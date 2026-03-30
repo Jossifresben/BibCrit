@@ -1,0 +1,20 @@
+{
+  "en": {
+    "app_name": "BibCrit",
+    "nav_textual": "Textual Analysis",
+    "nav_critical": "Critical Analysis",
+    "nav_discovery": "Discovery",
+    "divergence_title": "MT/LXX Divergence Analyzer",
+    "analyze_btn": "Analyze",
+    "passage_label": "Passage",
+    "scope_verse": "Verse",
+    "scope_chapter": "Chapter",
+    "scope_book": "Book",
+    "confidence_high": "HIGH",
+    "confidence_medium": "MEDIUM",
+    "confidence_low": "LOW",
+    "export_footnote": "Export footnote",
+    "export_bibtex": "BibTeX",
+    "budget_label": "Monthly analysis budget"
+  }
+}

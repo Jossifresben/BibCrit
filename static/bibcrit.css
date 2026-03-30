@@ -1,0 +1,171 @@
+/* BibCrit — Design System Overrides & Biblical Corpus Tokens */
+
+:root {
+  /* Override Atlas accent with BibCrit dark slate */
+  --accent: #2c3e50;
+  --accent-light: #eef1f4;
+  --accent-dark: #1a2535;
+  --bg: #faf8f4;      /* warmer parchment vs Atlas cool white */
+
+  /* Manuscript tradition colors */
+  --mt-color: #c0892a;
+  --mt-bg: #fff8e8;
+  --mt-border: #e8c87a;
+  --lxx-color: #3a6bc4;
+  --lxx-bg: #e8f0fc;
+  --lxx-border: #9ab8e8;
+  --gnt-color: #2c7c5f;
+  --dss-color: #5f2c7c;
+  --dss-bg: #f3e8ff;
+  --peshitta-color: #7c2c2c;
+
+  /* Confidence badge colors */
+  --conf-high-bg: #d4edda;
+  --conf-high-fg: #155724;
+  --conf-medium-bg: #fff3cd;
+  --conf-medium-fg: #856404;
+  --conf-low-bg: #f8d7da;
+  --conf-low-fg: #721c24;
+
+  /* Scripture fonts */
+  --font-hebrew: 'Noto Sans Hebrew', 'SBL Hebrew', serif;
+  --font-greek: 'Noto Serif', 'SBL Greek', serif;
+}
+
+[data-theme="dark"] {
+  --accent: #5a8ab5;
+  --bg: #111210;
+  --fg: #e8e6de;
+  --mt-color: #d4a84b;
+  --mt-bg: #2a2010;
+  --lxx-color: #6a9be0;
+  --lxx-bg: #101828;
+  --conf-high-bg: #1a3d24;
+  --conf-high-fg: #6fcf97;
+  --conf-medium-bg: #3d3010;
+  --conf-medium-fg: #f2c94c;
+  --conf-low-bg: #3d1010;
+  --conf-low-fg: #eb5757;
+}
+
+/* Confidence badges */
+.confidence-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+.confidence-high   { background: var(--conf-high-bg);   color: var(--conf-high-fg); }
+.confidence-medium { background: var(--conf-medium-bg); color: var(--conf-medium-fg); }
+.confidence-low    { background: var(--conf-low-bg);    color: var(--conf-low-fg); }
+
+/* Tradition badges */
+.tradition-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  color: white;
+}
+.mt-badge       { background: var(--mt-color); }
+.lxx-badge      { background: var(--lxx-color); }
+.analysis-badge { background: var(--dss-color); }
+
+/* Budget bar */
+.budget-footer {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  padding: 6px 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.budget-track {
+  flex: 1;
+  max-width: 200px;
+  background: var(--border);
+  border-radius: 4px;
+  height: 6px;
+}
+.budget-fill {
+  height: 6px;
+  border-radius: 4px;
+  background: var(--accent);
+  transition: width 0.4s ease;
+}
+.budget-fill.warning  { background: #f59e0b; }
+.budget-fill.critical { background: #dc3545; }
+.budget-donate-btn {
+  display: none;
+  font-size: 11px;
+  padding: 3px 10px;
+  background: var(--lxx-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Donation modal */
+.donation-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--overlay);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+.donation-modal-overlay.active { display: flex; }
+.donation-modal {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  max-width: 440px;
+  width: 90%;
+  box-shadow: 0 8px 32px var(--shadow-modal);
+  text-align: center;
+}
+.donation-modal h2 { margin-bottom: 0.75rem; }
+.donation-modal p  { color: var(--muted); font-size: 14px; line-height: 1.7; margin-bottom: 1.25rem; }
+.donation-modal .btn-donate {
+  display: inline-block;
+  padding: 10px 24px;
+  background: var(--lxx-color);
+  color: white;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.donation-modal .btn-dismiss {
+  display: block;
+  margin-top: 0.75rem;
+  font-size: 13px;
+  color: var(--muted);
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* Nav additions */
+.nav-discovery {
+  color: #f0d080 !important;
+  font-weight: 600;
+}
+.nav-drop-tier {
+  display: block;
+  padding: 4px 16px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+}
+.nav-future { color: var(--muted) !important; font-size: 12px; }
+.nav-soon   { color: var(--muted) !important; }

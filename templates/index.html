@@ -1,13 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BibCrit — Biblical Textual Criticism</title>
-</head>
-<body>
-    <h1>BibCrit</h1>
-    <p>Biblical Textual Criticism Platform — coming soon.</p>
-    <p><a href="/health">Health check</a></p>
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}BibCrit — Biblical Textual Criticism{% endblock %}
+{% block content %}
+<div style="max-width:760px; margin:4rem auto; padding:0 1.5rem; text-align:center;">
+  <h1 style="font-size:2rem; margin-bottom:1rem;">Biblical Textual Criticism, Powered by Claude</h1>
+  <p style="color:var(--muted); font-size:1.1rem; line-height:1.8; margin-bottom:2rem;">
+    Compare Masoretic Text and Septuagint side-by-side. Claude classifies every divergence,
+    scores confidence, and generates competing hypotheses with scholarly citations.
+  </p>
+  <a href="/divergence" style="display:inline-block; padding:12px 28px; background:var(--lxx-color);
+     color:white; border-radius:var(--radius); text-decoration:none; font-weight:600; font-size:1rem;">
+    Open Divergence Analyzer →
+  </a>
+</div>
+{% endblock %}

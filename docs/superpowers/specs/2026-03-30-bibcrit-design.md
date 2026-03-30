@@ -14,7 +14,7 @@ BibCrit is a comprehensive Biblical Textual Criticism research platform that app
 
 **Primary goal:** Give seminary-trained scholars and academics a research-grade tool that applies rigorous critical methodology to manuscript comparison, replacing hours of manual apparatus consultation with structured, citable AI-assisted analysis.
 
-**Secondary goal:** Democratize scholarship through a public-facing Discovery layer — curated, plain-language findings auto-generated as a bywheel of scholarly use, requiring no Hebrew or Greek knowledge.
+**Secondary goal:** Democratize scholarship through a public-facing Discovery layer — curated, plain-language findings auto-generated as a flywheel of scholarly use, requiring no Hebrew or Greek knowledge.
 
 **Funding pathway:** Demo the flagship tool (MT/LXX Parallel Divergence Analyzer) to ETCBC and similar institutions. Token costs are low enough ($5–200/month depending on scale) that a small institutional grant covers operations and unlocks the premium "Ask Claude" conversational layer.
 

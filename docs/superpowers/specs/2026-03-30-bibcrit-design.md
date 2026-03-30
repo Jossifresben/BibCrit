@@ -218,7 +218,7 @@ class VerseAlignment:
    System prompt: scholarly persona + methodology + output JSON schema.
 
 4. CLAUDE ANALYSIS
-   Model: claude-3-5-sonnet (balance of reasoning quality and cost)
+   Model: selected per-tool (see §5.2 Model Selection)
    Output: structured JSON with technical analysis + plain-language version
    in a single call. Both saved to cache simultaneously.
 
@@ -233,7 +233,20 @@ class VerseAlignment:
    discovery_ready=true.
 ```
 
-### 5.2 Prompt Architecture
+### 5.2 Model Selection
+
+Model is selected per-tool in `claude_pipeline.py`. The cache key includes `model_version` so Sonnet and Opus results are stored separately and never mixed.
+
+| Tool | Model | Rationale |
+|------|-------|-----------|
+| MT/LXX Divergence Analyzer | claude-3-5-sonnet | Structured classification + JSON output — Sonnet quality is sufficient |
+| LXX Back-Translation Workbench | claude-3-5-sonnet | Word-level reconstruction with clear methodology — Sonnet handles well |
+| Numerical Discrepancy Modeler | claude-3-5-sonnet | Pattern analysis on structured numerical data — Sonnet is reliable |
+| Scribal Tendency Profiler | **claude-opus** | Subtle stylometric reasoning across full books requires Opus depth. Cost justified by permanent caching — run once per book. |
+| "Ask Claude" conversational layer | **claude-opus** | Open-ended scholarly dialogue demands highest reasoning quality. Funded feature — Opus cost covered by institutional grant or donation token. |
+| Tier 2 tools (default) | claude-3-5-sonnet | Revisit per-tool during Tier 2 build if quality is insufficient |
+
+### 5.3 Prompt Architecture
 
 Prompt templates are versioned files stored in `data/prompts/`. This separates prompt engineering from code and allows improvement without redeployment. Each template contains:
 
@@ -244,7 +257,7 @@ Prompt templates are versioned files stored in `data/prompts/`. This separates p
 
 When prompt templates are updated (version bump), all cached entries for that tool are invalidated on next request.
 
-### 5.3 Confidence Scoring UI
+### 5.4 Confidence Scoring UI
 
 Every Claude-generated finding is displayed with explicit uncertainty. Three tiers:
 
@@ -260,7 +273,7 @@ Each finding displays:
 3. **Source citations** (BHS apparatus, Tov, Wevers, Pietersma, relevant DSS evidence)
 4. **Export controls**: footnote (SBL format), BibTeX, save to bookmarks
 
-### 5.4 Discovery Flywheel
+### 5.5 Discovery Flywheel
 
 Every Claude analysis call generates two outputs in a single API call at no extra cost:
 
@@ -269,25 +282,23 @@ Every Claude analysis call generates two outputs in a single API call at no extr
 
 The Discovery section queries `analysis_plain` from the cache. As scholars use the app, Discovery content grows automatically. An admin `discovery_ready` flag on each cache entry allows curation — some analyses are too narrow to surface publicly; others are ideal showcase material. A simple admin toggle controls publication.
 
-### 5.5 Token Cost Estimates
+### 5.6 Token Cost Estimates
 
-All estimates use claude-3-5-sonnet pricing.
-
-| Tool / Operation | Approx tokens (in+out) | Estimated cost | Caching impact |
-|-----------------|----------------------|----------------|----------------|
-| MT/LXX divergence — single verse | ~2,000 | ~$0.01 | High reuse → near-zero after first |
-| MT/LXX divergence — full chapter | ~8,000 | ~$0.03 | Cached per chapter |
-| Back-translation workbench — passage | ~3,500 | ~$0.02 | Medium reuse |
-| Scribal tendency profiler — full book | ~60,000 (chunked) | ~$0.50–2.00 | Run once, cached permanently |
-| Numerical discrepancy modeler | ~5,000 | ~$0.04 | Static data → near-permanent cache |
-| "Ask Claude" conversational (funded) | ~4,000/turn | ~$0.03/turn | Not cacheable |
+| Tool / Operation | Model | Approx tokens (in+out) | Estimated cost | Caching impact |
+|-----------------|-------|----------------------|----------------|----------------|
+| MT/LXX divergence — single verse | Sonnet | ~2,000 | ~$0.01 | High reuse → near-zero after first |
+| MT/LXX divergence — full chapter | Sonnet | ~8,000 | ~$0.03 | Cached per chapter |
+| Back-translation workbench — passage | Sonnet | ~3,500 | ~$0.02 | Medium reuse |
+| Numerical discrepancy modeler | Sonnet | ~5,000 | ~$0.04 | Static data → near-permanent cache |
+| Scribal tendency profiler — full book | **Opus** | ~60,000 (chunked) | ~$2.00–8.00 | Run once per book, cached permanently |
+| "Ask Claude" conversational (funded) | **Opus** | ~4,000/turn | ~$0.15/turn | Not cacheable |
 
 **Monthly operational estimates:**
 - Solo researcher (heavy use): $5–15/month
 - 10–50 active scholars: $50–200/month
 - ETCBC grant: covers "Ask Claude" conversational layer + institutional access
 
-### 5.6 API Budget Cap + Donation Flow
+### 5.7 API Budget Cap + Donation Flow
 
 - A single API key is configured with a monthly spend cap (default: $5, configurable)
 - A persistent budget bar in the page footer shows: `Monthly budget: $X.XX / $Y.00 used`

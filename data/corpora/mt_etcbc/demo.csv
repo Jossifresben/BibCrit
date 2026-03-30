@@ -1,0 +1,23 @@
+book_order,book,chapter,verse,reference,position,word_text,lemma,morph,strong,manuscript,tradition
+23,Isaiah,7,14,Isaiah 7:14,1,לָכֵן,לָכֵן,conj,H3651,Leningrad,MT
+23,Isaiah,7,14,Isaiah 7:14,2,יִתֵּן,נָתַן,verb.qal.yqtl.3ms,H5414,Leningrad,MT
+23,Isaiah,7,14,Isaiah 7:14,3,אֲדֹנָי,אֲדֹנָי,noun.ms.abs,H136,Leningrad,MT
+23,Isaiah,7,14,Isaiah 7:14,4,הוּא,הוּא,pron.3ms,H1931,Leningrad,MT
+23,Isaiah,7,14,Isaiah 7:14,5,לָכֶם,לְ,prep+pron.2mp,H3807,Leningrad,MT
+23,Isaiah,7,14,Isaiah 7:14,6,אוֹת,אוֹת,noun.fs.abs,H226,Leningrad,MT
+23,Isaiah,7,14,Isaiah 7:14,7,הִנֵּה,הִנֵּה,intj,H2009,Leningrad,MT
+23,Isaiah,7,14,Isaiah 7:14,8,הָעַלְמָה,עַלְמָה,noun.fs.det,H5959,Leningrad,MT
+23,Isaiah,7,14,Isaiah 7:14,9,הָרָה,הָרָה,adj.fs.abs,H2030,Leningrad,MT
+23,Isaiah,7,14,Isaiah 7:14,10,וְיֹלֶדֶת,יָלַד,verb.qal.ptcp.fs,H3205,Leningrad,MT
+23,Isaiah,7,14,Isaiah 7:14,11,בֵּן,בֵּן,noun.ms.abs,H1121,Leningrad,MT
+23,Isaiah,7,14,Isaiah 7:14,12,וְקָרָאת,קָרָא,verb.qal.qatl.3fs,H7121,Leningrad,MT
+23,Isaiah,7,14,Isaiah 7:14,13,שְׁמוֹ,שֵׁם,noun.ms.3ms,H8034,Leningrad,MT
+23,Isaiah,7,14,Isaiah 7:14,14,עִמָּנוּ,עִם,prep+pron.1cp,H5973,Leningrad,MT
+23,Isaiah,7,14,Isaiah 7:14,15,אֵל,אֵל,noun.ms.abs,H410,Leningrad,MT
+1,Genesis,1,1,Genesis 1:1,1,בְּרֵאשִׁית,רֵאשִׁית,noun.fs.abs,H7225,Leningrad,MT
+1,Genesis,1,1,Genesis 1:1,2,בָּרָא,בָּרָא,verb.qal.qatl.3ms,H1254,Leningrad,MT
+1,Genesis,1,1,Genesis 1:1,3,אֱלֹהִים,אֱלֹהִים,noun.mp.abs,H430,Leningrad,MT
+1,Genesis,1,1,Genesis 1:1,4,אֵת,אֵת,part.acc,H853,Leningrad,MT
+1,Genesis,1,1,Genesis 1:1,5,הַשָּׁמַיִם,שָׁמַיִם,noun.mp.det,H8064,Leningrad,MT
+1,Genesis,1,1,Genesis 1:1,6,וְאֵת,אֵת,part.acc,H853,Leningrad,MT
+1,Genesis,1,1,Genesis 1:1,7,הָאָרֶץ,אֶרֶץ,noun.fs.det,H776,Leningrad,MT

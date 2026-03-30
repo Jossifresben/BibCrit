@@ -9,3 +9,6 @@ services:
         value: "3.11"
       - key: ANTHROPIC_API_KEY
         sync: false
+      # Monthly Claude spend cap in USD (default: 5.0). Increase to allow more analyses per month.
+      - key: BIBCRIT_API_CAP_USD
+        value: "5.0"

@@ -15,15 +15,15 @@
   {% for card in cards %}
   <div class="discovery-card">
     <div class="dc-header">
-      <span class="dc-ref">{{ card.reference }}</span>
-      <span class="dc-type">{{ card.divergence_type | replace('_', ' ') | title }}</span>
+      <span class="dc-ref">{{ card.reference | e }}</span>
+      <span class="dc-type">{{ card.divergence_type | replace('_', ' ') | title | e }}</span>
     </div>
     <div class="dc-words">
-      <span class="dc-mt">{{ card.mt_word }}</span>
+      <span class="dc-mt">{{ card.mt_word | e }}</span>
       <span class="dc-arrow">→</span>
-      <span class="dc-lxx">{{ card.lxx_word }}</span>
+      <span class="dc-lxx">{{ card.lxx_word | e }}</span>
     </div>
-    <p class="dc-plain">{{ card.analysis_plain }}</p>
+    <p class="dc-plain">{{ card.analysis_plain | e }}</p>
     <div class="dc-footer">
       <a href="/divergence?ref={{ card.reference | urlencode }}" class="dc-link">
         See full analysis →

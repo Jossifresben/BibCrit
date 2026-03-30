@@ -8,6 +8,7 @@ import hashlib
 import json
 import os
 import re
+import threading
 from datetime import datetime
 
 DIVERGENCE_MODEL = 'claude-3-5-sonnet-20241022'
@@ -32,6 +33,7 @@ class ClaudePipeline:
         self._budget_path = os.path.join(self._cache_dir, 'budget.json')
         self._cap_usd = cap_usd
         self._client = None
+        self._budget_lock = threading.Lock()
 
         os.makedirs(self._cache_dir, exist_ok=True)
 
@@ -41,6 +43,13 @@ class ClaudePipeline:
                 self._client = anthropic.Anthropic(api_key=api_key)
             except ImportError:
                 pass
+
+    # ── Public interface ───────────────────────────────────────────────────
+
+    @property
+    def cache_dir(self) -> str:
+        """Public accessor for the cache directory path."""
+        return self._cache_dir
 
     # ── Cache ──────────────────────────────────────────────────────────────
 
@@ -91,11 +100,12 @@ class ClaudePipeline:
         }
 
     def record_spend(self, amount_usd: float) -> None:
-        """Add amount to this month's spend total."""
-        budget = self.get_budget()
-        budget['spend_usd'] = round(budget['spend_usd'] + amount_usd, 6)
-        with open(self._budget_path, 'w') as f:
-            json.dump(budget, f)
+        """Add amount to this month's spend total (thread-safe read-modify-write)."""
+        with self._budget_lock:
+            budget = self.get_budget()
+            budget['spend_usd'] = round(budget['spend_usd'] + amount_usd, 6)
+            with open(self._budget_path, 'w') as f:
+                json.dump(budget, f)
 
     # ── Prompts ────────────────────────────────────────────────────────────
 
@@ -126,6 +136,18 @@ class ClaudePipeline:
         if not self._client:
             return {
                 'error': 'No API key configured. Set ANTHROPIC_API_KEY environment variable.',
+                'divergences': [],
+                'summary_technical': '',
+                'summary_plain': '',
+            }
+
+        budget = self.get_budget()
+        if budget['spend_usd'] >= self._cap_usd:
+            return {
+                'error': (
+                    f"Monthly analysis budget of ${self._cap_usd:.2f} reached. "
+                    "Please try again next month or donate to increase the cap."
+                ),
                 'divergences': [],
                 'summary_technical': '',
                 'summary_plain': '',

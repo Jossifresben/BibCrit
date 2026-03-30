@@ -103,3 +103,29 @@ def test_no_api_key_returns_error_dict(tmp_path):
     result = p.analyze_divergence('Isaiah 7:14', 'MT text', 'LXX text')
     assert 'error' in result
     assert result['divergences'] == []
+
+
+def test_budget_cap_enforced_when_exceeded(tmp_path):
+    """analyze_divergence should return error dict (not call API) when cap is reached."""
+    p = ClaudePipeline(data_dir=str(tmp_path), api_key='fake-key-wont-be-called', cap_usd=1.0)
+    p.record_spend(1.0)  # exactly at cap
+    result = p.analyze_divergence('Isaiah 7:14', 'MT text', 'LXX text')
+    assert 'error' in result
+    assert 'budget' in result['error'].lower()
+    assert result['divergences'] == []
+
+
+def test_budget_cap_not_triggered_when_under(tmp_path):
+    """analyze_divergence should not block on cap when spend is below it."""
+    p = ClaudePipeline(data_dir=str(tmp_path), api_key='', cap_usd=5.0)
+    p.record_spend(4.99)  # just under cap
+    # api_key is empty so we get the no-api-key error, not the budget error
+    result = p.analyze_divergence('Isaiah 7:14', 'MT text', 'LXX text')
+    assert 'error' in result
+    assert 'budget' not in result['error'].lower()
+
+
+def test_cache_dir_property(tmp_path):
+    """cache_dir property exposes the internal cache directory path."""
+    p = make_pipeline(tmp_path)
+    assert p.cache_dir == str(tmp_path / 'cache')

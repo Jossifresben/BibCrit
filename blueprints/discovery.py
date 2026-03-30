@@ -24,7 +24,7 @@ def _load_discovery_cards() -> list:
     if not state.pipeline:
         return []
 
-    cache_dir = state.pipeline._cache_dir
+    cache_dir = state.pipeline.cache_dir
     cards = []
 
     if not os.path.isdir(cache_dir):

@@ -1,10 +1,13 @@
 """BibCrit — Biblical Textual Criticism Platform."""
 
 import json
+import logging
 import os
 import threading
 
 from flask import Flask
+
+logger = logging.getLogger(__name__)
 
 BASE_DIR = os.path.dirname(__file__)
 DATA_DIR = os.path.join(BASE_DIR, 'data')
@@ -55,7 +58,7 @@ def _init() -> None:
             state.corpus.set_data_dir(DATA_DIR)
             state.corpus.load_all()
         except Exception:
-            pass  # corpus not yet available — Phase 0 setup in progress
+            logger.exception('BiblicalCorpus init failed — corpus unavailable until fixed')
 
         # Load Claude pipeline (graceful if no API key)
         try:
@@ -66,7 +69,7 @@ def _init() -> None:
                 cap_usd=float(os.environ.get('BIBCRIT_API_CAP_USD', '5.0')),
             )
         except Exception:
-            pass  # pipeline not yet available
+            logger.exception('ClaudePipeline init failed — analysis unavailable until fixed')
 
         _initialized = True
 

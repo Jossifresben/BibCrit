@@ -215,11 +215,15 @@
                    background: var(--card-bg); }
 .featured-ref:hover { border-color: var(--lxx-color); color: var(--lxx-color); }
 
-.loading-state   { display: flex; flex-direction: column; align-items: center;
-                   justify-content: center; min-height: 300px; gap: 16px; color: var(--muted); }
-.loading-spinner { width: 36px; height: 36px; border: 3px solid var(--border);
-                   border-top-color: var(--lxx-color); border-radius: 50%;
-                   animation: spin 0.8s linear infinite; }
+.loading-state     { display: flex; flex-direction: column; align-items: center;
+                     justify-content: center; min-height: 300px; gap: 10px; color: var(--muted); }
+.loading-spinner   { width: 36px; height: 36px; border: 3px solid var(--border);
+                     border-top-color: var(--lxx-color); border-radius: 50%;
+                     animation: spin 0.8s linear infinite; }
+.loading-step-msg  { font-size: 15px; color: var(--fg); font-weight: 500; }
+.loading-timer     { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums;
+                     min-height: 18px; }
+.loading-hint      { font-size: 12px; color: var(--muted); opacity: 0.7; margin-top: 4px; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
 .error-msg       { background: var(--conf-low-bg); border-radius: var(--radius);

@@ -114,33 +114,80 @@
   });
 
   // ── Analysis fetch + render ───────────────────────────────────────────────
+  var _activeStream = null;
+  var _timerInterval = null;
+  var _elapsedSecs = 0;
+
   function analyze(ref) {
     if (!ref) return;
     currentRef = ref;
     refInput.value = ref;
 
+    // Close any previous stream
+    if (_activeStream) { _activeStream.close(); _activeStream = null; }
+    clearInterval(_timerInterval);
+
     emptyState.style.display    = 'none';
     apparatusGrid.style.display = 'none';
+    exportRow.style.display     = 'none';
     loadingState.style.display  = 'flex';
+    setLoadingStep('Preparing…');
+    startTimer();
 
-    fetch('/api/divergence?ref=' + encodeURIComponent(ref))
-      .then(function (r) { return r.json(); })
-      .then(function (data) {
+    var es = new EventSource('/api/divergence/stream?ref=' + encodeURIComponent(ref));
+    _activeStream = es;
+
+    es.onmessage = function (e) {
+      var msg = JSON.parse(e.data);
+
+      if (msg.type === 'step') {
+        setLoadingStep(msg.msg);
+      } else if (msg.type === 'done') {
+        es.close();
+        _activeStream = null;
+        stopTimer();
         loadingState.style.display = 'none';
-        if (data.error) {
-          showError(data.error);
-          return;
-        }
-        currentData = data;
-        renderApparatus(data);
+        currentData = msg.data;
+        renderApparatus(msg.data);
         apparatusGrid.style.display = 'grid';
         exportRow.style.display     = 'flex';
         updateBudgetBar();
-      })
-      .catch(function () {
+      } else if (msg.type === 'error') {
+        es.close();
+        _activeStream = null;
+        stopTimer();
         loadingState.style.display = 'none';
-        showError('Network error — please try again.');
-      });
+        showError(msg.msg);
+      }
+    };
+
+    es.onerror = function () {
+      es.close();
+      _activeStream = null;
+      stopTimer();
+      loadingState.style.display = 'none';
+      showError('Connection lost — please try again.');
+    };
+  }
+
+  function setLoadingStep(msg) {
+    var stepEl = document.getElementById('loading-step');
+    if (stepEl) stepEl.textContent = msg;
+  }
+
+  function startTimer() {
+    _elapsedSecs = 0;
+    var timerEl = document.getElementById('loading-timer');
+    if (timerEl) timerEl.textContent = '';
+    _timerInterval = setInterval(function () {
+      _elapsedSecs++;
+      if (timerEl) timerEl.textContent = _elapsedSecs + 's elapsed';
+    }, 1000);
+  }
+
+  function stopTimer() {
+    clearInterval(_timerInterval);
+    _timerInterval = null;
   }
 
   function renderApparatus(data) {

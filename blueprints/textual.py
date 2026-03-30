@@ -1,6 +1,7 @@
 """Textual Analysis blueprint — MT/LXX Divergence Analyzer and corpus browser API."""
 
-from flask import Blueprint, render_template, request, jsonify
+import json
+from flask import Blueprint, render_template, request, jsonify, Response, stream_with_context
 import state
 
 textual_bp = Blueprint('textual', __name__)
@@ -56,6 +57,74 @@ def api_divergence():
     result['reference'] = reference
 
     return jsonify(result)
+
+
+# ── SSE streaming analysis ────────────────────────────────────────────────
+
+@textual_bp.route('/api/divergence/stream')
+def api_divergence_stream():
+    """SSE endpoint: streams step-by-step progress then final result."""
+    reference = request.args.get('ref', '').strip()
+
+    def generate():
+        def event(type_, **kwargs):
+            payload = json.dumps({'type': type_, **kwargs})
+            return f'data: {payload}\n\n'
+
+        if not reference:
+            yield event('error', msg='ref parameter required')
+            return
+
+        corpus   = state.corpus
+        pipeline = state.pipeline
+
+        if corpus is None or pipeline is None:
+            yield event('error', msg='Server not ready — corpus or pipeline not initialized')
+            return
+
+        # Step 1: load verse text
+        yield event('step', msg='📖 Loading verse text…')
+        mt_words  = corpus.get_verse_words(reference, 'MT')
+        lxx_words = corpus.get_verse_words(reference, 'LXX')
+
+        if not mt_words and not lxx_words:
+            yield event('error', msg=f'No data found for "{reference}". Check spelling — e.g. "Isaiah 7:14"')
+            return
+
+        mt_text  = ' '.join(w.word_text for w in mt_words)
+        lxx_text = ' '.join(w.word_text for w in lxx_words)
+
+        # Step 2: check cache
+        yield event('step', msg='🔍 Checking analysis cache…')
+        from biblical_core.claude_pipeline import DIVERGENCE_MODEL
+        cached = pipeline.get_cached(reference, 'divergence', _DIVERGENCE_PROMPT, DIVERGENCE_MODEL)
+
+        if cached:
+            yield event('step', msg='⚡ Found in cache — loading instantly')
+            result = cached
+        else:
+            # Step 3: call Claude
+            yield event('step', msg='🤖 Calling Claude — new passages typically take 20–40s…')
+            result = pipeline.analyze_divergence(reference, mt_text, lxx_text)
+
+        if result.get('error'):
+            yield event('error', msg=result['error'])
+            return
+
+        result['mt_words']  = _words_to_dicts(mt_words)
+        result['lxx_words'] = _words_to_dicts(lxx_words)
+        result['reference'] = reference
+
+        yield event('done', data=result)
+
+    return Response(
+        stream_with_context(generate()),
+        mimetype='text/event-stream',
+        headers={
+            'Cache-Control':    'no-cache',
+            'X-Accel-Buffering': 'no',   # disable nginx buffering on Render
+        },
+    )
 
 
 # ── Corpus browser API ─────────────────────────────────────────────────────

@@ -11,6 +11,7 @@ dependencies = [
     "flask>=3.0",
     "requests>=2.31",
     "anthropic>=0.30",
+    "supabase>=2.0",
 ]
 
 [project.optional-dependencies]

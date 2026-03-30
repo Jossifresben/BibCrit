@@ -67,6 +67,8 @@ def _init() -> None:
                 data_dir=DATA_DIR,
                 api_key=os.environ.get('ANTHROPIC_API_KEY', ''),
                 cap_usd=float(os.environ.get('BIBCRIT_API_CAP_USD', '5.0')),
+                supabase_url=os.environ.get('SUPABASE_URL', ''),
+                supabase_key=os.environ.get('SUPABASE_KEY', ''),
             )
         except Exception:
             logger.exception('ClaudePipeline init failed — analysis unavailable until fixed')

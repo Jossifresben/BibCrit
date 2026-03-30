@@ -16,7 +16,7 @@ BibCrit is a comprehensive Biblical Textual Criticism research platform that app
 
 **Secondary goal:** Democratize scholarship through a public-facing Discovery layer — curated, plain-language findings auto-generated as a flywheel of scholarly use, requiring no Hebrew or Greek knowledge.
 
-**Funding pathway:** Demo the flagship tool (MT/LXX Parallel Divergence Analyzer) to ETCBC and similar institutions. Token costs are low enough ($5–200/month depending on scale) that a small institutional grant covers operations and unlocks the premium "Ask Claude" conversational layer.
+**Funding pathway:** Demo the flagship tool (MT/LXX Parallel Divergence Analyzer) to ETCBC and similar institutions. Token costs are low enough ($5–200/month depending on scale) that a small institutional grant or community donations keep the app running. BibCrit is and will remain fully open source and open access — no premium tiers, no institutional paywalls, no feature gating.
 
 ---
 
@@ -243,7 +243,7 @@ Model is selected per-tool in `claude_pipeline.py`. The cache key includes `mode
 | LXX Back-Translation Workbench | claude-3-5-sonnet | Word-level reconstruction with clear methodology — Sonnet handles well |
 | Numerical Discrepancy Modeler | claude-3-5-sonnet | Pattern analysis on structured numerical data — Sonnet is reliable |
 | Scribal Tendency Profiler | **claude-opus** | Subtle stylometric reasoning across full books requires Opus depth. Cost justified by permanent caching — run once per book. |
-| "Ask Claude" conversational layer | **claude-opus** | Open-ended scholarly dialogue demands highest reasoning quality. Funded feature — Opus cost covered by institutional grant or donation token. |
+| "Ask Claude" conversational layer | **claude-opus** | Open-ended scholarly dialogue demands highest reasoning quality. Open access — sustained by community donations and institutional grants, never paywalled. |
 | Tier 2 tools (default) | claude-3-5-sonnet | Revisit per-tool during Tier 2 build if quality is insufficient |
 
 ### 5.3 Prompt Architecture
@@ -291,20 +291,21 @@ The Discovery section queries `analysis_plain` from the cache. As scholars use t
 | Back-translation workbench — passage | Sonnet | ~3,500 | ~$0.02 | Medium reuse |
 | Numerical discrepancy modeler | Sonnet | ~5,000 | ~$0.04 | Static data → near-permanent cache |
 | Scribal tendency profiler — full book | **Opus** | ~60,000 (chunked) | ~$2.00–8.00 | Run once per book, cached permanently |
-| "Ask Claude" conversational (funded) | **Opus** | ~4,000/turn | ~$0.15/turn | Not cacheable |
+| "Ask Claude" conversational | **Opus** | ~4,000/turn | ~$0.15/turn | Not cacheable — sustained by donations |
 
 **Monthly operational estimates:**
 - Solo researcher (heavy use): $5–15/month
 - 10–50 active scholars: $50–200/month
-- ETCBC grant: covers "Ask Claude" conversational layer + institutional access
+- Community donations + ETCBC/institutional grants cover operational costs — all features remain free for everyone
 
 ### 5.7 API Budget Cap + Donation Flow
 
 - A single API key is configured with a monthly spend cap (default: $5, configurable)
 - A persistent budget bar in the page footer shows: `Monthly budget: $X.XX / $Y.00 used`
 - At 80% of cap: donate button appears alongside the bar
-- At 100% of cap: a tasteful modal explains the situation, thanks the user for their use of the tool, and presents a donation link (Ko-fi or Stripe)
-- Donors receive a session token extending access for 30 days
+- At 100% of cap: a tasteful modal explains the situation, thanks the user for their use of the tool, and presents a donation link (Ko-fi or Stripe) — the app remains fully usable, the modal is informational only
+- Donations go toward replenishing the API budget and keeping the service running for everyone
+- No access gating, no session tokens, no premium tier — donations are purely voluntary community support
 - All cap and donation logic lives in `claude_pipeline.py` — transparent and auditable
 
 ---
@@ -489,7 +490,7 @@ All tools assembled into a single integrated workbench. One passage selector con
 - **Shared passage selector** — change the passage once, every tool updates
 - **Research Dossier** — Claude accumulates evidence across sessions per passage or book. Persistent, searchable, exportable
 - **SBL Academic Export** — one-click export of all dossier findings as footnote-ready SBL-style text, ready for insertion into a paper
-- **"Ask Claude" conversational layer** — a side panel research assistant available for open-ended queries about any passage or finding. Funded feature: unlocked via ETCBC grant or donation token
+- **"Ask Claude" conversational layer** — a side panel research assistant available for open-ended queries about any passage or finding. Open access — available to all users, sustained by community donations and institutional grants
 
 **Technology note:** Tier 3's multi-panel workbench may warrant a React frontend layer over the Flask backend. This decision is deferred to the Tier 2 → Tier 3 transition, when the Python modules will be mature and a clean REST API layer is a natural evolution.
 
@@ -608,11 +609,11 @@ BibCrit extends the Atlas design system. Same CSS variable architecture, same da
 
 ## 14. Open Questions (Deferred)
 
-- **Collaborative annotations:** Should annotations be shareable between scholars in a later phase? Requires server-side storage.
-- **Institutional login:** ETCBC partnership may require authenticated access for premium features. Architecture supports adding this without refactor.
+- **Collaborative annotations:** Should annotations be shareable between scholars in a later phase? Requires server-side storage. Would strengthen the open scholarly community aspect of the project.
 - **React migration:** Tier 3 workbench may benefit from a React frontend. Deferred to Tier 2 → Tier 3 transition.
-- **API key per user vs. shared key:** Current design uses a single API key with a shared budget cap. Institutional deployment may require per-user keys.
 - **Samaritan Pentateuch:** Relevant for the Numerical Discrepancy Modeler (Genesis 5/11). No clean open digital source identified yet. Tier 2 research item.
+- **API sustainability at scale:** If usage grows significantly (500+ active scholars), donations alone may not cover Opus costs for "Ask Claude." Options: apply for academic computing grants (NEH, Mellon Foundation, DFG), partner with ETCBC/SBL as institutional sponsors (cost-sharing, not access-gating), or throttle "Ask Claude" per-session during high-demand periods while keeping all other tools fully unrestricted.
+- **Open source license:** MIT vs. GPL vs. AGPL. AGPL is strongest for ensuring any hosted derivative also remains open. Decision needed before first public release.
 
 ---
 

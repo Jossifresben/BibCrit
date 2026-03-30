@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Discovery — BibCrit{% endblock %}
+
+{% block content %}
+<div class="discovery-hero">
+  <h1>✦ Discovery</h1>
+  <p class="discovery-subtitle">
+    The most fascinating findings from biblical textual scholarship —
+    no Hebrew or Greek required.
+  </p>
+</div>
+
+{% if cards %}
+<div class="discovery-grid">
+  {% for card in cards %}
+  <div class="discovery-card">
+    <div class="dc-header">
+      <span class="dc-ref">{{ card.reference }}</span>
+      <span class="dc-type">{{ card.divergence_type | replace('_', ' ') | title }}</span>
+    </div>
+    <div class="dc-words">
+      <span class="dc-mt">{{ card.mt_word }}</span>
+      <span class="dc-arrow">→</span>
+      <span class="dc-lxx">{{ card.lxx_word }}</span>
+    </div>
+    <p class="dc-plain">{{ card.analysis_plain }}</p>
+    <div class="dc-footer">
+      <a href="/divergence?ref={{ card.reference | urlencode }}" class="dc-link">
+        See full analysis →
+      </a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% else %}
+<div class="discovery-empty">
+  <h2>Content coming soon</h2>
+  <p>Discovery cards appear automatically as scholars use the analysis tools.
+     <a href="/divergence?ref=Isaiah+7:14">Try the Divergence Analyzer</a> to seed the first finding.</p>
+</div>
+{% endif %}
+
+<div class="discovery-about">
+  <h3>How Discovery works</h3>
+  <p>Every analysis run by scholars generates both a technical finding and a plain-language version —
+     in a single Claude call at no extra cost. When a finding is particularly illuminating,
+     it surfaces here automatically. No editorial team required.</p>
+</div>
+{% endblock %}

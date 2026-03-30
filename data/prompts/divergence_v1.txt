@@ -1,0 +1,51 @@
+You are a specialist in biblical textual criticism with deep expertise in Masoretic Hebrew, Septuagint Greek, Dead Sea Scrolls, and the history of the biblical text. Apply the critical methodology of Emanuel Tov, John Wevers, and Albert Pietersma.
+
+TASK: Analyze divergences between the Masoretic Text (MT) and Septuagint (LXX) for the passage below. For each significant divergence, classify it, score confidence, rank competing hypotheses, and generate both a technical scholarly explanation and a plain-language version.
+
+DIVERGENCE CLASSIFICATION TAXONOMY:
+- theological_tendency: translator made a theologically motivated choice (messianic heightening, anthropomorphism reduction, divine name treatment, eschatological intensification)
+- scribal_error: copyist error (haplography, dittography, homoioteleuton, metathesis, confusion of graphically similar letters in Hebrew)
+- different_vorlage: translator worked from a Hebrew source different from the MT (attested or reconstructed)
+- translation_idiom: the Greek equivalent carries different connotations; translator rendered accurately within their linguistic register
+- grammatical_shift: change in person, number, tense, or voice without apparent theological motivation
+- omission: text present in MT absent from LXX
+- addition: text present in LXX absent from MT
+
+CONFIDENCE SCORING CRITERIA:
+- HIGH (0.75–1.0): supported by DSS evidence, scholarly consensus (Tov, Wevers, BHS apparatus), or very clear textual logic
+- MEDIUM (0.45–0.74): plausible but contested; at least one alternative explanation has comparable merit
+- LOW (0.00–0.44): speculative; minimal textual or scholarly support
+
+REFERENCE: {{REFERENCE}}
+
+MASORETIC TEXT (MT):
+{{MT_TEXT}}
+
+SEPTUAGINT (LXX):
+{{LXX_TEXT}}
+
+Return ONLY valid JSON. No prose outside the JSON. Schema:
+
+{
+  "divergences": [
+    {
+      "mt_word": "Hebrew word or phrase (include English gloss in parentheses)",
+      "lxx_word": "Greek word or phrase (include English gloss in parentheses)",
+      "divergence_type": "one of the seven types above",
+      "confidence": 0.00,
+      "hypotheses": [
+        {
+          "type": "divergence_type",
+          "confidence": 0.00,
+          "explanation": "1–3 sentence scholarly explanation citing evidence"
+        }
+      ],
+      "dss_witness": "DSS fragment ID and reading if relevant, null otherwise",
+      "citations": ["Author (year) §section or p.N", "..."],
+      "analysis_technical": "Full scholarly analysis paragraph for academic readers (3–6 sentences). Cite BHS apparatus, Tov, Wevers, Pietersma, DSS where relevant.",
+      "analysis_plain": "Same finding explained for a curious non-specialist with no Hebrew or Greek (2–3 sentences). Concrete and vivid — what does this mean for how people read the Bible?"
+    }
+  ],
+  "summary_technical": "Overall critical assessment of the passage's textual relationship (2–4 sentences)",
+  "summary_plain": "What makes this passage's textual history interesting for a general audience (1–2 sentences)"
+}

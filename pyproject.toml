@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "bibcrit"
 version = "0.1.0"
 description = "Biblical Textual Criticism research platform"
-requires-python = ">=3.11"
+requires-python = ">=3.10"
 dependencies = [
     "flask>=3.0",
     "requests>=2.31",
@@ -18,3 +18,6 @@ dev = [
     "pytest>=7.0",
     "text-fabric>=9.0",
 ]
+
+[tool.setuptools.packages.find]
+include = ["biblical_core*", "aramaic_core*", "blueprints*"]

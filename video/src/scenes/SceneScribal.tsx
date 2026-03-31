@@ -19,7 +19,7 @@ export const SceneScribal: React.FC = () => {
         gap: 20,
       }}
     >
-      <div style={{ fontSize: 18, fontWeight: 600, color: PALETTE.muted, letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+      <div style={{ fontSize: 26, fontWeight: 600, color: PALETTE.muted, letterSpacing: '0.1em', textTransform: 'uppercase' }}>
         Isaiah — Translator Profile
       </div>
       <RadarChart startFrame={10} />

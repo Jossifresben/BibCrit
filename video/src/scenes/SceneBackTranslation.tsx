@@ -38,22 +38,22 @@ export const SceneBackTranslation: React.FC = () => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '0 80px',
+        padding: '0 60px',
       }}
     >
       {/* Column headers */}
-      <div style={{ display: 'flex', width: '100%', maxWidth: 860, gap: 8, marginBottom: 12 }}>
+      <div style={{ display: 'flex', width: '100%', maxWidth: 1500, gap: 16, marginBottom: 12 }}>
         {COLS.map((col) => (
-          <div key={col.key} style={{ flex: 1, textAlign: 'center', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: PALETTE.muted }}>
+          <div key={col.key} style={{ flex: 1, textAlign: 'center', fontSize: 18, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: PALETTE.muted }}>
             {col.header}
           </div>
         ))}
       </div>
 
       {/* Word grid */}
-      <div style={{ display: 'flex', width: '100%', maxWidth: 860, gap: 8 }}>
+      <div style={{ display: 'flex', width: '100%', maxWidth: 1500, gap: 16 }}>
         {COLS.map((col) => (
-          <div key={col.key} style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 6 }}>
+          <div key={col.key} style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 12 }}>
             {WORDS.map((word, i) => {
               const wordStart = 10 + i * 20;
               const opacity = interpolate(frame, [wordStart, wordStart + 12], [0, 1], {
@@ -71,9 +71,9 @@ export const SceneBackTranslation: React.FC = () => {
                     background: bg,
                     border,
                     borderRadius: 6,
-                    padding: '8px 12px',
+                    padding: '16px 18px',
                     textAlign: 'center',
-                    fontSize: 18,
+                    fontSize: 28,
                     fontFamily: 'serif',
                     fontStyle: col.italic ? 'italic' : 'normal',
                     color: isVorlage ? STATUS_COLOR[word.status] : PALETTE.fg,

@@ -25,16 +25,16 @@ export const SceneDivergence: React.FC = () => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '0 120px',
+        padding: '0 80px',
         gap: 0,
       }}
     >
       {/* Column headers */}
-      <div style={{ display: 'flex', width: '100%', maxWidth: 900, gap: 12, marginBottom: 16 }}>
+      <div style={{ display: 'flex', width: '100%', maxWidth: 1500, gap: 12, marginBottom: 24 }}>
         <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
           <TraditionBadge tradition="MT" />
         </div>
-        <div style={{ width: 120 }} />
+        <div style={{ width: 160 }} />
         <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
           <TraditionBadge tradition="LXX" />
         </div>
@@ -61,24 +61,24 @@ export const SceneDivergence: React.FC = () => {
             style={{
               display: 'flex',
               width: '100%',
-              maxWidth: 900,
+              maxWidth: 1500,
               gap: 12,
               alignItems: 'center',
               opacity: rowOpacity,
               transform: `translateY(${rowY}px)`,
-              marginBottom: 18,
+              marginBottom: 24,
               background: PALETTE.card,
               border: `1px solid ${PALETTE.border}`,
               borderRadius: 8,
-              padding: '14px 20px',
+              padding: '22px 32px',
             }}
           >
-            <div style={{ flex: 1, fontSize: 18, color: PALETTE.fg, textAlign: 'right', direction: 'rtl', fontFamily: 'serif' }}>
+            <div style={{ flex: 1, fontSize: 28, color: PALETTE.fg, textAlign: 'right', direction: 'rtl', fontFamily: 'serif' }}>
               {row.mt}
             </div>
             <div
               style={{
-                width: 120,
+                width: 160,
                 textAlign: 'center',
                 transform: `scale(${badgeScale})`,
               }}
@@ -86,9 +86,9 @@ export const SceneDivergence: React.FC = () => {
               <span style={{
                 background: row.color,
                 color: '#fff',
-                fontSize: 10,
+                fontSize: 14,
                 fontWeight: 700,
-                padding: '3px 8px',
+                padding: '5px 12px',
                 borderRadius: 4,
                 letterSpacing: '0.06em',
                 textTransform: 'uppercase' as const,
@@ -97,7 +97,7 @@ export const SceneDivergence: React.FC = () => {
                 {row.badge}
               </span>
             </div>
-            <div style={{ flex: 1, fontSize: 18, color: PALETTE.fg, fontFamily: 'serif', fontStyle: 'italic' }}>
+            <div style={{ flex: 1, fontSize: 28, color: PALETTE.fg, fontFamily: 'serif', fontStyle: 'italic' }}>
               {row.lxx}
             </div>
           </div>

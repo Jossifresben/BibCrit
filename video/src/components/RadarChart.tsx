@@ -10,10 +10,10 @@ const AXES = [
   { label: 'Paraphrase',        value: 0.60 },
 ];
 
-const SIZE   = 260;
+const SIZE   = 500;
 const CX     = SIZE / 2;
 const CY     = SIZE / 2;
-const RADIUS = 100;
+const RADIUS = 190;
 
 function polarToXY(angleRad: number, r: number) {
   return {
@@ -77,7 +77,7 @@ export const RadarChart: React.FC<RadarChartProps> = ({ startFrame }) => {
         const ex = CX + (end.x - CX) * axisProgress;
         const ey = CY + (end.y - CY) * axisProgress;
 
-        const labelPt = polarToXY(angle, RADIUS + 22);
+        const labelPt = polarToXY(angle, RADIUS + 36);
         const labelOpacity = interpolate(
           localFrame,
           [30 + i * 6, 46 + i * 6],
@@ -98,7 +98,7 @@ export const RadarChart: React.FC<RadarChartProps> = ({ startFrame }) => {
               y={labelPt.y}
               textAnchor="middle"
               dominantBaseline="middle"
-              fontSize={10}
+              fontSize={16}
               fill={PALETTE.muted}
               opacity={labelOpacity}
               fontFamily="'Space Grotesk', sans-serif"
@@ -129,7 +129,7 @@ export const RadarChart: React.FC<RadarChartProps> = ({ startFrame }) => {
         return (
           <circle
             key={i}
-            cx={pt.x} cy={pt.y} r={4}
+            cx={pt.x} cy={pt.y} r={7}
             fill={PALETTE.lxx}
             opacity={dotOpacity}
           />

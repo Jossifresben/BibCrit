@@ -3,17 +3,17 @@ import { AbsoluteFill, useCurrentFrame, interpolate } from 'remotion';
 import { PALETTE, TIMING, SCENE_DURATIONS } from '../theme';
 import { ToolLabel } from '../components/ToolLabel';
 
-// Stemma nodes — positioned in a 900×480 SVG viewport
+// Stemma nodes — positioned in a 1600×620 SVG viewport
 const NODES = [
-  { id: 'proto',  label: 'Proto-Hebrew',    date: '4th–3rd c. BCE', x: 450, y:  50, color: '#334155', text: '#fff' },
-  { id: 'mt-src', label: 'Pre-Masoretic',   date: '2nd–1st c. BCE', x: 220, y: 160, color: '#334155', text: '#fff' },
-  { id: 'lxx',    label: 'Old Greek',       date: '3rd–2nd c. BCE', x: 450, y: 160, color: PALETTE.lxx, text: '#fff' },
-  { id: 'dss',    label: '1QIsaᵃ',          date: 'c. 125 BCE',     x: 700, y: 160, color: PALETTE.dss, text: '#fff' },
-  { id: 'mt',     label: 'Masoretic Text',  date: '1st–10th c. CE', x: 220, y: 290, color: PALETTE.mt,  text: '#fff' },
-  { id: 'hex',    label: 'Hexaplaric LXX',  date: 'c. 240 CE',      x: 380, y: 290, color: PALETTE.lxx, text: '#fff' },
-  { id: 'luc',    label: 'Lucianic LXX',    date: 'c. 300 CE',      x: 560, y: 290, color: PALETTE.lxx, text: '#fff' },
-  { id: 'aleppo', label: 'Aleppo Codex',    date: 'c. 930 CE',      x: 120, y: 420, color: PALETTE.mt,  text: '#fff' },
-  { id: 'len',    label: 'Leningrad Codex', date: '1008 CE',        x: 300, y: 420, color: PALETTE.mt,  text: '#fff' },
+  { id: 'proto',  label: 'Proto-Hebrew',    date: '4th–3rd c. BCE', x: 800, y:  60, color: '#334155', text: '#fff' },
+  { id: 'mt-src', label: 'Pre-Masoretic',   date: '2nd–1st c. BCE', x: 320, y: 200, color: '#334155', text: '#fff' },
+  { id: 'lxx',    label: 'Old Greek',       date: '3rd–2nd c. BCE', x: 800, y: 200, color: PALETTE.lxx, text: '#fff' },
+  { id: 'dss',    label: '1QIsaᵃ',          date: 'c. 125 BCE',     x: 1280, y: 200, color: PALETTE.dss, text: '#fff' },
+  { id: 'mt',     label: 'Masoretic Text',  date: '1st–10th c. CE', x: 320, y: 370, color: PALETTE.mt,  text: '#fff' },
+  { id: 'hex',    label: 'Hexaplaric LXX',  date: 'c. 240 CE',      x: 700, y: 370, color: PALETTE.lxx, text: '#fff' },
+  { id: 'luc',    label: 'Lucianic LXX',    date: 'c. 300 CE',      x: 1000, y: 370, color: PALETTE.lxx, text: '#fff' },
+  { id: 'aleppo', label: 'Aleppo Codex',    date: 'c. 930 CE',      x: 200, y: 530, color: PALETTE.mt,  text: '#fff' },
+  { id: 'len',    label: 'Leningrad Codex', date: '1008 CE',        x: 480, y: 530, color: PALETTE.mt,  text: '#fff' },
 ];
 
 const EDGES = [
@@ -22,8 +22,8 @@ const EDGES = [
   ['mt',     'aleppo'], ['mt',    'len'],
 ];
 
-const NODE_W = 130;
-const NODE_H = 40;
+const NODE_W = 180;
+const NODE_H = 56;
 
 export const SceneGenealogy: React.FC = () => {
   const frame = useCurrentFrame();
@@ -37,12 +37,12 @@ export const SceneGenealogy: React.FC = () => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '0 80px',
+        padding: '0 40px',
       }}
     >
       <svg
-        viewBox="0 0 900 490"
-        style={{ width: '100%', maxWidth: 900 }}
+        viewBox="0 0 1600 620"
+        style={{ width: '100%', maxWidth: 1600 }}
       >
         {/* Edges */}
         {EDGES.map(([fromId, toId], i) => {
@@ -99,10 +99,10 @@ export const SceneGenealogy: React.FC = () => {
                 style={{ transformOrigin: `${NODE_W / 2}px ${NODE_H / 2}px` }}
               />
               <text
-                x={NODE_W / 2} y={NODE_H / 2 - 4}
+                x={NODE_W / 2} y={NODE_H / 2 - 7}
                 textAnchor="middle"
                 dominantBaseline="middle"
-                fontSize={11}
+                fontSize={15}
                 fontWeight={700}
                 fill={node.text}
                 fontFamily="'Space Grotesk', sans-serif"
@@ -110,10 +110,10 @@ export const SceneGenealogy: React.FC = () => {
                 {node.label}
               </text>
               <text
-                x={NODE_W / 2} y={NODE_H / 2 + 10}
+                x={NODE_W / 2} y={NODE_H / 2 + 14}
                 textAnchor="middle"
                 dominantBaseline="middle"
-                fontSize={9}
+                fontSize={12}
                 fill="rgba(255,255,255,0.7)"
                 fontFamily="'Space Grotesk', sans-serif"
               >

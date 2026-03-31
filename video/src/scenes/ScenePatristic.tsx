@@ -32,16 +32,16 @@ export const ScenePatristic: React.FC = () => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '0 120px',
-        gap: 20,
+        padding: '0 80px',
+        gap: 28,
       }}
     >
       {/* Distribution bar */}
-      <div style={{ width: '100%', maxWidth: 820 }}>
-        <div style={{ fontSize: 12, fontWeight: 700, color: PALETTE.muted, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>
+      <div style={{ width: '100%', maxWidth: 1500 }}>
+        <div style={{ fontSize: 16, fontWeight: 700, color: PALETTE.muted, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>
           Text form distribution — Isaiah 7:14 · 23 citations
         </div>
-        <div style={{ display: 'flex', height: 32, borderRadius: 8, overflow: 'hidden', gap: 3 }}>
+        <div style={{ display: 'flex', height: 52, borderRadius: 8, overflow: 'hidden', gap: 3 }}>
           {DIST.map((seg) => (
             <div
               key={seg.label}
@@ -51,7 +51,7 @@ export const ScenePatristic: React.FC = () => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                fontSize: 11,
+                fontSize: 16,
                 fontWeight: 700,
                 color: '#fff',
                 overflow: 'hidden',
@@ -80,22 +80,22 @@ export const ScenePatristic: React.FC = () => {
             key={i}
             style={{
               width: '100%',
-              maxWidth: 820,
+              maxWidth: 1500,
               background: PALETTE.card,
               border: `1px solid ${PALETTE.border}`,
               borderRadius: 10,
-              padding: '12px 20px',
+              padding: '20px 32px',
               opacity,
               transform: `translateY(${y}px)`,
             }}
           >
-            <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 4 }}>
-              <span style={{ fontWeight: 700, fontSize: 15, color: PALETTE.fg }}>{c.father}</span>
-              <span style={{ fontSize: 12, color: PALETTE.muted }}>{c.dates}</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 10 }}>
+              <span style={{ fontWeight: 700, fontSize: 24, color: PALETTE.fg }}>{c.father}</span>
+              <span style={{ fontSize: 18, color: PALETTE.muted }}>{c.dates}</span>
               <TraditionBadge tradition={c.form} size="sm" />
-              <span style={{ fontSize: 12, color: PALETTE.muted, marginLeft: 'auto', fontStyle: 'italic' }}>{c.work}</span>
+              <span style={{ fontSize: 18, color: PALETTE.muted, marginLeft: 'auto', fontStyle: 'italic' }}>{c.work}</span>
             </div>
-            <div style={{ fontSize: 13, color: PALETTE.muted, fontStyle: 'italic' }}>{c.text}</div>
+            <div style={{ fontSize: 20, color: PALETTE.muted, fontStyle: 'italic' }}>{c.text}</div>
           </div>
         );
       })}

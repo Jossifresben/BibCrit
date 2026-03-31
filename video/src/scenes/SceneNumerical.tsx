@@ -26,16 +26,16 @@ export const SceneNumerical: React.FC = () => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        gap: 32,
-        padding: '0 120px',
+        gap: 48,
+        padding: '0 80px',
       }}
     >
-      <div style={{ fontSize: 18, color: PALETTE.muted, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+      <div style={{ fontSize: 26, color: PALETTE.muted, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
         Genesis 5:16 — Mahalalel's age
       </div>
 
       {/* Number chips */}
-      <div style={{ display: 'flex', gap: 40, alignItems: 'flex-end' }}>
+      <div style={{ display: 'flex', gap: 60, alignItems: 'flex-end' }}>
         {TRADITIONS.map((t) => {
           const sc = spring({ frame: frame - t.appear, fps, config: { damping: 14, stiffness: 180 } });
           return (
@@ -52,21 +52,21 @@ export const SceneNumerical: React.FC = () => {
             >
               <div
                 style={{
-                  width: 160,
-                  height: 160,
-                  borderRadius: 16,
+                  width: 240,
+                  height: 240,
+                  borderRadius: 24,
                   background: t.color,
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  fontSize: 56,
+                  fontSize: 80,
                   fontWeight: 700,
                   color: t.textColor,
                 }}
               >
                 {t.value}
               </div>
-              <div style={{ fontSize: 20, fontWeight: 700, color: t.color, letterSpacing: '0.06em' }}>
+              <div style={{ fontSize: 28, fontWeight: 700, color: t.color, letterSpacing: '0.06em' }}>
                 {t.label}
               </div>
             </div>
@@ -75,7 +75,7 @@ export const SceneNumerical: React.FC = () => {
       </div>
 
       {/* Fill bar */}
-      <div style={{ width: '100%', maxWidth: 600, background: PALETTE.border, borderRadius: 8, height: 12, overflow: 'hidden' }}>
+      <div style={{ width: '100%', maxWidth: 1000, background: PALETTE.border, borderRadius: 8, height: 20, overflow: 'hidden' }}>
         <div
           style={{
             width: `${barProgress * 100}%`,

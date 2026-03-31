@@ -22,8 +22,8 @@ export const SceneTheological: React.FC = () => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '0 120px',
-        gap: 16,
+        padding: '0 80px',
+        gap: 24,
       }}
     >
       {CARDS.map((card, i) => {
@@ -40,21 +40,21 @@ export const SceneTheological: React.FC = () => {
             key={i}
             style={{
               width: '100%',
-              maxWidth: 820,
+              maxWidth: 1500,
               background: PALETTE.card,
               border: `1px solid ${PALETTE.border}`,
               borderRadius: 10,
-              padding: '16px 22px',
+              padding: '24px 36px',
               opacity,
               transform: `translateX(${x}px)`,
             }}
           >
-            <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
-              <span style={{ fontSize: 15, fontWeight: 700, color: PALETTE.fg }}>{card.type}</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 14 }}>
+              <span style={{ fontSize: 24, fontWeight: 700, color: PALETTE.fg }}>{card.type}</span>
               <TraditionBadge tradition={card.tradition} size="sm" />
-              <span style={{ fontSize: 12, color: PALETTE.muted, marginLeft: 'auto' }}>{card.ref}</span>
+              <span style={{ fontSize: 18, color: PALETTE.muted, marginLeft: 'auto' }}>{card.ref}</span>
             </div>
-            <div style={{ fontSize: 14, color: PALETTE.muted, fontStyle: 'italic' }}>{card.note}</div>
+            <div style={{ fontSize: 20, color: PALETTE.muted, fontStyle: 'italic' }}>{card.note}</div>
           </div>
         );
       })}

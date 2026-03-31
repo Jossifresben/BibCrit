@@ -22,8 +22,8 @@ export const SceneDSS: React.FC = () => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '0 120px',
-        gap: 16,
+        padding: '0 80px',
+        gap: 24,
       }}
     >
       {MANUSCRIPTS.map((ms, i) => {
@@ -40,11 +40,11 @@ export const SceneDSS: React.FC = () => {
             key={i}
             style={{
               width: '100%',
-              maxWidth: 820,
+              maxWidth: 1500,
               background: PALETTE.card,
               border: `1px solid ${PALETTE.border}`,
               borderRadius: 10,
-              padding: '18px 24px',
+              padding: '28px 40px',
               opacity,
               transform: `scaleY(${scaleY})`,
               transformOrigin: 'top center',
@@ -53,12 +53,12 @@ export const SceneDSS: React.FC = () => {
               gap: 20,
             }}
           >
-            <div style={{ fontSize: 28, fontWeight: 700, color: PALETTE.dss, minWidth: 100 }}>
+            <div style={{ fontSize: 48, fontWeight: 700, color: PALETTE.dss, minWidth: 160 }}>
               {ms.siglum}
             </div>
             <div style={{ flex: 1 }}>
-              <div style={{ fontSize: 14, color: PALETTE.muted, marginBottom: 4 }}>{ms.name} · {ms.date}</div>
-              <div style={{ fontSize: 16, color: PALETTE.fg }}>{ms.desc}</div>
+              <div style={{ fontSize: 20, color: PALETTE.muted, marginBottom: 4 }}>{ms.name} · {ms.date}</div>
+              <div style={{ fontSize: 26, color: PALETTE.fg }}>{ms.desc}</div>
             </div>
             <TraditionBadge tradition={ms.align} />
           </div>

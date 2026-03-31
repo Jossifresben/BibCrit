@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate, Img, staticFile } from 'remotion';
 import { PALETTE } from '../theme';
 
 const TAGLINE = 'Biblical Textual Criticism';
@@ -7,7 +7,6 @@ const TAGLINE = 'Biblical Textual Criticism';
 export const Intro: React.FC = () => {
   const frame = useCurrentFrame();
 
-  // Logo: fades in and scales 0.8→1.0 over frames 0–30
   const logoOpacity = interpolate(frame, [0, 30], [0, 1], {
     extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
   });
@@ -15,7 +14,6 @@ export const Intro: React.FC = () => {
     extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
   });
 
-  // Tagline: starts at frame 40, one character every 3 frames
   const charsVisible = Math.floor(Math.max(0, frame - 40) / 3);
   const tagline = TAGLINE.slice(0, charsVisible);
 
@@ -31,34 +29,47 @@ export const Intro: React.FC = () => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        gap: 20,
+        gap: 32,
       }}
     >
-      {/* Logo mark */}
+      {/* Logo + wordmark */}
       <div
         style={{
           opacity: logoOpacity,
           transform: `scale(${logoScale})`,
-          fontSize: 80,
-          fontWeight: 700,
-          color: PALETTE.fg,
-          letterSpacing: '-0.02em',
-          lineHeight: 1,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: 24,
         }}
       >
-        ✦ BibCrit
+        <Img
+          src={staticFile('BibCrit_logo.svg')}
+          style={{ width: 200, height: 200 }}
+        />
+        <div
+          style={{
+            fontSize: 96,
+            fontWeight: 700,
+            color: PALETTE.fg,
+            letterSpacing: '-0.02em',
+            lineHeight: 1,
+          }}
+        >
+          BibCrit
+        </div>
       </div>
 
-      {/* Tagline */}
+      {/* Tagline typewriter */}
       <div
         style={{
           opacity: taglineOpacity,
-          fontSize: 26,
+          fontSize: 32,
           fontWeight: 400,
           color: PALETTE.muted,
           letterSpacing: '0.15em',
           textTransform: 'uppercase',
-          minHeight: 36,
+          minHeight: 44,
         }}
       >
         {tagline}

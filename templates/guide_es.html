@@ -547,6 +547,34 @@
 
     <p>Todo el análisis es producido por Claude a partir de su conocimiento de entrenamiento. BibCrit no llama a bases de datos externas en tiempo de ejecución. Los resultados deben contrastarse con fuentes primarias para publicaciones académicas revisadas por pares.</p>
 
+    {# ── Data sources ── #}
+    <h2 id="sources">Fuentes de Datos</h2>
+
+    <p>La capa de corpus de BibCrit se construye sobre dos conjuntos de datos académicos abiertos que proveen el texto hebreo y griego a nivel de palabra para cada análisis:</p>
+
+    <ul class="scholar-list">
+        <li>
+            <strong>ETCBC — Eep Talstra Centre for Bible and Computer</strong> (Vrije Universiteit Amsterdam)<br>
+            Proporciona el Texto Masorético con etiquetado morfológico completo (lema, categoría gramatical, persona/género/número, límites de cláusula). La base de datos ETCBC, desarrollada durante décadas en la VU Amsterdam, es una de las representaciones computacionales más detalladas de la Biblia Hebrea disponibles. BibCrit la utiliza como corpus del TM para el análisis de divergencias, retrotraducción y modelado numérico.
+            <br><a href="https://github.com/ETCBC/bhsa" target="_blank" rel="noopener" class="feature-example-link">ETCBC/BHSA en GitHub →</a>
+        </li>
+        <li>
+            <strong>STEP Bible — Tyndale House, Cambridge</strong><br>
+            Proporciona el texto de la Septuaginta (LXX) con etiquetado morfológico, números de Strong y siglas de manuscritos (principalmente el Vaticano). Los datos de STEP Bible de Tyndale House están bajo licencia abierta y cubren el canon completo de la LXX. BibCrit los usa como corpus de la LXX para todo análisis del lado griego.
+            <br><a href="https://github.com/tyndale/STEPBible-Data" target="_blank" rel="noopener" class="feature-example-link">STEPBible-Data en GitHub →</a>
+        </li>
+        <li>
+            <strong>Rollos del Mar Muerto — ediciones académicas</strong><br>
+            La herramienta DSS Bridge y la Genealogía de Manuscritos se basan en el conocimiento entrenado de Claude sobre las ediciones publicadas de los RMM (serie DJD, la biblioteca digital Leon Levy DSS) para identificar qué rollos atestiguan un pasaje y cómo se alinean con el TM o la LXX. No se consulta ninguna base de datos propietaria en tiempo de ejecución.
+        </li>
+        <li>
+            <strong>Fuentes patrísticas</strong><br>
+            El Rastreador de Citas Patrísticas usa el conocimiento de Claude sobre las ediciones críticas estándar (Migne PG/PL, Sources Chrétiennes, ANF/NPNF) para identificar cómo los Padres de la Iglesia hasta el siglo V citaron pasajes bíblicos y qué forma textual reflejan sus citas.
+        </li>
+    </ul>
+
+    <p style="font-size:0.9rem;color:var(--muted);margin-top:0.5rem;">Todos los datos del corpus se usan conforme a sus respectivas licencias abiertas. Ver el <a href="https://github.com/Jossifresben/BibCrit" target="_blank" rel="noopener">repositorio de BibCrit</a> para atribución completa.</p>
+
     {# ── FAQ ── #}
     <h2>Preguntas Frecuentes</h2>
 

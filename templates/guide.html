@@ -580,6 +580,34 @@
 
     <p>All analysis is produced by Claude from its training knowledge. BibCrit does not call external databases at runtime. Results should be cross-checked against primary sources for peer-reviewed publication.</p>
 
+    {# ── Data sources ── #}
+    <h2 id="sources">Data Sources</h2>
+
+    <p>BibCrit's corpus layer is built on two open academic datasets that supply the word-level Hebrew and Greek text for every analysis:</p>
+
+    <ul class="scholar-list">
+        <li>
+            <strong>ETCBC — Eep Talstra Centre for Bible and Computer</strong> (Vrije Universiteit Amsterdam)<br>
+            Provides the Masoretic Text with full morphological tagging (lemma, part of speech, person/gender/number, clause boundaries). The ETCBC database, developed over decades at VU Amsterdam, is one of the most detailed computational representations of the Hebrew Bible available. BibCrit uses it as its MT corpus for divergence analysis, back-translation, and numerical modeling.
+            <br><a href="https://github.com/ETCBC/bhsa" target="_blank" rel="noopener" class="feature-example-link">ETCBC/BHSA on GitHub →</a>
+        </li>
+        <li>
+            <strong>STEP Bible — Tyndale House, Cambridge</strong><br>
+            Provides the Septuagint (LXX) text with morphological tagging, Strong's numbers, and manuscript sigla (primarily Vaticanus). Tyndale House's STEP Bible data is openly licensed and covers the full LXX canon. BibCrit uses it as its LXX corpus for all Greek-side analysis.
+            <br><a href="https://github.com/tyndale/STEPBible-Data" target="_blank" rel="noopener" class="feature-example-link">STEPBible-Data on GitHub →</a>
+        </li>
+        <li>
+            <strong>Dead Sea Scrolls — scholarly editions</strong><br>
+            The DSS Bridge Tool and Manuscript Genealogy draw on Claude's training knowledge of published DSS editions (DJD series, the Leon Levy DSS Digital Library) to identify which scrolls attest a given passage and how they align with MT or LXX. No proprietary database is queried at runtime.
+        </li>
+        <li>
+            <strong>Patristic sources</strong><br>
+            The Patristic Citation Tracker uses Claude's knowledge of the standard critical editions (Migne PG/PL, Sources Chrétiennes, ANF/NPNF) to surface how Church Fathers through the 5th century cited biblical passages and what text form their quotations reflect.
+        </li>
+    </ul>
+
+    <p style="font-size:0.9rem;color:var(--muted);margin-top:0.5rem;">All corpus data is used in accordance with the respective open licenses. See the <a href="https://github.com/Jossifresben/BibCrit" target="_blank" rel="noopener">BibCrit repository</a> for full attribution.</p>
+
     {# ── FAQ ── #}
     <h2>Frequently Asked Questions</h2>
 

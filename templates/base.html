@@ -57,6 +57,15 @@
     </script>
     {% endblock %}
 
+    {# ── Google Analytics ── #}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSSLPE8BY6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GSSLPE8BY6');
+    </script>
+
     <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.svg') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">

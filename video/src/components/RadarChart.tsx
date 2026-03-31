@@ -22,6 +22,11 @@ function polarToXY(angleRad: number, r: number) {
   };
 }
 
+function pointsToPath(points: string): string {
+  const pts = points.split(' ');
+  return pts.map((pt, i) => `${i === 0 ? 'M' : 'L'}${pt}`).join(' ') + 'Z';
+}
+
 interface RadarChartProps {
   startFrame: number;
 }
@@ -33,7 +38,17 @@ export const RadarChart: React.FC<RadarChartProps> = ({ startFrame }) => {
   const n = AXES.length;
   const angleStep = (2 * Math.PI) / n;
 
-  const polygonOpacity = interpolate(localFrame, [50, 70], [0, 0.35], {
+  // Axes draw: frames 0–40
+  // Polygon stroke draws: frames 50–80
+  // Polygon fill fades in: frames 75–105
+  // Label text appears: frames 30–60
+
+  const strokeProgress = interpolate(localFrame, [50, 80], [0, 1], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  });
+
+  const polygonFillOpacity = interpolate(localFrame, [75, 105], [0, 0.30], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
@@ -44,10 +59,13 @@ export const RadarChart: React.FC<RadarChartProps> = ({ startFrame }) => {
     return `${pt.x},${pt.y}`;
   }).join(' ');
 
+  const polygonPath = pointsToPath(polygonPoints);
+
   const rings = [0.25, 0.5, 0.75, 1.0];
 
   return (
     <svg width={SIZE} height={SIZE} style={{ overflow: 'visible' }}>
+      {/* Background rings */}
       {rings.map((r) => {
         const pts = AXES.map((_, i) => {
           const angle = i * angleStep;
@@ -60,11 +78,12 @@ export const RadarChart: React.FC<RadarChartProps> = ({ startFrame }) => {
             points={pts}
             fill="none"
             stroke={PALETTE.border}
-            strokeWidth={1}
+            strokeWidth={1.5}
           />
         );
       })}
 
+      {/* Axes + labels */}
       {AXES.map((ax, i) => {
         const angle = i * angleStep;
         const end = polarToXY(angle, RADIUS);
@@ -110,19 +129,32 @@ export const RadarChart: React.FC<RadarChartProps> = ({ startFrame }) => {
         );
       })}
 
-      <polygon
-        points={polygonPoints}
+      {/* Polygon fill */}
+      <path
+        d={polygonPath}
         fill={PALETTE.lxx}
-        fillOpacity={polygonOpacity}
-        stroke={PALETTE.lxx}
-        strokeWidth={2}
-        strokeOpacity={Math.min(polygonOpacity * 3, 1)}
+        fillOpacity={polygonFillOpacity}
+        stroke="none"
       />
 
+      {/* Polygon stroke — animates drawing using pathLength trick */}
+      <path
+        d={polygonPath}
+        fill="none"
+        stroke={PALETTE.lxx}
+        strokeWidth={3}
+        pathLength={1}
+        strokeDasharray={1}
+        strokeDashoffset={1 - strokeProgress}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+
+      {/* Data point dots */}
       {AXES.map((ax, i) => {
         const angle = i * angleStep;
         const pt = polarToXY(angle, RADIUS * ax.value);
-        const dotOpacity = interpolate(localFrame, [55, 70], [0, 1], {
+        const dotOpacity = interpolate(localFrame, [80, 100], [0, 1], {
           extrapolateLeft: 'clamp',
           extrapolateRight: 'clamp',
         });

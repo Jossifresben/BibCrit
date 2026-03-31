@@ -3,17 +3,16 @@ import { AbsoluteFill, useCurrentFrame, interpolate } from 'remotion';
 import { PALETTE, TIMING, SCENE_DURATIONS } from '../theme';
 import { ToolLabel } from '../components/ToolLabel';
 
-// Stemma nodes — positioned in a 1600×620 SVG viewport
 const NODES = [
-  { id: 'proto',  label: 'Proto-Hebrew',    date: '4th–3rd c. BCE', x: 800, y:  60, color: '#334155', text: '#fff' },
-  { id: 'mt-src', label: 'Pre-Masoretic',   date: '2nd–1st c. BCE', x: 320, y: 200, color: '#334155', text: '#fff' },
-  { id: 'lxx',    label: 'Old Greek',       date: '3rd–2nd c. BCE', x: 800, y: 200, color: PALETTE.lxx, text: '#fff' },
-  { id: 'dss',    label: '1QIsaᵃ',          date: 'c. 125 BCE',     x: 1280, y: 200, color: PALETTE.dss, text: '#fff' },
-  { id: 'mt',     label: 'Masoretic Text',  date: '1st–10th c. CE', x: 320, y: 370, color: PALETTE.mt,  text: '#fff' },
-  { id: 'hex',    label: 'Hexaplaric LXX',  date: 'c. 240 CE',      x: 700, y: 370, color: PALETTE.lxx, text: '#fff' },
-  { id: 'luc',    label: 'Lucianic LXX',    date: 'c. 300 CE',      x: 1000, y: 370, color: PALETTE.lxx, text: '#fff' },
-  { id: 'aleppo', label: 'Aleppo Codex',    date: 'c. 930 CE',      x: 200, y: 530, color: PALETTE.mt,  text: '#fff' },
-  { id: 'len',    label: 'Leningrad Codex', date: '1008 CE',        x: 480, y: 530, color: PALETTE.mt,  text: '#fff' },
+  { id: 'proto',  label: 'Proto-Hebrew',    date: '4th–3rd c. BCE', x: 960,  y:  50,  color: '#334155', text: '#fff' },
+  { id: 'mt-src', label: 'Pre-Masoretic',   date: '2nd–1st c. BCE', x: 380,  y: 220,  color: '#334155', text: '#fff' },
+  { id: 'lxx',    label: 'Old Greek',       date: '3rd–2nd c. BCE', x: 960,  y: 220,  color: PALETTE.lxx, text: '#fff' },
+  { id: 'dss',    label: '1QIsaᵃ',          date: 'c. 125 BCE',     x: 1540, y: 220,  color: PALETTE.dss, text: '#fff' },
+  { id: 'mt',     label: 'Masoretic Text',  date: '1st–10th c. CE', x: 380,  y: 430,  color: PALETTE.mt,  text: '#fff' },
+  { id: 'hex',    label: 'Hexaplaric LXX',  date: 'c. 240 CE',      x: 840,  y: 430,  color: PALETTE.lxx, text: '#fff' },
+  { id: 'luc',    label: 'Lucianic LXX',    date: 'c. 300 CE',      x: 1160, y: 430,  color: PALETTE.lxx, text: '#fff' },
+  { id: 'aleppo', label: 'Aleppo Codex',    date: 'c. 930 CE',      x: 220,  y: 640,  color: PALETTE.mt,  text: '#fff' },
+  { id: 'len',    label: 'Leningrad Codex', date: '1008 CE',        x: 560,  y: 640,  color: PALETTE.mt,  text: '#fff' },
 ];
 
 const EDGES = [
@@ -22,8 +21,8 @@ const EDGES = [
   ['mt',     'aleppo'], ['mt',    'len'],
 ];
 
-const NODE_W = 180;
-const NODE_H = 56;
+const NODE_W = 220;
+const NODE_H = 64;
 
 export const SceneGenealogy: React.FC = () => {
   const frame = useCurrentFrame();
@@ -37,12 +36,12 @@ export const SceneGenealogy: React.FC = () => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '0 40px',
       }}
     >
       <svg
-        viewBox="0 0 1600 620"
-        style={{ width: '100%', maxWidth: 1600 }}
+        viewBox="0 0 1920 760"
+        style={{ width: '100%', height: '100%' }}
+        preserveAspectRatio="xMidYMid meet"
       >
         {/* Edges */}
         {EDGES.map(([fromId, toId], i) => {
@@ -54,9 +53,9 @@ export const SceneGenealogy: React.FC = () => {
           const y2 = to.y;
           const midY = (y1 + y2) / 2;
           const d = `M${x1},${y1} C${x1},${midY} ${x2},${midY} ${x2},${y2}`;
-          const pathLen = 120; // approximate
+          const pathLen = 200;
           const edgeStart = 20 + i * 18;
-          const progress = interpolate(frame, [edgeStart, edgeStart + 25], [1, 0], {
+          const progress = interpolate(frame, [edgeStart, edgeStart + 30], [1, 0], {
             extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
           });
 
@@ -66,7 +65,7 @@ export const SceneGenealogy: React.FC = () => {
               d={d}
               fill="none"
               stroke={PALETTE.border}
-              strokeWidth={1.5}
+              strokeWidth={2}
               strokeDasharray={pathLen}
               strokeDashoffset={progress * pathLen}
             />
@@ -88,21 +87,20 @@ export const SceneGenealogy: React.FC = () => {
               key={node.id}
               transform={`translate(${node.x - NODE_W / 2}, ${node.y})`}
               opacity={opacity}
-              style={{ transformOrigin: `${node.x}px ${node.y + NODE_H / 2}px` }}
             >
               <rect
                 x={0} y={0}
                 width={NODE_W} height={NODE_H}
-                rx={6}
+                rx={8}
                 fill={node.color}
                 transform={`scale(${scale})`}
                 style={{ transformOrigin: `${NODE_W / 2}px ${NODE_H / 2}px` }}
               />
               <text
-                x={NODE_W / 2} y={NODE_H / 2 - 7}
+                x={NODE_W / 2} y={NODE_H / 2 - 9}
                 textAnchor="middle"
                 dominantBaseline="middle"
-                fontSize={15}
+                fontSize={16}
                 fontWeight={700}
                 fill={node.text}
                 fontFamily="'Space Grotesk', sans-serif"
@@ -110,11 +108,11 @@ export const SceneGenealogy: React.FC = () => {
                 {node.label}
               </text>
               <text
-                x={NODE_W / 2} y={NODE_H / 2 + 14}
+                x={NODE_W / 2} y={NODE_H / 2 + 12}
                 textAnchor="middle"
                 dominantBaseline="middle"
                 fontSize={12}
-                fill="rgba(255,255,255,0.7)"
+                fill="rgba(255,255,255,0.75)"
                 fontFamily="'Space Grotesk', sans-serif"
               >
                 {node.date}

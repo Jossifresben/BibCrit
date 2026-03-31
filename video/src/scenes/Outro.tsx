@@ -25,7 +25,7 @@ export const Outro: React.FC = () => {
   });
 
   // Invert logo to white for dark background
-  const logoFilter = `brightness(10) invert(1)`;
+  const logoFilter = `brightness(0) invert(1)`;
 
   return (
     <AbsoluteFill

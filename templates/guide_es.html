@@ -260,6 +260,103 @@
     .orcid-link { color: #a6ce39; text-decoration: none; }
     .orcid-link:hover { text-decoration: underline; }
 
+    /* ── Video modal ── */
+    .watch-btn-wrap {
+        display: flex;
+        justify-content: center;
+        margin: 1.5rem 0 2rem;
+    }
+    .watch-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0.65rem 1.5rem;
+        background: var(--accent, #6b5cdb);
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+        transition: opacity .15s;
+    }
+    .watch-btn:hover { opacity: .85; }
+    .watch-btn .material-symbols-outlined { font-size: 1.25em; }
+
+    .video-modal-backdrop {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,.85);
+        z-index: 9999;
+        align-items: center;
+        justify-content: center;
+    }
+    .video-modal-backdrop.open { display: flex; }
+    .video-modal {
+        position: relative;
+        width: min(900px, 95vw);
+        background: #000;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 24px 80px rgba(0,0,0,.7);
+    }
+    .video-modal video {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16/9;
+    }
+    .video-modal-close,
+    .video-modal-fullscreen {
+        position: absolute;
+        top: 10px;
+        background: rgba(0,0,0,.5);
+        border: none;
+        color: #fff;
+        line-height: 1;
+        padding: 4px 9px;
+        border-radius: 6px;
+        cursor: pointer;
+        z-index: 1;
+    }
+    .video-modal-close { right: 12px; font-size: 1.4rem; }
+    .video-modal-fullscreen { right: 56px; font-size: 1.1rem; display: flex; align-items: center; padding: 5px 8px; }
+    .video-modal-close:hover,
+    .video-modal-fullscreen:hover { background: rgba(0,0,0,.8); }
+
+    .rotate-prompt {
+        display: none;
+        position: absolute;
+        inset: 0;
+        background: #000;
+        color: #fff;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        z-index: 2;
+        border-radius: 10px;
+    }
+    .rotate-prompt .rotate-icon {
+        font-size: 3rem;
+        animation: rotate-hint 1.6s ease-in-out infinite;
+    }
+    .rotate-prompt p {
+        font-size: 1rem;
+        opacity: .8;
+        margin: 0;
+        letter-spacing: .03em;
+    }
+    @keyframes rotate-hint {
+        0%, 100% { transform: rotate(0deg); }
+        40%       { transform: rotate(90deg); }
+        60%       { transform: rotate(90deg); }
+    }
+    @media (orientation: portrait) and (max-width: 768px) {
+        .video-modal-backdrop.open .rotate-prompt { display: flex; }
+    }
+
     @media (max-width: 520px) {
         .guide-hero h1 { font-size: 1.55rem; }
         .about-stat { min-width: 110px; }
@@ -292,6 +389,14 @@
             <span class="stat-num">3</span>
             <span class="stat-label">tradiciones de manuscritos</span>
         </div>
+    </div>
+
+    {# ── Watch overview button ── #}
+    <div class="watch-btn-wrap">
+        <button class="watch-btn" id="watchOverviewBtn">
+            <span class="material-symbols-outlined">play_circle</span>
+            Ver Presentación
+        </button>
     </div>
 
     {# ── Feature grid ── #}
@@ -508,4 +613,70 @@
 
 </div>{# /about-content #}
 </div>{# /container #}
+
+{# ── Video modal ── #}
+<div class="video-modal-backdrop" id="videoModalBackdrop" role="dialog" aria-modal="true" aria-label="Video de presentación de BibCrit">
+    <div class="video-modal">
+        <div class="rotate-prompt">
+            <span class="material-symbols-outlined rotate-icon">screen_rotation</span>
+            <p>Gira tu teléfono para ver el video</p>
+        </div>
+        <button class="video-modal-fullscreen" id="videoModalFullscreen" aria-label="Pantalla completa"><span class="material-symbols-outlined" style="font-size:1.2em">fullscreen</span></button>
+        <button class="video-modal-close" id="videoModalClose" aria-label="Cerrar video">&times;</button>
+        <video id="overviewVideo" controls preload="none" playsinline>
+            <source src="{{ url_for('static', filename='video/bibcrit-showcase.mp4') }}" type="video/mp4">
+        </video>
+    </div>
+</div>
+
+<script>
+(function () {
+    const backdrop = document.getElementById('videoModalBackdrop');
+    const video    = document.getElementById('overviewVideo');
+    const openBtn  = document.getElementById('watchOverviewBtn');
+    const closeBtn = document.getElementById('videoModalClose');
+
+    function openModal() {
+        backdrop.classList.add('open');
+        video.play().catch(() => {});
+        if (screen.orientation && screen.orientation.lock) {
+            screen.orientation.lock('landscape').catch(() => {});
+        }
+    }
+
+    function closeModal() {
+        backdrop.classList.remove('open');
+        video.pause();
+        if (screen.orientation && screen.orientation.unlock) {
+            screen.orientation.unlock();
+        }
+    }
+
+    const fsBtn = document.getElementById('videoModalFullscreen');
+    const fsIcon = fsBtn.querySelector('.material-symbols-outlined');
+
+    function toggleFullscreen() {
+        if (!document.fullscreenElement) {
+            video.requestFullscreen().catch(() => {});
+        } else {
+            document.exitFullscreen().catch(() => {});
+        }
+    }
+
+    document.addEventListener('fullscreenchange', function () {
+        fsIcon.textContent = document.fullscreenElement ? 'fullscreen_exit' : 'fullscreen';
+    });
+
+    openBtn.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+    fsBtn.addEventListener('click', toggleFullscreen);
+    video.addEventListener('dblclick', toggleFullscreen);
+    backdrop.addEventListener('click', function (e) {
+        if (e.target === backdrop) closeModal();
+    });
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeModal();
+    });
+})();
+</script>
 {% endblock %}

@@ -25,8 +25,8 @@ export const BibCritVideo: React.FC = () => {
       <Audio
         src={staticFile('BibCrit.mp3')}
         volume={(f) => {
-          // Fade out over last 60 frames (2s)
-          if (f > 2640) return Math.max(0, 1 - (f - 2640) / 60);
+          // Fade out over last 180 frames (6s), starting at 84s
+          if (f > 2520) return Math.max(0, 1 - (f - 2520) / 180);
           return 1;
         }}
       />

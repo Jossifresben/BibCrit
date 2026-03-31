@@ -84,7 +84,6 @@
   });
 
   var _randomPassages = [
-    'Isaiah 7:14', 'Genesis 1:1', 'Psalm 22:1', 'Deuteronomy 32:8',
     'Exodus 3:14', 'Micah 5:2', 'Numbers 24:17', 'Amos 9:11',
     'Jeremiah 31:31', 'Isaiah 53:7', 'Zechariah 9:9', 'Isaiah 9:6',
     'Genesis 3:15', 'Psalm 2:7', 'Isaiah 11:1', 'Joel 3:1',

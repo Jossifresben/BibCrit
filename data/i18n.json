@@ -269,10 +269,10 @@
     "feat_dss_isa5311": "Isaiah 53:11 — <em>The Servant's knowledge</em>",
     "feat_dss_ps2217":  "Psalm 22:17 — <em>Lion vs pierced</em>",
 
-    "feat_bt_isa714":  "Isaiah 7:14 — <em>almah / parthenos</em>",
-    "feat_bt_gen11":   "Genesis 1:1 — <em>In the beginning</em>",
-    "feat_bt_ps221":   "Psalm 22:1 — The cry of dereliction",
-    "feat_bt_deut328": "Deut 32:8 — <em>sons of God</em>",
+    "feat_bt_exod314": "Exodus 3:14 — <em>I AM WHO I AM</em>",
+    "feat_bt_isa537":  "Isaiah 53:7 — <em>The Suffering Servant</em>",
+    "feat_bt_ps27":    "Psalm 2:7 — <em>You are my Son</em>",
+    "feat_bt_gen315":  "Genesis 3:15 — <em>Seed of the Woman</em>",
 
     "feat_div_isa714":  "Isaiah 7:14 — <em>almah</em> vs. <em>parthenos</em>",
     "feat_div_gen11":   "Genesis 1:1 — <em>In the beginning</em>",
@@ -552,10 +552,10 @@
     "feat_dss_isa5311": "Isaías 53:11 — <em>El conocimiento del Siervo</em>",
     "feat_dss_ps2217":  "Salmo 22:17 — <em>León vs traspasado</em>",
 
-    "feat_bt_isa714":  "Isaías 7:14 — <em>almah / parthenos</em>",
-    "feat_bt_gen11":   "Génesis 1:1 — <em>En el principio</em>",
-    "feat_bt_ps221":   "Salmo 22:1 — El grito de derelicción",
-    "feat_bt_deut328": "Dt 32:8 — <em>hijos de Dios</em>",
+    "feat_bt_exod314": "Éxodo 3:14 — <em>YO SOY EL QUE SOY</em>",
+    "feat_bt_isa537":  "Isaías 53:7 — <em>El Siervo Sufriente</em>",
+    "feat_bt_ps27":    "Salmo 2:7 — <em>Tú eres mi Hijo</em>",
+    "feat_bt_gen315":  "Génesis 3:15 — <em>Simiente de la mujer</em>",
 
     "feat_div_isa714":  "Isaías 7:14 — <em>almah</em> vs. <em>parthenos</em>",
     "feat_div_gen11":   "Génesis 1:1 — <em>En el principio</em>",

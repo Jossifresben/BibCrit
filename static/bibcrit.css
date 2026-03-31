@@ -1449,3 +1449,380 @@
 .num-sug-chip:active {
     transform: translateY(0);
 }
+
+/* ── Filter chips (shared: theological + patristic) ── */
+.theo-filter-chips {
+  max-width: 900px;
+  margin: 0 auto 1rem;
+  padding: 0 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.theo-filter-chip {
+  font-size: 0.8rem;
+  padding: 3px 12px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--card-bg);
+  color: var(--fg);
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+}
+.theo-filter-chip:hover,
+.theo-filter-chip.active {
+  background: var(--accent-light);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+/* Color-coded variants (patristic + theological) */
+.theo-filter-chip[data-form="closer_to_lxx"]        { border-color: #bfdbfe; color: #1e40af; background: #eff6ff; }
+.theo-filter-chip[data-form="closer_to_lxx"].active  { background: #1e40af; border-color: #1e40af; color: #fff; }
+.theo-filter-chip[data-form="closer_to_mt"]         { border-color: #fde68a; color: #92400e; background: #fffbeb; }
+.theo-filter-chip[data-form="closer_to_mt"].active   { background: #92400e; border-color: #92400e; color: #fff; }
+.theo-filter-chip[data-form="mixed"]                 { border-color: #d8b4fe; color: #6b21a8; background: #faf5ff; }
+.theo-filter-chip[data-form="mixed"].active          { background: #6b21a8; border-color: #6b21a8; color: #fff; }
+.theo-filter-chip[data-form="independent"]           { border-color: #fdba74; color: #9a3412; background: #fff7ed; }
+.theo-filter-chip[data-form="independent"].active    { background: #9a3412; border-color: #9a3412; color: #fff; }
+.theo-filter-chip[data-form="uncertain"]             { border-color: var(--border); color: var(--muted); }
+.theo-filter-chip[data-form="uncertain"].active      { background: var(--muted); border-color: var(--muted); color: #fff; }
+.theo-filter-chip:hover[data-form]                   { filter: brightness(0.94); }
+
+/* ── Theological revision cards ─────────────────────────────────────────── */
+.theo-revision-card {
+  background: var(--card-bg, #fff);
+  border: 1px solid var(--border, #d4d0c8);
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.theo-revision-card.hidden { display: none; }
+.theo-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+.theo-ref-label {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--fg);
+  margin-right: 4px;
+}
+.theo-tradition-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--lxx-color, #3a6bc4);
+  color: #fff;
+  margin-right: 4px;
+}
+.theo-tradition-lxx     { background: #3a6bc4; color: #fff; }
+.theo-tradition-targum  { background: #27ae60; color: #fff; }
+.theo-tradition-peshitta{ background: #8e44ad; color: #fff; }
+.theo-tradition-vulgate { background: #c0392b; color: #fff; }
+.theo-tradition-sp      { background: #2c7c5f; color: #fff; }
+.theo-tradition-mt      { background: #c0892a; color: #fff; }
+.theo-type-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--accent-light);
+  color: var(--fg);
+  margin-right: 4px;
+}
+.theo-readings {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+@media (max-width: 520px) { .theo-readings { grid-template-columns: 1fr; } }
+.theo-reading-box {
+  background: var(--accent-light, #f5f4f0);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+}
+.theo-reading-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-bottom: 3px;
+}
+.theo-reading-text {
+  font-family: 'Noto Serif', serif;
+  line-height: 1.6;
+  color: var(--fg);
+}
+.theo-scholars {
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 0.4rem;
+}
+.theo-counter {
+  font-size: 0.85rem;
+  color: var(--muted);
+  border-left: 3px solid var(--border);
+  padding-left: 0.6rem;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+/* ── Patristic citation cards & distribution bar ─────────────────────────── */
+.pat-dist-bar {
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 32px;
+  max-width: 600px;
+  margin: 0.5rem 0 0.5rem;
+  gap: 3px;
+}
+.pat-dist-segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #fff;
+  transition: flex 0.3s;
+  white-space: nowrap;
+  overflow: hidden;
+  min-width: 0;
+}
+.pat-dist-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.4rem;
+}
+.pat-dist-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.8rem;
+  color: var(--fg);
+}
+.pat-dist-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+.pat-citation-card {
+  background: var(--card-bg, #fff);
+  border: 1px solid var(--border, #d4d0c8);
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.pat-citation-card.hidden { display: none; }
+.pat-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+.pat-father-name {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--fg);
+}
+.pat-dates {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.pat-region-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--accent-light);
+  color: var(--fg);
+}
+.pat-text-form-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.pat-tf-closer_to_lxx  { background: #dbeafe; color: #1e40af; border: 1px solid #bfdbfe; }
+.pat-tf-closer_to_mt   { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+.pat-tf-mixed          { background: #f3e8ff; color: #6b21a8; border: 1px solid #d8b4fe; }
+.pat-tf-independent    { background: #fed7aa; color: #9a3412; border: 1px solid #fdba74; }
+.pat-tf-uncertain      { background: var(--border); color: var(--muted); border: 1px solid var(--border); }
+.pat-work-ref {
+  font-size: 0.875rem;
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 0.6rem;
+}
+.pat-cited-text {
+  font-family: 'Noto Serif', serif;
+  font-size: 0.95rem;
+  background: var(--accent-light, #f5f4f0);
+  border-left: 3px solid var(--border);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 0.6rem;
+  line-height: 1.7;
+  color: var(--fg);
+}
+.pat-subfields {
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--fg);
+}
+.pat-subfield-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  display: block;
+  margin-top: 0.4rem;
+}
+.pat-variant-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.pat-variant-reading {
+  font-family: 'Noto Serif', serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+.pat-variant-fathers {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 0.4rem;
+}
+
+/* ── DSS manuscript cards ─────────────────────────────────────────────────── */
+.dss-ms-card {
+  background: var(--card-bg, #fff);
+  border: 1px solid var(--border, #d4d0c8);
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+.dss-ms-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  user-select: none;
+}
+.dss-ms-header:hover { background: var(--accent-light, #f5f4f0); }
+.dss-ms-siglum {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--fg);
+}
+.dss-ms-fullname {
+  font-size: 0.875rem;
+  color: var(--muted);
+  flex: 1;
+}
+.dss-ms-toggle {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.dss-ms-body {
+  padding: 0 1.25rem 1rem;
+  border-top: 1px solid var(--border);
+}
+.dss-ms-body.collapsed { display: none; }
+.dss-ms-text {
+  font-family: 'Noto Serif', serif;
+  font-size: 0.95rem;
+  padding: 0.75rem 0;
+  color: var(--fg);
+  line-height: 1.7;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0.75rem;
+}
+.dss-align-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-right: 6px;
+}
+.dss-align-mt  { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+.dss-align-lxx { background: #dbeafe; color: #1e40af; border: 1px solid #bfdbfe; }
+.dss-align-ind { background: #fed7aa; color: #9a3412; border: 1px solid #fdba74; }
+.dss-align-abs { background: var(--border); color: var(--muted); border: 1px solid var(--border); }
+.dss-div-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  margin-top: 0.75rem;
+}
+.dss-div-table th {
+  text-align: left;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  padding: 4px 8px;
+  border-bottom: 1px solid var(--border);
+}
+.dss-div-table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.5;
+}
+.dss-div-table tr:last-child td { border-bottom: none; }
+.dss-overall-note {
+  font-size: 0.875rem;
+  color: var(--fg);
+  line-height: 1.7;
+  margin-top: 0.75rem;
+  font-style: italic;
+}
+.dss-absent-note {
+  font-size: 0.875rem;
+  color: var(--muted);
+  padding: 0.5rem 0;
+  font-style: italic;
+}

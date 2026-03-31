@@ -384,11 +384,15 @@
     var contentW = Math.max(minSvgW, maxX + PADDING);
     var svgH     = (maxDepth + 1) * (ROW_H + V_GAP) + PADDING * 2;
 
-    // Set SVG dimensions
+    // Set SVG dimensions — scale to fit container on mobile
     svg.setAttribute('viewBox', '0 0 ' + contentW + ' ' + svgH);
-    svg.setAttribute('width',   contentW);
-    svg.setAttribute('height',  svgH);
-    svg.style.minWidth = contentW + 'px';
+    svg.setAttribute('width',  '100%');
+    svg.removeAttribute('height');
+    svg.style.maxWidth  = contentW + 'px';
+    svg.style.height    = 'auto';
+    svg.style.minWidth  = '';
+    svg.style.display   = 'block';
+    svg.style.margin    = '0 auto';
 
     var ns = 'http://www.w3.org/2000/svg';
 
@@ -517,19 +521,47 @@
   var fsBtn      = document.getElementById('stemma-fullscreen-btn');
   var stemmaWrap = document.getElementById('stemma-wrap');
   if (fsBtn && stemmaWrap) {
+    var fsIcon = fsBtn.querySelector('.material-symbols-outlined');
+
+    function enterFs() {
+      stemmaWrap.classList.add('stemma-fs');
+      fsIcon.textContent = 'fullscreen_exit';
+    }
+    function exitFs() {
+      stemmaWrap.classList.remove('stemma-fs');
+      fsIcon.textContent = 'fullscreen';
+      if (document.fullscreenElement) document.exitFullscreen().catch(function(){});
+    }
+
     fsBtn.addEventListener('click', function () {
-      if (!document.fullscreenElement) {
-        stemmaWrap.requestFullscreen().catch(function () {});
-        fsBtn.querySelector('.material-symbols-outlined').textContent = 'fullscreen_exit';
+      if (stemmaWrap.classList.contains('stemma-fs')) {
+        exitFs();
       } else {
-        document.exitFullscreen();
-        fsBtn.querySelector('.material-symbols-outlined').textContent = 'fullscreen';
+        // Try native fullscreen, fall back to CSS overlay
+        var req = stemmaWrap.requestFullscreen || stemmaWrap.webkitRequestFullscreen;
+        if (req) {
+          var p = req.call(stemmaWrap);
+          if (p && p.then) {
+            p.then(function () { fsIcon.textContent = 'fullscreen_exit'; })
+             .catch(function () { enterFs(); });
+          } else {
+            enterFs();
+          }
+        } else {
+          enterFs();
+        }
       }
     });
+
     document.addEventListener('fullscreenchange', function () {
-      if (!document.fullscreenElement) {
-        fsBtn.querySelector('.material-symbols-outlined').textContent = 'fullscreen';
+      if (!document.fullscreenElement && !stemmaWrap.classList.contains('stemma-fs')) {
+        fsIcon.textContent = 'fullscreen';
       }
+    });
+
+    // Close CSS overlay on Escape
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && stemmaWrap.classList.contains('stemma-fs')) exitFs();
     });
   }
 

@@ -133,7 +133,7 @@
         <span class="material-symbols-outlined" style="font-size:18px">fullscreen</span>
       </button>
     </div>
-    <div id="stemma-wrap" style="overflow-x:auto;overflow-y:auto;border:1px solid var(--border);border-radius:8px;background:var(--card-bg,#fff);padding:12px;">
+    <div id="stemma-wrap" style="border:1px solid var(--border);border-radius:8px;background:var(--card-bg,#fff);padding:12px;text-align:center;">
       <svg id="stemma-svg" xmlns="http://www.w3.org/2000/svg" style="display:block;"></svg>
     </div>
   </div>
@@ -184,11 +184,23 @@
 .num-suggestions { margin-top: 0.5rem; }
 
 /* Stemma section */
-#stemma-section { max-width: 900px; margin: 0 auto 1.5rem; }
+#stemma-section { width: 100%; margin: 0 auto 1.5rem; }
 
 /* Stemma fullscreen states */
 #stemma-wrap:fullscreen { background: var(--bg, #faf9f7); overflow: auto; padding: 20px; }
 #stemma-wrap:-webkit-full-screen { background: var(--bg, #faf9f7); overflow: auto; padding: 20px; }
+#stemma-wrap.stemma-fs {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 9999 !important;
+    border-radius: 0 !important;
+    overflow: auto !important;
+    padding: 20px !important;
+    background: var(--bg, #faf9f7) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 /* Stemma SVG elements */
 .stemma-node { cursor: default; }

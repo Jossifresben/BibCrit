@@ -4,6 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}BibCrit — Biblical Textual Criticism{% endblock %}</title>
+
+    {# ── SEO meta ── #}
+    <meta name="description" content="{% block meta_description %}BibCrit offers AI-powered tools for biblical textual criticism: MT/LXX divergence analysis, scribal tendency profiling, Dead Sea Scrolls comparison, back-translation, patristic citations, numerical discrepancy modeling, theological revision detection, and manuscript genealogy.{% endblock %}">
+    <meta name="author" content="Jossi Fresco Benaim">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bibcrit.app{{ request.path }}{% if lang != 'en' %}?lang={{ lang }}{% endif %}">
+    <link rel="alternate" hreflang="en" href="https://bibcrit.app{{ request.path }}">
+    <link rel="alternate" hreflang="es" href="https://bibcrit.app{{ request.path }}?lang=es">
+    <link rel="alternate" hreflang="x-default" href="https://bibcrit.app{{ request.path }}">
+
+    {# ── Open Graph ── #}
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="BibCrit">
+    <meta property="og:title" content="{% block og_title %}BibCrit — Biblical Textual Criticism{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}AI-powered tools for scholars studying MT/LXX divergences, scribal tendencies, Dead Sea Scrolls witnesses, patristic citations, and manuscript transmission history.{% endblock %}">
+    <meta property="og:url" content="https://bibcrit.app{{ request.path }}">
+    <meta property="og:image" content="https://bibcrit.app/static/BibCrit_logo.svg">
+    <meta property="og:locale" content="{{ 'es_ES' if lang == 'es' else 'en_US' }}">
+
+    {# ── Twitter / X Card ── #}
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{% block twitter_title %}BibCrit — Biblical Textual Criticism{% endblock %}">
+    <meta name="twitter:description" content="{% block twitter_description %}AI-powered biblical textual criticism: MT/LXX divergences, scribal tendencies, DSS comparison, patristic citations, manuscript genealogy.{% endblock %}">
+    <meta name="twitter:image" content="https://bibcrit.app/static/BibCrit_logo.svg">
+
+    {# ── Schema.org JSON-LD ── #}
+    {% block schema_ld %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "BibCrit",
+      "url": "https://bibcrit.app",
+      "description": "AI-powered toolkit for biblical textual criticism — MT/LXX divergence analysis, scribal tendency profiling, Dead Sea Scrolls comparison, patristic citation tracking, and manuscript genealogy.",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web",
+      "inLanguage": ["en", "es"],
+      "isAccessibleForFree": true,
+      "author": {
+        "@type": "Person",
+        "name": "Jossi Fresco Benaim",
+        "identifier": "https://orcid.org/0009-0000-2026-0836"
+      },
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "sourceOrganization": {
+        "@type": "Organization",
+        "name": "BibCrit",
+        "url": "https://bibcrit.app"
+      }
+    }
+    </script>
+    {% endblock %}
+
     <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.svg') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">

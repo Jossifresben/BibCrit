@@ -88,6 +88,107 @@ def ensure_initialized():
     _init()
 
 
+# ── SEO / Discovery files ──────────────────────────────────────────────────
+
+@app.route('/robots.txt')
+def robots_txt():
+    from flask import Response
+    content = """User-agent: *
+Allow: /
+Disallow: /api/
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://bibcrit.app/sitemap.xml
+"""
+    return Response(content, mimetype='text/plain')
+
+
+@app.route('/sitemap.xml')
+def sitemap_xml():
+    from flask import Response
+    pages = [
+        ('/', '1.0', 'weekly'),
+        ('/divergence', '0.9', 'weekly'),
+        ('/backtranslation', '0.9', 'weekly'),
+        ('/dss', '0.9', 'weekly'),
+        ('/scribal', '0.9', 'weekly'),
+        ('/numerical', '0.9', 'weekly'),
+        ('/theological', '0.9', 'weekly'),
+        ('/patristic', '0.9', 'weekly'),
+        ('/genealogy', '0.9', 'weekly'),
+        ('/discovery', '0.8', 'monthly'),
+        ('/guide', '0.7', 'monthly'),
+    ]
+    urls = ''
+    for path, priority, freq in pages:
+        urls += f"""  <url>
+    <loc>https://bibcrit.app{path}</loc>
+    <changefreq>{freq}</changefreq>
+    <priority>{priority}</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bibcrit.app{path}"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://bibcrit.app{path}?lang=es"/>
+  </url>\n"""
+    xml = f"""<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{urls}</urlset>"""
+    return Response(xml, mimetype='application/xml')
+
+
+@app.route('/llms.txt')
+def llms_txt():
+    from flask import Response
+    content = """# BibCrit
+
+> AI-powered toolkit for biblical textual criticism. Eight specialized scholarly tools for analyzing divergences between the Masoretic Text (MT) and the Septuagint (LXX), profiling scribal tendencies, comparing Dead Sea Scrolls witnesses, reconstructing Hebrew Vorlagen, tracing patristic citations, modeling numerical discrepancies, detecting theological revisions, and visualizing manuscript genealogies.
+
+BibCrit streams AI analysis (powered by Anthropic Claude) directly in the browser. Frequently analyzed passages are cached and load instantly. All tools are free and openly accessible.
+
+## Tools
+
+- MT/LXX Divergence Analyzer: https://bibcrit.app/divergence
+- Back-Translation Workbench: https://bibcrit.app/backtranslation
+- DSS Bridge Tool: https://bibcrit.app/dss
+- Scribal Tendency Profiler: https://bibcrit.app/scribal
+- Numerical Discrepancy Modeler: https://bibcrit.app/numerical
+- Theological Revision Detector: https://bibcrit.app/theological
+- Patristic Citation Tracker: https://bibcrit.app/patristic
+- Manuscript Genealogy: https://bibcrit.app/genealogy
+
+## Languages
+
+Available in English and Spanish. Append `?lang=es` to any URL for the Spanish interface.
+
+## Open Data API
+
+Full REST API for programmatic access to all analysis results.
+- API endpoint: https://bibcrit.app/api/discovery
+- Documentation: https://github.com/Jossifresben/BibCrit/blob/main/docs/api-reference.md
+
+## Source & License
+
+- GitHub: https://github.com/Jossifresben/BibCrit
+- License: Apache 2.0
+
+## Citation
+
+Fresco Benaim, J. (2026). BibCrit: AI-assisted biblical textual criticism. https://bibcrit.app ORCID:0009-0000-2026-0836
+"""
+    return Response(content, mimetype='text/plain')
+
+
+
 @app.context_processor
 def inject_globals():
     """Inject _t() translation helper, current lang, and JS i18n dict into every template."""

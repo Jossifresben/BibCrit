@@ -2,6 +2,7 @@ import React from 'react';
 import { AbsoluteFill, useCurrentFrame, interpolate } from 'remotion';
 import { PALETTE, TIMING, SCENE_DURATIONS } from '../theme';
 import { ToolLabel } from '../components/ToolLabel';
+import { BrandSlug } from '../components/BrandSlug';
 
 const NODES = [
   { id: 'proto',  label: 'Proto-Hebrew',    date: '4th–3rd c. BCE', x: 960,  y:  50,  color: '#334155', text: '#fff' },
@@ -38,6 +39,7 @@ export const SceneGenealogy: React.FC = () => {
         justifyContent: 'center',
       }}
     >
+      <BrandSlug />
       <svg
         viewBox="0 0 1920 760"
         style={{ width: '100%', height: '100%' }}

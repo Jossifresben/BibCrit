@@ -3,6 +3,7 @@ import { AbsoluteFill, useCurrentFrame, interpolate } from 'remotion';
 import { PALETTE, TIMING, SCENE_DURATIONS } from '../theme';
 import { ToolLabel } from '../components/ToolLabel';
 import { TraditionBadge } from '../components/TraditionBadge';
+import { BrandSlug } from '../components/BrandSlug';
 
 const DIST = [
   { label: 'Closer to LXX', pct: 55, color: PALETTE.lxx },
@@ -36,6 +37,7 @@ export const ScenePatristic: React.FC = () => {
         gap: 28,
       }}
     >
+      <BrandSlug />
       {/* Distribution bar */}
       <div style={{ width: '100%', maxWidth: 1500 }}>
         <div style={{ fontSize: 16, fontWeight: 700, color: PALETTE.muted, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>

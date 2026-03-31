@@ -3,6 +3,7 @@ import { AbsoluteFill, useCurrentFrame, interpolate } from 'remotion';
 import { PALETTE, TIMING, SCENE_DURATIONS } from '../theme';
 import { ToolLabel } from '../components/ToolLabel';
 import { TraditionBadge } from '../components/TraditionBadge';
+import { BrandSlug } from '../components/BrandSlug';
 
 const MANUSCRIPTS = [
   { siglum: '1QIsaᵃ',   name: 'Great Isaiah Scroll, Qumran Cave 1', date: 'c. 125 BCE', align: 'IND' as const,  desc: '21 divergences from MT, 8 align with LXX' },
@@ -26,6 +27,7 @@ export const SceneDSS: React.FC = () => {
         gap: 24,
       }}
     >
+      <BrandSlug />
       {MANUSCRIPTS.map((ms, i) => {
         const cardStart = 15 + i * 45;
         const opacity = interpolate(frame, [cardStart, cardStart + 20], [0, 1], {

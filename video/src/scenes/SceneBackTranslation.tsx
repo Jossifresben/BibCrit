@@ -2,6 +2,7 @@ import React from 'react';
 import { AbsoluteFill, useCurrentFrame, interpolate } from 'remotion';
 import { PALETTE, TIMING, SCENE_DURATIONS } from '../theme';
 import { ToolLabel } from '../components/ToolLabel';
+import { BrandSlug } from '../components/BrandSlug';
 
 const WORDS = [
   { lxx: 'ἐν',        vorlage: 'בְּ',      mt: 'בְּ',      status: 'agrees_mt'  },
@@ -41,6 +42,7 @@ export const SceneBackTranslation: React.FC = () => {
         padding: '0 60px',
       }}
     >
+      <BrandSlug />
       {/* Column headers */}
       <div style={{ display: 'flex', width: '100%', maxWidth: 1500, gap: 16, marginBottom: 12 }}>
         {COLS.map((col) => (

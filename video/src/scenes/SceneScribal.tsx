@@ -3,6 +3,7 @@ import { AbsoluteFill, useCurrentFrame } from 'remotion';
 import { PALETTE, TIMING, SCENE_DURATIONS } from '../theme';
 import { ToolLabel } from '../components/ToolLabel';
 import { RadarChart } from '../components/RadarChart';
+import { BrandSlug } from '../components/BrandSlug';
 
 export const SceneScribal: React.FC = () => {
   const frame = useCurrentFrame();
@@ -19,6 +20,7 @@ export const SceneScribal: React.FC = () => {
         gap: 20,
       }}
     >
+      <BrandSlug />
       <div style={{ fontSize: 26, fontWeight: 600, color: PALETTE.muted, letterSpacing: '0.1em', textTransform: 'uppercase' }}>
         Isaiah — Translator Profile
       </div>

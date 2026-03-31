@@ -3,6 +3,7 @@ import { AbsoluteFill, useCurrentFrame, interpolate, spring } from 'remotion';
 import { PALETTE, TIMING, SCENE_DURATIONS } from '../theme';
 import { ToolLabel } from '../components/ToolLabel';
 import { TraditionBadge } from '../components/TraditionBadge';
+import { BrandSlug } from '../components/BrandSlug';
 
 const ROWS = [
   { mt: 'הָעַלְמָה הָרָה',        lxx: 'ἡ παρθένος ἐν γαστρί', badge: 'LEXICAL',      color: PALETTE.lxx },
@@ -29,6 +30,7 @@ export const SceneDivergence: React.FC = () => {
         gap: 0,
       }}
     >
+      <BrandSlug />
       {/* Column headers */}
       <div style={{ display: 'flex', width: '100%', maxWidth: 1500, gap: 12, marginBottom: 24 }}>
         <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>

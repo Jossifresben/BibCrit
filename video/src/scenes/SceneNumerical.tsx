@@ -2,6 +2,7 @@ import React from 'react';
 import { AbsoluteFill, useCurrentFrame, interpolate, spring } from 'remotion';
 import { PALETTE, TIMING, SCENE_DURATIONS } from '../theme';
 import { ToolLabel } from '../components/ToolLabel';
+import { BrandSlug } from '../components/BrandSlug';
 
 const TRADITIONS = [
   { label: 'MT',  value: 130, color: PALETTE.mt,  textColor: '#fff', appear: 10 },
@@ -30,6 +31,7 @@ export const SceneNumerical: React.FC = () => {
         padding: '0 80px',
       }}
     >
+      <BrandSlug />
       <div style={{ fontSize: 26, color: PALETTE.muted, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
         Genesis 5:16 — Mahalalel's age
       </div>

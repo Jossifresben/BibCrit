@@ -3,6 +3,7 @@ import { AbsoluteFill, useCurrentFrame, interpolate } from 'remotion';
 import { PALETTE, TIMING, SCENE_DURATIONS } from '../theme';
 import { ToolLabel } from '../components/ToolLabel';
 import { TraditionBadge } from '../components/TraditionBadge';
+import { BrandSlug } from '../components/BrandSlug';
 
 const CARDS = [
   { type: 'Anthropomorphism Avoidance', tradition: 'LXX' as const, ref: 'Exodus 24:10', note: 'MT: "they saw God" → LXX: "they saw the place where the God of Israel stood"' },
@@ -26,6 +27,7 @@ export const SceneTheological: React.FC = () => {
         gap: 24,
       }}
     >
+      <BrandSlug />
       {CARDS.map((card, i) => {
         const cardStart = 15 + i * 50;
         const opacity = interpolate(frame, [cardStart, cardStart + 20], [0, 1], {

@@ -1,9 +1,29 @@
 import React from 'react';
-import { AbsoluteFill } from 'remotion';
-import { PALETTE } from '../theme';
+import { AbsoluteFill, useCurrentFrame } from 'remotion';
+import { PALETTE, TIMING, SCENE_DURATIONS } from '../theme';
+import { ToolLabel } from '../components/ToolLabel';
+import { RadarChart } from '../components/RadarChart';
 
-export const SceneScribal: React.FC = () => (
-  <AbsoluteFill style={{ background: PALETTE.parchment, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-    <span style={{ fontSize: 32, fontWeight: 700 }}>Scribal Tendency Profiler</span>
-  </AbsoluteFill>
-);
+export const SceneScribal: React.FC = () => {
+  const frame = useCurrentFrame();
+  const labelStart = Math.floor(SCENE_DURATIONS.scribal * TIMING.labelReveal);
+
+  return (
+    <AbsoluteFill
+      style={{
+        background: PALETTE.parchment,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 20,
+      }}
+    >
+      <div style={{ fontSize: 18, fontWeight: 600, color: PALETTE.muted, letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+        Isaiah — Translator Profile
+      </div>
+      <RadarChart startFrame={10} />
+      <ToolLabel label="Scribal Tendency Profiler" startFrame={labelStart} />
+    </AbsoluteFill>
+  );
+};

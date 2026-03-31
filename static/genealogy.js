@@ -520,16 +520,19 @@
   // ── Stemma fullscreen button ─────────────────────────────────────────────
   var fsBtn      = document.getElementById('stemma-fullscreen-btn');
   var stemmaWrap = document.getElementById('stemma-wrap');
+  var fsCloseBtn = document.getElementById('stemma-fs-close');
   if (fsBtn && stemmaWrap) {
     var fsIcon = fsBtn.querySelector('.material-symbols-outlined');
 
     function enterFs() {
       stemmaWrap.classList.add('stemma-fs');
       fsIcon.textContent = 'fullscreen_exit';
+      if (fsCloseBtn) fsCloseBtn.style.display = '';
     }
     function exitFs() {
       stemmaWrap.classList.remove('stemma-fs');
       fsIcon.textContent = 'fullscreen';
+      if (fsCloseBtn) fsCloseBtn.style.display = 'none';
       if (document.fullscreenElement) document.exitFullscreen().catch(function(){});
     }
 
@@ -558,6 +561,8 @@
         fsIcon.textContent = 'fullscreen';
       }
     });
+
+    if (fsCloseBtn) fsCloseBtn.addEventListener('click', exitFs);
 
     // Close CSS overlay on Escape
     document.addEventListener('keydown', function (e) {

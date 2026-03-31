@@ -1,0 +1,23 @@
+{
+  "name": "bibcrit-video",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "studio": "npx remotion studio src/Root.tsx",
+    "render": "npx remotion render src/Root.tsx BibCritShowcase out/bibcrit-showcase.mp4",
+    "build": "npx remotion render src/Root.tsx BibCritShowcase out/bibcrit-showcase.mp4 --codec h264"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.442",
+    "@remotion/renderer": "4.0.442",
+    "@remotion/transitions": "4.0.442",
+    "remotion": "4.0.442"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "typescript": "^5.0.0"
+  }
+}

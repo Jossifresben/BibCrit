@@ -3,6 +3,7 @@
 ![Claude](https://img.shields.io/badge/powered%20by-Claude%20claude--sonnet--4--5-blueviolet?logo=anthropic)
 ![License](https://img.shields.io/badge/license-Apache%202.0-green)
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0000--2026--0836-a6ce39)](https://orcid.org/0009-0000-2026-0836)
+[![DOI](https://zenodo.org/badge/1195648052.svg)](https://doi.org/10.5281/zenodo.19358424)
 
 # BibCrit
 

@@ -8,7 +8,26 @@
 
 AI-powered biblical textual criticism: compare MT, LXX, and Dead Sea Scrolls, reconstruct Hebrew Vorlagen, profile scribal tendencies, detect theological revisions, track patristic citations, model numerical discrepancies, and visualize manuscript genealogies — all in a browser.
 
-> **Screenshot placeholder** — `docs/screenshot.png`
+## Screenshots
+
+<table>
+<tr>
+<td><strong>MT/LXX Divergence Analyzer</strong><br><img src="docs/screenshots/divergence.png" alt="Divergence Analyzer" width="420"/></td>
+<td><strong>Back-Translation Workbench</strong><br><img src="docs/screenshots/backtranslation.png" alt="Back-Translation Workbench" width="420"/></td>
+</tr>
+<tr>
+<td><strong>Scribal Tendency Profiler</strong><br><img src="docs/screenshots/scribal.png" alt="Scribal Tendency Profiler" width="420"/></td>
+<td><strong>Numerical Discrepancy Modeler</strong><br><img src="docs/screenshots/numerical.png" alt="Numerical Discrepancy Modeler" width="420"/></td>
+</tr>
+<tr>
+<td><strong>DSS Bridge Tool</strong><br><img src="docs/screenshots/dss.png" alt="DSS Bridge Tool" width="420"/></td>
+<td><strong>Theological Revision Detector</strong><br><img src="docs/screenshots/theological.png" alt="Theological Revision Detector" width="420"/></td>
+</tr>
+<tr>
+<td><strong>Patristic Citation Tracker</strong><br><img src="docs/screenshots/patristic.png" alt="Patristic Citation Tracker" width="420"/></td>
+<td><strong>Manuscript Genealogy</strong><br><img src="docs/screenshots/Transmission_Stemma.png" alt="Manuscript Genealogy" width="420"/></td>
+</tr>
+</table>
 
 ---
 

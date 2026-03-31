@@ -252,7 +252,7 @@ Instantiated once by `app._init()` and stored at `state.pipeline`.
 |---|---|---|
 | `data_dir` | `app.BASE_DIR/data` | — |
 | `api_key` | `ANTHROPIC_API_KEY` env var | `''` |
-| `cap_usd` | `BIBCRIT_API_CAP_USD` env var | `5.0` |
+| `cap_usd` | `BIBCRIT_API_CAP_USD` env var | `10.0` |
 | `supabase_url` | `SUPABASE_URL` env var | `''` |
 | `supabase_key` | `SUPABASE_KEY` env var | `''` |
 
@@ -1097,7 +1097,7 @@ services:
       - key: ANTHROPIC_API_KEY
         sync: false           # set manually in Render dashboard — never committed
       - key: BIBCRIT_API_CAP_USD
-        value: "5.0"
+        value: "10.0"
 ```
 
 **Worker configuration:** Single worker with 2 threads. This is intentional: SSE streams hold a connection open for 60–90 seconds. Multiple workers would exhaust connection limits at low traffic. Two threads allow one analysis stream and one UI request to be served concurrently.
@@ -1109,7 +1109,7 @@ services:
 | Variable | Required | Description |
 |---|---|---|
 | `ANTHROPIC_API_KEY` | Yes (for analysis) | Claude API key. Without it the app serves cached results but cannot run new analyses. |
-| `BIBCRIT_API_CAP_USD` | No | Monthly spend cap in USD. Default: `5.0`. Increase to allow more analyses per month. |
+| `BIBCRIT_API_CAP_USD` | No | Monthly spend cap in USD. Default: `10.0`. Increase to allow more analyses per month. |
 | `SUPABASE_URL` | No | Supabase project URL. Without it the app falls back to disk caching. |
 | `SUPABASE_KEY` | No | Supabase `anon` or `service_role` key. |
 | `BIBCRIT_ADMIN_KEY` | No | Secret key for the `POST /api/admin/discovery/flag` endpoint. Without it the endpoint returns 403. |
@@ -1140,7 +1140,7 @@ CREATE INDEX ON analysis_cache (reference);
 CREATE TABLE budget (
     month       TEXT PRIMARY KEY,   -- 'YYYY-MM'
     spend_usd   NUMERIC NOT NULL DEFAULT 0,
-    cap_usd     NUMERIC NOT NULL DEFAULT 5.0,
+    cap_usd     NUMERIC NOT NULL DEFAULT 10.0,
     updated_at  TIMESTAMPTZ
 );
 ```

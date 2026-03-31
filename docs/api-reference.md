@@ -138,7 +138,7 @@ HTTP 403
 
 ### Rate Limiting & Budget Cap
 
-BibCrit enforces a **monthly Claude API spend cap** to prevent runaway costs. The cap is configured via the `BIBCRIT_API_CAP_USD` environment variable (default: `$5.00`).
+BibCrit enforces a **monthly Claude API spend cap** to prevent runaway costs. The cap is configured via the `BIBCRIT_API_CAP_USD` environment variable (default: `$10.00`).
 
 - Spend is tracked in a `budget` table in Supabase (falls back to disk at `data/cache/budget.json`).
 - When the monthly cap is reached, all SSE stream endpoints return an `error` event with a message indicating the budget is exhausted for the month.
@@ -1086,8 +1086,8 @@ curl http://localhost:5000/api/budget
 ```json
 {
   "spend_usd": 1.23,
-  "cap_usd": 5.0,
-  "pct": 24.6,
+  "cap_usd": 10.0,
+  "pct": 12.3,
   "month": "2026-03"
 }
 ```
@@ -1097,11 +1097,11 @@ curl http://localhost:5000/api/budget
 | Field     | Type   | Description                                                                    |
 |-----------|--------|--------------------------------------------------------------------------------|
 | spend_usd | float  | Total spend in USD for the current calendar month                              |
-| cap_usd   | float  | Configured monthly cap in USD (set via `BIBCRIT_API_CAP_USD`, default `5.0`)  |
+| cap_usd   | float  | Configured monthly cap in USD (set via `BIBCRIT_API_CAP_USD`, default `10.0`) |
 | pct       | float  | `(spend_usd / cap_usd) * 100`, rounded to 1 decimal place                     |
 | month     | string | Current month in `YYYY-MM` format                                              |
 
-**Note:** If the pipeline is not initialized, returns `{"spend_usd": 0.0, "cap_usd": 5.0, "pct": 0.0, "month": ""}` rather than an error.
+**Note:** If the pipeline is not initialized, returns `{"spend_usd": 0.0, "cap_usd": 10.0, "pct": 0.0, "month": ""}` rather than an error.
 
 ---
 
@@ -1135,7 +1135,7 @@ curl http://localhost:5000/health
 | Variable              | Default | Description                                                               |
 |-----------------------|---------|---------------------------------------------------------------------------|
 | `ANTHROPIC_API_KEY`   | —       | Required for any analysis that is not cached. No default.                 |
-| `BIBCRIT_API_CAP_USD` | `5.0`   | Monthly Claude API spend cap in USD                                       |
+| `BIBCRIT_API_CAP_USD` | `10.0`  | Monthly Claude API spend cap in USD                                       |
 | `BIBCRIT_ADMIN_KEY`   | —       | Secret key for admin endpoints. If unset, all admin requests return 403.  |
 | `SUPABASE_URL`        | `""`    | Supabase project URL for persistent cache and budget tracking             |
 | `SUPABASE_KEY`        | `""`    | Supabase service role or anon key                                         |

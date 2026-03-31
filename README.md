@@ -146,7 +146,7 @@ Create a `.env` file in the project root (or set these in your hosting dashboard
 | Variable | Required | Default | Description |
 |---|---|---|---|
 | `ANTHROPIC_API_KEY` | Yes | — | Anthropic API key. Without it the analysis tools return a graceful error; all cached results and the corpus browser still work. |
-| `BIBCRIT_API_CAP_USD` | No | `5.0` | Monthly Claude spend cap in USD. The app rejects new analysis calls once this is reached and prompts a Ko-fi donation. Resets each calendar month. |
+| `BIBCRIT_API_CAP_USD` | No | `10.0` | Monthly Claude spend cap in USD. The app rejects new analysis calls once this is reached and prompts a Ko-fi donation. Resets each calendar month. |
 | `SUPABASE_URL` | No | — | Supabase project URL. If unset, all caching and budget tracking fall back to local disk (`data/cache/`). |
 | `SUPABASE_KEY` | No | — | Supabase `anon` or `service_role` key. |
 | `BIBCRIT_ADMIN_KEY` | No | — | Arbitrary secret for the admin flag endpoint (`POST /api/admin/discovery/flag`). Without it the endpoint returns 403. |
@@ -201,13 +201,13 @@ GET /api/cache?discovery_ready=true&limit=50&offset=0
   "limit": 50,
   "has_more": true,
   "license": "Apache 2.0",
-  "citation": "Fresco, J. (2026). BibCrit...",
+  "citation": "Fresco Benaim, J. (2026). BibCrit...",
   "records": [{ "cache_key", "reference", "tool", "data", ... }]
 }
 ```
 
 All data is released under **Apache 2.0**. If you use BibCrit analyses in research, please cite:
-> Fresco, J. (2026). *BibCrit: AI-assisted biblical textual criticism*. ORCID:[0009-0000-2026-0836](https://orcid.org/0009-0000-2026-0836)
+> Fresco Benaim, J. (2026). *BibCrit: AI-assisted biblical textual criticism*. ORCID:[0009-0000-2026-0836](https://orcid.org/0009-0000-2026-0836)
 
 ### Analysis API (SSE streaming)
 
@@ -320,7 +320,7 @@ A `render.yaml` is included. To deploy:
 3. Set `ANTHROPIC_API_KEY` (and optionally `SUPABASE_URL` / `SUPABASE_KEY` / `BIBCRIT_ADMIN_KEY`) as environment variables.
 4. Deploy.
 
-The default `BIBCRIT_API_CAP_USD` is `$5.00/month`. Raise it in the Render environment variables or ask users to donate via Ko-fi.
+The default `BIBCRIT_API_CAP_USD` is `$10.00/month`. Raise it in the Render environment variables or ask users to donate via Ko-fi.
 
 ---
 

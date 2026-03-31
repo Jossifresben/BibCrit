@@ -138,7 +138,17 @@
       // SVG download — any tool that provides getSvgEl gets a .svg file too
       var svgEl = options.getSvgEl ? options.getSvgEl() : null;
       if (svgEl) {
-        var svgData = '<?xml version="1.0" encoding="UTF-8"?>\n' + new XMLSerializer().serializeToString(svgEl);
+        // Clone SVG and embed page <style> blocks so class-based styles
+        // survive as a standalone file (e.g. stemma-edge, radar classes)
+        var svgClone = svgEl.cloneNode(true);
+        var css = '';
+        document.querySelectorAll('style').forEach(function(s) { css += s.textContent + '\n'; });
+        if (css) {
+          var styleEl = document.createElementNS('http://www.w3.org/2000/svg', 'style');
+          styleEl.textContent = css;
+          svgClone.insertBefore(styleEl, svgClone.firstChild);
+        }
+        var svgData = '<?xml version="1.0" encoding="UTF-8"?>\n' + new XMLSerializer().serializeToString(svgClone);
         _dlBlob(svgData, 'image/svg+xml', 'bibcrit_' + options.toolName + '_' + safeRef + '.svg');
       }
     });

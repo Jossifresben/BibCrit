@@ -535,11 +535,12 @@
     var model = (data.model_version && data.model_version !== 'unknown')
       ? data.model_version : 'claude-sonnet-4-5';
     var modelDisplay = model
-      .replace(/-(\d{8})$/, '')          // strip date suffix
-      .replace(/^claude-/, '')            // strip leading "claude-"
-      .replace(/-/g, ' ')                 // dashes → spaces
+      .replace(/-(\d{8})$/, '')                        // strip date suffix e.g. -20250929
+      .replace(/^claude-/, '')                          // strip leading "claude-"
+      .replace(/-(\d+)-(\d+)$/, ' $1.$2')              // -4-5 → 4.5 version number
+      .replace(/-/g, ' ')                               // remaining dashes → spaces
       .replace(/\b\w/g, function(c){ return c.toUpperCase(); })  // Title Case
-      .replace(/^/, 'Claude ');           // re-add "Claude " prefix
+      .replace(/^/, 'Claude ');                         // re-add "Claude " prefix
     var ref = data.reference || currentRef;
 
     return '<div class="bibcrit-hypothesis-card">'

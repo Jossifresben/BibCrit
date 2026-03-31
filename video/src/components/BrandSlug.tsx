@@ -26,11 +26,11 @@ export const BrandSlug: React.FC = () => {
     >
       <Img
         src={staticFile('BibCrit_logo.svg')}
-        style={{ width: 32, height: 32 }}
+        style={{ width: 52, height: 52 }}
       />
       <span
         style={{
-          fontSize: 20,
+          fontSize: 30,
           fontWeight: 700,
           color: PALETTE.fg,
           letterSpacing: '0.04em',

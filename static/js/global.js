@@ -16,15 +16,39 @@
             if (themeIcon) themeIcon.textContent = theme === 'dark' ? 'bedtime' : 'sunny';
         }
 
-        var savedTheme = localStorage.getItem('theme');
+        var savedTheme = localStorage.getItem('bibcrit-theme');
         if (savedTheme) applyTheme(savedTheme);
 
         themeBtn.addEventListener('click', function() {
             var current = html.getAttribute('data-theme') || 'light';
             var next = current === 'dark' ? 'light' : 'dark';
-            localStorage.setItem('theme', next);
+            localStorage.setItem('bibcrit-theme', next);
             applyTheme(next);
         });
+    }
+
+    // Expose current lang globally so tool JS files can pass it to API stream calls
+    window.bibcritLang = urlParams.get('lang') || localStorage.getItem('bibcrit-lang') || 'en';
+
+    // --- Lang Preference ---
+    var currentLang = urlParams.get('lang');
+    if (currentLang) {
+        // Persist chosen lang
+        localStorage.setItem('bibcrit-lang', currentLang);
+    } else {
+        var storedLang = localStorage.getItem('bibcrit-lang');
+        if (storedLang && storedLang !== 'en') {
+            urlParams.set('lang', storedLang);
+            window.location.replace(window.location.pathname + '?' + urlParams.toString() + window.location.hash);
+            return;
+        }
+    }
+
+    // Update lang code label to match active lang
+    var langCodeEl = document.getElementById('lang-current-code');
+    if (langCodeEl) {
+        var activeLang = urlParams.get('lang') || localStorage.getItem('bibcrit-lang') || 'en';
+        langCodeEl.textContent = activeLang.toUpperCase();
     }
 
     // --- Stored Preferences Redirect ---
@@ -264,3 +288,26 @@ function deleteAnnotation(type, key) {
     if (ann[type]) delete ann[type][key];
     saveAnnotations(ann);
 }
+
+// --- Budget bar (shared across all analysis pages) ---
+function updateBudgetBar() {
+    fetch('/api/budget')
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+            var spendEl  = document.getElementById('budget-spend');
+            var capEl    = document.getElementById('budget-cap');
+            var barEl    = document.getElementById('budget-bar');
+            var pctEl    = document.getElementById('budget-pct');
+            var donateEl = document.getElementById('budget-donate-btn');
+            if (spendEl) spendEl.textContent = '$' + (data.spend_usd || 0).toFixed(2);
+            if (capEl)   capEl.textContent   = '$' + (data.cap_usd   || 5).toFixed(2);
+            if (barEl)   barEl.style.width   = Math.min(data.pct || 0, 100) + '%';
+            if (pctEl)   pctEl.textContent   = (data.pct || 0).toFixed(1) + '%';
+            if (donateEl) donateEl.style.display = (data.pct >= 80) ? 'inline-block' : 'none';
+        })
+        .catch(function() {});
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    updateBudgetBar();
+});

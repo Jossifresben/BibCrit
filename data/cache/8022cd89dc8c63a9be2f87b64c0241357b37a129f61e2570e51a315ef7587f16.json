@@ -1,0 +1,503 @@
+{
+  "book": "Genesis",
+  "period_range": "10th century BCE – 10th century CE",
+  "archetype_description": "The archetype of Genesis represents the product of complex literary growth spanning the monarchic through Second Temple periods, reflecting the merger of multiple narrative sources (traditionally J, E, P) into a unified literary work by the 6th–5th centuries BCE. The proto-text achieved substantial stabilization by the Persian period, though minor variants continued to circulate. The degree of textual unity was already high by the time of the earliest witnesses, with most variation representing orthographic modernization, phonological updating, and isolated theological adjustments rather than fundamentally different literary editions.",
+  "stemma_nodes": [
+    {
+      "id": "archetype",
+      "label": "Proto-Genesis",
+      "type": "archetype",
+      "date": "6th–5th c. BCE",
+      "description": "Composite text integrating J, E, P narrative strands into a unified literary work stabilized during the Persian period."
+    },
+    {
+      "id": "proto-hebrew",
+      "label": "Proto-Hebrew Tradition",
+      "type": "intermediate",
+      "date": "5th–4th c. BCE",
+      "description": "Common ancestor of MT, SP, and the Hebrew Vorlage of LXX, exhibiting minimal divergence among descendant traditions."
+    },
+    {
+      "id": "proto-mt",
+      "label": "Proto-MT",
+      "type": "intermediate",
+      "date": "3rd–2nd c. BCE",
+      "description": "Palestinian Hebrew text-form ancestral to the rabbinic Bible, characterized by conservative orthography and shorter readings in genealogical passages."
+    },
+    {
+      "id": "mt",
+      "label": "Masoretic Text",
+      "type": "tradition",
+      "tradition": "MT",
+      "date": "1st c. CE–10th c. CE",
+      "full_name": "Masoretic Text",
+      "language": "Hebrew",
+      "description": "Consonantal text standardized by the 1st century CE with vocalization and Masoretic apparatus added 7th–10th centuries CE."
+    },
+    {
+      "id": "leningrad",
+      "label": "Leningrad Codex (B19A)",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "1008/1009 CE",
+      "full_name": "Codex Leningradensis",
+      "language": "Hebrew",
+      "description": "Earliest complete Hebrew Bible manuscript, copied by Samuel ben Jacob in Cairo, basis of BHS and BHQ."
+    },
+    {
+      "id": "aleppo",
+      "label": "Aleppo Codex (A)",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "c. 930 CE",
+      "full_name": "Aleppo Codex",
+      "language": "Hebrew",
+      "description": "Oldest complete Masoretic codex produced by Aaron ben Asher in Tiberias; Genesis and most of Pentateuch lost in 1947 fire."
+    },
+    {
+      "id": "bhs",
+      "label": "BHS",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "1977 CE",
+      "full_name": "Biblia Hebraica Stuttgartensia",
+      "language": "Hebrew",
+      "description": "Critical edition based on Leningrad Codex with diplomatic text and eclectic apparatus."
+    },
+    {
+      "id": "bhq",
+      "label": "BHQ",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "2015 CE (Genesis fascicle)",
+      "full_name": "Biblia Hebraica Quinta",
+      "language": "Hebrew",
+      "description": "Most recent critical edition with refined apparatus evaluating textual witnesses according to genealogical stemmatic principles."
+    },
+    {
+      "id": "proto-sp",
+      "label": "Proto-Samaritan",
+      "type": "intermediate",
+      "date": "3rd–2nd c. BCE",
+      "description": "Pre-schism Palestinian Hebrew Pentateuch characterized by expansionist tendencies, proto-harmonizations, and popular textual features."
+    },
+    {
+      "id": "sp",
+      "label": "Samaritan Pentateuch",
+      "type": "tradition",
+      "tradition": "SP",
+      "date": "2nd c. BCE–present",
+      "full_name": "Samaritan Pentateuch",
+      "language": "Hebrew (Samaritan script)",
+      "description": "Independent Hebrew textual tradition preserving pre-Hasmonean Pentateuchal text with approximately 6,000 divergences from MT, including systematic pro-Gerizim harmonizations."
+    },
+    {
+      "id": "4qgen-a",
+      "label": "4QGen-Exodᵃ (4Q1)",
+      "type": "edition",
+      "tradition": "DSS",
+      "date": "c. 50–25 BCE",
+      "full_name": "4QGenesis-Exodus a",
+      "language": "Hebrew",
+      "description": "Early Herodian manuscript containing Genesis 1:18–27, aligned closely with proto-MT text-form."
+    },
+    {
+      "id": "4qgen-b",
+      "label": "4QGenᵇ (4Q2)",
+      "type": "edition",
+      "tradition": "DSS",
+      "date": "c. 30 BCE–20 CE",
+      "full_name": "4QGenesis b",
+      "language": "Hebrew",
+      "description": "Herodian manuscript preserving portions of Genesis 8, 18–19, exhibiting proto-Masoretic character."
+    },
+    {
+      "id": "4qgen-j",
+      "label": "4QGenʲ (4Q8)",
+      "type": "edition",
+      "tradition": "DSS",
+      "date": "c. 100–50 BCE",
+      "full_name": "4QGenesis j",
+      "language": "Hebrew",
+      "description": "Hasmonean manuscript with fragments from Genesis 1, preserving pre-Samaritan textual features."
+    },
+    {
+      "id": "4qgen-k",
+      "label": "4QGenᵏ (4Q9)",
+      "type": "edition",
+      "tradition": "DSS",
+      "date": "c. 50–25 BCE",
+      "full_name": "4QGenesis k",
+      "language": "Hebrew",
+      "description": "Contains Genesis 1:1–11, exhibiting some agreements with SP against MT in orthographic expansion."
+    },
+    {
+      "id": "proto-lxx",
+      "label": "Old Greek (OG)",
+      "type": "intermediate",
+      "date": "3rd c. BCE",
+      "full_name": "Old Greek Translation",
+      "language": "Greek",
+      "description": "Original Alexandrian translation of Genesis by a single translator working from a Hebrew Vorlage exhibiting both proto-MT and pre-Samaritan features."
+    },
+    {
+      "id": "lxx",
+      "label": "Septuagint Tradition",
+      "type": "tradition",
+      "tradition": "LXX",
+      "date": "3rd c. BCE–4th c. CE",
+      "full_name": "Septuagint",
+      "language": "Greek",
+      "description": "Greek translation tradition undergoing progressive recensional activity, with Genesis among the earliest and most stable books translated."
+    },
+    {
+      "id": "hexapla",
+      "label": "Hexapla",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "c. 245 CE",
+      "full_name": "Origen's Hexapla",
+      "language": "Greek",
+      "description": "Origen's six-column critical edition aligning LXX with contemporary Hebrew text, marking additions with asterisks and omissions with obeli."
+    },
+    {
+      "id": "lucianic",
+      "label": "Lucianic Recension",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "c. 300 CE",
+      "full_name": "Lucianic/Antiochene Recension",
+      "language": "Greek",
+      "description": "Antiochene revision characterized by stylistic improvements and occasional preservation of Old Greek readings against later Hexaplaric corruption."
+    },
+    {
+      "id": "codex-vaticanus",
+      "label": "Codex Vaticanus (B)",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "c. 325–350 CE",
+      "full_name": "Codex Vaticanus",
+      "language": "Greek",
+      "description": "Earliest substantially complete LXX witness to Genesis, representing Egyptian text-type with pre-Hexaplaric character."
+    },
+    {
+      "id": "codex-alexandrinus",
+      "label": "Codex Alexandrinus (A)",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "c. 400–440 CE",
+      "full_name": "Codex Alexandrinus",
+      "language": "Greek",
+      "description": "Fifth-century uncial exhibiting mixed text with Hexaplaric and Lucianic influences in the Pentateuch."
+    },
+    {
+      "id": "gottingen-lxx",
+      "label": "Göttingen LXX",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "1974 CE (Genesis)",
+      "full_name": "Göttingen Septuaginta: Genesis",
+      "language": "Greek",
+      "description": "Critical edition by John William Wevers reconstructing Old Greek text through genealogical analysis of Greek manuscript families."
+    },
+    {
+      "id": "nets",
+      "label": "NETS",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "2007 CE",
+      "full_name": "New English Translation of the Septuagint",
+      "language": "English",
+      "description": "Modern English translation of critically reconstructed LXX, providing interlinear-style rendering that highlights translation character."
+    },
+    {
+      "id": "peshitta-vorlage",
+      "label": "Peshitta Vorlage",
+      "type": "intermediate",
+      "date": "1st–2nd c. CE",
+      "description": "Hebrew textual base underlying Peshitta Genesis, exhibiting predominantly proto-MT character with occasional agreement with SP/LXX."
+    },
+    {
+      "id": "peshitta",
+      "label": "Peshitta",
+      "type": "tradition",
+      "tradition": "Peshitta",
+      "date": "2nd–3rd c. CE",
+      "full_name": "Peshitta (Syriac)",
+      "language": "Syriac",
+      "description": "Syriac translation produced within Jewish or Judaeo-Christian circles, exhibiting literal rendering style with occasional exegetical paraphrase."
+    },
+    {
+      "id": "targum-onqelos",
+      "label": "Targum Onqelos",
+      "type": "tradition",
+      "tradition": "Targum",
+      "date": "2nd c. CE (standardized)",
+      "full_name": "Targum Onqelos",
+      "language": "Aramaic",
+      "description": "Official rabbinic Aramaic translation of the Pentateuch, characterized by literal rendering with minor theological adjustments to anthropomorphisms."
+    },
+    {
+      "id": "targum-neofiti",
+      "label": "Targum Neofiti",
+      "type": "tradition",
+      "tradition": "Targum",
+      "date": "1st–2nd c. CE (core); 3rd–5th c. CE (expansions)",
+      "full_name": "Targum Neofiti",
+      "language": "Aramaic",
+      "description": "Palestinian Targum preserving early exegetical traditions with extensive haggadic expansions, discovered in Vatican Library 1956."
+    },
+    {
+      "id": "targum-pseudo-jonathan",
+      "label": "Targum Pseudo-Jonathan",
+      "type": "tradition",
+      "tradition": "Targum",
+      "date": "7th–8th c. CE (final form)",
+      "full_name": "Targum Pseudo-Jonathan",
+      "language": "Aramaic",
+      "description": "Late Palestinian Targum incorporating extensive midrashic material, legendary expansions, and post-Islamic anachronisms."
+    },
+    {
+      "id": "vulgate-vorlage",
+      "label": "Vulgate Vorlage",
+      "type": "intermediate",
+      "date": "c. 390 CE",
+      "description": "Hebrew textual base consulted by Jerome, closely aligned with proto-Masoretic consonantal tradition preserved in Palestinian Jewish communities."
+    },
+    {
+      "id": "vulgate",
+      "label": "Vulgate",
+      "type": "tradition",
+      "tradition": "Vulgate",
+      "date": "c. 390–405 CE",
+      "full_name": "Vulgate (Jerome)",
+      "language": "Latin",
+      "description": "Jerome's fresh translation from the Hebrew veritas, consulting Jewish informants and occasionally preferring readings against LXX tradition."
+    },
+    {
+      "id": "codex-amiatinus",
+      "label": "Codex Amiatinus",
+      "type": "edition",
+      "tradition": "Vulgate",
+      "date": "c. 692–716 CE",
+      "full_name": "Codex Amiatinus",
+      "language": "Latin",
+      "description": "Earliest complete Vulgate manuscript, produced at Wearmouth-Jarrow from exemplar brought from Rome, preserving pure Hieronymian text."
+    },
+    {
+      "id": "stuttgartensia-vulgate",
+      "label": "Stuttgart Vulgate",
+      "type": "edition",
+      "tradition": "Vulgate",
+      "date": "1969 CE",
+      "full_name": "Biblia Sacra iuxta Vulgatam Versionem",
+      "language": "Latin",
+      "description": "Critical edition produced by Württembergische Bibelanstalt reconstructing Jerome's original text through recensional analysis."
+    }
+  ],
+  "stemma_edges": [
+    {
+      "from": "archetype",
+      "to": "proto-hebrew"
+    },
+    {
+      "from": "proto-hebrew",
+      "to": "proto-mt"
+    },
+    {
+      "from": "proto-hebrew",
+      "to": "proto-sp"
+    },
+    {
+      "from": "proto-hebrew",
+      "to": "proto-lxx"
+    },
+    {
+      "from": "proto-mt",
+      "to": "mt"
+    },
+    {
+      "from": "proto-mt",
+      "to": "4qgen-a"
+    },
+    {
+      "from": "proto-mt",
+      "to": "4qgen-b"
+    },
+    {
+      "from": "proto-sp",
+      "to": "4qgen-j"
+    },
+    {
+      "from": "proto-sp",
+      "to": "4qgen-k"
+    },
+    {
+      "from": "proto-sp",
+      "to": "sp"
+    },
+    {
+      "from": "mt",
+      "to": "leningrad"
+    },
+    {
+      "from": "mt",
+      "to": "aleppo"
+    },
+    {
+      "from": "leningrad",
+      "to": "bhs"
+    },
+    {
+      "from": "bhs",
+      "to": "bhq"
+    },
+    {
+      "from": "proto-lxx",
+      "to": "lxx"
+    },
+    {
+      "from": "lxx",
+      "to": "hexapla"
+    },
+    {
+      "from": "lxx",
+      "to": "lucianic"
+    },
+    {
+      "from": "lxx",
+      "to": "codex-vaticanus"
+    },
+    {
+      "from": "lxx",
+      "to": "codex-alexandrinus"
+    },
+    {
+      "from": "hexapla",
+      "to": "codex-alexandrinus"
+    },
+    {
+      "from": "lucianic",
+      "to": "codex-alexandrinus"
+    },
+    {
+      "from": "codex-vaticanus",
+      "to": "gottingen-lxx"
+    },
+    {
+      "from": "codex-alexandrinus",
+      "to": "gottingen-lxx"
+    },
+    {
+      "from": "gottingen-lxx",
+      "to": "nets"
+    },
+    {
+      "from": "proto-mt",
+      "to": "peshitta-vorlage"
+    },
+    {
+      "from": "peshitta-vorlage",
+      "to": "peshitta"
+    },
+    {
+      "from": "mt",
+      "to": "targum-onqelos"
+    },
+    {
+      "from": "mt",
+      "to": "targum-neofiti"
+    },
+    {
+      "from": "targum-neofiti",
+      "to": "targum-pseudo-jonathan"
+    },
+    {
+      "from": "mt",
+      "to": "vulgate-vorlage"
+    },
+    {
+      "from": "vulgate-vorlage",
+      "to": "vulgate"
+    },
+    {
+      "from": "vulgate",
+      "to": "codex-amiatinus"
+    },
+    {
+      "from": "codex-amiatinus",
+      "to": "stuttgartensia-vulgate"
+    }
+  ],
+  "key_divergences": [
+    {
+      "title": "Chronological Numbers in Genesis 5 and 11",
+      "passage": "Genesis 5:1–32; 11:10–26",
+      "witnesses": [
+        "MT",
+        "LXX",
+        "SP"
+      ],
+      "plain": "The genealogies of Genesis 5 and 11 contain significantly different chronological numbers across the three major witnesses, affecting calculations of antediluvian and postdiluvian history. MT yields the shortest chronology, SP intermediate, and LXX the longest, with differences of over 1,400 years for the period from creation to Abraham.",
+      "technical": "LXX systematically inflates patriarchal ages at begetting by 100 years in Gen 5 and 11, while SP preserves intermediate values; MT's shorter chronology likely represents secondary systematization. Wevers (Göttingen Genesis, 1974) and Hendel (The Text of Genesis 1–11, 1998) analyze the recensional character of these divergences, with Hendel arguing LXX preserves the oldest reading in most cases against MT's later chronological compression. Klein (Archiv für Orientforschung, 1974) proposes proto-LXX Vorlage underwent inflation, while Larsson argues for MT priority."
+    },
+    {
+      "title": "Daughters of Humanity vs. Sons of God",
+      "passage": "Genesis 6:2",
+      "witnesses": [
+        "MT",
+        "LXX",
+        "SP",
+        "DSS"
+      ],
+      "plain": "MT reads 'sons of God' (bənê hāʾĕlōhîm) saw the 'daughters of humanity' were beautiful, while several witnesses attest variant readings that intensify or soften the mythological implications. This affects interpretation of the Nephilim narrative and antediluvian corruption.",
+      "technical": "MT's bənê hāʾĕlōhîm is preserved in LXX as 'angels of God' (hoi angeloi tou theou), while some LXX witnesses read 'sons of God' (hoi huioi tou theou). Aquila and Symmachus render 'sons of the gods' or 'sons of rulers,' reflecting rabbinic discomfort with angelic-human miscegenation. SP and DSS generally support MT. Tov (Textual Criticism, 2012) treats variants as exegetical rather than recensional, while Hendel sees LXX's 'angels' as original reading pre-dating theological sanitization."
+    },
+    {
+      "title": "God vs. Angels Made Man in Genesis 1:26",
+      "passage": "Genesis 1:26",
+      "witnesses": [
+        "MT",
+        "LXX",
+        "SP",
+        "Peshitta"
+      ],
+      "plain": "The divine self-deliberation 'Let us make humanity in our image' has provoked diverse textual and translational strategies to clarify the identity of the plural subject, affecting Christian Trinitarian and Jewish anti-polytheistic readings.",
+      "technical": "MT's plural cohortative naʿăśeh is uniformly transmitted across Hebrew witnesses without significant variant, but LXX's poiēsōmen and Peshitta's neʿbed preserve plurality while triggering exegetical anxiety. Targum Neofiti and Pseudo-Jonathan expand with divine address to angels or personified Memra, while Targum Onqelos retains literal plurality. Philo and early Christian exegetes exploit the plural for theological purposes. No textual variant resolves the interpretive crux; the divergence is exegetical rather than recensional (Wevers, Notes on Genesis, 1993)."
+    },
+    {
+      "title": "Samaritan Gerizim Insertions",
+      "passage": "Genesis 12:6; Exodus 20:17b (SP insertion after MT Deut 5:21)",
+      "witnesses": [
+        "SP",
+        "MT",
+        "LXX"
+      ],
+      "plain": "SP inserts a command to build an altar on Mount Gerizim after Exodus 20:17, absent from MT and LXX, and contains other pro-Gerizim expansions throughout the Pentateuch. These reveal sectarian scribal activity but also preserve ancient textual traditions sometimes supported by Qumran witnesses.",
+      "technical": "SP's approximately 6,000 divergences from MT include systematic harmonizations (e.g., Exod 7–11 plague sequence), expansions from parallel passages, and pro-Samaritan theological edits (Gerizim over Ebal/Jerusalem). Tov and Sidnie White Crawford demonstrate that pre-Samaritan textual features appear in 4QpaleoExod-m and 4QNum-b, indicating SP preserves a legitimate pre-Hasmonean Palestinian text-type, not simply sectarian fabrication. Barthélemy (CTAT, 1982) treats SP as recensionally independent witness requiring evaluation on a case-by-case basis."
+    },
+    {
+      "title": "Masoretic Paragraphing and Sense Divisions",
+      "passage": "Genesis 49:1–28 (Jacob's Blessing)",
+      "witnesses": [
+        "MT",
+        "LXX",
+        "SP"
+      ],
+      "plain": "The tribal blessings of Genesis 49 exhibit divergent verse divisions, cola arrangement, and interpretive segmentation across witnesses, affecting how the poetic units are understood and where blessing transitions occur.",
+      "technical": "MT's Masoretic petuhot and setumot paragraph markers shape reading of Gen 49:8–12 (Judah oracle) differently from LXX cola divisions, with implications for messianic interpretation of 49:10 (shiloh crux). SP follows MT structure closely but exhibits minor orthographic differences affecting poetic scansion. Wevers notes LXX translator struggled with archaic Hebrew poetry, producing semantic rather than formal equivalents. Sanders (The Provenance of Deuteronomy 32, 1996) and Skehan analyze versional divergences as reflecting interpretive tradition rather than Vorlage difference, though Cross argues some variants preserve superior readings against MT secondary smoothing."
+    }
+  ],
+  "transmission_narrative": "Genesis achieved textual stability relatively early, with the composite literary text (integrating J, E, P sources) finalized by the late 6th or early 5th century BCE during or shortly after the Babylonian exile. The proto-Hebrew text attested at Qumran (4QGen-a through 4QGen-k, dating 2nd–1st centuries BCE) reveals three discernible text-types: proto-Masoretic, pre-Samaritan, and a Vorlage closely related to the LXX, though the degree of divergence is minimal compared to later prophetic books. The Septuagint translation of Genesis (mid-3rd century BCE) represents one of the earliest and most literal Greek renderings, produced by a single Alexandrian translator working from a Hebrew text exhibiting both proto-MT and occasionally pre-Samaritan features; Wevers's Göttingen edition reconstructs the Old Greek through genealogical analysis of papyri (e.g., P. Bodmer XXIV, 3rd c. CE) and uncials (Vaticanus, Alexandrinus). The Masoretic tradition crystallized by the 1st century CE, with consonantal standardization attested in rabbinic literature and the Nash Papyrus (2nd c. BCE); vocalization and accentuation were added by Tiberian Masoretes (7th–10th c. CE), preserved in the Aleppo Codex (c. 930 CE, now missing Genesis) and Leningrad Codex (1008/1009 CE). The Samaritan Pentateuch diverged during the Hasmonean period (2nd c. BCE), preserving a pre-schism Palestinian text-type with systematic pro-Gerizim harmonizations but also archaic readings occasionally supported by Qumran witnesses. Jerome's Vulgate (c. 390 CE) consulted a proto-Masoretic Hebrew text, occasionally preserving readings against later MT corruption, while the Peshitta (2nd c. CE) and Targumim (Onqelos 2nd c. CE; Neofiti 1st–5th c. CE; Pseudo-Jonathan 7th–8th c. CE) witness to rabbinic textual and exegetical traditions. Critical scholarship since Lagarde and Kahle has moved toward recognizing limited pluriformity in Second Temple Genesis transmission, with Tov, Cross, and Ulrich emphasizing local text-types (Egyptian, Palestinian, Babylonian) that converged into the proto-Masoretic stabilization by the 1st century CE.",
+  "transmission_plain": "Genesis was written down in stages over centuries, with its final combined form taking shape around 500 BCE after the Babylonian exile. By the time of the Dead Sea Scrolls (200 BCE–70 CE), the Hebrew text was already quite stable, with only minor differences between the versions that would become the Masoretic (traditional Jewish), Samaritan, and Greek Septuagint Bibles. The Septuagint was translated into Greek in Egypt around 250 BCE for Greek-speaking Jews, while the Samaritan community preserved its own Hebrew version with distinctive religious edits favoring Mount Gerizim. The traditional Jewish text was carefully copied and vowel-pointed by the Masoretes between 600–1000 CE, producing the Hebrew Bibles we use today (based mainly on the Leningrad Codex from 1008 CE). Ancient translations into Aramaic (Targums), Syriac (Peshitta), and Latin (Jerome's Vulgate, c. 390 CE) help scholars understand how the text was read and understood in different communities, though most variants in Genesis involve numbers in genealogies, spelling differences, and occasional theological clarifications rather than major story changes.",
+  "bibcrit_assessment": {
+    "title": "Genesis Exhibits Exceptional Early Textual Stability",
+    "plain": "Unlike the prophetic books, which show significant variation in their Dead Sea Scrolls copies, Genesis was already remarkably uniform by 200 BCE, with most differences involving spelling modernization and genealogical numbers rather than narrative content. This suggests the Pentateuch was treated as authoritative Scripture earlier than other biblical books, leading scribes to copy it more conservatively.",
+    "confidence": 0.82
+  },
+  "discovery_ready": true,
+  "reference": "Genesis",
+  "cached_at": "2026-03-31T11:17:43.496511",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

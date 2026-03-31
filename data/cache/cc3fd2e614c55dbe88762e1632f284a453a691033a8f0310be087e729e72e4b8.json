@@ -1,0 +1,84 @@
+{
+  "reconstructed_words": [
+    {
+      "position": 1,
+      "lxx_word": "Ἐν ἀρχῇ",
+      "vorlage_word": "בראשית",
+      "status": "agrees_mt",
+      "confidence": 1.0,
+      "mt_equivalent": "בְּרֵאשִׁית",
+      "dss_witness": null,
+      "reasoning": "The Greek prepositional phrase ἐν ἀρχῇ is the standard LXX rendering of בראשית in Genesis 1:1. This translation pattern is attested throughout LXX Genesis and represents a straightforward lexical equivalent. The construct form בְּרֵאשִׁית ('in the beginning of') is rendered with the prepositional phrase, smoothing the Hebrew syntax.",
+      "alternatives": []
+    },
+    {
+      "position": 2,
+      "lxx_word": "ἐποίησεν",
+      "vorlage_word": "ברא",
+      "status": "agrees_mt",
+      "confidence": 1.0,
+      "mt_equivalent": "בָּרָא",
+      "dss_witness": null,
+      "reasoning": "The verb ἐποίησεν (aorist of ποιέω) reflects the Hebrew ברא (qal perfect 3ms). While ποιέω is a common generic verb for 'make/do,' it regularly renders ברא in LXX Genesis 1. The translator's choice of ποιέω over κτίζω reflects a preference for more common Greek vocabulary to express divine creation.",
+      "alternatives": []
+    },
+    {
+      "position": 3,
+      "lxx_word": "ὁ θεὸς",
+      "vorlage_word": "אלהים",
+      "status": "agrees_mt",
+      "confidence": 1.0,
+      "mt_equivalent": "אֱלֹהִים",
+      "dss_witness": null,
+      "reasoning": "The articular substantive ὁ θεός is the consistent LXX equivalent for אלהים throughout Genesis. The addition of the Greek article reflects standard Greek idiom for definite reference and does not imply a different Hebrew Vorlage. This is a characteristic feature of LXX translation technique when rendering the divine name אלהים.",
+      "alternatives": []
+    },
+    {
+      "position": 4,
+      "lxx_word": "τὸν οὐρανὸν",
+      "vorlage_word": "את השמים",
+      "status": "agrees_mt",
+      "confidence": 1.0,
+      "mt_equivalent": "אֵת הַשָּׁמַיִם",
+      "dss_witness": null,
+      "reasoning": "The accusative articular noun τὸν οὐρανὸν represents the Hebrew definite direct object את השמים. The LXX uses the Greek article to mark definiteness and case inflection (accusative) to express the direct object, replacing the Hebrew particle את. The singular οὐρανός renders the Hebrew plural שמים, a standard convention in LXX.",
+      "alternatives": []
+    },
+    {
+      "position": 5,
+      "lxx_word": "καὶ",
+      "vorlage_word": "ו",
+      "status": "agrees_mt",
+      "confidence": 1.0,
+      "mt_equivalent": "וְ",
+      "dss_witness": null,
+      "reasoning": "The conjunction καί is the direct equivalent of the Hebrew waw conjunctive (ו). This is the most basic and consistent lexical correspondence in LXX translation technique, with καί rendering ו throughout Genesis with near-total consistency.",
+      "alternatives": []
+    },
+    {
+      "position": 6,
+      "lxx_word": "τὴν γῆν",
+      "vorlage_word": "את הארץ",
+      "status": "agrees_mt",
+      "confidence": 1.0,
+      "mt_equivalent": "אֵת הָאָרֶץ",
+      "dss_witness": null,
+      "reasoning": "The accusative articular noun τὴν γῆν reflects the Hebrew definite direct object את הארץ, parallel to the treatment of 'the heavens' in position 4. The Greek article and accusative case marking replace the Hebrew object marker את, while γῆ consistently renders ארץ in cosmological contexts throughout LXX Genesis.",
+      "alternatives": []
+    }
+  ],
+  "summary_technical": "The LXX Vorlage for Genesis 1:1 agrees fully with the MT in consonantal text and word order. The translator employs characteristic LXX techniques: ποιέω for ברא, articular θεός for אלהים, singular οὐρανός for plural שמים, and Greek case inflection replacing את. No divergences from MT or DSS variants are evident; this represents a straightforward, literal rendering.",
+  "summary_plain": "The Greek translator worked from a Hebrew text identical to our current Masoretic Text. All differences between Greek and Hebrew reflect standard translation choices, not textual variants.",
+  "overall_confidence": 1.0,
+  "bibcrit_assessment": {
+    "title": "No Textual Variants Preserved in LXX Genesis 1:1",
+    "reasoning": "Genesis 1:1 LXX shows complete alignment with MT and offers no evidence of variant Hebrew readings. The verb choice ἐποίησεν (rather than ἔκτισεν) has sometimes been interpreted as theologically motivated to avoid technical creation vocabulary, but this reflects translation philosophy rather than a different Vorlage. No DSS evidence from Qumran contradicts MT here. This verse demonstrates the baseline against which genuine variants elsewhere must be measured.",
+    "plain": "The Greek translation preserves no lost Hebrew readings here; it faithfully reflects the traditional Hebrew text we possess today.",
+    "confidence": 1.0
+  },
+  "discovery_ready": false,
+  "reference": "Genesis 1:1",
+  "cached_at": "2026-03-31T11:14:16.602469",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

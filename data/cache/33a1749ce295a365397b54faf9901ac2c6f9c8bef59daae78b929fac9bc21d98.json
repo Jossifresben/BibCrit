@@ -1,0 +1,113 @@
+{
+  "book": "Micah",
+  "translator_name": "Old Greek of the Twelve Prophets (Minor Prophets)",
+  "translator_profile": {
+    "literalness": 0.72,
+    "anthropomorphism_reduction": 0.35,
+    "messianic_heightening": 0.68,
+    "harmonization": 0.42,
+    "paraphrase_rate": 0.38
+  },
+  "dimensions": [
+    {
+      "dimension": "literalness",
+      "score": 0.72,
+      "confidence": 0.82,
+      "summary": "The LXX-Micah translator demonstrates moderately high literalness, maintaining Hebrew word order and providing near-equivalent lexical choices in most contexts. In Micah 5:2, the translator preserves the syntactic structure closely: 'ἐκ σοῦ μοι ἐξελεύσεται' mirrors 'מִמְּךָ לִי יֵצֵא' with minimal adjustment. However, occasional shifts like rendering 'צָעִיר' (small) as 'ὀλιγοστὸς εἶ' (you are least/smallest) show interpretive nuancing within a generally formal equivalence framework. The translator belongs to the moderately literal tradition characteristic of the Twelve Prophets corpus.",
+      "summary_plain": "This translator usually follows the Hebrew text word-for-word, keeping the same sentence structure and finding close Greek equivalents for Hebrew words. Occasionally they make small interpretive adjustments to clarify meaning.",
+      "examples": [
+        {
+          "reference": "Micah 5:2",
+          "mt_text": "מִמְּךָ לִי יֵצֵא לִהְיוֹת מוֹשֵׁל בְּיִשְׂרָאֵל",
+          "lxx_text": "ἐκ σοῦ μοι ἐξελεύσεται τοῦ εἶναι εἰς ἄρχοντα τοῦ Ἰσραήλ",
+          "note": "The translation maintains Hebrew word order and syntax closely, with prepositional phrases, verbal forms, and infinitival constructions following the source text structure."
+        },
+        {
+          "reference": "Micah 5:2",
+          "mt_text": "וּמוֹצָאֹתָיו מִקֶּדֶם מִימֵי עוֹלָם",
+          "lxx_text": "καὶ αἱ ἔξοδοι αὐτοῦ ἀπ᾽ ἀρχῆς ἐξ ἡμερῶν αἰῶνος",
+          "note": "Each Hebrew element receives a formal equivalent: 'מוֹצָאֹתָיו' → 'αἱ ἔξοδοι αὐτοῦ', 'מִקֶּדֶם' → 'ἀπ᾽ ἀρχῆς', demonstrating isomorphic tendencies."
+        }
+      ]
+    },
+    {
+      "dimension": "anthropomorphism_reduction",
+      "score": 0.35,
+      "confidence": 0.58,
+      "summary": "The translator shows moderate evidence of theological smoothing but does not systematically eliminate anthropomorphic expressions. Throughout Micah, divine emotional language and bodily imagery are generally preserved (e.g., God's anger, walking before Israel). The limited sample prevents definitive assessment, but the translator appears less concerned with anthropomorphism than translators of books like Isaiah or Ezekiel, aligning with patterns observed across the Twelve Prophets where such theological revision is sporadic rather than programmatic.",
+      "summary_plain": "The translator sometimes softens language describing God in overly human terms (emotions, body parts), but doesn't do this systematically. They're more willing than some translators to keep such imagery.",
+      "examples": [
+        {
+          "reference": "Micah 5:2",
+          "mt_text": "מִמְּךָ לִי יֵצֵא",
+          "lxx_text": "ἐκ σοῦ μοι ἐξελεύσεται",
+          "note": "The personal pronoun 'לִי' (to/for me) referring to God is preserved as 'μοι' without theological distancing or abstraction, suggesting comfort with direct divine speech."
+        }
+      ]
+    },
+    {
+      "dimension": "messianic_heightening",
+      "score": 0.68,
+      "confidence": 0.78,
+      "summary": "The translator demonstrates clear messianic heightening in Micah 5:2, a passage with profound eschatological significance in Second Temple Judaism. The rendering of 'מוֹשֵׁל' as 'ἄρχων' (ruler/prince) rather than a more mundane term, and especially the translation 'ὀλιγοστὸς εἶ' (you are least) rather than simply 'small/young', intensifies the paradox of humble origins producing exalted leadership. The phrase 'αἱ ἔξοδοι αὐτοῦ ἀπ᾽ ἀρχῆς ἐξ ἡμερῶν αἰῶνος' (his goings forth from the beginning, from days of eternity) heightens the eternal, pre-existent quality of the coming ruler, amplifying messianic potential.",
+      "summary_plain": "The translator clearly emphasizes and strengthens passages that could be read as predictions about a future messianic king, making the eternal and royal dimensions more explicit than the Hebrew requires.",
+      "examples": [
+        {
+          "reference": "Micah 5:2",
+          "mt_text": "צָעִיר לִהְיוֹת בְּאַלְפֵי יְהוּדָה",
+          "lxx_text": "ὀλιγοστὸς εἶ τοῦ εἶναι ἐν χιλιάσιν Ἰούδα",
+          "note": "The choice of 'ὀλιγοστὸς' (least, most insignificant) over simple 'small' intensifies the paradox and likely reflects messianic interpretation heightening the contrast between lowly origin and exalted destiny."
+        },
+        {
+          "reference": "Micah 5:2",
+          "mt_text": "וּמוֹצָאֹתָיו מִקֶּדֶם מִימֵי עוֹלָם",
+          "lxx_text": "καὶ αἱ ἔξοδοι αὐτοῦ ἀπ᾽ ἀρχῆς ἐξ ἡμερῶν αἰῶνος",
+          "note": "The translation 'ἀπ᾽ ἀρχῆς' (from the beginning) for 'מִקֶּדֶם' (from of old) and the retention of 'from days of eternity' emphasizes pre-existence and eternal origins, consistent with messianic exaltation."
+        }
+      ]
+    },
+    {
+      "dimension": "harmonization",
+      "score": 0.42,
+      "confidence": 0.52,
+      "summary": "Evidence for systematic harmonization is limited in the available sample. The translator does not appear to extensively align Micah's text with parallel passages in other prophetic books or Pentateuchal traditions. Micah 5:2 stands independently without obvious verbal conformity to Genesis (Bethlehem/Ephrathah references) or other messianic texts. The moderate score reflects the baseline tendency in prophetic translation to occasionally echo common phraseology without programmatic harmonization.",
+      "summary_plain": "The translator occasionally makes the text align with similar passages elsewhere in Scripture, but doesn't do this as a regular practice. Most passages stand on their own.",
+      "examples": [
+        {
+          "reference": "Micah 5:2",
+          "mt_text": "בֵּית לֶחֶם אֶפְרָתָה",
+          "lxx_text": "Βηθλεέμ οἶκος τοῦ Εφραθα",
+          "note": "The rendering maintains Micah's unique formulation without harmonizing to Genesis 35:19 or Ruth 4:11 phraseology, suggesting independence from cross-referential smoothing."
+        }
+      ]
+    },
+    {
+      "dimension": "paraphrase_rate",
+      "score": 0.38,
+      "confidence": 0.65,
+      "summary": "The translator employs moderate paraphrase, primarily for interpretive clarification rather than stylistic freedom. In Micah 5:2, the shift from 'צָעִיר' to 'ὀλιγοστὸς εἶ' (adding the verb 'to be' and choosing a superlative form) represents mild paraphrastic expansion. The translator generally preserves lexical correspondence but permits syntactic and semantic adjustment when theological or contextual clarity requires it, placing this translation in the middle range of LXX paraphrastic tendency.",
+      "summary_plain": "The translator usually stays close to the Hebrew but will rephrase or expand when needed for clarity or theological interpretation. They don't rewrite freely but aren't rigidly literal either.",
+      "examples": [
+        {
+          "reference": "Micah 5:2",
+          "mt_text": "צָעִיר לִהְיוֹת",
+          "lxx_text": "ὀλιγοστὸς εἶ τοῦ εἶναι",
+          "note": "The Hebrew adjective 'צָעִיר' (small/insignificant) becomes a predicate construction 'you are least', adding verbal structure and intensifying through superlative choice—a mild but significant paraphrastic move."
+        }
+      ]
+    }
+  ],
+  "overall_assessment": "The LXX-Micah translator belongs to the moderately literal tradition of the Twelve Prophets corpus, maintaining formal correspondence with the Hebrew while exercising theological judgment at strategic points. Most distinctive is the marked messianic heightening in key passages like Micah 5:2, where lexical choices and interpretive nuancing amplify eschatological potential beyond what the Hebrew strictly requires. This translator is reliable for text-critical work but requires awareness that theologically charged passages may reflect Second Temple interpretive traditions rather than variant Vorlagen. The combination of general literalness with selective heightening places this translation between the highly literal (e.g., portions of Kingdoms) and freely interpretive (e.g., Job, Proverbs).",
+  "overall_plain": "This translator usually follows the Hebrew text closely but makes careful interpretive choices, especially in passages about the promised future king (messiah). They were a competent translator who balanced accuracy with theological insight, sometimes emphasizing themes they saw as important rather than translating mechanically.",
+  "bibcrit_assessment": {
+    "title": "Messianic Amplification in Moderately Literal Framework",
+    "reasoning": "The most significant finding is the translator's selective theological intensification within an otherwise literal approach. Micah 5:2 shows programmatic messianic heightening—'ὀλιγοστὸς' for 'צָעִיר', 'ἀπ᾽ ἀρχῆς' for 'מִקֶּדֶם'—that suggests conscious exegetical amplification of royal-messianic themes. This pattern indicates that text-critical use of LXX-Micah must distinguish between formal correspondence (high in non-theological contexts) and interpretive rendering (elevated in eschatologically significant passages). The translator's Vorlage was likely close to MT, but their translation reveals Second Temple messianic hermeneutics.",
+    "plain": "This translator was especially interested in passages about a future king and made those passages sound more clearly messianic than the Hebrew might require, while translating most other material quite literally.",
+    "confidence": 0.78
+  },
+  "discovery_ready": false,
+  "reference": "Micah",
+  "cached_at": "2026-03-30T21:41:19.346570",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

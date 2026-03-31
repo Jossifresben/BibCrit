@@ -1,0 +1,161 @@
+{
+  "book": "Psalms",
+  "translator_name": "Old Greek of Psalms (LXX-Psalms)",
+  "translator_profile": {
+    "literalness": 0.68,
+    "anthropomorphism_reduction": 0.35,
+    "messianic_heightening": 0.72,
+    "harmonization": 0.42,
+    "paraphrase_rate": 0.38
+  },
+  "dimensions": [
+    {
+      "dimension": "literalness",
+      "score": 0.68,
+      "confidence": 0.85,
+      "summary": "The LXX-Psalms translator demonstrates moderately high literalness with consistent formal correspondence in lexical equivalents and syntax. However, this literalness is selective: the translator maintains strict word order and morphological equivalence in most verses but introduces interpretive renderings in theologically significant passages. Tov would classify this as 'literal with interpretive tendencies,' distinguishing it from the extreme literalism of Ecclesiastes or the freedom of Job.",
+      "summary_plain": "The translator usually follows the Hebrew word-for-word, keeping the same word order and trying to match Hebrew words with consistent Greek equivalents. But when theology matters, the translator sometimes breaks from strict literalness to clarify meaning.",
+      "examples": [
+        {
+          "reference": "Psalms 2:12",
+          "mt_text": "נַשְּׁקוּ־בַר (nashshequ-bar)",
+          "lxx_text": "δράξασθε παιδείας (draxasthe paideias) 'lay hold of instruction'",
+          "note": "The problematic Hebrew 'kiss the son' is rendered with an interpretive phrase that avoids the rare Aramaic 'bar' and provides theological clarity, showing willingness to depart from strict formal equivalence when the text is difficult."
+        },
+        {
+          "reference": "Psalms 22:17",
+          "mt_text": "כָּאֲרִי יָדַי וְרַגְלָי (ka'ari yaday veraglay) 'like a lion my hands and feet'",
+          "lxx_text": "ὤρυξαν χεῖράς μου καὶ πόδας (ōryxan cheiras mou kai podas) 'they pierced my hands and feet'",
+          "note": "Famous crux where the translator provides a verb ('pierced') where MT has an unclear construction, demonstrating interpretive intervention in textually difficult passages while maintaining formal elements (hands and feet)."
+        },
+        {
+          "reference": "Psalms 1:1",
+          "mt_text": "אַשְׁרֵי־הָאִישׁ (ashrey-ha'ish)",
+          "lxx_text": "μακάριος ἀνήρ (makarios anēr)",
+          "note": "Standard one-to-one lexical correspondence with consistent equivalents ('ashrey = makarios, 'ish = anēr) exemplifies the baseline literal approach across straightforward passages."
+        }
+      ]
+    },
+    {
+      "dimension": "anthropomorphism_reduction",
+      "score": 0.35,
+      "confidence": 0.78,
+      "summary": "The LXX-Psalms translator shows moderate and inconsistent tendency toward reducing anthropomorphisms, less systematic than in LXX-Exodus or Ezekiel. Divine body parts are often retained (God's hand, arm, face), but emotional anthropomorphisms occasionally receive philosophical softening. The translator appears more concerned with christological potential than with philosophical propriety regarding divine corporeality, distinguishing this approach from translators working under stronger Hellenistic-philosophical influence.",
+      "summary_plain": "The translator sometimes tones down descriptions of God having human body parts or emotions, but not consistently. God's hands, arms, and face are usually kept as-is, showing less concern about this than other translators.",
+      "examples": [
+        {
+          "reference": "Psalms 18:9",
+          "mt_text": "עָלָה עָשָׁן בְּאַפּוֹ (alah ashan be'appo) 'smoke went up in his nostrils'",
+          "lxx_text": "ἀνέβη καπνὸς ἐν ὀργῇ αὐτοῦ (anebē kapnos en orgē autou) 'smoke went up in his wrath'",
+          "note": "The physical 'nostrils' (Hebrew 'aph') is rendered with the abstract 'wrath' (Greek orgē), showing selective reduction of physical anthropomorphism in theophanic descriptions."
+        },
+        {
+          "reference": "Psalms 44:24",
+          "mt_text": "לָמָּה פָנֶיךָ תַסְתִּיר (lammah phanekha tastir) 'why do you hide your face'",
+          "lxx_text": "ἵνα τί τὸ πρόσωπόν σου ἀποστρέφεις (hina ti to prosōpon sou apostrepheis)",
+          "note": "Divine 'face' is retained without reduction, demonstrating that anthropomorphic language is generally acceptable to this translator when dealing with relational metaphors."
+        },
+        {
+          "reference": "Psalms 89:14",
+          "mt_text": "זְרוֹעַ עִם־גְּבוּרָה (zero'a im-geburah) 'arm with might'",
+          "lxx_text": "ὁ βραχίων σου μετὰ δυνάμεως (ho brachiōn sou meta dynameōs)",
+          "note": "God's 'arm' is translated literally as brachiōn without abstraction, confirming that reduction is selective rather than systematic."
+        }
+      ]
+    },
+    {
+      "dimension": "messianic_heightening",
+      "score": 0.72,
+      "confidence": 0.88,
+      "summary": "The LXX-Psalms translator demonstrates strong messianic heightening, particularly in royal psalms where ambiguous Hebrew is rendered with eschatological and christological intensification. This is among the most pronounced messianic tendencies in the LXX corpus, comparable to Isaiah and greater than Jeremiah. The translator consistently selects lexical equivalents and interpretive options that enhance messianic potential, suggesting translation within a community with strong eschatological expectations. This heightening significantly influenced early Christian appropriation of the Psalter.",
+      "summary_plain": "The translator strongly emphasizes messianic and future-oriented meanings, especially in psalms about kings. Ambiguous passages are translated in ways that point toward a coming savior, making these psalms easier for early Christians to use.",
+      "examples": [
+        {
+          "reference": "Psalms 2:2",
+          "mt_text": "עַל־יְהוָה וְעַל־מְשִׁיחוֹ (al-YHWH ve'al-meshicho) 'against the LORD and against his anointed'",
+          "lxx_text": "κατὰ τοῦ κυρίου καὶ κατὰ τοῦ χριστοῦ αὐτοῦ (kata tou kyriou kai kata tou christou autou)",
+          "note": "The rendering of 'meshiach' as 'christos' (standard equivalent) creates messianic potential that becomes central to NT interpretation (Acts 4:26), with the Greek term carrying stronger technical eschatological connotations than the Hebrew."
+        },
+        {
+          "reference": "Psalms 40:7",
+          "mt_text": "אָזְנַיִם כָּרִיתָ לִּי (oznayim karita li) 'ears you have dug/opened for me'",
+          "lxx_text": "σῶμα δὲ κατηρτίσω μοι (sōma de katērtisō moi) 'but a body you have prepared for me'",
+          "note": "Radical interpretive transformation from 'ears' to 'body' creates incarnational theology exploited in Hebrews 10:5, demonstrating willingness to substantially alter text for christological enhancement."
+        },
+        {
+          "reference": "Psalms 110:3",
+          "mt_text": "בְּהַדְרֵי־קֹדֶשׁ (behadrey-qodesh) 'in holy splendor/majesty'",
+          "lxx_text": "ἐν ταῖς λαμπρότησιν τῶν ἁγίων (en tais lamprotēsin tōn hagiōn) 'in the splendors of the holy ones'",
+          "note": "Transformation from singular abstract ('holy splendor') to plural concrete ('holy ones') creates eschatological community imagery that heightens messianic-apocalyptic interpretation of this royal enthronement psalm."
+        }
+      ]
+    },
+    {
+      "dimension": "harmonization",
+      "score": 0.42,
+      "confidence": 0.72,
+      "summary": "The LXX-Psalms translator shows moderate harmonization tendencies, primarily intra-Psalter harmonization where similar phrases or refrains are made more uniform. Inter-textual harmonization with Torah or Prophets is less frequent than in Samuel-Kings but more evident than in prophetic books. The translator appears to recognize Psalms as a distinct literary collection and sometimes smooths internal repetitions, but does not systematically conform Psalms to external biblical texts. This represents a middle position in the LXX harmonization spectrum.",
+      "summary_plain": "The translator sometimes makes similar passages within Psalms match each other more closely, creating more uniform refrains. This happens moderately—more than in some books, less than in others.",
+      "examples": [
+        {
+          "reference": "Psalms 14 vs 53",
+          "mt_text": "Nearly identical psalms with minor variations",
+          "lxx_text": "LXX Psalms 13 and 52 show greater verbal uniformity than MT",
+          "note": "The translator harmonizes these duplicate psalms more closely than the Hebrew, reducing minor lexical variations to create greater consistency, demonstrating intra-Psalter harmonization tendency."
+        },
+        {
+          "reference": "Psalms 18 title/superscription",
+          "mt_text": "Matches 2 Samuel 22 with variations",
+          "lxx_text": "Shows harmonization toward Samuel parallel in some readings",
+          "note": "Some readings in Psalm 18 LXX move toward the Samuel parallel, though not systematically, indicating selective inter-textual awareness without comprehensive harmonization."
+        },
+        {
+          "reference": "Psalms 96:1 and 105:1",
+          "mt_text": "שִׁירוּ לַיהוָה (shiru laYHWH) repeated opening",
+          "lxx_text": "ᾄσατε τῷ κυρίῳ (asate tō kyriō) with consistent rendering",
+          "note": "Standard formulaic openings maintain consistent translation across multiple psalms, showing baseline equivalence rather than active harmonization, but contributing to liturgical uniformity."
+        }
+      ]
+    },
+    {
+      "dimension": "paraphrase_rate",
+      "score": 0.38,
+      "confidence": 0.8,
+      "summary": "The LXX-Psalms translator employs paraphrase at a moderate-low rate, significantly less than Job or Proverbs but more than the extremely literal Minor Prophets. Paraphrase occurs primarily in textually difficult passages, theological cruxes, and obscure Hebrew vocabulary. The translator prefers formal equivalence as baseline but shifts to dynamic equivalence when comprehension or theological clarity demands it. This selective paraphrase strategy distinguishes LXX-Psalms from both extreme literalists and extreme paraphrasers in the LXX corpus.",
+      "summary_plain": "The translator usually sticks close to the Hebrew wording but sometimes uses free paraphrase when the Hebrew is unclear or when theological meaning needs clarification. This happens in roughly one-third of challenging passages.",
+      "examples": [
+        {
+          "reference": "Psalms 68:19",
+          "mt_text": "לָקַחְתָּ מַתָּנוֹת בָּאָדָם (laqachta mattanot ba'adam) 'you received gifts among/in humanity'",
+          "lxx_text": "ἔλαβες δόματα ἐν ἀνθρώπῳ (elabes domata en anthrōpō) but context shows interpretive expansion",
+          "note": "Complex theological passage receives contextual clarification through paraphrase, cited in Ephesians 4:8 with further transformation, showing how moderate LXX paraphrase enables further NT interpretation."
+        },
+        {
+          "reference": "Psalms 51:6",
+          "mt_text": "הֵן בְּעָווֹן חוֹלָלְתִּי (hen be'avon cholalti) 'behold, in iniquity I was brought forth'",
+          "lxx_text": "ἰδοὺ γὰρ ἐν ἀνομίαις συνελήμφθην (idou gar en anomiais synelēmphthēn)",
+          "note": "Theologically sensitive verse on original sin receives close formal rendering, demonstrating that paraphrase is reserved for textual difficulty rather than theological sensitivity per se."
+        },
+        {
+          "reference": "Psalms 119:37",
+          "mt_text": "הַעֲבֵר עֵינַי מֵרְאוֹת שָׁוְא (ha'aver einay mere'ot shav) 'turn my eyes from seeing vanity'",
+          "lxx_text": "ἀπόστρεψον τοὺς ὀφθαλμούς μου τοῦ μὴ ἰδεῖν ματαιότητα (apostrепson tous ophthalmous mou tou mē idein mataiotēta)",
+          "note": "Straightforward passage maintains word-for-word correspondence with standard lexical equivalents, exemplifying the literal baseline from which paraphrase is exceptional."
+        }
+      ]
+    }
+  ],
+  "overall_assessment": "The LXX-Psalms translator represents a moderately literal approach with strategic theological intervention, particularly pronounced in messianic heightening. This translator operates between the extremes of LXX literalism (Ecclesiastes, Minor Prophets) and freedom (Job, Proverbs), maintaining formal correspondence as default while deploying interpretive rendering in textually difficult or theologically significant passages. The strong messianic heightening (0.72) combined with moderate literalness (0.68) creates a translation highly serviceable for early Christian appropriation while remaining rooted in formal equivalence. For text-critical work, LXX-Psalms provides generally reliable witness to a Hebrew Vorlage close to MT, but theological renderings require careful evaluation, particularly in royal and messianic contexts.",
+  "overall_plain": "This translator usually followed the Hebrew closely, word-for-word, but had a special interest in bringing out messianic and future-oriented meanings. When the text was difficult or theologically important, the translator would break from strict literalness to clarify the meaning. The result is a translation that's faithful to the original but also highly theological in its interpretation.",
+  "bibcrit_assessment": {
+    "title": "Selective Literalism With Pronounced Messianic Amplification",
+    "reasoning": "The most significant finding is the tension between baseline formal equivalence (0.68 literalness) and aggressive messianic heightening (0.72), creating a translation that is simultaneously conservative in method and theologically interventionist in execution. This dual character—literal in most verses, interpretive in royal/messianic contexts—explains both the text-critical utility of LXX-Psalms for reconstructing MT-type Vorlagen and its theological influence on NT christological hermeneutics. The translator's selectivity is methodologically sophisticated: literalism preserves textual authority while strategic paraphrase enables theological actualization.",
+    "plain": "This translator worked carefully and literally most of the time, but consistently emphasized messianic meanings in key passages. This combination made the Psalms both textually reliable and theologically powerful for early Christians.",
+    "confidence": 0.88
+  },
+  "discovery_ready": false,
+  "reference": "Psalms",
+  "cached_at": "2026-03-30T21:32:03.348602",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

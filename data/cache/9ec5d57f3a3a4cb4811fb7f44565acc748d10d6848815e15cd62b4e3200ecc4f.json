@@ -1,0 +1,91 @@
+{
+  "reconstructed_words": [
+    {
+      "position": 1,
+      "lxx_word": "ὅτε",
+      "vorlage_word": "בְּהַנְחֵל",
+      "status": "agrees_mt",
+      "confidence": 0.95,
+      "mt_equivalent": "בְּהַנְחֵל",
+      "dss_witness": null,
+      "reasoning": "The temporal conjunction ὅτε regularly renders the Hiphil infinitive construct with preposition בְּ in LXX Deuteronomy. The root נחל (Hiphil 'to give as inheritance, to apportion') is consistently translated with διαμερίζω or cognates in passages dealing with territorial division (Josh 13:7, 14:1).",
+      "alternatives": [
+        {
+          "reading": "כַּאֲשֶׁר הִנְחִיל",
+          "confidence": 0.25,
+          "note": "Finite verb less likely given LXX temporal construction"
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "lxx_word": "διεμέριζεν ὕψιστος ἔθνη",
+      "vorlage_word": "עֶלְיוֹן גּוֹיִם",
+      "status": "agrees_mt",
+      "confidence": 0.92,
+      "mt_equivalent": "עֶלְיוֹן גּוֹיִם",
+      "dss_witness": null,
+      "reasoning": "The verb διεμέριζεν requires no separate Hebrew equivalent beyond the נחל already reconstructed; LXX explicates the action. ὕψιστος is the standard LXX rendering of עֶלְיוֹן (Gen 14:18-20, Num 24:16, Ps 77:10). ἔθνη consistently translates גּוֹיִם throughout the Pentateuch.",
+      "alternatives": []
+    },
+    {
+      "position": 3,
+      "lxx_word": "ὡς διέσπειρεν υἱοὺς Ἀδάμ",
+      "vorlage_word": "בְּהַפְרִידוֹ בְּנֵי אָדָם",
+      "status": "agrees_mt",
+      "confidence": 0.9,
+      "mt_equivalent": "בְּהַפְרִידוֹ בְּנֵי אָדָם",
+      "dss_witness": null,
+      "reasoning": "The temporal ὡς with aorist διέσπειρεν reflects the Hiphil infinitive construct בְּהַפְרִידוֹ from פרד 'to separate, divide'. διασπείρω is attested as LXX equivalent for פרד in contexts of scattering or separating peoples (Gen 10:5, 32). υἱοὺς Ἀδάμ directly renders בְּנֵי אָדָם, a standard equivalence.",
+      "alternatives": [
+        {
+          "reading": "בְּהָפִיץ בְּנֵי אָדָם",
+          "confidence": 0.35,
+          "note": "Root נפץ possible but פרד better attested for διασπείρω in separation contexts"
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "lxx_word": "ἔστησεν ὅρια ἐθνῶν",
+      "vorlage_word": "יַצֵּב גְּבֻלֹת עַמִּים",
+      "status": "agrees_mt",
+      "confidence": 0.88,
+      "mt_equivalent": "יַצֵּב גְּבֻלֹת עַמִּים",
+      "dss_witness": null,
+      "reasoning": "ἔστησεν regularly translates Hiphil forms of נצב/יצב meaning 'to set, establish' (Exod 17:12, Deut 27:2). ὅρια consistently renders גְּבוּל/גְּבֻלֹת 'boundary, border' throughout LXX. The shift from MT עַמִּים to LXX ἐθνῶν reflects stylistic variation; LXX often harmonizes עַמִּים and גּוֹיִם to ἔθνη in poetic contexts.",
+      "alternatives": []
+    },
+    {
+      "position": 5,
+      "lxx_word": "κατὰ ἀριθμὸν ἀγγέλων θεοῦ",
+      "vorlage_word": "לְמִסְפַּר בְּנֵי אֵל/אֱלֹהִים",
+      "status": "agrees_dss",
+      "confidence": 0.95,
+      "mt_equivalent": "לְמִסְפַּר בְּנֵי יִשְׂרָאֵל",
+      "dss_witness": "4QDeutj: למספר בני אלוהים; 4QDeutq: למספר בני אל",
+      "reasoning": "κατὰ ἀριθμόν renders לְמִסְפַּר (standard equivalence). ἀγγέλων θεοῦ 'angels of God' presupposes בְּנֵי אֵל or בְּנֵי אֱלֹהִים 'sons of God/El', attested in 4QDeutj and 4QDeutq. MT בְּנֵי יִשְׂרָאֵל is a later theological correction. LXX interprets divine beings as angels, standard Hellenistic Jewish exegesis (cf. LXX Job, Psalms).",
+      "alternatives": [
+        {
+          "reading": "למספר בני ישראל",
+          "confidence": 0.85,
+          "note": "MT reading; theologically motivated change from original polytheistic formulation"
+        }
+      ]
+    }
+  ],
+  "summary_technical": "The LXX Vorlage substantially agrees with MT except at position 5, where LXX ἀγγέλων θεοῦ presupposes בְּנֵי אֵל/אֱלֹהִים, confirmed by 4QDeutj and 4QDeutq against MT בְּנֵי יִשְׂרָאֵל. The translator employs standard equivalences throughout (ὕψιστος=עֶלְיוֹן, ἔθνη=גּוֹיִם, διασπείρω=הפריד) with minor stylistic harmonization (ἐθνῶν for עַמִּים). The rendering of divine beings as ἄγγελοι reflects Hellenistic Jewish interpretive tradition rather than a different Hebrew text at that point.",
+  "summary_plain": "The Greek translator worked from a Hebrew text nearly identical to the standard Masoretic Text, except in verse 8c where Dead Sea Scrolls manuscripts confirm the original reading 'sons of God/El' rather than 'sons of Israel.' The Greek renders this as 'angels of God' following common Jewish interpretation of divine beings.",
+  "overall_confidence": 0.91,
+  "bibcrit_assessment": {
+    "title": "Divine Council Cosmology Preserved in Qumran Vorlage",
+    "reasoning": "The most significant textual-critical issue is position 5: LXX ἀγγέλων θεοῦ against MT בְּנֵי יִשְׂרָאֵל. The Qumran evidence (4QDeutj, 4QDeutq: בני אל/אלוהים) decisively demonstrates that LXX preserves the earlier reading reflecting ancient Near Eastern divine council theology, where Elyon apportions nations to lesser divine beings. MT represents inner-biblical monotheizing revision, probably post-exilic, eliminating polytheistic overtones. The LXX rendering as ἄγγελοι is interpretive (not a different Vorlage at that word) but rests on a Hebrew text mentioning divine beings, now confirmed as original by DSS witnesses.",
+    "plain": "The Greek translation preserves an original reference to divine beings ('sons of God') governing the nations, which the standard Hebrew text later changed to 'sons of Israel' for theological reasons. Dead Sea Scrolls manuscripts confirm the Greek reflects the older, authentic reading.",
+    "confidence": 0.95
+  },
+  "discovery_ready": false,
+  "reference": "Deuteronomy 32:8",
+  "cached_at": "2026-03-31T11:15:36.376239",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

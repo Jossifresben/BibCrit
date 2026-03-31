@@ -1,0 +1,201 @@
+{% extends "base.html" %}
+{% block title %}{{ _t('numerical_page_title') }}{% endblock %}
+
+{% block content %}
+
+<!-- Passage Selector Bar -->
+<div class="passage-bar">
+  <div class="passage-bar-row passage-bar-main">
+    <span class="passage-label">{{ _t('passage_label') }}:</span>
+
+    <div class="passage-bar-selectors">
+      <select id="sel-passage" class="passage-select" aria-label="{{ _t('passage_label') }}">
+        <option value="">{{ _t('num_select_passage') }}</option>
+        <option value="Genesis 5" data-ref="Genesis 5">Genesis 5 — Antediluvian ages</option>
+        <option value="Genesis 11" data-ref="Genesis 11">Genesis 11 — Postdiluvian ages</option>
+        <option value="Numbers 35" data-ref="Numbers 35">Numbers 35 — Levitical cities</option>
+        <option value="1 Kings 6" data-ref="1 Kings 6">1 Kings 6 — Temple dimensions</option>
+        <option value="2 Samuel 10" data-ref="2 Samuel 10">2 Samuel 10 — Military numbers</option>
+      </select>
+    </div>
+
+    <span class="passage-or">{{ _t('passage_or') }}</span>
+
+    <input type="text" id="ref-input" class="passage-input"
+           placeholder="Genesis 5" value="{{ reference }}"
+           aria-label="Type a reference">
+
+    <div class="passage-bar-actions">
+      <button id="btn-analyze" class="btn-primary">{{ _t('numerical_analyze_btn') }}</button>
+    </div>
+  </div>
+</div>
+
+<!-- Dismissable info banner -->
+<div id="numerical-info-banner" class="bt-info-banner">
+  <div class="bt-info-inner">
+    <span class="bt-info-icon">🔢</span>
+    <div class="bt-info-text">
+      <strong>{{ _t('numerical_what_title') }}</strong>
+      {{ _t('numerical_info_body') | safe }}
+    </div>
+    <button class="bt-info-close" id="numerical-info-close" aria-label="Dismiss">✕</button>
+  </div>
+</div>
+
+<!-- Empty / Welcome State -->
+<div id="empty-state" class="empty-state">
+  <div class="empty-inner">
+    <h2>{{ _t('numerical_empty_title') }}</h2>
+    <p>{{ _t('numerical_empty_body') }}</p>
+    <div class="bt-legend-hero" style="margin-bottom: 1.5rem;">
+      <span class="bt-legend-item"><span class="scribal-mini-dot" style="background:var(--mt-color)"></span> {{ _t('legend_mt_full') }}</span>
+      <span class="bt-legend-item"><span class="scribal-mini-dot" style="background:var(--lxx-color)"></span> {{ _t('legend_lxx_full') }}</span>
+      <span class="bt-legend-item"><span class="scribal-mini-dot" style="background:var(--sp-color, #2c7c5f)"></span> {{ _t('legend_sp_full') }}</span>
+    </div>
+    <p class="featured-label">{{ _t('featured_label') }}</p>
+    <div class="featured-passages">
+      <a href="#" class="featured-ref" data-ref="Genesis 5">{{ _t('feat_num_gen5') | safe }}</a>
+      <a href="#" class="featured-ref" data-ref="Genesis 11">{{ _t('feat_num_gen11') | safe }}</a>
+      <a href="#" class="featured-ref" data-ref="Numbers 35">{{ _t('feat_num_num35') | safe }}</a>
+      <a href="#" class="featured-ref" data-ref="1 Kings 6">{{ _t('feat_num_1k6') | safe }}</a>
+    </div>
+  </div>
+</div>
+
+<!-- Curated passage suggestion chips -->
+<div class="num-suggestions" id="num-suggestions">
+  <div class="num-sug-group">
+    <span class="num-sug-label">{{ _t('num_group_patriarchal') }}</span>
+    <div class="num-sug-chips">
+      <button class="num-sug-chip" data-ref="Genesis 5">Genesis 5</button>
+      <button class="num-sug-chip" data-ref="Genesis 11">Genesis 11</button>
+    </div>
+  </div>
+  <div class="num-sug-group">
+    <span class="num-sug-label">{{ _t('num_group_temple') }}</span>
+    <div class="num-sug-chips">
+      <button class="num-sug-chip" data-ref="1 Kings 6">1 Kings 6</button>
+      <button class="num-sug-chip" data-ref="1 Kings 7">1 Kings 7</button>
+      <button class="num-sug-chip" data-ref="Ezekiel 40">Ezekiel 40</button>
+    </div>
+  </div>
+  <div class="num-sug-group">
+    <span class="num-sug-label">{{ _t('num_group_military') }}</span>
+    <div class="num-sug-chips">
+      <button class="num-sug-chip" data-ref="Numbers 1">Numbers 1</button>
+      <button class="num-sug-chip" data-ref="Numbers 26">Numbers 26</button>
+      <button class="num-sug-chip" data-ref="2 Samuel 24">2 Samuel 24</button>
+      <button class="num-sug-chip" data-ref="1 Chronicles 21">1 Chronicles 21</button>
+      <button class="num-sug-chip" data-ref="Judges 20">Judges 20</button>
+    </div>
+  </div>
+  <div class="num-sug-group">
+    <span class="num-sug-label">{{ _t('num_group_casualties') }}</span>
+    <div class="num-sug-chips">
+      <button class="num-sug-chip" data-ref="2 Samuel 10">2 Samuel 10</button>
+      <button class="num-sug-chip" data-ref="1 Samuel 6:19">1 Samuel 6:19</button>
+      <button class="num-sug-chip" data-ref="2 Chronicles 13">2 Chronicles 13</button>
+    </div>
+  </div>
+  <div class="num-sug-group">
+    <span class="num-sug-label">{{ _t('num_group_exodus') }}</span>
+    <div class="num-sug-chips">
+      <button class="num-sug-chip" data-ref="Exodus 12:40">Exodus 12:40</button>
+      <button class="num-sug-chip" data-ref="Genesis 15:13">Genesis 15:13</button>
+      <button class="num-sug-chip" data-ref="1 Kings 6:1">1 Kings 6:1</button>
+    </div>
+  </div>
+  <div class="num-sug-group">
+    <span class="num-sug-label">{{ _t('num_group_sabbatical') }}</span>
+    <div class="num-sug-chips">
+      <button class="num-sug-chip" data-ref="Leviticus 25">Leviticus 25</button>
+      <button class="num-sug-chip" data-ref="Daniel 9">Daniel 9</button>
+    </div>
+  </div>
+  <div class="num-sug-group">
+    <span class="num-sug-label">{{ _t('num_group_royal') }}</span>
+    <div class="num-sug-chips">
+      <button class="num-sug-chip" data-ref="1 Kings 14">1 Kings 14</button>
+      <button class="num-sug-chip" data-ref="2 Kings 15">2 Kings 15</button>
+      <button class="num-sug-chip" data-ref="2 Chronicles 36">2 Chronicles 36</button>
+    </div>
+  </div>
+  <div class="num-sug-group">
+    <span class="num-sug-label">{{ _t('num_group_returnees') }}</span>
+    <div class="num-sug-chips">
+      <button class="num-sug-chip" data-ref="Ezra 2">Ezra 2</button>
+      <button class="num-sug-chip" data-ref="Nehemiah 7">Nehemiah 7</button>
+    </div>
+  </div>
+  <div class="num-sug-group">
+    <span class="num-sug-label">{{ _t('num_group_levitical') }}</span>
+    <div class="num-sug-chips">
+      <button class="num-sug-chip" data-ref="Numbers 35">Numbers 35</button>
+    </div>
+  </div>
+</div>
+
+<!-- Loading State -->
+<div id="loading-state" class="loading-state" style="display:none;" aria-live="polite">
+  <div class="loading-spinner"></div>
+  <p id="loading-step" class="loading-step-msg">{{ _t('loading_preparing') }}</p>
+  <p id="loading-timer" class="loading-timer"></p>
+</div>
+
+<!-- Passage heading -->
+<div id="passage-heading" class="passage-heading" style="display:none;"></div>
+
+<!-- Results area -->
+<div id="numerical-results" style="display:none;">
+  <div class="num-section">
+    <div class="num-section-label">{{ _t('section_figures') }}</div>
+    <div id="num-table-wrap" class="num-table-scroll"></div>
+  </div>
+  <div class="num-section">
+    <div class="num-section-label">{{ _t('section_lifespan_timeline') }}</div>
+    <svg id="num-timeline" aria-label="Numerical timeline"></svg>
+  </div>
+  <div class="num-section">
+    <div class="num-section-label">{{ _t('section_systematic') }}</div>
+    <div id="num-systematic"></div>
+  </div>
+</div>
+
+<!-- Theory Tabs -->
+<div id="tabs-area" class="tabs-area" style="display:none;">
+  <div class="tabs-header">
+    <span class="tradition-badge analysis-badge tabs-badge">{{ _t('section_competing_theories') }}</span>
+    <nav class="tabs-nav" id="tabs-nav" role="tablist" aria-label="Theory tabs"></nav>
+  </div>
+  <div class="tabs-body" id="tabs-body">
+    <div id="analysis-panel" class="tab-panel active">
+      <p class="analysis-hint">{{ _t('hint_click_theory') }}</p>
+    </div>
+  </div>
+</div>
+
+<!-- Export / share row -->
+<div class="export-row" id="export-row" style="display:none;">
+  <button class="btn-export" id="btn-sbl" title="Copy SBL footnote">📋 SBL Footnote</button>
+  <button class="btn-export" id="btn-bibtex" title="Copy BibTeX">📋 BibTeX</button>
+  <button class="btn-export btn-share" id="btn-share" title="Share">
+    <span class="material-symbols-outlined" style="font-size:14px;vertical-align:-2px">qr_code_2</span> Share
+  </button>
+</div>
+
+<!-- Toast -->
+<div id="toast" class="toast" style="display:none;" role="status"></div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='numerical.js') }}"></script>
+{% if reference %}
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.numerical) window.numerical.analyze('{{ reference | e }}');
+  });
+</script>
+{% endif %}
+{% endblock %}

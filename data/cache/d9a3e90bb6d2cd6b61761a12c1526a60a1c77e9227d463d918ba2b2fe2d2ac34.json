@@ -1,0 +1,138 @@
+{
+  "reference": "Psalm 2:7",
+  "total_citations_found": 8,
+  "period_summary": "Citations are concentrated in the 2nd–4th centuries, reflecting the verse's critical importance in early Christological debates, particularly in establishing Jesus' divine sonship and arguing against adoptionism.",
+  "citations": [
+    {
+      "father": "Justin Martyr",
+      "dates_ce": "c. 100–165",
+      "region": "Rome",
+      "work": "Dialogue with Trypho",
+      "chapter_section": "ch. 88",
+      "cited_text": "Υἱός μου εἶ σύ, ἐγὼ σήμερον γεγέννηκά σε (You are my Son, today I have begotten you)",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.95,
+      "text_form_note": "The citation matches the LXX verbatim with υἱός μου εἶ σύ, ἐγὼ σήμερον γεγέννηκά σε, showing no variation from the standard Septuagintal rendering of the Hebrew hayom yelidtikha.",
+      "theological_use": "Justin uses this verse as a proof-text for Christ's divine generation, arguing that the 'today' refers to the eternal generation of the Son, not temporal adoption, countering Jewish objections to Christian Christology.",
+      "transmission_implication": "Attests to a stable LXX text form circulating in mid-2nd century Rome."
+    },
+    {
+      "father": "Irenaeus of Lyons",
+      "dates_ce": "c. 130–202",
+      "region": "Gaul",
+      "work": "Against Heresies",
+      "chapter_section": "3.16.3",
+      "cited_text": "Filius meus es tu, ego hodie genui te (You are my Son, today I have begotten you)",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.9,
+      "text_form_note": "Irenaeus cites through Old Latin translation reflecting the LXX. The Latin 'hodie genui te' translates σήμερον γεγέννηκά σε, confirming LXX as his Vorlage, not Hebrew.",
+      "theological_use": "Irenaeus employs the verse to demonstrate the Son's eternal relationship with the Father against Gnostic attempts to separate the Christ from the eternal Logos, emphasizing unity of divine generation.",
+      "transmission_implication": "Shows LXX-based Old Latin circulation in late 2nd century Gaul."
+    },
+    {
+      "father": "Tertullian",
+      "dates_ce": "c. 160–225",
+      "region": "Carthage",
+      "work": "Against Praxeas",
+      "chapter_section": "ch. 11",
+      "cited_text": "Filius meus es tu, ego hodie genui te",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.88,
+      "text_form_note": "Tertullian's Latin citation reflects the LXX tradition through Vetus Latina. The rendering 'hodie genui' is consistent with γεγέννηκά, showing dependence on Greek rather than direct Hebrew translation.",
+      "theological_use": "Tertullian uses this verse to argue for the distinction of persons within the Godhead against modalism, showing that the Father addresses the Son as a distinct person while affirming their unity of substance.",
+      "transmission_implication": "Confirms widespread use of LXX-based Latin texts in North African Christianity circa 200 CE."
+    },
+    {
+      "father": "Origen",
+      "dates_ce": "c. 185–254",
+      "region": "Caesarea",
+      "work": "Commentary on John",
+      "chapter_section": "1.32",
+      "cited_text": "Υἱός μου εἶ σύ, ἐγὼ σήμερον γεγέννηκά σε",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.98,
+      "text_form_note": "Origen demonstrates awareness of both Hebrew and LXX forms in his Hexapla, but consistently cites the LXX form in theological works, showing it was the authoritative Christian text despite his knowledge of alternatives.",
+      "theological_use": "Origen interprets 'today' allegorically as the eternal present of divine generation, arguing against temporal or adoptionist readings and developing the concept of eternal generation that would shape Nicene theology.",
+      "transmission_implication": "Shows LXX as authoritative for Christian exegesis even among scholars aware of Hebrew text traditions."
+    },
+    {
+      "father": "Athanasius",
+      "dates_ce": "c. 296–373",
+      "region": "Alexandria",
+      "work": "Orations Against the Arians",
+      "chapter_section": "2.51",
+      "cited_text": "Υἱός μου εἶ σύ, ἐγὼ σήμερον γεγέννηκά σε",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.97,
+      "text_form_note": "Athanasius cites the standard LXX form with complete precision, using it as a cornerstone text in the Arian controversy. No textual variants are evident in his multiple citations.",
+      "theological_use": "Central to Athanasius's anti-Arian polemic, he uses this verse to demonstrate the Son's eternal generation from the Father's essence, arguing that 'today' signifies timeless eternity, not creaturely beginning.",
+      "transmission_implication": "Demonstrates textual stability of LXX Psalm 2:7 through the 4th century Alexandrian tradition."
+    },
+    {
+      "father": "Hilary of Poitiers",
+      "dates_ce": "c. 310–367",
+      "region": "Gaul",
+      "work": "On the Trinity",
+      "chapter_section": "6.23",
+      "cited_text": "Filius meus es tu, ego hodie genui te",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.92,
+      "text_form_note": "Hilary's Latin follows the Old Latin tradition based on LXX, with 'hodie genui' reflecting γεγέννηκά. His awareness of Greek fathers suggests direct knowledge of the Greek form underlying his Latin.",
+      "theological_use": "Hilary employs the verse in his comprehensive Trinitarian theology to refute both Arianism and Sabellianism, emphasizing the eternal, non-temporal nature of divine generation expressed in 'hodie.'",
+      "transmission_implication": "Confirms continued dominance of LXX-based texts in Western Latin Christianity mid-4th century."
+    },
+    {
+      "father": "Basil of Caesarea",
+      "dates_ce": "c. 330–379",
+      "region": "Caesarea",
+      "work": "Against Eunomius",
+      "chapter_section": "2.17",
+      "cited_text": "Υἱός μου εἶ σύ, ἐγὼ σήμερον γεγέννηκά σε",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.96,
+      "text_form_note": "Basil cites the exact LXX wording, showing no influence from Hexaplaric or other text forms. His citation is consistent with the received Alexandrian LXX text.",
+      "theological_use": "Basil uses this verse to argue for the co-eternity of the Son with the Father, interpreting 'today' as beyond temporal succession, supporting the homoousios doctrine against Eunomian subordinationism.",
+      "transmission_implication": "Attests to textual uniformity of LXX Psalm 2:7 in Cappadocian Christianity late 4th century."
+    },
+    {
+      "father": "Augustine of Hippo",
+      "dates_ce": "354–430",
+      "region": "Carthage",
+      "work": "Expositions on the Psalms",
+      "chapter_section": "Psalm 2.7",
+      "cited_text": "Filius meus es tu, ego hodie genui te",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.94,
+      "text_form_note": "Augustine consistently uses the Old Latin form based on LXX. Though aware of Jerome's Hebraica veritas, he maintains the traditional 'hodie genui' wording in his exegetical works.",
+      "theological_use": "Augustine offers multiple interpretations: the eternal generation of the Son, Christ's resurrection as manifestation of divine sonship, and the incorporation of believers into Christ's sonship through baptism.",
+      "transmission_implication": "Shows persistence of LXX-based Old Latin even after Jerome's Vulgate, indicating conservative textual practice in liturgical and catechetical contexts."
+    }
+  ],
+  "text_form_distribution": {
+    "closer_to_mt": 0,
+    "closer_to_lxx": 8,
+    "mixed": 0,
+    "independent": 0,
+    "uncertain": 0
+  },
+  "transmission_synthesis": "The patristic citation evidence for Psalm 2:7 reveals remarkable textual uniformity across geographic regions and chronological periods from the 2nd through 5th centuries. All eight fathers examined cite a form consistent with the LXX rendering (υἱός μου εἶ σύ, ἐγὼ σήμερον γεγέννηκά σε), with Latin fathers using Old Latin translations transparently based on this Greek text. Despite demonstrated awareness of the Hebrew text among scholars like Origen and Jerome, and the availability of Hexaplaric materials, no father shows influence from proto-MT readings or alternative textual traditions in their citations. This unanimity suggests that by the early 2nd century, the LXX form of Psalm 2:7 had become the exclusive authoritative text for Christian theological discourse, effectively creating a closed textual tradition insulated from Hebrew manuscript developments. The verse's central role in Christological controversy likely contributed to this textual conservatism, as any variant reading would have carried significant theological implications.",
+  "transmission_synthesis_plain": "Early Christian writers from diverse regions and time periods all cite Psalm 2:7 in exactly the same form, based on the Greek Septuagint translation. Even though some church fathers knew Hebrew and could have used the Hebrew Bible, they consistently preferred the Greek version, which had become the authoritative Christian scripture. This tells us that the Christian church established a stable, uniform text of this theologically important verse very early, and maintained it unchanged for centuries.",
+  "notable_variants": [
+    {
+      "reading": "No significant variants attested",
+      "fathers_using_it": [],
+      "text_form_alignment": "closer_to_lxx",
+      "significance": "The complete absence of textual variation in this heavily-cited verse is itself significant, suggesting liturgical and creedal fixation of the LXX wording very early in Christian tradition, making it resistant to correction from Hebrew or alternative Greek traditions."
+    }
+  ],
+  "bibcrit_assessment": {
+    "title": "Uniform LXX Transmission Despite Hexaplaric Access",
+    "reasoning": "The most significant finding is the absolute textual uniformity of Psalm 2:7 across all patristic citations despite documented awareness of alternative text forms. Origen's Hexapla made Hebrew and alternative Greek versions available, yet no Christian writer adopted variant readings. This indicates that theological function—specifically the verse's role in establishing eternal divine sonship against adoptionism and Arianism—created textual fixity independent of text-critical considerations. The LXX form was not simply preferred; it was theologically non-negotiable, transforming a translation into a dogmatic text.",
+    "plain": "Church fathers knew that other versions of this verse existed, but they all stuck with the Greek translation because it was essential to their theological arguments about Jesus being God's eternal Son. The verse's doctrinal importance made its wording unchangeable.",
+    "confidence": 0.93
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-03-31T00:33:02.933102",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

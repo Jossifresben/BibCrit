@@ -1,0 +1,166 @@
+{
+  "reference": "Isaiah 53:12",
+  "total_citations_found": 8,
+  "period_summary": "Citations cluster heavily in the 2nd–4th centuries, with particularly high usage in apologetic and Christological controversies, revealing the passage's centrality to early Christian messianic proof-texting.",
+  "citations": [
+    {
+      "father": "Justin Martyr",
+      "dates_ce": "c. 100–165",
+      "region": "Rome",
+      "work": "Dialogue with Trypho",
+      "chapter_section": "ch. 13",
+      "cited_text": "He was delivered up for our sins (διὰ τὰς ἁμαρτίας ἡμῶν παρεδόθη) and he bore the sins of many (ἁμαρτίας πολλῶν ἀνήνεγκεν)",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.82,
+      "text_form_note": "Justin's phraseology closely mirrors LXX readings, particularly διὰ τὰς ἁμαρτίας (dia tas hamartias) and ἁμαρτίας πολλῶν (hamartias pollōn), matching Septuagintal syntax and vocabulary rather than proto-MT.",
+      "theological_use": "Justin deploys this text as anti-Jewish polemic, arguing that the suffering servant prophecy cannot refer to Israel collectively but only to the crucified Christ. The citation supports his argument that Gentile believers inherit messianic promises.",
+      "transmission_implication": "Attests to early second-century circulation of LXX Isaiah in Christian apologetic contexts at Rome."
+    },
+    {
+      "father": "Irenaeus of Lyons",
+      "dates_ce": "c. 130–202",
+      "region": "Gaul",
+      "work": "Against Heresies",
+      "chapter_section": "3.16.4",
+      "cited_text": "He was numbered with the transgressors (μετὰ ἀνόμων ἐλογίσθη) and he bore the sins of many (ἁμαρτίας πολλῶν ἀνήνεγκεν) and made intercession for the transgressors (ὑπὲρ τῶν ἀνομιῶν αὐτῶν παρεδόθη)",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.85,
+      "text_form_note": "Irenaeus preserves the LXX's distinctive μετὰ ἀνόμων ἐλογίσθη and uses Greek terminology throughout. The reading ὑπὲρ τῶν ἀνομιῶν closely follows Septuagintal idiom rather than Hebrew constructions.",
+      "theological_use": "Irenaeus uses this passage to demonstrate Christ's voluntary self-offering and his solidarity with sinners. The intercession language supports his theology of recapitulation where Christ reverses Adam's transgression.",
+      "transmission_implication": "Confirms widespread LXX circulation in late second-century Gaul/Lyon Christian communities despite geographical distance from Alexandria."
+    },
+    {
+      "father": "Tertullian",
+      "dates_ce": "c. 155–240",
+      "region": "Carthage",
+      "work": "Against Marcion",
+      "chapter_section": "3.7",
+      "cited_text": "ideo et hereditabit multos et fortium dividet spolia, pro eo quod tradita est in mortem anima eius et cum sceleratis reputatus est, et ipse peccata multorum tulit",
+      "text_form": "mixed",
+      "text_form_confidence": 0.68,
+      "text_form_note": "Tertullian's Old Latin citation shows 'hereditabit multos' (will inherit many) closer to MT yiḥleq, while 'tradita est in mortem anima eius' reflects LXX's παρεδόθη εἰς θάνατον. The phrase 'peccata multorum tulit' aligns with both traditions.",
+      "theological_use": "Tertullian employs this verse to refute Marcion's separation of Creator from Redeemer, arguing that the Hebrew prophets foretold Christ's substitutionary death. The 'spoils' language supports his argument about Christ's victory over demonic powers.",
+      "transmission_implication": "Reveals Old Latin tradition in North Africa incorporated readings from both Hebraic and Septuagintal streams by early third century."
+    },
+    {
+      "father": "Origen",
+      "dates_ce": "c. 185–254",
+      "region": "Caesarea",
+      "work": "Commentary on Matthew",
+      "chapter_section": "16.8",
+      "cited_text": "καὶ αὐτὸς ἁμαρτίας πολλῶν ἀνήνεγκεν καὶ διὰ τὰς ἁμαρτίας αὐτῶν παρεδόθη... καὶ ἐν τοῖς ἀνόμοις ἐλογίσθη",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.9,
+      "text_form_note": "Origen's citation precisely follows LXX word order and vocabulary, including the characteristically Septuagintal ἀνήνεγκεν (anēnenken, 'bore up') and παρεδόθη (paredothē, 'was delivered'). His textual work in the Hexapla makes his LXX citations particularly significant.",
+      "theological_use": "Origen interprets this christologically but also applies it to Christian martyrs who share Christ's sufferings. The 'bearing sins' language supports his doctrine of Christ's descent and cosmic redemption.",
+      "transmission_implication": "Origen's Hexaplaric work confirms this LXX reading was standard in third-century Palestinian recensions, providing terminus ante quem for this textual form."
+    },
+    {
+      "father": "Cyprian of Carthage",
+      "dates_ce": "c. 200–258",
+      "region": "Carthage",
+      "work": "Testimonia ad Quirinum",
+      "chapter_section": "2.15",
+      "cited_text": "tradita est ad mortem anima eius, et inter iniquos reputatus est, et ipse peccata multorum pertulit, et propter peccata eorum traditus est",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.78,
+      "text_form_note": "Cyprian's Old Latin preserves LXX readings: 'tradita est ad mortem' = παρεδόθη εἰς θάνατον, 'inter iniquos reputatus' = ἐν τοῖς ἀνόμοις ἐλογίσθη. The Latin testimonia collection reflects Septuagintal base text translated into Latin.",
+      "theological_use": "Cyprian uses this in his testimonia (proof-text) collection to demonstrate scriptural warrant for Christ's vicarious suffering. The passage supports his sacramental theology where Christ's death effects real transfer of guilt.",
+      "transmission_implication": "Demonstrates Old Latin versions in mid-third-century North Africa derived from LXX rather than direct Hebrew translation."
+    },
+    {
+      "father": "Eusebius of Caesarea",
+      "dates_ce": "c. 260–339",
+      "region": "Caesarea",
+      "work": "Demonstratio Evangelica",
+      "chapter_section": "10.1.18",
+      "cited_text": "διὰ τοῦτο αὐτὸς κληρονομήσει πολλοὺς καὶ τῶν ἰσχυρῶν μεριεῖ σκῦλα, ἀνθ' ὧν παρεδόθη εἰς θάνατον ἡ ψυχὴ αὐτοῦ καὶ ἐν τοῖς ἀνόμοις ἐλογίσθη",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.88,
+      "text_form_note": "Eusebius provides a full citation matching the LXX almost verbatim, including κληρονομήσει πολλούς (will inherit many), μεριεῖ σκῦλα (will divide spoils), and the characteristic Septuagintal passive constructions. His scholarly apparatus makes this a reliable witness.",
+      "theological_use": "Eusebius employs this as historical proof of messianic prophecy fulfillment, emphasizing Christ's exaltation ('inherit many') following his humiliation. The apologetic context targets pagan critics of Christianity's crucified founder.",
+      "transmission_implication": "Confirms stability of LXX Isaiah text in early fourth-century Caesarean library, likely reflecting Origenian recension."
+    },
+    {
+      "father": "Athanasius",
+      "dates_ce": "c. 296–373",
+      "region": "Alexandria",
+      "work": "On the Incarnation",
+      "chapter_section": "ch. 35",
+      "cited_text": "καὶ αὐτὸς ἁμαρτίας πολλῶν ἀνήνεγκεν καὶ διὰ τὰς ἁμαρτίας αὐτῶν παρεδόθη",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.86,
+      "text_form_note": "Athanasius cites the latter portion of the verse with LXX vocabulary: ἁμαρτίας ἀνήνεγκεν (sins he bore up) and παρεδόθη (was delivered). The Alexandrian father's quotation reflects the Egyptian textual tradition.",
+      "theological_use": "Athanasius uses this to support his incarnational theology: Christ bore human sins precisely because he assumed human nature. The 'bearing' language supports his argument against Arian Christology that Christ's humanity was complete and real.",
+      "transmission_implication": "Attests fourth-century Alexandrian LXX tradition maintaining earlier Septuagintal readings without significant revision toward Hebrew."
+    },
+    {
+      "father": "Jerome",
+      "dates_ce": "c. 347–420",
+      "region": "Jerusalem",
+      "work": "Commentary on Isaiah",
+      "chapter_section": "15.53.12",
+      "cited_text": "propterea dispertiam ei plurimos et fortium dividet spolia, pro eo quod tradidit ad mortem animam suam et cum sceleratis reputatus est, cum ipse peccata multorum tulerit",
+      "text_form": "closer_to_mt",
+      "text_form_confidence": 0.92,
+      "text_form_note": "Jerome's Vulgate translation shows decisive shift toward Hebrew Masoretic readings: 'dispertiam ei plurimos' reflects MT 'aḥaleq-lo barabim (I will divide to him the many) rather than LXX's 'he will inherit many.' His 'tradidit ad mortem' preserves MT he'erah lammawet (poured out to death), and commentary explicitly corrects LXX toward hebraica veritas.",
+      "theological_use": "Jerome interprets this christologically but emphasizes careful philological exegesis. He argues that accurate translation from Hebrew reveals fuller messianic meaning obscured by Greek translation errors. The passage supports his theology of Christ's priestly self-offering.",
+      "transmission_implication": "Marks late fourth-century turn toward Hebrew text in Latin Christianity, though Jerome acknowledges LXX's continued liturgical authority despite its textual divergences."
+    }
+  ],
+  "text_form_distribution": {
+    "closer_to_mt": 1,
+    "closer_to_lxx": 6,
+    "mixed": 1,
+    "independent": 0,
+    "uncertain": 0
+  },
+  "transmission_synthesis": "The patristic citation history of Isaiah 53:12 reveals overwhelming dominance of the LXX text form from the second through fourth centuries across all major Christian regions (Rome, Gaul, Carthage, Alexandria, Caesarea). The consistent appearance of characteristically Septuagintal vocabulary (παρεδόθη, ἁμαρτίας ἀνήνεγκεν, ἐν τοῖς ἀνόμοις ἐλογίσθη) in Greek fathers and their Old Latin derivatives indicates a stable, widely-circulated Septuagintal tradition that became normative Christian scripture. Tertullian's mixed citation suggests some cross-pollination between textual streams in North Africa by the early third century, but this remains exceptional. Only with Jerome in the late fourth century does a deliberate program of revision toward the Hebrew text emerge, and even this coexists with continued LXX liturgical use. The evidence supports a model of relatively uniform LXX transmission in Christian communities until Jerome's hebraica veritas program, with minimal influence from proto-MT traditions before the late fourth century.",
+  "transmission_synthesis_plain": "Early Christian writers from the second through fourth centuries consistently quoted Isaiah 53:12 from the Greek Septuagint translation, not from the Hebrew text that became the Masoretic Bible. This Greek version circulated widely from Rome to North Africa to Palestine, showing remarkable textual stability. Only in the late 300s did Jerome begin translating directly from Hebrew, creating readings closer to the traditional Hebrew Bible we know today.",
+  "notable_variants": [
+    {
+      "reading": "κληρονομήσει πολλούς (will inherit many) vs. dispertiam ei plurimos (I will divide to him the many)",
+      "fathers_using_it": [
+        "Eusebius of Caesarea",
+        "Jerome"
+      ],
+      "text_form_alignment": "closer_to_lxx",
+      "significance": "This represents the single most significant textual divergence between LXX and MT in this verse. The LXX's 'he will inherit many' (reading Hebrew yaḥliq as yaḥleq with different vowels) differs substantially from MT's 'I will divide to him the many,' with major theological implications: LXX emphasizes Christ's acquisition of followers, while MT emphasizes God's rewarding action toward the servant. All pre-Hieronymian fathers attest the LXX reading."
+    },
+    {
+      "reading": "παρεδόθη εἰς θάνατον (was delivered to death) vs. he'erah lammawet (poured out to death)",
+      "fathers_using_it": [
+        "Justin Martyr",
+        "Irenaeus",
+        "Origen",
+        "Cyprian",
+        "Eusebius",
+        "Athanasius"
+      ],
+      "text_form_alignment": "closer_to_lxx",
+      "significance": "The LXX's passive 'was delivered' (implying divine or human agency in Christ's death) differs from MT's active 'poured out' (emphasizing the servant's own volitional action). This variant had profound theological consequences: patristic writers used 'was delivered' to support both divine sovereignty (God delivered him) and Jewish culpability (they delivered him), whereas MT's active form stresses the servant's self-offering. The unanimous patristic attestation of the passive form before Jerome demonstrates this was the standard Christian text."
+    },
+    {
+      "reading": "ἐν τοῖς ἀνόμοις ἐλογίσθη (among the lawless was reckoned) vs. cum sceleratis/iniquis reputatus est",
+      "fathers_using_it": [
+        "Irenaeus",
+        "Tertullian",
+        "Origen",
+        "Cyprian",
+        "Eusebius"
+      ],
+      "text_form_alignment": "closer_to_lxx",
+      "significance": "While this reading shows basic agreement between LXX and MT (et-posh'im nimnah), the Greek ἄνομοι (lawless ones, those without Torah) carries distinctive theological freight in Christian usage, suggesting Christ's association with Gentiles and Torah-transgressors. Latin translations vary between 'sceleratis' (criminals) and 'iniquis' (unrighteous), reflecting different understandings of the Hebrew pōsh'îm, but all derive from the Greek intermediary text."
+    }
+  ],
+  "bibcrit_assessment": {
+    "title": "LXX Hegemony in Christian Isaiah 53:12 Before Jerome",
+    "reasoning": "The most striking finding is the complete dominance of the Septuagintal text form across all geographical regions and theological traditions from 100–380 CE, with only Jerome's deliberate hebraicizing program breaking this unanimity. This pattern strongly suggests that by the mid-second century, the LXX had become so thoroughly embedded as Christian scripture that even fathers with access to Hebrew traditions (like Origen) cite the Greek without hesitation. The textual stability across such geographical dispersion (Rome, Gaul, North Africa, Palestine, Egypt) implies either a single early archetypical Christian LXX text or remarkably successful standardization. The variants between LXX and MT are theologically significant (inheritance vs. division of spoils; passive delivery vs. active pouring out), yet no pre-Hieronymian father shows awareness of alternative Hebrew readings, suggesting Christian textual isolation from synagogue recensions of Isaiah.",
+    "plain": "For nearly three centuries, all Christian writers quoted this verse from the same Greek translation, showing no knowledge of the different Hebrew text used in Jewish synagogues. Only when Jerome translated the Bible directly from Hebrew in the 380s–390s did Christians gain access to readings that differed significantly from their traditional Greek scriptures.",
+    "confidence": 0.91
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-03-31T00:25:50.373997",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

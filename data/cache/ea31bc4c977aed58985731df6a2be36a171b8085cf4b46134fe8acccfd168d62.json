@@ -1,0 +1,104 @@
+{
+  "reference": "Isaiah 53:11",
+  "mt_text": "מֵעֲמַל נַפְשׁוֹ יִרְאֶה יִשְׂבָּע בְּדַעְתּוֹ יַצְדִּיק צַדִּיק עַבְדִּי לָרַבִּים וַעֲוֺנֹתָם הוּא יִסְבֹּל",
+  "lxx_text": "ἀπὸ τοῦ πόνου τῆς ψυχῆς αὐτοῦ δεῖξαι αὐτῷ φῶς καὶ πλάσαι τῇ συνέσει δικαιῶσαι δίκαιον εὖ δουλεύοντα πολλοῖς καὶ τὰς ἁμαρτίας αὐτῶν αὐτὸς ἀνοίσει",
+  "dss_manuscripts": [
+    {
+      "siglum": "1QIsa-a",
+      "full_name": "Great Isaiah Scroll",
+      "verse_present": true,
+      "dss_text": "מעמל נפשו יראה אור ישבע בדעתו יצדיק צדיק עבדי לרבים ועונותם הוא יסבול",
+      "alignment": "independent",
+      "alignment_confidence": 0.95,
+      "divergences": [
+        {
+          "word_position": 4,
+          "mt_reading": "יִרְאֶה",
+          "lxx_reading": "δεῖξαι αὐτῷ φῶς (show him light)",
+          "dss_reading": "יראה אור",
+          "classification": "plus",
+          "textual_implication": "1QIsa-a contains 'light' (אור) after 'he shall see,' agreeing with the LXX tradition against MT which lacks this word. This is one of the most significant variants in Isaiah 53, suggesting the LXX reflects an earlier Hebrew Vorlage that included אור, which was lost in the proto-MT tradition through scribal error or intentional omission."
+        },
+        {
+          "word_position": 5,
+          "mt_reading": "יִשְׂבָּע",
+          "lxx_reading": "πλάσαι (form/fashion)",
+          "dss_reading": "ישבע",
+          "classification": "orthographic",
+          "textual_implication": "1QIsa-a agrees with MT 'he shall be satisfied' in defective spelling, while LXX appears to have read a different verb entirely (possibly reflecting a different Vorlage or inner-Greek corruption). The DSS supports the MT semantic reading here."
+        },
+        {
+          "word_position": 10,
+          "mt_reading": "וַעֲוֺנֹתָם",
+          "lxx_reading": "καὶ τὰς ἁμαρτίας αὐτῶν",
+          "dss_reading": "ועונותם",
+          "classification": "orthographic",
+          "textual_implication": "1QIsa-a uses full orthography (ועונותם) versus MT's mixed form (וַעֲוֺנֹתָם), reflecting the characteristic plene spelling of the Great Isaiah Scroll. This is stylistic, not substantive."
+        }
+      ],
+      "overall_note": "1QIsa-a provides crucial evidence for the textual history of Isaiah 53:11 by preserving 'light' (אור) after 'he shall see,' a reading supported by LXX and now by modern Hebrew Bible editions (BHS apparatus notes this). This demonstrates that the LXX translator worked from a Hebrew text that included this word, and that MT represents a secondary, shortened text. However, 1QIsa-a otherwise aligns closely with the MT tradition in syntax and vocabulary, making this plus particularly significant."
+    },
+    {
+      "siglum": "1QIsa-b",
+      "full_name": "Second Isaiah Scroll",
+      "verse_present": true,
+      "dss_text": "[מעמ]ל נפשו יר[אה",
+      "alignment": "sides_with_mt",
+      "alignment_confidence": 0.5,
+      "divergences": [
+        {
+          "word_position": 4,
+          "mt_reading": "יִרְאֶה",
+          "lxx_reading": "δεῖξαι αὐτῷ φῶς",
+          "dss_reading": "יר[אה",
+          "classification": "minus",
+          "textual_implication": "The fragmentary nature of 1QIsa-b at this point makes definitive judgment difficult, but the available space and visible letters suggest the manuscript did not include 'light' (אור) here, aligning with the MT tradition. However, the lacuna prevents absolute certainty."
+        }
+      ],
+      "overall_note": "1QIsa-b is highly fragmentary at Isaiah 53:11, preserving only portions of the first part of the verse. What remains appears to align with the MT tradition, possibly lacking the 'light' addition found in 1QIsa-a and LXX, but the fragmentary state requires caution in drawing firm conclusions. This manuscript generally represents a text closer to the proto-MT than 1QIsa-a does."
+    },
+    {
+      "siglum": "4QIsa-b",
+      "full_name": "4Q56",
+      "verse_present": false,
+      "dss_text": "",
+      "alignment": "absent",
+      "alignment_confidence": 1.0,
+      "divergences": [],
+      "overall_note": "4QIsa-b (4Q56) does not preserve Isaiah 53:11. This manuscript contains only fragments from earlier chapters of Isaiah and does not extend to the fourth Servant Song."
+    },
+    {
+      "siglum": "4QIsa-c",
+      "full_name": "4Q57",
+      "verse_present": false,
+      "dss_text": "",
+      "alignment": "absent",
+      "alignment_confidence": 1.0,
+      "divergences": [],
+      "overall_note": "4QIsa-c (4Q57) does not preserve Isaiah 53:11. The extant fragments from this manuscript come from other sections of Isaiah and do not include chapter 53."
+    },
+    {
+      "siglum": "4QIsa-d",
+      "full_name": "4Q58",
+      "verse_present": false,
+      "dss_text": "",
+      "alignment": "absent",
+      "alignment_confidence": 1.0,
+      "divergences": [],
+      "overall_note": "4QIsa-d (4Q58) does not preserve Isaiah 53:11. This fragmentary manuscript contains portions of Isaiah but not from chapter 53."
+    }
+  ],
+  "synthesis": "The DSS evidence for Isaiah 53:11, primarily from 1QIsa-a, demonstrates that the LXX's reference to 'light' (φῶς) after 'he shall see' reflects an authentic Hebrew reading (אור) that existed in Second Temple Judaism but was lost in the transmission leading to the MT. The Great Isaiah Scroll's inclusion of אור confirms this is not a LXX addition but represents an earlier, fuller Hebrew text. 1QIsa-b's fragmentary evidence tentatively suggests a proto-MT alignment without 'light,' indicating textual plurality in this verse during the late Second Temple period. The variant demonstrates that at this theologically loaded passage, different Hebrew text forms circulated, with the MT representing a secondary, shortened version.",
+  "synthesis_plain": "The Dead Sea Scrolls show that the original Hebrew of Isaiah 53:11 probably included the word 'light' after 'he shall see,' which appears in ancient Greek translations but was lost from the traditional Hebrew Bible. The Great Isaiah Scroll from Qumran preserves this reading, proving that multiple versions of this important verse existed in ancient times.",
+  "textual_history_implication": "The presence of 'light' in 1QIsa-a alongside its absence in MT establishes that Isaiah 53:11 circulated in at least two Hebrew forms by the first century BCE. The LXX's agreement with 1QIsa-a against MT indicates the proto-MT tradition underwent loss of original material, likely through parablepsis (מעמל נפשו יראה [אור] ישבע → מעמל נפשו יראה ישבע, with אור dropped between similar verbal forms). This suggests the LXX Vorlage and 1QIsa-a preserve the earlier, fuller text, while MT represents a later, contracted form that became standard in rabbinic Judaism.",
+  "bibcrit_assessment": {
+    "title": "1QIsa-a Vindicates LXX Plus: Original 'Light' Confirmed",
+    "reasoning": "The most significant text-critical finding is that 1QIsa-a's inclusion of אור ('light') after יראה ('he shall see') decisively confirms that the LXX's φῶς is not a theological expansion by the Greek translator but reflects an authentic Hebrew reading. This overturns older critical assumptions that dismissed the LXX plus as interpretive. The variant has major implications for understanding the Servant's vindication: the MT's 'he shall see [and] be satisfied' is less specific than the original 'he shall see light [and] be satisfied,' which evokes resurrection/vindication imagery common in post-exilic theology (cf. Ps 49:19). The textual history reveals that the theological richness of the proto-LXX/1QIsa-a tradition was diminished in the MT transmission.",
+    "plain": "The Dead Sea Scrolls prove that the original Hebrew text of Isaiah 53:11 said the suffering servant would 'see light,' language suggesting resurrection or divine vindication, but this phrase was accidentally lost when the traditional Hebrew text was copied. Greek translations preserved what the Hebrew originally said.",
+    "confidence": 0.92
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-03-31T08:31:09.111190",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

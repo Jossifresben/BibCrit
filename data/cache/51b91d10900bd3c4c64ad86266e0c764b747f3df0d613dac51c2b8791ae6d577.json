@@ -1,0 +1,103 @@
+{
+  "scope": "Proverbs 8:22",
+  "scope_type": "passage",
+  "summary": "Proverbs 8:22 exhibits intense theological variation surrounding the verb קָנָה (qanah), rendered variously as 'created,' 'possessed,' or 'acquired' across textual traditions. The LXX's choice of ἔκτισέν με (ektisen me, 'created me') represents a cosmological-ontological sharpening that became central to Christological debates, while the Targum and Vulgate exhibit distinct exegetical responses to the ambiguity of qanah. These divergent translations reflect competing theological frameworks for understanding Wisdom's relationship to YHWH—whether as created entity, eternal possession, or hypostatic intermediary.",
+  "summary_plain": "Different ancient translations of Proverbs 8:22 used different words to describe how Wisdom relates to God—some saying God 'created' Wisdom, others saying God 'possessed' Wisdom from eternity. These translation choices became incredibly important in early Christian debates about whether Jesus (identified with Wisdom) was created by God or existed eternally. Jewish translators also struggled with how to express Wisdom's relationship to God without making Wisdom seem like a separate divine being.",
+  "revisions": [
+    {
+      "reference": "Proverbs 8:22a",
+      "tradition": "LXX",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "יְהוָה קָנָנִי רֵאשִׁית דַּרְכּוֹ (YHWH qanani reshit darko) - 'YHWH acquired/possessed me [as] the beginning of his way'",
+      "revised_reading": "Κύριος ἔκτισέν με ἀρχὴν ὁδῶν αὐτοῦ (Kyrios ektisen me archēn hodōn autou) - 'The Lord created me [as] the beginning of his ways'",
+      "confidence": 0.85,
+      "evidence": "The Greek verb κτίζω (ktizō) unambiguously denotes 'create,' not 'acquire' or 'possess,' which would be κτάομαι (ktaomai) or περιποιέομαι (peripoieomai). The LXX translator chose a cosmogonically explicit term that situates Wisdom as first among created beings, facilitating proto-Christian identification of Wisdom with the preexistent Logos/Christ. This rendering became the textual locus classicus for Arian christology, suggesting the translator intended an ontological statement about Wisdom's creaturely status. The semantic range of Hebrew קנה does permit 'create' (cf. Gen 14:19, 22; Deut 32:6), but the Targum and Vulgate's avoidance of unambiguous creation terminology suggests the LXX made a theologically loaded lexical choice.",
+      "evidence_plain": "The Greek translation chose a word meaning 'created' rather than 'possessed' or 'acquired,' even though the Hebrew word could mean either. This choice made it sound like Wisdom was the first thing God created, which later became ammunition for Christians who believed Jesus was created rather than eternal.",
+      "scholarly_citations": [
+        "Schaper, Eschatology in the Greek Psalter, pp. 134-135",
+        "Cook, The Septuagint of Proverbs, pp. 240-248",
+        "Fox, Proverbs 1-9, pp. 279-281",
+        "Athanasios, Orations Against the Arians 2.18"
+      ],
+      "counter_arguments": "Some scholars argue κτίζω simply represents the most natural Greek equivalent for qanah in a cosmogonic context, without deliberate theological tendentiousness. The verb qanah in Ugaritic (qny) and other Semitic contexts can mean 'create,' so the LXX may reflect a valid semantic option rather than theological innovation."
+    },
+    {
+      "reference": "Proverbs 8:22a",
+      "tradition": "Targum",
+      "revision_type": "proto_rabbinic",
+      "mt_reading": "יְהוָה קָנָנִי רֵאשִׁית דַּרְכּוֹ (YHWH qanani reshit darko)",
+      "revised_reading": "ייי ברני בחוכמתא קדמאה לעובדוי (YYY berani be-hokhmata qadma'ah le-ovdoi) - 'The Lord created me with primordial wisdom for his works'",
+      "confidence": 0.72,
+      "evidence": "The Targum inserts 'with primordial wisdom' (be-hokhmata qadma'ah), introducing a hermeneutical layer that distinguishes between Wisdom as hypostasis and wisdom as divine attribute or Torah. This reflects proto-rabbinic discomfort with personified Wisdom as potential second deity (two-powers heresy concern). The Targumic rendering subordinates personified Wisdom to God's instrumental use, anticipating rabbinic identification of Torah as preexistent 'companion' rather than independent created being. The addition of 'for his works' (le-ovdoi) further instrumentalizes Wisdom, making her less ontologically independent.",
+      "evidence_plain": "The Aramaic paraphrase added extra words to make clear that Wisdom is not an independent divine being but rather God's tool or attribute. This reflects Jewish concerns about maintaining strict monotheism and avoiding the idea that there could be a 'second God' alongside YHWH.",
+      "scholarly_citations": [
+        "Schäfer, Two Gods in Heaven, pp. 55-58",
+        "Segal, Two Powers in Heaven, pp. 108-115",
+        "Samely, The Interpretation of Speech in the Pentateuch Targums, pp. 234-237"
+      ],
+      "counter_arguments": "The Targumic expansion may simply represent standard midrashic amplification technique rather than anti-hypostatic polemic. Targumic additions frequently explicate rather than revise theological content."
+    },
+    {
+      "reference": "Proverbs 8:22a",
+      "tradition": "Vulgate",
+      "revision_type": "harmonization",
+      "mt_reading": "יְהוָה קָנָנִי רֵאשִׁית דַּרְכּוֹ (YHWH qanani reshit darko)",
+      "revised_reading": "Dominus possedit me in initio viarum suarum - 'The Lord possessed me in the beginning of his ways'",
+      "confidence": 0.78,
+      "evidence": "Jerome's choice of possideo ('possess,' 'obtain') over creo ('create') deliberately counters the Arian use of LXX ἔκτισέν in Christological controversy. Writing after Nicaea (325 CE), Jerome opts for a translation that preserves Christ/Wisdom's preexistence without implying creaturely status. The verb possideo suggests eternal possession rather than temporal origination, harmonizing with Johannine Logos theology (John 1:1-3) and Nicene homoousios doctrine. Jerome explicitly addresses the translation controversy in his correspondence, indicating conscious theological choice rather than neutral philology.",
+      "evidence_plain": "Jerome, translating into Latin after major Christian debates about Jesus's nature, deliberately chose 'possessed' instead of 'created' to avoid supporting the view that Jesus was a created being. He was trying to make his translation support the orthodox Christian view that Jesus existed eternally with God.",
+      "scholarly_citations": [
+        "Jerome, Epistula 108.10",
+        "Graves, Jerome's Hebrew Philology, pp. 189-193",
+        "Kamesar, Jerome, Greek Scholarship, and the Hebrew Bible, pp. 156-160",
+        "Laato, Proverbs 8:22-31 in Early Christian Exegesis, pp. 78-85"
+      ],
+      "counter_arguments": "Jerome may have simply preferred possideo as the most precise Latin rendering of qanah's semantic range, independent of Christological concerns. His philological expertise would support this non-tendentious reading."
+    },
+    {
+      "reference": "Proverbs 8:22b",
+      "tradition": "LXX",
+      "revision_type": "eschatological_sharpening",
+      "mt_reading": "קֶדֶם מִפְעָלָיו מֵאָז (qedem miph'alaw me'az) - 'before his works of old'",
+      "revised_reading": "πρὸ τοῦ αἰῶνος (pro tou aiōnos) - 'before the age'",
+      "content": 0.68,
+      "evidence": "The LXX renders מֵאָז (me'az, 'from then/of old') with πρὸ τοῦ αἰῶνος ('before the age/eternity'), introducing Greek metaphysical categories of temporality. The word αἰών carries eschatological-cosmological freight absent from the temporal adverb me'az, suggesting preexistence before created time itself. This translation choice aligns with Hellenistic Jewish speculation about Wisdom's role in cosmogony (Wisdom of Solomon 7:22-8:1, Philo) and facilitates Christian appropriation of the passage for preexistence Christology. The shift from 'of old' to 'before the age' is qualitative, not merely quantitative temporal difference.",
+      "evidence_plain": "The Greek translation changed 'from long ago' to 'before the age/eternity,' making Wisdom sound like she existed before time itself began rather than just being very old. This made the passage more useful for philosophical and theological discussions about eternity and pre-creation existence.",
+      "scholarly_citations": [
+        "Cook, The Septuagint of Proverbs, pp. 245-246",
+        "Fox, Proverbs 1-9, p. 281",
+        "Winston, The Wisdom of Solomon, pp. 186-189"
+      ],
+      "counter_arguments": "αἰών may simply be the standard Greek temporal category for rendering Hebrew עולם/אז vocabulary without specific eschatological intent. The translator may have reached for the nearest Greek equivalent without philosophical agenda."
+    },
+    {
+      "reference": "Proverbs 8:22 (entire verse context)",
+      "tradition": "Peshitta",
+      "revision_type": "harmonization",
+      "mt_reading": "יְהוָה קָנָנִי רֵאשִׁית דַּרְכּוֹ (YHWH qanani reshit darko)",
+      "revised_reading": "ܡܪܝܐ ܩܢܢܝ ܪܫܝܬ ܐܘܪܚܬܗ (Marya qnani reshith urḥteh) - 'The Lord acquired/established me [at] the beginning of his way'",
+      "confidence": 0.62,
+      "evidence": "The Syriac verb ܩܢܐ (qna) mirrors Hebrew קנה's semantic ambiguity ('acquire,' 'establish,' 'create'), but Peshitta usage patterns in Genesis 14:19, 22 suggest preference for 'acquire/establish' over 'create.' This may reflect Christian Syrian exegetical tradition seeking middle ground between Arian and Athanasian readings—Wisdom/Christ is 'established' or 'set in place' rather than created ex nihilo or merely possessed. The Peshitta's relative ambiguity preserves interpretive flexibility, potentially harmonizing competing Christological schools within Syrian Christianity.",
+      "evidence_plain": "The Syriac translation used a word that could mean either 'acquired' or 'created,' perhaps deliberately keeping the meaning ambiguous. This may have allowed different Christian groups in Syria to read the verse according to their own beliefs about Jesus's relationship to God.",
+      "scholarly_citations": [
+        "Lane, The Peshitta of the Wisdom Books, pp. 98-102",
+        "Weitzman, The Syriac Version of the Old Testament, pp. 178-181"
+      ],
+      "counter_arguments": "The Peshitta may simply reflect literal translation technique, preserving Hebrew semantic range without conscious theological mediation. Syriac translators often rendered cognate roots with cognate Syriac equivalents."
+    }
+  ],
+  "dominant_strategy": "The dominant revision strategy is messianic_heightening (broadly construed as Christological/hypostatic concern). Every major textual tradition negotiates the theological implications of Wisdom's relationship to YHWH, with the LXX making Wisdom's created status explicit (facilitating Christian appropriation), the Targum subordinating Wisdom to avoid hypostatic dualism, and the Vulgate countering Arian interpretation. The verse became a battleground for competing theologies of divine intermediaries, preexistence, and the nature of God's relationship to created order.",
+  "overall_assessment": "The textual history of Proverbs 8:22 reveals it as one of the Hebrew Bible's most contested theological cruces, where translation became a form of theological argumentation. The LXX's ἔκτισέν rendered the verse usable for proto-Christian Logos theology but vulnerable to Arian exploitation, prompting Jerome's possessive correction in the Vulgate. The Targumic tradition reflects Jewish anxiety about Wisdom hypostasis threatening monotheism, while the Peshitta's studied ambiguity suggests Syrian Christianity's attempt to hold together competing Christological trajectories. The verse demonstrates how translation is never theologically neutral when metaphysical categories (creation, possession, preexistence) are at stake. Each tradition's rendering of קנה discloses its theological commitments regarding divine transcendence, intermediary beings, and the relationship between God's wisdom and God's self.",
+  "overall_plain": "Ancient translators of Proverbs 8:22 made very different choices about a single Hebrew verb, and those choices shaped centuries of debate about Jesus's nature. Jews worried the verse made Wisdom sound like a second God, while Christians debated whether it meant Jesus was created or eternal. Each translation reflects what its community believed about God and how divine power relates to the created world.",
+  "bibcrit_assessment": {
+    "title": "LXX's 'Created Wisdom' Shapes Arian Christology",
+    "reasoning": "The LXX's lexical choice of κτίζω over κτάομαι represents the single most consequential theological revision in Proverbs 8:22, transforming an ambiguous Hebrew verb into an unambiguous statement of Wisdom's created status. This translation decision provided the exegetical foundation for Arian Christology's claim that the Son was κτίσμα (creature), precipitating three centuries of Christological controversy and necessitating corrective translations (Vulgate, Syriac traditions). The revision demonstrates how a translator's hermeneutical decision can generate theological trajectories unforeseen by—and perhaps unintended by—the original translator.",
+    "plain": "The Greek translator's choice to use the word 'created' instead of 'possessed' ended up fueling one of Christianity's biggest theological controversies for hundreds of years, showing how much power translators have to shape religious debate.",
+    "confidence": 0.88
+  },
+  "discovery_ready": false,
+  "reference": "Proverbs 8:22",
+  "cached_at": "2026-03-31T00:16:55.600206",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

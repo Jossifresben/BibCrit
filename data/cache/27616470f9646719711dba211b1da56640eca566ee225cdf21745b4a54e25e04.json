@@ -1,0 +1,161 @@
+{
+  "book": "Deuteronomy",
+  "translator_name": "Old Greek of Deuteronomy",
+  "translator_profile": {
+    "literalness": 0.88,
+    "anthropomorphism_reduction": 0.15,
+    "messianic_heightening": 0.2,
+    "harmonization": 0.35,
+    "paraphrase_rate": 0.12
+  },
+  "dimensions": [
+    {
+      "dimension": "literalness",
+      "score": 0.88,
+      "confidence": 0.92,
+      "summary": "The LXX Deuteronomy translator demonstrates exceptionally high formal correspondence with the MT, maintaining Hebrew word order, syntax, and lexical equivalence even when this produces awkward Greek. The translator employs stereotyped lexical equivalents (e.g., κύριος ὁ θεός consistently for יהוה אלהים) and regularly preserves Hebrew constructions like infinitive absolutes with cognate finite verbs. This wooden technique places Deuteronomy among the most literal LXX Pentateuchal books, comparable to Leviticus but distinct from Genesis's more flexible approach.",
+      "summary_plain": "This translator stuck very closely to the Hebrew text, translating word-for-word even when it made the Greek sound awkward or unnatural. The result reads like someone who prioritized accuracy over smooth Greek style.",
+      "examples": [
+        {
+          "reference": "Deuteronomy 6:4",
+          "mt_text": "שְׁמַע יִשְׂרָאֵל יְהוָה אֱלֹהֵינוּ יְהוָה אֶחָד",
+          "lxx_text": "Ἄκουε Ισραηλ κύριος ὁ θεὸς ἡμῶν κύριος εἷς ἐστιν",
+          "note": "The translator preserves the Hebrew asyndetic structure and word order precisely, adding only the necessary copula 'ἐστιν' required by Greek syntax, demonstrating minimal interpretive intervention."
+        },
+        {
+          "reference": "Deuteronomy 31:6",
+          "mt_text": "לֹא יַרְפְּךָ וְלֹא יַעַזְבֶךָּ",
+          "lxx_text": "οὐ μή σε ἀνῇ οὐδ᾽ οὐ μή σε ἐγκαταλίπῃ",
+          "note": "The double negative construction with οὐ μή precisely mirrors the Hebrew emphatic negation, maintaining formal equivalence even in the emphatic particle system."
+        },
+        {
+          "reference": "Deuteronomy 28:13",
+          "mt_text": "וְהָיִיתָ רַק לְמַעְלָה וְלֹא תִהְיֶה לְמָטָּה",
+          "lxx_text": "καὶ ἔσῃ τότε ἄνω καὶ οὐκ ἔσῃ ὑποκάτω",
+          "note": "The translator renders the Hebrew adverbial expressions with literal spatial equivalents (ἄνω/ὑποκάτω), preserving the concrete imagery rather than abstracting to more idiomatic Greek."
+        }
+      ]
+    },
+    {
+      "dimension": "anthropomorphism_reduction",
+      "score": 0.15,
+      "confidence": 0.85,
+      "summary": "The Deuteronomy translator shows minimal tendency toward anti-anthropomorphic revision, generally preserving references to divine body parts, emotions, and spatial movement. References to God's hand (χείρ for יד), face (πρόσωπον for פנים), and emotional states are maintained with high consistency. Notable exceptions occur primarily in formulaic contexts where conventional Greek theological language may have influenced rendering, but these are sparse relative to the translator's overall preservative approach.",
+      "summary_plain": "The translator rarely softened descriptions of God having body parts or emotions. References to God's hand, face, or anger are usually kept as-is, showing little theological embarrassment about anthropomorphic language.",
+      "examples": [
+        {
+          "reference": "Deuteronomy 9:17",
+          "mt_text": "וָאֶתְפֹּשׂ בִּשְׁנֵי הַלֻּחֹת",
+          "lxx_text": "καὶ ἐπελαβόμην τῶν δύο πλακῶν",
+          "note": "While Moses's physical action is rendered literally, the broader context preserves references to God's 'finger' writing the tablets (9:10, δάκτυλος θεοῦ), showing no systematic reduction of divine anthropomorphism."
+        },
+        {
+          "reference": "Deuteronomy 13:17",
+          "mt_text": "וְשָׁב יְהוָה מֵחֲרוֹן אַפּוֹ",
+          "lxx_text": "καὶ ἀποστρέψει κύριος ἀπὸ θυμοῦ τῆς ὀργῆς αὐτοῦ",
+          "note": "The phrase 'burning anger' is preserved with θυμοῦ τῆς ὀργῆς, maintaining the emotional anthropomorphism without theological sanitization."
+        },
+        {
+          "reference": "Deuteronomy 33:27",
+          "mt_text": "וּמִתַּחַת זְרֹעֹת עוֹלָם",
+          "lxx_text": "καὶ ὑπὸ ἰσχὺν βραχιόνων ἀενάων",
+          "note": "The everlasting arms of God are rendered literally with βραχιόνων (arms), preserving the anthropomorphic imagery of divine physical support."
+        }
+      ]
+    },
+    {
+      "dimension": "messianic_heightening",
+      "score": 0.2,
+      "confidence": 0.78,
+      "summary": "The translator exhibits limited but notable messianic-eschatological amplification, particularly in royal and prophetic contexts. Most significantly, Deut 18:15's 'prophet like Moses' receives emphasis through lexical choices that became foundational for Christian messianic interpretation. However, the majority of potentially messianic passages (Davidic references, blessing passages) are rendered straightforwardly without interpretive enhancement, suggesting selective rather than programmatic messianic reading.",
+      "summary_plain": "The translator occasionally emphasized passages that could point to a future messianic figure, especially the prophecy about a prophet like Moses. But this wasn't a major tendency—most potentially messianic texts were translated plainly.",
+      "examples": [
+        {
+          "reference": "Deuteronomy 18:15",
+          "mt_text": "נָבִיא מִקִּרְבְּךָ מֵאַחֶיךָ כָּמֹנִי",
+          "lxx_text": "προφήτην ἐκ τῶν ἀδελφῶν σου ὡς ἐμὲ ἀναστήσει σοι κύριος ὁ θεός σου",
+          "note": "The use of ἀναστήσει (will raise up) became crucial for messianic interpretation (cf. Acts 3:22), though the term may simply render the Hebrew idiom faithfully. The passage's clarity supports messianic application without necessarily proving interpretive amplification."
+        },
+        {
+          "reference": "Deuteronomy 33:5",
+          "mt_text": "וַיְהִי בִישֻׁרוּן מֶלֶךְ",
+          "lxx_text": "καὶ ἔσται ἐν τῷ ἠγαπημένῳ ἄρχων",
+          "note": "The rendering of 'king' as ἄρχων (ruler) and Jeshurun as 'the beloved' shows interpretive flexibility but no clear messianic heightening; the passage refers to God's kingship in context."
+        },
+        {
+          "reference": "Deuteronomy 32:43",
+          "mt_text": "[MT shorter; LXX expansion]",
+          "lxx_text": "εὐφράνθητε οὐρανοὶ ἅμα αὐτῷ καὶ προσκυνησάτωσαν αὐτῷ πάντες υἱοὶ θεοῦ",
+          "note": "The LXX contains expansions including 'let all the sons of God worship him,' which heightens the theological-cosmic dimension of the passage, possibly reflecting eschatological interpretation or a different Vorlage (cf. 4QDeutq)."
+        }
+      ]
+    },
+    {
+      "dimension": "harmonization",
+      "score": 0.35,
+      "confidence": 0.8,
+      "summary": "The translator demonstrates moderate harmonizing tendencies, primarily within Deuteronomy's internal parallels (synchronic harmonization) rather than systematic alignment with other Pentateuchal books. Legal formulations and repeated speeches show standardization of terminology, and some passages reflect awareness of parallel traditions in Exodus or Numbers. However, many variant formulations are preserved, indicating selective rather than comprehensive harmonization driven by memorization of stock phrases rather than deliberate text-critical work.",
+      "summary_plain": "The translator sometimes made passages match similar texts elsewhere in Deuteronomy or occasionally other biblical books, but this wasn't done systematically. Repeated phrases tended to be translated the same way, probably from memory.",
+      "examples": [
+        {
+          "reference": "Deuteronomy 5:12-15",
+          "mt_text": "[Sabbath command differs from Exodus 20]",
+          "lxx_text": "Φύλαξαι τὴν ἡμέραν τῶν σαββάτων",
+          "note": "The LXX maintains the distinction between Deut 5 ('observe/guard') and Exod 20 ('remember'), showing restraint from harmonization in the Decalogue despite the parallel context."
+        },
+        {
+          "reference": "Deuteronomy 1:22-23",
+          "mt_text": "[Moses's retelling of Numbers 13 events]",
+          "lxx_text": "καὶ ἤρεσεν ἐναντίον μου τὸ ῥῆμα",
+          "note": "The retrospective narrative shows minor harmonization with Numbers 13 vocabulary but preserves Deuteronomy's distinctive framing as Moses's speech rather than fully conforming to the earlier account."
+        },
+        {
+          "reference": "Deuteronomy 10:1-5",
+          "mt_text": "[Ark construction retelling]",
+          "lxx_text": "καὶ ἐποίησα κιβωτὸν ἐκ ξύλων ἀσήπτων",
+          "note": "Terminology for the ark (κιβωτόν) and acacia wood is standardized with Exodus usage, showing lexical harmonization in cultic terminology, a common pattern for ritual objects."
+        }
+      ]
+    },
+    {
+      "dimension": "paraphrase_rate",
+      "score": 0.12,
+      "confidence": 0.88,
+      "summary": "Paraphrastic rendering is notably rare in LXX Deuteronomy, appearing primarily in resolution of obscure Hebrew expressions, legal technicalities requiring cultural translation, or rhetorical intensification. The translator occasionally explicates implicit subjects or adds minor clarifications but generally avoids restructuring Hebrew syntax or substituting dynamic equivalents for literal rendering. This low paraphrase rate correlates with the high literalness score and distinguishes Deuteronomy from more freely rendered books like Job or Proverbs.",
+      "summary_plain": "This translator rarely paraphrased or restructured sentences. Almost everything is translated as directly as possible, with only occasional explanatory additions when the Hebrew was unclear or needed cultural explanation.",
+      "examples": [
+        {
+          "reference": "Deuteronomy 25:5-6",
+          "mt_text": "יְבָמָהּ יָבֹא עָלֶיהָ",
+          "lxx_text": "ὁ ἀδελφὸς τοῦ ἀνδρὸς αὐτῆς εἰσελεύσεται πρὸς αὐτήν",
+          "note": "The technical levirate marriage term is rendered literally with εἰσελεύσεται πρὸς αὐτήν (go in to her) without paraphrastic explanation, maintaining the Hebrew idiom even in culturally specific law."
+        },
+        {
+          "reference": "Deuteronomy 28:27",
+          "mt_text": "בִּשְׁחִין מִצְרַיִם [with additional diseases]",
+          "lxx_text": "ἐν ἕλκει Αἰγυπτίου ἐν ταῖς ἕδραις",
+          "note": "Disease terminology is rendered with Greek medical vocabulary but maintains the structure and sequence of the Hebrew list without paraphrastic condensation or explanatory expansion."
+        },
+        {
+          "reference": "Deuteronomy 32:10",
+          "mt_text": "יְסֹבְבֶנְהוּ יְבוֹנְנֵהוּ",
+          "lxx_text": "ἐκύκλωσεν αὐτὸν καὶ ἐπαίδευσεν αὐτὸν",
+          "note": "The rare verb pair is rendered with semantic approximations (surrounded/instructed) but maintains the terse parallelism without paraphrastic elaboration of the metaphor."
+        }
+      ]
+    }
+  ],
+  "overall_assessment": "The LXX Deuteronomy translator represents a highly conservative, formally equivalent approach characteristic of mid-Pentateuchal translation technique. With literalness scoring 0.88 and paraphrase rate only 0.12, this translator prioritizes isomorphic representation over Greek idiom, producing a text that functions effectively as an interlinear guide to the Hebrew. The minimal anthropomorphism reduction (0.15) and restrained messianic heightening (0.20) indicate theological conservatism, while moderate harmonization (0.35) reflects practical standardization of repeated formulas rather than systematic text-critical intervention. This profile situates Deuteronomy between the extreme literalism of later kaige-recensions and the freer techniques of books like Proverbs or Job, making it particularly valuable for retroversion and reconstruction of the Hebrew Vorlage, though its wooden Greek syntax limits its utility for assessing Hebrew idiom versus translation Greek.",
+  "overall_plain": "This translator was extremely faithful to the Hebrew text, translating word-for-word even when it produced awkward Greek. They rarely tried to smooth out theological difficulties or add interpretive spins to the text. The result is a reliable window into their Hebrew source, but it reads like a translation rather than natural Greek. This approach was typical for the Law sections of the Greek Bible.",
+  "bibcrit_assessment": {
+    "title": "Isomorphic Fidelity with Selective Formulaic Harmonization",
+    "reasoning": "The most significant finding is the translator's consistent application of word-level formal equivalence while simultaneously displaying memorized standardization of recurring legal and liturgical formulas. This combination suggests a translator working with deep familiarity with Deuteronomy's repetitive rhetoric, where 'harmonization' emerges not from deliberate text-critical comparison but from cognitive processing of stock phrases. The implications for textual criticism are profound: variants between MT and LXX Deuteronomy more likely reflect genuine Vorlage differences than translational freedom, making LXX Deuteronomy exceptionally valuable for recovering pre-Masoretic textual plurality, as confirmed by Qumran evidence (4QDeut manuscripts).",
+    "plain": "This translator's extreme literalness means that when the Greek differs from the Hebrew we have today, it's usually because the translator's Hebrew text was actually different—not because they changed it on purpose. This makes the Greek Deuteronomy very valuable for recovering older forms of the Hebrew text.",
+    "confidence": 0.91
+  },
+  "discovery_ready": false,
+  "reference": "Deuteronomy",
+  "cached_at": "2026-03-30T21:35:08.797817",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

@@ -3,12 +3,16 @@ services:
     name: bibcrit
     runtime: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --workers 1 --threads 2 --timeout 120
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --workers 1 --threads 4 --timeout 180
     envVars:
       - key: PYTHON_VERSION
         value: "3.11"
       - key: ANTHROPIC_API_KEY
         sync: false
-      # Monthly Claude spend cap in USD (default: 5.0). Increase to allow more analyses per month.
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_KEY
+        sync: false
+      # Monthly Claude spend cap in USD
       - key: BIBCRIT_API_CAP_USD
-        value: "5.0"
+        value: "10.0"

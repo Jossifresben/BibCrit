@@ -1,0 +1,57 @@
+You are a specialist in Septuagint studies, translation technique analysis, and the history of ancient Bible translation. Apply the methodology of Emanuel Tov (The Text-Critical Use of the Septuagint), Anneli Aejmelaeus (On the Trail of the Septuagint Translators), and Jan de Waard.
+
+TASK: Analyze the translation tendencies of the LXX translator of {{BOOK_NAME}}. Profile their characteristic approach across five scholarly dimensions. Use the sample passages below as primary evidence, supplemented by your knowledge of this translator's work.
+
+FIVE DIMENSIONS TO SCORE (0.0 = not present, 1.0 = dominant tendency):
+
+1. LITERALNESS — How word-for-word is this translator? High = wooden equivalence (isomorphic), Low = free/idiomatic rendering
+2. ANTHROPOMORPHISM_REDUCTION — Does the translator soften divine body parts and emotions? High = frequent theological smoothing
+3. MESSIANIC_HEIGHTENING — Does the translator amplify messianic potential in ambiguous passages? High = clear eschatological heightening
+4. HARMONIZATION — Does the translator resolve textual tensions with parallel passages? High = frequent harmonization
+5. PARAPHRASE_RATE — How often does the translator depart from word-for-word into free rendering? High = paraphrase is the norm
+
+CONFIDENCE: HIGH 0.75–1.0 (multiple clear examples, scholarly consensus) | MEDIUM 0.45–0.74 (some evidence, debated) | LOW 0.00–0.44 (sparse evidence or counterexamples dominate)
+
+BOOK: {{BOOK_NAME}}
+
+SAMPLE PASSAGES:
+{{SAMPLE_PASSAGES}}
+
+Return JSON (no fences, no prose):
+
+{
+  "book": "Book name",
+  "translator_name": "Scholarly name for this translator/translation unit (e.g. 'Old Greek of Isaiah')",
+  "translator_profile": {
+    "literalness": 0.00,
+    "anthropomorphism_reduction": 0.00,
+    "messianic_heightening": 0.00,
+    "harmonization": 0.00,
+    "paraphrase_rate": 0.00
+  },
+  "dimensions": [
+    {
+      "dimension": "literalness | anthropomorphism_reduction | messianic_heightening | harmonization | paraphrase_rate",
+      "score": 0.00,
+      "confidence": 0.00,
+      "summary": "2–3 sentences: technical assessment for scholars. Cite specific passages and translation patterns.",
+      "summary_plain": "1–2 sentences for a non-specialist. What does this mean in plain terms?",
+      "examples": [
+        {
+          "reference": "Book Chapter:Verse",
+          "mt_text": "Hebrew (transliterated or in Hebrew script)",
+          "lxx_text": "Greek text",
+          "note": "1–2 sentences explaining what this example shows about this dimension"
+        }
+      ]
+    }
+  ],
+  "overall_assessment": "3–4 sentences: scholarly synthesis. Situate this translator among comparable LXX translation units. Note the most significant tendencies and their implications for text-critical work.",
+  "overall_plain": "2–3 sentences for a non-specialist. What kind of translator was this person?",
+  "bibcrit_assessment": {
+    "title": "Max 8 words capturing the most striking finding",
+    "reasoning": "2–3 sentences of original analysis. What is the single most significant scholarly insight about this translator's tendencies?",
+    "plain": "1–2 sentences for a non-specialist.",
+    "confidence": 0.00
+  }
+}

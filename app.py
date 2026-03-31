@@ -5,6 +5,13 @@ import logging
 import os
 import threading
 
+# Load .env for local development (silently ignored if file absent or dotenv not installed)
+try:
+    from dotenv import load_dotenv
+    load_dotenv(os.path.join(os.path.dirname(__file__), '.env'), override=True)
+except ImportError:
+    pass
+
 from flask import Flask
 
 logger = logging.getLogger(__name__)
@@ -66,7 +73,7 @@ def _init() -> None:
             state.pipeline = ClaudePipeline(
                 data_dir=DATA_DIR,
                 api_key=os.environ.get('ANTHROPIC_API_KEY', ''),
-                cap_usd=float(os.environ.get('BIBCRIT_API_CAP_USD', '5.0')),
+                cap_usd=float(os.environ.get('BIBCRIT_API_CAP_USD', '10.0')),
                 supabase_url=os.environ.get('SUPABASE_URL', ''),
                 supabase_key=os.environ.get('SUPABASE_KEY', ''),
             )
@@ -81,5 +88,20 @@ def ensure_initialized():
     _init()
 
 
+@app.context_processor
+def inject_globals():
+    """Inject _t() translation helper, current lang, and JS i18n dict into every template."""
+    from flask import request
+    import state
+    lang = request.args.get('lang', 'en')
+
+    def _t(key: str) -> str:
+        return state.t(key, lang)
+
+    i18n_lang = state.i18n.get(lang, state.i18n.get('en', {})) if state.i18n else {}
+    return dict(_t=_t, lang=lang, i18n_lang=i18n_lang)
+
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5001))
+    app.run(debug=True, port=port)

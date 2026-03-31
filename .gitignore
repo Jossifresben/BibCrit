@@ -1,5 +1,11 @@
 .superpowers/
-data/cache/
+.claude/
+.DS_Store
+**/.DS_Store
+# data/cache/ is intentionally tracked — pre-computed analyses are a community resource.
+# Keep budget.json out (contains spend data, not scholarly content).
+data/cache/budget.json
+data/cache/votes.json
 __pycache__/
 *.pyc
 .env

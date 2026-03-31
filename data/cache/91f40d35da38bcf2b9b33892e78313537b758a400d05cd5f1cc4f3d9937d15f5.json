@@ -1,0 +1,161 @@
+{
+  "book": "Genesis",
+  "translator_name": "Old Greek of Genesis (LXX Genesis)",
+  "translator_profile": {
+    "literalness": 0.82,
+    "anthropomorphism_reduction": 0.25,
+    "messianic_heightening": 0.15,
+    "harmonization": 0.35,
+    "paraphrase_rate": 0.22
+  },
+  "dimensions": [
+    {
+      "dimension": "literalness",
+      "score": 0.82,
+      "confidence": 0.9,
+      "summary": "The Genesis translator demonstrates highly consistent formal equivalence, regularly maintaining Hebrew word order, employing stereotyped lexical equivalents, and preserving Semitic syntactic structures even when awkward in Greek. This produces characteristic calques like καὶ ἐγένετο for wayehi and frequent paratactic καί constructions mirroring Hebrew waw-consecutive. The translator prioritizes morphological and syntactic isomorphism over Greek idiom.",
+      "summary_plain": "This translator usually follows the Hebrew word-for-word very closely, even when it makes the Greek sound awkward or foreign. The result reads like Hebrew dressed in Greek words.",
+      "examples": [
+        {
+          "reference": "Genesis 1:5",
+          "mt_text": "וַיְהִי־עֶרֶב וַיְהִי־בֹקֶר יוֹם אֶחָד",
+          "lxx_text": "καὶ ἐγένετο ἑσπέρα καὶ ἐγένετο πρωί, ἡμέρα μία",
+          "note": "The translator mechanically reproduces the Hebrew wayehi construction with καὶ ἐγένετο twice, maintaining the paratactic structure and even preserving the cardinal-for-ordinal 'day one' rather than Greek idiom ἡμέρα πρώτη."
+        },
+        {
+          "reference": "Genesis 2:7",
+          "mt_text": "וַיִּיצֶר יְהוָה אֱלֹהִים אֶת־הָאָדָם עָפָר מִן־הָאֲדָמָה",
+          "lxx_text": "καὶ ἔπλασεν ὁ θεὸς τὸν ἄνθρωπον χοῦν ἀπὸ τῆς γῆς",
+          "note": "The translator maintains Hebrew word order (verb-subject-object-material-source) and provides a literal equivalent for each Hebrew element, producing Greek that mirrors the source structure."
+        },
+        {
+          "reference": "Genesis 22:17",
+          "mt_text": "בָּרֵךְ אֲבָרֶכְךָ וְהַרְבָּה אַרְבֶּה",
+          "lxx_text": "ἦ μὴν εὐλογῶν εὐλογήσω σε καὶ πληθύνων πληθυνῶ",
+          "note": "The Hebrew infinitive absolute construction is rendered with stereotyped participial + finite verb formula, demonstrating consistent formal equivalence for this distinctive Semitic idiom."
+        }
+      ]
+    },
+    {
+      "dimension": "anthropomorphism_reduction",
+      "score": 0.25,
+      "confidence": 0.85,
+      "summary": "The Genesis translator shows minimal systematic tendency toward theological sanitizing of anthropomorphisms. Divine body parts and emotions are generally preserved: God walks in the garden (περιπατοῦντος Gen 3:8), smells sacrifices (ὀσφράνθη Gen 8:21), and closes the ark door (ἔκλεισεν Gen 7:16). Occasional softening appears contextually motivated rather than programmatic, distinguishing Genesis from later books like Job where anthropomorphism reduction is pronounced.",
+      "summary_plain": "This translator usually doesn't try to 'fix' passages where God is described with human characteristics like walking, smelling, or having emotions. These anthropomorphic descriptions are kept as they appear in the Hebrew.",
+      "examples": [
+        {
+          "reference": "Genesis 3:8",
+          "mt_text": "מִתְהַלֵּךְ בַּגָּן",
+          "lxx_text": "περιπατοῦντος ἐν τῷ παραδείσῳ",
+          "note": "The translator preserves God 'walking' in the garden without theological modification, maintaining the anthropomorphic imagery of divine locomotion that later translators often avoided."
+        },
+        {
+          "reference": "Genesis 6:6",
+          "mt_text": "וַיִּנָּחֶם יְהוָה כִּי־עָשָׂה אֶת־הָאָדָם בָּאָרֶץ וַיִּתְעַצֵּב אֶל־לִבּוֹ",
+          "lxx_text": "καὶ ἐνεθυμήθη ὁ θεὸς ὅτι ἐποίησεν τὸν ἄνθρωπον ἐπὶ τῆς γῆς καὶ διενοήθη",
+          "note": "God's regret and grief are preserved (ἐνεθυμήθη, διενοήθη), maintaining the emotional anthropopathism without systematic theological smoothing, though the rendering is slightly less vivid than MT."
+        },
+        {
+          "reference": "Genesis 8:21",
+          "mt_text": "וַיָּרַח יְהוָה אֶת־רֵיחַ הַנִּיחֹחַ",
+          "lxx_text": "καὶ ὠσφράνθη κύριος ὀσμὴν εὐωδίας",
+          "note": "The divine smelling of Noah's sacrifice is rendered literally with ὠσφράνθη, preserving the anthropomorphic sensory language without euphemism or abstraction."
+        }
+      ]
+    },
+    {
+      "dimension": "messianic_heightening",
+      "score": 0.15,
+      "confidence": 0.75,
+      "summary": "Genesis shows minimal messianic amplification compared to prophetic books. The Shiloh oracle (Gen 49:10) renders שִׁילֹה ambiguously as ᾧ ἀπόκειται (perhaps 'to whom it is reserved'), which later tradition read messianically but is not clearly heightened in translation. Gen 3:15 (σπέρμα for זֶרַע) maintains singular-collective ambiguity without forced messianic reading. The translator's literalism generally precludes systematic eschatological enhancement.",
+      "summary_plain": "This translator doesn't try to make passages sound more messianic or prophetic than they appear in Hebrew. Passages later interpreted as messianic are translated straightforwardly without special emphasis.",
+      "examples": [
+        {
+          "reference": "Genesis 3:15",
+          "mt_text": "הוּא יְשׁוּפְךָ רֹאשׁ וְאַתָּה תְּשׁוּפֶנּוּ עָקֵב",
+          "lxx_text": "αὐτός σου τηρήσει κεφαλήν, καὶ σὺ τηρήσεις αὐτοῦ πτέρναν",
+          "note": "The Protoevangelium is rendered literally with τηρέω (watch/guard) for שׁוּף without messianic heightening; later Christian interpretation of this verse emerged from the text's ambiguity rather than translator intervention."
+        },
+        {
+          "reference": "Genesis 49:10",
+          "mt_text": "עַד כִּי־יָבֹא שִׁילֹה",
+          "lxx_text": "ἕως ἂν ἔλθῃ ᾧ ἀπόκειται",
+          "note": "The notoriously difficult Shiloh crux is rendered 'until there comes that which is reserved/laid up for him,' an ambiguous translation that permits but does not demand messianic reading, reflecting translator uncertainty rather than theological programming."
+        },
+        {
+          "reference": "Genesis 22:18",
+          "mt_text": "וְהִתְבָּרֲכוּ בְזַרְעֲךָ כֹּל גּוֹיֵי הָאָרֶץ",
+          "lxx_text": "καὶ ἐνευλογηθήσονται ἐν τῷ σπέρματί σου πάντα τὰ ἔθνη τῆς γῆς",
+          "note": "The blessing formula maintains the collective 'seed' (σπέρμα) without forcing singular interpretation, preserving the Hebrew's grammatical ambiguity that Paul later exploited (Gal 3:16) but not creating it through translation choice."
+        }
+      ]
+    },
+    {
+      "dimension": "harmonization",
+      "score": 0.35,
+      "confidence": 0.8,
+      "summary": "The Genesis translator demonstrates moderate harmonization tendencies, primarily in doublets and parallel genealogies. Creation account variations (Gen 1 vs. Gen 2) are generally preserved without smoothing. However, the flood narrative shows occasional alignment of details, and genealogical lists display systematic consistency in formulaic language that sometimes adjusts minor Hebrew variations. This represents pragmatic scribal practice rather than systematic theological harmonization.",
+      "summary_plain": "The translator sometimes makes parallel stories or genealogies match each other more closely in their details, but doesn't systematically eliminate all differences between similar passages.",
+      "examples": [
+        {
+          "reference": "Genesis 7:2-3",
+          "mt_text": "מִכֹּל הַבְּהֵמָה הַטְּהוֹרָה... שִׁבְעָה שִׁבְעָה",
+          "lxx_text": "ἀπὸ δὲ τῶν κτηνῶν τῶν καθαρῶν... ἑπτὰ ἑπτά",
+          "note": "The flood narrative's numeric specifications are preserved literally without harmonizing the clean/unclean animal ratios to create consistency, showing restraint in harmonization impulse."
+        },
+        {
+          "reference": "Genesis 5:3 vs 5:6",
+          "mt_text": "Genealogical formulas with minor variations",
+          "lxx_text": "Standardized γεννάω formulas",
+          "note": "Genealogical formulas show systematization: the translator employs consistent Greek equivalents for Hebrew generational markers even when Hebrew varies slightly, representing practical standardization of stereotyped material."
+        },
+        {
+          "reference": "Genesis 1:27 vs 5:1-2",
+          "mt_text": "Variations in creation of humanity descriptions",
+          "lxx_text": "ἐποίησεν in both; minor verbal alignment",
+          "note": "The two creation accounts maintain their distinctive vocabularies largely intact, though Gen 5:1-2 shows slight lexical alignment with Gen 1:27 formula, suggesting awareness of parallel without systematic harmonization."
+        }
+      ]
+    },
+    {
+      "dimension": "paraphrase_rate",
+      "score": 0.22,
+      "confidence": 0.85,
+      "summary": "Genesis exhibits relatively low paraphrase frequency. Most departures from word-for-word rendering involve necessary syntactic adjustments for Greek grammar (genitive absolutes for Hebrew circumstantial clauses, article usage) rather than semantic paraphrase. Occasionally the translator provides contextual specification (e.g., making implicit subjects explicit) or employs dynamic equivalents for cultural terms, but sustained free rendering is rare. The baseline is formal equivalence with tactical adjustments.",
+      "summary_plain": "The translator usually sticks close to the Hebrew wording and rarely rewrites passages in more natural Greek. When changes occur, they're usually small adjustments for Greek grammar rather than complete rewording.",
+      "examples": [
+        {
+          "reference": "Genesis 15:1",
+          "mt_text": "אַחַר הַדְּבָרִים הָאֵלֶּה",
+          "lxx_text": "Μετὰ δὲ τὰ ῥήματα ταῦτα",
+          "note": "The stereotyped temporal formula is rendered with mechanical literalness (μετά + accusative mirroring אַחַר) rather than idiomatic Greek temporal expression, illustrating preference for formal over dynamic equivalence."
+        },
+        {
+          "reference": "Genesis 24:63",
+          "mt_text": "לָשׂוּחַ בַּשָּׂדֶה",
+          "lxx_text": "ἀδολεσχῆσαι εἰς τὸ πεδίον",
+          "note": "The rare Hebrew verb שׂוּחַ receives an interpretive rendering 'to meditate/muse' with ἀδολεσχέω, representing one of the infrequent instances where lexical uncertainty produces paraphrastic solution rather than wooden equivalent."
+        },
+        {
+          "reference": "Genesis 43:11",
+          "mt_text": "מִזִּמְרַת הָאָרֶץ",
+          "lxx_text": "τῶν καρπῶν τῆς γῆς",
+          "note": "The difficult 'choice products' (זִמְרָה) is rendered interpretively as 'fruits of the land,' showing contextual paraphrase for obscure terms, but such free rendering remains exceptional in Genesis."
+        }
+      ]
+    }
+  ],
+  "overall_assessment": "The LXX Genesis translator represents the highly literal end of the Septuagint translation spectrum, comparable to Judges and portions of the Minor Prophets in formal adherence to the source text. The consistent maintenance of Hebrew syntax, stereotyped lexical equivalents, and minimal theological intervention establish this as a conservative, scribal translation prioritizing formal correspondence. For text-critical work, this high literalness makes LXX Genesis valuable for reconstructing variant Hebrew Vorlagen, though the translator's occasional contextual paraphrases and standardization of formulaic material require careful evaluation. The relative absence of ideological tendencies (messianic heightening, anthropomorphism reduction) enhances its reliability as a witness to early Hebrew text forms.",
+  "overall_plain": "This was a very literal, word-for-word translator who prioritized staying close to the Hebrew even when it made awkward Greek. They didn't try to make the text more theologically refined or easier to understand—they mostly just converted Hebrew into Greek as directly as possible. This makes their work valuable for understanding what the Hebrew text looked like in the third century BCE.",
+  "bibcrit_assessment": {
+    "title": "Extreme Literalism Without Systematic Theological Filtering",
+    "reasoning": "The most significant finding is the combination of high formal equivalence (0.82) with surprisingly low theological intervention scores across anthropomorphism reduction (0.25), messianic heightening (0.15), and harmonization (0.35). This profile suggests a translator working in an early period before exegetical traditions became standardized, or within a translating community that valued textual fidelity over interpretive clarity. Unlike later LXX books that show translators actively engaging theological difficulties, Genesis presents a scribe reproducing a sacred text with minimal hermeneutical mediation, making it exceptionally valuable for text-critical reconstruction of proto-MT forms.",
+    "plain": "This translator was remarkably hands-off, avoiding the theological editing and interpretive choices common in other biblical translators. They seem to have viewed their job as faithful reproduction rather than interpretation, giving us an unusually direct window into the ancient Hebrew text.",
+    "confidence": 0.88
+  },
+  "discovery_ready": false,
+  "reference": "Genesis",
+  "cached_at": "2026-03-30T21:33:38.336423",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

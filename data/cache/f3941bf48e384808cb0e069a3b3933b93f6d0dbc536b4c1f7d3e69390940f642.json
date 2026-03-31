@@ -1,0 +1,137 @@
+{
+  "book": "Isaiah",
+  "translator_name": "Old Greek of Isaiah (LXX-Isaiah)",
+  "translator_profile": {
+    "literalness": 0.42,
+    "anthropomorphism_reduction": 0.35,
+    "messianic_heightening": 0.82,
+    "harmonization": 0.38,
+    "paraphrase_rate": 0.68
+  },
+  "dimensions": [
+    {
+      "dimension": "literalness",
+      "score": 0.42,
+      "confidence": 0.85,
+      "summary": "The LXX-Isaiah translator demonstrates moderately low literalness, frequently departing from word-for-word equivalence in favor of interpretive rendering. In Isa 7:14, the translator maintains structural correspondence but makes significant lexical substitutions (παρθένος for עלמה, ἕξει for הרה). In Isa 9:6, the translator completely recasts the divine throne names into 'Μεγάλης βουλῆς Ἄγγελος' rather than attempting wooden equivalents for פֶּלֶא יוֹעֵץ אֵל גִּבּוֹר, showing interpretive freedom. Isa 11:1 shows closer formal correspondence with ῥάβδος/חֹטֶר and ἄνθος/נֵצֶר, though ἐκ τῆς ῥίζης appears twice where MT has גֵּזַע and שָׁרָשׁ.",
+      "summary_plain": "This translator does not work word-for-word like a modern literal translation. Instead, they often express the Hebrew text's meaning using different Greek words and phrases that seemed more appropriate or clearer, showing interpretive freedom rather than mechanical equivalence.",
+      "examples": [
+        {
+          "reference": "Isaiah 7:14",
+          "mt_text": "הָעַלְמָה הָרָה",
+          "lxx_text": "ἡ παρθένος ἐν γαστρὶ ἕξει",
+          "note": "The translator renders עלמה ('young woman') as παρθένος ('virgin') and recasts the participial construction הָרָה into a periphrastic future ἐν γαστρὶ ἕξει, showing lexical precision over formal equivalence."
+        },
+        {
+          "reference": "Isaiah 9:6",
+          "mt_text": "פֶּלֶא יוֹעֵץ אֵל גִּבּוֹר אֲבִי עַד שַׂר שָׁלוֹם",
+          "lxx_text": "Μεγάλης βουλῆς Ἄγγελος",
+          "note": "The translator replaces the entire string of throne names with a single interpretive title 'Angel of Great Counsel,' demonstrating radical departure from word-for-word rendering in favor of theological interpretation."
+        },
+        {
+          "reference": "Isaiah 11:1",
+          "mt_text": "חֹטֶר מִגֵּזַע יִשָׁי וְנֵצֶר מִשָּׁרָשָׁיו",
+          "lxx_text": "ῥάβδος ἐκ τῆς ῥίζης Ἰεσσαί καὶ ἄνθος ἐκ τῆς ῥίζης",
+          "note": "Shows moderate literalness with appropriate botanical vocabulary (ῥάβδος/חֹטֶר, ἄνθος/נֵצֶר) but harmonizes גֵּזַע ('stump') and שָׁרָשׁ ('roots') both as ῥίζα, simplifying the imagery."
+        }
+      ]
+    },
+    {
+      "dimension": "anthropomorphism_reduction",
+      "score": 0.35,
+      "confidence": 0.55,
+      "summary": "The provided passages show limited evidence for systematic anthropomorphism reduction, though the translator does make theological adjustments. The recasting of Isa 9:6's divine names into 'Μεγάλης βουλῆς Ἄγγελος' may reflect discomfort with direct divine epithets applied to a human figure, though this could equally be messianic reinterpretation. The sample passages contain minimal anthropomorphic language in the MT to begin with (no divine body parts or crude emotions), making assessment difficult. Broader patterns in LXX-Isaiah show moderate but inconsistent reduction of anthropomorphisms.",
+      "summary_plain": "The translator occasionally softens language that might portray God in overly human terms, but this is not a dominant or consistent pattern in the available examples. The evidence is mixed and the tendency appears moderate at best.",
+      "examples": [
+        {
+          "reference": "Isaiah 9:6",
+          "mt_text": "אֵל גִּבּוֹר אֲבִי עַד",
+          "lxx_text": "Μεγάλης βουλῆς Ἄγγελος",
+          "note": "The elimination of 'Mighty God' (אֵל גִּבּוֹר) and 'Everlasting Father' (אֲבִי עַד) in favor of 'Angel of Great Counsel' may reflect theological sensitivity about applying divine titles directly to the messianic figure, though this is debated."
+        }
+      ]
+    },
+    {
+      "dimension": "messianic_heightening",
+      "score": 0.82,
+      "confidence": 0.9,
+      "summary": "The LXX-Isaiah translator demonstrates strong and consistent messianic heightening across the sample passages. In Isa 7:14, the shift from עלמה to παρθένος intensifies the miraculous nature of the sign, facilitating later Christian messianic interpretation. In Isa 9:6, the replacement of the Hebrew throne names with 'Μεγάλης βουλῆς Ἄγγελος' reinterprets the passage through angelomorphic and divine council imagery, heightening the transcendent nature of the figure. In Isa 11:1, while maintaining the Davidic lineage through Ἰεσσαί, the translator uses ἄνθος ('flower') for נֵצֶר, which may evoke Num 24:17's messianic 'flower' (ἄνθος in LXX). This pattern is consistent with scholarly consensus on LXX-Isaiah's eschatological intensification.",
+      "summary_plain": "This translator consistently amplifies passages that could have messianic meaning, making them point more clearly toward a future divine deliverer. Ambiguous Hebrew terms are rendered with Greek words that heighten the miraculous, transcendent, or eschatological significance of the text.",
+      "examples": [
+        {
+          "reference": "Isaiah 7:14",
+          "mt_text": "הָעַלְמָה",
+          "lxx_text": "ἡ παρθένος",
+          "note": "The translator renders the ambiguous עלמה ('young woman') with the more specific παρθένος ('virgin'), intensifying the miraculous nature of the sign and creating stronger messianic potential that would be exploited in early Christian interpretation."
+        },
+        {
+          "reference": "Isaiah 9:6",
+          "mt_text": "פֶּלֶא יוֹעֵץ אֵל גִּבּוֹר אֲבִי עַד שַׂר שָׁלוֹם",
+          "lxx_text": "Μεγάλης βουλῆς Ἄγγελος",
+          "note": "The complete reinterpretation as 'Angel of Great Counsel' evokes divine council imagery and angelomorphic Christology, significantly heightening the transcendent messianic significance beyond royal throne names."
+        },
+        {
+          "reference": "Isaiah 11:1",
+          "mt_text": "נֵצֶר מִשָּׁרָשָׁיו יִפְרֶה",
+          "lxx_text": "ἄνθος ἐκ τῆς ῥίζης αὐτοῦ ἀναβήσεται",
+          "note": "The choice of ἄνθος ('flower') for נֵצֶר ('branch/shoot') may intentionally evoke Num 24:17 LXX (ἄνθος ἐξ Ισραηλ), creating intertextual messianic resonance and heightening eschatological expectations."
+        }
+      ]
+    },
+    {
+      "dimension": "harmonization",
+      "score": 0.38,
+      "confidence": 0.6,
+      "summary": "The LXX-Isaiah translator shows modest harmonization tendencies, primarily within the book itself rather than with external parallels. In Isa 11:1, the use of ῥίζα for both גֵּזַע ('stump') and שָׁרָשׁ ('roots') creates internal lexical consistency but loses the MT's semantic distinction between trunk and root system. The sample passages do not provide clear evidence of harmonization with Torah or other prophetic books. The translator's interpretive freedom and messianic heightening appear to be driven more by theological updating than by conformity to parallel texts, though intertextual awareness (e.g., Num 24:17 in Isa 11:1) may influence lexical choices.",
+      "summary_plain": "The translator occasionally makes different parts of Isaiah more consistent with each other in vocabulary, but does not systematically force the text to match other biblical books. Harmonization is present but not a major driving force in translation decisions.",
+      "examples": [
+        {
+          "reference": "Isaiah 11:1",
+          "mt_text": "מִגֵּזַע... מִשָּׁרָשָׁיו",
+          "lxx_text": "ἐκ τῆς ῥίζης... ἐκ τῆς ῥίζης",
+          "note": "The translator uses ῥίζα for both גֵּזַע ('stump/trunk') and שָׁרָשׁ ('roots'), creating lexical harmonization within the verse but losing the MT's distinction between the cut-down trunk and the living root system."
+        }
+      ]
+    },
+    {
+      "dimension": "paraphrase_rate",
+      "score": 0.68,
+      "confidence": 0.85,
+      "summary": "The LXX-Isaiah translator exhibits a high paraphrase rate, regularly departing from word-for-word rendering into interpretive reformulation. Isa 9:6 provides the clearest example, where the entire catalogue of throne names is replaced with a single Greek title, representing radical paraphrase driven by theological interpretation. Isa 7:14 shows moderate paraphrase in recasting participial constructions into periphrastic futures. Even Isa 11:1, the most literal of the sample passages, shows interpretive lexical choices (ἄνθος for נֵצֶר) that go beyond mechanical equivalence. This high paraphrase rate is characteristic of LXX-Isaiah as a whole and places it among the freer LXX translation units, comparable to Job or Proverbs in its willingness to recast Hebrew thought into idiomatic and theologically updated Greek.",
+      "summary_plain": "This translator frequently moves away from word-for-word translation into free, interpretive paraphrase. They regularly reshape sentences, substitute concepts, and recast ideas to make them clearer or more theologically meaningful in Greek, rather than trying to mirror Hebrew word order and vocabulary mechanically.",
+      "examples": [
+        {
+          "reference": "Isaiah 9:6",
+          "mt_text": "וַיִּקְרָא שְׁמוֹ פֶּלֶא יוֹעֵץ אֵל גִּבּוֹר אֲבִי עַד שַׂר שָׁלוֹם",
+          "lxx_text": "καὶ καλεῖται τὸ ὄνομα αὐτοῦ Μεγάλης βουλῆς Ἄγγελος",
+          "note": "Complete paraphrastic replacement of five Hebrew throne names with a single interpretive Greek title, demonstrating the translator's willingness to radically reformulate content for theological clarity or updating."
+        },
+        {
+          "reference": "Isaiah 7:14",
+          "mt_text": "הָעַלְמָה הָרָה וְיֹלֶדֶת",
+          "lxx_text": "ἡ παρθένος ἐν γαστρὶ ἕξει καὶ τέξεται",
+          "note": "The participial construction הָרָה is paraphrased into the periphrastic future ἐν γαστρὶ ἕξει, and וְיֹלֶדֶת becomes the simple future τέξεται, showing preference for idiomatic Greek verbal structures over formal Hebrew equivalence."
+        },
+        {
+          "reference": "Isaiah 11:1",
+          "mt_text": "וְנֵצֶר מִשָּׁרָשָׁיו יִפְרֶה",
+          "lxx_text": "καὶ ἄνθος ἐκ τῆς ῥίζης αὐτοῦ ἀναβήσεται",
+          "note": "The verb יִפְרֶה ('will bear fruit') is paraphrased as ἀναβήσεται ('will come up/ascend'), shifting from fruition imagery to emergence/growth imagery, demonstrating interpretive lexical freedom."
+        }
+      ]
+    }
+  ],
+  "overall_assessment": "The LXX-Isaiah translator represents a highly interpretive and theologically sophisticated translation unit, characterized by strong messianic heightening (0.82) and high paraphrase rate (0.68) combined with moderate literalness (0.42). This translator prioritizes theological updating and eschatological interpretation over formal equivalence, placing LXX-Isaiah among the freer translation units alongside Job and Proverbs. The most significant tendency is the consistent amplification of messianic potential through lexical choices (παρθένος, ἄνθος) and radical reformulation (Μεγάλης βουλῆς Ἄγγελος), suggesting translation work in a context where eschatological expectation shaped interpretive decisions. For text-critical work, LXX-Isaiah must be used with caution as a witness to the Hebrew Vorlage, as theological interpretation frequently trumps formal correspondence, though the translator's interpretive moves themselves provide valuable evidence for Second Temple Jewish messianic exegesis.",
+  "overall_plain": "This was a theologically sophisticated translator who felt free to interpret and update the text for their Greek-speaking audience. Rather than translating mechanically word-for-word, they amplified messianic meanings and reshaped difficult passages to make theological sense in Greek. They were more like an interpretive commentator than a literal translator, producing a text that reflects Second Temple Jewish hopes for a coming deliverer.",
+  "bibcrit_assessment": {
+    "title": "Messianic Amplification Through Interpretive Lexical Substitution",
+    "reasoning": "The most striking finding is the LXX-Isaiah translator's systematic use of lexical substitution to heighten messianic potential in passages that are ambiguous or muted in the MT. The παρθένος rendering of עלמה in 7:14, the Μεγάλης βουλῆς Ἄγγελος reformulation in 9:6, and the ἄνθος choice in 11:1 all demonstrate a coherent hermeneutical program of eschatological intensification operating at the level of individual word choices. This is not random paraphrase but deliberate theological translation, suggesting the translator functioned as an early Jewish messianic exegete embedding interpretive tradition into the target text itself.",
+    "plain": "The translator consistently chose Greek words that made passages point more clearly toward a miraculous future deliverer, even when the Hebrew was more ambiguous. This shows they were interpreting the text through the lens of Jewish messianic hope, not just converting languages.",
+    "confidence": 0.9
+  },
+  "discovery_ready": false,
+  "reference": "Isaiah",
+  "cached_at": "2026-03-30T20:54:47.420763",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

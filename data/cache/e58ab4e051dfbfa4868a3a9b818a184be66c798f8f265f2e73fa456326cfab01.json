@@ -1,0 +1,143 @@
+{
+  "book": "Proverbs",
+  "translator_name": "Old Greek of Proverbs (LXX-Prov)",
+  "translator_profile": {
+    "literalness": 0.25,
+    "anthropomorphism_reduction": 0.15,
+    "messianic_heightening": 0.1,
+    "harmonization": 0.2,
+    "paraphrase_rate": 0.85
+  },
+  "dimensions": [
+    {
+      "dimension": "literalness",
+      "score": 0.25,
+      "confidence": 0.95,
+      "summary": "The LXX-Prov translator exhibits one of the lowest literalness rates in the entire Septuagint corpus. The translator frequently abandons formal equivalence, rearranges verses, adds entire cola not present in MT, and substitutes Hellenistic philosophical terminology for Hebrew wisdom vocabulary. Word order, syntactic structure, and lexical correspondence are routinely sacrificed for idiomatic Greek expression. This represents an extreme departure from the isomorphic method characteristic of the Pentateuch translators.",
+      "summary_plain": "This translator rarely follows the Hebrew word-for-word. Instead, they freely rewrite sentences, add new material, and use Greek philosophical terms that sound natural to Greek readers rather than sticking closely to the Hebrew text.",
+      "examples": [
+        {
+          "reference": "Proverbs 1:7",
+          "mt_text": "יִרְאַת יְהוָה רֵאשִׁית דָּעַת",
+          "lxx_text": "ἀρχὴ σοφίας φόβος θεοῦ",
+          "note": "The translator substitutes 'wisdom' (sophia) for 'knowledge' (da'at), demonstrating lexical freedom and preference for Greek philosophical terminology over formal correspondence."
+        },
+        {
+          "reference": "Proverbs 3:16",
+          "mt_text": "אֹרֶךְ יָמִים בִּימִינָהּ בִּשְׂמֹאולָהּ עֹשֶׁר וְכָבוֹד",
+          "lxx_text": "μῆκος γὰρ βίου καὶ ἔτη ζω�ῆς ἐν τῇ δεξιᾷ αὐτῆς, ἐν δὲ τῇ ἀριστερᾷ αὐτῆς πλοῦτος καὶ δόξα",
+          "note": "The translator expands 'length of days' into doublet 'length of life and years of life,' illustrating the tendency toward amplification and interpretive expansion rather than minimal representation."
+        },
+        {
+          "reference": "Proverbs 9:12a-e",
+          "mt_text": "[MT has 2 verses here]",
+          "lxx_text": "[LXX has 6 verses, including 12c-e absent from MT]",
+          "note": "Large-scale additions not present in any Hebrew Vorlage demonstrate that the translator functioned more as redactor and compositor than formal translator, inserting entire verses of sapiential material."
+        }
+      ]
+    },
+    {
+      "dimension": "anthropomorphism_reduction",
+      "score": 0.15,
+      "confidence": 0.7,
+      "summary": "LXX-Prov shows minimal concern with theological anthropomorphisms, though this may be partly due to the nature of wisdom literature, which already uses abstract language for the divine. The few cases where 'eyes of YHWH' or divine perception appears are generally rendered without systematic anti-anthropomorphic revision. The translator's overall paraphrastic freedom sometimes incidentally removes anthropomorphisms, but this appears stylistic rather than theologically motivated, unlike the clear tendencies in Isaiah or Ezekiel.",
+      "summary_plain": "The translator doesn't systematically avoid describing God in human terms. When the Hebrew mentions God's eyes or similar imagery, the translator usually keeps it without feeling the need to change it to more abstract language.",
+      "examples": [
+        {
+          "reference": "Proverbs 15:3",
+          "mt_text": "עֵינֵי יְהוָה צֹפוֹת",
+          "lxx_text": "ἐν παντὶ τόπῳ ὀφθαλμοὶ κυρίου σκοπεύουσιν",
+          "note": "The 'eyes of the Lord' anthropomorphism is retained without revision to abstract 'knowledge' or 'providence,' indicating low theological anxiety about corporeal divine imagery."
+        },
+        {
+          "reference": "Proverbs 6:16-17",
+          "mt_text": "שֵׁשׁ־הֵנָּה שָׂנֵא יְהוָה... עֵינַיִם רָמוֹת",
+          "lxx_text": "ἃ γὰρ μισεῖ... ὀφθαλμὸς ὑβριστοῦ",
+          "note": "Divine emotion of 'hate' (misein) is preserved without softening, and the anthropomorphic list structure remains intact despite extensive reworking of other elements."
+        }
+      ]
+    },
+    {
+      "dimension": "messianic_heightening",
+      "score": 0.1,
+      "confidence": 0.65,
+      "summary": "Messianic heightening is nearly absent from LXX-Prov, as befits the genre. Wisdom literature lacks explicit royal-messianic passages that might invite eschatological interpretation. The personification of Wisdom (Sophia) receives elaborate development in LXX additions, but this represents sapiential theology rather than messianic eschatology. The translator's extensive freedom is deployed for philosophical and ethical amplification, not christological preparation. This contrasts markedly with Isaiah or Psalms.",
+      "summary_plain": "This translator doesn't add messianic or end-times meanings to the text. The book of Proverbs is about wisdom and ethics, not future kings or messiahs, and the translator keeps it that way.",
+      "examples": [
+        {
+          "reference": "Proverbs 8:22-31",
+          "mt_text": "יְהוָה קָנָנִי רֵאשִׁית דַּרְכּוֹ",
+          "lxx_text": "κύριος ἔκτισέν με ἀρχὴν ὁδῶν αὐτοῦ",
+          "note": "Though later interpreted christologically, the LXX translator shows no evidence of heightening Wisdom's cosmic role beyond the Hebrew; 'ktisen' (created) is a standard lexical choice without apparent messianic intent."
+        },
+        {
+          "reference": "Proverbs 1:20-33",
+          "mt_text": "חָכְמוֹת בַּחוּץ תָּרֹנָּה",
+          "lxx_text": "σοφία ἐν ἐξόδοις ὑμνεῖται",
+          "note": "Personified Wisdom's public proclamation is rendered with rhetorical amplification but no eschatological or messianic framing, confirming the translator's disinterest in this dimension."
+        }
+      ]
+    },
+    {
+      "dimension": "harmonization",
+      "score": 0.2,
+      "confidence": 0.6,
+      "summary": "Harmonization appears sporadically in LXX-Prov but is not a dominant tendency. The translator occasionally aligns parallel cola within individual proverbs for stylistic balance but rarely harmonizes across chapters or with external biblical texts. The extreme paraphrastic freedom actually disrupts potential harmonization opportunities. Where harmonization occurs, it appears driven by rhetorical preference for parallelism rather than systematic text-critical concern to resolve tensions between biblical witnesses.",
+      "summary_plain": "The translator occasionally makes parallel lines within a proverb sound more alike, but doesn't systematically try to make Proverbs match other biblical books or resolve contradictions between different texts.",
+      "examples": [
+        {
+          "reference": "Proverbs 14:12 / 16:25",
+          "mt_text": "[Identical verses in MT]",
+          "lxx_text": "[Both rendered with variation in LXX]",
+          "note": "The translator renders these identical MT verses with lexical variation rather than harmonizing them, demonstrating indifference to formal consistency across the book."
+        },
+        {
+          "reference": "Proverbs 3:11-12",
+          "mt_text": "מוּסַר יְהוָה... כַּאֲשֶׁר אָב אֶת־בֵּן יִרְצֶה",
+          "lxx_text": "παιδείαν κυρίου... μαστιγοῖ δὲ πάντα υἱὸν ὃν παραδέχεται",
+          "note": "Shows internal harmonization within the verse (adding 'every' son for emphasis) but no attempt to align with citations of this passage in later literature or Christian texts."
+        }
+      ]
+    },
+    {
+      "dimension": "paraphrase_rate",
+      "score": 0.85,
+      "confidence": 0.95,
+      "summary": "LXX-Prov exhibits the highest paraphrase rate in the Septuagint corpus, rivaled only by Job and Esther. The translator routinely restructures syntax, substitutes cultural equivalents, adds explanatory glosses, inserts entire verses, and omits material deemed redundant. Scholarly consensus (Cook, Tov, Lange) recognizes this as a 'free' or 'paraphrastic' translation reflecting Hellenistic educational ideals and rhetorical training. The translator functions as cultural mediator and wisdom teacher rather than formal tradent of sacred text.",
+      "summary_plain": "This translator rewrites and explains the text very freely, more like a teacher adapting material for students than someone making a precise copy. It's one of the most freely-translated books in the entire Greek Old Testament.",
+      "examples": [
+        {
+          "reference": "Proverbs 4:27",
+          "mt_text": "אַל־תֵּט יָמִין וּשְׂמֹאול הָסֵר רַגְלְךָ מֵרָע",
+          "lxx_text": "μὴ ἐκκλίνῃς εἰς τὰ δεξιὰ μηδὲ εἰς τὰ ἀριστερά, ἀπόστρεψον δὲ τὸν πόδα σου ἀπὸ ὁδοῦ κακῆς· ὁδοὺς γὰρ τὰς ἐκ δεξιῶν οἶδεν ὁ θεός, διεστραμμέναι δέ εἰσιν αἱ ἐξ ἀριστερῶν· αὐτὸς δὲ ὀρθὰς ποιήσει τὰς τροχιάς σου, τὰς δὲ πορείας σου ἐν εἰρήνῃ προάξει",
+          "note": "A single bicolon in MT becomes six cola in LXX through massive theological and ethical expansion, demonstrating the translator's role as sapiential commentator and pedagogical adapter."
+        },
+        {
+          "reference": "Proverbs 11:16",
+          "mt_text": "אֵשֶׁת־חֵן תִּתְמֹךְ כָּבוֹד וְעָרִיצִים יִתְמְכוּ־עֹשֶׁר",
+          "lxx_text": "γυνὴ εὐχάριστος ἐγείρει ἀνδρὶ δόξαν, θρόνος δὲ ἀτιμίας γυνὴ μισοῦσα δίκαια· οἱ ἀργοὶ ἐνδεεῖς γίνονται τιμῆς, οἱ δὲ στερεοὶ ἐρείδονται πλούτῳ",
+          "note": "Two cola in MT become four in LXX with added moral commentary on the woman who hates righteousness and the lazy who lack honor, exemplifying constant paraphrastic expansion."
+        },
+        {
+          "reference": "Proverbs 25:1-29:27",
+          "mt_text": "[Chapters follow MT order approximately]",
+          "lxx_text": "[LXX presents these chapters in radically different sequence: 30-31, then 25:1-29:27, with extensive additions]",
+          "note": "Wholesale reorganization of entire chapters demonstrates that the translator/redactor felt authorized to restructure the book's macrostructure for pedagogical purposes, the most extreme editorial freedom in the LXX."
+        }
+      ]
+    }
+  ],
+  "overall_assessment": "The LXX-Proverbs translator represents the most paraphrastic extreme of Septuagint translation technique, functioning more as cultural adapter and wisdom teacher than as formal tradent. With literalness at 0.25 and paraphrase at 0.85, this work stands alongside Job and portions of Esther as evidence that some Hellenistic Jewish translators understood their task as producing functionally equivalent Greek wisdom literature for educated Diaspora audiences rather than preserving formal correspondence. The translator's Hellenistic rhetorical education and philosophical vocabulary (sophia, arete, paideia) thoroughly reshape the Hebrew material. Text-critical use of LXX-Prov requires extreme caution: variants may reflect translator creativity rather than Vorlage differences, though the extensive additions suggest a Hebrew Vorlage already different from MT.",
+  "overall_plain": "This translator had extraordinary freedom to rewrite, reorganize, and expand the book of Proverbs for Greek-speaking Jewish readers. Rather than translating word-for-word, they acted more like a wisdom teacher adapting traditional sayings for a new cultural context, using Greek philosophical language and adding extensive explanatory material. The result is more like an adapted edition than a close translation.",
+  "bibcrit_assessment": {
+    "title": "Extreme Paraphrase Challenges Vorlage Reconstruction",
+    "reasoning": "The most critical scholarly insight concerns the near-impossibility of retroverting LXX-Prov to recover its Hebrew Vorlage with confidence. While extensive additions (9:12c-e, reorganized chapters) clearly indicate a different Hebrew text-form, the translator's pervasive paraphrastic method means that most divergences from MT cannot reliably distinguish between translator creativity and Vorlage variants. This fundamentally limits LXX-Prov's utility for Hebrew Bible textual criticism, unlike more literal translation units where Greek variants more transparently witness to Hebrew variants.",
+    "plain": "Because this translator rewrote so freely, scholars cannot reliably tell whether differences from the Hebrew Bible reflect a different source text or just the translator's creative additions. This makes the Greek Proverbs less useful than other books for reconstructing the original Hebrew.",
+    "confidence": 0.9
+  },
+  "discovery_ready": false,
+  "reference": "Proverbs",
+  "cached_at": "2026-03-30T21:38:07.261284",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

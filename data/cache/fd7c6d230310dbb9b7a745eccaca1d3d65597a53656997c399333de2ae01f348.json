@@ -1,0 +1,94 @@
+{
+  "divergences": [
+    {
+      "mt_word": "אֶהְיֶה אֲשֶׁר אֶהְיֶה (I will be who I will be)",
+      "lxx_word": "Ἐγώ εἰμι ὁ ὤν (I am the one being)",
+      "divergence_type": "theological_tendency",
+      "confidence": 0.82,
+      "hypotheses": [
+        {
+          "type": "theological_tendency",
+          "confidence": 0.82,
+          "explanation": "LXX transforms Hebrew imperfect expressing dynamic becoming into Greek present participle emphasizing static ontological existence, reflecting Hellenistic philosophical categories of being."
+        },
+        {
+          "type": "translation_idiom",
+          "confidence": 0.15,
+          "explanation": "Greek lacks precise equivalent for Hebrew imperfect in self-predication formula, necessitating participle construction for intelligibility."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Wevers (1990) p.35",
+        "Propp (1999) p.224",
+        "van der Kooij (2006) p.78"
+      ],
+      "analysis_technical": "The MT's אֶהְיֶה employs the Qal imperfect of היה, expressing dynamic, future-oriented self-definition. LXX's ὁ ὤν (substantival present participle) converts this to timeless ontological predication, compatible with Platonic eternality. Wevers notes the translator's consistent hellenization of divine names. This divergence profoundly influenced Patristic theology and Septuagint-dependent Christian metaphysics.",
+      "analysis_plain": "Hebrew presents God as 'I will be' emphasizing future action and presence with the people. Greek shifts to 'the Being' or 'the Existent One,' making God sound more like an eternal philosophical principle than a covenant partner who acts in history."
+    },
+    {
+      "mt_word": "אֶהְיֶה שְׁלָחַנִי (I-will-be has sent me)",
+      "lxx_word": "Ὁ ὢν ἀπέσταλκέν με (The Being has sent me)",
+      "divergence_type": "theological_tendency",
+      "confidence": 0.85,
+      "hypotheses": [
+        {
+          "type": "theological_tendency",
+          "confidence": 0.85,
+          "explanation": "LXX transforms verbal name אֶהְיֶה into substantival title Ὁ ὤν, creating articular nominative as divine proper name suitable for Greek theological discourse."
+        },
+        {
+          "type": "grammatical_shift",
+          "confidence": 0.12,
+          "explanation": "Greek syntax requires nominative substantive as subject where Hebrew permits bare verbal form functioning as name."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Tov (2001) p.258",
+        "Pietersma (2000) p.89",
+        "Rösel (2006) p.442"
+      ],
+      "analysis_technical": "MT uses אֶהְיֶה as proper name in position of subject, maintaining verbal force. LXX's articular participle Ὁ ὤν functions as substantive title, third-person rather than first-person self-reference. This creates conceptual distance and enables philosophical appropriation. Tov identifies this as characteristic theological updating. The perfect ἀπέσταλκέν suggests completed mission grounding present authority.",
+      "analysis_plain": "Hebrew keeps the 'I will be' as God's actual name in the message. Greek turns it into a third-person title 'The Being,' like calling someone 'The Eternal' instead of using their self-given name. This makes God's identity more formal and less personal."
+    },
+    {
+      "mt_word": "שְׁלָחַנִי (has sent me, qal perfect)",
+      "lxx_word": "ἀπέσταλκέν με (has sent me, perfect indicative)",
+      "divergence_type": "grammatical_shift",
+      "confidence": 0.65,
+      "hypotheses": [
+        {
+          "type": "grammatical_shift",
+          "confidence": 0.65,
+          "explanation": "LXX renders Hebrew perfect with Greek perfect, appropriately conveying completed action with ongoing results, standard aspectual correspondence."
+        },
+        {
+          "type": "translation_idiom",
+          "confidence": 0.3,
+          "explanation": "Greek perfect emphasizes Moses' current authorized status as consequence of completed divine commissioning more than Hebrew perfect conveys."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Wevers (1990) p.36",
+        "Evans (2001) p.112"
+      ],
+      "analysis_technical": "Both languages employ perfect aspect marking completed action, showing close formal correspondence. Greek perfect ἀπέσταλκέν appropriately renders Hebrew שְׁלָחַנִי with standard aspectual mapping. This is among the least problematic renderings in the verse. The divergence is minimal compared to the אֶהְיֶה/ὁ ὤν transformations.",
+      "analysis_plain": "Both Hebrew and Greek use past tense with ongoing effect ('has sent'), showing straightforward translation with minimal theological shift. This portion preserves the original meaning well."
+    }
+  ],
+  "summary_technical": "LXX systematically converts MT's dynamic, first-person verbal self-predication אֶהְיֶה into static, third-person participial ontology ὁ ὤν, reflecting Hellenistic philosophical theology rather than different Vorlage. This represents paradigmatic theological tendency per Tov's taxonomy.",
+  "summary_plain": "The Greek translation changed God's self-description from active future relationship ('I will be with you') to timeless philosophical existence ('The Being'), profoundly influencing Christian theology.",
+  "bibcrit_hypothesis": {
+    "title": "Proto-Samaritan Vorlage Preserves Verbal Dynamic Force",
+    "reasoning": "While scholarly consensus attributes LXX's philosophical rendering to translator ideology, pre-Samaritan textual traditions may preserve alternate Hebrew readings emphasizing היה's covenant-formula context. The Samaritan Pentateuch's liturgical emphasis on divine presence formulas suggests textual plurality in Second Temple period beyond MT/LXX binary. LXX may reflect minority Hebrew tradition reading אֶהְיֶה with ontological emphasis already present in Vorlage, not purely translator innovation, though evidence remains circumstantial pending further Qumran publication.",
+    "plain": "The Greek translator might have worked from a Hebrew text already starting to interpret God's name more philosophically, not just imposing Greek ideas on straightforward Hebrew. Different Jewish communities may have understood this passage differently even in Hebrew.",
+    "confidence": 0.38
+  },
+  "discovery_ready": false,
+  "reference": "Exodus 3:14",
+  "cached_at": "2026-03-30T19:20:00.148309",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v2"
+}

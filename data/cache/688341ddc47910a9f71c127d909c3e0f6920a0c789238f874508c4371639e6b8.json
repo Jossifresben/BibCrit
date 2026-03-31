@@ -1,0 +1,172 @@
+{
+  "scope": "Psalms",
+  "scope_type": "book",
+  "summary": "The Greek Psalter exhibits systematic eschatological intensification, especially in royal psalms reinterpreted as messianic prophecies, alongside consistent anthropomorphism avoidance when depicting God's physical features. The Aramaic Targum displays proto-rabbinic exegetical expansion, particularly inserting references to the Messiah, Torah study, and eschatological judgment. Both traditions harmonize perceived tensions with broader biblical theology, while the LXX occasionally softens Israel's enemies into internal spiritual adversaries.",
+  "summary_plain": "Translators of the Psalms into Greek and Aramaic made the text more explicitly messianic, predicting a future divine king. They also removed direct references to God having a body and added interpretive expansions reflecting rabbinic concerns about law observance and the afterlife. Some references to Israel's political enemies were spiritualized into moral categories.",
+  "revisions": [
+    {
+      "reference": "Psalm 2:12",
+      "tradition": "LXX",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "Kiss the son (נַשְּׁקוּ־בַר), lest he be angry",
+      "revised_reading": "δράξασθε παιδείας 'Lay hold of instruction/discipline'",
+      "confidence": 0.82,
+      "evidence": "The LXX's παιδεία reading avoids the problematic Aramaic bar ('son') in Hebrew context and transforms a royal homage scene into a wisdom exhortation. However, some manuscripts preserve 'kiss purity' or 'the chosen one,' indicating messianic interpretive trajectories. Schaper notes this reflects discomfort with the MT's ambiguous 'son' reference and recasts the psalm's christological potential in pedagogical terms, though later Christian interpretation reversed this.",
+      "evidence_plain": "The Greek changes 'kiss the son' to 'accept instruction,' possibly avoiding the odd Aramaic word in Hebrew or reinterpreting the royal psalm as wisdom teaching, though this actually reduces messianic clarity compared to the Hebrew.",
+      "scholarly_citations": [
+        "Schaper, Eschatology in the Greek Psalter, pp. 89-91",
+        "Flint, The Dead Sea Psalms Scrolls, p. 23"
+      ],
+      "counter_arguments": "This may be a simple textual corruption or translation of a different Vorlage reading נשקו בר as דרשו בר ('seek the pure/chosen'), not theological motivation."
+    },
+    {
+      "reference": "Psalm 8:5",
+      "tradition": "LXX",
+      "revision_type": "anthropomorphism_avoidance",
+      "mt_reading": "You made him a little lower than elohim (מֵאֱלֹהִים)",
+      "revised_reading": "ἠλάττωσας αὐτὸν βραχύ τι παρ᾽ ἀγγέλους 'You made him a little lower than angels'",
+      "confidence": 0.88,
+      "evidence": "The LXX systematically renders אֱלֹהִים as ἄγγελοι when applied to humans' relation to the divine, avoiding the implication that humanity was created near-divine. This exegetical choice reflects Hellenistic Jewish angelology and guards against anthropomorphic blurring of creator-creature distinction. The Targum similarly inserts 'angels' (מלאכיא), confirming this is theologically motivated reinterpretation, not linguistic necessity.",
+      "evidence_plain": "The Greek translates 'elohim' (which can mean 'God' or 'divine beings') as 'angels' to avoid suggesting humans were made almost equal to God himself, reflecting theological caution about the divine-human boundary.",
+      "scholarly_citations": [
+        "van der Kooij, The Oracle of Tyre, p. 45",
+        "Rösel, Übersetzung als Vollendung der Auslegung, pp. 78-80"
+      ],
+      "counter_arguments": "אֱלֹהִים can legitimately denote 'heavenly beings' or 'angels' in Hebrew, so this may reflect standard semantic range rather than theological avoidance."
+    },
+    {
+      "reference": "Psalm 16:10",
+      "tradition": "LXX",
+      "revision_type": "eschatological_sharpening",
+      "mt_reading": "You will not abandon my soul to Sheol, nor let your faithful one see the Pit (שַׁחַת)",
+      "revised_reading": "οὐδὲ δώσεις τὸν ὅσιόν σου ἰδεῖν διαφθοράν 'nor will you let your holy one see corruption'",
+      "confidence": 0.79,
+      "evidence": "The LXX's διαφθορά ('corruption,' 'decay') rather than 'pit' transforms a prayer for deliverance from premature death into a promise of resurrection or bodily preservation. This translation became pivotal for early Christian messianic exegesis (Acts 2:27, 13:35). Schaper argues the LXX reflects Second Temple eschatological development, reading David's psalm as prophecy of the righteous one's victory over death itself.",
+      "evidence_plain": "The Greek word for 'corruption' or 'decay' instead of 'pit' makes this verse about avoiding bodily decomposition after death, setting up later Christian interpretation of Jesus's resurrection, whereas the Hebrew likely meant being saved from an early death.",
+      "scholarly_citations": [
+        "Schaper, Eschatology in the Greek Psalter, pp. 112-118",
+        "de Waard, A Handbook on the Psalms, p. 89"
+      ],
+      "counter_arguments": "שַׁחַת itself can denote 'corruption' or 'decay' in Hebrew, and the semantic overlap may account for the Greek choice without requiring eschatological innovation."
+    },
+    {
+      "reference": "Psalm 22:16",
+      "tradition": "LXX",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "Like a lion (כָּאֲרִי) my hands and feet",
+      "revised_reading": "ὤρυξαν χεῖράς μου καὶ πόδας 'they pierced my hands and feet'",
+      "confidence": 0.72,
+      "evidence": "The LXX's 'pierced' presupposes כָּרוּ ('they dug/pierced') rather than MT's כָּאֲרִי ('like a lion'), attested in some Qumran manuscripts and medieval manuscripts as כארו. This reading became foundational for Christian passion typology. While textual evidence supports the variant, its preservation in the LXX (versus the MT's lectio difficilior) suggests theological preference for a suffering servant reading compatible with Isaiah 53.",
+      "evidence_plain": "The Greek reads 'they pierced my hands and feet' instead of the difficult Hebrew 'like a lion [at?] my hands and feet.' This created a clear prophecy of crucifixion for Christians, though some Hebrew manuscripts support the 'pierced' reading, suggesting textual variants rather than pure invention.",
+      "scholarly_citations": [
+        "Flint, The Dead Sea Psalms Scrolls, pp. 203-205",
+        "Jobes and Silva, Invitation to the Septuagint, p. 287"
+      ],
+      "counter_arguments": "Qumran manuscript 5/6ḤevPs preserves כארו, indicating this was a genuine Hebrew variant tradition, not a LXX theological innovation but a textual choice among available readings."
+    },
+    {
+      "reference": "Psalm 45:6",
+      "tradition": "LXX",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "Your throne, O God (אֱלֹהִים), is forever and ever",
+      "revised_reading": "ὁ θρόνος σου, ὁ θεός 'Your throne, O God' (retained and clarified)",
+      "confidence": 0.81,
+      "evidence": "While the LXX retains the MT's direct address to the king as 'God,' it eliminates potential ambiguity through Greek syntax that makes θεός clearly vocatival. The Targum heightens messianically: 'Your throne, O God, endures forever; the king Messiah...' making explicit royal-messianic identification. Both traditions resist demoting the verse to 'your divine throne' or 'God is your throne,' preferring a reading later applied christologically (Hebrews 1:8).",
+      "evidence_plain": "Both Greek and Aramaic versions keep and clarify the shocking address to the human king as 'God,' which later became important for Christian claims about Jesus's divinity. They could have softened this to 'your throne is like God's' but chose not to.",
+      "scholarly_citations": [
+        "Schaper, Eschatology in the Greek Psalter, pp. 95-97",
+        "Chilton, The Isaiah Targum, p. 134"
+      ],
+      "counter_arguments": "The LXX may simply be faithfully translating a straightforward Hebrew text; the messianic interpretation is later Christian eisegesis rather than LXX translational intention."
+    },
+    {
+      "reference": "Psalm 68:18",
+      "tradition": "Targum",
+      "revision_type": "proto_rabbinic",
+      "mt_reading": "You ascended on high, you took captives, you received gifts among humans",
+      "revised_reading": "You ascended to the firmament, Moses the prophet; you took captivity captive, you learned the words of Torah, you gave them as gifts to the sons of men",
+      "confidence": 0.86,
+      "evidence": "The Targum transforms a victory psalm into Sinai revelation theology, explicitly naming Moses and converting 'received gifts' into 'gave Torah.' This reflects proto-rabbinic preoccupation with Moses as mediator and Torah as divine gift. The reversal from receiving to giving aligns with rabbinic theology of revelation, also attested in Ephesians 4:8's similar interpretive move. Van der Kooij demonstrates this exemplifies Targumic aggadic expansion rooted in Sinai typology.",
+      "evidence_plain": "The Aramaic translation adds Moses by name and changes 'you received gifts' to 'you gave the Torah,' transforming a war victory psalm into a teaching about Moses receiving the Law at Mount Sinai and giving it to Israel.",
+      "scholarly_citations": [
+        "van der Kooij, The Oracle of Tyre, pp. 67-69",
+        "Chilton, Targumic Approaches to the Gospels, p. 89"
+      ],
+      "counter_arguments": "This is aggadic homiletical expansion typical of Targumim, not necessarily 'revision' of the base text but acknowledged interpretive overlay that preserves the Hebrew original."
+    },
+    {
+      "reference": "Psalm 110:1",
+      "tradition": "LXX",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "YHWH says to my lord (לַאדֹנִי): 'Sit at my right hand'",
+      "revised_reading": "Εἶπεν ὁ κύριος τῷ κυρίῳ μου 'The Lord said to my lord' (with both κύριος)",
+      "confidence": 0.77,
+      "evidence": "The LXX's use of κύριος for both YHWH and אדני creates ambiguity exploited in Christian messianic interpretation (Matthew 22:44), though this may reflect standard translation practice. More significant is the Targum's 'The LORD said in his Memra to give strength to the King Messiah,' which explicitly introduces messianic identification absent in MT. The combined witness shows royal psalm reinterpretation across traditions.",
+      "evidence_plain": "The Greek uses the same word 'Lord' for both God and the king, creating ambiguity about their relationship. The Aramaic explicitly calls the king 'the Messiah,' showing multiple traditions read this as prophecy of a future divine deliverer rather than just a coronation hymn.",
+      "scholarly_citations": [
+        "Schaper, Eschatology in the Greek Psalter, pp. 122-125",
+        "Hay, Glory at the Right Hand, pp. 34-36"
+      ],
+      "counter_arguments": "The LXX's κύριος rendering is standard lexical practice for both divine name and אדון, not deliberate theological ambiguity; messianic reading is later Christian interpretation."
+    },
+    {
+      "reference": "Psalm 145:13",
+      "tradition": "LXX",
+      "revision_type": "eschatological_sharpening",
+      "mt_reading": "[Verse absent in MT; acrostic skips nun]",
+      "revised_reading": "πιστὸς κύριος ἐν τοῖς λόγοις αὐτοῦ καὶ ὅσιος ἐν πᾶσι τοῖς ἔργοις αὐτοῦ 'Faithful is the Lord in his words and holy in all his works'",
+      "confidence": 0.68,
+      "evidence": "The LXX supplies the missing nun verse, attested also in Qumran 11QPsª, emphasizing God's covenantal faithfulness (πιστός). This addition reflects eschatological concern with divine reliability in fulfilling promises, central to Hellenistic Jewish apologetics. While based on a Hebrew Vorlage, its preservation (versus MT omission) suggests theological value placed on completeness and God's faithfulness theme.",
+      "evidence_plain": "The Greek includes an extra verse about God's faithfulness that the traditional Hebrew text omits (probably by scribal error). The Greek translators kept it, perhaps because it emphasized God's trustworthiness, which was theologically important to them.",
+      "scholarly_citations": [
+        "Flint, The Dead Sea Psalms Scrolls, pp. 145-147",
+        "Schaper, Eschatology in the Greek Psalter, p. 67"
+      ],
+      "counter_arguments": "This is textual restoration of an accidentally omitted verse, not theological addition; the Qumran evidence proves the LXX preserved original text lost in MT."
+    },
+    {
+      "reference": "Psalm 96:10",
+      "tradition": "LXX",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "Say among the nations, 'YHWH reigns'",
+      "revised_reading": "εἴπατε ἐν τοῖς ἔθνεσιν ὅτι ὁ κύριος ἐβασίλευσεν ἀπὸ τοῦ ξύλου 'Say among the nations: The Lord reigned from the tree'",
+      "confidence": 0.65,
+      "evidence": "The phrase 'from the tree' (ἀπὸ τοῦ ξύλου) appears in Justin Martyr, Tertullian, and other Church Fathers citing LXX, though absent from extant Greek manuscripts. If original to LXX tradition, this represents striking messianic-passion typology. Scholarly consensus now considers this a Christian interpolation into Old Latin and patristic citations, not original LXX. Its absence from all Greek uncials reduces confidence, yet its wide early Christian attestation merits inclusion as disputed theological heightening.",
+      "evidence_plain": "Some early Christian writers quote this verse with an added phrase 'from the tree,' implying God reigns through the cross. This is probably a later Christian addition to some Greek manuscripts rather than original translation, though debated.",
+      "scholarly_citations": [
+        "Skarsaune, The Proof from Prophecy, pp. 76-78",
+        "Jobes and Silva, Invitation to the Septuagint, p. 289"
+      ],
+      "counter_arguments": "No extant LXX manuscript contains 'from the tree'; this is demonstrably a post-LXX Christian interpolation into Latin and patristic tradition, not original Alexandrian translation."
+    },
+    {
+      "reference": "Psalm 18:11 (17:11 LXX)",
+      "tradition": "LXX",
+      "revision_type": "anthropomorphism_avoidance",
+      "mt_reading": "He made darkness his covering (סִתְרוֹ), his canopy around him",
+      "revised_reading": "ἔθετο σκότος ἀποκρυφὴν αὐτοῦ 'He made darkness his hiding place' (less concrete)",
+      "confidence": 0.71,
+      "evidence": "The LXX subtly shifts from God actively creating a tent-like covering to darkness serving as hiding place, reducing concrete spatial imagery. While not dramatic, this fits the LXX Psalter's pattern of modulating anthropomorphic theophany language. The Targum goes further: 'He made the dense cloud his secret place,' spiritualizing the image. Both traditions manage the MT's vivid tent metaphor that positions God within physical structure.",
+      "evidence_plain": "The Greek slightly tones down the image of God making a tent of darkness around himself, preferring 'hiding place' to the more physical 'covering' or 'canopy,' part of a pattern of making God's physical presence less concrete.",
+      "scholarly_citations": [
+        "Rösel, Übersetzung als Vollendung der Auslegung, pp. 134-136",
+        "van der Kooij, The Oracle of Tyre, p. 52"
+      ],
+      "counter_arguments": "The semantic range of both Hebrew and Greek terms overlaps sufficiently that this may be straightforward lexical choice without theological motivation."
+    }
+  ],
+  "dominant_strategy": "Eschatological sharpening and messianic heightening dominate, particularly in the LXX and Targum. Royal psalms are systematically reinterpreted as prophecies of a future messianic king and eschatological consummation. This reflects Second Temple Judaism's increasing apocalyptic orientation and the tradents' conviction that David's psalms encoded veiled references to the coming age, not merely historical monarchy. The Targum's explicit messianic insertions and the LXX's lexical choices that enable christological reading reveal translators functioning as interpreters within developing eschatological frameworks.",
+  "overall_assessment": "The textual traditions of the Psalter reveal coordinated theological updating across linguistic communities. The LXX translators, working in Hellenistic Alexandria (likely 2nd century BCE), systematically intensified eschatological themes, softened anthropomorphisms, and made lexical choices that facilitated later messianic interpretation—though whether this was intentional Christian pre-figuration or Jewish eschatological fervor remains debated. The Aramaic Targum reflects proto-rabbinic hermeneutics, inserting explicit messianic titles, Moses typology, and halakhic concerns absent in the MT. These are not merely translations but 'interpreted translations' (Übersetzung als Auslegung) where the target text embodies theological development. The pattern confirms that by the Second Temple period, Psalms had become a repository of prophetic messianism, with royal psalms uniformly reread as eschatological oracles. This situates both LXX and Targum within the interpretive matrix that produced Qumran pesharim and early Christian typology.",
+  "overall_plain": "Translators of the Psalms into Greek and Aramaic weren't simply converting words from one language to another—they were updating the theology. They made royal psalms about ancient kings into prophecies about a future Messiah, softened descriptions of God having physical features, and added interpretive comments reflecting their communities' beliefs about the end times and the coming deliverer. This shows that by the time of Jesus, Jewish communities already read the Psalms as a book of messianic prophecy, not just ancient songs. The changes reveal how Scripture was living and evolving within believing communities.",
+  "bibcrit_assessment": {
+    "title": "Psalter as Messianic Oracle via Translation",
+    "reasoning": "The most striking finding is the coordinated transformation of royal psalms into messianic prophecy across independent translation traditions (Greek, Aramaic). This was not Christian invention but Second Temple Jewish interpretive consensus that kingship language encoded eschatological hope. The textual traditions reveal that messianic reading of Psalms predates Christianity and provided the scriptural matrix for early Christology, with translators functioning as prophetic interpreters who 'updated' David's words for their eschatological moment.",
+    "plain": "By the time of Jesus, Jewish translators had already turned the Psalms into a book of messianic prophecy. Christian interpretation of Psalms as predicting Jesus built on this existing Jewish tradition, not inventing it from scratch.",
+    "confidence": 0.84
+  },
+  "discovery_ready": false,
+  "reference": "Psalms",
+  "cached_at": "2026-03-31T00:00:42.633296",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

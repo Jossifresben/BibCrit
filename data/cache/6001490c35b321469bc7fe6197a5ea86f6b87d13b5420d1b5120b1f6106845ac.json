@@ -1,0 +1,12 @@
+{
+  "divergences": [],
+  "summary_technical": "",
+  "summary_plain": "",
+  "parse_error": "{\n  \"scope\": \"Numbers\",\n  \"scope_type\": \"book\",\n  \"summary\": \"The textual traditions of Numbers exhibit sustained anthropomorphism avoidance in the LXX and especially the Targums, where direct divine speech and physical presence are mediated through memra and yeqara formulations. Proto-rabbinic concerns surface prominently in Targum Onqelos regarding ritual purity, tribal boundaries, and the suppression of elements construed as encouraging magical praxis. Messianic heightening is concentrated in",
+  "parse_error_len": 15712,
+  "discovery_ready": false,
+  "reference": "Numbers",
+  "cached_at": "2026-03-31T00:09:42.003501",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

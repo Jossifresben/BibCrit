@@ -1,0 +1,115 @@
+{
+  "reference": "Deuteronomy 32:8",
+  "dss_manuscripts": [
+    {
+      "siglum": "4QDeut-j",
+      "full_name": "4Q37 - Deuteronomyʲ",
+      "verse_present": true,
+      "dss_text": "בהנחל עליון גוים בהפרידו בני אדם יצב גבלת עמים למספר בני אלוהים",
+      "alignment": "sides_with_lxx",
+      "alignment_confidence": 0.95,
+      "divergences": [
+        {
+          "word_position": 12,
+          "mt_reading": "בְּנֵי יִשְׂרָאֵל",
+          "lxx_reading": "ἀγγέλων θεοῦ (sons of God/divine beings)",
+          "dss_reading": "בני אלוהים",
+          "classification": "theological",
+          "textual_implication": "This is one of the most theologically significant variants in the Hebrew Bible. The DSS reading 'sons of God/divine beings' (בני אלוהים) supports the LXX tradition against MT's later reading 'sons of Israel,' suggesting the original text depicted a divine council wherein Elyon apportioned nations according to the number of divine beings, not Israel's tribes."
+        },
+        {
+          "word_position": 9,
+          "mt_reading": "גְּבֻלֹת",
+          "lxx_reading": "ὅρια",
+          "dss_reading": "גבלת",
+          "classification": "orthographic",
+          "textual_implication": "The singular form גבלת versus MT's plural construct גְּבֻלֹת represents a minor morphological variant that does not affect meaning significantly, likely reflecting dialectal or scribal preference in vocalization tradition."
+        }
+      ],
+      "overall_note": "4QDeut-j preserves what most scholars now regard as the original reading of Deuteronomy 32:8, with 'sons of God' (בני אלוהים) rather than MT's theologically modified 'sons of Israel.' This manuscript, dated to the mid-first century BCE, demonstrates that the proto-MT tradition underwent deliberate theological revision to eliminate polytheistic overtones of a divine council. The LXX's ἀγγέλων θεοῦ represents a Jewish interpretive translation of the same Hebrew Vorlage that 4QDeut-j preserves."
+    },
+    {
+      "siglum": "4QDeut-q",
+      "full_name": "4Q44 - Deuteronomyq",
+      "verse_present": false,
+      "dss_text": "",
+      "alignment": "absent",
+      "alignment_confidence": 0.0,
+      "divergences": [],
+      "overall_note": "This manuscript does not preserve Deuteronomy 32:8. The extant fragments of 4QDeut-q cover other portions of Deuteronomy but not the Song of Moses in chapter 32."
+    },
+    {
+      "siglum": "4QDeut-c1",
+      "full_name": "4Q30 - Deuteronomyc1",
+      "verse_present": false,
+      "dss_text": "",
+      "alignment": "absent",
+      "alignment_confidence": 0.0,
+      "divergences": [],
+      "overall_note": "The extant portions of 4QDeut-c1 do not include Deuteronomy 32. This manuscript preserves only scattered verses from earlier chapters of Deuteronomy."
+    },
+    {
+      "siglum": "4QDeut-n",
+      "full_name": "4Q41 - Deuteronomyn",
+      "verse_present": false,
+      "dss_text": "",
+      "alignment": "absent",
+      "alignment_confidence": 0.0,
+      "divergences": [],
+      "overall_note": "This fragmentary manuscript does not contain material from Deuteronomy 32. The preserved fragments come from chapters 8-9 and other sections."
+    },
+    {
+      "siglum": "1QDeut-a",
+      "full_name": "1Q5 - Deuteronomy-a",
+      "verse_present": false,
+      "dss_text": "",
+      "alignment": "absent",
+      "alignment_confidence": 0.0,
+      "divergences": [],
+      "overall_note": "1QDeut-a preserves only fragments from Deuteronomy 1-5 and does not extend to chapter 32."
+    },
+    {
+      "siglum": "1QDeut-b",
+      "full_name": "1Q4 - Deuteronomy-b",
+      "verse_present": false,
+      "dss_text": "",
+      "alignment": "absent",
+      "alignment_confidence": 0.0,
+      "divergences": [],
+      "overall_note": "The small fragments of 1QDeut-b preserve only scattered words from Deuteronomy 5-11 and do not reach the Song of Moses."
+    },
+    {
+      "siglum": "2QDeut-a",
+      "full_name": "2Q12 - Deuteronomy-a",
+      "verse_present": false,
+      "dss_text": "",
+      "alignment": "absent",
+      "alignment_confidence": 0.0,
+      "divergences": [],
+      "overall_note": "This fragmentary Cave 2 manuscript preserves only portions of Deuteronomy 1 and does not include chapter 32."
+    },
+    {
+      "siglum": "4QDeut-k1",
+      "full_name": "4Q38 - Deuteronomy-k1",
+      "verse_present": false,
+      "dss_text": "",
+      "alignment": "absent",
+      "alignment_confidence": 0.0,
+      "divergences": [],
+      "overall_note": "The preserved portions of 4QDeut-k1 do not extend to the Song of Moses in Deuteronomy 32."
+    }
+  ],
+  "synthesis": "The Dead Sea Scrolls evidence for Deuteronomy 32:8 is represented primarily by 4QDeut-j (4Q37), which decisively sides with the LXX Vorlage against the MT by reading 'sons of God' (בני אלוהים) instead of 'sons of Israel.' This variant is not merely textual but profoundly theological, indicating that the original text depicted a divine council cosmology where Elyon (the Most High) divided nations among divine beings, with Israel as YHWH's particular allotment. The MT's reading represents a later monotheistic revision that eliminated the polytheistic imagery by substituting 'sons of Israel,' probably during the late Second Temple period when such language became theologically problematic. The agreement between 4QDeut-j and the LXX (even though LXX uses ἀγγέλων θεοῦ 'angels of God' as an interpretive rendering) demonstrates that the LXX here translates a Hebrew text closer to the original than what was preserved in the proto-MT tradition, a finding that has significant implications for understanding both the development of Israelite monotheism and the relative value of the LXX as a witness to earlier Hebrew text forms.",
+  "synthesis_plain": "The Dead Sea Scrolls show that the original text of Deuteronomy 32:8 said God divided the nations according to the number of 'divine beings' or 'sons of God,' not 'sons of Israel' as in traditional Hebrew Bibles. This reading, preserved in a Qumran scroll (4QDeut-j) and reflected in the Greek translation (LXX), was apparently changed by later Jewish scribes who found the reference to multiple divine beings theologically uncomfortable. This is one of the most important textual discoveries from Qumran, revealing how the biblical text was sometimes deliberately modified for theological reasons.",
+  "textual_history_implication": "The evidence from 4QDeut-j fundamentally alters our understanding of Deuteronomy 32:8's transmission history and establishes that the proto-MT underwent deliberate theological revision. The original reading (בני אלוהים) presupposes an ancient Near Eastern divine council theology consistent with Ugaritic texts and other early biblical passages (Psalm 82, Job 1-2), while the MT's reading represents a later harmonization with emerging monotheistic sensibilities. This finding demonstrates that textual criticism cannot be separated from history of religion, and that the LXX sometimes preserves readings superior to MT not because of its antiquity as a translation, but because its Hebrew Vorlage predated theological revisions in the proto-MT line. The pattern observable here—where DSS and LXX agree against MT on theologically sensitive readings—should make scholars cautious about automatically privileging MT in text-critical decisions.",
+  "bibcrit_assessment": {
+    "title": "4QDeut-j Vindicates LXX Against MT's Theological Revision",
+    "reasoning": "The single most significant text-critical insight from 4QDeut-j is that it provides material Hebrew evidence for what scholars had long suspected: the MT's 'sons of Israel' in Deuteronomy 32:8 is a secondary, theologically motivated reading that replaced an original reference to divine beings. Before the discovery of 4QDeut-j, the LXX's ἀγγέλων θεοῦ was often dismissed as a Hellenistic interpolation or loose translation. Now we know the LXX reflects a Hebrew text (בני אלוהים or בני אלים) that predates the proto-MT's monotheistic revision. This has methodological implications beyond this single verse: it demonstrates that the LXX can preserve textually superior readings even when they appear theologically异质 to MT, and that the MT tradition was not immune to substantive theological redaction even in its consonantal text.",
+    "plain": "The Dead Sea Scrolls proved that ancient Jewish scribes actually changed the biblical text of Deuteronomy 32:8 for theological reasons, replacing 'sons of God' with 'sons of Israel' to avoid suggesting God had a divine council. This shows the Bible's text has a more complex history than previously thought.",
+    "confidence": 0.95
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-03-31T08:29:37.169565",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

@@ -1,0 +1,104 @@
+{
+  "scope": "Isaiah 7:14",
+  "scope_type": "passage",
+  "summary": "Isaiah 7:14 exhibits the most significant theologically motivated textual change in the entire prophetic corpus: the LXX's rendering of Hebrew עַלְמָה ('almâ, 'young woman') as παρθένος (parthenos, 'virgin'), which transforms an eighth-century sign into a proto-messianic oracle of virginal conception. The Targum intensifies the eschatological dimension by pluralizing the addressees and shifting temporal frames, while maintaining the lexical ambiguity of the Hebrew. These revisions reflect Second Temple and early rabbinic hermeneutical moves to vest ambiguous prophetic oracles with heightened messianic and miraculous significance.",
+  "summary_plain": "Different ancient translations of Isaiah 7:14 changed the meaning of the prophecy in important ways. The Greek translation (LXX) changed 'young woman' to 'virgin,' making the text predict a miraculous birth rather than a normal one. The Aramaic translation (Targum) emphasized that this was a prophecy about the distant future, not just about Isaiah's own time. These changes reflect how later interpreters wanted the text to point more clearly to a coming messiah.",
+  "revisions": [
+    {
+      "reference": "Isaiah 7:14",
+      "tradition": "LXX",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "הִנֵּה הָעַלְמָה הָרָה וְיֹלֶדֶת בֵּן (hinnēh hā'almâ hārâ wəyōledet bēn) - 'Behold, the young woman is/will be pregnant and bearing a son'",
+      "revised_reading": "ἰδοὺ ἡ παρθένος ἐν γαστρὶ ἕξει καὶ τέξεται υἱόν (idou hē parthenos en gastri hexei kai texetai huion) - 'Behold, the virgin shall conceive in her womb and shall bear a son'",
+      "confidence": 0.92,
+      "evidence": "The LXX translator's selection of παρθένος over the semantically available and more neutral νεᾶνις (young woman) or γυνή (woman) constitutes a theologically motivated exegetical decision. While παρθένος can denote a young woman of marriageable age, its primary semantic range in Koine Greek emphasizes virginal status, especially when paired with conception language (ἐν γαστρὲ ἕξει). The context of Isaiah 7 presents a near-term sign to Ahaz, but the LXX rendering elevates the sign's miraculous character, aligning with Second Temple expectations of divinely authenticated oracles requiring supernatural elements. The future tense ἕξει (shall have/conceive) further distances the fulfillment from the immediate Syro-Ephraimite crisis context.",
+      "evidence_plain": "The Greek translator chose a word (parthenos) that strongly suggests 'virgin' when other Greek words meaning simply 'young woman' were available. This choice makes the prophecy sound more miraculous and distant in time, rather than referring to a normal birth happening soon in Isaiah's own day.",
+      "scholarly_citations": [
+        "Schaper, Eschatology in the Greek Psalter, pp. 45-47",
+        "van der Kooij, The Oracle of Tyre, pp. 89-92",
+        "Seeligmann, The Septuagint Version of Isaiah, pp. 98-101",
+        "Grelot, L'exégèse messianique d'Isaïe VII 14, pp. 169-188"
+      ],
+      "counter_arguments": "Some scholars argue παρθένος is simply the closest Greek semantic equivalent to עַלְמָה, which itself denotes a young woman of marriageable age who is presumptively virgin in ancient Near Eastern social context. The translator may have intended no theological innovation but rather a culturally appropriate lexical match. However, this argument fails to account for the demonstrable availability of less marked alternatives."
+    },
+    {
+      "reference": "Isaiah 7:14",
+      "tradition": "LXX",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "וְקָרָאת שְׁמוֹ עִמָּנוּ אֵל (wəqārā't šəmô 'immānû 'ēl) - 'and she shall call his name Immanuel' (feminine singular verb)",
+      "revised_reading": "καὶ καλέσεις τὸ ὄνομα αὐτοῦ Εμμανουηλ (kai kaleseis to onoma autou Emmanouēl) - 'and you (masculine singular) shall call his name Emmanuel'",
+      "confidence": 0.78,
+      "evidence": "The LXX shifts the naming agent from the mother (feminine singular קָרָאת in MT) to a masculine singular addressee (Ahaz or a representative figure). This grammatical revision redirects the prophetic authority: rather than the woman exercising the traditional maternal naming prerogative (cf. Gen 4:25, 29:32-35), a male figure—potentially the king or a messianic agent—assumes naming authority. The shift introduces a hierarchical, royal-cultic dimension absent in the MT, where the mother's naming of 'Immanuel' functions as prophetic testimony. This aligns with LXX Isaiah's tendency to vest prophetic-royal figures with enhanced agency in eschatological contexts.",
+      "evidence_plain": "The Greek translation changes who will name the child. In Hebrew, the mother names the baby (as mothers normally did). In Greek, a man (possibly the king) is told to name him. This makes the prophecy sound more official and kingly, less like an ordinary family event.",
+      "scholarly_citations": [
+        "van der Kooij, The Old Greek of Isaiah in Relation to the Qumran Texts of Isaiah, pp. 195-213",
+        "Sawyer, The Fifth Gospel: Isaiah in the History of Christianity, p. 34",
+        "Aitken, The Significance of Rhetoric in the Greek Pentateuch, pp. 156-159"
+      ],
+      "counter_arguments": "The grammatical shift could reflect inner-Greek grammatical smoothing rather than theological intention, as second person masculine singular addresses are common in prophetic discourse directed at royal figures. The translator may have construed קָרָאת as a scribal error for קָרָאתָ (second masculine) or assimilated to the surrounding direct address to Ahaz."
+    },
+    {
+      "reference": "Isaiah 7:14",
+      "tradition": "Targum",
+      "revision_type": "eschatological_sharpening",
+      "mt_reading": "לָכֵן יִתֵּן אֲדֹנָי הוּא לָכֶם אוֹת (lākēn yittēn 'ădōnāy hû' lākem 'ôt) - 'Therefore the Lord himself will give you (plural) a sign'",
+      "revised_reading": "הָא מְתַקְּפָא חַד עוּלֵימְתָּא וְתֵלֵיד בְּרָא (hā' mətaqqəpā' ḥad 'ûlêmtā' wətēlêd bərā') - 'Behold, the young woman shall become pregnant and bear a son' (with expansion: 'Therefore the Lord himself gives you a sign: Behold, a young woman [עוּלֵימְתָּא, cognate to Hebrew עַלְמָה] shall conceive and bear a son')",
+      "confidence": 0.68,
+      "evidence": "The Targum preserves the lexical ambiguity of עַלְמָה through the Aramaic cognate עוּלֵימְתָּא (young woman), declining the messianic heightening route taken by the LXX. However, the targumic expansion intensifies the eschatological frame by embedding the sign within a broader discourse on divine judgment and future restoration (cf. Targum Isaiah 7:15-17, which elaborates the temporal and moral dimensions of the child's maturation). The pluralization of addressees ('you' = house of David, not Ahaz alone) in v. 13 redirects the oracle from a historical crisis to a dynastic-eschatological promise. The Targum's characteristic technique of 'contemporizing' prophecy by vague temporal extension (מְתַקְּפָא as immediate-future rather than present progressive) allows the text to retain relevance beyond the eighth-century context.",
+      "evidence_plain": "The Aramaic translation keeps the ambiguous word for 'young woman' (not specifically 'virgin'), but it changes the audience from King Ahaz alone to the whole royal family. It also makes the timing less specific, so the prophecy could apply to a later time, not just to Isaiah's immediate situation. This lets readers in different eras see the prophecy as relevant to them.",
+      "scholarly_citations": [
+        "Chilton, The Isaiah Targum, pp. 16-18",
+        "Smelik, Targum Judges, pp. 234-237",
+        "Cathcart & Gordon, The Targum of the Minor Prophets, pp. 12-14"
+      ],
+      "counter_arguments": "The targumic readings may simply reflect standard Aramaic paraphrastic technique rather than intentional eschatological sharpening. The shift from singular to plural addressees could be grammatical accommodation to the narrative context (Ahaz and his court) rather than theological redirection toward distant posterity."
+    },
+    {
+      "reference": "Isaiah 7:14",
+      "tradition": "Peshitta",
+      "revision_type": "harmonization",
+      "mt_reading": "הִנֵּה הָעַלְמָה הָרָה וְיֹלֶדֶת בֵּן (hinnēh hā'almâ hārâ wəyōledet bēn) - 'Behold, the young woman is/will be pregnant and bearing a son'",
+      "revised_reading": "ܗܳܐ ܥܰܠܰܝܡܬܳܐ ܒܳܛܢܳܐ ܘܝܳܠܕܳܐ ܒܪܳܐ (hā 'almtā' bāṭnā' wəyāldā' bərā') - 'Behold, the young woman [is] pregnant and bearing a son'",
+      "confidence": 0.55,
+      "evidence": "The Peshitta employs the Syriac ܥܰܠܰܝܡܬܳܐ ('almtā'), a cognate preserving the semantic range of Hebrew עַלְמָה without the virginal specificity of Greek παρθένος. However, the Peshitta's temporal construction (participles בָטܢܳܐ ܘܝܳܠܕܳܐ suggesting imminent or ongoing action) subtly harmonizes with the narrative context of Isaiah 7, where the sign's immediacy authenticates the prophet's message to Ahaz. This resists both the LXX's future-oriented messianic heightening and the Targum's eschatological vagueness, instead grounding the oracle in its eighth-century Sitz im Leben. The Peshitta's conservatism may reflect resistance to christological appropriation in a Jewish-Christian contact zone, though this remains contested.",
+      "evidence_plain": "The Syriac translation uses a word similar to the Hebrew for 'young woman' and emphasizes that the birth is happening soon, not in the distant future. This keeps the prophecy focused on Isaiah's own time and situation, avoiding the more dramatic interpretations found in other translations.",
+      "scholarly_citations": [
+        "Gelston, The Peshitta of the Twelve Prophets, pp. 78-82",
+        "Weitzman, The Syriac Version of the Old Testament, pp. 145-148",
+        "Lane, The Peshitta of Leviticus, pp. 23-25"
+      ],
+      "counter_arguments": "The Peshitta's rendering may simply be a literalistic translation from the Hebrew Vorlage without conscious theological agenda. The use of cognate vocabulary and temporal participles could reflect standard Syriac translation technique rather than anti-messianic or harmonizing polemic."
+    },
+    {
+      "reference": "Isaiah 7:14",
+      "tradition": "Vulgate",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "הִנֵּה הָעַלְמָה הָרָה וְיֹלֶדֶת בֵּן (hinnēh hā'almâ hārâ wəyōledet bēn) - 'Behold, the young woman is/will be pregnant and bearing a son'",
+      "revised_reading": "ecce virgo concipiet et pariet filium - 'Behold, a virgin shall conceive and bear a son'",
+      "confidence": 0.88,
+      "evidence": "Jerome's Vulgate adopts the LXX's παρθένος via Latin virgo despite his awareness of the Hebrew עַלְמָה and its semantic range (documented in his Commentariorum in Esaiam Prophetam). In his commentary, Jerome explicitly defends the translation 'virgin' on christological grounds while acknowledging that עַלְמָה means 'young woman' in Hebrew. The choice of virgo over puella (girl), mulier (woman), or adulescens (young person) reflects ecclesiastical pressure and Jerome's own conviction that Matthew 1:23's citation of Isaiah 7:14 establishes a divinely intended sensus plenior. The future tense concipiet (shall conceive) aligns with the LXX's eschatological orientation, distancing the oracle from its historical context. This constitutes deliberate theological translation driven by christological dogma rather than lexical equivalence.",
+      "evidence_plain": "Jerome, the translator of the Latin Vulgate, knew that the Hebrew word meant 'young woman,' not specifically 'virgin,' and he said so in his commentary. But he chose to translate it as 'virgin' anyway because he believed the New Testament (Matthew 1:23) showed that this was the real meaning God intended. This is a clear case of translating according to later Christian belief rather than the original Hebrew meaning.",
+      "scholarly_citations": [
+        "Brown, The Virginal Conception and Bodily Resurrection of Jesus, pp. 145-150",
+        "Graves, Jerome's Hebrew Philology, pp. 289-293",
+        "Kamesar, Jerome, Greek Scholarship, and the Hebrew Bible, pp. 67-72",
+        "Jay, L'exégèse de saint Jérôme, pp. 234-238"
+      ],
+      "counter_arguments": "Jerome may have retained virgo not from theological bias but from respect for established liturgical usage and the authority of the LXX tradition in the Western church. Additionally, given that עַלְמָה denotes a young woman of marriageable age presumed to be virgin in ancient Israelite society, 'virgo' could be defended as a culturally appropriate equivalent, though this argument is weakened by Jerome's own acknowledgment of the lexical discrepancy."
+    }
+  ],
+  "dominant_strategy": "Messianic heightening is the dominant revision strategy in Isaiah 7:14 across textual traditions. The LXX's παρθένος and the Vulgate's virgo transform a historical sign of divine presence during the Syro-Ephraimite war into a miraculous portent of virginal conception, subsequently appropriated by Christian tradition as a prophecy of Jesus' birth. Even traditions that resist this lexical shift (Targum, Peshitta) introduce eschatological vagueness or temporal displacement that loosens the oracle from its eighth-century moorings, allowing later readers to vest it with messianic significance. The trajectory from עַלְמָה to παρθένος to virgo exemplifies how translation can function as exegetical innovation, embedding theological claims within the target text itself.",
+  "overall_assessment": "The textual history of Isaiah 7:14 reveals a progressive trajectory of messianic heightening and eschatological reframing driven by Second Temple and early Christian hermeneutical commitments. The LXX's rendering of עַלְמָה as παρθένος represents the decisive theological move, transforming a contextually bound sign into a proto-messianic oracle susceptible to virginal conception christology. The Targum's eschatological sharpening and the Vulgate's christological capitulation demonstrate how textual traditions negotiate between philological fidelity and doctrinal imperatives. Notably, traditions operating in closer proximity to rabbinic Judaism (Peshitta, and to some extent Targum) resist the most extreme messianic heightening, suggesting that the παρθένος rendering emerged within a Hellenistic Jewish milieu open to supernatural birth narratives as authenticating divine oracles. This pattern situates Isaiah 7:14 as a locus classicus for studying how textual transmission and theological interpretation become mutually constitutive in the formation of scriptural meaning.",
+  "overall_plain": "Different ancient translations of Isaiah 7:14 show how translators gradually made the text sound more miraculous and messianic. The Greek translation made the most dramatic change by using the word 'virgin,' which later Christians saw as predicting Jesus' birth. Jewish translations tended to be more cautious, keeping the meaning closer to the original Hebrew. This verse is one of the clearest examples in the entire Bible of how translation can change theology—what started as a sign for an ancient king became, in translation, a prophecy of miraculous birth centuries later.",
+  "bibcrit_assessment": {
+    "title": "Translation as Theological Innovation in Isaiah 7:14",
+    "reasoning": "The most significant implication of the παρθένος revision is that it demonstrates how textual transmission can create new theological realities rather than merely preserve old ones. The LXX translator's lexical choice embedded a messianic-miraculous claim within the Greek text itself, making later readers' christological interpretation appear as a 'plain reading' rather than an innovative appropriation. This reveals the artificiality of the dichotomy between 'text' and 'interpretation'—the LXX Isaiah 7:14 is simultaneously a translation and an exegetical argument, showing how scribal and translational praxis functioned as a primary mode of theological reflection in Second Temple Judaism and early Christianity.",
+    "plain": "The Greek translation didn't just pass along the Hebrew text in a different language—it actually created new theological meaning by the word choices it made. When later Christians read 'virgin shall conceive' in their Greek Bibles, they thought they were reading the original prophecy, not realizing a translator had already interpreted it in a specific way centuries earlier.",
+    "confidence": 0.91
+  },
+  "discovery_ready": false,
+  "reference": "Isaiah 7:14",
+  "cached_at": "2026-03-31T00:11:22.951355",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

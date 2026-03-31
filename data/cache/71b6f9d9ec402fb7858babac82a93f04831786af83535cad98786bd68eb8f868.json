@@ -1,0 +1,90 @@
+{
+  "divergences": [
+    {
+      "mt_word": "הָעַלְמָה (the young woman)",
+      "lxx_word": "ἡ παρθένος (the virgin)",
+      "divergence_type": "theological_tendency",
+      "confidence": 0.82,
+      "hypotheses": [
+        {
+          "type": "theological_tendency",
+          "confidence": 0.82,
+          "explanation": "LXX translator selected παρθένος to emphasize the miraculous nature of the sign, though עַלְמָה primarily denotes a young woman of marriageable age without explicit reference to virginity. This reflects Hellenistic Jewish interpretive tendencies toward emphasizing divine intervention."
+        }
+      ],
+      "dss_witness": "1QIsaᵃ reads העלמה, identical to MT",
+      "citations": [
+        "Seeligmann (1948) p.94",
+        "Tov (2001) p.230",
+        "van der Kooij (1998) p.497"
+      ],
+      "analysis_technical": "The Hebrew עַלְמָה (attested 7x in MT) denotes a young woman without specifying virginity, though context often implies it (Gen 24:43, Exod 2:8, Ps 68:26, Prov 30:19, Song 1:3, 6:8). The LXX's παρθένος represents an interpretive choice rather than lexical error, as Aquila later revises to νεᾶνις. Tov notes this as典型 of LXX tendenz toward heightening miraculous elements in prophetic texts. 1QIsaᵃ confirms MT's reading, eliminating different Vorlage theories.",
+      "analysis_plain": "The Hebrew word means 'young woman' while the Greek says 'virgin.' The translator chose a more specific Greek word that emphasized something supernatural about the birth, even though the Hebrew is less explicit about this detail."
+    },
+    {
+      "mt_word": "הָרָה וְיֹלֶדֶת (pregnant and bearing)",
+      "lxx_word": "ἐν γαστρὶ ἕξει καὶ τέξεται (will have in womb and will bear)",
+      "divergence_type": "different_vorlage",
+      "confidence": 0.68,
+      "hypotheses": [
+        {
+          "type": "different_vorlage",
+          "confidence": 0.55,
+          "explanation": "LXX future tenses may reflect a Hebrew Vorlage reading תַּהַר וְתֵלֵד (imperfects) rather than MT's participial forms, shifting from present/imminent to future prediction."
+        },
+        {
+          "type": "translation_idiom",
+          "confidence": 0.45,
+          "explanation": "LXX translator rendered Hebrew participles as Greek futures to express prophetic futurity more explicitly in Hellenistic idiom, a common translation technique in LXX Isaiah."
+        }
+      ],
+      "dss_witness": "1QIsaᵃ reads הרה וילדת, supporting MT participles",
+      "citations": [
+        "Watts (1987) p.102",
+        "Williamson (2014) p.219",
+        "Wildberger (1972) p.284"
+      ],
+      "analysis_technical": "MT's participial construction הָרָה וְיֹלֶדֶת expresses imminent or present action, while LXX futures ἕξει καὶ τέξεται project the event into the future. 1QIsaᵃ's support for MT participles suggests LXX reflects interpretive translation rather than variant Hebrew. Watts argues LXX systematically renders prophetic participles as futures in Isaiah to clarify temporal reference for Greek readers. This parallels LXX treatment of Isa 9:5 where Hebrew perfects become futures.",
+      "analysis_plain": "The Hebrew describes something happening now or very soon ('is pregnant and bearing'), while the Greek puts it in the future tense ('will conceive and will bear'). This makes the prophecy sound more distant and predictive in Greek than in Hebrew."
+    },
+    {
+      "mt_word": "וְקָרָאת (and she will call, fem.)",
+      "lxx_word": "καὶ καλέσεις (and you will call, masc. sg.)",
+      "divergence_type": "different_vorlage",
+      "confidence": 0.71,
+      "hypotheses": [
+        {
+          "type": "different_vorlage",
+          "confidence": 0.71,
+          "explanation": "LXX reflects Hebrew וְקָרָאתָ (2ms) addressing Ahaz directly, versus MT's וְקָרָאת (3fs) referring to the mother. Shift from third-person feminine to second-person masculine fundamentally alters who names the child."
+        },
+        {
+          "type": "scribal_error",
+          "confidence": 0.29,
+          "explanation": "Possible confusion between final taw (fem.) and taw-he (masc.) suffixes in Hebrew transmission, though LXX's consistency suggests intentional Vorlage reading."
+        }
+      ],
+      "dss_witness": "1QIsaᵃ reads וקראת, ambiguous but likely 3fs agreeing with MT",
+      "citations": [
+        "Blenkinsopp (2000) p.229",
+        "Barthélemy (1986) p.53",
+        "Goshen-Gottstein (1995) p.38"
+      ],
+      "analysis_technical": "The verbal form is disputed: MT's וְקָרָאת (3fs perfect consecutive) assigns naming to the mother, while LXX καλέσεις (2ms future) addresses Ahaz or the prophet. Barthélemy argues LXX reflects a Vorlage reading וְקָרָאתָ with mappiq-he, making Ahaz the name-giver and intensifying the sign's personal relevance to the king. 1QIsaᵃ's orthography is ambiguous (defective spelling), though context suggests 3fs. This represents a significant theological shift regarding prophetic fulfillment.",
+      "analysis_plain": "The Hebrew says 'she will call' (the mother names the baby), but the Greek says 'you will call' (speaking directly to King Ahaz). This changes who is responsible for giving the child his symbolic name."
+    }
+  ],
+  "summary_technical": "Isaiah 7:14 exhibits three major MT/LXX divergences: παρθένος for עַלְמָה (theological heightening), future verbs for present participles (translation idiom or Vorlage difference), and 2ms for 3fs verb (likely different Vorlage). 1QIsaᵃ largely supports MT, suggesting LXX variations stem from interpretive translation and possibly variant Hebrew text for the verb.",
+  "summary_plain": "The Greek translation makes the prophecy more miraculous (virgin instead of young woman), more future-oriented, and speaks directly to the king rather than describing the mother's action.",
+  "bibcrit_hypothesis": {
+    "title": "LXX Reflects Eighth-Century Messianic Intensification Layer",
+    "reasoning": "The cumulative effect of LXX's three major variants creates a more explicitly messianic reading: virgin birth (παρθένος), future orientation (ἕξει/τέξεται), and royal naming responsibility (καλέσεις to Ahaz). This pattern suggests the LXX translator worked from a Hebrew Vorlage that had undergone post-exilic scribal revision to heighten messianic potential, particularly the verb form addressing the Davidic monarch directly. The systematic nature of changes points beyond ad hoc translation choices to a coherent interpretive tradition embedded in the Hebrew text ancestor of LXX, perhaps emerging from Second Temple royal ideology that reinterpreted Isaiah's original contextual sign to Ahaz as protological messianic prophecy.",
+    "plain": "The Greek translator may have used a Hebrew version that had already been edited to make the passage sound more like a prediction of a miraculous future king, not just a sign to Isaiah's own time. This editing happened before translation, reflecting how later Jewish communities reread Isaiah's words.",
+    "confidence": 0.58
+  },
+  "discovery_ready": false,
+  "reference": "Isaiah 7:14",
+  "cached_at": "2026-03-30T19:01:03.511537",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v2"
+}

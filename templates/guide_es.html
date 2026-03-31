@@ -1,0 +1,511 @@
+{% extends "base.html" %}
+{% block title %}Guía — BibCrit{% endblock %}
+
+{% block head %}
+<style>
+    /* ── Guide page — mirrors Atlas about.html patterns with BibCrit tokens ── */
+    .about-content {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 0 1rem 4rem;
+        line-height: 1.8;
+        font-size: 1.05rem;
+    }
+    .about-content p {
+        margin-bottom: 1.2em;
+    }
+    .about-content a {
+        color: var(--accent, #2c3e50);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+    }
+    .about-content a:hover {
+        opacity: 0.75;
+    }
+    .about-content h2 {
+        margin-top: 2.5rem;
+        margin-bottom: 0.75rem;
+        font-size: 1.45rem;
+        letter-spacing: -0.01em;
+        border-bottom: 2px solid var(--accent, #2c3e50);
+        padding-bottom: 0.3rem;
+    }
+    .about-content h3 {
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
+        font-size: 1.15rem;
+    }
+
+    /* Hero */
+    .guide-hero {
+        text-align: center;
+        padding: 2.5rem 1rem 1.5rem;
+    }
+    .guide-hero h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        margin-bottom: 0.75rem;
+        font-family: 'Space Grotesk', 'Inter', sans-serif;
+    }
+    .guide-hero p {
+        max-width: 620px;
+        margin: 0 auto;
+        color: var(--muted, #666);
+        line-height: 1.7;
+        font-size: 1.05rem;
+    }
+
+    /* Stats bar */
+    .about-stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+        margin: 1.75rem 0 2rem;
+    }
+    .about-stat {
+        background: var(--card-bg, #fff);
+        border: 1px solid var(--border, #ddd);
+        border-radius: 8px;
+        padding: 0.85rem 1.5rem;
+        text-align: center;
+        min-width: 140px;
+    }
+    .about-stat .stat-num {
+        font-size: 1.7rem;
+        font-weight: 700;
+        color: var(--accent, #2c3e50);
+        display: block;
+        font-family: 'Space Grotesk', 'Inter', sans-serif;
+    }
+    .about-stat .stat-label {
+        font-size: 0.82rem;
+        color: var(--muted, #888);
+        margin-top: 0.15rem;
+        display: block;
+    }
+
+    /* Feature grid */
+    .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1rem;
+        margin: 1rem 0 1.5rem;
+    }
+    .feature-card {
+        background: var(--card-bg, #fff);
+        border: 1px solid var(--border, #ddd);
+        border-radius: 10px;
+        padding: 1.1rem 1.3rem;
+        transition: box-shadow 0.15s;
+    }
+    .feature-card:hover {
+        box-shadow: 0 4px 14px rgba(44,62,80,0.10);
+    }
+    .feature-card h4 {
+        margin: 0 0 0.45rem;
+        font-size: 1rem;
+        color: var(--accent, #2c3e50);
+        font-weight: 700;
+    }
+    .feature-card p {
+        margin: 0;
+        font-size: 0.91rem;
+        line-height: 1.55;
+        color: var(--muted-text, inherit);
+    }
+    .feature-example-link {
+        display: inline-block;
+        margin-top: 0.55rem;
+        font-size: 0.83rem;
+        color: var(--accent, #2c3e50);
+        text-decoration: none;
+        font-weight: 600;
+        border: 1px solid var(--accent, #2c3e50);
+        border-radius: 4px;
+        padding: 0.2rem 0.55rem;
+        transition: background 0.12s, color 0.12s;
+    }
+    .feature-example-link:hover {
+        background: var(--accent, #2c3e50);
+        color: #fff;
+        text-decoration: none;
+        opacity: 1;
+    }
+
+    /* Manuscript table */
+    .about-table-wrap {
+        overflow-x: auto;
+        margin: 1rem 0 1.5rem;
+    }
+    .about-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.92rem;
+    }
+    .about-table th,
+    .about-table td {
+        padding: 0.55rem 0.85rem;
+        border: 1px solid var(--border, #ddd);
+        text-align: left;
+        vertical-align: top;
+    }
+    .about-table th {
+        background: var(--card-bg, #f8f8f8);
+        font-weight: 600;
+        white-space: nowrap;
+    }
+    .about-table .trad-mt  { color: var(--mt-color,  #c0892a); font-weight: 700; }
+    .about-table .trad-lxx { color: var(--lxx-color, #3a6bc4); font-weight: 700; }
+    .about-table .trad-sp  { color: #5a8a5a; font-weight: 700; }
+
+    /* Confidence section */
+    .conf-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin: 1rem 0 1.5rem;
+    }
+    .conf-card {
+        flex: 1;
+        min-width: 180px;
+        background: var(--card-bg, #fff);
+        border: 1px solid var(--border, #ddd);
+        border-radius: 8px;
+        padding: 0.85rem 1rem;
+    }
+    .conf-card .conf-badge-wrap {
+        margin-bottom: 0.4rem;
+    }
+    .conf-card p {
+        margin: 0;
+        font-size: 0.88rem;
+        line-height: 1.5;
+        color: var(--muted-text, inherit);
+    }
+
+    /* FAQ */
+    .faq-list {
+        list-style: none;
+        padding: 0;
+        margin: 1rem 0 1.5rem;
+    }
+    .faq-item {
+        padding: 0.9rem 0;
+        border-bottom: 1px solid var(--border, #ddd);
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q {
+        font-weight: 700;
+        font-size: 0.98rem;
+        margin-bottom: 0.3rem;
+        color: var(--accent, #2c3e50);
+    }
+    .faq-a {
+        font-size: 0.93rem;
+        line-height: 1.65;
+    }
+
+    /* Discovery CTA */
+    .guide-cta {
+        margin-top: 2.5rem;
+        padding: 1.75rem 2rem;
+        background: var(--card-bg, #fff);
+        border: 1px solid var(--border, #ddd);
+        border-radius: 12px;
+        text-align: center;
+    }
+    .guide-cta h3 {
+        margin: 0 0 0.5rem;
+        font-size: 1.2rem;
+        color: var(--accent, #2c3e50);
+    }
+    .guide-cta p {
+        margin: 0 0 1rem;
+        font-size: 0.95rem;
+        color: var(--muted, #666);
+    }
+    .guide-cta-btn {
+        display: inline-block;
+        background: var(--accent, #2c3e50);
+        color: #fff !important;
+        text-decoration: none !important;
+        padding: 0.6rem 1.6rem;
+        border-radius: 2rem;
+        font-weight: 700;
+        font-size: 0.98rem;
+        transition: opacity 0.15s;
+    }
+    .guide-cta-btn:hover { opacity: 0.82; }
+
+    /* Scholarship list */
+    .scholar-list {
+        list-style: disc;
+        padding-left: 1.4rem;
+        margin: 0.75rem 0 1.2rem;
+        line-height: 1.9;
+    }
+    .scholar-list li { font-size: 0.93rem; }
+
+    /* Attribution */
+    .guide-attribution {
+        margin: 2rem auto;
+        max-width: 800px;
+        padding: 1rem 1.5rem;
+        border-top: 1px solid var(--border);
+        font-size: 0.875rem;
+        color: var(--muted);
+    }
+    .orcid-link { color: #a6ce39; text-decoration: none; }
+    .orcid-link:hover { text-decoration: underline; }
+
+    @media (max-width: 520px) {
+        .guide-hero h1 { font-size: 1.55rem; }
+        .about-stat { min-width: 110px; }
+        .conf-grid { flex-direction: column; }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+<div class="about-content">
+
+    {# ── Hero ── #}
+    <div class="guide-hero">
+        <h1>Cómo usar BibCrit</h1>
+        <p>BibCrit es un conjunto de herramientas de crítica textual bíblica potenciado por Claude. Cada herramienta transmite análisis en tiempo real directamente en tu navegador, permitiéndote explorar divergencias entre el Texto Masorético (TM) y la Septuaginta (LXX), perfilar tendencias escribales, modelar discrepancias numéricas, reconstruir posibles Vorlagen hebreos, comparar testimonios de los Rollos del Mar Muerto, rastrear citas patrísticas, detectar revisiones teológicas y visualizar genealogías de manuscritos — todo sin instalar ningún software.</p>
+    </div>
+
+    {# ── Stats bar ── #}
+    <div class="about-stats">
+        <div class="about-stat">
+            <span class="stat-num">8</span>
+            <span class="stat-label">herramientas de análisis</span>
+        </div>
+        <div class="about-stat">
+            <span class="stat-num">10</span>
+            <span class="stat-label">libros de la LXX perfilados</span>
+        </div>
+        <div class="about-stat">
+            <span class="stat-num">3</span>
+            <span class="stat-label">tradiciones de manuscritos</span>
+        </div>
+    </div>
+
+    {# ── Feature grid ── #}
+    <h2>Herramientas de Análisis</h2>
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+            <h4><span class="material-symbols-outlined" style="font-size:1.1em;vertical-align:-3px;margin-right:4px">find_in_page</span>Analizador de Divergencias TM/LXX</h4>
+            <p>Introduce una referencia de versículo o capítulo y BibCrit lista cada divergencia a nivel de palabra entre el TM hebreo y la LXX griega, clasificando cada una como técnica de traducción, variante intragreca o evidencia de un Vorlage divergente. Los resultados se transmiten en tiempo real.</p>
+            <a href="/divergence?ref=Isaiah+53%3A1&lang={{ lang }}" class="feature-example-link">Probar Isaías 53:1 →</a>
+        </div>
+
+        <div class="feature-card">
+            <h4><span class="material-symbols-outlined" style="font-size:1.1em;vertical-align:-3px;margin-right:4px">translate</span>Banco de Retrotraducción</h4>
+            <p>Para cualquier pasaje de la LXX, Claude reconstruye el texto hebreo más probable que habría generado el griego, anotando cada palabra retrotraducida con su nivel de confianza y la estrategia de traducción que implica. Ideal para identificar pasajes donde la LXX preserva una variante textual invisible en el TM.</p>
+            <a href="/backtranslation?ref=Isaiah+7%3A14&lang={{ lang }}" class="feature-example-link">Probar Isaías 7:14 →</a>
+        </div>
+
+        <div class="feature-card">
+            <h4><span class="material-symbols-outlined" style="font-size:1.1em;vertical-align:-3px;margin-right:4px">radar</span>Perfilador de Tendencias Escribales</h4>
+            <p>Selecciona un libro de la LXX y obtén un gráfico de radar de cinco ejes con las tendencias características del traductor: literalidad, reducción del antropomorfismo, exaltación mesiánica, armonización y tasa de paráfrasis. Cada dimensión se puntúa y se apoya en ejemplos textuales reales.</p>
+            <a href="/scribal?book=Isaiah" class="feature-example-link">Probar Isaías →</a>
+        </div>
+
+        <div class="feature-card">
+            <h4><span class="material-symbols-outlined" style="font-size:1.1em;vertical-align:-3px;margin-right:4px">calculate</span>Modelador de Discrepancias Numéricas</h4>
+            <p>Las edades genealógicas, cifras del censo y números cronológicos difieren sistemáticamente entre el TM, la LXX y el SP. Introduce una referencia (p. ej. Génesis 5) y Claude modela qué tradición preserva la lectura más antigua, qué mecanismo escribal causó el cambio y cómo cada familia manuscrita resuelve la aritmética.</p>
+            <a href="/numerical?ref=Genesis+5" class="feature-example-link">Probar Génesis 5 →</a>
+        </div>
+
+        <div class="feature-card">
+            <h4><span class="material-symbols-outlined" style="font-size:1.1em;vertical-align:-3px;margin-right:4px">history_edu</span>Herramienta de Puente DSS</h4>
+            <p>Compara un pasaje bíblico entre los manuscritos de los Rollos del Mar Muerto, el Texto Masorético y la Septuaginta. Consulta qué rollos atestiguan el pasaje, qué tan cerca se alinea cada rollo con el TM o la LXX, y las divergencias específicas entre los testigos.</p>
+            <a href="/dss?ref=Isaiah+7%3A14&lang={{ lang }}" class="feature-example-link">Probar Isaías 7:14 →</a>
+        </div>
+
+        <div class="feature-card">
+            <h4><span class="material-symbols-outlined" style="font-size:1.1em;vertical-align:-3px;margin-right:4px">psychology</span>Detector de Revisiones Teológicas</h4>
+            <p>Identifica dónde traductores o copistas pueden haber alterado el texto por razones teológicas — evitación del antropomorfismo, exaltación mesiánica, cambios polémicos o armonización con convenciones teológicas. Cada pasaje marcado se evalúa según su probable motivación y contexto tradente.</p>
+            <a href="/theological?ref=Genesis+1%3A1&lang={{ lang }}" class="feature-example-link">Probar Génesis 1:1 →</a>
+        </div>
+
+        <div class="feature-card">
+            <h4><span class="material-symbols-outlined" style="font-size:1.1em;vertical-align:-3px;margin-right:4px">church</span>Rastreador de Citas Patrísticas</h4>
+            <p>Rastrea cómo los Padres de la Iglesia hasta el siglo V citaron un pasaje bíblico, qué forma textual usaron (similar al TM, a la LXX o divergente) y qué revelan sus citas sobre la transmisión textual primitiva. La evidencia patrística preserva a menudo lecturas perdidas de las ramas manuscritas supervivientes.</p>
+            <a href="/patristic?ref=Isaiah+53%3A1&lang={{ lang }}" class="feature-example-link">Probar Isaías 53:1 →</a>
+        </div>
+
+        <div class="feature-card">
+            <h4><span class="material-symbols-outlined" style="font-size:1.1em;vertical-align:-3px;margin-right:4px">account_tree</span>Genealogía de Manuscritos</h4>
+            <p>Visualiza el stemma de transmisión completo de un libro bíblico — desde el proto-texto hasta las familias manuscritas (TM, LXX, DSS, SP, Peshitta, Tárgum, Vulgata) y las ediciones críticas modernas. Comprende las relaciones genealógicas entre las tradiciones y dónde diverge cada rama.</p>
+            <a href="/genealogy?book=Isaiah&lang={{ lang }}" class="feature-example-link">Probar Isaías →</a>
+        </div>
+
+    </div>
+
+    {# ── Manuscript traditions ── #}
+    <h2>Tradiciones de Manuscritos</h2>
+
+    <p>BibCrit trabaja con tres grandes testimonios textuales de la Biblia Hebrea, cada uno con su propia historia de transmisión y edición académica.</p>
+
+    <div class="about-table-wrap">
+    <table class="about-table">
+        <thead>
+            <tr>
+                <th>Tradición</th>
+                <th>Nombre completo</th>
+                <th>Idioma</th>
+                <th>Fecha aproximada</th>
+                <th>Edición estándar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="trad-mt">TM</span></td>
+                <td>Texto Masorético</td>
+                <td>Hebreo bíblico / Arameo</td>
+                <td>Texto consonántico c. siglo I a.C.; vocalización tiberiana c. siglos VII–X d.C.</td>
+                <td>Biblia Hebraica Stuttgartensia / BHQ</td>
+            </tr>
+            <tr>
+                <td><span class="trad-lxx">LXX</span></td>
+                <td>Septuaginta</td>
+                <td>Griego koiné</td>
+                <td>Siglos III–I a.C. (Pentateuco, el más antiguo)</td>
+                <td>Septuaginta de Gotinga (crítica); Rahlfs-Hanhart (manual)</td>
+            </tr>
+            <tr>
+                <td><span class="trad-sp">SP</span></td>
+                <td>Pentateuco Samaritano</td>
+                <td>Hebreo samaritano</td>
+                <td>La escritura diverge c. siglos VI–IV a.C.; MSS existentes son medievales</td>
+                <td>von Gall 1918; HBCE (en curso)</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+
+    {# ── How analysis works ── #}
+    <h2>Cómo Funciona el Análisis</h2>
+
+    <p>Cada herramienta de BibCrit se basa en el extenso entrenamiento de Claude en estudios bíblicos, lenguas antiguas y la literatura primaria de la crítica textual. Cuando introduces un pasaje o libro, Claude aplica los mismos marcos analíticos utilizados en la erudición crítica: la taxonomía de divergencias de Tov para el Analizador de Divergencias, las categorías de técnica de traducción de Aejmelaeus para el Perfilador Escribal, la metodología estándar de reconstrucción del Vorlage para el Banco de Retrotraducción, y así sucesivamente. Consulta <a href="#scholarship">Bibliografía y Metodología</a> para conocer las fuentes específicas que informan cada herramienta.</p>
+
+    <p>Donde el análisis toca datos manuscritos verificables — como la presencia de un testimonio de los Rollos del Mar Muerto, la alineación de una cita patrística, o el valor numérico en una tradición específica — Claude contrasta su respuesta con su conocimiento de las ediciones críticas estándar. Los resultados se transmiten en tiempo real para que puedas seguir el análisis mientras se desarrolla. Los pasajes analizados frecuentemente se cargan desde una caché compartida, de modo que los resultados previos aparecen inmediatamente.</p>
+
+    <p>Todo el análisis se produce a partir del conocimiento de entrenamiento de Claude. BibCrit no consulta bases de datos externas en tiempo de ejecución. Los resultados deben verificarse con fuentes primarias — BHS/BHQ, la LXX de Gotinga, las transcripciones de los DSS — antes de citarlos en trabajos académicos revisados por pares.</p>
+
+    {# ── Confidence scores ── #}
+    <h2>Interpretación de los Niveles de Confianza</h2>
+
+    <p>Cada divergencia, elemento de retrotraducción o interpretación numérica lleva un indicador de confianza que refleja el grado de respaldo académico del juicio:</p>
+
+    <div class="conf-grid">
+        <div class="conf-card">
+            <div class="conf-badge-wrap">
+                <span class="confidence-badge confidence-high">ALTO</span>
+            </div>
+            <p>La conclusión cuenta con sólido respaldo textual y está documentada en los principales comentarios críticos o ediciones críticas. Múltiples testimonios independientes o un patrón de traducción bien establecido.</p>
+        </div>
+        <div class="conf-card">
+            <div class="conf-badge-wrap">
+                <span class="confidence-badge confidence-medium">MEDIO</span>
+            </div>
+            <p>La interpretación es plausible y coherente con los patrones escribales conocidos, pero existen explicaciones alternativas. Trátala como hipótesis de trabajo para investigación posterior.</p>
+        </div>
+        <div class="conf-card">
+            <div class="conf-badge-wrap">
+                <span class="confidence-badge confidence-low">BAJO</span>
+            </div>
+            <p>La evidencia es ambigua o el juicio implica una inferencia significativa. Útil como punto de partida, pero debe verificarse con fuentes primarias antes de citarlo.</p>
+        </div>
+    </div>
+
+    {# ── Scholarship & methodology ── #}
+    <h2 id="scholarship">Bibliografía y Metodología</h2>
+
+    <p>Los prompts de BibCrit se basan en las obras de referencia estándar y los marcos metodológicos de la erudición en crítica textual y estudios de la LXX. Las fuentes clave incluyen:</p>
+
+    <ul class="scholar-list">
+        <li><strong>Emanuel Tov</strong> — <em>Textual Criticism of the Hebrew Bible</em> (3.ª ed., Fortress, 2012): la taxonomía estándar de tipos de divergencia, la metodología de reconstrucción del Vorlage y la clasificación de errores escribales.</li>
+        <li><strong>Anneli Aejmelaeus</strong> — <em>On the Trail of the Septuagint Translators</em> (Peeters, 2007): análisis de técnica de traducción, puntuación de literalidad y tendencias sintácticas paratácticas frente a hipotácticas.</li>
+        <li><strong>Jan de Waard &amp; Eugene Nida</strong> — <em>A Translator's Handbook on the Bible</em>: principios de equivalencia funcional utilizados para clasificar la paráfrasis y la traducción dinámica.</li>
+        <li><strong>Biblia Hebraica Stuttgartensia (BHS)</strong> y <strong>Biblia Hebraica Quinta (BHQ)</strong>: las entradas del aparato crítico que clasifican las variantes como diferencias de Vorlage, corrupción intragreca o elecciones de traducción.</li>
+        <li><strong>Septuaginta de Gotinga</strong>: edición crítica utilizada para las variantes textuales de la LXX y la atestación de manuscritos griegos.</li>
+        <li><strong>Rollos del Mar Muerto</strong> (4QSam<sup>a</sup>, 1QIsa<sup>a</sup> y otros): testimonios hebreos pre-masoréticos que a veces apoyan los pluses y minuses de la LXX frente al TM.</li>
+    </ul>
+
+    <p>Todo el análisis es producido por Claude a partir de su conocimiento de entrenamiento. BibCrit no llama a bases de datos externas en tiempo de ejecución. Los resultados deben contrastarse con fuentes primarias para publicaciones académicas revisadas por pares.</p>
+
+    {# ── FAQ ── #}
+    <h2>Preguntas Frecuentes</h2>
+
+    <ul class="faq-list">
+        <li class="faq-item">
+            <div class="faq-q">¿Ha sido revisado BibCrit por pares académicos?</div>
+            <div class="faq-a">No. BibCrit es una herramienta de investigación potenciada por un modelo de lenguaje de gran escala. Sus análisis reflejan el entrenamiento de Claude sobre erudición publicada, pero no han sido verificados de forma independiente por especialistas humanos. Contrasta siempre los hallazgos significativos con ediciones críticas primarias (BHS/BHQ, LXX de Gotinga) y los comentarios pertinentes antes de citarlos en trabajos académicos.</div>
+        </li>
+        <li class="faq-item">
+            <div class="faq-q">¿Qué es un Vorlage?</div>
+            <div class="faq-a">Un <em>Vorlage</em> (término alemán para "ejemplar" o "copia maestra") es el texto fuente hebreo que un traductor usó al producir una versión en griego (u otro idioma). Cuando la lectura de la LXX difiere del TM, los especialistas se preguntan si el traductor tenía ante él un manuscrito hebreo diferente — un Vorlage divergente — o si la diferencia surgió dentro de la transmisión griega. El Banco de Retrotraducción y el Analizador de Divergencias intentan distinguir entre estos dos escenarios.</div>
+        </li>
+        <li class="faq-item">
+            <div class="faq-q">¿Por qué difieren los números entre el TM y la LXX?</div>
+            <div class="faq-a">Las discrepancias numéricas — como las edades de los patriarcas en Génesis 5 o las cifras del censo en Números — surgen de varias causas convergentes: las letras hebreas con función doble de numerales (lo que las hace vulnerables a confusiones paleográficas), ajustes cronológicos deliberados para alinear diferentes esquemas calendáricos o teológicos, y errores de transmisión en las ramas tanto del TM como de la LXX. El Pentateuco Samaritano proporciona un tercer testimonio independiente que a veces apoya a la LXX frente al TM. El Modelador de Discrepancias Numéricas de BibCrit analiza cada caso individualmente.</div>
+        </li>
+        <li class="faq-item">
+            <div class="faq-q">¿Admite BibCrit los Rollos del Mar Muerto o la Peshitta?</div>
+            <div class="faq-a">La <strong>Herramienta de Puente DSS</strong> (<a href="/dss">/dss</a>) ya está disponible y permite comparar cualquier pasaje entre los testimonios de los Rollos del Mar Muerto, el TM y la LXX simultáneamente. La integración de la Peshitta es una adición futura planificada. Los datos del Pentateuco Samaritano ya están incluidos en el Modelador de Discrepancias Numéricas, y la herramienta de Genealogía de Manuscritos cubre la Peshitta, el Tárgum y la Vulgata como ramas de transmisión.</div>
+        </li>
+    </ul>
+
+    {# ── Discovery CTA ── #}
+    <div class="guide-cta">
+        <h3><span class="material-symbols-outlined" style="font-size:1.1em;vertical-align:-3px;margin-right:4px">travel_explore</span>Explora el Canal de Descubrimiento</h3>
+        <p>Consulta resúmenes en lenguaje claro de las divergencias TM/LXX más interesantes, patrones escribales y tradiciones numéricas ya analizadas — sin necesidad de introducir ninguna referencia.</p>
+        <a href="/discovery?lang={{ lang }}" class="guide-cta-btn">Abrir Descubrimiento →</a>
+    </div>
+
+    {# ── Open Data API ── #}
+    <div class="guide-section" style="max-width:860px;margin:2rem auto;">
+        <h2 class="guide-section-title">API de Datos Abiertos</h2>
+        <p>Todos los análisis en caché son libremente accesibles mediante una API REST pública bajo la licencia Apache 2.0 — consúltalos, descárgalos y reutilízalos en tu propia investigación o herramientas.</p>
+
+        <p><strong>Ejemplos de consultas:</strong></p>
+        <div class="guide-code-block" style="background:var(--card-bg,#fff);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;font-family:monospace;font-size:0.85rem;margin:1rem 0;overflow-x:auto;">
+            <span style="color:var(--muted);font-style:italic;"># Todos los análisis en caché (paginados)</span><br>
+            GET /api/cache<br><br>
+            <span style="color:var(--muted);font-style:italic;"># Filtrar por herramienta</span><br>
+            GET /api/cache?tool=divergence<br><br>
+            <span style="color:var(--muted);font-style:italic;"># Filtrar por herramienta + pasaje</span><br>
+            GET /api/cache?tool=theological&amp;ref=Isaiah+7:14<br><br>
+            <span style="color:var(--muted);font-style:italic;"># Solo resultados listos para descubrimiento</span><br>
+            GET /api/cache?discovery_ready=true&amp;limit=50&amp;offset=0
+        </div>
+
+        <p>Cada registro incluye el JSON estructurado completo generado por Claude, más metadatos: <code>tool</code>, <code>reference</code>, <code>model_version</code>, <code>cached_at</code>. Parámetros de consulta disponibles: <code>tool</code>, <code>ref</code> (coincidencia de subcadena), <code>discovery_ready</code>, <code>limit</code> (máx. 200), <code>offset</code>.</p>
+
+        <p>La especificación completa de la API, la documentación del esquema y ejemplos de uso están en el <a href="https://github.com/Jossifresben/bibcrit" target="_blank" rel="noopener">repositorio de GitHub</a> en <code>docs/api-reference.md</code>.</p>
+
+        <p>Si usas datos de BibCrit en tu investigación, por favor cita:<br>
+        <em>Fresco Benaim, J. (2026). BibCrit: AI-assisted biblical textual criticism. <a href="https://orcid.org/0009-0000-2026-0836" target="_blank" rel="noopener">ORCID:0009-0000-2026-0836</a></em></p>
+    </div>
+
+    {# ── Attribution ── #}
+    <div class="guide-attribution">
+        <p>BibCrit fue creado por <strong>Jossi Fresco</strong>
+           <a href="https://orcid.org/0009-0000-2026-0836" target="_blank" rel="noopener" class="orcid-link">
+             <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" width="16" height="16" style="vertical-align:middle;margin:0 3px;">
+             0009-0000-2026-0836
+           </a>
+        </p>
+    </div>
+
+</div>{# /about-content #}
+</div>{# /container #}
+{% endblock %}

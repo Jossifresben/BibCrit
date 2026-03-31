@@ -1,0 +1,97 @@
+{
+  "divergences": [
+    {
+      "mt_word": "אֲסַפְּרָה אֶל חֹק (I will declare concerning the decree)",
+      "lxx_word": "διαγγέλλων τὸ πρόσταγμα (declaring/proclaiming the decree)",
+      "divergence_type": "grammatical_shift",
+      "confidence": 0.82,
+      "hypotheses": [
+        {
+          "type": "grammatical_shift",
+          "confidence": 0.82,
+          "explanation": "The LXX renders the Hebrew finite verb אֲסַפְּרָה with a Greek participle διαγγέλλων, likely subordinating the clause to emphasize the content of the declaration rather than the act itself."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Pietersma (2007) p.78",
+        "Kraus (1988) p.128"
+      ],
+      "analysis_technical": "The shift from finite verb to participle reflects Greek stylistic preference for subordination. Pietersma notes that LXX Psalms frequently employs participles to create smoother narrative flow. The prepositional phrase אֶל חֹק becomes direct object τὸ πρόσταγμα, eliminating the Hebrew construction's ambiguity.",
+      "analysis_plain": "The Greek translator changed the verb form to make the sentence flow better in Greek, turning 'I will declare' into 'declaring' to focus on what is being declared."
+    },
+    {
+      "mt_word": "יְהוָה (YHWH, the divine name)",
+      "lxx_word": "κυρίου (of Lord)",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.95,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.95,
+          "explanation": "Standard LXX practice substitutes κύριος for the Tetragrammaton, reflecting Jewish scribal conventions of the Second Temple period to avoid pronouncing the divine name."
+        }
+      ],
+      "dss_witness": "11QPsa and 4QPsb preserve יהוה in paleo-Hebrew",
+      "citations": [
+        "Tov (2001) p.218",
+        "Wevers (1993) p.45"
+      ],
+      "analysis_technical": "This represents universal LXX practice documented by Tov across all biblical books. DSS evidence from Qumran shows the Tetragrammaton written in paleo-Hebrew script within square Aramaic text, confirming pre-Christian Jewish reverence prompted this substitution. The genitive κυρίου appropriately renders the construct relationship.",
+      "analysis_plain": "Ancient Greek translators always replaced God's personal name with the title 'Lord,' following Jewish tradition of not speaking the sacred name aloud."
+    },
+    {
+      "mt_word": "אָמַר אֵלַי (said to me)",
+      "lxx_word": "εἶπεν πρός με (said to me)",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.88,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.88,
+          "explanation": "Both phrases convey identical meaning; πρός with accusative is standard Greek equivalent for Hebrew אֶל in verbs of speaking, representing expected lexical correspondence."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Joüon-Muraoka (2006) §133c",
+        "BDAG (2000) p.875"
+      ],
+      "analysis_technical": "The correspondence אֶל → πρός reflects established translation equivalence in LXX. The Hebrew אֵלַי and Greek πρός με both employ directional prepositions with first-person pronouns. No textual variation exists here; this is straightforward semantic mapping without interpretive overlay.",
+      "analysis_plain": "The Hebrew and Greek use their respective standard ways of saying 'to me' after verbs of speaking—this is normal translation with no difference in meaning."
+    },
+    {
+      "mt_word": "יְלִדְתִּיךָ (I have begotten you)",
+      "lxx_word": "γεγέννηκά σε (I have begotten you)",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.9,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.9,
+          "explanation": "Perfect tense in both languages conveys completed action with ongoing significance, standard rendering with no theological alteration of the metaphor of divine begetting/adoption."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Hossfeld-Zenger (2005) p.35",
+        "Acts 13:33, Hebrews 1:5"
+      ],
+      "analysis_technical": "The Hebrew qal perfect יְלִדְתִּיךָ is accurately rendered by Greek perfect γεγέννηκα. Both preserve the royal adoption formula attested in ancient Near Eastern enthronement texts. The verb choice maintains the biological metaphor without softening or spiritualizing, contra some early Christian interpretive readings that post-date the translation.",
+      "analysis_plain": "Both Hebrew and Greek use the same verb for 'give birth to' or 'father,' preserving the ancient royal language of a king being adopted as God's son at his coronation."
+    }
+  ],
+  "summary_technical": "The divergences reflect primarily grammatical and stylistic adaptation to Greek rather than substantive textual variants. Standard LXX translation technique accounts for all observed differences without requiring alternative Vorlage.",
+  "summary_plain": "The Greek translation makes small grammatical adjustments for clarity while preserving the meaning of the Hebrew text.",
+  "bibcrit_hypothesis": {
+    "title": "Participle Shift Signals Performance Context Change",
+    "reasoning": "The grammatical shift from finite אֲסַפְּרָה to participial διαγγέλλων may reflect the translator's awareness of liturgical performance contexts. The participle better suits antiphonal psalm recitation where the king responds to priestly pronouncement, subordinating his declaration to YHWH's prior decree. This implies the LXX translator understood Psalm 2:7 as dialogical ritual rather than monologic royal speech, a nuance invisible in MT's syntax but recoverable through Greek grammatical choices.",
+    "plain": "The Greek verb form might suggest the translator pictured this as part of a temple ceremony where the king responds to a priest, not just a solo declaration.",
+    "confidence": 0.58
+  },
+  "discovery_ready": false,
+  "reference": "Psalm 2:7",
+  "cached_at": "2026-03-30T19:03:24.546192",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v2"
+}

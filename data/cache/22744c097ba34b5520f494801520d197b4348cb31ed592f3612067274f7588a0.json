@@ -1,0 +1,119 @@
+{
+  "book": "Zechariah",
+  "translator_name": "Old Greek of Zechariah (Deutero-Zechariah 9–14)",
+  "translator_profile": {
+    "literalness": 0.68,
+    "anthropomorphism_reduction": 0.42,
+    "messianic_heightening": 0.81,
+    "harmonization": 0.38,
+    "paraphrase_rate": 0.35
+  },
+  "dimensions": [
+    {
+      "dimension": "literalness",
+      "score": 0.68,
+      "confidence": 0.82,
+      "summary": "The LXX translator of Zechariah demonstrates moderately high literalness with consistent equivalence patterns, though not at the level of extreme isomorphism found in books like Psalms or portions of the Pentateuch. In Zech 9:9, the translator maintains Hebrew syntax and word order (χαῖρε σφόδρα = גִּילִי מְאֹד), providing standard lexical equivalents for most substantives. However, the rendering shows selective freedom in verbal forms and theological interpretations, particularly where messianic potential exists.",
+      "summary_plain": "This translator generally follows the Hebrew text closely, producing word-for-word renderings in most cases, though they feel free to interpret theological terms and messianic passages more freely.",
+      "examples": [
+        {
+          "reference": "Zechariah 9:9",
+          "mt_text": "גִּילִי מְאֹד... הָרִיעִי",
+          "lxx_text": "χαῖρε σφόδρα... κήρυσσε",
+          "note": "The translator maintains Hebrew word order and provides standard equivalents (rejoice/shout), showing characteristic literal approach to non-theologically sensitive lexemes."
+        },
+        {
+          "reference": "Zechariah 9:9",
+          "mt_text": "עַל חֲמוֹר וְעַל עַיִר בֶּן אֲתֹנוֹת",
+          "lxx_text": "ἐπὶ ὑποζύγιον καὶ πῶλον νέον",
+          "note": "The double preposition structure (עַל...וְעַל) is preserved (ἐπὶ...καὶ), demonstrating formal correspondence, though the translator simplifies the hendiadys into two distinct animals."
+        }
+      ]
+    },
+    {
+      "dimension": "anthropomorphism_reduction",
+      "score": 0.42,
+      "confidence": 0.58,
+      "summary": "Evidence for systematic anthropomorphism reduction in Zechariah is mixed and debated among scholars. The translator shows moderate concern for avoiding crude divine embodiment in some passages (e.g., Zech 2:12/2:8 MT where touching Israel = touching God's eye), but does not consistently apply this tendency. The book's apocalyptic and visionary character, with its angel mediators and symbolic imagery, may have reduced the translator's perception that direct intervention was needed for theological reasons.",
+      "summary_plain": "The translator sometimes softens passages where God appears too human-like, but doesn't do this consistently throughout the book, perhaps because the visions and symbolic language already create distance from literal divine embodiment.",
+      "examples": [
+        {
+          "reference": "Zechariah 2:12 (MT 2:8)",
+          "mt_text": "הַנֹּגֵעַ בָּכֶם נֹגֵעַ בְּבָבַת עֵינוֹ",
+          "lxx_text": "διότι ὁ ἁπτόμενος ὑμῶν ὡς ἁπτόμενος τῆς κόρης τοῦ ὀφθαλμοῦ αὐτοῦ",
+          "note": "The addition of ὡς (as, like) creates simile rather than direct identity, moderately reducing anthropomorphic directness, though the referent remains ambiguous (God's eye or the nations' eye)."
+        }
+      ]
+    },
+    {
+      "dimension": "messianic_heightening",
+      "score": 0.81,
+      "confidence": 0.85,
+      "summary": "The Zechariah translator demonstrates pronounced messianic heightening, particularly in Deutero-Zechariah (chapters 9–14). The most significant case is Zech 9:9, where the passive participial form וְנוֹשָׁע (and saved/delivered) becomes the active present participle σῴζων (saving, a savior), transforming the king from one who is saved into an active salvific agent. This interpretive move, combined with retention of δίκαιος and πραΰς, creates a messianic portrait that profoundly influenced New Testament christology and early Christian exegesis.",
+      "summary_plain": "This translator frequently amplifies the messianic and eschatological meaning of passages, especially by changing descriptions of passive figures into active savior-kings, which later influenced how early Christians read these prophecies.",
+      "examples": [
+        {
+          "reference": "Zechariah 9:9",
+          "mt_text": "צַדִּיק וְנוֹשָׁע הוּא",
+          "lxx_text": "δίκαιος καὶ σῴζων αὐτός",
+          "note": "The transformation of passive וְנוֹשָׁע (being saved/delivered) to active participle σῴζων (saving, savior) represents clear messianic heightening, presenting the king as salvific agent rather than recipient of salvation."
+        },
+        {
+          "reference": "Zechariah 9:9",
+          "mt_text": "עָנִי",
+          "lxx_text": "πραΰς",
+          "note": "The rendering of עָנִי (poor, afflicted, humble) as πραΰς (meek, gentle) shifts from socioeconomic/circumstantial condition to moral virtue, enhancing the messianic king's character profile in ways exploited by Matthew 21:5."
+        }
+      ]
+    },
+    {
+      "dimension": "harmonization",
+      "score": 0.38,
+      "confidence": 0.52,
+      "summary": "Harmonization tendencies in LXX Zechariah are relatively subdued compared to other prophetic books. The translator occasionally aligns vocabulary with broader prophetic traditions but does not systematically resolve tensions with parallel passages. The handling of traditional prophetic formulae and the relationship between Proto-Zechariah (1–8) and Deutero-Zechariah (9–14) suggests limited concern for creating artificial consistency, though some lexical choices reflect awareness of broader biblical language.",
+      "summary_plain": "This translator doesn't often change the text to make it match other biblical passages or to smooth out differences, preferring to let each passage stand largely on its own terms.",
+      "examples": [
+        {
+          "reference": "Zechariah 9:9",
+          "mt_text": "בַּת צִיּוֹן... בַּת יְרוּשָׁלִַם",
+          "lxx_text": "θύγατερ Σιων... θύγατερ Ἰερουσαλήμ",
+          "note": "Standard rendering of the prophetic address maintains consistency with broader LXX prophetic corpus (Isaiah, Jeremiah, Lamentations) but represents conventional equivalence rather than deliberate harmonization."
+        }
+      ]
+    },
+    {
+      "dimension": "paraphrase_rate",
+      "score": 0.35,
+      "confidence": 0.72,
+      "summary": "The Zechariah translator employs paraphrase at a low-moderate rate, primarily in theologically significant contexts rather than as a general translation approach. Most of the text maintains formal correspondence with occasional interpretive expansions or contractions. The evidence from Zech 9:9 shows both literal rendering of syntactic structures and selective paraphrase where theological interpretation is at stake (the וְנוֹשָׁע/σῴζων transformation), suggesting strategic rather than habitual departure from formal equivalence.",
+      "summary_plain": "This translator usually sticks close to the Hebrew wording but occasionally rewrites passages when important theological ideas are involved, especially concerning the messiah and salvation.",
+      "examples": [
+        {
+          "reference": "Zechariah 9:9",
+          "mt_text": "וְעַל עַיִר בֶּן אֲתֹנוֹת",
+          "lxx_text": "καὶ πῶλον νέον",
+          "note": "The Hebrew construct chain 'foal, son of she-asses' is condensed to 'young foal,' representing minor paraphrastic compression while maintaining semantic content, typical of the translator's moderate freedom."
+        },
+        {
+          "reference": "Zechariah 9:9",
+          "mt_text": "צַדִּיק וְנוֹשָׁע הוּא עָנִי",
+          "lxx_text": "δίκαιος καὶ σῴζων αὐτός πραΰς",
+          "note": "While maintaining three-attribute structure, the lexical choices (especially σῴζων and πραΰς) represent interpretive paraphrase of theological terms rather than mere lexical substitution."
+        }
+      ]
+    }
+  ],
+  "overall_assessment": "The LXX translator of Zechariah, particularly Deutero-Zechariah (chapters 9–14), demonstrates a moderately literal approach with pronounced messianic-eschatological interpretation. This translator belongs to the middle range of LXX literalness, comparable to portions of Jeremiah or Minor Prophets, but distinguishes themselves through strategic theological heightening in messianic contexts. The most text-critically significant feature is the transformation of passive/receptive royal figures into active salvific agents (Zech 9:9: וְנוֹשָׁע → σῴζων), which reflects Second Temple messianic expectations and profoundly influenced New Testament christological exegesis. For text-critical purposes, LXX Zechariah must be used cautiously in messianic passages, as the Greek frequently represents theological Tendenz rather than variant Hebrew Vorlagen.",
+  "overall_plain": "This translator worked carefully but with a strong theological agenda, especially regarding messianic prophecies. They usually translated word-for-word but made strategic changes to heighten the messianic meaning of key passages, transforming passive descriptions into active savior language. Their work significantly shaped how early Christians understood and applied these prophecies to Jesus.",
+  "bibcrit_assessment": {
+    "title": "Strategic Messianic Activism in Passive Royal Texts",
+    "reasoning": "The single most significant finding is the translator's systematic transformation of passive or receptive royal characterizations into active salvific agency, most strikingly in Zech 9:9 where וְנוֹשָׁע (niphal participle: 'being saved/delivered') becomes σῴζων (present active participle: 'saving/savior'). This is not mere lexical variation but reflects deliberate theological interpretation rooted in Second Temple messianic expectations, creating a textual foundation for christological reading that the MT does not support. This tendency must be recognized when retroverting LXX readings or assessing the 'original' semantic range of Zechariah's royal theology.",
+    "plain": "The most important discovery is how this translator deliberately changed descriptions of kings who receive help into kings who provide salvation, especially in Zechariah 9:9. This wasn't accidental but reflected Jewish messianic hopes and later enabled Christian interpretation of these verses as prophecies of Jesus as savior.",
+    "confidence": 0.85
+  },
+  "discovery_ready": false,
+  "reference": "Zechariah",
+  "cached_at": "2026-03-30T21:43:12.183865",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

@@ -1,0 +1,166 @@
+{
+  "reference": "Isaiah 7:14",
+  "total_citations_found": 8,
+  "period_summary": "Citations cluster heavily in the 2nd–3rd centuries during Christological controversies over Jesus' birth, especially in debates with Jews over the virgin birth. The LXX reading 'parthenos' (virgin) vs. Hebrew 'almah' (young woman) became a primary locus of early Christian apologetic.",
+  "citations": [
+    {
+      "father": "Justin Martyr",
+      "dates_ce": "c. 100–165",
+      "region": "Rome",
+      "work": "Dialogue with Trypho",
+      "chapter_section": "ch. 43, 67, 71, 84",
+      "cited_text": "ἰδοὺ ἡ παρθένος ἐν γαστρὶ ἕξει καὶ τέξεται υἱόν, καὶ καλέσουσι τὸ ὄνομα αὐτοῦ Ἐμμανουήλ (Behold, the virgin shall conceive and bear a son, and they shall call his name Emmanuel)",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.95,
+      "text_form_note": "Justin's citation precisely matches the LXX reading 'parthenos' (παρθένος = virgin) and uses the plural 'they shall call' (καλέσουσι) found in LXX, against MT's singular 'she/you shall call'. His repeated insistence on 'parthenos' in debates with Trypho shows awareness of the Hebrew-Greek textual divergence.",
+      "theological_use": "Justin deploys this text as proof of virginal conception against Jewish interlocutors who argued 'almah' means only 'young woman.' He argues the LXX translators, being Jews closer to the prophets' time, correctly understood Isaiah's intent as 'virgin,' making this a cornerstone of his Christological apologetic.",
+      "transmission_implication": "Justin's citation demonstrates that by mid-2nd century, Christian communities in Rome were using a Greek text tradition (LXX) that had already diverged significantly from the Hebrew in this theologically charged verse."
+    },
+    {
+      "father": "Irenaeus of Lyons",
+      "dates_ce": "c. 130–202",
+      "region": "Gaul (Lyons)",
+      "work": "Against Heresies",
+      "chapter_section": "III.21.1–4",
+      "cited_text": "Ecce virgo in utero accipiet et pariet filium (Behold, a virgin shall conceive in the womb and bear a son)",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.9,
+      "text_form_note": "Irenaeus uses the Old Latin translation 'virgo' (virgin), which renders LXX's 'parthenos.' His extended discussion defends the LXX translation tradition against those who would read 'young woman,' demonstrating awareness of the Hebrew-Greek divergence and explicitly defending the Septuagint translators' rendering.",
+      "theological_use": "Irenaeus uses Isaiah 7:14 to argue for the virgin birth as essential to Christ's role as the 'new Adam' who reverses the Fall. He explicitly defends the LXX translators against critics (likely Jewish-Christian or Jewish opponents) who challenged 'parthenos,' asserting the translators were inspired.",
+      "transmission_implication": "Irenaeus's citation via Old Latin confirms that Western Christian communities in Gaul inherited and transmitted the LXX tradition through Latin translation, establishing 'virgo/parthenos' as the normative Christian reading by the late 2nd century."
+    },
+    {
+      "father": "Tertullian",
+      "dates_ce": "c. 155–220",
+      "region": "Carthage",
+      "work": "Against the Jews (Adversus Judaeos)",
+      "chapter_section": "ch. 9",
+      "cited_text": "Ecce virgo concipiet in utero et pariet filium (Behold, a virgin shall conceive in the womb and bear a son)",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.92,
+      "text_form_note": "Tertullian's Latin 'virgo' reflects the LXX 'parthenos' tradition. He explicitly engages the Hebrew-Greek controversy, noting that Jewish interpreters of his day read 'adolescentula' (young woman) but argues the context of the sign requires 'virgo.' His awareness of competing readings shows textual debate was active in North Africa.",
+      "theological_use": "Tertullian marshals Isaiah 7:14 as scriptural proof against Jewish rejection of virgin birth, arguing that only a virginal conception constitutes the miraculous 'sign' promised to Ahaz. He insists the LXX reading preserves the prophetic intent against contemporary Jewish reinterpretation.",
+      "transmission_implication": "Tertullian's citation reveals that by early 3rd century Carthage, the LXX-based Latin text was firmly established in Christian liturgical and apologetic use, even as Jewish communities transmitted a reading closer to the Hebrew 'almah.'"
+    },
+    {
+      "father": "Origen",
+      "dates_ce": "c. 185–254",
+      "region": "Alexandria/Caesarea",
+      "work": "Contra Celsum",
+      "chapter_section": "I.34–35",
+      "cited_text": "ἰδοὺ ἡ παρθένος ἐν γαστρὶ ἕξει καὶ τέξεται υἱόν (Behold, the virgin shall conceive and bear a son)",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.88,
+      "text_form_note": "Origen cites the LXX 'parthenos' but uniquely shows awareness (from his Hexapla work) that the Hebrew has 'almah' and that Aquila, Symmachus, and Theodotion rendered it 'neanis' (young woman). Despite this knowledge, he defends the LXX reading as prophetically accurate and argues 'parthenos' was the correct interpretation of Isaiah's intent.",
+      "theological_use": "Origen defends the LXX reading against pagan critic Celsus, who cited Jewish arguments that Christians mistranslated Isaiah. Origen argues the LXX translators, being pre-Christian Jews, had no motive to fabricate 'virgin,' thus validating the Christian reading as authentically Jewish and prophetic.",
+      "transmission_implication": "Origen's Hexapla work reveals that multiple Greek text forms (LXX vs. later Greek versions) circulated in 3rd-century Caesarea, but Christian communities uniformly transmitted and defended the LXX 'parthenos' reading as authoritative."
+    },
+    {
+      "father": "Eusebius of Caesarea",
+      "dates_ce": "c. 260–339",
+      "region": "Caesarea",
+      "work": "Proof of the Gospel (Demonstratio Evangelica)",
+      "chapter_section": "VII.1",
+      "cited_text": "ἰδοὺ ἡ παρθένος ἐν γαστρὶ λήψεται καὶ τέξεται υἱόν (Behold, the virgin shall conceive and bear a son)",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.9,
+      "text_form_note": "Eusebius uses 'λήψεται' (shall receive/conceive) found in some LXX manuscripts instead of 'ἕξει' (shall have), showing awareness of textual variation within the Greek tradition itself. He consistently maintains 'parthenos' and defends it as the only reading consistent with the sign's prophetic character.",
+      "theological_use": "Eusebius employs Isaiah 7:14 as foundational proof for Christian claims about Jesus' identity, arguing that the virgin birth was prophesied centuries beforehand. He uses the passage to demonstrate continuity between Old Testament prophecy and Gospel fulfillment, making it central to his apologetic method.",
+      "transmission_implication": "Eusebius's citation shows that even within the LXX tradition, minor lexical variants circulated in early 4th-century Palestine, though the core reading 'parthenos' remained stable across all Christian witnesses."
+    },
+    {
+      "father": "Jerome",
+      "dates_ce": "c. 347–420",
+      "region": "Bethlehem",
+      "work": "Commentary on Isaiah",
+      "chapter_section": "on 7:14",
+      "cited_text": "Ecce virgo concipiet et pariet filium (Behold, a virgin shall conceive and bear a son) — but notes Hebrew has 'almah'",
+      "text_form": "mixed",
+      "text_form_confidence": 0.85,
+      "text_form_note": "Jerome uniquely straddles traditions: his Vulgate translates Hebrew 'almah' as 'virgo' following Christian tradition, but his commentary explicitly notes that 'almah' in Hebrew means 'young woman' (not specifically virgin) and that the LXX translators chose 'parthenos' for theological-prophetic reasons. He defends the Christian reading on interpretive grounds while acknowledging the Hebrew's semantic range.",
+      "theological_use": "Jerome maintains the virgin birth doctrine while showing sophisticated awareness of Hebrew-Greek textual differences. He argues that even if 'almah' can mean 'young woman,' the prophetic context and Christian fulfillment retrospectively vindicate the LXX's 'parthenos' as capturing Isaiah's true prophetic meaning.",
+      "transmission_implication": "Jerome's work reveals that by late 4th century, Christian scholars with Hebrew knowledge recognized the textual divergence but transmitted the LXX-based 'parthenos/virgo' reading as theologically normative, establishing a 'double tradition' of textual awareness and doctrinal commitment."
+    },
+    {
+      "father": "Cyril of Jerusalem",
+      "dates_ce": "c. 313–386",
+      "region": "Jerusalem",
+      "work": "Catechetical Lectures",
+      "chapter_section": "XII.21",
+      "cited_text": "ἰδοὺ ἡ παρθένος ἐν γαστρὶ ἕξει (Behold, the virgin shall conceive)",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.93,
+      "text_form_note": "Cyril cites the standard LXX 'parthenos' reading without engaging textual controversies, suggesting that in catechetical contexts for new converts in Jerusalem, the LXX form was presented as uncontroversial and authoritative. His use is liturgical and credal rather than apologetic.",
+      "theological_use": "Cyril uses Isaiah 7:14 in baptismal instruction as proof of Christ's divine-human nature through virgin birth, presenting it as foundational Christian teaching. The passage functions as a credal anchor linking Old Testament prophecy to Nicene Christology.",
+      "transmission_implication": "Cyril's citation demonstrates that by mid-4th century Jerusalem, the LXX 'parthenos' reading was firmly embedded in Christian catechesis and liturgy, transmitted without textual debate to new believers as received tradition."
+    },
+    {
+      "father": "John Chrysostom",
+      "dates_ce": "c. 347–407",
+      "region": "Antioch/Constantinople",
+      "work": "Homilies on Matthew",
+      "chapter_section": "Hom. 4.2–3",
+      "cited_text": "Ἰδοὺ ἡ παρθένος ἐν γαστρὶ ἕξει καὶ τέξεται υἱόν (Behold, the virgin shall conceive and bear a son)",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.92,
+      "text_form_note": "Chrysostom cites the standard LXX 'parthenos' form and, like Cyril, shows no awareness of or interest in Hebrew textual issues. His citation reflects the Antiochene liturgical and exegetical tradition that transmitted the LXX as the Christian Old Testament without reference to Hebrew alternatives.",
+      "theological_use": "Chrysostom emphasizes that the virgin birth fulfills Isaiah's prophecy as a 'sign' of God's extraordinary intervention, using the passage to teach about divine providence and the incarnation's miraculous character. He reads it typologically as foreshadowing Mary's unique role in salvation history.",
+      "transmission_implication": "Chrysostom's homilies reveal that late 4th-century Antioch and Constantinople transmitted the LXX form in Greek-speaking liturgical contexts without scholarly engagement with Hebrew, indicating distinct transmission streams for scholarly vs. liturgical communities."
+    }
+  ],
+  "text_form_distribution": {
+    "closer_to_mt": 0,
+    "closer_to_lxx": 7,
+    "mixed": 1,
+    "independent": 0,
+    "uncertain": 0
+  },
+  "transmission_synthesis": "The patristic citation history of Isaiah 7:14 reveals near-unanimous transmission of the LXX 'parthenos' (virgin) reading across all Christian communities from the 2nd through 5th centuries, spanning Rome, Gaul, Carthage, Alexandria, Caesarea, Antioch, Jerusalem, and Constantinople. No patristic witness before the 5th century cites a reading closer to the MT's 'almah' (young woman), even among fathers like Origen and Jerome who possessed Hebrew knowledge and awareness of alternative Greek versions (Aquila, Symmachus, Theodotion) that rendered 'almah' as 'neanis' (young woman). This uniform transmission occurred despite active Jewish-Christian debate over the correct reading, demonstrating that Christian communities established the LXX form as doctrinally and liturgically authoritative by the mid-2nd century and maintained it without deviation. The textual history thus reflects not a neutral transmission process but a theologically motivated selection and preservation of the LXX tradition, with the 'parthenos' reading becoming a defining marker of Christian biblical interpretation and a shibboleth distinguishing Christian from Jewish textual traditions.",
+  "transmission_synthesis_plain": "Early Christian writers uniformly used a Greek translation that read 'virgin' (parthenos) rather than the Hebrew 'young woman' (almah), even when they knew Hebrew and were aware of the difference. This shows that Christians deliberately chose and transmitted the Greek version because it supported their belief in Jesus' virgin birth, making this biblical verse a key point where theology shaped which version of the text Christians passed down through the centuries.",
+  "notable_variants": [
+    {
+      "reading": "παρθένος (parthenos, virgin) vs. Hebrew עַלְמָה (almah, young woman)",
+      "fathers_using_it": [
+        "Justin Martyr",
+        "Irenaeus",
+        "Tertullian",
+        "Origen",
+        "Eusebius",
+        "Jerome",
+        "Cyril of Jerusalem",
+        "John Chrysostom"
+      ],
+      "text_form_alignment": "closer_to_lxx",
+      "significance": "This is the most theologically significant textual variant in early Christianity. The LXX's 'parthenos' (unambiguous virgin) vs. Hebrew 'almah' (young woman, with no necessary implication of virginity) became the locus classicus for Christian-Jewish textual debate. All patristic witnesses transmit 'parthenos,' establishing it as the Christian textus receptus despite awareness of the Hebrew divergence."
+    },
+    {
+      "reading": "καλέσουσι (they shall call) vs. MT's singular 'she/you shall call'",
+      "fathers_using_it": [
+        "Justin Martyr",
+        "Irenaeus",
+        "Tertullian"
+      ],
+      "text_form_alignment": "closer_to_lxx",
+      "significance": "The LXX's plural verb 'they shall call' (καλέσουσι) differs from the MT's singular, potentially broadening the prophecy's scope from the mother's naming act to communal recognition of the child's identity. This plural form, consistently transmitted in patristic citations, may reflect a theological emphasis on collective acknowledgment of Emmanuel's significance."
+    },
+    {
+      "reading": "ἐν γαστρὶ ἕξει (shall have in womb) vs. ἐν γαστρὶ λήψεται (shall receive/conceive in womb)",
+      "fathers_using_it": [
+        "Eusebius (λήψεται)",
+        "most others (ἕξει)"
+      ],
+      "text_form_alignment": "closer_to_lxx",
+      "significance": "Minor lexical variation within the Greek manuscript tradition itself, with 'λήψεται' (shall receive/conceive) possibly emphasizing the conception moment more explicitly. Eusebius's use of this variant shows that even within the uniformly 'parthenos' tradition, Christians transmitted multiple Greek textual witnesses, though without theological consequence."
+    }
+  ],
+  "bibcrit_assessment": {
+    "title": "LXX 'Virgin' Reading: Theological Selection Over Textual Neutrality",
+    "reasoning": "The complete absence of MT-aligned patristic citations of Isaiah 7:14 before the 5th century, despite documented awareness among scholars like Origen and Jerome of the Hebrew 'almah' and later Greek versions rendering it 'neanis,' demonstrates that Christian textual transmission was not a neutral process of preserving inherited tradition but an active selection of the LXX form based on its theological utility for virgin birth doctrine. This represents a critical moment in textual history where Christian communities established a 'canonical' text form (LXX) that diverged from the Hebrew tradition they acknowledged as chronologically and linguistically prior, creating parallel Jewish and Christian textual lineages for this verse.",
+    "plain": "Early Christians knew the Hebrew text said 'young woman,' not 'virgin,' but they deliberately chose to keep using and passing down the Greek translation that said 'virgin' because it supported their beliefs about Jesus. This shows how theology shaped which version of the Bible became standard in the church.",
+    "confidence": 0.94
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-03-30T23:35:07.489428",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

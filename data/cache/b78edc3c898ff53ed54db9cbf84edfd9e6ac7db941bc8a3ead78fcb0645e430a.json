@@ -1,0 +1,117 @@
+{
+  "divergences": [
+    {
+      "mt_word": "צָעִיר (small, insignificant)",
+      "lxx_word": "ὀλιγοστὸς εἶ (you are least/smallest)",
+      "divergence_type": "grammatical_shift",
+      "confidence": 0.82,
+      "hypotheses": [
+        {
+          "type": "grammatical_shift",
+          "confidence": 0.82,
+          "explanation": "LXX converts nominal adjective to finite verb 'you are,' rendering implicit predication explicit for Greek syntax."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Hillers (1984) p.65",
+        "Andersen-Freedman (2000) p.463"
+      ],
+      "analysis_technical": "MT employs participial/adjectival צָעִיר without copula, a common Hebrew nominal clause structure. LXX's ὀλιγοστὸς εἶ supplies explicit copula, standard Greek practice for translating Hebrew nominal sentences. Both convey 'small/insignificant' from root צער. No vorlage variant implied.",
+      "analysis_plain": "Hebrew says Bethlehem is 'small' without a verb; Greek adds 'you are small' to make a complete sentence, normal for Greek grammar."
+    },
+    {
+      "mt_word": "בְּאַלְפֵי יְהוּדָה (among the thousands/clans of Judah)",
+      "lxx_word": "ἐν χιλιάσιν Ἰούδα (among the thousands of Judah)",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.88,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.88,
+          "explanation": "Both render אֶלֶף as military/administrative 'thousands,' though term can mean 'clan' or 'military unit' contextually."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Wevers (1993) p.128",
+        "Tov (2001) p.117"
+      ],
+      "analysis_technical": "Hebrew אֶלֶף carries dual semantic range: 'thousand' (numerical) or 'clan/tribal unit' (administrative). LXX χιλιάσιν preserves ambiguity, functioning as military divisions or population units. Both translators understood Bethlehem's ranking among Judah's districts. No divergence in Vorlage.",
+      "analysis_plain": "The word 'thousands' could mean military units or family clans; both Hebrew and Greek keep this double meaning about Bethlehem's status."
+    },
+    {
+      "mt_word": "מוֹשֵׁל (ruler)",
+      "lxx_word": "ἄρχοντα (ruler/prince)",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.9,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.9,
+          "explanation": "Standard lexical equivalent: מושל regularly rendered ἄρχων in LXX, denoting governing authority without theological distinction."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Pietersma (2007) p.89",
+        "Muraoka (2009) p.94"
+      ],
+      "analysis_technical": "LXX ἄρχων is consistent translation equivalent for מושל across prophetic literature (cf. Isa 16:1, Jer 51:46). No ideological shift detectable; both terms denote political-military leadership. Represents standard lexical mapping in LXX translation technique.",
+      "analysis_plain": "Both Hebrew and Greek use common words for 'ruler' or 'leader' with no difference in meaning or emphasis."
+    },
+    {
+      "mt_word": "מִקֶּדֶם מִימֵי עוֹלָם (from of old, from days of eternity)",
+      "lxx_word": "ἀπ᾽ ἀρχῆς ἐξ ἡμερῶν αἰῶνος (from beginning, from days of eternity)",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.78,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.78,
+          "explanation": "LXX ἀπ᾽ ἀρχῆς interprets מִקֶּדֶם ('from aforetime') as 'from beginning,' slightly heightening primordial emphasis while maintaining temporal antiquity."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Andersen-Freedman (2000) p.471",
+        "Ben Zvi (2000) p.128"
+      ],
+      "analysis_technical": "MT's מִקֶּדֶם (etymologically 'from east/aforetime') rendered by LXX ἀπ᾽ ἀρχῆς ('from beginning'), possibly influenced by creation language (Gen 1:1 LXX ἐν ἀρχῇ). Both convey remote antiquity; LXX choice may reflect theological exegesis emphasizing eternal preexistence of Davidic line. Slight interpretive expansion rather than vorlage difference.",
+      "analysis_plain": "Hebrew says 'from long ago'; Greek says 'from the beginning,' possibly thinking of creation itself, making the ruler's origins sound even more ancient."
+    },
+    {
+      "mt_word": "וּמוֹצָאֹתָיו (and his origins/goings-forth)",
+      "lxx_word": "αἱ ἔξοδοι αὐτοῦ (his goings-out/exits)",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.75,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.75,
+          "explanation": "Both translate plural of יצא ('go out'), though LXX ἔξοδος echoes Exodus terminology, potentially layering deliverance typology onto ancestral origins."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Nogalski (2011) p.587",
+        "Waltke (2007) p.301"
+      ],
+      "analysis_technical": "MT מוֹצָאֹת (plural construct of יצא) denotes 'origins/goings-forth,' possibly ancestral lineage or prophetic activity. LXX ἔξοδοι literally 'exits/departures,' standard equivalent but carrying resonance of Exodus (ἡ ἔξοδος). May encode typological reading of future ruler as new Moses-David figure. Translation technique consistent with literalism.",
+      "analysis_plain": "The word means 'origins' or 'where someone comes from,' but the Greek word also hints at the Exodus, suggesting this future ruler might be like Moses."
+    }
+  ],
+  "summary_technical": "LXX exhibits grammatical normalization (adding copula) and subtle theological heightening (ἀπ᾽ ἀρχῆς, ἔξοδοι) while maintaining close formal correspondence to MT. No vorlage variants evident; divergences reflect standard translation technique with modest interpretive expansion.",
+  "summary_plain": "The Greek translation is very close to the Hebrew but makes small adjustments for grammar and subtly emphasizes the ancient, eternal nature of the promised ruler.",
+  "bibcrit_hypothesis": {
+    "title": "Messianic Temporal Maximalism in LXX Micah 5:2",
+    "reasoning": "LXX's shift from מִקֶּדֶם to ἀπ᾽ ἀρχῆς may reflect Second Temple period exegetical tendency to maximize temporal distance of messianic origins, aligning with sapiential traditions of pre-cosmic Wisdom (Prov 8:22-23 LXX uses ἀρχή). Combined with ἔξοδοι's Exodus echo, translator subtly encodes typological framework: future Davidide as eternal divine agent active in Israel's foundational salvation history. Speculative but consistent with Hellenistic Jewish messianism.",
+    "plain": "The Greek translator may have intentionally used 'beginning' language to suggest the coming ruler existed even before creation, like divine Wisdom, and would bring a new Exodus-like deliverance.",
+    "confidence": 0.58
+  },
+  "discovery_ready": false,
+  "reference": "Micah 5:2",
+  "cached_at": "2026-03-30T19:53:43.025187",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v2"
+}

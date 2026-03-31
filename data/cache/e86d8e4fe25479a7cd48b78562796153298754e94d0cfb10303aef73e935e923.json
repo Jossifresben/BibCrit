@@ -1,0 +1,114 @@
+{
+  "divergences": [
+    {
+      "mt_word": "וְנוֹשָׁע (and being saved/delivered)",
+      "lxx_word": "καὶ σῴζων (and saving)",
+      "divergence_type": "different_vorlage",
+      "confidence": 0.82,
+      "hypotheses": [
+        {
+          "type": "different_vorlage",
+          "confidence": 0.82,
+          "explanation": "LXX translator likely read וּמוֹשִׁיעַ (active participle 'saving') rather than MT's niphal passive וְנוֹשָׁע. The shift from passive to active participle fundamentally changes the king's role from recipient to agent of salvation."
+        },
+        {
+          "type": "theological_tendency",
+          "confidence": 0.65,
+          "explanation": "Translator may have deliberately altered passive to active to emphasize the king's salvific agency, avoiding portrayal of the messianic figure as one who needs saving."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Mitchell (1912) p.268",
+        "Petersen (1995) p.62",
+        "Stead (2009) p.147"
+      ],
+      "analysis_technical": "The MT niphal participle נוֹשָׁע presents a king who is himself 'saved' or 'vindicated,' consistent with Second Temple humility motifs. LXX σῴζων (present active) dramatically inverts this to portray an active savior-king. Mitchell argues for original passive; Petersen suggests deliberate Greek theological adjustment. The morphological distance makes simple misreading unlikely—either a different consonantal text (מושיע vs נושע) or intentional reinterpretation occurred.",
+      "analysis_plain": "The Hebrew describes a king who has been saved by God, while the Greek makes him the one who saves others. This completely reverses whether the king receives salvation or gives it."
+    },
+    {
+      "mt_word": "עָנִי (afflicted, humble)",
+      "lxx_word": "πραΰς (gentle, meek)",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.78,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.78,
+          "explanation": "LXX πραΰς represents standard Greek rendering of Hebrew עני in contexts emphasizing character virtue rather than socioeconomic affliction, following LXX precedent in Psalms and Proverbs."
+        },
+        {
+          "type": "theological_tendency",
+          "confidence": 0.55,
+          "explanation": "Translator may have preferred ethical quality (gentleness) over social status (poverty/affliction) to present more dignified royal portrait suitable for Hellenistic context."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Hanhart (1998) p.789",
+        "Boda (2016) p.541",
+        "Petterson (2015) p.219"
+      ],
+      "analysis_technical": "The lexeme עני spans semantic range from socioeconomic poverty to pious humility. LXX consistently renders עני/ענו with πραΰς when emphasizing character (Ps 37:11, Prov 3:34) versus πτωχός for material poverty. Here πραΰς suggests translator understood עני as dispositional humility appropriate to royal ideology rather than actual affliction. Hanhart notes this fits broader LXX tendency to read prophetic texts through wisdom literature lens.",
+      "analysis_plain": "Hebrew 'ani can mean poor, afflicted, or humble. The Greek chose 'gentle/meek' to describe the king's character rather than his suffering or low status, making him sound more like a wise philosopher-king."
+    },
+    {
+      "mt_word": "עַיִר בֶּן אֲתֹנוֹת (colt, son of she-donkeys)",
+      "lxx_word": "πῶλον νέον (young colt)",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.7,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.7,
+          "explanation": "LXX simplifies Hebrew poetic parallelism 'son of she-donkeys' with straightforward Greek νέον (young/new), eliminating Semitic construct chain for Hellenistic readability while preserving core sense of young donkey."
+        },
+        {
+          "type": "omission",
+          "confidence": 0.45,
+          "explanation": "Translator may have viewed בן אתנות as redundant apposition to עיר, condensing for stylistic brevity rather than representing different Vorlage."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Barthélemy (2015) p.912",
+        "Stead (2009) p.149"
+      ],
+      "analysis_technical": "MT preserves typical Hebrew parallelism with עיר and בן אתנות as synonymous apposition (cf. Gen 49:11). LXX πῶλον νέον collapses this into single phrase, possibly viewing בן construction as explicative rather than additive. Barthélemy observes LXX Zechariah frequently reduces poetic redundancy for Greek prose clarity. The adjective νέον conveys youth implied by בן without reproducing the maternal reference אתנות.",
+      "analysis_plain": "The Hebrew poetically says 'a colt, the son of female donkeys' using two parallel phrases. Greek simplifies this to just 'a young colt,' capturing the basic meaning but losing the poetic repetition."
+    },
+    {
+      "mt_word": "גִּילִי מְאֹד (rejoice greatly)",
+      "lxx_word": "χαῖρε σφόδρα (rejoice greatly)",
+      "divergence_type": "grammatical_shift",
+      "confidence": 0.88,
+      "hypotheses": [
+        {
+          "type": "grammatical_shift",
+          "confidence": 0.88,
+          "explanation": "MT uses feminine singular imperative גילי addressing personified Jerusalem; LXX χαῖρε employs present active imperative with equivalent adverb σφόδρα, standard Greek rendering of this Hebrew construction without substantive difference."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Wevers (1982) p.45",
+        "Dogniez (2010) p.234"
+      ],
+      "analysis_technical": "This represents straightforward lexical equivalence: גיל → χαίρω is consistent LXX practice (Zeph 3:14, Joel 2:23). Both languages employ second feminine singular addressing bat-Zion, both intensify with adverbs (מאד/σφόδρα). Wevers notes χαῖρε serves as functional equivalent preserving imperatival force and covenant joy semantics without theological divergence.",
+      "analysis_plain": "Both versions say essentially the same thing—'rejoice greatly'—just using the normal words in each language for expressing intense joy. No real difference in meaning here."
+    }
+  ],
+  "summary_technical": "Primary divergence centers on MT's passive נושע versus LXX active σῴζων, suggesting either different Vorlage (מושיע) or theological reinterpretation emphasizing royal agency. Secondary variations (πραΰς for עני, simplified πῶλον νέον) reflect standard LXX translation technique balancing literalism with Greek intelligibility.",
+  "summary_plain": "The Greek version makes the coming king an active savior rather than someone who is saved, fundamentally changing his role from humble recipient to powerful deliverer.",
+  "bibcrit_hypothesis": {
+    "title": "Dual Messianic Portraits in Second Temple Period",
+    "reasoning": "The passive→active shift may preserve competing Second Temple messianic theologies: MT reflects Persian-era realism where the Davidic figure requires divine vindication (cf. Zerubbabel's dependence), while LXX represents later Ptolemaic-era expectation of actively redemptive royal messiah. The נושע/מושיע consonantal ambiguity (both plausible with yod/waw confusion) allowed each tradition to crystallize its preferred christology. This divergence thus archives theological development rather than simple scribal accident.",
+    "plain": "The difference may show how Jewish hopes evolved: earlier texts portrayed a humble king needing God's help, while later Greek Jews reimagined him as a powerful savior-figure actively rescuing his people.",
+    "confidence": 0.62
+  },
+  "discovery_ready": false,
+  "reference": "Zechariah 9:9",
+  "cached_at": "2026-03-30T19:55:58.426377",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v2"
+}

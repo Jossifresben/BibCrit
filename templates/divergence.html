@@ -9,32 +9,31 @@
 
 <!-- Passage Selector Bar -->
 <div class="passage-bar">
-  <div class="passage-bar-inner">
+  <!-- Row 1: selectors + input + action buttons -->
+  <div class="passage-bar-row passage-bar-main">
     <span class="passage-label">Passage:</span>
 
-    <select id="sel-book" class="passage-select" aria-label="Book">
-      <option value="">Select book…</option>
-    </select>
-    <select id="sel-chapter" class="passage-select" disabled aria-label="Chapter">
-      <option value="">Ch…</option>
-    </select>
-    <select id="sel-verse" class="passage-select" disabled aria-label="Verse">
-      <option value="">Vs…</option>
-    </select>
+    <div class="passage-bar-selectors">
+      <select id="sel-book" class="passage-select" aria-label="Book">
+        <option value="">{{ _t('passage_book_placeholder') }}</option>
+      </select>
+      <select id="sel-chapter" class="passage-select" disabled aria-label="Chapter">
+        <option value="">{{ _t('passage_ch') }}</option>
+      </select>
+      <select id="sel-verse" class="passage-select" disabled aria-label="Verse">
+        <option value="">{{ _t('passage_vs') }}</option>
+      </select>
+    </div>
 
-    <span class="passage-or">or</span>
+    <span class="passage-or">{{ _t('passage_or') }}</span>
 
     <input type="text" id="ref-input" class="passage-input"
            placeholder="Isaiah 7:14" value="{{ reference }}"
            aria-label="Type a reference">
 
-    <button id="btn-analyze" class="btn-primary">Analyze ▶</button>
-
-    <div class="scope-group">
-      <span class="scope-label">Scope:</span>
-      <label class="scope-opt"><input type="radio" name="scope" value="verse" checked> Verse</label>
-      <label class="scope-opt"><input type="radio" name="scope" value="chapter"> Chapter</label>
-      <label class="scope-opt scope-warn"><input type="radio" name="scope" value="book"> Book ⚠</label>
+    <div class="passage-bar-actions">
+      <button id="btn-analyze" class="btn-primary">{{ _t('analyze_btn') }} ▶</button>
+      <button id="btn-random" class="btn-random" title="{{ _t('btn_random') }}">{{ _t('btn_random') }}</button>
     </div>
   </div>
 </div>
@@ -42,14 +41,14 @@
 <!-- Empty / Welcome State -->
 <div id="empty-state" class="empty-state">
   <div class="empty-inner">
-    <h2>MT/LXX Parallel Divergence Analyzer</h2>
-    <p>Select a passage above to compare the Masoretic Text and Septuagint side by side.
-       Claude classifies every divergence, scores confidence, and generates competing hypotheses.</p>
+    <h2>{{ _t('divergence_empty_title') }}</h2>
+    <p>{{ _t('divergence_empty_body') }}</p>
+    <p class="featured-label">{{ _t('featured_label') }}</p>
     <div class="featured-passages">
-      <a href="#" class="featured-ref" data-ref="Isaiah 7:14">Isaiah 7:14 — <em>almah</em> vs. <em>parthenos</em></a>
-      <a href="#" class="featured-ref" data-ref="Genesis 1:1">Genesis 1:1 — <em>In the beginning</em></a>
-      <a href="#" class="featured-ref" data-ref="Psalm 22:1">Psalm 22:1 — The cry of dereliction</a>
-      <a href="#" class="featured-ref" data-ref="Deuteronomy 32:8">Deut 32:8 — <em>sons of God</em></a>
+      <a href="#" class="featured-ref" data-ref="Isaiah 7:14">{{ _t('feat_div_isa714') | safe }}</a>
+      <a href="#" class="featured-ref" data-ref="Genesis 1:1">{{ _t('feat_div_gen11') | safe }}</a>
+      <a href="#" class="featured-ref" data-ref="Psalm 22:1">{{ _t('feat_div_ps221') | safe }}</a>
+      <a href="#" class="featured-ref" data-ref="Deuteronomy 32:8">{{ _t('feat_div_deut328') | safe }}</a>
     </div>
   </div>
 </div>
@@ -57,12 +56,14 @@
 <!-- Loading State -->
 <div id="loading-state" class="loading-state" style="display:none;" aria-live="polite">
   <div class="loading-spinner"></div>
-  <p id="loading-step" class="loading-step-msg">Preparing…</p>
+  <p id="loading-step" class="loading-step-msg">{{ _t('loading_preparing') }}</p>
   <p id="loading-timer" class="loading-timer"></p>
-  <p class="loading-hint">New passages take 20–40s. Cached passages load instantly.</p>
 </div>
 
-<!-- Main Three-Column Apparatus -->
+<!-- Passage heading (shown once analysis is loaded) -->
+<div id="passage-heading" class="passage-heading" style="display:none;"></div>
+
+<!-- Main Two-Column Apparatus (texts) -->
 <div id="apparatus-grid" class="apparatus-grid" style="display:none;">
 
   <!-- MT Column -->
@@ -79,37 +80,33 @@
   <div class="tradition-col" id="col-lxx">
     <div class="col-header">
       <span class="tradition-badge lxx-badge">LXX</span>
-      <span class="col-source">STEPBible LXXM</span>
-      <select id="sel-manuscript" class="ms-select" aria-label="Manuscript">
-        <option value="Vaticanus">Vaticanus (B)</option>
-        <option value="Sinaiticus">Sinaiticus (א)</option>
-        <option value="Alexandrinus">Alexandrinus (A)</option>
-      </select>
+      <span class="col-source">STEPBible LXXM · Vaticanus (B)</span>
     </div>
     <div class="verse-text greek-text" id="lxx-text" lang="el"></div>
     <div class="verse-meta" id="lxx-meta"></div>
   </div>
 
-  <!-- Analysis Column -->
-  <div class="tradition-col analysis-col" id="col-analysis">
-    <div class="col-header">
-      <span class="tradition-badge analysis-badge">Claude Analysis</span>
-      <span class="col-source" id="model-label">claude-3-5-sonnet</span>
-    </div>
+</div>
 
-    <div id="analysis-panel">
+<!-- Analysis Tabs (below the text columns) -->
+<div id="tabs-area" class="tabs-area" style="display:none;">
+  <div class="tabs-header">
+    <span class="tradition-badge analysis-badge tabs-badge">{{ _t('section_divergence_analysis') }}</span>
+    <nav class="tabs-nav" id="tabs-nav" role="tablist" aria-label="Divergence tabs"></nav>
+  </div>
+  <div class="tabs-body" id="tabs-body">
+    <div id="analysis-panel" class="tab-panel active">
       <p class="analysis-hint">Click any <span class="hint-mt">highlighted MT word</span>
          or <span class="hint-lxx">LXX word</span> to see its analysis.</p>
     </div>
-
-    <div class="export-row" id="export-row" style="display:none;">
-      <button class="btn-export" id="btn-sbl" title="Copy SBL-format footnote">Export footnote</button>
-      <button class="btn-export" id="btn-bibtex" title="Copy BibTeX entries">BibTeX</button>
-      <button class="btn-export" id="btn-save" title="Save to bookmarks">🔖 Save</button>
-      <button class="btn-export btn-share" id="btn-share" title="Share this analysis">Share ↗</button>
-    </div>
   </div>
-
+  <div class="export-row" id="export-row" style="display:none;">
+    <button class="btn-export" id="btn-sbl" title="Copy SBL-format footnote">📋 SBL Footnote</button>
+    <button class="btn-export" id="btn-bibtex" title="Copy BibTeX entries">📋 BibTeX</button>
+    <button class="btn-export btn-share" id="btn-share" title="Share this analysis">
+      <span class="material-symbols-outlined" style="font-size:14px;vertical-align:-2px">qr_code_2</span> Share
+    </button>
+  </div>
 </div>
 
 <!-- Toast notification -->

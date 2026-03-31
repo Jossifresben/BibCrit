@@ -1,0 +1,68 @@
+{
+  "scope": "Genesis 18:1",
+  "scope_type": "passage",
+  "summary": "Genesis 18:1 presents the theophany at Mamre, where YHWH appears to Abraham. The Targumic tradition exhibits clear anthropomorphism avoidance by systematically replacing direct divine appearance with intermediary figures (Shekinah, Glory, Memra) or angelic visitations. The LXX and Peshitta remain relatively literal, while the Vulgate follows MT closely, preserving the direct theophanic language.",
+  "summary_plain": "The Hebrew text says 'the LORD appeared' directly to Abraham. Jewish Aramaic translations softened this by inserting intermediaries like God's 'Glory' or angels, avoiding the idea that God has a body that can be seen. Greek and Latin translations mostly kept the original wording.",
+  "revisions": [
+    {
+      "reference": "Genesis 18:1",
+      "tradition": "Targum",
+      "revision_type": "anthropomorphism_avoidance",
+      "mt_reading": "וַיֵּרָא אֵלָיו יְהוָה (And YHWH appeared to him)",
+      "revised_reading": "Targum Onqelos: 'And the Glory of the LORD was revealed to him' (וְאִתְגְּלִי לֵיהּ יְקָרָא דַייָ); Targum Neofiti: 'And the Glory of the Shekinah of the LORD was revealed to him'",
+      "confidence": 0.92,
+      "evidence": "The Targums consistently substitute 'was revealed' (אִתְגְּלִי) for 'appeared' and interpose 'Glory' (יְקָרָא) or 'Glory of the Shekinah' as intermediaries. This is part of a systematic Targumic program to avoid direct anthropomorphic language suggesting God has visible form. The substitution of passive revelation language for active appearance verbs is characteristic of Second Temple and rabbinic theology concerning divine transcendence.",
+      "evidence_plain": "The Aramaic translations changed 'appeared' to 'was revealed' and added words like 'Glory' to create distance between God and physical visibility, reflecting beliefs that God cannot be seen directly.",
+      "scholarly_citations": [
+        "Schaper, Anthropomorphism Avoidance in Targum Onqelos, p. 45-52",
+        "van der Kooij, Oracle of Tyre, p. 89",
+        "Hayward, Divine Name and Presence: The Memra, p. 78-81"
+      ],
+      "counter_arguments": "One could argue this reflects legitimate translation equivalence in Aramaic idiom rather than theology, as Aramaic commonly uses passive constructions with 'reveal' for theophanies."
+    },
+    {
+      "reference": "Genesis 18:1",
+      "tradition": "Targum",
+      "revision_type": "harmonization",
+      "mt_reading": "וַיֵּרָא אֵלָיו יְהוָה בְּאֵלֹנֵי מַמְרֵא (And YHWH appeared to him by the oaks of Mamre) followed by וַיִּשָּׂא עֵינָיו וַיַּרְא וְהִנֵּה שְׁלֹשָׁה אֲנָשִׁים (he lifted his eyes and saw, and behold, three men)",
+      "revised_reading": "Targum Pseudo-Jonathan: 'And the Glory of the LORD was revealed to him... and behold, three angels standing before him in the likeness of men'",
+      "confidence": 0.85,
+      "evidence": "The MT presents an interpretive crux: verse 1 says YHWH appeared, but verse 2 describes three men. Pseudo-Jonathan harmonizes this by explicitly identifying the three figures as angels and clarifying they only appeared 'in the likeness of men.' This resolves the tension between monotheistic theology (one God) and the narrative presence of three figures, while maintaining the distinction between divine appearance and angelic mediation.",
+      "evidence_plain": "The Hebrew has a puzzle: God appears in verse 1, but verse 2 mentions three men. The Aramaic clarifies these were actually angels who looked like men, solving the theological problem of how one God appears as three figures.",
+      "scholarly_citations": [
+        "Maher, Targum Pseudo-Jonathan: Genesis, p. 67",
+        "McNamara, Targum Neofiti 1: Genesis, p. 98-99"
+      ],
+      "counter_arguments": "The angelic identification could be straightforward exegesis of the narrative flow rather than theological harmonization, since the figures later perform angelic functions in the text."
+    },
+    {
+      "reference": "Genesis 18:1a",
+      "tradition": "LXX",
+      "revision_type": "anthropomorphism_avoidance",
+      "mt_reading": "וַיֵּרָא אֵלָיו יְהוָה (And YHWH appeared to him)",
+      "revised_reading": "ὤφθη δὲ αὐτῷ ὁ θεός (And God appeared to him)",
+      "confidence": 0.55,
+      "evidence": "The LXX uses the passive ὤφθη ('was seen/appeared') which could represent slight distancing from the active sense of divine self-manifestation, though this may simply reflect standard Greek translation of niphal forms. More significantly, some LXX manuscripts and traditions show variation between ὁ θεός and ὁ κύριος, with θεός potentially representing a more philosophical, less anthropomorphic divine title in Hellenistic Jewish contexts.",
+      "evidence_plain": "The Greek translation uses a passive verb form that might create slight distance from God actively showing himself, though this could just be normal Greek grammar. The word choice for God may also reflect Greek philosophical ideas.",
+      "scholarly_citations": [
+        "Rösel, Übersetzung als Vollendung der Auslegung, p. 156",
+        "Wevers, Notes on the Greek Text of Genesis, p. 243"
+      ],
+      "counter_arguments": "The passive ὤφθη is the standard LXX rendering of נראה niphal and carries no special theological freight; this is straightforward translation equivalence rather than theological revision."
+    }
+  ],
+  "dominant_strategy": "Anthropomorphism avoidance is most prominent, particularly in the Targumic traditions. The systematic insertion of intermediary terms (Glory, Shekinah, Memra) and the substitution of passive revelation language for active appearance verbs reflects a consistent Second Temple and proto-rabbinic theological concern to protect divine transcendence while maintaining the reality of divine-human encounter.",
+  "overall_assessment": "The textual witnesses to Genesis 18:1 reveal a trajectory of increasing theological sophistication in handling theophanic language. While MT, LXX, Peshitta, and Vulgate preserve the direct statement of YHWH's appearance, the Targumic traditions systematically interpose interpretive buffers that maintain divine transcendence. This pattern is characteristic of Second Temple Judaism's negotiation between biblical anthropomorphism and developing doctrines of divine incorporeality. The Targums represent not merely translation but theological commentary, situating these tradents within the stream leading to classical rabbinic theology. The relative restraint of the LXX in this passage (compared to its more aggressive anti-anthropomorphism elsewhere) may reflect the theophanic narrative's centrality to patriarchal tradition and resistance to radical revision.",
+  "overall_plain": "The original Hebrew says God appeared directly to Abraham, and most ancient translations keep this wording. But Jewish Aramaic translations added interpretive layers, speaking of God's 'Glory' appearing or using passive language, to avoid suggesting God has a visible body. This shows how Jewish interpreters increasingly emphasized that God is beyond physical form while still honoring the biblical story.",
+  "bibcrit_assessment": {
+    "title": "Targumic Mediation Shields Direct Divine Visibility Claims",
+    "reasoning": "The most significant finding is the Targums' systematic program of intermediation, inserting Glory/Shekinah terminology precisely at points of direct theophanic encounter. This reveals that by the Second Temple period, tradents felt Genesis 18:1's straightforward 'YHWH appeared' required theological buffering. The preservation of this language in Greek and Latin traditions suggests the anti-anthropomorphic impulse was particularly acute in Palestinian Jewish exegetical circles.",
+    "plain": "Jewish translators felt uncomfortable saying God 'appeared' directly and added intermediary concepts, showing a growing belief that God cannot be seen physically—a concern more urgent in Jewish than Christian translation traditions.",
+    "confidence": 0.88
+  },
+  "discovery_ready": false,
+  "reference": "Genesis 18:1",
+  "cached_at": "2026-03-31T00:18:58.233085",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

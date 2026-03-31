@@ -1,0 +1,143 @@
+{
+  "book": "Jeremiah",
+  "translator_name": "Old Greek of Jeremiah (OG-Jer)",
+  "translator_profile": {
+    "literalness": 0.35,
+    "anthropomorphism_reduction": 0.2,
+    "messianic_heightening": 0.15,
+    "paraphrase_rate": 0.7,
+    "harmonization": 0.25
+  },
+  "dimensions": [
+    {
+      "dimension": "literalness",
+      "score": 0.35,
+      "confidence": 0.9,
+      "summary": "The OG-Jer translator demonstrates consistently low literalness, departing radically from word-for-word equivalence. The translator freely restructures syntax, omits repetitive elements, and shows no commitment to formal correspondence. This is one of the least literal major prophetic translations in the LXX corpus, comparable only to Job and certain portions of the Twelve.",
+      "summary_plain": "This translator rarely translates word-for-word. They freely rearrange, shorten, and restructure the Hebrew text, producing a Greek version that is about one-eighth shorter than the Hebrew Bible's Jeremiah.",
+      "examples": [
+        {
+          "reference": "Jeremiah 31:31 (LXX 38:31)",
+          "mt_text": "וְכָרַתִּי אֶת בֵּית יִשְׂרָאֵל וְאֶת בֵּית יְהוּדָה בְּרִית חֲדָשָׁה",
+          "lxx_text": "καὶ διαθήσομαι τῷ οἴκῳ Ἰσραὴλ καὶ τῷ οἴκῳ Ἰούδα διαθήκην καινήν",
+          "note": "While this verse shows reasonable correspondence, the use of διατίθημι for כרת ברית represents semantic rather than formal equivalence, and the entire LXX Jeremiah context reveals systematic brevity and restructuring absent here."
+        },
+        {
+          "reference": "Jeremiah 10:1-16",
+          "mt_text": "MT contains extended polemic against idols",
+          "lxx_text": "LXX omits substantial portions and restructures",
+          "note": "The LXX version is significantly shorter, demonstrating the translator's willingness to compress and reorganize extended discourse units rather than maintain formal equivalence."
+        },
+        {
+          "reference": "Jeremiah 27-29 (LXX 34-36)",
+          "mt_text": "MT narrative sequence",
+          "lxx_text": "LXX presents different chapter arrangement",
+          "note": "The radical reorganization of oracles (MT chs. 46-51 appear as LXX 25-31) demonstrates that this translator worked with interpretive freedom regarding textual structure, far beyond word-level literalness."
+        }
+      ]
+    },
+    {
+      "dimension": "anthropomorphism_reduction",
+      "score": 0.2,
+      "confidence": 0.65,
+      "summary": "The OG-Jer shows minimal systematic tendency toward theological sanitization of anthropomorphisms. While occasional smoothing occurs, the translator generally preserves divine emotional language and physical imagery when present in the Vorlage. The overall approach appears driven more by stylistic concerns than theological squeamishness about depicting God in human terms.",
+      "summary_plain": "The translator doesn't systematically avoid describing God in human terms. When the Hebrew speaks of God's emotions or actions, the Greek usually follows suit without theological embarrassment.",
+      "examples": [
+        {
+          "reference": "Jeremiah 31:20 (LXX 38:20)",
+          "mt_text": "הֲמוֹ מֵעַי לוֹ (my bowels are stirred for him)",
+          "lxx_text": "διὰ τοῦτο ἐσπούδασα ἐπ' αὐτῷ (therefore I hastened upon him)",
+          "note": "This shows moderate anthropomorphism reduction, changing visceral divine emotion to purposeful action, though this may reflect interpretive translation rather than systematic theological tendency."
+        },
+        {
+          "reference": "Jeremiah 18:7-10",
+          "mt_text": "God's repentance (נחם) language",
+          "lxx_text": "LXX preserves divine repentance terminology",
+          "note": "The translator retains language of divine changeability without systematic smoothing, suggesting comfort with anthropopathic divine portrayal when it appears in the source text."
+        }
+      ]
+    },
+    {
+      "dimension": "messianic_heightening",
+      "score": 0.15,
+      "confidence": 0.5,
+      "summary": "Evidence for messianic heightening in OG-Jer is limited and ambiguous. The translator does not demonstrate the systematic christological intensification found in Isaiah LXX. Key messianic passages like 23:5-6 are absent from the sample, but broader analysis suggests the translator's interpretive moves were pragmatic and contextual rather than driven by consistent eschatological agenda.",
+      "summary_plain": "This translator doesn't show strong evidence of amplifying messianic expectations. They translate passages fairly straightforwardly without adding obvious future-king or end-times language where it wasn't already present.",
+      "examples": [
+        {
+          "reference": "Jeremiah 23:5-6",
+          "mt_text": "וְהִקִמֹתִי לְדָוִד צֶמַח צַדִּיק (raise up for David a righteous Branch)",
+          "lxx_text": "Text not provided in sample for detailed analysis",
+          "note": "Without the specific LXX rendering available, comprehensive assessment is limited, though scholarship generally notes OG-Jer lacks the messianic intensification of other prophetic books."
+        },
+        {
+          "reference": "Jeremiah 30:9 (LXX 37:9)",
+          "mt_text": "וְאֵת דָּוִיד מַלְכָּם (and David their king)",
+          "lxx_text": "LXX rendering preserves straightforward reference",
+          "note": "The translator maintains the Davidic reference without amplification or eschatological heightening, consistent with generally non-intensifying approach to royal ideology."
+        }
+      ]
+    },
+    {
+      "dimension": "harmonization",
+      "score": 0.25,
+      "confidence": 0.6,
+      "summary": "The OG-Jer translator shows limited harmonization tendencies. While occasional alignment with parallel texts occurs, the translator's dominant mode is independent rendering without systematic cross-referencing to other biblical books. The substantial differences from MT suggest the translator worked from a distinct Vorlage rather than engaging in extensive harmonization during translation.",
+      "summary_plain": "This translator doesn't often change wording to match similar passages elsewhere in the Bible. They translate each text on its own terms without trying to make everything sound consistent across different books.",
+      "examples": [
+        {
+          "reference": "Jeremiah 31:31-34 (LXX 38:31-34)",
+          "mt_text": "New covenant passage",
+          "lxx_text": "διαθήκην καινήν rendering",
+          "note": "The translator renders the passage independently without harmonizing terminology or concepts to Pentateuchal covenant language, maintaining Jeremiah's distinctive formulation."
+        },
+        {
+          "reference": "Jeremiah 7:1-15",
+          "mt_text": "Temple sermon echoing Deuteronomic themes",
+          "lxx_text": "LXX maintains independent vocabulary",
+          "note": "Despite thematic overlap with Deuteronomy, the translator does not systematically align vocabulary, demonstrating low harmonization impulse across biblical books."
+        }
+      ]
+    },
+    {
+      "dimension": "paraphrase_rate",
+      "score": 0.7,
+      "confidence": 0.95,
+      "summary": "The OG-Jer exhibits exceptionally high paraphrase rates, representing one of the most freely rendered books in the LXX. The translator regularly condenses, restructures, and reformulates the source text, producing a version approximately one-eighth shorter than MT. This paraphrastic approach extends from lexical choices through clause-level syntax to macro-structural organization, reflecting consistent interpretive translation rather than formal correspondence.",
+      "summary_plain": "This translator very frequently paraphrases rather than translating literally. They regularly shorten, combine, and reword passages to create a smoother, more concise Greek text that conveys the sense but not the exact form of the Hebrew.",
+      "examples": [
+        {
+          "reference": "Jeremiah 1-25",
+          "mt_text": "MT oracles against Judah",
+          "lxx_text": "Substantially shorter Greek version with reorganization",
+          "note": "The systematic abbreviation and reorganization throughout demonstrates that paraphrase is the translator's default mode, not occasional practice."
+        },
+        {
+          "reference": "Jeremiah 29:16-20",
+          "mt_text": "MT contains oracle against those remaining in Jerusalem",
+          "lxx_text": "Absent from LXX",
+          "note": "Complete omission of multi-verse units exemplifies the extreme paraphrastic freedom, likely reflecting both Vorlage differences and translational compression."
+        },
+        {
+          "reference": "Jeremiah 33:14-26",
+          "mt_text": "MT contains extended Davidic and Levitical promises",
+          "lxx_text": "Absent from LXX",
+          "note": "Major structural omissions reflect the translator's willingness to drastically condense source material, whether due to shorter Vorlage or active editorial paraphrase."
+        }
+      ]
+    }
+  ],
+  "overall_assessment": "The OG-Jer translator represents an extreme case of free, paraphrastic translation within the LXX corpus. With literalness scores rivaling Job and portions of the Twelve, this translator prioritized concise, readable Greek over formal correspondence to the source text. The resulting version is approximately one-eighth shorter than MT Jeremiah, reflecting either a substantially different Hebrew Vorlage or extensive translational condensation (scholarly consensus increasingly favors the former). This translator shows minimal concern for theological sanitization or messianic heightening, instead focusing on producing a streamlined Greek text suitable for liturgical and communal reading.",
+  "overall_plain": "This translator worked with exceptional freedom, creating a Greek Jeremiah that is much shorter and more smoothly written than the Hebrew version in our Bibles. Rather than translating word-for-word, they condensed, reorganized, and paraphrased extensively, producing a text that conveys Jeremiah's message in more concise Greek form.",
+  "bibcrit_assessment": {
+    "title": "Extreme Paraphrase Challenges Vorlage Reconstruction Confidence",
+    "reasoning": "The OG-Jer translator's dominant paraphrastic tendency (0.70) combined with exceptionally low literalness (0.35) creates acute methodological challenges for retroverting LXX readings to reconstruct the Hebrew Vorlage. While the shorter LXX likely reflects a genuinely shorter Hebrew text (supported by Qumran evidence), the translator's habitual condensation means that any individual minus in LXX could represent either Vorlage variation or translational omission. This requires text-critical work on Jeremiah to proceed with unusual caution, evaluating each variant within the translator's demonstrated stylistic patterns rather than assuming one-to-one correspondence.",
+    "plain": "Because this translator paraphrased so freely and made the text so much shorter, scholars face special difficulties figuring out exactly what Hebrew text they were translating from. Each difference between the Greek and Hebrew could be either an original variation or just the translator's editing style.",
+    "confidence": 0.95
+  },
+  "discovery_ready": false,
+  "reference": "Jeremiah",
+  "cached_at": "2026-03-30T21:28:40.911359",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

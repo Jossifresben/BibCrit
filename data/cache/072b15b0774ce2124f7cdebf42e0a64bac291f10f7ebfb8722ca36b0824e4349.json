@@ -1,0 +1,84 @@
+{
+  "scope": "Psalm 110:1",
+  "scope_type": "passage",
+  "summary": "Psalm 110:1 exhibits minimal textual variation across major traditions, with the MT's divine oracle formula and dual 'adonai' terminology remaining stable. The LXX introduces a subtle messianic-eschatological orientation through temporal specification (\"until I make\") that became foundational for New Testament christological exegesis. Targumic tradition demonstrates proto-rabbinic concern with distinguishing divine titles and contextualizing royal messianism within Second Temple eschatological frameworks.",
+  "summary_plain": "The different ancient translations of this verse are remarkably similar, but small changes in the Greek version emphasize a future fulfillment that early Christians would later use to interpret Jesus as the Messiah. The Aramaic translation carefully distinguishes between God and the human king to avoid any confusion about who is divine.",
+  "revisions": [
+    {
+      "reference": "Psalm 110:1",
+      "tradition": "LXX",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "נְאֻם יְהוָה לַאדֹנִי שֵׁב לִימִינִי עַד־אָשִׁית אֹיְבֶיךָ הֲדֹם לְרַגְלֶיךָ (The LORD says to my lord: 'Sit at my right hand until I make your enemies your footstool')",
+      "revised_reading": "Εἶπεν ὁ κύριος τῷ κυρίῳ μου Κάθου ἐκ δεξιῶν μου ἕως ἂν θῶ τοὺς ἐχθρούς σου ὑποπόδιον τῶν ποδῶν σου (The Lord said to my lord: 'Sit at my right hand until I place your enemies as a footstool of your feet')",
+      "confidence": 0.72,
+      "evidence": "The LXX renders the Hebrew imperfect 'ashit with the aorist subjunctive θῶ preceded by ἕως ἄν, creating a more definitive temporal-eschatological framework. While this is a legitimate translation choice, the construction emphasizes futurity and certainty of divine action more strongly than the MT's open-ended imperfect. The addition of τῶν ποδῶν σου (\"of your feet\") after ὑποπόδιον, while possibly explicative, intensifies the imagery of subjugation. This reading became the standard citation form in NT christological argumentation (Acts 2:34-35, Heb 1:13), suggesting its utility for messianic interpretation.",
+      "evidence_plain": "The Greek translation uses grammar that makes God's future action sound more certain and complete, which made this verse easier to apply to a future Messiah. Early Christians quoted this Greek version when arguing that Jesus was the promised king.",
+      "scholarly_citations": [
+        "Schaper, Eschatology in the Greek Psalter, pp. 117-119",
+        "Hay, Glory at the Right Hand, pp. 21-33",
+        "Loader, The Septuagint, Sexuality, and the New Testament, p. 89"
+      ],
+      "counter_arguments": "The LXX rendering reflects standard Greek translation technique for Hebrew imperfects in temporal clauses and may not represent deliberate messianic sharpening but rather linguistic convention. The explicative genitive is common in Koine Greek."
+    },
+    {
+      "reference": "Psalm 110:1",
+      "tradition": "Targum",
+      "revision_type": "proto_rabbinic",
+      "mt_reading": "נְאֻם יְהוָה לַאדֹנִי (The LORD says to my lord)",
+      "revised_reading": "אָמַר יְיָ בְּמֵימְרֵיהּ לְמַלְכָּא מְשִׁיחָא (The LORD said in his Memra to the King Messiah)",
+      "confidence": 0.85,
+      "evidence": "The Targum inserts בְּמֵימְרֵיהּ (\"in/by his Memra\"), the characteristic targumic intermediary concept that distances direct divine speech and avoids anthropomorphic immediacy of God speaking to a human figure. The rendering of לַאדֹנִי as לְמַלְכָּא מְשִׁיחָא (\"to the King Messiah\") explicitly identifies the addressee as the messianic king, removing ambiguity inherent in the pronominal suffix. This reflects proto-rabbinic exegetical tradition attested in b. Sanhedrin 38b and midrashic sources that debated this verse's referent. The Memra insertion follows consistent targumic theology of the divine Word as mediating agency, documented across Targum Psalms.",
+      "evidence_plain": "The Aramaic translation adds the concept of God's 'Word' as an intermediary, avoiding the picture of God directly speaking to a human. It also explicitly identifies the 'lord' as 'the Messiah King,' removing any ambiguity about who the verse is discussing.",
+      "scholarly_citations": [
+        "Chilton, The Glory of Israel, pp. 63-66",
+        "Samely, The Interpretation of Speech in the Pentateuch Targums, pp. 234-237",
+        "Stec, The Targum of Psalms, pp. 192-193"
+      ],
+      "counter_arguments": "Memra usage is formulaic in Targums and may not indicate specific theological motivation here. The messianic identification could reflect established exegetical tradition rather than targumic innovation, as pre-Christian sources (e.g., 11Q13) already applied Psalm 110 messianically."
+    },
+    {
+      "reference": "Psalm 110:1",
+      "tradition": "Peshitta",
+      "revision_type": "harmonization",
+      "mt_reading": "עַד־אָשִׁית אֹיְבֶיךָ הֲדֹם לְרַגְלֶיךָ (until I make your enemies your footstool)",
+      "revised_reading": "ܥܕܡܐ ܕܐܣܝܡ ܒܥܠܕܒܒܝܟ ܬܚܝܬ ܪܓܠܝܟ (until I place your enemies beneath your feet)",
+      "confidence": 0.58,
+      "evidence": "The Peshitta renders הֲדֹם לְרַגְלֶיךָ with ܬܚܝܬ ܪܓܠܝܟ (\"beneath your feet\"), paralleling NT citation language in 1 Corinthians 15:25 and Ephesians 1:22 which use ὑποκάτω τῶν ποδῶν. This suggests possible harmonization with early Christian liturgical or catechetical use of the psalm, though the Peshitta's relationship to Greek and Syriac Christian tradition is complex. The preposition ܬܚܝܬ more explicitly denotes spatial subjugation than the metaphorical הֲדֹם (\"footstool\"), potentially reflecting theological emphasis on complete conquest consistent with eschatological triumph themes in Syriac Christianity.",
+      "evidence_plain": "The Syriac translation uses the phrase 'beneath your feet' instead of 'footstool,' which matches how early Christian writings quote this verse. This may show influence from Christian interpretation and liturgical use of the psalm.",
+      "scholarly_citations": [
+        "Gillingham, Psalms Through the Centuries, vol. 2, pp. 234-236",
+        "Weitzman, The Syriac Version of the Old Testament, pp. 156-158"
+      ],
+      "counter_arguments": "The Peshitta frequently employs ܬܚܝܬ ܪܓܠܝܟ for Hebrew footstool imagery elsewhere (e.g., Ps 8:7), suggesting standard translation convention rather than harmonization. The Peshitta Psalter may preserve pre-Christian Jewish exegetical tradition independent of NT influence."
+    },
+    {
+      "reference": "Psalm 110:1",
+      "tradition": "Vulgate",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "נְאֻם יְהוָה לַאדֹנִי (Oracle of the LORD to my lord)",
+      "revised_reading": "Dixit Dominus Domino meo (The Lord said to my Lord)",
+      "confidence": 0.68,
+      "evidence": "Jerome's rendering 'Dixit Dominus Domino meo' preserves the LXX's aorist indicative εἶπεν rather than translating the Hebrew נְאֻם as an ongoing oracular formula (e.g., 'dicit' or 'locutus est'). The perfect 'dixit' frames the divine utterance as a completed, definitive historical act, aligning with Christian interpretation of the verse as prophetic oracle fulfilled in Christ's resurrection and session. The capitalization distinction 'Dominus...Domino' (though a later scribal convention) reflects Jerome's christological reading evident in his Commentarioli in Psalmos and Epistulae, where he identifies the second 'Domino' with Christ. This follows established Latin liturgical use predating Jerome.",
+      "evidence_plain": "Jerome's Latin translation uses a past tense ('said') that makes God's statement sound like a one-time completed event rather than an ongoing oracle. This fits with Christian interpretation that saw the verse as a prophecy fulfilled when Jesus rose from the dead and ascended to heaven.",
+      "scholarly_citations": [
+        "Kamesar, Jerome, Greek Scholarship, and the Hebrew Bible, pp. 178-180",
+        "Graves, Jerome's Hebrew Philology, pp. 134-136"
+      ],
+      "counter_arguments": "Jerome typically follows LXX closely in poetic books, and 'dixit' is his standard rendering of εἶπεν regardless of theological context. The christological reading reflects received Latin tradition rather than Jerome's own translational choices, as he elsewhere critiques Christian over-interpretation of Hebrew texts."
+    }
+  ],
+  "dominant_strategy": "Proto-rabbinic revision is most prominent, particularly in the Targumic tradition's explicit messianic identification and Memra insertion. While LXX and Vulgate show messianic potential through temporal-aspectual choices, the Targum actively disambiguates and theologizes the text according to Second Temple Jewish exegetical norms, reflecting concerns visible in rabbinic debates about divine speech, messianic identity, and scriptural interpretation preserved in Talmudic sources.",
+  "overall_assessment": "The textual history of Psalm 110:1 reveals a verse already theologically charged in its Hebrew form, which major traditions handle with relative conservatism compared to more radically revised psalms. The stability of the core text across traditions suggests its recognized significance and perhaps resistance to overt alteration. Nevertheless, subtle translational choices—temporal specification in LXX, Memra mediation in Targum, spatial explicitness in Peshitta—disclose each tradition's theological anxieties and interpretive frameworks. The verse became a locus classicus for christological debate precisely because its dual 'lord' terminology and divine session imagery invited messianic reading while remaining sufficiently ambiguous to support multiple interpretive trajectories. The convergence of Jewish (targumic) and Christian (LXX-dependent) messianic interpretation, despite their different theological trajectories, indicates the verse's inherent eschatological-royal potency in Second Temple period exegesis.",
+  "overall_plain": "Ancient translators mostly kept this verse very close to the original Hebrew because it was already so important and theologically loaded. However, each translation tradition made small adjustments that reflect their own theological concerns—Greek translators emphasized future fulfillment, Aramaic translators carefully distinguished God from the human king, and Christian translators used language that fit their belief in Jesus as the promised ruler. These small changes show how the same verse could be read differently by Jews and Christians while remaining essentially the same text.",
+  "bibcrit_assessment": {
+    "title": "LXX Temporal Grammar Enables Christian Eschatological Exegesis",
+    "reasoning": "The LXX's rendering of Psalm 110:1 with aorist subjunctive plus ἕως ἄν construction, while linguistically defensible, created a temporal-eschatological framework more conducive to christological appropriation than the MT's aspectually ambiguous imperfect. This subtle shift—a matter of Greek tense-aspect convention rather than overt revision—became exegetically determinative: every NT citation follows LXX, and patristic exegesis universally depends on the Greek's futurity emphasis. The case illustrates how translation-technique choices, even when not consciously theological, acquire dogmatic significance through reception history.",
+    "plain": "The Greek translation's grammar made it easier to read this verse as a prophecy about a future event, which is exactly how early Christians used it to talk about Jesus. A small translation choice became hugely important for later theology.",
+    "confidence": 0.78
+  },
+  "discovery_ready": false,
+  "reference": "Psalm 110:1",
+  "cached_at": "2026-03-31T00:23:11.119131",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

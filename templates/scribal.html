@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+{% block title %}{{ _t('scribal_page_title') }}{% endblock %}
+
+{% block head %}
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+{% endblock %}
+
+{% block content %}
+
+<!-- Passage Selector Bar -->
+<div class="passage-bar">
+  <div class="passage-bar-row passage-bar-main">
+    <span class="passage-label">{{ _t('book_label') }}</span>
+
+    <div class="passage-bar-selectors">
+      <select id="sel-book" class="passage-select" aria-label="{{ _t('book_label') }}">
+        <option value="">{{ _t('scribal_select_book') }}</option>
+        <option value="Isaiah">Isaiah</option>
+        <option value="Jeremiah">Jeremiah</option>
+        <option value="Psalms">Psalms</option>
+        <option value="Genesis">Genesis</option>
+        <option value="Deuteronomy">Deuteronomy</option>
+        <option value="Exodus">Exodus</option>
+        <option value="Proverbs">Proverbs</option>
+        <option value="Job">Job</option>
+        <option value="Micah">Micah</option>
+        <option value="Zechariah">Zechariah</option>
+      </select>
+    </div>
+
+    <label class="scribal-compare-label">
+      <input type="checkbox" id="chk-compare"> {{ _t('scribal_compare') }}
+    </label>
+
+    <div id="compare-wrap" class="passage-bar-selectors" style="display:none;">
+      <select id="sel-book-2" class="passage-select" aria-label="{{ _t('scribal_second_book') }}">
+        <option value="">{{ _t('scribal_second_book') }}</option>
+        <option value="Isaiah">Isaiah</option>
+        <option value="Jeremiah">Jeremiah</option>
+        <option value="Psalms">Psalms</option>
+        <option value="Genesis">Genesis</option>
+        <option value="Deuteronomy">Deuteronomy</option>
+        <option value="Exodus">Exodus</option>
+        <option value="Proverbs">Proverbs</option>
+        <option value="Job">Job</option>
+        <option value="Micah">Micah</option>
+        <option value="Zechariah">Zechariah</option>
+      </select>
+    </div>
+
+    <div class="passage-bar-actions">
+      <button id="btn-analyze" class="btn-primary">{{ _t('scribal_profile_btn') }}</button>
+    </div>
+  </div>
+</div>
+
+<!-- Dismissable info banner -->
+<div id="scribal-info-banner" class="bt-info-banner">
+  <div class="bt-info-inner">
+    <span class="bt-info-icon">📊</span>
+    <div class="bt-info-text">
+      <strong>{{ _t('scribal_what_title') }}</strong>
+      {{ _t('scribal_info_body') | safe }}
+    </div>
+    <button class="bt-info-close" id="scribal-info-close" aria-label="Dismiss">✕</button>
+  </div>
+</div>
+
+<!-- Empty / Welcome State -->
+<div id="empty-state" class="empty-state">
+  <div class="empty-inner">
+    <h2>{{ _t('scribal_empty_title') }}</h2>
+    <p>{{ _t('scribal_empty_body') }}</p>
+    <div class="bt-legend-hero" style="margin-bottom: 1.5rem;">
+      <span class="bt-legend-item"><span class="scribal-mini-dot" style="background:var(--lxx-color)"></span> {{ _t('dim_literalness') }}</span>
+      <span class="bt-legend-item"><span class="scribal-mini-dot" style="background:#e67e22"></span> {{ _t('dim_anthropomorphism') }}</span>
+      <span class="bt-legend-item"><span class="scribal-mini-dot" style="background:#8e44ad"></span> {{ _t('dim_messianic') }}</span>
+    </div>
+    <p class="featured-label">{{ _t('featured_label') }}</p>
+    <div class="featured-passages">
+      <a href="#" class="featured-ref" data-book="Isaiah">{{ _t('feat_scr_isaiah') | safe }}</a>
+      <a href="#" class="featured-ref" data-book="Psalms">{{ _t('feat_scr_psalms') | safe }}</a>
+      <a href="#" class="featured-ref" data-book="Jeremiah">{{ _t('feat_scr_jeremiah') | safe }}</a>
+      <a href="#" class="featured-ref" data-book="Deuteronomy">{{ _t('feat_scr_deut') | safe }}</a>
+    </div>
+  </div>
+</div>
+
+<!-- Loading State -->
+<div id="loading-state" class="loading-state" style="display:none;" aria-live="polite">
+  <div class="loading-spinner"></div>
+  <p id="loading-step" class="loading-step-msg">{{ _t('loading_preparing') }}</p>
+  <p id="loading-timer" class="loading-timer"></p>
+</div>
+
+<!-- Passage heading -->
+<div id="passage-heading" class="passage-heading" style="display:none;"></div>
+
+<!-- Radar chart area -->
+<div id="radar-area" style="display:none;">
+  <div class="scribal-radar-wrap">
+    <div class="scribal-radar-chart-wrap">
+      <button id="btn-radar-expand" class="radar-expand-btn" title="Full screen">
+        <span class="material-symbols-outlined">fullscreen</span>
+      </button>
+      <div class="radar-svg-container">
+        <svg id="radar-chart" viewBox="0 0 720 470" width="720" height="470" preserveAspectRatio="xMidYMid meet" aria-label="Radar chart"></svg>
+      </div>
+    </div>
+    <div id="radar-legend" class="scribal-radar-legend"></div>
+  </div>
+  <div id="scribal-overall" class="scribal-overall"></div>
+</div>
+
+<!-- Radar fullscreen modal -->
+<div id="radar-modal" class="radar-modal-overlay" style="display:none;" role="dialog" aria-modal="true">
+  <div class="radar-modal-inner">
+    <button id="radar-modal-close" class="radar-modal-close" aria-label="Close">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+    <div id="radar-modal-legend" class="scribal-radar-legend scribal-radar-legend-modal"></div>
+    <svg id="radar-chart-modal" viewBox="0 0 720 470" width="720" height="470" preserveAspectRatio="xMidYMid meet" aria-label="Radar chart fullscreen"></svg>
+  </div>
+</div>
+
+<!-- Analysis Tabs -->
+<div id="tabs-area" class="tabs-area" style="display:none;">
+  <div class="tabs-header">
+    <span class="tradition-badge analysis-badge tabs-badge">{{ _t('scribal_dim_analysis') }}</span>
+    <nav class="tabs-nav" id="tabs-nav" role="tablist" aria-label="Dimension tabs"></nav>
+  </div>
+  <div class="tabs-body" id="tabs-body">
+    <div id="analysis-panel" class="tab-panel active">
+      <p class="analysis-hint">Click any tab above to explore a dimension.</p>
+    </div>
+  </div>
+  <div class="export-row" id="export-row" style="display:none;">
+    <button class="btn-export" id="btn-sbl" title="Copy SBL-format footnotes">{{ _t('scribal_sbl_btn') }}</button>
+    <button class="btn-export" id="btn-bibtex" title="Copy BibTeX">📋 BibTeX</button>
+    <button class="btn-export btn-share" id="btn-share" title="Share this analysis">
+      <span class="material-symbols-outlined" style="font-size:14px;vertical-align:-2px">qr_code_2</span> {{ _t('scribal_share_btn') }}
+    </button>
+  </div>
+</div>
+
+<!-- Toast -->
+<div id="toast" class="toast" style="display:none;" role="status"></div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='scribal.js') }}"></script>
+{% if book %}
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.scribal) window.scribal.analyze('{{ book | e }}');
+  });
+</script>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,369 @@
+{
+  "book": "Isaiah",
+  "period_range": "8th century BCE – 11th century CE",
+  "archetype_description": "The book of Isaiah exhibits a complex compositional history with material spanning from the 8th-century prophetic activity of Proto-Isaiah (chapters 1–39) through exilic Deutero-Isaiah (40–55) and post-exilic Trito-Isaiah (56–66). The proto-text reached substantial form by the late Persian or early Hellenistic period (c. 400–250 BCE), though the textual witnesses reveal significant ongoing fluidity. The Vorlage behind the major traditions shows evidence of multiple Hebrew recensions circulating in the Second Temple period, with the Qumran evidence demonstrating that substantial textual diversity persisted well into the 1st century BCE.",
+  "stemma_nodes": [
+    {
+      "id": "archetype",
+      "label": "Proto-Isaiah Archetype",
+      "type": "archetype",
+      "date": "8th–5th c. BCE",
+      "description": "Compositional layers from Proto-Isaiah (8th c.) through Deutero- and Trito-Isaiah, achieving substantial unity by the Persian period."
+    },
+    {
+      "id": "proto-hebrew-isaiah",
+      "label": "Proto-Hebrew Isaiah",
+      "type": "intermediate",
+      "date": "4th–3rd c. BCE",
+      "description": "Stabilized Hebrew text of Isaiah circulating in multiple recensions during the early Hellenistic period, prior to major textual divergence."
+    },
+    {
+      "id": "pre-mt-hebrew",
+      "label": "Pre-Masoretic Hebrew",
+      "type": "intermediate",
+      "date": "2nd–1st c. BCE",
+      "description": "Hebrew text-form ancestral to the consonantal Masoretic tradition, attested in part by 1QIsaᵇ and 4QIsaᵈ."
+    },
+    {
+      "id": "old-greek-isaiah",
+      "label": "Old Greek Isaiah",
+      "type": "intermediate",
+      "date": "late 3rd–early 2nd c. BCE",
+      "description": "Original Greek translation of Isaiah produced in Alexandria, exhibiting a Hebrew Vorlage with significant variants from proto-MT."
+    },
+    {
+      "id": "1qisaa",
+      "label": "1QIsaᵃ (Great Isaiah Scroll)",
+      "type": "edition",
+      "tradition": "DSS",
+      "date": "c. 125 BCE",
+      "full_name": "1QIsaᵃ (Great Isaiah Scroll from Qumran Cave 1)",
+      "language": "Hebrew",
+      "description": "Complete Isaiah scroll from Qumran Cave 1, representing a non-proto-Masoretic popular text with numerous orthographic and textual variants."
+    },
+    {
+      "id": "1qisab",
+      "label": "1QIsaᵇ",
+      "type": "edition",
+      "tradition": "DSS",
+      "date": "c. 100–75 BCE",
+      "full_name": "1QIsaᵇ (Second Isaiah Scroll from Qumran Cave 1)",
+      "language": "Hebrew",
+      "description": "Fragmentary Isaiah scroll from Qumran Cave 1, closely aligned with the proto-Masoretic textual tradition."
+    },
+    {
+      "id": "4qisaa-q",
+      "label": "4QIsaᵃ⁻ᑫ (18 scrolls)",
+      "type": "tradition",
+      "tradition": "DSS",
+      "date": "150 BCE–68 CE",
+      "full_name": "Cave 4 Isaiah manuscripts (4QIsaᵃ through 4QIsaᑫ)",
+      "language": "Hebrew",
+      "description": "Eighteen fragmentary Isaiah manuscripts from Qumran Cave 4, exhibiting textual diversity ranging from proto-Masoretic (4QIsaᵈ) to divergent text-forms."
+    },
+    {
+      "id": "mt-isaiah",
+      "label": "Masoretic Isaiah",
+      "type": "tradition",
+      "tradition": "MT",
+      "date": "1st c. CE–10th c. CE",
+      "full_name": "Masoretic Text of Isaiah",
+      "language": "Hebrew",
+      "description": "Consonantal text stabilized by the 1st century CE, with Tiberian vocalization and Masoretic apparatus added 7th–10th centuries."
+    },
+    {
+      "id": "aleppo-isaiah",
+      "label": "Aleppo Codex (Isaiah)",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "c. 930 CE",
+      "full_name": "Aleppo Codex (Keter Aram Tzova)",
+      "language": "Hebrew",
+      "description": "Earliest complete Tiberian Masoretic codex of the entire Hebrew Bible; Isaiah portion survives intact."
+    },
+    {
+      "id": "leningrad-isaiah",
+      "label": "Leningrad Codex (Isaiah)",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "1008/1009 CE",
+      "full_name": "Codex Leningradensis B19ᴬ",
+      "language": "Hebrew",
+      "description": "Oldest complete manuscript of the entire Hebrew Bible, base text for BHS and BHQ."
+    },
+    {
+      "id": "bhs-isaiah",
+      "label": "BHS Isaiah",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "1968–1977",
+      "full_name": "Biblia Hebraica Stuttgartensia: Isaiah",
+      "language": "Hebrew",
+      "description": "Critical edition of Masoretic Isaiah based on Leningrad Codex with apparatus citing ancient versions and Qumran witnesses."
+    },
+    {
+      "id": "bhq-isaiah",
+      "label": "BHQ Isaiah",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "2004",
+      "full_name": "Biblia Hebraica Quinta: Isaiah (ed. J. de Waard)",
+      "language": "Hebrew",
+      "description": "Most recent critical edition of Masoretic Isaiah with substantially revised apparatus incorporating full Qumran evidence."
+    },
+    {
+      "id": "lxx-isaiah",
+      "label": "LXX Isaiah",
+      "type": "tradition",
+      "tradition": "LXX",
+      "date": "2nd c. BCE–5th c. CE",
+      "full_name": "Septuagint Isaiah",
+      "language": "Greek",
+      "description": "Greek translation tradition of Isaiah exhibiting a Hebrew Vorlage with significant differences from MT, transmitted through multiple recensions."
+    },
+    {
+      "id": "hexaplaric-isaiah",
+      "label": "Hexaplaric Isaiah",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "c. 240 CE",
+      "full_name": "Origen's Hexapla: Isaiah column",
+      "language": "Greek",
+      "description": "Origen's revision of the LXX Isaiah toward the Hebrew text current in Palestine, using critical signs (asterisks and obeli)."
+    },
+    {
+      "id": "lucianic-isaiah",
+      "label": "Lucianic Isaiah",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "c. 300 CE",
+      "full_name": "Lucianic Recension of Isaiah",
+      "language": "Greek",
+      "description": "Antiochene revision of LXX Isaiah attributed to Lucian, characterized by stylistic refinements and occasional alignment with MT."
+    },
+    {
+      "id": "gott-lxx-isaiah",
+      "label": "Göttingen LXX Isaiah",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "1939 (Ziegler)",
+      "full_name": "Septuaginta: Vetus Testamentum Graecum XIV: Isaias (ed. J. Ziegler)",
+      "language": "Greek",
+      "description": "Critical edition of LXX Isaiah reconstructing the Old Greek text based on Alexandrinus, Vaticanus, and Sinaiticus with full apparatus."
+    },
+    {
+      "id": "aquila-isaiah",
+      "label": "Aquila's Isaiah",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "c. 130 CE",
+      "full_name": "Aquila's Greek Translation of Isaiah",
+      "language": "Greek",
+      "description": "Hyper-literal Greek revision of Isaiah closely following the proto-Masoretic Hebrew, known from fragments and patristic citations."
+    },
+    {
+      "id": "symmachus-isaiah",
+      "label": "Symmachus's Isaiah",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "c. 170–200 CE",
+      "full_name": "Symmachus's Greek Translation of Isaiah",
+      "language": "Greek",
+      "description": "Idiomatic Greek revision of Isaiah, known from fragments preserved in the Hexapla and Syro-Hexapla."
+    },
+    {
+      "id": "theodotion-isaiah",
+      "label": "Theodotion's Isaiah",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "c. 180 CE",
+      "full_name": "Theodotion's Greek Revision of Isaiah",
+      "language": "Greek",
+      "description": "Greek revision of Isaiah toward the Hebrew text, preserving elements of both OG and kaige traditions."
+    },
+    {
+      "id": "peshitta-isaiah",
+      "label": "Peshitta Isaiah",
+      "type": "tradition",
+      "tradition": "Peshitta",
+      "date": "2nd–3rd c. CE",
+      "full_name": "Peshitta (Syriac) Isaiah",
+      "language": "Syriac",
+      "description": "Syriac translation of Isaiah from a Hebrew Vorlage generally close to MT but with occasional divergences and possible influence from Targum and LXX."
+    },
+    {
+      "id": "targum-isaiah",
+      "label": "Targum Jonathan to Isaiah",
+      "type": "tradition",
+      "tradition": "Targum",
+      "date": "2nd–5th c. CE",
+      "full_name": "Targum Jonathan ben Uzziel to the Prophets: Isaiah",
+      "language": "Aramaic",
+      "description": "Expansive Aramaic paraphrase of Isaiah with extensive haggadic and theological interpretations, based on a proto-Masoretic Hebrew text."
+    },
+    {
+      "id": "vulgate-isaiah",
+      "label": "Vulgate Isaiah",
+      "type": "tradition",
+      "tradition": "Vulgate",
+      "date": "c. 390–405 CE",
+      "full_name": "Jerome's Vulgate: Isaiah",
+      "language": "Latin",
+      "description": "Jerome's fresh Latin translation of Isaiah from the Hebrew veritas (hebraica veritas), with occasional consultation of LXX and earlier Latin versions."
+    }
+  ],
+  "stemma_edges": [
+    {
+      "from": "archetype",
+      "to": "proto-hebrew-isaiah"
+    },
+    {
+      "from": "proto-hebrew-isaiah",
+      "to": "pre-mt-hebrew"
+    },
+    {
+      "from": "proto-hebrew-isaiah",
+      "to": "old-greek-isaiah"
+    },
+    {
+      "from": "proto-hebrew-isaiah",
+      "to": "1qisaa"
+    },
+    {
+      "from": "pre-mt-hebrew",
+      "to": "1qisab"
+    },
+    {
+      "from": "pre-mt-hebrew",
+      "to": "4qisaa-q"
+    },
+    {
+      "from": "pre-mt-hebrew",
+      "to": "mt-isaiah"
+    },
+    {
+      "from": "mt-isaiah",
+      "to": "aleppo-isaiah"
+    },
+    {
+      "from": "mt-isaiah",
+      "to": "leningrad-isaiah"
+    },
+    {
+      "from": "leningrad-isaiah",
+      "to": "bhs-isaiah"
+    },
+    {
+      "from": "leningrad-isaiah",
+      "to": "bhq-isaiah"
+    },
+    {
+      "from": "old-greek-isaiah",
+      "to": "lxx-isaiah"
+    },
+    {
+      "from": "lxx-isaiah",
+      "to": "hexaplaric-isaiah"
+    },
+    {
+      "from": "lxx-isaiah",
+      "to": "lucianic-isaiah"
+    },
+    {
+      "from": "lxx-isaiah",
+      "to": "gott-lxx-isaiah"
+    },
+    {
+      "from": "pre-mt-hebrew",
+      "to": "aquila-isaiah"
+    },
+    {
+      "from": "pre-mt-hebrew",
+      "to": "symmachus-isaiah"
+    },
+    {
+      "from": "lxx-isaiah",
+      "to": "theodotion-isaiah"
+    },
+    {
+      "from": "pre-mt-hebrew",
+      "to": "peshitta-isaiah"
+    },
+    {
+      "from": "mt-isaiah",
+      "to": "targum-isaiah"
+    },
+    {
+      "from": "pre-mt-hebrew",
+      "to": "vulgate-isaiah"
+    }
+  ],
+  "key_divergences": [
+    {
+      "title": "Virgin vs. Young Woman (Isaiah 7:14)",
+      "passage": "Isaiah 7:14",
+      "witnesses": [
+        "LXX",
+        "MT"
+      ],
+      "plain": "The Hebrew MT reads 'almah (young woman) while the Greek LXX translates parthenos (virgin), a difference that became foundational for Christian messianic interpretation. This divergence illustrates how translation choices in the LXX could introduce theological dimensions not explicit in the Hebrew.",
+      "technical": "MT העלמה (ha-'almah) vs. LXX ἡ παρθένος (hē parthenos). The semantic range of Hebrew 'almah includes young woman of marriageable age, not necessarily virgin, while Greek parthenos more specifically denotes virginity. This is a case of translational interpretation rather than variant Vorlage; see Barthélemy CTAT and extensive discussion by Seeligmann, Tov, and van der Kooij on LXX Isaiah's translational tendencies."
+    },
+    {
+      "title": "Suffering Servant Identity (Isaiah 52:13–53:12)",
+      "passage": "Isaiah 52:13–53:12",
+      "witnesses": [
+        "LXX",
+        "MT",
+        "1QIsaᵃ"
+      ],
+      "plain": "The Fourth Suffering Servant Song contains textual variants that affect whether the servant is understood collectively (Israel) or individually (messianic figure). The LXX in places shifts pronominal references and verbal subjects, while 1QIsaᵃ preserves unique plural readings at key points.",
+      "technical": "Notable variants include Isaiah 53:11: MT מֵעֲמַל נַפְשׁוֹ יִרְאֶה (from the travail of his soul he shall see) where 1QIsaᵃ reads יראה אור (he shall see light, supported by LXX ὄψεται φῶς). Also 53:9: MT בְּמֹתָיו (in his deaths/tomb, plural form) vs. LXX/Peshitta singular. Analyzed extensively by Sommer, Wilcox and Paton-Williams, and the BHQ apparatus (de Waard)."
+    },
+    {
+      "title": "Cosmic Battle Description (Isaiah 34:4)",
+      "passage": "Isaiah 34:4",
+      "witnesses": [
+        "MT",
+        "LXX",
+        "1QIsaᵃ"
+      ],
+      "plain": "A vivid apocalyptic passage describing cosmic dissolution shows significant textual variation in the sequence and imagery, affecting whether the passage depicts rolling up of the heavens like a scroll or falling stars like leaves.",
+      "technical": "MT reads וְנָגֹלּוּ כַסֵּפֶר הַשָּׁמַיִם (and the heavens shall be rolled up like a scroll) followed by falling host imagery. LXX has καὶ ἑλιγήσεται ὁ οὐρανὸς ὡς βιβλίον (and heaven shall be rolled up as a scroll) but differs in subsequent cola. 1QIsaᵃ exhibits variant word order and orthography. The tradition-history involves both textual corruption and differing apocalyptic imagery; see Troxel's LXX-Isaiah monograph and Flint's studies of Qumran Isaiah."
+    },
+    {
+      "title": "Cyrus as Messiah (Isaiah 45:1)",
+      "passage": "Isaiah 45:1",
+      "witnesses": [
+        "MT",
+        "LXX",
+        "Dead Sea Scrolls"
+      ],
+      "plain": "The explicit naming of the Persian king Cyrus as God's anointed (messiah) is a rare historical reference in prophetic literature, and textual witnesses show minor but theologically significant variants in how divine commissioning is described.",
+      "technical": "MT reads כֹּה־אָמַר יְהוָה לִמְשִׁיחוֹ לְכוֹרֶשׁ (Thus says YHWH to his anointed, to Cyrus). The designation למשיחו (to his anointed/messiah) applied to a gentile ruler is textually stable across traditions (confirmed by 1QIsaᵃ), but the LXX rendering τῷ χριστῷ μου Κύρῳ shows translational handling of the theologically charged term. Discussion by Blenkinsopp, Goldingay, and Baltzer on Second Isaiah's radical theology."
+    },
+    {
+      "title": "New Heavens and Earth Vision (Isaiah 65:17)",
+      "passage": "Isaiah 65:17–25",
+      "witnesses": [
+        "MT",
+        "LXX",
+        "1QIsaᵃ"
+      ],
+      "plain": "The climactic vision of new creation in Trito-Isaiah shows textual variants that affect eschatological interpretation, particularly regarding the permanence of the transformation and the fate of former things.",
+      "technical": "Isaiah 65:17 MT reads כִּי־הִנְנִי בוֹרֵא שָׁמַיִם חֲדָשִׁים וָאָרֶץ חֲדָשָׁה וְלֹא תִזָּכַרְנָה הָרִאשֹׁנוֹת (Behold, I am creating new heavens and new earth, and the former things shall not be remembered). 1QIsaᵃ exhibits minor orthographic differences but substantial agreement. LXX ἔσται γὰρ ὁ οὐρανὸς καινὸς καὶ ἡ γῆ καινή shows future tense rather than Hebrew participial construction. The passage's influence on Revelation 21:1 makes textual precision crucial; analyzed by Beuken, Stromberg, and Hibbard in studies of Trito-Isaiah's eschatology."
+    }
+  ],
+  "transmission_narrative": "Isaiah's transmission history is exceptionally complex, reflecting the book's compositional growth across four centuries (8th–4th c. BCE) and subsequent textual diversification during the Second Temple period. The Qumran discoveries revealed a spectrum of text-forms: 1QIsaᵃ (c. 125 BCE) represents a popular, non-proto-Masoretic text with extensive orthographic modernization and over 2,500 textual variants from MT, while 1QIsaᵇ and several Cave 4 manuscripts (especially 4QIsaᵈ) align closely with the proto-Masoretic tradition. The Old Greek translation (late 3rd–early 2nd c. BCE) was based on a Hebrew Vorlage exhibiting substantial variants from proto-MT, and its subsequent recensions (Hexaplaric, Lucianic, kaige-Theodotion, Aquila, Symmachus) reflect centuries of attempts to align the Greek with evolving Hebrew standards or to produce more idiomatic Greek. The Masoretic tradition itself achieved consonantal stabilization by the 1st century CE, with the Tiberian vocalization tradition reaching its apex in the Aleppo (10th c.) and Leningrad (1008/1009 CE) codices. Modern critical scholarship, particularly the BHQ edition (de Waard, 2004) and Göttingen LXX (Ziegler, 1939), has synthesized this evidence to produce eclectic texts, though the degree of original textual plurality versus recensional divergence remains debated (Cross's local-text theory vs. Barthélemy's emphasis on deliberate revisions).",
+  "transmission_plain": "The book of Isaiah traveled from its ancient Near Eastern origins through a remarkable journey of copying, translation, and interpretation. The earliest complete manuscript we possess is the Great Isaiah Scroll from the Dead Sea (c. 125 BCE), which already shows thousands of small differences from the later traditional Hebrew text. As Isaiah was translated into Greek in ancient Egypt, Aramaic paraphrases for Jewish worship, Syriac for Eastern Christians, and Latin by Jerome, each tradition introduced new variations while attempting to preserve the prophetic message. The Hebrew text used in synagogues today was standardized by Jewish scribes around 1000 CE in famous manuscripts like the Aleppo and Leningrad codices, but modern scholars now compare all these ancient witnesses to better understand Isaiah's original words and their evolution.",
+  "bibcrit_assessment": {
+    "title": "Qumran Revealed Dramatic Second Temple Textual Plurality",
+    "plain": "Before the Dead Sea Scrolls were discovered in 1947, scholars assumed Isaiah's text had been carefully preserved unchanged for millennia. The Qumran Isaiah scrolls shattered this assumption, revealing that multiple significantly different versions circulated simultaneously in antiquity, fundamentally changing how we understand biblical transmission.",
+    "confidence": 0.88
+  },
+  "discovery_ready": true,
+  "reference": "Isaiah",
+  "cached_at": "2026-03-31T09:51:39.540029",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

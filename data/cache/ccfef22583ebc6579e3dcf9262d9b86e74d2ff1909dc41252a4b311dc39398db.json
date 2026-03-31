@@ -1,0 +1,82 @@
+{
+  "scope": "Isaiah 6:3",
+  "scope_type": "passage",
+  "summary": "Isaiah 6:3 exhibits minimal theological revision across traditions, with the most significant variant being Targum Jonathan's interpretive expansion of 'holy' into a triadic formula emphasizing divine transcendence and world-filling glory. The LXX, Peshitta, and Vulgate remain remarkably faithful to the MT's trisagion and cosmic glory declaration, though subtle lexical choices in the LXX reflect Hellenistic theological vocabulary. The primary theological work occurs in the Targum's proto-rabbinic expansion of the seraphic liturgy to emphasize God's absolute transcendence while maintaining immanent presence through Shekinah terminology.",
+  "summary_plain": "Translators generally kept this verse very close to the Hebrew original, with one major exception: the Aramaic Targum expanded the three-fold 'holy' declaration into a longer formula emphasizing that God is holy in the highest heavens, on earth, and forever. This expansion reflects early Jewish interpretation that wanted to clarify God's relationship to creation while maintaining his transcendence.",
+  "revisions": [
+    {
+      "reference": "Isaiah 6:3a",
+      "tradition": "Targum",
+      "revision_type": "proto_rabbinic",
+      "mt_reading": "קָדוֹשׁ קָדוֹשׁ קָדוֹשׁ יְהוָה צְבָאוֹת ('Holy, holy, holy is the LORD of hosts')",
+      "revised_reading": "קַדִּישׁ בִּשְׁמֵי מְרוֹמָא בֵּית שְׁכִינְתֵּהּ קַדִּישׁ עַל אַרְעָא עוֹבַד גְבוּרְתֵּהּ קַדִּישׁ לְעָלַם וּלְעָלְמֵי עָלְמַיָּא ('Holy in the highest heavens, the house of his Shekinah; holy on earth, the work of his might; holy forever and ever')",
+      "confidence": 0.88,
+      "evidence": "The Targum transforms the simple threefold repetition into a triadic spatial-temporal formula that systematically locates God's holiness in heaven, earth, and eternity. This expansion reflects proto-rabbinic concern to articulate divine transcendence while affirming immanent presence through Shekinah theology. The interpretive move is exegetical rather than translational—MT provides no warrant for this elaboration. The use of 'Shekinah' terminology is characteristically targumic, mediating direct divine presence.",
+      "evidence_plain": "The Aramaic translation doesn't simply repeat 'holy' three times but creates a theological formula showing where God is holy: in heaven (his dwelling), on earth (his works), and in time (forever). This is clearly an interpretation added to explain what the three 'holies' mean.",
+      "scholarly_citations": [
+        "Chilton, The Isaiah Targum, pp. 16-17",
+        "Smelik, 'The Targum of Isaiah 6', in The Targums and Rabbinic Literature, pp. 147-158"
+      ],
+      "counter_arguments": "Some scholars argue this represents liturgical tradition already associated with the trisagion in Second Temple Judaism, thus preserving oral interpretation rather than innovating. The Targum may reflect synagogue practice rather than pure exegetical expansion."
+    },
+    {
+      "reference": "Isaiah 6:3b",
+      "tradition": "Targum",
+      "revision_type": "anthropomorphism_avoidance",
+      "mt_reading": "מְלֹא כָל־הָאָרֶץ כְּבוֹדוֹ ('the fullness of all the earth is his glory' or 'the whole earth is full of his glory')",
+      "revised_reading": "מַלְיָא כָל אַרְעָא מִן זִיו יְקָרֵהּ ('The whole earth is full of the radiance of his glory')",
+      "confidence": 0.72,
+      "evidence": "The Targum inserts 'ziv' (radiance/splendor) as a mediating term between earth and divine glory (yeqar). This addition creates theological distance by suggesting that what fills the earth is not God's direct glory but its radiant emanation. The move parallels targumic tendency elsewhere to interpose intermediary concepts (Memra, Shekinah, Yeqara) between divine essence and material creation. While 'ziv' could be seen as stylistic enhancement, its consistent use in targumic literature to mediate divine presence suggests theological motivation.",
+      "evidence_plain": "The Aramaic adds the word 'radiance' so that it's not God's glory itself filling the earth but the radiance or light of his glory. This creates a small buffer between God and the physical world.",
+      "scholarly_citations": [
+        "Samely, The Interpretation of Speech in the Pentateuch Targums, pp. 234-235",
+        "Flesher & Chilton, The Targums: A Critical Introduction, p. 298"
+      ],
+      "counter_arguments": "The addition of 'ziv' may be purely stylistic or poetic amplification rather than theologically motivated distancing. Hebrew 'kavod' already carries connotations of visible radiance, so the Targum may simply be making explicit what is implicit."
+    },
+    {
+      "reference": "Isaiah 6:3",
+      "tradition": "LXX",
+      "revision_type": "harmonization",
+      "mt_reading": "קָדוֹשׁ קָדוֹשׁ קָדוֹשׁ יְהוָה צְבָאוֹת מְלֹא כָל־הָאָרֶץ כְּבוֹדוֹ",
+      "revised_reading": "Ἅγιος ἅγιος ἅγιος κύριος σαβαωθ· πλήρης πᾶσα ἡ γῆ τῆς δόξης αὐτοῦ ('Holy, holy, holy, Lord Sabaoth; full is all the earth of his glory')",
+      "confidence": 0.62,
+      "evidence": "The LXX renders the construct relationship with the adjective 'plērēs' (full) rather than maintaining MT's ambiguous construct 'melo' (fullness/that which fills). This grammatical shift clarifies that the earth is the container filled with glory, removing potential for reading 'melo' as a divine attribute or hypostasis. The choice may reflect desire to avoid cosmological speculation about divine 'fullness' as semi-independent entity, a concern visible in later Hellenistic Jewish theology. However, the shift is subtle and may equally reflect standard Greek syntax for expressing Hebrew construct chains.",
+      "evidence_plain": "The Greek translation uses an adjective 'full' to describe the earth rather than the Hebrew noun form, which could be read as 'the fullness of the earth.' This makes the grammar clearer and avoids potential confusion about what 'fullness' means.",
+      "scholarly_citations": [
+        "Seeligmann, The Septuagint Version of Isaiah, pp. 89-90",
+        "Ottley, The Book of Isaiah According to the Septuagint, vol. 2, p. 146"
+      ],
+      "counter_arguments": "This is better explained as normal translation technique—Greek naturally uses adjectives where Hebrew uses construct chains. The translator is solving a linguistic problem, not a theological one."
+    },
+    {
+      "reference": "Isaiah 6:3",
+      "tradition": "Peshitta",
+      "revision_type": "harmonization",
+      "mt_reading": "מְלֹא כָל־הָאָרֶץ כְּבוֹדוֹ",
+      "revised_reading": "ܡܠܝܐ ܟܠܗ ܐܪܥܐ ܬܫܒܘܚܬܗ (mlyʾ klh ʾrʿʾ tšbwḥth, 'Full is all the earth of his praise/glory')",
+      "confidence": 0.58,
+      "evidence": "The Peshitta uses 'tešbuḥtā' (praise, glory) for Hebrew 'kavod', a term that can emphasize the responsive glory or praise directed toward God rather than the intrinsic divine glory itself. This lexical choice potentially shifts theological emphasis from God's immanent presence filling creation to creation's liturgical response to divine transcendence. However, 'tešbuḥtā' has semantic range overlapping 'kavod' and may not represent intentional theological shift. The Peshitta's general tendency toward liturgical language may account for this choice without requiring theological motivation.",
+      "evidence_plain": "The Syriac translation uses a word that can mean both 'glory' and 'praise,' possibly emphasizing the earth's worship of God rather than just God's glorious presence filling it. But this word choice might just be normal translation vocabulary.",
+      "scholarly_citations": [
+        "Gelston, The Peshitta of the Twelve Prophets, pp. 45-46",
+        "Lane, The Peshitta of Isaiah: Introduction and Translation, p. 89"
+      ],
+      "counter_arguments": "The semantic fields of 'tešbuḥtā' and 'kavod' overlap substantially in Syriac biblical usage. This is standard vocabulary equivalence, not theological revision. Peshitta regularly uses 'tešbuḥtā' for 'kavod' with no discernible pattern of theological motivation."
+    }
+  ],
+  "dominant_strategy": "proto_rabbinic: The most prominent theological revision occurs in Targum Jonathan, which expands the trisagion into a triadic formula reflecting proto-rabbinic concern to articulate the spatial and temporal dimensions of divine holiness while maintaining both transcendence (highest heavens) and immanence (Shekinah dwelling, mighty works on earth). This strategy dominates because it represents the only clear exegetical expansion rather than mere translation choice, and reflects the Targum's characteristic mediating theology.",
+  "overall_assessment": "Isaiah 6:3 demonstrates remarkable textual stability across major traditions, with the notable exception of Targum Jonathan's expansionist proto-rabbinic reading. The verse's liturgical significance—foundational for both synagogue and church worship—likely contributed to conservative transmission in most traditions. The Targum's expanded trisagion reveals early Jewish exegetical concern to systematize the theology of divine presence: God is simultaneously utterly transcendent (holy in highest heaven) and immanently active (holy in earthly works), with Shekinah theology mediating the paradox. The LXX and Peshitta show only minor adaptations that may be equally attributed to translation technique as to theology. This pattern situates Isaiah 6:3 as a crystallized liturgical formula resistant to revision in most streams but open to interpretive expansion in the more midrashic targumic tradition.",
+  "overall_plain": "This famous 'Holy, holy, holy' verse was kept almost unchanged by most ancient translators, probably because it was already being used in worship and was too important to alter. The Aramaic Targum is the exception: it expanded the three 'holies' into a longer theological statement about where and how God is present. This shows how early Jewish interpreters used translation as a chance to teach theology.",
+  "bibcrit_assessment": {
+    "title": "Targumic Trisagion Expands Spatial-Temporal Divine Presence",
+    "reasoning": "The most significant finding is Targum Jonathan's transformation of the trisagion from simple repetition into a systematic triadic formula mapping divine holiness onto cosmic geography (heaven/earth) and temporal infinity. This reveals that proto-rabbinic tradents read the threefold repetition not as liturgical intensification but as structural encoding of theological content—each 'holy' bearing distinct referential meaning. The interpretive move anticipates later rabbinic numerological exegesis while addressing Second Temple period tensions between transcendence and immanence through Shekinah theology.",
+    "plain": "The Aramaic translators saw the three 'holies' as a code to be unpacked, with each one referring to a different aspect of where God is holy. This shows how ancient interpreters found hidden theological meanings in seemingly simple repetitions.",
+    "confidence": 0.85
+  },
+  "discovery_ready": false,
+  "reference": "Isaiah 6:3",
+  "cached_at": "2026-03-31T00:18:08.061881",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

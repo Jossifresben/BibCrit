@@ -1,0 +1,465 @@
+{
+  "book": "Jeremiah",
+  "period_range": "7th century BCE – 11th century CE",
+  "archetype_description": "The book of Jeremiah originated in multiple stages during the late 7th and early 6th centuries BCE, with core prophetic oracles supplemented by biographical narratives and editorial expansions during the exilic and post-exilic periods. Two major editions circulated in antiquity: a shorter Hebrew text (represented by the LXX Vorlage) and a longer expanded Hebrew text (proto-MT), differing by approximately one-eighth of the content and presenting material in different sequences. Scholarship since the Dead Sea Scrolls discovery recognizes both as legitimate ancient textual traditions rather than one being a simple abbreviation or expansion of the other.",
+  "stemma_nodes": [
+    {
+      "id": "archetype",
+      "label": "Proto-Jeremiah",
+      "type": "archetype",
+      "date": "c. 620-580 BCE",
+      "description": "Original prophetic oracles of Jeremiah and early collections, likely oral and written materials compiled by the prophet and his scribe Baruch during the late monarchic and early exilic periods."
+    },
+    {
+      "id": "edition1",
+      "label": "First Edition (Scroll of 605 BCE)",
+      "type": "intermediate",
+      "date": "c. 605 BCE",
+      "description": "The scroll dictated by Jeremiah to Baruch and burned by King Jehoiakim (Jer 36), subsequently rewritten with additions, representing an early fixed form of prophetic material."
+    },
+    {
+      "id": "exilic-expansion",
+      "label": "Exilic Editorial Layer",
+      "type": "intermediate",
+      "date": "c. 580-550 BCE",
+      "description": "Post-destruction additions including biographical narratives, Egyptian period materials (Jer 37-44), and theological reflections on the fall of Jerusalem."
+    },
+    {
+      "id": "hebrew-bifurcation",
+      "label": "Hebrew Textual Bifurcation",
+      "type": "intermediate",
+      "date": "c. 400-300 BCE",
+      "description": "The divergence point where two distinct Hebrew editions emerge: a shorter text tradition (later translated as LXX) and an expanded text tradition (proto-MT) with additional material and different chapter ordering."
+    },
+    {
+      "id": "short-hebrew",
+      "label": "Short Hebrew Edition",
+      "type": "intermediate",
+      "date": "c. 300 BCE",
+      "description": "The shorter Hebrew text form circulating in Egypt and possibly Palestine, approximately 2,700 words shorter than proto-MT, with the oracle against nations in chapters 25-26 rather than 46-51."
+    },
+    {
+      "id": "proto-mt",
+      "label": "Proto-Masoretic Text",
+      "type": "intermediate",
+      "date": "c. 300 BCE - 100 CE",
+      "description": "The expanded Hebrew text tradition with additional doublets, clarifying glosses, and the oracle against nations repositioned to chapters 46-51, attested in 4QJerb,d and becoming the dominant Palestinian text."
+    },
+    {
+      "id": "4qjera",
+      "label": "4QJera (4Q70)",
+      "type": "edition",
+      "tradition": "DSS",
+      "date": "c. 200 BCE",
+      "full_name": "4QJeremiaʰ",
+      "language": "Hebrew",
+      "description": "Earliest extant manuscript of Jeremiah, representing the short text tradition corresponding closely to the Hebrew Vorlage of the LXX."
+    },
+    {
+      "id": "4qjerb",
+      "label": "4QJerb (4Q71)",
+      "type": "edition",
+      "tradition": "DSS",
+      "date": "c. 200-175 BCE",
+      "full_name": "4QJeremiahᵇ",
+      "language": "Hebrew",
+      "description": "Contains portions of Jeremiah 9-10 and 43-44, representing the proto-MT expanded text tradition with characteristic MT readings."
+    },
+    {
+      "id": "4qjerc",
+      "label": "4QJerc (4Q72)",
+      "type": "edition",
+      "tradition": "DSS",
+      "date": "c. 2nd century BCE",
+      "full_name": "4QJeremiahᶜ",
+      "language": "Hebrew",
+      "description": "Mixed text with some agreements with LXX Vorlage and some with MT, suggesting continuing textual plurality in the Second Temple period."
+    },
+    {
+      "id": "4qjerd",
+      "label": "4QJerd (4Q72a)",
+      "type": "edition",
+      "tradition": "DSS",
+      "date": "c. 150-125 BCE",
+      "full_name": "4QJeremiahᵈ",
+      "language": "Hebrew",
+      "description": "Fragmentary manuscript generally aligned with the proto-MT tradition in its preserved portions from Jeremiah 7, 9, and 22."
+    },
+    {
+      "id": "2qjer",
+      "label": "2QJer (2Q13)",
+      "type": "edition",
+      "tradition": "DSS",
+      "date": "c. 1st century BCE - 1st century CE",
+      "full_name": "2QJeremiah",
+      "language": "Hebrew",
+      "description": "Small fragments from Jeremiah 42-49, too limited to determine clearly its textual affiliation between short and long editions."
+    },
+    {
+      "id": "old-greek",
+      "label": "Old Greek (OG)",
+      "type": "intermediate",
+      "date": "c. 150-100 BCE",
+      "description": "The initial Greek translation of the short Hebrew edition, made in Egypt, representing a distinct literary edition of Jeremiah with different arrangement and approximately one-eighth less material than MT."
+    },
+    {
+      "id": "lxx-tradition",
+      "label": "LXX Jeremiah",
+      "type": "tradition",
+      "tradition": "LXX",
+      "date": "c. 100 BCE - 400 CE",
+      "full_name": "Septuagint Jeremiah",
+      "language": "Greek",
+      "description": "The Greek textual tradition preserving the translation of the short Hebrew edition, with oracles against nations in chapters 25-31 (MT 46-51) and different verse numbering throughout."
+    },
+    {
+      "id": "papyrus-967",
+      "label": "Papyrus 967",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "c. late 2nd - early 3rd century CE",
+      "full_name": "Chester Beatty Papyrus IX + Cologne",
+      "language": "Greek",
+      "description": "Earliest major manuscript witness to LXX Jeremiah (with Ezekiel), presenting the book with yet another arrangement: Jer 1-28, Baruch 1-5, Lamentations, Letter of Jeremiah, then Jer 29-52 (oracles against nations, partially)."
+    },
+    {
+      "id": "codex-vaticanus",
+      "label": "Codex Vaticanus",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "c. 325-350 CE",
+      "full_name": "Codex Vaticanus (B)",
+      "language": "Greek",
+      "description": "Major uncial manuscript presenting the standard LXX ordering of Jeremiah with the shorter text and oracles against nations in chapters 25-31."
+    },
+    {
+      "id": "codex-sinaiticus",
+      "label": "Codex Sinaiticus",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "c. 330-360 CE",
+      "full_name": "Codex Sinaiticus (א)",
+      "language": "Greek",
+      "description": "Major uncial manuscript of LXX Jeremiah with some Hexaplaric influence and corrections, witnessing the standard LXX short text tradition."
+    },
+    {
+      "id": "codex-alexandrinus",
+      "label": "Codex Alexandrinus",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "c. 400-440 CE",
+      "full_name": "Codex Alexandrinus (A)",
+      "language": "Greek",
+      "description": "Uncial manuscript representing a more Hexaplaric form of LXX Jeremiah with additions toward the MT expanded text, showing recensional activity."
+    },
+    {
+      "id": "hexapla",
+      "label": "Hexapla",
+      "type": "recension",
+      "date": "c. 240-250 CE",
+      "description": "Origen's sixfold parallel edition systematically marking LXX additions and omissions compared to the Hebrew (MT), profoundly influencing subsequent Greek manuscript transmission of Jeremiah."
+    },
+    {
+      "id": "lucianic-jer",
+      "label": "Lucianic Recension",
+      "type": "recension",
+      "date": "c. 300-320 CE",
+      "description": "The Antiochene/Lucianic revision of LXX Jeremiah, characterized by stylistic improvements, harmonizations, and doublets, preserved in minuscules and patristic citations."
+    },
+    {
+      "id": "goettingen-lxx-jer",
+      "label": "Göttingen LXX Jeremiah",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "1957 (Ziegler)",
+      "full_name": "Septuaginta: Vetus Testamentum Graecum XV: Ieremias, Baruch, Threni, Epistula Ieremiae",
+      "language": "Greek",
+      "description": "Joseph Ziegler's critical edition of LXX Jeremiah reconstructing the Old Greek text with full apparatus documenting Hexaplaric, Lucianic, and other recensions."
+    },
+    {
+      "id": "mt-tradition",
+      "label": "Masoretic Text",
+      "type": "tradition",
+      "tradition": "MT",
+      "date": "c. 100 CE - 1000 CE",
+      "full_name": "Masoretic Jeremiah",
+      "language": "Hebrew",
+      "description": "The standardized expanded Hebrew text tradition with oracles against nations in chapters 46-51, stabilized by proto-rabbinic scribal conventions and transmitted through the Tiberian Masoretes."
+    },
+    {
+      "id": "aleppo",
+      "label": "Aleppo Codex",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "c. 920 CE",
+      "full_name": "Aleppo Codex (A)",
+      "language": "Hebrew",
+      "description": "The most authoritative Tiberian Masoretic manuscript, vocalized by Aaron ben Asher; Jeremiah is preserved complete, providing the primary witness to MT Jeremiah."
+    },
+    {
+      "id": "leningrad",
+      "label": "Leningrad Codex",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "1008 CE",
+      "full_name": "Leningrad Codex (L, B19A)",
+      "language": "Hebrew",
+      "description": "The oldest complete manuscript of the Hebrew Bible with full Tiberian vocalization and Masorah, serving as the base text for BHS and BHQ Jeremiah."
+    },
+    {
+      "id": "bhs",
+      "label": "BHS",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "1977",
+      "full_name": "Biblia Hebraica Stuttgartensia",
+      "language": "Hebrew",
+      "description": "The standard diplomatic edition of Leningrad Codex with critical apparatus citing ancient versions and conjectural emendations for Jeremiah."
+    },
+    {
+      "id": "bhq-jer",
+      "label": "BHQ Jeremiah",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "2013",
+      "full_name": "Biblia Hebraica Quinta: Jeremiah",
+      "language": "Hebrew",
+      "description": "The latest critical edition of MT Jeremiah (editor Tov) with extensively revised apparatus documenting the two-edition theory and DSS evidence, prioritizing the description of textual witnesses over conjectural emendation."
+    },
+    {
+      "id": "peshitta-jer",
+      "label": "Peshitta Jeremiah",
+      "type": "tradition",
+      "tradition": "Peshitta",
+      "date": "c. 2nd-3rd century CE",
+      "full_name": "Syriac Peshitta Jeremiah",
+      "language": "Syriac",
+      "description": "The Syriac translation of Jeremiah, generally following the MT expanded text tradition but with independent translation characteristics and occasional LXX influence, possibly mediated through Jewish intermediaries."
+    },
+    {
+      "id": "targum-jonathan",
+      "label": "Targum Jonathan",
+      "type": "tradition",
+      "tradition": "Targum",
+      "date": "c. 2nd-4th century CE",
+      "full_name": "Targum Jonathan to the Prophets",
+      "language": "Aramaic",
+      "description": "The Aramaic translation-paraphrase of Jeremiah with extensive theological expansion, haggadic elaboration, and messianic interpretation, based on the MT text tradition."
+    },
+    {
+      "id": "vulgate-jer",
+      "label": "Vulgate Jeremiah",
+      "type": "tradition",
+      "tradition": "Vulgate",
+      "date": "c. 390-405 CE",
+      "full_name": "Jerome's Vulgate Jeremiah",
+      "language": "Latin",
+      "description": "Jerome's translation from the Hebrew (hebraica veritas) representing the MT expanded text tradition, largely superseding the Old Latin versions that had been based on the LXX short text."
+    },
+    {
+      "id": "old-latin",
+      "label": "Old Latin (Vetus Latina)",
+      "type": "tradition",
+      "date": "c. 2nd-4th century CE",
+      "full_name": "Old Latin Jeremiah",
+      "language": "Latin",
+      "description": "Pre-Vulgate Latin translations based on the LXX short text, fragmentarily preserved and witnessing the early Western reception of the LXX edition of Jeremiah."
+    },
+    {
+      "id": "nets",
+      "label": "NETS",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "2007",
+      "full_name": "New English Translation of the Septuagint",
+      "language": "English",
+      "description": "Modern critical translation of LXX Jeremiah based on Ziegler's Göttingen edition, rendering the short Greek text tradition in idiomatic interlinear-style English."
+    }
+  ],
+  "stemma_edges": [
+    {
+      "from": "archetype",
+      "to": "edition1"
+    },
+    {
+      "from": "edition1",
+      "to": "exilic-expansion"
+    },
+    {
+      "from": "exilic-expansion",
+      "to": "hebrew-bifurcation"
+    },
+    {
+      "from": "hebrew-bifurcation",
+      "to": "short-hebrew"
+    },
+    {
+      "from": "hebrew-bifurcation",
+      "to": "proto-mt"
+    },
+    {
+      "from": "short-hebrew",
+      "to": "4qjera"
+    },
+    {
+      "from": "short-hebrew",
+      "to": "old-greek"
+    },
+    {
+      "from": "proto-mt",
+      "to": "4qjerb"
+    },
+    {
+      "from": "proto-mt",
+      "to": "4qjerd"
+    },
+    {
+      "from": "hebrew-bifurcation",
+      "to": "4qjerc"
+    },
+    {
+      "from": "proto-mt",
+      "to": "2qjer"
+    },
+    {
+      "from": "old-greek",
+      "to": "lxx-tradition"
+    },
+    {
+      "from": "lxx-tradition",
+      "to": "papyrus-967"
+    },
+    {
+      "from": "lxx-tradition",
+      "to": "codex-vaticanus"
+    },
+    {
+      "from": "lxx-tradition",
+      "to": "codex-sinaiticus"
+    },
+    {
+      "from": "lxx-tradition",
+      "to": "hexapla"
+    },
+    {
+      "from": "hexapla",
+      "to": "codex-alexandrinus"
+    },
+    {
+      "from": "hexapla",
+      "to": "lucianic-jer"
+    },
+    {
+      "from": "lxx-tradition",
+      "to": "goettingen-lxx-jer"
+    },
+    {
+      "from": "proto-mt",
+      "to": "mt-tradition"
+    },
+    {
+      "from": "mt-tradition",
+      "to": "aleppo"
+    },
+    {
+      "from": "mt-tradition",
+      "to": "leningrad"
+    },
+    {
+      "from": "leningrad",
+      "to": "bhs"
+    },
+    {
+      "from": "leningrad",
+      "to": "bhq-jer"
+    },
+    {
+      "from": "proto-mt",
+      "to": "peshitta-jer"
+    },
+    {
+      "from": "mt-tradition",
+      "to": "targum-jonathan"
+    },
+    {
+      "from": "mt-tradition",
+      "to": "vulgate-jer"
+    },
+    {
+      "from": "lxx-tradition",
+      "to": "old-latin"
+    },
+    {
+      "from": "goettingen-lxx-jer",
+      "to": "nets"
+    }
+  ],
+  "key_divergences": [
+    {
+      "title": "Length and Arrangement: Two Ancient Editions",
+      "passage": "Jeremiah 25:1-13 vs 32:1-24 (LXX); chapters 46-51 vs 25:14-31:44 (LXX)",
+      "witnesses": [
+        "LXX",
+        "MT",
+        "4QJera"
+      ],
+      "plain": "The Greek (LXX) version of Jeremiah is about one-eighth shorter than the traditional Hebrew Bible and places the oracles against foreign nations in a completely different location and sequence. This means two substantially different editions of Jeremiah circulated in antiquity, not just minor copying errors between manuscripts.",
+      "technical": "The MT contains approximately 2,700 words (roughly 1/8 of the book) not found in LXX, including doublets, expansions, and clarifying glosses, while the oracles against the nations appear in MT 46-51 but in LXX 25:14-31:44 in different sequence (Egypt, Philistia, etc. vs MT's ordering). Emanuel Tov and J. Gerald Janzen argued the LXX represents a genuine earlier Hebrew edition confirmed by 4QJera, against earlier views (Streane, Workman) that LXX was an abridgment; this two-edition theory is now scholarly consensus following the Qumran discoveries."
+    },
+    {
+      "title": "Chapter 33: Major Messianic Expansion in MT",
+      "passage": "Jeremiah 33:14-26",
+      "witnesses": [
+        "MT",
+        "LXX"
+      ],
+      "plain": "The Hebrew Bible contains thirteen verses at the end of Jeremiah chapter 33 promising an eternal Davidic king and Levitical priesthood that are completely absent from the Greek translation. These verses are theologically significant for Jewish and Christian messianic hope but appear to be a later addition to the Hebrew text.",
+      "technical": "Jeremiah 33:14-26 is absent from all LXX witnesses and represents a secondary MT expansion containing the 'righteous Branch' oracle and covenant with David and Levi, likely added in the post-exilic period. Scholars including Rudolph, Holladay, and McKane consider this passage a Deuteronomistic expansion addressing concerns about dynastic and priestly continuity; its absence from the LXX Vorlage is confirmed by the general pattern of MT pluses throughout the book."
+    },
+    {
+      "title": "Jeremiah 27-29: Variant Name Forms and Narrative",
+      "passage": "Jeremiah 27:1 (Jehoiakim vs Zedekiah); 27:1-28:1; 29:16-20",
+      "witnesses": [
+        "MT",
+        "LXX",
+        "4QJerb"
+      ],
+      "plain": "These chapters contain significant differences in royal names, dates, and entire paragraphs between the Hebrew and Greek versions. The confusion over which king is meant in some passages and the presence or absence of whole sections show how complex the transmission was even for historical narrative material.",
+      "technical": "MT Jer 27:1 incorrectly reads 'Jehoiakim' where context demands 'Zedekiah' (corrected in many translations), while 27:7, 27:13-15, 27:19-22, 28:2-4, 28:10-14 show significant MT expansions absent in LXX; conversely, MT 29:16-20 (oracle against Jerusalem's remaining inhabitants) is absent from LXX witnesses. Janzen and Tov demonstrate these variants fit the pattern of MT's secondary expansion tendency; the 4QJerb,d witnesses generally support the MT form in preserved sections, showing the expanded text was already established by the 2nd century BCE in Palestine."
+    },
+    {
+      "title": "The Baruch Narratives: Textual Fluidity in Biography",
+      "passage": "Jeremiah 36:1-32 (the scroll story); 51:64 conclusion",
+      "witnesses": [
+        "MT",
+        "LXX",
+        "Papyrus 967"
+      ],
+      "plain": "The biographical stories about Jeremiah and his scribe Baruch show different levels of detail and editorial shaping between textual traditions, and the placement of these materials (including the book of Baruch itself) varies dramatically. Some manuscripts place Baruch's own book immediately after Jeremiah, while others separate them completely.",
+      "technical": "The Baruch narratives in Jeremiah 36-45 show substantial differences between MT and LXX in length and detail, with MT characteristically expanding the accounts; most significantly, Papyrus 967 places the book of Baruch, Lamentations, and the Epistle of Jeremiah between Jer 28 and 29 (before the oracles against nations), representing a distinct early Christian canonical arrangement. The MT concludes at 51:64 with 'Thus far the words of Jeremiah' before the historical appendix of chapter 52, while LXX ordering places oracles against nations earlier, affecting the book's literary structure and theological emphases (Stulman, Diamond)."
+    },
+    {
+      "title": "Minor Variants with Major Theological Impact",
+      "passage": "Jeremiah 23:5-6; 31:31-34; 33:14-16",
+      "witnesses": [
+        "MT",
+        "LXX",
+        "4QJera"
+      ],
+      "plain": "Small word changes in prophecies about future hope and a 'new covenant' create different theological meanings between textual traditions. For example, differences in messianic promises and covenant renewal language have shaped how Jewish and Christian communities interpret these crucial prophetic texts.",
+      "technical": "In Jer 23:5-6 the MT's 'righteous Branch' (ṣemaḥ ṣaddîq) appears in variant form in LXX; more significantly, the famous 'new covenant' oracle (31:31-34 [LXX 38:31-34]) shows minor but theologically consequential variants including the covenant partner designation and agency of knowledge. 4QJera preserves portions of chapter 23 that generally align with the short text tradition, while the doublet nature of 23:5-6 and 33:14-16 (the latter absent from LXX entirely) exemplifies the MT's expansion technique through textual recycling (Fischer, Lundbom)."
+    }
+  ],
+  "transmission_narrative": "Jeremiah's transmission history is uniquely complex among biblical books, characterized by the circulation of two substantially different editions from at least the third century BCE. The book originated in multiple stages during the late monarchy and exile (c. 620-550 BCE), beginning with the prophet's oracles and Baruch's biographical narratives, followed by Deuteronomistic editorial expansions. By the Persian period (400-300 BCE), the text bifurcated into two Hebrew editions: a shorter form (eventually translated as the LXX, witnessed by 4QJera from Qumran) and an expanded proto-Masoretic form (attested in 4QJerb,d) containing approximately one-eighth more material and a different arrangement of the oracles against the nations. The Old Greek translation (c. 150-100 BCE) preserved the short edition, transmitted through major uncials (Vaticanus, Sinaiticus) and subjected to Hexaplaric and Lucianic recensional activity. The expanded Hebrew text became standard in Palestine and Babylonia, transmitted through the Masoretic tradition and codified in the great medieval codices (Aleppo, Leningrad). The discovery of the Dead Sea Scrolls definitively confirmed that both editions represent legitimate ancient Hebrew texts rather than one being a translator's abbreviation or scribal expansion, revolutionizing Jeremiah scholarship and establishing the 'two-edition theory' as the consensus model (Tov, Janzen, Fischer).",
+  "transmission_plain": "The book of Jeremiah exists in two ancient versions that differ significantly in length and organization. The shorter Greek translation (Septuagint), made in Egypt around 150 BCE, represents one Hebrew edition, while the longer Hebrew text that became the traditional Jewish Bible (Masoretic Text) represents another edition with extra material and a different arrangement of chapters. Ancient manuscripts discovered in the Dead Sea caves in the 1940s-1950s proved both versions came from genuine Hebrew originals circulating in antiquity, not from translator's choices. This means communities in different places were reading noticeably different forms of Jeremiah's prophecies for centuries before the texts were standardized.",
+  "bibcrit_assessment": {
+    "title": "Two Substantially Different Ancient Editions Circulated Simultaneously",
+    "plain": "Unlike most biblical books where textual differences are minor word variants, Jeremiah circulated in two genuinely different editions—one about 15% longer than the other with major structural differences. The Dead Sea Scrolls proved both versions came from Hebrew originals, fundamentally changing how scholars understand the book's composition and transmission.",
+    "confidence": 0.88
+  },
+  "discovery_ready": true,
+  "reference": "Jeremiah",
+  "cached_at": "2026-03-31T11:19:45.829415",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

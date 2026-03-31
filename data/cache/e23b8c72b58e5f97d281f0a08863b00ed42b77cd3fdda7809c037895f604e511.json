@@ -1,0 +1,84 @@
+{
+  "scope": "Genesis 1:1",
+  "scope_type": "passage",
+  "summary": "Genesis 1:1 exhibits minimal theologically motivated revision across textual traditions, with most variants reflecting translation philosophy rather than doctrinal alteration. The primary theological concern visible in the Targums is proto-rabbinic exegetical precision regarding divine agency and wisdom, while the LXX shows deliberate terminological choice (ἐν ἀρχῇ for בראשית) that influenced later Christological interpretation. The verse's stability across traditions reflects its foundational status as the opening statement of Scripture.",
+  "summary_plain": "The opening verse of Genesis was transmitted very faithfully across ancient translations, with only minor theological adjustments. The most significant changes appear in the Aramaic Targums, which add interpretive details about God creating the world 'with wisdom' to clarify how God worked. Overall, this verse was too important and well-known to change dramatically.",
+  "revisions": [
+    {
+      "reference": "Genesis 1:1",
+      "tradition": "Targum",
+      "revision_type": "proto_rabbinic",
+      "mt_reading": "בְּרֵאשִׁית בָּרָא אֱלֹהִים (In the beginning God created)",
+      "revised_reading": "Targum Neofiti: בְּחוּכְמָא בְרָא יְיָ (With wisdom the LORD created); Targum Pseudo-Jonathan: בְּחוּכְמָא בְרָא יְיָ (With wisdom the LORD created)",
+      "confidence": 0.82,
+      "evidence": "The Targums insert 'with wisdom' (בְּחוּכְמָא) as the instrumental means of creation, reflecting proto-rabbinic exegesis that identifies Wisdom (Proverbs 8:22-31) as God's co-agent or instrument in creation. This insertion is not demanded by the Hebrew syntax and represents interpretive expansion linking Genesis 1:1 to sapiential traditions. The use of יְיָ (the LORD) for אֱלֹהִים also reflects Targumic harmonization with later Pentateuchal usage of the Tetragrammaton.",
+      "evidence_plain": "The Aramaic translations add the phrase 'with wisdom' to explain that God used wisdom as a tool when creating the world. This reflects Jewish teaching that connected Genesis with Proverbs 8, where Wisdom is personified as God's partner in creation.",
+      "scholarly_citations": [
+        "McNamara, Targum Neofiti 1: Genesis, p. 51",
+        "Maher, Targum Pseudo-Jonathan: Genesis, p. 27",
+        "Hayward, Targums and the Transmission of Scripture into Judaism and Christianity, p. 47"
+      ],
+      "counter_arguments": "Could represent standard Targumic expansive translation style rather than specific theological agenda; the Wisdom motif may be pedagogical clarification of 'how' God created rather than doctrinal innovation."
+    },
+    {
+      "reference": "Genesis 1:1",
+      "tradition": "LXX",
+      "revision_type": "harmonization",
+      "mt_reading": "בְּרֵאשִׁית (In the beginning / In beginning / When beginning)",
+      "revised_reading": "Ἐν ἀρχῇ (In [the] beginning)",
+      "confidence": 0.65,
+      "evidence": "The LXX renders בְּרֵאשִׁית with ἐν ἀρχῇ, choosing the anarthrous construction that could imply absolute beginning rather than temporal 'when God began to create' (construct chain reading). This translation choice established the verse as absolute cosmological statement rather than temporal clause subordinate to verse 2, influencing later theological interpretation including John 1:1's deliberate echo. While potentially reflecting legitimate grammatical ambiguity in Hebrew, the LXX's consistent preference for absolute beginning readings suggests interpretive agenda.",
+      "evidence_plain": "The Greek translation chose words that emphasize 'the beginning' as an absolute starting point of everything, rather than translating it as 'when God began creating.' This choice influenced how later Christians, including the Gospel of John, understood and used this verse.",
+      "scholarly_citations": [
+        "Wevers, Notes on the Greek Text of Genesis, p. 1",
+        "Rösel, Übersetzung als Vollendung der Auslegung, p. 48",
+        "van der Kooij, The Septuagint of Genesis 1 and Ancient Egyptian Creation Accounts, p. 180"
+      ],
+      "counter_arguments": "The LXX rendering may simply reflect standard translation of construct infinitive with preposition; the theological significance was likely unintended by the translator and only exploited by later interpreters like Philo and John."
+    },
+    {
+      "reference": "Genesis 1:1",
+      "tradition": "Peshitta",
+      "revision_type": "harmonization",
+      "mt_reading": "אֱלֹהִים (Elohim, divine plural form)",
+      "revised_reading": "ܐܰܠܳܗܳܐ (Alaha, singular form of God)",
+      "confidence": 0.55,
+      "evidence": "The Peshitta consistently renders the plural-form divine name אֱלֹהִים with the singular ܐܰܠܳܗܳܐ, eliminating potential misunderstanding of the Hebrew plural of majesty as indicating plurality of divine beings. While this is standard Peshitta practice throughout, in Genesis 1:1 it may reflect anti-polytheistic apologetic concern, ensuring monotheistic reading. However, this could equally be straightforward translation convention without specific theological agenda at this locus.",
+      "evidence_plain": "The Syriac translation uses a singular word for God instead of keeping the plural-sounding Hebrew word 'Elohim,' making absolutely clear that only one God is doing the creating, not multiple gods.",
+      "scholarly_citations": [
+        "Weitzman, The Syriac Version of the Old Testament, p. 83",
+        "Salvesen, The Peshitta of Genesis 1-11, p. 45"
+      ],
+      "counter_arguments": "This is universal Peshitta translation practice for אֱלֹהִים everywhere, not a specific theological intervention in Genesis 1:1; represents normal Semitic translation equivalence rather than conscious revision."
+    },
+    {
+      "reference": "Genesis 1:1",
+      "tradition": "Targum",
+      "revision_type": "anthropomorphism_avoidance",
+      "mt_reading": "בָּרָא (created, simple verb)",
+      "revised_reading": "Fragmentary Targum variants occasionally use circumlocution like 'brought into being by the Memra' (though not consistently in Gen 1:1)",
+      "confidence": 0.48,
+      "evidence": "While the major Targums (Onqelos, Neofiti, Pseudo-Jonathan) retain direct 'created' (ברא), some Fragmentary Targum manuscripts and related Palestinian Targumic traditions occasionally insert Memra (Word/Logos) as divine intermediary to distance God's essence from direct material engagement. However, this is inconsistent and not the dominant reading in Genesis 1:1 specifically, making the anthropomorphism-avoidance motivation uncertain at this precise verse, though it is characteristic Targumic strategy elsewhere in Genesis 1.",
+      "evidence_plain": "Some Aramaic translation fragments occasionally add the idea that God created through his 'Word' (Memra) rather than directly, to avoid suggesting God physically touched or worked on matter. But this is not common in Genesis 1:1 itself.",
+      "scholarly_citations": [
+        "Hayward, Divine Name and Presence: The Memra, p. 92",
+        "Chilton, The Glory of Israel, p. 52"
+      ],
+      "counter_arguments": "The major Targumic witnesses retain direct divine action in Genesis 1:1 without Memra insertion; anthropomorphism avoidance is more pronounced in later verses (e.g., 1:27, 2:7) than in the abstract 'created' of 1:1."
+    }
+  ],
+  "dominant_strategy": "Proto-rabbinic exegetical expansion is the most prominent revision type in Genesis 1:1, evidenced by the Targumic insertion of 'with wisdom' as instrumental agent of creation. This reflects early Jewish interpretive tradition linking creation narratives to Wisdom literature and clarifying the means (not merely the fact) of divine creative activity, characteristic of Tannaitic hermeneutical method.",
+  "overall_assessment": "Genesis 1:1's textual stability across traditions reflects its iconic status as Scripture's opening statement, with tradents exercising restraint in overt revision. The most significant theological intervention occurs in the Palestinian Targum tradition, which imports proto-rabbinic Wisdom speculation to clarify divine agency, connecting Genesis with Proverbs 8 and anticipating later Memra theology. The LXX's ἐν ἀρχῇ, while potentially unintentional, established grammatical precedent for absolute-beginning ontology that profoundly influenced Hellenistic Jewish philosophy and Johannine Christology. The pattern reveals a trajectory from early Jewish concern with clarifying divine action to later Christian appropriation of translational choices for Logos theology. Overall, Genesis 1:1 demonstrates that theological revision operates not only through direct textual alteration but through selective disambiguation of grammatically ambiguous source texts.",
+  "overall_plain": "The opening verse of the Bible was treated with great respect by ancient translators and was not dramatically changed. The most important theological addition was in Aramaic translations, which added 'with wisdom' to explain how God created, linking Genesis to other biblical books about Wisdom. These small changes show that even when translators were careful to preserve the text, their choices in handling ambiguous Hebrew words ended up shaping how later generations understood creation.",
+  "bibcrit_assessment": {
+    "title": "Targumic Wisdom Insertion Reveals Proto-Rabbinic Cosmology",
+    "reasoning": "The Targumic insertion of 'with wisdom' (בְּחוּכְמָא) in Genesis 1:1 is the most substantive theologically motivated revision, transforming the verse from simple divine action statement to sophisticated cosmological claim about Wisdom as instrumental cause. This reflects Tannaitic-era exegetical integration of Torah and Hokhmah literature, anticipating later rabbinic speculation about Torah/Wisdom's pre-existence and role in creation (Pirke Avot 3:14, Genesis Rabbah 1:1). The revision reveals a transitional moment where proto-rabbinic hermeneutic moves from implicit to explicit intertextual linkage.",
+    "plain": "The Aramaic addition of 'with wisdom' to Genesis 1:1 is the most important change, showing how early rabbis began connecting different parts of Scripture together and teaching that divine Wisdom existed before the world and helped God create everything.",
+    "confidence": 0.78
+  },
+  "discovery_ready": false,
+  "reference": "Genesis 1:1",
+  "cached_at": "2026-03-31T10:19:10.378475",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

@@ -1,0 +1,154 @@
+{
+  "reference": "Proverbs 8:22",
+  "total_citations_found": 8,
+  "period_summary": "Citations concentrated heavily in the 4th century during the Arian controversy, when this verse became the most contested biblical text in Christology. The verse's interpretation determined whether the Son was created or eternally begotten, making it central to Nicene and anti-Nicene debates.",
+  "citations": [
+    {
+      "father": "Justin Martyr",
+      "dates_ce": "c. 100–165",
+      "region": "Rome",
+      "work": "Dialogue with Trypho",
+      "chapter_section": "ch. 61, 129",
+      "cited_text": "The Lord created me as the beginning of his ways for his works",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.88,
+      "text_form_note": "Justin uses 'ἔκτισέν με' (created me) which is the standard LXX rendering, not the MT's 'qānānî' which could be translated 'possessed me'. His citation matches LXX Proverbs 8:22 closely.",
+      "theological_use": "Justin applies this verse to the pre-incarnate Logos, arguing that Wisdom personified is Christ who was begotten before creation as the principle of God's creative works. He uses it to demonstrate Christ's pre-existence to the Jewish interlocutor Trypho.",
+      "transmission_implication": "Attests that the LXX reading with ἔκτισεν was already standard in mid-2nd century Christian biblical texts used in Rome."
+    },
+    {
+      "father": "Tertullian",
+      "dates_ce": "c. 155–220",
+      "region": "Carthage",
+      "work": "Against Praxeas",
+      "chapter_section": "ch. 6–7",
+      "cited_text": "Dominus condidit me initium viarum suarum",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.85,
+      "text_form_note": "Tertullian's Latin 'condidit' (founded/created) reflects the LXX ἔκτισεν rather than a reading like 'possedit' (possessed) that would align with MT qānānî. This is Old Latin/Vetus Latina tradition dependent on LXX.",
+      "theological_use": "Tertullian uses this verse to establish the Son's distinction from the Father and his role as the agent of creation, arguing against modalism. He emphasizes that Wisdom/Son was brought forth before creation but is not co-eternal in the same mode as the Father.",
+      "transmission_implication": "Confirms that Old Latin versions in North Africa in the early 3rd century transmitted the LXX text form with its 'created' terminology."
+    },
+    {
+      "father": "Origen",
+      "dates_ce": "c. 185–254",
+      "region": "Alexandria/Caesarea",
+      "work": "De Principiis",
+      "chapter_section": "Book 1, ch. 2.2; Book 4, ch. 4.1",
+      "cited_text": "ὁ κύριος ἔκτισέν με ἀρχὴν ὁδῶν αὐτοῦ εἰς ἔργα αὐτοῦ",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.92,
+      "text_form_note": "Origen consistently cites the LXX verbatim with ἔκτισέν με. In his Hexapla work, he was aware of Hebrew variants but his citations in theological works use the standard LXX. He also discusses the term ἔκτισεν exegetically.",
+      "theological_use": "Origen interprets Wisdom as the Son/Logos who is eternally generated but uses the 'created' language to explain the Son's economic role as the beginning of God's ways. He distinguishes between eternal generation and the 'creation' language as referring to the Son's office in the divine economy.",
+      "transmission_implication": "Demonstrates that even textually sophisticated scholars like Origen, aware of Hebrew alternatives, transmitted the LXX reading in Christian theological discourse."
+    },
+    {
+      "father": "Arius",
+      "dates_ce": "c. 250–336",
+      "region": "Alexandria",
+      "work": "Letter to Eusebius of Nicomedia (preserved in Theodoret and other sources)",
+      "chapter_section": "Fragment preserved in Athanasius, De Synodis 16",
+      "cited_text": "ἔκτισέν με ἀρχὴν ὁδῶν αὐτοῦ",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.95,
+      "text_form_note": "Arius's citation precisely follows the LXX with ἔκτισέν με (created me), which became the linchpin of his argument. His entire theological system depended on the 'created' reading, making any alternative text form theologically impossible for him.",
+      "theological_use": "Arius uses this verse as definitive proof that the Son is a creature, the first and highest of God's creations but not co-eternal or consubstantial with the Father. The verb ἔκτισεν is taken literally to mean the Son had a beginning.",
+      "transmission_implication": "Shows how theological controversy could freeze a particular text form in place, as Arian theology made the LXX reading non-negotiable for anti-Nicene communities."
+    },
+    {
+      "father": "Athanasius",
+      "dates_ce": "c. 296–373",
+      "region": "Alexandria",
+      "work": "Orations Against the Arians",
+      "chapter_section": "Oration 2, sections 18–82 (extended treatment)",
+      "cited_text": "ἔκτισέν με ἀρχὴν ὁδῶν αὐτοῦ εἰς ἔργα αὐτοῦ",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.95,
+      "text_form_note": "Athanasius quotes the standard LXX text but devotes enormous exegetical effort to reinterpreting ἔκτισεν. He does not contest the wording but argues it refers to Christ's incarnate economy, not his eternal nature.",
+      "theological_use": "Athanasius accepts the LXX text but argues that 'created me' refers to Christ's assumption of human nature or his economic role in creation, not his eternal divine generation. He extensively argues that Proverbs 8 speaks of Christ's humanity or mediatorial office, not his divine essence.",
+      "transmission_implication": "Reveals that even pro-Nicene theologians transmitted the problematic LXX reading, addressing it through exegesis rather than textual emendation, which stabilized this text form in Greek manuscripts."
+    },
+    {
+      "father": "Hilary of Poitiers",
+      "dates_ce": "c. 310–367",
+      "region": "Gaul",
+      "work": "De Trinitate",
+      "chapter_section": "Book 12, sections 35–50",
+      "cited_text": "Dominus creavit me initium viarum suarum in opera sua / possedit me",
+      "text_form": "mixed",
+      "text_form_confidence": 0.78,
+      "text_form_note": "Hilary cites both 'creavit' (created, from LXX via Old Latin) and 'possedit' (possessed, closer to MT qānānî and Jerome's later Vulgate). He discusses both readings, showing awareness of textual plurality in Latin traditions.",
+      "theological_use": "Hilary uses the textual variants to argue that 'possessed' is the better reading, supporting Nicene theology by removing the problematic 'created' language. He argues the verse refers to the Son's eternal possession by the Father, not temporal creation.",
+      "transmission_implication": "Demonstrates that by mid-4th century, alternative Latin text forms closer to the Hebrew were circulating alongside the Old Latin LXX-based tradition, creating textual competition."
+    },
+    {
+      "father": "Basil of Caesarea",
+      "dates_ce": "c. 329–379",
+      "region": "Caesarea (Cappadocia)",
+      "work": "Against Eunomius",
+      "chapter_section": "Book 2, section 20",
+      "cited_text": "ἔκτισέν με ἀρχὴν ὁδῶν αὐτοῦ",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.9,
+      "text_form_note": "Basil cites the standard LXX reading and engages in exegetical defense, arguing that the verse must be read economically (referring to incarnation) rather than essentially (referring to the Son's eternal nature).",
+      "theological_use": "Basil argues that 'created me' refers to Christ's incarnate form or his assumption of created human nature, not his divine person. He also suggests the verse describes Wisdom's economic condescension in creation, not ontological origin.",
+      "transmission_implication": "Confirms continued dominance of LXX text form in 4th-century Greek-speaking eastern Christianity, even among Cappadocian fathers who opposed Arianism."
+    },
+    {
+      "father": "Jerome",
+      "dates_ce": "c. 347–420",
+      "region": "Bethlehem/Jerusalem",
+      "work": "Letter 140 (to Cyprian); Commentary on Ephesians",
+      "chapter_section": "Ep. 140.3; Commentary on Eph. 3:9",
+      "cited_text": "Dominus possedit me in initio viarum suarum",
+      "text_form": "closer_to_mt",
+      "text_form_confidence": 0.92,
+      "text_form_note": "Jerome's Vulgate translates Hebrew qānānî as 'possedit me' (possessed me), explicitly rejecting the LXX/Old Latin 'creavit/condidit'. He argues from the Hebrew that the verse teaches eternal possession, not temporal creation.",
+      "theological_use": "Jerome uses his Hebrew-based translation to support Nicene orthodoxy, arguing that 'possessed' indicates the Son's eternal relationship with the Father, not a beginning in time. He explicitly critiques the LXX rendering as theologically problematic and textually inferior.",
+      "transmission_implication": "Marks a deliberate break with LXX textual tradition in the Latin West, as Jerome's appeal to Hebrew authority introduces a competing text form designed to resolve the theological controversy."
+    }
+  ],
+  "text_form_distribution": {
+    "closer_to_mt": 1,
+    "closer_to_lxx": 6,
+    "mixed": 1,
+    "independent": 0,
+    "uncertain": 0
+  },
+  "transmission_synthesis": "Patristic citations overwhelmingly attest the LXX text form with ἔκτισέν με / creavit me through the 4th century, demonstrating remarkable textual stability despite intense theological controversy over the verse's meaning. The uniformity of the 'created' reading across geographically diverse fathers (Rome, Carthage, Alexandria, Caesarea, Cappadocia) from the 2nd through 4th centuries indicates that this was the universally transmitted Christian text form in both Greek and Old Latin traditions. The appearance of alternative readings closer to MT (possedit/possessed) emerges only in the late 4th century with Hilary's awareness of variants and Jerome's programmatic translation from Hebrew, representing not organic textual transmission but deliberate scholarly intervention to resolve theological problems. The patristic evidence thus reveals a stable but theologically problematic textual tradition that prompted, rather than reflected, the eventual turn to Hebrew-based alternatives in the Latin West.",
+  "transmission_synthesis_plain": "Early Christian writers from the 2nd through 4th centuries universally used a Greek and Latin text that said God 'created' Wisdom, not 'possessed' Wisdom as the Hebrew suggests. This reading remained stable across the entire Mediterranean world despite causing major theological problems in the Arian controversy, showing that Christians transmitted their received biblical text faithfully even when it seemed to support heretical views. Only in the late 4th century did scholars like Jerome deliberately introduce alternative translations based on the Hebrew to solve the theological difficulties.",
+  "notable_variants": [
+    {
+      "reading": "ἔκτισέν με (ektisen me / created me)",
+      "fathers_using_it": [
+        "Justin Martyr",
+        "Tertullian",
+        "Origen",
+        "Arius",
+        "Athanasius",
+        "Basil of Caesarea"
+      ],
+      "text_form_alignment": "closer_to_lxx",
+      "significance": "This LXX rendering of Hebrew qānānî as 'created' rather than 'possessed' or 'acquired' became the most controversial biblical variant in early Christianity, directly enabling Arian Christology by suggesting the Son had a temporal beginning. Its universal attestation in patristic sources before Jerome demonstrates the Christian church's dependence on LXX as scripture, even when the text supported heretical interpretation."
+    },
+    {
+      "reading": "possedit me (possessed me)",
+      "fathers_using_it": [
+        "Hilary of Poitiers",
+        "Jerome"
+      ],
+      "text_form_alignment": "closer_to_mt",
+      "significance": "This reading, closer to Hebrew qānānî, appears in the Latin tradition only in the mid-to-late 4th century as a conscious alternative to the problematic 'created' reading. Its emergence represents scholarly intervention rather than organic transmission, as theologians sought textual solutions to the Arian controversy by appealing to Hebrew authority over against the received LXX tradition."
+    }
+  ],
+  "bibcrit_assessment": {
+    "title": "Theological Controversy Stabilized Problematic LXX Text Form",
+    "reasoning": "The most striking finding is that the Arian controversy, rather than destabilizing the textual tradition of Proverbs 8:22, actually froze the LXX reading in place despite its theological problems for Nicene orthodoxy. Pro-Nicene fathers like Athanasius and Basil faithfully transmitted ἔκτισέν με even though it seemed to support their opponents, choosing exegetical reinterpretation over textual emendation. This demonstrates a remarkable reverence for received biblical text in the early church, where theological utility did not determine textual transmission. Only with Jerome's appeal to Hebrew authority does theology begin to reshape the transmitted text itself, marking a methodological shift in biblical scholarship.",
+    "plain": "Early Christians kept using a Greek translation that said Wisdom was 'created,' even though this reading supported heresy and caused enormous theological problems. They preferred to reinterpret the problematic text rather than change it, showing that the early church valued textual fidelity over theological convenience—until Jerome deliberately introduced a new translation from Hebrew to solve the problem.",
+    "confidence": 0.93
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-03-31T08:22:30.995548",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

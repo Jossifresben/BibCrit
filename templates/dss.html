@@ -1,0 +1,218 @@
+{% extends "base.html" %}
+{% block title %}{{ _t('dss_page_title') }}{% endblock %}
+
+{% block content %}
+
+<!-- Passage Selector Bar -->
+<div class="passage-bar">
+  <div class="passage-bar-row passage-bar-main">
+    <span class="passage-label">{{ _t('passage_label') }}:</span>
+
+    <div class="passage-bar-selectors">
+      <select id="sel-book" class="passage-select" aria-label="{{ _t('book_label') }}">
+        <option value="">{{ _t('passage_book_placeholder') }}</option>
+      </select>
+      <select id="sel-chapter" class="passage-select" aria-label="Chapter" disabled>
+        <option value="">{{ _t('passage_ch') }}</option>
+      </select>
+      <select id="sel-verse" class="passage-select" aria-label="Verse" disabled>
+        <option value="">{{ _t('passage_vs') }}</option>
+      </select>
+    </div>
+
+    <span class="passage-or">{{ _t('passage_or') }}</span>
+
+    <input type="text" id="ref-input" class="passage-input"
+           placeholder="Isaiah 7:14" value="{{ reference }}"
+           aria-label="Type a reference">
+
+    <div class="passage-bar-actions">
+      <button id="btn-analyze" class="btn-primary">{{ _t('dss_analyze_btn') }}</button>
+    </div>
+  </div>
+</div>
+
+<!-- Dismissable info banner -->
+<div id="dss-info-banner" class="bt-info-banner">
+  <div class="bt-info-inner">
+    <span class="bt-info-icon">📜</span>
+    <div class="bt-info-text">
+      <strong>{{ _t('dss_what_title') }}</strong>
+      {{ _t('dss_info_body') | safe }}
+    </div>
+    <button class="bt-info-close" id="dss-info-close" aria-label="Dismiss">✕</button>
+  </div>
+</div>
+
+<!-- Empty / Welcome State -->
+<div id="empty-state" class="empty-state">
+  <div class="empty-inner">
+    <h2>{{ _t('dss_empty_title') }}</h2>
+    <p>{{ _t('dss_empty_body') }}</p>
+    <div class="bt-legend-hero" style="margin-bottom: 1.5rem;">
+      <span class="bt-legend-item"><span class="scribal-mini-dot" style="background:var(--mt-color)"></span> {{ _t('legend_mt_full') }}</span>
+      <span class="bt-legend-item"><span class="scribal-mini-dot" style="background:var(--lxx-color)"></span> {{ _t('legend_lxx_full') }}</span>
+      <span class="bt-legend-item"><span class="scribal-mini-dot" style="background:#8e44ad"></span> {{ _t('legend_dss') }}</span>
+    </div>
+    <p class="featured-label">{{ _t('featured_label') }}</p>
+    <div class="featured-passages">
+      <a href="#" class="featured-ref" data-ref="Isaiah 7:14">{{ _t('feat_dss_isa714') | safe }}</a>
+      <a href="#" class="featured-ref" data-ref="Deuteronomy 32:8">{{ _t('feat_dss_deut328') | safe }}</a>
+      <a href="#" class="featured-ref" data-ref="Isaiah 53:11">{{ _t('feat_dss_isa5311') | safe }}</a>
+      <a href="#" class="featured-ref" data-ref="Psalm 22:17">{{ _t('feat_dss_ps2217') | safe }}</a>
+    </div>
+  </div>
+</div>
+
+<!-- Loading State -->
+<div id="loading-state" class="loading-state" style="display:none;" aria-live="polite">
+  <div class="loading-spinner"></div>
+  <p id="loading-step" class="loading-step-msg">{{ _t('loading_preparing') }}</p>
+  <p id="loading-timer" class="loading-timer"></p>
+</div>
+
+<!-- Passage heading -->
+<div id="passage-heading" class="passage-heading" style="display:none;"></div>
+
+<!-- Results area -->
+<div id="dss-results" style="display:none;">
+
+  <!-- Manuscript cards -->
+  <div id="manuscript-list"></div>
+
+  <!-- Synthesis section -->
+  <div id="synthesis-section" class="num-section" style="display:none;">
+    <div class="num-section-label">{{ _t('section_synthesis') }}</div>
+    <div id="synthesis-body"></div>
+  </div>
+
+  <!-- BibCrit Assessment -->
+  <div id="bibcrit-assessment" style="display:none;">
+    <div class="num-section-label" style="margin-top:1.5rem;">{{ _t('section_bibcrit_assessment') }}</div>
+    <div id="bibcrit-body"></div>
+  </div>
+
+  <!-- Export / share row -->
+  <div class="export-row" id="export-row" style="display:none;">
+    <button class="btn-export" id="btn-sbl" title="Copy SBL footnote">📋 SBL Footnote</button>
+    <button class="btn-export" id="btn-bibtex" title="Copy BibTeX">📋 BibTeX</button>
+    <button class="btn-export btn-share" id="btn-share" title="Share this analysis">
+      <span class="material-symbols-outlined" style="font-size:14px;vertical-align:-2px">qr_code_2</span> Share
+    </button>
+  </div>
+</div>
+
+<!-- Toast -->
+<div id="toast" class="toast" style="display:none;" role="status"></div>
+
+<style>
+.dss-ms-card {
+  background: var(--card-bg, #fff);
+  border: 1px solid var(--border, #d4d0c8);
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+.dss-ms-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  user-select: none;
+}
+.dss-ms-header:hover { background: var(--accent-light, #f5f4f0); }
+.dss-ms-siglum {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--fg);
+}
+.dss-ms-fullname {
+  font-size: 0.875rem;
+  color: var(--muted);
+  flex: 1;
+}
+.dss-ms-toggle {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.dss-ms-body {
+  padding: 0 1.25rem 1rem;
+  border-top: 1px solid var(--border);
+}
+.dss-ms-body.collapsed { display: none; }
+.dss-ms-text {
+  font-family: 'Noto Serif', serif;
+  font-size: 0.95rem;
+  padding: 0.75rem 0;
+  color: var(--fg);
+  line-height: 1.7;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0.75rem;
+}
+.dss-align-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-right: 6px;
+}
+.dss-align-mt  { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+.dss-align-lxx { background: #dbeafe; color: #1e40af; border: 1px solid #bfdbfe; }
+.dss-align-ind { background: #fed7aa; color: #9a3412; border: 1px solid #fdba74; }
+.dss-align-abs { background: var(--border); color: var(--muted); border: 1px solid var(--border); }
+.dss-div-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  margin-top: 0.75rem;
+}
+.dss-div-table th {
+  text-align: left;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  padding: 4px 8px;
+  border-bottom: 1px solid var(--border);
+}
+.dss-div-table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.5;
+}
+.dss-div-table tr:last-child td { border-bottom: none; }
+.dss-overall-note {
+  font-size: 0.875rem;
+  color: var(--fg);
+  line-height: 1.7;
+  margin-top: 0.75rem;
+  font-style: italic;
+}
+.dss-absent-note {
+  font-size: 0.875rem;
+  color: var(--muted);
+  padding: 0.5rem 0;
+  font-style: italic;
+}
+</style>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='dss.js') }}"></script>
+{% if reference %}
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.dss) window.dss.analyze('{{ reference | e }}');
+  });
+</script>
+{% endif %}
+{% endblock %}

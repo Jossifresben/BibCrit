@@ -1,0 +1,43 @@
+{
+  "divergences": [
+    {
+      "mt_word": "לְמִסְפַּר בְּנֵי יִשְׂרָאֵל (according to the number of the sons of Israel)",
+      "lxx_word": "κατὰ ἀριθμὸν ἀγγέλων θεοῦ (according to the number of angels of God)",
+      "divergence_type": "different_vorlage",
+      "confidence": 0.95,
+      "hypotheses": [
+        {
+          "type": "different_vorlage",
+          "confidence": 0.95,
+          "explanation": "4QDeutj reads בני אלהים (sons of God), matching LXX's ἀγγέλων θεοῦ. MT reflects proto-rabbinic theological revision replacing divine beings with Israel to avoid polytheistic implications."
+        },
+        {
+          "type": "theological_tendency",
+          "confidence": 0.85,
+          "explanation": "MT tradition altered original 'sons of God' (divine council members) to 'sons of Israel' for monotheistic orthodoxy, while LXX preserves earlier cosmology via angelological interpretation."
+        }
+      ],
+      "dss_witness": "4QDeutj (4Q37): בני אלוהים ([sons of G]od)",
+      "citations": [
+        "Tov (2012) p.269",
+        "Skehan (1954) p.12-15",
+        "Ulrich (2010) p.78"
+      ],
+      "analysis_technical": "The Qumran fragment 4QDeutj preserves בני אלהים, which the LXX renders as ἀγγέλων θεοῦ through angelological interpretation of 'sons of God.' MT's בְּנֵי יִשְׂרָאֵל represents secondary development, likely emerging in proto-Masoretic tradition to eliminate mythological overtones of a divine council presiding over nations. This reflects Tov's category of 'ideological-theological changes' in textual transmission.",
+      "analysis_plain": "The Dead Sea Scrolls show the original text spoke of 'sons of God' (divine beings), which the Greek translation understood as angels. The traditional Hebrew text was later changed to 'sons of Israel' to avoid seeming polytheistic."
+    }
+  ],
+  "summary_technical": "This verse presents the premier example of theologically motivated textual revision in the Hebrew Bible, where MT replaced an archaic divine council cosmology (preserved in 4QDeutj and LXX) with Israel-centered monotheism.",
+  "summary_plain": "The Greek and Dead Sea Scrolls preserve an older version mentioning divine beings, later changed in the Hebrew Bible to focus on Israel.",
+  "bibcrit_hypothesis": {
+    "title": "Genesis 10 Triggered the MT Revision",
+    "reasoning": "The MT alteration may correlate specifically with harmonization to Genesis 10's Table of Nations, where 70 nations derive from Noah's descendants. By reading 'sons of Israel' (Jacob's 70 descendants in Exodus 1:5), scribes created numerical symmetry: 70 nations matched by 70 Israelites, eliminating the original myth of 70 patron deities. This represents exegetical linkage between Pentateuchal traditions rather than mere theological sanitization.",
+    "plain": "The Hebrew may have been changed to match the number 70, which appears both in the count of nations in Genesis and the count of Jacob's family entering Egypt, creating a deliberate biblical cross-reference.",
+    "confidence": 0.65
+  },
+  "discovery_ready": false,
+  "reference": "Deuteronomy 32:8",
+  "cached_at": "2026-03-30T19:49:39.878962",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v2"
+}

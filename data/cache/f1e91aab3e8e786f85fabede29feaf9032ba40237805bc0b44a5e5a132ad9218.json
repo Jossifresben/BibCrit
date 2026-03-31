@@ -1,0 +1,162 @@
+{
+  "reference": "Micah 5:2",
+  "total_citations_found": 8,
+  "period_summary": "Citations concentrate heavily in the 2nd–3rd centuries, reflecting intense apologetic and christological debates with Judaism over messianic prophecy. The passage's use in nativity narratives ensured continuous citation through the 5th century.",
+  "citations": [
+    {
+      "father": "Justin Martyr",
+      "dates_ce": "c. 100–165",
+      "region": "Rome",
+      "work": "Dialogue with Trypho",
+      "chapter_section": "78.1",
+      "cited_text": "And that He was to be born in Bethlehem, hear the prophecy spoken by another prophet, Micah: 'And thou, Bethlehem, land of Judah, art not the least among the princes of Judah; for out of thee shall come forth a Governor, who shall feed my people Israel.'",
+      "text_form": "mixed",
+      "text_form_confidence": 0.82,
+      "text_form_note": "Justin's citation conflates Micah 5:2 with Matthew 2:6, which itself harmonizes Micah with 2 Samuel 5:2. The phrase 'art not the least' follows Matthew's interpretive rendering against both MT and LXX, which read 'too small/little.' This demonstrates early Christian typological reading.",
+      "theological_use": "Justin employs this text in anti-Jewish polemic to demonstrate that Jesus' birthplace was prophetically determined, fulfilling messianic expectations. The 'Governor who shall feed' underscores Jesus as the Davidic shepherd-king.",
+      "transmission_implication": "Justin's citation witnesses the early dominance of Gospel harmonization over direct prophetic text, suggesting Christian scriptural memory was mediated through New Testament fulfillment citations."
+    },
+    {
+      "father": "Irenaeus of Lyons",
+      "dates_ce": "c. 130–202",
+      "region": "Gaul",
+      "work": "Against Heresies",
+      "chapter_section": "3.21.6",
+      "cited_text": "For Micah, one of the twelve prophets, declared in these terms His place of birth: 'And thou, Bethlehem of Ephratah, art small to be among the thousands of Judah; yet out of thee shall come forth unto me one to be ruler in Israel, and his goings forth were from the beginning, from days of eternity.'",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.78,
+      "text_form_note": "Irenaeus follows the LXX closely with 'art small to be among the thousands' (ὀλιγοστὸς εἶ ἐν χιλιάσιν) and 'from days of eternity' (ἐξ ἡμερῶν αἰῶνος), distinctive LXX readings. The 'unto me' reflects the LXX's εἰς ἐμέ against MT's לִי positioning.",
+      "theological_use": "Irenaeus stresses the eternal pre-existence of Christ ('from days of eternity') to refute Gnostic claims of Jesus' purely earthly origin. Bethlehem's insignificance highlights divine election.",
+      "transmission_implication": "Irenaeus witnesses a relatively pure LXX textual tradition circulating in 2nd-century Gaul, independent of Gospel harmonization pressures."
+    },
+    {
+      "father": "Tertullian",
+      "dates_ce": "c. 155–220",
+      "region": "Carthage",
+      "work": "Against Marcion",
+      "chapter_section": "3.13",
+      "cited_text": "Micah proclaims: 'And thou, Bethlehem, house of Ephratah, art little to be among the thousands of Judah. From thee shall come forth unto me He who is to be ruler in Israel, whose goings forth are from of old, from days of eternity.'",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.72,
+      "text_form_note": "Tertullian's Latin citation reflects the Old Latin tradition based on LXX: 'little to be among thousands' (pusillus es in millibus) and 'from days of eternity' track LXX against MT's 'from ancient days.' The 'house of Ephratah' (domus Ephratah) follows LXX's οἶκος Ἐφραθά.",
+      "theological_use": "Tertullian uses the passage to prove the prophetic determination of Christ's birthplace against Marcion's rejection of the Old Testament, emphasizing continuity between testaments.",
+      "transmission_implication": "The Old Latin version in North Africa derives from LXX textual stock, indicating widespread Greek-to-Latin transmission patterns by the late 2nd century."
+    },
+    {
+      "father": "Origen",
+      "dates_ce": "c. 185–254",
+      "region": "Caesarea",
+      "work": "Contra Celsum",
+      "chapter_section": "1.51",
+      "cited_text": "The place was prophesied by Micah: 'And thou, Bethlehem, land of Judah, art by no means least among the rulers of Judah; for from thee shall come a ruler who will shepherd my people Israel.'",
+      "text_form": "mixed",
+      "text_form_confidence": 0.85,
+      "text_form_note": "Origen directly cites Matthew 2:6 rather than Micah itself, evidenced by 'by no means least' (οὐδαμῶς ἐλαχίστη) and 'rulers' (ἡγεμόσιν) rather than LXX's 'thousands.' This reflects conscious use of New Testament interpretive tradition in apologetic contexts.",
+      "theological_use": "Origen deploys this text to refute Celsus's mockery of Jesus' obscure origins, arguing prophetic fulfillment validates Jesus' messianic claims despite humble birthplace.",
+      "transmission_implication": "Origen's citation strategy prioritizes New Testament hermeneutical renderings over direct prophetic texts, revealing early Christian exegetical hierarchy."
+    },
+    {
+      "father": "Eusebius of Caesarea",
+      "dates_ce": "c. 260–339",
+      "region": "Caesarea",
+      "work": "Demonstratio Evangelica",
+      "chapter_section": "7.2",
+      "cited_text": "Micah prophesies: 'And thou, Bethlehem, house of Ephratah, art small to be among the thousands of Judah; from thee shall go forth for me one to be a ruler in Israel, and his goings forth are from the beginning, from days of eternity.'",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.88,
+      "text_form_note": "Eusebius provides a faithful LXX rendering: 'small to be' (ὀλιγοστὸς εἶ), 'thousands of Judah' (χιλιάσιν Ἰούδα), and 'from days of eternity' (ἐξ ἡμερῶν αἰῶνος) all align precisely with LXX Codex Vaticanus tradition. No Matthean harmonization appears.",
+      "theological_use": "Eusebius uses the passage in his systematic demonstration of Gospel fulfillment of prophecy, emphasizing both geographical specificity and eternal divine origins of the Messiah.",
+      "transmission_implication": "Eusebius had access to high-quality LXX manuscripts in Caesarea's library, reflecting Origen's textual legacy and standardization efforts."
+    },
+    {
+      "father": "Cyril of Jerusalem",
+      "dates_ce": "c. 313–386",
+      "region": "Jerusalem",
+      "work": "Catechetical Lectures",
+      "chapter_section": "12.20",
+      "cited_text": "Micah says: 'And thou, Bethlehem Ephratah, though thou be little among the thousands of Judah, yet out of thee shall he come forth unto me that is to be ruler in Israel; whose goings forth have been from of old, from everlasting.'",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.75,
+      "text_form_note": "Cyril's citation reflects LXX textual tradition with 'little among thousands' and 'from everlasting' (ἐξ αἰῶνος), though his Greek shows some fluidity in verbal forms. The overall semantic alignment with LXX is clear.",
+      "theological_use": "Cyril employs this text in baptismal catechesis to instruct new Christians about Christ's prophesied birthplace, linking geographical fulfillment to his eternal divine nature.",
+      "transmission_implication": "Jerusalem catechetical tradition maintained LXX textual fidelity in liturgical-instructional contexts by the mid-4th century."
+    },
+    {
+      "father": "Jerome",
+      "dates_ce": "c. 347–420",
+      "region": "Bethlehem",
+      "work": "Commentary on Micah",
+      "chapter_section": "2.5.2",
+      "cited_text": "Et tu Bethlehem Ephrata, parvulus es in millibus Iuda: ex te mihi egredietur qui sit dominator in Israel, et egressus eius ab initio, a diebus aeternitatis.",
+      "text_form": "closer_to_mt",
+      "text_form_confidence": 0.92,
+      "text_form_note": "Jerome's Vulgate translation from Hebrew shows MT alignment: 'parvulus es' (you are small) follows MT's צָעִיר against LXX's interpretive rendering; 'a diebus aeternitatis' reflects MT's מִימֵי עוֹלָם more literally than LXX's αἰῶνος. Jerome explicitly notes he translates from hebraica veritas.",
+      "theological_use": "Jerome emphasizes precise prophetic fulfillment while maintaining Hebrew textual integrity, arguing against allegorical excesses. He stresses Bethlehem's literal geographical significance.",
+      "transmission_implication": "Jerome represents a deliberate return to Hebrew textual tradition in Latin Christianity, breaking from LXX-based Old Latin dominance and establishing MT as authoritative."
+    },
+    {
+      "father": "Augustine of Hippo",
+      "dates_ce": "354–430",
+      "region": "North Africa",
+      "work": "The City of God",
+      "chapter_section": "18.29",
+      "cited_text": "Micah predicted: 'And thou, Bethlehem, house of Ephratah, art little to be among the thousands of Judah; out of thee shall come forth for me one to be a prince in Israel, and his goings forth are from the beginning, from the days of eternity.'",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.7,
+      "text_form_note": "Augustine's Latin follows Old Latin/LXX tradition: 'pusillus es in millibus' and 'a diebus aeternitatis' reflect LXX semantic range. His citation predates widespread Vulgate adoption in North Africa.",
+      "theological_use": "Augustine uses this prophecy to demonstrate God's providential plan across history, showing how Christ's origins were predetermined from eternity, supporting his theology of divine sovereignty.",
+      "transmission_implication": "North African liturgical and theological tradition maintained Old Latin texts based on LXX well into the early 5th century, resisting Hieronymian revision."
+    }
+  ],
+  "text_form_distribution": {
+    "closer_to_mt": 1,
+    "closer_to_lxx": 5,
+    "mixed": 2,
+    "independent": 0,
+    "uncertain": 0
+  },
+  "transmission_synthesis": "Patristic citations of Micah 5:2 reveal LXX dominance across geographical regions through the 4th century, with distinctive readings like 'small to be among thousands' and 'from days of eternity' consistently attested. The mixed text form appears primarily in apologetic contexts where fathers cite Matthew 2:6's interpretive rendering rather than direct prophetic text, demonstrating New Testament mediation of Old Testament citation. Jerome's late 4th-century shift to MT-based translation represents a deliberate scholarly intervention rather than organic textual evolution. The relative textual stability across diverse regions (Rome, Gaul, North Africa, Palestine) suggests early standardization of LXX text forms for this messianically significant passage.",
+  "transmission_synthesis_plain": "Early Christian writers almost universally used the Greek Old Testament (Septuagint) version of Micah 5:2, showing remarkable consistency across different regions. When variations appear, they usually come from quoting Matthew's Gospel rather than Micah directly. Only Jerome deliberately switched to translating from Hebrew in the late 300s CE.",
+  "notable_variants": [
+    {
+      "reading": "Art not the least / by no means least (οὐδαμῶς ἐλαχίστη) vs. art small/little (ὀλιγοστὸς εἶ / parvulus es)",
+      "fathers_using_it": [
+        "Justin Martyr",
+        "Origen"
+      ],
+      "text_form_alignment": "mixed",
+      "significance": "This variant reflects Matthew 2:6's interpretive reversal of Micah's statement about Bethlehem's insignificance into a declaration of significance. Fathers citing Matthew rather than Micah directly witness the New Testament's hermeneutical authority over direct prophetic texts in early Christian exegesis."
+    },
+    {
+      "reading": "Rulers/princes (ἡγεμόσιν) vs. thousands (χιλιάσιν)",
+      "fathers_using_it": [
+        "Justin Martyr",
+        "Origen"
+      ],
+      "text_form_alignment": "mixed",
+      "significance": "Matthew's substitution of 'rulers' for 'thousands' (clans) represents a contextual interpretation linking Micah to 2 Samuel 5:2. Patristic adoption of this reading demonstrates how Gospel writers' exegetical choices shaped subsequent Christian Old Testament textual tradition."
+    },
+    {
+      "reading": "From days of eternity (ἐξ ἡμερῶν αἰῶνος / a diebus aeternitatis) vs. from ancient days",
+      "fathers_using_it": [
+        "Irenaeus",
+        "Tertullian",
+        "Eusebius",
+        "Cyril of Jerusalem",
+        "Augustine"
+      ],
+      "text_form_alignment": "closer_to_lxx",
+      "significance": "The LXX's heightened language of eternity rather than mere antiquity provided theological support for christological claims about Christ's eternal pre-existence. This reading became standard in anti-Arian debates, showing how textual choices shaped doctrinal development."
+    }
+  ],
+  "bibcrit_assessment": {
+    "title": "Gospel Hermeneutics Overrode Direct Prophetic Citation Patterns",
+    "reasoning": "The most striking finding is the textual bifurcation between apologetic/polemical contexts (where Matthew's interpretive rendering dominates) and systematic theological contexts (where LXX text forms prevail). This reveals that early Christian scriptural memory operated on two tracks: a Gospel-mediated hermeneutical tradition for public argumentation and a more textually conservative tradition for scholarly exegesis. Jerome's late intervention represents not evolutionary textual development but deliberate scholarly reform. The variants are not products of scribal corruption but conscious exegetical choices that became embedded in Christian textual tradition.",
+    "plain": "Early Christians quoted this verse in two different ways depending on their purpose: when arguing with non-Christians, they used Matthew's interpreted version; when teaching other Christians, they used the standard Greek translation. This shows how theological needs shaped which version of the text people remembered and used.",
+    "confidence": 0.88
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-03-31T00:30:50.090541",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

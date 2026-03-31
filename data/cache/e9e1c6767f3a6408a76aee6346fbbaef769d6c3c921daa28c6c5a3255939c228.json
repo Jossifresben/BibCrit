@@ -1,0 +1,164 @@
+{
+  "reference": "Zechariah 12:10",
+  "total_citations_found": 8,
+  "period_summary": "Most citations cluster from the mid-2nd to late 4th century, particularly among apologists and anti-Jewish polemicists who used this verse as a messianic prophecy of Christ's piercing. The passage became a locus classicus in Christian-Jewish debates about Jesus' identity.",
+  "citations": [
+    {
+      "father": "Justin Martyr",
+      "dates_ce": "c. 100–165",
+      "region": "Rome",
+      "work": "Dialogue with Trypho",
+      "chapter_section": "ch. 14, 32, 64, 118",
+      "cited_text": "They shall look upon him whom they pierced (ἐπιβλέψονται πρός με ἀνθ᾽ ὧν κατωρχήσαντο)",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.82,
+      "text_form_note": "Justin's citation follows the LXX with 'they shall look upon me' (πρός με) rather than the MT's 'upon me' (אֵלַי), and uses κατωρχήσαντο (they pierced/mocked) consistent with some LXX witnesses.",
+      "theological_use": "Justin employs this text as a direct prophecy of the crucifixion, arguing that the Jews who pierced Christ will recognize him at the Parousia. The 'looking upon' is interpreted eschatologically as future Jewish repentance.",
+      "transmission_implication": "Attests an early LXX form circulating in mid-2nd century Rome, before later Christian recensions."
+    },
+    {
+      "father": "Irenaeus of Lyons",
+      "dates_ce": "c. 130–202",
+      "region": "Gaul",
+      "work": "Against Heresies",
+      "chapter_section": "Book 4.33.11",
+      "cited_text": "They shall look on him whom they pierced (aspicient in quem transfixerunt)",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.78,
+      "text_form_note": "Irenaeus cites through Old Latin which reflects the LXX tradition. The verb 'transfixerunt' corresponds to Greek ἐξεκέντησαν (they pierced), matching LXX against MT's דָּקָרוּ.",
+      "theological_use": "Irenaeus uses this text to demonstrate the unity of Old and New Testaments, showing that the prophets foretold Christ's passion. The piercing is linked to John 19:37's citation of the same verse.",
+      "transmission_implication": "Confirms LXX-based Old Latin tradition in late 2nd century Gaul, independent of Eastern Greek witnesses."
+    },
+    {
+      "father": "Tertullian",
+      "dates_ce": "c. 155–220",
+      "region": "Carthage",
+      "work": "An Answer to the Jews",
+      "chapter_section": "ch. 13",
+      "cited_text": "They shall look on him whom they pierced (respicient in eum quem confixerunt)",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.8,
+      "text_form_note": "Tertullian's Latin 'confixerunt' (they pierced through) reflects the LXX ἐξεκέντησαν tradition. The construction parallels John 19:37 rather than independent translation from Hebrew.",
+      "theological_use": "Tertullian deploys this as proof-text against Jewish rejection of Jesus, arguing the prophecy's fulfillment at Golgotha demonstrates Christian claims. The 'looking' signifies eschatological judgment upon Israel.",
+      "transmission_implication": "North African Old Latin tradition maintains consistency with LXX form, suggesting widespread Christian textual uniformity by early 3rd century."
+    },
+    {
+      "father": "Cyprian of Carthage",
+      "dates_ce": "c. 200–258",
+      "region": "Carthage",
+      "work": "Testimonies Against the Jews",
+      "chapter_section": "Book 2.20",
+      "cited_text": "They shall look upon him whom they pierced (aspicient in eum quem transfixerunt)",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.76,
+      "text_form_note": "Cyprian's testimonia collection preserves Old Latin rendering consistent with LXX. The verb choice 'transfixerunt' aligns with earlier Latin fathers and Greek ἐξεκέντησαν.",
+      "theological_use": "Cyprian presents this as one of many Old Testament prophecies fulfilled in Christ's crucifixion. The passage functions within a systematic anthology proving Christian interpretation of Hebrew scripture.",
+      "transmission_implication": "Testimonia tradition stabilized LXX-based readings in North African church by mid-3rd century, creating textual fixity."
+    },
+    {
+      "father": "Eusebius of Caesarea",
+      "dates_ce": "c. 260–340",
+      "region": "Caesarea",
+      "work": "Demonstratio Evangelica",
+      "chapter_section": "Book 10.8",
+      "cited_text": "They shall look upon me because they have insulted (ἐπιβλέψονται πρός με ἀνθ᾽ ὧν κατωρχήσαντο)",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.85,
+      "text_form_note": "Eusebius preserves the LXX reading with 'they shall look upon me' (πρός με) and uses κατωρχήσαντο (insulted/mocked) which represents an alternative LXX rendering to ἐξεκέντησαν, possibly reflecting proto-Lucianic recension.",
+      "theological_use": "Eusebius interprets this as God speaking through the prophet, with 'me' referring to Christ. The 'insulting' encompasses both crucifixion and Jewish mockery, proving the gospel narratives.",
+      "transmission_implication": "Caesarean textual tradition preserves variant LXX rendering (κατωρχήσαντο vs. ἐξεκέντησαν), suggesting multiple Greek recensions circulated in early 4th century Palestine."
+    },
+    {
+      "father": "John Chrysostom",
+      "dates_ce": "c. 347–407",
+      "region": "Antioch/Constantinople",
+      "work": "Homilies on the Gospel of John",
+      "chapter_section": "Homily 85.2",
+      "cited_text": "They shall look on him whom they pierced (ὄψονται εἰς ὃν ἐξεκέντησαν)",
+      "text_form": "mixed",
+      "text_form_confidence": 0.72,
+      "text_form_note": "Chrysostom cites via John 19:37 which itself represents a mixed form: ὄψονται (they shall see) comes from Johannine adaptation, while ἐξεκέντησαν (they pierced) matches LXX. The preposition εἰς rather than πρός suggests Gospel influence.",
+      "theological_use": "Chrysostom emphasizes this as fulfilled prophecy witnessed by eyewitnesses at the cross. He stresses the incarnation's visibility: God made flesh can be seen and pierced, revealing divine condescension.",
+      "transmission_implication": "Late 4th century Antiochene tradition shows Gospel citations replacing direct LXX quotation, creating hybrid textual forms in liturgical and homiletic contexts."
+    },
+    {
+      "father": "Jerome",
+      "dates_ce": "c. 347–420",
+      "region": "Bethlehem/Jerusalem",
+      "work": "Commentary on Zechariah",
+      "chapter_section": "On Zech 12:10",
+      "cited_text": "They shall look upon me whom they have pierced (aspicient ad me quem confixerunt)",
+      "text_form": "closer_to_mt",
+      "text_form_confidence": 0.88,
+      "text_form_note": "Jerome's Vulgate rendering reflects direct translation from Hebrew MT: 'ad me' (unto me) preserves the Hebrew אֵלַי rather than LXX's ἐπιβλέψονται πρός με. He explicitly notes the Hebrew has 'unto me' while some Greek manuscripts read 'unto him.'",
+      "theological_use": "Jerome understands this as God the Father speaking, with 'me' referring to the Son who shares the Father's divine essence. The piercing is both literal (crucifixion) and spiritual (rejection by Israel).",
+      "transmission_implication": "Jerome's direct access to Hebrew manuscripts reveals divergence between MT tradition and Christian LXX witnesses by late 4th century, prompting his translation revision."
+    },
+    {
+      "father": "Theodoret of Cyrus",
+      "dates_ce": "c. 393–458",
+      "region": "Antioch",
+      "work": "Commentary on the Twelve Prophets",
+      "chapter_section": "On Zechariah, ch. 12",
+      "cited_text": "They shall look upon him whom they pierced (ἐπιβλέψονται πρὸς αὐτὸν ὃν ἐξεκέντησαν)",
+      "text_form": "mixed",
+      "text_form_confidence": 0.7,
+      "text_form_note": "Theodoret cites a form with 'unto him' (πρὸς αὐτόν) rather than LXX's 'unto me' (πρός με), likely reflecting later Christian recension influenced by christological interpretation or awareness of Hebrew. Retains LXX verb ἐξεκέντησαν.",
+      "theological_use": "Theodoret applies this to Christ's second coming when Jews will recognize the crucified one as Messiah. He harmonizes the pronouns christologically: the Father speaks of the Son who was pierced.",
+      "transmission_implication": "Mid-5th century Antiochene text shows recensional activity adjusting LXX toward Hebrew or theological clarity, creating hybrid forms distinct from both MT and early LXX."
+    }
+  ],
+  "text_form_distribution": {
+    "closer_to_mt": 1,
+    "closer_to_lxx": 5,
+    "mixed": 2,
+    "independent": 0,
+    "uncertain": 0
+  },
+  "transmission_synthesis": "Patristic citations of Zechariah 12:10 reveal overwhelming dominance of LXX-based tradition through the 4th century, with remarkable textual stability across geographical regions (Rome, Gaul, Carthage, Caesarea). The LXX form, particularly the reading 'they shall look upon me' (πρός με) and the verb for 'pierced' (ἐξεκέντησαν or κατωρχήσαντο), circulated uniformly in Christian communities, likely stabilized through testimonia collections and liturgical use. Jerome's late 4th century work marks a critical turning point: his access to Hebrew manuscripts reveals the MT reading 'unto me' (אֵלַי) differed from Christian LXX witnesses, prompting his Vulgate revision. The emergence of mixed forms in Chrysostom and Theodoret (πρὸς αὐτόν, 'unto him') suggests either later Christian recension harmonizing pronouns christologically or influence from Jerome's Hebrew-based translation, indicating textual fluidity increased in the 5th century as scholarly access to multiple text traditions expanded.",
+  "transmission_synthesis_plain": "Early Christian writers from the 2nd through 4th centuries consistently cited Zechariah 12:10 in a Greek translation form that said 'they shall look upon me whom they pierced.' This version circulated widely from Rome to North Africa to Palestine, showing remarkable agreement across the Christian world. Only in the late 4th century did Jerome's work with Hebrew manuscripts reveal differences from the Christian Greek text, leading to adjustments. This shows the early church relied on Greek translations that became standardized through worship and theological debate, creating a distinct Christian textual tradition.",
+  "notable_variants": [
+    {
+      "reading": "They shall look upon me (πρός με / ad me)",
+      "fathers_using_it": [
+        "Justin Martyr",
+        "Irenaeus",
+        "Tertullian",
+        "Cyprian",
+        "Eusebius",
+        "Jerome (noting MT)"
+      ],
+      "text_form_alignment": "closer_to_lxx",
+      "significance": "This reading reflects the LXX tradition where God speaks in first person, creating theological tension resolved christologically (Father speaking of Son). Jerome's notation that the Hebrew has this reading vindicates LXX against later Christian recensions that changed to 'him.'"
+    },
+    {
+      "reading": "They shall look upon him (πρὸς αὐτόν)",
+      "fathers_using_it": [
+        "Theodoret",
+        "Chrysostom (via John)"
+      ],
+      "text_form_alignment": "mixed",
+      "significance": "This variant represents either later Christian recensional activity harmonizing the pronoun christologically or influence from Hebrew textual awareness. It appears only in 5th century sources, suggesting post-Hieronymian textual adjustment in Eastern churches."
+    },
+    {
+      "reading": "κατωρχήσαντο (they insulted/mocked) vs. ἐξεκέντησαν (they pierced)",
+      "fathers_using_it": [
+        "Eusebius (κατωρχήσαντο)",
+        "Justin Martyr (κατωρχήσαντο)",
+        "Most others (ἐξεκέντησαν)"
+      ],
+      "text_form_alignment": "closer_to_lxx",
+      "significance": "These variant verb forms both circulated in LXX tradition, with κατωρχήσαντο possibly representing proto-Lucianic recension. Both derive from Hebrew דָּקָרוּ but interpret differently: physical piercing vs. verbal insult, reflecting lexical ambiguity in Hebrew root."
+    }
+  ],
+  "bibcrit_assessment": {
+    "title": "LXX Standardization Through Christian Testimonia and Liturgy",
+    "reasoning": "The most striking finding is the near-unanimous patristic attestation of the LXX form 'they shall look upon me' across diverse geographical regions (Rome, Gaul, Carthage, Caesarea) from 150–400 CE, suggesting this reading achieved fixity through Christian testimonia collections and anti-Jewish apologetic use rather than through scholarly textual criticism. The variant only appears when Jerome introduces Hebrew-based translation, and even then, 5th century Eastern fathers show hybrid forms blending traditions. This indicates the early Christian church created a distinct textual stream of Zechariah 12:10, preserved through theological and liturgical function, which diverged from contemporary Jewish Hebrew transmission. The passage's christological centrality (proving Jesus' messiahship through crucifixion prophecy) drove textual standardization independent of Hebrew manuscript consultation until Jerome's scholarly revolution.",
+    "plain": "Early Christians used Zechariah 12:10 so consistently in debates about Jesus that they established a standard Greek version saying 'they shall look upon me whom they pierced' across the entire Mediterranean world. This version became fixed through worship and theological argument, creating a Christian textual tradition that only began changing when Jerome consulted Hebrew manuscripts four centuries later.",
+    "confidence": 0.87
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-03-31T00:32:06.384589",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

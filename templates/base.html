@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="{{ lang }}" dir="{{ 'rtl' if lang in ('he', 'ar') else 'ltr' }}">
+<html lang="{{ lang }}" dir="{{ 'rtl' if lang in ('he',) else 'ltr' }}" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}BibCrit — Biblical Textual Criticism{% endblock %}</title>
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.svg') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Noto+Sans+Hebrew&family=Noto+Serif&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew&family=Noto+Serif&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='bibcrit.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1/dist/driver.css">
     {% block head %}{% endblock %}
@@ -16,7 +18,9 @@
     <nav class="nav">
         <div class="nav-inner">
             <a href="/?lang={{ lang }}" class="nav-brand">
-                <span class="nav-brand-text" style="font-size:1.1rem; font-weight:700;">✝ BibCrit</span>
+                <img src="{{ url_for('static', filename='BibCrit_logo.svg') }}"
+                     alt="BibCrit logo" class="nav-logo" width="28" height="28">
+                <span class="nav-brand-text">BibCrit</span>
             </a>
             <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu" aria-expanded="false">
                 <span class="material-symbols-outlined">menu</span>
@@ -26,46 +30,62 @@
 
                 <div class="nav-dropdown">
                     <button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">
-                        Textual Analysis<span class="drop-arrow">▾</span>
+                        {{ _t('nav_textual') }}<span class="drop-arrow">▾</span>
                     </button>
                     <div class="nav-drop-menu">
-                        <a href="/divergence?lang={{ lang }}">MT/LXX Divergence Analyzer ⭐</a>
-                        <a href="/backtranslation?lang={{ lang }}" class="nav-soon">Back-Translation Workbench</a>
-                        <hr class="nav-drop-sep">
-                        <span class="nav-drop-tier">Tier 2</span>
-                        <a href="#" class="nav-future">DSS Bridge Tool</a>
-                        <a href="#" class="nav-future">Manuscript Genealogy</a>
+                        <a href="/divergence?lang={{ lang }}">{{ _t('nav_divergence') }}</a>
+                        <a href="/backtranslation?lang={{ lang }}">{{ _t('nav_backtranslation') }}</a>
+                        <a href="/dss?lang={{ lang }}">{{ _t('nav_dss') }}</a>
+                        <a href="/genealogy?lang={{ lang }}">{{ _t('nav_genealogy') }}</a>
                     </div>
                 </div>
 
                 <div class="nav-dropdown">
                     <button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">
-                        Critical Analysis<span class="drop-arrow">▾</span>
+                        {{ _t('nav_critical') }}<span class="drop-arrow">▾</span>
                     </button>
                     <div class="nav-drop-menu">
-                        <a href="/scribal?lang={{ lang }}" class="nav-soon">Scribal Tendency Profiler</a>
-                        <a href="/numerical?lang={{ lang }}" class="nav-soon">Numerical Discrepancy Modeler</a>
-                        <hr class="nav-drop-sep">
-                        <span class="nav-drop-tier">Tier 2</span>
-                        <a href="#" class="nav-future">Theological Revision Detector</a>
-                        <a href="#" class="nav-future">Patristic Citation Tracker</a>
+                        <a href="/scribal?lang={{ lang }}">{{ _t('nav_scribal') }}</a>
+                        <a href="/numerical?lang={{ lang }}">{{ _t('nav_numerical') }}</a>
+                        <a href="/theological?lang={{ lang }}">{{ _t('nav_theology') }}</a>
+                        <a href="/patristic?lang={{ lang }}">{{ _t('nav_patristic') }}</a>
                     </div>
                 </div>
 
-                <a href="/discovery?lang={{ lang }}" class="nav-discovery">✦ Discovery</a>
+                <a href="/discovery?lang={{ lang }}" class="nav-discovery">{{ _t('nav_discovery') }}</a>
+
+                <a href="/guide?lang={{ lang }}" class="nav-guide-link">{{ _t('nav_guide') }}</a>
 
             </div>
 
             <div class="nav-icons">
+                    <!-- Language Picker -->
+                    <div class="lang-picker" id="lang-picker">
+                        <button class="nav-btn lang-toggle" id="lang-toggle"
+                                aria-label="{{ _t('nav_language') }}"
+                                data-tooltip="{{ _t('nav_language') }}">
+                            <span class="material-symbols-outlined">language</span>
+                            <span class="lang-code" id="lang-current-code">{{ lang | upper }}</span>
+                        </button>
+                        <div class="lang-dropdown" id="lang-dropdown">
+                            <button class="lang-option{% if lang == 'en' %} active{% endif %}" data-lang="en">EN — English</button>
+                            <button class="lang-option{% if lang == 'es' %} active{% endif %}" data-lang="es">ES — Español</button>
+                            <hr class="lang-sep">
+                            <span class="lang-coming-soon">{{ _t('lang_coming_soon') }}</span>
+                            <button class="lang-option lang-soon" disabled>HE — עברית</button>
+                            <button class="lang-option lang-soon" disabled>NL — Nederlands</button>
+                        </div>
+                    </div>
+
                     <!-- Theme Toggle -->
-                    <button class="nav-btn theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"
-                            data-tooltip="Dark mode">
+                    <button class="nav-btn theme-toggle" id="theme-toggle" aria-label="{{ _t('nav_dark_mode') }}"
+                            data-tooltip="{{ _t('nav_dark_mode') }}">
                         <span class="material-symbols-outlined">sunny</span>
                     </button>
 
                     <!-- Share / QR -->
-                    <button class="nav-btn share-toggle" id="share-toggle" aria-label="Share"
-                            data-tooltip="Share">
+                    <button class="nav-btn share-toggle" id="share-toggle" aria-label="{{ _t('nav_share') }}"
+                            data-tooltip="{{ _t('nav_share') }}">
                         <span class="material-symbols-outlined">qr_code_2</span>
                     </button>
                 </div>{# /nav-icons #}
@@ -73,13 +93,13 @@
     </nav>
 
     <!-- Share Modal -->
-    <div id="share-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Share">
+    <div id="share-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="{{ _t('nav_share') }}">
         <div class="modal-content share-modal-content">
             <button class="modal-close" id="share-close" aria-label="Close">&times;</button>
-            <h3 class="share-modal-title">Share this page</h3>
+            <h3 class="share-modal-title">{{ _t('share_title') }}</h3>
             <div class="share-qr-wrap">
                 <div id="share-qr"></div>
-                <p class="share-qr-hint">Scan with your device</p>
+                <p class="share-qr-hint">{{ _t('share_scan') }}</p>
             </div>
             <div class="share-url-wrap">
                 <input type="text" id="share-url" class="share-url-input" readonly aria-label="URL">
@@ -95,39 +115,43 @@
     </main>
 
     <footer class="footer">
-        <p>By <a href="https://jossifresco.com" target="_blank" rel="noopener">Jossi Fresco</a> &middot; <a href="https://github.com/Jossifresben/bibcrit" target="_blank" rel="noopener">GitHub</a> &middot; Apache 2.0</p>
+        <p>{{ _t('footer_by') }} <a href="https://jossifresco.com" target="_blank" rel="noopener">Jossi Fresco</a> &middot; <a href="https://github.com/Jossifresben/bibcrit" target="_blank" rel="noopener">GitHub</a> &middot; {{ _t('footer_license') }}</p>
     </footer>
 
     <!-- Budget Bar -->
     <footer class="budget-footer" id="budget-footer">
-        <span id="budget-label">Monthly analysis budget:</span>
+        <span id="budget-label">{{ _t('budget_label') }}</span>
         <strong id="budget-spend">$0.00</strong>
         <span>/</span>
-        <span id="budget-cap">$5.00</span>
+        <span id="budget-cap">$10.00</span>
         <div class="budget-track">
             <div class="budget-fill" id="budget-bar" style="width:0%"></div>
         </div>
         <span id="budget-pct" style="font-size:11px;"></span>
-        <button class="budget-donate-btn" id="budget-donate-btn"
-                onclick="document.getElementById('donation-modal-overlay').classList.add('active')">
-            ☕ Donate to keep it running
-        </button>
+        <a href="https://tiptopjar.com/jossif" target="_blank" rel="noopener" class="budget-donate-btn" id="budget-donate-btn">
+            {{ _t('budget_donate') }}
+        </a>
     </footer>
 
     <!-- Donation Modal -->
     <div class="donation-modal-overlay" id="donation-modal-overlay">
         <div class="donation-modal">
-            <h2>BibCrit runs on your support</h2>
-            <p>This month's analysis budget has been reached. BibCrit is fully open access — all tools remain available. If this research has been useful to you, a small donation keeps the service running for everyone.</p>
-            <a href="https://ko-fi.com/bibcrit" target="_blank" rel="noopener" class="btn-donate">☕ Donate on Ko-fi</a>
+            <h2>{{ _t('donate_title') }}</h2>
+            <p>{{ _t('donate_body') }}</p>
+            <a href="https://tiptopjar.com/jossif" target="_blank" rel="noopener" class="btn-donate">{{ _t('donate_btn') }}</a>
             <button class="btn-dismiss" onclick="document.getElementById('donation-modal-overlay').classList.remove('active')">
-                Continue without donating →
+                {{ _t('donate_dismiss') }}
             </button>
         </div>
     </div>
 
+    <script>
+      window.BIBCRIT_I18N = {{ i18n_lang | tojson | safe }};
+      window.t = function(k, fb) { return (window.BIBCRIT_I18N && window.BIBCRIT_I18N[k]) || fb || k; };
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
     <script src="{{ url_for('static', filename='js/global.js') }}"></script>
+    <script src="{{ url_for('static', filename='result-actions.js') }}"></script>
     {% block scripts %}{% endblock %}
 </body>
 </html>

@@ -1,0 +1,202 @@
+{
+  "reconstructed_words": [
+    {
+      "position": 1,
+      "lxx_word": "διὰ τοῦτο",
+      "vorlage_word": "לָכֵן",
+      "status": "agrees_mt",
+      "confidence": 0.95,
+      "mt_equivalent": "לָכֵן",
+      "dss_witness": null,
+      "reasoning": "The prepositional phrase διὰ τοῦτο is the standard LXX rendering of לָכֵן ('therefore'), attested consistently across Isaiah and the Prophets. This is a stable translation equivalence with no variation expected.",
+      "alternatives": []
+    },
+    {
+      "position": 2,
+      "lxx_word": "δώσει",
+      "vorlage_word": "יִתֵּן",
+      "status": "agrees_mt",
+      "confidence": 0.98,
+      "mt_equivalent": "יִתֵּן",
+      "dss_witness": null,
+      "reasoning": "The future indicative δώσει directly renders the Hebrew imperfect יִתֵּן (qal imperfect 3ms of נתן). This is the standard LXX equivalence for this verbal form with no alternative plausible.",
+      "alternatives": []
+    },
+    {
+      "position": 3,
+      "lxx_word": "κύριος",
+      "vorlage_word": "אֲדֹנָי",
+      "status": "agrees_mt",
+      "confidence": 0.99,
+      "mt_equivalent": "אֲדֹנָי",
+      "dss_witness": null,
+      "reasoning": "While κύριος typically renders יהוה in LXX, in Isaiah it regularly translates אֲדֹנָי as well, particularly when the Tetragrammaton is absent. The MT has אֲדֹנָי here, and the translator follows standard protocol.",
+      "alternatives": [
+        {
+          "reading": "יהוה",
+          "confidence": 0.15,
+          "note": "Possible but unlikely given consistent LXX rendering of אֲדֹנָי as κύριος in Isaiah."
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "lxx_word": "αὐτὸς",
+      "vorlage_word": "הוּא",
+      "status": "agrees_mt",
+      "confidence": 0.97,
+      "mt_equivalent": "הוּא",
+      "dss_witness": null,
+      "reasoning": "The intensive pronoun αὐτὸς represents the Hebrew independent pronoun הוּא functioning as an emphatic particle ('he himself'). This is a direct lexical correspondence with no textual variant expected.",
+      "alternatives": []
+    },
+    {
+      "position": 5,
+      "lxx_word": "ὑμῖν",
+      "vorlage_word": "לָכֶם",
+      "status": "agrees_mt",
+      "confidence": 0.98,
+      "mt_equivalent": "לָכֶם",
+      "dss_witness": null,
+      "reasoning": "The dative pronoun ὑμῖν corresponds to the prepositional phrase לָכֶם (2mp). This is a standard grammatical equivalence in LXX translation technique with no variation.",
+      "alternatives": []
+    },
+    {
+      "position": 6,
+      "lxx_word": "σημεῖον",
+      "vorlage_word": "אוֹת",
+      "status": "agrees_mt",
+      "confidence": 0.99,
+      "mt_equivalent": "אוֹת",
+      "dss_witness": null,
+      "reasoning": "The noun σημεῖον is the consistent LXX rendering of אוֹת ('sign') throughout the Hebrew Bible. This equivalence is unwavering and presents no retroversion difficulty.",
+      "alternatives": []
+    },
+    {
+      "position": 7,
+      "lxx_word": "ἰδοὺ",
+      "vorlage_word": "הִנֵּה",
+      "status": "agrees_mt",
+      "confidence": 0.99,
+      "mt_equivalent": "הִנֵּה",
+      "dss_witness": null,
+      "reasoning": "The demonstrative particle ἰδοὺ invariably represents הִנֵּה in LXX. This is a fixed lexical correspondence with no textual complexity.",
+      "alternatives": []
+    },
+    {
+      "position": 8,
+      "lxx_word": "ἡ παρθένος",
+      "vorlage_word": "הָעַלְמָה",
+      "status": "agrees_mt",
+      "confidence": 0.85,
+      "mt_equivalent": "הָעַלְמָה",
+      "dss_witness": null,
+      "reasoning": "The definite noun ἡ παρθένος ('the virgin') renders MT הָעַלְמָה ('the young woman'). While עַלְמָה denotes a young woman of marriageable age without specific reference to virginity, LXX παρθένος emphasizes virginity. The translator likely interpreted הָעַלְמָה through the semantic overlap of youthful, unmarried status. 1QIsaª reads הָעַלְמָה identically to MT.",
+      "alternatives": [
+        {
+          "reading": "הַבְּתוּלָה",
+          "confidence": 0.1,
+          "note": "Theoretically possible but no textual support; LXX translator likely interpreted עלמה contextually."
+        }
+      ]
+    },
+    {
+      "position": 9,
+      "lxx_word": "ἐν γαστρὶ ἕξει",
+      "vorlage_word": "הָרָה",
+      "status": "unattested",
+      "confidence": 0.7,
+      "mt_equivalent": "הָרָה",
+      "dss_witness": null,
+      "reasoning": "The periphrastic future ἐν γαστρὶ ἕξει ('will have in womb' = 'will conceive') represents a different parsing than MT הָרָה, which is either a qal active participle feminine ('pregnant/conceiving') or an adjective ('pregnant'). LXX interprets this as a future event rather than present/imminent state. The Vorlage likely read הָרָה but was understood futurely, or possibly *תַּהַר (qal imperfect).",
+      "alternatives": [
+        {
+          "reading": "תַּהַר",
+          "confidence": 0.55,
+          "note": "Qal imperfect 3fs would align with future tense; possible variant or interpretive rendering."
+        }
+      ]
+    },
+    {
+      "position": 10,
+      "lxx_word": "καὶ τέξεται",
+      "vorlage_word": "וְיֹלֶדֶת",
+      "status": "unattested",
+      "confidence": 0.75,
+      "mt_equivalent": "וְיֹלֶדֶת",
+      "dss_witness": null,
+      "reasoning": "The future middle τέξεται ('will bear') renders MT וְיֹלֶדֶת (qal active participle fs with waw). MT presents a participial construction indicating imminent or durative action, while LXX renders as simple future. The Vorlage was likely וְיֹלֶדֶת but interpreted as future, or possibly *וְתֵלֵד (qal imperfect 3fs with waw consecutive).",
+      "alternatives": [
+        {
+          "reading": "וְתֵלֵד",
+          "confidence": 0.6,
+          "note": "Qal imperfect would better match LXX future tense; possible variant or translator's temporal interpretation."
+        }
+      ]
+    },
+    {
+      "position": 11,
+      "lxx_word": "υἱόν",
+      "vorlage_word": "בֵּן",
+      "status": "agrees_mt",
+      "confidence": 0.99,
+      "mt_equivalent": "בֵּן",
+      "dss_witness": null,
+      "reasoning": "The accusative noun υἱόν directly corresponds to Hebrew בֵּן ('son'). This is an invariable lexical equivalent in LXX with no ambiguity.",
+      "alternatives": []
+    },
+    {
+      "position": 12,
+      "lxx_word": "καὶ καλέσεις",
+      "vorlage_word": "וְקָרָאת",
+      "status": "unattested",
+      "confidence": 0.8,
+      "mt_equivalent": "וְקָרָאת",
+      "dss_witness": null,
+      "reasoning": "The future indicative καλέσεις (2s) renders MT וְקָרָאת (qal perfect 2fs or 3fs with waw). MT vocalization indicates 3fs ('she will call'), but LXX reads 2ms ('you will call'), suggesting Vorlage *וְקָרָאתָ (2ms) or contextual reinterpretation addressing Ahaz. This is a significant divergence in subject, possibly reflecting a different Hebrew consonantal text or interpretive tradition.",
+      "alternatives": [
+        {
+          "reading": "וְקָרָאת (3fs as MT)",
+          "confidence": 0.5,
+          "note": "LXX may have reinterpreted 3fs as 2ms for theological/contextual reasons without textual variant."
+        }
+      ]
+    },
+    {
+      "position": 13,
+      "lxx_word": "τὸ ὄνομα αὐτοῦ",
+      "vorlage_word": "שְׁמוֹ",
+      "status": "agrees_mt",
+      "confidence": 0.95,
+      "mt_equivalent": "שְׁמוֹ",
+      "dss_witness": null,
+      "reasoning": "The accusative phrase τὸ ὄνομα αὐτοῦ ('his name') corresponds to שְׁמוֹ (construct 'name' + 3ms suffix). The article in Greek is typical LXX expansion for definiteness. This is a standard rendering.",
+      "alternatives": []
+    },
+    {
+      "position": 14,
+      "lxx_word": "Εμμανουηλ",
+      "vorlage_word": "עִמָּנוּ אֵל",
+      "status": "agrees_mt",
+      "confidence": 0.98,
+      "mt_equivalent": "עִמָּנוּ אֵל",
+      "dss_witness": null,
+      "reasoning": "The transliterated name Εμμανουηλ represents עִמָּנוּ אֵל ('God with us'), rendered as a single word in Greek following standard practice for Hebrew theophoric names. The form matches MT precisely.",
+      "alternatives": []
+    }
+  ],
+  "summary_technical": "The reconstructed Vorlage aligns closely with MT in lexical content but diverges significantly in verbal parsing and person. LXX interprets הָרָה וְיֹלֶדֶת as future events (ἐν γαστρὶ ἕξει καὶ τέξεται) rather than participial/present states, and reads the naming verb as 2ms (καλέσεις) against MT 3fs וְקָרָאת. The rendering ἡ παρθένος for הָעַלְמָה reflects interpretive translation toward virginity rather than a distinct Hebrew Vorlage. No DSS witness for Isaiah 7:14 exists to adjudicate these variants; 1QIsaª has lacuna here.",
+  "summary_plain": "The Greek translator worked from a Hebrew text nearly identical to the traditional Masoretic Text but interpreted several verbs differently—reading future actions where Hebrew suggests present/imminent states, and changing 'she will call' to 'you will call.'",
+  "overall_confidence": 0.82,
+  "bibcrit_assessment": {
+    "title": "Second Person Naming Formula: Lost Variant or Interpretation?",
+    "reasoning": "The most significant textual problem is LXX καλέσεις (2ms 'you will call') versus MT וְקָרָאת (3fs 'she will call'). If the LXX reflects a Hebrew Vorlage *וְקָרָאתָ (qal perfect 2ms), this would represent a theologically significant variant directing the naming to Ahaz rather than the mother, intensifying the sign's address to the king. However, this could equally be translator's contextual reinterpretation without consonantal difference (וקראת is ambiguous in unpointed text). Without DSS evidence (1QIsaª lacks this verse), the variant remains plausible but unconfirmed. The future rendering of participles (positions 9–10) likely reflects interpretive temporal adjustment rather than distinct Vorlage.",
+    "plain": "The Greek text tells the king 'you will name him' instead of 'she will name him,' possibly preserving an earlier Hebrew version that made the prophecy more directly address King Ahaz, though this might also be the translator's own interpretation.",
+    "confidence": 0.65
+  },
+  "discovery_ready": false,
+  "reference": "Isaiah 7:14",
+  "cached_at": "2026-03-30T19:59:48.442640",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

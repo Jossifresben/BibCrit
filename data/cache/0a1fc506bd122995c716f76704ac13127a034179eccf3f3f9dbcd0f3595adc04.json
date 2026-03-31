@@ -1,0 +1,76 @@
+{
+  "divergences": [
+    {
+      "mt_word": "אֶשְׁפּוֹךְ אֶת רוּחִי (I will pour out my spirit)",
+      "lxx_word": "ἐκχεῶ ἀπὸ τοῦ πνεύματός μου (I will pour out from my spirit)",
+      "divergence_type": "theological_tendency",
+      "confidence": 0.82,
+      "hypotheses": [
+        {
+          "type": "theological_tendency",
+          "confidence": 0.82,
+          "explanation": "LXX partitive construction ἀπὸ τοῦ πνεύματός suggests partial outpouring, avoiding implication that God exhausts or diminishes divine spirit, reflecting Hellenistic theological sensibilities about divine immutability."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Pietersma & Wright (2007) p.789",
+        "Tov (2001) p.257"
+      ],
+      "analysis_technical": "The LXX partitive genitive ἀπὰ τοῦ πνεύματός versus MT direct object אֶת רוּחִי represents theological modulation rather than Vorlage difference. Pietersma notes this pattern in prophetic texts where LXX translators attenuate anthropomorphic or potentially problematic divine actions. Tov identifies partitive constructions as characteristic LXX theological tendency protecting divine transcendence.",
+      "analysis_plain": "The Greek says God will pour out 'from' his spirit rather than pouring out his spirit directly. This subtle change protects the idea that God's spirit cannot be depleted or diminished, reflecting Greek philosophical concerns about God's unchanging nature."
+    },
+    {
+      "mt_word": "זִקְנֵיכֶם חֲלֹמוֹת יַחֲלֹמוּן (your elders dreams will dream)",
+      "lxx_word": "οἱ πρεσβύτεροι ὑμῶν ἐνύπνια ἐνυπνιασθήσονται (your elders dreams will be dreamed)",
+      "divergence_type": "grammatical_shift",
+      "confidence": 0.9,
+      "hypotheses": [
+        {
+          "type": "grammatical_shift",
+          "confidence": 0.9,
+          "explanation": "LXX future passive ἐνυπνιασθήσονται renders MT internal object construction with cognate accusative. Greek idiom requires passive voice for dream-reception where Hebrew uses active with internal object."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Wevers (1990) p.124",
+        "Joüon-Muraoka §125"
+      ],
+      "analysis_technical": "The MT employs classical Hebrew internal object construction with cognate verb חֲלֹמוֹת יַחֲלֹמוּן (literally 'dream dreams'). LXX systematically renders such constructions with passive voice in Greek, since Hellenistic Greek lacks equivalent internal object idiom for experiential verbs. Wevers documents this pattern throughout LXX as translation technique rather than Vorlage variation.",
+      "analysis_plain": "Hebrew can say 'dream dreams' using the same root twice for emphasis, but Greek doesn't have this pattern. The translator used passive voice ('dreams will be dreamed by them') to express the same idea naturally in Greek."
+    },
+    {
+      "mt_word": "בַּחוּרֵיכֶם חֶזְיֹנוֹת יִרְאוּ (your young men visions will see)",
+      "lxx_word": "οἱ νεανίσκοι ὑμῶν ὁράσεις ὄψονται (your young men visions will see)",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.95,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.95,
+          "explanation": "LXX νεανίσκοι is standard equivalent for בַּחוּרֵי in prophetic literature. Active voice ὄψονται matches MT יִרְאוּ exactly, representing straightforward lexical equivalence without theological or textual variation."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Dogniez & Harl (1999) p.203"
+      ],
+      "analysis_technical": "Unlike the dream clause, the vision statement preserves MT active construction because ὁράω naturally governs direct objects in Greek. The lexical pair בחור/νεανίσκος and חזון/ὅρασις represent established translation equivalents in Minor Prophets LXX, confirmed by consistent rendering patterns across Joel and broader prophetic corpus.",
+      "analysis_plain": "The Greek translation of 'young men will see visions' follows the Hebrew word-for-word because both languages use the same grammar for seeing. No special adjustment was needed here unlike the dream phrase."
+    }
+  ],
+  "summary_technical": "Primary divergence involves LXX theological tendency in partitive spirit construction and grammatical adjustment for Hebrew internal object idiom. No evidence suggests different Vorlage; variations reflect standard LXX translation technique.",
+  "summary_plain": "The Greek translator made the verse sound natural in Greek while subtly protecting God's unchanging nature.",
+  "bibcrit_hypothesis": {
+    "title": "Partitive Spirit as Anti-Montanist Precursor",
+    "reasoning": "The LXX partitive ἀπὸ τοῦ πνεύματός may have inadvertently influenced later Christian pneumatology debates. While pre-Christian, this construction provided textual warrant for hierarchical spirit-gifting models against egalitarian charismatic movements. The contrast between partial (elders/prophets) versus total (Pentecost's reversion to MT sense in Acts 2:17-18) pneumatic endowment became exegetically significant in 2nd-3rd century controversies, though translators could not have anticipated this trajectory.",
+    "plain": "The Greek translator's subtle change about God pouring 'from' his spirit instead of pouring out his spirit completely may have unintentionally shaped later Christian debates about who receives God's spirit and how much.",
+    "confidence": 0.35
+  },
+  "discovery_ready": false,
+  "reference": "Joel 3:1",
+  "cached_at": "2026-03-30T19:51:10.694743",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v2"
+}

@@ -1,15 +1,247 @@
 {% extends "base.html" %}
 {% block title %}BibCrit — Biblical Textual Criticism{% endblock %}
+
+{% block head %}
+<style>
+.home-hero {
+    text-align: center;
+    padding: 3rem 1.5rem 2.5rem;
+    max-width: 640px;
+    margin: 0 auto;
+}
+.home-hero-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 0.6rem;
+}
+.home-hero-logo {
+    width: 40px;
+    height: 40px;
+}
+.home-hero-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--fg, #1a1a1a);
+    line-height: 1;
+}
+.home-hero-tagline {
+    font-size: 1rem;
+    color: var(--muted, #6b6560);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+}
+.home-hero-powered {
+    font-size: 0.75rem;
+    color: var(--muted, #6b6560);
+    opacity: 0.65;
+    letter-spacing: 0.02em;
+}
+.home-tools {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+}
+@media (max-width: 600px) {
+    .home-tools { grid-template-columns: 1fr; }
+}
+.tool-card {
+    display: block;
+    background: var(--card-bg, #fff);
+    border: 1px solid var(--border, #d4d0c8);
+    border-radius: 10px;
+    padding: 1.4rem 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+}
+.tool-card:hover {
+    border-color: var(--accent, #2c3e50);
+    box-shadow: 0 4px 16px var(--shadow, rgba(0,0,0,0.08));
+    transform: translateY(-2px);
+}
+.tool-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.6rem;
+}
+.tool-card-icon {
+    color: var(--accent, #2c3e50);
+    flex-shrink: 0;
+    line-height: 1;
+}
+.tool-card-icon .material-symbols-outlined {
+    font-size: 24px;
+    display: block;
+}
+.tool-card h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--fg, #1a1a1a);
+}
+.tool-card p {
+    font-size: 0.875rem;
+    color: var(--muted, #6b6560);
+    line-height: 1.55;
+    margin: 0;
+}
+.tool-card-arrow {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent, #2c3e50);
+    opacity: 0.75;
+}
+.home-discovery {
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    padding: 0 1.5rem;
+}
+.discovery-strip {
+    background: var(--accent-light, #eef1f4);
+    border: 1px solid var(--border, #d4d0c8);
+    border-radius: 10px;
+    padding: 1.2rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+[data-theme="dark"] .discovery-strip {
+    background: var(--accent-light, #1e2e38);
+}
+.discovery-strip-text h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+.discovery-strip-text p {
+    font-size: 0.85rem;
+    color: var(--muted, #6b6560);
+    margin: 0;
+}
+.discovery-strip-btn {
+    flex-shrink: 0;
+    padding: 8px 18px;
+    background: var(--accent, #2c3e50);
+    color: #fff;
+    border-radius: var(--radius, 6px);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.discovery-strip-btn:hover { opacity: 0.88; }
+@media (max-width: 520px) {
+    .discovery-strip { flex-direction: column; align-items: flex-start; }
+}
+</style>
+{% endblock %}
+
 {% block content %}
-<div style="max-width:760px; margin:4rem auto; padding:0 1.5rem; text-align:center;">
-  <h1 style="font-size:2rem; margin-bottom:1rem;">Biblical Textual Criticism, Powered by Claude</h1>
-  <p style="color:var(--muted); font-size:1.1rem; line-height:1.8; margin-bottom:2rem;">
-    Compare Masoretic Text and Septuagint side-by-side. Claude classifies every divergence,
-    scores confidence, and generates competing hypotheses with scholarly citations.
-  </p>
-  <a href="/divergence" style="display:inline-block; padding:12px 28px; background:var(--lxx-color);
-     color:white; border-radius:var(--radius); text-decoration:none; font-weight:600; font-size:1rem;">
-    Open Divergence Analyzer →
-  </a>
+<div class="home-hero">
+    <div class="home-hero-brand">
+        <img src="{{ url_for('static', filename='BibCrit_logo.svg') }}" alt="BibCrit" class="home-hero-logo">
+        <span class="home-hero-name">BibCrit</span>
+    </div>
+    <p class="home-hero-tagline">{{ _t('home_tagline') }}</p>
+    <p class="home-hero-powered">{{ _t('home_powered') }}</p>
+</div>
+
+<div class="home-tools">
+
+    <a href="/divergence?lang={{ lang }}" class="tool-card">
+        <div class="tool-card-header">
+            <div class="tool-card-icon"><span class="material-symbols-outlined">find_in_page</span></div>
+            <h3>{{ _t('tool_divergence_title') }}</h3>
+        </div>
+        <p>{{ _t('tool_divergence_desc') }}</p>
+        <span class="tool-card-arrow">{{ _t('home_open_arrow') }}</span>
+    </a>
+
+    <a href="/backtranslation?lang={{ lang }}" class="tool-card">
+        <div class="tool-card-header">
+            <div class="tool-card-icon"><span class="material-symbols-outlined">translate</span></div>
+            <h3>{{ _t('tool_backtrans_title') }}</h3>
+        </div>
+        <p>{{ _t('tool_backtrans_desc') }}</p>
+        <span class="tool-card-arrow">{{ _t('home_open_arrow') }}</span>
+    </a>
+
+    <a href="/scribal?lang={{ lang }}" class="tool-card">
+        <div class="tool-card-header">
+            <div class="tool-card-icon"><span class="material-symbols-outlined">radar</span></div>
+            <h3>{{ _t('tool_scribal_title') }}</h3>
+        </div>
+        <p>{{ _t('tool_scribal_desc') }}</p>
+        <span class="tool-card-arrow">{{ _t('home_open_arrow') }}</span>
+    </a>
+
+    <a href="/numerical?lang={{ lang }}" class="tool-card">
+        <div class="tool-card-header">
+            <div class="tool-card-icon"><span class="material-symbols-outlined">calculate</span></div>
+            <h3>{{ _t('tool_numerical_title') }}</h3>
+        </div>
+        <p>{{ _t('tool_numerical_desc') }}</p>
+        <span class="tool-card-arrow">{{ _t('home_open_arrow') }}</span>
+    </a>
+
+    <a href="/dss?lang={{ lang }}" class="tool-card">
+        <div class="tool-card-header">
+            <div class="tool-card-icon"><span class="material-symbols-outlined">history_edu</span></div>
+            <h3>{{ _t('tool_dss_title') }}</h3>
+        </div>
+        <p>{{ _t('tool_dss_desc') }}</p>
+        <span class="tool-card-arrow">{{ _t('home_open_arrow') }}</span>
+    </a>
+
+    <a href="/theological?lang={{ lang }}" class="tool-card">
+        <div class="tool-card-header">
+            <div class="tool-card-icon"><span class="material-symbols-outlined">psychology</span></div>
+            <h3>{{ _t('tool_theological_title') }}</h3>
+        </div>
+        <p>{{ _t('tool_theological_desc') }}</p>
+        <span class="tool-card-arrow">{{ _t('home_open_arrow') }}</span>
+    </a>
+
+    <a href="/patristic?lang={{ lang }}" class="tool-card">
+        <div class="tool-card-header">
+            <div class="tool-card-icon"><span class="material-symbols-outlined">church</span></div>
+            <h3>{{ _t('tool_patristic_title') }}</h3>
+        </div>
+        <p>{{ _t('tool_patristic_desc') }}</p>
+        <span class="tool-card-arrow">{{ _t('home_open_arrow') }}</span>
+    </a>
+
+    <a href="/genealogy?lang={{ lang }}" class="tool-card">
+        <div class="tool-card-header">
+            <div class="tool-card-icon"><span class="material-symbols-outlined">account_tree</span></div>
+            <h3>{{ _t('tool_genealogy_title') }}</h3>
+        </div>
+        <p>{{ _t('tool_genealogy_desc') }}</p>
+        <span class="tool-card-arrow">{{ _t('home_open_arrow') }}</span>
+    </a>
+
+</div>
+
+<div class="home-discovery">
+    <div class="discovery-strip">
+        <div class="discovery-strip-text">
+            <h4>{{ _t('discovery_strip_title') }}</h4>
+            <p>{{ _t('discovery_strip_body') }}</p>
+        </div>
+        <a href="/discovery?lang={{ lang }}" class="discovery-strip-btn">{{ _t('discovery_strip_cta') }}</a>
+    </div>
 </div>
 {% endblock %}

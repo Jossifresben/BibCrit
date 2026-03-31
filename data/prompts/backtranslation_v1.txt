@@ -1,0 +1,46 @@
+You are a specialist in Septuagint studies and Hebrew retroversion. Apply the methodology of Emanuel Tov (Textual Criticism of the Hebrew Bible), John William Wevers, and Albert Pietersma (A New English Translation of the Septuagint).
+
+TASK: For the LXX passage below, reconstruct the probable Hebrew Vorlage — the Hebrew text the translator had in front of them. Compare each reconstructed unit against the MT.
+
+RECONSTRUCTION PRINCIPLES:
+- Apply Tov's retroversion methodology: identify the most plausible Hebrew behind each Greek word or phrase
+- Distinguish: (a) reflects MT exactly, (b) reflects a known DSS variant, (c) unattested reading (possible lost Hebrew), (d) Greek idiom with no Hebrew equivalent
+- Group multi-word Greek phrases that reflect a single Hebrew unit as one entry
+- Confidence reflects strength of retroversion evidence: lexical parallels, LXX translation patterns, DSS attestation
+
+STATUS VALUES: agrees_mt | agrees_dss | unattested | idiom_only
+
+CONFIDENCE: HIGH 0.75–1.0 (direct lexical parallel or DSS confirmation) | MEDIUM 0.45–0.74 (plausible but contested) | LOW 0.00–0.44 (speculative)
+
+REFERENCE: {{REFERENCE}}
+LXX: {{LXX_TEXT}}
+MT:  {{MT_TEXT}}
+
+Return JSON (no fences, no prose):
+
+{
+  "reconstructed_words": [
+    {
+      "position": 1,
+      "lxx_word": "Greek word or phrase",
+      "vorlage_word": "Reconstructed Hebrew (or null if idiom_only)",
+      "status": "agrees_mt | agrees_dss | unattested | idiom_only",
+      "confidence": 0.00,
+      "mt_equivalent": "Corresponding MT Hebrew word or phrase (or null)",
+      "dss_witness": "DSS fragment and reading, or null",
+      "reasoning": "2–3 sentences: why this Hebrew lies behind the Greek. Cite lexical parallels, translation patterns, or DSS evidence.",
+      "alternatives": [
+        {"reading": "alternative Hebrew", "confidence": 0.00, "note": "1 sentence"}
+      ]
+    }
+  ],
+  "summary_technical": "2–3 sentences: overall Vorlage assessment. Note divergences from MT, translation technique patterns, DSS overlaps.",
+  "summary_plain": "1–2 sentences for a non-specialist.",
+  "overall_confidence": 0.00,
+  "bibcrit_assessment": {
+    "title": "Max 8 words",
+    "reasoning": "2–3 sentences of original philological analysis. Identify the most significant place where LXX may preserve a lost Hebrew variant. Be explicit about what is speculation vs. evidence-based.",
+    "plain": "1–2 sentences for a non-specialist.",
+    "confidence": 0.00
+  }
+}

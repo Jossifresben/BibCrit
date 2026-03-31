@@ -1,0 +1,362 @@
+{
+  "book": "Ezekiel",
+  "period_range": "6th century BCE – 11th century CE",
+  "archetype_description": "The original text of Ezekiel, composed during the Babylonian exile (593–571 BCE), underwent editorial expansion in the late exilic and early post-exilic periods, particularly in chapters 40–48. The proto-text was substantially unified by c. 450 BCE, though the transmission history reveals two major text-forms: a shorter Old Greek Vorlage and the longer proto-Masoretic tradition, diverging by approximately 4–5% in overall length. The degree of textual unity is relatively high compared to Jeremiah, but the LXX consistently represents a Vorlage roughly 4–6 chapters shorter than MT in cumulative divergences.",
+  "stemma_nodes": [
+    {
+      "id": "archetype",
+      "label": "Proto-Ezekiel",
+      "type": "archetype",
+      "date": "593–571 BCE",
+      "description": "Original prophetic oracles and early redactional layers composed during Ezekiel's exile in Babylon (Tel-abib)."
+    },
+    {
+      "id": "exilic-edition",
+      "label": "Exilic Edition",
+      "type": "intermediate",
+      "date": "c. 550–500 BCE",
+      "description": "First major redaction incorporating temple vision materials and chronological framework."
+    },
+    {
+      "id": "proto-hebrew",
+      "label": "Proto-Hebrew Bifurcation",
+      "type": "intermediate",
+      "date": "c. 450–400 BCE",
+      "description": "Common ancestor before divergence into shorter and longer Hebrew text-forms."
+    },
+    {
+      "id": "vorlage-lxx",
+      "label": "Old Greek Vorlage",
+      "type": "intermediate",
+      "date": "c. 400–250 BCE",
+      "description": "Shorter Hebrew text-form underlying the Old Greek translation, lacking numerous expansions present in proto-MT."
+    },
+    {
+      "id": "proto-mt",
+      "label": "Proto-Masoretic Text",
+      "type": "intermediate",
+      "date": "c. 400–100 BCE",
+      "description": "Longer Hebrew text-form with systematic expansions, doublets, and harmonizations, stabilized in Palestine."
+    },
+    {
+      "id": "og-ezekiel",
+      "label": "Old Greek Ezekiel",
+      "type": "intermediate",
+      "date": "c. 250–200 BCE",
+      "description": "Original Greek translation made in Egypt, representing the shorter Hebrew Vorlage with distinctive chapter order (omitting MT 36:23c–38)."
+    },
+    {
+      "id": "lxx",
+      "label": "LXX Ezekiel",
+      "type": "tradition",
+      "tradition": "LXX",
+      "date": "c. 200 BCE – 4th c. CE",
+      "full_name": "Septuagint (Old Greek and Recensions)",
+      "language": "Greek",
+      "description": "Greek textual tradition preserving the shorter text-form with significant recensional activity."
+    },
+    {
+      "id": "papyrus-967",
+      "label": "Papyrus 967",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "c. early 3rd c. CE",
+      "description": "Chester Beatty-Cologne papyrus preserving substantial portions of Ezekiel with distinctive chapter order (36–38 placed after 39)."
+    },
+    {
+      "id": "hexapla",
+      "label": "Hexapla",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "c. 240 CE",
+      "description": "Origen's recension systematically correcting Old Greek toward the proto-Rabbinic Hebrew text, with asterisked additions."
+    },
+    {
+      "id": "lucianic",
+      "label": "Lucianic Recension",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "c. 300 CE",
+      "description": "Antiochene recension with stylistic improvements and some readings closer to proto-MT."
+    },
+    {
+      "id": "dss-ezekiel",
+      "label": "DSS Ezekiel Fragments",
+      "type": "tradition",
+      "tradition": "DSS",
+      "date": "c. 50 BCE – 50 CE",
+      "full_name": "Dead Sea Scrolls: 11Q4, 4Q73–74, Mas1k",
+      "language": "Hebrew",
+      "description": "Limited fragments (11QEzek, 4QEzeka–b, MasEzek) aligning closely with proto-MT, but insufficient for independent stemmatic branch."
+    },
+    {
+      "id": "mt",
+      "label": "Masoretic Text",
+      "type": "tradition",
+      "tradition": "MT",
+      "date": "c. 100 CE – 10th c. CE",
+      "full_name": "Masoretic Text Tradition",
+      "language": "Hebrew",
+      "description": "Stabilized longer Hebrew text with systematic vocalization and Masorah preserving expansionist tradition."
+    },
+    {
+      "id": "codex-leningradensis",
+      "label": "Codex Leningradensis (L)",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "1008 CE",
+      "description": "Complete manuscript (Firkovich B19A) copied by Samuel ben Jacob in Cairo, base text for BHS and most modern editions."
+    },
+    {
+      "id": "aleppo-codex",
+      "label": "Aleppo Codex (A)",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "c. 920 CE",
+      "description": "Codex Aleppo missing the end of Ezekiel from 41:3 onward due to 1947 fire damage."
+    },
+    {
+      "id": "bhs",
+      "label": "BHS",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "1977",
+      "description": "Biblia Hebraica Stuttgartensia, diplomatic edition of Codex Leningradensis with critical apparatus."
+    },
+    {
+      "id": "bhq-ezekiel",
+      "label": "BHQ Ezekiel",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "2004",
+      "description": "Biblia Hebraica Quinta fascicle with extensive textual commentary by Lust, evaluating proto-MT and LXX divergences."
+    },
+    {
+      "id": "peshitta-vorlage",
+      "label": "Peshitta Hebrew Vorlage",
+      "type": "intermediate",
+      "date": "c. 200 BCE – 100 CE",
+      "description": "Hebrew text-form underlying Syriac translation, generally closer to proto-MT but with occasional Old Greek affinities."
+    },
+    {
+      "id": "peshitta",
+      "label": "Peshitta Ezekiel",
+      "type": "tradition",
+      "tradition": "Peshitta",
+      "date": "c. 2nd c. CE",
+      "full_name": "Syriac Peshitta",
+      "language": "Syriac",
+      "description": "Syriac translation possibly influenced by both Hebrew and Greek traditions, showing mixed textual affinities."
+    },
+    {
+      "id": "targum-vorlage",
+      "label": "Targum Hebrew Base",
+      "type": "intermediate",
+      "date": "c. 100 BCE – 200 CE",
+      "description": "Proto-Masoretic text-form serving as base for targum with expanded paraphrastic rendering."
+    },
+    {
+      "id": "targum-jonathan",
+      "label": "Targum Jonathan to Ezekiel",
+      "type": "tradition",
+      "tradition": "Targum",
+      "date": "c. 2nd–5th c. CE",
+      "full_name": "Targum of the Prophets (Jonathan)",
+      "language": "Aramaic",
+      "description": "Aramaic paraphrase with extensive haggadic expansions, based on proto-Masoretic text-form."
+    },
+    {
+      "id": "vulgate",
+      "label": "Vulgate Ezekiel",
+      "type": "tradition",
+      "tradition": "Vulgate",
+      "date": "c. 390–405 CE",
+      "full_name": "Jerome's Latin Vulgate",
+      "language": "Latin",
+      "description": "Jerome's translation from the Hebrew veritas (proto-Rabbinic text) with occasional consultation of Hexaplaric Greek."
+    },
+    {
+      "id": "codex-amiatinus",
+      "label": "Codex Amiatinus",
+      "type": "edition",
+      "tradition": "Vulgate",
+      "date": "c. 700 CE",
+      "description": "Earliest complete Vulgate manuscript, copied at Wearmouth-Jarrow, preserving high-quality text."
+    },
+    {
+      "id": "goettingen-ezekiel",
+      "label": "Göttingen LXX Ezekiel",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "1952 (Ziegler)",
+      "description": "Critical edition by Joseph Ziegler reconstructing Old Greek text from manuscript evidence and papyri."
+    },
+    {
+      "id": "nets-ezekiel",
+      "label": "NETS Ezekiel",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "2007",
+      "description": "New English Translation of the Septuagint, based on Göttingen edition, revealing shorter Greek text-form."
+    }
+  ],
+  "stemma_edges": [
+    {
+      "from": "archetype",
+      "to": "exilic-edition"
+    },
+    {
+      "from": "exilic-edition",
+      "to": "proto-hebrew"
+    },
+    {
+      "from": "proto-hebrew",
+      "to": "vorlage-lxx"
+    },
+    {
+      "from": "proto-hebrew",
+      "to": "proto-mt"
+    },
+    {
+      "from": "vorlage-lxx",
+      "to": "og-ezekiel"
+    },
+    {
+      "from": "og-ezekiel",
+      "to": "lxx"
+    },
+    {
+      "from": "lxx",
+      "to": "papyrus-967"
+    },
+    {
+      "from": "lxx",
+      "to": "hexapla"
+    },
+    {
+      "from": "lxx",
+      "to": "lucianic"
+    },
+    {
+      "from": "lxx",
+      "to": "goettingen-ezekiel"
+    },
+    {
+      "from": "goettingen-ezekiel",
+      "to": "nets-ezekiel"
+    },
+    {
+      "from": "proto-mt",
+      "to": "dss-ezekiel"
+    },
+    {
+      "from": "proto-mt",
+      "to": "mt"
+    },
+    {
+      "from": "mt",
+      "to": "codex-leningradensis"
+    },
+    {
+      "from": "mt",
+      "to": "aleppo-codex"
+    },
+    {
+      "from": "codex-leningradensis",
+      "to": "bhs"
+    },
+    {
+      "from": "bhs",
+      "to": "bhq-ezekiel"
+    },
+    {
+      "from": "proto-mt",
+      "to": "peshitta-vorlage"
+    },
+    {
+      "from": "peshitta-vorlage",
+      "to": "peshitta"
+    },
+    {
+      "from": "proto-mt",
+      "to": "targum-vorlage"
+    },
+    {
+      "from": "targum-vorlage",
+      "to": "targum-jonathan"
+    },
+    {
+      "from": "proto-mt",
+      "to": "vulgate"
+    },
+    {
+      "from": "vulgate",
+      "to": "codex-amiatinus"
+    }
+  ],
+  "key_divergences": [
+    {
+      "title": "MT Plus in Ezekiel 36:23c–38",
+      "passage": "Ezekiel 36:23c–38 (16 verses)",
+      "witnesses": [
+        "MT",
+        "LXX"
+      ],
+      "plain": "The Masoretic Text contains an entire passage of 16 verses (the valley of dry bones preamble and extended sanctuary vision) completely absent from the Old Greek, representing the single largest block of divergence in the book. This shows that the Hebrew text underlying the Greek translation was substantially shorter than what became the standard Jewish text.",
+      "technical": "MT 36:23c–38 is completely absent from Papyrus 967 and the Old Greek tradition, likely a late proto-Masoretic expansion integrating sanctuary theology; Lust, Ziegler, and Block identify this as secondary redaction post-dating the LXX Vorlage, with directional priority favoring the shorter Greek text."
+    },
+    {
+      "title": "Gog Oracles: Chapter Order Divergence",
+      "passage": "Ezekiel 36:23c–39:29",
+      "witnesses": [
+        "MT",
+        "Papyrus 967",
+        "LXX"
+      ],
+      "plain": "The Chester Beatty papyrus (our earliest witness) places the Gog oracles in a completely different order than all other manuscripts: chapters 37–39 appear after chapter 39 in modern numbering, suggesting the sequence of these apocalyptic visions was still fluid in the early transmission period.",
+      "technical": "Papyrus 967 transposes the Gog material to follow 39:29, creating the sequence 36:1–23b, 40–48, 37–39; Lust and Tov argue this may preserve the more original Old Greek arrangement before harmonization to the proto-MT sequence, though Ziegler's edition retains MT order."
+    },
+    {
+      "title": "MT Doublets and Expansions in Ezekiel 7",
+      "passage": "Ezekiel 7:3–9",
+      "witnesses": [
+        "MT",
+        "LXX"
+      ],
+      "plain": "The Hebrew text repeats the judgment oracle twice with nearly identical wording, while the Greek translation has it only once, showing that scribes copying the Hebrew version added repetitions for emphasis that weren't in the earlier text translated into Greek.",
+      "technical": "MT 7:3–4 and 7:8–9 constitute a doublet absent in Old Greek, with MT expansion characteristic of the systematizing tendency of the proto-Rabbinic text; Tov and Greenberg identify the LXX as preserving the earlier, non-repetitive form, with MT representing secondary liturgical amplification."
+    },
+    {
+      "title": "Temple Measurements: Cubit Standards Divergence",
+      "passage": "Ezekiel 40:5; 43:13",
+      "witnesses": [
+        "MT",
+        "LXX"
+      ],
+      "plain": "The two textual traditions use different measuring standards for the visionary temple—the Hebrew text specifies a 'long cubit' while the Greek just says 'cubit'—resulting in systematically different dimensions throughout the temple vision and affecting interpretations of the architecture.",
+      "technical": "MT specifies אַמָּה אַמָּה וָטֹפַח ('cubit and handbreadth,' i.e., long cubit = ~52 cm) while LXX reads πῆχυς (standard cubit = ~45 cm); Zimmerli and Greenberg note this reflects different metrological traditions, with MT preserving Second Temple-era Babylonian standard and LXX potentially reflecting Egyptian Ptolemaic practice."
+    },
+    {
+      "title": "MT Plus: Eschatological Material in Ezekiel 39",
+      "passage": "Ezekiel 39:21–29",
+      "witnesses": [
+        "MT",
+        "LXX"
+      ],
+      "plain": "The Masoretic Text includes an extended theological conclusion about God's glory and Israel's restoration that is significantly shorter in the Greek, suggesting this theological summary was expanded as later interpreters wanted to make the prophet's message more explicit.",
+      "technical": "MT 39:21–29 shows substantial expansion over Old Greek with additions emphasizing divine glory and permanent restoration; Lust identifies vv. 25–29 as particularly expansionist, harmonizing with Ezekiel 36 themes and representing proto-Masoretic theological systematization absent from the LXX Vorlage."
+    }
+  ],
+  "transmission_narrative": "Ezekiel's textual transmission reveals two major text-forms diverging by c. 400 BCE: a shorter Hebrew Vorlage underlying the Old Greek (translated c. 250–200 BCE in Egypt) and a longer proto-Masoretic tradition that underwent systematic expansion through doublets, harmonizations, and theological amplification. The discovery of Papyrus 967 (early 3rd c. CE) revolutionized Ezekiel studies by revealing an alternative chapter arrangement and confirming the substantial minus of MT 36:23c–38 in the Greek tradition, though debate continues whether this represents a shorter Vorlage or Greek abridgment. The Dead Sea Scrolls fragments (11QEzek, 4QEzeka–b, MasEzek) align with proto-MT but are too fragmentary to adjudicate the major divergences, while the Peshitta and Vulgate witness to the longer, stabilized proto-Rabbinic text. Ziegler's Göttingen edition (1952) and Lust's BHQ fascicle (2004) established methodological frameworks for evaluating the competing claims of the two text-forms, with growing consensus that the Old Greek preserves a genuinely earlier, shorter Hebrew text-form rather than representing systematic Greek abridgment.",
+  "transmission_plain": "The book of Ezekiel was written during the Babylonian exile (6th century BCE) and then copied in two different Hebrew versions: a shorter one that was translated into Greek around 250–200 BCE in Egypt, and a longer one that became the standard Jewish Hebrew text with many additions and repetitions. The discovery of a 3rd-century papyrus in Egypt showed that even the order of chapters was different in the early period, and that large sections found in today's Hebrew Bible were completely missing from the Greek version. Modern scholars now work to reconstruct what the original Hebrew text looked like by carefully comparing these two main ancient versions.",
+  "bibcrit_assessment": {
+    "title": "Two Distinct Hebrew Text-Forms Behind Ezekiel",
+    "plain": "Unlike most biblical books where the ancient Greek translation simply represents the Hebrew we have today, Ezekiel exists in two fundamentally different ancient Hebrew versions—one about 4-5% shorter than the other—revealing that the text was still being substantially edited and expanded even after it was translated into Greek in Egypt.",
+    "confidence": 0.78
+  },
+  "discovery_ready": true,
+  "reference": "Ezekiel",
+  "cached_at": "2026-03-31T11:24:49.072320",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

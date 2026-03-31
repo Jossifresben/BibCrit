@@ -1,0 +1,149 @@
+{
+  "book": "Job",
+  "translator_name": "Old Greek of Job (LXX Job)",
+  "translator_profile": {
+    "literalness": 0.25,
+    "anthropomorphism_reduction": 0.3,
+    "messianic_heightening": 0.15,
+    "harmonization": 0.2,
+    "paraphrase_rate": 0.85
+  },
+  "dimensions": [
+    {
+      "dimension": "literalness",
+      "score": 0.25,
+      "confidence": 0.95,
+      "summary": "The LXX Job translator exhibits one of the lowest literalness levels in the entire Septuagint corpus, freely abbreviating, restructuring, and omitting material. The translator demonstrates sophisticated Greek literary sensibility rather than formal equivalence to the Hebrew Vorlage. Approximately one-sixth of the MT Job material is absent in the OG, representing massive condensation rather than textual variation.",
+      "summary_plain": "This translator was extremely free with the Hebrew text, shortening it dramatically and rewriting passages in fluent Greek rather than following the Hebrew word order or vocabulary closely.",
+      "examples": [
+        {
+          "reference": "Job 6:14-15",
+          "mt_text": "לַמָּס מֵרֵעֵהוּ חָסֶד / 'To the despairing, kindness from his friend'",
+          "lxx_text": "ἔλεος παρὰ φίλου / 'mercy from a friend'",
+          "note": "The translator drastically condenses the Hebrew, omitting lammas ('to the despairing') and reducing the verse to its semantic core, demonstrating the characteristic brevity of LXX Job."
+        },
+        {
+          "reference": "Job 15:17-19",
+          "mt_text": "Extended wisdom discourse (3 verses in MT)",
+          "lxx_text": "Condensed to approximately 1.5 verses",
+          "note": "The translator freely abbreviates lengthy discourses, particularly wisdom material, showing no commitment to isomorphic representation but rather to producing readable Greek literature."
+        },
+        {
+          "reference": "Job 39:13-18",
+          "mt_text": "Six verses describing the ostrich",
+          "lxx_text": "Completely omitted in OG",
+          "note": "Entire pericopes are excised, demonstrating that this translator operated with an editorial rather than a strictly translational mandate, removing material deemed repetitive or obscure."
+        }
+      ]
+    },
+    {
+      "dimension": "anthropomorphism_reduction",
+      "score": 0.3,
+      "confidence": 0.65,
+      "summary": "While the translator shows some tendency to modify anthropomorphic divine language, this is inconsistent and not a dominant feature compared to other theological translations. The translator occasionally renders divine bodily references more abstractly but does not systematically eliminate them. The free paraphrastic approach often obscures whether changes reflect theological motivation or stylistic preference.",
+      "summary_plain": "The translator sometimes softens language about God having human-like body parts or emotions, but this wasn't a major concern and happens irregularly throughout the book.",
+      "examples": [
+        {
+          "reference": "Job 13:9",
+          "mt_text": "הַכְּהָתֵל בֶּאֱנוֹשׁ תְּהָתְלוּ בוֹ / 'As one deceives a man, will you deceive him?'",
+          "lxx_text": "εἰ δὲ καὶ πάντα ἐρευνῶντες ποιήσετε / 'But if also searching all things you shall do'",
+          "note": "The reference to potentially deceiving God is completely transformed into a different concept, possibly reflecting theological discomfort with the anthropopathism."
+        },
+        {
+          "reference": "Job 10:4",
+          "mt_text": "הַעֵינֵי בָשָׂר לָךְ / 'Do you have eyes of flesh?'",
+          "lxx_text": "ἢ καθὰ βλέπει βροτός / 'or as a mortal sees'",
+          "note": "The direct reference to God having 'eyes of flesh' is softened to a comparative statement about divine perception versus human seeing."
+        },
+        {
+          "reference": "Job 9:13",
+          "mt_text": "אֱלוֹהַ לֹא־יָשִׁיב אַפּוֹ / 'God does not turn back his anger'",
+          "lxx_text": "ὁ γὰρ ὀργὴν ἄτρεπτος / 'for his anger is unchangeable'",
+          "note": "Divine anger is retained but the anthropomorphic action ('turn back') is rendered as an abstract quality ('unchangeable'), showing mild theological refinement."
+        }
+      ]
+    },
+    {
+      "dimension": "messianic_heightening",
+      "score": 0.15,
+      "confidence": 0.5,
+      "summary": "LXX Job shows minimal messianic amplification, which is unsurprising given the book's wisdom genre and dialogical structure. The translator does not systematically introduce eschatological or christological themes into the text. The most notable instance is Job 19:25-27, where some scholars detect potential messianic nuancing, though this remains highly debated.",
+      "summary_plain": "Unlike some other Septuagint books, the Job translator rarely if ever tried to make passages sound more messianic or point toward a future deliverer.",
+      "examples": [
+        {
+          "reference": "Job 19:25",
+          "mt_text": "וְאַחֲרוֹן עַל־עָפָר יָקוּם / 'and at last he will stand upon the dust'",
+          "lxx_text": "ἀέναος ἐστιν ὃν μέλλει ἐπὶ γῆς ἀνιστάναι / 'eternal is the one who is about to raise up upon earth'",
+          "note": "The term ἀέναος ('eternal') potentially heightens the redeemer figure's significance, though the overall context remains focused on Job's personal vindication rather than messianic expectation."
+        },
+        {
+          "reference": "Job 42:17",
+          "mt_text": "Ends with Job's death",
+          "lxx_text": "γέγραπται δὲ αὐτὸν πάλιν ἀναστήσεσθαι / 'but it is written that he will rise again'",
+          "note": "The LXX addition references resurrection, though this appears more concerned with general afterlife hope than specifically messianic theology, and may derive from the supplementary Greek epilogue tradition."
+        }
+      ]
+    },
+    {
+      "dimension": "harmonization",
+      "score": 0.2,
+      "confidence": 0.55,
+      "summary": "The translator shows limited concern for harmonizing Job with other biblical texts or resolving internal contradictions within the book. The free paraphrastic approach actually introduces new tensions rather than smoothing existing ones. There is minimal evidence of systematic cross-referencing with Torah, Prophets, or other wisdom literature.",
+      "summary_plain": "This translator didn't try to make Job's language match other parts of the Bible or resolve apparent contradictions within the book itself.",
+      "examples": [
+        {
+          "reference": "Job 1:6",
+          "mt_text": "בְּנֵי הָאֱלֹהִים / 'sons of God'",
+          "lxx_text": "οἱ ἄγγελοι τοῦ θεοῦ / 'the angels of God'",
+          "note": "This rendering aligns with common Greek interpretation of the divine council as angelic, potentially harmonizing with later Jewish angelology, though this may reflect the translator's own conceptual framework rather than deliberate harmonization."
+        },
+        {
+          "reference": "Job 28:28",
+          "mt_text": "הֵן יִרְאַת אֲדֹנָי הִיא חָכְמָה / 'Behold, the fear of the Lord, that is wisdom'",
+          "lxx_text": "ἰδοὺ ἡ θεοσέβεια ἐστὶν σοφία / 'behold, piety is wisdom'",
+          "note": "While θεοσέβεια could echo wisdom theology found elsewhere, the translator does not systematically harmonize Job's wisdom vocabulary with Proverbs or other sapiential texts."
+        }
+      ]
+    },
+    {
+      "dimension": "paraphrase_rate",
+      "score": 0.85,
+      "confidence": 0.95,
+      "summary": "LXX Job demonstrates the highest paraphrase rate in the Septuagint, with systematic abbreviation, restructuring, and free rendering. The translator functions more as an epitomizer and literary adapter than a formal translator, producing Greek that reads naturally but often diverges substantially from the Hebrew semantics and structure. Scholarly consensus identifies this as the most freely translated book of the LXX corpus.",
+      "summary_plain": "This is the most freely translated book in the entire Septuagint. The translator constantly rewrote, shortened, and restructured the Hebrew, creating readable Greek literature rather than a close translation.",
+      "examples": [
+        {
+          "reference": "Job 3:3-10",
+          "mt_text": "Eight verses of Job's curse upon his birth",
+          "lxx_text": "Condensed to approximately five verses with significant restructuring",
+          "note": "The translator freely reorganizes poetic material, combining lines, omitting repetitions, and recasting imagery to suit Greek literary aesthetics rather than preserving Hebrew parallelism."
+        },
+        {
+          "reference": "Job 26:5-14",
+          "mt_text": "Extended cosmic imagery across ten verses",
+          "lxx_text": "Drastically abbreviated and simplified",
+          "note": "Complex Hebrew cosmological poetry is reduced to simpler Greek statements, demonstrating the translator's willingness to sacrifice poetic density for clarity and brevity."
+        },
+        {
+          "reference": "Job 40:15-24",
+          "mt_text": "Behemoth description (10 verses)",
+          "lxx_text": "Significantly condensed with altered imagery",
+          "note": "The translator freely paraphrases difficult descriptive passages, replacing obscure Hebrew zoological details with generalized Greek descriptions, prioritizing comprehensibility over formal correspondence."
+        }
+      ]
+    }
+  ],
+  "overall_assessment": "The LXX Job translator represents the most extreme case of free translation in the Septuagint corpus, operating with editorial license to abbreviate the Hebrew Vorlage by approximately one-sixth while producing sophisticated Greek prose. This translator demonstrates high literary competence in Greek but minimal commitment to formal equivalence, making LXX Job particularly challenging for text-critical reconstruction of the Hebrew. The work reflects Hellenistic literary values prioritizing clarity, brevity, and readability over preserving the complex poetic texture of the Hebrew, suggesting a translator who viewed the task as cultural and literary adaptation rather than preservation.",
+  "overall_plain": "The Job translator was more of an editor and rewriter than a traditional translator. This person drastically shortened the Hebrew book, rewrote difficult passages in clear Greek, and cared more about producing readable Greek literature than preserving every detail of the original. The result is one-sixth shorter than the Hebrew and reads very differently.",
+  "bibcrit_assessment": {
+    "title": "Extreme Abbreviation Renders LXX Job Text-Critically Problematic",
+    "reasoning": "The systematic abbreviation and free paraphrase in LXX Job means that its minuses cannot be straightforwardly attributed to a shorter Hebrew Vorlage. The translator's demonstrated willingness to omit material for stylistic reasons severely limits the value of LXX Job for reconstructing an earlier Hebrew text-form. Text critics must exercise extreme caution when using LXX Job evidence, as apparent variants often reflect translation technique rather than textual difference.",
+    "plain": "Because this translator so freely shortened and rewrote the text, we cannot use the shorter Greek version as evidence that the translator's Hebrew text was also shorter. Most differences are translation choices, not textual variants.",
+    "confidence": 0.9
+  },
+  "discovery_ready": false,
+  "reference": "Job",
+  "cached_at": "2026-03-30T21:39:18.020195",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

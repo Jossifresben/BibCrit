@@ -1,0 +1,102 @@
+{
+  "divergences": [
+    {
+      "mt_word": "בְּרֵאשִׁית (in beginning)",
+      "lxx_word": "Ἐν ἀρχῇ (in beginning)",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.85,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.85,
+          "explanation": "The LXX renders the Hebrew construct state with prepositional phrase, a standard Greek idiom for temporal expression. Both convey absolute beginning."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Wevers (1993) p.1",
+        "Tov (2001) p.238"
+      ],
+      "analysis_technical": "The anarthrous בְּרֵאשִׁית is translated with articular Ἐν ἀρχῇ, reflecting Greek preference for definite article in abstract temporal expressions. Wevers notes this is standard LXX practice for construct chains. The rendering preserves semantic equivalence despite syntactic shift from construct to prepositional phrase.",
+      "analysis_plain": "The Hebrew uses a special form showing relationship between words, while Greek uses a preposition with article. Both mean 'in the beginning' but follow each language's natural grammar."
+    },
+    {
+      "mt_word": "בָּרָא (created)",
+      "lxx_word": "ἐποίησεν (made)",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.7,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.7,
+          "explanation": "The technical Hebrew term ברא (divine creation ex nihilo) is rendered with the more common Greek ποιέω (make), likely reflecting Hellenistic vocabulary norms rather than theological revision."
+        },
+        {
+          "type": "theological_tendency",
+          "confidence": 0.3,
+          "explanation": "Possibly avoids implying material creation from nothing, aligning with some Greek philosophical assumptions about matter's eternity, though this is debated."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Pietersma (2006) p.53",
+        "Rösel (2006) p.67"
+      ],
+      "analysis_technical": "The lexical choice of ποιέω over κτίζω for ברא has generated debate. Pietersma argues the LXX translator preferred common Koine vocabulary over technical terms. Rösel suggests subtle philosophical accommodation. The verb ברא appears 54 times in MT; LXX uses ποιέω predominantly but κτίζω occasionally, suggesting stylistic rather than systematic theological revision.",
+      "analysis_plain": "Hebrew uses a special word reserved for God's creative power, but Greek uses the everyday word 'make.' This may reflect normal translation choices or possibly show Greek philosophical influence about creation."
+    },
+    {
+      "mt_word": "אֵת (definite object marker)",
+      "lxx_word": "τὸν (the, accusative article)",
+      "divergence_type": "grammatical_shift",
+      "confidence": 0.9,
+      "hypotheses": [
+        {
+          "type": "grammatical_shift",
+          "confidence": 0.9,
+          "explanation": "The Hebrew particle אֵת marks definite direct objects but has no semantic content; Greek uses accusative article for definiteness, standard syntactic mapping."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Tov (2001) p.27",
+        "Joüon-Muraoka (2006) §125"
+      ],
+      "analysis_technical": "The nota accusativi אֵת is a purely syntactic marker in Hebrew with no lexical meaning, consistently rendered by LXX translators through Greek case system and articles. Tov categorizes this as 'obligatory transformation' in translation. The double occurrence (אֵת הַשָּׁמַיִם וְאֵת הָאָרֶץ) becomes τὸν οὐρανὸν καὶ τὴν γῆν with articles distributed appropriately by gender and case.",
+      "analysis_plain": "Hebrew has a little word that signals the direct object but doesn't mean anything itself. Greek doesn't have this, so translators just use the normal Greek article 'the' in the accusative case."
+    },
+    {
+      "mt_word": "הַשָּׁמַיִם (the heavens, plural)",
+      "lxx_word": "τὸν οὐρανόν (the heaven, singular)",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.8,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.8,
+          "explanation": "Hebrew uses dual/plural שָׁמַיִם idiomatically for sky/heaven; Greek prefers singular οὐρανός in cosmological contexts, though plural also exists in Greek."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Wevers (1993) p.2",
+        "HALOT (2001) s.v. שָׁמַיִם"
+      ],
+      "analysis_technical": "The Hebrew plural שָׁמַיִם is a standard lexeme (possibly original dual) for sky/firmament, consistently used in plural form. Wevers notes LXX Genesis alternates between singular and plural οὐρανός depending on context, with singular preferred for cosmic/creation contexts and plural for meteorological. This reflects Greek cosmological vocabulary conventions rather than different Vorlage.",
+      "analysis_plain": "Hebrew always uses the plural 'heavens' but Greek often switches to singular 'heaven' in grand cosmic statements. Both languages are just following their own natural way of talking about the sky and cosmos."
+    }
+  ],
+  "summary_technical": "Genesis 1:1 exhibits standard translation technique with no textual variants: syntactic adjustments (construct to prepositional phrase, particle to article), lexical idiom (ברא to ποιέω, plural to singular heaven), all consistent with LXX translator's Koine Greek norms.",
+  "summary_plain": "The Greek translation follows normal ancient translation practices, adjusting Hebrew grammar to natural Greek while keeping the same essential meaning.",
+  "bibcrit_hypothesis": {
+    "title": "ποιέω as Pre-Platonic Creation Vocabulary",
+    "reasoning": "The choice of ποιέω over κτίζω may reflect not philosophical accommodation but rather the chronological priority of the Pentateuch translation (mid-3rd century BCE) before κτίζω became standard Jewish-Greek creation terminology. Early LXX translators lacked an established technical vocabulary for divine creation in Greek, using the available common verb. Later translators and revisers sometimes updated to κτίζω, evidencing evolving Jewish-Greek theological lexicon.",
+    "plain": "The word choice might simply show that when Genesis was first translated into Greek, there wasn't yet a special Jewish vocabulary for 'divine creation,' so translators used everyday language that later generations refined.",
+    "confidence": 0.55
+  },
+  "discovery_ready": false,
+  "reference": "Genesis 1:1",
+  "cached_at": "2026-03-30T17:58:28.816520",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v2"
+}

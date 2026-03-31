@@ -1,0 +1,87 @@
+{
+  "reference": "Psalm 22:17",
+  "dss_manuscripts": [
+    {
+      "siglum": "4QPsª (4Q83)",
+      "full_name": "4QPsalmsa",
+      "verse_present": false,
+      "dss_text": "",
+      "alignment": "absent",
+      "alignment_confidence": 0.0,
+      "divergences": [],
+      "overall_note": "4QPsª preserves portions of Psalms 5, 6, 9, 14, 18, 27, and 31, but does not contain material from Psalm 22. The manuscript cannot contribute to the textual history of this passage."
+    },
+    {
+      "siglum": "4QPsᵇ (4Q84)",
+      "full_name": "4QPsalmsb",
+      "verse_present": false,
+      "dss_text": "",
+      "alignment": "absent",
+      "alignment_confidence": 0.0,
+      "divergences": [],
+      "overall_note": "4QPsᵇ contains fragments from Psalms 91, 92, 94, 95, 96, 98, and 100, but Psalm 22 is not represented in the extant portions of this manuscript."
+    },
+    {
+      "siglum": "4QPsᶜ (4Q85)",
+      "full_name": "4QPsalmsc",
+      "verse_present": false,
+      "dss_text": "",
+      "alignment": "absent",
+      "alignment_confidence": 0.0,
+      "divergences": [],
+      "overall_note": "4QPsᶜ preserves fragments from Psalms 5, 6, and 69, but does not include text from Psalm 22. This manuscript offers no witness to the verse under examination."
+    },
+    {
+      "siglum": "4QPsᶠ (4Q88)",
+      "full_name": "4QPsalmsf",
+      "verse_present": false,
+      "dss_text": "",
+      "alignment": "absent",
+      "alignment_confidence": 0.0,
+      "divergences": [],
+      "overall_note": "4QPsᶠ contains fragments from Psalms 107, 109, and portions of the 140s, but Psalm 22 is not extant. The manuscript provides no data for this verse."
+    },
+    {
+      "siglum": "11QPsª (11Q5)",
+      "full_name": "11QPsalmsa (Great Psalms Scroll)",
+      "verse_present": false,
+      "dss_text": "",
+      "alignment": "absent",
+      "alignment_confidence": 0.0,
+      "divergences": [],
+      "overall_note": "11QPsª is the largest Psalms scroll from Qumran, but it begins with Psalm 101 and follows a non-Masoretic arrangement. Psalm 22 is not included in this manuscript, which represents a liturgical collection rather than a continuous Psalter."
+    },
+    {
+      "siglum": "5/6ḤevPs",
+      "full_name": "Naḥal Ḥever Psalms Scroll",
+      "verse_present": true,
+      "dss_text": "כי סבבוני כלבים עדת מרעים הקיפוני כארי ידי ורגלי",
+      "alignment": "sides_with_mt",
+      "alignment_confidence": 0.85,
+      "divergences": [
+        {
+          "word_position": 7,
+          "mt_reading": "כָּאֲרִי",
+          "lxx_reading": "ὤρυξαν (ōryxan, 'they dug/pierced')",
+          "dss_reading": "כארי",
+          "classification": "lexical",
+          "textual_implication": "5/6ḤevPs clearly supports the MT reading 'like a lion' (כָּאֲרִי) against the LXX's 'they pierced,' which presumes a Hebrew Vorlage reading כָּאֲרוּ. This is crucial evidence for the proto-MT tradition in one of the most debated textual variants in the Hebrew Bible, with significant christological implications for early Christian interpretation."
+        }
+      ],
+      "overall_note": "This scroll from Naḥal Ḥever, dating to the early second century CE, is particularly valuable because it clearly attests כארי ('like a lion') rather than a verb form meaning 'pierced.' The manuscript follows the proto-MT tradition closely and predates the standardization of the consonantal text, providing independent second-temple period evidence for the 'lion' reading. Its agreement with MT against LXX demonstrates that the 'pierced' reading in Greek reflects either a different Hebrew Vorlage or interpretive translation."
+    }
+  ],
+  "synthesis": "The critical text-critical issue in Psalm 22:17 concerns the disputed word rendered 'like a lion' (כָּאֲרִי) in MT versus 'they pierced' (ὤρυξαν) in LXX. The Naḥal Ḥever Psalms scroll (5/6ḤevPs), dating to the early second century CE, unambiguously supports the MT reading כארי, providing crucial pre-Masoretic manuscript evidence for the 'lion' tradition. No Qumran Psalms manuscripts preserve this verse, leaving 5/6ḤevPs as the sole Dead Sea Scrolls witness. The alignment with proto-MT demonstrates that this reading circulated in Second Temple Judaism independently of later rabbinic standardization, though the LXX's 'pierced' reading indicates either a variant Hebrew tradition (כָּאֲרוּ) or interpretive rendering was also known in the Hellenistic period.",
+  "synthesis_plain": "The Dead Sea Scrolls provide one witness to this controversial verse through the Naḥal Ḥever Psalms scroll, which clearly reads 'like a lion' matching the traditional Hebrew Bible, not 'pierced' as the ancient Greek translation has it. This confirms that the 'lion' reading existed in ancient Hebrew manuscripts before the medieval period, though it doesn't settle whether an alternative 'pierced' reading also circulated in Hebrew.",
+  "textual_history_implication": "The 5/6ḤevPs manuscript demonstrates that the MT reading 'like a lion' represents an authentic Second Temple textual tradition, not a later rabbinic alteration. However, the LXX's rendering 'they pierced' cannot be dismissed as mere interpretation—it likely reflects either a genuine Hebrew variant (כארו) that circulated in pre-Christian Egypt or an early theological reading. The textual plurality evident here suggests that both traditions may have ancient Hebrew roots, with the 'lion' reading better attested in Palestine and the 'pierced' reading perhaps preserved in Alexandrian Jewish circles. The debate over whether the original text read כארי or כארו remains unresolved by DSS evidence, but 5/6ḤevPs confirms the antiquity and authenticity of the proto-MT tradition.",
+  "bibcrit_assessment": {
+    "title": "Naḥal Ḥever Confirms MT 'Lion' Reading, LXX Unexplained",
+    "reasoning": "The most significant finding is that 5/6ḤevPs provides unambiguous Second Temple evidence for כארי ('like a lion'), decisively refuting theories that this reading resulted from medieval scribal error or anti-Christian polemic. However, this does not explain the LXX's 'pierced'—either a Hebrew Vorlage כארו genuinely circulated (now lost except in Greek translation), or the LXX represents early messianic/theological interpretation. The DSS evidence shifts the burden of proof: scholars must now explain how the LXX arrived at 'pierced' if the Palestinian Hebrew tradition consistently read 'lion.'",
+    "plain": "The Dead Sea Scrolls prove that 'like a lion' was the authentic ancient Hebrew reading in Palestine, but they don't explain why the Greek translation has 'pierced.' Either there was a second Hebrew version now lost, or the Greek translators interpreted the text messianically.",
+    "confidence": 0.85
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-03-31T08:32:24.605643",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

@@ -1,0 +1,62 @@
+You are a specialist in Dead Sea Scrolls textual criticism with deep expertise in the biblical scrolls from Qumran, applying the methodology of Emanuel Tov (Textual Criticism of the Hebrew Bible) and Eugene Ulrich (The Dead Sea Scrolls and the Origins of the Bible).
+
+TASK: Compare the passage {{REFERENCE}} across MT, LXX, and relevant Dead Sea Scrolls manuscripts. For each DSS manuscript that covers this passage, assess how it aligns with or diverges from the proto-MT and proto-LXX traditions.
+
+ALIGNMENT CLASSIFICATIONS (use exactly):
+- sides_with_mt     — DSS reading agrees with the Masoretic tradition
+- sides_with_lxx    — DSS reading supports the LXX Vorlage (different from MT)
+- independent       — DSS preserves a reading not found in MT or LXX
+- absent            — This passage is not extant in this manuscript
+
+DIVERGENCE CLASSIFICATION TYPES (use exactly):
+- orthographic       — Spelling/plene variants with no semantic difference
+- morphological      — Different grammatical form, same meaning
+- lexical            — Different word choice, significant for textual history
+- syntactic          — Different word order or clause structure
+- plus               — DSS adds material not in MT or LXX
+- minus              — DSS omits material present in MT or LXX
+- theological        — Variant likely motivated by theological considerations
+
+CONFIDENCE: HIGH 0.75–1.0 (extant text clearly legible, scholarly consensus) | MEDIUM 0.45–0.74 (partially preserved or debated) | LOW 0.00–0.44 (highly fragmentary or speculative)
+
+REFERENCE: {{REFERENCE}}
+MT TEXT: {{MT_TEXT}}
+LXX TEXT: {{LXX_TEXT}}
+
+For manuscripts where the verse is NOT extant, set verse_present to false and leave dss_text empty. Do not fabricate readings. If a major scroll (1QIsa-a, 4QSam-a, 4QJer-b, etc.) is relevant to this passage, include it even if only partially preserved.
+
+Return JSON (no fences, no prose):
+
+{
+  "reference": "Passage reference",
+  "dss_manuscripts": [
+    {
+      "siglum": "1QIsa-a",
+      "full_name": "Great Isaiah Scroll",
+      "verse_present": true,
+      "dss_text": "Transcription of DSS reading (transliterated or Hebrew script)",
+      "alignment": "sides_with_mt | sides_with_lxx | independent | absent",
+      "alignment_confidence": 0.00,
+      "divergences": [
+        {
+          "word_position": 1,
+          "mt_reading": "MT word or phrase",
+          "lxx_reading": "LXX equivalent or null",
+          "dss_reading": "DSS word or phrase",
+          "classification": "orthographic | morphological | lexical | syntactic | plus | minus | theological",
+          "textual_implication": "1–2 sentences on what this variant means for the history of the text"
+        }
+      ],
+      "overall_note": "2–3 sentences: what does this manuscript witness tell us about this passage's textual history?"
+    }
+  ],
+  "synthesis": "3–4 sentences: technical synthesis of what the DSS witnesses collectively reveal about this passage — which tradition they support, what independent readings they preserve, and implications for the text's transmission history.",
+  "synthesis_plain": "2–3 sentences for a non-specialist: what do the Dead Sea Scrolls tell us about this passage in plain terms?",
+  "textual_history_implication": "2–3 sentences: broader implication for understanding how this passage was transmitted and which text form is likely earliest.",
+  "bibcrit_assessment": {
+    "title": "Max 8 words capturing the most striking DSS finding",
+    "reasoning": "2–3 sentences of original analysis. What is the single most significant text-critical insight from the DSS evidence for this passage?",
+    "plain": "1–2 sentences for a non-specialist.",
+    "confidence": 0.00
+  }
+}

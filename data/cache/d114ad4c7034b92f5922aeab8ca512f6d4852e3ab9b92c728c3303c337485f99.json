@@ -1,0 +1,185 @@
+{
+  "reconstructed_words": [
+    {
+      "position": 1,
+      "lxx_word": "χαῖρε σφόδρα",
+      "vorlage_word": "גִּילִי מְאֹד",
+      "status": "agrees_mt",
+      "confidence": 0.95,
+      "mt_equivalent": "גִּילִי מְאֹד",
+      "dss_witness": null,
+      "reasoning": "The imperative χαῖρε regularly renders Hebrew גִּילִי (rejoice) in prophetic texts, and σφόδρα is the standard LXX equivalent for מְאֹד (exceedingly). This pairing appears throughout the Psalms and Prophets with high consistency. The translator follows the MT Vorlage precisely here.",
+      "alternatives": []
+    },
+    {
+      "position": 2,
+      "lxx_word": "θύγατερ Σιων",
+      "vorlage_word": "בַּת צִיּוֹן",
+      "status": "agrees_mt",
+      "confidence": 0.98,
+      "mt_equivalent": "בַּת צִיּוֹן",
+      "dss_witness": null,
+      "reasoning": "θυγάτηρ Σιων is the fixed LXX rendering of בַּת צִיּוֹן throughout prophetic literature (Isa 1:8, 10:32, 16:1, 52:2, 62:11; Jer 4:31, 6:2, 6:23; Lam 1:6, 2:1, 2:4, 2:8, 2:10, 2:13, 2:18, 4:22; Mic 1:13, 4:8, 4:10, 4:13; Zeph 3:14; Zech 2:10, 9:9). This is a formulaic phrase with absolute lexical correspondence.",
+      "alternatives": []
+    },
+    {
+      "position": 3,
+      "lxx_word": "κήρυσσε",
+      "vorlage_word": "צַהֲלִי or הָרִיעִי",
+      "status": "unattested",
+      "confidence": 0.55,
+      "mt_equivalent": "הָרִיעִי",
+      "dss_witness": null,
+      "reasoning": "The MT has הָרִיעִי (shout, sound a war cry). However, κήρυσσε (proclaim, herald) typically translates קָרָא or נָגַד, not רוּעַ. The translator may have read צַהֲלִי (cry out joyfully) or interpreted הָרִיעִי as a public proclamation rather than cultic shouting. Alternatively, this reflects inner-Greek stylistic choice to vary the parallel verb, though a different Hebrew root remains plausible.",
+      "alternatives": [
+        {
+          "reading": "הָרִיעִי",
+          "confidence": 0.4,
+          "note": "MT reading reinterpreted as public proclamation rather than cultic shout"
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "lxx_word": "θύγατερ Ἰερουσαλήμ",
+      "vorlage_word": "בַּת יְרוּשָׁלִַם",
+      "status": "agrees_mt",
+      "confidence": 0.98,
+      "mt_equivalent": "בַּת יְרוּשָׁלִַם",
+      "dss_witness": null,
+      "reasoning": "θυγάτηρ Ἰερουσαλήμ is the consistent LXX rendering of בַּת יְרוּשָׁלִַם across all prophetic books (2 Kings 19:21; Isa 37:22; Jer 6:23; Lam 2:13, 2:15; Mic 1:13, 4:8; Zeph 3:14; Zech 9:9). This formulaic phrase shows complete lexical agreement with MT.",
+      "alternatives": []
+    },
+    {
+      "position": 5,
+      "lxx_word": "ἰδοὺ",
+      "vorlage_word": "הִנֵּה",
+      "status": "agrees_mt",
+      "confidence": 0.99,
+      "mt_equivalent": "הִנֵּה",
+      "dss_witness": null,
+      "reasoning": "ἰδού is the automatic LXX equivalent of הִנֵּה (behold) with near-absolute consistency across all biblical books. This is one of the most stable lexical correspondences in the entire Septuagint corpus. No variant reading is plausible.",
+      "alternatives": []
+    },
+    {
+      "position": 6,
+      "lxx_word": "ὁ βασιλεύς σου",
+      "vorlage_word": "מַלְכֵּךְ",
+      "status": "agrees_mt",
+      "confidence": 0.97,
+      "mt_equivalent": "מַלְכֵּךְ",
+      "dss_witness": null,
+      "reasoning": "ὁ βασιλεύς with pronominal suffix consistently renders מֶלֶךְ + suffix throughout the LXX. The article ὁ reflects Greek idiom with possessed nouns and does not indicate a Hebrew article. The second person singular suffix matches MT precisely.",
+      "alternatives": []
+    },
+    {
+      "position": 7,
+      "lxx_word": "ἔρχεταί σοι",
+      "vorlage_word": "יָבוֹא לָךְ",
+      "status": "agrees_mt",
+      "confidence": 0.96,
+      "mt_equivalent": "יָבוֹא לָךְ",
+      "dss_witness": null,
+      "reasoning": "ἔρχομαι with dative pronoun is the standard rendering of בּוֹא + לְ in the LXX. The present tense ἔρχεται represents the Hebrew imperfect יָבוֹא, following normal LXX practice of using present for imminent future actions. The dative σοι precisely renders לָךְ.",
+      "alternatives": []
+    },
+    {
+      "position": 8,
+      "lxx_word": "δίκαιος",
+      "vorlage_word": "צַדִּיק",
+      "status": "agrees_mt",
+      "confidence": 0.98,
+      "mt_equivalent": "צַדִּיק",
+      "dss_witness": null,
+      "reasoning": "δίκαιος is the universal LXX equivalent for צַדִּיק (righteous), appearing hundreds of times with this correspondence in Psalms, Prophets, and Wisdom literature. This is one of the most stable theological terms in LXX translation technique. No variant is conceivable.",
+      "alternatives": []
+    },
+    {
+      "position": 9,
+      "lxx_word": "καὶ σῴζων αὐτός",
+      "vorlage_word": "וְנוֹשָׁע הוּא",
+      "status": "unattested",
+      "confidence": 0.68,
+      "mt_equivalent": "וְנוֹשָׁע הוּא",
+      "dss_witness": null,
+      "reasoning": "The MT has וְנוֹשָׁע (Niphal participle, 'being saved/delivered'), indicating a passive state. The LXX καὶ σῴζων (active present participle 'saving') reflects either וּמוֹשִׁיעַ (Hiphil active 'saving') or a reinterpretation of the passive as active. Given messianic context, the translator may have had וּמוֹשִׁיעַ or deliberately rendered the king as savior rather than saved, reflecting theological exegesis or a variant Vorlage.",
+      "alternatives": [
+        {
+          "reading": "וְנוֹשָׁע",
+          "confidence": 0.3,
+          "note": "MT reading reinterpreted as active for messianic-theological reasons"
+        }
+      ]
+    },
+    {
+      "position": 10,
+      "lxx_word": "πραΰς",
+      "vorlage_word": "עָנִי",
+      "status": "agrees_mt",
+      "confidence": 0.85,
+      "mt_equivalent": "עָנִי",
+      "dss_witness": null,
+      "reasoning": "The MT has עָנִי (afflicted, humble, poor). πραΰς (gentle, meek) is attested as a LXX rendering of עָנִי in contexts emphasizing humility rather than poverty (Ps 34:3, 37:11; Isa 11:4, 29:19). The translator selected the 'meek' semantic range of עָנִי rather than 'afflicted,' consistent with royal messianic portrait. This is interpretive translation within the semantic field of the Hebrew.",
+      "alternatives": [
+        {
+          "reading": "עָנָו",
+          "confidence": 0.6,
+          "note": "Alternative form of same root, more explicitly 'humble/meek' rather than 'afflicted'"
+        }
+      ]
+    },
+    {
+      "position": 11,
+      "lxx_word": "καὶ ἐπιβεβηκὼς",
+      "vorlage_word": "וְרֹכֵב",
+      "status": "agrees_mt",
+      "confidence": 0.94,
+      "mt_equivalent": "וְרֹכֵב",
+      "dss_witness": null,
+      "reasoning": "ἐπιβαίνω with perfect participle regularly translates רָכַב (ride) in the LXX, especially with ἐπί + accusative of the animal. The perfect participle ἐπιβεβηκώς represents the Hebrew participle רֹכֵב, indicating continuous or characteristic action. This is standard translation equivalence.",
+      "alternatives": []
+    },
+    {
+      "position": 12,
+      "lxx_word": "ἐπὶ ὑποζύγιον",
+      "vorlage_word": "עַל חֲמוֹר",
+      "status": "agrees_mt",
+      "confidence": 0.92,
+      "mt_equivalent": "עַל חֲמוֹר",
+      "dss_witness": null,
+      "reasoning": "ὑποζύγιον (beast of burden, donkey) is the standard LXX rendering of חֲמוֹר throughout the Pentateuch and Historical Books (Gen 22:3, 5; 42:26, 27; 43:18, 24; 44:3, 13; 45:23; Ex 4:20; 13:13; 20:17; 21:33; 22:3, 8, 9; 23:4, 5, 12; Num 16:15; 22:21–33; Deut 5:14, 21; 22:3, 4, 10; Josh 15:18; Judg 1:14; 19:3, 10, 19, 21, 28). The preposition ἐπί + accusative matches עַל precisely.",
+      "alternatives": []
+    },
+    {
+      "position": 13,
+      "lxx_word": "καὶ πῶλον νέον",
+      "vorlage_word": "וְעַל עַיִר בֶּן אֲתֹנוֹת",
+      "status": "unattested",
+      "confidence": 0.72,
+      "mt_equivalent": "וְעַל עַיִר בֶּן אֲתֹנוֹת",
+      "dss_witness": null,
+      "reasoning": "The MT has וְעַל עַיִר בֶּן אֲתֹנוֹת ('and upon a colt, the son of she-asses'), a hendiadys specifying a young male donkey. The LXX omits the second עַל and renders with καὶ πῶλον νέον (accusative, coordinated with ὑποζύγιον). This could reflect a Vorlage without the second עַל, reading וְעַיִר חָדָשׁ or וְעַיִר צָעִיר. Alternatively, the translator simplified the Hebrew construct chain into Greek idiom, treating both animals as a single hendiadys rather than strict parallelism. The adjective νέον translates בֶּן אֲתֹנוֹת by semantic equivalence.",
+      "alternatives": [
+        {
+          "reading": "וְעַל עַיִר בֶּן אֲתֹנוֹת",
+          "confidence": 0.5,
+          "note": "MT reading simplified by omitting second preposition for Greek stylistic smoothness"
+        }
+      ]
+    }
+  ],
+  "summary_technical": "The LXX Vorlage of Zechariah 9:9 closely follows the MT with three notable divergences: (1) κήρυσσε for הָרִיעִי may reflect צַהֲלִי or interpretive translation; (2) καὶ σῴζων (active) for וְנוֹשָׁע (passive) suggests either וּמוֹשִׁיעַ in the Vorlage or theological reinterpretation emphasizing the king's salvific role; (3) the syntactic simplification of וְעַל עַיִר בֶּן אֲתֹנוֹת to καὶ πῶλον νέον may reflect either textual variation or Greek stylistic preference. The translator demonstrates consistent lexical equivalence for standard prophetic formulae (daughter Zion/Jerusalem, δίκαιος, ἰδού, βασιλεύς) while exercising interpretive freedom in theologically significant terms (σῴζων, πραΰς).",
+  "summary_plain": "The Greek translator worked from a Hebrew text very close to our Masoretic Text, with possible variations in three phrases: the command to 'proclaim' instead of 'shout,' the king described as 'saving' rather than 'saved,' and a simplified description of the donkey. These may reflect either a slightly different Hebrew manuscript or the translator's interpretive choices to clarify the messianic meaning.",
+  "overall_confidence": 0.82,
+  "bibcrit_assessment": {
+    "title": "Active Savior vs. Passive Saved King",
+    "reasoning": "The most textually significant variant is καὶ σῴζων (active 'saving') against MT וְנוֹשָׁע (passive Niphal 'being saved'). This could preserve a genuine textual variant *וּמוֹשִׁיעַ (Hiphil active participle), unattested in MT or DSS but fitting Zechariah's messianic theology. Alternatively, it represents early messianic exegesis, reinterpreting a humble, delivered king as an active deliverer. The passive MT reading ('saved') emphasizes divine agency and the king's dependence on YHWH, while the LXX active ('saving') portrays royal agency—a theologically consequential shift. Without DSS evidence, we cannot definitively determine whether this is textual or exegetical, but the former remains plausible given the translator's general fidelity elsewhere in the verse.",
+    "plain": "The Greek describes the coming king as 'saving' his people, while the Hebrew says he is 'saved' or 'delivered' by God. This may preserve an older Hebrew reading where the king is the active savior, or it may show how early interpreters began to emphasize the messiah's saving role rather than his humble dependence on divine help.",
+    "confidence": 0.68
+  },
+  "discovery_ready": false,
+  "reference": "Zechariah 9:9",
+  "cached_at": "2026-03-30T20:20:06.114902",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

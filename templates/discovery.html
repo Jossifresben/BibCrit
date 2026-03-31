@@ -2,49 +2,221 @@
 {% block title %}Discovery — BibCrit{% endblock %}
 
 {% block content %}
-<div class="discovery-hero">
-  <h1>✦ Discovery</h1>
-  <p class="discovery-subtitle">
-    The most fascinating findings from biblical textual scholarship —
-    no Hebrew or Greek required.
-  </p>
+
+<!-- Hero -->
+<div class="disc-hero">
+  <div class="disc-hero-inner">
+    <div class="disc-hero-label">✦ Discovery</div>
+    <h1 class="disc-hero-title">Findings from the Text</h1>
+    <p class="disc-hero-sub">
+      The most fascinating discoveries in biblical manuscript scholarship —
+      no Hebrew or Greek required.
+    </p>
+    {% if stats.passages %}
+    <div class="disc-stats-bar">
+      <div class="disc-stat">
+        <span class="disc-stat-n">{{ stats.passages }}</span>
+        <span class="disc-stat-label">passages analyzed</span>
+      </div>
+      <div class="disc-stat-sep"></div>
+      <div class="disc-stat">
+        <span class="disc-stat-n">{{ stats.divergences }}</span>
+        <span class="disc-stat-label">divergences examined</span>
+      </div>
+      <div class="disc-stat-sep"></div>
+      <div class="disc-stat">
+        <span class="disc-stat-n">{{ cards | length }}</span>
+        <span class="disc-stat-label">findings surfaced</span>
+      </div>
+    </div>
+    {% endif %}
+  </div>
 </div>
 
 {% if cards %}
-<div class="discovery-grid">
-  {% for card in cards %}
-  <div class="discovery-card">
-    <div class="dc-header">
-      <span class="dc-ref">{{ card.reference | e }}</span>
-      <span class="dc-type">{{ card.divergence_type | replace('_', ' ') | title | e }}</span>
+
+<!-- Featured card (highest confidence) -->
+{% set featured = cards[0] %}
+<div class="disc-featured-wrap">
+  <div class="disc-featured">
+    <div class="disc-featured-eyebrow">
+      <span class="disc-feat-label">Featured Finding</span>
+      <span class="disc-type-badge disc-type-{{ featured.card_type or featured.divergence_type }}">
+        {{ (featured.card_type or featured.divergence_type) | replace('_', ' ') | title }}
+      </span>
     </div>
-    <div class="dc-words">
-      <span class="dc-mt">{{ card.mt_word | e }}</span>
-      <span class="dc-arrow">→</span>
-      <span class="dc-lxx">{{ card.lxx_word | e }}</span>
+    <div class="disc-feat-ref">{{ featured.reference }}</div>
+    {% if featured.mt_word and featured.lxx_word %}
+    <div class="disc-feat-words">
+      <span class="disc-feat-mt">{{ featured.mt_word.split('(')[0].strip() }}</span>
+      <span class="disc-feat-arrow">→</span>
+      <span class="disc-feat-lxx">{{ featured.lxx_word.split('(')[0].strip() }}</span>
     </div>
-    <p class="dc-plain">{{ card.analysis_plain | e }}</p>
-    <div class="dc-footer">
-      <a href="/divergence?ref={{ card.reference | urlencode }}" class="dc-link">
-        See full analysis →
-      </a>
+    {% elif featured.headline %}
+    <div class="disc-feat-headline">{{ featured.headline }}</div>
+    {% endif %}
+    <p class="disc-feat-plain">{{ featured.analysis_plain }}</p>
+    {% if featured.summary_plain %}
+    <p class="disc-feat-summary">{{ featured.summary_plain }}</p>
+    {% endif %}
+    <a href="{{ featured.link or ('/divergence?ref=' ~ featured.reference | urlencode) }}" class="disc-feat-link">
+      See full scholarly analysis →
+    </a>
+  </div>
+</div>
+
+<!-- Cards grid (remaining findings) -->
+{% if cards | length > 1 %}
+<div class="disc-section-label">More Findings</div>
+<div class="disc-grid" id="disc-grid">
+  {% for card in cards[1:] %}
+  <div class="disc-card">
+    <div class="disc-card-head">
+      <span class="disc-card-ref">{{ card.reference }}</span>
+      <span class="disc-type-badge disc-type-{{ card.card_type or card.divergence_type }}">
+        {{ (card.card_type or card.divergence_type) | replace('_', ' ') | title }}
+      </span>
     </div>
+    {% if card.mt_word and card.lxx_word %}
+    <div class="disc-card-words">
+      <span class="disc-card-mt">{{ card.mt_word.split('(')[0].strip() }}</span>
+      <span class="disc-card-arrow">→</span>
+      <span class="disc-card-lxx">{{ card.lxx_word.split('(')[0].strip() }}</span>
+    </div>
+    {% elif card.headline %}
+    <div class="disc-card-headline">{{ card.headline }}</div>
+    {% endif %}
+    <p class="disc-card-plain">{{ card.analysis_plain }}</p>
+    <a href="{{ card.link or ('/divergence?ref=' ~ card.reference | urlencode) }}" class="disc-card-link">
+      Explore →
+    </a>
   </div>
   {% endfor %}
 </div>
 
-{% else %}
-<div class="discovery-empty">
-  <h2>Content coming soon</h2>
-  <p>Discovery cards appear automatically as scholars use the analysis tools.
-     <a href="/divergence?ref=Isaiah+7:14">Try the Divergence Analyzer</a> to seed the first finding.</p>
+{% if has_more %}
+<div class="disc-load-more-wrap" id="load-more-wrap">
+  <button class="disc-load-more" id="btn-load-more"
+          data-offset="12" data-total="{{ total }}">
+    Load more findings
+  </button>
+  <span class="disc-load-count" id="load-count">
+    Showing 12 of {{ total }}
+  </span>
 </div>
 {% endif %}
+{% endif %}
 
-<div class="discovery-about">
-  <h3>How Discovery works</h3>
-  <p>Every analysis run by scholars generates both a technical finding and a plain-language version —
-     in a single Claude call at no extra cost. When a finding is particularly illuminating,
-     it surfaces here automatically. No editorial team required.</p>
+{% else %}
+
+<!-- Empty state -->
+<div class="disc-empty">
+  <div class="disc-empty-icon">📜</div>
+  <h2>Content coming soon</h2>
+  <p>Discovery cards appear automatically as passages are analyzed.
+     Try the Divergence Analyzer to generate the first finding.</p>
+  <a href="/divergence?ref=Isaiah+7:14" class="btn-primary" style="display:inline-block;text-decoration:none;padding:8px 20px;">
+    Analyze Isaiah 7:14 →
+  </a>
 </div>
+
+{% endif %}
+
+<!-- How it works -->
+<div class="disc-about">
+  <h3>How Discovery works</h3>
+  <p>
+    Every time a scholar runs the Divergence Analyzer, BibCrit generates both a technical
+    scholarly analysis <em>and</em> a plain-language version.
+    The most illuminating findings surface here,
+    making centuries of manuscript scholarship accessible to everyone.
+  </p>
+  <a href="/divergence" class="disc-about-link">Try the Divergence Analyzer →</a>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function () {
+  var btn = document.getElementById('btn-load-more');
+  if (!btn) return;
+
+  var grid  = document.getElementById('disc-grid');
+  var count = document.getElementById('load-count');
+
+  function typeLabel(type) {
+    return (type || '').replace(/_/g, ' ').replace(/\b\w/g, function(c){ return c.toUpperCase(); });
+  }
+
+  function wordBase(w) {
+    return (w || '').split('(')[0].trim();
+  }
+
+  function _esc(s) {
+    return String(s || '')
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function buildCard(card) {
+    var el = document.createElement('div');
+    el.className = 'disc-card';
+    var wordsHtml = '';
+    if (card.mt_word && card.lxx_word) {
+      wordsHtml =
+        '<div class="disc-card-words">' +
+          '<span class="disc-card-mt">'  + _esc(wordBase(card.mt_word))  + '</span>' +
+          '<span class="disc-card-arrow">→</span>' +
+          '<span class="disc-card-lxx">' + _esc(wordBase(card.lxx_word)) + '</span>' +
+        '</div>';
+    } else if (card.headline) {
+      wordsHtml = '<div class="disc-card-headline">' + _esc(card.headline) + '</div>';
+    }
+    var link = card.link || ('/divergence?ref=' + encodeURIComponent(card.reference));
+    el.innerHTML =
+      '<div class="disc-card-head">' +
+        '<span class="disc-card-ref">' + _esc(card.reference) + '</span>' +
+        '<span class="disc-type-badge disc-type-' + _esc(card.card_type || card.divergence_type) + '">' +
+          typeLabel(card.card_type || card.divergence_type) +
+        '</span>' +
+      '</div>' +
+      wordsHtml +
+      '<p class="disc-card-plain">' + _esc(card.analysis_plain) + '</p>' +
+      '<a href="' + _esc(link) + '" class="disc-card-link">Explore →</a>';
+    return el;
+  }
+
+  btn.addEventListener('click', function () {
+    var offset = parseInt(btn.dataset.offset, 10);
+    var total  = parseInt(btn.dataset.total,  10);
+    btn.textContent = 'Loading…';
+    btn.disabled = true;
+
+    fetch('/api/discovery/cards?offset=' + offset + '&limit=12')
+      .then(function(r){ return r.json(); })
+      .then(function(data) {
+        (data.cards || []).forEach(function(card) {
+          grid.appendChild(buildCard(card));
+        });
+
+        var newOffset = offset + (data.cards || []).length;
+        btn.dataset.offset = newOffset;
+
+        if (data.has_more) {
+          btn.textContent = 'Load more findings';
+          btn.disabled = false;
+          if (count) count.textContent = 'Showing ' + newOffset + ' of ' + total;
+        } else {
+          var wrap = document.getElementById('load-more-wrap');
+          if (wrap) wrap.style.display = 'none';
+        }
+      })
+      .catch(function() {
+        btn.textContent = 'Load more findings';
+        btn.disabled = false;
+      });
+  });
+})();
+</script>
 {% endblock %}

@@ -1,0 +1,154 @@
+{
+  "reference": "Genesis 1:1",
+  "total_citations_found": 8,
+  "period_summary": "Citations are concentrated heavily in the 2nd–4th centuries, reflecting early Christian apologetic interest in creation theology against pagan cosmogonies and Gnostic claims. The uniformity of citations across regions suggests rapid standardization of LXX Genesis text by the mid-2nd century.",
+  "citations": [
+    {
+      "father": "Justin Martyr",
+      "dates_ce": "c. 100–165",
+      "region": "Rome",
+      "work": "Apologia I",
+      "chapter_section": "ch. 59",
+      "cited_text": "Ἐν ἀρχῇ ἐποίησεν ὁ θεὸς τὸν οὐρανὸν καὶ τὴν γῆν",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.95,
+      "text_form_note": "Justin's citation precisely matches the LXX rendering with ἐποίησεν (made/created) rather than a direct equivalent of Hebrew בָּרָא (bara), and uses the standard LXX word order and article placement.",
+      "theological_use": "Justin deploys Genesis 1:1 apologetically to demonstrate that Moses predates Greek philosophers and that Christian monotheistic creation ex nihilo contradicts pagan eternal matter cosmologies, arguing for the superiority of biblical revelation.",
+      "transmission_implication": "Attests widespread circulation of stable LXX Genesis text in mid-2nd century Rome among Christian apologists."
+    },
+    {
+      "father": "Theophilus of Antioch",
+      "dates_ce": "c. 120–186",
+      "region": "Antioch",
+      "work": "Ad Autolycum",
+      "chapter_section": "2.10",
+      "cited_text": "Ἐν ἀρχῇ ἐποίησεν ὁ θεὸς τὸν οὐρανὸν καὶ τὴν γῆν",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.95,
+      "text_form_note": "Theophilus reproduces the LXX verbatim with ἐποίησεν and standard Greek syntax. He shows no awareness of alternative Hebrew readings, indicating exclusive reliance on Greek text tradition.",
+      "theological_use": "Theophilus uses Genesis 1:1 to establish divine priority and sovereignty, arguing that the world had a temporal beginning against Stoic eternalism. He emphasizes that 'the beginning' (ἀρχῇ) signifies both temporal origin and God's absolute first principle.",
+      "transmission_implication": "Confirms LXX Genesis was the authoritative Scripture for Syrian churches by late 2nd century with no competing Hebrew-influenced recensions."
+    },
+    {
+      "father": "Irenaeus of Lyons",
+      "dates_ce": "c. 130–202",
+      "region": "Gaul/Asia Minor",
+      "work": "Adversus Haereses",
+      "chapter_section": "2.1.1",
+      "cited_text": "In principio fecit Deus caelum et terram",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.9,
+      "text_form_note": "Irenaeus cites in Latin translation (fecit = ἐποίησεν) reflecting Old Latin based on LXX. The rendering 'fecit' (made) rather than 'creavit' aligns with Greek ἐποίησεν, not directly with Hebrew bara's semantic field.",
+      "theological_use": "Irenaeus employs Genesis 1:1 polemically against Valentinian Gnostics to assert that the one God created all matter directly, not through deficient emanations. He stresses 'fecit' to emphasize direct divine agency without intermediaries.",
+      "transmission_implication": "Shows Old Latin Genesis tradition in Gaul was already mediated through LXX Greek by late 2nd century rather than independent Hebrew translation."
+    },
+    {
+      "father": "Origen",
+      "dates_ce": "c. 185–254",
+      "region": "Alexandria/Caesarea",
+      "work": "De Principiis",
+      "chapter_section": "2.9.1",
+      "cited_text": "Ἐν ἀρχῇ ἐποίησεν ὁ θεὸς τὸν οὐρανὸν καὶ τὴν γῆν",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.92,
+      "text_form_note": "Origen consistently uses standard LXX text in Greek works. Though he knew Hebrew and noted textual variants in his Hexapla, his theological citations default to LXX without revision toward Hebrew.",
+      "theological_use": "Origen interprets 'in the beginning' spiritually and allegorically as referring to the Logos/Wisdom through whom God creates, subordinating the temporal creation to eternal spiritual realities. He sees ἀρχῇ as polysemous: temporal start and ontological principle.",
+      "transmission_implication": "Despite Hexaplaric awareness of Hebrew text differences, Origen's citations confirm LXX remained normative for theological exegesis in Alexandria and Caesarea."
+    },
+    {
+      "father": "Basil of Caesarea",
+      "dates_ce": "c. 330–379",
+      "region": "Caesarea (Cappadocia)",
+      "work": "Hexaemeron",
+      "chapter_section": "Homily 1.2",
+      "cited_text": "Ἐν ἀρχῇ ἐποίησεν ὁ θεὸς τὸν οὐρανὸν καὶ τὴν γῆν",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.95,
+      "text_form_note": "Basil's citation matches the standard Byzantine LXX text exactly, with no variants. He explicitly discusses the Greek terminology, indicating he works from Greek Scripture without consulting Hebrew.",
+      "theological_use": "Basil uses Genesis 1:1 to defend creation ex nihilo against Arian subordinationism and pagan eternalism. He insists ἐποίησεν indicates absolute divine origination of all reality, and 'beginning' marks the inauguration of time itself, excluding pre-temporal matter.",
+      "transmission_implication": "Demonstrates complete textual stability of LXX Genesis 1:1 in Cappadocian tradition by mid-4th century with no textual fluidity."
+    },
+    {
+      "father": "John Chrysostom",
+      "dates_ce": "c. 347–407",
+      "region": "Antioch/Constantinople",
+      "work": "Homilies on Genesis",
+      "chapter_section": "Homily 2.1",
+      "cited_text": "Ἐν ἀρχῇ ἐποίησεν ὁ θεὸς τὸν οὐρανὸν καὶ τὴν γῆν",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.95,
+      "text_form_note": "Chrysostom reproduces the LXX verbatim and builds his exegesis on the specific Greek vocabulary (ἐποίησεν, ἀρχῇ) without any indication of Hebrew alternatives or text-critical awareness.",
+      "theological_use": "Chrysostom emphasizes the simplicity and clarity of Genesis 1:1 against pagan philosophical complexity, using it pastorally to teach common believers about God's sovereignty. He stresses that Moses wrote 'simply' (ἁπλῶς) to make divine truth accessible.",
+      "transmission_implication": "Confirms that late 4th-century Antiochene preaching relied exclusively on standardized LXX text with no influence from Jerome's Hebraica veritas movement."
+    },
+    {
+      "father": "Augustine of Hippo",
+      "dates_ce": "354–430",
+      "region": "North Africa",
+      "work": "Confessiones",
+      "chapter_section": "11.3",
+      "cited_text": "In principio fecit Deus caelum et terram",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.88,
+      "text_form_note": "Augustine cites Old Latin (fecit) based on LXX tradition. Though aware of Jerome's Vulgate 'creavit' from Hebrew, Augustine's earlier works and theological discussions consistently use the older 'fecit' rendering.",
+      "theological_use": "Augustine meditates on 'in principio' philosophically, exploring time's ontology: the beginning is not 'in time' but constitutes time's inception. He uses Genesis 1:1 to argue that creation occurs through the eternal Word (Verbum), making 'principium' refer both to temporal start and to Christ as Logos.",
+      "transmission_implication": "Shows North African Latin tradition preserved LXX-based Old Latin despite Jerome's Vulgate availability, indicating textual conservatism in liturgical and theological usage."
+    },
+    {
+      "father": "Ephrem the Syrian",
+      "dates_ce": "c. 306–373",
+      "region": "Syria",
+      "work": "Commentary on Genesis",
+      "chapter_section": "1.1",
+      "cited_text": "ܒܪܝܫܝܬ ܒܪܐ ܐܠܗܐ ܫܡܝܐ ܘܐܪܥܐ (b-reshith bra alaha shmaya w-ar'a)",
+      "text_form": "closer_to_mt",
+      "text_form_confidence": 0.85,
+      "text_form_note": "Ephrem's Syriac citation uses ܒܪܐ (bra = created), which semantically corresponds more closely to Hebrew בָּרָא (bara) than to LXX ἐποίησεν (made). The Peshitta underlying his citation reflects Semitic substrate closer to MT than to Greek tradition.",
+      "theological_use": "Ephrem emphasizes the literal-historical sense of creation, interpreting 'in the beginning' as the actual temporal start of the material cosmos. He avoids Alexandrian allegorization, maintaining that God created heaven and earth as described, not as symbols of spiritual realities.",
+      "transmission_implication": "Demonstrates independent Syriac textual tradition (Peshitta) closer to Hebrew MT in vocabulary, preserving distinct Semitic reception history parallel to Greek LXX dominance."
+    }
+  ],
+  "text_form_distribution": {
+    "closer_to_mt": 1,
+    "closer_to_lxx": 7,
+    "mixed": 0,
+    "independent": 0,
+    "uncertain": 0
+  },
+  "transmission_synthesis": "Patristic citations overwhelmingly attest the LXX form of Genesis 1:1, with remarkable textual uniformity across diverse geographical regions (Rome, Antioch, Alexandria, Gaul, Cappadocia, North Africa, Constantinople) from the 2nd through 5th centuries. The single exception is Ephrem's Syriac Peshitta-based citation, which preserves a distinct Semitic textual trajectory closer to MT. This distribution indicates that Greek-speaking Christianity universally adopted a stable LXX Genesis text by the mid-2nd century, with no competing Greek recensions or Hebraizing revisions gaining traction despite Origen's Hexaplaric work and Jerome's Vulgate. The dominance of LXX ἐποίησεν over any rendering closer to Hebrew בָּרָא confirms that the Septuagint functioned as the Christian Old Testament par excellence, transmitting a fixed Greek text form independently of ongoing Jewish Hebrew transmission.",
+  "transmission_synthesis_plain": "Early Christian writers almost universally cited Genesis 1:1 from the Greek Septuagint translation, showing the same wording from the 2nd century onward across the entire Mediterranean world. Only Syrian Christians using Syriac had a text closer to the original Hebrew, while everyone else—whether writing in Greek or Latin—depended on the stable Greek translation, which became the Christian Bible.",
+  "notable_variants": [
+    {
+      "reading": "ἐποίησεν (epoiēsen, 'made/created') vs. Hebrew בָּרָא (bara, 'created')",
+      "fathers_using_it": [
+        "Justin Martyr",
+        "Theophilus of Antioch",
+        "Origen",
+        "Basil of Caesarea",
+        "John Chrysostom",
+        "Irenaeus (fecit)",
+        "Augustine (fecit)"
+      ],
+      "text_form_alignment": "closer_to_lxx",
+      "significance": "The LXX's choice of ἐποίησεν (a general verb for making/creating) rather than a closer semantic equivalent to Hebrew bara (like κτίζειν used elsewhere) shaped patristic creation theology. Fathers built arguments for creatio ex nihilo on ἐποίησεν without awareness that the Hebrew verb bara uniquely denotes divine creation from nothing in its Biblical usage, creating a subtle semantic gap between Hebrew and Greek interpretive traditions."
+    },
+    {
+      "reading": "Syriac ܒܪܐ (bra, 'created') preserving Hebrew semantic field",
+      "fathers_using_it": [
+        "Ephrem the Syrian"
+      ],
+      "text_form_alignment": "closer_to_mt",
+      "significance": "The Peshitta's use of bra cognate with Hebrew bara indicates an independent Syriac translation tradition that preserved the original Hebrew verb's specific theological nuance (divine creation distinct from human making), offering textual witness outside the dominant LXX tradition and closer to proto-MT semantics."
+    }
+  ],
+  "bibcrit_assessment": {
+    "title": "LXX Genesis 1:1 Achieved Universal Christian Canonization",
+    "reasoning": "The patristic evidence demonstrates that by the mid-2nd century CE, the Greek Septuagint text of Genesis 1:1 had achieved complete textual fixation and universal authority across all Greek and Latin Christianity, functioning as the sole scriptural text regardless of geographical or theological diversity. Even textual scholars like Origen, who knew Hebrew and documented variants in the Hexapla, made no attempt to revise the LXX theologically normative text. This uniformity is remarkable given the diversity of early Christian scriptural practices elsewhere and suggests Genesis 1:1's use in baptismal creeds and liturgical formulae drove early standardization, making it untouchable for revision.",
+    "plain": "Christian writers everywhere used exactly the same Greek translation of Genesis 1:1 from the 2nd century onward, making it perhaps the most stable and unchanging verse in early Christian Scripture—likely because it was used in core teaching about God as Creator.",
+    "confidence": 0.92
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-03-31T00:27:02.420634",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

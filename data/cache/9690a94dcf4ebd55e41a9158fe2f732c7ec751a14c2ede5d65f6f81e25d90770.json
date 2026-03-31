@@ -1,0 +1,83 @@
+{
+  "divergences": [
+    {
+      "mt_word": "אֵלִי אֵלִי (My God, My God)",
+      "lxx_word": "ὁ θεὸς ὁ θεός μου (O God, my God)",
+      "divergence_type": "grammatical_shift",
+      "confidence": 0.85,
+      "hypotheses": [
+        {
+          "type": "grammatical_shift",
+          "confidence": 0.85,
+          "explanation": "MT uses possessive suffix twice for emotional intensity; LXX normalizes to vocative article plus possessive once, reflecting standard Greek syntax for address."
+        }
+      ],
+      "dss_witness": "11QPsa not extant for Ps 22:1",
+      "citations": [
+        "Kraus (1989) p.291",
+        "Hossfeld-Zenger (2005) p.309"
+      ],
+      "analysis_technical": "The double possessive in MT (אֵלִי אֵלִי) creates emphatic repetition typical of Hebrew lament. LXX translator regularizes to articular vocative ὁ θεός with single possessive μου, standard Koine pattern. No vorlage difference implied; purely translational adaptation to Greek idiom.",
+      "analysis_plain": "Hebrew repeats 'my God' twice for emotional emphasis, while Greek uses 'O God, my God' following normal Greek grammar for addressing deity."
+    },
+    {
+      "mt_word": "(no equivalent for πρόσχες μοι)",
+      "lxx_word": "πρόσχες μοι (give heed to me)",
+      "divergence_type": "addition",
+      "confidence": 0.7,
+      "hypotheses": [
+        {
+          "type": "addition",
+          "confidence": 0.7,
+          "explanation": "LXX adds imperative 'give heed to me' before 'why have you forsaken me,' possibly to soften accusatory tone or clarify petition structure typical of Greek psalms."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Pietersma-Wright (2007) p.59",
+        "Wevers (1990) p.18"
+      ],
+      "analysis_technical": "The phrase πρόσχες μοι has no Hebrew equivalent in MT and appears as LXX plus. This may reflect translator's liturgical sensitivity, inserting conventional petition formula before the stark abandonment question. Alternatively, inner-Greek expansion during transmission. No manuscript evidence for Hebrew Vorlage containing equivalent.",
+      "analysis_plain": "The Greek adds 'pay attention to me' before the question, perhaps making the prayer sound more like a formal request than a raw cry of abandonment."
+    },
+    {
+      "mt_word": "דִּבְרֵי שַׁאֲגָתִי (words of my roaring)",
+      "lxx_word": "οἱ λόγοι τῶν παραπτωμάτων μου (the words of my transgressions)",
+      "divergence_type": "different_vorlage",
+      "confidence": 0.78,
+      "hypotheses": [
+        {
+          "type": "different_vorlage",
+          "confidence": 0.78,
+          "explanation": "LXX παραπτωμάτων (transgressions) suggests Hebrew שְׁגָגוֹתַי or פְּשָׁעַי instead of MT שַׁאֲגָתִי (roaring), indicating variant textual tradition interpreting suffering as consequence of sin."
+        },
+        {
+          "type": "theological_tendency",
+          "confidence": 0.55,
+          "explanation": "Translator may have intentionally altered 'roaring' to 'transgressions' to conform to deuteronomistic theology linking suffering with sin, though vorlage difference more probable."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Tov (2001) p.267",
+        "Flint (1997) p.142",
+        "Hossfeld-Zenger (2005) p.310"
+      ],
+      "analysis_technical": "MT שַׁאֲגָתִי (roaring, groaning) versus LXX παραπτωμάτων (transgressions) represents significant semantic divergence. Hebrew שׁאגה describes animalistic roar of suffering; Greek παράπτωμα denotes moral failing. Confusion between שׁאגה and שׁגגה (inadvertent sin) plausible graphically, suggesting different Hebrew parent text rather than deliberate theological revision.",
+      "analysis_plain": "Hebrew describes anguished 'roaring' like a wounded animal, while Greek speaks of 'transgressions' or sins, suggesting the translator read a different Hebrew word or understood suffering as punishment."
+    }
+  ],
+  "summary_technical": "Primary divergence involves שַׁאֲגָתִי/παραπτωμάτων, likely reflecting variant Hebrew Vorlage with theological implications. LXX addition of πρόσχες μοι and grammatical normalization represent translation technique rather than textual variants.",
+  "summary_plain": "The Greek translation differs most dramatically in changing 'roaring' to 'sins,' possibly reading a different Hebrew manuscript.",
+  "bibcrit_hypothesis": {
+    "title": "Graphic Confusion Between Roaring and Straying",
+    "reasoning": "The MT שַׁאֲגָתִי (roaring) could have been confused in an earlier Hebrew manuscript with שִׁגְיָתִי or שְׁגָגָתִי (my error/straying), especially in paleo-Hebrew where א and ג are graphically similar. This would naturally yield παραπτωμάτων. The shift transforms the psalm from innocent suffering to penitential lament, aligning with Second Temple period theological developments emphasizing retributive justice. Graphic confusion better explains the divergence than conscious theological alteration, though the resultant reading served later interpretive needs.",
+    "plain": "An ancient Hebrew scribe may have misread similar-looking letters, turning 'roaring' into 'straying,' which the Greek translator then rendered as 'transgressions,' fundamentally changing the psalm's theology from innocent suffering to confession of sin.",
+    "confidence": 0.68
+  },
+  "discovery_ready": false,
+  "reference": "Psalm 22:1",
+  "cached_at": "2026-03-31T11:13:47.529615",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v2"
+}

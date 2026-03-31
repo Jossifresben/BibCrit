@@ -1,0 +1,83 @@
+{
+  "reference": "Numbers 24",
+  "dss_manuscripts": [
+    {
+      "siglum": "4Q27",
+      "full_name": "4QNum-b",
+      "verse_present": true,
+      "dss_text": "Fragmentary preservation of vv. 1–9, 17–18. Notable readings include ישראל (v. 5) and מלכו (v. 7) with plene orthography; כככב (v. 17) showing double kaph.",
+      "alignment": "sides_with_mt",
+      "alignment_confidence": 0.82,
+      "divergences": [
+        {
+          "word_position": 5,
+          "mt_reading": "ישראל (defective)",
+          "lxx_reading": "Ισραηλ",
+          "dss_reading": "ישראל (plene with waw)",
+          "classification": "orthographic",
+          "textual_implication": "The plene spelling represents a later orthographic development common in Second Temple period manuscripts but does not affect semantic content or textual affiliation."
+        },
+        {
+          "word_position": 7,
+          "mt_reading": "ימלך (v. 7)",
+          "lxx_reading": "ἄνθρωπος",
+          "dss_reading": "מלכו",
+          "classification": "morphological",
+          "textual_implication": "The suffix form 'his king' versus the MT's imperfect verb 'shall reign' reflects a possible variant vocalization tradition, though the consonantal text supports proto-MT."
+        },
+        {
+          "word_position": 17,
+          "mt_reading": "ככב (v. 17)",
+          "lxx_reading": "ἄστρον",
+          "dss_reading": "כככב (with double kaph)",
+          "classification": "orthographic",
+          "textual_implication": "The gemination of kaph likely represents scribal emphasis on the simile or a regional pronunciation feature, attested occasionally in DSS orthography but without semantic variance."
+        }
+      ],
+      "overall_note": "4QNum-b preserves a text closely aligned with the proto-MT tradition of Numbers 24, with variations confined primarily to orthographic features characteristic of Qumran scribal practices. The manuscript's witness to vv. 17–18, containing the messianic 'star and scepter' prophecy, shows no substantive theological revision, supporting the stability of this tradition. The fragmentary nature limits comprehensive assessment, but extant portions confirm MT's antiquity."
+    },
+    {
+      "siglum": "2Q8",
+      "full_name": "2QNum-b",
+      "verse_present": false,
+      "dss_text": "",
+      "alignment": "absent",
+      "alignment_confidence": 0.0,
+      "divergences": [],
+      "overall_note": "This manuscript does not preserve any portion of Numbers 24. The preserved fragments cover earlier sections of Numbers."
+    },
+    {
+      "siglum": "4QNumb",
+      "full_name": "4QNum-a (4Q23)",
+      "verse_present": false,
+      "dss_text": "",
+      "alignment": "absent",
+      "alignment_confidence": 0.0,
+      "divergences": [],
+      "overall_note": "4QNum-a does not contain extant text from Numbers 24. Its preserved portions cover scattered verses from Numbers 11–36, but chapter 24 is not represented."
+    },
+    {
+      "siglum": "4QpaleoNum",
+      "full_name": "4QpaleoNum (4Q46)",
+      "verse_present": false,
+      "dss_text": "",
+      "alignment": "absent",
+      "alignment_confidence": 0.0,
+      "divergences": [],
+      "overall_note": "This paleo-Hebrew manuscript of Numbers does not preserve Numbers 24 in its extant fragments."
+    }
+  ],
+  "synthesis": "The Dead Sea Scrolls evidence for Numbers 24 is limited to 4QNum-b (4Q27), which provides fragmentary but significant attestation. This manuscript aligns consistently with the proto-Masoretic textual tradition, exhibiting only orthographic variations typical of Second Temple scribal practices (plene spellings, occasional gemination). Critically, the preservation of vv. 17–18 — the messianic 'star and scepter' oracle — shows no theological expansion or revision, contrary to what might be expected given this passage's interpretive significance at Qumran (cf. CD 7:18–20, 1QM 11:6). The textual stability evidenced here suggests that Numbers 24 circulated in a relatively fixed form by the late Second Temple period, with the proto-MT representing the dominant, perhaps exclusive, textual tradition for this passage.",
+  "synthesis_plain": "Only one Dead Sea Scrolls manuscript (4QNum-b) preserves parts of Numbers 24, and it matches the traditional Hebrew Bible text very closely. The differences are mostly spelling variations that don't change the meaning. Even the famous prophecy about a 'star' and 'scepter' (verses 17–18), which was interpreted messianically at Qumran, shows no signs of being changed or expanded.",
+  "textual_history_implication": "The DSS evidence for Numbers 24, though fragmentary, suggests a single dominant textual tradition existed by the third-second century BCE, represented by the proto-MT. The absence of substantive variants, particularly in the messianically-interpreted vv. 17–18, indicates either that this text achieved fixed form early in its transmission or that sectarian groups like the Qumran community preserved received scriptural text without harmonization to their interpretive traditions. This contrasts with more fluid textual traditions observed in Samuel-Kings and Jeremiah at Qumran, supporting Tov's categorization of Numbers among the more stable biblical texts.",
+  "bibcrit_assessment": {
+    "title": "Numbers 24 Shows Exceptional Textual Stability at Qumran",
+    "reasoning": "The most significant finding is the negative evidence: despite the intense messianic interest in Num 24:17 at Qumran (attested in CD, 1QM, 4QTest), the biblical manuscript 4QNum-b shows no trace of theological expansion, harmonization, or sectarian revision. This demonstrates that even highly interpretively-charged texts could be transmitted with fidelity, and that pesher-style interpretation operated on a received textual base rather than through textual modification. The proto-MT's dominance for this passage is virtually certain.",
+    "plain": "Even though the Qumran community saw deep messianic meaning in this chapter's prophecy, their biblical manuscript copied it faithfully without changes. This shows they interpreted Scripture creatively but didn't alter the text itself.",
+    "confidence": 0.85
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-03-31T08:34:51.197375",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

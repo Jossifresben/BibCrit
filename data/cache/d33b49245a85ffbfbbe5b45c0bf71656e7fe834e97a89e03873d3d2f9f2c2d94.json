@@ -1,0 +1,192 @@
+{
+  "divergences": [
+    {
+      "mt_word": "אֶרְאֶנּוּ וְלֹא עַתָּה (I see him but not now)",
+      "lxx_word": "δείξω αὐτῷ καὶ οὐχ (I will show him and not)",
+      "divergence_type": "different_vorlage",
+      "confidence": 0.68,
+      "hypotheses": [
+        {
+          "type": "different_vorlage",
+          "confidence": 0.68,
+          "explanation": "LXX likely read אַרְאֶנּוּ (causative, 'I will show him') instead of MT's אֶרְאֶנּוּ (simple, 'I see him'). The shift from prophetic vision to demonstration alters the oracle's temporality."
+        },
+        {
+          "type": "theological_tendency",
+          "confidence": 0.32,
+          "explanation": "Translator may have intentionally shifted from visionary experience to prophetic announcement, making God the revealer rather than Balaam the seer."
+        }
+      ],
+      "dss_witness": "4QNumb preserves partial text but lacks this specific clause",
+      "citations": [
+        "Wevers (1998) p.402",
+        "Tov (2012) p.234"
+      ],
+      "analysis_technical": "The confusion between אֶרְאֶה/אַרְאֶה is paleographically simple. Wevers notes LXX's tendency to prefer divine agency in oracles. The absence of עַתָּה's equivalent suggests the translator may have found the temporal framework obscure or rendered it with ἐγγίζει instead.",
+      "analysis_plain": "The Hebrew says Balaam sees a future king, but the Greek says God will show or reveal him. This small change shifts who controls the vision—the prophet or God himself."
+    },
+    {
+      "mt_word": "אֲשׁוּרֶנּוּ (I behold him)",
+      "lxx_word": "(omitted)",
+      "divergence_type": "omission",
+      "confidence": 0.82,
+      "hypotheses": [
+        {
+          "type": "omission",
+          "confidence": 0.82,
+          "explanation": "LXX omits the second verb of vision, possibly due to haplography or because it was perceived as redundant parallel to the first clause."
+        },
+        {
+          "type": "different_vorlage",
+          "confidence": 0.18,
+          "explanation": "Hebrew Vorlage may have lacked this phrase, though MT's poetic parallelism argues against this."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Levine (2000) p.185",
+        "Ashley (1993) p.499"
+      ],
+      "analysis_technical": "The MT's bipartite temporal parallelism (not now/not near) is characteristic of archaic Hebrew poetry. LXX's single temporal marker suggests either textual loss or deliberate streamlining. Tov's principles suggest deliberate abridgment of synonymous parallelism is common in LXX.",
+      "analysis_plain": "The Hebrew repeats 'I see him' with two time markers for poetic effect. The Greek translator dropped the second phrase, perhaps seeing it as unnecessary repetition."
+    },
+    {
+      "mt_word": "וְלֹא קָרוֹב (and not near)",
+      "lxx_word": "καὶ οὐχ ἐγγίζει (and does not draw near)",
+      "divergence_type": "grammatical_shift",
+      "confidence": 0.71,
+      "hypotheses": [
+        {
+          "type": "grammatical_shift",
+          "confidence": 0.71,
+          "explanation": "LXX transforms the nominal phrase 'not near' into a verb 'does not approach,' creating dynamic action rather than static temporal description."
+        },
+        {
+          "type": "translation_idiom",
+          "confidence": 0.29,
+          "explanation": "Greek idiom may have preferred verbal expression for temporal proximity, though the shift affects meaning subtly."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Pietersma (2006) p.89"
+      ],
+      "analysis_technical": "The shift from adjective to verb (קָרוֹב → ἐγγίζει) reflects LXX's tendency toward verbal dynamism noted by Pietersma. The Greek may also relocate this clause to govern the following verb ἀνατελεῖ, creating 'does not draw near—a star shall rise' as continuous thought.",
+      "analysis_plain": "Hebrew says 'not near' (describing when), but Greek says 'does not draw near' (describing action). The Greek makes the future event feel more active and approaching."
+    },
+    {
+      "mt_word": "דָּרַךְ כּוֹכָב (a star has stepped forth)",
+      "lxx_word": "ἀνατελεῖ ἄστρον (a star shall rise)",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.79,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.79,
+          "explanation": "Hebrew דָּרַךְ ('tread, march') translated with standard Greek astronomical term ἀνατέλλω ('rise'), reflecting conventional celestial vocabulary rather than literal rendering."
+        },
+        {
+          "type": "grammatical_shift",
+          "confidence": 0.21,
+          "explanation": "Perfect verb in MT rendered as future in LXX, heightening prophetic futurity."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Wevers (1998) p.403",
+        "Gray (1903) p.369"
+      ],
+      "analysis_technical": "The MT's דָּרַךְ employs militaristic imagery (cf. Hab 3:12), while LXX's ἀνατέλλω is technical astronomical language. Wevers notes LXX Numbers consistently naturalizes metaphorical Hebrew into conventional Greek idiom. The perfect-to-future shift is standard prophetic-oracular translation technique.",
+      "analysis_plain": "Hebrew uses a military marching word for the star, but Greek uses the normal astronomical term for a star rising. The translators made the image more conventional and less poetic."
+    },
+    {
+      "mt_word": "וְקָם שֵׁבֶט (and a scepter has arisen)",
+      "lxx_word": "καὶ ἀναστήσεται ἄνθρωπος (and a man shall arise)",
+      "divergence_type": "different_vorlage",
+      "confidence": 0.58,
+      "hypotheses": [
+        {
+          "type": "different_vorlage",
+          "confidence": 0.58,
+          "explanation": "LXX possibly read שֵׁבֶט as referring to a tribal member or person rather than royal scepter, or vocalized differently to produce 'man' interpretation."
+        },
+        {
+          "type": "theological_tendency",
+          "confidence": 0.42,
+          "explanation": "Translator deliberately personalized the royal symbol, making explicit the human messianic figure rather than symbolic regalia."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Albright (1944) p.207",
+        "Tov (2012) p.236",
+        "Vermes (1961) p.59"
+      ],
+      "analysis_technical": "Albright argued שֵׁבֶט could mean 'leader' in archaic poetry, which LXX may preserve. Alternatively, messianic interpretation drove explicit ἄνθρωπος rendering. Qumran texts (CD 7:19-20, 1QSb 5:27) attest early personalized messianic reading of this verse, supporting theological tendency hypothesis.",
+      "analysis_plain": "Hebrew has 'scepter,' a symbol of kingship, but Greek says 'a man.' The translator either read a different Hebrew word or deliberately made the future king into a specific person rather than a symbol."
+    },
+    {
+      "mt_word": "וּמָחַץ פַּאֲתֵי מוֹאָב (and will smash the corners of Moab)",
+      "lxx_word": "καὶ θραύσει τοὺς ἀρχηγοὺς Μωάβ (and will crush the leaders of Moab)",
+      "divergence_type": "different_vorlage",
+      "confidence": 0.72,
+      "hypotheses": [
+        {
+          "type": "different_vorlage",
+          "confidence": 0.72,
+          "explanation": "LXX likely read פַּקִּידֵי or פְּקֻדֵי ('officers, leaders') instead of MT's פַּאֲתֵי ('corners, sides'). Paleographic confusion between פא and פק is plausible."
+        },
+        {
+          "type": "translation_idiom",
+          "confidence": 0.28,
+          "explanation": "Translator may have interpreted פַּאֲתֵי metaphorically as regional rulers or understood it as synecdoche for leadership."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Levine (2000) p.188",
+        "Wevers (1998) p.404"
+      ],
+      "analysis_technical": "The shift from geographic 'corners/sides' to political 'leaders' transforms military conquest imagery. Levine notes פאה can denote regional divisions, which LXX interprets as their rulers. This follows LXX tendency to clarify ambiguous metaphors with concrete political terminology.",
+      "analysis_plain": "Hebrew speaks of crushing Moab's 'corners' or 'sides' (meaning its regions), but Greek says crushing Moab's leaders or chiefs. The Greek makes the military conquest more about defeating rulers than territory."
+    },
+    {
+      "mt_word": "וְקַרְקַר כָּל בְּנֵי שֵׁת (and tear down all sons of Sheth)",
+      "lxx_word": "καὶ προνομεύσει πάντας υἱοὺς Σήθ (and will plunder all sons of Seth)",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.64,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.64,
+          "explanation": "Hebrew קַרְקַר (rare verb, perhaps 'destroy, tear down') rendered with common military term προνομεύω ('plunder, despoil'), prioritizing intelligibility over lexical precision."
+        },
+        {
+          "type": "different_vorlage",
+          "confidence": 0.36,
+          "explanation": "Vorlage may have had בזז or שסה ('plunder') instead of קרקר, though MT's rare verb argues for authenticity."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Gray (1903) p.371",
+        "Ashley (1993) p.501"
+      ],
+      "analysis_technical": "The hapax קרקר's meaning is uncertain; cognates suggest 'dig, demolish.' LXX's προνομεύω standardizes with conventional warfare vocabulary. 'Sons of Seth' remains cryptic in both texts—possibly meaning 'humanity' or a specific tribal group. LXX preserves the ambiguity.",
+      "analysis_plain": "The Hebrew verb for what happens to the 'sons of Seth' is rare and unclear. The Greek translator chose a standard military word meaning 'plunder' to make the sentence understandable to readers."
+    }
+  ],
+  "summary_technical": "The LXX exhibits multiple translational strategies: replacing visionary terminology with divine demonstration (v.17a), naturalizing military-astronomical metaphors into conventional Greek idiom, and personalizing the messianic scepter as ἄνθρωπος. Different Vorlage and theological tendency both operate, particularly in the star/man parallelism.",
+  "summary_plain": "The Greek translation shifts the oracle from Balaam's personal vision to God's revelation, changes poetic symbols into clearer references, and makes the future ruler an explicit person rather than a symbolic scepter.",
+  "bibcrit_hypothesis": {
+    "title": "Early Messianic Personalization in LXX Vorlage",
+    "reasoning": "The שֵׁבֶט/ἄνθρωπος divergence likely reflects a pre-LXX Hebrew variant that already interpreted the verse messianically as a person rather than symbol, evidenced by parallel personalization in Qumran texts. The LXX translator did not innovate this reading but inherited a textual tradition where שֵׁבֶט was already glossed or read as tribal leader/man. The surrounding shifts (אראנו causative, פאתי as leaders) suggest a coherent Vorlage tradition emphasizing personal agency and political-military concreteness over poetic symbol.",
+    "plain": "The Greek's 'man' instead of 'scepter' probably came from a Hebrew manuscript that already read this verse as predicting a specific person, not just a symbol. This messianic interpretation was developing before the Greek translation was even made.",
+    "confidence": 0.61
+  },
+  "discovery_ready": false,
+  "reference": "Numbers 24:17",
+  "cached_at": "2026-03-30T18:47:26.734935",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v2"
+}

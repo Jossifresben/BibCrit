@@ -1,0 +1,101 @@
+{
+  "reconstructed_words": [
+    {
+      "position": 1,
+      "lxx_word": "ὁ θεὸς ὁ θεός μου",
+      "vorlage_word": "אלהי אלהי",
+      "status": "agrees_mt",
+      "confidence": 0.95,
+      "mt_equivalent": "אֵלִי אֵלִי",
+      "dss_witness": null,
+      "reasoning": "The Greek phrase reflects Hebrew אלהי repeated. While MT has אֵלִי (from אֵל 'God'), the LXX uses the standard rendering θεός for אלהים. The LXX translator either read אלהי or interpreted אלי as equivalent to אלהי, both meaning 'my God'. The double vocative pattern is preserved identically.",
+      "alternatives": [
+        {
+          "reading": "אלי אלי",
+          "confidence": 0.9,
+          "note": "The exact MT form, though LXX typically renders אל with θεός as well"
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "lxx_word": "πρόσχες μοι",
+      "vorlage_word": "הקשיבה לי",
+      "status": "unattested",
+      "confidence": 0.35,
+      "mt_equivalent": null,
+      "dss_witness": null,
+      "reasoning": "This imperative 'pay attention to me' has no equivalent in MT Ps 22:2. The Greek προσέχω + dative typically translates forms of קשב 'attend' or שמע 'hear'. This appears to be an expansion or represents a Hebrew Vorlage different from MT, possibly harmonizing with other lament psalms that begin with imperatives requesting divine attention.",
+      "alternatives": [
+        {
+          "reading": "שמע אלי",
+          "confidence": 0.3,
+          "note": "Another common Hebrew phrase meaning 'listen to me'"
+        },
+        {
+          "reading": null,
+          "confidence": 0.25,
+          "note": "Possible Greek liturgical expansion with no Hebrew Vorlage"
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "lxx_word": "ἵνα τί ἐγκατέλιπές με",
+      "vorlage_word": "למה עזבתני",
+      "status": "agrees_mt",
+      "confidence": 0.98,
+      "mt_equivalent": "לָמָה עֲזַבְתָּנִי",
+      "dss_witness": null,
+      "reasoning": "Perfect correspondence: ἵνα τί is the standard LXX rendering of למה 'why', and ἐγκατέλιπές (from ἐγκαταλείπω) consistently translates עזב 'abandon, forsake'. The accusative με reflects the suffix תני-. This is one of the most stable renderings in the Psalter.",
+      "alternatives": []
+    },
+    {
+      "position": 4,
+      "lxx_word": "μακρὰν ἀπὸ τῆς σωτηρίας μου",
+      "vorlage_word": "רחוק מישועתי",
+      "status": "agrees_mt",
+      "confidence": 0.92,
+      "mt_equivalent": "רָחוֹק מִישׁוּעָתִי",
+      "dss_witness": null,
+      "reasoning": "The Greek μακράν 'far' corresponds to רחוק, ἀπό renders מן, and σωτηρία is the standard equivalent for ישועה 'salvation, deliverance'. The genitive μου reflects the pronominal suffix י-. MT continues with דברי שאגתי 'the words of my roaring', which the LXX has interpreted differently.",
+      "alternatives": []
+    },
+    {
+      "position": 5,
+      "lxx_word": "οἱ λόγοι τῶν παραπτωμάτων μου",
+      "vorlage_word": "דברי פשעי",
+      "status": "unattested",
+      "confidence": 0.4,
+      "mt_equivalent": "דִּבְרֵי שַׁאֲגָתִי",
+      "dss_witness": null,
+      "reasoning": "MT has דברי שאגתי 'the words of my roaring/groaning'. The LXX reads 'the words of my transgressions', suggesting a Vorlage with פשעי or חטאתי instead of שאגתי. The translator may have read שגי (from שגה 'go astray') or misread שאגתי as a form related to transgression. Alternatively, this reflects theological interpretation: the psalmist's suffering is connected to sin.",
+      "alternatives": [
+        {
+          "reading": "דברי שגיתי",
+          "confidence": 0.35,
+          "note": "From שגה 'err', closer paleographically to שאגתי"
+        },
+        {
+          "reading": "דברי שאגתי",
+          "confidence": 0.25,
+          "note": "MT reading interpreted theologically as involving sin"
+        }
+      ]
+    }
+  ],
+  "summary_technical": "The LXX Vorlage agrees substantially with MT in the core lament formula (אלהי אלהי למה עזבתני רחוק מישועתי), showing high lexical correspondence. Two significant divergences appear: the added imperative πρόσχες μοι (position 2), likely from הקשיבה לי or a liturgical expansion, and the substitution of παραπτωμάτων for MT's שאגתי (position 5), suggesting either a variant reading (פשעי) or theological interpretation. The translation technique is generally formal-equivalence with occasional interpretive freedom in theologically sensitive contexts.",
+  "summary_plain": "The Greek translator worked from a Hebrew text very similar to the traditional Masoretic Text for the famous opening 'My God, my God, why have you forsaken me?' but had two notable differences: an added phrase asking God to pay attention, and 'transgressions' where the Hebrew has 'groaning.'",
+  "overall_confidence": 0.72,
+  "bibcrit_assessment": {
+    "title": "Lost Vorlage: Transgression Instead of Groaning",
+    "reasoning": "The most textually significant variant is οἱ λόγοι τῶν παραπτωμάτων μου versus MT דברי שאגתי. While theological interpretation is possible, the specificity of παράπτωμα (typically rendering פשע) suggests the translator read a different Hebrew word. Paleographically, שאגתי could be confused with a form of שגה, or the Vorlage may have had פשעי, shifting the theology from anguished cry to confession of sin. This is evidence-based on lexical correspondence patterns, though without DSS confirmation it remains a plausible rather than certain variant. The added πρόσχες μοι is more likely secondary expansion.",
+    "plain": "The Greek translation may preserve an ancient Hebrew version where the psalmist speaks of 'my transgressions' rather than 'my groaning,' possibly reflecting an earlier theological interpretation that connected suffering with sin, though this could also be the translator's own interpretive choice.",
+    "confidence": 0.55
+  },
+  "discovery_ready": false,
+  "reference": "Psalm 22:1",
+  "cached_at": "2026-03-31T11:14:54.317007",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

@@ -1,0 +1,161 @@
+{
+  "book": "Exodus",
+  "translator_name": "Old Greek of Exodus",
+  "translator_profile": {
+    "literalness": 0.82,
+    "anthropomorphism_reduction": 0.38,
+    "messianic_heightening": 0.15,
+    "harmonization": 0.42,
+    "paraphrase_rate": 0.28
+  },
+  "dimensions": [
+    {
+      "dimension": "literalness",
+      "score": 0.82,
+      "confidence": 0.92,
+      "summary": "The Exodus translator exhibits highly isomorphic technique with consistent formal equivalence patterns. Word order frequently mirrors Hebrew syntax, and stereotyped lexical equivalents dominate (e.g., wayyiqtol consistently rendered with καί + aorist). Wevers and Aejmelaeus both note the mechanical quality of this rendering, with quantitative equivalence prioritized over Greek idiom in most pericopes.",
+      "summary_plain": "This translator worked very literally, following the Hebrew word-for-word even when it made awkward Greek. The translation reads like someone carefully matching each Hebrew word to a Greek equivalent.",
+      "examples": [
+        {
+          "reference": "Exodus 3:2",
+          "mt_text": "וַיֵּרָא מַלְאַךְ יְהוָה אֵלָיו בְּלַבַּת־אֵשׁ מִתּוֹךְ הַסְּנֶה",
+          "lxx_text": "ὤφθη δὲ αὐτῷ ἄγγελος κυρίου ἐν πυρὶ φλογὸς ἐκ τοῦ βάτου",
+          "note": "Word-for-word equivalence with Hebrew syntax preserved, including the prepositional phrase structure 'in fire of flame from the bush' rather than idiomatic Greek restructuring."
+        },
+        {
+          "reference": "Exodus 15:1",
+          "mt_text": "אָז יָשִׁיר־מֹשֶׁה",
+          "lxx_text": "τότε ᾖσεν Μωυσῆς",
+          "note": "Mechanical rendering of temporal adverb + verb + subject in exact Hebrew order, demonstrating the translator's preference for formal over dynamic equivalence."
+        },
+        {
+          "reference": "Exodus 20:13-15",
+          "mt_text": "לֹא תִרְצָח לֹא תִנְאָף לֹא תִגְנֹב",
+          "lxx_text": "οὐ φονεύσεις· οὐ μοιχεύσεις· οὐ κλέψεις",
+          "note": "Stereotyped negative + future indicative rendering for all prohibitions maintains formal equivalence with Hebrew imperfect, showing systematic lexical consistency."
+        }
+      ]
+    },
+    {
+      "dimension": "anthropomorphism_reduction",
+      "score": 0.38,
+      "confidence": 0.85,
+      "summary": "The translator shows moderate theological sensitivity, softening some anthropomorphisms but retaining many physical descriptions of deity. Exodus 24:10 ('they saw the God of Israel') is rendered literally, while some instances of divine emotion or regret receive slight modification. This represents a restrained approach compared to later revisers, suggesting early translation practice with limited systematic theological revision.",
+      "summary_plain": "The translator sometimes softened descriptions of God having human body parts or emotions, but not consistently. Many physical descriptions of God were kept exactly as in Hebrew.",
+      "examples": [
+        {
+          "reference": "Exodus 24:10",
+          "mt_text": "וַיִּרְאוּ אֵת אֱלֹהֵי יִשְׂרָאֵל",
+          "lxx_text": "καὶ εἶδον τὸν τόπον οὗ εἱστήκει ὁ θεὸς τοῦ Ισραηλ",
+          "note": "Notable anthropomorphism reduction: rather than 'they saw the God of Israel,' the translator inserts 'the place where stood the God of Israel,' avoiding direct divine visibility."
+        },
+        {
+          "reference": "Exodus 32:14",
+          "mt_text": "וַיִּנָּחֶם יְהוָה עַל־הָרָעָה",
+          "lxx_text": "καὶ ἱλάσθη κύριος περὶ τῆς κακίας",
+          "note": "Divine 'repentance' (נחם) rendered as 'was propitious/merciful' (ἱλάσθη), a mild theological softening that removes the notion of divine changeability while preserving the emotional content."
+        },
+        {
+          "reference": "Exodus 15:3",
+          "mt_text": "יְהוָה אִישׁ מִלְחָמָה",
+          "lxx_text": "κύριος συντρίβων πολέμους",
+          "note": "The bold anthropomorphism 'the LORD is a man of war' is retained with literal rendering, showing the translator's tolerance for physical-warrior imagery applied to deity."
+        }
+      ]
+    },
+    {
+      "dimension": "messianic_heightening",
+      "score": 0.15,
+      "confidence": 0.78,
+      "summary": "Messianic interpretation is largely absent from this translator's work, consistent with the legal-historical character of Exodus material. No clear instances of eschatological amplification appear in key passages like the Passover narrative or covenant formulae. The translator maintains the immediate historical referents of the Hebrew text without obvious christological or future-oriented reinterpretation, unlike prophetic books where such tendencies are more pronounced.",
+      "summary_plain": "This translator did not add messianic or future-kingdom meanings to the text. The translation stays with the historical story without adding hidden prophecies about a future messiah.",
+      "examples": [
+        {
+          "reference": "Exodus 12:46",
+          "mt_text": "וְעֶצֶם לֹא תִשְׁבְּרוּ־בוֹ",
+          "lxx_text": "καὶ οὐ συντρίψετε ὀστοῦν ἀπ' αὐτοῦ",
+          "note": "Despite later Christian typological reading (John 19:36), the translator renders the Passover lamb regulation with no heightening or amplification that would signal messianic significance."
+        },
+        {
+          "reference": "Exodus 17:6",
+          "mt_text": "וְהִכִּיתָ בַצּוּר וְיָצְאוּ מִמֶּנּוּ מַיִם",
+          "lxx_text": "πατάξεις τὴν πέτραν, καὶ ἐξελεύσεται ἐξ αὐτῆς ὕδωρ",
+          "note": "The rock-water miracle is rendered literally without any interpretive expansion, despite Pauline typology (1 Cor 10:4); no messianic or christological emphasis appears."
+        },
+        {
+          "reference": "Exodus 3:14",
+          "mt_text": "אֶהְיֶה אֲשֶׁר אֶהְיֶה",
+          "lxx_text": "ἐγώ εἰμι ὁ ὤν",
+          "note": "While 'I am the Being/Existing One' carries philosophical weight, this represents translation of a difficult Hebrew idiom rather than messianic heightening; the translator seeks Greek metaphysical equivalence without eschatological amplification."
+        }
+      ]
+    },
+    {
+      "dimension": "harmonization",
+      "score": 0.42,
+      "confidence": 0.8,
+      "summary": "The translator demonstrates moderate harmonizing activity, particularly within legal sections where parallel formulations appear. Tabernacle descriptions show some coordination between instruction and execution narratives, and Decalogue wording exhibits minor alignment tendencies. However, harmonization is not systematic; many textual tensions remain unresolved, suggesting the translator worked with sensitivity to immediate context rather than comprehensive cross-referencing of the entire Pentateuch.",
+      "summary_plain": "The translator sometimes smoothed out differences between similar passages to make them match better, especially in legal and ritual sections, but this was not done everywhere.",
+      "examples": [
+        {
+          "reference": "Exodus 20:11 / Deuteronomy 5:15",
+          "mt_text": "Exodus: כִּי שֵׁשֶׁת־יָמִים עָשָה יְהוָה; Deut: וְזָכַרְתָּ כִּי־עֶבֶד הָיִיתָ",
+          "lxx_text": "Exodus: ἐν γὰρ ἓξ ἡμέραις ἐποίησεν κύριος; Deut follows MT distinctly",
+          "note": "The different Sabbath rationales in the two Decalogues are preserved without harmonization, showing restraint in theological alignment between parallel legal texts."
+        },
+        {
+          "reference": "Exodus 35-40",
+          "mt_text": "Tabernacle execution vs. chapters 25-31 instructions",
+          "lxx_text": "Reordered and partially harmonized in Greek",
+          "note": "Significant reordering and some lexical harmonization between tabernacle command and fulfillment sections, demonstrating the translator's willingness to coordinate parallel material for consistency."
+        },
+        {
+          "reference": "Exodus 12:40",
+          "mt_text": "וּמוֹשַׁב בְּנֵי־יִשְׂרָאֵל אֲשֶׁר יָשְׁבוּ בְּמִצְרָיִם",
+          "lxx_text": "ἡ δὲ κατοίκησις τῶν υἱῶν Ισραηλ ἣν κατῴκησαν ἐν γῇ Αἰγύπτῳ καὶ ἐν γῇ Χανααν",
+          "note": "Addition of 'and in land of Canaan' harmonizes chronology with Genesis patriarchal narratives, resolving the 430-year calculation through explicit coordination with earlier Pentateuchal material."
+        }
+      ]
+    },
+    {
+      "dimension": "paraphrase_rate",
+      "score": 0.28,
+      "confidence": 0.88,
+      "summary": "Paraphrase appears selectively, primarily in culturally specific legal material and realia requiring cultural translation for Greek readers. The translator generally maintains formal equivalence but introduces explanatory expansions for Hebrew technical terms, cultic objects, and juridical concepts. This represents functional adaptation rather than literary paraphrase, with the translator serving as cultural mediator while preserving structural isomorphism in narrative and most legal formulations.",
+      "summary_plain": "The translator usually stuck close to the Hebrew wording but would occasionally explain or expand technical terms and cultural details that Greek readers might not understand.",
+      "examples": [
+        {
+          "reference": "Exodus 12:22",
+          "mt_text": "אֵזוֹב",
+          "lxx_text": "ὑσσώπου (with occasional descriptive phrases in context)",
+          "note": "Technical cultic terms like 'hyssop' are typically transliterated or given direct equivalents, but surrounding context sometimes receives slight expansion for clarity, showing restrained paraphrase for realia."
+        },
+        {
+          "reference": "Exodus 22:28",
+          "mt_text": "אֱלֹהִים לֹא תְקַלֵּל וְנָשִׂיא בְעַמְּךָ לֹא תָאֹר",
+          "lxx_text": "θεοὺς οὐ κακολογήσεις καὶ ἄρχοντας τοῦ λαοῦ σου οὐκ ἐρεῖς κακῶς",
+          "note": "Legal formulation rendered with close equivalence but verb choices (κακολογέω vs. ἐρεῖς κακῶς) show slight interpretive expansion for Greek legal register."
+        },
+        {
+          "reference": "Exodus 28:30",
+          "mt_text": "אוּרִים וְאֶת־הַתֻּמִּים",
+          "lxx_text": "τὴν δήλωσιν καὶ τὴν ἀλήθειαν",
+          "note": "Urim and Thummim rendered as 'manifestation and truth,' a functional paraphrase translating obscure Hebrew technical terms into conceptual Greek equivalents for the divination objects."
+        }
+      ]
+    }
+  ],
+  "overall_assessment": "The Old Greek translator of Exodus exemplifies early Ptolemaic literal translation technique with high formal equivalence and systematic lexical consistency. The work shows professional competence in producing isomorphic Greek while exercising limited theological revision—anthropomorphisms are occasionally softened but generally retained, and no messianic agenda appears. Moderate harmonization in legal material and selective functional paraphrase for technical terms indicate a translator balancing fidelity to source text structure with minimal concessions to target-language comprehensibility. For text-critical purposes, this translation provides generally reliable access to a Hebrew Vorlage close to MT, though the tabernacle section reordering and occasional chronological harmonizations require careful evaluation.",
+  "overall_plain": "This was a highly literal translator who worked carefully to match Greek words to Hebrew words in the same order, even when it made awkward Greek sentences. The translator occasionally explained technical religious terms and smoothed out a few descriptions of God's body or emotions, but mostly stayed very close to the Hebrew source. This translation is quite reliable for understanding what the Hebrew text said.",
+  "bibcrit_assessment": {
+    "title": "High Literalism with Selective Cultural Mediation",
+    "reasoning": "The most significant finding is the combination of extreme formal equivalence in syntax and word order with strategic functional paraphrase exclusively in cultural-technical domains (realia, cultic apparatus, legal terminology). This suggests a translator operating under a literalist mandate but recognizing the necessity of minimal cultural translation for comprehensibility. Unlike later kaige revisers who systematized literalism absolutely, this translator permitted pragmatic adaptation within a fundamentally isomorphic framework, revealing early translation conventions that balanced fidelity with limited accessibility.",
+    "plain": "This translator was extremely literal but knew when Greek readers would be completely lost by Hebrew cultural terms, so those got brief explanations while everything else stayed word-for-word.",
+    "confidence": 0.89
+  },
+  "discovery_ready": false,
+  "reference": "Exodus",
+  "cached_at": "2026-03-30T21:36:32.924852",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

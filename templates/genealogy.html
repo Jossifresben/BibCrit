@@ -1,0 +1,229 @@
+{% extends "base.html" %}
+{% block title %}{{ _t('genealogy_page_title') }}{% endblock %}
+
+{% block content %}
+
+<!-- Passage Selector Bar -->
+<div class="passage-bar">
+  <div class="passage-bar-row passage-bar-main">
+    <span class="passage-label">{{ _t('genealogy_ref_label') }}:</span>
+    <select id="sel-book" class="passage-select" aria-label="Select book">
+      <option value="">{{ _t('passage_book_placeholder') }}</option>
+      <option value="Genesis">Genesis</option>
+      <option value="Exodus">Exodus</option>
+      <option value="Leviticus">Leviticus</option>
+      <option value="Numbers">Numbers</option>
+      <option value="Deuteronomy">Deuteronomy</option>
+      <option value="Joshua">Joshua</option>
+      <option value="Judges">Judges</option>
+      <option value="Ruth">Ruth</option>
+      <option value="1 Samuel">1 Samuel</option>
+      <option value="2 Samuel">2 Samuel</option>
+      <option value="1 Kings">1 Kings</option>
+      <option value="2 Kings">2 Kings</option>
+      <option value="Isaiah">Isaiah</option>
+      <option value="Jeremiah">Jeremiah</option>
+      <option value="Ezekiel">Ezekiel</option>
+      <option value="Hosea">Hosea</option>
+      <option value="Joel">Joel</option>
+      <option value="Amos">Amos</option>
+      <option value="Obadiah">Obadiah</option>
+      <option value="Jonah">Jonah</option>
+      <option value="Micah">Micah</option>
+      <option value="Nahum">Nahum</option>
+      <option value="Habakkuk">Habakkuk</option>
+      <option value="Zephaniah">Zephaniah</option>
+      <option value="Haggai">Haggai</option>
+      <option value="Zechariah">Zechariah</option>
+      <option value="Malachi">Malachi</option>
+      <option value="Psalms">Psalms</option>
+      <option value="Proverbs">Proverbs</option>
+      <option value="Job">Job</option>
+      <option value="Song of Songs">Song of Songs</option>
+      <option value="Lamentations">Lamentations</option>
+      <option value="Ecclesiastes">Ecclesiastes</option>
+      <option value="Esther">Esther</option>
+      <option value="Daniel">Daniel</option>
+      <option value="Ezra">Ezra</option>
+      <option value="Nehemiah">Nehemiah</option>
+      <option value="1 Chronicles">1 Chronicles</option>
+      <option value="2 Chronicles">2 Chronicles</option>
+    </select>
+    <span class="passage-or">{{ _t('passage_or') }}</span>
+    <input type="text" id="ref-input" class="passage-input"
+           placeholder="Isaiah" value="{{ book }}"
+           aria-label="Type a book name">
+    <div class="passage-bar-actions">
+      <button id="btn-analyze" class="btn-primary">{{ _t('genealogy_analyze_btn') }}</button>
+    </div>
+  </div>
+</div>
+
+<!-- Dismissable info banner -->
+<div id="genealogy-info-banner" class="bt-info-banner">
+  <div class="bt-info-inner">
+    <span class="bt-info-icon">🌳</span>
+    <div class="bt-info-text">
+      <strong>{{ _t('genealogy_what_title') }}</strong>
+      {{ _t('genealogy_info_body') | safe }}
+    </div>
+    <button class="bt-info-close" id="genealogy-info-close" aria-label="Dismiss">✕</button>
+  </div>
+</div>
+
+<!-- Empty / Welcome State -->
+<div id="empty-state" class="empty-state">
+  <div class="empty-inner">
+    <h2>{{ _t('genealogy_empty_title') }}</h2>
+    <p>{{ _t('genealogy_empty_body') }}</p>
+
+    <!-- Tradition legend -->
+    <div class="bt-legend-hero" style="margin-bottom: 1.5rem;">
+      <span class="bt-legend-item"><span class="scribal-mini-dot" style="background:#d97706"></span> {{ _t('legend_mt_abbr') }}</span>
+      <span class="bt-legend-item"><span class="scribal-mini-dot" style="background:#2563eb"></span> {{ _t('legend_lxx_abbr') }}</span>
+      <span class="bt-legend-item"><span class="scribal-mini-dot" style="background:#9333ea"></span> {{ _t('legend_dss_abbr') }}</span>
+      <span class="bt-legend-item"><span class="scribal-mini-dot" style="background:#059669"></span> {{ _t('legend_sp_abbr') }}</span>
+      <span class="bt-legend-item"><span class="scribal-mini-dot" style="background:#ea580c"></span> {{ _t('legend_peshitta') }}</span>
+      <span class="bt-legend-item"><span class="scribal-mini-dot" style="background:#dc2626"></span> {{ _t('legend_targum') }}</span>
+      <span class="bt-legend-item"><span class="scribal-mini-dot" style="background:#64748b"></span> {{ _t('legend_vulgate') }}</span>
+    </div>
+  </div>
+</div>
+
+<!-- Featured book chips -->
+<div class="num-suggestions" id="genealogy-suggestions">
+  <div class="num-sug-group">
+    <span class="num-sug-label">{{ _t('featured_label') }}</span>
+    <div class="num-sug-chips">
+      <button class="num-sug-chip" data-book="Isaiah">{{ _t('feat_gen_isaiah') | safe }}</button>
+      <button class="num-sug-chip" data-book="Psalms">{{ _t('feat_gen_psalms') | safe }}</button>
+      <button class="num-sug-chip" data-book="Genesis">{{ _t('feat_gen_genesis') | safe }}</button>
+      <button class="num-sug-chip" data-book="Jeremiah">{{ _t('feat_gen_jeremiah') | safe }}</button>
+      <button class="num-sug-chip" data-book="Deuteronomy">{{ _t('feat_gen_deut') | safe }}</button>
+      <button class="num-sug-chip" data-book="Daniel">{{ _t('feat_gen_daniel') | safe }}</button>
+      <button class="num-sug-chip" data-book="Ezekiel">{{ _t('feat_gen_ezekiel') | safe }}</button>
+      <button class="num-sug-chip" data-book="Numbers">{{ _t('feat_gen_numbers') | safe }}</button>
+    </div>
+  </div>
+</div>
+
+<!-- Loading State -->
+<div id="loading-state" class="loading-state" style="display:none;" aria-live="polite">
+  <div class="loading-spinner"></div>
+  <p id="loading-step" class="loading-step-msg">{{ _t('loading_preparing') }}</p>
+  <p id="loading-timer" class="loading-timer"></p>
+</div>
+
+<!-- Passage heading -->
+<div id="passage-heading" class="passage-heading" style="display:none;"></div>
+
+<!-- Results area -->
+<div id="genealogy-results" style="display:none;">
+
+  <!-- Stemma SVG canvas -->
+  <div id="stemma-section" class="num-section" style="display:none;">
+    <div class="num-section-label" style="display:flex;align-items:center;justify-content:space-between;">
+      {{ _t('section_transmission_stemma') }}
+      <button id="stemma-fullscreen-btn" class="btn-icon-sm" title="Fullscreen">
+        <span class="material-symbols-outlined" style="font-size:18px">fullscreen</span>
+      </button>
+    </div>
+    <div id="stemma-wrap" style="overflow-x:auto;overflow-y:auto;border:1px solid var(--border);border-radius:8px;background:var(--card-bg,#fff);padding:12px;">
+      <svg id="stemma-svg" xmlns="http://www.w3.org/2000/svg" style="display:block;"></svg>
+    </div>
+  </div>
+
+  <!-- Archetype description -->
+  <div id="archetype-section" style="display:none;">
+    <div class="num-section-label">{{ _t('section_archetype') }}</div>
+    <div id="archetype-body"></div>
+  </div>
+
+  <!-- Key divergences -->
+  <div id="divergences-section" style="display:none;">
+    <div class="num-section-label">{{ _t('section_key_divergences') }}</div>
+    <div id="divergences-list"></div>
+  </div>
+
+  <!-- Transmission narrative -->
+  <div id="narrative-section" class="num-section" style="display:none;">
+    <div class="num-section-label">{{ _t('section_transmission_history') }}</div>
+    <div id="narrative-body"></div>
+  </div>
+
+  <!-- BibCrit Assessment -->
+  <div id="bibcrit-assessment" style="display:none;">
+    <div class="num-section-label" style="margin-top:1.5rem;">{{ _t('section_bibcrit_assessment') }}</div>
+    <div id="bibcrit-body"></div>
+  </div>
+
+  <!-- Export / share row -->
+  <div class="export-row" id="export-row" style="display:none;">
+    <button class="btn-export" id="btn-sbl" title="Copy SBL footnote">📋 SBL Footnote</button>
+    <button class="btn-export" id="btn-bibtex" title="Copy BibTeX">📋 BibTeX</button>
+    <button class="btn-export btn-share" id="btn-share" title="Share this analysis">
+      <span class="material-symbols-outlined" style="font-size:14px;vertical-align:-2px">qr_code_2</span> Share
+    </button>
+  </div>
+</div>
+
+<!-- Toast -->
+<div id="toast" class="toast" style="display:none;" role="status"></div>
+
+<style>
+/* Tighten layout */
+.bt-info-banner { margin-bottom: 0; }
+#empty-state.empty-state { margin: 1.5rem auto 0.5rem; }
+#empty-state.empty-state h2 { font-size: 1.4rem; margin-bottom: 0.4rem; }
+#empty-state.empty-state p  { margin-bottom: 0.75rem; }
+.num-suggestions { margin-top: 0.5rem; }
+
+/* Stemma section */
+#stemma-section { max-width: 900px; margin: 0 auto 1.5rem; }
+
+/* Stemma fullscreen states */
+#stemma-wrap:fullscreen { background: var(--bg, #faf9f7); overflow: auto; padding: 20px; }
+#stemma-wrap:-webkit-full-screen { background: var(--bg, #faf9f7); overflow: auto; padding: 20px; }
+
+/* Stemma SVG elements */
+.stemma-node { cursor: default; }
+.stemma-node rect { rx: 6; ry: 6; }
+.stemma-edge { fill: none; stroke: var(--border, #ccc); stroke-width: 1.5; }
+.stemma-node text { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 600; }
+.stemma-node .node-date { font-size: 9px; font-weight: 400; fill: #888; }
+
+/* Genealogy cards */
+.genealogy-card {
+  background: var(--card-bg, #fff);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 0.75rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.div-card-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 0.35rem;
+}
+.div-card-passage {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+</style>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='genealogy.js') }}"></script>
+{% if book %}
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.genealogy) window.genealogy.analyze('{{ book | e }}');
+  });
+</script>
+{% endif %}
+{% endblock %}

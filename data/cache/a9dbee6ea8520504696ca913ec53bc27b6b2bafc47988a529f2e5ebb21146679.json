@@ -1,0 +1,83 @@
+{
+  "divergences": [
+    {
+      "mt_word": "וַיִּקְרָא שְׁמוֹ (and he called/will call his name)",
+      "lxx_word": "καλεῖται τὸ ὄνομα αὐτοῦ (is called his name)",
+      "divergence_type": "grammatical_shift",
+      "confidence": 0.82,
+      "hypotheses": [
+        {
+          "type": "grammatical_shift",
+          "confidence": 0.82,
+          "explanation": "MT uses wayyiqtol (waw-consecutive imperfect) suggesting prophetic past-as-future or narrative past, while LXX employs present passive, likely interpreting as divine passive to avoid specifying the subject of naming."
+        }
+      ],
+      "dss_witness": "1QIsaᵃ reads ויקרא, supporting MT vocalization",
+      "citations": [
+        "Blenkinsopp (2000) p.253",
+        "Williamson (2006) p.271"
+      ],
+      "analysis_technical": "The MT wayyiqtol form וַיִּקְרָא creates ambiguity about the subject (God, prophet, or impersonal) and temporal reference. LXX's present passive καλεῖται removes this ambiguity, reflecting either a theological tendency to clarify divine agency through passive voice or a translation strategy for rendering Hebrew prophetic perfects. Williamson notes the LXX consistently uses passive voice for divine naming in Isaiah.",
+      "analysis_plain": "The Hebrew says 'he called' but doesn't specify who does the calling, while the Greek uses 'is called' to make it clear God is the one naming the child without directly saying so."
+    },
+    {
+      "mt_word": "פֶּלֶא יוֹעֵץ אֵל גִּבּוֹר אֲבִי עַד שַׂר שָׁלוֹם (Wonderful Counselor, Mighty God, Everlasting Father, Prince of Peace)",
+      "lxx_word": "Μεγάλης βουλῆς Ἄγγελος (Angel/Messenger of Great Counsel)",
+      "divergence_type": "different_vorlage",
+      "confidence": 0.68,
+      "hypotheses": [
+        {
+          "type": "theological_tendency",
+          "confidence": 0.55,
+          "explanation": "LXX truncates four titles into one to avoid apparent divine attribution to a human figure, reflecting Jewish theological discomfort with calling a mortal 'Mighty God.'"
+        },
+        {
+          "type": "different_vorlage",
+          "confidence": 0.68,
+          "explanation": "LXX translator's Vorlage may have read פלא יעץ אל as construct chain 'wonder of counsel of God' with מלאך instead of final titles, or translator creatively rendered an abbreviated Hebrew text."
+        }
+      ],
+      "dss_witness": "1QIsaᵃ preserves all four MT titles with minor orthographic variants",
+      "citations": [
+        "Seeligmann (1948) p.95",
+        "Tov (2001) p.237",
+        "van der Kooij (1997) p.513"
+      ],
+      "analysis_technical": "The LXX's radical abbreviation represents either a substantially different Hebrew text or deliberate theological revision. Seeligmann argues for conscious reduction to avoid quasi-divine titles for a human king. The addition of Ἄγγελος (not in MT) may reflect interpretation of פֶּלֶא as divine messenger rather than adjective 'wonderful.' Van der Kooij suggests LXX read מלאך for מלך implicit in royal context, though DSS evidence strongly supports MT's longer form as original.",
+      "analysis_plain": "The Hebrew lists four grand titles including 'Mighty God,' but the Greek reduces these to a single modest title 'Angel of Great Counsel,' probably because calling a human king 'God' made translators uncomfortable."
+    },
+    {
+      "mt_word": "וַתְּהִי הַמִּשְׂרָה עַל שִׁכְמוֹ (and the government was/will be on his shoulder)",
+      "lxx_word": "οὗ ἡ ἀρχὴ ἐγενήθη ἐπὶ τοῦ ὤμου αὐτοῦ (whose rule came to be on his shoulder)",
+      "divergence_type": "grammatical_shift",
+      "confidence": 0.71,
+      "hypotheses": [
+        {
+          "type": "grammatical_shift",
+          "confidence": 0.71,
+          "explanation": "MT wayyiqtol וַתְּהִי rendered by LXX aorist ἐγενήθη, shifting from consecutive narrative to relative clause construction, likely to clarify syntactic relationship and emphasize completed action."
+        }
+      ],
+      "dss_witness": "1QIsaᵃ reads ותהי, confirming MT",
+      "citations": [
+        "Ottley (1906) p.167",
+        "Ziegler (1934) p.89"
+      ],
+      "analysis_technical": "The LXX transforms the waw-consecutive structure into a relative clause (οὗ... αὐτοῦ), subordinating the clause to the preceding 'son given to us.' This reflects standard LXX technique for handling Hebrew narrative sequences in poetic contexts. Ottley notes LXX Isaiah frequently restructures wayyiqtol chains when maintaining Hebrew syntax would create awkward Greek. The choice of ἐγενήθη (aorist of γίνομαι) over ἦν suggests emphasis on the inauguration moment rather than continuous state.",
+      "analysis_plain": "The Hebrew connects this phrase with 'and' to the previous line, but the Greek uses 'whose' to make it a descriptive clause, creating smoother Greek syntax while slightly changing the logical flow."
+    }
+  ],
+  "summary_technical": "The LXX exhibits major divergence primarily in the throne-name sequence, likely reflecting theological concern about attributing divine titles to a human monarch, though different Vorlage cannot be excluded. Grammatical adjustments show standard translation technique for Hebrew consecutive forms.",
+  "summary_plain": "The Greek translation dramatically shortens the royal titles and smooths the grammar, probably to avoid calling a human king by names that belong to God alone.",
+  "bibcrit_hypothesis": {
+    "title": "LXX Abbreviation Reflects Pre-Christian Messianic Ambivalence",
+    "reasoning": "The LXX's reduction may preserve evidence of Second Temple Jewish discomfort with Isaianic royal theology that too closely identified Davidic kings with divine attributes—a tension predating Christian messianic interpretation. The מלאך/Ἄγγελος connection suggests the translator parsed פֶּלֶא not as 'wonderful' but as a cipher for angelic mediation, distancing divine presence from direct royal embodiment. This represents not textual corruption but hermeneutical negotiation with exilic/post-exilic monarchy's theological crisis.",
+    "plain": "The Greek shortening might show that even before Christianity, some Jews were uncomfortable with prophetic language that made kings sound too much like God himself, preferring to see them as messengers rather than divine figures.",
+    "confidence": 0.62
+  },
+  "discovery_ready": false,
+  "reference": "Isaiah 9:6",
+  "cached_at": "2026-03-30T19:02:07.744324",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v2"
+}

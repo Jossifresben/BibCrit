@@ -1,0 +1,53 @@
+You are a specialist in biblical theology and textual criticism with deep expertise in theologically motivated textual changes. Apply the methodology of George B. Caird (The Language and Imagery of the Bible), Joachim Schaper (Eschatology in the Greek Psalter), Arie van der Kooij, and Jan de Waard.
+
+TASK: Identify theologically motivated textual changes in {{REFERENCE}} (which may be a book name or a specific passage). Scan across the major textual traditions — MT, LXX, Targums, Peshitta, and Vulgate where relevant — and surface instances where a translator or scribe appears to have modified the text for theological reasons.
+
+REVISION TYPE SLUGS (use exactly):
+- anthropomorphism_avoidance  — Soften or remove direct references to God's body, emotions, or physical presence
+- messianic_heightening        — Amplify or introduce messianic/eschatological interpretation in an ambiguous passage
+- harmonization                — Smooth over tensions with other biblical texts or theological norms
+- softening                    — Remove morally or theologically offensive content
+- proto_rabbinic               — Reflect proto-rabbinic halakhic or exegetical concerns
+- eschatological_sharpening    — Introduce or intensify future/eschatological orientation
+
+TRADITION LABELS (use exactly): MT | LXX | Targum | Peshitta | Vulgate | SP
+
+CONFIDENCE: HIGH 0.75–1.0 (strong scholarly consensus, clear theological motivation) | MEDIUM 0.45–0.74 (plausible but debated) | LOW 0.00–0.44 (speculative or contested)
+
+REFERENCE: {{REFERENCE}}
+
+For book-level scans, identify the 5–10 most significant theological revision instances. For passage-level requests, be exhaustive within the passage. Include scholarly citations (author surname + short title) where applicable.
+
+Return JSON (no fences, no prose):
+
+{
+  "scope": "Book name or passage reference",
+  "scope_type": "book | passage",
+  "summary": "2–3 sentences: technical overview of the dominant theological revision strategies visible in this scope.",
+  "summary_plain": "2–3 sentences for a non-specialist: what kinds of theological changes were made to this text?",
+  "revisions": [
+    {
+      "reference": "Specific verse or passage (e.g. Isaiah 7:14)",
+      "tradition": "LXX | Targum | Peshitta | Vulgate | SP",
+      "revision_type": "anthropomorphism_avoidance | messianic_heightening | harmonization | softening | proto_rabbinic | eschatological_sharpening",
+      "mt_reading": "The MT (or earlier) reading",
+      "revised_reading": "The theologically revised reading",
+      "confidence": 0.00,
+      "evidence": "2–3 sentences: technical evidence for theological motivation. Why is this not simply a translation variant?",
+      "evidence_plain": "1–2 sentences for a non-specialist.",
+      "scholarly_citations": [
+        "Schaper, Eschatology in the Greek Psalter, p. 00"
+      ],
+      "counter_arguments": "1–2 sentences: strongest counter-argument that this is not theologically motivated."
+    }
+  ],
+  "dominant_strategy": "Which single revision type is most prominent in this scope, and why?",
+  "overall_assessment": "3–4 sentences: scholarly synthesis. What does the pattern of theological revision reveal about the tradents responsible for this text? How does it situate this tradition within the broader history of biblical interpretation?",
+  "overall_plain": "2–3 sentences for a non-specialist.",
+  "bibcrit_assessment": {
+    "title": "Max 8 words capturing the most striking theological revision finding",
+    "reasoning": "2–3 sentences of original analysis. What is the single most significant implication of this theological revision pattern for understanding this text's history?",
+    "plain": "1–2 sentences for a non-specialist.",
+    "confidence": 0.00
+  }
+}

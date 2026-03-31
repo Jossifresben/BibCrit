@@ -30,7 +30,7 @@ export const ToolLabel: React.FC<ToolLabelProps> = ({ label, startFrame }) => {
         textAlign: 'center',
         opacity,
         transform: `translateY(${translateY}px)`,
-        fontSize: 22,
+        fontSize: 36,
         fontWeight: 700,
         letterSpacing: '0.06em',
         textTransform: 'uppercase',

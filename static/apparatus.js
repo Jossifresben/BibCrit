@@ -532,8 +532,14 @@
     if (!h) return '';
     var tier      = confidenceTier(h.confidence || 0);
     var tierClass = tier.toLowerCase();
-    var model     = data.model_version || 'claude sonnet 4.5';
-    var modelDisplay = model.replace(/^claude-/, 'claude ').replace(/-(\d{8})$/, '').replace(/-/g, '.');
+    var model = (data.model_version && data.model_version !== 'unknown')
+      ? data.model_version : 'claude-sonnet-4-5';
+    var modelDisplay = model
+      .replace(/-(\d{8})$/, '')          // strip date suffix
+      .replace(/^claude-/, '')            // strip leading "claude-"
+      .replace(/-/g, ' ')                 // dashes → spaces
+      .replace(/\b\w/g, function(c){ return c.toUpperCase(); })  // Title Case
+      .replace(/^/, 'Claude ');           // re-add "Claude " prefix
     var ref = data.reference || currentRef;
 
     return '<div class="bibcrit-hypothesis-card">'

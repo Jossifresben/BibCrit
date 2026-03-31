@@ -188,6 +188,7 @@
         toolName: 'numerical',
         getReference: function() { return _currentRef; },
         getResultData: function() { return _lastData || {}; },
+        getSvgEl: function() { return document.getElementById('num-timeline'); },
       });
     }
 

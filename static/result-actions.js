@@ -135,11 +135,11 @@
       var safeRef = ref.replace(/[^a-z0-9]/gi, '_');
       var text = global.ResultActions._toText(data, ref, options.toolName);
       _dlBlob(text, 'text/plain', 'bibcrit_' + options.toolName + '_' + safeRef + '.txt');
-      // SVG for genealogy
-      var svgEl = options.getSvgEl ? options.getSvgEl() : document.getElementById('stemma-svg');
-      if (options.toolName === 'genealogy' && svgEl) {
+      // SVG download — any tool that provides getSvgEl gets a .svg file too
+      var svgEl = options.getSvgEl ? options.getSvgEl() : null;
+      if (svgEl) {
         var svgData = '<?xml version="1.0" encoding="UTF-8"?>\n' + new XMLSerializer().serializeToString(svgEl);
-        _dlBlob(svgData, 'image/svg+xml', 'bibcrit_genealogy_' + safeRef + '.svg');
+        _dlBlob(svgData, 'image/svg+xml', 'bibcrit_' + options.toolName + '_' + safeRef + '.svg');
       }
     });
   }

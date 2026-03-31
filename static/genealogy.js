@@ -219,6 +219,7 @@
         toolName: 'genealogy',
         getReference: function() { return _currentBook; },
         getResultData: function() { return _lastData || {}; },
+        getSvgEl: function() { return document.getElementById('stemma-svg'); },
       });
     }
 

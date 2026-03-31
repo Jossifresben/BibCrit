@@ -1,5 +1,5 @@
 import React from 'react';
-import { Composition } from 'remotion';
+import { Composition, registerRoot } from 'remotion';
 import { BibCritVideo } from './BibCritVideo';
 import { TOTAL_FRAMES, TIMING } from './theme';
 
@@ -15,3 +15,5 @@ export const RemotionRoot: React.FC = () => {
     />
   );
 };
+
+registerRoot(RemotionRoot);

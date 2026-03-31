@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, Audio } from 'remotion';
+import { AbsoluteFill, Audio, staticFile } from 'remotion';
 import { TransitionSeries, linearTiming } from '@remotion/transitions';
 import { fade } from '@remotion/transitions/fade';
 import { TIMING, SCENE_DURATIONS, PALETTE, FONT_STYLE } from './theme';
@@ -23,7 +23,7 @@ export const BibCritVideo: React.FC = () => {
       <style>{FONT_STYLE}</style>
 
       <Audio
-        src="/BibCrit.mp3"
+        src={staticFile('BibCrit.mp3')}
         volume={(f) => {
           // Fade out over last 60 frames (2s)
           if (f > 2640) return Math.max(0, 1 - (f - 2640) / 60);

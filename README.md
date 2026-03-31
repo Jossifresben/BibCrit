@@ -351,7 +351,7 @@ The default `BIBCRIT_API_CAP_USD` is `$10.00/month`. Raise it in the Render envi
 - [x] Patristic Citation Tracker — church-father quotation cross-reference
 - [ ] Hebrew UI (`he`) with full RTL layout
 - [ ] Dutch UI (`nl`)
-- [ ] Corpus expansion beyond demo passages
+- [x] Corpus expansion — featured passages across all 8 tools pre-loaded
 
 ---
 

@@ -1826,3 +1826,67 @@
   padding: 0.5rem 0;
   font-style: italic;
 }
+
+/* ── Persona pill (nav) ─────────────────────────────────────────────────────── */
+.persona-pill-wrap {
+  position: relative;
+}
+.persona-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.01em;
+  transition: opacity 0.15s;
+  white-space: nowrap;
+}
+.persona-pill:hover { opacity: 0.88; }
+
+.persona-pill-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--card-bg, #fff);
+  border: 1px solid var(--border, #d4d0c8);
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  overflow: hidden;
+  min-width: 180px;
+  z-index: 200;
+}
+.persona-pill-dropdown.open { display: block; }
+
+.ppd-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 10px 14px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 0.825rem;
+  color: var(--fg, #1a1a1a);
+  cursor: pointer;
+  transition: background 0.1s;
+}
+.ppd-item:hover { background: var(--accent-light, #eef1f4); }
+.ppd-item.active { font-weight: 700; }
+.ppd-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.ppd-sep {
+  border: none;
+  border-top: 1px solid var(--border, #d4d0c8);
+  margin: 2px 0;
+}
+.ppd-all { font-size: 0.775rem; color: var(--muted, #6b6560); }

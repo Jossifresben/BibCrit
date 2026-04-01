@@ -90,6 +90,51 @@ def download(url: str, cache_dir: str) -> str:
     return local
 
 
+def _lxx_psalm_ch_vs_to_mt(lxx_ch: int, lxx_vs: int) -> tuple:
+    """Map LXX/Greek Psalm (ch, vs) to MT/Hebrew numbering.
+
+    LXX Psalms differ from MT in chapter numbering:
+      LXX  1–8   → MT  1–8   (identical)
+      LXX  9     → MT  9:1-21 / MT 10:1-18  (merged in LXX)
+      LXX 10–112 → MT 11–113 (+1)
+      LXX 113    → MT 114:1-8 / MT 115:1-18 (merged in LXX)
+      LXX 114    → MT 116:1-9
+      LXX 115    → MT 116:10-19
+      LXX 116–145→ MT 117–146 (+1)
+      LXX 146    → MT 147:1-11
+      LXX 147    → MT 147:12-20
+      LXX 148–151→ MT 148–150 (identical; 151 is extra LXX psalm)
+    """
+    if lxx_ch <= 8:
+        return (lxx_ch, lxx_vs)
+    elif lxx_ch == 9:
+        # LXX 9 has 39 verses: 1-21 = MT 9, 22-39 = MT 10
+        if lxx_vs <= 21:
+            return (9, lxx_vs)
+        else:
+            return (10, lxx_vs - 21)
+    elif 10 <= lxx_ch <= 112:
+        return (lxx_ch + 1, lxx_vs)
+    elif lxx_ch == 113:
+        # LXX 113 has 26 verses: 1-8 = MT 114, 9-26 = MT 115
+        if lxx_vs <= 8:
+            return (114, lxx_vs)
+        else:
+            return (115, lxx_vs - 8)
+    elif lxx_ch == 114:
+        return (116, lxx_vs)           # MT 116:1-9
+    elif lxx_ch == 115:
+        return (116, lxx_vs + 9)       # MT 116:10-19
+    elif 116 <= lxx_ch <= 145:
+        return (lxx_ch + 1, lxx_vs)
+    elif lxx_ch == 146:
+        return (147, lxx_vs)           # MT 147:1-11
+    elif lxx_ch == 147:
+        return (147, lxx_vs + 11)      # MT 147:12-20
+    else:
+        return (lxx_ch, lxx_vs)        # 148-151 unchanged
+
+
 def parse_verse_ref(raw: str):
     """Parse 「Gen 1:1」 → (book_name_or_None, book_order, ch, vs, ref) or None.
 
@@ -114,6 +159,9 @@ def parse_verse_ref(raw: str):
     if canonical is None:
         return (None, None, ch, vs, None)  # known but skipped book
     book_name, book_order = canonical
+    # Remap LXX Psalm numbers to MT/Hebrew numbering
+    if book_name == 'Psalms':
+        ch, vs = _lxx_psalm_ch_vs_to_mt(ch, vs)
     return (book_name, book_order, ch, vs, f'{book_name} {ch}:{vs}')
 
 

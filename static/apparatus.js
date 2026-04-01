@@ -198,6 +198,13 @@
         history.replaceState(null, '', '/divergence?ref=' + encodeURIComponent(ref));
         updateBudgetBar();
 
+        // Model attribution badge
+        var modelAttr = document.getElementById('divergence-model-attr');
+        if (modelAttr) {
+          modelAttr.textContent = window.t('analysis_by', 'Analysis by') + ' ' + _friendlyModel(msg.data.model_version);
+          modelAttr.style.display = 'inline';
+        }
+
         // Inject Scholar Rating, Copy, Download into export-row (once only)
         if (window.ResultActions) {
           ResultActions.init({
@@ -719,6 +726,14 @@
 
   function formatType(type) {
     return (type || '').replace(/_/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+  }
+
+  function _friendlyModel(modelId) {
+    if (!modelId) return 'Claude';
+    if (modelId.indexOf('opus')   !== -1) return 'Claude Opus';
+    if (modelId.indexOf('sonnet') !== -1) return 'Claude Sonnet';
+    if (modelId.indexOf('haiku')  !== -1) return 'Claude Haiku';
+    return 'Claude';
   }
 
   function escapeHtml(str) {

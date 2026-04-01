@@ -231,6 +231,13 @@
     tabsArea.style.display  = 'block';
     exportRow.style.display = 'flex';
 
+    // Model attribution badge
+    var modelAttr = document.getElementById('bt-model-attr');
+    if (modelAttr && currentData) {
+      modelAttr.textContent = window.t('analysis_by', 'Analysis by') + ' ' + _friendlyModel(currentData.model_version);
+      modelAttr.style.display = 'inline';
+    }
+
     // Inject Scholar Rating, Copy, Download into export-row (once only)
     if (window.ResultActions) {
       ResultActions.init({
@@ -239,6 +246,14 @@
         getResultData: function() { return currentData || {}; },
       });
     }
+  }
+
+  function _friendlyModel(modelId) {
+    if (!modelId) return 'Claude';
+    if (modelId.indexOf('opus')   !== -1) return 'Claude Opus';
+    if (modelId.indexOf('sonnet') !== -1) return 'Claude Sonnet';
+    if (modelId.indexOf('haiku')  !== -1) return 'Claude Haiku';
+    return 'Claude';
   }
 
   // ── Column renderers ──────────────────────────────────────────────────────

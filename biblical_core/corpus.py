@@ -42,6 +42,7 @@ class BiblicalCorpus:
         'LXX': 'lxx_stepbible',
         'GNT': 'gnt_opengnt',
         'DSS': 'dss',
+        'SP':  'sp_etcbc',
     }
 
     def __init__(self) -> None:

@@ -12,6 +12,17 @@
 
 {% block content %}
 
+<!-- Persona tool banner -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.BibCritPersona) BibCritPersona.injectToolBanner('backtranslation', {
+      scholar: 'Tov\u2019s retroversion method applied word-by-word. Reconstructs the probable Hebrew Vorlage with per-word confidence scores.',
+      phd:     'Reconstruct the Hebrew Vorlage for your passage \u2014 cite the results directly with the SBL export.',
+      student: 'What Hebrew text did the Greek translators have? This tool reconstructs it word by word.'
+    });
+  });
+</script>
+
 <!-- Passage Selector Bar -->
 <div class="passage-bar">
   <div class="passage-bar-row passage-bar-main">

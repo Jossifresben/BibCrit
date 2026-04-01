@@ -8,6 +8,17 @@
 
 {% block content %}
 
+<!-- Persona tool banner -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.BibCritPersona) BibCritPersona.injectToolBanner('genealogy', {
+      scholar: 'Full stemmatic visualization from proto-text to modern critical editions across all major manuscript traditions.',
+      phd:     'Get a stemmatic overview for your book\u2019s transmission \u2014 use the diagram in your manuscript history chapter.',
+      student: 'See how your Bible was copied and passed down through history \u2014 like a family tree for manuscripts.'
+    });
+  });
+</script>
+
 <!-- Passage Selector Bar -->
 <div class="passage-bar">
   <div class="passage-bar-row passage-bar-main">

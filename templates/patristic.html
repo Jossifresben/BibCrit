@@ -8,6 +8,17 @@
 
 {% block content %}
 
+<!-- Persona tool banner -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.BibCritPersona) BibCritPersona.injectToolBanner('patristic', {
+      scholar: 'Church Father citation analysis from the 1st\u20135th centuries. Text-form distribution bar shows MT vs LXX alignment per Father.',
+      phd:     'Which Church Fathers cited your passage? What text form did they use? Essential for reception-history chapters.',
+      student: 'See how early Christians quoted these Bible passages \u2014 and how their text differed from ours.'
+    });
+  });
+</script>
+
 <!-- Passage Selector Bar -->
 <div class="passage-bar">
   <div class="passage-bar-row passage-bar-main">

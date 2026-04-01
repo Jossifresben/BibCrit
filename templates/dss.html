@@ -8,6 +8,17 @@
 
 {% block content %}
 
+<!-- Persona tool banner -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.BibCritPersona) BibCritPersona.injectToolBanner('dss', {
+      scholar: 'Cross-tradition witness analysis: MT, LXX, and 1QIsa\u1d43 scroll data where extant. Alignment scored per reading.',
+      phd:     'Which Dead Sea Scrolls attest your passage? Does the scroll align with MT or LXX? Cite the scroll evidence in your chapter.',
+      student: 'Compare the ancient Dead Sea Scrolls to your Bible \u2014 and see which is older.'
+    });
+  });
+</script>
+
 <!-- Passage Selector Bar -->
 <div class="passage-bar">
   <div class="passage-bar-row passage-bar-main">

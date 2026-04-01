@@ -8,6 +8,17 @@
 
 {% block content %}
 
+<!-- Persona tool banner -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.BibCritPersona) BibCritPersona.injectToolBanner('theological', {
+      scholar: 'Detects theologically motivated alterations across six categories: anthropomorphism avoidance, messianic heightening, harmonization, anti-idolatry, divine transcendence, and ethical smoothing.',
+      phd:     'Flag theologically motivated changes for your redaction-critical chapter \u2014 results cite the scholarly literature.',
+      student: 'Did scribes change the text for religious reasons? See where and why.'
+    });
+  });
+</script>
+
 <!-- Passage Selector Bar -->
 <div class="passage-bar">
   <div class="passage-bar-row passage-bar-main">

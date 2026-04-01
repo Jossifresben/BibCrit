@@ -47,8 +47,8 @@
 
     hideEl(selector);
     hideEl(defaultHero);
-    showEl(toolGrid);
-    showEl(discovery);
+    if (toolGrid)  toolGrid.style.display  = 'grid';
+    if (discovery) discovery.style.display = 'block';
 
     // Persona heroes
     document.querySelectorAll('.persona-hero').forEach(function (h) {
@@ -82,7 +82,7 @@
     var toolGrid  = document.getElementById('home-tools');
     var discovery = document.querySelector('.home-discovery');
 
-    showEl(selector);
+    if (selector) selector.style.display = 'block';
     hideEl(defaultHero);
     hideEl(toolGrid);
     hideEl(discovery);
@@ -104,9 +104,9 @@
     var discovery = document.querySelector('.home-discovery');
 
     hideEl(selector);
-    showEl(defaultHero);
-    showEl(toolGrid);
-    showEl(discovery);
+    if (defaultHero) defaultHero.style.display = 'block';
+    if (toolGrid)    toolGrid.style.display     = 'grid';
+    if (discovery)   discovery.style.display    = 'block';
 
     document.querySelectorAll('.persona-hero').forEach(function (h) {
       h.style.display = 'none';
@@ -128,9 +128,16 @@
     var label = document.getElementById('persona-pill-label');
     if (!pill) return;
 
+    var isHome = !!document.getElementById('persona-selector');
+
     if (persona && PERSONAS[persona]) {
       pill.style.background = PERSONAS[persona].color;
       if (label) label.textContent = PERSONAS[persona].label + ' \u25be';
+      pill.style.display = 'flex';
+    } else if (isHome) {
+      // On home page with no persona: show a neutral "Choose view" pill
+      pill.style.background = 'var(--muted, #6b7280)';
+      if (label) label.textContent = 'Choose view \u25be';
       pill.style.display = 'flex';
     } else {
       pill.style.display = 'none';
@@ -141,6 +148,48 @@
       item.classList.toggle('active', item.dataset.switchPersona === persona);
     });
   }
+
+  // ── Tool banner ─────────────────────────────────────────────────────────
+  /**
+   * Inject a persona-aware explainer banner above the passage bar on tool pages.
+   * @param {string} toolName  - e.g. 'divergence'
+   * @param {{scholar:string, phd:string, student:string}} texts
+   */
+  function injectToolBanner(toolName, texts) {
+    var persona = getPersona();
+    if (!persona || !texts[persona]) return;
+
+    var dismissKey = 'bibcrit_banner_dismissed_' + toolName;
+    try { if (localStorage.getItem(dismissKey)) return; } catch(e) { return; }
+
+    var passageBar = document.querySelector('.passage-bar');
+    if (!passageBar) return;
+
+    var banner = document.createElement('div');
+    banner.className = 'persona-tool-banner';
+    banner.setAttribute('data-persona', persona);
+    banner.setAttribute('role', 'note');
+
+    var textSpan = document.createElement('span');
+    textSpan.className = 'persona-tool-banner-text';
+    textSpan.textContent = texts[persona];
+
+    var dismiss = document.createElement('button');
+    dismiss.className = 'persona-tool-banner-dismiss';
+    dismiss.setAttribute('aria-label', 'Dismiss banner');
+    dismiss.textContent = '\u00d7';
+    dismiss.addEventListener('click', function () {
+      try { localStorage.setItem(dismissKey, '1'); } catch(e) {}
+      banner.parentNode && banner.parentNode.removeChild(banner);
+    });
+
+    banner.appendChild(textSpan);
+    banner.appendChild(dismiss);
+    passageBar.parentNode.insertBefore(banner, passageBar);
+  }
+
+  // ── Public API ───────────────────────────────────────────────────────────
+  window.BibCritPersona = { injectToolBanner: injectToolBanner };
 
   // ── Init ────────────────────────────────────────────────────────────────────
   document.addEventListener('DOMContentLoaded', function () {
@@ -206,6 +255,25 @@
           window.location.reload();
         });
       });
+
+      // "Change view" — navigate home and show selector
+      var changeBtn = document.getElementById('ppd-change-view');
+      if (changeBtn) {
+        changeBtn.addEventListener('click', function () {
+          dropdown.classList.remove('open');
+          var isHome = !!document.getElementById('persona-selector');
+          if (isHome) {
+            // Already on home page — clear persona and show selector inline
+            clearPersona();
+            showSelector();
+            updateNavPill(null);
+          } else {
+            // Navigate to home, selector will auto-show (no persona in storage)
+            clearPersona();
+            window.location.href = '/';
+          }
+        });
+      }
     }
   });
 

@@ -8,6 +8,17 @@
 
 {% block content %}
 
+<!-- Persona tool banner -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.BibCritPersona) BibCritPersona.injectToolBanner('numerical', {
+      scholar: 'MT/LXX/SP numerical variants modeled against four competing theories: scribal error, theological revision, different Vorlage, and chronological system.',
+      phd:     'Model the numerical variants in your passage and get ranked competing theories \u2014 cite the confidence scores.',
+      student: 'Why do the numbers differ between Bible versions? This tool explains the leading theories.'
+    });
+  });
+</script>
+
 <!-- Passage Selector Bar -->
 <div class="passage-bar">
   <div class="passage-bar-row passage-bar-main">

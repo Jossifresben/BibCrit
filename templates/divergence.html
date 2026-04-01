@@ -12,6 +12,17 @@
 
 {% block content %}
 
+<!-- Persona tool banner -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.BibCritPersona) BibCritPersona.injectToolBanner('divergence', {
+      scholar: 'Word-level divergence classification using Tov\u2019s taxonomy. Each variant is scored by confidence and assigned competing hypotheses.',
+      phd:     'Classify every divergence for your dissertation chapter. Export SBL footnotes directly from the results.',
+      student: 'See exactly where the Hebrew Bible and Greek Old Testament say different things \u2014 explained in plain English.'
+    });
+  });
+</script>
+
 <!-- Passage Selector Bar -->
 <div class="passage-bar">
   <!-- Row 1: selectors + input + action buttons -->

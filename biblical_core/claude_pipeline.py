@@ -758,7 +758,7 @@ class ClaudePipeline:
         return data
 
     def analyze_dss(self, reference: str, mt_text: str = '',
-                    lxx_text: str = '') -> dict:
+                    lxx_text: str = '', dss_text: str = '') -> dict:
         """Return DSS bridge analysis comparing MT, LXX, and Dead Sea Scrolls.
 
         Returns dict with 'dss_manuscripts', 'synthesis', 'synthesis_plain', etc.
@@ -798,8 +798,9 @@ class ClaudePipeline:
             .replace('{{REFERENCE}}', reference)
             .replace('{{MT_TEXT}}', mt_text)
             .replace('{{LXX_TEXT}}', lxx_text)
+            .replace('{{DSS_TEXT}}', dss_text)
         ) if template else (
-            f'Reference: {reference}\nMT: {mt_text}\nLXX: {lxx_text}\n'
+            f'Reference: {reference}\nMT: {mt_text}\nLXX: {lxx_text}\n1QIsaA: {dss_text}\n'
             'Compare MT, LXX, and DSS witnesses. Return JSON with dss_manuscripts array.'
         )
 

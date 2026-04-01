@@ -13,7 +13,7 @@ textual_bp = Blueprint('textual', __name__)
 
 _DIVERGENCE_PROMPT     = 'v2'
 _BACKTRANSLATION_PROMPT = 'v1'
-_DSS_PROMPT            = 'v1'
+_DSS_PROMPT            = 'v2'
 _GENEALOGY_PROMPT      = 'v1'
 
 _STEPS = {
@@ -362,11 +362,14 @@ def api_dss_stream():
         yield event('step', msg=_step(lang, 'load_verse'))
         mt_text  = ''
         lxx_text = ''
+        dss_text = ''
         if corpus is not None:
             mt_words  = corpus.get_verse_words(reference, 'MT')
             lxx_words = corpus.get_verse_words(reference, 'LXX')
+            dss_words = corpus.get_verse_words(reference, 'DSS')
             mt_text   = ' '.join(w.word_text for w in mt_words)  if mt_words  else ''
             lxx_text  = ' '.join(w.word_text for w in lxx_words) if lxx_words else ''
+            dss_text  = ' '.join(w.word_text for w in dss_words) if dss_words else ''
 
         if lang == 'es':
             cached_es = pipeline.get_cached_es(reference, 'dss', _DSS_PROMPT, DSS_MODEL)
@@ -387,7 +390,7 @@ def api_dss_stream():
             yield event('step', msg=_step(lang, 'dss_generating'))
             _result_box = [None]
             def _run_dss():
-                _result_box[0] = pipeline.analyze_dss(reference, mt_text, lxx_text)
+                _result_box[0] = pipeline.analyze_dss(reference, mt_text, lxx_text, dss_text)
             _t = threading.Thread(target=_run_dss, daemon=True)
             _t.start()
             while _t.is_alive():

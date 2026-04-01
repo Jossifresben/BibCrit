@@ -105,7 +105,7 @@
     hide(results);
     hide(heading);
     show(loadState);
-    setLoadingStep('Preparing…');
+    setLoadingStep(window.t('loading_preparing', 'Preparing…'));
 
     var elapsed = 0;
     _timer = setInterval(function () {
@@ -164,7 +164,7 @@
             ? '<p class="div-meta" style="margin-top:8px;font-style:italic">' + _esc(data.summary) + '</p>'
             : '') +
           (data.dominant_strategy
-            ? '<p style="margin-top:8px;font-size:0.875rem;color:var(--fg)"><strong>Dominant strategy:</strong> ' + _esc(data.dominant_strategy) + '</p>'
+            ? '<p style="margin-top:8px;font-size:0.875rem;color:var(--fg)"><strong>' + window.t('theo_dominant_strategy', 'Dominant strategy:') + '</strong> ' + _esc(data.dominant_strategy) + '</p>'
             : '') +
         '</div>';
       show(summarySection);
@@ -186,7 +186,7 @@
       filterChips.innerHTML = '';
       var allBtn = document.createElement('button');
       allBtn.className = 'theo-filter-chip active';
-      allBtn.textContent = 'All';
+      allBtn.textContent = window.t('filter_all', 'All');
       allBtn.addEventListener('click', function () {
         _activeFilter = '';
         _updateFilterChips(filterChips, '');
@@ -217,7 +217,7 @@
     }
 
     if (!revisions.length && revisionList) {
-      revisionList.innerHTML = '<p style="padding:1rem;color:var(--muted);text-align:center">No theologically motivated revisions identified.</p>';
+      revisionList.innerHTML = '<p style="padding:1rem;color:var(--muted);text-align:center">' + window.t('theo_no_revisions', 'No theologically motivated revisions identified.') + '</p>';
     }
 
     // Overall assessment
@@ -318,11 +318,11 @@
 
       '<div class="theo-readings">' +
         '<div class="theo-reading-box">' +
-          '<div class="theo-reading-label">MT / Earlier Reading</div>' +
+          '<div class="theo-reading-label">' + window.t('theo_mt_reading_label', 'MT / Earlier Reading') + '</div>' +
           '<div class="theo-reading-text">' + _esc(rev.mt_reading || '') + '</div>' +
         '</div>' +
         '<div class="theo-reading-box">' +
-          '<div class="theo-reading-label">' + _esc(rev.tradition || 'Revised') + ' Reading</div>' +
+          '<div class="theo-reading-label">' + _esc(rev.tradition || window.t('theo_revised_reading_label', 'Revised Reading')) + '</div>' +
           '<div class="theo-reading-text">' + _esc(rev.revised_reading || '') + '</div>' +
         '</div>' +
       '</div>' +
@@ -331,9 +331,9 @@
       (rev.evidence && rev.evidence !== rev.evidence_plain
         ? '<p class="div-meta" style="font-style:italic;margin-top:6px">' + _esc(rev.evidence) + '</p>'
         : '') +
-      (citations ? '<p class="theo-scholars">Sources: ' + _esc(citations) + '</p>' : '') +
+      (citations ? '<p class="theo-scholars">' + window.t('theo_sources_label', 'Sources:') + ' ' + _esc(citations) + '</p>' : '') +
       (rev.counter_arguments
-        ? '<div class="theo-counter"><strong>Counter-argument:</strong> ' + _esc(rev.counter_arguments) + '</div>'
+        ? '<div class="theo-counter"><strong>' + window.t('theo_counter_arg_label', 'Counter-argument:') + '</strong> ' + _esc(rev.counter_arguments) + '</div>'
         : '');
 
     return card;
@@ -353,7 +353,7 @@
           (ass.title ? '<h3 style="margin:0 0 12px;font-size:16px">' + _esc(ass.title) + '</h3>' : '') +
           '<p class="div-analysis">' + _esc(ass.plain || '') + '</p>' +
           (ass.reasoning ? '<p class="div-meta" style="font-style:italic;margin-top:8px">' + _esc(ass.reasoning) + '</p>' : '') +
-          (pct ? '<p style="margin-top:10px"><span class="conf-badge ' + confCls + '">Confidence: ' + pct + '%</span></p>' : '') +
+          (pct ? '<p style="margin-top:10px"><span class="conf-badge ' + confCls + '">' + window.t('num_confidence_label', 'Confidence:') + ' ' + pct + '%</span></p>' : '') +
           '<p class="analysis-model-attr">Performed by ' + _esc(_friendlyModel(data.model_version)) + '</p>' +
         '</div>';
     }
@@ -370,7 +370,15 @@
 
   // ── Helpers ──────────────────────────────────────────────────────────────
   function _revisionTypeLabel(slug) {
-    var labels = {
+    var map = {
+      anthropomorphism_avoidance: 'theo_type_anthropomorphism_avoidance',
+      messianic_heightening:      'theo_type_messianic_heightening',
+      harmonization:              'theo_type_harmonization',
+      softening:                  'theo_type_softening',
+      proto_rabbinic:             'theo_type_proto_rabbinic',
+      eschatological_sharpening:  'theo_type_eschatological_sharpening',
+    };
+    var fallbacks = {
       anthropomorphism_avoidance: 'Anthropomorphism Avoidance',
       messianic_heightening:      'Messianic Heightening',
       harmonization:              'Harmonization',
@@ -378,7 +386,8 @@
       proto_rabbinic:             'Proto-Rabbinic',
       eschatological_sharpening:  'Eschatological Sharpening',
     };
-    return labels[slug] || (slug || '').replace(/_/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+    if (map[slug]) return window.t(map[slug], fallbacks[slug]);
+    return (slug || '').replace(/_/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
   }
 
   function _traditionBadge(tradition) {

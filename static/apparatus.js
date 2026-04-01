@@ -172,7 +172,7 @@
     exportRow.style.display     = 'none';
     if (passageHeading) passageHeading.style.display = 'none';
     loadingState.style.display  = 'flex';
-    setLoadingStep('Preparing…');
+    setLoadingStep(window.t('loading_preparing', 'Preparing…'));
     startTimer();
 
     var es = new EventSource('/api/divergence/stream?ref=' + encodeURIComponent(ref) + '&lang=' + (window.bibcritLang || 'en'));
@@ -266,7 +266,7 @@
 
     var count = data.divergences.length;
     mtMeta.innerHTML = count
-      ? '<span class="div-count">\u2726 ' + count + ' divergence' + (count === 1 ? '' : 's') + ' detected</span>'
+      ? '<span class="div-count">\u2726 ' + count + ' ' + window.t(count === 1 ? 'divergence_count_singular' : 'divergence_count_plural', count === 1 ? 'divergence detected' : 'divergences detected') + '</span>'
       : '';
 
     buildTabs(data, colorMap);
@@ -315,7 +315,7 @@
       var noDiv = document.createElement('div');
       noDiv.className = 'tab-panel active';
       noDiv.id = 'tab-panel-main';
-      noDiv.innerHTML = '<p class="analysis-hint">No significant divergences detected.</p>';
+      noDiv.innerHTML = '<p class="analysis-hint">' + window.t('divergence_none_detected', 'No significant divergences detected.') + '</p>';
       tabsBody.appendChild(noDiv);
       if (data.bibcrit_hypothesis) {
         appendHypothesisTab(data);
@@ -423,13 +423,13 @@
   function formatTypeShort(type) {
     // Abbreviate long type names for tab labels
     var map = {
-      'theological_tendency': 'Theological',
-      'scribal_error':        'Scribal Error',
-      'different_vorlage':    'Vorlage',
-      'translation_idiom':    'Idiom',
-      'grammatical_shift':    'Grammar',
-      'omission':             'Omission',
-      'addition':             'Addition'
+      'theological_tendency': window.t('divergence_type_theological', 'Theological'),
+      'scribal_error':        window.t('divergence_type_scribal',     'Scribal Error'),
+      'different_vorlage':    window.t('divergence_type_vorlage',     'Vorlage'),
+      'translation_idiom':    window.t('divergence_type_idiom',       'Idiom'),
+      'grammatical_shift':    window.t('divergence_type_grammar',     'Grammar'),
+      'omission':             window.t('divergence_type_omission',    'Omission'),
+      'addition':             window.t('divergence_type_addition',    'Addition'),
     };
     return map[type] || formatType(type);
   }
@@ -449,7 +449,7 @@
 
   function renderWords(words, divMap, tradition, colorMap) {
     if (!words.length) {
-      return '<em class="no-data">No ' + tradition.toUpperCase() + ' data loaded for this passage</em>';
+      return '<em class="no-data">' + window.t('divergence_no_data', 'No {tradition} data loaded for this passage').replace('{tradition}', tradition.toUpperCase()) + '</em>';
     }
     return words.map(function (w) {
       var isDivergent = (w.word_text in divMap) || (w.lemma in divMap);
@@ -512,7 +512,7 @@
 
     var citesHtml = (div.citations && div.citations.length)
       ? '<div class="div-citations">\uD83D\uDCDA ' + escapeHtml(div.citations.join(' \u00b7 ')) + '</div>'
-      : '<div class="div-citations div-no-citations">No published sources identified for this divergence.</div>';
+      : '<div class="div-citations div-no-citations">' + window.t('divergence_no_sources', 'No published sources identified for this divergence.') + '</div>';
 
     return '<div class="divergence-card">'
       + '<div class="div-card-header">'
@@ -732,7 +732,7 @@
   function showError(msg) {
     emptyState.style.display = 'block';
     emptyState.innerHTML = '<div class="error-msg"><p>\u26a0\ufe0f ' + escapeHtml(msg) + '</p>'
-      + '<button onclick="location.reload()">Try again</button></div>';
+      + '<button onclick="location.reload()">' + window.t('btn_try_again', 'Try again') + '</button></div>';
   }
 
   function showToast(msg) {

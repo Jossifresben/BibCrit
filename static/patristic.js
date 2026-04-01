@@ -109,7 +109,7 @@
     hide(results);
     hide(heading);
     show(loadState);
-    setLoadingStep('Preparing…');
+    setLoadingStep(window.t('loading_preparing', 'Preparing…'));
 
     var elapsed = 0;
     _timer = setInterval(function () {
@@ -183,7 +183,7 @@
       filterChips.innerHTML = '';
       var allBtn = document.createElement('button');
       allBtn.className = 'theo-filter-chip active';
-      allBtn.textContent = 'All';
+      allBtn.textContent = window.t('filter_all', 'All');
       allBtn.addEventListener('click', function () {
         _activeFilter = '';
         _updateFilterChips(filterChips, '');
@@ -214,7 +214,7 @@
     }
 
     if (!citations.length && citationList) {
-      citationList.innerHTML = '<p style="padding:1rem;color:var(--muted);text-align:center">No patristic citations found for this passage.</p>';
+      citationList.innerHTML = '<p style="padding:1rem;color:var(--muted);text-align:center">' + window.t('pat_no_citations', 'No patristic citations found for this passage.') + '</p>';
     }
 
     // Notable variants
@@ -296,7 +296,7 @@
     FORMS.forEach(function (f) { total += (dist[f] || 0); });
 
     if (!total) {
-      distBar.innerHTML = '<p style="color:var(--muted);font-size:0.875rem">No distribution data available.</p>';
+      distBar.innerHTML = '<p style="color:var(--muted);font-size:0.875rem">' + window.t('pat_no_distribution', 'No distribution data available.') + '</p>';
       return;
     }
 
@@ -363,13 +363,13 @@
 
       '<div class="pat-subfields">' +
         (cit.text_form_note
-          ? '<span class="pat-subfield-label">Text Form Note</span>' + _esc(cit.text_form_note)
+          ? '<span class="pat-subfield-label">' + window.t('pat_text_form_note', 'Text Form Note') + '</span>' + _esc(cit.text_form_note)
           : '') +
         (cit.theological_use
-          ? '<span class="pat-subfield-label">Theological Use</span>' + _esc(cit.theological_use)
+          ? '<span class="pat-subfield-label">' + window.t('pat_theological_use', 'Theological Use') + '</span>' + _esc(cit.theological_use)
           : '') +
         (cit.transmission_implication
-          ? '<span class="pat-subfield-label">Transmission Implication</span>' + _esc(cit.transmission_implication)
+          ? '<span class="pat-subfield-label">' + window.t('pat_transmission_impl', 'Transmission Implication') + '</span>' + _esc(cit.transmission_implication)
           : '') +
       '</div>';
 
@@ -391,7 +391,7 @@
 
       card.innerHTML =
         '<div class="pat-variant-reading">' + _esc(v.reading || '') + '</div>' +
-        '<p class="pat-variant-fathers">Used by: ' + _esc(fathers) + '</p>' +
+        '<p class="pat-variant-fathers">' + window.t('pat_used_by', 'Used by:') + ' ' + _esc(fathers) + '</p>' +
         '<span class="pat-text-form-badge ' + tfBadgeClass + '">' + _esc(_textFormLabel(v.text_form_alignment || '')) + '</span>' +
         (v.significance ? '<p style="font-size:0.875rem;margin-top:0.5rem;line-height:1.7;color:var(--fg)">' + _esc(v.significance) + '</p>' : '');
 
@@ -434,7 +434,7 @@
           (ass.title ? '<h3 style="margin:0 0 12px;font-size:16px">' + _esc(ass.title) + '</h3>' : '') +
           '<p class="div-analysis">' + _esc(ass.plain || '') + '</p>' +
           (ass.reasoning ? '<p class="div-meta" style="font-style:italic;margin-top:8px">' + _esc(ass.reasoning) + '</p>' : '') +
-          (pct ? '<p style="margin-top:10px"><span class="conf-badge ' + confCls + '">Confidence: ' + pct + '%</span></p>' : '') +
+          (pct ? '<p style="margin-top:10px"><span class="conf-badge ' + confCls + '">' + window.t('num_confidence_label', 'Confidence:') + ' ' + pct + '%</span></p>' : '') +
           '<p class="analysis-model-attr">Performed by ' + _esc(_friendlyModel(data.model_version)) + '</p>' +
         '</div>';
     }
@@ -451,14 +451,22 @@
 
   // ── Helpers ──────────────────────────────────────────────────────────────
   function _textFormLabel(slug) {
-    var labels = {
+    var map = {
+      closer_to_lxx: 'pat_form_closer_lxx',
+      closer_to_mt:  'pat_form_closer_mt',
+      mixed:         'pat_form_mixed',
+      independent:   'pat_form_independent',
+      uncertain:     'pat_form_uncertain',
+    };
+    var fallbacks = {
       closer_to_lxx: 'Closer to LXX',
       closer_to_mt:  'Closer to MT',
       mixed:         'Mixed',
       independent:   'Independent',
       uncertain:     'Uncertain',
     };
-    return labels[slug] || (slug || '').replace(/_/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+    if (map[slug]) return window.t(map[slug], fallbacks[slug]);
+    return (slug || '').replace(/_/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
   }
 
   function setLoadingStep(msg) { if (loadStep) loadStep.textContent = msg; }

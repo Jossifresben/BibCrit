@@ -113,7 +113,7 @@
     hide(results);
     hide(heading);
     show(loadState);
-    setLoadingStep('Preparing…');
+    setLoadingStep(window.t('loading_preparing', 'Preparing…'));
 
     var elapsed = 0;
     _timer = setInterval(function () {
@@ -160,7 +160,7 @@
     // Heading
     show(heading);
     heading.innerHTML = '<span class="ph-ref">' + _esc(data.book || _currentBook) + '</span>' +
-      '<span class="ph-meta"> — Manuscript Transmission</span>';
+      '<span class="ph-meta"> — ' + window.t('genealogy_ms_transmission', 'Manuscript Transmission') + '</span>';
 
     // Stemma visualization
     renderStemma(data);
@@ -585,7 +585,7 @@
           (ass.title ? '<h3 style="margin:0 0 12px;font-size:16px">' + _esc(ass.title) + '</h3>' : '') +
           '<p class="div-analysis">' + _esc(ass.plain || '') + '</p>' +
           (ass.reasoning ? '<p class="div-meta" style="font-style:italic;margin-top:8px">' + _esc(ass.reasoning) + '</p>' : '') +
-          (pct ? '<p style="margin-top:10px"><span class="conf-badge ' + confCls + '">Confidence: ' + pct + '%</span></p>' : '') +
+          (pct ? '<p style="margin-top:10px"><span class="conf-badge ' + confCls + '">' + window.t('num_confidence_label', 'Confidence:') + ' ' + pct + '%</span></p>' : '') +
           '<p class="analysis-model-attr">Performed by ' + _esc(_friendlyModel(data.model_version)) + '</p>' +
         '</div>';
     }

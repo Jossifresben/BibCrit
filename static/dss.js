@@ -224,7 +224,7 @@
     hide(results);
     hide(heading);
     show(loadState);
-    setLoadingStep('Preparing…');
+    setLoadingStep(window.t('loading_preparing', 'Preparing…'));
 
     var elapsed = 0;
     _timer = setInterval(function () {
@@ -288,9 +288,8 @@
       if (msList) msList.innerHTML =
         '<div class="bt-group-card" style="max-width:900px;margin:0 auto 1rem;text-align:center;padding:2rem 1.5rem">' +
           '<span class="material-symbols-outlined" style="font-size:2.5rem;color:var(--muted);display:block;margin-bottom:0.75rem">hide_source</span>' +
-          '<p style="font-weight:600;margin:0 0 0.4rem;font-size:1rem">No DSS Witness Found</p>' +
-          '<p style="color:var(--muted);margin:0;font-size:0.875rem">No Dead Sea Scrolls manuscript attests this passage. ' +
-          'The passage may fall in a lacuna, or no scroll preserving this section has been identified.</p>' +
+          '<p style="font-weight:600;margin:0 0 0.4rem;font-size:1rem">' + window.t('dss_no_witness_title', 'No DSS Witness Found') + '</p>' +
+          '<p style="color:var(--muted);margin:0;font-size:0.875rem">' + window.t('dss_no_witness_body', 'No Dead Sea Scrolls manuscript attests this passage. The passage may fall in a lacuna, or no scroll preserving this section has been identified.') + '</p>' +
         '</div>';
     }
 
@@ -382,7 +381,7 @@
     body.className = 'dss-ms-body' + (idx === 0 ? '' : ' collapsed');
 
     if (!present || alignment === 'absent') {
-      body.innerHTML = '<p class="dss-absent-note">This passage is not extant in ' + _esc(ms.siglum || 'this manuscript') + '.</p>';
+      body.innerHTML = '<p class="dss-absent-note">' + window.t('dss_absent_note', 'This passage is not extant in {siglum}.').replace('{siglum}', _esc(ms.siglum || 'this manuscript')) + '</p>';
     } else {
       var inner = '';
       if (ms.dss_text) {
@@ -430,10 +429,10 @@
 
   function _alignmentBadge(alignment) {
     var labels = {
-      sides_with_mt:  'Sides with MT',
-      sides_with_lxx: 'Sides with LXX',
-      independent:    'Independent',
-      absent:         'Not extant',
+      sides_with_mt:  window.t('dss_align_mt',          'Sides with MT'),
+      sides_with_lxx: window.t('dss_align_lxx',         'Sides with LXX'),
+      independent:    window.t('dss_align_independent',  'Independent'),
+      absent:         window.t('dss_align_absent',       'Not extant'),
     };
     var classes = {
       sides_with_mt:  'dss-align-mt',
@@ -460,7 +459,7 @@
           (ass.title ? '<h3 style="margin:0 0 12px;font-size:16px">' + _esc(ass.title) + '</h3>' : '') +
           '<p class="div-analysis">' + _esc(ass.plain || '') + '</p>' +
           (ass.reasoning ? '<p class="div-meta" style="font-style:italic;margin-top:8px">' + _esc(ass.reasoning) + '</p>' : '') +
-          (pct ? '<p style="margin-top:10px"><span class="conf-badge ' + confCls + '">Confidence: ' + pct + '%</span></p>' : '') +
+          (pct ? '<p style="margin-top:10px"><span class="conf-badge ' + confCls + '">' + window.t('dss_confidence_label', 'Confidence:') + ' ' + pct + '%</span></p>' : '') +
           '<p class="analysis-model-attr">Performed by ' + _esc(_friendlyModel(data.model_version)) + '</p>' +
         '</div>';
     }

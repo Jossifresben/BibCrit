@@ -163,7 +163,7 @@
 
     var stepEl  = document.getElementById('loading-step');
     var timerEl = document.getElementById('loading-timer');
-    stepEl.textContent  = 'Preparing…';
+    stepEl.textContent  = window.t('loading_preparing', 'Preparing…');
     timerEl.textContent = '';
 
     var startTime = Date.now();
@@ -211,7 +211,7 @@
     // Passage heading
     passageHeading.innerHTML =
       '<span class="ph-ref">' + _esc(data.reference) + '</span>' +
-      '<span class="ph-tool">Back-Translation Workbench</span>';
+      '<span class="ph-tool">' + window.t('bt_workbench_heading', 'Back-Translation Workbench') + '</span>';
     passageHeading.style.display = 'flex';
 
     // Render columns
@@ -371,8 +371,8 @@
     var sortBtn = document.createElement('button');
     sortBtn.className = 'tab-btn bt-sort-btn';
     sortBtn.id        = 'bt-sort-toggle';
-    sortBtn.title     = 'Sort by confidence';
-    sortBtn.innerHTML = _sortAsc ? '↑ Confidence' : '↓ Confidence';
+    sortBtn.title     = window.t('scribal_sort_title', 'Sort by confidence');
+    sortBtn.innerHTML = _sortAsc ? window.t('scribal_sort_asc', '↑ Confidence') : window.t('scribal_sort_desc', '↓ Confidence');
     sortBtn.addEventListener('click', function () {
       _sortAsc = !_sortAsc;
       var activePanel = tabsBody.querySelector('.tab-panel.active');
@@ -390,7 +390,7 @@
       assessBtn.role          = 'tab';
       assessBtn.dataset.panel = assessPanelId;
       assessBtn.innerHTML     =
-        '<span class="tab-num" style="background:#5f2c7c;color:#fff;">✦</span> BibCrit Assessment';
+        '<span class="tab-num" style="background:#5f2c7c;color:#fff;">✦</span> ' + window.t('bt_assessment_tab', '✦ BibCrit Assessment').replace(/^✦\s*/, '');
       assessBtn.addEventListener('click', function () { activateTab(assessPanelId); });
       tabsNav.appendChild(assessBtn);
 
@@ -458,7 +458,7 @@
       '<div class="div-analysis">' +
         '<p>' + _esc(rw.reasoning || '') + '</p>' +
       '</div>' +
-      (alts ? '<div class="div-alternatives"><strong>Alternative readings:</strong><ul>' + alts + '</ul></div>' : '') +
+      (alts ? '<div class="div-alternatives"><strong>' + window.t('bt_alternative_readings', 'Alternative readings:') + '</strong><ul>' + alts + '</ul></div>' : '') +
     '</div>';
   }
 

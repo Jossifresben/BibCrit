@@ -778,7 +778,7 @@ class ClaudePipeline:
         On error: returns {'error': ..., 'dss_manuscripts': [], ...}.
         """
         model          = DSS_MODEL
-        prompt_version = 'v4'
+        prompt_version = 'v5'
         tool           = 'dss'
 
         cached = self.get_cached(reference, tool, prompt_version, model)
@@ -933,7 +933,7 @@ class ClaudePipeline:
         On error: returns {'error': ..., 'citations': [], ...}.
         """
         model          = PATRISTIC_MODEL
-        prompt_version = 'v2'
+        prompt_version = 'v3'
         tool           = 'patristic'
 
         cached = self.get_cached(reference, tool, prompt_version, model)

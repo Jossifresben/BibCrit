@@ -531,18 +531,29 @@
 
   function renderAssessment(data) {
     var ass = data.bibcrit_assessment || {};
-    if (!ass.title && !ass.plain) return;
 
+    // Normalise: Claude sometimes returns different field names across versions.
+    // 'plain' might come as 'assessment', 'summary', or 'composition_layer' etc.
+    var title   = ass.title   || ass.heading       || '';
+    var plain   = ass.plain   || ass.assessment    || ass.summary || '';
+    var reason  = ass.reasoning || ass.analysis    || '';
     var conf    = ass.confidence || 0;
+
+    // Fall back to top-level synthesis if assessment is entirely absent
+    if (!title && !plain) {
+      plain = data.overall_plain || data.overall_assessment || '';
+    }
+    if (!plain) return;
+
     var pct     = Math.round(conf * 100);
     var confCls = conf >= 0.75 ? 'badge-high' : conf >= 0.45 ? 'badge-medium' : 'badge-low';
 
     if (bibBody) {
       bibBody.innerHTML =
         '<div class="bt-group-card">' +
-          (ass.title ? '<h3 style="margin:0 0 12px;font-size:16px">' + _esc(ass.title) + '</h3>' : '') +
-          '<p class="div-analysis">' + _esc(ass.plain || '') + '</p>' +
-          (ass.reasoning ? '<p class="div-meta" style="font-style:italic;margin-top:8px">' + _esc(ass.reasoning) + '</p>' : '') +
+          (title ? '<h3 style="margin:0 0 12px;font-size:16px">' + _esc(title) + '</h3>' : '') +
+          '<p class="div-analysis">' + _esc(plain) + '</p>' +
+          (reason ? '<p class="div-meta" style="font-style:italic;margin-top:8px">' + _esc(reason) + '</p>' : '') +
           (pct ? '<p style="margin-top:10px"><span class="conf-badge ' + confCls + '">' + window.t('dss_confidence_label', 'Confidence:') + ' ' + pct + '%</span></p>' : '') +
           '<p class="analysis-model-attr">Performed by ' + _esc(_friendlyModel(data.model_version)) + '</p>' +
         '</div>';

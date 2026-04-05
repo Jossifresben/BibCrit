@@ -171,8 +171,10 @@
     var _hMeta = data.subject ? ' <span class="ph-meta">— ' + _esc(data.subject) + '</span>' : '';
     heading.innerHTML = '<span class="ph-ref">' + _hRef + '</span>' + _hMeta;
 
-    renderTable(data.figures || []);
-    renderTimeline(data.figures || []);
+    // Claude sometimes returns 'patriarchs' instead of 'figures' — normalise here
+    var figures = data.figures || data.patriarchs || [];
+    renderTable(figures);
+    renderTimeline(figures);
     renderSystematic(data.systematic_analysis || {});
     buildTheoryTabs(data.theories || [], data);
 

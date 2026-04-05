@@ -19,7 +19,7 @@ critical_bp = Blueprint('critical', __name__)
 _SCRIBAL_PROMPT     = 'v1'
 _NUMERICAL_PROMPT   = 'v3'
 _THEOLOGICAL_PROMPT = 'v1'
-_PATRISTIC_PROMPT   = 'v2'
+_PATRISTIC_PROMPT   = 'v3'
 
 _STEPS = {
     'en': {

@@ -16,7 +16,7 @@ textual_bp = Blueprint('textual', __name__)
 # A mismatch causes cache-key divergence and cache misses on every request.
 _DIVERGENCE_PROMPT     = 'v2'
 _BACKTRANSLATION_PROMPT = 'v1'
-_DSS_PROMPT            = 'v4'
+_DSS_PROMPT            = 'v5'
 _GENEALOGY_PROMPT      = 'v1'
 
 _STEPS = {

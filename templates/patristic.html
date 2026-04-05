@@ -8,13 +8,17 @@
 
 {% block content %}
 
-<!-- Persona tool banner -->
+<!-- Tool header -->
+<div class="tool-header">
+  <h1 class="tool-title">Patristic Citation Tracker</h1>
+  <p class="tool-subtitle" id="tool-subtitle">Trace how Church Fathers cited biblical passages through the 5th century and identify which text form they used.</p>
+</div>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    if (window.BibCritPersona) BibCritPersona.injectToolBanner('patristic', {
+    if (window.BibCritPersona) BibCritPersona.setToolSubtitle('patristic', {
       scholar: 'Church Father citation analysis from the 1st\u20135th centuries. Text-form distribution bar shows MT vs LXX alignment per Father.',
       phd:     'Which Church Fathers cited your passage? What text form did they use? Essential for reception-history chapters.',
-      student: 'See how early Christians quoted these Bible passages \u2014 and how their text differed from ours.'
+      student: 'Early Christian writers like Origen, Augustine, and Jerome quoted the Bible constantly \u2014 and their quotes sometimes differ from any manuscript we have today. Tracking these citations helps scholars reconstruct what the Bible looked like in the 1st\u20135th centuries and which text tradition each region used. Enter a passage to see who cited it, what they said, and whether their text agreed with the Hebrew or Greek tradition.'
     });
   });
 </script>
@@ -49,7 +53,6 @@
 <!-- Empty / Welcome State -->
 <div id="empty-state" class="empty-state">
   <div class="empty-inner">
-    <h2>{{ _t('patristic_empty_title') }}</h2>
     <p>{{ _t('patristic_empty_body') }}</p>
     <div class="bt-legend-hero" style="margin-bottom: 1.5rem;">
       <span class="bt-legend-item"><span class="scribal-mini-dot" style="background:var(--lxx-color)"></span> {{ _t('legend_closer_lxx') }}</span>

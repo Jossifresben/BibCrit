@@ -12,13 +12,17 @@
 
 {% block content %}
 
-<!-- Persona tool banner -->
+<!-- Tool header -->
+<div class="tool-header">
+  <h1 class="tool-title">MT/LXX Divergence Analyzer</h1>
+  <p class="tool-subtitle" id="tool-subtitle">Word-by-word comparison of the Hebrew Bible and Septuagint, with AI-generated scholarly hypotheses for each divergence.</p>
+</div>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    if (window.BibCritPersona) BibCritPersona.injectToolBanner('divergence', {
+    if (window.BibCritPersona) BibCritPersona.setToolSubtitle('divergence', {
       scholar: 'Word-level divergence classification using Tov\u2019s taxonomy. Each variant is scored by confidence and assigned competing hypotheses.',
       phd:     'Classify every divergence for your dissertation chapter. Export SBL footnotes directly from the results.',
-      student: 'See exactly where the Hebrew Bible and Greek Old Testament say different things \u2014 explained in plain English.'
+      student: 'The Old Testament exists in two ancient versions: the Hebrew Masoretic Text (what most Bibles translate) and the Greek Septuagint (used by the early church). They often differ \u2014 sometimes by a word, sometimes by entire sentences. Select a passage to see every difference highlighted side by side, with a plain-English explanation of why scholars think it happened.'
     });
   });
 </script>
@@ -57,7 +61,6 @@
 <!-- Empty / Welcome State -->
 <div id="empty-state" class="empty-state">
   <div class="empty-inner">
-    <h2>{{ _t('divergence_empty_title') }}</h2>
     <p>{{ _t('divergence_empty_body') }}</p>
     <p class="featured-label">{{ _t('featured_label') }}</p>
     <div class="featured-passages">

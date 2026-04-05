@@ -76,8 +76,15 @@ _NUMERICAL_SYSTEM = (
 _DSS_SYSTEM = (
     "You are a specialist in Dead Sea Scrolls textual criticism with deep expertise "
     "in the biblical scrolls from Qumran, their relationship to the proto-MT, "
-    "proto-LXX, and independent traditions, applying the methodology of Emanuel Tov "
-    "and Eugene Ulrich. "
+    "proto-LXX, Samaritan Pentateuch, and independent traditions, applying the "
+    "methodology of Emanuel Tov and Eugene Ulrich. "
+    "The JSON response must always include an 'sp_witness' field at the top level. "
+    "When SP corpus text is provided, populate sp_witness with: "
+    "present (bool), alignment ('sides_with_mt'|'sides_with_lxx'|'independent'), "
+    "alignment_confidence (0-1), sp_text (the corpus text), divergences (array of "
+    "{word_position, mt_reading, sp_reading, classification, textual_implication}), "
+    "and overall_note. When SP text is NOT provided, set sp_witness to null. "
+    "Keep dss_manuscripts for actual Dead Sea Scrolls only. "
     "CRITICAL: Return ONLY raw JSON. No markdown, no code fences, no backticks, "
     "no prose before or after. The response must start with { and end with }."
 )
@@ -93,10 +100,11 @@ _THEOLOGICAL_SYSTEM = (
 
 _PATRISTIC_SYSTEM = (
     "You are a specialist in patristic biblical citation with deep expertise in how "
-    "the Church Fathers cited the Old Testament, the text forms they used (proto-MT, "
-    "proto-LXX, Old Latin, Vetus Latina), and what their citations imply for the "
-    "history of the biblical text. You apply the methodology of Metzger, Hengel, "
-    "and the Göttingen LXX critical apparatus. "
+    "the Church Fathers cited both the Old and New Testaments. For OT passages you "
+    "identify the text form used (proto-MT, proto-LXX, Old Latin, Vetus Latina). "
+    "For NT passages you compare citations against the GNT (SBLGNT). When GNT corpus "
+    "text is provided, use it as the reference text for NT citation comparison. "
+    "You apply the methodology of Metzger, Hengel, and the Göttingen LXX critical apparatus. "
     "CRITICAL: Return ONLY raw JSON. No markdown, no code fences, no backticks, "
     "no prose before or after. The response must start with { and end with }."
 )
@@ -694,14 +702,15 @@ class ClaudePipeline:
         self.save_cache(book_name, tool, prompt_version, model, data)
         return data
 
-    def analyze_numerical(self, reference: str) -> dict:
+    def analyze_numerical(self, reference: str, sp_text: str = '') -> dict:
         """Return numerical discrepancy analysis for a passage.
 
         Returns dict with 'figures', 'systematic_analysis', 'theories', etc.
+        sp_text: raw SP corpus text for the passage (improves SP value accuracy).
         On error: returns {'error': ..., 'figures': [], 'theories': []}.
         """
         model          = NUMERICAL_MODEL
-        prompt_version = 'v1'
+        prompt_version = 'v2'
         tool           = 'numerical'
 
         cached = self.get_cached(reference, tool, prompt_version, model)
@@ -731,10 +740,12 @@ class ClaudePipeline:
             }
 
         template = self.load_prompt('numerical', prompt_version)
+        sp_context = (f'\nSamaritan Pentateuch corpus text for this passage:\n{sp_text}\n'
+                      'Use this SP text as ground truth for SP numerical values.\n') if sp_text else ''
         user_content = (
-            template.replace('{{REFERENCE}}', reference)
+            template.replace('{{REFERENCE}}', reference).replace('{{SP_TEXT}}', sp_text)
         ) if template else (
-            f'Reference: {reference}\n'
+            f'Reference: {reference}\n{sp_context}'
             'Analyze numerical divergences between MT, LXX, and SP. Return JSON.'
         )
 
@@ -758,14 +769,16 @@ class ClaudePipeline:
         return data
 
     def analyze_dss(self, reference: str, mt_text: str = '',
-                    lxx_text: str = '', dss_text: str = '') -> dict:
-        """Return DSS bridge analysis comparing MT, LXX, and Dead Sea Scrolls.
+                    lxx_text: str = '', dss_text: str = '',
+                    sp_text: str = '') -> dict:
+        """Return DSS bridge analysis comparing MT, LXX, DSS, and SP.
 
         Returns dict with 'dss_manuscripts', 'synthesis', 'synthesis_plain', etc.
+        sp_text: raw SP corpus text (Pentateuch only; empty string if not applicable).
         On error: returns {'error': ..., 'dss_manuscripts': [], ...}.
         """
         model          = DSS_MODEL
-        prompt_version = 'v1'
+        prompt_version = 'v4'
         tool           = 'dss'
 
         cached = self.get_cached(reference, tool, prompt_version, model)
@@ -793,16 +806,29 @@ class ClaudePipeline:
             }
 
         template = self.load_prompt('dss', prompt_version)
+        sp_section = (
+            f'\n=== SAMARITAN PENTATEUCH CORPUS TEXT (REQUIRED) ===\n{sp_text}\n'
+            '=== END SP TEXT ===\n'
+            'MANDATORY: You MUST populate sp_witness with present=true and analyze '
+            'this SP text. Do NOT set sp_witness to null when SP text is provided above.\n'
+        ) if sp_text else '\nNo SP text available for this passage — set sp_witness to null.\n'
         user_content = (
             template
             .replace('{{REFERENCE}}', reference)
             .replace('{{MT_TEXT}}', mt_text)
             .replace('{{LXX_TEXT}}', lxx_text)
             .replace('{{DSS_TEXT}}', dss_text)
+            .replace('{{SP_TEXT}}', sp_text)
         ) if template else (
-            f'Reference: {reference}\nMT: {mt_text}\nLXX: {lxx_text}\n1QIsaA: {dss_text}\n'
-            'Compare MT, LXX, and DSS witnesses. Return JSON with dss_manuscripts array.'
+            f'Reference: {reference}\nMT: {mt_text}\nLXX: {lxx_text}\n'
+            f'Dead Sea Scrolls: {dss_text or "(not attested)"}\n{sp_section}'
+            'Return JSON with: dss_manuscripts (DSS scrolls only), sp_witness (SP '
+            'alignment object — REQUIRED when SP text provided), synthesis, synthesis_plain, '
+            'textual_history_implication, bibcrit_assessment.'
         )
+
+        # Python-level fallback: if SP text was provided but Claude omitted sp_witness,
+        # construct a minimal card so the corpus data is never silently dropped.
 
         response = self._client.messages.create(
             model=model,
@@ -820,6 +846,21 @@ class ClaudePipeline:
 
         raw  = '{' + response.content[0].text
         data = _parse_json_response(raw)
+
+        # Fallback: if SP text was provided but Claude omitted sp_witness, build minimal card
+        if sp_text and not data.get('sp_witness'):
+            data['sp_witness'] = {
+                'present': True,
+                'alignment': 'independent',
+                'alignment_confidence': 0.0,
+                'sp_text': sp_text,
+                'divergences': [],
+                'overall_note': (
+                    'Samaritan Pentateuch text is available for this passage '
+                    'but alignment analysis could not be generated automatically.'
+                ),
+            }
+
         self.save_cache(reference, tool, prompt_version, model, data)
         return data
 
@@ -884,14 +925,15 @@ class ClaudePipeline:
         self.save_cache(reference, tool, prompt_version, model, data)
         return data
 
-    def analyze_patristic(self, reference: str) -> dict:
+    def analyze_patristic(self, reference: str, gnt_text: str = '') -> dict:
         """Return patristic citation analysis for a passage.
 
         Returns dict with 'citations', 'transmission_synthesis', etc.
+        gnt_text: raw GNT corpus text (NT passages only; empty for OT).
         On error: returns {'error': ..., 'citations': [], ...}.
         """
         model          = PATRISTIC_MODEL
-        prompt_version = 'v1'
+        prompt_version = 'v2'
         tool           = 'patristic'
 
         cached = self.get_cached(reference, tool, prompt_version, model)
@@ -919,10 +961,13 @@ class ClaudePipeline:
             }
 
         template = self.load_prompt('patristic', prompt_version)
+        gnt_line = (f'\nGNT (SBLGNT) corpus text: {gnt_text}\n'
+                    'Use this as the reference text when comparing Father citations for this NT passage.\n'
+                   ) if gnt_text else ''
         user_content = (
-            template.replace('{{REFERENCE}}', reference)
+            template.replace('{{REFERENCE}}', reference).replace('{{GNT_TEXT}}', gnt_text)
         ) if template else (
-            f'Reference: {reference}\n'
+            f'Reference: {reference}\n{gnt_line}'
             'Trace patristic citations and text forms. Return JSON with citations array.'
         )
 

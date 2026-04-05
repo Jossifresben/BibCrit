@@ -40,10 +40,14 @@ def api_discovery_cards():
     except ValueError:
         return jsonify({'error': 'offset and limit must be integers'}), 400
 
-    limit = min(limit, 50)   # cap per request
+    limit   = min(limit, 50)   # cap per request
+    persona = request.args.get('persona', '').strip().lower()
 
     all_cards = _load_all_cards()
-    if len(all_cards) > 1:
+    if persona in _PERSONA_TYPE_ORDER:
+        order = _PERSONA_TYPE_ORDER[persona]
+        all_cards = sorted(all_cards, key=lambda c: _type_rank(c, order))
+    elif len(all_cards) > 1:
         tail = all_cards[1:]
         random.shuffle(tail)
         all_cards = all_cards[:1] + tail
@@ -207,6 +211,19 @@ def _load_all_cards() -> list:
 
 
 _FEATURED_TYPES = {'different_vorlage', 'theological_tendency', 'scribal_error'}
+
+_PERSONA_TYPE_ORDER = {
+    'scholar': ['different_vorlage', 'theological_tendency', 'harmonization', 'scribal_error', 'omission', 'addition'],
+    'phd':     ['theological_tendency', 'different_vorlage', 'harmonization', 'scribal_error', 'omission', 'addition'],
+    'student': ['scribal_error', 'omission', 'addition', 'different_vorlage', 'theological_tendency', 'harmonization'],
+}
+
+def _type_rank(card, order):
+    t = card.get('card_type') or card.get('divergence_type') or ''
+    try:
+        return order.index(t)
+    except ValueError:
+        return 999
 
 def _load_discovery_cards(limit: int = 12) -> list:
     """Return first `limit` cards for the initial page render.

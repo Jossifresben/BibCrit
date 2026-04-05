@@ -1789,6 +1789,7 @@
 }
 .dss-align-mt  { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
 .dss-align-lxx { background: #dbeafe; color: #1e40af; border: 1px solid #bfdbfe; }
+.dss-align-sp  { background: #d1fae5; color: #065f46; border: 1px solid #6ee7b7; }
 .dss-align-ind { background: #fed7aa; color: #9a3412; border: 1px solid #fdba74; }
 .dss-align-abs { background: var(--border); color: var(--muted); border: 1px solid var(--border); }
 .dss-div-table {
@@ -1891,28 +1892,43 @@
 }
 .ppd-all { font-size: 0.775rem; color: var(--muted, #6b6560); }
 
-/* ── Persona tool banner ────────────────────────────────────────────── */
-.persona-tool-banner {
-  padding: 10px 16px;
-  border-radius: 8px;
-  margin: 12px auto 0;
-  max-width: 900px;
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 0.85rem;
-  line-height: 1.5;
+/* ── Tool page header ───────────────────────────────────────────────── */
+.tool-header {
+  padding: 1.25rem 1.5rem 0.75rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-.persona-tool-banner[data-persona="scholar"] { background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; }
-.persona-tool-banner[data-persona="phd"]     { background: #f5f3ff; border: 1px solid #ddd6fe; color: #4c1d95; }
-.persona-tool-banner[data-persona="student"] { background: #f0fdf4; border: 1px solid #bbf7d0; color: #14532d; }
-[data-theme="dark"] .persona-tool-banner[data-persona="scholar"] { background: #1e3a5f; border-color: #2563eb; color: #bfdbfe; }
-[data-theme="dark"] .persona-tool-banner[data-persona="phd"]     { background: #2d1b69; border-color: #6b5cdb; color: #ddd6fe; }
-[data-theme="dark"] .persona-tool-banner[data-persona="student"] { background: #14532d; border-color: #059669; color: #bbf7d0; }
-.persona-tool-banner-text { flex: 1; }
-.persona-tool-banner-dismiss {
-  background: none; border: none; cursor: pointer; padding: 0;
-  font-size: 16px; opacity: 0.5; line-height: 1; flex-shrink: 0;
-  color: inherit;
+.tool-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0 0 0.3rem;
+  color: var(--heading, #111827);
+  line-height: 1.25;
 }
-.persona-tool-banner-dismiss:hover { opacity: 1; }
+[data-theme="dark"] .tool-title { color: #f3f4f6; }
+.tool-subtitle {
+  font-size: 0.875rem;
+  color: var(--muted, #6b7280);
+  margin: 0;
+  line-height: 1.55;
+  max-width: 760px;
+  transition: color 0.15s;
+}
+/* When persona active: entire header becomes a full-width gradient banner */
+body[data-persona] .tool-header {
+  max-width: none;
+  padding: 1.25rem 1.5rem 1rem;
+}
+body[data-persona] .tool-title {
+  color: #ffffff;
+  margin-bottom: 0.4rem;
+}
+body[data-persona] .tool-subtitle {
+  color: rgba(255,255,255,0.82);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-width: 860px;
+}
+body[data-persona="scholar"] .tool-header { background: linear-gradient(to right, #1e1e3a, #2d2d52); }
+body[data-persona="phd"]     .tool-header { background: linear-gradient(to right, #2d1b69, #3d2b85); }
+body[data-persona="student"] .tool-header { background: linear-gradient(to right, #064e3b, #065f46); }

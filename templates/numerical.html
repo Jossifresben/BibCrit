@@ -8,13 +8,17 @@
 
 {% block content %}
 
-<!-- Persona tool banner -->
+<!-- Tool header -->
+<div class="tool-header">
+  <h1 class="tool-title">Numerical Discrepancy Modeler</h1>
+  <p class="tool-subtitle" id="tool-subtitle">Analyze numerical variants across MT, LXX, and SP — patriarchal ages, census figures, temple dimensions — with competing scholarly theories.</p>
+</div>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    if (window.BibCritPersona) BibCritPersona.injectToolBanner('numerical', {
+    if (window.BibCritPersona) BibCritPersona.setToolSubtitle('numerical', {
       scholar: 'MT/LXX/SP numerical variants modeled against four competing theories: scribal error, theological revision, different Vorlage, and chronological system.',
       phd:     'Model the numerical variants in your passage and get ranked competing theories \u2014 cite the confidence scores.',
-      student: 'Why do the numbers differ between Bible versions? This tool explains the leading theories.'
+      student: 'Did you know that in Genesis 5, the Hebrew Bible says Methuselah lived 969 years, while the Greek version gives different ages entirely? Numbers are among the most frequently changed data between Bible versions \u2014 affecting genealogies, census figures, temple dimensions, and chronologies. Select a passage to see the variant numbers across traditions and the competing scholarly theories for why they differ.'
     });
   });
 </script>
@@ -62,7 +66,6 @@
 <!-- Empty / Welcome State -->
 <div id="empty-state" class="empty-state">
   <div class="empty-inner">
-    <h2>{{ _t('numerical_empty_title') }}</h2>
     <p>{{ _t('numerical_empty_body') }}</p>
     <div class="bt-legend-hero" style="margin-bottom: 1.5rem;">
       <span class="bt-legend-item"><span class="scribal-mini-dot" style="background:var(--mt-color)"></span> {{ _t('legend_mt_full') }}</span>

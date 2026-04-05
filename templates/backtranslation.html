@@ -12,13 +12,17 @@
 
 {% block content %}
 
-<!-- Persona tool banner -->
+<!-- Tool header -->
+<div class="tool-header">
+  <h1 class="tool-title">LXX Back-Translation Workbench</h1>
+  <p class="tool-subtitle" id="tool-subtitle">Reconstruct the probable Hebrew Vorlage behind the Septuagint, word by word, with per-word confidence scoring.</p>
+</div>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    if (window.BibCritPersona) BibCritPersona.injectToolBanner('backtranslation', {
+    if (window.BibCritPersona) BibCritPersona.setToolSubtitle('backtranslation', {
       scholar: 'Tov\u2019s retroversion method applied word-by-word. Reconstructs the probable Hebrew Vorlage with per-word confidence scores.',
       phd:     'Reconstruct the Hebrew Vorlage for your passage \u2014 cite the results directly with the SBL export.',
-      student: 'What Hebrew text did the Greek translators have? This tool reconstructs it word by word.'
+      student: 'When scholars translated the Hebrew Bible into Greek (the Septuagint), they worked from a Hebrew manuscript that no longer exists. Sometimes the Greek differs because the translator interpreted freely \u2014 but sometimes it differs because their Hebrew copy said something different. This tool tries to reverse-engineer that lost Hebrew text, word by word, so you can see what the translators were actually reading.'
     });
   });
 </script>
@@ -68,7 +72,6 @@
 <!-- Empty / Welcome State -->
 <div id="empty-state" class="empty-state">
   <div class="empty-inner">
-    <h2>{{ _t('backtrans_empty_title') }}</h2>
     <p>{{ _t('backtrans_empty_body') }}</p>
     <div class="bt-legend-hero">
       <span class="bt-legend-item"><span class="bt-swatch bt-agrees-mt"></span> {{ _t('status_agrees_mt') }}</span>

@@ -149,52 +149,32 @@
     });
   }
 
-  // ── Tool banner ─────────────────────────────────────────────────────────
+  // ── Tool page subtitle ───────────────────────────────────────────────────
   /**
-   * Inject a persona-aware explainer banner above the passage bar on tool pages.
-   * @param {string} toolName  - e.g. 'divergence'
+   * Swap the #tool-subtitle paragraph text based on the active persona.
+   * The element must already exist in the template with default (no-persona) text.
+   * @param {string} toolName  - e.g. 'divergence' (reserved for future use)
    * @param {{scholar:string, phd:string, student:string}} texts
    */
-  function injectToolBanner(toolName, texts) {
+  function setToolSubtitle(toolName, texts) {
     var persona = getPersona();
-    if (!persona || !texts[persona]) return;
-
-    var dismissKey = 'bibcrit_banner_dismissed_' + toolName;
-    try { if (localStorage.getItem(dismissKey)) return; } catch(e) { return; }
-
-    var passageBar = document.querySelector('.passage-bar');
-    if (!passageBar) return;
-
-    var banner = document.createElement('div');
-    banner.className = 'persona-tool-banner';
-    banner.setAttribute('data-persona', persona);
-    banner.setAttribute('role', 'note');
-
-    var textSpan = document.createElement('span');
-    textSpan.className = 'persona-tool-banner-text';
-    textSpan.textContent = texts[persona];
-
-    var dismiss = document.createElement('button');
-    dismiss.className = 'persona-tool-banner-dismiss';
-    dismiss.setAttribute('aria-label', 'Dismiss banner');
-    dismiss.textContent = '\u00d7';
-    dismiss.addEventListener('click', function () {
-      try { localStorage.setItem(dismissKey, '1'); } catch(e) {}
-      banner.parentNode && banner.parentNode.removeChild(banner);
-    });
-
-    banner.appendChild(textSpan);
-    banner.appendChild(dismiss);
-    passageBar.parentNode.insertBefore(banner, passageBar);
+    if (!persona) return;
+    var el = document.getElementById('tool-subtitle');
+    if (!el) return;
+    if (texts[persona]) el.textContent = texts[persona];
   }
 
   // ── Public API ───────────────────────────────────────────────────────────
-  window.BibCritPersona = { injectToolBanner: injectToolBanner };
+  window.BibCritPersona = { setToolSubtitle: setToolSubtitle };
 
   // ── Init ────────────────────────────────────────────────────────────────────
   document.addEventListener('DOMContentLoaded', function () {
     var persona = getPersona();
     var isHome  = !!document.getElementById('persona-selector');
+
+    // Apply data-persona to body on every page (drives CSS subtitle colors)
+    if (persona) document.body.dataset.persona = persona;
+    else delete document.body.dataset.persona;
 
     // Nav pill on every page
     updateNavPill(persona);

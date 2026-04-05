@@ -1,20 +1,24 @@
 {% extends "base.html" %}
 {% block title %}{{ _t('dss_page_title') }}{% endblock %}
 {% block meta_description %}Compare Dead Sea Scrolls witnesses against the Masoretic Text and Septuagint for any biblical passage. Discover where the DSS align with MT, LXX, or preserve independent readings.{% endblock %}
-{% block og_title %}DSS Bridge Tool — BibCrit{% endblock %}
-{% block og_description %}Compare Dead Sea Scrolls manuscripts against the MT and LXX. Find where Qumran texts align with or diverge from both traditions.{% endblock %}
-{% block twitter_title %}DSS Bridge Tool — BibCrit{% endblock %}
-{% block twitter_description %}Compare Dead Sea Scrolls witnesses against the Masoretic Text and Septuagint for any biblical passage.{% endblock %}
+{% block og_title %}Ancient Witness Bridge — BibCrit{% endblock %}
+{% block og_description %}Compare ancient manuscript witnesses — Dead Sea Scrolls, Samaritan Pentateuch, MT, and LXX — for any biblical passage.{% endblock %}
+{% block twitter_title %}Ancient Witness Bridge — BibCrit{% endblock %}
+{% block twitter_description %}Compare ancient manuscript witnesses — DSS, SP, MT, and LXX — for any biblical passage.{% endblock %}
 
 {% block content %}
 
-<!-- Persona tool banner -->
+<!-- Tool header -->
+<div class="tool-header">
+  <h1 class="tool-title">Ancient Witness Bridge</h1>
+  <p class="tool-subtitle" id="tool-subtitle">Compare ancient manuscript witnesses — Dead Sea Scrolls, Samaritan Pentateuch, MT, and LXX — for any biblical passage.</p>
+</div>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    if (window.BibCritPersona) BibCritPersona.injectToolBanner('dss', {
-      scholar: 'Cross-tradition witness analysis: MT, LXX, and 1QIsa\u1d43 scroll data where extant. Alignment scored per reading.',
-      phd:     'Which Dead Sea Scrolls attest your passage? Does the scroll align with MT or LXX? Cite the scroll evidence in your chapter.',
-      student: 'Compare the ancient Dead Sea Scrolls to your Bible \u2014 and see which is older.'
+    if (window.BibCritPersona) BibCritPersona.setToolSubtitle('dss', {
+      scholar: 'Cross-tradition witness analysis: MT, LXX, Dead Sea Scrolls, and Samaritan Pentateuch where extant. Alignment scored per reading.',
+      phd:     'Which ancient witnesses attest your passage? Do DSS and SP align with MT or LXX? Cite the evidence in your chapter.',
+      student: 'The Dead Sea Scrolls \u2014 discovered in 1947 \u2014 are the oldest surviving copies of the Hebrew Bible, over 1,000 years older than any manuscript previously known. Some scrolls match our Bible almost exactly; others have surprising differences. Select a passage to see whether the Scrolls agree with the Hebrew Bible, the Greek Septuagint, or preserve a completely independent reading.'
     });
   });
 </script>
@@ -63,12 +67,12 @@
 <!-- Empty / Welcome State -->
 <div id="empty-state" class="empty-state">
   <div class="empty-inner">
-    <h2>{{ _t('dss_empty_title') }}</h2>
     <p>{{ _t('dss_empty_body') }}</p>
     <div class="bt-legend-hero" style="margin-bottom: 1.5rem;">
       <span class="bt-legend-item"><span class="scribal-mini-dot" style="background:var(--mt-color)"></span> {{ _t('legend_mt_full') }}</span>
       <span class="bt-legend-item"><span class="scribal-mini-dot" style="background:var(--lxx-color)"></span> {{ _t('legend_lxx_full') }}</span>
       <span class="bt-legend-item"><span class="scribal-mini-dot" style="background:#8e44ad"></span> {{ _t('legend_dss') }}</span>
+      <span class="bt-legend-item"><span class="scribal-mini-dot" style="background:var(--sp-color,#2c7c5f)"></span> {{ _t('legend_sp_full') }} <span style="font-size:0.75rem;opacity:0.7">(Pentateuch)</span></span>
     </div>
     <p class="featured-label">{{ _t('featured_label') }}</p>
     <div class="featured-passages">

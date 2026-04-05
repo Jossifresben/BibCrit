@@ -8,13 +8,17 @@
 
 {% block content %}
 
-<!-- Persona tool banner -->
+<!-- Tool header -->
+<div class="tool-header">
+  <h1 class="tool-title">Theological Revision Detector</h1>
+  <p class="tool-subtitle" id="tool-subtitle">Detect theologically motivated revisions in the Septuagint across six categories, passage by passage.</p>
+</div>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    if (window.BibCritPersona) BibCritPersona.injectToolBanner('theological', {
+    if (window.BibCritPersona) BibCritPersona.setToolSubtitle('theological', {
       scholar: 'Detects theologically motivated alterations across six categories: anthropomorphism avoidance, messianic heightening, harmonization, anti-idolatry, divine transcendence, and ethical smoothing.',
       phd:     'Flag theologically motivated changes for your redaction-critical chapter \u2014 results cite the scholarly literature.',
-      student: 'Did scribes change the text for religious reasons? See where and why.'
+      student: 'Ancient scribes and translators sometimes changed the text on purpose \u2014 softening descriptions of God that seemed too human, emphasizing prophecies about the Messiah, or smoothing out passages that seemed theologically awkward. This tool scans your passage for those kinds of intentional changes in the Greek Septuagint and explains what type of revision it likely was and why scholars think it was deliberate.'
     });
   });
 </script>
@@ -49,7 +53,6 @@
 <!-- Empty / Welcome State -->
 <div id="empty-state" class="empty-state">
   <div class="empty-inner">
-    <h2>{{ _t('theological_empty_title') }}</h2>
     <p>{{ _t('theological_empty_body') }}</p>
     <div class="bt-legend-hero" style="margin-bottom: 1.5rem;">
       <span class="bt-legend-item"><span class="scribal-mini-dot" style="background:#3a6bc4"></span> {{ _t('legend_anthrop_avoidance') }}</span>

@@ -12,6 +12,21 @@
 
 {% block content %}
 
+<!-- Tool header -->
+<div class="tool-header">
+  <h1 class="tool-title">Scribal Tendency Profiler</h1>
+  <p class="tool-subtitle" id="tool-subtitle">Profile the translation tendencies of LXX scribes book by book across five critical dimensions.</p>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.BibCritPersona) BibCritPersona.setToolSubtitle('scribal', {
+      scholar: 'Five-axis radar analysis of translator tendencies: literalism, lexical consistency, syntactic adaptation, pluses/minuses, and theological revision.',
+      phd:     'Profile the translator\u2019s tendencies for your book \u2014 include the radar chart in your methodology chapter.',
+      student: 'Different books of the Greek Old Testament were translated by different people, and their styles vary enormously \u2014 some translators stuck closely to the Hebrew word for word, while others paraphrased freely or added theological nuance. Select a book to see its translator\u2019s profile visualized as a radar chart across five dimensions: literalness, consistency, theological revision, and more.'
+    });
+  });
+</script>
+
 <!-- Passage Selector Bar -->
 <div class="passage-bar">
   <div class="passage-bar-row passage-bar-main">
@@ -74,7 +89,6 @@
 <!-- Empty / Welcome State -->
 <div id="empty-state" class="empty-state">
   <div class="empty-inner">
-    <h2>{{ _t('scribal_empty_title') }}</h2>
     <p>{{ _t('scribal_empty_body') }}</p>
     <div class="bt-legend-hero" style="margin-bottom: 1.5rem;">
       <span class="bt-legend-item"><span class="scribal-mini-dot" style="background:var(--lxx-color)"></span> {{ _t('dim_literalness') }}</span>

@@ -122,7 +122,7 @@
     hide(tabsArea);
     hide(heading);
     show(loadState);
-    setLoadingStep('Preparing…');
+    setLoadingStep(window.t('loading_preparing', 'Preparing…'));
 
     var elapsed = 0;
     _timer = setInterval(function () {
@@ -337,9 +337,9 @@
     var toggleDiv = document.createElement('div');
     toggleDiv.className = 'num-timeline-toggle';
     toggleDiv.innerHTML =
-      '<span class="num-tl-label">View:</span>' +
-      '<button class="num-tl-btn' + (_mode === 'stacked' ? ' active' : '') + '" data-mode="stacked">Age + Remaining</button>' +
-      '<button class="num-tl-btn' + (_mode === 'total' ? ' active' : '') + '" data-mode="total">Total only</button>';
+      '<span class="num-tl-label">' + window.t('num_view_label', 'View:') + '</span>' +
+      '<button class="num-tl-btn' + (_mode === 'stacked' ? ' active' : '') + '" data-mode="stacked">' + window.t('num_view_stacked', 'Age + Remaining') + '</button>' +
+      '<button class="num-tl-btn' + (_mode === 'total' ? ' active' : '') + '" data-mode="total">' + window.t('num_view_total', 'Total only') + '</button>';
     parent.insertBefore(toggleDiv, timelineSvg);
 
     function draw(mode) {
@@ -596,7 +596,7 @@
           '<div class="num-conf-track">' +
             '<div class="num-conf-bar" style="width:' + pct + '%"></div>' +
           '</div>' +
-          '<div class="num-conf-label">Confidence: ' + pct + '%</div>' +
+          '<div class="num-conf-label">' + window.t('num_confidence_label', 'Confidence:') + ' ' + pct + '%</div>' +
         '</div>' +
 
         '<p class="div-analysis">' + _esc(theory.summary_plain || '') + '</p>' +
@@ -605,7 +605,7 @@
     // Evidence
     var ev = theory.supporting_evidence || [];
     if (ev.length) {
-      html += '<div style="margin-top:14px"><strong style="font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)">Supporting Evidence</strong><ul style="margin:6px 0 0 16px;padding:0">';
+      html += '<div style="margin-top:14px"><strong style="font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)">' + window.t('num_supporting_evidence', 'Supporting Evidence') + '</strong><ul style="margin:6px 0 0 16px;padding:0">';
       ev.forEach(function (e) { html += '<li style="margin-bottom:5px;line-height:1.6;font-size:14px">' + _esc(e) + '</li>'; });
       html += '</ul></div>';
     }
@@ -613,7 +613,7 @@
     // Weaknesses
     var wk = theory.weaknesses || [];
     if (wk.length) {
-      html += '<div style="margin-top:10px"><strong style="font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)">Weaknesses</strong><ul style="margin:6px 0 0 16px;padding:0">';
+      html += '<div style="margin-top:10px"><strong style="font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)">' + window.t('num_weaknesses', 'Weaknesses') + '</strong><ul style="margin:6px 0 0 16px;padding:0">';
       wk.forEach(function (w) { html += '<li style="margin-bottom:5px;line-height:1.6;font-size:14px">' + _esc(w) + '</li>'; });
       html += '</ul></div>';
     }
@@ -632,7 +632,7 @@
       (ass.title ? '<h3 style="margin:0 0 12px;font-size:16px">' + _esc(ass.title) + '</h3>' : '') +
       '<p class="div-analysis">' + _esc(ass.plain || '') + '</p>' +
       (ass.reasoning ? '<p class="div-meta" style="font-style:italic;margin-top:8px">' + _esc(ass.reasoning) + '</p>' : '') +
-      (pct ? '<p style="margin-top:10px"><span class="conf-badge ' + confCls + '">Confidence: ' + pct + '%</span></p>' : '') +
+      (pct ? '<p style="margin-top:10px"><span class="conf-badge ' + confCls + '">' + window.t('num_confidence_label', 'Confidence:') + ' ' + pct + '%</span></p>' : '') +
       '<p class="div-meta" style="margin-top:8px">' + _esc(data.overall_plain || '') + '</p>' +
       '</div>';
   }

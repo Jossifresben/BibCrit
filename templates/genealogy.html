@@ -8,6 +8,21 @@
 
 {% block content %}
 
+<!-- Tool header -->
+<div class="tool-header">
+  <h1 class="tool-title">Manuscript Genealogy</h1>
+  <p class="tool-subtitle" id="tool-subtitle">Visualize the transmission history of any biblical book across MT, LXX, DSS, SP, Peshitta, Targum, and Vulgate as an interactive stemma.</p>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.BibCritPersona) BibCritPersona.setToolSubtitle('genealogy', {
+      scholar: 'Full stemmatic visualization from proto-text to modern critical editions across all major manuscript traditions.',
+      phd:     'Get a stemmatic overview for your book\u2019s transmission \u2014 use the diagram in your manuscript history chapter.',
+      student: 'The Bible wasn\u2019t printed \u2014 it was hand-copied for over a thousand years, branching into distinct manuscript families across different regions and languages: Hebrew, Greek, Aramaic, Latin, Syriac, and more. Each tradition made its own choices and accumulated its own changes. Select a book to see its full transmission history mapped as an interactive family tree, from the earliest manuscripts to the modern critical editions your Bible is translated from.'
+    });
+  });
+</script>
+
 <!-- Passage Selector Bar -->
 <div class="passage-bar">
   <div class="passage-bar-row passage-bar-main">
@@ -79,9 +94,7 @@
 <!-- Empty / Welcome State -->
 <div id="empty-state" class="empty-state">
   <div class="empty-inner">
-    <h2>{{ _t('genealogy_empty_title') }}</h2>
     <p>{{ _t('genealogy_empty_body') }}</p>
-
     <!-- Tradition legend -->
     <div class="bt-legend-hero" style="margin-bottom: 1.5rem;">
       <span class="bt-legend-item"><span class="scribal-mini-dot" style="background:#d97706"></span> {{ _t('legend_mt_abbr') }}</span>

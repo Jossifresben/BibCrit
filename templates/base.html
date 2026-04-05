@@ -124,6 +124,31 @@
             </div>
 
             <div class="nav-icons">
+                    <!-- Persona Pill -->
+                    <div class="persona-pill-wrap" id="persona-pill-wrap">
+                        <button class="persona-pill" id="persona-pill" style="display:none" aria-label="Switch persona">
+                            <span id="persona-pill-label">Scholar ▾</span>
+                        </button>
+                        <div class="persona-pill-dropdown" id="persona-pill-dropdown">
+                            <button class="ppd-item" data-switch-persona="scholar">
+                                <span class="ppd-dot" style="background:#2563eb"></span> Scholar / Faculty
+                            </button>
+                            <button class="ppd-item" data-switch-persona="phd">
+                                <span class="ppd-dot" style="background:#6b5cdb"></span> PhD Candidate
+                            </button>
+                            <button class="ppd-item" data-switch-persona="student">
+                                <span class="ppd-dot" style="background:#059669"></span> Student / Learner
+                            </button>
+                            <hr class="ppd-sep">
+                            <button class="ppd-item ppd-change" id="ppd-change-view">
+                                <span class="material-symbols-outlined" style="font-size:15px;">swap_horiz</span> Change view
+                            </button>
+                            <button class="ppd-item ppd-all" data-switch-persona="all">
+                                <span class="material-symbols-outlined" style="font-size:15px;">grid_view</span> Show all tools
+                            </button>
+                        </div>
+                    </div>
+
                     <!-- Language Picker -->
                     <div class="lang-picker" id="lang-picker">
                         <button class="nav-btn lang-toggle" id="lang-toggle"
@@ -217,6 +242,7 @@
     <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
     <script src="{{ url_for('static', filename='js/global.js') }}"></script>
     <script src="{{ url_for('static', filename='result-actions.js') }}"></script>
+    <script src="{{ url_for('static', filename='persona.js') }}"></script>
     {% block scripts %}{% endblock %}
 </body>
 </html>

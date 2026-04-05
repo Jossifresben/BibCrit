@@ -117,7 +117,7 @@
       var data = options.getResultData ? options.getResultData() : {};
       var text = global.ResultActions._toText(data, ref, options.toolName);
       if (navigator.clipboard) {
-        navigator.clipboard.writeText(text).then(function() { _flash(copyBtn, '✓ Copied!'); });
+        navigator.clipboard.writeText(text).then(function() { _flash(copyBtn, window.t('toast_copied', '✓ Copied!')); });
       } else {
         var ta = document.createElement('textarea');
         ta.value = text;
@@ -125,7 +125,7 @@
         ta.select();
         document.execCommand('copy');
         document.body.removeChild(ta);
-        _flash(copyBtn, '✓ Copied!');
+        _flash(copyBtn, window.t('toast_copied', '✓ Copied!'));
       }
     });
 

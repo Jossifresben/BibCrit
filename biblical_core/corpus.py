@@ -42,6 +42,7 @@ class BiblicalCorpus:
         'LXX': 'lxx_stepbible',
         'GNT': 'gnt_opengnt',
         'DSS': 'dss',
+        'SP':  'sp_etcbc',
     }
 
     def __init__(self) -> None:
@@ -105,7 +106,7 @@ class BiblicalCorpus:
     def get_verse_words(self, reference: str, tradition: str) -> list:
         """Return words for a verse in a given tradition, ordered by position."""
         self.load_all()
-        return list(self._words.get((reference, tradition), []))
+        return list(self._words.get((_norm_ref(reference), tradition), []))
 
     def get_verse_text(self, reference: str, tradition: str) -> str:
         """Return all words joined by spaces (surface text of the verse)."""
@@ -114,7 +115,8 @@ class BiblicalCorpus:
     def available_traditions(self, reference: str) -> list:
         """Return which traditions have data for this reference."""
         self.load_all()
-        return [trad for (ref, trad) in self._words if ref == reference]
+        ref = _norm_ref(reference)
+        return [trad for (r, trad) in self._words if r == ref]
 
     def get_books(self, tradition: str) -> list:
         """Return distinct book names that have data in this tradition."""
@@ -169,3 +171,17 @@ def _chapter_from_ref(reference: str) -> int:
     idx = reference.rfind(' ')
     chv = reference[idx + 1:] if idx != -1 else reference
     return int(chv.split(':')[0])
+
+
+def _norm_ref(reference: str) -> str:
+    """Normalize legacy book name variants to match ETCBC canonical names.
+
+    'Psalm 22:1' → 'Psalms 22:1'  (ETCBC uses plural)
+    """
+    _ALIASES = {
+        'Psalm ': 'Psalms ',
+    }
+    for alias, canonical in _ALIASES.items():
+        if reference.startswith(alias):
+            return canonical + reference[len(alias):]
+    return reference

@@ -7,8 +7,8 @@
 <div class="disc-hero">
   <div class="disc-hero-inner">
     <div class="disc-hero-label">✦ Discovery</div>
-    <h1 class="disc-hero-title">Findings from the Text</h1>
-    <p class="disc-hero-sub">
+    <h1 class="disc-hero-title" id="disc-hero-title">Findings from the Text</h1>
+    <p class="disc-hero-sub" id="disc-hero-sub">
       The most fascinating discoveries in biblical manuscript scholarship —
       no Hebrew or Greek required.
     </p>
@@ -70,7 +70,7 @@
 <div class="disc-section-label">More Findings</div>
 <div class="disc-grid" id="disc-grid">
   {% for card in cards[1:] %}
-  <div class="disc-card">
+  <div class="disc-card" data-card-type="{{ card.card_type or card.divergence_type }}">
     <div class="disc-card-head">
       <span class="disc-card-ref">{{ card.reference }}</span>
       <span class="disc-type-badge disc-type-{{ card.card_type or card.divergence_type }}">
@@ -139,6 +139,59 @@
 {% block scripts %}
 <script>
 (function () {
+  // ── Persona-aware hero text + card reordering ───────────────────────────
+  var HERO = {
+    scholar: {
+      title: 'Research-Grade Textual Findings',
+      sub:   'Sorted by scholarly significance — different Vorlagen, theological tendencies, and harmonization patterns across the manuscript traditions.'
+    },
+    phd: {
+      title: 'Dissertation-Ready Textual Evidence',
+      sub:   'Findings most relevant for thesis argumentation — theological revision patterns, cross-tradition divergences, and citable analyses.'
+    },
+    student: {
+      title: 'Discoveries from the Ancient Manuscripts',
+      sub:   'The most fascinating finds from 3,000 years of Bible manuscripts — no Hebrew or Greek required.'
+    }
+  };
+
+  // Type priority by persona (first = most prominent)
+  var TYPE_ORDER = {
+    scholar: ['different_vorlage', 'theological_tendency', 'harmonization', 'scribal_error', 'omission', 'addition'],
+    phd:     ['theological_tendency', 'different_vorlage', 'harmonization', 'scribal_error', 'omission', 'addition'],
+    student: ['scribal_error', 'omission', 'addition', 'different_vorlage', 'theological_tendency', 'harmonization']
+  };
+
+  var persona = (typeof localStorage !== 'undefined') ? localStorage.getItem('bibcrit_persona') : null;
+
+  if (persona && HERO[persona]) {
+    var titleEl = document.getElementById('disc-hero-title');
+    var subEl   = document.getElementById('disc-hero-sub');
+    if (titleEl) titleEl.textContent = HERO[persona].title;
+    if (subEl)   subEl.textContent   = HERO[persona].sub;
+  }
+
+  function reorderGrid() {
+    if (!persona || !TYPE_ORDER[persona]) return;
+    var grid = document.getElementById('disc-grid');
+    if (!grid) return;
+    var order = TYPE_ORDER[persona];
+    var cards = Array.prototype.slice.call(grid.querySelectorAll('.disc-card'));
+    cards.sort(function(a, b) {
+      var ta = (a.dataset.cardType || '');
+      var tb = (b.dataset.cardType || '');
+      var ia = order.indexOf(ta); if (ia === -1) ia = 999;
+      var ib = order.indexOf(tb); if (ib === -1) ib = 999;
+      return ia - ib;
+    });
+    cards.forEach(function(c) { grid.appendChild(c); });
+  }
+
+  document.addEventListener('DOMContentLoaded', reorderGrid);
+})();
+</script>
+<script>
+(function () {
   var btn = document.getElementById('btn-load-more');
   if (!btn) return;
 
@@ -162,6 +215,7 @@
   function buildCard(card) {
     var el = document.createElement('div');
     el.className = 'disc-card';
+    el.dataset.cardType = card.card_type || card.divergence_type || '';
     var wordsHtml = '';
     if (card.mt_word && card.lxx_word) {
       wordsHtml =
@@ -193,7 +247,9 @@
     btn.textContent = 'Loading…';
     btn.disabled = true;
 
-    fetch('/api/discovery/cards?offset=' + offset + '&limit=12')
+    var personaParam = (typeof localStorage !== 'undefined' && localStorage.getItem('bibcrit_persona'))
+      ? '&persona=' + encodeURIComponent(localStorage.getItem('bibcrit_persona')) : '';
+    fetch('/api/discovery/cards?offset=' + offset + '&limit=12' + personaParam)
       .then(function(r){ return r.json(); })
       .then(function(data) {
         (data.cards || []).forEach(function(card) {

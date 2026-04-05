@@ -224,7 +224,7 @@
     hide(results);
     hide(heading);
     show(loadState);
-    setLoadingStep('Preparing…');
+    setLoadingStep(window.t('loading_preparing', 'Preparing…'));
 
     var elapsed = 0;
     _timer = setInterval(function () {
@@ -288,23 +288,28 @@
       if (msList) msList.innerHTML =
         '<div class="bt-group-card" style="max-width:900px;margin:0 auto 1rem;text-align:center;padding:2rem 1.5rem">' +
           '<span class="material-symbols-outlined" style="font-size:2.5rem;color:var(--muted);display:block;margin-bottom:0.75rem">hide_source</span>' +
-          '<p style="font-weight:600;margin:0 0 0.4rem;font-size:1rem">No DSS Witness Found</p>' +
-          '<p style="color:var(--muted);margin:0;font-size:0.875rem">No Dead Sea Scrolls manuscript attests this passage. ' +
-          'The passage may fall in a lacuna, or no scroll preserving this section has been identified.</p>' +
+          '<p style="font-weight:600;margin:0 0 0.4rem;font-size:1rem">' + window.t('dss_no_scroll_title', 'No Dead Sea Scroll Attests This Passage') + '</p>' +
+          '<p style="color:var(--muted);margin:0;font-size:0.875rem">' + window.t('dss_no_scroll_body', 'No Dead Sea Scrolls manuscript attests this passage. The passage may fall in a lacuna, or no scroll preserving this section has been identified.') + '</p>' +
         '</div>';
     }
 
-    // Synthesis
+    // SP witness card (Samaritan Pentateuch)
+    if (data.sp_witness && data.sp_witness.present) {
+      var spCard = _buildSPWitnessCard(data.sp_witness);
+      if (msList) msList.appendChild(spCard);
+    }
+
+    // Synthesis — allow basic HTML tags (<b>, <em>, <i>) from Claude
     var synth = data.synthesis_plain || data.synthesis || '';
     if (synth && synthSec && synthBody) {
       synthBody.innerHTML =
         '<div class="bt-group-card">' +
-          '<p class="div-analysis">' + _esc(synth) + '</p>' +
+          '<p class="div-analysis">' + _safe(synth) + '</p>' +
           (data.synthesis && data.synthesis !== synth
-            ? '<p class="div-meta" style="margin-top:8px;font-style:italic">' + _esc(data.synthesis) + '</p>'
+            ? '<p class="div-meta" style="margin-top:8px;font-style:italic">' + _safe(data.synthesis) + '</p>'
             : '') +
           (data.textual_history_implication
-            ? '<p style="margin-top:8px;font-size:0.875rem;color:var(--fg)">' + _esc(data.textual_history_implication) + '</p>'
+            ? '<p style="margin-top:8px;font-size:0.875rem;color:var(--fg)">' + _safe(data.textual_history_implication) + '</p>'
             : '') +
         '</div>';
       show(synthSec);
@@ -382,7 +387,7 @@
     body.className = 'dss-ms-body' + (idx === 0 ? '' : ' collapsed');
 
     if (!present || alignment === 'absent') {
-      body.innerHTML = '<p class="dss-absent-note">This passage is not extant in ' + _esc(ms.siglum || 'this manuscript') + '.</p>';
+      body.innerHTML = '<p class="dss-absent-note">' + window.t('dss_absent_note', 'This passage is not extant in {siglum}.').replace('{siglum}', _esc(ms.siglum || 'this manuscript')) + '</p>';
     } else {
       var inner = '';
       if (ms.dss_text) {
@@ -391,9 +396,12 @@
 
       var divs = ms.divergences || [];
       if (divs.length) {
+        var hasSP = divs.some(function (d) { return d.sp_reading != null; });
         inner +=
           '<table class="dss-div-table"><thead><tr>' +
-          '<th>#</th><th>MT</th><th>LXX</th><th>DSS</th><th>Type</th><th>Implication</th>' +
+          '<th>#</th><th>MT</th><th>LXX</th><th>DSS</th>' +
+          (hasSP ? '<th style="color:var(--sp-color,#2c7c5f)">SP</th>' : '') +
+          '<th>Type</th><th>Implication</th>' +
           '</tr></thead><tbody>';
         divs.forEach(function (d) {
           inner += '<tr>' +
@@ -401,6 +409,7 @@
             '<td>' + _esc(d.mt_reading  || '—') + '</td>' +
             '<td>' + _esc(d.lxx_reading || '—') + '</td>' +
             '<td><strong>' + _esc(d.dss_reading || '—') + '</strong></td>' +
+            (hasSP ? '<td><span style="color:var(--sp-color,#2c7c5f)">' + _esc(d.sp_reading || '—') + '</span></td>' : '') +
             '<td><span class="theo-type-badge">' + _esc(d.classification || '') + '</span></td>' +
             '<td>' + _esc(d.textual_implication || '') + '</td>' +
             '</tr>';
@@ -428,16 +437,90 @@
     return card;
   }
 
+  function _buildSPWitnessCard(sp) {
+    var card = document.createElement('div');
+    card.className = 'dss-ms-card';
+    card.style.maxWidth = '900px';
+    card.style.margin = '0 auto 1rem';
+    card.style.borderLeft = '3px solid var(--sp-color, #2c7c5f)';
+
+    var conf    = sp.alignment_confidence || 0;
+    var pct     = Math.round(conf * 100);
+    var confCls = conf >= 0.75 ? 'badge-high' : conf >= 0.45 ? 'badge-medium' : 'badge-low';
+
+    var header = document.createElement('div');
+    header.className = 'dss-ms-header';
+    header.setAttribute('role', 'button');
+    header.setAttribute('aria-expanded', 'true');
+    header.innerHTML =
+      '<span class="dss-ms-siglum" style="color:var(--sp-color,#2c7c5f)">SP</span>' +
+      '<span class="dss-ms-fullname">Samaritan Pentateuch (Chester Beatty 751)</span>' +
+      _alignmentBadge(sp.alignment || 'independent') +
+      (conf ? '<span class="conf-badge ' + confCls + '" style="margin-left:4px">' + pct + '%</span>' : '') +
+      '<span class="dss-ms-toggle">▲</span>';
+
+    var body = document.createElement('div');
+    body.className = 'dss-ms-body';
+
+    var inner = '';
+    if (sp.sp_text) {
+      inner += '<div class="dss-ms-text" style="direction:rtl;text-align:right;font-family:serif;font-size:1.1rem">' + _esc(sp.sp_text) + '</div>';
+    }
+
+    var divs = sp.divergences || [];
+    if (divs.length) {
+      inner +=
+        '<table class="dss-div-table"><thead><tr>' +
+        '<th>#</th><th>MT</th><th style="color:var(--sp-color,#2c7c5f)">SP</th>' +
+        '<th>Type</th><th>Implication</th>' +
+        '</tr></thead><tbody>';
+      divs.forEach(function (d) {
+        inner += '<tr>' +
+          '<td>' + _esc(String(d.word_position || '')) + '</td>' +
+          '<td>' + _esc(d.mt_reading  || '—') + '</td>' +
+          '<td><strong style="color:var(--sp-color,#2c7c5f)">' + _esc(d.sp_reading || '—') + '</strong></td>' +
+          '<td><span class="theo-type-badge">' + _esc(d.classification || '') + '</span></td>' +
+          '<td>' + _esc(d.textual_implication || '') + '</td>' +
+          '</tr>';
+      });
+      inner += '</tbody></table>';
+    }
+
+    if (!divs.length && sp.present) {
+      inner += '<p class="dss-overall-note" style="opacity:0.7;font-style:italic">No individual divergences identified for this passage.</p>';
+    }
+
+    if (sp.overall_note) {
+      inner += '<p class="dss-overall-note">' + _safe(sp.overall_note) + '</p>';
+    }
+
+    body.innerHTML = inner;
+
+    header.addEventListener('click', function () {
+      var isOpen = !body.classList.contains('collapsed');
+      body.classList.toggle('collapsed', isOpen);
+      header.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+      var toggle = header.querySelector('.dss-ms-toggle');
+      if (toggle) toggle.textContent = isOpen ? '▼' : '▲';
+    });
+
+    card.appendChild(header);
+    card.appendChild(body);
+    return card;
+  }
+
   function _alignmentBadge(alignment) {
     var labels = {
-      sides_with_mt:  'Sides with MT',
-      sides_with_lxx: 'Sides with LXX',
-      independent:    'Independent',
-      absent:         'Not extant',
+      sides_with_mt:  window.t('dss_align_mt',          'Sides with MT'),
+      sides_with_lxx: window.t('dss_align_lxx',         'Sides with LXX'),
+      sides_with_sp:  window.t('dss_align_sp',          'Sides with SP'),
+      independent:    window.t('dss_align_independent',  'Independent'),
+      absent:         window.t('dss_align_absent',       'Not extant'),
     };
     var classes = {
       sides_with_mt:  'dss-align-mt',
       sides_with_lxx: 'dss-align-lxx',
+      sides_with_sp:  'dss-align-sp',
       independent:    'dss-align-ind',
       absent:         'dss-align-abs',
     };
@@ -460,7 +543,7 @@
           (ass.title ? '<h3 style="margin:0 0 12px;font-size:16px">' + _esc(ass.title) + '</h3>' : '') +
           '<p class="div-analysis">' + _esc(ass.plain || '') + '</p>' +
           (ass.reasoning ? '<p class="div-meta" style="font-style:italic;margin-top:8px">' + _esc(ass.reasoning) + '</p>' : '') +
-          (pct ? '<p style="margin-top:10px"><span class="conf-badge ' + confCls + '">Confidence: ' + pct + '%</span></p>' : '') +
+          (pct ? '<p style="margin-top:10px"><span class="conf-badge ' + confCls + '">' + window.t('dss_confidence_label', 'Confidence:') + ' ' + pct + '%</span></p>' : '') +
           '<p class="analysis-model-attr">Performed by ' + _esc(_friendlyModel(data.model_version)) + '</p>' +
         '</div>';
     }
@@ -491,6 +574,15 @@
     return String(s || '')
       .replace(/&/g, '&amp;').replace(/</g, '&lt;')
       .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  // Like _esc but preserves <b>, <em>, <i>, <strong> tags from Claude output
+  function _safe(s) {
+    return _esc(s)
+      .replace(/&lt;b&gt;/g, '<b>').replace(/&lt;\/b&gt;/g, '</b>')
+      .replace(/&lt;strong&gt;/g, '<strong>').replace(/&lt;\/strong&gt;/g, '</strong>')
+      .replace(/&lt;em&gt;/g, '<em>').replace(/&lt;\/em&gt;/g, '</em>')
+      .replace(/&lt;i&gt;/g, '<i>').replace(/&lt;\/i&gt;/g, '</i>');
   }
 
   function _friendlyModel(modelId) {

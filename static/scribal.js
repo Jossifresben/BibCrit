@@ -144,7 +144,7 @@
     hide(tabsArea);
     hide(heading);
     show(loadState);
-    setLoadingStep('Preparing…');
+    setLoadingStep(window.t('loading_preparing', 'Preparing…'));
 
     var elapsed = 0;
     _timerInt = setInterval(function () {
@@ -175,7 +175,7 @@
           // If compare mode is on, fetch second book
           var book2 = chkCompare && chkCompare.checked && selBook2 ? selBook2.value.trim() : '';
           if (book2 && book2 !== book) {
-            setLoadingStep('Loading comparison book…');
+            setLoadingStep(window.t('scribal_loading_comparison', 'Loading comparison book…'));
             fetchSecond(book2, function (d2) {
               _data2 = d2;
               renderScribal(_data1, _data2);
@@ -230,7 +230,7 @@
               '<span style="color:var(--muted);font-weight:400;font-size:1.1rem;margin:0 10px">vs</span>' +
               '<span style="color:' + SERIES_COLORS[1] + '">' + _esc(translatorName2) + '</span>' +
             '</h1>' +
-            '<span class="scribal-heading-sub">Scribal Tendency Comparison · ' + _esc(bookLabel) + ' &amp; ' + _esc(bookLabel2) + '</span>' +
+            '<span class="scribal-heading-sub">' + window.t('scribal_heading_comparison', 'Scribal Tendency Comparison') + ' · ' + _esc(bookLabel) + ' &amp; ' + _esc(bookLabel2) + '</span>' +
           '</div>' +
         '</div>';
     } else {
@@ -239,7 +239,7 @@
           '<span class="tradition-badge lxx-badge scribal-heading-badge">LXX</span>' +
           '<div class="scribal-heading-text">' +
             '<h1 class="scribal-heading-title">' + _esc(translatorName) + '</h1>' +
-            '<span class="scribal-heading-sub">Scribal Tendency Profile · ' + _esc(bookLabel) + '</span>' +
+            '<span class="scribal-heading-sub">' + window.t('scribal_heading_profile', 'Scribal Tendency Profile') + ' · ' + _esc(bookLabel) + '</span>' +
           '</div>' +
         '</div>';
     }
@@ -560,7 +560,10 @@
     var examples = dim.examples || [];
     if (examples.length) {
       html += '<table class="dim-examples-table"><thead><tr>' +
-        '<th>Reference</th><th>MT</th><th>LXX</th><th>Note</th>' +
+        '<th>' + window.t('scribal_col_reference', 'Reference') + '</th>' +
+        '<th>' + window.t('scribal_col_mt', 'MT') + '</th>' +
+        '<th>' + window.t('scribal_col_lxx', 'LXX') + '</th>' +
+        '<th>' + window.t('scribal_col_note', 'Note') + '</th>' +
         '</tr></thead><tbody>';
       examples.forEach(function (ex) {
         html += '<tr>' +
@@ -596,12 +599,12 @@
         .then(function (r) { return r.json(); })
         .then(function (data) {
           var text = (data.footnotes || []).join('\n\n');
-          if (!text) { showToast('No footnotes generated.'); return; }
+          if (!text) { showToast(window.t('scribal_no_footnotes', 'No footnotes generated.')); return; }
           navigator.clipboard.writeText(text).then(function () {
             showToast(window.t('toast_sbl_copied_short', 'SBL footnotes copied!'));
           });
         })
-        .catch(function () { showToast('Export failed.'); });
+        .catch(function () { showToast(window.t('scribal_export_failed', 'Export failed.')); });
     });
   }
 
@@ -629,14 +632,22 @@
   }
 
   function _dimLabel(key) {
-    var labels = {
+    var map = {
+      literalness:                'scribal_dim_literalness',
+      anthropomorphism_reduction: 'scribal_dim_anthropomorphism',
+      messianic_heightening:      'scribal_dim_messianic',
+      harmonization:              'scribal_dim_harmonization',
+      paraphrase_rate:            'scribal_dim_paraphrase',
+    };
+    var fallbacks = {
       literalness:                'Literalness',
       anthropomorphism_reduction: 'Anthropomorphism Reduction',
       messianic_heightening:      'Messianic Heightening',
       harmonization:              'Harmonization',
       paraphrase_rate:            'Paraphrase Rate',
     };
-    return labels[key] || (key || '').replace(/_/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+    if (map[key]) return window.t(map[key], fallbacks[key]);
+    return (key || '').replace(/_/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
   }
 
   // ── Public API ───────────────────────────────────────────────────────────

@@ -12,10 +12,14 @@ import state
 
 critical_bp = Blueprint('critical', __name__)
 
+# IMPORTANT: These must stay in sync with the prompt_version set inside the
+# corresponding pipeline.analyze_*() methods. A mismatch causes cache-key
+# divergence — the blueprint generates lookup keys with version X while the
+# pipeline stores them with version Y, producing cache misses on every request.
 _SCRIBAL_PROMPT     = 'v1'
-_NUMERICAL_PROMPT   = 'v1'
+_NUMERICAL_PROMPT   = 'v2'
 _THEOLOGICAL_PROMPT = 'v1'
-_PATRISTIC_PROMPT   = 'v1'
+_PATRISTIC_PROMPT   = 'v2'
 
 _STEPS = {
     'en': {
@@ -201,7 +205,16 @@ def api_numerical_stream():
                 yield event('done', data=cached_es)
                 return
 
-        # Step 1: check cache
+        # Step 1: load SP corpus text for Pentateuch passages
+        sp_text = ''
+        if state.corpus is not None:
+            try:
+                sp_words = state.corpus.get_verse_words(reference, 'SP')
+                sp_text  = ' '.join(w.word_text for w in sp_words) if sp_words else ''
+            except Exception:
+                sp_text = ''
+
+        # Step 2: check cache
         yield event('step', msg=_step(lang, 'checking_cache'))
         cached = pipeline.get_cached(reference, 'numerical', _NUMERICAL_PROMPT, NUMERICAL_MODEL)
 
@@ -212,7 +225,7 @@ def api_numerical_stream():
             yield event('step', msg=_step(lang, 'num_generating'))
             _result_box = [None]
             def _run_numerical():
-                _result_box[0] = pipeline.analyze_numerical(reference)
+                _result_box[0] = pipeline.analyze_numerical(reference, sp_text=sp_text)
             _t = threading.Thread(target=_run_numerical, daemon=True)
             _t.start()
             while _t.is_alive():
@@ -365,7 +378,16 @@ def api_patristic_stream():
                 yield event('done', data=cached_es)
                 return
 
-        # Step 1: check cache
+        # Step 1: load GNT corpus text for NT passages
+        gnt_text = ''
+        if state.corpus is not None:
+            try:
+                gnt_words = state.corpus.get_verse_words(reference, 'GNT')
+                gnt_text  = ' '.join(w.word_text for w in gnt_words) if gnt_words else ''
+            except Exception:
+                gnt_text = ''
+
+        # Step 2: check cache
         yield event('step', msg=_step(lang, 'checking_cache'))
         cached = pipeline.get_cached(reference, 'patristic', _PATRISTIC_PROMPT, PATRISTIC_MODEL)
 
@@ -376,7 +398,7 @@ def api_patristic_stream():
             yield event('step', msg=_step(lang, 'pat_generating'))
             _result_box = [None]
             def _run_patristic():
-                _result_box[0] = pipeline.analyze_patristic(reference)
+                _result_box[0] = pipeline.analyze_patristic(reference, gnt_text=gnt_text)
             _t = threading.Thread(target=_run_patristic, daemon=True)
             _t.start()
             while _t.is_alive():

@@ -17,7 +17,7 @@ critical_bp = Blueprint('critical', __name__)
 # divergence — the blueprint generates lookup keys with version X while the
 # pipeline stores them with version Y, producing cache misses on every request.
 _SCRIBAL_PROMPT     = 'v1'
-_NUMERICAL_PROMPT   = 'v2'
+_NUMERICAL_PROMPT   = 'v3'
 _THEOLOGICAL_PROMPT = 'v1'
 _PATRISTIC_PROMPT   = 'v2'
 
@@ -205,12 +205,22 @@ def api_numerical_stream():
                 yield event('done', data=cached_es)
                 return
 
-        # Step 1: load SP corpus text for Pentateuch passages
+        # Step 1: load SP corpus text for Pentateuch passages.
+        # The numerical tool uses chapter-level references (e.g. "Genesis 5"),
+        # so we aggregate all verse words across the chapter rather than a
+        # single-verse lookup which would always return empty.
         sp_text = ''
         if state.corpus is not None:
             try:
                 sp_words = state.corpus.get_verse_words(reference, 'SP')
-                sp_text  = ' '.join(w.word_text for w in sp_words) if sp_words else ''
+                if not sp_words and ':' not in reference:
+                    # Chapter-level reference — aggregate all verses
+                    parts = reference.rsplit(' ', 1)
+                    if len(parts) == 2:
+                        book, chap_str = parts
+                        chap = int(chap_str)
+                        sp_words = state.corpus.get_chapter_words(book, chap, 'SP')
+                sp_text = ' '.join(w.word_text for w in sp_words) if sp_words else ''
             except Exception:
                 sp_text = ''
 

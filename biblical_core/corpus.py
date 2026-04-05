@@ -58,6 +58,8 @@ class BiblicalCorpus:
         self._file_index: dict = {}
         # (tradition, book_stem) → canonical book name
         self._book_names: dict = {}
+        # (tradition, canonical_book_name) → csv_path  — primary lookup path
+        self._canonical_to_path: dict = {}
         # set of csv_paths already fully loaded into self._words
         self._loaded_files: set = set()
 
@@ -94,13 +96,22 @@ class BiblicalCorpus:
                 canonical = _canonical_book_from_csv(fpath)
                 if canonical:
                     self._book_names[(tradition, stem)] = canonical
+                    # Primary lookup: by canonical name (handles 1qisaa.csv → "Isaiah")
+                    self._canonical_to_path[(tradition, canonical)] = fpath
 
     # ── Lazy loading ────────────────────────────────────────────────────────
 
     def _ensure_book_loaded(self, book: str, tradition: str) -> None:
-        """Load the CSV for this (book, tradition) pair if not already cached."""
-        stem = _book_to_stem(book)
-        fpath = self._file_index.get((tradition, stem))
+        """Load the CSV for this (book, tradition) pair if not already cached.
+
+        Uses canonical book name first (handles DSS where 1qisaa.csv → 'Isaiah'),
+        then falls back to stem-based lookup for standard naming conventions.
+        """
+        # Primary: canonical-name index (handles DSS manuscript filenames)
+        fpath = self._canonical_to_path.get((tradition, book))
+        # Fallback: stem-based (e.g., 'genesis' → 'genesis.csv')
+        if not fpath:
+            fpath = self._file_index.get((tradition, _book_to_stem(book)))
         if fpath and fpath not in self._loaded_files:
             self._load_csv(fpath, tradition)
             self._loaded_files.add(fpath)
@@ -142,6 +153,22 @@ class BiblicalCorpus:
     def get_verse_text(self, reference: str, tradition: str) -> str:
         """Return all words joined by spaces (surface text of the verse)."""
         return ' '.join(w.word_text for w in self.get_verse_words(reference, tradition))
+
+    def get_chapter_words(self, book: str, chapter: int, tradition: str) -> list:
+        """Return all words in a chapter, in verse order.
+
+        Used for chapter-level references (e.g. 'Genesis 5') where the corpus
+        stores individual verse keys like 'Genesis 5:1', 'Genesis 5:2', …
+        """
+        verse_nums = self.get_verses(book, chapter, tradition)
+        words = []
+        for v in verse_nums:
+            words.extend(self.get_verse_words(f'{book} {chapter}:{v}', tradition))
+        return words
+
+    def get_chapter_text(self, book: str, chapter: int, tradition: str) -> str:
+        """Return all chapter words joined by spaces."""
+        return ' '.join(w.word_text for w in self.get_chapter_words(book, chapter, tradition))
 
     def available_traditions(self, reference: str) -> list:
         """Return which traditions have data for this reference."""

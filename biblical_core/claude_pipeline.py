@@ -710,7 +710,7 @@ class ClaudePipeline:
         On error: returns {'error': ..., 'figures': [], 'theories': []}.
         """
         model          = NUMERICAL_MODEL
-        prompt_version = 'v2'
+        prompt_version = 'v3'
         tool           = 'numerical'
 
         cached = self.get_cached(reference, tool, prompt_version, model)

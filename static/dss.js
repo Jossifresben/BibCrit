@@ -571,6 +571,8 @@
   }
 
   function _esc(s) {
+    // Guard: only stringify scalars; objects/arrays become '' to prevent "[object Object]"
+    if (s !== null && s !== undefined && typeof s === 'object') return '';
     return String(s || '')
       .replace(/&/g, '&amp;').replace(/</g, '&lt;')
       .replace(/>/g, '&gt;').replace(/"/g, '&quot;');

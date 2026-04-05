@@ -3,6 +3,11 @@
 CSV schema (word-level, one row per word):
   book_order, book, chapter, verse, reference, position,
   word_text, lemma, morph, strong, manuscript, tradition
+
+Memory strategy: LAZY LOADING BY BOOK.
+CSVs are not loaded at startup. Each book is loaded on first access and
+cached in memory. This keeps peak memory well under 512 MB on a free
+Render instance even with full OT + NT corpora on disk.
 """
 
 import csv
@@ -10,11 +15,11 @@ import os
 from dataclasses import dataclass
 
 
-@dataclass
+@dataclass(slots=True)
 class VerseWord:
     """A single morphologically-tagged word in a biblical verse."""
     reference: str        # "Isaiah 7:14"
-    tradition: str        # "MT" | "LXX" | "GNT" | "DSS"
+    tradition: str        # "MT" | "LXX" | "GNT" | "DSS" | "SP"
     position: int         # 1-based word position in the verse
     word_text: str        # surface form with pointing/accents
     lemma: str            # dictionary form
@@ -24,17 +29,17 @@ class VerseWord:
 
 
 class BiblicalCorpus:
-    """Loads one or more biblical tradition CSVs and provides verse/word access.
+    """Provides verse/word access across biblical traditions with lazy book loading.
 
-    Each tradition (MT, LXX, GNT, DSS) lives in its own subdirectory under
-    data_dir/corpora/<tradition_dir>/. Every CSV file in a tradition directory
-    is loaded.
+    Each tradition (MT, LXX, GNT, DSS, SP) lives in its own subdirectory under
+    data_dir/corpora/<tradition_dir>/. Books are loaded on first access only.
 
     Tradition directory mapping:
       MT  → corpora/mt_etcbc/
       LXX → corpora/lxx_stepbible/
       GNT → corpora/gnt_opengnt/
       DSS → corpora/dss/
+      SP  → corpora/sp_etcbc/
     """
 
     _TRADITION_DIRS: dict = {
@@ -48,39 +53,61 @@ class BiblicalCorpus:
     def __init__(self) -> None:
         # (reference, tradition) → sorted list of VerseWord
         self._words: dict = {}
-        self._data_dir = None
-        self._loaded: bool = False
+        self._data_dir: str | None = None
+        # (tradition, book_stem) → csv_path   (built at set_data_dir time)
+        self._file_index: dict = {}
+        # (tradition, book_stem) → canonical book name
+        self._book_names: dict = {}
+        # set of csv_paths already fully loaded into self._words
+        self._loaded_files: set = set()
 
     def set_data_dir(self, data_dir: str) -> None:
-        """Set base data directory. Must be called before load_all()."""
+        """Set base data directory and scan available files (no CSV data loaded)."""
         self._data_dir = data_dir
-        self._loaded = False
+        self._words = {}
+        self._file_index = {}
+        self._book_names = {}
+        self._loaded_files = set()
+        self._build_file_index()
 
-    def load_all(self) -> None:
-        """Load all available traditions. Safe to call multiple times."""
-        if self._loaded:
-            return
-        if not self._data_dir:
-            raise RuntimeError('Call set_data_dir() before load_all()')
+    # ── Index building (startup — reads filenames only, no word data) ──────
 
+    def _build_file_index(self) -> None:
+        """Scan tradition directories and index available CSV files.
+
+        Reads only the first data row of each CSV to obtain the canonical
+        book name (e.g. 'song_of_songs.csv' → 'Song of Songs').
+        This is fast (~1 ms per file, ~150 files total).
+        """
         corpora_dir = os.path.join(self._data_dir, 'corpora')
         for tradition, subdir in self._TRADITION_DIRS.items():
             path = os.path.join(corpora_dir, subdir)
-            if os.path.isdir(path):
-                self._load_tradition_dir(path, tradition)
+            if not os.path.isdir(path):
+                continue
+            for filename in sorted(os.listdir(path)):
+                if not filename.endswith('.csv'):
+                    continue
+                stem = filename[:-4]
+                fpath = os.path.join(path, filename)
+                self._file_index[(tradition, stem)] = fpath
+                # Peek at first row to get canonical book name
+                canonical = _canonical_book_from_csv(fpath)
+                if canonical:
+                    self._book_names[(tradition, stem)] = canonical
 
-        # Sort each verse's words by position
-        for key in self._words:
-            self._words[key].sort(key=lambda w: w.position)
+    # ── Lazy loading ────────────────────────────────────────────────────────
 
-        self._loaded = True
-
-    def _load_tradition_dir(self, directory: str, tradition: str) -> None:
-        for filename in sorted(os.listdir(directory)):
-            if filename.endswith('.csv'):
-                self._load_csv(os.path.join(directory, filename), tradition)
+    def _ensure_book_loaded(self, book: str, tradition: str) -> None:
+        """Load the CSV for this (book, tradition) pair if not already cached."""
+        stem = _book_to_stem(book)
+        fpath = self._file_index.get((tradition, stem))
+        if fpath and fpath not in self._loaded_files:
+            self._load_csv(fpath, tradition)
+            self._loaded_files.add(fpath)
 
     def _load_csv(self, path: str, tradition: str) -> None:
+        """Read one CSV into self._words, sorting words by position."""
+        tmp: dict = {}
         with open(path, 'r', encoding='utf-8') as f:
             reader = csv.DictReader(f)
             for row in reader:
@@ -91,22 +118,26 @@ class BiblicalCorpus:
                     tradition=tradition,
                     position=int(row['position']),
                     word_text=row['word_text'],
-                    lemma=row['lemma'],
-                    morph=row['morph'],
-                    strong=row['strong'],
-                    manuscript=row['manuscript'],
+                    lemma=row.get('lemma', ''),
+                    morph=row.get('morph', ''),
+                    strong=row.get('strong', ''),
+                    manuscript=row.get('manuscript', ''),
                 )
                 key = (row['reference'], tradition)
-                if key not in self._words:
-                    self._words[key] = []
-                self._words[key].append(word)
+                tmp.setdefault(key, []).append(word)
 
-    # ── Query API ──────────────────────────────────────────────────────────
+        for key, words in tmp.items():
+            words.sort(key=lambda w: w.position)
+            self._words[key] = words
+
+    # ── Public query API ────────────────────────────────────────────────────
 
     def get_verse_words(self, reference: str, tradition: str) -> list:
         """Return words for a verse in a given tradition, ordered by position."""
-        self.load_all()
-        return list(self._words.get((_norm_ref(reference), tradition), []))
+        ref = _norm_ref(reference)
+        book = _book_from_ref(ref)
+        self._ensure_book_loaded(book, tradition)
+        return list(self._words.get((ref, tradition), []))
 
     def get_verse_text(self, reference: str, tradition: str) -> str:
         """Return all words joined by spaces (surface text of the verse)."""
@@ -114,28 +145,30 @@ class BiblicalCorpus:
 
     def available_traditions(self, reference: str) -> list:
         """Return which traditions have data for this reference."""
-        self.load_all()
         ref = _norm_ref(reference)
-        return [trad for (r, trad) in self._words if r == ref]
+        book = _book_from_ref(ref)
+        result = []
+        for tradition in self._TRADITION_DIRS:
+            self._ensure_book_loaded(book, tradition)
+            if (ref, tradition) in self._words:
+                result.append(tradition)
+        return result
 
     def get_books(self, tradition: str) -> list:
-        """Return distinct book names that have data in this tradition."""
-        self.load_all()
-        seen = set()
-        result = []
-        for (ref, trad) in self._words:
-            if trad != tradition:
-                continue
-            book = _book_from_ref(ref)
-            if book not in seen:
-                seen.add(book)
-                result.append(book)
-        return result
+        """Return distinct book names available in this tradition.
+
+        Uses the file index — no full CSV loading required.
+        """
+        books = []
+        for (trad, stem), name in sorted(self._book_names.items()):
+            if trad == tradition:
+                books.append(name)
+        return sorted(set(books))
 
     def get_chapters(self, book: str, tradition: str) -> list:
         """Return sorted chapter numbers for a book in this tradition."""
-        self.load_all()
-        chapters = set()
+        self._ensure_book_loaded(book, tradition)
+        chapters: set = set()
         for (ref, trad) in self._words:
             if trad != tradition:
                 continue
@@ -146,9 +179,9 @@ class BiblicalCorpus:
 
     def get_verses(self, book: str, chapter: int, tradition: str) -> list:
         """Return sorted verse numbers for a book+chapter in this tradition."""
-        self.load_all()
+        self._ensure_book_loaded(book, tradition)
         prefix = f'{book} {chapter}:'
-        verses = set()
+        verses: set = set()
         for (ref, trad) in self._words:
             if trad != tradition:
                 continue
@@ -157,8 +190,38 @@ class BiblicalCorpus:
             verses.add(int(ref[len(prefix):]))
         return sorted(verses)
 
+    # Legacy compat: called by old code that expected load_all() ─────────────
 
-# ── Internal helpers ───────────────────────────────────────────────────────
+    def load_all(self) -> None:  # pragma: no cover
+        """Deprecated shim — lazy loading makes this a no-op.
+
+        Kept for backward compatibility; individual books are loaded on demand.
+        """
+        pass
+
+
+# ── Internal helpers ──────────────────────────────────────────────────────────
+
+def _canonical_book_from_csv(path: str) -> str:
+    """Read the first data row of a CSV and return the 'book' field value."""
+    try:
+        with open(path, 'r', encoding='utf-8') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                return row.get('book', '')
+    except Exception:
+        pass
+    return ''
+
+
+def _book_to_stem(book: str) -> str:
+    """Convert a canonical book name to its CSV filename stem.
+
+    'Song of Songs' → 'song_of_songs'
+    '1 Corinthians' → '1_corinthians'
+    """
+    return book.lower().replace(' ', '_').replace("'", '')
+
 
 def _book_from_ref(reference: str) -> str:
     """'Isaiah 7:14' → 'Isaiah'"""

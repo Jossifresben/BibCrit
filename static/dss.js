@@ -395,19 +395,19 @@
     var hdr = document.createElement('div');
     hdr.style.cssText = 'display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none;';
     hdr.setAttribute('role', 'button');
-    hdr.setAttribute('aria-expanded', 'false');
+    hdr.setAttribute('aria-expanded', 'true');
     var hdrLeft = document.createElement('span');
     hdrLeft.style.cssText = 'font-size:0.7rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)';
     hdrLeft.textContent = window.t ? window.t('dss_verse_texts', 'Verse Texts') : 'Verse Texts';
     var toggle = document.createElement('span');
     toggle.style.cssText = 'font-size:0.75rem;color:var(--muted)';
-    toggle.textContent = '▼ Show';
+    toggle.textContent = '▲ Hide';
     hdr.appendChild(hdrLeft);
     hdr.appendChild(toggle);
 
-    // Collapsible body
+    // Collapsible body — open by default
     var body = document.createElement('div');
-    body.className = 'dss-ms-body collapsed';
+    body.className = 'dss-ms-body';
     body.style.marginTop = '0.75rem';
 
     function rowHtml(label, text, dir) {
@@ -430,10 +430,10 @@
     body.innerHTML = inner;
 
     hdr.addEventListener('click', function() {
-      var open = !body.classList.contains('collapsed');
-      body.classList.toggle('collapsed', open);
-      hdr.setAttribute('aria-expanded', open ? 'false' : 'true');
-      toggle.textContent = open ? '▼ Show' : '▲ Hide';
+      var nowOpen = !body.classList.contains('collapsed');
+      body.classList.toggle('collapsed', nowOpen);
+      hdr.setAttribute('aria-expanded', nowOpen ? 'false' : 'true');
+      toggle.textContent = nowOpen ? '▼ Show' : '▲ Hide';
     });
 
     panel.appendChild(hdr);

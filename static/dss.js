@@ -271,6 +271,9 @@
     show(heading);
     heading.innerHTML = '<span class="ph-ref">' + _esc(data.reference || _currentRef) + '</span>';
 
+    // Verse panel (corpus texts)
+    _renderVersePanel(data);
+
     // Manuscript cards — extant first, absent last
     if (msList) msList.innerHTML = '';
     var manuscripts = (data.dss_manuscripts || []).slice().sort(function (a, b) {
@@ -358,6 +361,91 @@
         });
       }
     }
+  }
+
+  // ── Verse panel ──────────────────────────────────────────────────────────
+  var _versePanelEl = null;
+
+  function _renderVersePanel(data) {
+    // Remove any previous panel
+    if (_versePanelEl && _versePanelEl.parentNode) {
+      _versePanelEl.parentNode.removeChild(_versePanelEl);
+    }
+    _versePanelEl = null;
+
+    var corpus = data._corpus || {};
+    var mt     = corpus.mt  || '';
+    var lxx    = corpus.lxx || '';
+
+    // Also pull DSS text from first extant manuscript and SP from sp_witness
+    var dssMs   = (data.dss_manuscripts || []).filter(function(m) {
+      return m.verse_present && m.alignment !== 'absent' && m.dss_text;
+    });
+    var dssText = dssMs.length ? dssMs[0].dss_text : '';
+    var spText  = (data.sp_witness && data.sp_witness.present && data.sp_witness.sp_text)
+                    ? data.sp_witness.sp_text : '';
+
+    if (!mt && !lxx && !dssText && !spText) return;
+
+    var panel = document.createElement('div');
+    panel.className = 'bt-group-card dss-verse-panel';
+    panel.style.cssText = 'max-width:900px;margin:0 auto 1.25rem;padding:1rem 1.25rem;';
+
+    // Toggle header
+    var hdr = document.createElement('div');
+    hdr.style.cssText = 'display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none;';
+    hdr.setAttribute('role', 'button');
+    hdr.setAttribute('aria-expanded', 'false');
+    var hdrLeft = document.createElement('span');
+    hdrLeft.style.cssText = 'font-size:0.7rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)';
+    hdrLeft.textContent = window.t ? window.t('dss_verse_texts', 'Verse Texts') : 'Verse Texts';
+    var toggle = document.createElement('span');
+    toggle.style.cssText = 'font-size:0.75rem;color:var(--muted)';
+    toggle.textContent = '▼ Show';
+    hdr.appendChild(hdrLeft);
+    hdr.appendChild(toggle);
+
+    // Collapsible body
+    var body = document.createElement('div');
+    body.className = 'dss-ms-body collapsed';
+    body.style.marginTop = '0.75rem';
+
+    function rowHtml(label, text, dir) {
+      return '<div style="margin-bottom:0.75rem">' +
+        '<span style="font-size:0.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:0.2rem">' +
+          _esc(label) +
+        '</span>' +
+        '<div style="direction:' + (dir || 'ltr') + ';text-align:' + (dir === 'rtl' ? 'right' : 'left') + ';' +
+             'font-family:serif;font-size:1.05rem;line-height:1.7;word-break:break-word">' +
+          _esc(text) +
+        '</div>' +
+      '</div>';
+    }
+
+    var inner = '';
+    if (mt)      inner += rowHtml('Hebrew (MT)',  mt,      'rtl');
+    if (lxx)     inner += rowHtml('Greek (LXX)',  lxx,     'ltr');
+    if (dssText) inner += rowHtml('DSS (' + _esc(dssMs[0].siglum || '1QIsa') + ')', dssText, 'rtl');
+    if (spText)  inner += rowHtml('Samaritan Pentateuch (SP)', spText, 'rtl');
+    body.innerHTML = inner;
+
+    hdr.addEventListener('click', function() {
+      var open = !body.classList.contains('collapsed');
+      body.classList.toggle('collapsed', open);
+      hdr.setAttribute('aria-expanded', open ? 'false' : 'true');
+      toggle.textContent = open ? '▼ Show' : '▲ Hide';
+    });
+
+    panel.appendChild(hdr);
+    panel.appendChild(body);
+
+    // Insert before manuscript list
+    if (msList && msList.parentNode) {
+      msList.parentNode.insertBefore(panel, msList);
+    } else if (results) {
+      results.insertBefore(panel, results.firstChild);
+    }
+    _versePanelEl = panel;
   }
 
   function _buildManuscriptCard(ms, idx) {
@@ -589,13 +677,34 @@
       .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 
-  // Like _esc but preserves <b>, <em>, <i>, <strong> tags from Claude output
+  // Like _esc but also renders markdown **bold** / *italic* and safe HTML tags.
+  // Processing order:
+  //   1. Replace markdown with sentinels (before escaping corrupts the asterisks)
+  //   2. HTML-escape everything else
+  //   3. Restore sentinels as real HTML tags
+  //   4. Restore any literal <b>/<em>/<i> tags Claude may have emitted
+  var _MD_BOLD_RE   = /\*\*([^*\n]+?)\*\*/g;
+  var _MD_ITALIC_RE = /(?<!\*)\*([^*\n]+?)\*(?!\*)/g;
+  var _S1 = '\x02STRONG\x03'; var _S1C = '\x02/STRONG\x03';
+  var _S2 = '\x02EM\x03';     var _S2C = '\x02/EM\x03';
+
   function _safe(s) {
-    return _esc(s)
+    if (typeof s !== 'string') return '';
+    // 1. Convert markdown to sentinels
+    s = s.replace(_MD_BOLD_RE,   _S1 + '$1' + _S1C);
+    s = s.replace(_MD_ITALIC_RE, _S2 + '$1' + _S2C);
+    // 2. Escape HTML
+    s = _esc(s);
+    // 3. Restore sentinels
+    s = s.replace(/\x02STRONG\x03/g, '<strong>').replace(/\x02\/STRONG\x03/g, '</strong>');
+    s = s.replace(/\x02EM\x03/g,     '<em>').replace(/\x02\/EM\x03/g,         '</em>');
+    // 4. Restore explicit tags Claude may have emitted
+    s = s
       .replace(/&lt;b&gt;/g, '<b>').replace(/&lt;\/b&gt;/g, '</b>')
       .replace(/&lt;strong&gt;/g, '<strong>').replace(/&lt;\/strong&gt;/g, '</strong>')
       .replace(/&lt;em&gt;/g, '<em>').replace(/&lt;\/em&gt;/g, '</em>')
       .replace(/&lt;i&gt;/g, '<i>').replace(/&lt;\/i&gt;/g, '</i>');
+    return s;
   }
 
   function _friendlyModel(modelId) {

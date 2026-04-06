@@ -410,6 +410,12 @@ def api_dss_stream():
             return
 
         result['reference'] = reference
+        # Inject live corpus texts so the client can display the verse
+        # (not stored in cache — always pulled fresh from the corpus files)
+        result['_corpus'] = {
+            'mt':  mt_text,
+            'lxx': lxx_text,
+        }
 
         if lang == 'es':
             yield event('step', msg=_step(lang, 'translating'))

@@ -159,38 +159,72 @@ body[data-persona] .home-section-header { display: none; }
 
 /* ── Persona hero sections ── */
 .persona-hero { display: none; }
+/* Persona accent border anchors the persona identity without drama */
+.persona-hero[data-persona="scholar"] { border-top: 3px solid #2563eb; }
+.persona-hero[data-persona="phd"]     { border-top: 3px solid #6b5cdb; }
+.persona-hero[data-persona="student"] { border-top: 3px solid #059669; }
+
 .ph-inner {
-    color: #fff; padding: 2.5rem 3rem 2.2rem;
+    color: var(--fg, #1a1a1a);
+    padding: 2.5rem 3rem 2.2rem;
 }
+/* Per-persona lightly tinted backgrounds — scholarly restraint */
+.persona-hero[data-persona="scholar"] .ph-inner { background: #eef2ff; }
+.persona-hero[data-persona="phd"]     .ph-inner { background: #f2f0ff; }
+.persona-hero[data-persona="student"] .ph-inner { background: #ecfdf8; }
+/* Dark mode: flat dark tones, no gradient */
+[data-theme="dark"] .ph-inner { color: var(--fg, #e2e4dc); }
+[data-theme="dark"] .persona-hero[data-persona="scholar"] .ph-inner { background: #0d1229; }
+[data-theme="dark"] .persona-hero[data-persona="phd"]     .ph-inner { background: #12102a; }
+[data-theme="dark"] .persona-hero[data-persona="student"] .ph-inner { background: #051d12; }
+
 @media (max-width: 600px) { .ph-inner { padding: 2rem 1.5rem 1.8rem; } }
 .ph-eyebrow {
     font-size: 0.7rem; font-weight: 700; letter-spacing: .1em;
-    text-transform: uppercase; margin-bottom: 0.6rem; opacity: 0.8;
+    text-transform: uppercase; margin-bottom: 0.6rem;
 }
-.ph-title { font-size: 1.6rem; font-weight: 800; margin-bottom: 0.5rem; line-height: 1.25; }
-.ph-sub   { font-size: 0.85rem; opacity: 0.75; margin-bottom: 1.2rem; }
+/* Eyebrow inherits persona color — replaces inline style per-instance */
+.persona-hero[data-persona="scholar"] .ph-eyebrow { color: #2563eb; }
+.persona-hero[data-persona="phd"]     .ph-eyebrow { color: #6b5cdb; }
+.persona-hero[data-persona="student"] .ph-eyebrow { color: #059669; }
+[data-theme="dark"] .persona-hero[data-persona="scholar"] .ph-eyebrow { color: #93aaff; }
+[data-theme="dark"] .persona-hero[data-persona="phd"]     .ph-eyebrow { color: #c4baff; }
+[data-theme="dark"] .persona-hero[data-persona="student"] .ph-eyebrow { color: #6ee7b7; }
+
+.ph-title { font-size: 1.6rem; font-weight: 700; margin-bottom: 0.5rem; line-height: 1.25;
+            font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.02em; }
+.ph-sub   { font-size: 0.875rem; color: var(--muted, #6b6560); margin-bottom: 1.2rem; }
+
 .ph-badges { display: flex; gap: 0.5rem; flex-wrap: wrap; }
 .ph-badge  {
-    background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.22);
-    border-radius: 5px; padding: 3px 9px; font-size: 0.7rem; color: #e8e8e8;
+    background: rgba(0,0,0,.05); border: 1px solid rgba(0,0,0,.12);
+    border-radius: 5px; padding: 3px 9px; font-size: 0.7rem; color: var(--muted, #6b6560);
 }
-.ph-badge.accent { background: rgba(255,255,255,.22); border-color: rgba(255,255,255,.4); color: #fff; font-weight: 700; }
+/* Accent badges use the persona color — clear, not glassy */
+.persona-hero[data-persona="scholar"] .ph-badge.accent { background: #2563eb; border-color: #2563eb; color: #fff; font-weight: 700; }
+.persona-hero[data-persona="phd"]     .ph-badge.accent { background: #6b5cdb; border-color: #6b5cdb; color: #fff; font-weight: 700; }
+.persona-hero[data-persona="student"] .ph-badge.accent { background: #059669; border-color: #059669; color: #fff; font-weight: 700; }
+[data-theme="dark"] .ph-badge { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.15); color: var(--muted, #a0a498); }
 
-/* Dissertation box (PhD only) */
+/* Dissertation box (PhD only) — replace glassmorphism with clean muted box */
 .phd-diss-box {
-    background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2);
+    background: rgba(0,0,0,.03); border: 1px solid rgba(0,0,0,.1);
     border-radius: 9px; padding: 1rem 1.2rem; margin: 1.2rem 0 0;
 }
-.phd-diss-label { font-size: 0.65rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; opacity: 0.7; margin-bottom: 0.5rem; }
-.phd-diss-desc  { font-size: 0.8rem; opacity: 0.8; margin-bottom: 0.75rem; }
+[data-theme="dark"] .phd-diss-box { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.1); }
+.phd-diss-label { font-size: 0.65rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+                  color: var(--muted, #6b6560); margin-bottom: 0.5rem; }
+.phd-diss-desc  { font-size: 0.8rem; color: var(--fg, #1a1a1a); margin-bottom: 0.75rem; }
+[data-theme="dark"] .phd-diss-desc { color: var(--fg, #e2e4dc); }
 .phd-diss-chips { display: flex; gap: 0.4rem; flex-wrap: wrap; }
 .phd-diss-chip  {
-    background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.25);
-    border-radius: 5px; padding: 4px 10px; font-size: 0.75rem; color: #fff;
-    text-decoration: none; cursor: pointer;
-    transition: background 0.12s;
+    background: rgba(0,0,0,.06); border: 1px solid rgba(0,0,0,.14);
+    border-radius: 5px; padding: 4px 10px; font-size: 0.75rem; color: var(--fg, #1a1a1a);
+    text-decoration: none; cursor: pointer; transition: background 0.12s;
 }
-.phd-diss-chip:hover { background: rgba(255,255,255,.28); }
+.phd-diss-chip:hover { background: rgba(0,0,0,.12); }
+[data-theme="dark"] .phd-diss-chip { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.18); color: var(--fg, #e2e4dc); }
+[data-theme="dark"] .phd-diss-chip:hover { background: rgba(255,255,255,.16); }
 
 /* Methodology note (PhD only) */
 .phd-method-note {
@@ -263,9 +297,9 @@ body[data-persona] .home-section-header { display: none; }
 
 {# ══ SCHOLAR HERO ════════════════════════════════════════════════════════════ #}
 <div class="persona-hero" data-persona="scholar">
-  <div class="ph-inner" style="background: linear-gradient(135deg, #1e1e3a 0%, #2d2d52 100%);">
+  <div class="ph-inner">
     <div style="max-width:900px; margin:0 auto;">
-      <div class="ph-eyebrow" style="color:#9b8ff5;">Scholarly tools</div>
+      <div class="ph-eyebrow">Scholarly tools</div>
       <div class="ph-title">Corpus-grounded textual criticism.<br>Powered by AI.</div>
       <div class="ph-sub">ETCBC (MT) · LXX Rahlfs-1935 · DSS 1QIsaᵃ · Samaritan Pentateuch · MorphGNT</div>
       <div class="ph-badges">
@@ -283,9 +317,9 @@ body[data-persona] .home-section-header { display: none; }
 
 {# ══ PHD HERO ════════════════════════════════════════════════════════════════ #}
 <div class="persona-hero" data-persona="phd">
-  <div class="ph-inner" style="background: linear-gradient(135deg, #2d1b69 0%, #3d2b85 100%);">
+  <div class="ph-inner">
     <div style="max-width:900px; margin:0 auto;">
-      <div class="ph-eyebrow" style="color:#c4baff;">Dissertation research tools</div>
+      <div class="ph-eyebrow">Dissertation research tools</div>
       <div class="ph-title">Your research assistant for<br>dissertation-level textual analysis.</div>
       <div class="ph-sub">All 9 tools · methodology guidance · SBL/BibTeX export · open data API</div>
       <div class="ph-badges">
@@ -319,14 +353,14 @@ body[data-persona] .home-section-header { display: none; }
 
 {# ══ STUDENT HERO ════════════════════════════════════════════════════════════ #}
 <div class="persona-hero" data-persona="student">
-  <div class="ph-inner" style="background: linear-gradient(135deg, #064e3b 0%, #065f46 100%);">
+  <div class="ph-inner">
     <div style="max-width:900px; margin:0 auto;">
-      <div class="ph-eyebrow" style="color:#6ee7b7;">Explore the manuscripts</div>
+      <div class="ph-eyebrow">Explore the manuscripts</div>
       <div class="ph-title">Discover the ancient texts<br>behind your Bible.</div>
       <div class="ph-sub">No Hebrew or Greek required — AI explains everything in plain language</div>
       <div class="ph-badges">
-        <span class="ph-badge accent" style="background:rgba(6,95,70,.5);border-color:#059669;color:#6ee7b7;">Start with the Guide</span>
-        <span class="ph-badge accent" style="background:rgba(6,95,70,.5);border-color:#059669;color:#6ee7b7;">Discovery Feed</span>
+        <span class="ph-badge accent">Start with the Guide</span>
+        <span class="ph-badge accent">Discovery Feed</span>
         <span class="ph-badge">Free · No signup</span>
       </div>
     </div>

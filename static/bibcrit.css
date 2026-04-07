@@ -697,7 +697,7 @@
   border: 1px solid var(--lxx-color);
   border-radius: 8px;
   padding: 14px 16px;
-  background: linear-gradient(135deg, #f0f4ff 0%, #f8f5ff 100%);
+  background: var(--lxx-bg, #e8f0fc);
   display: flex; flex-direction: column; gap: 10px;
 }
 .hyp-card-header   { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
@@ -802,7 +802,7 @@
 
 /* Hero */
 .disc-hero {
-  background: linear-gradient(135deg, #1a2535 0%, #2c3e50 60%, #1a3a2a 100%);
+  background: #1a2535;  /* dark slate — matches nav, no gradient needed */
   padding: 3.5rem 1.5rem 2.5rem;
   text-align: center;
 }
@@ -1060,13 +1060,13 @@
 
 /* ── Back-translation info banner ───────────────────────────────────── */
 .bt-info-banner {
-  background: linear-gradient(135deg, #eef4ff 0%, #f5f0ff 100%);
-  border-bottom: 1px solid #c8d8f8;
+  background: var(--bg-ref, #f5f3ee);
+  border-bottom: 1px solid var(--border, #d4d0c8);
   padding: 10px 1.5rem;
 }
 [data-theme="dark"] .bt-info-banner {
-  background: linear-gradient(135deg, #0e1828 0%, #130e1f 100%);
-  border-bottom-color: #2a3a5a;
+  background: var(--bg-ref, #222520);
+  border-bottom-color: var(--border, #333830);
 }
 .bt-info-inner {
   max-width: 1200px; margin: 0 auto;
@@ -1957,21 +1957,25 @@
   max-width: 760px;
   transition: color 0.15s;
 }
-/* When persona active: entire header becomes a full-width gradient banner */
+/* When persona active: header gets a persona-accented top border — no gradient */
 body[data-persona] .tool-header {
   max-width: none;
   padding: 1.25rem 1.5rem 1rem;
+  background: var(--bg);
+  border-top: 3px solid transparent;
 }
 body[data-persona] .tool-title {
-  color: #ffffff;
+  color: var(--heading, #111827);
   margin-bottom: 0.4rem;
 }
 body[data-persona] .tool-subtitle {
-  color: rgba(255,255,255,0.82);
-  font-size: 0.9rem;
+  color: var(--muted, #6b7280);
+  font-size: 1rem;
   line-height: 1.6;
   max-width: 860px;
 }
-body[data-persona="scholar"] .tool-header { background: linear-gradient(to right, #1e1e3a, #2d2d52); }
-body[data-persona="phd"]     .tool-header { background: linear-gradient(to right, #2d1b69, #3d2b85); }
-body[data-persona="student"] .tool-header { background: linear-gradient(to right, #064e3b, #065f46); }
+body[data-persona="scholar"] .tool-header { border-top-color: #2563eb; }
+body[data-persona="phd"]     .tool-header { border-top-color: #6b5cdb; }
+body[data-persona="student"] .tool-header { border-top-color: #059669; }
+[data-theme="dark"] body[data-persona] .tool-title   { color: var(--fg, #e2e4dc); }
+[data-theme="dark"] body[data-persona] .tool-subtitle { color: var(--muted, #a0a498); }

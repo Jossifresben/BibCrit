@@ -71,8 +71,9 @@
 .tool-card[data-persona-accent="student"].persona-highlight .persona-chip { display: block; background: #059669; }
 
 .tool-card-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
-.tool-card-icon   { color: var(--muted, #6b6560); flex-shrink: 0; line-height: 1; opacity: 0.7; }
+.tool-card-icon   { color: var(--muted, #6b6560); flex-shrink: 0; line-height: 1; opacity: 0.7; transition: color 0.15s, opacity 0.15s; }
 .tool-card-icon .material-symbols-outlined { font-size: 18px; display: block; }
+.tool-card:hover .tool-card-icon { color: var(--accent, #2c3e50); opacity: 1; }
 .tool-card h3     { font-size: 1rem; font-weight: 700; margin: 0; color: var(--fg, #1a1a1a);
                     font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.01em; }
 .tool-card p      { font-size: 1rem; color: var(--muted, #6b6560); line-height: 1.6; margin: 0; }

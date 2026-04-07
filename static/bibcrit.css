@@ -501,7 +501,8 @@
 .loading-spinner   { width: 36px; height: 36px; border: 3px solid var(--border);
                      border-top-color: var(--lxx-color); border-radius: 50%;
                      animation: spin 0.8s linear infinite; }
-.loading-step-msg  { font-size: 15px; color: var(--fg); font-weight: 500; }
+.loading-step-msg  { font-size: 1rem; color: var(--fg); font-weight: 500;
+                     font-family: 'Space Grotesk', sans-serif; }
 .loading-timer     { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums;
                      min-height: 18px; }
 .loading-hint      { font-size: 12px; color: var(--muted); opacity: 0.7; margin-top: 4px; }
@@ -693,8 +694,10 @@
 .hyp-card-title    { font-weight: 700; font-size: 13px; color: var(--lxx-color);
                      text-transform: uppercase; letter-spacing: 0.04em; }
 .hyp-card-subtitle { font-size: 13px; font-style: italic; color: var(--fg); flex: 1; }
-.hyp-card-plain     { font-size: 15px; line-height: 1.75; color: var(--fg); margin: 0; }
-.hyp-card-reasoning { font-size: 15px; line-height: 1.75; color: var(--muted); margin: 0;
+.hyp-card-plain     { font-size: 1rem; line-height: 1.8; color: var(--fg); margin: 0;
+                      font-family: var(--font-reading, 'IBM Plex Serif', Georgia, serif); }
+.hyp-card-reasoning { font-size: 1rem; line-height: 1.8; color: var(--muted); margin: 0;
+                      font-family: var(--font-reading, 'IBM Plex Serif', Georgia, serif);
                       border-top: 1px solid var(--lxx-border); padding-top: 8px; }
 .hyp-card-generated { font-size: 10px; color: var(--muted); opacity: 0.6;
                       margin: 0; text-align: right; letter-spacing: 0.03em; }
@@ -798,8 +801,9 @@
   text-transform: uppercase; color: #f0d080; margin-bottom: 0.75rem;
 }
 .disc-hero-title {
-  font-size: 2.4rem; font-weight: 800; color: #f5f0e8;
-  margin: 0 0 0.6rem; letter-spacing: -0.01em;
+  font-size: 2.4rem; font-weight: 700; color: #f5f0e8;
+  font-family: 'Space Grotesk', sans-serif;
+  margin: 0 0 0.6rem; letter-spacing: -0.03em;
 }
 .disc-hero-sub {
   font-size: 1.05rem; color: rgba(245,240,232,0.7);
@@ -876,7 +880,8 @@
   margin: 0.5rem 0 1rem;
 }
 .disc-feat-plain {
-  font-size: 1rem; line-height: 1.75; color: var(--fg);
+  font-size: 1.0625rem; line-height: 1.8; color: var(--fg);
+  font-family: var(--font-reading, 'IBM Plex Serif', Georgia, serif);
   margin: 0 0 0.6rem; max-width: 620px;
 }
 .disc-feat-summary {
@@ -931,7 +936,9 @@
 .disc-card-mt    { font-family: var(--font-hebrew); font-size: 1.25rem; color: var(--mt-color); }
 .disc-card-arrow { color: var(--muted); }
 .disc-card-lxx   { font-family: var(--font-greek); font-size: 1.1rem; color: var(--lxx-color); }
-.disc-card-plain { font-size: 13px; line-height: 1.7; color: var(--fg); flex: 1; margin: 0; }
+.disc-card-plain { font-size: 0.9375rem; line-height: 1.75; color: var(--fg);
+                   font-family: var(--font-reading, 'IBM Plex Serif', Georgia, serif);
+                   flex: 1; margin: 0; }
 .disc-card-link  { font-size: 12px; font-weight: 600; color: var(--lxx-color);
                    text-decoration: none; margin-top: auto; }
 .disc-card-link:hover { text-decoration: underline; }
@@ -1126,7 +1133,8 @@
 [data-theme="dark"] .bt-status-idiom-only { background: #2a2a2a; color: #aaa; }
 
 .div-analysis {
-  font-size: 15px; line-height: 1.75; color: var(--fg);
+  font-size: 1rem; line-height: 1.8; color: var(--fg);
+  font-family: var(--font-reading, 'IBM Plex Serif', Georgia, serif);
   background: var(--bg);
   border-left: 3px solid var(--lxx-color);
   padding: 10px 14px; border-radius: 0 4px 4px 0;
@@ -1285,7 +1293,9 @@
   text-transform: uppercase; font-weight: 500;
 }
 .scribal-overall-title {
-  margin: 0 0 8px; font-size: 15px; color: var(--fg);
+  margin: 0 0 8px; font-size: 1rem; color: var(--fg);
+  font-family: var(--font-reading, 'IBM Plex Serif', Georgia, serif);
+  line-height: 1.7;
 }
 .analysis-model-attr {
   margin: 10px 0 0; font-size: 11px; color: var(--muted);
@@ -1899,18 +1909,20 @@
   margin: 0 auto;
 }
 .tool-title {
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   font-weight: 700;
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.02em;
   margin: 0 0 0.3rem;
   color: var(--heading, #111827);
-  line-height: 1.25;
+  line-height: 1.2;
 }
 [data-theme="dark"] .tool-title { color: #f3f4f6; }
 .tool-subtitle {
-  font-size: 0.875rem;
+  font-size: 1rem;
   color: var(--muted, #6b7280);
   margin: 0;
-  line-height: 1.55;
+  line-height: 1.6;
   max-width: 760px;
   transition: color 0.15s;
 }

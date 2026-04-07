@@ -70,13 +70,39 @@
 .tool-card[data-persona-accent="phd"].persona-highlight     .persona-chip { display: block; background: #6b5cdb; }
 .tool-card[data-persona-accent="student"].persona-highlight .persona-chip { display: block; background: #059669; }
 
-.tool-card-header { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.6rem; }
-.tool-card-icon   { color: var(--accent, #2c3e50); flex-shrink: 0; line-height: 1; }
-.tool-card-icon .material-symbols-outlined { font-size: 24px; display: block; }
+.tool-card-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
+.tool-card-icon   { color: var(--muted, #6b6560); flex-shrink: 0; line-height: 1; opacity: 0.7; }
+.tool-card-icon .material-symbols-outlined { font-size: 18px; display: block; }
 .tool-card h3     { font-size: 1rem; font-weight: 700; margin: 0; color: var(--fg, #1a1a1a);
                     font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.01em; }
 .tool-card p      { font-size: 1rem; color: var(--muted, #6b6560); line-height: 1.6; margin: 0; }
 .tool-card-arrow  { display: inline-block; margin-top: 0.75rem; font-size: 0.8rem; font-weight: 600; color: var(--accent, #2c3e50); opacity: 0.75; }
+
+/* ── Tool grid section headers ───────────────────────────────────── */
+.home-section-header {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-top: 0.5rem;
+}
+.home-section-header:first-child { padding-top: 0; }
+.home-section-label {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted, #6b6560);
+    white-space: nowrap;
+    font-family: 'Space Grotesk', sans-serif;
+}
+.home-section-rule {
+    flex: 1;
+    height: 1px;
+    background: var(--border, #d4d0c8);
+}
+/* When persona active, tool order changes — section headers would be in wrong position */
+body[data-persona] .home-section-header { display: none; }
 
 /* ── Discovery strip ── */
 .home-discovery   { max-width: 900px; margin: 0 auto 3rem; padding: 0 1.5rem; }
@@ -321,6 +347,11 @@
 {# ══ TOOL GRID ═══════════════════════════════════════════════════════════════ #}
 <div class="home-tools" id="home-tools">
 
+    <div class="home-section-header">
+        <span class="home-section-label">{{ _t('nav_textual') }}</span>
+        <span class="home-section-rule"></span>
+    </div>
+
     <a href="/divergence?lang={{ lang }}" class="tool-card" data-tool="divergence">
         <span class="persona-chip">Featured</span>
         <div class="tool-card-header">
@@ -360,6 +391,11 @@
         <p>{{ _t('tool_genealogy_desc') }}</p>
         <span class="tool-card-arrow">{{ _t('home_open_arrow') }}</span>
     </a>
+
+    <div class="home-section-header">
+        <span class="home-section-label">{{ _t('nav_critical') }}</span>
+        <span class="home-section-rule"></span>
+    </div>
 
     <a href="/scribal?lang={{ lang }}" class="tool-card" data-tool="scribal">
         <div class="tool-card-header">

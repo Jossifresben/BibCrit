@@ -27,11 +27,38 @@ except ImportError:
 # ── What to cache ────────────────────────────────────────────────────────────
 
 NUMERICAL_REFS = [
+    # Patriarchal ages
     'Genesis 5',
     'Genesis 11',
-    'Numbers 35',
+    # Temple / construction
     '1 Kings 6',
+    '1 Kings 7',
+    'Ezekiel 40',
+    # Military / census
+    'Numbers 1',
+    'Numbers 26',
+    '2 Samuel 24',
+    '1 Chronicles 21',
+    'Judges 20',
     '2 Samuel 10',
+    '1 Samuel 6:19',
+    '2 Chronicles 13',
+    # Chronological
+    'Exodus 12:40',
+    'Genesis 15:13',
+    '1 Kings 6:1',
+    # Sabbatical / jubilee
+    'Leviticus 25',
+    'Daniel 9',
+    # Royal chronology
+    '1 Kings 14',
+    '2 Kings 15',
+    '2 Chronicles 36',
+    # Returnees
+    'Ezra 2',
+    'Nehemiah 7',
+    # Levitical
+    'Numbers 35',
 ]
 
 # High-interest back-translation passages (messianic + textually rich)
@@ -85,10 +112,24 @@ PATRISTIC_REFS = [
     'Psalm 2:7', 'Isaiah 40:3', 'Deuteronomy 6:4', 'Proverbs 8:22',
 ]
 
+# Genealogy — all 8 featured books in UI chips
+GENEALOGY_BOOKS = [
+    'Isaiah', 'Psalms', 'Genesis', 'Jeremiah',
+    'Deuteronomy', 'Daniel', 'Ezekiel', 'Numbers',
+]
+
+# Divergence — all 4 featured passages in UI chips
+DIVERGENCE_REFS = [
+    'Isaiah 7:14',
+    'Genesis 1:1',
+    'Psalm 22:1',
+    'Deuteronomy 32:8',
+]
+
 
 def main() -> None:
     parser = argparse.ArgumentParser(description='Pre-cache BibCrit analyses')
-    parser.add_argument('--type', choices=['numerical', 'backtranslation', 'scribal', 'theological', 'patristic', 'dss'],
+    parser.add_argument('--type', choices=['numerical', 'backtranslation', 'scribal', 'theological', 'patristic', 'dss', 'genealogy', 'divergence'],
                         help='Only run this analysis type (default: all)')
     parser.add_argument('--dry-run', action='store_true',
                         help='Show what would be cached without calling the API')
@@ -99,7 +140,7 @@ def main() -> None:
     from biblical_core.claude_pipeline import (
         ClaudePipeline, SCRIBAL_MODEL, NUMERICAL_MODEL,
         THEOLOGICAL_MODEL, PATRISTIC_MODEL, DSS_MODEL, DIVERGENCE_MODEL,
-        _SCRIBAL_SAMPLE_REFS,
+        GENEALOGY_MODEL, _SCRIBAL_SAMPLE_REFS,
     )
     from biblical_core.corpus import BiblicalCorpus
 
@@ -128,6 +169,8 @@ def main() -> None:
     _SCRIBAL_PROMPT      = 'v1'
     _THEOLOGICAL_PROMPT  = 'v1'
     _PATRISTIC_PROMPT    = 'v3'
+    _GENEALOGY_PROMPT    = 'v1'
+    _DIVERGENCE_PROMPT   = 'v2'
 
     total = skipped = ran = errors = 0
 
@@ -301,6 +344,60 @@ def main() -> None:
                 print(f' ✓  {elapsed:.0f}s')
                 ran += 1
 
+    def run_genealogy():
+        nonlocal total, skipped, ran, errors
+        for book in GENEALOGY_BOOKS:
+            total += 1
+            cached = pipeline.get_cached(book, 'genealogy', _GENEALOGY_PROMPT, GENEALOGY_MODEL)
+            if cached:
+                print(f'  ⚡ SKIP  genealogy  {book}  (cached)')
+                skipped += 1
+                continue
+            if args.dry_run:
+                print(f'  ○ WOULD RUN  genealogy  {book}')
+                continue
+            print(f'  → RUN   genealogy  {book} …', end='', flush=True)
+            t0 = time.time()
+            result = pipeline.analyze_genealogy(book)
+            elapsed = time.time() - t0
+            if result.get('error'):
+                print(f' ❌  {result["error"]}')
+                errors += 1
+            else:
+                print(f' ✓  {elapsed:.0f}s')
+                ran += 1
+
+    def run_divergence():
+        nonlocal total, skipped, ran, errors
+        for ref in DIVERGENCE_REFS:
+            total += 1
+            cached = pipeline.get_cached(ref, 'divergence', _DIVERGENCE_PROMPT, DIVERGENCE_MODEL)
+            if cached:
+                print(f'  ⚡ SKIP  divergence  {ref}  (cached)')
+                skipped += 1
+                continue
+            if args.dry_run:
+                print(f'  ○ WOULD RUN  divergence  {ref}')
+                continue
+            mt_text = lxx_text = ''
+            try:
+                mt_words  = corpus.get_verse_words(ref, 'MT')
+                lxx_words = corpus.get_verse_words(ref, 'LXX')
+                mt_text   = ' '.join(w.word_text for w in mt_words)  if mt_words  else ''
+                lxx_text  = ' '.join(w.word_text for w in lxx_words) if lxx_words else ''
+            except Exception:
+                pass
+            print(f'  → RUN   divergence  {ref} …', end='', flush=True)
+            t0 = time.time()
+            result = pipeline.analyze_divergence(ref, mt_text, lxx_text)
+            elapsed = time.time() - t0
+            if result.get('error'):
+                print(f' ❌  {result["error"]}')
+                errors += 1
+            else:
+                print(f' ✓  {elapsed:.0f}s')
+                ran += 1
+
     run_type = args.type
     print(f'\nPre-cache run — type={run_type or "all"}  dry_run={args.dry_run}\n')
 
@@ -327,6 +424,14 @@ def main() -> None:
     if not run_type or run_type == 'patristic':
         print('\n── Patristic ───────────────────────────────────')
         run_patristic()
+
+    if not run_type or run_type == 'genealogy':
+        print('\n── Genealogy ───────────────────────────────────')
+        run_genealogy()
+
+    if not run_type or run_type == 'divergence':
+        print('\n── Divergence ──────────────────────────────────')
+        run_divergence()
 
     print(f'\n{"DRY RUN — " if args.dry_run else ""}Done.  '
           f'Total={total}  Ran={ran}  Skipped={skipped}  Errors={errors}')

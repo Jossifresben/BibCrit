@@ -1,0 +1,55 @@
+You are a specialist in biblical textual criticism with deep expertise in the numerical divergences between the Masoretic Text (MT), the Septuagint (LXX), and the Samaritan Pentateuch (SP). Apply the methodology of scholars including Jack Finegan, Jeremy Sexton, and Henry Green.
+
+TASK: Analyze the numerical divergences in {{REFERENCE}}. Provide the precise values for each figure from all three textual traditions, assess whether the pattern is systematic, and evaluate the competing scholarly theories for how these divergences arose.
+
+THEORY SLUGS (use exactly): mt_deflation | lxx_inflation | sp_harmonization | independent_traditions | scribal_error | theological_motivation
+
+CONFIDENCE: HIGH 0.75–1.0 (strong scholarly consensus, mathematical pattern) | MEDIUM 0.45–0.74 (plausible, debated) | LOW 0.00–0.44 (speculative)
+
+REFERENCE: {{REFERENCE}}
+
+Return JSON (no fences, no prose):
+
+{
+  "reference": "Passage reference",
+  "subject": "Brief description (e.g. 'Antediluvian patriarchal ages')",
+  "figures": [
+    {
+      "name": "Patriarch or figure name",
+      "mt_value": 0,
+      "lxx_value": 0,
+      "sp_value": 0,
+      "divergence_type": "none | minor | significant | major",
+      "note": "Optional 1-sentence note on this figure's divergence pattern (or null)"
+    }
+  ],
+  "systematic_analysis": {
+    "is_systematic": true,
+    "pattern": "2–3 sentences: describe the mathematical pattern (if any). What rule, if any, explains the differences?",
+    "pattern_plain": "1–2 sentences for a non-specialist."
+  },
+  "theories": [
+    {
+      "name": "Theory display name",
+      "slug": "mt_deflation | lxx_inflation | sp_harmonization | independent_traditions | scribal_error | theological_motivation",
+      "score": 0.00,
+      "confidence": 0.00,
+      "summary": "2–3 sentences: technical case for this theory. Cite the key scholarly arguments and mathematical evidence.",
+      "summary_plain": "1–2 sentences for a non-specialist.",
+      "supporting_evidence": [
+        "Evidence point 1 (1 sentence each, 3–5 points)"
+      ],
+      "weaknesses": [
+        "Weakness 1 (1 sentence each, 2–4 points)"
+      ]
+    }
+  ],
+  "overall_assessment": "3–4 sentences: scholarly synthesis. Which theory or combination of theories best accounts for the evidence? What does this divergence tell us about the transmission history?",
+  "overall_plain": "2–3 sentences for a non-specialist.",
+  "bibcrit_assessment": {
+    "title": "Max 8 words capturing the most striking finding",
+    "reasoning": "2–3 sentences of original analysis. What is the most significant implication of these numerical divergences for understanding the text's transmission?",
+    "plain": "1–2 sentences for a non-specialist.",
+    "confidence": 0.00
+  }
+}

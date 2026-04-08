@@ -35,17 +35,28 @@ NUMERICAL_REFS = [
 ]
 
 # High-interest back-translation passages (messianic + textually rich)
+# Featured UI passages first: Exodus 3:14, Isaiah 53:7, Psalm 2:7, Genesis 3:15
 BACKTRANS_REFS = [
+    'Exodus 3:14',
+    'Isaiah 53:7',
+    'Psalm 2:7',
+    'Genesis 3:15',
     'Isaiah 7:14',
     'Isaiah 9:6',
     'Isaiah 53:1',
-    'Psalm 2:7',
-    'Psalm 22:16',
     'Deuteronomy 32:8',
     'Genesis 1:1',
     'Micah 5:2',
     'Zechariah 9:9',
     'Joel 3:1',
+]
+
+# DSS passages — all four featured in UI chips
+DSS_REFS = [
+    'Isaiah 7:14',
+    'Deuteronomy 32:8',
+    'Isaiah 53:11',
+    'Psalm 22:17',
 ]
 
 # Scribal books — all ten are already cached by the earlier batch run,
@@ -67,8 +78,9 @@ THEOLOGICAL_REFS = [
 ]
 
 # Patristic — featured passages from the UI chips
+# Note: Psalm 22:1 replaced with Genesis 1:26 in template (returned empty)
 PATRISTIC_REFS = [
-    'Isaiah 7:14', 'Psalm 22:1', 'Isaiah 53:12', 'Genesis 1:1',
+    'Isaiah 7:14', 'Genesis 1:26', 'Isaiah 53:12', 'Genesis 1:1',
     'Psalm 110:1', 'Isaiah 9:6', 'Micah 5:2', 'Zechariah 12:10',
     'Psalm 2:7', 'Isaiah 40:3', 'Deuteronomy 6:4', 'Proverbs 8:22',
 ]
@@ -76,7 +88,7 @@ PATRISTIC_REFS = [
 
 def main() -> None:
     parser = argparse.ArgumentParser(description='Pre-cache BibCrit analyses')
-    parser.add_argument('--type', choices=['numerical', 'backtranslation', 'scribal', 'theological', 'patristic'],
+    parser.add_argument('--type', choices=['numerical', 'backtranslation', 'scribal', 'theological', 'patristic', 'dss'],
                         help='Only run this analysis type (default: all)')
     parser.add_argument('--dry-run', action='store_true',
                         help='Show what would be cached without calling the API')
@@ -86,7 +98,7 @@ def main() -> None:
 
     from biblical_core.claude_pipeline import (
         ClaudePipeline, SCRIBAL_MODEL, NUMERICAL_MODEL,
-        THEOLOGICAL_MODEL, PATRISTIC_MODEL,
+        THEOLOGICAL_MODEL, PATRISTIC_MODEL, DSS_MODEL, DIVERGENCE_MODEL,
         _SCRIBAL_SAMPLE_REFS,
     )
     from biblical_core.corpus import BiblicalCorpus
@@ -111,10 +123,11 @@ def main() -> None:
     )
 
     _BACKTRANS_PROMPT    = 'v1'
-    _NUMERICAL_PROMPT    = 'v1'
+    _DSS_PROMPT          = 'v5'
+    _NUMERICAL_PROMPT    = 'v3'
     _SCRIBAL_PROMPT      = 'v1'
     _THEOLOGICAL_PROMPT  = 'v1'
-    _PATRISTIC_PROMPT    = 'v1'
+    _PATRISTIC_PROMPT    = 'v3'
 
     total = skipped = ran = errors = 0
 
@@ -210,6 +223,38 @@ def main() -> None:
                 print(f' ✓  {elapsed:.0f}s')
                 ran += 1
 
+    def run_dss():
+        nonlocal total, skipped, ran, errors
+        for ref in DSS_REFS:
+            total += 1
+            cached = pipeline.get_cached(ref, 'dss', _DSS_PROMPT, DSS_MODEL)
+            if cached:
+                print(f'  ⚡ SKIP  dss  {ref}  (cached)')
+                skipped += 1
+                continue
+            if args.dry_run:
+                print(f'  ○ WOULD RUN  dss  {ref}')
+                continue
+            mt_text = ''
+            lxx_text = ''
+            try:
+                mt_words  = corpus.get_verse_words(ref, 'MT')
+                lxx_words = corpus.get_verse_words(ref, 'LXX')
+                mt_text   = ' '.join(w.word_text for w in mt_words)  if mt_words  else ''
+                lxx_text  = ' '.join(w.word_text for w in lxx_words) if lxx_words else ''
+            except Exception:
+                pass
+            print(f'  → RUN   dss  {ref} …', end='', flush=True)
+            t0 = time.time()
+            result = pipeline.analyze_dss(ref, mt_text, lxx_text)
+            elapsed = time.time() - t0
+            if result.get('error'):
+                print(f' ❌  {result["error"]}')
+                errors += 1
+            else:
+                print(f' ✓  {elapsed:.0f}s')
+                ran += 1
+
     def run_theological():
         nonlocal total, skipped, ran, errors
         for ref in THEOLOGICAL_REFS:
@@ -266,6 +311,10 @@ def main() -> None:
     if not run_type or run_type == 'backtranslation':
         print('\n── Back-translation ────────────────────────────')
         run_backtranslation()
+
+    if not run_type or run_type == 'dss':
+        print('\n── DSS ─────────────────────────────────────────')
+        run_dss()
 
     if not run_type or run_type == 'scribal':
         print('\n── Scribal ─────────────────────────────────────')

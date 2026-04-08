@@ -95,9 +95,9 @@ SCRIBAL_BOOKS = [
 
 # Theological — featured books + passages from the UI chips
 THEOLOGICAL_REFS = [
-    # Books
+    # Books (Numbers excluded — full-book response exceeds 8192-token output limit)
     'Genesis', 'Isaiah', 'Psalms', 'Exodus',
-    'Deuteronomy', 'Daniel', 'Job', 'Numbers',
+    'Deuteronomy', 'Daniel', 'Job',
     # Passages
     'Isaiah 7:14', 'Deuteronomy 32:8', 'Genesis 1:26', 'Exodus 24:10',
     'Proverbs 8:22', 'Isaiah 6:3', 'Genesis 18:1', 'Exodus 4:24',

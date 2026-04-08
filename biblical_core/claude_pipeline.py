@@ -1352,6 +1352,11 @@ def _extract_cards_genealogy(reference: str, data: dict, min_confidence: float) 
 
 def _parse_json_response(raw: str) -> dict:
     """Extract JSON from Claude response, handling markdown fences."""
+    # 0. Handle double-brace prefill artefact: Claude sometimes re-emits the
+    #    prefilled '{', producing '{{...}' which is not valid JSON.
+    if raw.startswith('{{'):
+        raw = raw[1:]
+
     # 1. Direct parse
     try:
         return json.loads(raw)

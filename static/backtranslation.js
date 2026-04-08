@@ -44,29 +44,6 @@
 
   if (!selBook || !btnAnalyze) return;  // guard: only run on backtranslation page
 
-  // ── Info banner (dismissable, remembered via localStorage) ───────────────
-  var infoBanner = document.getElementById('bt-info-banner');
-  var infoClose  = document.getElementById('bt-info-close');
-  if (infoBanner) {
-    if (localStorage.getItem('bt-info-dismissed') === '1') {
-      infoBanner.style.display = 'none';
-    }
-    if (infoClose) {
-      infoClose.addEventListener('click', function () {
-        infoBanner.style.maxHeight = infoBanner.scrollHeight + 'px';
-        infoBanner.style.overflow  = 'hidden';
-        infoBanner.style.transition = 'max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease';
-        requestAnimationFrame(function () {
-          infoBanner.style.maxHeight = '0';
-          infoBanner.style.opacity   = '0';
-          infoBanner.style.padding   = '0';
-        });
-        setTimeout(function () { infoBanner.style.display = 'none'; }, 320);
-        localStorage.setItem('bt-info-dismissed', '1');
-      });
-    }
-  }
-
   // ── Init ──────────────────────────────────────────────────────────────────
   fetchBooks();
 

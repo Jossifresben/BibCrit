@@ -8,8 +8,6 @@
   var selVerse   = document.getElementById('sel-verse');
   var refInput   = document.getElementById('ref-input');
   var btnAnalyze = document.getElementById('btn-analyze');
-  var infoBanner = document.getElementById('dss-info-banner');
-  var infoClose  = document.getElementById('dss-info-close');
   var emptyState = document.getElementById('empty-state');
   var loadState  = document.getElementById('loading-state');
   var loadStep   = document.getElementById('loading-step');
@@ -26,18 +24,6 @@
   var toast      = document.getElementById('toast');
 
   if (!btnAnalyze) return;
-
-  // ── Info banner dismiss ─────────────────────────────────────────────────
-  var _BANNER_VER = 'dss-info-v1';
-  if (localStorage.getItem(_BANNER_VER) === '1' && infoBanner) {
-    infoBanner.style.display = 'none';
-  }
-  if (infoClose) {
-    infoClose.addEventListener('click', function () {
-      if (infoBanner) infoBanner.style.display = 'none';
-      localStorage.setItem(_BANNER_VER, '1');
-    });
-  }
 
   var _es           = null;
   var _timer        = null;

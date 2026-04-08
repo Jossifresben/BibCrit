@@ -6,8 +6,6 @@
   var selBook    = document.getElementById('sel-book');
   var refInput   = document.getElementById('ref-input');
   var btnAnalyze = document.getElementById('btn-analyze');
-  var infoBanner = document.getElementById('genealogy-info-banner');
-  var infoClose  = document.getElementById('genealogy-info-close');
   var emptyState = document.getElementById('empty-state');
   var suggestions = document.getElementById('genealogy-suggestions');
   var loadState  = document.getElementById('loading-state');
@@ -40,18 +38,6 @@
         break;
       }
     }
-  }
-
-  // ── Info banner dismiss ─────────────────────────────────────────────────
-  var _BANNER_VER = 'genealogy-info-v1';
-  if (localStorage.getItem(_BANNER_VER) === '1' && infoBanner) {
-    infoBanner.style.display = 'none';
-  }
-  if (infoClose) {
-    infoClose.addEventListener('click', function () {
-      if (infoBanner) infoBanner.style.display = 'none';
-      localStorage.setItem(_BANNER_VER, '1');
-    });
   }
 
   var _es           = null;

@@ -8,8 +8,6 @@
   var chkCompare = document.getElementById('chk-compare');
   var compareWrap = document.getElementById('compare-wrap');
   var btnAnalyze = document.getElementById('btn-analyze');
-  var infoBanner  = document.getElementById('scribal-info-banner');
-  var infoClose   = document.getElementById('scribal-info-close');
   var emptyState = document.getElementById('empty-state');
   var loadState  = document.getElementById('loading-state');
   var loadStep   = document.getElementById('loading-step');
@@ -32,18 +30,6 @@
   var toast      = document.getElementById('toast');
 
   if (!selBook || !btnAnalyze) return;
-
-  // ── Info banner dismiss ─────────────────────────────────────────────────
-  var _BANNER_VER = 'scribal-info-v2';   // bump to re-show after content changes
-  if (localStorage.getItem(_BANNER_VER) === '1' && infoBanner) {
-    infoBanner.style.display = 'none';
-  }
-  if (infoClose) {
-    infoClose.addEventListener('click', function () {
-      if (infoBanner) infoBanner.style.display = 'none';
-      localStorage.setItem(_BANNER_VER, '1');
-    });
-  }
 
   var _es           = null;
   var _timerInt     = null;

@@ -264,34 +264,34 @@ body[data-persona] .home-section-header { display: none; }
       <img src="{{ url_for('static', filename='BibCrit_logo.svg') }}" alt="BibCrit" class="ps-logo">
       <div class="ps-title">BibCrit</div>
       <div class="ps-sub">{{ _t('home_tagline') }}</div>
-      <div class="ps-prompt">How do you use BibCrit?</div>
+      <div class="ps-prompt">{{ _t('ps_how_are_you') }}</div>
     </div>
 
     <div class="ps-cards">
       <div class="ps-card scholar" data-select-persona="scholar" role="button" tabindex="0">
         <div class="ps-card-icon"><span class="material-symbols-outlined">school</span></div>
-        <div class="ps-card-title">Scholar / Faculty</div>
-        <div class="ps-card-desc">Research tools, SBL/BibTeX export, corpus API access</div>
-        <span class="ps-card-btn">Select →</span>
+        <div class="ps-card-title">{{ _t('ps_scholar_title') }}</div>
+        <div class="ps-card-desc">{{ _t('ps_scholar_desc') }}</div>
+        <span class="ps-card-btn">{{ _t('ps_select_btn') }}</span>
       </div>
 
       <div class="ps-card phd" data-select-persona="phd" role="button" tabindex="0">
         <div class="ps-card-icon"><span class="material-symbols-outlined">menu_book</span></div>
-        <div class="ps-card-title">PhD Candidate</div>
-        <div class="ps-card-desc">Dissertation-level analysis, methodology guidance, citations</div>
-        <span class="ps-card-btn">Select →</span>
+        <div class="ps-card-title">{{ _t('ps_phd_title') }}</div>
+        <div class="ps-card-desc">{{ _t('ps_phd_desc') }}</div>
+        <span class="ps-card-btn">{{ _t('ps_select_btn') }}</span>
       </div>
 
       <div class="ps-card student" data-select-persona="student" role="button" tabindex="0">
         <div class="ps-card-icon"><span class="material-symbols-outlined">auto_stories</span></div>
-        <div class="ps-card-title">Student / Learner</div>
-        <div class="ps-card-desc">Guided exploration, plain-language results, key concepts</div>
-        <span class="ps-card-btn">Select →</span>
+        <div class="ps-card-title">{{ _t('ps_student_title') }}</div>
+        <div class="ps-card-desc">{{ _t('ps_student_desc') }}</div>
+        <span class="ps-card-btn">{{ _t('ps_select_btn') }}</span>
       </div>
     </div>
 
     <div class="ps-skip">
-      <a href="#" id="persona-skip">Skip — show all tools</a>
+      <a href="#" id="persona-skip">{{ _t('ps_skip') }}</a>
     </div>
   </div>
 </div>
@@ -300,12 +300,12 @@ body[data-persona] .home-section-header { display: none; }
 <div class="persona-hero" data-persona="scholar">
   <div class="ph-inner">
     <div style="max-width:900px; margin:0 auto;">
-      <div class="ph-eyebrow">Scholarly tools</div>
-      <div class="ph-title">Corpus-grounded textual criticism.<br>Powered by AI.</div>
+      <div class="ph-eyebrow">{{ _t('ph_scholar_eyebrow') }}</div>
+      <div class="ph-title">{{ _t('ph_scholar_title') | safe }}</div>
       <div class="ph-sub">ETCBC (MT) · LXX Rahlfs-1935 · DSS 1QIsaᵃ · Samaritan Pentateuch · MorphGNT</div>
       <div class="ph-badges">
-        <span class="ph-badge accent">SBL / BibTeX export</span>
-        <span class="ph-badge accent">Open Data API</span>
+        <span class="ph-badge accent">{{ _t('ph_scholar_badge_sbl') }}</span>
+        <span class="ph-badge accent">{{ _t('ph_scholar_badge_api') }}</span>
 
         <span class="ph-badge">DOI: 10.5281/zenodo.19358424</span>
         <span class="ph-badge">Apache 2.0</span>
@@ -313,25 +313,25 @@ body[data-persona] .home-section-header { display: none; }
       </div>
     </div>
   </div>
-  <div class="ph-tools-label">Research tools — ordered by analytical depth</div>
+  <div class="ph-tools-label">{{ _t('ph_scholar_tools_label') }}</div>
 </div>
 
 {# ══ PHD HERO ════════════════════════════════════════════════════════════════ #}
 <div class="persona-hero" data-persona="phd">
   <div class="ph-inner">
     <div style="max-width:900px; margin:0 auto;">
-      <div class="ph-eyebrow">Dissertation research tools</div>
-      <div class="ph-title">Your research assistant for<br>dissertation-level textual analysis.</div>
-      <div class="ph-sub">All 9 tools · methodology guidance · SBL/BibTeX export · open data API</div>
+      <div class="ph-eyebrow">{{ _t('ph_phd_eyebrow') }}</div>
+      <div class="ph-title">{{ _t('ph_phd_title') | safe }}</div>
+      <div class="ph-sub">{{ _t('ph_phd_sub') }}</div>
       <div class="ph-badges">
-        <span class="ph-badge accent">Export citations</span>
-        <span class="ph-badge accent">Methodology notes</span>
-        <span class="ph-badge">Discovery feed</span>
-        <span class="ph-badge">DOI citable</span>
+        <span class="ph-badge accent">{{ _t('ph_phd_badge_export') }}</span>
+        <span class="ph-badge accent">{{ _t('ph_phd_badge_method') }}</span>
+        <span class="ph-badge">{{ _t('ph_phd_badge_disc') }}</span>
+        <span class="ph-badge">{{ _t('ph_phd_badge_doi') }}</span>
       </div>
       <div class="phd-diss-box">
-        <div class="phd-diss-label">Dissertation starting point</div>
-        <div class="phd-diss-desc">Not sure where to start? Pick a well-known crux passage and run it through Divergence + Back-Translation first.</div>
+        <div class="phd-diss-label">{{ _t('ph_phd_diss_label') }}</div>
+        <div class="phd-diss-desc">{{ _t('ph_phd_diss_desc') }}</div>
         <div class="phd-diss-chips">
           <a href="/divergence?ref=Isaiah+7:14&lang={{ lang }}" class="phd-diss-chip">Isaiah 7:14 →</a>
           <a href="/divergence?ref=Deuteronomy+32:8&lang={{ lang }}" class="phd-diss-chip">Deuteronomy 32:8 →</a>
@@ -344,28 +344,28 @@ body[data-persona] .home-section-header { display: none; }
   <div style="max-width:900px; margin:0.75rem auto 0; padding: 0 1.5rem;">
     <div class="phd-method-note">
       <span class="material-symbols-outlined" style="font-size:16px;flex-shrink:0;margin-top:2px;">info</span>
-      <span><strong>Methodology note:</strong> All analyses cite their scholarly framework (Tov, Aejmelaeus, Ulrich). Results are AI-generated and should be cross-checked against BHS critical apparatus and the Göttingen LXX for peer-reviewed publication.
-      <a href="/guide?lang={{ lang }}#scholarship">See full methodology →</a></span>
+      <span>{{ _t('ph_phd_method_note') | safe }}
+      <a href="/guide?lang={{ lang }}#scholarship">{{ _t('ph_phd_see_method') }}</a></span>
     </div>
   </div>
-  <div class="ph-tools-label">All tools — balanced view</div>
+  <div class="ph-tools-label">{{ _t('ph_phd_tools_label') }}</div>
 </div>
 
 {# ══ STUDENT HERO ════════════════════════════════════════════════════════════ #}
 <div class="persona-hero" data-persona="student">
   <div class="ph-inner">
     <div style="max-width:900px; margin:0 auto;">
-      <div class="ph-eyebrow">Explore the manuscripts</div>
-      <div class="ph-title">Discover the ancient texts<br>behind your Bible.</div>
-      <div class="ph-sub">No Hebrew or Greek required — AI explains everything in plain language</div>
+      <div class="ph-eyebrow">{{ _t('ph_student_eyebrow') }}</div>
+      <div class="ph-title">{{ _t('ph_student_title') | safe }}</div>
+      <div class="ph-sub">{{ _t('ph_student_sub') }}</div>
       <div class="ph-badges">
-        <span class="ph-badge accent">Start with the Guide</span>
-        <span class="ph-badge accent">Discovery Feed</span>
-        <span class="ph-badge">Free · No signup</span>
+        <span class="ph-badge accent">{{ _t('ph_student_badge_guide') }}</span>
+        <span class="ph-badge accent">{{ _t('ph_student_badge_disc') }}</span>
+        <span class="ph-badge">{{ _t('ph_student_badge_free') }}</span>
       </div>
     </div>
   </div>
-  <div class="ph-tools-label">Start here</div>
+  <div class="ph-tools-label">{{ _t('ph_student_tools_label') }}</div>
 </div>
 
 {# ══ DEFAULT HERO ════════════════════════════════════════════════════════════ #}
@@ -387,7 +387,7 @@ body[data-persona] .home-section-header { display: none; }
     </div>
 
     <a href="/divergence?lang={{ lang }}" class="tool-card" data-tool="divergence">
-        <span class="persona-chip">Featured</span>
+        <span class="persona-chip">{{ _t('ph_chip_featured') }}</span>
         <div class="tool-card-header">
             <div class="tool-card-icon"><span class="material-symbols-outlined">find_in_page</span></div>
             <h3>{{ _t('tool_divergence_title') }}</h3>
@@ -397,7 +397,7 @@ body[data-persona] .home-section-header { display: none; }
     </a>
 
     <a href="/backtranslation?lang={{ lang }}" class="tool-card" data-tool="backtranslation">
-        <span class="persona-chip">Featured</span>
+        <span class="persona-chip">{{ _t('ph_chip_featured') }}</span>
         <div class="tool-card-header">
             <div class="tool-card-icon"><span class="material-symbols-outlined">translate</span></div>
             <h3>{{ _t('tool_backtrans_title') }}</h3>
@@ -407,7 +407,7 @@ body[data-persona] .home-section-header { display: none; }
     </a>
 
     <a href="/dss?lang={{ lang }}" class="tool-card" data-tool="dss">
-        <span class="persona-chip">Featured</span>
+        <span class="persona-chip">{{ _t('ph_chip_featured') }}</span>
         <div class="tool-card-header">
             <div class="tool-card-icon"><span class="material-symbols-outlined">history_edu</span></div>
             <h3>{{ _t('tool_dss_title') }}</h3>
@@ -417,7 +417,7 @@ body[data-persona] .home-section-header { display: none; }
     </a>
 
     <a href="/genealogy?lang={{ lang }}" class="tool-card" data-tool="genealogy">
-        <span class="persona-chip">Featured</span>
+        <span class="persona-chip">{{ _t('ph_chip_featured') }}</span>
         <div class="tool-card-header">
             <div class="tool-card-icon"><span class="material-symbols-outlined">account_tree</span></div>
             <h3>{{ _t('tool_genealogy_title') }}</h3>
@@ -450,7 +450,7 @@ body[data-persona] .home-section-header { display: none; }
     </a>
 
     <a href="/theological?lang={{ lang }}" class="tool-card" data-tool="theological">
-        <span class="persona-chip">Featured</span>
+        <span class="persona-chip">{{ _t('ph_chip_featured') }}</span>
         <div class="tool-card-header">
             <div class="tool-card-icon"><span class="material-symbols-outlined">psychology</span></div>
             <h3>{{ _t('tool_theological_title') }}</h3>

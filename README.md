@@ -5,9 +5,9 @@
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0000--2026--0836-a6ce39)](https://orcid.org/0009-0000-2026-0836)
 [![DOI](https://zenodo.org/badge/1195648052.svg)](https://doi.org/10.5281/zenodo.19358424)
 
-# BibCrit
+# BibCrit v2.0
 
-AI-powered biblical textual criticism: compare MT, LXX, and Dead Sea Scrolls, reconstruct Hebrew Vorlagen, profile scribal tendencies, detect theological revisions, track patristic citations, model numerical discrepancies, and visualize manuscript genealogies — all in a browser.
+Free, open-access web tool for biblical textual criticism at [bibcrit.com](https://bibcrit.com). Compare MT, LXX, and Dead Sea Scrolls; reconstruct Hebrew Vorlagen; profile scribal tendencies; detect theological revisions; track patristic citations; model numerical discrepancies; and visualize manuscript genealogies — all in a browser, in English and Spanish.
 
 ## Screenshots
 
@@ -32,36 +32,32 @@ AI-powered biblical textual criticism: compare MT, LXX, and Dead Sea Scrolls, re
 
 ---
 
-## Features
+## Tools
 
-### Textual Analysis
+| # | Tool | Route | Description |
+|---|---|---|---|
+| 1 | **MT/LXX Divergence Analyzer** | `/divergence` | Word-level Hebrew/Greek comparison with alignment scoring. Claude classifies each divergence (`different_vorlage`, `theological_tendency`, `scribal_error`, etc.), assigns confidence, and generates competing scholarly hypotheses. Exports SBL footnotes and BibTeX. Prompt: `divergence_v2`. |
+| 2 | **Scribal Tendencies Profiler** | `/scribal` | Statistical fingerprint of an LXX book's translator across five dimensions: literalness, anthropomorphism reduction, messianic heightening, harmonization, and paraphrase rate. Rendered as a D3.js radar chart with per-dimension evidence. Supports two-book comparison. Prompt: `scribal_v1`. |
+| 3 | **Numerical Discrepancies** | `/numerical` | Surfaces numerical divergences (patriarchal ages, census figures, temple dimensions, etc.) across MT, LXX, and Samaritan Pentateuch, ranking competing theories by confidence. Prompt: `numerical_v3`. |
+| 4 | **Ancient Witness Bridge (DSS)** | `/dss` | Compare a passage across Dead Sea Scrolls manuscripts (1QIsaᵃ and others), MT, and LXX. Shows which scrolls attest the passage, MT/LXX alignment, and specific divergences. Prompt: `dss_v5`. |
+| 5 | **Theological Revisions** | `/theological` | Identifies theologically motivated textual changes — anthropomorphism avoidance, messianic heightening, polemical alterations, harmonization. Prompt: `theological_v1`. |
+| 6 | **Patristic Citation Tracker** | `/patristic` | Traces Church Father citations (1st–5th century), identifies the text form used, and visualizes text-form distribution as a bar chart. Prompt: `patristic_v3`. |
+| 7 | **Back-Translation Workbench** | `/backtranslation` | Reconstructs the probable Hebrew Vorlage word-by-word from LXX Greek using Tov's retroversion methodology, with confidence levels and summary assessments. Prompt: `backtranslation_v1`. |
+| 8 | **Manuscript Genealogy** | `/genealogy` | Visualizes the full transmission stemma of a biblical book — from proto-text through manuscript families (MT, LXX, DSS, SP, Peshitta, Targum, Vulgate) to modern critical editions. Prompt: `genealogy_v1`. |
 
-| Tool | Route | What it does |
+---
+
+## Data Sources
+
+| Corpus | Source | Path |
 |---|---|---|
-| **MT/LXX Divergence Analyzer** | `/divergence` | Side-by-side Hebrew/Greek comparison. Claude classifies every divergence by type (`different_vorlage`, `theological_tendency`, `scribal_error`, etc.), assigns a confidence score, and generates competing scholarly hypotheses. Exports SBL footnotes and BibTeX. |
-| **Back-Translation Workbench** | `/backtranslation` | Starting from the LXX Greek, reconstructs the probable Hebrew Vorlage word-by-word using Tov's retroversion methodology. Returns annotated reconstructed words with confidence levels and summary assessments. |
+| **MT** | [ETCBC/BHSA](https://github.com/ETCBC/bhsa) via Text-Fabric | `data/corpora/mt_etcbc/` |
+| **LXX** | Rahlfs (ingested via `ingest_lxx_rahlfs.py`) | `data/corpora/lxx_stepbible/` |
+| **DSS** | [ETCBC/DSS](https://github.com/ETCBC/dss) — 1QIsaᵃ — via Text-Fabric | `data/corpora/dss/` |
+| **SP** | [dt-ucph/sp](https://github.com/dt-ucph/sp) via Text-Fabric | `data/corpora/sp_etcbc/` |
+| **GNT** | [SBLGNT](https://github.com/LogosBible/SBLGNT) | `data/corpora/gnt_opengnt/` |
 
-### Critical Analysis
-
-| Tool | Route | What it does |
-|---|---|---|
-| **Scribal Tendency Profiler** | `/scribal` | Generates a statistical fingerprint of an LXX book's translator across five scholarly dimensions: literalness, anthropomorphism reduction, messianic heightening, harmonization, and paraphrase rate. Rendered as a D3.js radar chart with per-dimension evidence. Supports two-book comparison. |
-| **Numerical Discrepancy Modeler** | `/numerical` | Surfaces numerical divergences between MT, LXX, and Samaritan Pentateuch (patriarchal ages, census figures, temple dimensions, etc.) and ranks competing theories — scribal error, theological revision, or different Vorlage — by confidence. |
-
-### Discovery
-
-| Route | What it does |
-|---|---|
-| `/discovery` | Public-facing, plain-language findings surfaced from the analysis cache. No Hebrew or Greek required. Cards are curated (`discovery_ready` flag) and paginated; a "featured finding" is selected from high-confidence `different_vorlage`, `theological_tendency`, and `scribal_error` entries. Grows automatically as scholars use the other tools (the flywheel). |
-
-### Research Tools
-
-| Tool | Route | What it does |
-|---|---|---|
-| **DSS Bridge Tool** | `/dss` | Compare a biblical passage across Dead Sea Scrolls manuscripts, the Masoretic Text, and the Septuagint. See which scrolls attest the passage, their alignment with MT or LXX, and specific divergences. |
-| **Theological Revision Detector** | `/theological` | Identify where translators or scribes may have altered the text for theological reasons — anthropomorphism avoidance, messianic heightening, polemical changes, or harmonization. |
-| **Patristic Citation Tracker** | `/patristic` | Trace how Church Fathers (through the 5th century) cited a biblical passage, what text form they used, and what their citations reveal about early textual transmission. |
-| **Manuscript Genealogy** | `/genealogy` | Visualize the full transmission stemma of a biblical book — from proto-text through manuscript families (MT, LXX, DSS, SP, Peshitta, Targum, Vulgate) to modern critical editions. |
+**License note:** The ETCBC corpora (MT/BHSA and DSS) are released under [CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/). The app code is Apache 2.0; the corpus data it ingests retains its own license terms. Do not use the ingested ETCBC data for commercial purposes without a separate agreement with ETCBC.
 
 ---
 
@@ -71,8 +67,8 @@ AI-powered biblical textual criticism: compare MT, LXX, and Dead Sea Scrolls, re
 |---|---|
 | Web framework | [Flask](https://flask.palletsprojects.com/) 3.0+ |
 | AI analysis | [Anthropic Python SDK](https://github.com/anthropics/anthropic-sdk-python) 0.30+ · model: `claude-sonnet-4-5-20250929` |
-| Visualization | [D3.js](https://d3js.org/) v7 (radar charts) |
-| Persistence | [Supabase](https://supabase.com/) (analysis cache + budget + votes) · disk JSON fallback |
+| Visualization | [D3.js](https://d3js.org/) v7 (radar charts, bar charts) |
+| Persistence | [Supabase](https://supabase.com/) (PostgreSQL) + disk JSON fallback |
 | Production server | Gunicorn (1 worker, 2 threads) |
 | Fonts | Space Grotesk, Noto Sans Hebrew, Noto Serif |
 | Deploy target | [Render](https://render.com/) (Python 3.11, `render.yaml` included) |
@@ -83,40 +79,66 @@ AI-powered biblical textual criticism: compare MT, LXX, and Dead Sea Scrolls, re
 
 ```
 BibCrit/
-├── app.py                    # Flask app factory; lazy _init() wires corpus + pipeline
-├── state.py                  # Shared singletons: corpus, pipeline, i18n, TranslationProxy
+├── app.py                      # Flask app factory; lazy _init() wires corpus + pipeline
+├── state.py                    # Shared singletons: corpus, pipeline, i18n, TranslationProxy
 ├── requirements.txt
-├── render.yaml               # One-click Render deploy config
+├── render.yaml                 # One-click Render deploy config
 │
 ├── blueprints/
-│   ├── textual.py            # /divergence, /backtranslation, corpus browser API, vote API
-│   ├── critical.py           # /scribal, /numerical
-│   ├── discovery.py          # /discovery, /api/discovery/cards, /api/admin/discovery/flag
-│   └── research.py           # /health (concordance/hapax stub)
+│   ├── textual.py              # /divergence, /backtranslation, /dss, /genealogy + APIs
+│   ├── critical.py             # /scribal, /numerical, /theological, /patristic + APIs
+│   ├── discovery.py            # /discovery, /api/discovery/cards, /api/admin/discovery/flag
+│   └── research.py             # /health, /guide
 │
 ├── biblical_core/
-│   ├── claude_pipeline.py    # ClaudePipeline: Claude calls, Supabase cache, budget tracking
-│   ├── corpus.py             # BiblicalCorpus: loads MT (ETCBC) and LXX (STEP) CSVs
-│   └── divergence.py         # parse_claude_response, format_sbl_footnote, format_bibtex
+│   ├── claude_pipeline.py      # ClaudePipeline: Claude calls, Supabase cache, budget tracking
+│   ├── corpus.py               # BiblicalCorpus: loads MT, LXX, DSS, SP, GNT
+│   └── divergence.py           # parse_claude_response, format_sbl_footnote, format_bibtex
 │
 ├── data/
-│   ├── i18n.json             # All UI strings (en, es)
-│   ├── prompts/              # Versioned prompt templates (divergence_v2.txt, etc.)
-│   ├── cache/                # Disk-based analysis cache and budget.json (fallback)
+│   ├── i18n.json               # All UI strings (en, es)
+│   ├── prompts/                # Versioned prompt templates ({tool}_{version}.txt)
+│   ├── cache/                  # Disk-based analysis cache fallback ({sha256}.json)
 │   └── corpora/
-│       ├── mt_etcbc/         # Masoretic Text CSV files (ETCBC morphology)
-│       └── lxx_stepbible/    # Septuagint CSV files (STEP Bible)
+│       ├── mt_etcbc/           # Masoretic Text (ETCBC/BHSA morphology)
+│       ├── lxx_stepbible/      # Septuagint (Rahlfs)
+│       ├── dss/                # Dead Sea Scrolls (ETCBC, primarily 1QIsaᵃ)
+│       ├── sp_etcbc/           # Samaritan Pentateuch (dt-ucph/sp via ETCBC)
+│       └── gnt_opengnt/        # Greek New Testament (SBLGNT)
 │
-├── templates/                # Jinja2 templates extending base.html
-└── static/                   # CSS (bibcrit.css, style.css), JS per-tool, SVG assets
+├── scripts/
+│   ├── precache_all.py         # Seed 91 featured passages in English
+│   ├── precache_es.py          # Translate all 91 passages to Spanish
+│   ├── push_cache_to_supabase.py  # Push disk cache → Supabase
+│   ├── ingest_mt.py            # ETCBC/BHSA → CSV
+│   ├── ingest_lxx.py           # LXX (STEP) → CSV
+│   ├── ingest_lxx_rahlfs.py    # LXX (Rahlfs) → CSV
+│   ├── ingest_dss_1qisaa.py    # ETCBC/DSS (1QIsaᵃ) → CSV
+│   ├── ingest_sp.py            # SP (dt-ucph/sp) → CSV
+│   └── ingest_gnt.py           # SBLGNT → CSV
+│
+├── templates/                  # Jinja2 templates extending base.html
+└── static/                     # CSS (bibcrit.css, style.css), JS per-tool, SVG assets
 ```
 
-**Key design decisions:**
+### Key design decisions
 
 - `state.py` holds no blueprint or app imports, preventing circular dependencies. Blueprints read `state.corpus` and `state.pipeline` directly.
 - `app._init()` runs before the first request (thread-safe double-checked locking) to keep startup fast.
-- All Claude calls are cached by `sha256(reference | tool | prompt_version | model)`. Supabase is the primary store; disk JSON is always written as fallback.
-- SSE (Server-Sent Events) streams real-time progress steps to the browser while Claude thinks. Budget checks happen before every API call.
+- SSE (Server-Sent Events) streams real-time progress steps (`step` / `done` / `error` frames) to the browser while Claude analyzes.
+- Budget checks happen before every API call; once `spend_usd >= cap_usd` the endpoint returns an error frame without calling the API.
+
+### Cache system
+
+Every analysis result is keyed by:
+
+```
+cache_key = SHA256("{reference}|{tool}|{prompt_version}|{model}")
+```
+
+**English (EN):** written to both Supabase (`analysis_cache` table) and disk (`data/cache/{sha256}.json`). Supabase is the primary read path; disk is the fallback.
+
+**Spanish (ES):** stored in Supabase only (`analysis_cache_es` table). Generated by `scripts/precache_es.py`, which translates cached EN analyses rather than re-running the full Claude pipeline.
 
 ---
 
@@ -161,15 +183,52 @@ gunicorn app:app --workers 1 --threads 2 --timeout 120
 
 ## Environment Variables
 
-Create a `.env` file in the project root (or set these in your hosting dashboard):
-
 | Variable | Required | Default | Description |
 |---|---|---|---|
 | `ANTHROPIC_API_KEY` | Yes | — | Anthropic API key. Without it the analysis tools return a graceful error; all cached results and the corpus browser still work. |
-| `BIBCRIT_API_CAP_USD` | No | `10.0` | Monthly Claude spend cap in USD. The app rejects new analysis calls once this is reached and prompts a Ko-fi donation. Resets each calendar month. |
-| `SUPABASE_URL` | No | — | Supabase project URL. If unset, all caching and budget tracking fall back to local disk (`data/cache/`). |
+| `BIBCRIT_API_CAP_USD` | No | `10.0` | Monthly Claude spend cap in USD. Resets each calendar month. |
+| `SUPABASE_URL` | No | — | Supabase project URL. If unset, caching and budget tracking fall back to disk (`data/cache/`). |
 | `SUPABASE_KEY` | No | — | Supabase `anon` or `service_role` key. |
-| `BIBCRIT_ADMIN_KEY` | No | — | Arbitrary secret for the admin flag endpoint (`POST /api/admin/discovery/flag`). Without it the endpoint returns 403. |
+| `BIBCRIT_ADMIN_KEY` | No | — | Arbitrary secret for `POST /api/admin/discovery/flag`. Without it the endpoint returns 403. |
+
+---
+
+## Corpus Ingestion
+
+Run ingestion scripts once to populate `data/corpora/`. Each script pulls from Text-Fabric or a local file and writes normalized CSV:
+
+```bash
+python scripts/ingest_mt.py
+python scripts/ingest_lxx_rahlfs.py
+python scripts/ingest_dss_1qisaa.py
+python scripts/ingest_sp.py
+python scripts/ingest_gnt.py
+```
+
+Text-Fabric downloads corpora on first run (~several hundred MB). The ETCBC and SP corpora require acceptance of their respective licenses before use.
+
+---
+
+## Pre-caching Featured Passages
+
+The repo ships with analyses for 91 featured passages across all 8 tools. To seed or refresh:
+
+```bash
+# Seed all missing EN analyses (safe to re-run; skips already-cached)
+python scripts/precache_all.py
+
+# Seed a specific tool only
+python scripts/precache_all.py --type numerical
+
+# Dry run — show what would be seeded without calling the API
+python scripts/precache_all.py --dry-run
+
+# Push disk cache to Supabase
+python scripts/push_cache_to_supabase.py
+
+# Generate Spanish translations of all cached EN analyses
+python scripts/precache_es.py
+```
 
 ---
 
@@ -184,13 +243,28 @@ Create a `.env` file in the project root (or set these in your hosting dashboard
 | GET | `/backtranslation` | Back-Translation Workbench |
 | GET | `/scribal` | Scribal Tendency Profiler |
 | GET | `/numerical` | Numerical Discrepancy Modeler |
-| GET | `/dss` | DSS Bridge Tool |
+| GET | `/dss` | Ancient Witness Bridge (DSS) |
 | GET | `/theological` | Theological Revision Detector |
 | GET | `/patristic` | Patristic Citation Tracker |
 | GET | `/genealogy` | Manuscript Genealogy |
 | GET | `/discovery` | Discovery — plain-language findings |
 | GET | `/guide` | User guide |
 | GET | `/health` | Health check (`{"status": "ok"}`) |
+
+### Analysis API (SSE streaming)
+
+All stream endpoints emit `step` (progress), `done` (full JSON result), and `error` frames.
+
+| Method | Route | Key query param |
+|---|---|---|
+| GET | `/api/divergence/stream` | `ref` — e.g. `Isaiah 7:14` |
+| GET | `/api/backtranslation/stream` | `ref` |
+| GET | `/api/scribal/stream` | `book` — e.g. `Isaiah` |
+| GET | `/api/numerical/stream` | `ref` — e.g. `Genesis 5` |
+| GET | `/api/dss/stream` | `ref` |
+| GET | `/api/theological/stream` | `ref` |
+| GET | `/api/patristic/stream` | `ref` |
+| GET | `/api/genealogy/stream` | `ref` |
 
 ### Open Data API
 
@@ -203,8 +277,6 @@ GET /api/cache?tool=theological&ref=Isaiah+7:14
 GET /api/cache?discovery_ready=true&limit=50&offset=0
 ```
 
-**Query parameters:**
-
 | Param | Description | Default |
 |---|---|---|
 | `tool` | Filter by tool (`divergence`, `backtranslation`, `scribal`, `numerical`, `dss`, `theological`, `patristic`, `genealogy`) | all |
@@ -213,32 +285,8 @@ GET /api/cache?discovery_ready=true&limit=50&offset=0
 | `limit` | Max records per page (max 200) | 50 |
 | `offset` | Pagination offset | 0 |
 
-**Response:**
-```json
-{
-  "total": 63,
-  "offset": 0,
-  "limit": 50,
-  "has_more": true,
-  "license": "Apache 2.0",
-  "citation": "Fresco Benaim, J. (2026). BibCrit...",
-  "records": [{ "cache_key", "reference", "tool", "data", ... }]
-}
-```
-
 All data is released under **Apache 2.0**. If you use BibCrit analyses in research, please cite:
-> Fresco Benaim, J. (2026). *BibCrit: AI-assisted biblical textual criticism*. ORCID:[0009-0000-2026-0836](https://orcid.org/0009-0000-2026-0836)
-
-### Analysis API (SSE streaming)
-
-| Method | Route | Query params |
-|---|---|---|
-| GET | `/api/divergence/stream` | `ref` — e.g. `Isaiah 7:14` |
-| GET | `/api/backtranslation/stream` | `ref` |
-| GET | `/api/scribal/stream` | `book` — e.g. `Isaiah` |
-| GET | `/api/numerical/stream` | `ref` — e.g. `Genesis 5` |
-
-SSE events: `step` (progress message), `done` (final JSON payload), `error`.
+> Fresco Benaim, J. (2026). *BibCrit: AI-assisted biblical textual criticism*. ORCID: [0009-0000-2026-0836](https://orcid.org/0009-0000-2026-0836)
 
 ### Corpus Browser API
 
@@ -258,16 +306,11 @@ SSE events: `step` (progress message), `done` (final JSON payload), `error`.
 
 ### Discovery API
 
-| Method | Route | Query params |
+| Method | Route | Notes |
 |---|---|---|
 | GET | `/api/discovery/cards` | `offset`, `limit` (max 50) |
-| GET | `/api/budget` | — |
-
-### Admin API
-
-| Method | Route | Query params |
-|---|---|---|
-| POST | `/api/admin/discovery/flag` | `ref`, `ready=true\|false`, `key` |
+| GET | `/api/budget` | Current spend vs. cap |
+| POST | `/api/admin/discovery/flag` | `ref`, `ready=true\|false`, `key` (admin only) |
 
 ### Hypothesis Voting
 
@@ -280,25 +323,23 @@ SSE events: `step` (progress message), `done` (final JSON payload), `error`.
 
 ## Internationalization
 
-UI strings live in `data/i18n.json`. The `lang` query parameter (`?lang=en`) selects the active language. `state.TranslationProxy` (exposed as `_t()` in all templates) falls back to English if a key is missing in the requested language.
+UI strings live in `data/i18n.json`. The `lang` query parameter (`?lang=es`) selects the active language. `state.TranslationProxy` (exposed as `_t()` in templates) falls back to English if a key is missing.
 
-| Language | Code | Status |
-|---|---|---|
-| English | `en` | Available |
-| Spanish | `es` | Available |
-| Hebrew | `he` | Planned (RTL wiring already in `base.html`) |
-| Dutch | `nl` | Planned |
+| Language | Code | Analysis cache | Status |
+|---|---|---|---|
+| English | `en` | `analysis_cache` (Supabase) + disk | Available |
+| Spanish | `es` | `analysis_cache_es` (Supabase only) | Available |
+| Hebrew | `he` | — | Planned (RTL wiring in `base.html`) |
+| Dutch | `nl` | — | Planned |
 
-To add a language, add a new top-level key to `data/i18n.json` matching all existing `en` keys, then add a button to the language picker in `templates/base.html`.
+To add a language: add a top-level key to `data/i18n.json` matching all `en` keys, and add a button to the language picker in `templates/base.html`.
 
 ---
 
 ## Supabase Schema
 
-The pipeline expects three tables:
-
 ```sql
--- Analysis results cache
+-- English analysis results cache
 CREATE TABLE analysis_cache (
   cache_key       TEXT PRIMARY KEY,
   reference       TEXT,
@@ -308,6 +349,17 @@ CREATE TABLE analysis_cache (
   data            JSONB,
   cached_at       TIMESTAMPTZ,
   discovery_ready BOOLEAN DEFAULT FALSE
+);
+
+-- Spanish analysis results cache
+CREATE TABLE analysis_cache_es (
+  cache_key       TEXT PRIMARY KEY,
+  reference       TEXT,
+  tool            TEXT,
+  prompt_version  TEXT,
+  model_version   TEXT,
+  data            JSONB,
+  cached_at       TIMESTAMPTZ
 );
 
 -- Monthly API spend tracking
@@ -327,7 +379,7 @@ CREATE TABLE hypothesis_votes (
 );
 ```
 
-All three tables are optional — the app falls back to disk if Supabase is unavailable.
+All tables are optional — the app falls back to disk if Supabase is unavailable (EN only; ES requires Supabase).
 
 ---
 
@@ -340,19 +392,19 @@ A `render.yaml` is included. To deploy:
 3. Set `ANTHROPIC_API_KEY` (and optionally `SUPABASE_URL` / `SUPABASE_KEY` / `BIBCRIT_ADMIN_KEY`) as environment variables.
 4. Deploy.
 
-The default `BIBCRIT_API_CAP_USD` is `$10.00/month`. Raise it in the Render environment variables or ask users to donate via Ko-fi.
+The default spend cap is `$10.00/month`. Raise it via `BIBCRIT_API_CAP_USD` in the Render environment variables.
 
 ---
 
 ## Roadmap
 
-- [x] DSS Bridge Tool — Dead Sea Scrolls witness comparison
-- [x] Manuscript Genealogy — visual stemma builder
-- [x] Theological Revision Detector — corpus-wide pattern analysis
-- [x] Patristic Citation Tracker — church-father quotation cross-reference
+- [x] 8 analysis tools across textual, critical, and discovery categories
+- [x] Spanish translation layer (`analysis_cache_es`)
+- [x] 91 featured passages pre-cached across all tools
+- [x] Open Data API
 - [ ] Hebrew UI (`he`) with full RTL layout
 - [ ] Dutch UI (`nl`)
-- [x] Corpus expansion — featured passages across all 8 tools pre-loaded
+- [ ] Expanded DSS witness coverage beyond 1QIsaᵃ
 
 ---
 
@@ -360,8 +412,10 @@ The default `BIBCRIT_API_CAP_USD` is `$10.00/month`. Raise it in the Render envi
 
 Apache 2.0 — see [LICENSE](LICENSE).
 
+Corpus data retains its own licenses: ETCBC/BHSA and ETCBC/DSS are CC-BY-NC 4.0; SP (dt-ucph/sp) and SBLGNT have their own terms. See each upstream repository for details.
+
 ---
 
 ## Credits
 
-Built by [Jossi Fresco](https://jossifresco.com). Analysis powered by [Claude](https://anthropic.com) (Anthropic). Corpus data: ETCBC (MT) and STEP Bible (LXX).
+Built by [Jossi Fresco](https://jossifresco.com). Analysis powered by [Claude](https://anthropic.com) (Anthropic). Corpus data: ETCBC (MT, DSS), dt-ucph/sp (Samaritan Pentateuch), Rahlfs (LXX), SBLGNT (GNT).

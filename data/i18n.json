@@ -330,7 +330,23 @@
     "genealogy_ms_transmission": "Manuscript Transmission",
     "scribal_heading_comparison": "Scribal Tendency Comparison",
     "scribal_heading_profile": "Scribal Tendency Profile",
-    "analysis_by": "Analysis by"
+    "analysis_by": "Analysis by",
+    "patristic_tool_title": "Patristic Citation Tracker",
+    "patristic_tool_subtitle": "Trace how Church Fathers cited biblical passages through the 5th century and identify which text form they used.",
+    "dss_tool_title": "Ancient Witness Bridge",
+    "dss_tool_subtitle": "Compare ancient manuscript witnesses — Dead Sea Scrolls, Samaritan Pentateuch, MT, and LXX — for any biblical passage.",
+    "numerical_tool_title": "Numerical Discrepancy Modeler",
+    "numerical_tool_subtitle": "Analyze numerical variants across MT, LXX, and SP — patriarchal ages, census figures, temple dimensions — with competing scholarly theories.",
+    "backtrans_tool_title": "LXX Back-Translation Workbench",
+    "backtrans_tool_subtitle": "Reconstruct the probable Hebrew Vorlage behind the Septuagint, word by word, with per-word confidence scoring.",
+    "scribal_tool_title": "Scribal Tendency Profiler",
+    "scribal_tool_subtitle": "Profile the translation tendencies of LXX scribes book by book across five critical dimensions.",
+    "theological_tool_title": "Theological Revision Detector",
+    "theological_tool_subtitle": "Detect theologically motivated revisions in the Septuagint across six categories, passage by passage.",
+    "divergence_tool_title": "MT/LXX Divergence Analyzer",
+    "divergence_tool_subtitle": "Word-by-word comparison of the Hebrew Bible and Septuagint, with AI-generated scholarly hypotheses for each divergence.",
+    "genealogy_tool_title": "Manuscript Genealogy",
+    "genealogy_tool_subtitle": "Visualize the transmission history of any biblical book across MT, LXX, DSS, SP, Peshitta, Targum, and Vulgate as an interactive stemma."
   },
   "es": {
     "app_name": "BibCrit",
@@ -649,6 +665,22 @@
     "genealogy_ms_transmission": "Transmisión Manuscrita",
     "scribal_heading_comparison": "Comparación de Tendencias Escribales",
     "scribal_heading_profile": "Perfil de Tendencias Escribales",
-    "analysis_by": "Análisis por"
+    "analysis_by": "Análisis por",
+    "patristic_tool_title": "Rastreador de Citas Patrísticas",
+    "patristic_tool_subtitle": "Rastrea cómo los Padres de la Iglesia citaron pasajes bíblicos hasta el siglo V e identifica la forma textual que utilizaron.",
+    "dss_tool_title": "Puente de Testigos Antiguos",
+    "dss_tool_subtitle": "Compara testigos manuscritos antiguos — Rollos del Mar Muerto, Pentateuco Samaritano, TM y LXX — para cualquier pasaje bíblico.",
+    "numerical_tool_title": "Modelador de Discrepancias Numéricas",
+    "numerical_tool_subtitle": "Analiza variantes numéricas entre TM, LXX y SP — edades patriarcales, cifras censales, dimensiones del templo — con teorías académicas contrastadas.",
+    "backtrans_tool_title": "Banco de Retrotraducción LXX",
+    "backtrans_tool_subtitle": "Reconstruye el probable Vorlage hebreo de la Septuaginta, palabra por palabra, con puntuación de confianza por término.",
+    "scribal_tool_title": "Analizador de Tendencias Escribales",
+    "scribal_tool_subtitle": "Perfila las tendencias de traducción de los escribas de la LXX libro por libro en cinco dimensiones críticas.",
+    "theological_tool_title": "Detector de Revisiones Teológicas",
+    "theological_tool_subtitle": "Detecta revisiones con motivación teológica en la Septuaginta en seis categorías, pasaje por pasaje.",
+    "divergence_tool_title": "Analizador de Divergencias TM/LXX",
+    "divergence_tool_subtitle": "Comparación palabra por palabra de la Biblia hebrea y la Septuaginta, con hipótesis académicas generadas por IA para cada divergencia.",
+    "genealogy_tool_title": "Genealogía de Manuscritos",
+    "genealogy_tool_subtitle": "Visualiza la historia de transmisión de cualquier libro bíblico a través de TM, LXX, Rollos del Mar Muerto, SP, Peshitta, Tárgum y Vulgata como stemma interactivo."
   }
 }

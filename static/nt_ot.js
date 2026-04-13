@@ -219,12 +219,19 @@
     // Clear previous results
     resultsArea.innerHTML = '';
 
-    // Passage heading
+    // Passage heading + GNT verse text
     if (passageHeading) {
       passageHeading.innerHTML =
         '<span class="ph-ref">'  + _esc(data.reference || currentRef) + '</span>' +
         '<span class="ph-tool">NT Use of OT</span>';
       passageHeading.style.display = 'flex';
+    }
+
+    if (data.nt_text) {
+      var verseEl = document.createElement('div');
+      verseEl.className = 'nt-ot-verse-text greek-text';
+      verseEl.textContent = data.nt_text;
+      resultsArea.appendChild(verseEl);
     }
 
     // Summary card

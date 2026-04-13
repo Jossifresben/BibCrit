@@ -3408,6 +3408,21 @@ body.mode-student .plain-highlight {
     margin: 0.5rem 0 0;
 }
 
+/* NT verse text display (GNT corpus, shown below passage heading) */
+.nt-ot-verse-text {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--text-secondary, #555);
+    background: var(--surface-alt, #f7f6f3);
+    border-left: 3px solid var(--lxx-color, #3a6bc4);
+    padding: 0.6rem 1rem;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 1.25rem;
+}
+[data-theme="dark"] .nt-ot-verse-text {
+    background: rgba(255,255,255,0.05);
+}
+
 /* Results area wrapper */
 #results-area {
     max-width: 900px;

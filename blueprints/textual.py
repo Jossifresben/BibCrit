@@ -748,6 +748,7 @@ def api_nt_ot_stream():
             return
 
         result['reference'] = reference
+        result['nt_text']   = nt_text   # GNT verse text for display
 
         if lang == 'es':
             yield event('step', msg=_step(lang, 'translating'))

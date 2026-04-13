@@ -126,9 +126,34 @@
     analyze(ref);
   });
 
+  // ── OT book guard ─────────────────────────────────────────────────────────
+  var OT_BOOKS = [
+    'genesis','exodus','leviticus','numbers','deuteronomy','joshua','judges','ruth',
+    '1 samuel','2 samuel','1 kings','2 kings','1 chronicles','2 chronicles',
+    'ezra','nehemiah','esther','job','psalm','psalms','proverbs','ecclesiastes',
+    'song of solomon','song of songs','isaiah','jeremiah','lamentations','ezekiel',
+    'daniel','hosea','joel','amos','obadiah','jonah','micah','nahum','habakkuk',
+    'zephaniah','haggai','zechariah','malachi',
+    'gen','exo','exod','lev','num','deut','josh','judg','isa','jer','ezek','dan',
+    'hos','amos','mic','zech','mal','psa','prov','ecc','neh','est',
+  ];
+
+  function _isOtRef(ref) {
+    var first = ref.trim().toLowerCase().replace(/\s+\d.*$/, '').trim();
+    return OT_BOOKS.indexOf(first) !== -1;
+  }
+
   // ── Analysis (SSE) ────────────────────────────────────────────────────────
   function analyze(ref) {
     if (!ref) return;
+
+    if (_isOtRef(ref)) {
+      emptyState.style.display = 'block';
+      var p = emptyState.querySelector('p');
+      if (p) p.textContent = '\u26a0 "' + ref + '" is an Old Testament reference. This tool analyzes NT passages — try Matthew 1:23, Hebrews 1:6, or Romans 15:12.';
+      return;
+    }
+
     currentRef = ref;
 
     // Show loading, hide others

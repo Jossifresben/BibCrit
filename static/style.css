@@ -3144,12 +3144,12 @@ body.mode-student .plain-highlight {
     border-left-color: var(--accent, #93aaff);
 }
 
-/* Mode toggle button active state */
+/* Hide student icon by default; JS switches between them */
+.mode-icon-student { display: none; }
+
+/* Mode toggle: highlight button border when in student mode */
 #mode-toggle.mode-active {
-    color: var(--accent, #2563eb);
-}
-[data-theme="dark"] #mode-toggle.mode-active {
-    color: var(--accent, #93aaff);
+    box-shadow: inset 0 0 0 2px rgba(255,255,255,0.5);
 }
 
 /* BiblIndex external link */

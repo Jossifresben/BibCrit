@@ -37,8 +37,8 @@
             var isStudent = mode === 'student';
             document.body.classList.toggle('mode-student', isStudent);
             modeBtn.classList.toggle('mode-active', isStudent);
-            if (modeIconScholar) modeIconScholar.style.display = isStudent ? 'none' : '';
-            if (modeIconStudent) modeIconStudent.style.display = isStudent ? '' : 'none';
+            if (modeIconScholar) modeIconScholar.style.display = isStudent ? 'none' : 'block';
+            if (modeIconStudent) modeIconStudent.style.display = isStudent ? 'block' : 'none';
         }
 
         var savedMode = localStorage.getItem('bibcrit-mode') || 'scholar';

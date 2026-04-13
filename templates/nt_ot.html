@@ -15,11 +15,21 @@
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    if (window.BibCritPersona) BibCritPersona.setToolSubtitle('nt_ot', {
-      scholar: 'Identify OT allusions in NT passages and determine MT vs. LXX citation form, applying the methodology of Beale \u0026 Carson, Stanley, and Hays.',
-      phd:     'Determine text-form alignment for every OT allusion in your NT passage. Results cite Beale \u0026 Carson, Stanley, and Hays.',
-      student: 'When New Testament authors quoted the Old Testament, they were sometimes using a Hebrew Bible and sometimes a Greek translation. This tool shows you which version each NT author used and why it matters.'
-    });
+    if (window.BibCritPersona) {
+      var _lang = '{{ lang }}';
+      var _es = _lang === 'es';
+      BibCritPersona.setToolSubtitle('nt_ot', {
+        scholar: _es
+          ? 'Identifica alusiones al AT en pasajes del NT y determina la forma textual citada (TM o LXX), aplicando la metodolog\u00eda de Beale &amp; Carson, Stanley y Hays.'
+          : 'Identify OT allusions in NT passages and determine MT vs. LXX citation form, applying the methodology of Beale \u0026 Carson, Stanley, and Hays.',
+        phd: _es
+          ? 'Determina la alineaci\u00f3n de forma textual para cada alusi\u00f3n al AT en tu pasaje del NT. Los resultados citan a Beale &amp; Carson, Stanley y Hays.'
+          : 'Determine text-form alignment for every OT allusion in your NT passage. Results cite Beale \u0026 Carson, Stanley, and Hays.',
+        student: _es
+          ? 'Cuando los autores del Nuevo Testamento citaban el Antiguo Testamento, a veces usaban la Biblia hebrea y otras la traducci\u00f3n griega. Esta herramienta te muestra cu\u00e1l version us\u00f3 cada autor y por qu\u00e9 importa.'
+          : 'When New Testament authors quoted the Old Testament, they were sometimes using a Hebrew Bible and sometimes a Greek translation. This tool shows you which version each NT author used and why it matters.'
+      });
+    }
   });
 </script>
 

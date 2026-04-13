@@ -47,7 +47,7 @@
            aria-label="Type a reference">
 
     <div class="passage-bar-actions">
-      <button id="btn-analyze" class="btn-primary">{{ _t('nt_ot_analyze_btn') }} ▶</button>
+      <button id="btn-analyze" class="btn-primary">{{ _t('analyze_btn') }} ▶</button>
     </div>
   </div>
 </div>
@@ -55,7 +55,6 @@
 <!-- Empty / Welcome State -->
 <div id="empty-state" class="empty-state">
   <div class="empty-inner">
-    <h2>{{ _t('nt_ot_empty_title') }}</h2>
     <p>{{ _t('nt_ot_empty_body') }}</p>
     <p class="featured-label">{{ _t('featured_label') }}</p>
     <div class="featured-passages">
@@ -83,49 +82,6 @@
 <!-- Toast notification -->
 <div id="toast" class="toast" style="display:none;" role="status"></div>
 
-<!-- Info box -->
-<details class="nt-ot-info-box" id="info-box">
-  <summary class="nt-ot-info-summary">{{ _t('nt_ot_what_title') }}</summary>
-  <div class="nt-ot-info-body">{{ _t('nt_ot_info_body') | safe }}</div>
-</details>
-
-<style>
-.nt-ot-info-box {
-  margin: 2rem auto;
-  max-width: 760px;
-  border: 1px solid var(--border-color, #e0e0e0);
-  border-radius: 8px;
-  background: var(--surface-color, #fafafa);
-  padding: 0;
-  font-size: 0.92rem;
-  color: var(--text-secondary, #555);
-}
-.nt-ot-info-summary {
-  cursor: pointer;
-  padding: 0.75rem 1rem;
-  font-weight: 600;
-  color: var(--text-primary, #222);
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  user-select: none;
-}
-.nt-ot-info-summary::-webkit-details-marker { display: none; }
-.nt-ot-info-summary::before {
-  content: '▶';
-  font-size: 0.7rem;
-  transition: transform 0.18s;
-  color: var(--text-secondary, #888);
-}
-details[open] .nt-ot-info-summary::before {
-  transform: rotate(90deg);
-}
-.nt-ot-info-body {
-  padding: 0 1rem 0.85rem;
-  line-height: 1.65;
-}
-</style>
 
 {% endblock %}
 

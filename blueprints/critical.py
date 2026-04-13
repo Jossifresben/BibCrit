@@ -136,14 +136,17 @@ def api_scribal_stream():
             yield event('step', msg=_step(lang, 'scribal_generating'))
             _result_box = [None]
             def _run_scribal():
-                _result_box[0] = pipeline.analyze_scribal(book, sample_passages)
+                try:
+                    _result_box[0] = pipeline.analyze_scribal(book, sample_passages)
+                except Exception as exc:
+                    _result_box[0] = {'error': str(exc)}
             _t = threading.Thread(target=_run_scribal, daemon=True)
             _t.start()
             while _t.is_alive():
                 _t.join(timeout=8)
                 if _t.is_alive():
                     yield ': keepalive\n\n'
-            result = _result_box[0]
+            result = _result_box[0] or {'error': 'Analysis returned no result'}
 
         if result.get('error'):
             yield event('error', msg=result['error'])
@@ -235,14 +238,17 @@ def api_numerical_stream():
             yield event('step', msg=_step(lang, 'num_generating'))
             _result_box = [None]
             def _run_numerical():
-                _result_box[0] = pipeline.analyze_numerical(reference, sp_text=sp_text)
+                try:
+                    _result_box[0] = pipeline.analyze_numerical(reference, sp_text=sp_text)
+                except Exception as exc:
+                    _result_box[0] = {'error': str(exc)}
             _t = threading.Thread(target=_run_numerical, daemon=True)
             _t.start()
             while _t.is_alive():
                 _t.join(timeout=8)
                 if _t.is_alive():
                     yield ': keepalive\n\n'
-            result = _result_box[0]
+            result = _result_box[0] or {'error': 'Analysis returned no result'}
 
         if result.get('error'):
             yield event('error', msg=result['error'])
@@ -317,14 +323,17 @@ def api_theological_stream():
             yield event('step', msg=_step(lang, 'theo_generating'))
             _result_box = [None]
             def _run_theological():
-                _result_box[0] = pipeline.analyze_theological(reference)
+                try:
+                    _result_box[0] = pipeline.analyze_theological(reference)
+                except Exception as exc:
+                    _result_box[0] = {'error': str(exc)}
             _t = threading.Thread(target=_run_theological, daemon=True)
             _t.start()
             while _t.is_alive():
                 _t.join(timeout=8)
                 if _t.is_alive():
                     yield ': keepalive\n\n'
-            result = _result_box[0]
+            result = _result_box[0] or {'error': 'Analysis returned no result'}
 
         if result.get('error'):
             yield event('error', msg=result['error'])
@@ -408,14 +417,17 @@ def api_patristic_stream():
             yield event('step', msg=_step(lang, 'pat_generating'))
             _result_box = [None]
             def _run_patristic():
-                _result_box[0] = pipeline.analyze_patristic(reference, gnt_text=gnt_text)
+                try:
+                    _result_box[0] = pipeline.analyze_patristic(reference, gnt_text=gnt_text)
+                except Exception as exc:
+                    _result_box[0] = {'error': str(exc)}
             _t = threading.Thread(target=_run_patristic, daemon=True)
             _t.start()
             while _t.is_alive():
                 _t.join(timeout=8)
                 if _t.is_alive():
                     yield ': keepalive\n\n'
-            result = _result_box[0]
+            result = _result_box[0] or {'error': 'Analysis returned no result'}
 
         if result.get('error'):
             yield event('error', msg=result['error'])

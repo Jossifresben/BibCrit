@@ -197,14 +197,17 @@ def api_divergence_stream():
             yield event('step', msg=_step(lang, 'div_generating'))
             _result_box = [None]
             def _run():
-                _result_box[0] = pipeline.analyze_divergence(reference, mt_text, lxx_text)
+                try:
+                    _result_box[0] = pipeline.analyze_divergence(reference, mt_text, lxx_text)
+                except Exception as exc:
+                    _result_box[0] = {'error': str(exc)}
             _t = threading.Thread(target=_run, daemon=True)
             _t.start()
             while _t.is_alive():
                 _t.join(timeout=8)
                 if _t.is_alive():
                     yield ': keepalive\n\n'
-            result = _result_box[0]
+            result = _result_box[0] or {'error': 'Analysis returned no result'}
 
         if result.get('error'):
             yield event('error', msg=result['error'])
@@ -302,14 +305,17 @@ def api_backtranslation_stream():
             yield event('step', msg=_step(lang, 'bt_generating'))
             _result_box = [None]
             def _run_bt():
-                _result_box[0] = pipeline.analyze_backtranslation(reference, lxx_text, mt_text)
+                try:
+                    _result_box[0] = pipeline.analyze_backtranslation(reference, lxx_text, mt_text)
+                except Exception as exc:
+                    _result_box[0] = {'error': str(exc)}
             _t = threading.Thread(target=_run_bt, daemon=True)
             _t.start()
             while _t.is_alive():
                 _t.join(timeout=8)
                 if _t.is_alive():
                     yield ': keepalive\n\n'
-            result = _result_box[0]
+            result = _result_box[0] or {'error': 'Analysis returned no result'}
 
         if result.get('error'):
             yield event('error', msg=result['error'])
@@ -406,14 +412,17 @@ def api_dss_stream():
             yield event('step', msg=_step(lang, 'dss_generating'))
             _result_box = [None]
             def _run_dss():
-                _result_box[0] = pipeline.analyze_dss(reference, mt_text, lxx_text, dss_text, sp_text)
+                try:
+                    _result_box[0] = pipeline.analyze_dss(reference, mt_text, lxx_text, dss_text, sp_text)
+                except Exception as exc:
+                    _result_box[0] = {'error': str(exc)}
             _t = threading.Thread(target=_run_dss, daemon=True)
             _t.start()
             while _t.is_alive():
                 _t.join(timeout=8)
                 if _t.is_alive():
                     yield ': keepalive\n\n'
-            result = _result_box[0]
+            result = _result_box[0] or {'error': 'Analysis returned no result'}
 
         if result.get('error'):
             yield event('error', msg=result['error'])
@@ -498,14 +507,17 @@ def api_genealogy_stream():
             yield event('step', msg=_step(lang, 'gen_generating'))
             _result_box = [None]
             def _run_genealogy():
-                _result_box[0] = pipeline.analyze_genealogy(book)
+                try:
+                    _result_box[0] = pipeline.analyze_genealogy(book)
+                except Exception as exc:
+                    _result_box[0] = {'error': str(exc)}
             _t = threading.Thread(target=_run_genealogy, daemon=True)
             _t.start()
             while _t.is_alive():
                 _t.join(timeout=8)
                 if _t.is_alive():
                     yield ': keepalive\n\n'
-            result = _result_box[0]
+            result = _result_box[0] or {'error': 'Analysis returned no result'}
 
         if result.get('error'):
             yield event('error', msg=result['error'])
@@ -719,14 +731,17 @@ def api_nt_ot_stream():
             yield event('step', msg=_step(lang, 'nt_ot_generating'))
             _result_box = [None]
             def _run():
-                _result_box[0] = pipeline.analyze_nt_ot(reference, nt_text, '')
+                try:
+                    _result_box[0] = pipeline.analyze_nt_ot(reference, nt_text, '')
+                except Exception as exc:
+                    _result_box[0] = {'error': str(exc), 'allusions': []}
             _t = threading.Thread(target=_run, daemon=True)
             _t.start()
             while _t.is_alive():
                 _t.join(timeout=8)
                 if _t.is_alive():
                     yield ': keepalive\n\n'
-            result = _result_box[0]
+            result = _result_box[0] or {'error': 'Analysis returned no result', 'allusions': []}
 
         if result.get('error'):
             yield event('error', msg=result['error'])

@@ -4,7 +4,7 @@ import json
 import os
 import threading
 from flask import Blueprint, render_template, request, jsonify, Response, stream_with_context
-from biblical_core.claude_pipeline import DIVERGENCE_MODEL, DSS_MODEL, GENEALOGY_MODEL
+from biblical_core.claude_pipeline import DIVERGENCE_MODEL, DSS_MODEL, GENEALOGY_MODEL, NT_OT_MODEL
 import state
 
 _votes_lock = threading.Lock()
@@ -18,6 +18,7 @@ _DIVERGENCE_PROMPT     = 'v2'
 _BACKTRANSLATION_PROMPT = 'v1'
 _DSS_PROMPT            = 'v5'
 _GENEALOGY_PROMPT      = 'v1'
+_NT_OT_PROMPT          = 'v1'
 
 _STEPS = {
     'en': {
@@ -31,6 +32,7 @@ _STEPS = {
         'bt_generating':  'Reconstructing Vorlage — new passages typically take 60–90s…',
         'dss_generating': 'Comparing DSS witnesses — this typically takes 60–90 seconds…',
         'gen_generating': 'Tracing transmission history — this typically takes 60–90 seconds…',
+        'nt_ot_generating': 'Analyzing NT use of OT — this typically takes 60–90 seconds…',
     },
     'es': {
         'load_verse':     '📖 Cargando texto del versículo…',
@@ -43,6 +45,7 @@ _STEPS = {
         'bt_generating':  'Reconstruyendo el Vorlage — los pasajes nuevos tardan 60–90 s…',
         'dss_generating': 'Comparando testigos DSS — esto tarda 60–90 segundos…',
         'gen_generating': 'Rastreando la historia de transmisión — esto tarda 60–90 segundos…',
+        'nt_ot_generating': 'Analizando el uso del AT en el NT — esto tarda 60–90 segundos…',
     },
 }
 
@@ -93,6 +96,13 @@ def genealogy():
     book = request.args.get('book', '').strip()
     lang = request.args.get('lang', 'en')
     return render_template('genealogy.html', book=book, lang=lang, t=state.t)
+
+
+@textual_bp.route('/nt-ot')
+def nt_ot():
+    lang      = request.args.get('lang', 'en')
+    reference = request.args.get('ref', '')
+    return render_template('nt_ot.html', lang=lang, reference=reference, t=state.t)
 
 
 # ── Analysis API ───────────────────────────────────────────────────────────
@@ -658,6 +668,96 @@ def export_tei():
     records = parse_claude_response(data, reference)
     tei = format_tei(records, reference, model_version, data.get('cached_at', ''))
     return jsonify({'reference': reference, 'tei': tei})
+
+
+# ── NT Use of OT SSE stream ───────────────────────────────────────────────
+
+@textual_bp.route('/api/nt-ot/stream')
+def api_nt_ot_stream():
+    """SSE endpoint: streams NT use of OT analysis progress then final result."""
+    reference = request.args.get('ref', '').strip()
+    lang      = request.args.get('lang', 'en')
+
+    def generate():
+        def event(type_, **kwargs):
+            payload = json.dumps({'type': type_, **kwargs})
+            return f'data: {payload}\n\n'
+
+        if not reference:
+            yield event('error', msg='ref parameter required')
+            return
+
+        corpus   = state.corpus
+        pipeline = state.pipeline
+
+        if corpus is None or pipeline is None:
+            yield event('error', msg='Server not ready — corpus or pipeline not initialized')
+            return
+
+        # Step 1: optionally load GNT text for the NT reference
+        yield event('step', msg=_step(lang, 'load_verse'))
+        gnt_words = corpus.get_verse_words(reference, 'GNT')
+        nt_text   = ' '.join(w.word_text for w in gnt_words) if gnt_words else ''
+
+        if lang == 'es':
+            cached_es = pipeline.get_cached_es(reference, 'nt_ot', _NT_OT_PROMPT, NT_OT_MODEL)
+            if cached_es:
+                yield event('step', msg=_step(lang, 'found_es'))
+                cached_es['reference'] = reference
+                yield event('done', data=cached_es)
+                return
+
+        # Step 2: check cache
+        yield event('step', msg=_step(lang, 'checking_cache'))
+        cached = pipeline.get_cached(reference, 'nt_ot', _NT_OT_PROMPT, NT_OT_MODEL)
+
+        if cached:
+            yield event('step', msg=_step(lang, 'found_cache'))
+            result = cached
+        else:
+            # Step 3: call Claude
+            yield event('step', msg=_step(lang, 'nt_ot_generating'))
+            _result_box = [None]
+            def _run():
+                _result_box[0] = pipeline.analyze_nt_ot(reference, nt_text, '')
+            _t = threading.Thread(target=_run, daemon=True)
+            _t.start()
+            while _t.is_alive():
+                _t.join(timeout=8)
+                if _t.is_alive():
+                    yield ': keepalive\n\n'
+            result = _result_box[0]
+
+        if result.get('error'):
+            yield event('error', msg=result['error'])
+            return
+
+        result['reference'] = reference
+
+        if lang == 'es':
+            yield event('step', msg=_step(lang, 'translating'))
+            _tr_box = [result]
+            def _run_tr():
+                _tr_box[0] = _translate_step(pipeline, lang, result, reference,
+                                             'nt_ot', _NT_OT_PROMPT, NT_OT_MODEL)
+            _tt = threading.Thread(target=_run_tr, daemon=True)
+            _tt.start()
+            while _tt.is_alive():
+                _tt.join(timeout=8)
+                if _tt.is_alive():
+                    yield ': keepalive\n\n'
+            result = _tr_box[0]
+
+        yield event('done', data=result)
+
+    return Response(
+        stream_with_context(generate()),
+        mimetype='text/event-stream',
+        headers={
+            'Cache-Control':    'no-cache',
+            'X-Accel-Buffering': 'no',
+        },
+    )
 
 
 # ── Result quality vote API ────────────────────────────────────────────────

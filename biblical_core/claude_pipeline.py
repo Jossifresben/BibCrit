@@ -19,6 +19,7 @@ DSS_MODEL         = 'claude-sonnet-4-5-20250929'
 THEOLOGICAL_MODEL = 'claude-sonnet-4-5-20250929'
 PATRISTIC_MODEL   = 'claude-sonnet-4-5-20250929'
 GENEALOGY_MODEL   = 'claude-sonnet-4-5-20250929'
+NT_OT_MODEL       = 'claude-sonnet-4-5-20250929'
 
 _SONNET_COST_IN  = 3.0  / 1_000_000   # $3 per MTok input (claude-sonnet-4-5)
 _SONNET_COST_OUT = 15.0 / 1_000_000   # $15 per MTok output (claude-sonnet-4-5)
@@ -115,6 +116,15 @@ _GENEALOGY_SYSTEM = (
     "Septuagint and its recensions, the Dead Sea Scrolls, and the ancient versions "
     "(Peshitta, Targum, Vulgate). You apply the methodology of Tov, Barthélemy, "
     "Cross, and the editors of BHQ and the Göttingen Septuagint. "
+    "CRITICAL: Return ONLY raw JSON. No markdown, no code fences, no backticks, "
+    "no prose before or after. The response must start with { and end with }."
+)
+
+_NT_OT_SYSTEM = (
+    "You are a specialist in the New Testament's use of the Old Testament, with deep expertise in "
+    "citation technique, text form identification (MT vs. LXX vs. recensions), and the methodology "
+    "of Beale & Carson, Christopher Stanley, and Richard Hays. You determine whether NT authors "
+    "cited MT or LXX forms with philological precision. "
     "CRITICAL: Return ONLY raw JSON. No markdown, no code fences, no backticks, "
     "no prose before or after. The response must start with { and end with }."
 )
@@ -1116,6 +1126,70 @@ class ClaudePipeline:
         raw = '{' + response.content[0].text  # prepend the pre-filled opening brace
         data = _parse_json_response(raw)
         self.save_cache(reference, 'divergence', prompt_version, model, data)
+        return data
+
+
+    def analyze_nt_ot(self, reference: str, nt_text: str = '',
+                      ot_context: str = '') -> dict:
+        """Return NT use of OT analysis for a NT passage.
+
+        Returns dict with 'allusions', 'summary_technical', 'summary_plain', 'bibcrit_hypothesis'.
+        On error: returns {'error': ..., 'allusions': []}.
+        """
+        model          = NT_OT_MODEL
+        prompt_version = 'v1'
+        tool           = 'nt_ot'
+
+        cached = self.get_cached(reference, tool, prompt_version, model)
+        if cached:
+            return cached
+
+        if not self._client:
+            return {
+                'error': 'No API key configured. Set ANTHROPIC_API_KEY environment variable.',
+                'allusions': [], 'summary_technical': '', 'summary_plain': '',
+                'bibcrit_hypothesis': {'title': '', 'reasoning': '', 'plain': '', 'confidence': 0.0},
+            }
+
+        budget = self.get_budget()
+        if budget['spend_usd'] >= self._cap_usd:
+            return {
+                'error': (
+                    f"Monthly analysis budget of ${self._cap_usd:.2f} reached. "
+                    "Please try again next month or donate to increase the cap."
+                ),
+                'allusions': [], 'summary_technical': '', 'summary_plain': '',
+                'bibcrit_hypothesis': {'title': '', 'reasoning': '', 'plain': '', 'confidence': 0.0},
+            }
+
+        template = self.load_prompt('nt_ot', prompt_version)
+        user_content = (
+            template
+            .replace('{{NT_REFERENCE}}', reference)
+            .replace('{{NT_TEXT}}', nt_text or '')
+            .replace('{{OT_REFS}}', ot_context or '')
+        ) if template else (
+            f'NT Reference: {reference}\nNT Text: {nt_text}\n'
+            'Identify OT allusions. Return JSON with allusions array.'
+        )
+
+        response = self._client.messages.create(
+            model=model,
+            max_tokens=8192,
+            system=_NT_OT_SYSTEM,
+            messages=[
+                {'role': 'user',      'content': user_content},
+                {'role': 'assistant', 'content': '{'},
+            ],
+        )
+
+        cost = (response.usage.input_tokens  * _SONNET_COST_IN +
+                response.usage.output_tokens * _SONNET_COST_OUT)
+        self.record_spend(cost)
+
+        raw  = '{' + response.content[0].text
+        data = _parse_json_response(raw)
+        self.save_cache(reference, tool, prompt_version, model, data)
         return data
 
 

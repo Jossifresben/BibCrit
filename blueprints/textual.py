@@ -622,6 +622,44 @@ def export_bibtex():
     return jsonify({'reference': reference, 'bibtex': bibtex})
 
 
+@textual_bp.route('/api/divergence/export/ris')
+def export_ris():
+    reference = request.args.get('ref', '').strip()
+    if not reference:
+        return jsonify({'error': 'ref parameter required'}), 400
+    if state.pipeline is None:
+        return jsonify({'error': 'Pipeline not initialized'}), 503
+    data = state.pipeline.get_cached(
+        reference, 'divergence', _DIVERGENCE_PROMPT, DIVERGENCE_MODEL
+    )
+    if not data:
+        return jsonify({'error': f'No cached analysis for "{reference}". Run the Divergence Analyzer first.'}), 404
+    from biblical_core.divergence import parse_claude_response, format_ris
+    model_version = data.get('model_version', 'Claude')
+    records = parse_claude_response(data, reference)
+    ris = '\r\n\r\n'.join(format_ris(r, model_version) for r in records)
+    return jsonify({'reference': reference, 'ris': ris})
+
+
+@textual_bp.route('/api/divergence/export/tei')
+def export_tei():
+    reference = request.args.get('ref', '').strip()
+    if not reference:
+        return jsonify({'error': 'ref parameter required'}), 400
+    if state.pipeline is None:
+        return jsonify({'error': 'Pipeline not initialized'}), 503
+    data = state.pipeline.get_cached(
+        reference, 'divergence', _DIVERGENCE_PROMPT, DIVERGENCE_MODEL
+    )
+    if not data:
+        return jsonify({'error': f'No cached analysis for "{reference}". Run the Divergence Analyzer first.'}), 404
+    from biblical_core.divergence import parse_claude_response, format_tei
+    model_version = data.get('model_version', 'Claude')
+    records = parse_claude_response(data, reference)
+    tei = format_tei(records, reference, model_version, data.get('cached_at', ''))
+    return jsonify({'reference': reference, 'tei': tei})
+
+
 # ── Result quality vote API ────────────────────────────────────────────────
 
 @textual_bp.route('/api/vote', methods=['POST'])

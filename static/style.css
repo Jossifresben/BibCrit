@@ -3126,3 +3126,45 @@ body {
         opacity: 1;
     }
 }
+
+/* ── Student / Scholar mode ─────────────────────────────────────────────── */
+
+/* In student mode: hide technical analysis, highlight plain */
+body.mode-student .technical-only {
+    display: none !important;
+}
+body.mode-student .plain-highlight {
+    background: var(--surface-alt, #f4f2ee);
+    border-left: 3px solid var(--accent, #2563eb);
+    padding: 0.5rem 0.75rem;
+    border-radius: 0 4px 4px 0;
+}
+[data-theme="dark"] body.mode-student .plain-highlight {
+    background: rgba(255,255,255,0.06);
+    border-left-color: var(--accent, #93aaff);
+}
+
+/* Mode toggle button active state */
+#mode-toggle.mode-active {
+    color: var(--accent, #2563eb);
+}
+[data-theme="dark"] #mode-toggle.mode-active {
+    color: var(--accent, #93aaff);
+}
+
+/* BiblIndex external link */
+.biblindex-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.78rem;
+    color: var(--muted, #6b6560);
+    text-decoration: none;
+    margin-top: 6px;
+    opacity: 0.8;
+    transition: opacity 0.15s;
+}
+.biblindex-link:hover {
+    opacity: 1;
+    color: var(--accent, #2563eb);
+}

@@ -380,7 +380,15 @@
     "ph_student_badge_disc": "Discovery Feed",
     "ph_student_badge_free": "Free · No signup",
     "ph_student_tools_label": "Start here",
-    "ph_chip_featured": "Featured"
+    "ph_chip_featured": "Featured",
+    "export_ris_label": "Cite (RIS / Zotero)",
+    "export_tei_label": "Cite (TEI XML)",
+    "toast_ris_copied": "RIS citation copied to clipboard",
+    "toast_tei_copied": "TEI XML copied to clipboard",
+    "mode_scholar": "Scholar mode",
+    "mode_student": "Student mode",
+    "mode_toggle_label": "Toggle Scholar / Student mode",
+    "biblindex_link_label": "Search BiblIndex →"
   },
   "es": {
     "app_name": "BibCrit",
@@ -749,6 +757,14 @@
     "ph_student_badge_disc": "Feed de Descubrimientos",
     "ph_student_badge_free": "Gratis · Sin registro",
     "ph_student_tools_label": "Empieza aquí",
-    "ph_chip_featured": "Destacado"
+    "ph_chip_featured": "Destacado",
+    "export_ris_label": "Citar (RIS / Zotero)",
+    "export_tei_label": "Citar (TEI XML)",
+    "toast_ris_copied": "Cita RIS copiada al portapapeles",
+    "toast_tei_copied": "TEI XML copiado al portapapeles",
+    "mode_scholar": "Modo académico",
+    "mode_student": "Modo estudiante",
+    "mode_toggle_label": "Cambiar entre modo académico y estudiante",
+    "biblindex_link_label": "Buscar en BiblIndex →"
   }
 }

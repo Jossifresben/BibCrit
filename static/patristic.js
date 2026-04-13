@@ -359,6 +359,18 @@
           : '') +
       '</div>';
 
+    // BiblIndex deep-link (verse-level references only)
+    var biblUrl = _buildBiblIndexUrl(_currentRef);
+    if (biblUrl) {
+      var link = document.createElement('a');
+      link.href = biblUrl;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.className = 'biblindex-link';
+      link.textContent = window.t('biblindex_link_label', 'Search BiblIndex \u2192');
+      card.appendChild(link);
+    }
+
     return card;
   }
 
@@ -453,6 +465,18 @@
     };
     if (map[slug]) return window.t(map[slug], fallbacks[slug]);
     return (slug || '').replace(/_/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+  }
+
+  // Build a BiblIndex search URL for a verse-level reference (e.g. "Isaiah 7:14").
+  // Returns null for book-level or chapter-only references.
+  function _buildBiblIndexUrl(ref) {
+    if (!ref) return null;
+    var m = ref.match(/^(.+?)\s+(\d+):(\d+)$/);
+    if (!m) return null;
+    var book = m[1].toLowerCase().replace(/\s+/g, '-');
+    var ch   = m[2];
+    var vs   = m[3];
+    return 'https://www.biblindex.org/en/biblical-text/' + encodeURIComponent(book) + '/' + ch + '/' + vs;
   }
 
   function setLoadingStep(msg) { if (loadStep) loadStep.textContent = msg; }

@@ -36,12 +36,12 @@ Free, open-access web tool for biblical textual criticism at [bibcrit.com](https
 
 | # | Tool | Route | Description |
 |---|---|---|---|
-| 1 | **MT/LXX Divergence Analyzer** | `/divergence` | Word-level Hebrew/Greek comparison with alignment scoring. Claude classifies each divergence (`different_vorlage`, `theological_tendency`, `scribal_error`, etc.), assigns confidence, and generates competing scholarly hypotheses. Exports SBL footnotes and BibTeX. Prompt: `divergence_v2`. |
+| 1 | **MT/LXX Divergence Analyzer** | `/divergence` | Word-level Hebrew/Greek comparison with alignment scoring. Claude classifies each divergence (`different_vorlage`, `theological_tendency`, `scribal_error`, etc.), assigns confidence, and generates competing scholarly hypotheses. Exports SBL footnotes, BibTeX, RIS (Zotero), and TEI XML. Prompt: `divergence_v2`. |
 | 2 | **Scribal Tendencies Profiler** | `/scribal` | Statistical fingerprint of an LXX book's translator across five dimensions: literalness, anthropomorphism reduction, messianic heightening, harmonization, and paraphrase rate. Rendered as a D3.js radar chart with per-dimension evidence. Supports two-book comparison. Prompt: `scribal_v1`. |
 | 3 | **Numerical Discrepancies** | `/numerical` | Surfaces numerical divergences (patriarchal ages, census figures, temple dimensions, etc.) across MT, LXX, and Samaritan Pentateuch, ranking competing theories by confidence. Prompt: `numerical_v3`. |
 | 4 | **Ancient Witness Bridge (DSS)** | `/dss` | Compare a passage across Dead Sea Scrolls manuscripts (1QIsaᵃ and others), MT, and LXX. Shows which scrolls attest the passage, MT/LXX alignment, and specific divergences. Prompt: `dss_v5`. |
 | 5 | **Theological Revisions** | `/theological` | Identifies theologically motivated textual changes — anthropomorphism avoidance, messianic heightening, polemical alterations, harmonization. Prompt: `theological_v1`. |
-| 6 | **Patristic Citation Tracker** | `/patristic` | Traces Church Father citations (1st–5th century), identifies the text form used, and visualizes text-form distribution as a bar chart. Prompt: `patristic_v3`. |
+| 6 | **Patristic Citation Tracker** | `/patristic` | Traces Church Father citations (1st–5th century), identifies the text form used, and visualizes text-form distribution as a bar chart. Each citation links to [BiblIndex](https://www.biblindex.org) for primary source access. Prompt: `patristic_v3`. |
 | 7 | **Back-Translation Workbench** | `/backtranslation` | Reconstructs the probable Hebrew Vorlage word-by-word from LXX Greek using Tov's retroversion methodology, with confidence levels and summary assessments. Prompt: `backtranslation_v1`. |
 | 8 | **Manuscript Genealogy** | `/genealogy` | Visualizes the full transmission stemma of a biblical book — from proto-text through manuscript families (MT, LXX, DSS, SP, Peshitta, Targum, Vulgate) to modern critical editions. Prompt: `genealogy_v1`. |
 
@@ -298,11 +298,13 @@ All data is released under **Apache 2.0**. If you use BibCrit analyses in resear
 
 ### Export API
 
-| Method | Route | Query params |
-|---|---|---|
-| GET | `/api/divergence/export/sbl` | `ref` |
-| GET | `/api/divergence/export/bibtex` | `ref` |
-| GET | `/api/scribal/export/sbl` | `book` |
+| Method | Route | Query params | Returns |
+|---|---|---|---|
+| GET | `/api/divergence/export/sbl` | `ref` | SBL-style footnote string per divergence |
+| GET | `/api/divergence/export/bibtex` | `ref` | BibTeX `@misc` entries |
+| GET | `/api/divergence/export/ris` | `ref` | RIS records (Zotero / Mendeley import) |
+| GET | `/api/divergence/export/tei` | `ref` | TEI XML critical apparatus (`<listApp>`) |
+| GET | `/api/scribal/export/sbl` | `book` | SBL footnote for scribal profile |
 
 ### Discovery API
 
@@ -333,6 +335,10 @@ UI strings live in `data/i18n.json`. The `lang` query parameter (`?lang=es`) sel
 | Dutch | `nl` | — | Planned |
 
 To add a language: add a top-level key to `data/i18n.json` matching all `en` keys, and add a button to the language picker in `templates/base.html`.
+
+### Scholar / Student Mode
+
+A toggle in the navbar (book icon) switches between **Scholar mode** (default — full technical analysis) and **Student mode** (plain-language explanations highlighted, technical text hidden). The preference is persisted in `localStorage` under `bibcrit-mode`. No server changes are needed; the mode is purely client-side CSS (`body.mode-student .technical-only { display: none }`).
 
 ---
 

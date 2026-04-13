@@ -27,6 +27,30 @@
         });
     }
 
+    // --- Scholar / Student Mode Toggle ---
+    var modeBtn = document.getElementById('mode-toggle');
+    if (modeBtn) {
+        var modeIconScholar = modeBtn.querySelector('.mode-icon-scholar');
+        var modeIconStudent = modeBtn.querySelector('.mode-icon-student');
+
+        function applyMode(mode) {
+            var isStudent = mode === 'student';
+            document.body.classList.toggle('mode-student', isStudent);
+            modeBtn.classList.toggle('mode-active', isStudent);
+            if (modeIconScholar) modeIconScholar.style.display = isStudent ? 'none' : '';
+            if (modeIconStudent) modeIconStudent.style.display = isStudent ? '' : 'none';
+        }
+
+        var savedMode = localStorage.getItem('bibcrit-mode') || 'scholar';
+        applyMode(savedMode);
+
+        modeBtn.addEventListener('click', function () {
+            var next = document.body.classList.contains('mode-student') ? 'scholar' : 'student';
+            localStorage.setItem('bibcrit-mode', next);
+            applyMode(next);
+        });
+    }
+
     // Expose current lang globally so tool JS files can pass it to API stream calls
     window.bibcritLang = urlParams.get('lang') || localStorage.getItem('bibcrit-lang') || 'en';
 

@@ -521,14 +521,19 @@
       ? '<div class="div-citations">\uD83D\uDCDA ' + escapeHtml(div.citations.join(' \u00b7 ')) + '</div>'
       : '<div class="div-citations div-no-citations">' + window.t('divergence_no_sources', 'No published sources identified for this divergence.') + '</div>';
 
+    var plainHtml = div.analysis_plain
+      ? '<div class="div-analysis-plain plain-highlight">' + escapeHtml(div.analysis_plain) + '</div>'
+      : '';
+
     return '<div class="divergence-card">'
       + '<div class="div-card-header">'
       +   '<span class="div-words">' + escapeHtml(div.mt_word) + ' \u2192 ' + escapeHtml(div.lxx_word) + '</span>'
       +   '<span class="confidence-badge confidence-' + tierClass + '">' + tier + ' ' + div.confidence.toFixed(2) + '</span>'
       + '</div>'
-      + '<div class="div-analysis"' + (borderStyle ? ' style="' + borderStyle + '"' : '') + '>'
+      + '<div class="div-analysis technical-only"' + (borderStyle ? ' style="' + borderStyle + '"' : '') + '>'
       +   escapeHtml(div.analysis_technical)
       + '</div>'
+      + plainHtml
       + hypsHtml
       + citesHtml
       + '</div>';
@@ -656,6 +661,28 @@
         if (data.error) { showToast('\u26a0 ' + data.error); return; }
         copyToClipboard(data.bibtex || '');
         showToast(window.t('toast_bibtex_copied', 'BibTeX entries copied to clipboard'));
+      });
+  });
+
+  document.getElementById('btn-ris').addEventListener('click', function () {
+    if (!currentRef) return;
+    fetch('/api/divergence/export/ris?ref=' + encodeURIComponent(currentRef))
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        if (data.error) { showToast('\u26a0 ' + data.error); return; }
+        copyToClipboard(data.ris || '');
+        showToast(window.t('toast_ris_copied', 'RIS citation copied to clipboard'));
+      });
+  });
+
+  document.getElementById('btn-tei').addEventListener('click', function () {
+    if (!currentRef) return;
+    fetch('/api/divergence/export/tei?ref=' + encodeURIComponent(currentRef))
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        if (data.error) { showToast('\u26a0 ' + data.error); return; }
+        copyToClipboard(data.tei || '');
+        showToast(window.t('toast_tei_copied', 'TEI XML copied to clipboard'));
       });
   });
 

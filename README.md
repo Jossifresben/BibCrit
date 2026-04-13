@@ -404,13 +404,37 @@ The default spend cap is `$10.00/month`. Raise it via `BIBCRIT_API_CAP_USD` in t
 
 ## Roadmap
 
+### ✅ Completed
 - [x] 8 analysis tools across textual, critical, and discovery categories
-- [x] Spanish translation layer (`analysis_cache_es`)
-- [x] 91 featured passages pre-cached across all tools
+- [x] Full OT corpus coverage — MT (ETCBC) + LXX (Vaticanus) across all books
+- [x] 1QIsaᵃ (Dead Sea Scrolls) corpus — DSS Bridge Tool runs on real scroll data
+- [x] Samaritan Pentateuch corpus (5 books, 114,889 words)
+- [x] MorphGNT / SBLGNT corpus (27 NT books, 137,554 words)
+- [x] Spanish translation layer (`analysis_cache_es`) — full UI + analysis output
+- [x] 91 featured passages pre-cached across all tools (instant load)
+- [x] Persona-based home page — Scholar, PhD Candidate, Student entry points
+- [x] Scholar / Student mode toggle (technical vs. plain-language view)
+- [x] RIS and TEI XML export for Divergence Analysis
+- [x] BiblIndex deep-links in Patristic Citations tool
 - [x] Open Data API
+
+### 🔜 Phase 2 — NT Use of OT Analyzer
+- [ ] New tool: identify every OT allusion in any NT passage and determine whether the author cited MT or LXX text form (methodology: Beale & Carson, Christopher Stanley, Richard Hays)
+- [ ] GNT corpus integration for NT text retrieval
+- [ ] 10 high-use NT citation passages pre-cached (Matthew 1:23, Hebrews 1:6, Acts 15:17…)
+
+### 🔜 Phase 3 — Literary Structure Tools
+- [ ] **Chiasm Detector** — detect chiastic (A B C B′ A′) and parallel structures; visual arm rendering with color-coded pairs and pivot highlighting (methodology: Lund, Welch, Dorsey)
+- [ ] **Source Profile Tool** — identify J/E/D/P linguistic and theological markers per passage; supports Classic DH, Supplementary, and Neo-Documentary frameworks; framed as analytical evidence, not definitive assignment
+
+### 🔜 Phase 4 — New Corpora
+- [ ] **Targum corpus** (Onkelos + Jonathan) — Aramaic paraphrase comparison; categorize expansions as theological, halakhic, messianic, divine-name substitution (Memra/Shekhina)
+- [ ] **Targum Comparator tool** — dedicated MT vs. Targum analysis view
+- [ ] **Extended DSS witnesses** — 4QSamᵃ, 11QPaleoLev, 1QpHab beyond 1QIsaᵃ; fifth column in Ancient Witness Bridge
+
+### 🔜 Languages
 - [ ] Hebrew UI (`he`) with full RTL layout
 - [ ] Dutch UI (`nl`)
-- [ ] Expanded DSS witness coverage beyond 1QIsaᵃ
 
 ---
 

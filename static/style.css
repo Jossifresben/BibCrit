@@ -3168,3 +3168,253 @@ body.mode-student .plain-highlight {
     opacity: 1;
     color: var(--accent, #2563eb);
 }
+
+/* ── NT Use of OT Analyzer ─────────────────────────────────────────────── */
+
+/* Summary card */
+.nt-ot-summary-card {
+    background: var(--surface-alt, #f7f6f3);
+    border: 1px solid var(--border, #e0ddd8);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+}
+.summary-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.summary-card-title {
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted, #888);
+}
+.nt-ot-summary-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-primary, #1a1a1a);
+}
+
+/* Allusion card */
+.nt-ot-allusion-card {
+    background: var(--surface, #fff);
+    border: 1px solid var(--border, #e0ddd8);
+    border-left-width: 4px;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+}
+.allusion-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.75rem;
+}
+.allusion-ot-ref {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text-primary, #1a1a1a);
+}
+.allusion-badges {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+.alignment-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 2px 8px;
+    border-radius: 12px;
+    text-transform: uppercase;
+}
+.contested-badge {
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 12px;
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffc107;
+}
+[data-theme="dark"] .contested-badge {
+    background: rgba(255,193,7,0.15);
+    color: #ffd54f;
+    border-color: rgba(255,193,7,0.4);
+}
+
+/* NT words cited */
+.allusion-nt-words {
+    font-size: 0.9rem;
+    margin: 0 0 0.75rem;
+    color: var(--text-secondary, #555);
+}
+.allusion-nt-words .field-label {
+    font-weight: 600;
+    color: var(--muted, #888);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-right: 4px;
+}
+
+/* MT / LXX two-column comparison */
+.text-form-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+.text-form-col {
+    background: var(--surface-alt, #f7f6f3);
+    border: 1px solid var(--border, #e0ddd8);
+    border-radius: 6px;
+    padding: 0.6rem 0.8rem;
+}
+.text-form-col.text-form-highlight {
+    border-color: currentColor;
+    box-shadow: 0 0 0 2px currentColor;
+    background: var(--accent-light, #eef2ff);
+}
+[data-theme="dark"] .text-form-col.text-form-highlight {
+    background: rgba(99,132,255,0.1);
+}
+.text-form-col-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--muted, #888);
+    margin-bottom: 0.3rem;
+}
+.text-form-mt .text-form-col-label  { color: #5a7a5a; }
+.text-form-lxx .text-form-col-label { color: #3a6bc4; }
+.text-form-col-value {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: var(--text-primary, #1a1a1a);
+}
+
+/* Key word */
+.allusion-key-word {
+    font-size: 0.9rem;
+    margin: 0 0 0.6rem;
+}
+.allusion-key-word .field-label {
+    font-weight: 600;
+    color: var(--muted, #888);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-right: 4px;
+}
+
+/* Technical / plain paragraphs */
+.allusion-implication p,
+.allusion-implication-plain p {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.65;
+}
+.allusion-implication {
+    margin-bottom: 0.6rem;
+}
+.allusion-implication-plain {
+    margin-bottom: 0.6rem;
+}
+
+/* Scholarly note */
+.allusion-scholarly-note {
+    font-size: 0.85rem;
+    color: var(--text-secondary, #666);
+    margin: 0.5rem 0 0.75rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--border, #e0ddd8);
+}
+.allusion-scholarly-note .field-label {
+    font-weight: 600;
+    color: var(--muted, #888);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-right: 4px;
+}
+
+/* Card footer — confidence badge */
+.allusion-card-footer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+.confidence-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    padding: 3px 10px;
+    border-radius: 12px;
+    text-transform: uppercase;
+}
+.confidence-high   { background: #d1fae5; color: #065f46; }
+.confidence-medium { background: #fef3c7; color: #92400e; }
+.confidence-low    { background: #fee2e2; color: #991b1b; }
+[data-theme="dark"] .confidence-high   { background: rgba(16,185,129,0.2); color: #6ee7b7; }
+[data-theme="dark"] .confidence-medium { background: rgba(245,158,11,0.2); color: #fcd34d; }
+[data-theme="dark"] .confidence-low    { background: rgba(239,68,68,0.2);  color: #fca5a5; }
+
+/* Hypothesis card */
+.nt-ot-hypothesis-card {
+    background: var(--surface-alt, #f7f6f3);
+    border: 1px solid var(--border, #e0ddd8);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+}
+.hyp-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.6rem;
+}
+.hyp-card-title {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent, #2563eb);
+}
+.hyp-card-subtitle {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-primary, #1a1a1a);
+}
+.hyp-card-plain,
+.hyp-card-reasoning {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    margin: 0 0 0.5rem;
+    color: var(--text-primary, #1a1a1a);
+}
+.hyp-card-generated {
+    font-size: 0.78rem;
+    color: var(--muted, #999);
+    margin: 0.5rem 0 0;
+}
+
+/* Results area wrapper */
+#results-area {
+    max-width: 900px;
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+}
+
+@media (max-width: 600px) {
+    .text-form-columns { grid-template-columns: 1fr; }
+}

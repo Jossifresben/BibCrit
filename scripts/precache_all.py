@@ -148,13 +148,13 @@ CHIASM_REFS = [
     'Genesis 37',
     'Isaiah 1:2-20',
     'Psalm 22',
-    'Genesis 6:1-9:17',
+    'Genesis 6:1-8',
 ]
 
 # Source Criticism — featured Pentateuchal passages
 SOURCE_REFS = [
     'Genesis 1:1-2:25',
-    'Genesis 6:1-9:17',
+    'Genesis 6:1-8',
     'Exodus 19:1-20:21',
     'Genesis 37',
     'Numbers 1',

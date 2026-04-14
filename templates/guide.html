@@ -405,13 +405,13 @@
     {# ── Hero ── #}
     <div class="guide-hero">
         <h1>How to Use BibCrit</h1>
-        <p>BibCrit is a Claude-powered biblical textual criticism toolkit. Each tool streams AI analysis directly in your browser, letting you explore divergences between the Masoretic Text (MT) and the Septuagint (LXX), profile scribal tendencies, model numerical discrepancies, reconstruct plausible Hebrew Vorlagen, compare Dead Sea Scrolls witnesses, trace patristic citations, detect theological revisions, and visualize manuscript genealogies — all without installing any software.</p>
+        <p>BibCrit is a Claude-powered biblical textual criticism toolkit. Each tool streams AI analysis directly in your browser, letting you explore divergences between the Masoretic Text (MT) and the Septuagint (LXX), profile scribal tendencies, model numerical discrepancies, reconstruct plausible Hebrew Vorlagen, compare Dead Sea Scrolls witnesses, trace patristic citations, detect theological revisions, visualize manuscript genealogies, map chiastic structures, and analyze source layers — all without installing any software.</p>
     </div>
 
     {# ── Stats bar ── #}
     <div class="about-stats">
         <div class="about-stat">
-            <span class="stat-num">9</span>
+            <span class="stat-num">11</span>
             <span class="stat-label">analysis tools</span>
         </div>
         <div class="about-stat">
@@ -489,6 +489,18 @@
             <h4><span class="material-symbols-outlined" style="font-size:1.1em;vertical-align:-3px;margin-right:4px">account_tree</span>Manuscript Genealogy</h4>
             <p>Visualize the full transmission stemma of a biblical book — from proto-text through manuscript families (MT, LXX, DSS, SP, Peshitta, Targum, Vulgate) to modern critical editions. Understand the genealogical relationships between traditions and where each branch diverges from the others.</p>
             <a href="/genealogy?book=Isaiah&lang={{ lang }}" class="feature-example-link">Try Isaiah →</a>
+        </div>
+
+        <div class="feature-card">
+            <h4><span class="material-symbols-outlined" style="font-size:1.1em;vertical-align:-3px;margin-right:4px">swap_vert</span>Chiasm Detector</h4>
+            <p>Detect concentric (chiastic) literary structures in any biblical passage. The tool identifies labeled structural units (A–B–C–X–C′–B′–A′), annotates the pivot/climax, maps correspondences between parallel panels, and assesses overall structural integrity. Results include a full diagram, confidence score, and a BibCrit hypothesis on theological significance.</p>
+            <a href="/chiasm?ref=Amos+5%3A1-17&lang={{ lang }}" class="feature-example-link">Try Amos 5:1–17 →</a>
+        </div>
+
+        <div class="feature-card">
+            <h4><span class="material-symbols-outlined" style="font-size:1.1em;vertical-align:-3px;margin-right:4px">layers</span>Source Criticism</h4>
+            <p>Analyze a passage for documentary source layers using classical criteria: divine name usage (YHWH vs. Elohim), vocabulary patterns, doublets, theological concerns, and narrative tensions. Each identified unit is assigned a traditional source designation (J, E, D, P, or Redactor) with confidence level, supporting evidence, and scholarly debate context.</p>
+            <a href="/source?ref=Genesis+1-2&lang={{ lang }}" class="feature-example-link">Try Genesis 1–2 →</a>
         </div>
 
     </div>

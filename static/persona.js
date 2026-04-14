@@ -16,15 +16,15 @@
 
   // CSS order value per tool per persona (lower = appears first in grid)
   const ORDER = {
-    scholar: { divergence: 1, backtranslation: 2, dss: 3, genealogy: 4, scribal: 5, numerical: 6, theological: 7, patristic: 8 },
-    phd:     { divergence: 1, backtranslation: 2, dss: 3, theological: 4, scribal: 5, numerical: 6, patristic: 7, genealogy: 8 },
-    student: { divergence: 1, backtranslation: 2, dss: 3, scribal: 4, numerical: 5, theological: 6, patristic: 7, genealogy: 8 },
+    scholar: { divergence: 1, backtranslation: 2, dss: 3, genealogy: 4, scribal: 5, numerical: 6, theological: 7, patristic: 8, chiasm: 9, source: 10 },
+    phd:     { divergence: 1, backtranslation: 2, dss: 3, theological: 4, scribal: 5, numerical: 6, patristic: 7, genealogy: 8, chiasm: 9, source: 10 },
+    student: { divergence: 1, backtranslation: 2, dss: 3, scribal: 4, numerical: 5, theological: 6, patristic: 7, genealogy: 8, chiasm: 9, source: 10 },
   };
 
   // Which tool cards get the accent highlight per persona
   const HIGHLIGHT = {
-    scholar: ['divergence', 'backtranslation', 'dss', 'genealogy'],
-    phd:     ['divergence', 'backtranslation', 'dss', 'theological'],
+    scholar: ['divergence', 'backtranslation', 'dss', 'genealogy', 'chiasm', 'source'],
+    phd:     ['divergence', 'backtranslation', 'dss', 'theological', 'source'],
     student: ['divergence', 'backtranslation', 'dss'],
   };
 

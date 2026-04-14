@@ -1996,3 +1996,223 @@ body[data-persona="student"] .tool-header { border-top-color: #059669; }
   animation: sectionReveal 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
   animation-delay: var(--reveal-delay, 0ms);
 }
+
+/* ── Shared result-card system (used by chiasm, source, nt_ot) ──────────── */
+.result-card {
+  background: var(--surface, #fff);
+  border: 1px solid var(--border, #e0ddd5);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+}
+.result-section-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--muted, #888);
+  margin: 0 0 12px;
+}
+.muted { color: var(--muted, #888); font-size: 0.9em; }
+.hyp-title {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--fg, #1a1a1a);
+  margin: 0 0 6px;
+}
+.result-card.bibcrit-hypothesis {
+  border-color: var(--lxx-border, #9ab8e8);
+  background: var(--lxx-bg, #e8f0fc);
+}
+[data-theme="dark"] .result-card {
+  background: var(--surface-dark, #1e2228);
+  border-color: var(--border, #2e3440);
+}
+[data-theme="dark"] .result-card.bibcrit-hypothesis {
+  background: #1a2535;
+  border-color: var(--lxx-color, #3a6bc4);
+}
+
+/* ── Source Criticism — shared badge + legend ────────────────────────────── */
+.source-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 12px 0 16px;
+  font-size: 0.9em;
+  color: var(--fg, #1a1a1a);
+}
+.src-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #fff;
+  vertical-align: middle;
+}
+.src-j { background: #d97706; }
+.src-e { background: #16a34a; }
+.src-d { background: #2563eb; }
+.src-p { background: #7c3aed; }
+.src-r { background: #64748b; }
+
+/* ── Source unit card ────────────────────────────────────────────────────── */
+.source-unit {
+  border-left: 4px solid var(--border, #e0ddd5);
+  border-radius: 6px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+}
+.source-unit:last-child { margin-bottom: 0; }
+.source-unit-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.source-unit-verses {
+  font-weight: 600;
+  font-size: 0.92em;
+  color: var(--fg, #1a1a1a);
+  flex: 1;
+}
+.source-unit-conf {
+  font-size: 0.8em;
+  color: var(--muted, #888);
+}
+.source-meta {
+  font-size: 0.85em;
+  color: var(--fg, #1a1a1a);
+  margin: 4px 0;
+  line-height: 1.5;
+}
+.doublet-row {
+  padding: 10px 12px;
+  border: 1px solid var(--border, #e0ddd5);
+  border-radius: 6px;
+  margin-bottom: 8px;
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+.competing-position {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border, #e0ddd5);
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+.competing-position:last-child { border-bottom: none; }
+
+/* ── Chiasm diagram ──────────────────────────────────────────────────────── */
+.chiasm-diagram {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 14px;
+}
+.chiasm-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+.chiasm-row:hover { background: var(--accent-light, #eef1f4); }
+.chiasm-pivot {
+  background: var(--accent-light, #eef1f4);
+  border: 1px solid var(--border, #e0ddd5);
+  font-weight: 600;
+}
+.chiasm-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+  letter-spacing: 0.02em;
+}
+.chiasm-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+}
+.chiasm-row-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.chiasm-verses {
+  font-weight: 700;
+  font-size: 0.78em;
+  color: var(--muted, #6b7280);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+.chiasm-summary {
+  font-size: 0.91em;
+  color: var(--fg, #1a1a1a);
+  line-height: 1.45;
+}
+.chiasm-conf {
+  font-size: 0.72em;
+  color: var(--muted, #888);
+  white-space: nowrap;
+  margin-left: auto;
+}
+.chiasm-pivot-note {
+  margin-top: 10px;
+  padding: 10px 12px;
+  background: var(--accent-light, #eef1f4);
+  border-radius: 6px;
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+.chiasm-overall-conf {
+  margin-top: 10px;
+  font-size: 0.88em;
+  color: var(--fg, #1a1a1a);
+  padding-top: 10px;
+  border-top: 1px solid var(--border, #e0ddd5);
+}
+.chiasm-corr-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88em;
+}
+.chiasm-corr-table th {
+  text-align: left;
+  padding: 6px 10px;
+  border-bottom: 2px solid var(--border, #e0ddd5);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted, #888);
+}
+.chiasm-corr-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border, #e0ddd5);
+  vertical-align: top;
+  line-height: 1.4;
+}
+.chiasm-corr-table tr:last-child td { border-bottom: none; }
+
+@media (max-width: 600px) {
+  .chiasm-row    { padding-left: 0 !important; }
+  .source-legend { font-size: 0.8em; }
+  .chiasm-corr-table th, .chiasm-corr-table td { padding: 5px 6px; }
+}

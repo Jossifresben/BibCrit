@@ -43,11 +43,12 @@ class BiblicalCorpus:
     """
 
     _TRADITION_DIRS: dict = {
-        'MT':  'mt_etcbc',
-        'LXX': 'lxx_stepbible',
-        'GNT': 'gnt_opengnt',
-        'DSS': 'dss',
-        'SP':  'sp_etcbc',
+        'MT':   'mt_etcbc',
+        'LXX':  'lxx_stepbible',
+        'GNT':  'gnt_opengnt',
+        'DSS':  'dss',
+        'SP':   'sp_etcbc',
+        'PESH': 'pesh_etcbc',
     }
 
     def __init__(self) -> None:

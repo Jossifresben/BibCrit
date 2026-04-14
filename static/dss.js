@@ -288,6 +288,12 @@
       if (msList) msList.appendChild(spCard);
     }
 
+    // Peshitta witness card (Syriac OT)
+    if (data.pesh_witness && data.pesh_witness.present) {
+      var peshCard = _buildPeshWitnessCard(data.pesh_witness);
+      if (msList) msList.appendChild(peshCard);
+    }
+
     // Synthesis — allow basic HTML tags (<b>, <em>, <i>) from Claude
     var synth = data.synthesis_plain || data.synthesis || '';
     if (synth && synthSec && synthBody) {
@@ -363,15 +369,17 @@
     var mt     = corpus.mt  || '';
     var lxx    = corpus.lxx || '';
 
-    // Also pull DSS text from first extant manuscript and SP from sp_witness
-    var dssMs   = (data.dss_manuscripts || []).filter(function(m) {
+    // Also pull DSS text from first extant manuscript, SP, and Peshitta
+    var dssMs    = (data.dss_manuscripts || []).filter(function(m) {
       return m.verse_present && m.alignment !== 'absent' && m.dss_text;
     });
-    var dssText = dssMs.length ? dssMs[0].dss_text : '';
-    var spText  = (data.sp_witness && data.sp_witness.present && data.sp_witness.sp_text)
-                    ? data.sp_witness.sp_text : '';
+    var dssText  = dssMs.length ? dssMs[0].dss_text : '';
+    var spText   = (data.sp_witness  && data.sp_witness.present  && data.sp_witness.sp_text)
+                     ? data.sp_witness.sp_text : '';
+    var peshText = (data.pesh_witness && data.pesh_witness.present && data.pesh_witness.pesh_text)
+                     ? data.pesh_witness.pesh_text : '';
 
-    if (!mt && !lxx && !dssText && !spText) return;
+    if (!mt && !lxx && !dssText && !spText && !peshText) return;
 
     var panel = document.createElement('div');
     panel.className = 'bt-group-card dss-verse-panel';
@@ -409,10 +417,11 @@
     }
 
     var inner = '';
-    if (mt)      inner += rowHtml('Hebrew (MT)',  mt,      'rtl');
-    if (lxx)     inner += rowHtml('Greek (LXX)',  lxx,     'ltr');
-    if (dssText) inner += rowHtml('DSS (' + _esc(dssMs[0].siglum || '1QIsa') + ')', dssText, 'rtl');
-    if (spText)  inner += rowHtml('Samaritan Pentateuch (SP)', spText, 'rtl');
+    if (mt)       inner += rowHtml('Hebrew (MT)',  mt,      'rtl');
+    if (lxx)      inner += rowHtml('Greek (LXX)',  lxx,     'ltr');
+    if (dssText)  inner += rowHtml('DSS (' + _esc(dssMs[0].siglum || '1QIsa') + ')', dssText, 'rtl');
+    if (spText)   inner += rowHtml('Samaritan Pentateuch (SP)', spText, 'rtl');
+    if (peshText) inner += rowHtml('Peshitta (Syriac)', peshText, 'rtl');
     body.innerHTML = inner;
 
     hdr.addEventListener('click', function() {
@@ -583,20 +592,98 @@
     return card;
   }
 
+  function _buildPeshWitnessCard(pesh) {
+    var card = document.createElement('div');
+    card.className = 'dss-ms-card';
+    card.style.maxWidth  = '900px';
+    card.style.margin    = '0 auto 1rem';
+    card.style.borderLeft = '3px solid var(--pesh-color, #7B5EA7)';
+
+    var conf    = pesh.alignment_confidence || 0;
+    var pct     = Math.round(conf * 100);
+    var confCls = conf >= 0.75 ? 'badge-high' : conf >= 0.45 ? 'badge-medium' : 'badge-low';
+
+    var header = document.createElement('div');
+    header.className = 'dss-ms-header';
+    header.setAttribute('role', 'button');
+    header.setAttribute('aria-expanded', 'true');
+    header.innerHTML =
+      '<span class="dss-ms-siglum" style="color:var(--pesh-color,#7B5EA7)">PESH</span>' +
+      '<span class="dss-ms-fullname">Peshitta (Syriac Old Testament)</span>' +
+      _alignmentBadge(pesh.alignment || 'independent') +
+      (conf ? '<span class="conf-badge ' + confCls + '" style="margin-left:4px">' + pct + '%</span>' : '') +
+      '<span class="dss-ms-toggle">▲</span>';
+
+    var body = document.createElement('div');
+    body.className = 'dss-ms-body';
+
+    var inner = '';
+    if (pesh.pesh_text) {
+      inner += '<div class="dss-ms-text" style="direction:rtl;text-align:right;font-family:serif;font-size:1.1rem">' + _esc(pesh.pesh_text) + '</div>';
+    }
+
+    var divs = pesh.divergences || [];
+    if (divs.length) {
+      var hasLxx = divs.some(function(d) { return d.lxx_reading != null; });
+      inner +=
+        '<table class="dss-div-table"><thead><tr>' +
+        '<th>#</th><th>MT</th>' +
+        (hasLxx ? '<th>LXX</th>' : '') +
+        '<th style="color:var(--pesh-color,#7B5EA7)">PESH</th>' +
+        '<th>Type</th><th>Implication</th>' +
+        '</tr></thead><tbody>';
+      divs.forEach(function(d) {
+        inner += '<tr>' +
+          '<td>' + _esc(String(d.word_position || '')) + '</td>' +
+          '<td>' + _esc(d.mt_reading   || '—') + '</td>' +
+          (hasLxx ? '<td>' + _esc(d.lxx_reading || '—') + '</td>' : '') +
+          '<td><strong style="color:var(--pesh-color,#7B5EA7)">' + _esc(d.pesh_reading || '—') + '</strong></td>' +
+          '<td><span class="theo-type-badge">' + _esc(d.classification || '') + '</span></td>' +
+          '<td>' + _esc(d.textual_implication || '') + '</td>' +
+          '</tr>';
+      });
+      inner += '</tbody></table>';
+    }
+
+    if (!divs.length && pesh.present) {
+      inner += '<p class="dss-overall-note" style="opacity:0.7;font-style:italic">No individual divergences identified for this passage.</p>';
+    }
+
+    if (pesh.overall_note) {
+      inner += '<p class="dss-overall-note">' + _safe(pesh.overall_note) + '</p>';
+    }
+
+    body.innerHTML = inner;
+
+    header.addEventListener('click', function() {
+      var isOpen = !body.classList.contains('collapsed');
+      body.classList.toggle('collapsed', isOpen);
+      header.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+      var toggle = header.querySelector('.dss-ms-toggle');
+      if (toggle) toggle.textContent = isOpen ? '▼' : '▲';
+    });
+
+    card.appendChild(header);
+    card.appendChild(body);
+    return card;
+  }
+
   function _alignmentBadge(alignment) {
     var labels = {
-      sides_with_mt:  window.t('dss_align_mt',          'Sides with MT'),
-      sides_with_lxx: window.t('dss_align_lxx',         'Sides with LXX'),
-      sides_with_sp:  window.t('dss_align_sp',          'Sides with SP'),
-      independent:    window.t('dss_align_independent',  'Independent'),
-      absent:         window.t('dss_align_absent',       'Not extant'),
+      sides_with_mt:   window.t('dss_align_mt',          'Sides with MT'),
+      sides_with_lxx:  window.t('dss_align_lxx',         'Sides with LXX'),
+      sides_with_sp:   window.t('dss_align_sp',          'Sides with SP'),
+      sides_with_pesh: window.t('dss_align_pesh',        'Sides with PESH'),
+      independent:     window.t('dss_align_independent',  'Independent'),
+      absent:          window.t('dss_align_absent',       'Not extant'),
     };
     var classes = {
-      sides_with_mt:  'dss-align-mt',
-      sides_with_lxx: 'dss-align-lxx',
-      sides_with_sp:  'dss-align-sp',
-      independent:    'dss-align-ind',
-      absent:         'dss-align-abs',
+      sides_with_mt:   'dss-align-mt',
+      sides_with_lxx:  'dss-align-lxx',
+      sides_with_sp:   'dss-align-sp',
+      sides_with_pesh: 'dss-align-pesh',
+      independent:     'dss-align-ind',
+      absent:          'dss-align-abs',
     };
     var label = labels[alignment] || alignment;
     var cls   = classes[alignment] || 'dss-align-abs';

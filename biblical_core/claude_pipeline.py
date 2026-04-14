@@ -77,14 +77,19 @@ _NUMERICAL_SYSTEM = (
 _DSS_SYSTEM = (
     "You are a specialist in Dead Sea Scrolls textual criticism with deep expertise "
     "in the biblical scrolls from Qumran, their relationship to the proto-MT, "
-    "proto-LXX, Samaritan Pentateuch, and independent traditions, applying the "
-    "methodology of Emanuel Tov and Eugene Ulrich. "
-    "The JSON response must always include an 'sp_witness' field at the top level. "
+    "proto-LXX, Samaritan Pentateuch, Peshitta (Syriac OT), and independent traditions, "
+    "applying the methodology of Emanuel Tov and Eugene Ulrich. "
+    "The JSON response must always include 'sp_witness' and 'pesh_witness' fields at the top level. "
     "When SP corpus text is provided, populate sp_witness with: "
     "present (bool), alignment ('sides_with_mt'|'sides_with_lxx'|'independent'), "
-    "alignment_confidence (0-1), sp_text (the corpus text), divergences (array of "
-    "{word_position, mt_reading, sp_reading, classification, textual_implication}), "
-    "and overall_note. When SP text is NOT provided, set sp_witness to null. "
+    "alignment_confidence (0-1), sp_text, divergences, and overall_note. "
+    "When SP text is NOT provided, set sp_witness to null. "
+    "For pesh_witness: when Peshitta corpus text is provided, populate with: "
+    "present (bool), alignment ('sides_with_mt'|'sides_with_lxx'|'independent'), "
+    "alignment_confidence (0-1), pesh_text, divergences (array of "
+    "{word_position, mt_reading, lxx_reading, pesh_reading, classification, textual_implication}), "
+    "and overall_note. When no Peshitta corpus text is provided, still analyze from training knowledge "
+    "if meaningful variants exist, otherwise set pesh_witness.present to false. "
     "Keep dss_manuscripts for actual Dead Sea Scrolls only. "
     "CRITICAL: Return ONLY raw JSON. No markdown, no code fences, no backticks, "
     "no prose before or after. The response must start with { and end with }."
@@ -780,15 +785,16 @@ class ClaudePipeline:
 
     def analyze_dss(self, reference: str, mt_text: str = '',
                     lxx_text: str = '', dss_text: str = '',
-                    sp_text: str = '') -> dict:
-        """Return DSS bridge analysis comparing MT, LXX, DSS, and SP.
+                    sp_text: str = '', pesh_text: str = '') -> dict:
+        """Return DSS bridge analysis comparing MT, LXX, DSS, SP, and Peshitta.
 
-        Returns dict with 'dss_manuscripts', 'synthesis', 'synthesis_plain', etc.
-        sp_text: raw SP corpus text (Pentateuch only; empty string if not applicable).
+        Returns dict with 'dss_manuscripts', 'sp_witness', 'pesh_witness', 'synthesis', etc.
+        sp_text:   raw SP corpus text (Pentateuch only; empty string if not applicable).
+        pesh_text: raw Peshitta corpus text (OT-wide; empty string if corpus not yet loaded).
         On error: returns {'error': ..., 'dss_manuscripts': [], ...}.
         """
         model          = DSS_MODEL
-        prompt_version = 'v5'
+        prompt_version = 'v6'
         tool           = 'dss'
 
         cached = self.get_cached(reference, tool, prompt_version, model)
@@ -816,29 +822,22 @@ class ClaudePipeline:
             }
 
         template = self.load_prompt('dss', prompt_version)
-        sp_section = (
-            f'\n=== SAMARITAN PENTATEUCH CORPUS TEXT (REQUIRED) ===\n{sp_text}\n'
-            '=== END SP TEXT ===\n'
-            'MANDATORY: You MUST populate sp_witness with present=true and analyze '
-            'this SP text. Do NOT set sp_witness to null when SP text is provided above.\n'
-        ) if sp_text else '\nNo SP text available for this passage — set sp_witness to null.\n'
         user_content = (
             template
             .replace('{{REFERENCE}}', reference)
-            .replace('{{MT_TEXT}}', mt_text)
-            .replace('{{LXX_TEXT}}', lxx_text)
-            .replace('{{DSS_TEXT}}', dss_text)
-            .replace('{{SP_TEXT}}', sp_text)
+            .replace('{{MT_TEXT}}',   mt_text)
+            .replace('{{LXX_TEXT}}',  lxx_text)
+            .replace('{{DSS_TEXT}}',  dss_text)
+            .replace('{{SP_TEXT}}',   sp_text)
+            .replace('{{PESH_TEXT}}', pesh_text)
         ) if template else (
             f'Reference: {reference}\nMT: {mt_text}\nLXX: {lxx_text}\n'
-            f'Dead Sea Scrolls: {dss_text or "(not attested)"}\n{sp_section}'
-            'Return JSON with: dss_manuscripts (DSS scrolls only), sp_witness (SP '
-            'alignment object — REQUIRED when SP text provided), synthesis, synthesis_plain, '
-            'textual_history_implication, bibcrit_assessment.'
+            f'Dead Sea Scrolls: {dss_text or "(not attested)"}\n'
+            f'SP: {sp_text or "(not applicable)"}\n'
+            f'Peshitta: {pesh_text or "(corpus not loaded — use training knowledge)"}\n'
+            'Return JSON with: dss_manuscripts (DSS scrolls only), sp_witness, pesh_witness, '
+            'synthesis, synthesis_plain, textual_history_implication, bibcrit_assessment.'
         )
-
-        # Python-level fallback: if SP text was provided but Claude omitted sp_witness,
-        # construct a minimal card so the corpus data is never silently dropped.
 
         response = self._client.messages.create(
             model=model,
@@ -867,6 +866,20 @@ class ClaudePipeline:
                 'divergences': [],
                 'overall_note': (
                     'Samaritan Pentateuch text is available for this passage '
+                    'but alignment analysis could not be generated automatically.'
+                ),
+            }
+
+        # Fallback: if Peshitta corpus text was provided but Claude omitted pesh_witness
+        if pesh_text and not data.get('pesh_witness'):
+            data['pesh_witness'] = {
+                'present': True,
+                'alignment': 'independent',
+                'alignment_confidence': 0.0,
+                'pesh_text': pesh_text,
+                'divergences': [],
+                'overall_note': (
+                    'Peshitta text is available for this passage '
                     'but alignment analysis could not be generated automatically.'
                 ),
             }

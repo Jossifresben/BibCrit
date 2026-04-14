@@ -1355,14 +1355,20 @@
 
 /* ── Numerical Discrepancy Modeler ─────────────────────────────────── */
 :root {
-  --sp-color:  #2c7c5f;
-  --sp-bg:     #e8f5ef;
-  --sp-border: #7abda0;
+  --sp-color:    #2c7c5f;
+  --sp-bg:       #e8f5ef;
+  --sp-border:   #7abda0;
+  --pesh-color:  #7B5EA7;
+  --pesh-bg:     #f3eeff;
+  --pesh-border: #b89fd4;
 }
 [data-theme="dark"] {
-  --sp-color:  #4aab89;
-  --sp-bg:     #0f2a1e;
-  --sp-border: #2c7c5f;
+  --sp-color:    #4aab89;
+  --sp-bg:       #0f2a1e;
+  --sp-border:   #2c7c5f;
+  --pesh-color:  #a78fce;
+  --pesh-bg:     #1e1433;
+  --pesh-border: #7B5EA7;
 }
 
 /* ── Numerical timeline toggle ─────────────────────────────────────────── */
@@ -1828,11 +1834,12 @@
   letter-spacing: 0.05em;
   margin-right: 6px;
 }
-.dss-align-mt  { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
-.dss-align-lxx { background: #dbeafe; color: #1e40af; border: 1px solid #bfdbfe; }
-.dss-align-sp  { background: #d1fae5; color: #065f46; border: 1px solid #6ee7b7; }
-.dss-align-ind { background: #fed7aa; color: #9a3412; border: 1px solid #fdba74; }
-.dss-align-abs { background: var(--border); color: var(--muted); border: 1px solid var(--border); }
+.dss-align-mt   { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+.dss-align-lxx  { background: #dbeafe; color: #1e40af; border: 1px solid #bfdbfe; }
+.dss-align-sp   { background: #d1fae5; color: #065f46; border: 1px solid #6ee7b7; }
+.dss-align-pesh { background: var(--pesh-bg, #f3eeff); color: var(--pesh-color, #7B5EA7); border: 1px solid var(--pesh-border, #b89fd4); }
+.dss-align-ind  { background: #fed7aa; color: #9a3412; border: 1px solid #fdba74; }
+.dss-align-abs  { background: var(--border); color: var(--muted); border: 1px solid var(--border); }
 .dss-div-table {
   width: 100%;
   border-collapse: collapse;

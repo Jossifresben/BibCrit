@@ -16,7 +16,7 @@ textual_bp = Blueprint('textual', __name__)
 # A mismatch causes cache-key divergence and cache misses on every request.
 _DIVERGENCE_PROMPT     = 'v2'
 _BACKTRANSLATION_PROMPT = 'v1'
-_DSS_PROMPT            = 'v5'
+_DSS_PROMPT            = 'v6'
 _GENEALOGY_PROMPT      = 'v1'
 _NT_OT_PROMPT          = 'v1'
 
@@ -379,19 +379,22 @@ def api_dss_stream():
 
         # Step 1: load verse text
         yield event('step', msg=_step(lang, 'load_verse'))
-        mt_text  = ''
-        lxx_text = ''
-        dss_text = ''
-        sp_text  = ''
+        mt_text   = ''
+        lxx_text  = ''
+        dss_text  = ''
+        sp_text   = ''
+        pesh_text = ''
         if corpus is not None:
-            mt_words  = corpus.get_verse_words(reference, 'MT')
-            lxx_words = corpus.get_verse_words(reference, 'LXX')
-            dss_words = corpus.get_verse_words(reference, 'DSS')
-            sp_words  = corpus.get_verse_words(reference, 'SP')
-            mt_text   = ' '.join(w.word_text for w in mt_words)  if mt_words  else ''
-            lxx_text  = ' '.join(w.word_text for w in lxx_words) if lxx_words else ''
-            dss_text  = ' '.join(w.word_text for w in dss_words) if dss_words else ''
-            sp_text   = ' '.join(w.word_text for w in sp_words)  if sp_words  else ''
+            mt_words   = corpus.get_verse_words(reference, 'MT')
+            lxx_words  = corpus.get_verse_words(reference, 'LXX')
+            dss_words  = corpus.get_verse_words(reference, 'DSS')
+            sp_words   = corpus.get_verse_words(reference, 'SP')
+            pesh_words = corpus.get_verse_words(reference, 'PESH')
+            mt_text   = ' '.join(w.word_text for w in mt_words)   if mt_words   else ''
+            lxx_text  = ' '.join(w.word_text for w in lxx_words)  if lxx_words  else ''
+            dss_text  = ' '.join(w.word_text for w in dss_words)  if dss_words  else ''
+            sp_text   = ' '.join(w.word_text for w in sp_words)   if sp_words   else ''
+            pesh_text = ' '.join(w.word_text for w in pesh_words) if pesh_words else ''
 
         if lang == 'es':
             cached_es = pipeline.get_cached_es(reference, 'dss', _DSS_PROMPT, DSS_MODEL)
@@ -413,7 +416,7 @@ def api_dss_stream():
             _result_box = [None]
             def _run_dss():
                 try:
-                    _result_box[0] = pipeline.analyze_dss(reference, mt_text, lxx_text, dss_text, sp_text)
+                    _result_box[0] = pipeline.analyze_dss(reference, mt_text, lxx_text, dss_text, sp_text, pesh_text)
                 except Exception as exc:
                     _result_box[0] = {'error': str(exc)}
             _t = threading.Thread(target=_run_dss, daemon=True)

@@ -1300,6 +1300,74 @@ class ClaudePipeline:
         self.save_cache(reference, tool, prompt_version, model, data)
         return data
 
+    def analyze_source(self, reference: str, mt_text: str = '') -> dict:
+        """Return source-critical analysis (J/E/D/P) for a biblical passage.
+
+        Returns dict with 'source_units', 'doublets', 'competing_positions',
+        'synthesis', 'bibcrit_hypothesis'.
+        On error: returns {'error': ..., 'source_units': []}.
+
+        prompt_version='v1' — keep in sync with _SOURCE_PROMPT in blueprints/literary.py.
+        """
+        model          = SOURCE_MODEL
+        prompt_version = 'v1'
+        tool           = 'source'
+
+        cached = self.get_cached(reference, tool, prompt_version, model)
+        if cached:
+            return cached
+
+        if not self._client:
+            return {
+                'error': 'No API key configured. Set ANTHROPIC_API_KEY environment variable.',
+                'source_units': [], 'doublets': [], 'competing_positions': [],
+                'framework': 'classic_documentary', 'scope_note': '',
+                'framework_note': '', 'synthesis': '',
+                'bibcrit_hypothesis': {'title': '', 'reasoning': '', 'confidence': 0.0},
+            }
+
+        budget = self.get_budget()
+        if budget['spend_usd'] >= self._cap_usd:
+            return {
+                'error': (
+                    f"Monthly analysis budget of ${self._cap_usd:.2f} reached. "
+                    "Please try again next month or donate to increase the cap."
+                ),
+                'source_units': [], 'doublets': [], 'competing_positions': [],
+                'framework': 'classic_documentary', 'scope_note': '',
+                'framework_note': '', 'synthesis': '',
+                'bibcrit_hypothesis': {'title': '', 'reasoning': '', 'confidence': 0.0},
+            }
+
+        template = self.load_prompt('source', prompt_version)
+        user_content = (
+            template
+            .replace('{{REFERENCE}}', reference)
+            .replace('{{MT_TEXT}}', mt_text or '')
+        ) if template else (
+            f'Passage: {reference}\nMT Text: {mt_text}\n'
+            'Perform source criticism. Return JSON with source_units array.'
+        )
+
+        response = self._client.messages.create(
+            model=model,
+            max_tokens=8192,
+            system=_SOURCE_SYSTEM,
+            messages=[
+                {'role': 'user',      'content': user_content},
+                {'role': 'assistant', 'content': '{'},
+            ],
+        )
+
+        cost = (response.usage.input_tokens  * _SONNET_COST_IN +
+                response.usage.output_tokens * _SONNET_COST_OUT)
+        self.record_spend(cost)
+
+        raw  = '{' + response.content[0].text
+        data = _parse_json_response(raw)
+        self.save_cache(reference, tool, prompt_version, model, data)
+        return data
+
 
 _DISCOVERY_TYPES = {'translation_idiom', 'different_vorlage', 'theological_tendency',
                     'omission', 'addition', 'scribal_error'}

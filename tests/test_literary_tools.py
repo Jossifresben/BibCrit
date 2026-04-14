@@ -58,3 +58,52 @@ def test_analyze_chiasm_budget_cap_returns_error(tmp_path):
     assert 'error' in result
     assert 'budget' in result['error'].lower() or 'cap' in result['error'].lower()
     assert result['elements'] == []
+
+
+def test_analyze_source_no_client_returns_error(tmp_path):
+    p = make_pipeline(tmp_path)
+    result = p.analyze_source('Genesis 1:1-2:3')
+    assert 'error' in result
+    assert result['source_units'] == []
+
+
+def test_analyze_source_cache_roundtrip(tmp_path):
+    p = make_pipeline(tmp_path)
+    fake = {
+        'passage': 'Genesis 1:1-2:3',
+        'framework': 'classic_documentary',
+        'scope_note': 'Covers the first creation account.',
+        'source_units': [
+            {
+                'verses': '1:1-2:3',
+                'source': 'P',
+                'confidence': 0.92,
+                'divine_name_used': 'Elohim',
+                'key_vocabulary': ['bara', 'wayyehi erev'],
+                'theological_concerns': 'Creation by command; sabbath rest.',
+                'structural_markers': '7-day framework; formulaic repetition.',
+                'doublet_with': '2:4-25',
+                'summary': 'Priestly creation account.',
+            }
+        ],
+        'doublets': [{'unit_1_verses': '1:1-2:3', 'unit_2_verses': '2:4-25',
+                      'description': 'Two creation accounts',
+                      'significance': 'Classic J/P doublet.'}],
+        'competing_positions': [],
+        'framework_note': 'Classic Documentary Hypothesis.',
+        'synthesis': 'P dominates the first account.',
+        'bibcrit_hypothesis': {'title': 'P creation account in Genesis 1', 'reasoning': 'test', 'confidence': 0.9},
+        'discovery_ready': False,
+    }
+    p.save_cache('Genesis 1:1-2:3', 'source', 'v1', SOURCE_MODEL, fake)
+    cached = p.get_cached('Genesis 1:1-2:3', 'source', 'v1', SOURCE_MODEL)
+    assert cached is not None
+    assert cached['source_units'][0]['source'] == 'P'
+    assert cached['doublets'][0]['unit_2_verses'] == '2:4-25'
+
+
+def test_analyze_source_budget_cap_returns_error(tmp_path):
+    p = ClaudePipeline(data_dir=str(tmp_path), api_key='fake-key', cap_usd=0.0)
+    result = p.analyze_source('Exodus 19')
+    assert 'error' in result
+    assert result['source_units'] == []

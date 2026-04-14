@@ -30,11 +30,13 @@ def create_app() -> Flask:
     from blueprints.critical import critical_bp
     from blueprints.research import research_bp
     from blueprints.discovery import discovery_bp
+    from blueprints.literary import literary_bp
 
     app.register_blueprint(textual_bp)
     app.register_blueprint(critical_bp)
     app.register_blueprint(research_bp)
     app.register_blueprint(discovery_bp)
+    app.register_blueprint(literary_bp)
 
     return app
 
@@ -127,6 +129,8 @@ def sitemap_xml():
         ('/theological', '0.9', 'weekly'),
         ('/patristic', '0.9', 'weekly'),
         ('/genealogy', '0.9', 'weekly'),
+        ('/chiasm', '0.9', 'weekly'),
+        ('/source', '0.9', 'weekly'),
         ('/discovery', '0.8', 'monthly'),
         ('/guide', '0.7', 'monthly'),
     ]
@@ -151,7 +155,7 @@ def llms_txt():
     from flask import Response
     content = """# BibCrit
 
-> AI-powered toolkit for biblical textual criticism. Eight specialized scholarly tools for analyzing divergences between the Masoretic Text (MT) and the Septuagint (LXX), profiling scribal tendencies, comparing Dead Sea Scrolls witnesses, reconstructing Hebrew Vorlagen, tracing patristic citations, modeling numerical discrepancies, detecting theological revisions, and visualizing manuscript genealogies.
+> AI-powered toolkit for biblical textual criticism. Ten specialized scholarly tools for analyzing divergences between the Masoretic Text (MT) and the Septuagint (LXX), profiling scribal tendencies, comparing Dead Sea Scrolls witnesses, reconstructing Hebrew Vorlagen, tracing patristic citations, modeling numerical discrepancies, detecting theological revisions, visualizing manuscript genealogies, detecting chiastic literary structures, and performing source criticism (J/E/D/P).
 
 BibCrit streams AI analysis (powered by Anthropic Claude) directly in the browser. Frequently analyzed passages are cached and load instantly. All tools are free and openly accessible.
 
@@ -165,6 +169,8 @@ BibCrit streams AI analysis (powered by Anthropic Claude) directly in the browse
 - Theological Revision Detector: https://bibcrit.app/theological
 - Patristic Citation Tracker: https://bibcrit.app/patristic
 - Manuscript Genealogy: https://bibcrit.app/genealogy
+- Chiasm & Literary Structure Detector: https://bibcrit.app/chiasm
+- Source Criticism Tool (J/E/D/P): https://bibcrit.app/source
 
 ## Languages
 

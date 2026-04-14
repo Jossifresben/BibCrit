@@ -406,37 +406,79 @@ The default spend cap is `$10.00/month`. Raise it via `BIBCRIT_API_CAP_USD` in t
 
 ## Roadmap
 
-### ✅ Completed
+### ✅ Completed (v2.2)
 - [x] 9 analysis tools across textual, critical, and discovery categories
 - [x] Full OT corpus coverage — MT (ETCBC) + LXX (Vaticanus) across all books
 - [x] 1QIsaᵃ (Dead Sea Scrolls) corpus — DSS Bridge Tool runs on real scroll data
 - [x] Samaritan Pentateuch corpus (5 books, 114,889 words)
 - [x] MorphGNT / SBLGNT corpus (27 NT books, 137,554 words)
+- [x] Peshitta as fifth witness in Ancient Witness Bridge (AI-grounded; real corpus planned)
+- [x] NT Use of OT Analyzer — citation-form determination across MT and LXX
 - [x] Spanish translation layer (`analysis_cache_es`) — full UI + analysis output
-- [x] 91 featured passages pre-cached across all tools (instant load)
+- [x] 141 featured passages pre-cached across all tools (instant load)
 - [x] Persona-based home page — Scholar, PhD Candidate, Student entry points
 - [x] Scholar / Student mode toggle (technical vs. plain-language view)
 - [x] RIS and TEI XML export for Divergence Analysis
 - [x] BiblIndex deep-links in Patristic Citations tool
 - [x] Open Data API
 
-### 🔜 Phase 2 — NT Use of OT Analyzer
-- [ ] New tool: identify every OT allusion in any NT passage and determine whether the author cited MT or LXX text form (methodology: Beale & Carson, Christopher Stanley, Richard Hays)
-- [ ] GNT corpus integration for NT text retrieval
-- [ ] 10 high-use NT citation passages pre-cached (Matthew 1:23, Hebrews 1:6, Acts 15:17…)
+---
 
-### 🔜 Phase 3 — Literary Structure Tools
-- [ ] **Chiasm Detector** — detect chiastic (A B C B′ A′) and parallel structures; visual arm rendering with color-coded pairs and pivot highlighting (methodology: Lund, Welch, Dorsey)
-- [ ] **Source Profile Tool** — identify J/E/D/P linguistic and theological markers per passage; supports Classic DH, Supplementary, and Neo-Documentary frameworks; framed as analytical evidence, not definitive assignment
+### 🔜 Phase 1 — Months 1–2: Foundation
 
-### 🔜 Phase 4 — New Corpora
-- [ ] **Targum corpus** (Onkelos + Jonathan) — Aramaic paraphrase comparison; categorize expansions as theological, halakhic, messianic, divine-name substitution (Memra/Shekhina)
-- [ ] **Targum Comparator tool** — dedicated MT vs. Targum analysis view
-- [ ] **Extended DSS witnesses** — 4QSamᵃ, 11QPaleoLev, 1QpHab beyond 1QIsaᵃ; fifth column in Ancient Witness Bridge
+**Corpus**
+- [ ] **Peshitta real corpus** — replace AI-only Peshitta with actual Leiden / CAL data files in `pesh_etcbc/` (already registered in `corpus.py`; zero code changes needed)
+- [ ] **MT/LXX expansion** — add Jeremiah (LXX is 1/8 shorter with different chapter order), 1–2 Samuel (4QSamᵃ alignment), full Psalms; no code changes
+- [ ] **Extended DSS witnesses** — 4QSamᵃ, 11QPaleoLev, 1QpHab, 4QDeutᵏ as additional CSVs in `data/corpora/dss/`
 
-### 🔜 Languages
-- [ ] Hebrew UI (`he`) with full RTL layout
-- [ ] Dutch UI (`nl`)
+**New tools** *(first open tools of their kind anywhere)*
+- [ ] **Chiasm & Literary Structure Detector** (`/chiasm`) — detect concentric structures (A-B-C-B′-A′), parallel panels, inclusios, and refrains; methodology: Lund, Welch, Dorsey, Walsh
+- [ ] **Source Criticism Tool** (`/source`) — J/E/D/P attribution with evidence; supports Classic Documentary, Supplementary, and Neo-Documentary frameworks; Wellhausen / Friedman / Baden grounding
+
+---
+
+### 🔜 Phase 2 — Months 3–4: New Traditions
+
+**Corpus**
+- [ ] **Targum corpus** (Onkelos + Jonathan) — Aramaic Targumim from CAL / ETCBC; register `targum_cal/` tradition
+- [ ] **Vulgate corpus** (Jerome) — Latin OT + NT from CLTK / Open Scriptures; register `vulgate_cltk/` tradition
+- [ ] **LXX variant MSS** — add Sinaiticus and Alexandrinus alongside Vaticanus; unlocks three-way LXX manuscript comparison
+
+**New tools**
+- [ ] **Targum Comparator** (`/targum`) — MT vs. Targum word-level comparison; expansion types: theological, halakhic, messianic, divine-name substitution (Memra/Shekhina), haggadic; Sperber / McNamara methodology
+- [ ] **NT Textual Tradition Analyzer** (`/nt-text`) — classify NT variants across Byzantine, Alexandrian, and Western text types; UBS/NA apparatus data + AI analysis; Metzger methodology
+
+**Infrastructure**
+- [ ] **Hebrew RTL UI** (`he` locale) — full RTL layout; makes BibCrit usable by Israeli biblical scholars
+- [ ] **True Anthropic token streaming** — replace blocking `messages.create()` with `messages.stream()`; sections appear as Claude writes them, 10–20s earlier on first queries
+
+---
+
+### 🔜 Phase 3 — Months 5–6: Synthesis
+
+**Corpus**
+- [ ] **Second Temple literature** — 1 Enoch, Jubilees, Sirach, 4 Ezra, Tobit from CLTK / Open Scriptures; register `stl_cltk/` tradition
+- [ ] **Peshitta NT** — Syriac NT (Aramaic Primacy tradition); third NT tradition alongside SBLGNT
+
+**New tools** *(capstone — require all prior corpora)*
+- [ ] **Second Temple Literature Bridge** (`/stl`) — map allusions from 1 Enoch, Jubilees, Sirach, 4 Ezra to canonical texts; critical for DSS and NT intertextuality; Nickelsburg / VanderKam / Collins methodology
+- [ ] **Intertextuality Mapper** (`/intertextuality`) — full allusion network for any passage: inner-biblical allusions, NT echoes, patristic citations, DSS parallels, Second Temple parallels; exportable as JSON-LD / RDF; Hays / Beale / Fishbane methodology
+
+**Infrastructure**
+- [ ] **Full open API v1** — versioned endpoints, API key management, rate limiting, Swagger docs at `/api/docs`
+- [ ] **Dutch UI** (`nl`) and **Portuguese UI** (`pt`)
+- [ ] **JOSS paper v3 + Zenodo DOI update** — reflect 15 tools and 9 corpus traditions
+
+---
+
+### v3.0 target state
+
+| Metric | v2.2 now | v3.0 (+6 months) |
+|---|---|---|
+| Analysis tools | 9 | 15 |
+| Corpus traditions | 5 | 9 |
+| UI languages | 2 (EN, ES) | 5 (+ HE, NL, PT) |
+| First-in-world open tools | 5 | 11 |
 
 ---
 

@@ -164,7 +164,7 @@ def main() -> None:
     )
 
     _BACKTRANS_PROMPT    = 'v1'
-    _DSS_PROMPT          = 'v5'
+    _DSS_PROMPT          = 'v6'
     _NUMERICAL_PROMPT    = 'v3'
     _SCRIBAL_PROMPT      = 'v1'
     _THEOLOGICAL_PROMPT  = 'v1'
@@ -278,18 +278,23 @@ def main() -> None:
             if args.dry_run:
                 print(f'  ○ WOULD RUN  dss  {ref}')
                 continue
-            mt_text = ''
-            lxx_text = ''
+            mt_text = lxx_text = dss_text = sp_text = pesh_text = ''
             try:
-                mt_words  = corpus.get_verse_words(ref, 'MT')
-                lxx_words = corpus.get_verse_words(ref, 'LXX')
-                mt_text   = ' '.join(w.word_text for w in mt_words)  if mt_words  else ''
-                lxx_text  = ' '.join(w.word_text for w in lxx_words) if lxx_words else ''
+                mt_words   = corpus.get_verse_words(ref, 'MT')
+                lxx_words  = corpus.get_verse_words(ref, 'LXX')
+                dss_words  = corpus.get_verse_words(ref, 'DSS')
+                sp_words   = corpus.get_verse_words(ref, 'SP')
+                pesh_words = corpus.get_verse_words(ref, 'PESH')
+                mt_text   = ' '.join(w.word_text for w in mt_words)   if mt_words   else ''
+                lxx_text  = ' '.join(w.word_text for w in lxx_words)  if lxx_words  else ''
+                dss_text  = ' '.join(w.word_text for w in dss_words)  if dss_words  else ''
+                sp_text   = ' '.join(w.word_text for w in sp_words)   if sp_words   else ''
+                pesh_text = ' '.join(w.word_text for w in pesh_words) if pesh_words else ''
             except Exception:
                 pass
             print(f'  → RUN   dss  {ref} …', end='', flush=True)
             t0 = time.time()
-            result = pipeline.analyze_dss(ref, mt_text, lxx_text)
+            result = pipeline.analyze_dss(ref, mt_text, lxx_text, dss_text, sp_text, pesh_text)
             elapsed = time.time() - t0
             if result.get('error'):
                 print(f' ❌  {result["error"]}')

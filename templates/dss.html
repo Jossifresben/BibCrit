@@ -15,11 +15,21 @@
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    if (window.BibCritPersona) BibCritPersona.setToolSubtitle('dss', {
-      scholar: 'Cross-tradition witness analysis: MT, LXX, Dead Sea Scrolls, and Samaritan Pentateuch where extant. Alignment scored per reading.',
-      phd:     'Which ancient witnesses attest your passage? Do DSS and SP align with MT or LXX? Cite the evidence in your chapter.',
-      student: 'The Dead Sea Scrolls \u2014 discovered in 1947 \u2014 are the oldest surviving copies of the Hebrew Bible, over 1,000 years older than any manuscript previously known. Some scrolls match our Bible almost exactly; others have surprising differences. Select a passage to see whether the Scrolls agree with the Hebrew Bible, the Greek Septuagint, or preserve a completely independent reading.'
-    });
+    if (window.BibCritPersona) {
+      var _lang = '{{ lang }}';
+      var _es = _lang === 'es';
+      BibCritPersona.setToolSubtitle('dss', {
+        scholar: _es
+          ? 'An\u00e1lisis de testigos a trav\u00e9s de tradiciones: TM, LXX, Rollos del Mar Muerto, Pentateuco Samaritano y Peshitta donde est\u00e9n atestiguados. Alineaci\u00f3n puntuada por lectura.'
+          : 'Cross-tradition witness analysis: MT, LXX, Dead Sea Scrolls, Samaritan Pentateuch, and Peshitta where extant. Alignment scored per reading.',
+        phd: _es
+          ? '\u00bfQu\u00e9 testigos antiguos atestiguan tu pasaje? \u00bfSe alinean los DSS, el SP y la Peshitta con el TM o con la LXX? Cita la evidencia en tu cap\u00edtulo.'
+          : 'Which ancient witnesses attest your passage? Do DSS, SP, and Peshitta align with MT or LXX? Cite the evidence in your chapter.',
+        student: _es
+          ? 'Los Rollos del Mar Muerto \u2014 descubiertos en 1947 \u2014 son las copias m\u00e1s antiguas que se conservan de la Biblia hebrea. Ahora tambi\u00e9n comparamos el Pentateuco Samaritano y la Peshitta siriac\u00e1. Selecciona un pasaje para ver con qu\u00e9 versi\u00f3n antigua coincide cada testigo.'
+          : 'The Dead Sea Scrolls \u2014 discovered in 1947 \u2014 are the oldest surviving copies of the Hebrew Bible. We now also compare the Samaritan Pentateuch and the Syriac Peshitta. Select a passage to see which ancient version each witness agrees with \u2014 or whether it preserves a completely independent reading.'
+      });
+    }
   });
 </script>
 

@@ -56,6 +56,7 @@ Free, open-access web tool for biblical textual criticism at [bibcrit.com](https
 | **DSS** | [ETCBC/DSS](https://github.com/ETCBC/dss) — 1QIsaᵃ — via Text-Fabric | `data/corpora/dss/` |
 | **SP** | [dt-ucph/sp](https://github.com/dt-ucph/sp) via Text-Fabric | `data/corpora/sp_etcbc/` |
 | **GNT** | [SBLGNT](https://github.com/LogosBible/SBLGNT) | `data/corpora/gnt_opengnt/` |
+| **PESH** | Leiden Peshitta / [CAL](https://cal.huc.edu) — Claude training knowledge (corpus files planned) | `data/corpora/pesh_etcbc/` |
 
 **License note:** The ETCBC corpora (MT/BHSA and DSS) are released under [CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/). The app code is Apache 2.0; the corpus data it ingests retains its own license terms. Do not use the ingested ETCBC data for commercial purposes without a separate agreement with ETCBC.
 

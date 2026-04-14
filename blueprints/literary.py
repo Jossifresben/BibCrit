@@ -1,7 +1,6 @@
 """Literary Analysis blueprint — Chiasm Detector and Source Criticism Tool."""
 
 import json
-import os
 import threading
 from flask import Blueprint, render_template, request, Response, stream_with_context
 from biblical_core.claude_pipeline import CHIASM_MODEL, SOURCE_MODEL
@@ -136,11 +135,8 @@ def api_chiasm_stream():
             yield event('step', msg=_step(lang, 'translating'))
             _tr_box = [result]
             def _run_tr_chiasm():
-                try:
-                    _tr_box[0] = _translate_step(pipeline, lang, result, reference,
-                                                  'chiasm', _CHIASM_PROMPT, CHIASM_MODEL)
-                except Exception:
-                    pass
+                _tr_box[0] = _translate_step(pipeline, lang, result, reference,
+                                              'chiasm', _CHIASM_PROMPT, CHIASM_MODEL)
             _tt = threading.Thread(target=_run_tr_chiasm, daemon=True)
             _tt.start()
             while _tt.is_alive():
@@ -230,11 +226,8 @@ def api_source_stream():
             yield event('step', msg=_step(lang, 'translating'))
             _tr_box = [result]
             def _run_tr_source():
-                try:
-                    _tr_box[0] = _translate_step(pipeline, lang, result, reference,
-                                                  'source', _SOURCE_PROMPT, SOURCE_MODEL)
-                except Exception:
-                    pass
+                _tr_box[0] = _translate_step(pipeline, lang, result, reference,
+                                              'source', _SOURCE_PROMPT, SOURCE_MODEL)
             _tt = threading.Thread(target=_run_tr_source, daemon=True)
             _tt.start()
             while _tt.is_alive():

@@ -202,7 +202,8 @@ body[data-persona] .home-section-header { display: none; }
             font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.02em; }
 .ph-sub   { font-size: 0.875rem; color: var(--muted, #6b6560); margin-bottom: 1.2rem; }
 
-.ph-badges { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.ph-badges { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+.ph-badge-zenodo { display: inline-flex; align-items: center; text-decoration: none; }
 .ph-badge  {
     background: rgba(0,0,0,.05); border: 1px solid rgba(0,0,0,.12);
     border-radius: 5px; padding: 3px 9px; font-size: 0.7rem; color: var(--muted, #6b6560);
@@ -313,9 +314,11 @@ body[data-persona] .home-section-header { display: none; }
         <span class="ph-badge accent">{{ _t('ph_scholar_badge_sbl') }}</span>
         <span class="ph-badge accent">{{ _t('ph_scholar_badge_api') }}</span>
 
-        <span class="ph-badge">DOI: 10.5281/zenodo.19358424</span>
+        <a href="https://doi.org/10.5281/zenodo.19358424" target="_blank" rel="noopener" class="ph-badge-zenodo">
+          <img src="https://zenodo.org/badge/1195648052.svg" alt="DOI: 10.5281/zenodo.19358424" style="height:20px;vertical-align:middle;">
+        </a>
         <span class="ph-badge">Apache 2.0</span>
-        <span class="ph-badge">9 tools</span>
+        <span class="ph-badge">11 tools</span>
       </div>
     </div>
   </div>
@@ -333,7 +336,9 @@ body[data-persona] .home-section-header { display: none; }
         <span class="ph-badge accent">{{ _t('ph_phd_badge_export') }}</span>
         <span class="ph-badge accent">{{ _t('ph_phd_badge_method') }}</span>
         <span class="ph-badge">{{ _t('ph_phd_badge_disc') }}</span>
-        <span class="ph-badge">{{ _t('ph_phd_badge_doi') }}</span>
+        <a href="https://doi.org/10.5281/zenodo.19358424" target="_blank" rel="noopener" class="ph-badge-zenodo">
+          <img src="https://zenodo.org/badge/1195648052.svg" alt="DOI: 10.5281/zenodo.19358424" style="height:20px;vertical-align:middle;">
+        </a>
       </div>
       <div class="phd-diss-box">
         <div class="phd-diss-label">{{ _t('ph_phd_diss_label') }}</div>

@@ -14,3 +14,4 @@ data/corpora/mt_etcbc/full_*.csv
 data/corpora/lxx_stepbible/full_*.csv
 video/node_modules/
 video/out/
+.worktrees/

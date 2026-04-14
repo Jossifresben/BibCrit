@@ -412,7 +412,19 @@
     "nt_ot_scholarly_note_label": "Scholarly note:",
     "nt_ot_contested_label": "Contested",
     "nt_ot_section_allusions": "OT Allusions",
-    "nt_ot_no_allusions": "No OT allusions identified for this passage."
+    "nt_ot_no_allusions": "No OT allusions identified for this passage.",
+    "nav_chiasm": "Chiasm Detector",
+    "nav_source": "Source Criticism",
+    "chiasm_tool_title": "Chiasm & Literary Structure Detector",
+    "chiasm_tool_subtitle": "Identify concentric structures, parallel panels, and inclusios in any biblical passage, applying the methodology of Lund, Dorsey, and Walsh.",
+    "tool_chiasm_title": "Chiasm Detector",
+    "tool_chiasm_desc": "Detect A-B-C-X-C'-B'-A' concentric structures, parallel panels, and inclusios in any passage. The first open tool of its kind.",
+    "chiasm_empty_body": "Enter a biblical passage to detect its literary structure. Works on any book — Genesis, Isaiah, Psalms, Ruth, and Amos are primary targets.",
+    "source_tool_title": "Source Criticism Tool (J/E/D/P)",
+    "source_tool_subtitle": "Identify Pentateuchal source layers (J, E, D, P) with reasoning grounded in Wellhausen, Friedman, and Baden.",
+    "tool_source_title": "Source Criticism (J/E/D/P)",
+    "tool_source_desc": "Attribute Pentateuchal passages to source layers — Yahwist (J), Elohist (E), Deuteronomist (D), Priestly (P) — with scholarly evidence. No other digital tool does this.",
+    "source_empty_body": "Enter a Pentateuchal passage to identify its source layers. Works best on Genesis, Exodus, Leviticus, Numbers, and Deuteronomy."
   },
   "es": {
     "app_name": "BibCrit",
@@ -813,6 +825,18 @@
     "nt_ot_scholarly_note_label": "Nota académica:",
     "nt_ot_contested_label": "Controvertido",
     "nt_ot_section_allusions": "Alusiones al AT",
-    "nt_ot_no_allusions": "No se identificaron alusiones al AT para este pasaje."
+    "nt_ot_no_allusions": "No se identificaron alusiones al AT para este pasaje.",
+    "nav_chiasm": "Detector de Quiasmo",
+    "nav_source": "Crítica de Fuentes",
+    "chiasm_tool_title": "Detector de Quiasmo y Estructura Literaria",
+    "chiasm_tool_subtitle": "Identifica estructuras concéntricas, paneles paralelos e inclusiones en cualquier pasaje bíblico, aplicando la metodología de Lund, Dorsey y Walsh.",
+    "tool_chiasm_title": "Detector de Quiasmo",
+    "tool_chiasm_desc": "Detecta estructuras concéntricas A-B-C-X-C'-B'-A', paneles paralelos e inclusiones en cualquier pasaje. La primera herramienta abierta de este tipo.",
+    "chiasm_empty_body": "Ingresa un pasaje bíblico para detectar su estructura literaria. Funciona con cualquier libro — Génesis, Isaías, Salmos, Rut y Amós son objetivos principales.",
+    "source_tool_title": "Herramienta de Crítica de Fuentes (J/E/D/P)",
+    "source_tool_subtitle": "Identifica capas de fuentes pentateucales (J, E, D, P) con razonamiento fundamentado en Wellhausen, Friedman y Baden.",
+    "tool_source_title": "Crítica de Fuentes (J/E/D/P)",
+    "tool_source_desc": "Atribuye pasajes pentateucales a capas de fuentes — Yahvista (J), Elohísta (E), Deuteronomista (D), Sacerdotal (P) — con evidencia académica. Ninguna otra herramienta digital hace esto.",
+    "source_empty_body": "Ingresa un pasaje pentateuco para identificar sus capas de fuentes. Funciona mejor con Génesis, Éxodo, Levítico, Números y Deuteronomio."
   }
 }

@@ -262,6 +262,8 @@
         });
       }
     }
+
+    staggerReveal(results, 90);
   }
 
   function _updateFilterChips(container, activeType) {

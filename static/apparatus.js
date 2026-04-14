@@ -193,6 +193,7 @@
         if (passageHeading) passageHeading.style.display = 'block';
         apparatusGrid.style.display = 'grid';
         tabsArea.style.display      = 'block';
+        staggerReveal(tabsArea, 0);
         exportRow.style.display     = 'flex';
         // Keep the URL bar in sync so the Share modal always reflects the current passage
         history.replaceState(null, '', '/divergence?ref=' + encodeURIComponent(ref));

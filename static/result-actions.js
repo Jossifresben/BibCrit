@@ -499,3 +499,27 @@
   global.ResultActions._toText = _resultToText;
 
 })(window);
+
+// ── Staggered section reveal ──────────────────────────────────────────────────
+// Loaded via base.html — available on every tool page.
+//   staggerReveal(container)     → stagger direct children at 90 ms intervals
+//   staggerReveal(container, 0)  → fade the container itself in as one unit
+//   staggerReveal(container, 60) → custom ms step; capped at 500 ms total
+window.staggerReveal = function(container, step) {
+  if (!container) return;
+  step = (step === undefined) ? 90 : step;
+  if (step === 0) {
+    container.classList.remove('section-reveal');
+    void container.offsetHeight;            // force reflow to restart animation
+    container.style.setProperty('--reveal-delay', '0ms');
+    container.classList.add('section-reveal');
+  } else {
+    var els = Array.prototype.slice.call(container.children);
+    els.forEach(function(el, i) {
+      el.classList.remove('section-reveal');
+      void el.offsetHeight;
+      el.style.setProperty('--reveal-delay', Math.min(i * step, 500) + 'ms');
+      el.classList.add('section-reveal');
+    });
+  }
+};

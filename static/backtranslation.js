@@ -206,6 +206,7 @@
     buildTabs(data);
 
     tabsArea.style.display  = 'block';
+    staggerReveal(tabsArea, 0);
     exportRow.style.display = 'flex';
 
     // Model attribution badge

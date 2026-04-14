@@ -269,6 +269,7 @@
     }
 
     resultsArea.style.display = 'block';
+    staggerReveal(resultsArea, 90);
   }
 
   // ── Card builders ─────────────────────────────────────────────────────────

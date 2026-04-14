@@ -166,6 +166,7 @@
 
     show(results);
     show(tabsArea);
+    staggerReveal(tabsArea, 0);
 
     var exportRow = document.getElementById('export-row');
     if (exportRow) show(exportRow);

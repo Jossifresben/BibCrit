@@ -1986,3 +1986,13 @@ body[data-persona="phd"]     .tool-header { border-top-color: #6b5cdb; }
 body[data-persona="student"] .tool-header { border-top-color: #059669; }
 [data-theme="dark"] body[data-persona] .tool-title   { color: var(--fg, #e2e4dc); }
 [data-theme="dark"] body[data-persona] .tool-subtitle { color: var(--muted, #a0a498); }
+
+/* ── Staggered section reveal ─────────────────────────────────────────────── */
+@keyframes sectionReveal {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.section-reveal {
+  animation: sectionReveal 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--reveal-delay, 0ms);
+}

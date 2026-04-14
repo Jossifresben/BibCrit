@@ -92,7 +92,7 @@ BibCrit loads CSV exports of the ETCBC (MT) and STEP Bible (LXX) corpora at star
 
 ## Streaming Interface
 
-Analysis streams via SSE so progress is visible in real time. The front end renders structured JSON responses progressively, with each section (synthesis, assessment, key divergences, transmission history) appearing as it arrives.
+Analysis streams via SSE so progress is visible in real time, with step-by-step indicators ("Checking cache…", "Analyzing…") displayed during generation. When results arrive, structured sections are revealed in sequence via staggered CSS animations — synthesis first, then key divergences, transmission history, and the BibCrit assessment — so the page populates incrementally rather than appearing all at once.
 
 ## Internationalization
 

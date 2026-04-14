@@ -242,6 +242,7 @@
 
     // Export
     show(tabsArea);
+    staggerReveal(tabsArea, 0);
     if (exportRow) show(exportRow);
 
     // Inject Scholar Rating, Copy, Download into export-row (once only)

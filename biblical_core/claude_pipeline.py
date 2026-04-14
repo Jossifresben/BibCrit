@@ -1148,6 +1148,8 @@ class ClaudePipeline:
 
         Returns dict with 'allusions', 'summary_technical', 'summary_plain', 'bibcrit_hypothesis'.
         On error: returns {'error': ..., 'allusions': []}.
+
+        prompt_version='v1' — keep in sync with _NT_OT_PROMPT in blueprints/textual.py.
         """
         model          = NT_OT_MODEL
         prompt_version = 'v1'

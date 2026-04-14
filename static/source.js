@@ -106,6 +106,7 @@
   // ── SSE analysis ──────────────────────────────────────────────────────────
   function analyze(ref) {
     if (!ref) return;
+    if (window.BibCrit_checkPassageLength && window.BibCrit_checkPassageLength(ref)) return;
     show(loadingState); hide(emptyState); hide(resultsArea); hide(passageHdr);
     document.getElementById('loading-step').textContent = '\u2026';
     document.getElementById('loading-timer').textContent = '';

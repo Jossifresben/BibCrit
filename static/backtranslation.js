@@ -129,6 +129,7 @@
   // ── Analysis (SSE) ────────────────────────────────────────────────────────
   function analyze(ref) {
     if (!ref) return;
+    if (window.BibCrit_checkPassageLength && window.BibCrit_checkPassageLength(ref)) return;
     currentRef = ref;
 
     // Show loading, hide others

@@ -4,7 +4,21 @@ import json
 import threading
 from flask import Blueprint, render_template, request, Response, stream_with_context
 from biblical_core.claude_pipeline import CHIASM_MODEL, SOURCE_MODEL
+from biblical_core.ref_utils import estimate_verse_count, TOOL_VERSE_LIMITS
 import state
+
+
+def _check_ref_length(reference: str, tool: str) -> str | None:
+    """Return an error message string if the passage is too long, else None."""
+    max_v = TOOL_VERSE_LIMITS.get(tool)
+    if not max_v:
+        return None
+    est = estimate_verse_count(reference)
+    if est > max_v:
+        return (
+            f'Passage too long (≈{est} verses estimated). '
+            f'Please limit to {max_v} verses or fewer for this tool.'
+        )
 
 literary_bp = Blueprint('literary', __name__)
 
@@ -79,6 +93,10 @@ def api_chiasm_stream():
 
         if not reference:
             yield event('error', msg='ref parameter required')
+            return
+        len_err = _check_ref_length(reference, 'chiasm')
+        if len_err:
+            yield event('error', msg=len_err)
             return
 
         corpus   = state.corpus
@@ -170,6 +188,10 @@ def api_source_stream():
 
         if not reference:
             yield event('error', msg='ref parameter required')
+            return
+        len_err = _check_ref_length(reference, 'source')
+        if len_err:
+            yield event('error', msg=len_err)
             return
 
         corpus   = state.corpus

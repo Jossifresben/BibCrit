@@ -148,6 +148,7 @@
   // ── Analysis (SSE) ────────────────────────────────────────────────────────
   function analyze(ref) {
     if (!ref) return;
+    if (window.BibCrit_checkPassageLength && window.BibCrit_checkPassageLength(ref)) return;
 
     if (_isOtRef(ref)) {
       emptyState.style.display = 'block';

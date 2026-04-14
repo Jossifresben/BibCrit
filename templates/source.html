@@ -86,6 +86,7 @@
 {% endblock %}
 
 {% block scripts %}
+<script>window.TOOL_MAX_VERSES = 65;</script>
 <script src="{{ url_for('static', filename='source.js') }}"></script>
 {% if reference %}
 <script>

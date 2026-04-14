@@ -96,6 +96,7 @@
 {% endblock %}
 
 {% block scripts %}
+<script>window.TOOL_MAX_VERSES = 40;</script>
 <script src="{{ url_for('static', filename='nt_ot.js') }}"></script>
 {% if reference %}
 <script>

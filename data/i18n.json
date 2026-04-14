@@ -446,7 +446,8 @@
     "tool_source_desc": "Attribute Pentateuchal passages to source layers — Yahwist (J), Elohist (E), Deuteronomist (D), Priestly (P) — with scholarly evidence. No other digital tool does this.",
     "tool_source_desc_phd": "Delineate source layers in your pericope with systematic evidence — divine name distribution, vocabulary patterns, doublets, narrative tensions — mapped to JEDP designations with competing scholarly positions.",
     "tool_source_desc_student": "Learn how scholars separate the different ancient voices woven into your Bible passage — and what each voice was originally trying to say.",
-    "source_empty_body": "Enter a Pentateuchal passage to identify its source layers. Works best on Genesis, Exodus, Leviticus, Numbers, and Deuteronomy."
+    "source_empty_body": "Enter a Pentateuchal passage to identify its source layers. Works best on Genesis, Exodus, Leviticus, Numbers, and Deuteronomy.",
+    "err_passage_too_long": "Passage too long. Please limit to {max} verses or fewer for this tool."
   },
   "es": {
     "app_name": "BibCrit",
@@ -881,6 +882,7 @@
     "tool_source_desc": "Atribuye pasajes pentateucales a capas de fuentes — Yahvista (J), Elohísta (E), Deuteronomista (D), Sacerdotal (P) — con evidencia académica. Ninguna otra herramienta digital hace esto.",
     "tool_source_desc_phd": "Delimita las capas de fuentes en tu perícopa con evidencia sistemática — distribución del nombre divino, patrones de vocabulario, dobletes, tensiones narrativas — asignadas a las designaciones JEDP con posiciones académicas en competencia.",
     "tool_source_desc_student": "Aprende cómo los académicos separan las distintas voces antiguas entretejidas en tu pasaje bíblico — y lo que cada voz intentaba comunicar originalmente.",
-    "source_empty_body": "Ingresa un pasaje pentateuco para identificar sus capas de fuentes. Funciona mejor con Génesis, Éxodo, Levítico, Números y Deuteronomio."
+    "source_empty_body": "Ingresa un pasaje pentateuco para identificar sus capas de fuentes. Funciona mejor con Génesis, Éxodo, Levítico, Números y Deuteronomio.",
+    "err_passage_too_long": "Pasaje demasiado largo. Por favor, limita la selección a {max} versículos o menos para esta herramienta."
   }
 }

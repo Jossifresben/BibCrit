@@ -478,6 +478,31 @@ body[data-persona] .home-section-header { display: none; }
         <span class="tool-card-arrow">{{ _t('home_open_arrow') }}</span>
     </a>
 
+    <div class="home-section-header">
+        <span class="home-section-label">Literary</span>
+        <span class="home-section-rule"></span>
+    </div>
+
+    <a href="/chiasm?lang={{ lang }}" class="tool-card" data-tool="chiasm">
+        <span class="persona-chip">{{ _t('ph_chip_featured') }}</span>
+        <div class="tool-card-header">
+            <div class="tool-card-icon"><span class="material-symbols-outlined">account_tree</span></div>
+            <h3>{{ _t('tool_chiasm_title') }}</h3>
+        </div>
+        <p>{{ _t('tool_chiasm_desc') }}</p>
+        <span class="tool-card-arrow">{{ _t('home_open_arrow') }}</span>
+    </a>
+
+    <a href="/source?lang={{ lang }}" class="tool-card" data-tool="source">
+        <span class="persona-chip">{{ _t('ph_chip_featured') }}</span>
+        <div class="tool-card-header">
+            <div class="tool-card-icon"><span class="material-symbols-outlined">layers</span></div>
+            <h3>{{ _t('tool_source_title') }}</h3>
+        </div>
+        <p>{{ _t('tool_source_desc') }}</p>
+        <span class="tool-card-arrow">{{ _t('home_open_arrow') }}</span>
+    </a>
+
 </div>
 
 <div class="home-discovery">

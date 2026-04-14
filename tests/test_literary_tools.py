@@ -11,3 +11,50 @@ def test_chiasm_constants_are_importable():
 def test_source_constants_are_importable():
     assert isinstance(SOURCE_MODEL, str) and SOURCE_MODEL
     assert isinstance(_SOURCE_SYSTEM, str) and 'source' in _SOURCE_SYSTEM.lower()
+
+
+from biblical_core.claude_pipeline import ClaudePipeline, CHIASM_MODEL
+
+
+def make_pipeline(tmp_path) -> ClaudePipeline:
+    return ClaudePipeline(data_dir=str(tmp_path), api_key='', cap_usd=5.0)
+
+
+def test_analyze_chiasm_no_client_returns_error(tmp_path):
+    p = make_pipeline(tmp_path)
+    result = p.analyze_chiasm('Amos 5:1-17')
+    assert 'error' in result
+    assert result['elements'] == []
+
+
+def test_analyze_chiasm_cache_roundtrip(tmp_path):
+    p = make_pipeline(tmp_path)
+    fake = {
+        'passage': 'Amos 5:1-17',
+        'structure_detected': True,
+        'structure_type': 'concentric',
+        'elements': [{'label': 'A', 'verses': '5:1-3', 'summary': 'Lament',
+                      'text_excerpt': 'Fallen, no more', 'confidence': 0.88}],
+        'pivot': {'label': 'X', 'verses': '5:8-9', 'summary': 'Doxology',
+                  'theological_weight': "God's sovereignty grounds the ethics."},
+        'correspondences': [],
+        'overall_confidence': 0.85,
+        'methodology_citations': 'Dorsey 1999 ch.11',
+        'theological_significance': 'Test significance.',
+        'scholarly_citations': 'Dorsey, Wolff.',
+        'bibcrit_hypothesis': {'title': 'Doxology as pivot', 'reasoning': 'test', 'confidence': 0.82},
+        'discovery_ready': True,
+    }
+    p.save_cache('Amos 5:1-17', 'chiasm', 'v1', CHIASM_MODEL, fake)
+    cached = p.get_cached('Amos 5:1-17', 'chiasm', 'v1', CHIASM_MODEL)
+    assert cached is not None
+    assert cached['structure_type'] == 'concentric'
+    assert cached['elements'][0]['label'] == 'A'
+
+
+def test_analyze_chiasm_budget_cap_returns_error(tmp_path):
+    p = ClaudePipeline(data_dir=str(tmp_path), api_key='fake-key', cap_usd=0.0)
+    result = p.analyze_chiasm('Genesis 1:1-2:3')
+    assert 'error' in result
+    assert 'budget' in result['error'].lower() or 'cap' in result['error'].lower()
+    assert result['elements'] == []

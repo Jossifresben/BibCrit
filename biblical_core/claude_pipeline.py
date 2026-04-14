@@ -1232,6 +1232,74 @@ class ClaudePipeline:
         self.save_cache(reference, tool, prompt_version, model, data)
         return data
 
+    def analyze_chiasm(self, reference: str, mt_text: str = '') -> dict:
+        """Return chiasm/literary structure analysis for a biblical passage.
+
+        Returns dict with 'structure_detected', 'elements', 'pivot', 'correspondences',
+        'overall_confidence', 'theological_significance', 'bibcrit_hypothesis'.
+        On error: returns {'error': ..., 'elements': []}.
+
+        prompt_version='v1' — keep in sync with _CHIASM_PROMPT in blueprints/literary.py.
+        """
+        model          = CHIASM_MODEL
+        prompt_version = 'v1'
+        tool           = 'chiasm'
+
+        cached = self.get_cached(reference, tool, prompt_version, model)
+        if cached:
+            return cached
+
+        if not self._client:
+            return {
+                'error': 'No API key configured. Set ANTHROPIC_API_KEY environment variable.',
+                'elements': [], 'structure_detected': False, 'structure_type': 'none',
+                'pivot': None, 'correspondences': [], 'overall_confidence': 0.0,
+                'theological_significance': '', 'scholarly_citations': '',
+                'bibcrit_hypothesis': {'title': '', 'reasoning': '', 'confidence': 0.0},
+            }
+
+        budget = self.get_budget()
+        if budget['spend_usd'] >= self._cap_usd:
+            return {
+                'error': (
+                    f"Monthly analysis budget of ${self._cap_usd:.2f} reached. "
+                    "Please try again next month or donate to increase the cap."
+                ),
+                'elements': [], 'structure_detected': False, 'structure_type': 'none',
+                'pivot': None, 'correspondences': [], 'overall_confidence': 0.0,
+                'theological_significance': '', 'scholarly_citations': '',
+                'bibcrit_hypothesis': {'title': '', 'reasoning': '', 'confidence': 0.0},
+            }
+
+        template = self.load_prompt('chiasm', prompt_version)
+        user_content = (
+            template
+            .replace('{{REFERENCE}}', reference)
+            .replace('{{MT_TEXT}}', mt_text or '')
+        ) if template else (
+            f'Passage: {reference}\nMT Text: {mt_text}\n'
+            'Analyze for chiastic structure. Return JSON with elements array.'
+        )
+
+        response = self._client.messages.create(
+            model=model,
+            max_tokens=8192,
+            system=_CHIASM_SYSTEM,
+            messages=[
+                {'role': 'user',      'content': user_content},
+                {'role': 'assistant', 'content': '{'},
+            ],
+        )
+
+        cost = (response.usage.input_tokens  * _SONNET_COST_IN +
+                response.usage.output_tokens * _SONNET_COST_OUT)
+        self.record_spend(cost)
+
+        raw  = '{' + response.content[0].text
+        data = _parse_json_response(raw)
+        self.save_cache(reference, tool, prompt_version, model, data)
+        return data
+
 
 _DISCOVERY_TYPES = {'translation_idiom', 'different_vorlage', 'theological_tendency',
                     'omission', 'addition', 'scribal_error'}

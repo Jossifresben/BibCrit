@@ -51,16 +51,19 @@ def estimate_verse_count(ref: str) -> int:
     return 20
 
 
-# Per-tool hard limits (verses)
+# Per-tool hard limits (verses).
+# Set by output density, not just timeout risk:
+#   verbose (word-level / citation-per-verse): 25–35
+#   structural (chiasm, source, numerical):    50–60
+# Scribal and genealogy operate on whole books — no limit applied.
 TOOL_VERSE_LIMITS: dict[str, int] = {
-    'divergence':     50,
-    'backtranslation': 40,
-    'dss':            50,
-    'numerical':      50,
-    'theological':    50,
-    'patristic':      50,
-    'nt_ot':          40,
-    'chiasm':         65,
-    'source':         65,
-    # 'scribal' and 'genealogy' operate on whole books — no limit applied
+    'backtranslation':  25,   # retroversion: ~50 tokens/word, extremely dense
+    'nt_ot':            25,   # citation form + scholarly note per allusion
+    'patristic':        25,   # full Father-by-Father citations per passage
+    'divergence':       30,   # word-level table for every MT/LXX difference
+    'theological':      30,   # flag + motivation analysis per revision
+    'dss':              35,   # 5-tradition comparison, moderate density
+    'chiasm':           50,   # structural overview, lower output per verse
+    'numerical':        50,   # chapter-level anyway
+    'source':           60,   # Genesis 1:1-2:25 = 56 verses — keep just under
 }

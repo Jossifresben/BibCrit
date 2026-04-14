@@ -39,11 +39,12 @@ Free, open-access web tool for biblical textual criticism at [bibcrit.com](https
 | 1 | **MT/LXX Divergence Analyzer** | `/divergence` | Word-level Hebrew/Greek comparison with alignment scoring. Claude classifies each divergence (`different_vorlage`, `theological_tendency`, `scribal_error`, etc.), assigns confidence, and generates competing scholarly hypotheses. Exports SBL footnotes, BibTeX, RIS (Zotero), and TEI XML. Prompt: `divergence_v2`. |
 | 2 | **Scribal Tendencies Profiler** | `/scribal` | Statistical fingerprint of an LXX book's translator across five dimensions: literalness, anthropomorphism reduction, messianic heightening, harmonization, and paraphrase rate. Rendered as a D3.js radar chart with per-dimension evidence. Supports two-book comparison. Prompt: `scribal_v1`. |
 | 3 | **Numerical Discrepancies** | `/numerical` | Surfaces numerical divergences (patriarchal ages, census figures, temple dimensions, etc.) across MT, LXX, and Samaritan Pentateuch, ranking competing theories by confidence. Prompt: `numerical_v3`. |
-| 4 | **Ancient Witness Bridge (DSS)** | `/dss` | Compare a passage across Dead Sea Scrolls manuscripts (1QIsaᵃ and others), MT, and LXX. Shows which scrolls attest the passage, MT/LXX alignment, and specific divergences. Prompt: `dss_v5`. |
+| 4 | **Ancient Witness Bridge (DSS)** | `/dss` | Compare a passage across five ancient witnesses: Dead Sea Scrolls (1QIsaᵃ and others), Samaritan Pentateuch, Peshitta (Syriac OT), MT, and LXX. Shows which witnesses attest the passage, alignment, and specific divergences. Prompt: `dss_v6`. |
 | 5 | **Theological Revisions** | `/theological` | Identifies theologically motivated textual changes — anthropomorphism avoidance, messianic heightening, polemical alterations, harmonization. Prompt: `theological_v1`. |
 | 6 | **Patristic Citation Tracker** | `/patristic` | Traces Church Father citations (1st–5th century), identifies the text form used, and visualizes text-form distribution as a bar chart. Each citation links to [BiblIndex](https://www.biblindex.org) for primary source access. Prompt: `patristic_v3`. |
 | 7 | **Back-Translation Workbench** | `/backtranslation` | Reconstructs the probable Hebrew Vorlage word-by-word from LXX Greek using Tov's retroversion methodology, with confidence levels and summary assessments. Prompt: `backtranslation_v1`. |
 | 8 | **Manuscript Genealogy** | `/genealogy` | Visualizes the full transmission stemma of a biblical book — from proto-text through manuscript families (MT, LXX, DSS, SP, Peshitta, Targum, Vulgate) to modern critical editions. Prompt: `genealogy_v1`. |
+| 9 | **NT Use of OT Analyzer** | `/nt-ot` | Enter a New Testament passage and identify every OT allusion it contains. For each allusion, determines whether the NT author cited MT, LXX, an independent form, or a conflation — applying the methodology of Beale & Carson, Stanley, and Hays. Prompt: `nt_ot_v1`. |
 
 ---
 
@@ -212,7 +213,7 @@ Text-Fabric downloads corpora on first run (~several hundred MB). The ETCBC and 
 
 ## Pre-caching Featured Passages
 
-The repo ships with analyses for 91 featured passages across all 8 tools. To seed or refresh:
+The repo ships with analyses for featured passages across all 9 tools. To seed or refresh:
 
 ```bash
 # Seed all missing EN analyses (safe to re-run; skips already-cached)
@@ -406,7 +407,7 @@ The default spend cap is `$10.00/month`. Raise it via `BIBCRIT_API_CAP_USD` in t
 ## Roadmap
 
 ### ✅ Completed
-- [x] 8 analysis tools across textual, critical, and discovery categories
+- [x] 9 analysis tools across textual, critical, and discovery categories
 - [x] Full OT corpus coverage — MT (ETCBC) + LXX (Vaticanus) across all books
 - [x] 1QIsaᵃ (Dead Sea Scrolls) corpus — DSS Bridge Tool runs on real scroll data
 - [x] Samaritan Pentateuch corpus (5 books, 114,889 words)

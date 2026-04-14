@@ -60,10 +60,11 @@ The eight analytical tools, their scholarly methods, and active prompt versions 
 | Back-Translation Workbench | Retroversion of LXX → probable Hebrew Vorlage with per-word confidence [@tov1981] | v1 |
 | Scribal Tendency Profiler | Five-axis radar chart: literalness, anthropomorphism reduction, messianic heightening, harmonization, paraphrase rate [@sollamo1979] | v1 |
 | Numerical Discrepancy Modeler | MT / LXX / SP numerical divergence with competing theories ranked by confidence | v3 |
-| Ancient Witness Bridge | DSS manuscript witness alignment across scrolls, MT, and LXX [@ulrich2010] | v5 |
+| Ancient Witness Bridge | DSS manuscript witness alignment across scrolls, Samaritan Pentateuch, Peshitta, MT, and LXX [@ulrich2010] | v6 |
 | Theological Revision Detector | Detection of theologically motivated alterations [@fishbane1985] | v1 |
 | Patristic Citation Tracker | Church Father quotation analysis through the 5th century with text-form distribution [@kraft2009] | v3 |
 | Manuscript Genealogy | Stemmatic visualization from proto-text to modern critical editions | v1 |
+| NT Use of OT Analyzer | Identification of OT allusions in NT passages with MT/LXX citation-form determination [@beale2007; @stanley1992; @hays1989] | v1 |
 
 Table: BibCrit analytical tools with scholarly grounding and current prompt versions.
 
@@ -71,13 +72,13 @@ Table: BibCrit analytical tools with scholarly grounding and current prompt vers
 
 BibCrit lowers the barrier to entry for several research activities that previously required specialist software and deep palaeographic training. A graduate student can now obtain a structured comparison of MT and LXX readings for a contested passage in seconds, with competing scholarly explanations ranked by confidence — work that previously required consulting Tov's apparatus [@tov2012] alongside the Göttingen critical edition. The scribal tendency profiler makes it possible to compare the translation styles of different LXX books quantitatively without writing custom corpus queries. The patristic citation tracker surfaces text-form evidence from the Church Fathers that is otherwise scattered across the Migne Patrologia and specialist monographs.
 
-The accumulated analysis cache — covering 91 featured passages across all eight tools in both English and Spanish — constitutes an open dataset that can be harvested for downstream computational studies. The cache API (`/api/{tool}/stream?ref=...&lang=en`) is openly accessible, enabling integration into research pipelines without direct interaction with the web interface.
+The accumulated analysis cache — covering featured passages across all nine tools in both English and Spanish — constitutes an open dataset that can be harvested for downstream computational studies. The cache API (`/api/{tool}/stream?ref=...&lang=en`) is openly accessible, enabling integration into research pipelines without direct interaction with the web interface.
 
 Bilingual operation (English and Spanish) makes the tool accessible to the significant body of biblical scholarship published in Spanish, particularly in Latin American and Iberian academic contexts.
 
 # AI Usage Disclosure
 
-BibCrit uses the Anthropic Claude API (`claude-sonnet-4-5`) to generate analytical content for each of its eight tools. The AI is not used for corpus ingestion, cache management, or any deterministic processing steps. All AI-generated analysis is clearly attributed as such in the user interface, and users are informed that results should be verified against primary sources.
+BibCrit uses the Anthropic Claude API (`claude-sonnet-4-5`) to generate analytical content for each of its nine tools. The AI is not used for corpus ingestion, cache management, or any deterministic processing steps. All AI-generated analysis is clearly attributed as such in the user interface, and users are informed that results should be verified against primary sources.
 
 The prompt templates in `data/prompts/` are scholarly-grounded, specifying the methodological frameworks of Tov, Metzger, Hengel, and the Göttingen LXX critical apparatus explicitly. Output schemas are versioned and pinned to specific model versions to ensure reproducibility. A monthly budget cap prevents the tool from making unbounded API calls during public access.
 

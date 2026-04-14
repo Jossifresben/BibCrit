@@ -20,6 +20,8 @@ THEOLOGICAL_MODEL = 'claude-sonnet-4-5-20250929'
 PATRISTIC_MODEL   = 'claude-sonnet-4-5-20250929'
 GENEALOGY_MODEL   = 'claude-sonnet-4-5-20250929'
 NT_OT_MODEL       = 'claude-sonnet-4-5-20250929'
+CHIASM_MODEL      = 'claude-sonnet-4-5-20250929'
+SOURCE_MODEL      = 'claude-sonnet-4-5-20250929'
 
 _SONNET_COST_IN  = 3.0  / 1_000_000   # $3 per MTok input (claude-sonnet-4-5)
 _SONNET_COST_OUT = 15.0 / 1_000_000   # $15 per MTok output (claude-sonnet-4-5)
@@ -130,6 +132,29 @@ _NT_OT_SYSTEM = (
     "citation technique, text form identification (MT vs. LXX vs. recensions), and the methodology "
     "of Beale & Carson, Christopher Stanley, and Richard Hays. You determine whether NT authors "
     "cited MT or LXX forms with philological precision. "
+    "CRITICAL: Return ONLY raw JSON. No markdown, no code fences, no backticks, "
+    "no prose before or after. The response must start with { and end with }."
+)
+
+_CHIASM_SYSTEM = (
+    "You are a specialist in biblical literary structure with deep expertise in "
+    "chiasm and concentric compositions in the Hebrew Bible. You apply the "
+    "methodology of Nils Lund (1942), John Welch (1981), David Dorsey (1999), "
+    "and Jerome Walsh (2001). You identify A-B-C-X-C'-B'-A' concentric structures, "
+    "parallel panels, inclusios, and refrains. You distinguish genuine chiastic "
+    "structures from coincidental parallelism using multiple corroborating criteria. "
+    "CRITICAL: Return ONLY raw JSON. No markdown, no code fences, no backticks, "
+    "no prose before or after. The response must start with { and end with }."
+)
+
+_SOURCE_SYSTEM = (
+    "You are a specialist in Pentateuchal source criticism with deep expertise in "
+    "the Documentary Hypothesis and its variants. You apply the methodology of "
+    "Julius Wellhausen (1878), Richard Friedman (1987, 2003), and Joel Baden (2012). "
+    "You identify source layers (J, E, D, P) by divine name usage, vocabulary, "
+    "theological concerns, doublets, and narrative style. You surface competing "
+    "scholarly positions and present attributions as analytical evidence, not "
+    "definitive assignments. "
     "CRITICAL: Return ONLY raw JSON. No markdown, no code fences, no backticks, "
     "no prose before or after. The response must start with { and end with }."
 )

@@ -19,6 +19,8 @@ All API endpoints return JSON unless otherwise noted. SSE endpoints return `text
    - [GET /backtranslation](#get-backtranslation)
    - [GET /scribal](#get-scribal)
    - [GET /numerical](#get-numerical)
+   - [GET /chiasm](#get-chiasm)
+   - [GET /source](#get-source)
    - [GET /discovery](#get-discovery)
 3. [Textual Analysis API](#textual-analysis-api)
    - [GET /api/divergence/stream](#get-apidivergencestream)
@@ -37,10 +39,13 @@ All API endpoints return JSON unless otherwise noted. SSE endpoints return `text
    - [GET /api/numerical/stream](#get-apinumericalstream)
    - [GET /api/scribal/export/sbl](#get-apiscribalexportsbl)
    - [GET /api/numerical/export/sbl](#get-apinumericalexportsbl)
-6. [Discovery API](#discovery-api)
+6. [Literary Analysis API](#literary-analysis-api)
+   - [GET /api/chiasm/stream](#get-apichiasmsstream)
+   - [GET /api/source/stream](#get-apisourcestream)
+7. [Discovery API](#discovery-api)
    - [GET /api/discovery/cards](#get-apidiscoverycards)
    - [POST /api/admin/discovery/flag](#post-apiadmindiscoveryflag)
-7. [Budget & Health API](#budget--health-api)
+8. [Budget & Health API](#budget--health-api)
    - [GET /api/budget](#get-apibudget)
    - [GET /health](#get-health)
 
@@ -243,6 +248,38 @@ curl "http://localhost:5000/scribal?book=Isaiah"
 **Example:**
 ```bash
 curl "http://localhost:5000/numerical?ref=Genesis+5:3"
+```
+
+---
+
+### GET /chiasm
+
+**Description:** Chiasm & Literary Structure Detector page. Optionally pre-populates the reference field.
+
+| Parameter | Type   | Required | Default | Description                             |
+|-----------|--------|----------|---------|-----------------------------------------|
+| lang      | string | optional | `en`    | UI language code                        |
+| ref       | string | optional | `""`    | Biblical reference to pre-load, e.g. `Amos 5:1-17` |
+
+**Example:**
+```bash
+curl "http://localhost:5001/chiasm?ref=Amos+5:1-17"
+```
+
+---
+
+### GET /source
+
+**Description:** Source Criticism Tool page. Optionally pre-populates the reference field.
+
+| Parameter | Type   | Required | Default | Description                             |
+|-----------|--------|----------|---------|-----------------------------------------|
+| lang      | string | optional | `en`    | UI language code                        |
+| ref       | string | optional | `""`    | Pentateuchal reference to pre-load, e.g. `Genesis 6:1-8` |
+
+**Example:**
+```bash
+curl "http://localhost:5001/source?ref=Genesis+6:1-8"
 ```
 
 ---
@@ -925,6 +962,188 @@ HTTP 404
 ```json
 HTTP 501
 {"error": "Numerical SBL export not yet implemented"}
+```
+
+---
+
+## Literary Analysis API
+
+### GET /api/chiasm/stream
+
+**Description:** SSE stream. Detects chiastic and concentric literary structures in a biblical passage — identifying A-B-C-B′-A′ patterns, parallel panels, inclusios, and refrains. Methodology: Lund, Welch, Dorsey, Walsh.
+
+**Response format:** `text/event-stream`
+
+**Headers returned:**
+- `Cache-Control: no-cache`
+- `X-Accel-Buffering: no`
+
+#### Query Parameters
+
+| Parameter | Type   | Required | Description                                          | Example         |
+|-----------|--------|----------|------------------------------------------------------|-----------------|
+| ref       | string | required | Biblical reference                                   | `Amos 5:1-17`   |
+| lang      | string | optional | Response language: `en` or `es`                      | `en`            |
+
+**Verse limit:** 50 verses. Passages exceeding this return an `error` event.
+
+#### SSE Event Sequence
+
+1. `step` — `"📖 Loading passage text…"`
+2. `step` — `"🔍 Checking analysis cache…"`
+3. `step` — one of:
+   - `"⚡ Found in cache — loading instantly"` (cache hit)
+   - `"Detecting literary structure — this typically takes 60–90 seconds…"` (cache miss)
+4. `done` — full result payload, **or** `error`
+
+#### `done` Payload Schema
+
+```json
+{
+  "type": "done",
+  "data": {
+    "reference": "Amos 5:1-17",
+    "structure_type": "chiasm",
+    "elements": [
+      {
+        "label": "A",
+        "verses": "5:1-3",
+        "description": "Death and mourning — Israel fallen",
+        "mirror_label": "A′",
+        "text_snippet": "Fallen, no more to rise…"
+      },
+      {
+        "label": "B",
+        "verses": "5:4-6",
+        "description": "Seek YHWH and live",
+        "mirror_label": "B′"
+      },
+      {
+        "label": "C",
+        "verses": "5:7",
+        "description": "Social injustice — justice turned to wormwood",
+        "mirror_label": "C′"
+      },
+      {
+        "label": "X",
+        "verses": "5:8-9",
+        "description": "Doxology — YHWH's cosmic sovereignty (turning point)",
+        "mirror_label": null
+      }
+    ],
+    "turning_point": "5:8-9",
+    "structure_confidence": 0.85,
+    "synthesis": "Amos 5:1-17 displays a clear chiastic structure centred on the doxology…",
+    "scholarly_debate": "Scholars dispute whether vv. 8-9 are a later insertion…",
+    "cached": false,
+    "model": "claude-sonnet-4-5-20250929"
+  }
+}
+```
+
+**`elements` item schema:**
+
+| Field        | Type         | Description                                      |
+|--------------|--------------|--------------------------------------------------|
+| label        | string       | Element label: `A`, `B`, `C`, `X`, `A′`, etc.   |
+| verses       | string       | Verse range for this element                     |
+| description  | string       | Content summary                                  |
+| mirror_label | string\|null | Corresponding mirror element label (null for pivot) |
+| text_snippet | string       | Brief text excerpt (optional)                    |
+
+#### Example curl
+
+```bash
+curl -N -H "Accept: text/event-stream" \
+  "http://localhost:5001/api/chiasm/stream?ref=Amos+5:1-17"
+```
+
+---
+
+### GET /api/source/stream
+
+**Description:** SSE stream. Assigns documentary source designations (J, E, D, P, Redactor) to units within a Pentateuchal passage, using classical criteria: divine name usage (YHWH vs. Elohim), vocabulary patterns, doublets, theological concerns, and narrative tensions. Scholarly grounding: Wellhausen, Friedman, Baden.
+
+**Response format:** `text/event-stream`
+
+**Headers returned:**
+- `Cache-Control: no-cache`
+- `X-Accel-Buffering: no`
+
+#### Query Parameters
+
+| Parameter | Type   | Required | Description                                          | Example              |
+|-----------|--------|----------|------------------------------------------------------|----------------------|
+| ref       | string | required | Pentateuchal reference                               | `Genesis 6:1-8`      |
+| lang      | string | optional | Response language: `en` or `es`                      | `en`                 |
+
+**Verse limit:** 60 verses. Passages exceeding this return an `error` event.
+
+#### SSE Event Sequence
+
+1. `step` — `"📖 Loading passage text…"`
+2. `step` — `"🔍 Checking analysis cache…"`
+3. `step` — one of:
+   - `"⚡ Found in cache — loading instantly"` (cache hit)
+   - `"Analyzing source layers — this typically takes 60–90 seconds…"` (cache miss)
+4. `done` — full result payload, **or** `error`
+
+#### `done` Payload Schema
+
+```json
+{
+  "type": "done",
+  "data": {
+    "reference": "Genesis 6:1-8",
+    "source_units": [
+      {
+        "verses": "6:1-4",
+        "source": "J",
+        "confidence": 0.82,
+        "divine_name": "YHWH",
+        "key_evidence": [
+          "YHWH used in v.3 and v.8",
+          "Anthropomorphic language: 'sons of God' taking wives",
+          "Narrative tension with P flood account"
+        ],
+        "scholarly_debate": "Some assign to pre-J tradition; Baden argues composite."
+      },
+      {
+        "verses": "6:5-8",
+        "source": "J",
+        "confidence": 0.88,
+        "divine_name": "YHWH",
+        "key_evidence": [
+          "YHWH regrets (נִּחָם) — anthropopathism characteristic of J",
+          "Vocabulary 'grieved to his heart' absent from P"
+        ],
+        "scholarly_debate": "Wellhausen, Friedman, and Baden all assign to J."
+      }
+    ],
+    "overall_assessment": "Genesis 6:1-8 is uniformly J in the Classical Documentary Hypothesis…",
+    "framework_notes": "Neo-Documentary (Baden) agrees; Supplementary Hypothesis treats 6:5-8 as redactional.",
+    "cached": false,
+    "model": "claude-sonnet-4-5-20250929"
+  }
+}
+```
+
+**`source_units` item schema:**
+
+| Field            | Type    | Description                                                          |
+|------------------|---------|----------------------------------------------------------------------|
+| verses           | string  | Verse range for this source unit                                     |
+| source           | string  | Source designation: `J`, `E`, `D`, `P`, or `R` (Redactor)          |
+| confidence       | float   | 0.0–1.0 confidence score                                             |
+| divine_name      | string  | Dominant divine name in this unit (`YHWH`, `Elohim`, `mixed`, etc.) |
+| key_evidence     | array   | Bullet-point evidence items supporting the attribution               |
+| scholarly_debate | string  | Summary of scholarly disagreement, if any                            |
+
+#### Example curl
+
+```bash
+curl -N -H "Accept: text/event-stream" \
+  "http://localhost:5001/api/source/stream?ref=Genesis+6:1-8"
 ```
 
 ---

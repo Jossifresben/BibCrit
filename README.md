@@ -5,9 +5,9 @@
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0000--2026--0836-a6ce39)](https://orcid.org/0009-0000-2026-0836)
 [![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.19553402.svg)](https://doi.org/10.5281/zenodo.19553402)
 
-# BibCrit v2.0
+# BibCrit v2.5
 
-Free, open-access web tool for biblical textual criticism at [bibcrit.com](https://bibcrit.com). Compare MT, LXX, and Dead Sea Scrolls; reconstruct Hebrew Vorlagen; profile scribal tendencies; detect theological revisions; track patristic citations; model numerical discrepancies; and visualize manuscript genealogies — all in a browser, in English and Spanish.
+Free, open-access web tool for biblical textual criticism at [bibcrit.com](https://bibcrit.com). Compare MT, LXX, and Dead Sea Scrolls; reconstruct Hebrew Vorlagen; profile scribal tendencies; detect theological revisions; track patristic citations; model numerical discrepancies; detect literary structures (chiasm, inclusios, parallel panels); identify documentary source layers (J/E/D/P); and visualize manuscript genealogies — all in a browser, in English and Spanish.
 
 ## Screenshots
 
@@ -45,6 +45,8 @@ Free, open-access web tool for biblical textual criticism at [bibcrit.com](https
 | 7 | **Back-Translation Workbench** | `/backtranslation` | Reconstructs the probable Hebrew Vorlage word-by-word from LXX Greek using Tov's retroversion methodology, with confidence levels and summary assessments. Prompt: `backtranslation_v1`. |
 | 8 | **Manuscript Genealogy** | `/genealogy` | Visualizes the full transmission stemma of a biblical book — from proto-text through manuscript families (MT, LXX, DSS, SP, Peshitta, Targum, Vulgate) to modern critical editions. Prompt: `genealogy_v1`. |
 | 9 | **NT Use of OT Analyzer** | `/nt-ot` | Enter a New Testament passage and identify every OT allusion it contains. For each allusion, determines whether the NT author cited MT, LXX, an independent form, or a conflation — applying the methodology of Beale & Carson, Stanley, and Hays. Prompt: `nt_ot_v1`. |
+| 10 | **Chiasm & Literary Structure Detector** | `/chiasm` | Detects concentric literary structures (A-B-C-B′-A′), parallel panels, inclusios, and refrains. Maps each structural element with its mirror partner and identifies the focal turning point. Methodology: Lund, Welch, Dorsey, Walsh. Prompt: `chiasm_v1`. |
+| 11 | **Source Criticism Tool** | `/source` | Assigns documentary source designations (J, E, D, P, Redactor) to Pentateuchal units using classical criteria: divine name usage (YHWH vs. Elohim), vocabulary patterns, doublets, and narrative tensions. Scholarly grounding: Wellhausen, Friedman, Baden. Prompt: `source_v1`. |
 
 ---
 
@@ -89,12 +91,14 @@ BibCrit/
 ├── blueprints/
 │   ├── textual.py              # /divergence, /backtranslation, /dss, /genealogy + APIs
 │   ├── critical.py             # /scribal, /numerical, /theological, /patristic + APIs
+│   ├── literary.py             # /chiasm, /source + SSE APIs
 │   ├── discovery.py            # /discovery, /api/discovery/cards, /api/admin/discovery/flag
 │   └── research.py             # /health, /guide
 │
 ├── biblical_core/
 │   ├── claude_pipeline.py      # ClaudePipeline: Claude calls, Supabase cache, budget tracking
 │   ├── corpus.py               # BiblicalCorpus: loads MT, LXX, DSS, SP, GNT
+│   ├── ref_utils.py            # Reference string parsing; per-tool verse-count limits
 │   └── divergence.py           # parse_claude_response, format_sbl_footnote, format_bibtex
 │
 ├── data/
@@ -281,7 +285,7 @@ GET /api/cache?discovery_ready=true&limit=50&offset=0
 
 | Param | Description | Default |
 |---|---|---|
-| `tool` | Filter by tool (`divergence`, `backtranslation`, `scribal`, `numerical`, `dss`, `theological`, `patristic`, `genealogy`) | all |
+| `tool` | Filter by tool (`divergence`, `backtranslation`, `scribal`, `numerical`, `dss`, `theological`, `patristic`, `genealogy`, `nt_ot`, `chiasm`, `source`) | all |
 | `ref` | Case-insensitive substring match on reference | all |
 | `discovery_ready` | `true` / `false` | all |
 | `limit` | Max records per page (max 200) | 50 |
@@ -406,8 +410,10 @@ The default spend cap is `$10.00/month`. Raise it via `BIBCRIT_API_CAP_USD` in t
 
 ## Roadmap
 
-### ✅ Completed (v2.2)
-- [x] 9 analysis tools across textual, critical, and discovery categories
+### ✅ Completed (v2.5)
+- [x] 11 analysis tools across textual, critical, literary, and discovery categories
+- [x] **Chiasm & Literary Structure Detector** (`/chiasm`) — first open tool of its kind
+- [x] **Source Criticism Tool** (`/source`) — J/E/D/P attribution with Wellhausen / Friedman / Baden grounding
 - [x] Full OT corpus coverage — MT (ETCBC) + LXX (Vaticanus) across all books
 - [x] 1QIsaᵃ (Dead Sea Scrolls) corpus — DSS Bridge Tool runs on real scroll data
 - [x] Samaritan Pentateuch corpus (5 books, 114,889 words)
@@ -430,10 +436,6 @@ The default spend cap is `$10.00/month`. Raise it via `BIBCRIT_API_CAP_USD` in t
 - [ ] **Peshitta real corpus** — replace AI-only Peshitta with actual Leiden / CAL data files in `pesh_etcbc/` (already registered in `corpus.py`; zero code changes needed)
 - [ ] **MT/LXX expansion** — add Jeremiah (LXX is 1/8 shorter with different chapter order), 1–2 Samuel (4QSamᵃ alignment), full Psalms; no code changes
 - [ ] **Extended DSS witnesses** — 4QSamᵃ, 11QPaleoLev, 1QpHab, 4QDeutᵏ as additional CSVs in `data/corpora/dss/`
-
-**New tools** *(first open tools of their kind anywhere)*
-- [ ] **Chiasm & Literary Structure Detector** (`/chiasm`) — detect concentric structures (A-B-C-B′-A′), parallel panels, inclusios, and refrains; methodology: Lund, Welch, Dorsey, Walsh
-- [ ] **Source Criticism Tool** (`/source`) — J/E/D/P attribution with evidence; supports Classic Documentary, Supplementary, and Neo-Documentary frameworks; Wellhausen / Friedman / Baden grounding
 
 ---
 
@@ -475,7 +477,7 @@ The default spend cap is `$10.00/month`. Raise it via `BIBCRIT_API_CAP_USD` in t
 
 | Metric | v2.2 now | v3.0 (+6 months) |
 |---|---|---|
-| Analysis tools | 9 | 15 |
+| Analysis tools | 11 | 15 |
 | Corpus traditions | 5 | 9 |
 | UI languages | 2 (EN, ES) | 5 (+ HE, NL, PT) |
 | First-in-world open tools | 5 | 11 |

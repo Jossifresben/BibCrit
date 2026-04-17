@@ -56,12 +56,12 @@ Free, open-access web tool for biblical textual criticism at [bibcrit.com](https
 |---|---|---|
 | **MT** | [ETCBC/BHSA](https://github.com/ETCBC/bhsa) via Text-Fabric | `data/corpora/mt_etcbc/` |
 | **LXX** | Rahlfs (ingested via `ingest_lxx_rahlfs.py`) | `data/corpora/lxx_stepbible/` |
-| **DSS** | [ETCBC/DSS](https://github.com/ETCBC/dss) — 1QIsaᵃ — via Text-Fabric | `data/corpora/dss/` |
+| **DSS** | [ETCBC/DSS](https://github.com/ETCBC/dss) via Text-Fabric — 1QIsaᵃ, 4QSamᵃ, 11QPaleoLev, 4QDeutᵏ | `data/corpora/dss/` |
 | **SP** | [dt-ucph/sp](https://github.com/dt-ucph/sp) via Text-Fabric | `data/corpora/sp_etcbc/` |
 | **GNT** | [SBLGNT](https://github.com/LogosBible/SBLGNT) | `data/corpora/gnt_opengnt/` |
-| **PESH** | Leiden Peshitta / [CAL](https://cal.huc.edu) — Claude training knowledge (corpus files planned) | `data/corpora/pesh_etcbc/` |
+| **PESH** | [ETCBC/peshitta](https://github.com/ETCBC/peshitta) via Text-Fabric (SEDRA / Beth Mardutho) — 39 OT books, 308,863 words | `data/corpora/pesh_etcbc/` |
 
-**License note:** The ETCBC corpora (MT/BHSA and DSS) are released under [CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/). The app code is Apache 2.0; the corpus data it ingests retains its own license terms. Do not use the ingested ETCBC data for commercial purposes without a separate agreement with ETCBC.
+**License note:** The ETCBC corpora (MT/BHSA, DSS, and Peshitta) are released under [CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/). The app code is Apache 2.0; the corpus data it ingests retains its own license terms. Do not use the ingested ETCBC data for commercial purposes without a separate agreement with ETCBC.
 
 ---
 
@@ -418,7 +418,7 @@ The default spend cap is `$10.00/month`. Raise it via `BIBCRIT_API_CAP_USD` in t
 - [x] 1QIsaᵃ (Dead Sea Scrolls) corpus — DSS Bridge Tool runs on real scroll data
 - [x] Samaritan Pentateuch corpus (5 books, 114,889 words)
 - [x] MorphGNT / SBLGNT corpus (27 NT books, 137,554 words)
-- [x] Peshitta as fifth witness in Ancient Witness Bridge (AI-grounded; real corpus planned)
+- [x] Peshitta real corpus — ETCBC/peshitta via Text-Fabric (SEDRA); 39 OT books, 308,863 Syriac word tokens
 - [x] NT Use of OT Analyzer — citation-form determination across MT and LXX
 - [x] Spanish translation layer (`analysis_cache_es`) — full UI + analysis output
 - [x] 141 featured passages pre-cached across all tools (instant load)
@@ -433,9 +433,9 @@ The default spend cap is `$10.00/month`. Raise it via `BIBCRIT_API_CAP_USD` in t
 ### 🔜 Phase 1 — Months 1–2: Foundation
 
 **Corpus**
-- [ ] **Peshitta real corpus** — replace AI-only Peshitta with actual Leiden / CAL data files in `pesh_etcbc/` (already registered in `corpus.py`; zero code changes needed)
-- [ ] **MT/LXX expansion** — add Jeremiah (LXX is 1/8 shorter with different chapter order), 1–2 Samuel (4QSamᵃ alignment), full Psalms; no code changes
-- [ ] **Extended DSS witnesses** — 4QSamᵃ, 11QPaleoLev, 1QpHab, 4QDeutᵏ as additional CSVs in `data/corpora/dss/`
+- [x] **Peshitta real corpus** — ETCBC/peshitta via Text-Fabric; 39 OT books, 308,863 Syriac word tokens in `pesh_etcbc/`
+- [x] **MT/LXX expansion** — all 39 MT books and 38 LXX books already present (complete)
+- [x] **Extended DSS witnesses** — 4QSamᵃ (4Q51), 11QPaleoLev (11Q1), 4QDeutᵏ (4Q41) added; note: 1QpHab excluded (ETCBC DSS has no MT-aligned verse coordinates for this scroll)
 
 ---
 

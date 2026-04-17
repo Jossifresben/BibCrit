@@ -1,0 +1,5 @@
+book_order,book,chapter,verse,reference,position,word_text,lemma,morph,strong,manuscript,tradition
+9,1 Samuel,1,9,1 Samuel 1:9,2,ב,בְּ,ptcl,,4QSamA,DSS
+9,1 Samuel,1,9,1 Samuel 1:9,3,שילה,שִׁילֹו,subs,,4QSamA,DSS
+9,1 Samuel,1,9,1 Samuel 1:9,4,ו,וְ,ptcl,,4QSamA,DSS
+9,1 Samuel,1,9,1 Samuel 1:9,5,אחרי,אַחַר,ptcl,,4QSamA,DSS

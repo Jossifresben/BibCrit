@@ -609,13 +609,15 @@ curl "http://localhost:5000/api/divergence/export/bibtex?ref=Isaiah+7:14"
 
 | Parameter  | Type   | Required | Default | Description                        | Example |
 |------------|--------|----------|---------|------------------------------------|---------|
-| tradition  | string | optional | `MT`    | Textual tradition: `MT` or `LXX`   | `LXX`   |
+| tradition  | string | optional | `MT`    | Textual tradition: `MT`, `LXX`, `DSS`, `SP`, `GNT`, or `PESH`   | `LXX`   |
 
 #### Example curl
 
 ```bash
 curl "http://localhost:5000/api/books?tradition=MT"
 curl "http://localhost:5000/api/books?tradition=LXX"
+curl "http://localhost:5000/api/books?tradition=PESH"
+curl "http://localhost:5000/api/books?tradition=DSS"
 ```
 
 #### Example response
@@ -641,7 +643,7 @@ curl "http://localhost:5000/api/books?tradition=LXX"
 | Parameter  | Type   | Required | Default | Description                         | Example   |
 |------------|--------|----------|---------|-------------------------------------|-----------|
 | book       | string | required |         | Book name                           | `Isaiah`  |
-| tradition  | string | optional | `MT`    | Textual tradition: `MT` or `LXX`    | `MT`      |
+| tradition  | string | optional | `MT`    | Textual tradition: `MT`, `LXX`, `DSS`, `SP`, `GNT`, or `PESH`    | `MT`      |
 
 #### Example curl
 
@@ -671,7 +673,7 @@ curl "http://localhost:5000/api/chapters?book=Isaiah&tradition=MT"
 |------------|---------|----------|---------|--------------------------------------|----------|
 | book       | string  | required |         | Book name                            | `Isaiah` |
 | chapter    | integer | optional | `1`     | Chapter number (must be an integer)  | `7`      |
-| tradition  | string  | optional | `MT`    | Textual tradition: `MT` or `LXX`     | `MT`     |
+| tradition  | string  | optional | `MT`    | Textual tradition: `MT`, `LXX`, `DSS`, `SP`, `GNT`, or `PESH`     | `MT`     |
 
 #### Example curl
 

@@ -46,7 +46,7 @@ No existing open-source tool integrates manuscript comparison across MT, LXX, DS
 
 BibCrit follows a three-layer architecture:
 
-**Corpus layer.** The `BiblicalCorpus` class loads CSV exports of the ETCBC (MT), Rahlfs LXX, ETCBC DSS (1QIsaᵃ), Samaritan Pentateuch (via Text-Fabric), and SBLGNT corpora at startup. It resolves verse references across traditions and returns typed word objects carrying lemma, morphology, and Strong's identifiers. This layer is entirely deterministic and requires no API calls.
+**Corpus layer.** The `BiblicalCorpus` class loads CSV exports of six corpus traditions at startup: ETCBC (MT, all 39 books), Rahlfs LXX (38 books), ETCBC DSS (1QIsaᵃ, 4QSamᵃ, 11QPaleoLev, 4QDeutᵏ), Samaritan Pentateuch (Torah, 5 books), ETCBC Peshitta (Syriac OT, all 39 books, 308,863 word tokens), and SBLGNT (NT, 27 books). It resolves verse references across traditions and returns typed word objects carrying lemma, morphology, and Strong's identifiers. This layer is entirely deterministic and requires no API calls.
 
 **Analysis layer.** The `ClaudePipeline` class wraps all Claude API calls with versioned prompt templates stored in `data/prompts/{tool}_{version}.txt`. Cache keys are computed as `SHA-256("{reference}|{tool}|{prompt_version}|{model_version}")`, ensuring identical queries return cached results without re-incurring API cost. Results are stored in Supabase with a transparent disk JSON fallback. A monthly budget cap (`BIBCRIT_API_CAP_USD`) prevents runaway spend during public access.
 
@@ -90,7 +90,7 @@ This paper was written by the author. Claude was not used to draft or edit the p
 
 ## Corpus and Data Layer
 
-BibCrit loads CSV exports of the ETCBC (MT) and STEP Bible (LXX) corpora at startup. The `BiblicalCorpus` class resolves verse references across traditions and returns typed word objects with lemma, morphology, and Strong's number. Books currently covered include Genesis, Exodus, Numbers, Deuteronomy, Isaiah, Jeremiah, Psalms, Job, Proverbs, Amos, Joel, Micah, Zechariah, and Daniel, with DSS coverage for 1QIsaᵃ.
+BibCrit loads CSV exports of six corpus traditions at startup. The `BiblicalCorpus` class resolves verse references across traditions and returns typed word objects with lemma, morphology, and Strong's number. Full OT coverage is provided for MT (39 books), LXX (38 books), and Peshitta (39 books, 308,863 Syriac word tokens via ETCBC/peshitta). DSS coverage spans four scrolls: 1QIsaᵃ (Isaiah 1–66), 4QSamᵃ (Samuel fragments), 11QPaleoLev (Leviticus), and 4QDeutᵏ (Deuteronomy fragments). The Samaritan Pentateuch covers the Torah (5 books), and the SBLGNT provides NT Greek (27 books).
 
 ## Streaming Interface
 

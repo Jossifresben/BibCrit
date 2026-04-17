@@ -65,7 +65,7 @@ PASSAGES: list[tuple[str, str]] = [
 
     # ── CHIASM (new tool — all 4 featured passages) ───────────────────────────
     ("chiasm",          "Amos 5:1-17"),
-    ("chiasm",          "Genesis 1:1-2:3"),
+    ("chiasm",          "Genesis 1:1-31"),
     ("chiasm",          "Ruth 1:1-22"),
     ("chiasm",          "Psalm 136"),
 

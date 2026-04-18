@@ -4,7 +4,7 @@
 Scrolls ingested:
   4Q51  — 4QSamᵃ        (1/2 Samuel fragments)
   11Q1  — 11QPaleoLev   (Leviticus in paleo-Hebrew script)
-  4Q41  — 4QDeutᵏ       (Deuteronomy fragments)
+  4Q41  — 4QDeutn       (Deuteronomy fragments)
 
 NOTE: 1QpHab is excluded — the ETCBC DSS dataset has no MT-aligned chapter/verse
 coordinates for this scroll (all chapter/verse fields are None), so it cannot be
@@ -20,7 +20,7 @@ Usage:
 Output (appended to existing dss/ directory):
   4qsama.csv        — 4QSamᵃ words with 1/2 Samuel verse references
   11qpaleolev.csv   — 11QPaleoLev words with Leviticus verse references
-  4qdeutk.csv       — 4QDeutᵏ words with Deuteronomy verse references
+  4qdeutk.csv       — 4QDeutn words with Deuteronomy verse references
 
 Schema (same as 1qisaa.csv):
   book_order, book, chapter, verse, reference, position,
@@ -53,7 +53,7 @@ BOOK_ETCBC_MAP: dict[str, tuple[str, int]] = {
 SCROLLS: list[tuple[str, str, str]] = [
     ('4Q51',   '4qsama.csv',       '4QSamA'),
     ('11Q1',   '11qpaleolev.csv',  '11QPaleoLev'),
-    ('4Q41',   '4qdeutk.csv',      '4QDeutK'),
+    ('4Q41',   '4qdeutk.csv',      '4QDeutn'),
 ]
 
 

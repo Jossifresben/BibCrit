@@ -56,7 +56,7 @@ Free, open-access web tool for biblical textual criticism at [bibcrit.com](https
 |---|---|---|
 | **MT** | [ETCBC/BHSA](https://github.com/ETCBC/bhsa) via Text-Fabric | `data/corpora/mt_etcbc/` |
 | **LXX** | Rahlfs (ingested via `ingest_lxx_rahlfs.py`) | `data/corpora/lxx_stepbible/` |
-| **DSS** | [ETCBC/DSS](https://github.com/ETCBC/dss) via Text-Fabric — 1QIsaᵃ, 4QSamᵃ, 11QPaleoLev, 4QDeutᵏ | `data/corpora/dss/` |
+| **DSS** | [ETCBC/DSS](https://github.com/ETCBC/dss) via Text-Fabric — 1QIsaᵃ, 4QSamᵃ, 11QPaleoLev, 4QDeutn | `data/corpora/dss/` |
 | **SP** | [dt-ucph/sp](https://github.com/dt-ucph/sp) via Text-Fabric | `data/corpora/sp_etcbc/` |
 | **GNT** | [SBLGNT](https://github.com/LogosBible/SBLGNT) | `data/corpora/gnt_opengnt/` |
 | **PESH** | [ETCBC/peshitta](https://github.com/ETCBC/peshitta) via Text-Fabric (SEDRA / Beth Mardutho) — 39 OT books, 308,863 words | `data/corpora/pesh_etcbc/` |
@@ -435,7 +435,7 @@ The default spend cap is `$10.00/month`. Raise it via `BIBCRIT_API_CAP_USD` in t
 **Corpus**
 - [x] **Peshitta real corpus** — ETCBC/peshitta via Text-Fabric; 39 OT books, 308,863 Syriac word tokens in `pesh_etcbc/`
 - [x] **MT/LXX expansion** — all 39 MT books and 38 LXX books already present (complete)
-- [x] **Extended DSS witnesses** — 4QSamᵃ (4Q51), 11QPaleoLev (11Q1), 4QDeutᵏ (4Q41) added; note: 1QpHab excluded (ETCBC DSS has no MT-aligned verse coordinates for this scroll)
+- [x] **Extended DSS witnesses** — 4QSamᵃ (4Q51), 11QPaleoLev (11Q1), 4QDeutn (4Q41) added; note: 1QpHab excluded (ETCBC DSS has no MT-aligned verse coordinates for this scroll)
 
 ---
 

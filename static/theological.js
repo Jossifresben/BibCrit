@@ -79,6 +79,7 @@
   // ── Core analyze ────────────────────────────────────────────────────────
   function analyze(ref) {
     if (!ref) return;
+    if (window.BibCrit_checkPassageLength && window.BibCrit_checkPassageLength(ref)) return;
     _currentRef  = ref;
     _activeFilter = '';
 
@@ -262,6 +263,8 @@
         });
       }
     }
+
+    staggerReveal(results, 90);
   }
 
   function _updateFilterChips(container, activeType) {

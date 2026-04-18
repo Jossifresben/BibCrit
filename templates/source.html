@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block title %}{{ _t('source_tool_title') }} — BibCrit{% endblock %}
+{% block meta_description %}Identify J, E, D, and P source layers in any Pentateuchal passage using the Documentary Hypothesis methodology of Wellhausen, Friedman, and Baden.{% endblock %}
+{% block og_title %}Source Criticism Tool (J/E/D/P) — BibCrit{% endblock %}
+{% block og_description %}Identify J, E, D, and P source layers in Pentateuchal passages using the Documentary Hypothesis methodology of Wellhausen, Friedman, and Baden.{% endblock %}
+{% block twitter_title %}Source Criticism Tool (J/E/D/P) — BibCrit{% endblock %}
+{% block twitter_description %}Identify J, E, D, and P source layers in any Pentateuchal passage using the Documentary Hypothesis methodology.{% endblock %}
+
+{% block content %}
+
+<!-- Tool header -->
+<div class="tool-header">
+  <h1 class="tool-title">{{ _t('source_tool_title') }}</h1>
+  <p class="tool-subtitle">{{ _t('source_tool_subtitle') }}</p>
+</div>
+
+<!-- Passage Selector Bar -->
+<div class="passage-bar">
+  <div class="passage-bar-row passage-bar-main">
+    <span class="passage-label">{{ _t('passage_label') }}:</span>
+
+    <div class="passage-bar-selectors">
+      <select id="sel-book" class="passage-select" aria-label="{{ _t('book_label') }}">
+        <option value="">{{ _t('passage_book_placeholder') }}</option>
+      </select>
+      <select id="sel-chapter" class="passage-select" disabled aria-label="Chapter">
+        <option value="">{{ _t('passage_ch') }}</option>
+      </select>
+      <select id="sel-verse" class="passage-select" disabled aria-label="Verse">
+        <option value="">{{ _t('passage_vs') }}</option>
+      </select>
+    </div>
+
+    <span class="passage-or">{{ _t('passage_or') }}</span>
+
+    <input type="text" id="ref-input" class="passage-input"
+           placeholder="Genesis 6:1-8" value="{{ reference | e }}"
+           aria-label="Type a reference">
+
+    <div class="passage-bar-actions">
+      <button id="btn-analyze" class="btn-primary">{{ _t('analyze_btn') }} ▶</button>
+    </div>
+  </div>
+</div>
+
+<!-- Empty / Welcome State -->
+<div id="empty-state" class="empty-state">
+  <div class="empty-inner">
+    <p>{{ _t('source_empty_body') }}</p>
+
+    <!-- Source legend -->
+    <div class="source-legend">
+      <span class="src-badge src-j">J</span> Yahwist &nbsp;
+      <span class="src-badge src-e">E</span> Elohist &nbsp;
+      <span class="src-badge src-d">D</span> Deuteronomist &nbsp;
+      <span class="src-badge src-p">P</span> Priestly &nbsp;
+      <span class="src-badge src-r">R</span> Redactor
+    </div>
+
+    <p class="featured-label">{{ _t('featured_label') }}</p>
+    <div class="featured-passages">
+      <a href="#" class="featured-ref" data-ref="Genesis 1:1-2:25">Genesis 1–2</a>
+      <a href="#" class="featured-ref" data-ref="Genesis 6:1-8">Genesis 6:1–8 (Sons of God)</a>
+      <a href="#" class="featured-ref" data-ref="Exodus 19:1-20:21">Exodus 19–20</a>
+      <a href="#" class="featured-ref" data-ref="Genesis 37">Genesis 37</a>
+    </div>
+  </div>
+</div>
+
+<!-- Loading State -->
+<div id="loading-state" class="loading-state" style="display:none;" aria-live="polite">
+  <div class="loading-spinner"></div>
+  <p id="loading-step" class="loading-step-msg">{{ _t('loading_preparing') }}</p>
+  <p id="loading-timer" class="loading-timer"></p>
+</div>
+
+<!-- Passage heading -->
+<div id="passage-heading" class="passage-heading" style="display:none;"></div>
+
+<!-- Results Area (injected by JS) -->
+<div id="results-area" style="display:none;"></div>
+
+<!-- Toast notification -->
+<div id="toast" class="toast" style="display:none;" role="status"></div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>window.TOOL_MAX_VERSES = 60;</script>
+<script src="{{ url_for('static', filename='source.js') }}"></script>
+{% if reference %}
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.sourceCrit) window.sourceCrit.analyze('{{ reference | e }}');
+  });
+</script>
+{% endif %}
+{% endblock %}

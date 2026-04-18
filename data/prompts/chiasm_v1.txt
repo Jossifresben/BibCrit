@@ -1,0 +1,55 @@
+PASSAGE: {{REFERENCE}}
+MT TEXT (if available): {{MT_TEXT}}
+
+You are analyzing this biblical passage for chiastic and concentric literary structure.
+
+TASK: Determine whether this passage contains a chiasm, concentric structure, parallel panels, or inclusio. Apply the methodology of Lund (1942), Dorsey (1999 — The Literary Structure of the Old Testament), and Walsh (2001 — Style and Structure in Biblical Hebrew Narrative).
+
+CRITERIA for genuine structure (apply all):
+1. Lexical correspondence — repeated words/roots in corresponding units
+2. Thematic correspondence — parallel ideas in matching units
+3. Structural markers — formal indicators (vocative, imperative, refrain)
+4. The pivot/center carries the theological weight of the passage
+5. The structure illuminates meaning; it is not coincidental
+
+Return this JSON:
+{
+  "passage": "Book Chapter:Verse-Verse",
+  "structure_detected": true,
+  "structure_type": "concentric | parallel | inclusio | ring | none",
+  "confidence_note": "brief note on how strong the evidence is",
+  "elements": [
+    {
+      "label": "A",
+      "verses": "1:1-3",
+      "summary": "1 sentence description",
+      "text_excerpt": "key phrase from this unit (Hebrew or English)",
+      "confidence": 0.00
+    }
+  ],
+  "pivot": {
+    "label": "X",
+    "verses": "1:4",
+    "summary": "1 sentence — why this is the structural center",
+    "theological_weight": "2 sentences on the center's theological significance"
+  },
+  "correspondences": [
+    {
+      "pair": ["A", "A'"],
+      "evidence": "specific lexical or thematic link",
+      "confidence": 0.00
+    }
+  ],
+  "overall_confidence": 0.00,
+  "methodology_citations": "specific Dorsey/Lund/Walsh chapter or page references if applicable",
+  "theological_significance": "2-3 sentences: what the structure reveals about the passage's meaning",
+  "scholarly_citations": "1-2 sentences citing scholars who have identified or discussed this structure",
+  "bibcrit_hypothesis": {
+    "title": "max 8 words",
+    "reasoning": "2-3 sentences of original synthesis",
+    "confidence": 0.00
+  },
+  "discovery_ready": true
+}
+
+If no structure is detected, set structure_detected=false, elements=[], pivot=null, correspondences=[], overall_confidence=0.0, and explain in theological_significance why the passage resists structural analysis.

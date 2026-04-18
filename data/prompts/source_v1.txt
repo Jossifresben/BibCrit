@@ -1,0 +1,66 @@
+PASSAGE: {{REFERENCE}}
+MT TEXT (if available): {{MT_TEXT}}
+
+You are analyzing this passage for source-critical layers using the Documentary Hypothesis.
+
+TASK: Identify probable source attributions (J, E, D, P, or R for redactor) for each unit in the passage. Apply the Classic Documentary Hypothesis as synthesized by Wellhausen (Prolegomena, 1878), Friedman (Who Wrote the Bible?, 1987; The Bible with Sources Revealed, 2003), and Baden (The Composition of the Pentateuch, 2012).
+
+CRITERIA for source identification:
+- J (Yahwist): divine name YHWH, anthropomorphic God, Judah-centered, vivid narrative style, God walks/speaks/sees directly
+- E (Elohist): divine name Elohim, dreams/angels as mediators, fear of God, northern (Ephraim-centered) orientation
+- D (Deuteronomist): hortatory style, "the place the LORD will choose," covenant theology, centralization of worship
+- P (Priestly): divine name Elohim / El Shaddai, genealogies, precise numbers, creation-by-command, tabernacle/cult concerns
+- R (Redactor): harmonizing links between sources, resumptive repetitions, bridging clauses
+
+CONSTRAINTS:
+- Present source attribution as analytical evidence, not definitive assignment
+- Always note competing scholarly positions
+- Non-Pentateuchal books: note that classic J/E/D/P applies to Torah only; for other books identify analogous compositional layers if present (e.g. Deuteronomistic History redaction in Joshua–Kings)
+
+Return this JSON:
+{
+  "passage": "Book Chapter:Verse-Verse",
+  "framework": "classic_documentary",
+  "scope_note": "1 sentence on the scope and nature of the analysis",
+  "source_units": [
+    {
+      "verses": "1:1-5",
+      "source": "J",
+      "confidence": 0.00,
+      "divine_name_used": "YHWH",
+      "key_vocabulary": ["word1", "word2"],
+      "theological_concerns": "brief description",
+      "structural_markers": "what formal features support this attribution",
+      "doublet_with": null,
+      "summary": "2-3 sentences explaining the attribution"
+    }
+  ],
+  "doublets": [
+    {
+      "unit_1_verses": "1:1-5",
+      "unit_2_verses": "2:4-9",
+      "description": "what the two accounts describe",
+      "significance": "1 sentence — what this doublet reveals"
+    }
+  ],
+  "competing_positions": [
+    {
+      "scholar": "Friedman (1987)",
+      "attribution": "brief summary of Friedman's position on this passage",
+      "note": "relevant page or chapter reference"
+    },
+    {
+      "scholar": "Baden (2012)",
+      "attribution": "brief summary of Baden's position",
+      "note": "relevant page or chapter reference"
+    }
+  ],
+  "framework_note": "Classic Documentary Hypothesis (Wellhausen 1878, Friedman 1987). Source attribution is analytical evidence, not definitive assignment. Scholarly debate is ongoing.",
+  "synthesis": "2-3 sentences overall assessment of the source composition of this passage",
+  "bibcrit_hypothesis": {
+    "title": "max 8 words",
+    "reasoning": "2-3 sentences of original synthesis",
+    "confidence": 0.00
+  },
+  "discovery_ready": false
+}

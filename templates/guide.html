@@ -405,13 +405,13 @@
     {# ── Hero ── #}
     <div class="guide-hero">
         <h1>How to Use BibCrit</h1>
-        <p>BibCrit is a Claude-powered biblical textual criticism toolkit. Each tool streams AI analysis directly in your browser, letting you explore divergences between the Masoretic Text (MT) and the Septuagint (LXX), profile scribal tendencies, model numerical discrepancies, reconstruct plausible Hebrew Vorlagen, compare Dead Sea Scrolls witnesses, trace patristic citations, detect theological revisions, and visualize manuscript genealogies — all without installing any software.</p>
+        <p>BibCrit is a Claude-powered biblical textual criticism toolkit. Each tool streams AI analysis directly in your browser, letting you explore divergences between the Masoretic Text (MT) and the Septuagint (LXX), profile scribal tendencies, model numerical discrepancies, reconstruct plausible Hebrew Vorlagen, compare Dead Sea Scrolls witnesses, trace patristic citations, detect theological revisions, visualize manuscript genealogies, map chiastic structures, and analyze source layers — all without installing any software.</p>
     </div>
 
     {# ── Stats bar ── #}
     <div class="about-stats">
         <div class="about-stat">
-            <span class="stat-num">8</span>
+            <span class="stat-num">11</span>
             <span class="stat-label">analysis tools</span>
         </div>
         <div class="about-stat">
@@ -419,7 +419,7 @@
             <span class="stat-label">LXX books profiled</span>
         </div>
         <div class="about-stat">
-            <span class="stat-num">3</span>
+            <span class="stat-num">5</span>
             <span class="stat-label">manuscript traditions</span>
         </div>
     </div>
@@ -491,12 +491,24 @@
             <a href="/genealogy?book=Isaiah&lang={{ lang }}" class="feature-example-link">Try Isaiah →</a>
         </div>
 
+        <div class="feature-card">
+            <h4><span class="material-symbols-outlined" style="font-size:1.1em;vertical-align:-3px;margin-right:4px">swap_vert</span>Chiasm Detector</h4>
+            <p>Detect concentric (chiastic) literary structures in any biblical passage. The tool identifies labeled structural units (A–B–C–X–C′–B′–A′), annotates the pivot/climax, maps correspondences between parallel panels, and assesses overall structural integrity. Results include a full diagram, confidence score, and a BibCrit hypothesis on theological significance.</p>
+            <a href="/chiasm?ref=Amos+5%3A1-17&lang={{ lang }}" class="feature-example-link">Try Amos 5:1–17 →</a>
+        </div>
+
+        <div class="feature-card">
+            <h4><span class="material-symbols-outlined" style="font-size:1.1em;vertical-align:-3px;margin-right:4px">layers</span>Source Criticism</h4>
+            <p>Analyze a passage for documentary source layers using classical criteria: divine name usage (YHWH vs. Elohim), vocabulary patterns, doublets, theological concerns, and narrative tensions. Each identified unit is assigned a traditional source designation (J, E, D, P, or Redactor) with confidence level, supporting evidence, and scholarly debate context.</p>
+            <a href="/source?ref=Genesis+1%3A1-2%3A25&lang={{ lang }}" class="feature-example-link">Try Genesis 1–2 →</a>
+        </div>
+
     </div>
 
     {# ── Manuscript traditions ── #}
     <h2>Manuscript Traditions</h2>
 
-    <p>BibCrit works across three major textual witnesses to the Hebrew Bible, each with its own transmission history and scholarly edition.</p>
+    <p>BibCrit works across five major textual witnesses to the Hebrew Bible, each with its own transmission history and scholarly edition.</p>
 
     <div class="about-table-wrap">
     <table class="about-table">
@@ -530,6 +542,20 @@
                 <td>Samaritan Hebrew</td>
                 <td>Script diverges c. 6th–4th c. BCE; extant MSS medieval</td>
                 <td>von Gall 1918; HBCE (in progress)</td>
+            </tr>
+            <tr>
+                <td><span class="trad-dss">DSS</span></td>
+                <td>Dead Sea Scrolls</td>
+                <td>Hebrew / Aramaic</td>
+                <td>c. 250 BCE – 68 CE (Qumran deposits)</td>
+                <td>DJD series (Oxford); Leon Levy DSS Digital Library</td>
+            </tr>
+            <tr>
+                <td><span style="color:var(--pesh-color,#7B5EA7);font-weight:600">PESH</span></td>
+                <td>Peshitta</td>
+                <td>Classical Syriac</td>
+                <td>OT books translated c. 1st–2nd c. CE</td>
+                <td>Leiden Peshitta (Brill); CAL (Comprehensive Aramaic Lexicon)</td>
             </tr>
         </tbody>
     </table>

@@ -126,10 +126,47 @@ DIVERGENCE_REFS = [
     'Deuteronomy 32:8',
 ]
 
+# NT Use of OT — featured passages from the UI chips
+NT_OT_REFS = [
+    'Matthew 1:23',
+    'Romans 15:12',
+    'Hebrews 1:6',
+    'Matthew 2:15',
+    'Romans 10:13',
+    'Hebrews 2:7',
+    'Matthew 4:4',
+    'Romans 11:26',
+    'Revelation 1:7',
+]
+
+# Chiasm Detector — primary targets from the roadmap
+CHIASM_REFS = [
+    'Amos 5:1-17',
+    'Genesis 1:1-2:3',
+    'Ruth 1:1-22',
+    'Psalm 136',
+    'Genesis 37',
+    'Isaiah 1:2-20',
+    'Psalm 22',
+    'Genesis 6:1-8',
+]
+
+# Source Criticism — featured Pentateuchal passages
+SOURCE_REFS = [
+    'Genesis 1:1-2:25',
+    'Genesis 6:1-8',
+    'Exodus 19:1-20:21',
+    'Genesis 37',
+    'Numbers 1',
+    'Deuteronomy 5',
+    'Genesis 15',
+    'Leviticus 1',
+]
+
 
 def main() -> None:
     parser = argparse.ArgumentParser(description='Pre-cache BibCrit analyses')
-    parser.add_argument('--type', choices=['numerical', 'backtranslation', 'scribal', 'theological', 'patristic', 'dss', 'genealogy', 'divergence'],
+    parser.add_argument('--type', choices=['numerical', 'backtranslation', 'scribal', 'theological', 'patristic', 'dss', 'genealogy', 'divergence', 'nt_ot', 'chiasm', 'source'],
                         help='Only run this analysis type (default: all)')
     parser.add_argument('--dry-run', action='store_true',
                         help='Show what would be cached without calling the API')
@@ -140,7 +177,8 @@ def main() -> None:
     from biblical_core.claude_pipeline import (
         ClaudePipeline, SCRIBAL_MODEL, NUMERICAL_MODEL,
         THEOLOGICAL_MODEL, PATRISTIC_MODEL, DSS_MODEL, DIVERGENCE_MODEL,
-        GENEALOGY_MODEL, _SCRIBAL_SAMPLE_REFS,
+        GENEALOGY_MODEL, NT_OT_MODEL, CHIASM_MODEL, SOURCE_MODEL,
+        _SCRIBAL_SAMPLE_REFS,
     )
     from biblical_core.corpus import BiblicalCorpus
 
@@ -171,6 +209,9 @@ def main() -> None:
     _PATRISTIC_PROMPT    = 'v3'
     _GENEALOGY_PROMPT    = 'v1'
     _DIVERGENCE_PROMPT   = 'v2'
+    _NT_OT_PROMPT        = 'v1'
+    _CHIASM_PROMPT       = 'v1'   # keep in sync with blueprints/literary.py
+    _SOURCE_PROMPT       = 'v1'   # keep in sync with blueprints/literary.py
 
     total = skipped = ran = errors = 0
 
@@ -403,6 +444,82 @@ def main() -> None:
                 print(f' ✓  {elapsed:.0f}s')
                 ran += 1
 
+    def run_nt_ot():
+        nonlocal total, skipped, ran, errors
+        for ref in NT_OT_REFS:
+            total += 1
+            cached = pipeline.get_cached(ref, 'nt_ot', _NT_OT_PROMPT, NT_OT_MODEL)
+            if cached:
+                print(f'  ⚡ SKIP  nt_ot  {ref}  (cached)')
+                skipped += 1
+                continue
+            if args.dry_run:
+                print(f'  ○ WOULD RUN  nt_ot  {ref}')
+                continue
+            nt_text = ''
+            try:
+                gnt_words = corpus.get_verse_words(ref, 'GNT')
+                nt_text = ' '.join(w.word_text for w in gnt_words) if gnt_words else ''
+            except Exception:
+                pass
+            print(f'  → RUN   nt_ot  {ref} …', end='', flush=True)
+            t0 = time.time()
+            result = pipeline.analyze_nt_ot(ref, nt_text, '')
+            elapsed = time.time() - t0
+            if result.get('error'):
+                print(f' ❌  {result["error"]}')
+                errors += 1
+            else:
+                print(f' ✓  {elapsed:.0f}s')
+                ran += 1
+
+    def run_chiasm():
+        nonlocal total, skipped, ran, errors
+        for ref in CHIASM_REFS:
+            total += 1
+            cached = pipeline.get_cached(ref, 'chiasm', _CHIASM_PROMPT, CHIASM_MODEL)
+            if cached:
+                print(f'  ⚡ SKIP  chiasm  {ref}  (cached)')
+                skipped += 1
+                continue
+            if args.dry_run:
+                print(f'  ○ WOULD RUN  chiasm  {ref}')
+                continue
+            print(f'  → RUN   chiasm  {ref} …', end='', flush=True)
+            t0 = time.time()
+            result = pipeline.analyze_chiasm(ref)
+            elapsed = time.time() - t0
+            if result.get('error'):
+                print(f' ❌  {result["error"]}')
+                errors += 1
+            else:
+                print(f' ✓  {elapsed:.0f}s — structure_detected={result.get("structure_detected")}')
+                ran += 1
+
+    def run_source():
+        nonlocal total, skipped, ran, errors
+        for ref in SOURCE_REFS:
+            total += 1
+            cached = pipeline.get_cached(ref, 'source', _SOURCE_PROMPT, SOURCE_MODEL)
+            if cached:
+                print(f'  ⚡ SKIP  source  {ref}  (cached)')
+                skipped += 1
+                continue
+            if args.dry_run:
+                print(f'  ○ WOULD RUN  source  {ref}')
+                continue
+            print(f'  → RUN   source  {ref} …', end='', flush=True)
+            t0 = time.time()
+            result = pipeline.analyze_source(ref)
+            elapsed = time.time() - t0
+            if result.get('error'):
+                print(f' ❌  {result["error"]}')
+                errors += 1
+            else:
+                units = len(result.get('source_units', []))
+                print(f' ✓  {elapsed:.0f}s — {units} source unit(s)')
+                ran += 1
+
     run_type = args.type
     print(f'\nPre-cache run — type={run_type or "all"}  dry_run={args.dry_run}\n')
 
@@ -437,6 +554,18 @@ def main() -> None:
     if not run_type or run_type == 'divergence':
         print('\n── Divergence ──────────────────────────────────')
         run_divergence()
+
+    if not run_type or run_type == 'nt_ot':
+        print('\n── NT Use of OT ────────────────────────────────')
+        run_nt_ot()
+
+    if not run_type or run_type == 'chiasm':
+        print('\n── Chiasm Detector ─────────────────────────────')
+        run_chiasm()
+
+    if not run_type or run_type == 'source':
+        print('\n── Source Criticism ────────────────────────────')
+        run_source()
 
     print(f'\n{"DRY RUN — " if args.dry_run else ""}Done.  '
           f'Total={total}  Ran={ran}  Skipped={skipped}  Errors={errors}')

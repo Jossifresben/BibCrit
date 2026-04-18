@@ -96,6 +96,7 @@
   // ── Core analyze ────────────────────────────────────────────────────────
   function analyze(ref) {
     if (!ref) return;
+    if (window.BibCrit_checkPassageLength && window.BibCrit_checkPassageLength(ref)) return;
     _currentRef = ref;
 
     if (_es) { _es.close(); _es = null; }
@@ -166,6 +167,7 @@
 
     show(results);
     show(tabsArea);
+    staggerReveal(tabsArea, 0);
 
     var exportRow = document.getElementById('export-row');
     if (exportRow) show(exportRow);

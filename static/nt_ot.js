@@ -136,6 +136,8 @@
     'zephaniah','haggai','zechariah','malachi',
     'gen','exo','exod','lev','num','deut','josh','judg','isa','jer','ezek','dan',
     'hos','amos','mic','zech','mal','psa','prov','ecc','neh','est',
+    '1sam','2sam','1kgs','2kgs','1ki','2ki','1king','2king','1kings','2kings',
+    '1chr','2chr','1chron','2chron','1chronicles','2chronicles',
   ];
 
   function _isOtRef(ref) {
@@ -146,6 +148,7 @@
   // ── Analysis (SSE) ────────────────────────────────────────────────────────
   function analyze(ref) {
     if (!ref) return;
+    if (window.BibCrit_checkPassageLength && window.BibCrit_checkPassageLength(ref)) return;
 
     if (_isOtRef(ref)) {
       emptyState.style.display = 'block';
@@ -267,6 +270,7 @@
     }
 
     resultsArea.style.display = 'block';
+    staggerReveal(resultsArea, 90);
   }
 
   // ── Card builders ─────────────────────────────────────────────────────────

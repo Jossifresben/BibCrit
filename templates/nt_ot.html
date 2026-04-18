@@ -53,7 +53,7 @@
     <span class="passage-or">{{ _t('passage_or') }}</span>
 
     <input type="text" id="ref-input" class="passage-input"
-           placeholder="Matthew 1:23" value="{{ reference }}"
+           placeholder="Matthew 1:23" value="{{ reference | e }}"
            aria-label="Type a reference">
 
     <div class="passage-bar-actions">
@@ -96,6 +96,7 @@
 {% endblock %}
 
 {% block scripts %}
+<script>window.TOOL_MAX_VERSES = 25;</script>
 <script src="{{ url_for('static', filename='nt_ot.js') }}"></script>
 {% if reference %}
 <script>

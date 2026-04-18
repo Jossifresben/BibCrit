@@ -77,6 +77,12 @@
 .tool-card h3     { font-size: 1rem; font-weight: 700; margin: 0; color: var(--fg, #1a1a1a);
                     font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.01em; }
 .tool-card p      { font-size: 1rem; color: var(--muted, #6b6560); line-height: 1.6; margin: 0; }
+/* Persona-specific tool card descriptions */
+.persona-desc-phd, .persona-desc-student { display: none; }
+body[data-persona="phd"]     .tool-card p .persona-desc-default  { display: none; }
+body[data-persona="phd"]     .tool-card p .persona-desc-phd      { display: inline; }
+body[data-persona="student"] .tool-card p .persona-desc-default  { display: none; }
+body[data-persona="student"] .tool-card p .persona-desc-student  { display: inline; }
 .tool-card-arrow  { display: inline-block; margin-top: 0.75rem; font-size: 0.8rem; font-weight: 600; color: var(--accent, #2c3e50); opacity: 0.75; }
 
 /* ── Tool grid section headers ───────────────────────────────────── */
@@ -196,7 +202,8 @@ body[data-persona] .home-section-header { display: none; }
             font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.02em; }
 .ph-sub   { font-size: 0.875rem; color: var(--muted, #6b6560); margin-bottom: 1.2rem; }
 
-.ph-badges { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.ph-badges { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+.ph-badge-zenodo { display: inline-flex; align-items: center; text-decoration: none; }
 .ph-badge  {
     background: rgba(0,0,0,.05); border: 1px solid rgba(0,0,0,.12);
     border-radius: 5px; padding: 3px 9px; font-size: 0.7rem; color: var(--muted, #6b6560);
@@ -307,9 +314,11 @@ body[data-persona] .home-section-header { display: none; }
         <span class="ph-badge accent">{{ _t('ph_scholar_badge_sbl') }}</span>
         <span class="ph-badge accent">{{ _t('ph_scholar_badge_api') }}</span>
 
-        <span class="ph-badge">DOI: 10.5281/zenodo.19358424</span>
+        <a href="https://doi.org/10.5281/zenodo.19358424" target="_blank" rel="noopener" class="ph-badge-zenodo">
+          <img src="https://zenodo.org/badge/1195648052.svg" alt="DOI: 10.5281/zenodo.19358424" style="height:20px;vertical-align:middle;">
+        </a>
         <span class="ph-badge">Apache 2.0</span>
-        <span class="ph-badge">9 tools</span>
+        <span class="ph-badge">11 tools</span>
       </div>
     </div>
   </div>
@@ -327,7 +336,9 @@ body[data-persona] .home-section-header { display: none; }
         <span class="ph-badge accent">{{ _t('ph_phd_badge_export') }}</span>
         <span class="ph-badge accent">{{ _t('ph_phd_badge_method') }}</span>
         <span class="ph-badge">{{ _t('ph_phd_badge_disc') }}</span>
-        <span class="ph-badge">{{ _t('ph_phd_badge_doi') }}</span>
+        <a href="https://doi.org/10.5281/zenodo.19358424" target="_blank" rel="noopener" class="ph-badge-zenodo">
+          <img src="https://zenodo.org/badge/1195648052.svg" alt="DOI: 10.5281/zenodo.19358424" style="height:20px;vertical-align:middle;">
+        </a>
       </div>
       <div class="phd-diss-box">
         <div class="phd-diss-label">{{ _t('ph_phd_diss_label') }}</div>
@@ -392,7 +403,7 @@ body[data-persona] .home-section-header { display: none; }
             <div class="tool-card-icon"><span class="material-symbols-outlined">find_in_page</span></div>
             <h3>{{ _t('tool_divergence_title') }}</h3>
         </div>
-        <p>{{ _t('tool_divergence_desc') }}</p>
+        <p><span class="persona-desc-default">{{ _t('tool_divergence_desc') }}</span><span class="persona-desc-phd">{{ _t('tool_divergence_desc_phd') }}</span><span class="persona-desc-student">{{ _t('tool_divergence_desc_student') }}</span></p>
         <span class="tool-card-arrow">{{ _t('home_open_arrow') }}</span>
     </a>
 
@@ -402,7 +413,7 @@ body[data-persona] .home-section-header { display: none; }
             <div class="tool-card-icon"><span class="material-symbols-outlined">translate</span></div>
             <h3>{{ _t('tool_backtrans_title') }}</h3>
         </div>
-        <p>{{ _t('tool_backtrans_desc') }}</p>
+        <p><span class="persona-desc-default">{{ _t('tool_backtrans_desc') }}</span><span class="persona-desc-phd">{{ _t('tool_backtrans_desc_phd') }}</span><span class="persona-desc-student">{{ _t('tool_backtrans_desc_student') }}</span></p>
         <span class="tool-card-arrow">{{ _t('home_open_arrow') }}</span>
     </a>
 
@@ -412,7 +423,7 @@ body[data-persona] .home-section-header { display: none; }
             <div class="tool-card-icon"><span class="material-symbols-outlined">history_edu</span></div>
             <h3>{{ _t('tool_dss_title') }}</h3>
         </div>
-        <p>{{ _t('tool_dss_desc') }}</p>
+        <p><span class="persona-desc-default">{{ _t('tool_dss_desc') }}</span><span class="persona-desc-phd">{{ _t('tool_dss_desc_phd') }}</span><span class="persona-desc-student">{{ _t('tool_dss_desc_student') }}</span></p>
         <span class="tool-card-arrow">{{ _t('home_open_arrow') }}</span>
     </a>
 
@@ -422,7 +433,7 @@ body[data-persona] .home-section-header { display: none; }
             <div class="tool-card-icon"><span class="material-symbols-outlined">account_tree</span></div>
             <h3>{{ _t('tool_genealogy_title') }}</h3>
         </div>
-        <p>{{ _t('tool_genealogy_desc') }}</p>
+        <p><span class="persona-desc-default">{{ _t('tool_genealogy_desc') }}</span><span class="persona-desc-phd">{{ _t('tool_genealogy_desc_phd') }}</span><span class="persona-desc-student">{{ _t('tool_genealogy_desc_student') }}</span></p>
         <span class="tool-card-arrow">{{ _t('home_open_arrow') }}</span>
     </a>
 
@@ -432,7 +443,7 @@ body[data-persona] .home-section-header { display: none; }
             <div class="tool-card-icon"><span class="material-symbols-outlined">menu_book</span></div>
             <h3>{{ _t('nt_ot_tool_title') }}</h3>
         </div>
-        <p>{{ _t('nt_ot_tool_desc') }}</p>
+        <p><span class="persona-desc-default">{{ _t('nt_ot_tool_desc') }}</span><span class="persona-desc-phd">{{ _t('nt_ot_tool_desc_phd') }}</span><span class="persona-desc-student">{{ _t('nt_ot_tool_desc_student') }}</span></p>
         <span class="tool-card-arrow">{{ _t('home_open_arrow') }}</span>
     </a>
 
@@ -446,7 +457,7 @@ body[data-persona] .home-section-header { display: none; }
             <div class="tool-card-icon"><span class="material-symbols-outlined">radar</span></div>
             <h3>{{ _t('tool_scribal_title') }}</h3>
         </div>
-        <p>{{ _t('tool_scribal_desc') }}</p>
+        <p><span class="persona-desc-default">{{ _t('tool_scribal_desc') }}</span><span class="persona-desc-phd">{{ _t('tool_scribal_desc_phd') }}</span><span class="persona-desc-student">{{ _t('tool_scribal_desc_student') }}</span></p>
         <span class="tool-card-arrow">{{ _t('home_open_arrow') }}</span>
     </a>
 
@@ -455,7 +466,7 @@ body[data-persona] .home-section-header { display: none; }
             <div class="tool-card-icon"><span class="material-symbols-outlined">calculate</span></div>
             <h3>{{ _t('tool_numerical_title') }}</h3>
         </div>
-        <p>{{ _t('tool_numerical_desc') }}</p>
+        <p><span class="persona-desc-default">{{ _t('tool_numerical_desc') }}</span><span class="persona-desc-phd">{{ _t('tool_numerical_desc_phd') }}</span><span class="persona-desc-student">{{ _t('tool_numerical_desc_student') }}</span></p>
         <span class="tool-card-arrow">{{ _t('home_open_arrow') }}</span>
     </a>
 
@@ -465,7 +476,7 @@ body[data-persona] .home-section-header { display: none; }
             <div class="tool-card-icon"><span class="material-symbols-outlined">psychology</span></div>
             <h3>{{ _t('tool_theological_title') }}</h3>
         </div>
-        <p>{{ _t('tool_theological_desc') }}</p>
+        <p><span class="persona-desc-default">{{ _t('tool_theological_desc') }}</span><span class="persona-desc-phd">{{ _t('tool_theological_desc_phd') }}</span><span class="persona-desc-student">{{ _t('tool_theological_desc_student') }}</span></p>
         <span class="tool-card-arrow">{{ _t('home_open_arrow') }}</span>
     </a>
 
@@ -474,7 +485,32 @@ body[data-persona] .home-section-header { display: none; }
             <div class="tool-card-icon"><span class="material-symbols-outlined">church</span></div>
             <h3>{{ _t('tool_patristic_title') }}</h3>
         </div>
-        <p>{{ _t('tool_patristic_desc') }}</p>
+        <p><span class="persona-desc-default">{{ _t('tool_patristic_desc') }}</span><span class="persona-desc-phd">{{ _t('tool_patristic_desc_phd') }}</span><span class="persona-desc-student">{{ _t('tool_patristic_desc_student') }}</span></p>
+        <span class="tool-card-arrow">{{ _t('home_open_arrow') }}</span>
+    </a>
+
+    <div class="home-section-header">
+        <span class="home-section-label">Literary</span>
+        <span class="home-section-rule"></span>
+    </div>
+
+    <a href="/chiasm?lang={{ lang }}" class="tool-card" data-tool="chiasm">
+        <span class="persona-chip">{{ _t('ph_chip_featured') }}</span>
+        <div class="tool-card-header">
+            <div class="tool-card-icon"><span class="material-symbols-outlined">swap_vert</span></div>
+            <h3>{{ _t('tool_chiasm_title') }}</h3>
+        </div>
+        <p><span class="persona-desc-default">{{ _t('tool_chiasm_desc') }}</span><span class="persona-desc-phd">{{ _t('tool_chiasm_desc_phd') }}</span><span class="persona-desc-student">{{ _t('tool_chiasm_desc_student') }}</span></p>
+        <span class="tool-card-arrow">{{ _t('home_open_arrow') }}</span>
+    </a>
+
+    <a href="/source?lang={{ lang }}" class="tool-card" data-tool="source">
+        <span class="persona-chip">{{ _t('ph_chip_featured') }}</span>
+        <div class="tool-card-header">
+            <div class="tool-card-icon"><span class="material-symbols-outlined">layers</span></div>
+            <h3>{{ _t('tool_source_title') }}</h3>
+        </div>
+        <p><span class="persona-desc-default">{{ _t('tool_source_desc') }}</span><span class="persona-desc-phd">{{ _t('tool_source_desc_phd') }}</span><span class="persona-desc-student">{{ _t('tool_source_desc_student') }}</span></p>
         <span class="tool-card-arrow">{{ _t('home_open_arrow') }}</span>
     </a>
 

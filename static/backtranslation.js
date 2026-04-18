@@ -129,6 +129,7 @@
   // ── Analysis (SSE) ────────────────────────────────────────────────────────
   function analyze(ref) {
     if (!ref) return;
+    if (window.BibCrit_checkPassageLength && window.BibCrit_checkPassageLength(ref)) return;
     currentRef = ref;
 
     // Show loading, hide others
@@ -206,6 +207,7 @@
     buildTabs(data);
 
     tabsArea.style.display  = 'block';
+    staggerReveal(tabsArea, 0);
     exportRow.style.display = 'flex';
 
     // Model attribution badge

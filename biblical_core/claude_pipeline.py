@@ -20,6 +20,8 @@ THEOLOGICAL_MODEL = 'claude-sonnet-4-5-20250929'
 PATRISTIC_MODEL   = 'claude-sonnet-4-5-20250929'
 GENEALOGY_MODEL   = 'claude-sonnet-4-5-20250929'
 NT_OT_MODEL       = 'claude-sonnet-4-5-20250929'
+CHIASM_MODEL      = 'claude-sonnet-4-5-20250929'
+SOURCE_MODEL      = 'claude-sonnet-4-5-20250929'
 
 _SONNET_COST_IN  = 3.0  / 1_000_000   # $3 per MTok input (claude-sonnet-4-5)
 _SONNET_COST_OUT = 15.0 / 1_000_000   # $15 per MTok output (claude-sonnet-4-5)
@@ -130,6 +132,29 @@ _NT_OT_SYSTEM = (
     "citation technique, text form identification (MT vs. LXX vs. recensions), and the methodology "
     "of Beale & Carson, Christopher Stanley, and Richard Hays. You determine whether NT authors "
     "cited MT or LXX forms with philological precision. "
+    "CRITICAL: Return ONLY raw JSON. No markdown, no code fences, no backticks, "
+    "no prose before or after. The response must start with { and end with }."
+)
+
+_CHIASM_SYSTEM = (
+    "You are a specialist in biblical literary structure with deep expertise in "
+    "chiasm and concentric compositions in the Hebrew Bible. You apply the "
+    "methodology of Nils Lund (1942), John Welch (1981), David Dorsey (1999), "
+    "and Jerome Walsh (2001). You identify A-B-C-X-C'-B'-A' concentric structures, "
+    "parallel panels, inclusios, and refrains. You distinguish genuine chiastic "
+    "structures from coincidental parallelism using multiple corroborating criteria. "
+    "CRITICAL: Return ONLY raw JSON. No markdown, no code fences, no backticks, "
+    "no prose before or after. The response must start with { and end with }."
+)
+
+_SOURCE_SYSTEM = (
+    "You are a specialist in Pentateuchal source criticism with deep expertise in "
+    "the Documentary Hypothesis and its variants. You apply the methodology of "
+    "Julius Wellhausen (1878), Richard Friedman (1987, 2003), and Joel Baden (2012). "
+    "You identify source layers (J, E, D, P) by divine name usage, vocabulary, "
+    "theological concerns, doublets, and narrative style. You surface competing "
+    "scholarly positions and present attributions as analytical evidence, not "
+    "definitive assignments. "
     "CRITICAL: Return ONLY raw JSON. No markdown, no code fences, no backticks, "
     "no prose before or after. The response must start with { and end with }."
 )
@@ -1148,6 +1173,8 @@ class ClaudePipeline:
 
         Returns dict with 'allusions', 'summary_technical', 'summary_plain', 'bibcrit_hypothesis'.
         On error: returns {'error': ..., 'allusions': []}.
+
+        prompt_version='v1' — keep in sync with _NT_OT_PROMPT in blueprints/textual.py.
         """
         model          = NT_OT_MODEL
         prompt_version = 'v1'
@@ -1190,6 +1217,142 @@ class ClaudePipeline:
             model=model,
             max_tokens=8192,
             system=_NT_OT_SYSTEM,
+            messages=[
+                {'role': 'user',      'content': user_content},
+                {'role': 'assistant', 'content': '{'},
+            ],
+        )
+
+        cost = (response.usage.input_tokens  * _SONNET_COST_IN +
+                response.usage.output_tokens * _SONNET_COST_OUT)
+        self.record_spend(cost)
+
+        raw  = '{' + response.content[0].text
+        data = _parse_json_response(raw)
+        self.save_cache(reference, tool, prompt_version, model, data)
+        return data
+
+    def analyze_chiasm(self, reference: str, mt_text: str = '') -> dict:
+        """Return chiasm/literary structure analysis for a biblical passage.
+
+        Returns dict with 'structure_detected', 'elements', 'pivot', 'correspondences',
+        'overall_confidence', 'theological_significance', 'bibcrit_hypothesis'.
+        On error: returns {'error': ..., 'elements': []}.
+
+        prompt_version='v1' — keep in sync with _CHIASM_PROMPT in blueprints/literary.py.
+        """
+        model          = CHIASM_MODEL
+        prompt_version = 'v1'
+        tool           = 'chiasm'
+
+        cached = self.get_cached(reference, tool, prompt_version, model)
+        if cached:
+            return cached
+
+        if not self._client:
+            return {
+                'error': 'No API key configured. Set ANTHROPIC_API_KEY environment variable.',
+                'elements': [], 'structure_detected': False, 'structure_type': 'none',
+                'pivot': None, 'correspondences': [], 'overall_confidence': 0.0,
+                'theological_significance': '', 'scholarly_citations': '',
+                'bibcrit_hypothesis': {'title': '', 'reasoning': '', 'confidence': 0.0},
+            }
+
+        budget = self.get_budget()
+        if budget['spend_usd'] >= self._cap_usd:
+            return {
+                'error': (
+                    f"Monthly analysis budget of ${self._cap_usd:.2f} reached. "
+                    "Please try again next month or donate to increase the cap."
+                ),
+                'elements': [], 'structure_detected': False, 'structure_type': 'none',
+                'pivot': None, 'correspondences': [], 'overall_confidence': 0.0,
+                'theological_significance': '', 'scholarly_citations': '',
+                'bibcrit_hypothesis': {'title': '', 'reasoning': '', 'confidence': 0.0},
+            }
+
+        template = self.load_prompt('chiasm', prompt_version)
+        user_content = (
+            template
+            .replace('{{REFERENCE}}', reference)
+            .replace('{{MT_TEXT}}', mt_text or '')
+        ) if template else (
+            f'Passage: {reference}\nMT Text: {mt_text}\n'
+            'Analyze for chiastic structure. Return JSON with elements array.'
+        )
+
+        response = self._client.messages.create(
+            model=model,
+            max_tokens=8192,
+            system=_CHIASM_SYSTEM,
+            messages=[
+                {'role': 'user',      'content': user_content},
+                {'role': 'assistant', 'content': '{'},
+            ],
+        )
+
+        cost = (response.usage.input_tokens  * _SONNET_COST_IN +
+                response.usage.output_tokens * _SONNET_COST_OUT)
+        self.record_spend(cost)
+
+        raw  = '{' + response.content[0].text
+        data = _parse_json_response(raw)
+        self.save_cache(reference, tool, prompt_version, model, data)
+        return data
+
+    def analyze_source(self, reference: str, mt_text: str = '') -> dict:
+        """Return source-critical analysis (J/E/D/P) for a biblical passage.
+
+        Returns dict with 'source_units', 'doublets', 'competing_positions',
+        'synthesis', 'bibcrit_hypothesis'.
+        On error: returns {'error': ..., 'source_units': []}.
+
+        prompt_version='v1' — keep in sync with _SOURCE_PROMPT in blueprints/literary.py.
+        """
+        model          = SOURCE_MODEL
+        prompt_version = 'v1'
+        tool           = 'source'
+
+        cached = self.get_cached(reference, tool, prompt_version, model)
+        if cached:
+            return cached
+
+        if not self._client:
+            return {
+                'error': 'No API key configured. Set ANTHROPIC_API_KEY environment variable.',
+                'source_units': [], 'doublets': [], 'competing_positions': [],
+                'framework': 'classic_documentary', 'scope_note': '',
+                'framework_note': '', 'synthesis': '',
+                'bibcrit_hypothesis': {'title': '', 'reasoning': '', 'confidence': 0.0},
+            }
+
+        budget = self.get_budget()
+        if budget['spend_usd'] >= self._cap_usd:
+            return {
+                'error': (
+                    f"Monthly analysis budget of ${self._cap_usd:.2f} reached. "
+                    "Please try again next month or donate to increase the cap."
+                ),
+                'source_units': [], 'doublets': [], 'competing_positions': [],
+                'framework': 'classic_documentary', 'scope_note': '',
+                'framework_note': '', 'synthesis': '',
+                'bibcrit_hypothesis': {'title': '', 'reasoning': '', 'confidence': 0.0},
+            }
+
+        template = self.load_prompt('source', prompt_version)
+        user_content = (
+            template
+            .replace('{{REFERENCE}}', reference)
+            .replace('{{MT_TEXT}}', mt_text or '')
+        ) if template else (
+            f'Passage: {reference}\nMT Text: {mt_text}\n'
+            'Perform source criticism. Return JSON with source_units array.'
+        )
+
+        response = self._client.messages.create(
+            model=model,
+            max_tokens=8192,
+            system=_SOURCE_SYSTEM,
             messages=[
                 {'role': 'user',      'content': user_content},
                 {'role': 'assistant', 'content': '{'},

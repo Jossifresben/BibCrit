@@ -5,7 +5,21 @@ import os
 import threading
 from flask import Blueprint, render_template, request, jsonify, Response, stream_with_context
 from biblical_core.claude_pipeline import DIVERGENCE_MODEL, DSS_MODEL, GENEALOGY_MODEL, NT_OT_MODEL
+from biblical_core.ref_utils import estimate_verse_count, TOOL_VERSE_LIMITS
 import state
+
+
+def _check_ref_length(reference: str, tool: str) -> str | None:
+    """Return an error message string if the passage is too long, else None."""
+    max_v = TOOL_VERSE_LIMITS.get(tool)
+    if not max_v:
+        return None
+    est = estimate_verse_count(reference)
+    if est > max_v:
+        return (
+            f'Passage too long (≈{est} verses estimated). '
+            f'Please limit to {max_v} verses or fewer for this tool.'
+        )
 
 _votes_lock = threading.Lock()
 
@@ -18,7 +32,7 @@ _DIVERGENCE_PROMPT     = 'v2'
 _BACKTRANSLATION_PROMPT = 'v1'
 _DSS_PROMPT            = 'v6'
 _GENEALOGY_PROMPT      = 'v1'
-_NT_OT_PROMPT          = 'v1'
+_NT_OT_PROMPT          = 'v1'   # keep in sync with analyze_nt_ot() prompt_version in claude_pipeline.py
 
 _STEPS = {
     'en': {
@@ -155,6 +169,10 @@ def api_divergence_stream():
         if not reference:
             yield event('error', msg='ref parameter required')
             return
+        len_err = _check_ref_length(reference, 'divergence')
+        if len_err:
+            yield event('error', msg=len_err)
+            return
 
         corpus   = state.corpus
         pipeline = state.pipeline
@@ -262,6 +280,10 @@ def api_backtranslation_stream():
         if not reference:
             yield event('error', msg='ref parameter required')
             return
+        len_err = _check_ref_length(reference, 'backtranslation')
+        if len_err:
+            yield event('error', msg=len_err)
+            return
 
         corpus   = state.corpus
         pipeline = state.pipeline
@@ -368,6 +390,10 @@ def api_dss_stream():
 
         if not reference:
             yield event('error', msg='ref parameter required')
+            return
+        len_err = _check_ref_length(reference, 'dss')
+        if len_err:
+            yield event('error', msg=len_err)
             return
 
         corpus   = state.corpus
@@ -687,6 +713,34 @@ def export_tei():
 
 # ── NT Use of OT SSE stream ───────────────────────────────────────────────
 
+# OT book names (lower-case) used to reject OT references server-side.
+# Must stay in sync with OT_BOOKS in static/nt_ot.js.
+_OT_BOOKS = frozenset({
+    'genesis', 'exodus', 'leviticus', 'numbers', 'deuteronomy', 'joshua',
+    'judges', 'ruth', '1 samuel', '2 samuel', '1 kings', '2 kings',
+    '1 chronicles', '2 chronicles', 'ezra', 'nehemiah', 'esther', 'job',
+    'psalm', 'psalms', 'proverbs', 'ecclesiastes', 'song of solomon',
+    'song of songs', 'isaiah', 'jeremiah', 'lamentations', 'ezekiel',
+    'daniel', 'hosea', 'joel', 'amos', 'obadiah', 'jonah', 'micah',
+    'nahum', 'habakkuk', 'zephaniah', 'haggai', 'zechariah', 'malachi',
+    # Abbreviations
+    'gen', 'exo', 'exod', 'lev', 'num', 'deut', 'josh', 'judg',
+    'isa', 'jer', 'ezek', 'dan', 'hos', 'mic', 'zech', 'mal',
+    'psa', 'prov', 'ecc', 'neh', 'est',
+    '1sam', '2sam', '1kgs', '2kgs', '1ki', '2ki', '1king', '2king',
+    '1chr', '2chr', '1chron', '2chron',
+})
+
+import re as _re
+
+def _is_ot_ref(ref: str) -> bool:
+    """Return True if ref appears to be an OT passage (not NT)."""
+    # Strip chapter:verse suffix then trailing chapter number
+    cleaned = _re.sub(r'\s*\d+:\d+.*$', '', ref.strip())
+    cleaned = _re.sub(r'\s+\d+$', '', cleaned).strip().lower()
+    return cleaned in _OT_BOOKS
+
+
 @textual_bp.route('/api/nt-ot/stream')
 def api_nt_ot_stream():
     """SSE endpoint: streams NT use of OT analysis progress then final result."""
@@ -700,6 +754,18 @@ def api_nt_ot_stream():
 
         if not reference:
             yield event('error', msg='ref parameter required')
+            return
+        len_err = _check_ref_length(reference, 'nt_ot')
+        if len_err:
+            yield event('error', msg=len_err)
+            return
+
+        # Server-side OT reference guard (mirrors _isOtRef in nt_ot.js)
+        if _is_ot_ref(reference):
+            yield event('error', msg=(
+                f'"{reference}" is an Old Testament reference. '
+                'This tool analyzes NT passages — try Matthew 1:23, Hebrews 1:6, or Romans 15:12.'
+            ))
             return
 
         corpus   = state.corpus
@@ -756,16 +822,19 @@ def api_nt_ot_stream():
         if lang == 'es':
             yield event('step', msg=_step(lang, 'translating'))
             _tr_box = [result]
-            def _run_tr():
-                _tr_box[0] = _translate_step(pipeline, lang, result, reference,
-                                             'nt_ot', _NT_OT_PROMPT, NT_OT_MODEL)
-            _tt = threading.Thread(target=_run_tr, daemon=True)
+            def _run_tr_nt_ot():
+                try:
+                    _tr_box[0] = _translate_step(pipeline, lang, result, reference,
+                                                 'nt_ot', _NT_OT_PROMPT, NT_OT_MODEL)
+                except Exception:
+                    pass  # _tr_box[0] retains English result as fallback
+            _tt = threading.Thread(target=_run_tr_nt_ot, daemon=True)
             _tt.start()
             while _tt.is_alive():
                 _tt.join(timeout=8)
                 if _tt.is_alive():
                     yield ': keepalive\n\n'
-            result = _tr_box[0]
+            result = _tr_box[0] or result
 
         yield event('done', data=result)
 

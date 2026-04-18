@@ -335,3 +335,61 @@ function updateBudgetBar() {
 document.addEventListener('DOMContentLoaded', function() {
     updateBudgetBar();
 });
+
+// ── Passage length guard ───────────────────────────────────────────────────
+/**
+ * Rough upper-bound estimate of verses in a biblical reference string.
+ * Handles: "Genesis 6:1-9:17" (cross-chapter), "Genesis 6-9" (chapter range),
+ *          "Amos 5:1-17" (same-chapter verse range), single verse/chapter.
+ */
+window.BibCrit_estimateVerseCount = function(ref) {
+  if (!ref) return 0;
+  // NOTE: same-chapter verse range MUST be checked first to avoid
+  // "5:1-17" being misread as chapter range "1→17".
+  // Same-chapter verse range: ":1-17"
+  var vr = ref.match(/:\s*(\d+)\s*[-\u2013\u2014]\s*(\d+)\s*$/);
+  if (vr) return parseInt(vr[2]) - parseInt(vr[1]) + 1;
+  // Cross-chapter range: "6:1 - 9:17"
+  var cc = ref.match(/(\d+)\s*:\s*\d+\s*[-\u2013\u2014]\s*(\d+)\s*:/);
+  if (cc) return (parseInt(cc[2]) - parseInt(cc[1]) + 1) * 30;
+  // Chapter range without colons: "6 - 9"
+  var cr = ref.match(/\b(\d+)\s*[-\u2013\u2014]\s*(\d+)\b(?!\s*:)/);
+  if (cr) {
+    var d = parseInt(cr[2]) - parseInt(cr[1]);
+    if (d > 0 && d < 50) return (d + 1) * 30;
+  }
+  return 20; // single verse or chapter — safe
+};
+
+/**
+ * Show a toast-style error if a reference exceeds TOOL_MAX_VERSES.
+ * Returns true if the reference is too long (caller should abort), false if ok.
+ */
+window.BibCrit_checkPassageLength = function(ref) {
+  var max = window.TOOL_MAX_VERSES;
+  if (!max) return false; // no limit set for this tool
+  var est = window.BibCrit_estimateVerseCount(ref);
+  if (est <= max) return false;
+  // Show inline error using the toast system (defined in result-actions.js)
+  var msg = (window.BIBCRIT_I18N && window.BIBCRIT_I18N['err_passage_too_long'])
+    ? window.BIBCRIT_I18N['err_passage_too_long'].replace('{max}', max)
+    : 'Passage too long. Please keep to ' + max + ' verses or fewer.';
+  if (window.showToast) {
+    window.showToast(msg, 'error');
+  } else {
+    // Fallback: inline error below the analyze button
+    var btn = document.getElementById('btn-analyze');
+    if (btn) {
+      var err = document.getElementById('_passage-len-err');
+      if (!err) {
+        err = document.createElement('p');
+        err.id = '_passage-len-err';
+        err.style.cssText = 'color:#c0392b;font-size:.85rem;margin:.4rem 0 0;';
+        btn.parentNode.insertBefore(err, btn.nextSibling);
+      }
+      err.textContent = msg;
+      setTimeout(function() { if (err.parentNode) err.textContent = ''; }, 6000);
+    }
+  }
+  return true;
+};

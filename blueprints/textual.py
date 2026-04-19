@@ -6,17 +6,12 @@ import time
 import threading
 from queue import Queue, Empty
 from flask import Blueprint, render_template, request, jsonify, Response, stream_with_context
-from biblical_core.claude_pipeline import DIVERGENCE_MODEL, DSS_MODEL, GENEALOGY_MODEL, NT_OT_MODEL
+from biblical_core.claude_pipeline import (
+    DIVERGENCE_MODEL, DSS_MODEL, GENEALOGY_MODEL, NT_OT_MODEL, CACHE_META_KEYS,
+)
 from biblical_core.ref_utils import estimate_verse_count, TOOL_VERSE_LIMITS
 import state
 
-# Keys present in every cached dict that are NOT analysis sections.
-# Excluded from the section-event loop so the JS receives only renderable keys.
-_CACHE_META_KEYS = frozenset((
-    'cached_at', 'model_version', 'prompt_version',
-    'reference', 'book', 'discovery_ready', 'cache_key',
-    'parse_error', 'parse_error_len',
-))
 
 
 def _check_ref_length(reference: str, tool: str) -> str | None:
@@ -220,7 +215,7 @@ def api_divergence_stream():
         if cached:
             yield event('step', msg=_step(lang, 'found_cache'))
             for _key, _val in cached.items():
-                if _key not in _CACHE_META_KEYS:
+                if _key not in CACHE_META_KEYS:
                     yield event('section', key=_key, data=_val)
                     time.sleep(0.04)
             result = cached
@@ -362,7 +357,7 @@ def api_backtranslation_stream():
         if cached:
             yield event('step', msg=_step(lang, 'found_cache'))
             for _key, _val in cached.items():
-                if _key not in _CACHE_META_KEYS:
+                if _key not in CACHE_META_KEYS:
                     yield event('section', key=_key, data=_val)
                     time.sleep(0.04)
             result = cached
@@ -508,7 +503,7 @@ def api_dss_stream():
         if cached:
             yield event('step', msg=_step(lang, 'found_cache'))
             for _key, _val in cached.items():
-                if _key not in _CACHE_META_KEYS:
+                if _key not in CACHE_META_KEYS:
                     yield event('section', key=_key, data=_val)
                     time.sleep(0.04)
             result = cached
@@ -637,7 +632,7 @@ def api_genealogy_stream():
         if cached:
             yield event('step', msg=_step(lang, 'found_cache'))
             for _key, _val in cached.items():
-                if _key not in _CACHE_META_KEYS:
+                if _key not in CACHE_META_KEYS:
                     yield event('section', key=_key, data=_val)
                     time.sleep(0.04)
             result = cached
@@ -929,7 +924,7 @@ def api_nt_ot_stream():
         if cached:
             yield event('step', msg=_step(lang, 'found_cache'))
             for _key, _val in cached.items():
-                if _key not in _CACHE_META_KEYS:
+                if _key not in CACHE_META_KEYS:
                     yield event('section', key=_key, data=_val)
                     time.sleep(0.04)
             result = cached

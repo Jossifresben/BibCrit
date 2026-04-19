@@ -31,6 +31,15 @@ NT_TEXT_MODEL     = 'claude-sonnet-4-6'
 _SONNET_COST_IN  = 3.0  / 1_000_000   # $3 per MTok input (claude-sonnet-4-6)
 _SONNET_COST_OUT = 15.0 / 1_000_000   # $15 per MTok output (claude-sonnet-4-6)
 
+# Keys present in every cached result dict that are NOT analysis sections.
+# Blueprint SSE endpoints import this to filter the cache-hit section-event loop
+# so the client only receives keys that have DOM render targets.
+CACHE_META_KEYS = frozenset((
+    'cached_at', 'model_version', 'prompt_version',
+    'reference', 'book', 'discovery_ready', 'cache_key',
+    'parse_error', 'parse_error_len',
+))
+
 # Diagnostic passages used to build sample_passages for scribal profiling
 _SCRIBAL_SAMPLE_REFS = {
     'Isaiah':      ['Isaiah 7:14', 'Isaiah 9:6', 'Isaiah 11:1', 'Isaiah 40:3',
@@ -789,6 +798,7 @@ class ClaudePipeline:
 
         sections: dict = {}
         in_tok = out_tok = 0
+        full_text = '{'   # safe default if _call_streaming drops its terminal yield
         try:
             for key, value in self._call_streaming(
                 system=_BACKTRANSLATION_SYSTEM,
@@ -916,6 +926,7 @@ class ClaudePipeline:
 
         sections: dict = {}
         in_tok = out_tok = 0
+        full_text = '{'   # safe default if _call_streaming drops its terminal yield
         try:
             for key, value in self._call_streaming(
                 system=_SCRIBAL_SYSTEM,
@@ -1045,6 +1056,7 @@ class ClaudePipeline:
 
         sections: dict = {}
         in_tok = out_tok = 0
+        full_text = '{'   # safe default if _call_streaming drops its terminal yield
         try:
             for key, value in self._call_streaming(
                 system=_NUMERICAL_SYSTEM,
@@ -1244,6 +1256,7 @@ class ClaudePipeline:
 
         sections: dict = {}
         in_tok = out_tok = 0
+        full_text = '{'   # safe default if _call_streaming drops its terminal yield
         try:
             for key, value in self._call_streaming(
                 system=_DSS_SYSTEM,
@@ -1444,6 +1457,7 @@ class ClaudePipeline:
 
         sections: dict = {}
         in_tok = out_tok = 0
+        full_text = '{'   # safe default if _call_streaming drops its terminal yield
         try:
             for key, value in self._call_streaming(
                 system=_THEOLOGICAL_SYSTEM,
@@ -1574,6 +1588,7 @@ class ClaudePipeline:
 
         sections: dict = {}
         in_tok = out_tok = 0
+        full_text = '{'   # safe default if _call_streaming drops its terminal yield
         try:
             for key, value in self._call_streaming(
                 system=_PATRISTIC_SYSTEM,
@@ -1704,6 +1719,7 @@ class ClaudePipeline:
 
         sections: dict = {}
         in_tok = out_tok = 0
+        full_text = '{'   # safe default if _call_streaming drops its terminal yield
         try:
             for key, value in self._call_streaming(
                 system=_GENEALOGY_SYSTEM,
@@ -1873,6 +1889,7 @@ class ClaudePipeline:
 
         sections: dict = {}
         in_tok = out_tok = 0
+        full_text = '{'   # safe default if _call_streaming drops its terminal yield
         try:
             for key, value in self._call_streaming(
                 system=_TARGUM_SYSTEM,
@@ -2023,6 +2040,7 @@ class ClaudePipeline:
 
         sections: dict = {}
         in_tok = out_tok = 0
+        full_text = '{'   # safe default if _call_streaming drops its terminal yield
         try:
             for key, value in self._call_streaming(
                 system=_NT_TEXT_SYSTEM,
@@ -2152,6 +2170,7 @@ class ClaudePipeline:
 
         sections: dict = {}
         in_tok = out_tok = 0
+        full_text = '{'   # safe default if _call_streaming drops its terminal yield
         try:
             for key, value in self._call_streaming(
                 system=_DIVERGENCE_SYSTEM,
@@ -2284,6 +2303,7 @@ class ClaudePipeline:
 
         sections: dict = {}
         in_tok = out_tok = 0
+        full_text = '{'   # safe default if _call_streaming drops its terminal yield
         try:
             for key, value in self._call_streaming(
                 system=_NT_OT_SYSTEM,
@@ -2416,6 +2436,7 @@ class ClaudePipeline:
 
         sections: dict = {}
         in_tok = out_tok = 0
+        full_text = '{'   # safe default if _call_streaming drops its terminal yield
         try:
             for key, value in self._call_streaming(
                 system=_CHIASM_SYSTEM,
@@ -2548,6 +2569,7 @@ class ClaudePipeline:
 
         sections: dict = {}
         in_tok = out_tok = 0
+        full_text = '{'   # safe default if _call_streaming drops its terminal yield
         try:
             for key, value in self._call_streaming(
                 system=_SOURCE_SYSTEM,

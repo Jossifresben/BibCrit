@@ -828,16 +828,18 @@ class ClaudePipeline:
 
     def analyze_dss(self, reference: str, mt_text: str = '',
                     lxx_text: str = '', dss_text: str = '',
-                    sp_text: str = '', pesh_text: str = '') -> dict:
+                    sp_text: str = '', pesh_text: str = '',
+                    vul_text: str = '') -> dict:
         """Return DSS bridge analysis comparing MT, LXX, DSS, SP, and Peshitta.
 
         Returns dict with 'dss_manuscripts', 'sp_witness', 'pesh_witness', 'synthesis', etc.
         sp_text:   raw SP corpus text (Pentateuch only; empty string if not applicable).
         pesh_text: raw Peshitta corpus text (OT-wide; empty string if corpus not yet loaded).
+        vul_text: raw Vulgate corpus text (empty string if not applicable).
         On error: returns {'error': ..., 'dss_manuscripts': [], ...}.
         """
         model          = DSS_MODEL
-        prompt_version = 'v6'
+        prompt_version = 'v7'
         tool           = 'dss'
 
         cached = self.get_cached(reference, tool, prompt_version, model)
@@ -873,11 +875,13 @@ class ClaudePipeline:
             .replace('{{DSS_TEXT}}',  dss_text)
             .replace('{{SP_TEXT}}',   sp_text)
             .replace('{{PESH_TEXT}}', pesh_text)
+            .replace('{{VUL_TEXT}}',  vul_text)
         ) if template else (
             f'Reference: {reference}\nMT: {mt_text}\nLXX: {lxx_text}\n'
             f'Dead Sea Scrolls: {dss_text or "(not attested)"}\n'
             f'SP: {sp_text or "(not applicable)"}\n'
             f'Peshitta: {pesh_text or "(corpus not loaded — use training knowledge)"}\n'
+            f'Vulgate: {vul_text or "(corpus not loaded)"}\n'
             'Return JSON with: dss_manuscripts (DSS scrolls only), sp_witness, pesh_witness, '
             'synthesis, synthesis_plain, textual_history_implication, bibcrit_assessment.'
         )
@@ -923,6 +927,20 @@ class ClaudePipeline:
                 'divergences': [],
                 'overall_note': (
                     'Peshitta text is available for this passage '
+                    'but alignment analysis could not be generated automatically.'
+                ),
+            }
+
+        # Fallback: if Vulgate corpus text was provided but Claude omitted vul_witness
+        if vul_text and not data.get('vul_witness'):
+            data['vul_witness'] = {
+                'present': True,
+                'alignment': 'independent',
+                'alignment_confidence': 0.0,
+                'vul_text': vul_text,
+                'key_readings': [],
+                'overall_note': (
+                    'Vulgate text is available for this passage '
                     'but alignment analysis could not be generated automatically.'
                 ),
             }

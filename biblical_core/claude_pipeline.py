@@ -1198,6 +1198,75 @@ class ClaudePipeline:
         self.save_cache(reference, tool, prompt_version, model, data)
         return data
 
+    def analyze_nt_text(self, reference: str, gnt_text: str = '') -> dict:
+        """Return NT textual tradition analysis for a New Testament passage.
+
+        Uses SBLGNT corpus data where available.
+        Returns dict with 'text_basis', 'manuscript_families', 'metzger_rating', etc.
+        On error: returns {'error': ..., 'synthesis': '', ...}.
+        """
+        model          = NT_TEXT_MODEL
+        prompt_version = 'v1'
+        tool           = 'nt_text'
+
+        cached = self.get_cached(reference, tool, prompt_version, model)
+        if cached:
+            return cached
+
+        if not self._client:
+            return {
+                'error': 'No API key configured. Set ANTHROPIC_API_KEY environment variable.',
+                'reference': reference, 'text_basis': {}, 'manuscript_families': {},
+                'metzger_rating': {}, 'variant_register': [], 'disputed_passage': None,
+                'synthesis': '',
+                'assessment': {'title': '', 'reasoning': '', 'plain': '', 'confidence': 0.0},
+                'citations': {'sbl': '', 'bibtex': ''},
+            }
+
+        budget = self.get_budget()
+        if budget['spend_usd'] >= self._cap_usd:
+            return {
+                'error': (
+                    f"Monthly analysis budget of ${self._cap_usd:.2f} reached. "
+                    "Please try again next month or donate to increase the cap."
+                ),
+                'reference': reference, 'text_basis': {}, 'manuscript_families': {},
+                'metzger_rating': {}, 'variant_register': [], 'disputed_passage': None,
+                'synthesis': '',
+                'assessment': {'title': '', 'reasoning': '', 'plain': '', 'confidence': 0.0},
+                'citations': {'sbl': '', 'bibtex': ''},
+            }
+
+        template = self.load_prompt('nt_text', prompt_version)
+        user_content = (
+            template
+            .replace('{{REFERENCE}}', reference)
+            .replace('{{GNT_TEXT}}',  gnt_text)
+        ) if template else (
+            f'Reference: {reference}\nGNT: {gnt_text or "(not available)"}\n'
+            'Analyze NT textual tradition. Return JSON with text_basis, manuscript_families, '
+            'metzger_rating, variant_register, disputed_passage, synthesis, assessment, citations.'
+        )
+
+        response = self._client.messages.create(
+            model=model,
+            max_tokens=8192,
+            system=_NT_TEXT_SYSTEM,
+            messages=[
+                {'role': 'user',      'content': user_content},
+                {'role': 'assistant', 'content': '{'},
+            ],
+        )
+
+        cost = (response.usage.input_tokens  * _SONNET_COST_IN +
+                response.usage.output_tokens * _SONNET_COST_OUT)
+        self.record_spend(cost)
+
+        raw  = '{' + response.content[0].text
+        data = _parse_json_response(raw)
+        self.save_cache(reference, tool, prompt_version, model, data)
+        return data
+
     def analyze_divergence(self, reference: str, mt_text: str,
                            lxx_text: str) -> dict:
         """Return divergence analysis. Checks cache first.

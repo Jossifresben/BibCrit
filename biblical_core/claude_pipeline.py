@@ -247,6 +247,7 @@ class ClaudePipeline:
             followed by (None, (in_tok: int, out_tok: int, full_text: str)).
         """
         if not self._client:
+            yield None, (0, 0, prefill)
             return
 
         full_text = prefill
@@ -1104,7 +1105,6 @@ class ClaudePipeline:
 
         sections: dict = {}
         in_tok = out_tok = 0
-        full_text = '{'
         try:
             for key, value in self._call_streaming(
                 system=_THEOLOGICAL_SYSTEM,

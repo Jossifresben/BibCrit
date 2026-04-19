@@ -480,9 +480,13 @@ q = Queue()
 def _run_theo():
     try:
         for key, value in pipeline.stream_theological(reference, vul_text):
+            if key is None:
+                # Epilogue: value is the final result dict
+                q.put(('done', None, value))
+                return
             q.put(('section', key, value))
-        final = getattr(pipeline, '_last_theological_result', None) or {}
-        q.put(('done', None, final))
+        # Generator exhausted without epilogue (should not happen)
+        q.put(('done', None, {}))
     except Exception as exc:
         q.put(('error', None, str(exc)))
 

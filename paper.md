@@ -63,7 +63,7 @@ The thirteen analytical tools, their scholarly methods, and active prompt versio
 | Ancient Witness Bridge | DSS manuscript witness alignment across scrolls, Samaritan Pentateuch, Peshitta, MT, and LXX [@ulrich2010] | v7 |
 | Theological Revision Detector | Detection of theologically motivated alterations [@fishbane1985] | v2 |
 | Patristic Citation Tracker | Church Father quotation analysis through the 5th century with text-form distribution [@kraft2009] | v3 |
-| Manuscript Genealogy | Stemmatic visualization from proto-text to modern critical editions | v1 |
+| Manuscript Genealogy | Stemmatic visualization from proto-text to modern critical editions | v2 |
 | NT Use of OT Analyzer | Identification of OT allusions in NT passages with MT/LXX citation-form determination [@beale2007; @stanley1992; @hays1989] | v1 |
 | Chiasm & Literary Structure Detector | Detection of concentric structures (A-B-C-B′-A′), parallel panels, inclusios, and refrains [@lund1942; @welch1981; @dorsey1999] | v1 |
 | Source Criticism Tool | Documentary source attribution (J, E, D, P, Redactor) via divine name usage, vocabulary patterns, doublets, and narrative tensions [@wellhausen1883; @friedman1987; @baden2012] | v1 |

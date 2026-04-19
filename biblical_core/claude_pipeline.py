@@ -1476,6 +1476,8 @@ def _detect_tool(data: dict) -> str:
     if 'back_translations' in data:   return 'backtranslation'
     if 'figures' in data:             return 'numerical'
     if 'dimensions' in data:          return 'scribal'
+    if 'rendering_fidelity' in data:  return 'targum'
+    if 'metzger_rating' in data:      return 'nt_text'
     if 'citations' in data:           return 'patristic'
     if 'stemma_nodes' in data:        return 'genealogy'
     return 'divergence'

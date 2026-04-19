@@ -1217,7 +1217,22 @@ class ClaudePipeline:
 
         raw  = '{' + response.content[0].text
         data = _parse_json_response(raw)
-        self.save_cache(reference, tool, prompt_version, model, data)
+
+        # Retry once if JSON parsing failed; never persist a parse error to cache.
+        if 'parse_error' in data:
+            resp2 = self._client.messages.create(
+                model=model, max_tokens=8192, system=_TARGUM_SYSTEM,
+                messages=[{'role': 'user', 'content': user_content},
+                           {'role': 'assistant', 'content': '{'}],
+            )
+            self.record_spend(resp2.usage.input_tokens * _SONNET_COST_IN +
+                              resp2.usage.output_tokens * _SONNET_COST_OUT)
+            data2 = _parse_json_response('{' + resp2.content[0].text)
+            if 'parse_error' not in data2:
+                data = data2
+
+        if 'parse_error' not in data:
+            self.save_cache(reference, tool, prompt_version, model, data)
         return data
 
     def analyze_nt_text(self, reference: str, gnt_text: str = '') -> dict:
@@ -1286,7 +1301,22 @@ class ClaudePipeline:
 
         raw  = '{' + response.content[0].text
         data = _parse_json_response(raw)
-        self.save_cache(reference, tool, prompt_version, model, data)
+
+        # Retry once if JSON parsing failed; never persist a parse error to cache.
+        if 'parse_error' in data:
+            resp2 = self._client.messages.create(
+                model=model, max_tokens=8192, system=_NT_TEXT_SYSTEM,
+                messages=[{'role': 'user', 'content': user_content},
+                           {'role': 'assistant', 'content': '{'}],
+            )
+            self.record_spend(resp2.usage.input_tokens * _SONNET_COST_IN +
+                              resp2.usage.output_tokens * _SONNET_COST_OUT)
+            data2 = _parse_json_response('{' + resp2.content[0].text)
+            if 'parse_error' not in data2:
+                data = data2
+
+        if 'parse_error' not in data:
+            self.save_cache(reference, tool, prompt_version, model, data)
         return data
 
     def analyze_divergence(self, reference: str, mt_text: str,

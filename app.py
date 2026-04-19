@@ -32,6 +32,7 @@ def create_app() -> Flask:
     from blueprints.discovery import discovery_bp
     from blueprints.literary import literary_bp
     from blueprints.targum import targum_bp
+    from blueprints.nt_text import nt_text_bp
 
     app.register_blueprint(textual_bp)
     app.register_blueprint(critical_bp)
@@ -39,6 +40,7 @@ def create_app() -> Flask:
     app.register_blueprint(discovery_bp)
     app.register_blueprint(literary_bp)
     app.register_blueprint(targum_bp)
+    app.register_blueprint(nt_text_bp)
 
     return app
 

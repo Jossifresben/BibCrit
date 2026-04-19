@@ -82,6 +82,12 @@ PASSAGES: list[tuple[str, str]] = [
     ("targum",          "Exodus 3:14"),
     ("targum",          "Genesis 3:22"),
 
+    # ── NT TEXT (new tool — all 4 featured passages) ──────────────────────────
+    ("nt_text", "Mark 16:9"),
+    ("nt_text", "John 7:53"),
+    ("nt_text", "1 John 5:7"),
+    ("nt_text", "Matthew 1:16"),
+
     # ── PATRISTIC (all 12 featured passages; Psalm 22:1 → 110:1) ─────────────
     ("patristic",       "Psalm 110:1"),
     ("patristic",       "Isaiah 7:14"),

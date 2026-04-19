@@ -64,6 +64,7 @@ TOOL_VERSE_LIMITS: dict[str, int] = {
     'theological':      30,   # flag + motivation analysis per revision
     'dss':              35,   # 5-tradition comparison, moderate density
     'targum':           35,   # 3-tradition comparison with word-level analysis
+    'nt_text':          30,   # Manuscript family analysis with variant register
     'chiasm':           50,   # structural overview, lower output per verse
     'numerical':        50,   # chapter-level anyway
     'source':           60,   # Genesis 1:1-2:25 = 56 verses — keep just under
@@ -109,4 +110,37 @@ def validate_targum_reference(reference: str) -> str | None:
         f'"{reference}" is in the Writings — Targum coverage is limited to Torah (Onkelos) '
         f'and Prophets (Jonathan). For Psalms, Proverbs, Job, or other Writings, '
         f'use the Ancient Witness Bridge or Theological Revision Detector instead.'
+    )
+
+
+# NT books (Matthew–Revelation, 27 books)
+_NT_BOOKS = {
+    'matthew', 'mark', 'luke', 'john', 'acts', 'romans',
+    '1 corinthians', '2 corinthians', 'galatians', 'ephesians',
+    'philippians', 'colossians', '1 thessalonians', '2 thessalonians',
+    '1 timothy', '2 timothy', 'titus', 'philemon', 'hebrews',
+    'james', '1 peter', '2 peter', '1 john', '2 john', '3 john',
+    'jude', 'revelation',
+}
+
+
+def validate_nt_reference(reference: str) -> str | None:
+    """Return error string if reference is outside the NT canon, else None.
+
+    The NT Text Analyzer is for Matthew–Revelation only.
+    For OT manuscript comparison use the Ancient Witness Bridge.
+    """
+    parts = reference.strip().lower().split()
+    if parts[0].isdigit() and len(parts) >= 2:
+        book = parts[0] + ' ' + parts[1].split(':')[0]
+    else:
+        book = parts[0].split(':')[0]
+
+    if book in _NT_BOOKS:
+        return None
+
+    return (
+        f'"{reference}" appears to be an Old Testament reference. '
+        'The NT Textual Tradition Analyzer covers Matthew–Revelation only. '
+        'For OT manuscript comparison, use the Ancient Witness Bridge (/dss).'
     )

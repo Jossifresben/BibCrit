@@ -30,6 +30,7 @@ BASE = "http://localhost:5001"
 # Tools that use a hyphen in the URL rather than underscore:
 ENDPOINT_OVERRIDES = {
     "nt_ot": "nt-ot",
+    "nt_text": "nt-text",
 }
 
 # ── Featured passages ────────────────────────────────────────────────────────
@@ -74,6 +75,12 @@ PASSAGES: list[tuple[str, str]] = [
     ("source",          "Genesis 6:1-8"),
     ("source",          "Exodus 19:1-20:21"),
     ("source",          "Genesis 37"),
+
+    # ── TARGUM (new tool — all 4 featured passages) ──────────────────────────
+    ("targum",          "Genesis 22:8"),
+    ("targum",          "Isaiah 53:5"),
+    ("targum",          "Exodus 3:14"),
+    ("targum",          "Genesis 3:22"),
 
     # ── PATRISTIC (all 12 featured passages; Psalm 22:1 → 110:1) ─────────────
     ("patristic",       "Psalm 110:1"),

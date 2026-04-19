@@ -31,12 +31,14 @@ def create_app() -> Flask:
     from blueprints.research import research_bp
     from blueprints.discovery import discovery_bp
     from blueprints.literary import literary_bp
+    from blueprints.targum import targum_bp
 
     app.register_blueprint(textual_bp)
     app.register_blueprint(critical_bp)
     app.register_blueprint(research_bp)
     app.register_blueprint(discovery_bp)
     app.register_blueprint(literary_bp)
+    app.register_blueprint(targum_bp)
 
     return app
 

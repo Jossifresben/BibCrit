@@ -32,6 +32,8 @@
   var _finalHandled = false;
   var _activeFilter = '';
   var _lastData     = null;
+  var _partialData    = {};   // accumulates section key/value pairs during streaming
+  var _sectionReceived = false;  // true once any section event has been handled
 
   // ── Suggestion chips ────────────────────────────────────────────────────
   document.querySelectorAll('.num-sug-chip[data-ref]').forEach(function (chip) {
@@ -86,6 +88,8 @@
     if (_es) { _es.close(); _es = null; }
     clearInterval(_timer);
     _finalHandled = false;
+    _partialData     = {};
+    _sectionReceived = false;
 
     hide(suggestions);
     hide(emptyState);
@@ -109,6 +113,8 @@
         var msg = JSON.parse(e.data);
         if (msg.type === 'step') {
           setLoadingStep(msg.msg);
+        } else if (msg.type === 'section') {
+          _renderSection(msg.key, msg.data);
         } else if (msg.type === 'error') {
           _finalHandled = true;
           clearInterval(_timer);
@@ -118,7 +124,11 @@
           _finalHandled = true;
           clearInterval(_timer);
           _es.close();
-          renderRevisions(msg.data);
+          if (_sectionReceived) {
+            _finalize(msg.data);
+          } else {
+            renderRevisions(msg.data);  // cache-hit fallback: done without sections
+          }
         }
       } catch (_) { /* ignore */ }
     });
@@ -129,6 +139,204 @@
       setLoadingStep('❌ ' + window.t('err_connection_step', 'Connection error. Please try again.'));
       if (_es) _es.close();
     };
+  }
+
+  // ── Progressive section rendering ────────────────────────────────────────
+  function _renderSection(key, data) {
+    _partialData[key] = data;
+    _sectionReceived  = true;
+
+    // Reveal results container, hide loading / empty states
+    if (results)    results.style.display    = '';
+    if (emptyState) emptyState.style.display = 'none';
+    if (loadState)  loadState.style.display  = 'none';
+
+    // Heading: render as soon as scope is known
+    if ((key === 'scope' || key === 'scope_type') && heading && _partialData.scope) {
+      var _hRef  = _esc(_partialData.scope);
+      var _hMeta = _partialData.scope_type
+        ? ' <span class="ph-meta">— ' +
+            _esc(_partialData.scope_type.charAt(0).toUpperCase() +
+                 _partialData.scope_type.slice(1)) + '</span>'
+        : '';
+      heading.innerHTML = '<span class="ph-ref">' + _hRef + '</span>' + _hMeta;
+      show(heading);
+    }
+
+    // Summary section: render as soon as summary_plain arrives
+    if ((key === 'summary' || key === 'summary_plain' || key === 'dominant_strategy') &&
+        summarySection && summaryBody &&
+        (_partialData.summary_plain || _partialData.summary)) {
+      var summ = _partialData.summary_plain || _partialData.summary || '';
+      summaryBody.innerHTML =
+        '<div class="bt-group-card">' +
+          '<p class="div-analysis">' + _esc(summ) + '</p>' +
+          (_partialData.summary && _partialData.summary !== summ
+            ? '<p class="div-meta" style="margin-top:8px;font-style:italic">' +
+                _esc(_partialData.summary) + '</p>'
+            : '') +
+          (_partialData.dominant_strategy
+            ? '<p style="margin-top:8px;font-size:0.875rem;color:var(--fg)"><strong>' +
+                window.t('theo_dominant_strategy', 'Dominant strategy:') + '</strong> ' +
+                _esc(_partialData.dominant_strategy) + '</p>'
+            : '') +
+        '</div>';
+      show(summarySection);
+      staggerReveal(summarySection, 0);
+    }
+
+    // Revisions: render cards as soon as the array arrives
+    if (key === 'revisions') {
+      var revisions = (data || []).slice().sort(function (a, b) {
+        return (b.confidence || 0) - (a.confidence || 0);
+      });
+
+      var types = [];
+      revisions.forEach(function (r) {
+        var t = r.revision_type || '';
+        if (t && types.indexOf(t) === -1) types.push(t);
+      });
+
+      if (filterChips && types.length > 1) {
+        filterChips.innerHTML = '';
+        var allBtn = document.createElement('button');
+        allBtn.className = 'theo-filter-chip active';
+        allBtn.textContent = window.t('filter_all', 'All');
+        allBtn.addEventListener('click', function () {
+          _activeFilter = '';
+          _updateFilterChips(filterChips, '');
+          _applyFilter(revisions);
+        });
+        filterChips.appendChild(allBtn);
+        types.forEach(function (t) {
+          var btn = document.createElement('button');
+          btn.className = 'theo-filter-chip';
+          btn.textContent = _revisionTypeLabel(t);
+          btn.setAttribute('data-type', t);
+          btn.addEventListener('click', function () {
+            _activeFilter = t;
+            _updateFilterChips(filterChips, t);
+            _applyFilter(revisions);
+          });
+          filterChips.appendChild(btn);
+        });
+        show(filterChips);
+      }
+
+      if (revisionList) {
+        revisionList.innerHTML = '';
+        revisions.forEach(function (rev) {
+          revisionList.appendChild(_buildRevisionCard(rev));
+        });
+      }
+
+      if (!revisions.length && revisionList) {
+        revisionList.innerHTML =
+          '<p style="padding:1rem;color:var(--muted);text-align:center">' +
+            window.t('theo_no_revisions', 'No theologically motivated revisions identified.') +
+          '</p>';
+      }
+      staggerReveal(revisionList, 30);
+    }
+
+    // Overall assessment: render as soon as either field arrives
+    if ((key === 'overall_assessment' || key === 'overall_plain') &&
+        overallSection && overallBody &&
+        (_partialData.overall_plain || _partialData.overall_assessment)) {
+      var overall = _partialData.overall_plain || _partialData.overall_assessment || '';
+      overallBody.innerHTML =
+        '<div class="bt-group-card">' +
+          '<p class="div-analysis">' + _esc(overall) + '</p>' +
+          (_partialData.overall_assessment && _partialData.overall_assessment !== overall
+            ? '<p class="div-meta" style="margin-top:8px;font-style:italic">' +
+                _esc(_partialData.overall_assessment) + '</p>'
+            : '') +
+        '</div>';
+      show(overallSection);
+      staggerReveal(overallSection, 0);
+    }
+
+    // BibCrit assessment
+    if (key === 'bibcrit_assessment') {
+      renderAssessment({ bibcrit_assessment: data,
+                         model_version: _partialData.model_version });
+      if (bibSec) staggerReveal(bibSec, 0);
+    }
+  }
+
+  function _finalize(data) {
+    _lastData = data || _partialData;
+    hide(loadState);
+
+    // Refresh heading with authoritative scope from final data
+    if (heading && data) {
+      var _hRef  = _esc(data.scope || _currentRef);
+      var _hMeta = data.scope_type
+        ? ' <span class="ph-meta">— ' +
+            _esc(data.scope_type.charAt(0).toUpperCase() +
+                 data.scope_type.slice(1)) + '</span>'
+        : '';
+      heading.innerHTML = '<span class="ph-ref">' + _hRef + '</span>' + _hMeta;
+      show(heading);
+    }
+
+    // Re-render summary with complete data (dominant_strategy may have arrived late)
+    if (data && summarySection && summaryBody &&
+        (data.summary_plain || data.summary)) {
+      var summ = data.summary_plain || data.summary || '';
+      summaryBody.innerHTML =
+        '<div class="bt-group-card">' +
+          '<p class="div-analysis">' + _esc(summ) + '</p>' +
+          (data.summary && data.summary !== summ
+            ? '<p class="div-meta" style="margin-top:8px;font-style:italic">' +
+                _esc(data.summary) + '</p>'
+            : '') +
+          (data.dominant_strategy
+            ? '<p style="margin-top:8px;font-size:0.875rem;color:var(--fg)"><strong>' +
+                window.t('theo_dominant_strategy', 'Dominant strategy:') + '</strong> ' +
+                _esc(data.dominant_strategy) + '</p>'
+            : '') +
+        '</div>';
+      show(summarySection);
+    }
+
+    if (exportRow) show(exportRow);
+    staggerReveal(results, 90);
+
+    if (window.ResultActions) {
+      ResultActions.init({
+        toolName: 'theological',
+        getReference: function() { return _currentRef; },
+        getResultData: function() { return _lastData || {}; },
+      });
+    }
+
+    if (exportRow && !exportRow._exportWired) {
+      exportRow._exportWired = true;
+      var _btnSbl    = document.getElementById('btn-sbl');
+      var _btnBibtex = document.getElementById('btn-bibtex');
+      if (_btnSbl) {
+        _btnSbl.addEventListener('click', function() {
+          fetch('/api/export/sbl?tool=theological&ref=' + encodeURIComponent(_currentRef))
+            .then(function(r) { return r.json(); })
+            .then(function(d) {
+              var text = (d.footnotes || [d.footnote]).join('\n\n');
+              navigator.clipboard.writeText(text).catch(function(){});
+              showToast(window.t('toast_sbl_copied_short', 'SBL footnotes copied!'));
+            }).catch(function(){});
+        });
+      }
+      if (_btnBibtex) {
+        _btnBibtex.addEventListener('click', function() {
+          fetch('/api/export/bibtex?tool=theological&ref=' + encodeURIComponent(_currentRef))
+            .then(function(r) { return r.json(); })
+            .then(function(d) {
+              navigator.clipboard.writeText(d.bibtex || '').catch(function(){});
+              showToast(window.t('toast_bibtex_copied_short', 'BibTeX copied!'));
+            }).catch(function(){});
+        });
+      }
+    }
   }
 
   // ── Render ───────────────────────────────────────────────────────────────

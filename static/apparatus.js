@@ -268,11 +268,10 @@
     _partialData[key] = data;
     _sectionReceived  = true;
 
-    // Reveal containers, hide loading/empty
-    if (emptyState)    emptyState.style.display    = 'none';
-    if (loadingState)  loadingState.style.display  = 'none';
-
     if (key === 'divergences') {
+      // Reveal containers, hide loading/empty only when content is ready
+      if (emptyState)    emptyState.style.display    = 'none';
+      if (loadingState)  loadingState.style.display  = 'none';
       currentData = _partialData;
       var partial = { divergences: data || [], mt_words: [], lxx_words: [], reference: currentRef };
       if (passageHeading) { passageHeading.style.display = 'block'; }

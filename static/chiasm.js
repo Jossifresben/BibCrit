@@ -171,11 +171,11 @@
     _partialData[key] = data;
     _sectionReceived  = true;
 
-    if (loadingState) loadingState.style.display = 'none';
-    if (emptyState)   emptyState.style.display   = 'none';
-    if (resultsArea)  resultsArea.style.display  = '';
-
     if (key === 'structure') {
+      // Hide loading and reveal results only when content is ready to show
+      if (loadingState) loadingState.style.display = 'none';
+      if (emptyState)   emptyState.style.display   = 'none';
+      if (resultsArea)  resultsArea.style.display  = '';
       if (passageHdr) {
         passageHdr.textContent = _currentRef;
         show(passageHdr);

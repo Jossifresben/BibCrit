@@ -166,11 +166,11 @@
     _partialData[key] = data;
     _sectionReceived  = true;
 
-    if (loadingState) loadingState.style.display = 'none';
-    if (emptyState)   emptyState.style.display   = 'none';
-    if (resultsArea)  resultsArea.style.display  = '';
-
     if (key === 'units') {
+      // Hide loading and reveal results only when content is ready to show
+      if (loadingState) loadingState.style.display = 'none';
+      if (emptyState)   emptyState.style.display   = 'none';
+      if (resultsArea)  resultsArea.style.display  = '';
       if (passageHdr) { passageHdr.textContent = _currentRef; show(passageHdr); }
       // Render source units
       var units = Array.isArray(data) ? data : (data && data.source_units) || [];

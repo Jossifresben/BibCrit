@@ -206,10 +206,10 @@
     _partialData[key] = data;
     _sectionReceived  = true;
 
-    if (emptyState)    emptyState.style.display    = 'none';
-    if (loadingState)  loadingState.style.display  = 'none';
-
     if (key === 'vorlage_analysis') {
+      // Hide loading only when content is ready to show (not on earlier data-only sections)
+      if (emptyState)    emptyState.style.display    = 'none';
+      if (loadingState)  loadingState.style.display  = 'none';
       // Render the workbench grid with partial data
       var partial = {
         reference:          currentRef,

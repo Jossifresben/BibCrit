@@ -234,12 +234,12 @@
     _partialData[key] = data;
     _sectionReceived  = true;
 
-    if (loadingState) loadingState.style.display = 'none';
-    if (emptyState)   emptyState.style.display   = 'none';
-    if (resultsArea)  resultsArea.style.display  = '';
-    if (passageHeading) passageHeading.style.display = 'flex';
-
     if (key === 'citations') {
+      // Hide loading and reveal results only when content is ready to show
+      if (loadingState) loadingState.style.display = 'none';
+      if (emptyState)   emptyState.style.display   = 'none';
+      if (resultsArea)  resultsArea.style.display  = '';
+      if (passageHeading) passageHeading.style.display = 'flex';
       // citations = array of allusion objects
       if (passageHeading) {
         passageHeading.innerHTML =

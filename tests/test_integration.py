@@ -11,8 +11,15 @@ import pytest
 
 
 @pytest.fixture
-def client(tmp_path):
-    """Flask test client with isolated tmp_path as data_dir."""
+def client(tmp_path, monkeypatch):
+    """Flask test client with isolated tmp_path as data_dir.
+
+    Supabase env vars are blanked so the pipeline uses disk cache only,
+    ensuring tests are not affected by real cached entries in the cloud DB.
+    """
+    monkeypatch.setenv('SUPABASE_URL', '')
+    monkeypatch.setenv('SUPABASE_KEY', '')
+
     # Copy corpus fixtures into tmp_path
     fixtures = os.path.join(os.path.dirname(__file__), 'fixtures')
     corpora_src = os.path.join(fixtures, 'corpora')

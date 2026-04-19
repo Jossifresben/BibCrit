@@ -415,7 +415,7 @@ The default spend cap is `$10.00/month`. Raise it via `BIBCRIT_API_CAP_USD` in t
 ## Roadmap
 
 ### ✅ Completed (v2.5)
-- [x] 11 analysis tools across textual, critical, literary, and discovery categories
+- [x] 13 analysis tools across textual, critical, literary, and discovery categories
 - [x] **Chiasm & Literary Structure Detector** (`/chiasm`) — first open tool of its kind
 - [x] **Source Criticism Tool** (`/source`) — J/E/D/P attribution with Wellhausen / Friedman / Baden grounding
 - [x] Full OT corpus coverage — MT (ETCBC) + LXX (Vaticanus) across all books

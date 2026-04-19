@@ -9,6 +9,14 @@ from biblical_core.claude_pipeline import TARGUM_MODEL
 from biblical_core.ref_utils import estimate_verse_count, TOOL_VERSE_LIMITS
 import state
 
+# Keys present in every cached dict that are NOT analysis sections.
+# Excluded from the section-event loop so the JS receives only renderable keys.
+_CACHE_META_KEYS = frozenset((
+    'cached_at', 'model_version', 'prompt_version',
+    'reference', 'book', 'discovery_ready', 'cache_key',
+    'parse_error', 'parse_error_len',
+))
+
 targum_bp = Blueprint('targum', __name__)
 
 # IMPORTANT: must stay in sync with prompt_version in pipeline.analyze_targum()
@@ -121,10 +129,8 @@ def api_targum_stream():
 
         if cached:
             yield event('step', msg=_step(lang, 'found_cache'))
-            _CACHE_META = ('cached_at', 'model_version', 'prompt_version',
-                           'reference', 'book', 'discovery_ready', 'cache_key')
             for _key, _val in cached.items():
-                if _key not in _CACHE_META:
+                if _key not in _CACHE_META_KEYS:
                     yield event('section', key=_key, data=_val)
                     time.sleep(0.04)
             result = cached

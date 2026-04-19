@@ -2,6 +2,7 @@
 
 import json
 import threading
+from queue import Queue, Empty
 from flask import Blueprint, render_template, request, Response, stream_with_context
 from biblical_core.claude_pipeline import TARGUM_MODEL
 from biblical_core.ref_utils import estimate_verse_count, TOOL_VERSE_LIMITS
@@ -123,29 +124,49 @@ def api_targum_stream():
         else:
             # Step 3: call Claude
             yield event('step', msg=_step(lang, 'generating'))
-            _result_box = [None]
+            q = Queue()
 
-            def _run():
+            def _run_targum():
                 try:
-                    _result_box[0] = pipeline.analyze_targum(
+                    for key, value in pipeline.stream_targum(
                         reference, mt_text, lxx_text, targ_text, manuscript
-                    )
+                    ):
+                        if key is None:
+                            q.put(('done', None, value))
+                            return
+                        q.put(('section', key, value))
+                    q.put(('done', None, {}))
                 except Exception as exc:
-                    _result_box[0] = {'error': str(exc)}
+                    q.put(('error', None, str(exc)))
 
-            _t = threading.Thread(target=_run, daemon=True)
+            _t = threading.Thread(target=_run_targum, daemon=True)
             _t.start()
-            while _t.is_alive():
-                _t.join(timeout=8)
-                if _t.is_alive():
+
+            result = {}
+            while True:
+                try:
+                    item = q.get(timeout=8)
+                except Empty:
                     yield ': keepalive\n\n'
-            result = _result_box[0] or {'error': 'Analysis returned no result'}
+                    continue
+
+                evt_type, key, data = item
+                if evt_type == 'section':
+                    result[key] = data
+                    yield event('section', key=key, data=data)
+                elif evt_type == 'done':
+                    result = data if data else result
+                    break
+                elif evt_type == 'error':
+                    yield event('error', msg=data)
+                    return
+
+            if result.get('parse_error'):
+                yield event('error', msg='Analysis could not be parsed — please try again')
+                return
 
         if result.get('error'):
             yield event('error', msg=result['error'])
-            return
-        if result.get('parse_error'):
-            yield event('error', msg='Analysis could not be parsed — please try again')
             return
 
         result.update({'mt_text': mt_text, 'lxx_text': lxx_text,

@@ -2,6 +2,7 @@
 
 import json
 import threading
+from queue import Queue, Empty
 from flask import Blueprint, render_template, request, Response, stream_with_context
 from biblical_core.claude_pipeline import CHIASM_MODEL, SOURCE_MODEL
 from biblical_core.ref_utils import estimate_verse_count, TOOL_VERSE_LIMITS
@@ -129,19 +130,44 @@ def api_chiasm_stream():
         else:
             # Step 3: call Claude
             yield event('step', msg=_step(lang, 'chiasm_generating'))
-            _result_box = [None]
+            q = Queue()
+
             def _run_chiasm():
                 try:
-                    _result_box[0] = pipeline.analyze_chiasm(reference, mt_text)
+                    for key, value in pipeline.stream_chiasm(reference, mt_text):
+                        if key is None:
+                            q.put(('done', None, value))
+                            return
+                        q.put(('section', key, value))
+                    q.put(('done', None, {}))
                 except Exception as exc:
-                    _result_box[0] = {'error': str(exc), 'elements': []}
+                    q.put(('error', None, str(exc)))
+
             _t = threading.Thread(target=_run_chiasm, daemon=True)
             _t.start()
-            while _t.is_alive():
-                _t.join(timeout=8)
-                if _t.is_alive():
+
+            result = {}
+            while True:
+                try:
+                    item = q.get(timeout=8)
+                except Empty:
                     yield ': keepalive\n\n'
-            result = _result_box[0] or {'error': 'Analysis returned no result', 'elements': []}
+                    continue
+
+                evt_type, key, data = item
+                if evt_type == 'section':
+                    result[key] = data
+                    yield event('section', key=key, data=data)
+                elif evt_type == 'done':
+                    result = data if data else result
+                    break
+                elif evt_type == 'error':
+                    yield event('error', msg=data)
+                    return
+
+            if result.get('parse_error'):
+                yield event('error', msg='Analysis could not be parsed — please try again')
+                return
 
         if result.get('error'):
             yield event('error', msg=result['error'])
@@ -224,19 +250,44 @@ def api_source_stream():
         else:
             # Step 3: call Claude
             yield event('step', msg=_step(lang, 'source_generating'))
-            _result_box = [None]
+            q = Queue()
+
             def _run_source():
                 try:
-                    _result_box[0] = pipeline.analyze_source(reference, mt_text)
+                    for key, value in pipeline.stream_source(reference, mt_text):
+                        if key is None:
+                            q.put(('done', None, value))
+                            return
+                        q.put(('section', key, value))
+                    q.put(('done', None, {}))
                 except Exception as exc:
-                    _result_box[0] = {'error': str(exc), 'source_units': []}
+                    q.put(('error', None, str(exc)))
+
             _t = threading.Thread(target=_run_source, daemon=True)
             _t.start()
-            while _t.is_alive():
-                _t.join(timeout=8)
-                if _t.is_alive():
+
+            result = {}
+            while True:
+                try:
+                    item = q.get(timeout=8)
+                except Empty:
                     yield ': keepalive\n\n'
-            result = _result_box[0] or {'error': 'Analysis returned no result', 'source_units': []}
+                    continue
+
+                evt_type, key, data = item
+                if evt_type == 'section':
+                    result[key] = data
+                    yield event('section', key=key, data=data)
+                elif evt_type == 'done':
+                    result = data if data else result
+                    break
+                elif evt_type == 'error':
+                    yield event('error', msg=data)
+                    return
+
+            if result.get('parse_error'):
+                yield event('error', msg='Analysis could not be parsed — please try again')
+                return
 
         if result.get('error'):
             yield event('error', msg=result['error'])

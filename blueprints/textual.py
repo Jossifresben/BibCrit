@@ -3,6 +3,7 @@
 import json
 import os
 import threading
+from queue import Queue, Empty
 from flask import Blueprint, render_template, request, jsonify, Response, stream_with_context
 from biblical_core.claude_pipeline import DIVERGENCE_MODEL, DSS_MODEL, GENEALOGY_MODEL, NT_OT_MODEL
 from biblical_core.ref_utils import estimate_verse_count, TOOL_VERSE_LIMITS
@@ -213,19 +214,44 @@ def api_divergence_stream():
         else:
             # Step 3: call Claude
             yield event('step', msg=_step(lang, 'div_generating'))
-            _result_box = [None]
-            def _run():
+            q = Queue()
+
+            def _run_divergence():
                 try:
-                    _result_box[0] = pipeline.analyze_divergence(reference, mt_text, lxx_text)
+                    for key, value in pipeline.stream_divergence(reference, mt_text, lxx_text):
+                        if key is None:
+                            q.put(('done', None, value))
+                            return
+                        q.put(('section', key, value))
+                    q.put(('done', None, {}))
                 except Exception as exc:
-                    _result_box[0] = {'error': str(exc)}
-            _t = threading.Thread(target=_run, daemon=True)
+                    q.put(('error', None, str(exc)))
+
+            _t = threading.Thread(target=_run_divergence, daemon=True)
             _t.start()
-            while _t.is_alive():
-                _t.join(timeout=8)
-                if _t.is_alive():
+
+            result = {}
+            while True:
+                try:
+                    item = q.get(timeout=8)
+                except Empty:
                     yield ': keepalive\n\n'
-            result = _result_box[0] or {'error': 'Analysis returned no result'}
+                    continue
+
+                evt_type, key, data = item
+                if evt_type == 'section':
+                    result[key] = data
+                    yield event('section', key=key, data=data)
+                elif evt_type == 'done':
+                    result = data if data else result
+                    break
+                elif evt_type == 'error':
+                    yield event('error', msg=data)
+                    return
+
+            if result.get('parse_error'):
+                yield event('error', msg='Analysis could not be parsed — please try again')
+                return
 
         if result.get('error'):
             yield event('error', msg=result['error'])
@@ -325,19 +351,44 @@ def api_backtranslation_stream():
             result = cached
         else:
             yield event('step', msg=_step(lang, 'bt_generating'))
-            _result_box = [None]
-            def _run_bt():
+            q = Queue()
+
+            def _run_backtranslation():
                 try:
-                    _result_box[0] = pipeline.analyze_backtranslation(reference, lxx_text, mt_text)
+                    for key, value in pipeline.stream_backtranslation(reference, lxx_text, mt_text):
+                        if key is None:
+                            q.put(('done', None, value))
+                            return
+                        q.put(('section', key, value))
+                    q.put(('done', None, {}))
                 except Exception as exc:
-                    _result_box[0] = {'error': str(exc)}
-            _t = threading.Thread(target=_run_bt, daemon=True)
+                    q.put(('error', None, str(exc)))
+
+            _t = threading.Thread(target=_run_backtranslation, daemon=True)
             _t.start()
-            while _t.is_alive():
-                _t.join(timeout=8)
-                if _t.is_alive():
+
+            result = {}
+            while True:
+                try:
+                    item = q.get(timeout=8)
+                except Empty:
                     yield ': keepalive\n\n'
-            result = _result_box[0] or {'error': 'Analysis returned no result'}
+                    continue
+
+                evt_type, key, data = item
+                if evt_type == 'section':
+                    result[key] = data
+                    yield event('section', key=key, data=data)
+                elif evt_type == 'done':
+                    result = data if data else result
+                    break
+                elif evt_type == 'error':
+                    yield event('error', msg=data)
+                    return
+
+            if result.get('parse_error'):
+                yield event('error', msg='Analysis could not be parsed — please try again')
+                return
 
         if result.get('error'):
             yield event('error', msg=result['error'])
@@ -442,19 +493,44 @@ def api_dss_stream():
             result = cached
         else:
             yield event('step', msg=_step(lang, 'dss_generating'))
-            _result_box = [None]
+            q = Queue()
+
             def _run_dss():
                 try:
-                    _result_box[0] = pipeline.analyze_dss(reference, mt_text, lxx_text, dss_text, sp_text, pesh_text, vul_text)
+                    for key, value in pipeline.stream_dss(reference, mt_text, lxx_text, dss_text, sp_text, pesh_text, vul_text):
+                        if key is None:
+                            q.put(('done', None, value))
+                            return
+                        q.put(('section', key, value))
+                    q.put(('done', None, {}))
                 except Exception as exc:
-                    _result_box[0] = {'error': str(exc)}
+                    q.put(('error', None, str(exc)))
+
             _t = threading.Thread(target=_run_dss, daemon=True)
             _t.start()
-            while _t.is_alive():
-                _t.join(timeout=8)
-                if _t.is_alive():
+
+            result = {}
+            while True:
+                try:
+                    item = q.get(timeout=8)
+                except Empty:
                     yield ': keepalive\n\n'
-            result = _result_box[0] or {'error': 'Analysis returned no result'}
+                    continue
+
+                evt_type, key, data = item
+                if evt_type == 'section':
+                    result[key] = data
+                    yield event('section', key=key, data=data)
+                elif evt_type == 'done':
+                    result = data if data else result
+                    break
+                elif evt_type == 'error':
+                    yield event('error', msg=data)
+                    return
+
+            if result.get('parse_error'):
+                yield event('error', msg='Analysis could not be parsed — please try again')
+                return
 
         if result.get('error'):
             yield event('error', msg=result['error'])
@@ -542,19 +618,44 @@ def api_genealogy_stream():
             result = cached
         else:
             yield event('step', msg=_step(lang, 'gen_generating'))
-            _result_box = [None]
+            q = Queue()
+
             def _run_genealogy():
                 try:
-                    _result_box[0] = pipeline.analyze_genealogy(book, vul_text)
+                    for key, value in pipeline.stream_genealogy(book, vul_text):
+                        if key is None:
+                            q.put(('done', None, value))
+                            return
+                        q.put(('section', key, value))
+                    q.put(('done', None, {}))
                 except Exception as exc:
-                    _result_box[0] = {'error': str(exc)}
+                    q.put(('error', None, str(exc)))
+
             _t = threading.Thread(target=_run_genealogy, daemon=True)
             _t.start()
-            while _t.is_alive():
-                _t.join(timeout=8)
-                if _t.is_alive():
+
+            result = {}
+            while True:
+                try:
+                    item = q.get(timeout=8)
+                except Empty:
                     yield ': keepalive\n\n'
-            result = _result_box[0] or {'error': 'Analysis returned no result'}
+                    continue
+
+                evt_type, key, data = item
+                if evt_type == 'section':
+                    result[key] = data
+                    yield event('section', key=key, data=data)
+                elif evt_type == 'done':
+                    result = data if data else result
+                    break
+                elif evt_type == 'error':
+                    yield event('error', msg=data)
+                    return
+
+            if result.get('parse_error'):
+                yield event('error', msg='Analysis could not be parsed — please try again')
+                return
 
         if result.get('error'):
             yield event('error', msg=result['error'])
@@ -806,19 +907,44 @@ def api_nt_ot_stream():
         else:
             # Step 3: call Claude
             yield event('step', msg=_step(lang, 'nt_ot_generating'))
-            _result_box = [None]
-            def _run():
+            q = Queue()
+
+            def _run_nt_ot():
                 try:
-                    _result_box[0] = pipeline.analyze_nt_ot(reference, nt_text, '')
+                    for key, value in pipeline.stream_nt_ot(reference, nt_text, ''):
+                        if key is None:
+                            q.put(('done', None, value))
+                            return
+                        q.put(('section', key, value))
+                    q.put(('done', None, {}))
                 except Exception as exc:
-                    _result_box[0] = {'error': str(exc), 'allusions': []}
-            _t = threading.Thread(target=_run, daemon=True)
+                    q.put(('error', None, str(exc)))
+
+            _t = threading.Thread(target=_run_nt_ot, daemon=True)
             _t.start()
-            while _t.is_alive():
-                _t.join(timeout=8)
-                if _t.is_alive():
+
+            result = {}
+            while True:
+                try:
+                    item = q.get(timeout=8)
+                except Empty:
                     yield ': keepalive\n\n'
-            result = _result_box[0] or {'error': 'Analysis returned no result', 'allusions': []}
+                    continue
+
+                evt_type, key, data = item
+                if evt_type == 'section':
+                    result[key] = data
+                    yield event('section', key=key, data=data)
+                elif evt_type == 'done':
+                    result = data if data else result
+                    break
+                elif evt_type == 'error':
+                    yield event('error', msg=data)
+                    return
+
+            if result.get('parse_error'):
+                yield event('error', msg='Analysis could not be parsed — please try again')
+                return
 
         if result.get('error'):
             yield event('error', msg=result['error'])

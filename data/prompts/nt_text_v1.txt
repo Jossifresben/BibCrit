@@ -80,7 +80,7 @@ Return JSON (no markdown fences, no prose):
   }
 }
 
-For DISPUTED PASSAGES (Mark 16:9-20, John 7:53–8:11, Luke 22:43-44, 1 John 5:7-8, Acts 8:37, Romans 16:25-27), populate the "disputed_passage" field instead of null:
+For DISPUTED PASSAGES (Mark 16:9-20, John 7:53–8:11, Luke 22:43-44, 1 John 5:7-8, Acts 8:37, Romans 16:25-27), replace the null value for "disputed_passage" in the JSON above with the following object. Do not emit a second JSON block — place this content inline within the single JSON object:
 
 "disputed_passage": {
   "designation": "Longer Ending of Mark | Pericope Adulterae | [etc.]",

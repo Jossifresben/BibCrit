@@ -1219,7 +1219,7 @@ class ClaudePipeline:
                 'reference': reference, 'text_basis': {}, 'manuscript_families': {},
                 'metzger_rating': {}, 'variant_register': [], 'disputed_passage': None,
                 'synthesis': '',
-                'assessment': {'title': '', 'reasoning': '', 'plain': '', 'confidence': 0.0},
+                'assessment': {'title': '', 'reasoning': '', 'plain': '', 'confidence': 0.0, 'recommended_reading': '', 'open_questions': ''},
                 'citations': {'sbl': '', 'bibtex': ''},
             }
 
@@ -1233,7 +1233,7 @@ class ClaudePipeline:
                 'reference': reference, 'text_basis': {}, 'manuscript_families': {},
                 'metzger_rating': {}, 'variant_register': [], 'disputed_passage': None,
                 'synthesis': '',
-                'assessment': {'title': '', 'reasoning': '', 'plain': '', 'confidence': 0.0},
+                'assessment': {'title': '', 'reasoning': '', 'plain': '', 'confidence': 0.0, 'recommended_reading': '', 'open_questions': ''},
                 'citations': {'sbl': '', 'bibtex': ''},
             }
 

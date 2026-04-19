@@ -12,21 +12,21 @@ import re
 import threading
 from datetime import datetime
 
-DIVERGENCE_MODEL  = 'claude-sonnet-4-5-20250929'
-SCRIBAL_MODEL     = 'claude-sonnet-4-5-20250929'
-NUMERICAL_MODEL   = 'claude-sonnet-4-5-20250929'
-DSS_MODEL         = 'claude-sonnet-4-5-20250929'
-THEOLOGICAL_MODEL = 'claude-sonnet-4-5-20250929'
-PATRISTIC_MODEL   = 'claude-sonnet-4-5-20250929'
-GENEALOGY_MODEL   = 'claude-sonnet-4-5-20250929'
-NT_OT_MODEL       = 'claude-sonnet-4-5-20250929'
-CHIASM_MODEL      = 'claude-sonnet-4-5-20250929'
-SOURCE_MODEL      = 'claude-sonnet-4-5-20250929'
-TARGUM_MODEL      = 'claude-sonnet-4-5-20250929'
-NT_TEXT_MODEL     = 'claude-sonnet-4-5-20250929'
+DIVERGENCE_MODEL  = 'claude-sonnet-4-6'
+SCRIBAL_MODEL     = 'claude-sonnet-4-6'
+NUMERICAL_MODEL   = 'claude-sonnet-4-6'
+DSS_MODEL         = 'claude-sonnet-4-6'
+THEOLOGICAL_MODEL = 'claude-sonnet-4-6'
+PATRISTIC_MODEL   = 'claude-sonnet-4-6'
+GENEALOGY_MODEL   = 'claude-sonnet-4-6'
+NT_OT_MODEL       = 'claude-sonnet-4-6'
+CHIASM_MODEL      = 'claude-sonnet-4-6'
+SOURCE_MODEL      = 'claude-sonnet-4-6'
+TARGUM_MODEL      = 'claude-sonnet-4-6'
+NT_TEXT_MODEL     = 'claude-sonnet-4-6'
 
-_SONNET_COST_IN  = 3.0  / 1_000_000   # $3 per MTok input (claude-sonnet-4-5)
-_SONNET_COST_OUT = 15.0 / 1_000_000   # $15 per MTok output (claude-sonnet-4-5)
+_SONNET_COST_IN  = 3.0  / 1_000_000   # $3 per MTok input (claude-sonnet-4-6)
+_SONNET_COST_OUT = 15.0 / 1_000_000   # $15 per MTok output (claude-sonnet-4-6)
 
 # Diagnostic passages used to build sample_passages for scribal profiling
 _SCRIBAL_SAMPLE_REFS = {

@@ -1074,14 +1074,14 @@ class ClaudePipeline:
         self.save_cache(reference, tool, prompt_version, model, data)
         return data
 
-    def analyze_genealogy(self, book: str) -> dict:
+    def analyze_genealogy(self, book: str, vul_text: str = '') -> dict:
         """Return manuscript transmission genealogy (stemma) for a biblical book.
 
         Returns dict with 'stemma_nodes', 'stemma_edges', 'key_divergences', etc.
         On error: returns {'error': ..., 'stemma_nodes': [], 'stemma_edges': [], ...}.
         """
         model          = GENEALOGY_MODEL
-        prompt_version = 'v1'
+        prompt_version = 'v2'
         tool           = 'genealogy'
 
         cached = self.get_cached(book, tool, prompt_version, model)
@@ -1112,9 +1112,11 @@ class ClaudePipeline:
 
         template = self.load_prompt('genealogy', prompt_version)
         user_content = (
-            template.replace('{{BOOK}}', book)
+            template
+            .replace('{{BOOK}}',     book)
+            .replace('{{VUL_TEXT}}', vul_text)
         ) if template else (
-            f'Book: {book}\n'
+            f'Book: {book}\nVulgate sample: {vul_text or "(not loaded)"}\n'
             'Construct a manuscript transmission genealogy (stemma). Return JSON with stemma_nodes and stemma_edges arrays.'
         )
 

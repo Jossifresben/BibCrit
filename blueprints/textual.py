@@ -31,7 +31,7 @@ textual_bp = Blueprint('textual', __name__)
 _DIVERGENCE_PROMPT     = 'v2'
 _BACKTRANSLATION_PROMPT = 'v1'
 _DSS_PROMPT            = 'v7'
-_GENEALOGY_PROMPT      = 'v1'
+_GENEALOGY_PROMPT      = 'v2'
 _NT_OT_PROMPT          = 'v1'   # keep in sync with analyze_nt_ot() prompt_version in claude_pipeline.py
 
 _STEPS = {
@@ -517,6 +517,11 @@ def api_genealogy_stream():
             yield event('error', msg='Server not ready — pipeline not initialized')
             return
 
+        # Fetch first verse of the book as Vulgate grounding sample
+        vul_sample_ref = f'{book} 1:1'
+        vul_words      = state.corpus.get_verse_words(vul_sample_ref, 'VUL') if state.corpus else None
+        vul_text       = ' '.join(w.word_text for w in vul_words) if vul_words else ''
+
         if lang == 'es':
             cached_es = pipeline.get_cached_es(book, 'genealogy', _GENEALOGY_PROMPT, GENEALOGY_MODEL)
             if cached_es:
@@ -540,7 +545,7 @@ def api_genealogy_stream():
             _result_box = [None]
             def _run_genealogy():
                 try:
-                    _result_box[0] = pipeline.analyze_genealogy(book)
+                    _result_box[0] = pipeline.analyze_genealogy(book, vul_text)
                 except Exception as exc:
                     _result_box[0] = {'error': str(exc)}
             _t = threading.Thread(target=_run_genealogy, daemon=True)

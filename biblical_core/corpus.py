@@ -49,6 +49,8 @@ class BiblicalCorpus:
         'DSS':  'dss',
         'SP':   'sp_etcbc',
         'PESH': 'pesh_etcbc',
+        'TARG': 'targ_sefaria',
+        'VUL':  'vul_clementine',
     }
 
     def __init__(self) -> None:

@@ -28,6 +28,20 @@
   <div class="passage-bar-row passage-bar-main">
     <span class="passage-label">{{ _t('patristic_ref_label') }}</span>
 
+    <div class="passage-bar-selectors">
+      <select id="sel-book" class="passage-select" aria-label="Book">
+        <option value="">{{ _t('passage_book_placeholder') }}</option>
+      </select>
+      <select id="sel-chapter" class="passage-select" disabled aria-label="Chapter">
+        <option value="">{{ _t('passage_ch') }}</option>
+      </select>
+      <select id="sel-verse" class="passage-select" disabled aria-label="Verse">
+        <option value="">{{ _t('passage_vs') }}</option>
+      </select>
+    </div>
+
+    <span class="passage-or">{{ _t('passage_or') }}</span>
+
     <input type="text" id="ref-input" class="passage-input"
            placeholder="Isaiah 7:14" value="{{ reference }}"
            aria-label="Passage reference">

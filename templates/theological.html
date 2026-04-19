@@ -28,8 +28,22 @@
   <div class="passage-bar-row passage-bar-main">
     <span class="passage-label">{{ _t('theological_ref_label') }}</span>
 
+    <div class="passage-bar-selectors">
+      <select id="sel-book" class="passage-select" aria-label="Book">
+        <option value="">{{ _t('passage_book_placeholder') }}</option>
+      </select>
+      <select id="sel-chapter" class="passage-select" disabled aria-label="Chapter">
+        <option value="">{{ _t('passage_ch') }}</option>
+      </select>
+      <select id="sel-verse" class="passage-select" disabled aria-label="Verse">
+        <option value="">{{ _t('passage_vs') }}</option>
+      </select>
+    </div>
+
+    <span class="passage-or">{{ _t('passage_or') }}</span>
+
     <input type="text" id="ref-input" class="passage-input"
-           placeholder="Isaiah" value="{{ reference }}"
+           placeholder="Isaiah 7:14" value="{{ reference }}"
            aria-label="Book or passage">
 
     <div class="passage-bar-actions">
@@ -63,21 +77,6 @@
       <button class="num-sug-chip" data-ref="Daniel">{{ _t('feat_theo_daniel') }}</button>
       <button class="num-sug-chip" data-ref="Job">{{ _t('feat_theo_job') }}</button>
       <button class="num-sug-chip" data-ref="Numbers">{{ _t('feat_theo_numbers') }}</button>
-    </div>
-  </div>
-  <div class="num-sug-group">
-    <span class="num-sug-label">{{ _t('label_passages') }}</span>
-    <div class="num-sug-chips">
-      <button class="num-sug-chip" data-ref="Isaiah 7:14">Isaiah 7:14</button>
-      <button class="num-sug-chip" data-ref="Deuteronomy 32:8">Deuteronomy 32:8</button>
-      <button class="num-sug-chip" data-ref="Genesis 1:26">Genesis 1:26</button>
-      <button class="num-sug-chip" data-ref="Exodus 24:10">Exodus 24:10</button>
-      <button class="num-sug-chip" data-ref="Proverbs 8:22">Proverbs 8:22</button>
-      <button class="num-sug-chip" data-ref="Isaiah 6:3">Isaiah 6:3</button>
-      <button class="num-sug-chip" data-ref="Genesis 18:1">Genesis 18:1</button>
-      <button class="num-sug-chip" data-ref="Exodus 4:24">Exodus 4:24</button>
-      <button class="num-sug-chip" data-ref="Isaiah 53:10">Isaiah 53:10</button>
-      <button class="num-sug-chip" data-ref="Psalm 110:1">Psalm 110:1</button>
     </div>
   </div>
 </div>

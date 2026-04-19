@@ -3,6 +3,9 @@
 (function () {
   'use strict';
 
+  var selBook    = document.getElementById('sel-book');
+  var selChapter = document.getElementById('sel-chapter');
+  var selVerse   = document.getElementById('sel-verse');
   var refInput   = document.getElementById('ref-input');
   var btnAnalyze = document.getElementById('btn-analyze');
   var emptyState = document.getElementById('empty-state');
@@ -29,6 +32,61 @@
   var toast      = document.getElementById('toast');
 
   if (!btnAnalyze) return;
+
+  // ── Corpus browser ──────────────────────────────────────────────────────────
+  if (selBook) {
+    fetch('/api/books?tradition=MT')
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        (data.books || []).forEach(function (book) {
+          var opt = document.createElement('option');
+          opt.value = book; opt.textContent = book;
+          selBook.appendChild(opt);
+        });
+      }).catch(function () {});
+
+    selBook.addEventListener('change', function () {
+      var book = selBook.value;
+      selChapter.innerHTML = '<option value="">' + (window.t ? window.t('passage_ch', 'Ch\u2026') : 'Ch\u2026') + '</option>';
+      selChapter.disabled = !book;
+      selVerse.innerHTML = '<option value="">' + (window.t ? window.t('passage_vs', 'Vs\u2026') : 'Vs\u2026') + '</option>';
+      selVerse.disabled = true;
+      if (!book) return;
+      fetch('/api/chapters?book=' + encodeURIComponent(book) + '&tradition=MT')
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          (data.chapters || []).forEach(function (ch) {
+            var opt = document.createElement('option');
+            opt.value = ch; opt.textContent = ch;
+            selChapter.appendChild(opt);
+          });
+          selChapter.disabled = false;
+        });
+    });
+
+    selChapter.addEventListener('change', function () {
+      var book = selBook.value, ch = selChapter.value;
+      selVerse.innerHTML = '<option value="">' + (window.t ? window.t('passage_vs', 'Vs\u2026') : 'Vs\u2026') + '</option>';
+      selVerse.disabled = !ch;
+      if (!ch) return;
+      fetch('/api/verses?book=' + encodeURIComponent(book) + '&chapter=' + ch + '&tradition=MT')
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          (data.verses || []).forEach(function (v) {
+            var opt = document.createElement('option');
+            opt.value = v; opt.textContent = v;
+            selVerse.appendChild(opt);
+          });
+          selVerse.disabled = false;
+        });
+    });
+
+    selVerse.addEventListener('change', function () {
+      if (selBook.value && selChapter.value && selVerse.value) {
+        refInput.value = selBook.value + ' ' + selChapter.value + ':' + selVerse.value;
+      }
+    });
+  }
 
   var _es           = null;
   var _timer        = null;

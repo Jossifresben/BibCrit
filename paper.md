@@ -104,6 +104,6 @@ All UI strings are defined in `data/i18n.json` with English and Spanish translat
 
 # Acknowledgements
 
-Corpus data provided by the ETCBC (Eep Talstra Centre for Bible and Computer, Vrije Universiteit Amsterdam) under CC-BY-NC 4.0, and STEP Bible (Tyndale House, Cambridge). AI analysis powered by Claude (Anthropic).
+Corpus data is drawn from the following sources. The Masoretic Text, Dead Sea Scrolls, and Peshitta corpora use Text-Fabric modules produced by the ETCBC (Eep Talstra Centre for Bible and Computer, Vrije Universiteit Amsterdam), released under CC BY-NC 4.0 [@hagen2017]. The Peshitta lexical data derives from the SEDRA database (Beth Mardutho: The Syriac Institute). The Septuagint corpus uses data from STEP Bible (Tyndale House, Cambridge) [@stepbible2023]. The Samaritan Pentateuch corpus uses the Text-Fabric module produced by the University of Copenhagen (dt-ucph). The Greek New Testament corpus uses MorphGNT morphological annotations (James Tauber) over the SBLGNT text (Society of Biblical Literature). Targum Onkelos and Targum Jonathan texts are retrieved via the Sefaria API (Sefaria: A Living Library of Jewish Texts). The Clementine Vulgate text uses the scrollmapper/bible_databases corpus. AI analysis is powered by Claude (Anthropic).
 
 # References

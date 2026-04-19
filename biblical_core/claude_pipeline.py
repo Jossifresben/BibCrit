@@ -948,14 +948,14 @@ class ClaudePipeline:
         self.save_cache(reference, tool, prompt_version, model, data)
         return data
 
-    def analyze_theological(self, reference: str) -> dict:
+    def analyze_theological(self, reference: str, vul_text: str = '') -> dict:
         """Return theologically motivated revision analysis for a book or passage.
 
         Returns dict with 'revisions', 'summary', 'overall_assessment', etc.
         On error: returns {'error': ..., 'revisions': [], ...}.
         """
         model          = THEOLOGICAL_MODEL
-        prompt_version = 'v1'
+        prompt_version = 'v2'
         tool           = 'theological'
 
         cached = self.get_cached(reference, tool, prompt_version, model)
@@ -984,9 +984,11 @@ class ClaudePipeline:
 
         template = self.load_prompt('theological', prompt_version)
         user_content = (
-            template.replace('{{REFERENCE}}', reference)
+            template
+            .replace('{{REFERENCE}}', reference)
+            .replace('{{VUL_TEXT}}',  vul_text)
         ) if template else (
-            f'Reference: {reference}\n'
+            f'Reference: {reference}\nVulgate: {vul_text or "(not loaded)"}\n'
             'Identify theologically motivated textual changes. Return JSON with revisions array.'
         )
 

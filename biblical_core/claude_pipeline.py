@@ -1308,7 +1308,36 @@ class ClaudePipeline:
             self.save_cache(reference, tool, prompt_version, model, data)
             yield None, data
         else:
-            yield None, (sections if sections else data)
+            fallback = sections if sections else data
+            # Ensure witness fallbacks land in partial-sections path too
+            if sp_text and not fallback.get('sp_witness'):
+                fallback['sp_witness'] = data.get('sp_witness') or {
+                    'present': True, 'alignment': 'independent',
+                    'alignment_confidence': 0.0, 'sp_text': sp_text,
+                    'divergences': [], 'overall_note': (
+                        'Samaritan Pentateuch text is available for this passage '
+                        'but alignment analysis could not be generated automatically.'
+                    ),
+                }
+            if pesh_text and not fallback.get('pesh_witness'):
+                fallback['pesh_witness'] = data.get('pesh_witness') or {
+                    'present': True, 'alignment': 'independent',
+                    'alignment_confidence': 0.0, 'pesh_text': pesh_text,
+                    'divergences': [], 'overall_note': (
+                        'Peshitta text is available for this passage '
+                        'but alignment analysis could not be generated automatically.'
+                    ),
+                }
+            if vul_text and not fallback.get('vul_witness'):
+                fallback['vul_witness'] = data.get('vul_witness') or {
+                    'present': True, 'alignment': 'independent',
+                    'alignment_confidence': 0.0, 'vul_text': vul_text,
+                    'key_readings': [], 'overall_note': (
+                        'Vulgate text is available for this passage '
+                        'but alignment analysis could not be generated automatically.'
+                    ),
+                }
+            yield None, fallback
 
     def analyze_theological(self, reference: str, vul_text: str = '') -> dict:
         """Return theologically motivated revision analysis for a book or passage.
@@ -1699,7 +1728,9 @@ class ClaudePipeline:
             self.save_cache(book, tool, prompt_version, model, data)
             yield None, data
         else:
-            yield None, (sections if sections else data)
+            fallback = sections if sections else data
+            fallback['discovery_ready'] = True
+            yield None, fallback
 
     def analyze_targum(self, reference: str, mt_text: str = '',
                        lxx_text: str = '', targ_text: str = '',

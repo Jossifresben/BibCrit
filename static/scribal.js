@@ -38,6 +38,8 @@
   var _data2      = null;
   var _currentBook = '';
   var _lastData    = null;
+  var _partialData    = {};
+  var _sectionReceived = false;
 
   // Radar color palette per series
   var SERIES_COLORS = ['#3a6bc4', '#e67e22'];
@@ -123,7 +125,9 @@
 
     if (_es) { _es.close(); _es = null; }
     clearInterval(_timerInt);
-    _finalHandled = false;
+    _finalHandled    = false;
+    _partialData     = {};
+    _sectionReceived = false;
 
     hide(emptyState);
     hide(radarArea);
@@ -147,6 +151,8 @@
         var msg = JSON.parse(e.data);
         if (msg.type === 'step') {
           setLoadingStep(msg.msg);
+        } else if (msg.type === 'section') {
+          _renderSection(msg.key, msg.data);
         } else if (msg.type === 'error') {
           _finalHandled = true;
           clearInterval(_timerInt);
@@ -164,10 +170,18 @@
             setLoadingStep(window.t('scribal_loading_comparison', 'Loading comparison book…'));
             fetchSecond(book2, function (d2) {
               _data2 = d2;
-              renderScribal(_data1, _data2);
+              if (_sectionReceived) {
+                _finalize(_data1, _data2);
+              } else {
+                renderScribal(_data1, _data2);
+              }
             });
           } else {
-            renderScribal(_data1, null);
+            if (_sectionReceived) {
+              _finalize(_data1, null);
+            } else {
+              renderScribal(_data1, null);
+            }
           }
         }
       } catch (err) { /* ignore */ }
@@ -192,6 +206,46 @@
       } catch (_) { /* ignore */ }
     });
     es2.onerror = function () { es2.close(); cb(null); };
+  }
+
+  // ── Progressive section rendering ─────────────────────────────────────────
+  function _renderSection(key, data) {
+    _partialData[key] = data;
+    _sectionReceived  = true;
+
+    if (emptyState)  emptyState.style.display  = 'none';
+    if (loadState)   loadState.style.display   = 'none';
+
+    if (key === 'dimensions') {
+      // Render the tab area with partial dimensions
+      var partial = { dimensions: data || [], book: _currentBook };
+      if (heading) {
+        show(heading);
+        heading.innerHTML =
+          '<div class="scribal-heading-inner">' +
+            '<span class="tradition-badge lxx-badge scribal-heading-badge">LXX</span>' +
+            '<div class="scribal-heading-text">' +
+              '<h1 class="scribal-heading-title">' + _esc(_currentBook) + '</h1>' +
+              '<span class="scribal-heading-sub">' + window.t('scribal_heading_profile', 'Scribal Tendency Profile') + ' \u00b7 ' + _esc(_currentBook) + '</span>' +
+            '</div>' +
+          '</div>';
+      }
+      buildTabs(partial, null);
+      show(tabsArea);
+      staggerReveal(tabsArea, 30);
+    }
+
+    if (key === 'assessment') {
+      var withAssessment = Object.assign({}, _partialData, { bibcrit_assessment: data });
+      renderOverall(withAssessment, null);
+      if (overallDiv) staggerReveal(overallDiv, 0);
+    }
+  }
+
+  function _finalize(data, data2) {
+    _lastData = data || _partialData;
+    hide(loadState);
+    renderScribal(_lastData, data2);
   }
 
   // ── Render ──────────────────────────────────────────────────────────────

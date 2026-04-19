@@ -30,6 +30,9 @@
 
   var _timer = null;
   var _currentRef = '';
+  var _finalHandled   = false;
+  var _partialData    = {};
+  var _sectionReceived = false;
 
   if (selBook) {
     Object.keys(_NT_BOOKS).forEach(function (b) {
@@ -247,8 +250,119 @@
     }
   }
 
+  // ── Progressive section rendering ─────────────────────────────────────────
+  function _renderSection(key, data) {
+    _partialData[key] = data;
+    _sectionReceived  = true;
+
+    if (emptyState)  emptyState.style.display  = 'none';
+    if (loadState)   loadState.style.display   = 'none';
+    if (results)     results.style.display     = 'block';
+    if (heading) { heading.textContent = _currentRef; heading.style.display = ''; }
+
+    if (key === 'metzger_rating') {
+      var r = data && data.rating ? data.rating.toUpperCase() : '';
+      var badge = document.getElementById('metzger-badge');
+      var just  = document.getElementById('metzger-justification');
+      var mSec  = document.getElementById('metzger-section');
+      if (badge) { badge.textContent = r; badge.className = 'ms-rating-badge rating-' + r.toLowerCase(); }
+      if (just) just.textContent = (data && data.justification) || '';
+      if (mSec) { mSec.style.display = ''; staggerReveal(mSec, 0); }
+    }
+
+    if (key === 'manuscript_families') {
+      var mfHtml = '';
+      var families = ['alexandrian', 'western', 'byzantine', 'caesarean'];
+      families.forEach(function (f) {
+        var fm = data && data[f];
+        if (!fm) return;
+        var supportClass = 'support-' + (fm.support || 'unknown').replace(/_/g, '-');
+        mfHtml += '<div class="ms-family-row">' +
+          '<span class="ms-family-name">' + esc(f.charAt(0).toUpperCase() + f.slice(1)) + '</span>' +
+          '<span class="ms-family-witnesses">' + esc((fm.witnesses || []).join(', ')) + '</span>' +
+          '<span class="ms-support ' + supportClass + '">' + esc(fm.support || '') + '</span>' +
+          '<p class="ms-family-note">' + esc(fm.note || '') + '</p></div>';
+      });
+      var mfEl  = document.getElementById('ms-families-body');
+      var mfSec = document.getElementById('ms-families-section');
+      if (mfEl) mfEl.innerHTML = mfHtml;
+      if (mfSec && mfHtml) { mfSec.style.display = ''; staggerReveal(mfSec, 0); }
+    }
+
+    if (key === 'variant_register') {
+      var vrArr = Array.isArray(data) ? data : (data || []);
+      if (vrArr.length) {
+        var vrHtml = vrArr.map(function (v, i) {
+          return '<div class="variant-card">' +
+            '<div class="vc-type">Variant ' + (i + 1) + '</div>' +
+            '<p class="vc-text">' + esc(v.variant_text || '') + '</p>' +
+            '<div class="vc-pair"><span class="vc-label">Support:</span> ' + esc(v.manuscript_support || '') + '</div>' +
+            '<div class="vc-pair">' +
+              '<span class="vc-label">Intrinsic:</span> ' + esc(v.intrinsic_probability || '') +
+              ' &nbsp;|&nbsp; <span class="vc-label">Transcriptional:</span> ' + esc(v.transcriptional_probability || '') +
+            '</div>' +
+            '<p class="vc-note">' + esc(v.assessment || '') + '</p></div>';
+        }).join('');
+        var vrEl  = document.getElementById('variant-body');
+        var vrSec = document.getElementById('variant-section');
+        if (vrEl) vrEl.innerHTML = vrHtml;
+        if (vrSec) { vrSec.style.display = ''; staggerReveal(vrSec, 0); }
+      }
+    }
+
+    if (key === 'disputed_passage') {
+      if (data) {
+        var dpHtml =
+          '<div class="disputed-designation">' + esc(data.designation || '') + '</div>' +
+          '<div class="dp-row"><strong>Evidence for inclusion:</strong> ' + esc(data.manuscript_evidence_for || '') + '</div>' +
+          '<div class="dp-row"><strong>Evidence against:</strong> ' + esc(data.manuscript_evidence_against || '') + '</div>' +
+          '<div class="dp-row"><strong>Internal evidence:</strong> ' + esc(data.internal_evidence || '') + '</div>' +
+          '<div class="dp-row"><strong>Scholarly consensus:</strong> ' + esc(data.scholarly_consensus || '') + '</div>' +
+          '<div class="dp-row"><strong>In major translations:</strong> ' + esc(data.pastoral_note || '') + '</div>';
+        var dpEl  = document.getElementById('disputed-body');
+        var dpSec = document.getElementById('disputed-section');
+        if (dpEl) dpEl.innerHTML = dpHtml;
+        if (dpSec) { dpSec.style.display = ''; staggerReveal(dpSec, 0); }
+      }
+    }
+
+    if (key === 'synthesis') {
+      var synText = typeof data === 'string' ? data : (data && (data.synthesis || data.plain || ''));
+      var synEl  = document.getElementById('synthesis-body');
+      var synSec = document.getElementById('synthesis-section');
+      if (synEl) synEl.textContent = synText || '';
+      if (synSec && synText) { synSec.style.display = ''; staggerReveal(synSec, 0); }
+    }
+
+    if (key === 'assessment') {
+      var a = data || {};
+      var aHtml = '';
+      if (a.title)    aHtml += '<h3 class="bc-title">' + esc(a.title) + '</h3>';
+      if (a.plain)    aHtml += '<p class="bc-plain">' + esc(a.plain) + '</p>';
+      if (a.reasoning) aHtml += '<p>' + esc(a.reasoning) + '</p>';
+      if (a.recommended_reading) aHtml += '<p><strong>Recommended edition:</strong> ' + esc(a.recommended_reading) + '</p>';
+      if (a.open_questions) aHtml += '<p><strong>Open questions:</strong> ' + esc(a.open_questions) + '</p>';
+      if (typeof a.confidence === 'number') {
+        aHtml += '<div class="confidence-bar"><div class="confidence-fill" style="width:' + (a.confidence * 100).toFixed(0) + '%"></div></div>';
+      }
+      var bibBodyEl = document.getElementById('bibcrit-body');
+      var bibSecEl  = document.getElementById('bibcrit-assessment');
+      if (bibBodyEl) bibBodyEl.innerHTML = aHtml;
+      if (bibSecEl)  { bibSecEl.style.display = ''; staggerReveal(bibSecEl, 0); }
+    }
+  }
+
+  function _finalize(data) {
+    _partialData = Object.assign(_partialData, data || {});
+    if (loadState) loadState.style.display = 'none';
+    renderResult(data || _partialData);
+  }
+
   function analyze(ref) {
-    _currentRef = ref;
+    _currentRef      = ref;
+    _finalHandled    = false;
+    _partialData     = {};
+    _sectionReceived = false;
     setLoading(true);
     if (loadStep) loadStep.textContent = window.t ? window.t('loading_preparing', 'Preparing\u2026') : 'Preparing\u2026';
 
@@ -268,15 +382,25 @@
         var msg = JSON.parse(e.data);
         if (msg.type === 'step') {
           if (loadStep) loadStep.textContent = msg.msg;
+        } else if (msg.type === 'section') {
+          _renderSection(msg.key, msg.data);
         } else if (msg.type === 'done') {
-          es.close(); renderResult(msg.data);
+          _finalHandled = true;
+          es.close();
+          if (_sectionReceived) {
+            _finalize(msg.data);
+          } else {
+            renderResult(msg.data);
+          }
         } else if (msg.type === 'error') {
+          _finalHandled = true;
           es.close(); setLoading(false); showToast(msg.msg || 'Error', 5000);
         }
       } catch (_) {}
     };
 
     es.onerror = function () {
+      if (_finalHandled) return;
       es.close(); setLoading(false);
       showToast(window.t ? window.t('err_connection', 'Connection error') : 'Connection error', 5000);
     };

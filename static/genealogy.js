@@ -45,6 +45,8 @@
   var _currentBook  = '';
   var _finalHandled = false;
   var _lastData     = null;
+  var _partialData    = {};
+  var _sectionReceived = false;
 
   // ── Suggestion chips ────────────────────────────────────────────────────
   document.querySelectorAll('.num-sug-chip[data-book]').forEach(function (chip) {
@@ -92,7 +94,9 @@
 
     if (_es) { _es.close(); _es = null; }
     clearInterval(_timer);
-    _finalHandled = false;
+    _finalHandled    = false;
+    _partialData     = {};
+    _sectionReceived = false;
 
     hide(suggestions);
     hide(emptyState);
@@ -116,6 +120,8 @@
         var msg = JSON.parse(e.data);
         if (msg.type === 'step') {
           setLoadingStep(msg.msg);
+        } else if (msg.type === 'section') {
+          _renderSection(msg.key, msg.data);
         } else if (msg.type === 'error') {
           _finalHandled = true;
           clearInterval(_timer);
@@ -125,7 +131,11 @@
           _finalHandled = true;
           clearInterval(_timer);
           _es.close();
-          renderGenealogy(msg.data);
+          if (_sectionReceived) {
+            _finalize(msg.data);
+          } else {
+            renderGenealogy(msg.data);
+          }
         }
       } catch (_) { /* ignore */ }
     });
@@ -136,6 +146,83 @@
       setLoadingStep('❌ ' + window.t('err_connection_step', 'Connection error. Please try again.'));
       if (_es) _es.close();
     };
+  }
+
+  // ── Progressive section rendering ─────────────────────────────────────────
+  function _renderSection(key, data) {
+    _partialData[key] = data;
+    _sectionReceived  = true;
+
+    if (emptyState)  emptyState.style.display  = 'none';
+    if (loadState)   loadState.style.display   = 'none';
+    if (results)     results.style.display     = '';
+
+    if (key === 'archetype_analysis') {
+      if (heading) {
+        show(heading);
+        heading.innerHTML = '<span class="ph-ref">' + _esc(_currentBook) + '</span>' +
+          '<span class="ph-meta"> \u2014 ' + window.t('genealogy_ms_transmission', 'Manuscript Transmission') + '</span>';
+      }
+      var archSec  = document.getElementById('archetype-section');
+      var archBody = document.getElementById('archetype-body');
+      var desc = (data && (data.archetype_description || data.description || data.plain)) ||
+                 (typeof data === 'string' ? data : '');
+      if (desc && archSec && archBody) {
+        archBody.innerHTML =
+          '<div class="bt-group-card"><p class="div-analysis">' + _esc(desc) + '</p></div>';
+        show(archSec);
+        staggerReveal(archSec, 0);
+      }
+    }
+
+    if (key === 'transmission_branches') {
+      // Render stemma if stemma_nodes/edges are inside data
+      if (data && data.stemma_nodes) {
+        renderStemma(data);
+      }
+      var narSec  = document.getElementById('narrative-section');
+      var narBody = document.getElementById('narrative-body');
+      var plain = (data && (data.transmission_plain || data.plain)) ||
+                  (typeof data === 'string' ? data : '');
+      if (plain && narSec && narBody) {
+        narBody.innerHTML =
+          '<div class="bt-group-card"><p class="div-analysis">' + _esc(plain) + '</p></div>';
+        show(narSec);
+        staggerReveal(narSec, 0);
+      }
+    }
+
+    if (key === 'critical_editions') {
+      var divSec  = document.getElementById('divergences-section');
+      var divList = document.getElementById('divergences-list');
+      var divs = Array.isArray(data) ? data : (data && data.key_divergences) || [];
+      if (divs.length && divSec && divList) {
+        divList.innerHTML = '';
+        divs.forEach(function (d) {
+          var card = document.createElement('div');
+          card.className = 'genealogy-card';
+          card.innerHTML =
+            (d.title   ? '<div class="div-card-title">'   + _esc(d.title)   + '</div>' : '') +
+            (d.passage ? '<div class="div-card-passage">' + _esc(d.passage) + '</div>' : '') +
+            (d.plain   ? '<p class="div-analysis">'       + _esc(d.plain)   + '</p>'   : '') +
+            (d.detail  ? '<p class="div-meta" style="font-style:italic;margin-top:6px">' + _esc(d.detail) + '</p>' : '');
+          divList.appendChild(card);
+        });
+        show(divSec);
+        staggerReveal(divSec, 0);
+      }
+    }
+
+    if (key === 'assessment') {
+      renderAssessment({ bibcrit_assessment: data, model_version: _partialData.model_version });
+      if (bibSec) staggerReveal(bibSec, 0);
+    }
+  }
+
+  function _finalize(data) {
+    _lastData = data || _partialData;
+    hide(loadState);
+    renderGenealogy(_lastData);
   }
 
   // ── Render ───────────────────────────────────────────────────────────────

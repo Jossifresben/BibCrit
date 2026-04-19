@@ -30,6 +30,9 @@
 
   var _timer = null;
   var _currentRef = '';
+  var _finalHandled   = false;
+  var _partialData    = {};
+  var _sectionReceived = false;
 
   // Populate book dropdown
   if (selBook) {
@@ -291,8 +294,125 @@
       .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 
+  // ── Progressive section rendering ─────────────────────────────────────────
+  function _renderSection(key, data) {
+    _partialData[key] = data;
+    _sectionReceived  = true;
+
+    if (emptyState)  emptyState.style.display  = 'none';
+    if (loadState)   loadState.style.display   = 'none';
+    if (results)     results.style.display     = 'block';
+
+    if (heading) { heading.textContent = _currentRef; heading.style.display = ''; }
+
+    if (key === 'key_divergences' || key === 'rendering_fidelity') {
+      var fid = _partialData.rendering_fidelity;
+      if (fid && fid.word_analysis) {
+        var rows = (fid.word_analysis || []).map(function (w) {
+          return '<tr><td>' + esc(w.mt_word || '') + '</td>' +
+                 '<td>' + esc(w.targ_word || '') + '</td>' +
+                 '<td><span class="badge">' + esc(w.type || '') + '</span></td>' +
+                 '<td>' + esc(w.note || '') + '</td></tr>';
+        }).join('');
+        setText('fidelity-body',
+          '<p style="margin-bottom:.5rem">Overall: <strong>' + esc(fid.overall || '') + '</strong></p>' +
+          (rows ? '<table class="var-table"><thead><tr><th>MT</th><th>Targum</th><th>Type</th><th>Note</th></tr></thead><tbody>' + rows + '</tbody></table>' : ''));
+        showSection('fidelity-section');
+        var fidSec = document.getElementById('fidelity-section');
+        if (fidSec) staggerReveal(fidSec, 0);
+      }
+    }
+
+    if (key === 'theological_modifications') {
+      var mods = Array.isArray(data) ? data : (data || []);
+      if (mods.length) {
+        var html = mods.map(function (m) {
+          return '<div class="variant-card">' +
+            '<div class="vc-type">' + esc(m.type || '') + '</div>' +
+            '<div class="vc-pair"><span class="vc-label">MT:</span> ' + esc(m.mt_reading || '') + '</div>' +
+            '<div class="vc-pair"><span class="vc-label">Targum:</span> ' + esc(m.targ_reading || '') + '</div>' +
+            '<p class="vc-note">' + esc(m.explanation || '') + '</p></div>';
+        }).join('');
+        setText('theological-body', html);
+        showSection('theological-section');
+        var theoSec = document.getElementById('theological-section');
+        if (theoSec) staggerReveal(theoSec, 0);
+      }
+    }
+
+    if (key === 'expansions') {
+      var exps = Array.isArray(data) ? data : (data || []);
+      if (exps.length) {
+        var html2 = exps.map(function (ex) {
+          return '<div class="variant-card">' +
+            '<div class="vc-location">' + esc(ex.location || '') + '</div>' +
+            '<p class="vc-expansion">' + esc(ex.expansion_text || '') + '</p>' +
+            (ex.midrashic_parallel ? '<p class="vc-parallel">Midrashic parallel: ' + esc(ex.midrashic_parallel) + '</p>' : '') +
+            '<p class="vc-note">' + esc(ex.significance || '') + '</p></div>';
+        }).join('');
+        setText('expansions-body', html2);
+        showSection('expansions-section');
+        var expSec = document.getElementById('expansions-section');
+        if (expSec) staggerReveal(expSec, 0);
+      }
+    }
+
+    if (key === 'messianic') {
+      if (data && data.present) {
+        var insts = (data.instances || []).map(function (i) {
+          return '<div class="variant-card">' +
+            '<div class="vc-pair"><span class="vc-label">MT:</span> ' + esc(i.mt_reading || '') + '</div>' +
+            '<div class="vc-pair"><span class="vc-label">Targum:</span> ' + esc(i.targ_reading || '') + '</div>' +
+            '<p class="vc-note">' + esc(i.scholarly_note || '') + '</p></div>';
+        }).join('');
+        setText('messianic-body', insts || '<p>Messianic reinterpretation present \u2014 see synthesis.</p>');
+        showSection('messianic-section');
+        var mesSec = document.getElementById('messianic-section');
+        if (mesSec) staggerReveal(mesSec, 0);
+      }
+    }
+
+    if (key === 'lxx_alignment') {
+      if (data && data.areas_of_agreement) {
+        setText('lxx-align-body',
+          '<p>' + esc(data.areas_of_agreement) + '</p>' +
+          (data.significance ? '<p class="vc-note">' + esc(data.significance) + '</p>' : ''));
+        showSection('lxx-align-section');
+        var lxxSec = document.getElementById('lxx-align-section');
+        if (lxxSec) staggerReveal(lxxSec, 0);
+      }
+    }
+
+    if (key === 'assessment') {
+      var a = data || {};
+      var aHtml = '';
+      if (a.title)      aHtml += '<h3 class="bc-title">' + esc(a.title) + '</h3>';
+      if (a.plain)      aHtml += '<p class="bc-plain">' + esc(a.plain) + '</p>';
+      if (a.reasoning)  aHtml += '<p>' + esc(a.reasoning) + '</p>';
+      if (a.next_steps) aHtml += '<p><strong>Next steps:</strong> ' + esc(a.next_steps) + '</p>';
+      if (typeof a.confidence === 'number') {
+        aHtml += '<div class="confidence-bar"><div class="confidence-fill" style="width:' +
+                 (a.confidence * 100).toFixed(0) + '%"></div></div>';
+      }
+      var bibSecEl  = document.getElementById('bibcrit-assessment');
+      var bibBodyEl = document.getElementById('bibcrit-body');
+      if (bibBodyEl) bibBodyEl.innerHTML = aHtml;
+      if (bibSecEl)  bibSecEl.style.display = '';
+      if (bibSecEl)  staggerReveal(bibSecEl, 0);
+    }
+  }
+
+  function _finalize(data) {
+    _partialData = Object.assign(_partialData, data || {});
+    if (loadState) loadState.style.display = 'none';
+    renderResult(data || _partialData);
+  }
+
   function analyze(ref) {
-    _currentRef = ref;
+    _currentRef      = ref;
+    _finalHandled    = false;
+    _partialData     = {};
+    _sectionReceived = false;
     setLoading(true);
     if (loadStep) loadStep.textContent = window.t ? window.t('loading_preparing', 'Preparing\u2026') : 'Preparing\u2026';
 
@@ -305,10 +425,18 @@
         var msg = JSON.parse(e.data);
         if (msg.type === 'step') {
           if (loadStep) loadStep.textContent = msg.msg;
+        } else if (msg.type === 'section') {
+          _renderSection(msg.key, msg.data);
         } else if (msg.type === 'done') {
+          _finalHandled = true;
           es.close();
-          renderResult(msg.data);
+          if (_sectionReceived) {
+            _finalize(msg.data);
+          } else {
+            renderResult(msg.data);
+          }
         } else if (msg.type === 'error') {
+          _finalHandled = true;
           es.close();
           setLoading(false);
           showToast(msg.msg || 'Error', 5000);
@@ -317,6 +445,7 @@
     };
 
     es.onerror = function () {
+      if (_finalHandled) return;
       es.close();
       setLoading(false);
       showToast(window.t ? window.t('err_connection', 'Connection error') : 'Connection error', 5000);

@@ -27,6 +27,8 @@
   var _currentRef   = '';
   var _finalHandled = false;  // true once 'done' or 'error' SSE message received
   var _lastData     = null;
+  var _partialData    = {};
+  var _sectionReceived = false;
 
   var TRAD_COLORS = {
     mt:  'var(--mt-color, #c0892a)',
@@ -101,7 +103,9 @@
 
     if (_es) { _es.close(); _es = null; }
     clearInterval(_timer);
-    _finalHandled = false;
+    _finalHandled    = false;
+    _partialData     = {};
+    _sectionReceived = false;
 
     hide(suggestionsEl);
     hide(emptyState);
@@ -126,6 +130,8 @@
         var msg = JSON.parse(e.data);
         if (msg.type === 'step') {
           setLoadingStep(msg.msg);
+        } else if (msg.type === 'section') {
+          _renderSection(msg.key, msg.data);
         } else if (msg.type === 'error') {
           _finalHandled = true;
           clearInterval(_timer);
@@ -135,7 +141,11 @@
           _finalHandled = true;
           clearInterval(_timer);
           _es.close();
-          renderNumerical(msg.data);
+          if (_sectionReceived) {
+            _finalize(msg.data);
+          } else {
+            renderNumerical(msg.data);
+          }
         }
       } catch (_) { /* ignore */ }
     });
@@ -146,6 +156,114 @@
       setLoadingStep('❌ ' + window.t('err_connection_step', 'Connection error. Please try again.'));
       if (_es) _es.close();
     };
+  }
+
+  // ── Progressive section rendering ─────────────────────────────────────────
+  function _renderSection(key, data) {
+    _partialData[key] = data;
+    _sectionReceived  = true;
+
+    if (emptyState)  emptyState.style.display  = 'none';
+    if (loadState)   loadState.style.display   = 'none';
+    if (results)     results.style.display     = '';
+
+    if (key === 'figures') {
+      // Show heading
+      if (heading) {
+        show(heading);
+        heading.innerHTML = '<span class="ph-ref">' + _esc(_currentRef) + '</span>';
+      }
+      var figs = data || [];
+      renderTable(figs);
+      renderTimeline(figs);
+      staggerReveal(results, 30);
+    }
+
+    if (key === 'lifespan_timeline') {
+      var figs2 = _partialData.figures || data || [];
+      renderTable(figs2);
+      renderTimeline(figs2);
+      staggerReveal(results, 0);
+    }
+
+    if (key === 'systematic_analysis') {
+      renderSystematic(data || {});
+      if (systematic) staggerReveal(systematic, 0);
+    }
+
+    if (key === 'theories') {
+      buildTheoryTabs(data || [], _partialData);
+      show(tabsArea);
+      staggerReveal(tabsArea, 30);
+    }
+
+    if (key === 'assessment') {
+      // assessment arrives as bibcrit_assessment-like object
+      var withAss = Object.assign({}, _partialData, { bibcrit_assessment: data });
+      buildTheoryTabs(_partialData.theories || [], withAss);
+      show(tabsArea);
+      staggerReveal(tabsArea, 0);
+    }
+  }
+
+  function _finalize(data) {
+    _lastData = data || _partialData;
+    hide(loadState);
+
+    show(heading);
+    var _hRef  = _esc(_lastData.reference || _currentRef);
+    var _hMeta = _lastData.subject ? ' <span class="ph-meta">\u2014 ' + _esc(_lastData.subject) + '</span>' : '';
+    heading.innerHTML = '<span class="ph-ref">' + _hRef + '</span>' + _hMeta;
+
+    var figures = _lastData.figures || _lastData.patriarchs || [];
+    renderTable(figures);
+    renderTimeline(figures);
+    renderSystematic(_lastData.systematic_analysis || {});
+    buildTheoryTabs(_lastData.theories || [], _lastData);
+
+    show(results);
+    show(tabsArea);
+    staggerReveal(tabsArea, 0);
+
+    var exportRow = document.getElementById('export-row');
+    if (exportRow) show(exportRow);
+
+    if (window.ResultActions) {
+      ResultActions.init({
+        toolName: 'numerical',
+        getReference: function() { return _currentRef; },
+        getResultData: function() { return _lastData || {}; },
+        getSvgEl: function() { return document.getElementById('num-timeline'); },
+      });
+    }
+
+    if (exportRow && !exportRow._exportWired) {
+      exportRow._exportWired = true;
+      var _btnSbl    = document.getElementById('btn-sbl');
+      var _btnBibtex = document.getElementById('btn-bibtex');
+
+      if (_btnSbl) {
+        _btnSbl.addEventListener('click', function() {
+          fetch('/api/export/sbl?tool=numerical&ref=' + encodeURIComponent(_currentRef))
+            .then(function(r) { return r.json(); })
+            .then(function(d) {
+              var text = (d.footnotes || [d.footnote]).join('\n\n');
+              navigator.clipboard.writeText(text).catch(function(){});
+              showToast(window.t('toast_sbl_copied_short', 'SBL footnotes copied!'));
+            }).catch(function(){});
+        });
+      }
+      if (_btnBibtex) {
+        _btnBibtex.addEventListener('click', function() {
+          fetch('/api/export/bibtex?tool=numerical&ref=' + encodeURIComponent(_currentRef))
+            .then(function(r) { return r.json(); })
+            .then(function(d) {
+              navigator.clipboard.writeText(d.bibtex || '').catch(function(){});
+              showToast(window.t('toast_bibtex_copied_short', 'BibTeX copied!'));
+            }).catch(function(){});
+        });
+      }
+    }
   }
 
   // ── Render ───────────────────────────────────────────────────────────────

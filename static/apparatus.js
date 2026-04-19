@@ -156,6 +156,9 @@
   var _activeStream = null;
   var _timerInterval = null;
   var _elapsedSecs = 0;
+  var _finalHandled = false;
+  var _partialData    = {};   // accumulates section key/value pairs during streaming
+  var _sectionReceived = false;  // true once any section event has been handled
 
   function analyze(ref) {
     if (!ref) return;
@@ -166,6 +169,9 @@
     // Close any previous stream
     if (_activeStream) { _activeStream.close(); _activeStream = null; }
     clearInterval(_timerInterval);
+    _finalHandled = false;
+    _partialData     = {};
+    _sectionReceived = false;
 
     emptyState.style.display    = 'none';
     apparatusGrid.style.display = 'none';
@@ -184,38 +190,41 @@
 
       if (msg.type === 'step') {
         setLoadingStep(msg.msg);
+      } else if (msg.type === 'section') {
+        _renderSection(msg.key, msg.data);
       } else if (msg.type === 'done') {
+        _finalHandled = true;
         es.close();
         _activeStream = null;
         stopTimer();
-        loadingState.style.display = 'none';
-        currentData = msg.data;
-        renderApparatus(msg.data);
-        if (passageHeading) passageHeading.style.display = 'block';
-        apparatusGrid.style.display = 'grid';
-        tabsArea.style.display      = 'block';
-        staggerReveal(tabsArea, 0);
-        exportRow.style.display     = 'flex';
-        // Keep the URL bar in sync so the Share modal always reflects the current passage
-        history.replaceState(null, '', '/divergence?ref=' + encodeURIComponent(ref));
-        updateBudgetBar();
-
-        // Model attribution badge
-        var modelAttr = document.getElementById('divergence-model-attr');
-        if (modelAttr) {
-          modelAttr.textContent = window.t('analysis_by', 'Analysis by') + ' ' + _friendlyModel(msg.data.model_version);
-          modelAttr.style.display = 'inline';
-        }
-
-        // Inject Scholar Rating, Copy, Download into export-row (once only)
-        if (window.ResultActions) {
-          ResultActions.init({
-            toolName: 'divergence',
-            getReference: function() { return currentRef; },
-            getResultData: function() { return currentData || {}; },
-          });
+        if (_sectionReceived) {
+          _finalize(msg.data);
+        } else {
+          loadingState.style.display = 'none';
+          currentData = msg.data;
+          renderApparatus(msg.data);
+          if (passageHeading) passageHeading.style.display = 'block';
+          apparatusGrid.style.display = 'grid';
+          tabsArea.style.display      = 'block';
+          staggerReveal(tabsArea, 0);
+          exportRow.style.display     = 'flex';
+          history.replaceState(null, '', '/divergence?ref=' + encodeURIComponent(ref));
+          updateBudgetBar();
+          var modelAttr = document.getElementById('divergence-model-attr');
+          if (modelAttr) {
+            modelAttr.textContent = window.t('analysis_by', 'Analysis by') + ' ' + _friendlyModel(msg.data.model_version);
+            modelAttr.style.display = 'inline';
+          }
+          if (window.ResultActions) {
+            ResultActions.init({
+              toolName: 'divergence',
+              getReference: function() { return currentRef; },
+              getResultData: function() { return currentData || {}; },
+            });
+          }
         }
       } else if (msg.type === 'error') {
+        _finalHandled = true;
         es.close();
         _activeStream = null;
         stopTimer();
@@ -251,6 +260,55 @@
   function stopTimer() {
     clearInterval(_timerInterval);
     _timerInterval = null;
+  }
+
+  // ── Progressive section rendering ─────────────────────────────────────────
+  function _renderSection(key, data) {
+    _partialData[key] = data;
+    _sectionReceived  = true;
+
+    // Reveal containers, hide loading/empty
+    if (emptyState)    emptyState.style.display    = 'none';
+    if (loadingState)  loadingState.style.display  = 'none';
+
+    if (key === 'divergences') {
+      currentData = _partialData;
+      var partial = { divergences: data || [], mt_words: [], lxx_words: [], reference: currentRef };
+      if (passageHeading) { passageHeading.style.display = 'block'; }
+      if (apparatusGrid) apparatusGrid.style.display = 'grid';
+      if (tabsArea)      tabsArea.style.display      = 'block';
+      renderApparatus(partial);
+      staggerReveal(tabsArea, 30);
+    }
+  }
+
+  function _finalize(data) {
+    currentData = data || _partialData;
+    loadingState.style.display = 'none';
+
+    renderApparatus(currentData);
+    if (passageHeading) passageHeading.style.display = 'block';
+    apparatusGrid.style.display = 'grid';
+    tabsArea.style.display      = 'block';
+    exportRow.style.display     = 'flex';
+    staggerReveal(tabsArea, 0);
+
+    history.replaceState(null, '', '/divergence?ref=' + encodeURIComponent(currentRef));
+    updateBudgetBar();
+
+    var modelAttr = document.getElementById('divergence-model-attr');
+    if (modelAttr && currentData) {
+      modelAttr.textContent = window.t('analysis_by', 'Analysis by') + ' ' + _friendlyModel(currentData.model_version);
+      modelAttr.style.display = 'inline';
+    }
+
+    if (window.ResultActions) {
+      ResultActions.init({
+        toolName: 'divergence',
+        getReference: function() { return currentRef; },
+        getResultData: function() { return currentData || {}; },
+      });
+    }
   }
 
   function renderApparatus(data) {

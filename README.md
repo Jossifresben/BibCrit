@@ -39,14 +39,16 @@ Free, open-access web tool for biblical textual criticism at [bibcrit.com](https
 | 1 | **MT/LXX Divergence Analyzer** | `/divergence` | Word-level Hebrew/Greek comparison with alignment scoring. Claude classifies each divergence (`different_vorlage`, `theological_tendency`, `scribal_error`, etc.), assigns confidence, and generates competing scholarly hypotheses. Exports SBL footnotes, BibTeX, RIS (Zotero), and TEI XML. Prompt: `divergence_v2`. |
 | 2 | **Scribal Tendencies Profiler** | `/scribal` | Statistical fingerprint of an LXX book's translator across five dimensions: literalness, anthropomorphism reduction, messianic heightening, harmonization, and paraphrase rate. Rendered as a D3.js radar chart with per-dimension evidence. Supports two-book comparison. Prompt: `scribal_v1`. |
 | 3 | **Numerical Discrepancies** | `/numerical` | Surfaces numerical divergences (patriarchal ages, census figures, temple dimensions, etc.) across MT, LXX, and Samaritan Pentateuch, ranking competing theories by confidence. Prompt: `numerical_v3`. |
-| 4 | **Ancient Witness Bridge (DSS)** | `/dss` | Compare a passage across five ancient witnesses: Dead Sea Scrolls (1QIsaᵃ and others), Samaritan Pentateuch, Peshitta (Syriac OT), MT, and LXX. Shows which witnesses attest the passage, alignment, and specific divergences. Prompt: `dss_v6`. |
-| 5 | **Theological Revisions** | `/theological` | Identifies theologically motivated textual changes — anthropomorphism avoidance, messianic heightening, polemical alterations, harmonization. Prompt: `theological_v1`. |
+| 4 | **Ancient Witness Bridge (DSS)** | `/dss` | Compare a passage across five ancient witnesses: Dead Sea Scrolls (1QIsaᵃ and others), Samaritan Pentateuch, Peshitta (Syriac OT), MT, and LXX. Shows which witnesses attest the passage, alignment, and specific divergences. Prompt: `dss_v7`. |
+| 5 | **Theological Revisions** | `/theological` | Identifies theologically motivated textual changes — anthropomorphism avoidance, messianic heightening, polemical alterations, harmonization. Prompt: `theological_v2`. |
 | 6 | **Patristic Citation Tracker** | `/patristic` | Traces Church Father citations (1st–5th century), identifies the text form used, and visualizes text-form distribution as a bar chart. Each citation links to [BiblIndex](https://www.biblindex.org) for primary source access. Prompt: `patristic_v3`. |
 | 7 | **Back-Translation Workbench** | `/backtranslation` | Reconstructs the probable Hebrew Vorlage word-by-word from LXX Greek using Tov's retroversion methodology, with confidence levels and summary assessments. Prompt: `backtranslation_v1`. |
-| 8 | **Manuscript Genealogy** | `/genealogy` | Visualizes the full transmission stemma of a biblical book — from proto-text through manuscript families (MT, LXX, DSS, SP, Peshitta, Targum, Vulgate) to modern critical editions. Prompt: `genealogy_v1`. |
+| 8 | **Manuscript Genealogy** | `/genealogy` | Visualizes the full transmission stemma of a biblical book — from proto-text through manuscript families (MT, LXX, DSS, SP, Peshitta, Targum, Vulgate) to modern critical editions. Prompt: `genealogy_v2`. |
 | 9 | **NT Use of OT Analyzer** | `/nt-ot` | Enter a New Testament passage and identify every OT allusion it contains. For each allusion, determines whether the NT author cited MT, LXX, an independent form, or a conflation — applying the methodology of Beale & Carson, Stanley, and Hays. Prompt: `nt_ot_v1`. |
 | 10 | **Chiasm & Literary Structure Detector** | `/chiasm` | Detects concentric literary structures (A-B-C-B′-A′), parallel panels, inclusios, and refrains. Maps each structural element with its mirror partner and identifies the focal turning point. Methodology: Lund, Welch, Dorsey, Walsh. Prompt: `chiasm_v1`. |
 | 11 | **Source Criticism Tool** | `/source` | Assigns documentary source designations (J, E, D, P, Redactor) to Pentateuchal units using classical criteria: divine name usage (YHWH vs. Elohim), vocabulary patterns, doublets, and narrative tensions. Scholarly grounding: Wellhausen, Friedman, Baden. Prompt: `source_v1`. |
+| 12 | **Targum Comparator** | `/targum` | Compares Targum Onkelos (Torah) and Targum Jonathan (Prophets) against MT and LXX; analyzes Memra substitutions, anthropomorphism avoidance, targumic expansions, and messianic reinterpretation. Prompt: `targum_v1`. |
+| 13 | **NT Textual Tradition Analyzer** | `/nt-text` | Manuscript family support (Alexandrian, Western, Byzantine, Caesarean), Metzger A/B/C/D confidence ratings, variant register, and extended analysis for all major disputed passages. Prompt: `nt_text_v1`. |
 
 ---
 
@@ -60,6 +62,8 @@ Free, open-access web tool for biblical textual criticism at [bibcrit.com](https
 | **SP** | [dt-ucph/sp](https://github.com/dt-ucph/sp) via Text-Fabric | `data/corpora/sp_etcbc/` |
 | **GNT** | [SBLGNT](https://github.com/LogosBible/SBLGNT) | `data/corpora/gnt_opengnt/` |
 | **PESH** | [ETCBC/peshitta](https://github.com/ETCBC/peshitta) via Text-Fabric (SEDRA / Beth Mardutho) — 39 OT books, 308,863 words | `data/corpora/pesh_etcbc/` |
+| **TARG** | [Sefaria API](https://www.sefaria.org) — Targum Onkelos (Torah, 5 books) + Targum Jonathan (Prophets, 21 books), 240,297 Aramaic word tokens | `data/corpora/targ_sefaria/` |
+| **VUL** | [scrollmapper/bible_databases](https://github.com/scrollmapper/bible_databases) — Clementine Vulgate, 66 books, 569,588 Latin word tokens | `data/corpora/vul_clementine/` |
 
 **License note:** The ETCBC corpora (MT/BHSA, DSS, and Peshitta) are released under [CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/). The app code is Apache 2.0; the corpus data it ingests retains its own license terms. Do not use the ingested ETCBC data for commercial purposes without a separate agreement with ETCBC.
 
@@ -442,13 +446,13 @@ The default spend cap is `$10.00/month`. Raise it via `BIBCRIT_API_CAP_USD` in t
 ### 🔜 Phase 2 — Months 3–4: New Traditions
 
 **Corpus**
-- [ ] **Targum corpus** (Onkelos + Jonathan) — Aramaic Targumim from CAL / ETCBC; register `targum_cal/` tradition
-- [ ] **Vulgate corpus** (Jerome) — Latin OT + NT from CLTK / Open Scriptures; register `vulgate_cltk/` tradition
+- [x] **Targum corpus** (Onkelos + Jonathan) — Sefaria API; 26 books; 240,297 Aramaic word tokens in `targ_sefaria/`
+- [x] **Vulgate corpus** (Jerome) — scrollmapper/bible_databases Clementine Vulgate; 66 books; 569,588 Latin word tokens in `vul_clementine/`
 - [ ] **LXX variant MSS** — add Sinaiticus and Alexandrinus alongside Vaticanus; unlocks three-way LXX manuscript comparison
 
 **New tools**
-- [ ] **Targum Comparator** (`/targum`) — MT vs. Targum word-level comparison; expansion types: theological, halakhic, messianic, divine-name substitution (Memra/Shekhina), haggadic; Sperber / McNamara methodology
-- [ ] **NT Textual Tradition Analyzer** (`/nt-text`) — classify NT variants across Byzantine, Alexandrian, and Western text types; UBS/NA apparatus data + AI analysis; Metzger methodology
+- [x] **Targum Comparator** (`/targum`) — MT vs. Targum word-level comparison; expansion types: theological, halakhic, messianic, divine-name substitution (Memra/Shekhina), haggadic; Sperber / McNamara methodology
+- [x] **NT Textual Tradition Analyzer** (`/nt-text`) — classify NT variants across Byzantine, Alexandrian, and Western text types; UBS/NA apparatus data + AI analysis; Metzger methodology
 
 **Infrastructure**
 - [ ] **Hebrew RTL UI** (`he` locale) — full RTL layout; makes BibCrit usable by Israeli biblical scholars
@@ -477,8 +481,8 @@ The default spend cap is `$10.00/month`. Raise it via `BIBCRIT_API_CAP_USD` in t
 
 | Metric | v2.2 now | v3.0 (+6 months) |
 |---|---|---|
-| Analysis tools | 11 | 15 |
-| Corpus traditions | 5 | 9 |
+| Analysis tools | 13 | 15 |
+| Corpus traditions | 7 | 9 |
 | UI languages | 2 (EN, ES) | 5 (+ HE, NL, PT) |
 | First-in-world open tools | 5 | 11 |
 

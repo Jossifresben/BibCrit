@@ -10,7 +10,10 @@ import json
 import os
 import re
 import threading
+import time
+from queue import Queue, Empty
 from datetime import datetime
+from biblical_core.json_stream import extract_next_section
 
 DIVERGENCE_MODEL  = 'claude-sonnet-4-6'
 SCRIBAL_MODEL     = 'claude-sonnet-4-6'
@@ -27,6 +30,15 @@ NT_TEXT_MODEL     = 'claude-sonnet-4-6'
 
 _SONNET_COST_IN  = 3.0  / 1_000_000   # $3 per MTok input (claude-sonnet-4-6)
 _SONNET_COST_OUT = 15.0 / 1_000_000   # $15 per MTok output (claude-sonnet-4-6)
+
+# Keys present in every cached result dict that are NOT analysis sections.
+# Blueprint SSE endpoints import this to filter the cache-hit section-event loop
+# so the client only receives keys that have DOM render targets.
+CACHE_META_KEYS = frozenset((
+    'cached_at', 'model_version', 'prompt_version',
+    'reference', 'book', 'discovery_ready', 'cache_key',
+    'parse_error', 'parse_error_len',
+))
 
 # Diagnostic passages used to build sample_passages for scribal profiling
 _SCRIBAL_SAMPLE_REFS = {
@@ -226,6 +238,67 @@ class ClaudePipeline:
             except ImportError:
                 pass
 
+    def _call_streaming(self, system: str, user_content: str,
+                        model: str, max_tokens: int,
+                        prefill: str = '{'):
+        """Generator: yields (key, value) pairs as top-level JSON sections complete.
+
+        Uses the Anthropic streaming API so sections arrive as Claude writes them,
+        not all at once. Waits for the opening '{' in the token stream before
+        starting section parsing (no assistant prefill — incompatible with
+        claude-sonnet-4-6 which returns 400 for prefill requests).
+
+        The final item yielded is always ``(None, (in_tok, out_tok, full_text))``:
+        an epilogue carrying token usage and the full raw response for caching.
+        Callers must handle ``key is None`` to consume this epilogue.
+
+        Yields:
+            (key: str, value: any) tuples for each completed JSON section,
+            followed by (None, (in_tok: int, out_tok: int, full_text: str)).
+        """
+        if not self._client:
+            yield None, (0, 0, '{}')
+            return
+
+        full_text = ''
+        buffer = ''         # content AFTER the opening {
+        _json_started = False
+
+        with self._client.messages.stream(
+            model=model,
+            max_tokens=max_tokens,
+            system=system,
+            messages=[
+                {'role': 'user', 'content': user_content},
+            ],
+        ) as stream:
+            for text_chunk in stream.text_stream:
+                full_text += text_chunk
+                if not _json_started:
+                    # Skip preamble text until we see the opening {
+                    search = buffer + text_chunk
+                    idx = search.find('{')
+                    if idx == -1:
+                        buffer = search[-20:]   # keep a small tail for multi-chunk {
+                        continue
+                    _json_started = True
+                    buffer = search[idx + 1:]   # content AFTER the {
+                else:
+                    buffer += text_chunk
+
+                while True:
+                    result = extract_next_section(buffer)
+                    if result is None:
+                        break
+                    key, value, buffer = result
+                    yield key, value
+
+            final_msg = stream.get_final_message()
+            in_tok = final_msg.usage.input_tokens
+            out_tok = final_msg.usage.output_tokens
+
+        yield None, (in_tok, out_tok, full_text)
+
     # ── Public interface ───────────────────────────────────────────────────
 
     @property
@@ -384,14 +457,13 @@ class ClaudePipeline:
                 system=_TRANSLATION_SYSTEM,
                 messages=[
                     {'role': 'user',      'content': user_content},
-                    {'role': 'assistant', 'content': '{'},
                 ],
             )
             cost = (response.usage.input_tokens  * _SONNET_COST_IN +
                     response.usage.output_tokens * _SONNET_COST_OUT)
             self.record_spend(cost)
 
-            raw        = '{' + response.content[0].text
+            raw        = response.content[0].text
             translated = _parse_json_response(raw)
             if translated.get('error'):
                 return data  # fallback to English on parse failure
@@ -684,7 +756,6 @@ class ClaudePipeline:
             system=_BACKTRANSLATION_SYSTEM,
             messages=[
                 {'role': 'user',      'content': user_content},
-                {'role': 'assistant', 'content': '{'},
             ],
         )
 
@@ -692,10 +763,76 @@ class ClaudePipeline:
                 response.usage.output_tokens * _SONNET_COST_OUT)
         self.record_spend(cost)
 
-        raw  = '{' + response.content[0].text
+        raw  = response.content[0].text
         data = _parse_json_response(raw)
         self.save_cache(reference, tool, prompt_version, model, data)
         return data
+
+    def stream_backtranslation(self, reference: str, lxx_text: str, mt_text: str):
+        """Streaming version of analyze_backtranslation().
+
+        Yields (key, value) pairs as each JSON section completes,
+        followed by a final epilogue: ``(None, final_result_dict)``.
+        """
+        model          = DIVERGENCE_MODEL
+        prompt_version = 'v1'
+        tool           = 'backtranslation'
+
+        cached = self.get_cached(reference, tool, prompt_version, model)
+        if cached:
+            for key, value in cached.items():
+                yield key, value
+                time.sleep(0.04)
+            yield None, cached
+            return
+
+        if not self._client:
+            yield None, {'error': 'No API key configured.'}
+            return
+
+        budget = self.get_budget()
+        if budget['spend_usd'] >= self._cap_usd:
+            yield None, {'error': 'Monthly budget reached.'}
+            return
+
+        template = self.load_prompt('backtranslation', prompt_version)
+        user_content = (
+            template
+            .replace('{{REFERENCE}}', reference)
+            .replace('{{LXX_TEXT}}', lxx_text)
+            .replace('{{MT_TEXT}}',  mt_text)
+        ) if template else (
+            f'Reference: {reference}\nLXX: {lxx_text}\nMT: {mt_text}\n'
+            'Reconstruct the Hebrew Vorlage. Return JSON with reconstructed_words array.'
+        )
+
+        sections: dict = {}
+        in_tok = out_tok = 0
+        full_text = '{'   # safe default if _call_streaming drops its terminal yield
+        try:
+            for key, value in self._call_streaming(
+                system=_BACKTRANSLATION_SYSTEM,
+                user_content=user_content,
+                model=model,
+                max_tokens=8192,
+            ):
+                if key is None:
+                    in_tok, out_tok, full_text = value
+                else:
+                    sections[key] = value
+                    yield key, value
+        except Exception as exc:
+            yield None, {'error': str(exc)}
+            return
+        finally:
+            self.record_spend(in_tok * _SONNET_COST_IN + out_tok * _SONNET_COST_OUT)
+
+        data = _parse_json_response(full_text)
+        if 'parse_error' not in data:
+            self.save_cache(reference, tool, prompt_version, model, data)
+            yield None, data
+        else:
+            yield None, (sections if sections else data)
 
     def analyze_scribal(self, book_name: str, sample_passages: str) -> dict:
         """Return scribal tendency profile for an LXX book.
@@ -747,7 +884,6 @@ class ClaudePipeline:
             system=_SCRIBAL_SYSTEM,
             messages=[
                 {'role': 'user',      'content': user_content},
-                {'role': 'assistant', 'content': '{'},
             ],
         )
 
@@ -755,10 +891,75 @@ class ClaudePipeline:
                 response.usage.output_tokens * _SONNET_COST_OUT)
         self.record_spend(cost)
 
-        raw  = '{' + response.content[0].text
+        raw  = response.content[0].text
         data = _parse_json_response(raw)
         self.save_cache(book_name, tool, prompt_version, model, data)
         return data
+
+    def stream_scribal(self, book_name: str, sample_passages: str):
+        """Streaming version of analyze_scribal().
+
+        Yields (key, value) pairs as each JSON section completes,
+        followed by a final epilogue: ``(None, final_result_dict)``.
+        """
+        model          = SCRIBAL_MODEL
+        prompt_version = 'v1'
+        tool           = 'scribal'
+
+        cached = self.get_cached(book_name, tool, prompt_version, model)
+        if cached:
+            for key, value in cached.items():
+                yield key, value
+                time.sleep(0.04)
+            yield None, cached
+            return
+
+        if not self._client:
+            yield None, {'error': 'No API key configured.'}
+            return
+
+        budget = self.get_budget()
+        if budget['spend_usd'] >= self._cap_usd:
+            yield None, {'error': 'Monthly budget reached.'}
+            return
+
+        template = self.load_prompt('scribal', prompt_version)
+        user_content = (
+            template
+            .replace('{{BOOK_NAME}}', book_name)
+            .replace('{{SAMPLE_PASSAGES}}', sample_passages)
+        ) if template else (
+            f'Book: {book_name}\nSample passages:\n{sample_passages}\n'
+            'Profile this LXX translator. Return JSON with translator_profile and dimensions.'
+        )
+
+        sections: dict = {}
+        in_tok = out_tok = 0
+        full_text = '{'   # safe default if _call_streaming drops its terminal yield
+        try:
+            for key, value in self._call_streaming(
+                system=_SCRIBAL_SYSTEM,
+                user_content=user_content,
+                model=model,
+                max_tokens=8192,
+            ):
+                if key is None:
+                    in_tok, out_tok, full_text = value
+                else:
+                    sections[key] = value
+                    yield key, value
+        except Exception as exc:
+            yield None, {'error': str(exc)}
+            return
+        finally:
+            self.record_spend(in_tok * _SONNET_COST_IN + out_tok * _SONNET_COST_OUT)
+
+        data = _parse_json_response(full_text)
+        if 'parse_error' not in data:
+            self.save_cache(book_name, tool, prompt_version, model, data)
+            yield None, data
+        else:
+            yield None, (sections if sections else data)
 
     def analyze_numerical(self, reference: str, sp_text: str = '') -> dict:
         """Return numerical discrepancy analysis for a passage.
@@ -813,7 +1014,6 @@ class ClaudePipeline:
             system=_NUMERICAL_SYSTEM,
             messages=[
                 {'role': 'user',      'content': user_content},
-                {'role': 'assistant', 'content': '{'},
             ],
         )
 
@@ -821,10 +1021,74 @@ class ClaudePipeline:
                 response.usage.output_tokens * _SONNET_COST_OUT)
         self.record_spend(cost)
 
-        raw  = '{' + response.content[0].text
+        raw  = response.content[0].text
         data = _parse_json_response(raw)
         self.save_cache(reference, tool, prompt_version, model, data)
         return data
+
+    def stream_numerical(self, reference: str, sp_text: str = ''):
+        """Streaming version of analyze_numerical().
+
+        Yields (key, value) pairs as each JSON section completes,
+        followed by a final epilogue: ``(None, final_result_dict)``.
+        """
+        model          = NUMERICAL_MODEL
+        prompt_version = 'v3'
+        tool           = 'numerical'
+
+        cached = self.get_cached(reference, tool, prompt_version, model)
+        if cached:
+            for key, value in cached.items():
+                yield key, value
+                time.sleep(0.04)
+            yield None, cached
+            return
+
+        if not self._client:
+            yield None, {'error': 'No API key configured.'}
+            return
+
+        budget = self.get_budget()
+        if budget['spend_usd'] >= self._cap_usd:
+            yield None, {'error': 'Monthly budget reached.'}
+            return
+
+        template = self.load_prompt('numerical', prompt_version)
+        user_content = (
+            template.replace('{{REFERENCE}}', reference).replace('{{SP_TEXT}}', sp_text)
+        ) if template else (
+            f'Reference: {reference}\n'
+            + (f'Samaritan Pentateuch corpus text:\n{sp_text}\n' if sp_text else '')
+            + 'Analyze numerical divergences between MT, LXX, and SP. Return JSON.'
+        )
+
+        sections: dict = {}
+        in_tok = out_tok = 0
+        full_text = '{'   # safe default if _call_streaming drops its terminal yield
+        try:
+            for key, value in self._call_streaming(
+                system=_NUMERICAL_SYSTEM,
+                user_content=user_content,
+                model=model,
+                max_tokens=8192,
+            ):
+                if key is None:
+                    in_tok, out_tok, full_text = value
+                else:
+                    sections[key] = value
+                    yield key, value
+        except Exception as exc:
+            yield None, {'error': str(exc)}
+            return
+        finally:
+            self.record_spend(in_tok * _SONNET_COST_IN + out_tok * _SONNET_COST_OUT)
+
+        data = _parse_json_response(full_text)
+        if 'parse_error' not in data:
+            self.save_cache(reference, tool, prompt_version, model, data)
+            yield None, data
+        else:
+            yield None, (sections if sections else data)
 
     def analyze_dss(self, reference: str, mt_text: str = '',
                     lxx_text: str = '', dss_text: str = '',
@@ -892,7 +1156,6 @@ class ClaudePipeline:
             system=_DSS_SYSTEM,
             messages=[
                 {'role': 'user',      'content': user_content},
-                {'role': 'assistant', 'content': '{'},
             ],
         )
 
@@ -900,7 +1163,7 @@ class ClaudePipeline:
                 response.usage.output_tokens * _SONNET_COST_OUT)
         self.record_spend(cost)
 
-        raw  = '{' + response.content[0].text
+        raw  = response.content[0].text
         data = _parse_json_response(raw)
 
         # Fallback: if SP text was provided but Claude omitted sp_witness, build minimal card
@@ -947,6 +1210,154 @@ class ClaudePipeline:
 
         self.save_cache(reference, tool, prompt_version, model, data)
         return data
+
+    def stream_dss(self, reference: str, mt_text: str = '',
+                   lxx_text: str = '', dss_text: str = '',
+                   sp_text: str = '', pesh_text: str = '',
+                   vul_text: str = ''):
+        """Streaming version of analyze_dss().
+
+        Yields (key, value) pairs as each JSON section completes,
+        followed by a final epilogue: ``(None, final_result_dict)``.
+        """
+        model          = DSS_MODEL
+        prompt_version = 'v7'
+        tool           = 'dss'
+
+        cached = self.get_cached(reference, tool, prompt_version, model)
+        if cached:
+            for key, value in cached.items():
+                yield key, value
+                time.sleep(0.04)
+            yield None, cached
+            return
+
+        if not self._client:
+            yield None, {'error': 'No API key configured.'}
+            return
+
+        budget = self.get_budget()
+        if budget['spend_usd'] >= self._cap_usd:
+            yield None, {'error': 'Monthly budget reached.'}
+            return
+
+        template = self.load_prompt('dss', prompt_version)
+        user_content = (
+            template
+            .replace('{{REFERENCE}}', reference)
+            .replace('{{MT_TEXT}}',   mt_text)
+            .replace('{{LXX_TEXT}}',  lxx_text)
+            .replace('{{DSS_TEXT}}',  dss_text)
+            .replace('{{SP_TEXT}}',   sp_text)
+            .replace('{{PESH_TEXT}}', pesh_text)
+            .replace('{{VUL_TEXT}}',  vul_text)
+        ) if template else (
+            f'Reference: {reference}\nMT: {mt_text}\nLXX: {lxx_text}\n'
+            f'Dead Sea Scrolls: {dss_text or "(not attested)"}\n'
+            f'SP: {sp_text or "(not applicable)"}\n'
+            f'Peshitta: {pesh_text or "(corpus not loaded — use training knowledge)"}\n'
+            f'Vulgate: {vul_text or "(corpus not loaded)"}\n'
+            'Return JSON with: dss_manuscripts (DSS scrolls only), sp_witness, pesh_witness, '
+            'synthesis, synthesis_plain, textual_history_implication, bibcrit_assessment.'
+        )
+
+        sections: dict = {}
+        in_tok = out_tok = 0
+        full_text = '{'   # safe default if _call_streaming drops its terminal yield
+        try:
+            for key, value in self._call_streaming(
+                system=_DSS_SYSTEM,
+                user_content=user_content,
+                model=model,
+                max_tokens=8192,
+            ):
+                if key is None:
+                    in_tok, out_tok, full_text = value
+                else:
+                    sections[key] = value
+                    yield key, value
+        except Exception as exc:
+            yield None, {'error': str(exc)}
+            return
+        finally:
+            self.record_spend(in_tok * _SONNET_COST_IN + out_tok * _SONNET_COST_OUT)
+
+        data = _parse_json_response(full_text)
+
+        # Fallback witnesses (same as analyze_dss)
+        if sp_text and not data.get('sp_witness'):
+            data['sp_witness'] = {
+                'present': True,
+                'alignment': 'independent',
+                'alignment_confidence': 0.0,
+                'sp_text': sp_text,
+                'divergences': [],
+                'overall_note': (
+                    'Samaritan Pentateuch text is available for this passage '
+                    'but alignment analysis could not be generated automatically.'
+                ),
+            }
+
+        if pesh_text and not data.get('pesh_witness'):
+            data['pesh_witness'] = {
+                'present': True,
+                'alignment': 'independent',
+                'alignment_confidence': 0.0,
+                'pesh_text': pesh_text,
+                'divergences': [],
+                'overall_note': (
+                    'Peshitta text is available for this passage '
+                    'but alignment analysis could not be generated automatically.'
+                ),
+            }
+
+        if vul_text and not data.get('vul_witness'):
+            data['vul_witness'] = {
+                'present': True,
+                'alignment': 'independent',
+                'alignment_confidence': 0.0,
+                'vul_text': vul_text,
+                'key_readings': [],
+                'overall_note': (
+                    'Vulgate text is available for this passage '
+                    'but alignment analysis could not be generated automatically.'
+                ),
+            }
+
+        if 'parse_error' not in data:
+            self.save_cache(reference, tool, prompt_version, model, data)
+            yield None, data
+        else:
+            fallback = sections if sections else data
+            # Ensure witness fallbacks land in partial-sections path too
+            if sp_text and not fallback.get('sp_witness'):
+                fallback['sp_witness'] = data.get('sp_witness') or {
+                    'present': True, 'alignment': 'independent',
+                    'alignment_confidence': 0.0, 'sp_text': sp_text,
+                    'divergences': [], 'overall_note': (
+                        'Samaritan Pentateuch text is available for this passage '
+                        'but alignment analysis could not be generated automatically.'
+                    ),
+                }
+            if pesh_text and not fallback.get('pesh_witness'):
+                fallback['pesh_witness'] = data.get('pesh_witness') or {
+                    'present': True, 'alignment': 'independent',
+                    'alignment_confidence': 0.0, 'pesh_text': pesh_text,
+                    'divergences': [], 'overall_note': (
+                        'Peshitta text is available for this passage '
+                        'but alignment analysis could not be generated automatically.'
+                    ),
+                }
+            if vul_text and not fallback.get('vul_witness'):
+                fallback['vul_witness'] = data.get('vul_witness') or {
+                    'present': True, 'alignment': 'independent',
+                    'alignment_confidence': 0.0, 'vul_text': vul_text,
+                    'key_readings': [], 'overall_note': (
+                        'Vulgate text is available for this passage '
+                        'but alignment analysis could not be generated automatically.'
+                    ),
+                }
+            yield None, fallback
 
     def analyze_theological(self, reference: str, vul_text: str = '') -> dict:
         """Return theologically motivated revision analysis for a book or passage.
@@ -998,7 +1409,6 @@ class ClaudePipeline:
             system=_THEOLOGICAL_SYSTEM,
             messages=[
                 {'role': 'user',      'content': user_content},
-                {'role': 'assistant', 'content': '{'},
             ],
         )
 
@@ -1006,10 +1416,80 @@ class ClaudePipeline:
                 response.usage.output_tokens * _SONNET_COST_OUT)
         self.record_spend(cost)
 
-        raw  = '{' + response.content[0].text
+        raw  = response.content[0].text
         data = _parse_json_response(raw)
         self.save_cache(reference, tool, prompt_version, model, data)
         return data
+
+    def stream_theological(self, reference: str, vul_text: str = ''):
+        """Streaming version of analyze_theological().
+
+        Yields (key, value) pairs as each JSON section completes,
+        followed by a final epilogue: ``(None, final_result_dict)``.
+        The epilogue is always the last item; callers must handle ``key is None``.
+        Caches the complete result internally.
+        """
+        model          = THEOLOGICAL_MODEL
+        prompt_version = 'v2'
+        tool           = 'theological'
+
+        # Cache hit: yield sections then epilogue
+        cached = self.get_cached(reference, tool, prompt_version, model)
+        if cached:
+            for key, value in cached.items():
+                yield key, value
+                time.sleep(0.04)
+            yield None, cached
+            return
+
+        if not self._client:
+            yield None, {'error': 'No API key configured.'}
+            return
+
+        budget = self.get_budget()
+        if budget['spend_usd'] >= self._cap_usd:
+            yield None, {'error': 'Monthly budget reached.'}
+            return
+
+        template = self.load_prompt('theological', prompt_version)
+        user_content = (
+            template
+            .replace('{{REFERENCE}}', reference)
+            .replace('{{VUL_TEXT}}', vul_text)
+        ) if template else (
+            f'Reference: {reference}\nVulgate: {vul_text or "(not loaded)"}\n'
+            'Identify theologically motivated textual changes. Return JSON.'
+        )
+
+        sections: dict = {}
+        in_tok = out_tok = 0
+        full_text = '{'   # safe default if _call_streaming drops its terminal yield
+        try:
+            for key, value in self._call_streaming(
+                system=_THEOLOGICAL_SYSTEM,
+                user_content=user_content,
+                model=model,
+                max_tokens=8192,
+            ):
+                if key is None:
+                    # Epilogue from _call_streaming: (in_tok, out_tok, full_text)
+                    in_tok, out_tok, full_text = value
+                else:
+                    sections[key] = value
+                    yield key, value
+        except Exception as exc:
+            yield None, {'error': str(exc)}
+            return
+        finally:
+            self.record_spend(in_tok * _SONNET_COST_IN + out_tok * _SONNET_COST_OUT)
+
+        data = _parse_json_response(full_text)
+        if 'parse_error' not in data:
+            self.save_cache(reference, tool, prompt_version, model, data)
+            yield None, data
+        else:
+            # Fallback: reconstruct from yielded sections
+            yield None, (sections if sections else data)
 
     def analyze_patristic(self, reference: str, gnt_text: str = '') -> dict:
         """Return patristic citation analysis for a passage.
@@ -1063,7 +1543,6 @@ class ClaudePipeline:
             system=_PATRISTIC_SYSTEM,
             messages=[
                 {'role': 'user',      'content': user_content},
-                {'role': 'assistant', 'content': '{'},
             ],
         )
 
@@ -1071,10 +1550,74 @@ class ClaudePipeline:
                 response.usage.output_tokens * _SONNET_COST_OUT)
         self.record_spend(cost)
 
-        raw  = '{' + response.content[0].text
+        raw  = response.content[0].text
         data = _parse_json_response(raw)
         self.save_cache(reference, tool, prompt_version, model, data)
         return data
+
+    def stream_patristic(self, reference: str, gnt_text: str = ''):
+        """Streaming version of analyze_patristic().
+
+        Yields (key, value) pairs as each JSON section completes,
+        followed by a final epilogue: ``(None, final_result_dict)``.
+        """
+        model          = PATRISTIC_MODEL
+        prompt_version = 'v3'
+        tool           = 'patristic'
+
+        cached = self.get_cached(reference, tool, prompt_version, model)
+        if cached:
+            for key, value in cached.items():
+                yield key, value
+                time.sleep(0.04)
+            yield None, cached
+            return
+
+        if not self._client:
+            yield None, {'error': 'No API key configured.'}
+            return
+
+        budget = self.get_budget()
+        if budget['spend_usd'] >= self._cap_usd:
+            yield None, {'error': 'Monthly budget reached.'}
+            return
+
+        template = self.load_prompt('patristic', prompt_version)
+        user_content = (
+            template.replace('{{REFERENCE}}', reference).replace('{{GNT_TEXT}}', gnt_text)
+        ) if template else (
+            f'Reference: {reference}\n'
+            + (f'GNT (SBLGNT) corpus text: {gnt_text}\n' if gnt_text else '')
+            + 'Trace patristic citations and text forms. Return JSON with citations array.'
+        )
+
+        sections: dict = {}
+        in_tok = out_tok = 0
+        full_text = '{'   # safe default if _call_streaming drops its terminal yield
+        try:
+            for key, value in self._call_streaming(
+                system=_PATRISTIC_SYSTEM,
+                user_content=user_content,
+                model=model,
+                max_tokens=8192,
+            ):
+                if key is None:
+                    in_tok, out_tok, full_text = value
+                else:
+                    sections[key] = value
+                    yield key, value
+        except Exception as exc:
+            yield None, {'error': str(exc)}
+            return
+        finally:
+            self.record_spend(in_tok * _SONNET_COST_IN + out_tok * _SONNET_COST_OUT)
+
+        data = _parse_json_response(full_text)
+        if 'parse_error' not in data:
+            self.save_cache(reference, tool, prompt_version, model, data)
+            yield None, data
+        else:
+            yield None, (sections if sections else data)
 
     def analyze_genealogy(self, book: str, vul_text: str = '') -> dict:
         """Return manuscript transmission genealogy (stemma) for a biblical book.
@@ -1128,7 +1671,6 @@ class ClaudePipeline:
             system=_GENEALOGY_SYSTEM,
             messages=[
                 {'role': 'user',      'content': user_content},
-                {'role': 'assistant', 'content': '{'},
             ],
         )
 
@@ -1136,11 +1678,79 @@ class ClaudePipeline:
                 response.usage.output_tokens * _SONNET_COST_OUT)
         self.record_spend(cost)
 
-        raw  = '{' + response.content[0].text
+        raw  = response.content[0].text
         data = _parse_json_response(raw)
         data['discovery_ready'] = True
         self.save_cache(book, tool, prompt_version, model, data)
         return data
+
+    def stream_genealogy(self, book: str, vul_text: str = ''):
+        """Streaming version of analyze_genealogy().
+
+        Yields (key, value) pairs as each JSON section completes,
+        followed by a final epilogue: ``(None, final_result_dict)``.
+        """
+        model          = GENEALOGY_MODEL
+        prompt_version = 'v2'
+        tool           = 'genealogy'
+
+        cached = self.get_cached(book, tool, prompt_version, model)
+        if cached:
+            for key, value in cached.items():
+                yield key, value
+                time.sleep(0.04)
+            yield None, cached
+            return
+
+        if not self._client:
+            yield None, {'error': 'No API key configured.'}
+            return
+
+        budget = self.get_budget()
+        if budget['spend_usd'] >= self._cap_usd:
+            yield None, {'error': 'Monthly budget reached.'}
+            return
+
+        template = self.load_prompt('genealogy', prompt_version)
+        user_content = (
+            template
+            .replace('{{BOOK}}',     book)
+            .replace('{{VUL_TEXT}}', vul_text)
+        ) if template else (
+            f'Book: {book}\nVulgate sample: {vul_text or "(not loaded)"}\n'
+            'Construct a manuscript transmission genealogy (stemma). Return JSON with stemma_nodes and stemma_edges arrays.'
+        )
+
+        sections: dict = {}
+        in_tok = out_tok = 0
+        full_text = '{'   # safe default if _call_streaming drops its terminal yield
+        try:
+            for key, value in self._call_streaming(
+                system=_GENEALOGY_SYSTEM,
+                user_content=user_content,
+                model=model,
+                max_tokens=8192,
+            ):
+                if key is None:
+                    in_tok, out_tok, full_text = value
+                else:
+                    sections[key] = value
+                    yield key, value
+        except Exception as exc:
+            yield None, {'error': str(exc)}
+            return
+        finally:
+            self.record_spend(in_tok * _SONNET_COST_IN + out_tok * _SONNET_COST_OUT)
+
+        data = _parse_json_response(full_text)
+        data['discovery_ready'] = True
+        if 'parse_error' not in data:
+            self.save_cache(book, tool, prompt_version, model, data)
+            yield None, data
+        else:
+            fallback = sections if sections else data
+            fallback['discovery_ready'] = True
+            yield None, fallback
 
     def analyze_targum(self, reference: str, mt_text: str = '',
                        lxx_text: str = '', targ_text: str = '',
@@ -1207,7 +1817,6 @@ class ClaudePipeline:
             system=_TARGUM_SYSTEM,
             messages=[
                 {'role': 'user',      'content': user_content},
-                {'role': 'assistant', 'content': '{'},
             ],
         )
 
@@ -1215,25 +1824,98 @@ class ClaudePipeline:
                 response.usage.output_tokens * _SONNET_COST_OUT)
         self.record_spend(cost)
 
-        raw  = '{' + response.content[0].text
+        raw  = response.content[0].text
         data = _parse_json_response(raw)
 
         # Retry once if JSON parsing failed; never persist a parse error to cache.
         if 'parse_error' in data:
             resp2 = self._client.messages.create(
                 model=model, max_tokens=8192, system=_TARGUM_SYSTEM,
-                messages=[{'role': 'user', 'content': user_content},
-                           {'role': 'assistant', 'content': '{'}],
+                messages=[{'role': 'user', 'content': user_content}],
             )
             self.record_spend(resp2.usage.input_tokens * _SONNET_COST_IN +
                               resp2.usage.output_tokens * _SONNET_COST_OUT)
-            data2 = _parse_json_response('{' + resp2.content[0].text)
+            data2 = _parse_json_response(resp2.content[0].text)
             if 'parse_error' not in data2:
                 data = data2
 
         if 'parse_error' not in data:
             self.save_cache(reference, tool, prompt_version, model, data)
         return data
+
+    def stream_targum(self, reference: str, mt_text: str = '',
+                      lxx_text: str = '', targ_text: str = '',
+                      manuscript: str = 'Onkelos'):
+        """Streaming version of analyze_targum().
+
+        Yields (key, value) pairs as each JSON section completes,
+        followed by a final epilogue: ``(None, final_result_dict)``.
+        No JSON parse retry — if parse fails, result is not cached.
+        """
+        model          = TARGUM_MODEL
+        prompt_version = 'v1'
+        tool           = 'targum'
+
+        cached = self.get_cached(reference, tool, prompt_version, model)
+        if cached:
+            for key, value in cached.items():
+                yield key, value
+                time.sleep(0.04)
+            yield None, cached
+            return
+
+        if not self._client:
+            yield None, {'error': 'No API key configured.'}
+            return
+
+        budget = self.get_budget()
+        if budget['spend_usd'] >= self._cap_usd:
+            yield None, {'error': 'Monthly budget reached.'}
+            return
+
+        template = self.load_prompt('targum', prompt_version)
+        user_content = (
+            template
+            .replace('{{REFERENCE}}',  reference)
+            .replace('{{MANUSCRIPT}}', manuscript)
+            .replace('{{MT_TEXT}}',    mt_text)
+            .replace('{{LXX_TEXT}}',   lxx_text)
+            .replace('{{TARG_TEXT}}',  targ_text)
+        ) if template else (
+            f'Reference: {reference}\nManuscript: {manuscript}\n'
+            f'MT: {mt_text}\nLXX: {lxx_text}\nTargum: {targ_text or "(not available)"}\n'
+            'Analyze Targum rendering. Return JSON with synthesis, rendering_fidelity, '
+            'theological_modifications, targumic_expansions, messianic_reinterpretation, '
+            'lxx_alignment, key_divergences, assessment, citations.'
+        )
+
+        sections: dict = {}
+        in_tok = out_tok = 0
+        full_text = '{'   # safe default if _call_streaming drops its terminal yield
+        try:
+            for key, value in self._call_streaming(
+                system=_TARGUM_SYSTEM,
+                user_content=user_content,
+                model=model,
+                max_tokens=8192,
+            ):
+                if key is None:
+                    in_tok, out_tok, full_text = value
+                else:
+                    sections[key] = value
+                    yield key, value
+        except Exception as exc:
+            yield None, {'error': str(exc)}
+            return
+        finally:
+            self.record_spend(in_tok * _SONNET_COST_IN + out_tok * _SONNET_COST_OUT)
+
+        data = _parse_json_response(full_text)
+        if 'parse_error' not in data:
+            self.save_cache(reference, tool, prompt_version, model, data)
+            yield None, data
+        else:
+            yield None, (sections if sections else data)
 
     def analyze_nt_text(self, reference: str, gnt_text: str = '') -> dict:
         """Return NT textual tradition analysis for a New Testament passage.
@@ -1291,7 +1973,6 @@ class ClaudePipeline:
             system=_NT_TEXT_SYSTEM,
             messages=[
                 {'role': 'user',      'content': user_content},
-                {'role': 'assistant', 'content': '{'},
             ],
         )
 
@@ -1299,25 +1980,91 @@ class ClaudePipeline:
                 response.usage.output_tokens * _SONNET_COST_OUT)
         self.record_spend(cost)
 
-        raw  = '{' + response.content[0].text
+        raw  = response.content[0].text
         data = _parse_json_response(raw)
 
         # Retry once if JSON parsing failed; never persist a parse error to cache.
         if 'parse_error' in data:
             resp2 = self._client.messages.create(
                 model=model, max_tokens=8192, system=_NT_TEXT_SYSTEM,
-                messages=[{'role': 'user', 'content': user_content},
-                           {'role': 'assistant', 'content': '{'}],
+                messages=[{'role': 'user', 'content': user_content}],
             )
             self.record_spend(resp2.usage.input_tokens * _SONNET_COST_IN +
                               resp2.usage.output_tokens * _SONNET_COST_OUT)
-            data2 = _parse_json_response('{' + resp2.content[0].text)
+            data2 = _parse_json_response(resp2.content[0].text)
             if 'parse_error' not in data2:
                 data = data2
 
         if 'parse_error' not in data:
             self.save_cache(reference, tool, prompt_version, model, data)
         return data
+
+    def stream_nt_text(self, reference: str, gnt_text: str = ''):
+        """Streaming version of analyze_nt_text().
+
+        Yields (key, value) pairs as each JSON section completes,
+        followed by a final epilogue: ``(None, final_result_dict)``.
+        No JSON parse retry — if parse fails, result is not cached.
+        """
+        model          = NT_TEXT_MODEL
+        prompt_version = 'v1'
+        tool           = 'nt_text'
+
+        cached = self.get_cached(reference, tool, prompt_version, model)
+        if cached:
+            for key, value in cached.items():
+                yield key, value
+                time.sleep(0.04)
+            yield None, cached
+            return
+
+        if not self._client:
+            yield None, {'error': 'No API key configured.'}
+            return
+
+        budget = self.get_budget()
+        if budget['spend_usd'] >= self._cap_usd:
+            yield None, {'error': 'Monthly budget reached.'}
+            return
+
+        template = self.load_prompt('nt_text', prompt_version)
+        user_content = (
+            template
+            .replace('{{REFERENCE}}', reference)
+            .replace('{{GNT_TEXT}}',  gnt_text)
+        ) if template else (
+            f'Reference: {reference}\nGNT: {gnt_text or "(not available)"}\n'
+            'Analyze NT textual tradition. Return JSON with text_basis, manuscript_families, '
+            'metzger_rating, variant_register, disputed_passage, synthesis, assessment, citations.'
+        )
+
+        sections: dict = {}
+        in_tok = out_tok = 0
+        full_text = '{'   # safe default if _call_streaming drops its terminal yield
+        try:
+            for key, value in self._call_streaming(
+                system=_NT_TEXT_SYSTEM,
+                user_content=user_content,
+                model=model,
+                max_tokens=8192,
+            ):
+                if key is None:
+                    in_tok, out_tok, full_text = value
+                else:
+                    sections[key] = value
+                    yield key, value
+        except Exception as exc:
+            yield None, {'error': str(exc)}
+            return
+        finally:
+            self.record_spend(in_tok * _SONNET_COST_IN + out_tok * _SONNET_COST_OUT)
+
+        data = _parse_json_response(full_text)
+        if 'parse_error' not in data:
+            self.save_cache(reference, tool, prompt_version, model, data)
+            yield None, data
+        else:
+            yield None, (sections if sections else data)
 
     def analyze_divergence(self, reference: str, mt_text: str,
                            lxx_text: str) -> dict:
@@ -1369,8 +2116,7 @@ class ClaudePipeline:
             max_tokens=8192,
             system=_DIVERGENCE_SYSTEM,
             messages=[
-                {'role': 'user',      'content': user_content},
-                {'role': 'assistant', 'content': '{'},  # pre-fill: forces raw JSON, no fence
+                {'role': 'user', 'content': user_content},
             ],
         )
 
@@ -1378,10 +2124,76 @@ class ClaudePipeline:
                 response.usage.output_tokens * _SONNET_COST_OUT)
         self.record_spend(cost)
 
-        raw = '{' + response.content[0].text  # prepend the pre-filled opening brace
+        raw = response.content[0].text  # prepend the pre-filled opening brace
         data = _parse_json_response(raw)
         self.save_cache(reference, 'divergence', prompt_version, model, data)
         return data
+
+    def stream_divergence(self, reference: str, mt_text: str, lxx_text: str):
+        """Streaming version of analyze_divergence().
+
+        Yields (key, value) pairs as each JSON section completes,
+        followed by a final epilogue: ``(None, final_result_dict)``.
+        """
+        model          = DIVERGENCE_MODEL
+        prompt_version = 'v2'
+        tool           = 'divergence'
+
+        cached = self.get_cached(reference, tool, prompt_version, model)
+        if cached:
+            for key, value in cached.items():
+                yield key, value
+                time.sleep(0.04)
+            yield None, cached
+            return
+
+        if not self._client:
+            yield None, {'error': 'No API key configured.'}
+            return
+
+        budget = self.get_budget()
+        if budget['spend_usd'] >= self._cap_usd:
+            yield None, {'error': 'Monthly budget reached.'}
+            return
+
+        template = self.load_prompt('divergence', prompt_version)
+        user_content = (
+            template
+            .replace('{{REFERENCE}}', reference)
+            .replace('{{MT_TEXT}}', mt_text)
+            .replace('{{LXX_TEXT}}', lxx_text)
+        ) if template else (
+            f'Reference: {reference}\nMT: {mt_text}\nLXX: {lxx_text}\n'
+            'Analyze divergences. Return JSON with divergences array.'
+        )
+
+        sections: dict = {}
+        in_tok = out_tok = 0
+        full_text = '{'   # safe default if _call_streaming drops its terminal yield
+        try:
+            for key, value in self._call_streaming(
+                system=_DIVERGENCE_SYSTEM,
+                user_content=user_content,
+                model=model,
+                max_tokens=8192,
+            ):
+                if key is None:
+                    in_tok, out_tok, full_text = value
+                else:
+                    sections[key] = value
+                    yield key, value
+        except Exception as exc:
+            yield None, {'error': str(exc)}
+            return
+        finally:
+            self.record_spend(in_tok * _SONNET_COST_IN + out_tok * _SONNET_COST_OUT)
+
+        data = _parse_json_response(full_text)
+        if 'parse_error' not in data:
+            self.save_cache(reference, tool, prompt_version, model, data)
+            yield None, data
+        else:
+            yield None, (sections if sections else data)
 
 
     def analyze_nt_ot(self, reference: str, nt_text: str = '',
@@ -1436,7 +2248,6 @@ class ClaudePipeline:
             system=_NT_OT_SYSTEM,
             messages=[
                 {'role': 'user',      'content': user_content},
-                {'role': 'assistant', 'content': '{'},
             ],
         )
 
@@ -1444,10 +2255,77 @@ class ClaudePipeline:
                 response.usage.output_tokens * _SONNET_COST_OUT)
         self.record_spend(cost)
 
-        raw  = '{' + response.content[0].text
+        raw  = response.content[0].text
         data = _parse_json_response(raw)
         self.save_cache(reference, tool, prompt_version, model, data)
         return data
+
+    def stream_nt_ot(self, reference: str, nt_text: str = '',
+                     ot_context: str = ''):
+        """Streaming version of analyze_nt_ot().
+
+        Yields (key, value) pairs as each JSON section completes,
+        followed by a final epilogue: ``(None, final_result_dict)``.
+        """
+        model          = NT_OT_MODEL
+        prompt_version = 'v1'
+        tool           = 'nt_ot'
+
+        cached = self.get_cached(reference, tool, prompt_version, model)
+        if cached:
+            for key, value in cached.items():
+                yield key, value
+                time.sleep(0.04)
+            yield None, cached
+            return
+
+        if not self._client:
+            yield None, {'error': 'No API key configured.'}
+            return
+
+        budget = self.get_budget()
+        if budget['spend_usd'] >= self._cap_usd:
+            yield None, {'error': 'Monthly budget reached.'}
+            return
+
+        template = self.load_prompt('nt_ot', prompt_version)
+        user_content = (
+            template
+            .replace('{{NT_REFERENCE}}', reference)
+            .replace('{{NT_TEXT}}', nt_text or '')
+            .replace('{{OT_REFS}}', ot_context or '')
+        ) if template else (
+            f'NT Reference: {reference}\nNT Text: {nt_text}\n'
+            'Identify OT allusions. Return JSON with allusions array.'
+        )
+
+        sections: dict = {}
+        in_tok = out_tok = 0
+        full_text = '{'   # safe default if _call_streaming drops its terminal yield
+        try:
+            for key, value in self._call_streaming(
+                system=_NT_OT_SYSTEM,
+                user_content=user_content,
+                model=model,
+                max_tokens=8192,
+            ):
+                if key is None:
+                    in_tok, out_tok, full_text = value
+                else:
+                    sections[key] = value
+                    yield key, value
+        except Exception as exc:
+            yield None, {'error': str(exc)}
+            return
+        finally:
+            self.record_spend(in_tok * _SONNET_COST_IN + out_tok * _SONNET_COST_OUT)
+
+        data = _parse_json_response(full_text)
+        if 'parse_error' not in data:
+            self.save_cache(reference, tool, prompt_version, model, data)
+            yield None, data
+        else:
+            yield None, (sections if sections else data)
 
     def analyze_chiasm(self, reference: str, mt_text: str = '') -> dict:
         """Return chiasm/literary structure analysis for a biblical passage.
@@ -1504,7 +2382,6 @@ class ClaudePipeline:
             system=_CHIASM_SYSTEM,
             messages=[
                 {'role': 'user',      'content': user_content},
-                {'role': 'assistant', 'content': '{'},
             ],
         )
 
@@ -1512,10 +2389,75 @@ class ClaudePipeline:
                 response.usage.output_tokens * _SONNET_COST_OUT)
         self.record_spend(cost)
 
-        raw  = '{' + response.content[0].text
+        raw  = response.content[0].text
         data = _parse_json_response(raw)
         self.save_cache(reference, tool, prompt_version, model, data)
         return data
+
+    def stream_chiasm(self, reference: str, mt_text: str = ''):
+        """Streaming version of analyze_chiasm().
+
+        Yields (key, value) pairs as each JSON section completes,
+        followed by a final epilogue: ``(None, final_result_dict)``.
+        """
+        model          = CHIASM_MODEL
+        prompt_version = 'v1'
+        tool           = 'chiasm'
+
+        cached = self.get_cached(reference, tool, prompt_version, model)
+        if cached:
+            for key, value in cached.items():
+                yield key, value
+                time.sleep(0.04)
+            yield None, cached
+            return
+
+        if not self._client:
+            yield None, {'error': 'No API key configured.'}
+            return
+
+        budget = self.get_budget()
+        if budget['spend_usd'] >= self._cap_usd:
+            yield None, {'error': 'Monthly budget reached.'}
+            return
+
+        template = self.load_prompt('chiasm', prompt_version)
+        user_content = (
+            template
+            .replace('{{REFERENCE}}', reference)
+            .replace('{{MT_TEXT}}', mt_text or '')
+        ) if template else (
+            f'Passage: {reference}\nMT Text: {mt_text}\n'
+            'Analyze for chiastic structure. Return JSON with elements array.'
+        )
+
+        sections: dict = {}
+        in_tok = out_tok = 0
+        full_text = '{'   # safe default if _call_streaming drops its terminal yield
+        try:
+            for key, value in self._call_streaming(
+                system=_CHIASM_SYSTEM,
+                user_content=user_content,
+                model=model,
+                max_tokens=8192,
+            ):
+                if key is None:
+                    in_tok, out_tok, full_text = value
+                else:
+                    sections[key] = value
+                    yield key, value
+        except Exception as exc:
+            yield None, {'error': str(exc)}
+            return
+        finally:
+            self.record_spend(in_tok * _SONNET_COST_IN + out_tok * _SONNET_COST_OUT)
+
+        data = _parse_json_response(full_text)
+        if 'parse_error' not in data:
+            self.save_cache(reference, tool, prompt_version, model, data)
+            yield None, data
+        else:
+            yield None, (sections if sections else data)
 
     def analyze_source(self, reference: str, mt_text: str = '') -> dict:
         """Return source-critical analysis (J/E/D/P) for a biblical passage.
@@ -1572,7 +2514,6 @@ class ClaudePipeline:
             system=_SOURCE_SYSTEM,
             messages=[
                 {'role': 'user',      'content': user_content},
-                {'role': 'assistant', 'content': '{'},
             ],
         )
 
@@ -1580,10 +2521,75 @@ class ClaudePipeline:
                 response.usage.output_tokens * _SONNET_COST_OUT)
         self.record_spend(cost)
 
-        raw  = '{' + response.content[0].text
+        raw  = response.content[0].text
         data = _parse_json_response(raw)
         self.save_cache(reference, tool, prompt_version, model, data)
         return data
+
+    def stream_source(self, reference: str, mt_text: str = ''):
+        """Streaming version of analyze_source().
+
+        Yields (key, value) pairs as each JSON section completes,
+        followed by a final epilogue: ``(None, final_result_dict)``.
+        """
+        model          = SOURCE_MODEL
+        prompt_version = 'v1'
+        tool           = 'source'
+
+        cached = self.get_cached(reference, tool, prompt_version, model)
+        if cached:
+            for key, value in cached.items():
+                yield key, value
+                time.sleep(0.04)
+            yield None, cached
+            return
+
+        if not self._client:
+            yield None, {'error': 'No API key configured.'}
+            return
+
+        budget = self.get_budget()
+        if budget['spend_usd'] >= self._cap_usd:
+            yield None, {'error': 'Monthly budget reached.'}
+            return
+
+        template = self.load_prompt('source', prompt_version)
+        user_content = (
+            template
+            .replace('{{REFERENCE}}', reference)
+            .replace('{{MT_TEXT}}', mt_text or '')
+        ) if template else (
+            f'Passage: {reference}\nMT Text: {mt_text}\n'
+            'Perform source criticism. Return JSON with source_units array.'
+        )
+
+        sections: dict = {}
+        in_tok = out_tok = 0
+        full_text = '{'   # safe default if _call_streaming drops its terminal yield
+        try:
+            for key, value in self._call_streaming(
+                system=_SOURCE_SYSTEM,
+                user_content=user_content,
+                model=model,
+                max_tokens=8192,
+            ):
+                if key is None:
+                    in_tok, out_tok, full_text = value
+                else:
+                    sections[key] = value
+                    yield key, value
+        except Exception as exc:
+            yield None, {'error': str(exc)}
+            return
+        finally:
+            self.record_spend(in_tok * _SONNET_COST_IN + out_tok * _SONNET_COST_OUT)
+
+        data = _parse_json_response(full_text)
+        if 'parse_error' not in data:
+            self.save_cache(reference, tool, prompt_version, model, data)
+            yield None, data
+        else:
+            yield None, (sections if sections else data)
 
 
 _DISCOVERY_TYPES = {'translation_idiom', 'different_vorlage', 'theological_tendency',

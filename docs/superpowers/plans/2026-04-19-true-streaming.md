@@ -344,36 +344,42 @@ def _call_streaming(self, system: str, user_content: str,
 
 - [ ] **Step 3: Add `stream_theological()` generator**
 
-Place this directly after `analyze_theological()`:
+> **Note:** This step was superseded during implementation. The final version of `stream_theological()` uses the epilogue pattern (no `self._last_theological_result` or `self._last_stream_text`). See the actual committed code for the canonical implementation. For Task 5 (rolling out to remaining tools), use the pattern in the **implemented** `stream_theological()` as your template, not this draft.
+
+The canonical signature that Task 5 implementers should follow:
+- yields `(key, value)` pairs for each JSON section
+- yields `(None, result_dict)` as the **final** item on every code path (cache hit, no client, budget exceeded, success, parse failure, exception)
+- wraps `_call_streaming()` in `try/except/finally`; `finally` calls `record_spend`
+- no instance-attribute side effects (`_last_stream_text`, `_last_stream_usage`, `_last_theological_result` do not exist)
 
 ```python
 def stream_theological(self, reference: str, vul_text: str = ''):
     """Streaming version of analyze_theological().
 
-    Yields (key, value) pairs as each JSON section completes.
-    Caches the complete result after the stream finishes.
-    Sets self._last_theological_result with the final parsed dict.
+    Yields (key, value) pairs as each JSON section completes,
+    followed by a final epilogue: (None, final_result_dict).
+    The epilogue is always the last item; callers must handle key is None.
+    Caches the complete result internally.
     """
     model          = THEOLOGICAL_MODEL
     prompt_version = 'v2'
     tool           = 'theological'
 
-    self._last_theological_result = None
-
-    # Cache hit: yield sections from stored JSON, no API call
     cached = self.get_cached(reference, tool, prompt_version, model)
     if cached:
-        self._last_theological_result = cached
-        yield from cached.items()
+        for key, value in cached.items():
+            yield key, value
+            time.sleep(0.04)
+        yield None, cached
         return
 
     if not self._client:
-        self._last_theological_result = {'error': 'No API key configured.'}
+        yield None, {'error': 'No API key configured.'}
         return
 
     budget = self.get_budget()
     if budget['spend_usd'] >= self._cap_usd:
-        self._last_theological_result = {'error': 'Monthly budget reached.'}
+        yield None, {'error': 'Monthly budget reached.'}
         return
 
     template = self.load_prompt('theological', prompt_version)
@@ -386,28 +392,33 @@ def stream_theological(self, reference: str, vul_text: str = ''):
         'Identify theologically motivated textual changes. Return JSON.'
     )
 
-    sections = {}
-    for key, value in self._call_streaming(
-        system=_THEOLOGICAL_SYSTEM,
-        user_content=user_content,
-        model=model,
-        max_tokens=8192,
-    ):
-        sections[key] = value
-        yield key, value
+    sections: dict = {}
+    in_tok = out_tok = 0
+    full_text = '{'
+    try:
+        for key, value in self._call_streaming(
+            system=_THEOLOGICAL_SYSTEM,
+            user_content=user_content,
+            model=model,
+            max_tokens=8192,
+        ):
+            if key is None:
+                in_tok, out_tok, full_text = value
+            else:
+                sections[key] = value
+                yield key, value
+    except Exception as exc:
+        yield None, {'error': str(exc)}
+        return
+    finally:
+        self.record_spend(in_tok * _SONNET_COST_IN + out_tok * _SONNET_COST_OUT)
 
-    # Record spend
-    in_tok, out_tok = getattr(self, '_last_stream_usage', (0, 0))
-    self.record_spend(in_tok * _SONNET_COST_IN + out_tok * _SONNET_COST_OUT)
-
-    # Parse full response and cache
-    data = _parse_json_response(self._last_stream_text)
+    data = _parse_json_response(full_text)
     if 'parse_error' not in data:
         self.save_cache(reference, tool, prompt_version, model, data)
-        self._last_theological_result = data
+        yield None, data
     else:
-        # Fallback: reconstruct from yielded sections
-        self._last_theological_result = sections if sections else data
+        yield None, (sections if sections else data)
 ```
 
 - [ ] **Step 4: Verify the new method is syntactically correct**
@@ -480,9 +491,13 @@ q = Queue()
 def _run_theo():
     try:
         for key, value in pipeline.stream_theological(reference, vul_text):
+            if key is None:
+                # Epilogue: value is the final result dict
+                q.put(('done', None, value))
+                return
             q.put(('section', key, value))
-        final = getattr(pipeline, '_last_theological_result', None) or {}
-        q.put(('done', None, final))
+        # Generator exhausted without epilogue (should not happen)
+        q.put(('done', None, {}))
     except Exception as exc:
         q.put(('error', None, str(exc)))
 

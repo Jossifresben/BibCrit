@@ -30,6 +30,8 @@
   var _currentRef   = '';
   var _finalHandled = false;
   var _lastData     = null;
+  var _partialData    = {};
+  var _sectionReceived = false;
 
   // ── DSS coverage: books and chapters with known DSS witnesses ─────────
   // Chapters listed are those with at least one attested DSS fragment.
@@ -205,7 +207,9 @@
 
     if (_es) { _es.close(); _es = null; }
     clearInterval(_timer);
-    _finalHandled = false;
+    _finalHandled    = false;
+    _partialData     = {};
+    _sectionReceived = false;
 
     hide(emptyState);
     hide(results);
@@ -228,6 +232,8 @@
         var msg = JSON.parse(e.data);
         if (msg.type === 'step') {
           setLoadingStep(msg.msg);
+        } else if (msg.type === 'section') {
+          _renderSection(msg.key, msg.data);
         } else if (msg.type === 'error') {
           _finalHandled = true;
           clearInterval(_timer);
@@ -237,7 +243,11 @@
           _finalHandled = true;
           clearInterval(_timer);
           _es.close();
-          renderDSS(msg.data);
+          if (_sectionReceived) {
+            _finalize(msg.data);
+          } else {
+            renderDSS(msg.data);
+          }
         }
       } catch (_) { /* ignore */ }
     });
@@ -248,6 +258,55 @@
       setLoadingStep('❌ ' + window.t('err_connection_step', 'Connection error. Please try again.'));
       if (_es) _es.close();
     };
+  }
+
+  // ── Progressive section rendering ─────────────────────────────────────────
+  function _renderSection(key, data) {
+    _partialData[key] = data;
+    _sectionReceived  = true;
+
+    if (emptyState)  emptyState.style.display  = 'none';
+    if (loadState)   loadState.style.display   = 'none';
+    if (results)     results.style.display     = '';
+
+    if (key === 'witness_comparison') {
+      // Render manuscript cards early
+      if (heading) {
+        show(heading);
+        heading.innerHTML = '<span class="ph-ref">' + _esc(_currentRef) + '</span>';
+      }
+      var manuscripts = ((data && data.dss_manuscripts) || data || []).slice().sort(function (a, b) {
+        var aE = (a.verse_present && a.alignment !== 'absent') ? 0 : 1;
+        var bE = (b.verse_present && b.alignment !== 'absent') ? 0 : 1;
+        return aE - bE;
+      });
+      if (msList) {
+        msList.innerHTML = '';
+        manuscripts.forEach(function (ms, idx) { msList.appendChild(_buildManuscriptCard(ms, idx)); });
+      }
+      staggerReveal(results, 30);
+    }
+
+    if (key === 'transmission_history') {
+      var synth = (data && (data.synthesis_plain || data.synthesis)) || '';
+      if (synth && synthSec && synthBody) {
+        synthBody.innerHTML =
+          '<div class="bt-group-card"><p class="div-analysis">' + _safe(synth) + '</p></div>';
+        show(synthSec);
+        staggerReveal(synthSec, 0);
+      }
+    }
+
+    if (key === 'assessment') {
+      renderAssessment({ bibcrit_assessment: data, model_version: _partialData.model_version });
+      if (bibSec) staggerReveal(bibSec, 0);
+    }
+  }
+
+  function _finalize(data) {
+    _lastData = data || _partialData;
+    hide(loadState);
+    renderDSS(_lastData);
   }
 
   // ── Render ───────────────────────────────────────────────────────────────

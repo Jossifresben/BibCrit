@@ -13,8 +13,11 @@
   'use strict';
 
   // ── State ─────────────────────────────────────────────────────────────────
-  var currentData = null;
-  var currentRef  = '';
+  var currentData  = null;
+  var currentRef   = '';
+  var _finalHandled   = false;
+  var _partialData    = {};
+  var _sectionReceived = false;
 
   // ── Language ──────────────────────────────────────────────────────────────
   var LANG = window.BIBCRIT_LANG || document.documentElement.lang || 'en';
@@ -158,6 +161,9 @@
     }
 
     currentRef = ref;
+    _finalHandled    = false;
+    _partialData     = {};
+    _sectionReceived = false;
 
     // Show loading, hide others
     emptyState.style.display   = 'none';
@@ -187,8 +193,10 @@
 
       if (msg.type === 'step') {
         if (stepEl) stepEl.textContent = msg.msg;
-
+      } else if (msg.type === 'section') {
+        _renderSection(msg.key, msg.data);
       } else if (msg.type === 'error') {
+        _finalHandled = true;
         clearInterval(timerInterval);
         es.close();
         loadingState.style.display = 'none';
@@ -197,22 +205,98 @@
         if (h2) h2.textContent = '\u26a0 ' + msg.msg;
 
       } else if (msg.type === 'done') {
+        _finalHandled = true;
         clearInterval(timerInterval);
         es.close();
-        loadingState.style.display = 'none';
-        currentData = msg.data;
-        history.replaceState(null, '', '/nt-ot?ref=' + encodeURIComponent(ref));
-        if (typeof updateBudgetBar === 'function') updateBudgetBar();
-        renderResults(msg.data);
+        if (_sectionReceived) {
+          _finalize(msg.data);
+        } else {
+          loadingState.style.display = 'none';
+          currentData = msg.data;
+          history.replaceState(null, '', '/nt-ot?ref=' + encodeURIComponent(ref));
+          if (typeof updateBudgetBar === 'function') updateBudgetBar();
+          renderResults(msg.data);
+        }
       }
     };
 
     es.onerror = function () {
+      if (_finalHandled) return;
       clearInterval(timerInterval);
       es.close();
       loadingState.style.display = 'none';
       emptyState.style.display   = 'block';
     };
+  }
+
+  // ── Progressive section rendering ─────────────────────────────────────────
+  function _renderSection(key, data) {
+    _partialData[key] = data;
+    _sectionReceived  = true;
+
+    if (loadingState) loadingState.style.display = 'none';
+    if (emptyState)   emptyState.style.display   = 'none';
+    if (resultsArea)  resultsArea.style.display  = '';
+    if (passageHeading) passageHeading.style.display = 'flex';
+
+    if (key === 'citations') {
+      // citations = array of allusion objects
+      if (passageHeading) {
+        passageHeading.innerHTML =
+          '<span class="ph-ref">'  + _esc(currentRef) + '</span>' +
+          '<span class="ph-tool">NT Use of OT</span>';
+      }
+      if (resultsArea) {
+        resultsArea.innerHTML = '';
+        var allusions = Array.isArray(data) ? data : (data || []);
+        allusions.forEach(function (allusion) {
+          resultsArea.appendChild(buildAllusionCard(allusion));
+        });
+      }
+      staggerReveal(resultsArea, 30);
+    }
+
+    if (key === 'intertextual_analysis') {
+      // summary-like text block
+      if (resultsArea && data) {
+        var summCard = buildSummaryCard({
+          summary_technical: (data && data.summary_technical) || '',
+          summary_plain:     (data && data.summary_plain)     || (typeof data === 'string' ? data : ''),
+        });
+        if (resultsArea.firstChild) {
+          resultsArea.insertBefore(summCard, resultsArea.firstChild);
+        } else {
+          resultsArea.appendChild(summCard);
+        }
+        staggerReveal(summCard, 0);
+      }
+    }
+
+    if (key === 'synthesis') {
+      if (resultsArea && data) {
+        var synCard = buildSummaryCard({
+          summary_plain: typeof data === 'string' ? data : (data && (data.synthesis_plain || data.synthesis || '')),
+        });
+        resultsArea.appendChild(synCard);
+        staggerReveal(synCard, 0);
+      }
+    }
+
+    if (key === 'assessment') {
+      if (resultsArea) {
+        resultsArea.appendChild(buildHypothesisCard({ bibcrit_hypothesis: data, model_version: _partialData.model_version }));
+        staggerReveal(resultsArea, 0);
+      }
+    }
+  }
+
+  function _finalize(data) {
+    var merged = Object.assign({}, _partialData, data || {});
+    currentData = merged;
+    if (loadingState) loadingState.style.display = 'none';
+    history.replaceState(null, '', '/nt-ot?ref=' + encodeURIComponent(currentRef));
+    if (typeof updateBudgetBar === 'function') updateBudgetBar();
+    renderResults(merged);
   }
 
   // ── Render ────────────────────────────────────────────────────────────────

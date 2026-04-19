@@ -2,14 +2,19 @@
 
 import json
 import os
+import time
 import threading
+from queue import Queue, Empty
 from flask import Blueprint, render_template, request, jsonify, Response, stream_with_context
 from biblical_core.claude_pipeline import (
     SCRIBAL_MODEL, NUMERICAL_MODEL, THEOLOGICAL_MODEL, PATRISTIC_MODEL,
     _SCRIBAL_SAMPLE_REFS
+,
+    CACHE_META_KEYS
 )
 from biblical_core.ref_utils import estimate_verse_count, TOOL_VERSE_LIMITS
 import state
+
 
 
 def _check_ref_length(reference: str, tool: str) -> str | None:
@@ -145,22 +150,51 @@ def api_scribal_stream():
 
         if cached:
             yield event('step', msg=_step(lang, 'found_cache'))
+            for _key, _val in cached.items():
+                if _key not in CACHE_META_KEYS:
+                    yield event('section', key=_key, data=_val)
+                    time.sleep(0.04)
             result = cached
         else:
             yield event('step', msg=_step(lang, 'scribal_generating'))
-            _result_box = [None]
+            q = Queue()
+
             def _run_scribal():
                 try:
-                    _result_box[0] = pipeline.analyze_scribal(book, sample_passages)
+                    for key, value in pipeline.stream_scribal(book, sample_passages):
+                        if key is None:
+                            q.put(('done', None, value))
+                            return
+                        q.put(('section', key, value))
+                    q.put(('done', None, {}))
                 except Exception as exc:
-                    _result_box[0] = {'error': str(exc)}
+                    q.put(('error', None, str(exc)))
+
             _t = threading.Thread(target=_run_scribal, daemon=True)
             _t.start()
-            while _t.is_alive():
-                _t.join(timeout=8)
-                if _t.is_alive():
+
+            result = {}
+            while True:
+                try:
+                    item = q.get(timeout=8)
+                except Empty:
                     yield ': keepalive\n\n'
-            result = _result_box[0] or {'error': 'Analysis returned no result'}
+                    continue
+
+                evt_type, key, data = item
+                if evt_type == 'section':
+                    result[key] = data
+                    yield event('section', key=key, data=data)
+                elif evt_type == 'done':
+                    result = data if data else result
+                    break
+                elif evt_type == 'error':
+                    yield event('error', msg=data)
+                    return
+
+            if result.get('parse_error'):
+                yield event('error', msg='Analysis could not be parsed — please try again')
+                return
 
         if result.get('error'):
             yield event('error', msg=result['error'])
@@ -251,22 +285,51 @@ def api_numerical_stream():
 
         if cached:
             yield event('step', msg=_step(lang, 'found_cache'))
+            for _key, _val in cached.items():
+                if _key not in CACHE_META_KEYS:
+                    yield event('section', key=_key, data=_val)
+                    time.sleep(0.04)
             result = cached
         else:
             yield event('step', msg=_step(lang, 'num_generating'))
-            _result_box = [None]
+            q = Queue()
+
             def _run_numerical():
                 try:
-                    _result_box[0] = pipeline.analyze_numerical(reference, sp_text=sp_text)
+                    for key, value in pipeline.stream_numerical(reference, sp_text=sp_text):
+                        if key is None:
+                            q.put(('done', None, value))
+                            return
+                        q.put(('section', key, value))
+                    q.put(('done', None, {}))
                 except Exception as exc:
-                    _result_box[0] = {'error': str(exc)}
+                    q.put(('error', None, str(exc)))
+
             _t = threading.Thread(target=_run_numerical, daemon=True)
             _t.start()
-            while _t.is_alive():
-                _t.join(timeout=8)
-                if _t.is_alive():
+
+            result = {}
+            while True:
+                try:
+                    item = q.get(timeout=8)
+                except Empty:
                     yield ': keepalive\n\n'
-            result = _result_box[0] or {'error': 'Analysis returned no result'}
+                    continue
+
+                evt_type, key, data = item
+                if evt_type == 'section':
+                    result[key] = data
+                    yield event('section', key=key, data=data)
+                elif evt_type == 'done':
+                    result = data if data else result
+                    break
+                elif evt_type == 'error':
+                    yield event('error', msg=data)
+                    return
+
+            if result.get('parse_error'):
+                yield event('error', msg='Analysis could not be parsed — please try again')
+                return
 
         if result.get('error'):
             yield event('error', msg=result['error'])
@@ -343,22 +406,53 @@ def api_theological_stream():
 
         if cached:
             yield event('step', msg=_step(lang, 'found_cache'))
+            for _key, _val in cached.items():
+                if _key not in CACHE_META_KEYS:
+                    yield event('section', key=_key, data=_val)
+                    time.sleep(0.04)
             result = cached
         else:
             yield event('step', msg=_step(lang, 'theo_generating'))
-            _result_box = [None]
+            q = Queue()
+
             def _run_theological():
                 try:
-                    _result_box[0] = pipeline.analyze_theological(reference, vul_text)
+                    for key, value in pipeline.stream_theological(reference, vul_text):
+                        if key is None:
+                            # Epilogue: value is the final result dict
+                            q.put(('done', None, value))
+                            return
+                        q.put(('section', key, value))
+                    # Generator exhausted without epilogue (should not happen)
+                    q.put(('done', None, {}))
                 except Exception as exc:
-                    _result_box[0] = {'error': str(exc)}
+                    q.put(('error', None, str(exc)))
+
             _t = threading.Thread(target=_run_theological, daemon=True)
             _t.start()
-            while _t.is_alive():
-                _t.join(timeout=8)
-                if _t.is_alive():
+
+            result = {}
+            while True:
+                try:
+                    item = q.get(timeout=8)
+                except Empty:
                     yield ': keepalive\n\n'
-            result = _result_box[0] or {'error': 'Analysis returned no result'}
+                    continue
+
+                evt_type, key, data = item
+                if evt_type == 'section':
+                    result[key] = data
+                    yield event('section', key=key, data=data)
+                elif evt_type == 'done':
+                    result = data if data else result
+                    break
+                elif evt_type == 'error':
+                    yield event('error', msg=data)
+                    return
+
+            if result.get('parse_error'):
+                yield event('error', msg='Analysis could not be parsed — please try again')
+                return
 
         if result.get('error'):
             yield event('error', msg=result['error'])
@@ -441,22 +535,51 @@ def api_patristic_stream():
 
         if cached:
             yield event('step', msg=_step(lang, 'found_cache'))
+            for _key, _val in cached.items():
+                if _key not in CACHE_META_KEYS:
+                    yield event('section', key=_key, data=_val)
+                    time.sleep(0.04)
             result = cached
         else:
             yield event('step', msg=_step(lang, 'pat_generating'))
-            _result_box = [None]
+            q = Queue()
+
             def _run_patristic():
                 try:
-                    _result_box[0] = pipeline.analyze_patristic(reference, gnt_text=gnt_text)
+                    for key, value in pipeline.stream_patristic(reference, gnt_text=gnt_text):
+                        if key is None:
+                            q.put(('done', None, value))
+                            return
+                        q.put(('section', key, value))
+                    q.put(('done', None, {}))
                 except Exception as exc:
-                    _result_box[0] = {'error': str(exc)}
+                    q.put(('error', None, str(exc)))
+
             _t = threading.Thread(target=_run_patristic, daemon=True)
             _t.start()
-            while _t.is_alive():
-                _t.join(timeout=8)
-                if _t.is_alive():
+
+            result = {}
+            while True:
+                try:
+                    item = q.get(timeout=8)
+                except Empty:
                     yield ': keepalive\n\n'
-            result = _result_box[0] or {'error': 'Analysis returned no result'}
+                    continue
+
+                evt_type, key, data = item
+                if evt_type == 'section':
+                    result[key] = data
+                    yield event('section', key=key, data=data)
+                elif evt_type == 'done':
+                    result = data if data else result
+                    break
+                elif evt_type == 'error':
+                    yield event('error', msg=data)
+                    return
+
+            if result.get('parse_error'):
+                yield event('error', msg='Analysis could not be parsed — please try again')
+                return
 
         if result.get('error'):
             yield event('error', msg=result['error'])

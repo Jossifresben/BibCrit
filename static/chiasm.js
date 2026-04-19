@@ -36,6 +36,11 @@
 
   if (!selBook || !btnAnalyze) return;
 
+  var _finalHandled   = false;
+  var _partialData    = {};
+  var _sectionReceived = false;
+  var _currentRef     = '';
+
   fetchBooks();
 
   document.querySelectorAll('.featured-ref').forEach(function (el) {
@@ -110,6 +115,10 @@
   function analyze(ref) {
     if (!ref) return;
     if (window.BibCrit_checkPassageLength && window.BibCrit_checkPassageLength(ref)) return;
+    _currentRef      = ref;
+    _finalHandled    = false;
+    _partialData     = {};
+    _sectionReceived = false;
     show(loadingState); hide(emptyState); hide(resultsArea); hide(passageHdr);
     document.getElementById('loading-step').textContent = '\u2026';
     document.getElementById('loading-timer').textContent = '';
@@ -128,24 +137,78 @@
       var msg = JSON.parse(e.data);
       if (msg.type === 'step') {
         document.getElementById('loading-step').textContent = msg.msg;
+      } else if (msg.type === 'section') {
+        _renderSection(msg.key, msg.data);
       } else if (msg.type === 'error') {
+        _finalHandled = true;
         clearInterval(timerInterval); es.close();
         hide(loadingState);
         showToast(msg.msg);
         show(emptyState);
       } else if (msg.type === 'done') {
+        _finalHandled = true;
         clearInterval(timerInterval); es.close();
-        hide(loadingState);
-        renderResults(msg.data, ref);
+        if (_sectionReceived) {
+          _finalize(msg.data, ref);
+        } else {
+          hide(loadingState);
+          renderResults(msg.data, ref);
+        }
       }
     };
 
     es.onerror = function () {
+      if (_finalHandled) return;
       clearInterval(timerInterval); es.close();
       hide(loadingState);
       showToast('Connection error. Please try again.');
       show(emptyState);
     };
+  }
+
+  // ── Progressive section rendering ─────────────────────────────────────────
+  function _renderSection(key, data) {
+    _partialData[key] = data;
+    _sectionReceived  = true;
+
+    if (loadingState) loadingState.style.display = 'none';
+    if (emptyState)   emptyState.style.display   = 'none';
+    if (resultsArea)  resultsArea.style.display  = '';
+
+    if (key === 'structure') {
+      if (passageHdr) {
+        passageHdr.textContent = _currentRef;
+        show(passageHdr);
+      }
+      // Render structure diagram early with partial data
+      var partial = Object.assign({ structure_detected: !!(data && (data.elements || data.structure_detected)) }, data || {});
+      renderResults(partial, _currentRef);
+    }
+
+    if (key === 'parallel_analysis') {
+      // Re-render with accumulated data (correspondences may be in here)
+      var acc = Object.assign({}, _partialData.structure || {}, { correspondences: Array.isArray(data) ? data : (data && data.correspondences) || [] });
+      renderResults(acc, _currentRef);
+    }
+
+    if (key === 'literary_function') {
+      var sigData = Object.assign({}, _partialData.structure || {}, {
+        theological_significance: typeof data === 'string' ? data : (data && (data.theological_significance || data.plain || '')),
+      });
+      renderResults(sigData, _currentRef);
+    }
+
+    if (key === 'assessment') {
+      var hypData = Object.assign({}, _partialData.structure || {}, {
+        bibcrit_hypothesis: data,
+      });
+      renderResults(hypData, _currentRef);
+    }
+  }
+
+  function _finalize(data, ref) {
+    hide(loadingState);
+    renderResults(data || _partialData, ref || _currentRef);
   }
 
   // ── Render ────────────────────────────────────────────────────────────────

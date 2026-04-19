@@ -109,11 +109,11 @@ def test_api_divergence_serves_cached_result(client, tmp_path):
         'summary_plain': '',
         'cached_at': '2026-01-01T00:00:00',
         'model_version': DIVERGENCE_MODEL,
-        'prompt_version': 'v1',
+        'prompt_version': 'v2',
         'discovery_ready': False,
     }
     key = hashlib.sha256(
-        f'{reference}|divergence|v1|{DIVERGENCE_MODEL}'.encode()
+        f'{reference}|divergence|v2|{DIVERGENCE_MODEL}'.encode()
     ).hexdigest()
     cache_path = tmp_path / 'cache' / f'{key}.json'
     cache_path.write_text(json.dumps(cache_payload), encoding='utf-8')

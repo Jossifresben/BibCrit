@@ -36,6 +36,8 @@
   var _finalHandled = false;
   var _activeFilter = '';
   var _lastData     = null;
+  var _partialData    = {};
+  var _sectionReceived = false;
 
   // ── Suggestion chips ────────────────────────────────────────────────────
   document.querySelectorAll('.num-sug-chip[data-ref]').forEach(function (chip) {
@@ -89,7 +91,9 @@
 
     if (_es) { _es.close(); _es = null; }
     clearInterval(_timer);
-    _finalHandled = false;
+    _finalHandled    = false;
+    _partialData     = {};
+    _sectionReceived = false;
 
     hide(suggestions);
     hide(emptyState);
@@ -113,6 +117,8 @@
         var msg = JSON.parse(e.data);
         if (msg.type === 'step') {
           setLoadingStep(msg.msg);
+        } else if (msg.type === 'section') {
+          _renderSection(msg.key, msg.data);
         } else if (msg.type === 'error') {
           _finalHandled = true;
           clearInterval(_timer);
@@ -122,7 +128,11 @@
           _finalHandled = true;
           clearInterval(_timer);
           _es.close();
-          renderPatristic(msg.data);
+          if (_sectionReceived) {
+            _finalize(msg.data);
+          } else {
+            renderPatristic(msg.data);
+          }
         }
       } catch (_) { /* ignore */ }
     });
@@ -133,6 +143,97 @@
       setLoadingStep('❌ ' + window.t('err_connection_step', 'Connection error. Please try again.'));
       if (_es) _es.close();
     };
+  }
+
+  // ── Progressive section rendering ─────────────────────────────────────────
+  function _renderSection(key, data) {
+    _partialData[key] = data;
+    _sectionReceived  = true;
+
+    if (emptyState)  emptyState.style.display  = 'none';
+    if (loadState)   loadState.style.display   = 'none';
+    if (results)     results.style.display     = '';
+
+    if (key === 'citations') {
+      var citations = data || [];
+      if (heading) {
+        show(heading);
+        var total = citations.length;
+        heading.innerHTML = '<span class="ph-ref">' + _esc(_currentRef) + '</span>' +
+          (total ? ' <span class="ph-meta">\u2014 ' + total + ' citation' + (total === 1 ? '' : 's') + ' found</span>' : '');
+      }
+      if (citationList) {
+        citationList.innerHTML = '';
+        citations.forEach(function (cit) { citationList.appendChild(_buildCitationCard(cit)); });
+        if (!citations.length) {
+          citationList.innerHTML = '<p style="padding:1rem;color:var(--muted);text-align:center">' + window.t('pat_no_citations', 'No patristic citations found for this passage.') + '</p>';
+        }
+      }
+      staggerReveal(results, 30);
+    }
+
+    if (key === 'text_form_distribution') {
+      renderDistributionBar({ text_form_distribution: data });
+    }
+
+    if (key === 'transmission_synthesis') {
+      var synth = (data && (data.transmission_synthesis_plain || data.transmission_synthesis)) ||
+                  (typeof data === 'string' ? data : '');
+      if (synth && synthSec && synthBody) {
+        synthBody.innerHTML =
+          '<div class="bt-group-card"><p class="div-analysis">' + _esc(synth) + '</p></div>';
+        show(synthSec);
+        staggerReveal(synthSec, 0);
+      }
+    }
+
+    if (key === 'assessment') {
+      renderAssessment({ bibcrit_assessment: data, model_version: _partialData.model_version });
+      if (bibSec) staggerReveal(bibSec, 0);
+    }
+  }
+
+  function _finalize(data) {
+    _lastData = data || _partialData;
+    hide(loadState);
+    if (exportRow) show(exportRow);
+    staggerReveal(results, 90);
+
+    if (window.ResultActions) {
+      ResultActions.init({
+        toolName: 'patristic',
+        getReference: function() { return _currentRef; },
+        getResultData: function() { return _lastData || {}; },
+      });
+    }
+
+    if (exportRow && !exportRow._exportWired) {
+      exportRow._exportWired = true;
+      var _btnSbl    = document.getElementById('btn-sbl');
+      var _btnBibtex = document.getElementById('btn-bibtex');
+
+      if (_btnSbl) {
+        _btnSbl.addEventListener('click', function() {
+          fetch('/api/export/sbl?tool=patristic&ref=' + encodeURIComponent(_currentRef))
+            .then(function(r) { return r.json(); })
+            .then(function(d) {
+              var text = (d.footnotes || [d.footnote]).join('\n\n');
+              navigator.clipboard.writeText(text).catch(function(){});
+              showToast(window.t('toast_sbl_copied_short', 'SBL footnotes copied!'));
+            }).catch(function(){});
+        });
+      }
+      if (_btnBibtex) {
+        _btnBibtex.addEventListener('click', function() {
+          fetch('/api/export/bibtex?tool=patristic&ref=' + encodeURIComponent(_currentRef))
+            .then(function(r) { return r.json(); })
+            .then(function(d) {
+              navigator.clipboard.writeText(d.bibtex || '').catch(function(){});
+              showToast(window.t('toast_bibtex_copied_short', 'BibTeX copied!'));
+            }).catch(function(){});
+        });
+      }
+    }
   }
 
   // ── Render ───────────────────────────────────────────────────────────────

@@ -127,10 +127,19 @@
   });
 
   // ── Analysis (SSE) ────────────────────────────────────────────────────────
+  var _finalHandled   = false;
+  var _partialData    = {};
+  var _sectionReceived = false;
+
   function analyze(ref) {
     if (!ref) return;
     if (window.BibCrit_checkPassageLength && window.BibCrit_checkPassageLength(ref)) return;
     currentRef = ref;
+
+    _finalHandled    = false;
+    _partialData     = {};
+    _sectionReceived = false;
+    _lastData        = null;
 
     // Show loading, hide others
     emptyState.style.display    = 'none';
@@ -157,8 +166,10 @@
 
       if (msg.type === 'step') {
         stepEl.textContent = msg.msg;
-
+      } else if (msg.type === 'section') {
+        _renderSection(msg.key, msg.data);
       } else if (msg.type === 'error') {
+        _finalHandled = true;
         clearInterval(timerInterval);
         es.close();
         loadingState.style.display = 'none';
@@ -166,22 +177,104 @@
         emptyState.querySelector('h2').textContent = '⚠ ' + msg.msg;
 
       } else if (msg.type === 'done') {
+        _finalHandled = true;
         clearInterval(timerInterval);
         es.close();
-        loadingState.style.display = 'none';
-        currentData = msg.data;
-        history.replaceState(null, '', '/backtranslation?ref=' + encodeURIComponent(ref));
-        if (typeof updateBudgetBar === 'function') updateBudgetBar();
-        renderWorkbench(msg.data);
+        if (_sectionReceived) {
+          _finalize(msg.data);
+        } else {
+          loadingState.style.display = 'none';
+          currentData = msg.data;
+          history.replaceState(null, '', '/backtranslation?ref=' + encodeURIComponent(ref));
+          if (typeof updateBudgetBar === 'function') updateBudgetBar();
+          renderWorkbench(msg.data);
+        }
       }
     };
 
     es.onerror = function () {
+      if (_finalHandled) return;
       clearInterval(timerInterval);
       es.close();
       loadingState.style.display = 'none';
       emptyState.style.display   = 'block';
     };
+  }
+
+  // ── Progressive section rendering ─────────────────────────────────────────
+  function _renderSection(key, data) {
+    _partialData[key] = data;
+    _sectionReceived  = true;
+
+    if (emptyState)    emptyState.style.display    = 'none';
+    if (loadingState)  loadingState.style.display  = 'none';
+
+    if (key === 'vorlage_analysis') {
+      // Render the workbench grid with partial data
+      var partial = {
+        reference:          currentRef,
+        lxx_words:          _partialData.lxx_words || [],
+        reconstructed_words: data || [],
+        mt_words:           _partialData.mt_words || [],
+      };
+      renderLxx(partial.lxx_words, partial.reconstructed_words);
+      renderVorlage(partial.reconstructed_words);
+      renderMt(partial.mt_words);
+      var legend = document.getElementById('bt-legend');
+      if (legend) legend.style.display = 'flex';
+      if (vorlageGrid) vorlageGrid.style.display = 'grid';
+      buildTabs(partial);
+      if (tabsArea) tabsArea.style.display = 'block';
+      if (passageHeading) {
+        passageHeading.innerHTML =
+          '<span class="ph-ref">' + _esc(currentRef) + '</span>' +
+          '<span class="ph-tool">' + window.t('bt_workbench_heading', 'Back-Translation Workbench') + '</span>';
+        passageHeading.style.display = 'flex';
+      }
+      staggerReveal(tabsArea, 30);
+    }
+
+    if (key === 'assessment') {
+      // assessment is the bibcrit_assessment — rebuild tabs with it
+      var withAssessment = Object.assign({}, _partialData, { bibcrit_assessment: data });
+      buildTabs(withAssessment);
+      staggerReveal(tabsArea, 0);
+    }
+  }
+
+  function _finalize(data) {
+    _lastData = data || _partialData;
+    if (loadingState) loadingState.style.display = 'none';
+
+    currentData = _lastData;
+    history.replaceState(null, '', '/backtranslation?ref=' + encodeURIComponent(currentRef));
+    if (typeof updateBudgetBar === 'function') updateBudgetBar();
+
+    // Re-render with complete data
+    renderLxx(_lastData.lxx_words || [], _lastData.reconstructed_words || []);
+    renderVorlage(_lastData.reconstructed_words || []);
+    renderMt(_lastData.mt_words || []);
+    var legend = document.getElementById('bt-legend');
+    if (legend) legend.style.display = 'flex';
+    if (vorlageGrid) vorlageGrid.style.display = 'grid';
+    buildTabs(_lastData);
+    if (tabsArea)  tabsArea.style.display  = 'block';
+    if (exportRow) exportRow.style.display = 'flex';
+    staggerReveal(tabsArea, 0);
+
+    var modelAttr = document.getElementById('bt-model-attr');
+    if (modelAttr && _lastData.model_version) {
+      modelAttr.textContent = window.t('analysis_by', 'Analysis by') + ' ' + _friendlyModel(_lastData.model_version);
+      modelAttr.style.display = 'inline';
+    }
+
+    if (window.ResultActions) {
+      ResultActions.init({
+        toolName: 'backtranslation',
+        getReference: function() { return currentRef; },
+        getResultData: function() { return currentData || {}; },
+      });
+    }
   }
 
   // ── Render ────────────────────────────────────────────────────────────────

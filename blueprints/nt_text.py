@@ -135,6 +135,9 @@ def api_nt_text_stream():
         if result.get('error'):
             yield event('error', msg=result['error'])
             return
+        if result.get('parse_error'):
+            yield event('error', msg='Analysis could not be parsed — please try again')
+            return
 
         result['gnt_text'] = gnt_text
 

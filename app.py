@@ -135,6 +135,8 @@ def sitemap_xml():
         ('/genealogy', '0.9', 'weekly'),
         ('/chiasm', '0.9', 'weekly'),
         ('/source', '0.9', 'weekly'),
+        ('/targum', '0.9', 'weekly'),
+        ('/nt-text', '0.9', 'weekly'),
         ('/discovery', '0.8', 'monthly'),
         ('/guide', '0.7', 'monthly'),
     ]
@@ -159,7 +161,7 @@ def llms_txt():
     from flask import Response
     content = """# BibCrit
 
-> AI-powered toolkit for biblical textual criticism. Ten specialized scholarly tools for analyzing divergences between the Masoretic Text (MT) and the Septuagint (LXX), profiling scribal tendencies, comparing Dead Sea Scrolls witnesses, reconstructing Hebrew Vorlagen, tracing patristic citations, modeling numerical discrepancies, detecting theological revisions, visualizing manuscript genealogies, detecting chiastic literary structures, and performing source criticism (J/E/D/P).
+> AI-powered toolkit for biblical textual criticism. Thirteen specialized scholarly tools for analyzing divergences between the Masoretic Text (MT) and the Septuagint (LXX), profiling scribal tendencies, comparing Dead Sea Scrolls witnesses, reconstructing Hebrew Vorlagen, comparing Targum Onkelos/Jonathan against MT and LXX, analyzing NT textual traditions and variant registers, tracing patristic citations, modeling numerical discrepancies, detecting theological revisions, visualizing manuscript genealogies, detecting chiastic literary structures, and performing source criticism (J/E/D/P).
 
 BibCrit streams AI analysis (powered by Anthropic Claude) directly in the browser. Frequently analyzed passages are cached and load instantly. All tools are free and openly accessible.
 
@@ -175,6 +177,8 @@ BibCrit streams AI analysis (powered by Anthropic Claude) directly in the browse
 - Manuscript Genealogy: https://bibcrit.app/genealogy
 - Chiasm & Literary Structure Detector: https://bibcrit.app/chiasm
 - Source Criticism Tool (J/E/D/P): https://bibcrit.app/source
+- Targum Comparator (Onkelos/Jonathan): https://bibcrit.app/targum
+- NT Textual Tradition Analyzer: https://bibcrit.app/nt-text
 
 ## Languages
 

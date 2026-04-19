@@ -144,6 +144,9 @@ def api_targum_stream():
         if result.get('error'):
             yield event('error', msg=result['error'])
             return
+        if result.get('parse_error'):
+            yield event('error', msg='Analysis could not be parsed — please try again')
+            return
 
         result.update({'mt_text': mt_text, 'lxx_text': lxx_text,
                         'targ_text': targ_text, 'manuscript': manuscript})

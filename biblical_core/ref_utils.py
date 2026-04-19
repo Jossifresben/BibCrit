@@ -131,6 +131,8 @@ def validate_nt_reference(reference: str) -> str | None:
     For OT manuscript comparison use the Ancient Witness Bridge.
     """
     parts = reference.strip().lower().split()
+    if not parts:
+        return 'Please enter a reference.'
     if parts[0].isdigit() and len(parts) >= 2:
         book = parts[0] + ' ' + parts[1].split(':')[0]
     else:

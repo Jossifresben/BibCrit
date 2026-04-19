@@ -1843,8 +1843,8 @@ def _extract_cards_targum(reference: str, data: dict, min_confidence: float) -> 
             'tool':            'targum',
             'card_type':       div_type,
             'divergence_type': div_type,
-            'mt_word':         mt_word,
-            'lxx_word':        targ_word,
+            'mt_word':         '',   # headline carries the MT→Targ pair; avoids LXX styling on Aramaic
+            'lxx_word':        '',
             'headline':        headline,
             'analysis_plain':  explanation,
             'summary_plain':   synth,

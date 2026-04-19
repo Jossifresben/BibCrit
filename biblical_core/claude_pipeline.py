@@ -22,8 +22,8 @@ GENEALOGY_MODEL   = 'claude-sonnet-4-5-20250929'
 NT_OT_MODEL       = 'claude-sonnet-4-5-20250929'
 CHIASM_MODEL      = 'claude-sonnet-4-5-20250929'
 SOURCE_MODEL      = 'claude-sonnet-4-5-20250929'
-TARGUM_MODEL  = 'claude-sonnet-4-5-20250929'
-NT_TEXT_MODEL = 'claude-sonnet-4-5-20250929'
+TARGUM_MODEL      = 'claude-sonnet-4-5-20250929'
+NT_TEXT_MODEL     = 'claude-sonnet-4-5-20250929'
 
 _SONNET_COST_IN  = 3.0  / 1_000_000   # $3 per MTok input (claude-sonnet-4-5)
 _SONNET_COST_OUT = 15.0 / 1_000_000   # $15 per MTok output (claude-sonnet-4-5)
@@ -1144,7 +1144,7 @@ class ClaudePipeline:
                 'synthesis': '', 'rendering_fidelity': {}, 'theological_modifications': [],
                 'targumic_expansions': [], 'messianic_reinterpretation': {'present': False},
                 'lxx_alignment': {}, 'key_divergences': [],
-                'assessment': {'title': '', 'reasoning': '', 'plain': '', 'confidence': 0.0},
+                'assessment': {'title': '', 'reasoning': '', 'plain': '', 'confidence': 0.0, 'next_steps': ''},
                 'citations': {'sbl': '', 'bibtex': ''},
             }
 
@@ -1159,7 +1159,7 @@ class ClaudePipeline:
                 'synthesis': '', 'rendering_fidelity': {}, 'theological_modifications': [],
                 'targumic_expansions': [], 'messianic_reinterpretation': {'present': False},
                 'lxx_alignment': {}, 'key_divergences': [],
-                'assessment': {'title': '', 'reasoning': '', 'plain': '', 'confidence': 0.0},
+                'assessment': {'title': '', 'reasoning': '', 'plain': '', 'confidence': 0.0, 'next_steps': ''},
                 'citations': {'sbl': '', 'bibtex': ''},
             }
 

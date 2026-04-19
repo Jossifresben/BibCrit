@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+{% block title %}{{ _t('targum_page_title') }}{% endblock %}
+{% block meta_description %}Compare Targum Onkelos and Jonathan against the Masoretic Text and Septuagint. Analyze Memra substitutions, anthropomorphism softening, targumic expansions, and messianic reinterpretation.{% endblock %}
+{% block og_title %}Targum Comparator — BibCrit{% endblock %}
+{% block og_description %}Compare Targum Onkelos (Torah) and Jonathan (Prophets) against MT and LXX for any biblical passage.{% endblock %}
+
+{% block content %}
+
+<div class="tool-header">
+  <h1 class="tool-title">{{ _t('targum_tool_title') }}</h1>
+  <p class="tool-subtitle">{{ _t('targum_tool_subtitle') }}</p>
+</div>
+
+<!-- Passage Selector Bar -->
+<div class="passage-bar">
+  <div class="passage-bar-row passage-bar-main">
+    <span class="passage-label">{{ _t('passage_label') }}:</span>
+    <div class="passage-bar-selectors">
+      <select id="sel-book" class="passage-select" aria-label="{{ _t('book_label') }}">
+        <option value="">{{ _t('passage_book_placeholder') }}</option>
+      </select>
+      <select id="sel-chapter" class="passage-select" aria-label="Chapter" disabled>
+        <option value="">{{ _t('passage_ch') }}</option>
+      </select>
+      <select id="sel-verse" class="passage-select" aria-label="Verse" disabled>
+        <option value="">{{ _t('passage_vs') }}</option>
+      </select>
+    </div>
+    <span class="passage-or">{{ _t('passage_or') }}</span>
+    <input type="text" id="ref-input" class="passage-input"
+           placeholder="Genesis 22:8" value="{{ reference }}"
+           aria-label="Type a reference">
+    <div class="passage-bar-actions">
+      <button id="btn-analyze" class="btn-primary">{{ _t('targum_analyze_btn') }}</button>
+    </div>
+  </div>
+</div>
+
+<!-- Empty / Welcome State -->
+<div id="empty-state" class="empty-state">
+  <div class="empty-inner">
+    <p>{{ _t('targum_empty_body') }}</p>
+    <div class="bt-legend-hero" style="margin-bottom:1.5rem;">
+      <span class="bt-legend-item"><span class="scribal-mini-dot" style="background:var(--mt-color)"></span> {{ _t('legend_mt_full') }} (Hebrew)</span>
+      <span class="bt-legend-item"><span class="scribal-mini-dot" style="background:#c0392b"></span> Targum (Aramaic)</span>
+      <span class="bt-legend-item"><span class="scribal-mini-dot" style="background:var(--lxx-color)"></span> {{ _t('legend_lxx_full') }} (Greek)</span>
+    </div>
+    <p class="featured-label">{{ _t('featured_label') }}</p>
+    <div class="featured-passages">
+      <a href="#" class="featured-ref" data-ref="Genesis 22:8">{{ _t('feat_targ_gen228') | safe }}</a>
+      <a href="#" class="featured-ref" data-ref="Isaiah 53:5">{{ _t('feat_targ_isa535') | safe }}</a>
+      <a href="#" class="featured-ref" data-ref="Exodus 3:14">{{ _t('feat_targ_exod314') | safe }}</a>
+      <a href="#" class="featured-ref" data-ref="Genesis 3:22">{{ _t('feat_targ_gen322') | safe }}</a>
+    </div>
+  </div>
+</div>
+
+<!-- Loading State -->
+<div id="loading-state" class="loading-state" style="display:none;" aria-live="polite">
+  <div class="loading-spinner"></div>
+  <p id="loading-step" class="loading-step-msg">{{ _t('loading_preparing') }}</p>
+  <p id="loading-timer" class="loading-timer"></p>
+</div>
+
+<!-- Passage heading -->
+<div id="passage-heading" class="passage-heading" style="display:none;"></div>
+
+<!-- Results area -->
+<div id="targum-results" style="display:none;">
+
+  <!-- Three-column text display -->
+  <div id="text-columns" class="targum-columns" style="display:none;">
+    <div class="targum-col targum-col-mt">
+      <div class="targum-col-label">MT (Hebrew)</div>
+      <div id="col-mt-text" class="targum-col-text" dir="rtl"></div>
+    </div>
+    <div class="targum-col targum-col-targ">
+      <div class="targum-col-label">
+        <span id="manuscript-badge" class="ms-badge">Targum</span> (Aramaic)
+      </div>
+      <div id="col-targ-text" class="targum-col-text" dir="rtl"></div>
+    </div>
+    <div class="targum-col targum-col-lxx">
+      <div class="targum-col-label">LXX (Greek)</div>
+      <div id="col-lxx-text" class="targum-col-text"></div>
+    </div>
+  </div>
+
+  <!-- Synthesis -->
+  <div id="synthesis-section" class="num-section" style="display:none;">
+    <div class="num-section-label">{{ _t('section_synthesis') }}</div>
+    <div id="synthesis-body"></div>
+  </div>
+
+  <!-- Rendering Fidelity -->
+  <div id="fidelity-section" class="num-section" style="display:none;">
+    <div class="num-section-label">{{ _t('targum_rendering_fidelity') }}</div>
+    <div id="fidelity-body"></div>
+  </div>
+
+  <!-- Theological Modifications -->
+  <div id="theological-section" class="num-section" style="display:none;">
+    <div class="num-section-label">{{ _t('targum_theological_modifications') }}</div>
+    <div id="theological-body"></div>
+  </div>
+
+  <!-- Targumic Expansions -->
+  <div id="expansions-section" class="num-section" style="display:none;">
+    <div class="num-section-label">{{ _t('targum_expansions') }}</div>
+    <div id="expansions-body"></div>
+  </div>
+
+  <!-- Messianic Reinterpretation -->
+  <div id="messianic-section" class="num-section" style="display:none;">
+    <div class="num-section-label">{{ _t('targum_messianic') }}</div>
+    <div id="messianic-body"></div>
+  </div>
+
+  <!-- LXX Alignment -->
+  <div id="lxx-align-section" class="num-section" style="display:none;">
+    <div class="num-section-label">{{ _t('targum_lxx_alignment') }}</div>
+    <div id="lxx-align-body"></div>
+  </div>
+
+  <!-- BibCrit Assessment -->
+  <div id="bibcrit-assessment" style="display:none;">
+    <div class="num-section-label" style="margin-top:1.5rem;">{{ _t('section_bibcrit_assessment') }}</div>
+    <div id="bibcrit-body"></div>
+  </div>
+
+  <!-- Export row -->
+  <div class="export-row" id="export-row" style="display:none;">
+    <button class="btn-export" id="btn-sbl" title="Copy SBL footnote">📋 SBL Footnote</button>
+    <button class="btn-export" id="btn-bibtex" title="Copy BibTeX">📋 BibTeX</button>
+    <button class="btn-export btn-share" id="btn-share" title="Share">
+      <span class="material-symbols-outlined" style="font-size:14px;vertical-align:-2px">qr_code_2</span> Share
+    </button>
+  </div>
+</div>
+
+<!-- Toast -->
+<div id="toast" class="toast" style="display:none;" role="status"></div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>window.TOOL_MAX_VERSES = 35;</script>
+<script src="{{ url_for('static', filename='targum.js') }}"></script>
+{% if reference %}
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.targum) window.targum.analyze('{{ reference | e }}');
+  });
+</script>
+{% endif %}
+{% endblock %}

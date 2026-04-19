@@ -2,6 +2,7 @@
 
 import json
 import os
+import time
 import threading
 from queue import Queue, Empty
 from flask import Blueprint, render_template, request, jsonify, Response, stream_with_context
@@ -210,6 +211,12 @@ def api_divergence_stream():
 
         if cached:
             yield event('step', msg=_step(lang, 'found_cache'))
+            _CACHE_META = ('cached_at', 'model_version', 'prompt_version',
+                           'reference', 'book', 'discovery_ready', 'cache_key')
+            for _key, _val in cached.items():
+                if _key not in _CACHE_META:
+                    yield event('section', key=_key, data=_val)
+                    time.sleep(0.04)
             result = cached
         else:
             # Step 3: call Claude
@@ -348,6 +355,12 @@ def api_backtranslation_stream():
 
         if cached:
             yield event('step', msg=_step(lang, 'found_cache'))
+            _CACHE_META = ('cached_at', 'model_version', 'prompt_version',
+                           'reference', 'book', 'discovery_ready', 'cache_key')
+            for _key, _val in cached.items():
+                if _key not in _CACHE_META:
+                    yield event('section', key=_key, data=_val)
+                    time.sleep(0.04)
             result = cached
         else:
             yield event('step', msg=_step(lang, 'bt_generating'))
@@ -490,6 +503,12 @@ def api_dss_stream():
 
         if cached:
             yield event('step', msg=_step(lang, 'found_cache'))
+            _CACHE_META = ('cached_at', 'model_version', 'prompt_version',
+                           'reference', 'book', 'discovery_ready', 'cache_key')
+            for _key, _val in cached.items():
+                if _key not in _CACHE_META:
+                    yield event('section', key=_key, data=_val)
+                    time.sleep(0.04)
             result = cached
         else:
             yield event('step', msg=_step(lang, 'dss_generating'))
@@ -615,6 +634,12 @@ def api_genealogy_stream():
 
         if cached:
             yield event('step', msg=_step(lang, 'found_cache'))
+            _CACHE_META = ('cached_at', 'model_version', 'prompt_version',
+                           'reference', 'book', 'discovery_ready', 'cache_key')
+            for _key, _val in cached.items():
+                if _key not in _CACHE_META:
+                    yield event('section', key=_key, data=_val)
+                    time.sleep(0.04)
             result = cached
         else:
             yield event('step', msg=_step(lang, 'gen_generating'))
@@ -903,6 +928,12 @@ def api_nt_ot_stream():
 
         if cached:
             yield event('step', msg=_step(lang, 'found_cache'))
+            _CACHE_META = ('cached_at', 'model_version', 'prompt_version',
+                           'reference', 'book', 'discovery_ready', 'cache_key')
+            for _key, _val in cached.items():
+                if _key not in _CACHE_META:
+                    yield event('section', key=_key, data=_val)
+                    time.sleep(0.04)
             result = cached
         else:
             # Step 3: call Claude

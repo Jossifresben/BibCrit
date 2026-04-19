@@ -1,6 +1,7 @@
 """NT Textual Tradition Analyzer blueprint — /nt-text page and /api/nt-text/stream SSE endpoint."""
 
 import json
+import time
 import threading
 from queue import Queue, Empty
 from flask import Blueprint, render_template, request, Response, stream_with_context
@@ -113,6 +114,12 @@ def api_nt_text_stream():
 
         if cached:
             yield event('step', msg=_step(lang, 'found_cache'))
+            _CACHE_META = ('cached_at', 'model_version', 'prompt_version',
+                           'reference', 'book', 'discovery_ready', 'cache_key')
+            for _key, _val in cached.items():
+                if _key not in _CACHE_META:
+                    yield event('section', key=_key, data=_val)
+                    time.sleep(0.04)
             result = cached
         else:
             # Step 3: call Claude

@@ -24,7 +24,7 @@ def _make_pipeline(with_client=True):
 
 class TestCallStreamingEpilogue:
     def test_no_client_yields_epilogue(self):
-        """When _client is None, must yield a single (None, (0, 0, prefill)) epilogue."""
+        """When _client is None, must yield a single (None, (0, 0, '{}')) epilogue."""
         pl = _make_pipeline(with_client=False)
         items = list(pl._call_streaming(system='s', user_content='u', model='m', max_tokens=10))
         assert len(items) == 1
@@ -33,7 +33,7 @@ class TestCallStreamingEpilogue:
         in_tok, out_tok, full_text = value
         assert in_tok == 0
         assert out_tok == 0
-        assert full_text == '{'   # default prefill
+        assert full_text == '{}'   # empty JSON object (no prefill)
 
     def test_epilogue_is_last_item(self):
         """With a real stream mock, (None, ...) must be the last item yielded."""

@@ -244,8 +244,9 @@ class ClaudePipeline:
         """Generator: yields (key, value) pairs as top-level JSON sections complete.
 
         Uses the Anthropic streaming API so sections arrive as Claude writes them,
-        not all at once. The prefill ('{') is prepended to match the existing
-        assistant-prefill pattern used by all blocking analyze_* methods.
+        not all at once. Waits for the opening '{' in the token stream before
+        starting section parsing (no assistant prefill — incompatible with
+        claude-sonnet-4-6 which returns 400 for prefill requests).
 
         The final item yielded is always ``(None, (in_tok, out_tok, full_text))``:
         an epilogue carrying token usage and the full raw response for caching.
@@ -256,24 +257,35 @@ class ClaudePipeline:
             followed by (None, (in_tok: int, out_tok: int, full_text: str)).
         """
         if not self._client:
-            yield None, (0, 0, prefill)
+            yield None, (0, 0, '{}')
             return
 
-        full_text = prefill
-        buffer = ''  # content AFTER the prefill opening brace
+        full_text = ''
+        buffer = ''         # content AFTER the opening {
+        _json_started = False
 
         with self._client.messages.stream(
             model=model,
             max_tokens=max_tokens,
             system=system,
             messages=[
-                {'role': 'user',      'content': user_content},
-                {'role': 'assistant', 'content': prefill},
+                {'role': 'user', 'content': user_content},
             ],
         ) as stream:
             for text_chunk in stream.text_stream:
-                buffer += text_chunk
                 full_text += text_chunk
+                if not _json_started:
+                    # Skip preamble text until we see the opening {
+                    search = buffer + text_chunk
+                    idx = search.find('{')
+                    if idx == -1:
+                        buffer = search[-20:]   # keep a small tail for multi-chunk {
+                        continue
+                    _json_started = True
+                    buffer = search[idx + 1:]   # content AFTER the {
+                else:
+                    buffer += text_chunk
+
                 while True:
                     result = extract_next_section(buffer)
                     if result is None:
@@ -445,14 +457,13 @@ class ClaudePipeline:
                 system=_TRANSLATION_SYSTEM,
                 messages=[
                     {'role': 'user',      'content': user_content},
-                    {'role': 'assistant', 'content': '{'},
                 ],
             )
             cost = (response.usage.input_tokens  * _SONNET_COST_IN +
                     response.usage.output_tokens * _SONNET_COST_OUT)
             self.record_spend(cost)
 
-            raw        = '{' + response.content[0].text
+            raw        = response.content[0].text
             translated = _parse_json_response(raw)
             if translated.get('error'):
                 return data  # fallback to English on parse failure
@@ -745,7 +756,6 @@ class ClaudePipeline:
             system=_BACKTRANSLATION_SYSTEM,
             messages=[
                 {'role': 'user',      'content': user_content},
-                {'role': 'assistant', 'content': '{'},
             ],
         )
 
@@ -753,7 +763,7 @@ class ClaudePipeline:
                 response.usage.output_tokens * _SONNET_COST_OUT)
         self.record_spend(cost)
 
-        raw  = '{' + response.content[0].text
+        raw  = response.content[0].text
         data = _parse_json_response(raw)
         self.save_cache(reference, tool, prompt_version, model, data)
         return data
@@ -874,7 +884,6 @@ class ClaudePipeline:
             system=_SCRIBAL_SYSTEM,
             messages=[
                 {'role': 'user',      'content': user_content},
-                {'role': 'assistant', 'content': '{'},
             ],
         )
 
@@ -882,7 +891,7 @@ class ClaudePipeline:
                 response.usage.output_tokens * _SONNET_COST_OUT)
         self.record_spend(cost)
 
-        raw  = '{' + response.content[0].text
+        raw  = response.content[0].text
         data = _parse_json_response(raw)
         self.save_cache(book_name, tool, prompt_version, model, data)
         return data
@@ -1005,7 +1014,6 @@ class ClaudePipeline:
             system=_NUMERICAL_SYSTEM,
             messages=[
                 {'role': 'user',      'content': user_content},
-                {'role': 'assistant', 'content': '{'},
             ],
         )
 
@@ -1013,7 +1021,7 @@ class ClaudePipeline:
                 response.usage.output_tokens * _SONNET_COST_OUT)
         self.record_spend(cost)
 
-        raw  = '{' + response.content[0].text
+        raw  = response.content[0].text
         data = _parse_json_response(raw)
         self.save_cache(reference, tool, prompt_version, model, data)
         return data
@@ -1148,7 +1156,6 @@ class ClaudePipeline:
             system=_DSS_SYSTEM,
             messages=[
                 {'role': 'user',      'content': user_content},
-                {'role': 'assistant', 'content': '{'},
             ],
         )
 
@@ -1156,7 +1163,7 @@ class ClaudePipeline:
                 response.usage.output_tokens * _SONNET_COST_OUT)
         self.record_spend(cost)
 
-        raw  = '{' + response.content[0].text
+        raw  = response.content[0].text
         data = _parse_json_response(raw)
 
         # Fallback: if SP text was provided but Claude omitted sp_witness, build minimal card
@@ -1402,7 +1409,6 @@ class ClaudePipeline:
             system=_THEOLOGICAL_SYSTEM,
             messages=[
                 {'role': 'user',      'content': user_content},
-                {'role': 'assistant', 'content': '{'},
             ],
         )
 
@@ -1410,7 +1416,7 @@ class ClaudePipeline:
                 response.usage.output_tokens * _SONNET_COST_OUT)
         self.record_spend(cost)
 
-        raw  = '{' + response.content[0].text
+        raw  = response.content[0].text
         data = _parse_json_response(raw)
         self.save_cache(reference, tool, prompt_version, model, data)
         return data
@@ -1537,7 +1543,6 @@ class ClaudePipeline:
             system=_PATRISTIC_SYSTEM,
             messages=[
                 {'role': 'user',      'content': user_content},
-                {'role': 'assistant', 'content': '{'},
             ],
         )
 
@@ -1545,7 +1550,7 @@ class ClaudePipeline:
                 response.usage.output_tokens * _SONNET_COST_OUT)
         self.record_spend(cost)
 
-        raw  = '{' + response.content[0].text
+        raw  = response.content[0].text
         data = _parse_json_response(raw)
         self.save_cache(reference, tool, prompt_version, model, data)
         return data
@@ -1666,7 +1671,6 @@ class ClaudePipeline:
             system=_GENEALOGY_SYSTEM,
             messages=[
                 {'role': 'user',      'content': user_content},
-                {'role': 'assistant', 'content': '{'},
             ],
         )
 
@@ -1674,7 +1678,7 @@ class ClaudePipeline:
                 response.usage.output_tokens * _SONNET_COST_OUT)
         self.record_spend(cost)
 
-        raw  = '{' + response.content[0].text
+        raw  = response.content[0].text
         data = _parse_json_response(raw)
         data['discovery_ready'] = True
         self.save_cache(book, tool, prompt_version, model, data)
@@ -1813,7 +1817,6 @@ class ClaudePipeline:
             system=_TARGUM_SYSTEM,
             messages=[
                 {'role': 'user',      'content': user_content},
-                {'role': 'assistant', 'content': '{'},
             ],
         )
 
@@ -1821,19 +1824,18 @@ class ClaudePipeline:
                 response.usage.output_tokens * _SONNET_COST_OUT)
         self.record_spend(cost)
 
-        raw  = '{' + response.content[0].text
+        raw  = response.content[0].text
         data = _parse_json_response(raw)
 
         # Retry once if JSON parsing failed; never persist a parse error to cache.
         if 'parse_error' in data:
             resp2 = self._client.messages.create(
                 model=model, max_tokens=8192, system=_TARGUM_SYSTEM,
-                messages=[{'role': 'user', 'content': user_content},
-                           {'role': 'assistant', 'content': '{'}],
+                messages=[{'role': 'user', 'content': user_content}],
             )
             self.record_spend(resp2.usage.input_tokens * _SONNET_COST_IN +
                               resp2.usage.output_tokens * _SONNET_COST_OUT)
-            data2 = _parse_json_response('{' + resp2.content[0].text)
+            data2 = _parse_json_response(resp2.content[0].text)
             if 'parse_error' not in data2:
                 data = data2
 
@@ -1971,7 +1973,6 @@ class ClaudePipeline:
             system=_NT_TEXT_SYSTEM,
             messages=[
                 {'role': 'user',      'content': user_content},
-                {'role': 'assistant', 'content': '{'},
             ],
         )
 
@@ -1979,19 +1980,18 @@ class ClaudePipeline:
                 response.usage.output_tokens * _SONNET_COST_OUT)
         self.record_spend(cost)
 
-        raw  = '{' + response.content[0].text
+        raw  = response.content[0].text
         data = _parse_json_response(raw)
 
         # Retry once if JSON parsing failed; never persist a parse error to cache.
         if 'parse_error' in data:
             resp2 = self._client.messages.create(
                 model=model, max_tokens=8192, system=_NT_TEXT_SYSTEM,
-                messages=[{'role': 'user', 'content': user_content},
-                           {'role': 'assistant', 'content': '{'}],
+                messages=[{'role': 'user', 'content': user_content}],
             )
             self.record_spend(resp2.usage.input_tokens * _SONNET_COST_IN +
                               resp2.usage.output_tokens * _SONNET_COST_OUT)
-            data2 = _parse_json_response('{' + resp2.content[0].text)
+            data2 = _parse_json_response(resp2.content[0].text)
             if 'parse_error' not in data2:
                 data = data2
 
@@ -2116,8 +2116,7 @@ class ClaudePipeline:
             max_tokens=8192,
             system=_DIVERGENCE_SYSTEM,
             messages=[
-                {'role': 'user',      'content': user_content},
-                {'role': 'assistant', 'content': '{'},  # pre-fill: forces raw JSON, no fence
+                {'role': 'user', 'content': user_content},
             ],
         )
 
@@ -2125,7 +2124,7 @@ class ClaudePipeline:
                 response.usage.output_tokens * _SONNET_COST_OUT)
         self.record_spend(cost)
 
-        raw = '{' + response.content[0].text  # prepend the pre-filled opening brace
+        raw = response.content[0].text  # prepend the pre-filled opening brace
         data = _parse_json_response(raw)
         self.save_cache(reference, 'divergence', prompt_version, model, data)
         return data
@@ -2249,7 +2248,6 @@ class ClaudePipeline:
             system=_NT_OT_SYSTEM,
             messages=[
                 {'role': 'user',      'content': user_content},
-                {'role': 'assistant', 'content': '{'},
             ],
         )
 
@@ -2257,7 +2255,7 @@ class ClaudePipeline:
                 response.usage.output_tokens * _SONNET_COST_OUT)
         self.record_spend(cost)
 
-        raw  = '{' + response.content[0].text
+        raw  = response.content[0].text
         data = _parse_json_response(raw)
         self.save_cache(reference, tool, prompt_version, model, data)
         return data
@@ -2384,7 +2382,6 @@ class ClaudePipeline:
             system=_CHIASM_SYSTEM,
             messages=[
                 {'role': 'user',      'content': user_content},
-                {'role': 'assistant', 'content': '{'},
             ],
         )
 
@@ -2392,7 +2389,7 @@ class ClaudePipeline:
                 response.usage.output_tokens * _SONNET_COST_OUT)
         self.record_spend(cost)
 
-        raw  = '{' + response.content[0].text
+        raw  = response.content[0].text
         data = _parse_json_response(raw)
         self.save_cache(reference, tool, prompt_version, model, data)
         return data
@@ -2517,7 +2514,6 @@ class ClaudePipeline:
             system=_SOURCE_SYSTEM,
             messages=[
                 {'role': 'user',      'content': user_content},
-                {'role': 'assistant', 'content': '{'},
             ],
         )
 
@@ -2525,7 +2521,7 @@ class ClaudePipeline:
                 response.usage.output_tokens * _SONNET_COST_OUT)
         self.record_spend(cost)
 
-        raw  = '{' + response.content[0].text
+        raw  = response.content[0].text
         data = _parse_json_response(raw)
         self.save_cache(reference, tool, prompt_version, model, data)
         return data

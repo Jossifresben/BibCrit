@@ -238,18 +238,18 @@ class ClaudePipeline:
         not all at once. The prefill ('{') is prepended to match the existing
         assistant-prefill pattern used by all blocking analyze_* methods.
 
-        After the generator exhausts, self._last_stream_text contains the full
-        raw response (for caching) and self._last_stream_usage is an
-        (input_tokens, output_tokens) tuple.
+        The final item yielded is always ``(None, (in_tok, out_tok, full_text))``:
+        an epilogue carrying token usage and the full raw response for caching.
+        Callers must handle ``key is None`` to consume this epilogue.
 
         Yields:
-            (key: str, value: any) tuples in the order Claude writes them.
+            (key: str, value: any) tuples for each completed JSON section,
+            followed by (None, (in_tok: int, out_tok: int, full_text: str)).
         """
         if not self._client:
             return
 
-        self._last_stream_text = prefill
-        self._last_stream_usage = (0, 0)
+        full_text = prefill
         buffer = ''  # content AFTER the prefill opening brace
 
         with self._client.messages.stream(
@@ -263,7 +263,7 @@ class ClaudePipeline:
         ) as stream:
             for text_chunk in stream.text_stream:
                 buffer += text_chunk
-                self._last_stream_text += text_chunk
+                full_text += text_chunk
                 while True:
                     result = extract_next_section(buffer)
                     if result is None:
@@ -272,10 +272,10 @@ class ClaudePipeline:
                     yield key, value
 
             final_msg = stream.get_final_message()
-            self._last_stream_usage = (
-                final_msg.usage.input_tokens,
-                final_msg.usage.output_tokens,
-            )
+            in_tok = final_msg.usage.input_tokens
+            out_tok = final_msg.usage.output_tokens
+
+        yield None, (in_tok, out_tok, full_text)
 
     # ── Public interface ───────────────────────────────────────────────────
 
@@ -1065,32 +1065,31 @@ class ClaudePipeline:
     def stream_theological(self, reference: str, vul_text: str = ''):
         """Streaming version of analyze_theological().
 
-        Yields (key, value) pairs as each JSON section completes.
-        Caches the complete result after the stream finishes.
-        Sets self._last_theological_result with the final parsed dict.
+        Yields (key, value) pairs as each JSON section completes,
+        followed by a final epilogue: ``(None, final_result_dict)``.
+        The epilogue is always the last item; callers must handle ``key is None``.
+        Caches the complete result internally.
         """
         model          = THEOLOGICAL_MODEL
         prompt_version = 'v2'
         tool           = 'theological'
 
-        self._last_theological_result = None
-
-        # Cache hit: yield sections from stored JSON, no API call
+        # Cache hit: yield sections then epilogue
         cached = self.get_cached(reference, tool, prompt_version, model)
         if cached:
-            self._last_theological_result = cached
             for key, value in cached.items():
                 yield key, value
                 time.sleep(0.04)
+            yield None, cached
             return
 
         if not self._client:
-            self._last_theological_result = {'error': 'No API key configured.'}
+            yield None, {'error': 'No API key configured.'}
             return
 
         budget = self.get_budget()
         if budget['spend_usd'] >= self._cap_usd:
-            self._last_theological_result = {'error': 'Monthly budget reached.'}
+            yield None, {'error': 'Monthly budget reached.'}
             return
 
         template = self.load_prompt('theological', prompt_version)
@@ -1103,28 +1102,35 @@ class ClaudePipeline:
             'Identify theologically motivated textual changes. Return JSON.'
         )
 
-        sections = {}
-        for key, value in self._call_streaming(
-            system=_THEOLOGICAL_SYSTEM,
-            user_content=user_content,
-            model=model,
-            max_tokens=8192,
-        ):
-            sections[key] = value
-            yield key, value
+        sections: dict = {}
+        in_tok = out_tok = 0
+        full_text = '{'
+        try:
+            for key, value in self._call_streaming(
+                system=_THEOLOGICAL_SYSTEM,
+                user_content=user_content,
+                model=model,
+                max_tokens=8192,
+            ):
+                if key is None:
+                    # Epilogue from _call_streaming: (in_tok, out_tok, full_text)
+                    in_tok, out_tok, full_text = value
+                else:
+                    sections[key] = value
+                    yield key, value
+        except Exception as exc:
+            yield None, {'error': str(exc)}
+            return
+        finally:
+            self.record_spend(in_tok * _SONNET_COST_IN + out_tok * _SONNET_COST_OUT)
 
-        # Record spend
-        in_tok, out_tok = getattr(self, '_last_stream_usage', (0, 0))
-        self.record_spend(in_tok * _SONNET_COST_IN + out_tok * _SONNET_COST_OUT)
-
-        # Parse full response and cache
-        data = _parse_json_response(self._last_stream_text)
+        data = _parse_json_response(full_text)
         if 'parse_error' not in data:
             self.save_cache(reference, tool, prompt_version, model, data)
-            self._last_theological_result = data
+            yield None, data
         else:
             # Fallback: reconstruct from yielded sections
-            self._last_theological_result = sections if sections else data
+            yield None, (sections if sections else data)
 
     def analyze_patristic(self, reference: str, gnt_text: str = '') -> dict:
         """Return patristic citation analysis for a passage.

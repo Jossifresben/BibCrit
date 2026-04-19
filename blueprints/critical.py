@@ -32,7 +32,7 @@ critical_bp = Blueprint('critical', __name__)
 # pipeline stores them with version Y, producing cache misses on every request.
 _SCRIBAL_PROMPT     = 'v1'
 _NUMERICAL_PROMPT   = 'v3'
-_THEOLOGICAL_PROMPT = 'v1'
+_THEOLOGICAL_PROMPT = 'v2'
 _PATRISTIC_PROMPT   = 'v3'
 
 _STEPS = {
@@ -326,6 +326,9 @@ def api_theological_stream():
             yield event('error', msg='Server not ready — pipeline not initialized')
             return
 
+        vul_words = state.corpus.get_verse_words(reference, 'VUL') if state.corpus else None
+        vul_text  = ' '.join(w.word_text for w in vul_words) if vul_words else ''
+
         if lang == 'es':
             cached_es = pipeline.get_cached_es(reference, 'theological', _THEOLOGICAL_PROMPT, THEOLOGICAL_MODEL)
             if cached_es:
@@ -346,7 +349,7 @@ def api_theological_stream():
             _result_box = [None]
             def _run_theological():
                 try:
-                    _result_box[0] = pipeline.analyze_theological(reference)
+                    _result_box[0] = pipeline.analyze_theological(reference, vul_text)
                 except Exception as exc:
                     _result_box[0] = {'error': str(exc)}
             _t = threading.Thread(target=_run_theological, daemon=True)

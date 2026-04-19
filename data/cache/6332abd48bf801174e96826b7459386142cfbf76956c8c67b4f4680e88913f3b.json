@@ -1,0 +1,84 @@
+{
+  "passage": "Genesis 6:1-8",
+  "framework": "classic_documentary",
+  "scope_note": "This passage presents the Sons of God episode and divine decision to limit human lifespan, followed by YHWH's decision to destroy humanity, serving as the prelude to the Flood narrative.",
+  "source_units": [
+    {
+      "verses": "6:1-4",
+      "source": "J",
+      "confidence": 0.75,
+      "divine_name_used": "YHWH (v. 3)",
+      "key_vocabulary": [
+        "sons of God",
+        "daughters of men",
+        "Nephilim",
+        "mighty men",
+        "men of renown"
+      ],
+      "theological_concerns": "Divine-human boundary violation, human corruption, divine limitation of human lifespan",
+      "structural_markers": "Narrative introduction ('when men began to multiply'), etiological concern (explaining Nephilim), use of YHWH in direct divine speech",
+      "doublet_with": null,
+      "summary": "The Sons of God pericope (vv. 1-4) is widely attributed to J based on the use of YHWH in v. 3, the vivid mythological narrative style, and concern with divine-human boundaries typical of J's anthropomorphic theology. The passage explains the divine decision to limit human lifespan to 120 years in response to divine beings taking human wives. Some scholars debate whether this is a fragment of an independent tradition incorporated by J or part of J's original composition."
+    },
+    {
+      "verses": "6:5-8",
+      "source": "J",
+      "confidence": 0.95,
+      "divine_name_used": "YHWH (vv. 5, 6, 7, 8)",
+      "key_vocabulary": [
+        "wickedness",
+        "evil inclination",
+        "grieved to his heart",
+        "sorry that he made",
+        "blot out",
+        "found favor"
+      ],
+      "theological_concerns": "Human moral corruption, divine emotional response (grief and regret), divine judgment, special favor toward Noah",
+      "structural_markers": "Repetition of 'YHWH saw' (v. 5) echoing creation language, anthropopathic description of God's internal state, divine monologue of judgment",
+      "doublet_with": "6:11-13",
+      "summary": "Verses 5-8 are nearly universally assigned to J, evidenced by exclusive use of YHWH (four times), deeply anthropomorphic language (God 'grieved,' 'sorry'), and the characteristic J concern with human wickedness and divine emotional response. The passage provides J's motivation for the Flood: YHWH's grief over human moral corruption and regret at having made humanity. The contrast between universal judgment (vv. 5-7) and Noah's exceptional favor (v. 8) sets up J's Flood narrative, where Noah is chosen for his character rather than mere genealogical position."
+    }
+  ],
+  "doublets": [
+    {
+      "unit_1_verses": "6:5-8",
+      "unit_2_verses": "6:11-13",
+      "description": "Two distinct accounts of why God decided to send the Flood: J emphasizes YHWH's grief over human wickedness and evil inclination (6:5-8), while P describes the earth as 'corrupt' and filled with 'violence' in more abstract, legalistic terms (6:11-13)",
+      "significance": "This doublet reveals the characteristic theological differences between J (anthropomorphic, emotionally engaged deity) and P (transcendent, juridical deity responding to cosmic corruption)."
+    }
+  ],
+  "competing_positions": [
+    {
+      "scholar": "Friedman (1987, 2003)",
+      "attribution": "Friedman assigns 6:1-8 entirely to J, viewing vv. 1-4 as J's mythological prologue explaining both the Nephilim and divine limitation of lifespan, with vv. 5-8 providing J's emotional, anthropomorphic rationale for the Flood based on human wickedness.",
+      "note": "The Bible with Sources Revealed (2003), pp. 41-42; Who Wrote the Bible? (1987), pp. 246-247"
+    },
+    {
+      "scholar": "Baden (2012)",
+      "attribution": "Baden likewise attributes 6:1-8 to J, emphasizing the unified narrative logic: the Sons of God episode (vv. 1-4) demonstrates divine-human boundary transgression that contributes to the wickedness described in vv. 5-6, creating a coherent J introduction to the Flood.",
+      "note": "The Composition of the Pentateuch (2012), pp. 107-108"
+    },
+    {
+      "scholar": "Westermann (1984)",
+      "attribution": "Westermann treats 6:1-4 as an independent mythological fragment inserted into the J narrative, arguing its concern with divine beings differs from the human wickedness theme of vv. 5-8, though he acknowledges J as the redactor who incorporated it.",
+      "note": "Genesis 1-11: A Commentary (1984), pp. 365-379"
+    },
+    {
+      "scholar": "Carr (1996)",
+      "attribution": "Carr suggests 6:1-4 may represent a pre-J tradition that J adapted, noting parallels with Ancient Near Eastern divine rebellion myths, while affirming vv. 5-8 as classic J material.",
+      "note": "Reading the Fractures of Genesis (1996), pp. 245-250"
+    }
+  ],
+  "framework_note": "Classic Documentary Hypothesis (Wellhausen 1878, Friedman 1987, Baden 2012). Source attribution is analytical evidence, not definitive assignment. Scholarly debate continues regarding the origin and integration of vv. 1-4.",
+  "synthesis": "Genesis 6:1-8 is predominantly assigned to J based on exclusive use of YHWH, anthropomorphic theology, and concern with human moral corruption. While vv. 5-8 represent consensus J material providing the emotional divine rationale for the Flood, vv. 1-4 (the Sons of God episode) present more debate, with some viewing it as incorporated mythology and others as original J composition establishing the theme of boundary violation that culminates in divine judgment.",
+  "bibcrit_hypothesis": {
+    "title": "Sons of God as J's Mythological Causation",
+    "reasoning": "The Sons of God episode (6:1-4) functions as J's etiological explanation for both the Nephilim and the intensification of human wickedness, creating narrative causation for YHWH's grief response. The divine-human boundary violation (vv. 1-2) produces hybrid offspring and accelerates moral corruption, which YHWH observes and laments (vv. 5-6), forming a unified J narrative arc from transgression to divine emotional response to judgment decision.",
+    "confidence": 0.72
+  },
+  "discovery_ready": true,
+  "reference": "Genesis 6:1-8",
+  "cached_at": "2026-04-14T18:53:32.540352",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

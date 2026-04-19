@@ -1838,6 +1838,7 @@
 .dss-align-lxx  { background: #dbeafe; color: #1e40af; border: 1px solid #bfdbfe; }
 .dss-align-sp   { background: #d1fae5; color: #065f46; border: 1px solid #6ee7b7; }
 .dss-align-pesh { background: var(--pesh-bg, #f3eeff); color: var(--pesh-color, #7B5EA7); border: 1px solid var(--pesh-border, #b89fd4); }
+.dss-align-vul  { background: #f5f0e8; color: #8B7355; border: 1px solid #c8b99a; }
 .dss-align-ind  { background: #fed7aa; color: #9a3412; border: 1px solid #fdba74; }
 .dss-align-abs  { background: var(--border); color: var(--muted); border: 1px solid var(--border); }
 .dss-div-table {

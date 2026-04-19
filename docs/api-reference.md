@@ -22,6 +22,8 @@ All API endpoints return JSON unless otherwise noted. SSE endpoints return `text
    - [GET /chiasm](#get-chiasm)
    - [GET /source](#get-source)
    - [GET /discovery](#get-discovery)
+   - [GET /targum](#get-targum)
+   - [GET /nt-text](#get-nt-text)
 3. [Textual Analysis API](#textual-analysis-api)
    - [GET /api/divergence/stream](#get-apidivergencestream)
    - [GET /api/backtranslation/stream](#get-apibacktranslationstream)
@@ -42,10 +44,13 @@ All API endpoints return JSON unless otherwise noted. SSE endpoints return `text
 6. [Literary Analysis API](#literary-analysis-api)
    - [GET /api/chiasm/stream](#get-apichiasmsstream)
    - [GET /api/source/stream](#get-apisourcestream)
-7. [Discovery API](#discovery-api)
+7. [Corpus Traditions API (Phase 2)](#corpus-traditions-api-phase-2)
+   - [GET /api/targum/stream](#get-apitargumstream)
+   - [GET /api/nt-text/stream](#get-apint-textstream)
+8. [Discovery API](#discovery-api)
    - [GET /api/discovery/cards](#get-apidiscoverycards)
    - [POST /api/admin/discovery/flag](#post-apiadmindiscoveryflag)
-8. [Budget & Health API](#budget--health-api)
+9. [Budget & Health API](#budget--health-api)
    - [GET /api/budget](#get-apibudget)
    - [GET /health](#get-health)
 
@@ -143,13 +148,13 @@ HTTP 403
 
 ### Rate Limiting & Budget Cap
 
-BibCrit enforces a **monthly Claude API spend cap** to prevent runaway costs. The cap is configured via the `BIBCRIT_API_CAP_USD` environment variable (default: `$10.00`).
+BibCrit enforces a **monthly Claude API spend cap** to prevent runaway costs. The cap is configured via the `BIBCRIT_API_CAP_USD` environment variable (default: `$20.00`).
 
 - Spend is tracked in a `budget` table in Supabase (falls back to disk at `data/cache/budget.json`).
 - When the monthly cap is reached, all SSE stream endpoints return an `error` event with a message indicating the budget is exhausted for the month.
 - Cached analyses (already stored in Supabase or disk cache) are always served without calling the Claude API and are **never** subject to the cap.
 - The cache key is `sha256(reference | tool | prompt_version | model_version)`. Cache hits are instant.
-- The Claude model used for all analysis tools is **`claude-sonnet-4-5-20250929`** ($3/MTok input, $15/MTok output).
+- The Claude model used for all analysis tools is **`claude-sonnet-4-6`** ($3/MTok input, $15/MTok output).
 
 ---
 
@@ -366,7 +371,7 @@ curl http://localhost:5000/discovery
     "analysis_plain": "In plain language, the translators of the LXX made a choice here…",
     "hypothesis": "The LXX translator interpreted עַלְמָה in light of messianic expectation…",
     "confidence": 0.88,
-    "model": "claude-sonnet-4-5-20250929",
+    "model": "claude-sonnet-4-6",
     "cached": true
   }
 }
@@ -467,7 +472,7 @@ data: {"type": "done", "data": {"reference": "Isaiah 7:14", "divergences": [...]
     "analysis_plain": "In plain language, the LXX translator here…",
     "hypothesis": "The divergences suggest the translator interpreted חֳלָיֵנוּ differently…",
     "confidence": 0.82,
-    "model": "claude-sonnet-4-5-20250929",
+    "model": "claude-sonnet-4-6",
     "cached": false
   }
 }
@@ -523,7 +528,7 @@ curl "http://localhost:5000/api/divergence?ref=Isaiah+7:14"
   "analysis_plain": "...",
   "hypothesis": "...",
   "confidence": 0.88,
-  "model": "claude-sonnet-4-5-20250929",
+  "model": "claude-sonnet-4-6",
   "cached": true
 }
 ```
@@ -828,7 +833,7 @@ HTTP 400
     "overall_profile": "The LXX translator of Isaiah was a theologically sophisticated interpreter…",
     "analysis_plain": "In plain language, this translator tended to…",
     "confidence": 0.85,
-    "model": "claude-sonnet-4-5-20250929",
+    "model": "claude-sonnet-4-6",
     "cached": false
   }
 }
@@ -900,7 +905,7 @@ curl -N -H "Accept: text/event-stream" \
     "overall_assessment": "The LXX preserves an independent numerical tradition…",
     "analysis_plain": "The Greek Bible records Adam being 230 when Seth was born, versus 130 in the Hebrew…",
     "confidence": 0.83,
-    "model": "claude-sonnet-4-5-20250929",
+    "model": "claude-sonnet-4-6",
     "cached": true
   }
 }
@@ -1038,7 +1043,7 @@ HTTP 501
     "synthesis": "Amos 5:1-17 displays a clear chiastic structure centred on the doxology…",
     "scholarly_debate": "Scholars dispute whether vv. 8-9 are a later insertion…",
     "cached": false,
-    "model": "claude-sonnet-4-5-20250929"
+    "model": "claude-sonnet-4-6"
   }
 }
 ```
@@ -1125,7 +1130,7 @@ curl -N -H "Accept: text/event-stream" \
     "overall_assessment": "Genesis 6:1-8 is uniformly J in the Classical Documentary Hypothesis…",
     "framework_notes": "Neo-Documentary (Baden) agrees; Supplementary Hypothesis treats 6:5-8 as redactional.",
     "cached": false,
-    "model": "claude-sonnet-4-5-20250929"
+    "model": "claude-sonnet-4-6"
   }
 }
 ```
@@ -1147,6 +1152,77 @@ curl -N -H "Accept: text/event-stream" \
 curl -N -H "Accept: text/event-stream" \
   "http://localhost:5001/api/source/stream?ref=Genesis+6:1-8"
 ```
+
+---
+
+## Corpus Traditions API (Phase 2)
+
+### GET /api/targum/stream
+
+**Description:** SSE stream. Compares any Torah or Prophets reference against Targum Onkelos (Torah) or Targum Jonathan (Prophets) alongside the MT and LXX. Identifies Memra substitutions, anthropomorphism softening, targumic expansions, and messianic reinterpretation absent from MT.
+
+**Corpus dependency:** `data/corpora/targ_sefaria/` — Aramaic text from Sefaria export (CC BY-SA). Torah books use Onkelos; Prophets books use Jonathan. Returns a validation error for Writings (Psalms, Proverbs, Job, etc.).
+
+**Query parameters:**
+
+| Parameter | Type   | Required | Description                                         |
+|-----------|--------|----------|-----------------------------------------------------|
+| `ref`     | string | Yes      | Verse reference, e.g. `Genesis 22:8`, `Isaiah 53:5` |
+| `lang`    | string | No       | `en` (default) or `es`                              |
+
+#### Example curl
+
+```bash
+curl -N "http://localhost:5001/api/targum/stream?ref=Genesis+22:8&lang=en"
+```
+
+#### Response JSON keys (`done` event)
+
+| Key | Description |
+|-----|-------------|
+| `synthesis` | 2–3 sentence overview of how the Targum renders the passage |
+| `rendering_fidelity` | Word-level comparison: close rendering vs. substitution vs. expansion |
+| `theological_modifications` | Memra substitutions, anthropomorphism softening, angelological insertions |
+| `targumic_expansions` | Paraphrastic additions absent from MT/LXX |
+| `messianic_reinterpretation` | Where Targum introduces messianic reading absent from MT |
+| `lxx_alignment` | Where Targum and LXX agree against MT |
+| `key_divergences` | Array of `{mt_word, targ_word, type, explanation}` objects |
+| `assessment` | BibCrit confidence rating + recommended scholarly next steps |
+| `citations` | SBL and BibTeX for Samely, Smelik, McNamara, Grossfeld |
+
+---
+
+### GET /api/nt-text/stream
+
+**Description:** SSE stream. Analyzes the textual tradition of any New Testament passage — manuscript family support (Alexandrian, Western, Byzantine, Caesarean), Metzger A/B/C/D confidence rating, and a variant register. Includes extended analysis for the six major disputed passages (Mark 16:9–20, John 7:53–8:11, Luke 22:43–44, 1 John 5:7–8, Acts 8:37, Romans 16:25–27).
+
+**Corpus dependency:** `data/corpora/gnt_opengnt/` — SBLGNT Greek New Testament. Returns a validation error for OT references (with a pointer to `/api/dss/stream` for OT manuscript comparison).
+
+**Query parameters:**
+
+| Parameter | Type   | Required | Description                                          |
+|-----------|--------|----------|------------------------------------------------------|
+| `ref`     | string | Yes      | NT verse reference, e.g. `Mark 16:9`, `1 John 5:7`  |
+| `lang`    | string | No       | `en` (default) or `es`                               |
+
+#### Example curl
+
+```bash
+curl -N "http://localhost:5001/api/nt-text/stream?ref=Mark+16:9&lang=en"
+```
+
+#### Response JSON keys (`done` event)
+
+| Key | Description |
+|-----|-------------|
+| `text_basis` | SBLGNT reading; NA28/UBS5 alignment note; flag if known disputed locus |
+| `manuscript_families` | Object with `alexandrian`, `western`, `byzantine`, `caesarean` sub-keys |
+| `metzger_rating` | A/B/C/D confidence rating per Metzger *Textual Commentary* |
+| `variant_register` | Array (up to 5) of `{variant_text, manuscript_support, intrinsic_probability, transcriptional_probability, assessment}` |
+| `disputed_passage` | Extended section for the 6 major disputed passages; `null` otherwise |
+| `synthesis` | 2–3 sentence overview of the passage's text-critical stability |
+| `assessment` | BibCrit rating + recommended reading + open questions |
+| `citations` | SBL and BibTeX for Metzger, Aland/Aland, Ehrman, Parker |
 
 ---
 
@@ -1307,7 +1383,7 @@ curl http://localhost:5000/api/budget
 ```json
 {
   "spend_usd": 1.23,
-  "cap_usd": 10.0,
+  "cap_usd": 20.0,
   "pct": 12.3,
   "month": "2026-03"
 }
@@ -1318,11 +1394,11 @@ curl http://localhost:5000/api/budget
 | Field     | Type   | Description                                                                    |
 |-----------|--------|--------------------------------------------------------------------------------|
 | spend_usd | float  | Total spend in USD for the current calendar month                              |
-| cap_usd   | float  | Configured monthly cap in USD (set via `BIBCRIT_API_CAP_USD`, default `10.0`) |
+| cap_usd   | float  | Configured monthly cap in USD (set via `BIBCRIT_API_CAP_USD`, default `20.0`) |
 | pct       | float  | `(spend_usd / cap_usd) * 100`, rounded to 1 decimal place                     |
 | month     | string | Current month in `YYYY-MM` format                                              |
 
-**Note:** If the pipeline is not initialized, returns `{"spend_usd": 0.0, "cap_usd": 10.0, "pct": 0.0, "month": ""}` rather than an error.
+**Note:** If the pipeline is not initialized, returns `{"spend_usd": 0.0, "cap_usd": 20.0, "pct": 0.0, "month": ""}` rather than an error.
 
 ---
 
@@ -1356,7 +1432,7 @@ curl http://localhost:5000/health
 | Variable              | Default | Description                                                               |
 |-----------------------|---------|---------------------------------------------------------------------------|
 | `ANTHROPIC_API_KEY`   | —       | Required for any analysis that is not cached. No default.                 |
-| `BIBCRIT_API_CAP_USD` | `10.0`  | Monthly Claude API spend cap in USD                                       |
+| `BIBCRIT_API_CAP_USD` | `20.0`  | Monthly Claude API spend cap in USD                                       |
 | `BIBCRIT_ADMIN_KEY`   | —       | Secret key for admin endpoints. If unset, all admin requests return 403.  |
 | `SUPABASE_URL`        | `""`    | Supabase project URL for persistent cache and budget tracking             |
 | `SUPABASE_KEY`        | `""`    | Supabase service role or anon key                                         |

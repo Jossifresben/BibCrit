@@ -1,0 +1,133 @@
+{
+  "reference": "John 7:53",
+  "text_basis": {
+    "sblgnt_reading": "[[Καὶ ἐπορεύθησαν ἕκαστος εἰς τὸν οἶκον αὐτοῦ,]]",
+    "na28_alignment": "NA28 and UBS5 both bracket the passage with double brackets indicating significant textual doubt; SBLGNT places in double brackets",
+    "is_disputed_locus": true,
+    "dispute_note": "John 7:53–8:11 (Pericope Adulterae) is one of the most famous textual problems in the New Testament; John 7:53 is the opening verse of this disputed passage"
+  },
+  "manuscript_families": {
+    "alexandrian": {
+      "witnesses": [
+        "P66",
+        "P75",
+        "א",
+        "B",
+        "A",
+        "C",
+        "L",
+        "T",
+        "W",
+        "X",
+        "Δ",
+        "Θ",
+        "Ψ"
+      ],
+      "support": "supports_variant",
+      "note": "The entire Alexandrian tradition omits John 7:53–8:11. P66 and P75 (ca. 200 CE) jump from 7:52 directly to 8:12, as do the great uncials Sinaiticus, Vaticanus, and others, providing unanimous early witness against inclusion."
+    },
+    "western": {
+      "witnesses": [
+        "D",
+        "it",
+        "some Old Latin MSS"
+      ],
+      "support": "split",
+      "note": "Western evidence is divided. Codex Bezae (D) includes the pericope but other Western witnesses omit it; some Old Latin manuscripts contain it while others do not. The Latin tradition shows the passage was known early in the West but not universally accepted."
+    },
+    "byzantine": {
+      "witnesses": [
+        "Majority Text",
+        "TR",
+        "E",
+        "F",
+        "G",
+        "H",
+        "K",
+        "M",
+        "S",
+        "U",
+        "Γ",
+        "Π",
+        "Ω"
+      ],
+      "support": "sides_with_received",
+      "note": "The Byzantine tradition overwhelmingly includes John 7:53–8:11 in its traditional location. This represents the medieval consensus that became standard in the Textus Receptus and KJV translation, though this is clearly secondary development."
+    },
+    "caesarean": {
+      "witnesses": [
+        "f1",
+        "f13",
+        "some members only"
+      ],
+      "support": "split",
+      "note": "Caesarean witnesses are divided and some manuscripts from family 1 and family 13 place the pericope in different locations (after John 7:36, after John 21:25, or after Luke 21:38), indicating awareness of the passage but uncertainty about its original location."
+    }
+  },
+  "metzger_rating": {
+    "rating": "D",
+    "justification": "Metzger assigns a {D} rating reflecting very high doubt about originality. The evidence against inclusion is overwhelming: absent from all early Greek manuscripts, absent from the entire Alexandrian tradition, omitted by early Church Fathers who commented on John, and shows non-Johannine vocabulary and style. The passage almost certainly was not part of the original Gospel of John."
+  },
+  "variant_register": [
+    {
+      "variant_text": "Omission of entire pericope (7:53–8:11)",
+      "manuscript_support": "P66, P75, א, B, A, C, L, N, T, W, X, Y, Δ, Θ, Ψ, 0141, 0211, plus Syriac versions (syr-s, syr-p, syr-pal), Coptic versions (cop-sa, cop-bo), Armenian, Georgian, some Old Latin",
+      "intrinsic_probability": "high",
+      "transcriptional_probability": "medium",
+      "assessment": "The omission has overwhelming early manuscript support and represents the original text of John's Gospel. The vocabulary and style differ markedly from Johannine usage throughout the Gospel."
+    },
+    {
+      "variant_text": "Inclusion at John 7:53–8:11",
+      "manuscript_support": "D, E, F, G, H, K, M, S, U, Γ, Π, Ω, Byzantine majority, some Old Latin, Vulgate",
+      "intrinsic_probability": "low",
+      "transcriptional_probability": "high",
+      "assessment": "Inclusion represents later insertion into the Gospel tradition, appearing first in Western manuscripts and eventually achieving dominance in Byzantine tradition. The story may preserve an authentic Jesus tradition but was not originally part of John."
+    },
+    {
+      "variant_text": "Placement after John 7:36",
+      "manuscript_support": "f13 (minuscule family 13)",
+      "intrinsic_probability": "low",
+      "transcriptional_probability": "medium",
+      "assessment": "This alternative placement demonstrates scribal uncertainty about where to insert the pericope, supporting the view that it was a floating tradition seeking a textual home."
+    },
+    {
+      "variant_text": "Placement after John 21:25",
+      "manuscript_support": "f1 (minuscule family 1 MSS: 1, 1582mg)",
+      "intrinsic_probability": "low",
+      "transcriptional_probability": "medium",
+      "assessment": "Placement at the end of John's Gospel represents another attempt to preserve the tradition while acknowledging it did not originally belong in the narrative flow."
+    },
+    {
+      "variant_text": "Placement after Luke 21:38",
+      "manuscript_support": "f13 (minuscules 13, 69, 124, 346, 556, 788, 826, 828, 983, 1689mg)",
+      "intrinsic_probability": "low",
+      "transcriptional_probability": "medium",
+      "assessment": "The Lukan placement may represent the most contextually appropriate location given the story's Synoptic-like character and the reference to the Mount of Olives, but still represents secondary insertion."
+    }
+  ],
+  "disputed_passage": {
+    "designation": "Pericope Adulterae (opening verse)",
+    "manuscript_evidence_for": "Byzantine majority (E, F, G, H, K, M, S, U, Γ, Π, Ω, and most minuscules), D (Bezae), later additions to some Alexandrian witnesses, Vulgate, some Old Latin manuscripts, later Syriac and other versions",
+    "manuscript_evidence_against": "P66, P75, א, B, A, C, L, N, T, W, X, Y, Δ, Θ, Ψ, 0141, 0211, early Syriac (syr-s, syr-p), Coptic (cop-sa, cop-bo, cop-fay), Armenian, Georgian, Ethiopic, some Old Latin; omitted by early Church Fathers including Origen, Chrysostom, Cyril of Alexandria, Tertullian, Cyprian, and others who commented extensively on John",
+    "internal_evidence": "Vocabulary analysis reveals numerous non-Johannine terms and phrases. The word γραμματεῖς (scribes) appears here but nowhere else in John; Johannine style typically uses ἀποκριθεὶς εἶπεν but the pericope uses other forms; the phrase οἱ Ἰουδαῖοι functions differently than John's typical usage; narrative style resembles Synoptic accounts more than Johannine style. The story interrupts the flow between 7:52 and 8:12 where Jesus's claim to be light of the world follows naturally from the Feast of Tabernacles context. Jerome acknowledged the passage was absent from many Greek manuscripts. Eusebius and other patristic writers knew of its questionable status.",
+    "scholarly_consensus": "The overwhelming scholarly consensus is that John 7:53–8:11 was not part of the original Gospel of John. While the story may preserve an authentic tradition about Jesus (Papias mentioned a similar story), it was likely a floating pericope inserted into various Gospel locations by scribes who valued the tradition. Most scholars date the insertion to the late second or third century in some Western manuscripts, with gradual acceptance leading to Byzantine inclusion.",
+    "pastoral_note": "Modern translations handle this passage with explanatory notes. ESV, NIV, NRSV, NASB, and CSB include the passage but set it off with brackets or spacing and include footnotes explaining the manuscript evidence. Some translations print it in smaller font or italics. The passage remains canonical in Roman Catholic and Eastern Orthodox traditions based on inclusion in the Vulgate and Byzantine text. Despite textual doubts, the story's theological message about Jesus's mercy and call to repentance is valued across Christian traditions."
+  },
+  "synthesis": "John 7:53 opens the Pericope Adulterae, absent from all early Greek manuscripts and the entire Alexandrian tradition. The passage appears to be a genuine Jesus tradition inserted secondarily into John's Gospel, achieving widespread acceptance only in medieval Byzantine manuscripts.",
+  "assessment": {
+    "title": "John 7:53: Opening Verse of the Non-Original Pericope Adulterae",
+    "reasoning": "The textual evidence overwhelmingly demonstrates that John 7:53–8:11 was not part of the original Gospel of John. Every early papyrus and uncial of the Alexandrian tradition omits it; it appears in no Greek manuscript before the fifth century (D); early Church Fathers who extensively commented on John show no knowledge of it; and when it does appear, manuscripts place it in at least four different locations, revealing scribal uncertainty. Internal evidence confirms external: the vocabulary, style, and narrative flow are non-Johannine. Nevertheless, the story likely preserves authentic Jesus tradition and was valued highly enough that scribes gradually incorporated it into Gospel manuscripts. Its inclusion in the Vulgate and Byzantine tradition led to canonical status despite dubious origins.",
+    "plain": "John 7:53 begins the famous story of the woman caught in adultery, which was not originally part of John's Gospel according to the earliest and best manuscripts. While the story may be historically true and theologically valuable, it was added by later scribes and interrupts the original flow of John's narrative.",
+    "confidence": 0.98,
+    "recommended_reading": "NA28/UBS5 with double brackets indicating the passage's secondary nature; readers should consult footnotes explaining the textual situation",
+    "open_questions": "Where did the Pericope Adulterae originate and why was it excluded from early Gospel manuscripts? Does the story's absence from early manuscripts reflect theological discomfort with Jesus's forgiveness of adultery in the early church, as some scholars suggest?"
+  },
+  "citations": {
+    "sbl": "Bruce M. Metzger, A Textual Commentary on the Greek New Testament, 2nd ed. (Stuttgart: Deutsche Bibelgesellschaft, 1994), 187–189; Kurt Aland and Barbara Aland, The Text of the New Testament, trans. Erroll F. Rhodes, 2nd ed. (Grand Rapids: Eerdmans, 1989), 310–312.",
+    "bibtex": "@book{metzger1994textual, author={Metzger, Bruce M.}, title={A Textual Commentary on the Greek New Testament}, edition={2nd}, year={1994}, publisher={Deutsche Bibelgesellschaft}, address={Stuttgart}}"
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-04-19T15:57:01.786603",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

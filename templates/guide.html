@@ -411,16 +411,16 @@
     {# ── Stats bar ── #}
     <div class="about-stats">
         <div class="about-stat">
-            <span class="stat-num">11</span>
+            <span class="stat-num">13</span>
             <span class="stat-label">analysis tools</span>
         </div>
         <div class="about-stat">
-            <span class="stat-num">10</span>
-            <span class="stat-label">LXX books profiled</span>
+            <span class="stat-num">38</span>
+            <span class="stat-label">LXX books</span>
         </div>
         <div class="about-stat">
-            <span class="stat-num">5</span>
-            <span class="stat-label">manuscript traditions</span>
+            <span class="stat-num">7</span>
+            <span class="stat-label">corpus traditions</span>
         </div>
     </div>
 
@@ -503,12 +503,24 @@
             <a href="/source?ref=Genesis+1%3A1-2%3A25&lang={{ lang }}" class="feature-example-link">Try Genesis 1–2 →</a>
         </div>
 
+        <div class="feature-card">
+            <h4><span class="material-symbols-outlined" style="font-size:1.1em;vertical-align:-3px;margin-right:4px">auto_stories</span>Targum Comparator</h4>
+            <p>Compare any Torah or Prophets passage against Targum Onkelos (Torah) or Targum Jonathan (Prophets) alongside the Hebrew MT and Greek LXX. The tool identifies Memra substitutions for the divine name, anthropomorphism softening, targumic expansions with Midrashic parallels, and messianic reinterpretations absent from the MT. Targum text is displayed in Hebrew square script — the same alphabet as Biblical Hebrew, though the language is Jewish Aramaic.</p>
+            <a href="/targum?ref=Genesis+22%3A8&lang={{ lang }}" class="feature-example-link">Try Genesis 22:8 →</a>
+        </div>
+
+        <div class="feature-card">
+            <h4><span class="material-symbols-outlined" style="font-size:1.1em;vertical-align:-3px;margin-right:4px">fact_check</span>NT Textual Tradition Analyzer</h4>
+            <p>For any New Testament passage, identifies its textual stability across the four major manuscript families — Alexandrian (P66, P75, Sinaiticus, Vaticanus), Western (Bezae, Old Latin), Byzantine (Majority Text), and Caesarean (P45, family 1, family 13) — and assigns a Metzger A/B/C/D confidence rating. Includes extended analysis for the six major disputed passages: Mark 16:9–20, John 7:53–8:11, Luke 22:43–44, 1 John 5:7–8, Acts 8:37, and Romans 16:25–27.</p>
+            <a href="/nt-text?ref=Mark+16%3A9&lang={{ lang }}" class="feature-example-link">Try Mark 16:9 →</a>
+        </div>
+
     </div>
 
     {# ── Manuscript traditions ── #}
     <h2>Manuscript Traditions</h2>
 
-    <p>BibCrit works across five major textual witnesses to the Hebrew Bible, each with its own transmission history and scholarly edition.</p>
+    <p>BibCrit works across seven major textual witnesses to the Hebrew Bible and New Testament, each with its own transmission history and scholarly edition.</p>
 
     <div class="about-table-wrap">
     <table class="about-table">
@@ -556,6 +568,20 @@
                 <td>Classical Syriac</td>
                 <td>OT books translated c. 1st–2nd c. CE</td>
                 <td>Leiden Peshitta (Brill); CAL (Comprehensive Aramaic Lexicon)</td>
+            </tr>
+            <tr>
+                <td><span style="color:#c0392b;font-weight:600">TARG</span></td>
+                <td>Targum Onkelos (Torah) / Targum Jonathan (Prophets)</td>
+                <td>Jewish Babylonian Aramaic — written in Hebrew square script</td>
+                <td>Onkelos: redacted c. 2nd–3rd c. CE; Jonathan: redacted c. 4th–5th c. CE</td>
+                <td>Sperber 1959–1973; Sefaria critical text</td>
+            </tr>
+            <tr>
+                <td><span style="color:#6b7280;font-weight:600">VUL</span></td>
+                <td>Vulgate (Clementine)</td>
+                <td>Latin</td>
+                <td>Translated by Jerome c. 382–405 CE; Clementine revision 1592</td>
+                <td>Biblia Sacra iuxta Vulgatam Versionem (Weber-Gryson); scrollmapper edition</td>
             </tr>
         </tbody>
     </table>
@@ -615,22 +641,37 @@
     {# ── Data sources ── #}
     <h2 id="sources">Data Sources</h2>
 
-    <p>BibCrit's corpus layer is built on two open academic datasets that supply the word-level Hebrew and Greek text for every analysis:</p>
+    <p>BibCrit's corpus layer is built on seven open academic datasets supplying word-level text across eight manuscript traditions:</p>
 
     <ul class="scholar-list">
         <li>
             <strong>ETCBC — Eep Talstra Centre for Bible and Computer</strong> (Vrije Universiteit Amsterdam)<br>
-            Provides the Masoretic Text with full morphological tagging (lemma, part of speech, person/gender/number, clause boundaries). The ETCBC database, developed over decades at VU Amsterdam, is one of the most detailed computational representations of the Hebrew Bible available. BibCrit uses it as its MT corpus for divergence analysis, back-translation, and numerical modeling.
+            Provides the Masoretic Text with full morphological tagging (lemma, part of speech, person/gender/number, clause boundaries). Also the source for the Dead Sea Scrolls corpus (1QIsaᵃ, 4QSamᵃ, 11QPaleoLev, 4QDeutn) and the Peshitta Syriac OT (all 39 OT books, 308,863 word tokens). Licensed CC-BY-NC 4.0.
             <br><a href="https://github.com/ETCBC/bhsa" target="_blank" rel="noopener" class="feature-example-link">ETCBC/BHSA on GitHub →</a>
         </li>
         <li>
             <strong>STEP Bible — Tyndale House, Cambridge</strong><br>
-            Provides the Septuagint (LXX) text with morphological tagging, Strong's numbers, and manuscript sigla (primarily Vaticanus). Tyndale House's STEP Bible data is openly licensed and covers the full LXX canon. BibCrit uses it as its LXX corpus for all Greek-side analysis.
+            Provides the Septuagint (LXX) text with morphological tagging, Strong's numbers, and manuscript sigla (primarily Vaticanus). Covers the full LXX canon (38 books). BibCrit uses it as its LXX corpus for all Greek-side analysis.
             <br><a href="https://github.com/tyndale/STEPBible-Data" target="_blank" rel="noopener" class="feature-example-link">STEPBible-Data on GitHub →</a>
         </li>
         <li>
-            <strong>Dead Sea Scrolls, Samaritan Pentateuch &amp; Peshitta — scholarly editions</strong><br>
-            The Ancient Witness Bridge draws on Claude's training knowledge of published DSS editions (DJD series, the Leon Levy DSS Digital Library), the Samaritan Pentateuch (ingested sp_etcbc corpus), and the Peshitta Syriac OT (standard Leiden edition / CAL) to compare witnesses and score alignment. The Manuscript Genealogy tool similarly covers the Peshitta, Targum, and Vulgate as transmission branches. No proprietary database is queried at runtime.
+            <strong>SBLGNT — Society of Biblical Literature</strong><br>
+            The SBL Greek New Testament provides the morphologically tagged Greek text for all 27 NT books (137,554 word tokens). Used by the NT Textual Tradition Analyzer and the NT Use of OT Analyzer.
+            <br><a href="https://github.com/LogosBible/SBLGNT" target="_blank" rel="noopener" class="feature-example-link">SBLGNT on GitHub →</a>
+        </li>
+        <li>
+            <strong>Sefaria — Targum Onkelos &amp; Targum Jonathan</strong><br>
+            Sefaria's openly licensed export provides the Aramaic Targum text for Torah (Onkelos, 5 books) and Prophets (Jonathan, 21 books) — 26 books and 240,297 Aramaic word tokens in total. Note: Targum uses the Hebrew square script, not Syriac. Attributed per Sefaria's CC BY-SA license.
+            <br><a href="https://github.com/Sefaria/Sefaria-Export" target="_blank" rel="noopener" class="feature-example-link">Sefaria-Export on GitHub →</a>
+        </li>
+        <li>
+            <strong>scrollmapper/bible_databases — Clementine Vulgate</strong><br>
+            Provides Jerome's Latin Vulgate (Clementine edition, 1592) across the full Protestant canon — 66 books, 569,588 Latin word tokens. Used by the DSS Bridge, Manuscript Genealogy, and Theological Revision Detector to add a 4th-century Latin witness to each analysis.
+            <br><a href="https://github.com/scrollmapper/bible_databases" target="_blank" rel="noopener" class="feature-example-link">scrollmapper/bible_databases on GitHub →</a>
+        </li>
+        <li>
+            <strong>Samaritan Pentateuch — dt-ucph/sp</strong><br>
+            The Samaritan Pentateuch corpus (Torah, 5 books) is used primarily by the Numerical Discrepancy Modeler to compare patriarchal chronologies across MT, LXX, and SP traditions.
         </li>
         <li>
             <strong>Patristic sources</strong><br>

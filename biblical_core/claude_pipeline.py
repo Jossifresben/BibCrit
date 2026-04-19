@@ -22,6 +22,8 @@ GENEALOGY_MODEL   = 'claude-sonnet-4-5-20250929'
 NT_OT_MODEL       = 'claude-sonnet-4-5-20250929'
 CHIASM_MODEL      = 'claude-sonnet-4-5-20250929'
 SOURCE_MODEL      = 'claude-sonnet-4-5-20250929'
+TARGUM_MODEL      = 'claude-sonnet-4-5-20250929'
+NT_TEXT_MODEL     = 'claude-sonnet-4-5-20250929'
 
 _SONNET_COST_IN  = 3.0  / 1_000_000   # $3 per MTok input (claude-sonnet-4-5)
 _SONNET_COST_OUT = 15.0 / 1_000_000   # $15 per MTok output (claude-sonnet-4-5)
@@ -132,6 +134,22 @@ _NT_OT_SYSTEM = (
     "citation technique, text form identification (MT vs. LXX vs. recensions), and the methodology "
     "of Beale & Carson, Christopher Stanley, and Richard Hays. You determine whether NT authors "
     "cited MT or LXX forms with philological precision. "
+    "CRITICAL: Return ONLY raw JSON. No markdown, no code fences, no backticks, "
+    "no prose before or after. The response must start with { and end with }."
+)
+
+_TARGUM_SYSTEM = (
+    "You are a specialist in Jewish Aramaic translation technique and Targumic studies, "
+    "with deep expertise in Targum Onkelos (Torah) and Targum Jonathan (Prophets). "
+    "You apply the methodology of Samely, Smelik, McNamara, and Grossfeld. "
+    "CRITICAL: Return ONLY raw JSON. No markdown, no code fences, no backticks, "
+    "no prose before or after. The response must start with { and end with }."
+)
+
+_NT_TEXT_SYSTEM = (
+    "You are a specialist in New Testament textual criticism with deep expertise in "
+    "manuscript families (Alexandrian, Western, Byzantine, Caesarean), the Metzger "
+    "Textual Commentary methodology, and the SBLGNT/NA28/UBS5 critical apparatus. "
     "CRITICAL: Return ONLY raw JSON. No markdown, no code fences, no backticks, "
     "no prose before or after. The response must start with { and end with }."
 )
@@ -810,16 +828,18 @@ class ClaudePipeline:
 
     def analyze_dss(self, reference: str, mt_text: str = '',
                     lxx_text: str = '', dss_text: str = '',
-                    sp_text: str = '', pesh_text: str = '') -> dict:
+                    sp_text: str = '', pesh_text: str = '',
+                    vul_text: str = '') -> dict:
         """Return DSS bridge analysis comparing MT, LXX, DSS, SP, and Peshitta.
 
         Returns dict with 'dss_manuscripts', 'sp_witness', 'pesh_witness', 'synthesis', etc.
         sp_text:   raw SP corpus text (Pentateuch only; empty string if not applicable).
         pesh_text: raw Peshitta corpus text (OT-wide; empty string if corpus not yet loaded).
+        vul_text: raw Vulgate corpus text (empty string if not applicable).
         On error: returns {'error': ..., 'dss_manuscripts': [], ...}.
         """
         model          = DSS_MODEL
-        prompt_version = 'v6'
+        prompt_version = 'v7'
         tool           = 'dss'
 
         cached = self.get_cached(reference, tool, prompt_version, model)
@@ -855,11 +875,13 @@ class ClaudePipeline:
             .replace('{{DSS_TEXT}}',  dss_text)
             .replace('{{SP_TEXT}}',   sp_text)
             .replace('{{PESH_TEXT}}', pesh_text)
+            .replace('{{VUL_TEXT}}',  vul_text)
         ) if template else (
             f'Reference: {reference}\nMT: {mt_text}\nLXX: {lxx_text}\n'
             f'Dead Sea Scrolls: {dss_text or "(not attested)"}\n'
             f'SP: {sp_text or "(not applicable)"}\n'
             f'Peshitta: {pesh_text or "(corpus not loaded — use training knowledge)"}\n'
+            f'Vulgate: {vul_text or "(corpus not loaded)"}\n'
             'Return JSON with: dss_manuscripts (DSS scrolls only), sp_witness, pesh_witness, '
             'synthesis, synthesis_plain, textual_history_implication, bibcrit_assessment.'
         )
@@ -909,17 +931,31 @@ class ClaudePipeline:
                 ),
             }
 
+        # Fallback: if Vulgate corpus text was provided but Claude omitted vul_witness
+        if vul_text and not data.get('vul_witness'):
+            data['vul_witness'] = {
+                'present': True,
+                'alignment': 'independent',
+                'alignment_confidence': 0.0,
+                'vul_text': vul_text,
+                'key_readings': [],
+                'overall_note': (
+                    'Vulgate text is available for this passage '
+                    'but alignment analysis could not be generated automatically.'
+                ),
+            }
+
         self.save_cache(reference, tool, prompt_version, model, data)
         return data
 
-    def analyze_theological(self, reference: str) -> dict:
+    def analyze_theological(self, reference: str, vul_text: str = '') -> dict:
         """Return theologically motivated revision analysis for a book or passage.
 
         Returns dict with 'revisions', 'summary', 'overall_assessment', etc.
         On error: returns {'error': ..., 'revisions': [], ...}.
         """
         model          = THEOLOGICAL_MODEL
-        prompt_version = 'v1'
+        prompt_version = 'v2'
         tool           = 'theological'
 
         cached = self.get_cached(reference, tool, prompt_version, model)
@@ -948,9 +984,11 @@ class ClaudePipeline:
 
         template = self.load_prompt('theological', prompt_version)
         user_content = (
-            template.replace('{{REFERENCE}}', reference)
+            template
+            .replace('{{REFERENCE}}', reference)
+            .replace('{{VUL_TEXT}}',  vul_text)
         ) if template else (
-            f'Reference: {reference}\n'
+            f'Reference: {reference}\nVulgate: {vul_text or "(not loaded)"}\n'
             'Identify theologically motivated textual changes. Return JSON with revisions array.'
         )
 
@@ -1038,14 +1076,14 @@ class ClaudePipeline:
         self.save_cache(reference, tool, prompt_version, model, data)
         return data
 
-    def analyze_genealogy(self, book: str) -> dict:
+    def analyze_genealogy(self, book: str, vul_text: str = '') -> dict:
         """Return manuscript transmission genealogy (stemma) for a biblical book.
 
         Returns dict with 'stemma_nodes', 'stemma_edges', 'key_divergences', etc.
         On error: returns {'error': ..., 'stemma_nodes': [], 'stemma_edges': [], ...}.
         """
         model          = GENEALOGY_MODEL
-        prompt_version = 'v1'
+        prompt_version = 'v2'
         tool           = 'genealogy'
 
         cached = self.get_cached(book, tool, prompt_version, model)
@@ -1076,9 +1114,11 @@ class ClaudePipeline:
 
         template = self.load_prompt('genealogy', prompt_version)
         user_content = (
-            template.replace('{{BOOK}}', book)
+            template
+            .replace('{{BOOK}}',     book)
+            .replace('{{VUL_TEXT}}', vul_text)
         ) if template else (
-            f'Book: {book}\n'
+            f'Book: {book}\nVulgate sample: {vul_text or "(not loaded)"}\n'
             'Construct a manuscript transmission genealogy (stemma). Return JSON with stemma_nodes and stemma_edges arrays.'
         )
 
@@ -1100,6 +1140,183 @@ class ClaudePipeline:
         data = _parse_json_response(raw)
         data['discovery_ready'] = True
         self.save_cache(book, tool, prompt_version, model, data)
+        return data
+
+    def analyze_targum(self, reference: str, mt_text: str = '',
+                       lxx_text: str = '', targ_text: str = '',
+                       manuscript: str = 'Onkelos') -> dict:
+        """Return Targum comparison analysis for a biblical passage.
+
+        manuscript: 'Onkelos' (Torah) or 'Jonathan' (Prophets).
+        Returns dict with 'synthesis', 'rendering_fidelity', 'theological_modifications', etc.
+        On error: returns {'error': ..., 'synthesis': '', ...}.
+        """
+        model          = TARGUM_MODEL
+        prompt_version = 'v1'
+        tool           = 'targum'
+
+        cached = self.get_cached(reference, tool, prompt_version, model)
+        if cached:
+            return cached
+
+        if not self._client:
+            return {
+                'error': 'No API key configured. Set ANTHROPIC_API_KEY environment variable.',
+                'reference': reference, 'manuscript': manuscript,
+                'synthesis': '', 'rendering_fidelity': {}, 'theological_modifications': [],
+                'targumic_expansions': [], 'messianic_reinterpretation': {'present': False},
+                'lxx_alignment': {}, 'key_divergences': [],
+                'assessment': {'title': '', 'reasoning': '', 'plain': '', 'confidence': 0.0, 'next_steps': ''},
+                'citations': {'sbl': '', 'bibtex': ''},
+            }
+
+        budget = self.get_budget()
+        if budget['spend_usd'] >= self._cap_usd:
+            return {
+                'error': (
+                    f"Monthly analysis budget of ${self._cap_usd:.2f} reached. "
+                    "Please try again next month or donate to increase the cap."
+                ),
+                'reference': reference, 'manuscript': manuscript,
+                'synthesis': '', 'rendering_fidelity': {}, 'theological_modifications': [],
+                'targumic_expansions': [], 'messianic_reinterpretation': {'present': False},
+                'lxx_alignment': {}, 'key_divergences': [],
+                'assessment': {'title': '', 'reasoning': '', 'plain': '', 'confidence': 0.0, 'next_steps': ''},
+                'citations': {'sbl': '', 'bibtex': ''},
+            }
+
+        template = self.load_prompt('targum', prompt_version)
+        user_content = (
+            template
+            .replace('{{REFERENCE}}',  reference)
+            .replace('{{MANUSCRIPT}}', manuscript)
+            .replace('{{MT_TEXT}}',    mt_text)
+            .replace('{{LXX_TEXT}}',   lxx_text)
+            .replace('{{TARG_TEXT}}',  targ_text)
+        ) if template else (
+            f'Reference: {reference}\nManuscript: {manuscript}\n'
+            f'MT: {mt_text}\nLXX: {lxx_text}\nTargum: {targ_text or "(not available)"}\n'
+            'Analyze Targum rendering. Return JSON with synthesis, rendering_fidelity, '
+            'theological_modifications, targumic_expansions, messianic_reinterpretation, '
+            'lxx_alignment, key_divergences, assessment, citations.'
+        )
+
+        response = self._client.messages.create(
+            model=model,
+            max_tokens=8192,
+            system=_TARGUM_SYSTEM,
+            messages=[
+                {'role': 'user',      'content': user_content},
+                {'role': 'assistant', 'content': '{'},
+            ],
+        )
+
+        cost = (response.usage.input_tokens  * _SONNET_COST_IN +
+                response.usage.output_tokens * _SONNET_COST_OUT)
+        self.record_spend(cost)
+
+        raw  = '{' + response.content[0].text
+        data = _parse_json_response(raw)
+
+        # Retry once if JSON parsing failed; never persist a parse error to cache.
+        if 'parse_error' in data:
+            resp2 = self._client.messages.create(
+                model=model, max_tokens=8192, system=_TARGUM_SYSTEM,
+                messages=[{'role': 'user', 'content': user_content},
+                           {'role': 'assistant', 'content': '{'}],
+            )
+            self.record_spend(resp2.usage.input_tokens * _SONNET_COST_IN +
+                              resp2.usage.output_tokens * _SONNET_COST_OUT)
+            data2 = _parse_json_response('{' + resp2.content[0].text)
+            if 'parse_error' not in data2:
+                data = data2
+
+        if 'parse_error' not in data:
+            self.save_cache(reference, tool, prompt_version, model, data)
+        return data
+
+    def analyze_nt_text(self, reference: str, gnt_text: str = '') -> dict:
+        """Return NT textual tradition analysis for a New Testament passage.
+
+        Uses SBLGNT corpus data where available.
+        Returns dict with 'text_basis', 'manuscript_families', 'metzger_rating', etc.
+        On error: returns {'error': ..., 'synthesis': '', ...}.
+        """
+        model          = NT_TEXT_MODEL
+        prompt_version = 'v1'
+        tool           = 'nt_text'
+
+        cached = self.get_cached(reference, tool, prompt_version, model)
+        if cached:
+            return cached
+
+        if not self._client:
+            return {
+                'error': 'No API key configured. Set ANTHROPIC_API_KEY environment variable.',
+                'reference': reference, 'text_basis': {}, 'manuscript_families': {},
+                'metzger_rating': {}, 'variant_register': [], 'disputed_passage': None,
+                'synthesis': '',
+                'assessment': {'title': '', 'reasoning': '', 'plain': '', 'confidence': 0.0, 'recommended_reading': '', 'open_questions': ''},
+                'citations': {'sbl': '', 'bibtex': ''},
+            }
+
+        budget = self.get_budget()
+        if budget['spend_usd'] >= self._cap_usd:
+            return {
+                'error': (
+                    f"Monthly analysis budget of ${self._cap_usd:.2f} reached. "
+                    "Please try again next month or donate to increase the cap."
+                ),
+                'reference': reference, 'text_basis': {}, 'manuscript_families': {},
+                'metzger_rating': {}, 'variant_register': [], 'disputed_passage': None,
+                'synthesis': '',
+                'assessment': {'title': '', 'reasoning': '', 'plain': '', 'confidence': 0.0, 'recommended_reading': '', 'open_questions': ''},
+                'citations': {'sbl': '', 'bibtex': ''},
+            }
+
+        template = self.load_prompt('nt_text', prompt_version)
+        user_content = (
+            template
+            .replace('{{REFERENCE}}', reference)
+            .replace('{{GNT_TEXT}}',  gnt_text)
+        ) if template else (
+            f'Reference: {reference}\nGNT: {gnt_text or "(not available)"}\n'
+            'Analyze NT textual tradition. Return JSON with text_basis, manuscript_families, '
+            'metzger_rating, variant_register, disputed_passage, synthesis, assessment, citations.'
+        )
+
+        response = self._client.messages.create(
+            model=model,
+            max_tokens=8192,
+            system=_NT_TEXT_SYSTEM,
+            messages=[
+                {'role': 'user',      'content': user_content},
+                {'role': 'assistant', 'content': '{'},
+            ],
+        )
+
+        cost = (response.usage.input_tokens  * _SONNET_COST_IN +
+                response.usage.output_tokens * _SONNET_COST_OUT)
+        self.record_spend(cost)
+
+        raw  = '{' + response.content[0].text
+        data = _parse_json_response(raw)
+
+        # Retry once if JSON parsing failed; never persist a parse error to cache.
+        if 'parse_error' in data:
+            resp2 = self._client.messages.create(
+                model=model, max_tokens=8192, system=_NT_TEXT_SYSTEM,
+                messages=[{'role': 'user', 'content': user_content},
+                           {'role': 'assistant', 'content': '{'}],
+            )
+            self.record_spend(resp2.usage.input_tokens * _SONNET_COST_IN +
+                              resp2.usage.output_tokens * _SONNET_COST_OUT)
+            data2 = _parse_json_response('{' + resp2.content[0].text)
+            if 'parse_error' not in data2:
+                data = data2
+
+        if 'parse_error' not in data:
+            self.save_cache(reference, tool, prompt_version, model, data)
         return data
 
     def analyze_divergence(self, reference: str, mt_text: str,
@@ -1380,6 +1597,8 @@ def _detect_tool(data: dict) -> str:
     if 'back_translations' in data:   return 'backtranslation'
     if 'figures' in data:             return 'numerical'
     if 'dimensions' in data:          return 'scribal'
+    if 'rendering_fidelity' in data:  return 'targum'
+    if 'metzger_rating' in data:      return 'nt_text'
     if 'citations' in data:           return 'patristic'
     if 'stemma_nodes' in data:        return 'genealogy'
     return 'divergence'
@@ -1404,6 +1623,10 @@ def _extract_cards(reference: str, data: dict, min_confidence: float,
         return _extract_cards_scribal(reference, data, min_confidence)
     if tool == 'genealogy':
         return _extract_cards_genealogy(reference, data, min_confidence)
+    if tool == 'targum':
+        return _extract_cards_targum(reference, data, min_confidence)
+    if tool == 'nt_text':
+        return _extract_cards_nt_text(reference, data, min_confidence)
     return []
 
 
@@ -1598,6 +1821,115 @@ def _extract_cards_genealogy(reference: str, data: dict, min_confidence: float) 
         'cached_at':       data.get('cached_at', ''),
         'link':            f'/genealogy?book={reference}',
     }]
+
+
+def _extract_cards_targum(reference: str, data: dict, min_confidence: float) -> list:
+    """One card per key_divergence entry — mirrors _extract_cards_theological."""
+    ass     = data.get('assessment', {})
+    conf    = ass.get('confidence', 0) or 0
+    synth   = data.get('synthesis', '')
+    ms      = data.get('manuscript', 'Targum')
+    cards   = []
+    for div in data.get('key_divergences', []):
+        explanation = div.get('explanation', '')
+        mt_word     = div.get('mt_word', '')
+        targ_word   = div.get('targ_word', '')
+        div_type    = div.get('type', 'targumic_rendering')
+        if not explanation or conf < min_confidence:
+            continue
+        headline = f'{ms}: {mt_word} → {targ_word}' if mt_word and targ_word else f'{ms} {div_type}'
+        cards.append({
+            'reference':       reference,
+            'tool':            'targum',
+            'card_type':       div_type,
+            'divergence_type': div_type,
+            'mt_word':         '',   # headline carries the MT→Targ pair; avoids LXX styling on Aramaic
+            'lxx_word':        '',
+            'headline':        headline,
+            'analysis_plain':  explanation,
+            'summary_plain':   synth,
+            'confidence':      conf,
+            'cached_at':       data.get('cached_at', ''),
+            'link':            f'/targum?ref={reference}',
+        })
+    # Fallback: if no key_divergences, emit one summary card
+    if not cards:
+        plain = ass.get('plain', '') or synth
+        if plain and conf >= min_confidence:
+            divs = data.get('key_divergences', [])
+            headline = (f'{len(divs)} targumic divergence{"s" if len(divs) != 1 else ""}'
+                        if divs else ass.get('title', 'Targumic rendering'))
+            cards.append({
+                'reference':       reference,
+                'tool':            'targum',
+                'card_type':       'targumic_rendering',
+                'divergence_type': 'targumic_rendering',
+                'mt_word':         '',
+                'lxx_word':        '',
+                'headline':        headline,
+                'analysis_plain':  plain,
+                'summary_plain':   synth,
+                'confidence':      conf,
+                'cached_at':       data.get('cached_at', ''),
+                'link':            f'/targum?ref={reference}',
+            })
+    return cards[:4]  # cap at 4 per passage
+
+
+def _extract_cards_nt_text(reference: str, data: dict, min_confidence: float) -> list:
+    """One card per variant_register entry — mirrors _extract_cards_theological."""
+    ass        = data.get('assessment', {})
+    conf       = ass.get('confidence', 0) or 0
+    synth      = data.get('synthesis', '')
+    raw_rating = data.get('metzger_rating', '')
+    rating     = raw_rating.get('rating', '') if isinstance(raw_rating, dict) else str(raw_rating)
+    cards      = []
+    for var in data.get('variant_register', []):
+        assessment = var.get('assessment', '')
+        vtext      = var.get('variant_text', '')
+        support    = var.get('manuscript_support', '')
+        intrinsic  = var.get('intrinsic_probability', '')
+        if not assessment or conf < min_confidence:
+            continue
+        headline = vtext[:60] + ('…' if len(vtext) > 60 else '') if vtext else 'Textual variant'
+        plain = assessment
+        if support:
+            plain = f'{assessment} (Witnesses: {support})'
+        cards.append({
+            'reference':       reference,
+            'tool':            'nt_text',
+            'card_type':       'nt_variant',
+            'divergence_type': f'nt_variant_{intrinsic}' if intrinsic else 'nt_variant',
+            'mt_word':         '',
+            'lxx_word':        '',
+            'headline':        headline,
+            'analysis_plain':  plain,
+            'summary_plain':   synth,
+            'confidence':      conf,
+            'cached_at':       data.get('cached_at', ''),
+            'link':            f'/nt-text?ref={reference}',
+        })
+    # Fallback: if no variant_register, emit one summary card
+    if not cards:
+        plain = ass.get('plain', '') or synth
+        if plain and conf >= min_confidence:
+            headline = (f'Metzger {rating} — {ass.get("title", "NT textual tradition")}'
+                        if rating else ass.get('title', 'NT textual tradition'))
+            cards.append({
+                'reference':       reference,
+                'tool':            'nt_text',
+                'card_type':       'nt_textual_tradition',
+                'divergence_type': 'nt_textual_tradition',
+                'mt_word':         '',
+                'lxx_word':        '',
+                'headline':        headline,
+                'analysis_plain':  plain,
+                'summary_plain':   synth,
+                'confidence':      conf,
+                'cached_at':       data.get('cached_at', ''),
+                'link':            f'/nt-text?ref={reference}',
+            })
+    return cards[:4]  # cap at 4 per passage
 
 
 def _parse_json_response(raw: str) -> dict:

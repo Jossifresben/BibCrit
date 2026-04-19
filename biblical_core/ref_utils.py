@@ -63,7 +63,86 @@ TOOL_VERSE_LIMITS: dict[str, int] = {
     'divergence':       30,   # word-level table for every MT/LXX difference
     'theological':      30,   # flag + motivation analysis per revision
     'dss':              35,   # 5-tradition comparison, moderate density
+    'targum':           35,   # 3-tradition comparison with word-level analysis
+    'nt_text':          30,   # Manuscript family analysis with variant register
     'chiasm':           50,   # structural overview, lower output per verse
     'numerical':        50,   # chapter-level anyway
     'source':           60,   # Genesis 1:1-2:25 = 56 verses — keep just under
 }
+
+
+# Books covered by Targum Onkelos (Torah)
+_TARGUM_TORAH = {
+    'genesis', 'exodus', 'leviticus', 'numbers', 'deuteronomy',
+}
+
+# Books covered by Targum Jonathan (Former + Latter Prophets)
+_TARGUM_PROPHETS = {
+    'joshua', 'judges', '1 samuel', '2 samuel', '1 kings', '2 kings',
+    'isaiah', 'jeremiah', 'ezekiel',
+    'hosea', 'joel', 'amos', 'obadiah', 'jonah', 'micah',
+    'nahum', 'habakkuk', 'zephaniah', 'haggai', 'zechariah', 'malachi',
+}
+
+_TARGUM_ALL = _TARGUM_TORAH | _TARGUM_PROPHETS
+
+
+def validate_targum_reference(reference: str) -> str | None:
+    """Return error string if reference is outside Targum coverage, else None.
+
+    Targum covers Torah (Onkelos) and Prophets (Jonathan) only.
+    Writings (Psalms, Proverbs, Job, etc.) have no Targum in this corpus.
+    """
+    parts = reference.strip().lower().split()
+    if not parts:
+        return 'Please enter a reference.'
+    # Handle multi-word book names: "1 samuel", "2 kings", etc.
+    if parts[0].isdigit() and len(parts) >= 2:
+        book = parts[0] + ' ' + parts[1].split(':')[0]
+    else:
+        book = parts[0].split(':')[0]
+    book = book.strip()
+
+    if book in _TARGUM_ALL:
+        return None
+
+    return (
+        f'"{reference}" is in the Writings — Targum coverage is limited to Torah (Onkelos) '
+        f'and Prophets (Jonathan). For Psalms, Proverbs, Job, or other Writings, '
+        f'use the Ancient Witness Bridge or Theological Revision Detector instead.'
+    )
+
+
+# NT books (Matthew–Revelation, 27 books)
+_NT_BOOKS = {
+    'matthew', 'mark', 'luke', 'john', 'acts', 'romans',
+    '1 corinthians', '2 corinthians', 'galatians', 'ephesians',
+    'philippians', 'colossians', '1 thessalonians', '2 thessalonians',
+    '1 timothy', '2 timothy', 'titus', 'philemon', 'hebrews',
+    'james', '1 peter', '2 peter', '1 john', '2 john', '3 john',
+    'jude', 'revelation',
+}
+
+
+def validate_nt_reference(reference: str) -> str | None:
+    """Return error string if reference is outside the NT canon, else None.
+
+    The NT Text Analyzer is for Matthew–Revelation only.
+    For OT manuscript comparison use the Ancient Witness Bridge.
+    """
+    parts = reference.strip().lower().split()
+    if not parts:
+        return 'Please enter a reference.'
+    if parts[0].isdigit() and len(parts) >= 2:
+        book = parts[0] + ' ' + parts[1].split(':')[0]
+    else:
+        book = parts[0].split(':')[0]
+
+    if book in _NT_BOOKS:
+        return None
+
+    return (
+        f'"{reference}" appears to be an Old Testament reference. '
+        'The NT Textual Tradition Analyzer covers Matthew–Revelation only. '
+        'For OT manuscript comparison, use the Ancient Witness Bridge (/dss).'
+    )

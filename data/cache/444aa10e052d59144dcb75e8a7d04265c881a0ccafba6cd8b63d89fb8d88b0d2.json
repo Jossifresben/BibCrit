@@ -1,0 +1,159 @@
+{
+  "reference": "Genesis 3:22",
+  "manuscript": "Onkelos",
+  "synthesis": "Targum Onkelos renders Genesis 3:22 with a significant theological expansion that transforms the ambiguous Hebrew phrase 'like one of us' into an explicit monotheistic statement: 'unique in the world from him.' This expansion addresses potential anthropomorphic or polytheistic misreadings while maintaining close adherence to the MT's narrative structure and vocabulary elsewhere in the verse.",
+  "rendering_fidelity": {
+    "overall": "mixed",
+    "word_analysis": [
+      {
+        "mt_word": "wayyomer",
+        "targ_word": "wa'amar",
+        "type": "close",
+        "note": "Standard qal perfect 3ms rendering with minimal morphological adjustment."
+      },
+      {
+        "mt_word": "YHWH Elohim",
+        "targ_word": "YYY Elohim",
+        "type": "close",
+        "note": "Tetragrammaton represented by double yod with standard divine name rendering."
+      },
+      {
+        "mt_word": "hen",
+        "targ_word": "ha",
+        "type": "close",
+        "note": "Standard Aramaic equivalent for Hebrew demonstrative particle."
+      },
+      {
+        "mt_word": "ha-adam",
+        "targ_word": "adam",
+        "type": "close",
+        "note": "Definite article dropped, standard Targumic practice for proper nouns."
+      },
+      {
+        "mt_word": "hayah",
+        "targ_word": "hawa",
+        "type": "close",
+        "note": "Standard Aramaic cognate for Hebrew 'to be' in qal perfect."
+      },
+      {
+        "mt_word": "ke-'aḥad mimmennu",
+        "targ_word": "yəḥidai bə'alma minneh",
+        "type": "theological",
+        "note": "Major theological expansion: 'like one of us' becomes 'unique in the world from him' to eliminate polytheistic implications."
+      },
+      {
+        "mt_word": "lada'at",
+        "targ_word": "ləmidda'",
+        "type": "close",
+        "note": "Standard infinitive construct with preposition, Aramaic cognate of Hebrew yd'."
+      },
+      {
+        "mt_word": "tov wara'",
+        "targ_word": "ṭav ubish",
+        "type": "close",
+        "note": "Standard Aramaic equivalents for 'good and evil.'"
+      },
+      {
+        "mt_word": "wə'attah",
+        "targ_word": "ukhə'an",
+        "type": "close",
+        "note": "Standard temporal particle 'and now' in Aramaic."
+      },
+      {
+        "mt_word": "pen-yishlaḥ",
+        "targ_word": "dilma yoshiṭ",
+        "type": "close",
+        "note": "Negative purpose clause with standard Aramaic rendering of shalaḥ."
+      },
+      {
+        "mt_word": "yado",
+        "targ_word": "yədeh",
+        "type": "close",
+        "note": "Standard noun with 3ms pronominal suffix."
+      },
+      {
+        "mt_word": "wəlaqaḥ",
+        "targ_word": "wəyissav",
+        "type": "close",
+        "note": "Aramaic nsb replaces Hebrew lqḥ, standard lexical substitution."
+      },
+      {
+        "mt_word": "gam",
+        "targ_word": "'af",
+        "type": "close",
+        "note": "Standard Aramaic particle for Hebrew 'also.'"
+      },
+      {
+        "mt_word": "me'eṣ ha-ḥayyim",
+        "targ_word": "me'ilan ḥayyaya",
+        "type": "close",
+        "note": "Standard lexical equivalents with emphatic state for definiteness."
+      },
+      {
+        "mt_word": "wə'akal",
+        "targ_word": "wəyekhul",
+        "type": "close",
+        "note": "Standard Aramaic cognate for 'eat' in appropriate conjugation."
+      },
+      {
+        "mt_word": "waḥay",
+        "targ_word": "wiḥe",
+        "type": "close",
+        "note": "Standard Aramaic rendering of Hebrew ḥyh 'live.'"
+      },
+      {
+        "mt_word": "lə'olam",
+        "targ_word": "lə'alam",
+        "type": "close",
+        "note": "Direct cognate for 'forever' with minimal phonetic shift."
+      }
+    ]
+  },
+  "theological_modifications": [
+    {
+      "type": "anthropomorphism",
+      "mt_reading": "ke-'aḥad mimmennu (like one of us)",
+      "targ_reading": "yəḥidai bə'alma minneh (unique in the world from him)",
+      "explanation": "The Targum fundamentally reinterprets the problematic divine plural 'one of us' which could suggest polytheism or divine council theology. By rendering it as 'unique in the world from him,' the translator both eliminates the plural reference and transforms the comparison into a statement of human uniqueness in having knowledge of good and evil. This reflects rabbinic concern to protect monotheism and avoid anthropomorphic implications of a divine council, consistent with the broader Targumic tendency to guard divine transcendence."
+    }
+  ],
+  "targumic_expansions": [
+    {
+      "location": "Genesis 3:22a",
+      "expansion_text": "yəḥidai bə'alma minneh (unique in the world from him)",
+      "midrashic_parallel": "Genesis Rabbah 21:5 discusses the problematic 'one of us' and offers multiple rabbinic interpretations avoiding polytheism",
+      "significance": "This expansion represents a midrashic-style theological clarification embedded directly in the translation, transforming a potentially troublesome phrase into an affirmation of human uniqueness that poses no theological difficulty."
+    }
+  ],
+  "messianic_reinterpretation": {
+    "present": false,
+    "instances": []
+  },
+  "lxx_alignment": {
+    "areas_of_agreement": "Both LXX and Targum retain 'one of us' structure (LXX: hōs heis ex hēmōn), but Targum diverges significantly by eliminating the plural reference entirely",
+    "significance": "The LXX's retention of the divine plural suggests an earlier textual tradition comfortable with divine council language, while the Targum's radical reinterpretation reflects later rabbinic theological sensitivities. This divergence indicates that the Targum is engaging in interpretive translation rather than following a variant Vorlage, since the LXX confirms the MT reading."
+  },
+  "key_divergences": [
+    {
+      "mt_word": "ke-'aḥad mimmennu",
+      "targ_word": "yəḥidai bə'alma minneh",
+      "type": "theological",
+      "explanation": "This is the verse's only major divergence and represents a core Targumic hermeneutical strategy: theological correction through translation. The MT's 'like one of us' becomes 'unique in the world from him,' completely transforming the statement from a comparison with deity to an assertion of human uniqueness, thereby eliminating potential polytheistic misunderstanding."
+    }
+  ],
+  "assessment": {
+    "title": "Targumic Theological Correction of Divine Plurality in Genesis 3:22 Through Monotheistic Reinterpretation",
+    "reasoning": "Targum Onkelos demonstrates its characteristic approach to theologically problematic texts by maintaining close fidelity to the MT throughout Genesis 3:22 except at the single point of theological difficulty. The phrase 'like one of us' (ke-'aḥad mimmennu) receives a complete reinterpretation as 'unique in the world from him' (yəḥidai bə'alma minneh), transforming a potentially polytheistic or anthropomorphic statement into an affirmation of human uniqueness. This surgical intervention exemplifies what Samely (1992) identifies as 'replacement' technique and what Smelik (1995) terms 'theological updating.' The Targum's divergence from both MT and LXX at this precise point confirms that the motivation is interpretive rather than textual-critical. The rendering reflects the broader rabbinic discomfort with divine council theology and demonstrates how Targum Onkelos functions not merely as translation but as authoritative interpretation protecting monotheistic theology.",
+    "plain": "The Aramaic translation follows the Hebrew text very closely except for one crucial change: where the Hebrew has God saying Adam has become 'like one of us,' the Aramaic changes this to say Adam is now 'unique in the world.' This change removes any suggestion that there might be multiple divine beings and protects strict monotheism, showing how ancient Jewish translators carefully modified potentially confusing passages.",
+    "confidence": 0.95,
+    "next_steps": "Examine other instances of divine plural in Pentateuchal Targumim (e.g., Gen 1:26, 11:7) to establish systematic patterns of treatment; compare with Targum Pseudo-Jonathan's rendering of this verse to assess variation within the Targumic tradition."
+  },
+  "citations": {
+    "sbl": "Alexander Samely, The Interpretation of Speech in the Pentateuch Targums: A Study of Method and Presentation in Targumic Exegesis (Tübingen: Mohr Siebeck, 1992), 214–18; Willem F. Smelik, The Targum of Judges (Leiden: Brill, 1995), 45–67 on theological modification techniques.",
+    "bibtex": "@book{Samely1992,\n  author = {Alexander Samely},\n  title = {The Interpretation of Speech in the Pentateuch Targums: A Study of Method and Presentation in Targumic Exegesis},\n  publisher = {Mohr Siebeck},\n  address = {Tübingen},\n  year = {1992},\n  pages = {214--218}\n}"
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-04-19T15:54:42.386287",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

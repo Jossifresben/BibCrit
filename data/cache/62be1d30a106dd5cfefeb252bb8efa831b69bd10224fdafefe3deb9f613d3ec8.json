@@ -1,0 +1,12 @@
+{
+  "divergences": [],
+  "summary_technical": "",
+  "summary_plain": "",
+  "parse_error": "{\n  \"reference\": \"Genesis 22:8\",\n  \"manuscript\": \"Onkelos\",\n  \"synthesis\": \"Targum Onkelos renders Genesis 22:8 with characteristic theological precision, replacing the anthropomorphic 'God will see' with 'before the LORD it is revealed' and substituting 'lamb' (seh) with 'lamb' (imra). The most significant modification is the use of 'qodam YHWH gelei' (before the LORD it is revealed) instead of MT's 'Elohim yireh' (God will see), reflecting the standard Onkelos technique of avoiding direct attr",
+  "parse_error_len": 7940,
+  "discovery_ready": false,
+  "reference": "Genesis 22:8",
+  "cached_at": "2026-04-19T15:51:59.581439",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

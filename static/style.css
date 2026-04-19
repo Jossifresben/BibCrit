@@ -1615,6 +1615,11 @@ body {
 .footer a:hover {
     text-decoration: underline;
 }
+.footer-orcid img {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 2px;
+}
 
 /* Hamburger menu button — hidden on desktop */
 .nav-hamburger {

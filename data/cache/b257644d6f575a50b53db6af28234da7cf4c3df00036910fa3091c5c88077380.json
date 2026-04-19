@@ -1,0 +1,103 @@
+{
+  "passage": "Amos 5:1-17",
+  "structure_detected": true,
+  "structure_type": "concentric",
+  "confidence_note": "Strong concentric structure with multiple lexical correspondences, thematic inversions, and a central pivot emphasizing the divine imperative to 'seek YHWH and live.' The structure is widely recognized in Amos scholarship.",
+  "elements": [
+    {
+      "label": "A",
+      "verses": "5:1-3",
+      "summary": "Funeral lament (קִינָה) over fallen virgin Israel with announcement of devastating military losses.",
+      "text_excerpt": "שִׁמְעוּ אֶת־הַדָּבָר הַזֶּה אֲשֶׁר אָנֹכִי נֹשֵׂא עֲלֵיכֶם קִינָה (Hear this word that I take up over you—a lament)",
+      "confidence": 0.92
+    },
+    {
+      "label": "B",
+      "verses": "5:4-6",
+      "summary": "First 'seek me and live' oracle with prohibition against cultic sites (Bethel, Gilgal, Beersheba).",
+      "text_excerpt": "דִּרְשׁוּנִי וִחְיוּ (Seek me and live)",
+      "confidence": 0.95
+    },
+    {
+      "label": "C",
+      "verses": "5:7",
+      "summary": "Accusation against those who turn justice to wormwood and cast down righteousness.",
+      "text_excerpt": "הַהֹפְכִים לְלַעֲנָה מִשְׁפָּט וּצְדָקָה לָאָרֶץ הִנִּיחוּ (You who turn justice to wormwood and cast down righteousness to the earth)",
+      "confidence": 0.88
+    },
+    {
+      "label": "X",
+      "verses": "5:8-9",
+      "summary": "Central hymnic doxology praising YHWH as cosmic Creator who controls constellations, day/night, waters, and brings destruction upon the strong.",
+      "text_excerpt": "עֹשֵׂה כִימָה וּכְסִיל וְהֹפֵךְ לַבֹּקֶר צַלְמָוֶת (He who made the Pleiades and Orion, who turns deep darkness into morning)",
+      "confidence": 0.96
+    },
+    {
+      "label": "C'",
+      "verses": "5:10-13",
+      "summary": "Expanded accusation against those who hate justice at the gate, trample the poor, and practice economic oppression.",
+      "text_excerpt": "שֹׂנְאוּ בַשַּׁעַר מוֹכִיחַ... כִּי יָדַעְתִּי רַבִּים פִּשְׁעֵיכֶם (They hate him who reproves in the gate... For I know how many are your transgressions)",
+      "confidence": 0.89
+    },
+    {
+      "label": "B'",
+      "verses": "5:14-15",
+      "summary": "Second 'seek good and live' oracle calling for love of good, establishment of justice in the gate, with conditional hope.",
+      "text_excerpt": "דִּרְשׁוּ־טוֹב וְאַל־רָע לְמַעַן תִּחְיוּ (Seek good and not evil, that you may live)",
+      "confidence": 0.94
+    },
+    {
+      "label": "A'",
+      "verses": "5:16-17",
+      "summary": "Resumption of funeral imagery with wailing in streets, vineyards, and divine passing through in judgment.",
+      "text_excerpt": "בְּכָל־רְחֹבוֹת מִסְפֵּד... וְקָרְאוּ אִכָּר אֶל־אֵבֶל וּמִסְפֵּד (In all the squares there shall be wailing... they shall call the farmers to mourning and to wailing)",
+      "confidence": 0.91
+    }
+  ],
+  "pivot": {
+    "label": "X",
+    "verses": "5:8-9",
+    "summary": "The hymnic doxology is the structural and theological center, grounding the prophetic critique in YHWH's cosmic sovereignty and power to transform.",
+    "theological_weight": "The pivot establishes that the God who demands justice is the Creator who controls cosmic order (Pleiades, Orion, day and night, waters). This cosmic authority legitimates both the judgment threatened and the transformative power offered in the 'seek and live' oracles. The God who 'turns darkness to morning' can turn Israel's mourning to life if they seek Him and establish justice."
+  },
+  "correspondences": [
+    {
+      "pair": [
+        "A",
+        "A'"
+      ],
+      "evidence": "Both units employ funeral/mourning imagery: קִינָה (lament, v.1) corresponds to מִסְפֵּד (mourning/wailing, vv.16-17). Both depict national catastrophe with city/agricultural contexts.",
+      "confidence": 0.93
+    },
+    {
+      "pair": [
+        "B",
+        "B'"
+      ],
+      "evidence": "Both contain the 'seek and live' formula: דִּרְשׁוּנִי וִחְיוּ (v.4) parallels דִּרְשׁוּ־טוֹב... לְמַעַן תִּחְיוּ (v.14). Both use 'seek' (דרש) and 'live' (חיה) with contrasting objects (YHWH vs. cultic sites; good vs. evil).",
+      "confidence": 0.96
+    },
+    {
+      "pair": [
+        "C",
+        "C'"
+      ],
+      "evidence": "Both accuse those who pervert justice: v.7 speaks of turning מִשְׁפָּט (justice) to wormwood; vv.10-13 elaborate on hating justice 'in the gate' (בַשַּׁעַר) and oppressing the poor, with שׂנא (hate) and דרך (trample) vocabulary.",
+      "confidence": 0.9
+    }
+  ],
+  "overall_confidence": 0.93,
+  "methodology_citations": "Dorsey (Literary Structure of the OT, 283-284) identifies Amos 5:1-17 as a seven-part concentric structure. Lund's criteria of 'shift at the center' and 'identical or antithetical ideas' in corresponding members are clearly met. Walsh's emphasis on pivot significance is satisfied by the hymnic interlude's theological function.",
+  "theological_significance": "The concentric structure reveals that true worship and social justice are inseparable and grounded in YHWH's cosmic sovereignty. The pivot's hymnic praise of the Creator who transforms darkness to light provides the theological foundation for the prophetic demand: the God who controls cosmic order expects corresponding moral order in society. The chiasm moves from death (funeral lament) through cultic and ethical critique to the central affirmation of YHWH's power, then back through renewed call to justice and warning of mourning, creating a rhetorical trap: Israel can choose life through seeking YHWH and establishing justice, or experience the funeral already being sung.",
+  "scholarly_citations": "Shalom Paul (Amos, Hermeneia, 163-168) recognizes the concentric pattern with vv.8-9 as pivot. Jörg Jeremias (The Book of Amos, 96-99) discusses the structural function of the hymnic fragment. Hans Walter Wolff (Amos the Prophet, 234-235) identifies the 'seek and live' parallels as structural markers framing the doxology.",
+  "bibcrit_hypothesis": {
+    "title": "Hymnic Pivot as Redactional Hinge Strategy",
+    "reasoning": "The hymnic fragment (vv.8-9) may represent deliberate redactional insertion to create structural symmetry and theological grounding for originally independent oracles. The doxology's cosmic perspective transforms scattered judgment and exhortation materials into a unified argument from creation theology. This suggests a sophisticated scribal community using concentric composition to integrate prophetic traditions around a liturgical core, similar to doxologies in Amos 4:13 and 9:5-6.",
+    "confidence": 0.85
+  },
+  "discovery_ready": true,
+  "reference": "Amos 5:1-17",
+  "cached_at": "2026-04-14T18:36:50.851752",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

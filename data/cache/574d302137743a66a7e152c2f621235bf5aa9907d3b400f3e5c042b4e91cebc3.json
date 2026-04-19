@@ -1,0 +1,103 @@
+{
+  "passage": "Ruth 1:1-22",
+  "structure_detected": true,
+  "structure_type": "concentric",
+  "confidence_note": "Strong evidence with lexical repetition, geographic markers, and thematic reversal patterns anchored by the covenant statement at center",
+  "elements": [
+    {
+      "label": "A",
+      "verses": "1:1-5",
+      "summary": "Journey from Bethlehem to Moab due to famine; death of Elimelech and two sons",
+      "text_excerpt": "וַיֵּלֶךְ אִישׁ מִבֵּית לֶחֶם יְהוּדָה לָגוּר בִּשְׂדֵי מוֹאָב (A man went from Bethlehem Judah to sojourn in the fields of Moab)",
+      "confidence": 0.92
+    },
+    {
+      "label": "B",
+      "verses": "1:6-7",
+      "summary": "Naomi hears the LORD has visited His people with bread and prepares to return",
+      "text_excerpt": "כִּי־פָקַד יְהוָה אֶת־עַמּוֹ לָתֵת לָהֶם לָחֶם (for the LORD had visited His people by giving them bread)",
+      "confidence": 0.9
+    },
+    {
+      "label": "C",
+      "verses": "1:8-14",
+      "summary": "Naomi urges daughters-in-law to return to their mothers' houses; Orpah returns but Ruth clings",
+      "text_excerpt": "שֹׁבְנָה בְּנֹתַי לֵכְנָה (Turn back, my daughters, go)",
+      "confidence": 0.88
+    },
+    {
+      "label": "X",
+      "verses": "1:15-18",
+      "summary": "Ruth's covenant declaration of loyalty to Naomi and YHWH forms the theological center",
+      "text_excerpt": "עַמֵּךְ עַמִּי וֵאלֹהַיִךְ אֱלֹהָי (Your people are my people, and your God my God)",
+      "confidence": 0.95
+    },
+    {
+      "label": "C'",
+      "verses": "1:19a",
+      "summary": "The two women journey together until arrival in Bethlehem",
+      "text_excerpt": "וַתֵּלַכְנָה שְׁתֵּיהֶם (And the two of them went)",
+      "confidence": 0.87
+    },
+    {
+      "label": "B'",
+      "verses": "1:19b-21",
+      "summary": "Bethlehem's reception and Naomi's bitter testimony about the LORD's affliction",
+      "text_excerpt": "יְהוָה הֵעַנִי בִּי וְשַׁדַּי הֵרַע לִי (The LORD has testified against me, and Shaddai has brought calamity upon me)",
+      "confidence": 0.91
+    },
+    {
+      "label": "A'",
+      "verses": "1:22",
+      "summary": "Journey from Moab to Bethlehem completed at barley harvest; narrative frame closure",
+      "text_excerpt": "וַתָּשָׁב נָעֳמִי וְרוּת הַמּוֹאֲבִיָּה כַלָּתָהּ עִמָּהּ הַשָּׁבָה מִשְּׂדֵי מוֹאָב (So Naomi returned, and Ruth the Moabitess her daughter-in-law with her, who returned from the fields of Moab)",
+      "confidence": 0.93
+    }
+  ],
+  "pivot": {
+    "label": "X",
+    "verses": "1:15-18",
+    "summary": "Ruth's covenant formula climaxes Naomi's three attempts to send her back, establishing Ruth's full incorporation into Israel",
+    "theological_weight": "Ruth's declaration employs covenant language (עַמֵּךְ עַמִּי וֵאלֹהַיִךְ אֱלֹהָי) that echoes Sinai formulae and prophetic marriage imagery, positioning a Moabite woman as paradigmatic covenant keeper. The oath formula invoking YHWH's name (כֹּה יַעֲשֶׂה יְהוָה לִי) demonstrates her complete theological commitment, transforming ethnic identity through religious allegiance and foreshadowing the inclusion of nations in messianic lineage."
+  },
+  "correspondences": [
+    {
+      "pair": [
+        "A",
+        "A'"
+      ],
+      "evidence": "Geographic inclusio: מִבֵּית לֶחֶם...בִּשְׂדֵי מוֹאָב (from Bethlehem...to fields of Moab) reversed in מִשְּׂדֵי מוֹאָב...בֵּית לָחֶם (from fields of Moab...to Bethlehem); famine/emptiness vs. barley harvest/potential fullness",
+      "confidence": 0.94
+    },
+    {
+      "pair": [
+        "B",
+        "B'"
+      ],
+      "evidence": "Divine activity framed by contrasting verbs: פָקַד (visited/provided) in positive sense vs. הֵעַנִי/הֵרַע (afflicted/brought evil); bread (לָחֶם) given vs. emptiness (רֵיקָם) proclaimed; theological interpretation of circumstances",
+      "confidence": 0.89
+    },
+    {
+      "pair": [
+        "C",
+        "C'"
+      ],
+      "evidence": "Movement patterns: שֹׁבְנָה (return) imperative three times vs. וַתֵּלַכְנָה שְׁתֵּיהֶם (the two of them went); separation/union theme with Orpah departing but Ruth clinging (דָּבְקָה) resulting in unified journey",
+      "confidence": 0.85
+    }
+  ],
+  "overall_confidence": 0.91,
+  "methodology_citations": "Dorsey (Literary Structure of the OT, p. 119-120) identifies concentric patterns in Ruth marked by geographic movement and divine name theology; Lund (Chiasmus in the New Testament, 1942) criterion of 'shifting from the extremes to the center' evident in journey-to-covenant-to-journey pattern; Walsh (Style and Structure, 2001, p. 176-178) on covenant formulas as structural pivots",
+  "theological_significance": "The concentric structure presents Ruth 1 as a theology of reversals orchestrated around covenant commitment. The geographic frame (Bethlehem-Moab-Bethlehem) and theological frame (YHWH's provision-affliction) converge on Ruth's radical covenant oath, suggesting that true Israel is defined not by ethnicity but by covenantal allegiance to YHWH and His people. Naomi's bitter emptiness theology (B') inverts the earlier report of divine provision (B), yet the structure hints at resolution through Ruth's central pledge—the Moabite becomes the truest Israelite. The barley harvest notation (A') points forward to redemption themes in chapters 2-4, with the structure emphasizing that covenant fidelity, not ethnic purity, opens participation in YHWH's restorative work.",
+  "scholarly_citations": "Phyllis Trible (God and the Rhetoric of Sexuality, 1978, p. 166-199) recognizes Ruth's speech as the structural and theological climax of chapter 1. Robert Hubbard (NICOT Ruth, 1988, p. 119-120) notes the concentric geographic pattern and identifies vv. 16-17 as 'the thematic heart of the book.' Daniel Block (Judges-Ruth NAC, 1999, p. 625-627) discusses the covenant language and its centrality to Ruth's characterization.",
+  "bibcrit_hypothesis": {
+    "title": "Ruth as Counter-Ezran Inclusion Narrative",
+    "reasoning": "The concentric structure with a Moabite's covenant oath at center may represent post-exilic resistance to Ezra-Nehemiah's exclusionary policies regarding foreign wives (Ezra 9-10). By positioning Ruth—ancestress of David—as the paradigmatic covenant keeper through a structurally emphasized oath formula, the narrative argues that ethnic foreignness is no barrier to full incorporation when genuine יראת יהוה (fear of YHWH) is present. The emphasis on return (שׁוב, seven times in ch. 1) may encode Second Temple debates about who truly 'returns' to covenant faithfulness.",
+    "confidence": 0.78
+  },
+  "discovery_ready": true,
+  "reference": "Ruth 1:1-22",
+  "cached_at": "2026-04-17T08:42:54.361644",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

@@ -1,0 +1,133 @@
+{
+  "reference": "Isaiah 53:5",
+  "manuscript": "Jonathan",
+  "synthesis": "Targum Jonathan radically reinterprets Isaiah 53:5, shifting the subject from a suffering servant to the Temple and the people. The verse is transformed from a description of vicarious suffering ('he was wounded for our transgressions') into a statement about the Temple's destruction due to sin and the pedagogical benefit of the servant's teaching, with forgiveness conditional on obedience to his words.",
+  "rendering_fidelity": {
+    "overall": "expansion",
+    "word_analysis": [
+      {
+        "mt_word": "mḥōlāl (wounded/pierced)",
+        "targ_word": "yibnē bēt maqdəšā də'ittəḥal (he will build the Temple which was profaned)",
+        "type": "expansion",
+        "note": "MT's passive participle describing the servant's wounding is replaced with a future verb about rebuilding the Temple that was profaned."
+      },
+      {
+        "mt_word": "mippəšāʿēnû (for our transgressions)",
+        "targ_word": "bəḥōbānā (by our sins)",
+        "type": "theological",
+        "note": "MT's causal preposition indicating vicarious suffering is transformed into an instrumental 'by' describing the cause of the Temple's profanation, shifting agency."
+      },
+      {
+        "mt_word": "mədukka' (crushed)",
+        "targ_word": "ittməsar (was delivered up)",
+        "type": "substitution",
+        "note": "MT's passive participle of crushing is replaced with a verb of delivery/handing over, continuing the Temple subject."
+      },
+      {
+        "mt_word": "mēʿăwōnōtênû (for our iniquities)",
+        "targ_word": "baʿăwāyātānā (by our iniquities)",
+        "type": "theological",
+        "note": "Again the causal preposition is instrumentalized, maintaining the shift from vicarious suffering to causative agency of sin."
+      },
+      {
+        "mt_word": "mûsar šəlômēnû ʿālāyw (the chastisement of our peace upon him)",
+        "targ_word": "ûbə'ûlpənēh šəlāmā' yisgē ʿălānā (and through his teaching, peace will increase upon us)",
+        "type": "expansion",
+        "note": "MT's concept of punitive suffering for our benefit becomes pedagogical instruction (ûlpānā) bringing peace, eliminating the vicarious element."
+      },
+      {
+        "mt_word": "ûbaḥăburātô nirpa'-lānû (and by his wounds we are healed)",
+        "targ_word": "wəkad naṣēt ləpitgāmôhî ḥôbānā' yištabəqûn lānā (and when we obey his words, our sins will be forgiven us)",
+        "type": "expansion",
+        "note": "MT's healing through the servant's wounds is replaced with conditional forgiveness contingent on obedience to his teaching."
+      }
+    ]
+  },
+  "theological_modifications": [
+    {
+      "type": "eschatological",
+      "mt_reading": "wəhû' mḥōlāl mippəšāʿēnû (and he was wounded for our transgressions)",
+      "targ_reading": "wəhû' yibnē bēt maqdəšā də'ittəḥal bəḥōbānā (and he will build the Temple which was profaned by our sins)",
+      "explanation": "The Targum fundamentally rejects the MT's presentation of vicarious suffering, introducing instead an eschatological Temple restoration motif. This reflects discomfort with attributing salvific suffering to the Messiah and shifts responsibility for the Temple's destruction squarely onto Israel's sins. The modification eliminates any notion of substitutionary atonement, replacing it with a future-oriented hope tied to the Messiah's rebuilding activity, consistent with post-70 CE Temple theology."
+    },
+    {
+      "type": "eschatological",
+      "mt_reading": "ûbaḥăburātô nirpa'-lānû (and by his wounds we are healed)",
+      "targ_reading": "The Targum transforms the MT's physical healing metaphor (rooted in the servant's suffering) into conditional forgiveness based on obedience to the Messiah's teaching. This pedagogical emphasis (pitgāmôhî, 'his words') reframes the Messiah as teacher and interpreter of Torah rather than suffering redeemer. The conditional particle kad ('when') introduces moral causality: forgiveness comes through human obedience, not divine suffering, reflecting standard rabbinic soteriology that emphasizes Torah observance over sacrificial or vicarious atonement."
+    }
+  ],
+  "targumic_expansions": [
+    {
+      "location": "Opening clause",
+      "expansion_text": "yibnē bēt maqdəšā (he will build the Temple)",
+      "midrashic_parallel": "Cf. Sukkah 52a (Messiah ben Joseph's suffering) and Zechariah 6:12-13 (Branch who builds Temple)",
+      "significance": "The Temple-building motif associates the Servant/Messiah with Zerubbabel typology and eschatological restoration, deflecting the suffering onto the building rather than the builder."
+    },
+    {
+      "location": "Second clause",
+      "expansion_text": "ûbə'ûlpənēh (and through his teaching)",
+      "midrashic_parallel": "Cf. Isaiah Rabbah on this verse emphasizing Torah instruction",
+      "significance": "Introduces a key pedagogical function for the Messiah, transforming suffering into instruction and aligning with rabbinic emphasis on Torah study as path to redemption."
+    },
+    {
+      "location": "Final clause",
+      "expansion_text": "kad naṣēt ləpitgāmôhî (when we obey his words)",
+      "midrashic_parallel": "Standard rabbinic conditional forgiveness formulas (e.g., mShabbat 12:3, teshuvah contingent on Torah observance)",
+      "significance": "Makes forgiveness explicitly conditional on human response, eliminating any automatic or vicarious mechanism of atonement."
+    }
+  ],
+  "messianic_reinterpretation": {
+    "present": true,
+    "instances": [
+      {
+        "mt_reading": "Individual servant suffering vicariously for collective sins",
+        "targ_reading": "Messiah as Temple-builder and Torah teacher whose instruction brings peace and whose teaching, when obeyed, brings forgiveness",
+        "scholarly_note": "The Targum's messianic interpretation is functional rather than suffering-oriented: the Messiah rebuilds, teaches, and mediates forgiveness through Torah instruction. This represents a fundamental theological divergence from Christian readings of Isaiah 53 as prophecy of vicarious atonement, instead presenting a conquering, teaching Messiah consistent with rabbinic eschatology."
+      },
+      {
+        "mt_reading": "ûbaḥăburātô nirpa'-lānû (by his wounds we are healed)",
+        "targ_reading": "wəkad naṣēt ləpitgāmôhî ḥôbānā' yištabəqûn lānā (when we obey his words our sins will be forgiven)",
+        "scholarly_note": "This is perhaps the most theologically significant reinterpretation in all of Targum Jonathan, completely eliminating the nexus between the servant's suffering and Israel's healing/forgiveness. Scholarly debate continues whether this represents anti-Christian polemic or simply reflects indigenous Jewish theology that rejected vicarious atonement concepts."
+      }
+    ]
+  },
+  "lxx_alignment": {
+    "areas_of_agreement": "Both MT and LXX maintain the vicarious suffering framework (διὰ τὰς ἀνομίας ἡμῶν 'because of our lawless deeds,' τῷ μώλωπι αὐτοῦ ἡμεῖς ἰάθημεν 'by his wound we were healed'), which the Targum rejects entirely",
+    "significance": "The complete divergence of Targum Jonathan from both MT and LXX on the theological core of this verse demonstrates that the Targumic rendering is not based on a variant textual tradition but represents deliberate interpretive transformation. The LXX-MT agreement on vicarious suffering underscores that the Targum's pedagogical-conditional reading is a distinctive Jewish response, likely shaped by internal theological commitments rather than text-critical considerations."
+  },
+  "key_divergences": [
+    {
+      "mt_word": "mḥōlāl (wounded)",
+      "targ_word": "yibnē bēt maqdəšā də'ittəḥal (will build the Temple which was profaned)",
+      "type": "expansion",
+      "explanation": "The transformation of the servant's wounding into Temple restoration represents the most dramatic lexical shift. This move transfers the profanation (ḥll in both Hebrew and Aramaic) from the servant's body to the sanctuary, fundamentally altering the theological economy from bodily suffering to architectural desecration and restoration."
+    },
+    {
+      "mt_word": "mûsar (chastisement/discipline)",
+      "targ_word": "'ûlpənēh (his teaching/instruction)",
+      "type": "substitution",
+      "explanation": "The Hebrew mûsar can mean both 'discipline/punishment' and 'instruction,' and the Targum exploits this semantic range to shift from passive reception of punishment to active pedagogical function. This substitution is key to the Targum's reimagining of the Messiah as rabbi rather than victim."
+    },
+    {
+      "mt_word": "ḥăburātô (his wounds/stripes)",
+      "targ_word": "pitgāmôhî (his words)",
+      "type": "theological",
+      "explanation": "This represents the theological climax of the Targumic transformation: the Hebrew ḥăburātô (wounds, stripes from beating) becomes pitgāmôhî (his words, pronouncements). The shift from physical suffering to verbal instruction eliminates any mechanism of vicarious atonement through suffering, replacing it with Torah-based forgiveness contingent on obedience."
+    }
+  ],
+  "assessment": {
+    "title": "Targum Jonathan Isaiah 53:5: Systematic De-victimization and Pedagogical Re-orientation of the Suffering Servant",
+    "reasoning": "Targum Jonathan's rendering of Isaiah 53:5 represents one of the most thoroughgoing theological reinterpretations in the entire Prophetic Targum corpus. Every element of the MT that suggests vicarious, substitutionary suffering is systematically eliminated or transformed: wounding becomes Temple rebuilding, chastisement becomes teaching, and healing through wounds becomes conditional forgiveness through obedience to instruction. The Targum accomplishes this through a sophisticated interplay of lexical substitution (mûsar → 'ûlpānā), semantic transformation (ḥăburātô → pitgāmôhî), and syntactic reconfiguration (causal prepositions become instrumental, passive suffering becomes active teaching). Whether this reflects anti-Christian polemic (as argued by some, though dating is contested), internal Jewish theological commitments against vicarious atonement, or post-70 CE Temple theology, the result is a coherent alternative reading that presents the Messiah as conquering teacher-restorer rather than suffering substitute. The Targum's consistency across the entire chapter (cf. vv. 4, 10-12) suggests this is programmatic rather than ad hoc.",
+    "plain": "Targum Jonathan completely transforms Isaiah 53:5 from a description of someone suffering for others' sins into a vision of the Messiah rebuilding the Temple and teaching Torah. Where the Hebrew says 'he was wounded for our sins' and 'by his wounds we are healed,' the Aramaic says 'he will rebuild the Temple that was profaned by our sins' and 'when we obey his teaching, our sins will be forgiven.' This reflects Jewish theology that forgiveness comes through repentance and Torah obedience, not through someone else's suffering.",
+    "confidence": 0.97,
+    "next_steps": "Compare this verse's Targumic handling with verses 4, 10-12 in Isaiah 53 to map the complete reinterpretive strategy across the chapter. Investigate whether the Temple-building motif has precedent in pre-Christian Jewish exegesis or emerges only in post-70 CE context, which would affect dating and polemical theories."
+  },
+  "citations": {
+    "sbl": "On Targum Jonathan's theological transformations in Isaiah 53, see Alexander Smelik, 'The Rabbinic Reception of Early Bible Translations as Holy Writings and Oral Torah,' JAB 1 (1999): 249–72; Martin McNamara, Targum and Testament Revisited: Aramaic Paraphrases of the Hebrew Bible, 2nd ed. (Grand Rapids: Eerdmans, 2010), 147–52; Bruce Chilton, The Isaiah Targum, ArBib 11 (Wilmington: Glazier, 1987), 103–4.",
+    "bibtex": "@book{Chilton1987,\n  author = {Bruce Chilton},\n  title = {The Isaiah Targum: Introduction, Translation, Apparatus and Notes},\n  series = {The Aramaic Bible},\n  number = {11},\n  publisher = {Michael Glazier},\n  address = {Wilmington, DE},\n  year = {1987},\n  pages = {103--104}\n}"
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-04-19T15:53:13.565609",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

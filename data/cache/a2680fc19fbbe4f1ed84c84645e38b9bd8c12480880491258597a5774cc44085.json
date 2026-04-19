@@ -1,0 +1,111 @@
+{
+  "passage": "Genesis 1:1-31",
+  "structure_detected": true,
+  "structure_type": "concentric",
+  "confidence_note": "Strong evidence from multiple scholars (Wenham, Cassuto, Andersen) identifying a seven-day framework with Day 4 as pivot. The 3+1+3 pattern shows formal correspondence between Days 1-3 (realms) and Days 5-7 (rulers), with Day 4 as structural and theological center.",
+  "elements": [
+    {
+      "label": "A",
+      "verses": "1:1-5",
+      "summary": "Day 1: Creation of light, separation of light from darkness, naming day and night",
+      "text_excerpt": "וַיַּבְדֵּל אֱלֹהִים בֵּין הָאוֹר וּבֵין הַחֹשֶׁךְ (God separated light from darkness)",
+      "confidence": 0.92
+    },
+    {
+      "label": "B",
+      "verses": "1:6-8",
+      "summary": "Day 2: Creation of firmament/expanse, separation of waters above from waters below",
+      "text_excerpt": "וַיַּעַשׂ אֱלֹהִים אֶת־הָרָקִיעַ וַיַּבְדֵּל בֵּין הַמַּיִם (God made the expanse and separated the waters)",
+      "confidence": 0.9
+    },
+    {
+      "label": "C",
+      "verses": "1:9-13",
+      "summary": "Day 3: Separation of land from sea, creation of vegetation and seed-bearing plants",
+      "text_excerpt": "תַּדְשֵׁא הָאָרֶץ דֶּשֶׁא עֵשֶׂב מַזְרִיעַ זֶרַע (Let the earth sprout vegetation, plants yielding seed)",
+      "confidence": 0.88
+    },
+    {
+      "label": "X",
+      "verses": "1:14-19",
+      "summary": "Day 4: Creation of sun, moon, and stars as luminaries to rule day and night, govern seasons and time",
+      "text_excerpt": "וְהָיוּ לְאֹתֹת וּלְמוֹעֲדִים וּלְיָמִים וְשָׁנִים (Let them be for signs and seasons and days and years)",
+      "confidence": 0.95
+    },
+    {
+      "label": "C'",
+      "verses": "1:20-23",
+      "summary": "Day 5: Creation of sea creatures and birds to fill waters and sky",
+      "text_excerpt": "יִשְׁרְצוּ הַמַּיִם שֶׁרֶץ נֶפֶשׁ חַיָּה וְעוֹף יְעוֹפֵף (Let the waters swarm with living creatures and let birds fly)",
+      "confidence": 0.89
+    },
+    {
+      "label": "B'",
+      "verses": "1:24-25",
+      "summary": "Day 6a: Creation of land animals to fill the earth",
+      "text_excerpt": "תּוֹצֵא הָאָרֶץ נֶפֶשׁ חַיָּה לְמִינָהּ (Let the earth bring forth living creatures according to their kinds)",
+      "confidence": 0.87
+    },
+    {
+      "label": "A'",
+      "verses": "1:26-31",
+      "summary": "Day 6b: Creation of humanity in God's image to rule over all creation, blessed with food",
+      "text_excerpt": "נַעֲשֶׂה אָדָם בְּצַלְמֵנוּ כִּדְמוּתֵנוּ וְיִרְדּוּ (Let us make humankind in our image, after our likeness, and let them have dominion)",
+      "confidence": 0.93
+    }
+  ],
+  "pivot": {
+    "label": "X",
+    "verses": "1:14-19",
+    "summary": "Day 4 establishes the celestial bodies as timekeepers and governors, linking the creation of spatial realms (Days 1-3) with their inhabitants (Days 5-7)",
+    "theological_weight": "The luminaries function as mediators between God's cosmic order and creaturely time, establishing sacred rhythms (signs, seasons, sabbaths). Day 4's central position emphasizes divine sovereignty over time itself—the sun and moon are demythologized functionaries, not deities, serving God's purposes for ordering creation and human worship rhythms."
+  },
+  "correspondences": [
+    {
+      "pair": [
+        "A",
+        "A'"
+      ],
+      "evidence": "Day 1 creates light/darkness; Day 6 creates humans who rule over all realms. Both involve separation and dominion. Lexical: בָּרָא (created) appears in 1:1, 1:27 (3x); radah (rule/dominion) is implicit in light's governance and explicit in humanity's rule (1:26, 28)",
+      "confidence": 0.91
+    },
+    {
+      "pair": [
+        "B",
+        "B'"
+      ],
+      "evidence": "Day 2 creates sky/firmament realm; Day 6a populates land realm. Both use the verb עָשָׂה (made/make). The earth brings forth in both (1:7 waters gathered, 1:24 earth brings forth animals)",
+      "confidence": 0.85
+    },
+    {
+      "pair": [
+        "C",
+        "C'"
+      ],
+      "evidence": "Day 3 creates vegetation/land; Day 5 creates creatures for water and sky. Parallel formulaic structure: divine command + 'Let the waters/earth bring forth' (תּוֹצֵא/יִשְׁרְצוּ). Both involve fertility: plants yield seed (זֶרַע, 1:11-12), creatures told to be fruitful (פְּרוּ וּרְבוּ, 1:22)",
+      "confidence": 0.87
+    },
+    {
+      "pair": [
+        "A",
+        "X"
+      ],
+      "evidence": "Day 1 light separated from darkness; Day 4 greater/lesser lights govern day and night. Lexical concentration: אוֹר (light) 5x in Day 1, 3x in Day 4; יוֹם (day) and לַיְלָה (night) in both. Day 4 completes and structures what Day 1 initiated",
+      "confidence": 0.94
+    }
+  ],
+  "overall_confidence": 0.89,
+  "methodology_citations": "Dorsey (Literary Structure of the Old Testament, 1999: 52-53) identifies the correspondence between Days 1-3 (forming) and Days 4-6 (filling). Walsh (Style and Structure, 2001: 205-207) emphasizes refrain formulas as structural markers. Lund (Chiasmus in the New Testament, 1942: 40-41) establishes criteria requiring lexical and thematic correspondence.",
+  "theological_significance": "The concentric structure reveals Genesis 1 as liturgical cosmogony, not merely chronological report. The three-fold pattern of realm-creation (Days 1-3) balanced by inhabitant-creation (Days 4-6) demonstrates divine wisdom: God first prepares environments, then populates them. Day 4's pivot position emphasizes time's sacredness—the luminaries exist not for astrology but for worship rhythms ('signs and seasons' = festivals). The structure climaxes in humanity (A'), who unlike other creatures receives God's image and comprehensive dominion, yet remains dependent on the vegetarian food economy established in the pivot and Day 3. The seven-day framework itself becomes the template for Sabbath observance (Exodus 20:11), making the structure both cosmological and covenantal.",
+  "scholarly_citations": "Gordon Wenham (Genesis 1-15, WBC, 1987: 6-7) identifies the Days 1-3/4-6 correspondence as widely recognized. Umberto Cassuto (Commentary on Genesis I, 1961: 14-15) argues for the literary artistry of the parallel panels. Francis Andersen (The Sentence in Biblical Hebrew, 1974: 102) notes the formulaic refrains as structural markers delimiting each day-panel.",
+  "bibcrit_hypothesis": {
+    "title": "Day 4 Pivot Critiques Solar Worship",
+    "reasoning": "The central placement of Day 4 in a priestly composition may reflect deliberate polemic against Mesopotamian and Egyptian solar/astral religion. By positioning sun and moon creation at the structural center yet subordinating them to God's command and treating them as mere timekeepers for Israel's liturgical calendar, P demythologizes celestial bodies precisely where ANE cosmogonies elevate them. The structure itself becomes anti-mythological rhetoric: Israel's God creates light before light-sources, establishing sovereignty over what other nations worship.",
+    "confidence": 0.82
+  },
+  "discovery_ready": true,
+  "reference": "Genesis 1:1-31",
+  "cached_at": "2026-04-17T08:42:03.142889",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

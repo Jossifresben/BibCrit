@@ -1,0 +1,12 @@
+{
+  "divergences": [],
+  "summary_technical": "",
+  "summary_plain": "",
+  "parse_error": "{\n  \"passage\": \"Genesis 6:1-9:17\",\n  \"framework\": \"classic_documentary\",\n  \"scope_note\": \"The Flood Narrative is one of the most extensively analyzed passages in source criticism, exhibiting clear doublets, contradictory chronologies, and alternating divine names that reveal complex J and P interweaving with minimal redactional additions.\",\n  \"source_units\": [\n    {\n      \"verses\": \"6:1-4\",\n      \"source\": \"J\",\n      \"confidence\": 0.75,\n      \"divine_name_used\": \"YHWH\",\n      \"key_vocabulary\": [",
+  "parse_error_len": 28447,
+  "discovery_ready": false,
+  "reference": "Genesis 6:1-9:17",
+  "cached_at": "2026-04-14T18:46:01.342271",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

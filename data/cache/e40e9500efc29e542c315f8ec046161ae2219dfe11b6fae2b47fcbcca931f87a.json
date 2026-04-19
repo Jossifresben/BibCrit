@@ -1,0 +1,110 @@
+{
+  "reference": "Matthew 1:16",
+  "text_basis": {
+    "sblgnt_reading": "Ἰακὼβ δὲ ἐγέννησεν τὸν Ἰωσὴφ τὸν ἄνδρα Μαρίας, ἐξ ἧς ἐγεννήθη Ἰησοῦς ὁ λεγόμενος χριστός",
+    "na28_alignment": "NA28 and UBS5 align with SBLGNT reading; minor orthographic variants (ἐγέννησεν vs. ἐγέννησε) and accentuation differences do not affect critical apparatus",
+    "is_disputed_locus": true,
+    "dispute_note": "This verse contains significant textual variants regarding Joseph's relationship to Jesus and the virginal conception, with Syriac Sinaitic offering a radically different genealogical formulation"
+  },
+  "manuscript_families": {
+    "alexandrian": {
+      "witnesses": [
+        "א",
+        "B",
+        "C",
+        "L",
+        "Z",
+        "Θ",
+        "33"
+      ],
+      "support": "sides_with_received",
+      "note": "The Alexandrian witnesses uniformly support the received reading with Joseph as 'the husband of Mary' (τὸν ἄνδρα Μαρίας) and the passive construction 'was born' (ἐγεννήθη) applying to Jesus. This reading preserves the genealogical break that emphasizes the virginal conception."
+    },
+    "western": {
+      "witnesses": [
+        "D",
+        "it-b",
+        "it-k",
+        "Syriac Sinaitic (sys)"
+      ],
+      "support": "supports_variant",
+      "note": "The Western text, particularly sys and some Old Latin witnesses, presents a notable variant where Joseph 'begat Jesus' or altered formulations attempt to reconcile the genealogy with virgin birth theology. The Syriac Sinaitic reads: 'Joseph, to whom was betrothed Mary the virgin, begat Jesus,' creating theological controversy."
+    },
+    "byzantine": {
+      "witnesses": [
+        "Majority Text",
+        "TR",
+        "A",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "support": "sides_with_received",
+      "note": "The Byzantine tradition overwhelmingly supports the received text with its clear indication of Joseph as Mary's husband and the passive verb for Jesus' birth. This reading became standard in ecclesiastical use and reflects harmonization with Matthew's infancy narrative in chapters 1-2."
+    },
+    "caesarean": {
+      "witnesses": [
+        "f1",
+        "f13",
+        "28",
+        "565",
+        "700"
+      ],
+      "support": "sides_with_received",
+      "note": "Caesarean witnesses align with the Alexandrian and Byzantine traditions in supporting the received text. No significant Caesarean-specific variants are attested for this critically important genealogical verse."
+    }
+  },
+  "metzger_rating": {
+    "rating": "A",
+    "justification": "Despite the existence of the Syriac Sinaitic variant, the text is certain based on overwhelming manuscript support from all major traditions except isolated Western witnesses. The variant readings appear to be theological corrections or clarifications rather than preservation of an earlier text. The grammatical shift from active to passive voice (ἐγέννησεν to ἐγεννήθη) is consistently attested in the earliest and most reliable witnesses, indicating authorial intention to mark the break in biological descent."
+  },
+  "variant_register": [
+    {
+      "variant_text": "Ἰωσὴφ ᾧ ἐμνηστεύθη Μαριὰμ ἡ παρθένος ἐγέννησεν Ἰησοῦν (Joseph, to whom was betrothed Mary the virgin, begat Jesus)",
+      "manuscript_support": "sys (Syriac Sinaitic), some Old Syriac witnesses",
+      "intrinsic_probability": "low",
+      "transcriptional_probability": "medium",
+      "assessment": "This variant appears to be a theological correction attempting to preserve both the genealogical formula (active 'begat') and virgin birth doctrine by specifying betrothal and virginity. However, it contradicts Matthew's clear narrative intent and likely represents early Syriac theological interpretation rather than original text."
+    },
+    {
+      "variant_text": "Ἰωσὴφ ὃν ἐγέννησεν ἡ παρθένος Μαρία Ἰησοῦν (Joseph, whom the virgin Mary bore Jesus)",
+      "manuscript_support": "sys (alternative reading), fragmentary Old Latin",
+      "intrinsic_probability": "low",
+      "transcriptional_probability": "low",
+      "assessment": "This highly problematic variant makes Mary the subject of bearing and confuses the genealogical structure entirely. It represents scribal confusion or extreme theological redaction and has virtually no scholarly support as original."
+    },
+    {
+      "variant_text": "Ἰωσὴφ τὸν ἄνδρα Μαρίας ἐξ ἧς ἐγέννησεν Ἰησοῦν (Joseph the husband of Mary, from whom he begat Jesus)",
+      "manuscript_support": "it-k (Codex Bobiensis), fragmentary Old Latin",
+      "intrinsic_probability": "low",
+      "transcriptional_probability": "medium",
+      "assessment": "This variant changes the passive to active voice, making Joseph the biological father. It likely represents either textual corruption or an anti-docetic polemic. The feminine pronoun ἧς clearly refers to Mary in all reliable witnesses, making this an impossible reading grammatically and theologically."
+    },
+    {
+      "variant_text": "Minor orthographic variants: ἐγέννησε(ν), Ἰωσήφ/Ἰωσὴφ, Μαρίας/Μαριάμ, χριστός/Χριστός",
+      "manuscript_support": "Various witnesses across all families",
+      "intrinsic_probability": "not_applicable",
+      "transcriptional_probability": "high",
+      "assessment": "These represent normal scribal variation in spelling, accentuation, and capitalization. They have no bearing on meaning and reflect regional orthographic preferences and the evolution of Greek manuscript conventions."
+    }
+  ],
+  "disputed_passage": null,
+  "synthesis": "Matthew 1:16 is text-critically stable despite theologically motivated variants in marginal Western witnesses. The overwhelming consensus of Alexandrian, Byzantine, and Caesarean traditions supports the received reading with its grammatical break (passive ἐγεννήθη) signaling the virginal conception. The Syriac Sinaitic variants represent early theological wrestling with the genealogy's implications rather than authentic textual tradition.",
+  "assessment": {
+    "title": "Matthew 1:16: Textual Stability Amid Early Christological Interpretation of Jesus' Genealogical Origins",
+    "reasoning": "The critical text of Matthew 1:16 enjoys exceptional manuscript support across all major textual families except isolated Western/Syriac witnesses. The grammatical shift from the active ἐγέννησεν (begat) used throughout the genealogy to the passive ἐγεννήθη (was born) for Jesus represents authorial intention to indicate non-biological descent from Joseph. The Syriac Sinaitic variants, while historically fascinating as evidence of early christological interpretation, are clearly secondary attempts to harmonize genealogical form with virgin birth theology. The feminine relative pronoun ἐξ ἧς (from whom—feminine) unambiguously refers to Mary as the sole biological parent, and this reading is attested in all reliable Greek witnesses. Modern critical editions uniformly adopt the Alexandrian/Byzantine reading, and no credible textual scholar argues for the originality of the Western variants.",
+    "plain": "The standard text of Matthew 1:16 is extremely well-supported by ancient manuscripts, clearly stating that Joseph was Mary's husband and that Jesus was born from her (not from Joseph). A few Syriac manuscripts tried to reword this verse to make the virgin birth more explicit, but these changes were theological interpretations, not the original text Matthew wrote.",
+    "confidence": 0.98,
+    "recommended_reading": "NA28/UBS5/SBLGNT all represent the original text with highest confidence; the grammatical passive construction and feminine pronoun establish Matthean theology of virginal conception",
+    "open_questions": "How early did the Syriac variants emerge, and do they reflect pre-canonical oral tradition or post-canonical theological correction? What role did this verse play in early adoptionist vs. virginal conception christological debates?"
+  },
+  "citations": {
+    "sbl": "Bruce M. Metzger, A Textual Commentary on the Greek New Testament, 2nd ed. (Stuttgart: Deutsche Bibelgesellschaft, 1994), 2–4; Kurt Aland and Barbara Aland, The Text of the New Testament, trans. Erroll F. Rhodes, 2nd ed. (Grand Rapids: Eerdmans, 1989), 297–298.",
+    "bibtex": "@book{metzger1994textual, author={Metzger, Bruce M.}, title={A Textual Commentary on the Greek New Testament}, edition={2nd}, year={1994}, publisher={Deutsche Bibelgesellschaft}, address={Stuttgart}}"
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-04-19T15:58:56.033849",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

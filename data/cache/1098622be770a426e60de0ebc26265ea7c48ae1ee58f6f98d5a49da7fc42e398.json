@@ -1,0 +1,73 @@
+{
+  "reference": "Psalm 22:17",
+  "dss_manuscripts": [
+    {
+      "siglum": "5/6HevPs",
+      "full_name": "Psalms Scroll from Nahal Hever (Cave 5/6)",
+      "verse_present": true,
+      "dss_text": "כארו ידי ורגלי",
+      "alignment": "sides_with_lxx",
+      "alignment_confidence": 0.9,
+      "divergences": [
+        {
+          "word_position": 5,
+          "mt_reading": "כָּאֲרִי (like a lion)",
+          "lxx_reading": "ὤρυξαν (they pierced/dug)",
+          "dss_reading": "כארו (they pierced/dug)",
+          "classification": "lexical",
+          "textual_implication": "This is the most significant variant in Psalm 22:17. The DSS reading כארו (ka'aru, 'they pierced') supports the LXX ὤρυξαν against MT's כָּאֲרִי (ka'ari, 'like a lion'), representing a verb rather than a noun+preposition. The yod/waw distinction is crucial for meaning: pierced hands and feet vs. lion at hands and feet."
+        }
+      ],
+      "overall_note": "The 5/6HevPs manuscript preserves perhaps the most theologically significant textual variant in the Psalter. Its reading כארו clearly supports the LXX tradition of 'they pierced' against the MT's 'like a lion,' suggesting the proto-MT reading כָּאֲרִי may represent a later development or scribal corruption (vav to yod). This has profound implications for early Christian interpretation of this messianic psalm, as the 'piercing' reading was central to New Testament citations."
+    },
+    {
+      "siglum": "4QPsᵃ",
+      "full_name": "Psalms Scroll A from Qumran Cave 4",
+      "verse_present": false,
+      "dss_text": "",
+      "alignment": "absent",
+      "alignment_confidence": 0.0,
+      "divergences": [],
+      "overall_note": "This manuscript does not preserve Psalm 22:17 in its extant portions."
+    }
+  ],
+  "sp_witness": null,
+  "pesh_witness": {
+    "present": true,
+    "alignment": "sides_with_lxx",
+    "alignment_confidence": 0.85,
+    "pesh_text": "ܡܛܠ ܕܚܕܪܘܢܝ ܟܠܒ̈ܐ ܘܟܢܘܫܬܐ ܕܒܝܫ̈ܐ ܟܪܟܘܢܝ ܒܙܥܘ ܐ̈ܝܕܝ ܘܪ̈ܓܠܝ (meṭul d-ḥdaruni kalbē w-kenušto d-bīšē karkaruni, bzaʿw īday w-reglai)",
+    "divergences": [
+      {
+        "word_position": 5,
+        "mt_reading": "כָּאֲרִי (like a lion)",
+        "lxx_reading": "ὤρυξαν (they pierced)",
+        "pesh_reading": "ܒܙܥܘ (bzaʿw, 'they pierced/dug')",
+        "classification": "lexical",
+        "textual_implication": "The Peshitta's ܒܙܥܘ (bzaʿw) clearly represents a verbal reading meaning 'they pierced' or 'they dug through,' aligning with the LXX ὤρυξαν against MT's nominal construction. This suggests the Syriac translator either worked from a Hebrew Vorlage reading כארו or was influenced by the LXX tradition. The verb bzaʿ can mean 'pierce,' 'bore,' or 'dig,' matching the semantic range of both the presumed Hebrew כארו and Greek ὤρυξαν."
+      },
+      {
+        "word_position": 2,
+        "mt_reading": "כְּלָבִים (dogs)",
+        "lxx_reading": "κύνες πολλοί (many dogs)",
+        "pesh_reading": "ܟܠܒ̈ܐ (kalbē, dogs)",
+        "classification": "minus",
+        "textual_implication": "The Peshitta lacks the LXX's intensifier 'many' (πολλοί), agreeing with MT's simple plural. This suggests either a Hebrew Vorlage without an intensifier or translational restraint, demonstrating that the Peshitta does not slavishly follow the LXX even where it agrees on major variants."
+      }
+    ],
+    "overall_note": "The Peshitta decisively supports the 'piercing' interpretation against MT's 'like a lion,' aligning with both the LXX and the Dead Sea Scrolls witness from Nahal Hever. However, it shows independence from the LXX in minor details (omitting 'many'), suggesting either an independent Hebrew Vorlage with the כארו reading or a mixed textual tradition. The Syriac translation technique here appears literalistic, rendering the Hebrew verb directly into its Syriac semantic equivalent."
+  },
+  "synthesis": "The combined ancient witness testimony for Psalm 22:17 presents a striking textual alignment: the Dead Sea Scrolls (5/6HevPs), LXX, and Peshitta all preserve a verbal reading ('they pierced/dug') where MT has a nominal construction ('like a lion'). This three-way agreement strongly suggests that כארו ('they pierced') represents the earlier Hebrew reading, while MT's כָּאֲרִי likely results from a vav-to-yod scribal error or deliberate revision. The convergence of independent witnesses (Judean Desert Hebrew manuscript, Greek translation, Syriac translation) against the proto-Masoretic tradition indicates significant textual fluidity in this verse during the Second Temple period, with theological implications for messianic interpretation.",
+  "synthesis_plain": "The Dead Sea Scrolls, ancient Greek translation, and Syriac translation all agree on reading 'they pierced my hands and feet' where the traditional Hebrew Bible says 'like a lion, my hands and feet.' This strong agreement among independent ancient sources suggests the 'pierced' reading was likely original, and the traditional text may preserve a scribal copying error where one Hebrew letter was misread for another.",
+  "textual_history_implication": "The overwhelming ancient witness support for כארו ('they pierced') against MT's כָּאֲרִי ('like a lion') suggests the proto-Masoretic reading represents either a secondary development or localized textual corruption. The 5/6HevPs manuscript demonstrates that the 'piercing' reading existed in Hebrew manuscripts from the Judean Desert, eliminating theories that this was purely a Greek or Christian innovation. The textual history likely involves a vav-to-yod confusion in the proto-MT transmission line, while other textual streams (represented by 5/6HevPs, LXX Vorlage, and possibly Peshitta Vorlage) preserved the original verbal form. This case exemplifies how DSS evidence can decisively adjudicate between variant traditions.",
+  "bibcrit_assessment": {
+    "title": "DSS Confirms 'Pierced' Against MT's 'Lion' Reading",
+    "reasoning": "The most significant finding is that the 5/6HevPs manuscript provides unambiguous Hebrew manuscript evidence for כארו ('they pierced'), definitively settling a centuries-old textual debate. Prior to this discovery, the LXX's ὤρυξαν stood alone against MT, allowing arguments that the Greek represented Christian interpretation or translation error. The Dead Sea Scrolls now prove that 'they pierced my hands and feet' existed in pre-Christian Hebrew manuscripts, fundamentally altering our understanding of both the text's original form and its early interpretation. The convergence of Hebrew, Greek, and Syriac witnesses against the proto-MT demonstrates that the Masoretic reading likely preserves a scribal error that became fixed in the Tiberian textual tradition.",
+    "plain": "Before the Dead Sea Scrolls were discovered, scholars debated whether 'they pierced my hands and feet' was the original reading or a later Christian interpretation. The Hebrew manuscript from the Dead Sea region proves that 'pierced' was indeed in ancient Hebrew Bibles, not invented by later translators, making MT's 'like a lion' likely a copying mistake.",
+    "confidence": 0.9
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-04-18T22:35:44.004724",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v6"
+}

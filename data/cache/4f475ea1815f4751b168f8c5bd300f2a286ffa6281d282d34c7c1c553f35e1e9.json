@@ -1,0 +1,96 @@
+{
+  "reference": "1 John 5:7",
+  "text_basis": {
+    "sblgnt_reading": "ὅτι τρεῖς εἰσίν οἱ μαρτυροῦντες",
+    "na28_alignment": "Full alignment with NA28/UBS5; both omit the Comma Johanneum and print only the shorter text",
+    "is_disputed_locus": true,
+    "dispute_note": "This is the locus of the Comma Johanneum, one of the most famous textual interpolations in the New Testament, debated since the Reformation"
+  },
+  "manuscript_families": {
+    "alexandrian": {
+      "witnesses": [
+        "א",
+        "B",
+        "A",
+        "C",
+        "P",
+        "Ψ",
+        "048",
+        "33",
+        "81",
+        "1739"
+      ],
+      "support": "sides_with_received",
+      "note": "All Alexandrian witnesses unanimously support the shorter reading without the Comma. The earliest and most reliable manuscripts (Sinaiticus, Vaticanus, Alexandrinus) contain no trace of the Trinitarian formula."
+    },
+    "western": {
+      "witnesses": [
+        "Vulgate majority",
+        "Old Latin majority",
+        "Coptic versions"
+      ],
+      "support": "sides_with_received",
+      "note": "The vast majority of Western witnesses omit the Comma. Only a handful of late Old Latin manuscripts (l, q, r¹) contain it, likely influenced by Latin liturgical usage rather than representing an early textual tradition."
+    },
+    "byzantine": {
+      "witnesses": [
+        "Textus Receptus",
+        "late minuscules (61, 88, 221, 429, 629, 636, 918, 2318)"
+      ],
+      "support": "supports_variant",
+      "note": "The Textus Receptus includes the Comma, but only eight late Greek minuscules (16th–18th centuries) contain it. The Byzantine mainstream omits the passage, showing it was a late Latin intrusion into a few Greek manuscripts under Western influence."
+    },
+    "caesarean": {
+      "witnesses": [
+        "Not applicable for Catholic Epistles"
+      ],
+      "support": "not_applicable",
+      "note": "The Caesarean text-type is not clearly defined for the Catholic Epistles. Available witnesses that might belong to this family all omit the Comma Johanneum."
+    }
+  },
+  "metzger_rating": {
+    "rating": "A",
+    "justification": "Metzger assigns an {A} rating for the omission of the Comma Johanneum. The evidence is overwhelming: no Greek manuscript before the 14th century contains the passage, and it appears in only eight very late Greek minuscules. All early versions except a handful of late Old Latin manuscripts omit it. The passage originated as a Latin marginal gloss that gradually entered the Vulgate tradition."
+  },
+  "variant_register": [
+    {
+      "variant_text": "ὅτι τρεῖς εἰσὶν οἱ μαρτυροῦντες ἐν τῷ οὐρανῷ, ὁ πατήρ, ὁ λόγος, καὶ τὸ ἅγιον πνεῦμα· καὶ οὗτοι οἱ τρεῖς ἕν εἰσι. καὶ τρεῖς εἰσὶν οἱ μαρτυροῦντες ἐν τῇ γῇ",
+      "manuscript_support": "Textus Receptus, Latin Vulgate (Clementine and some medieval manuscripts), Old Latin (l, q, r¹), eight late Greek minuscules (61mg, 88mg, 221mg, 429mg, 629, 636mg, 918, 2318), margin of Codex Montfortianus (61, early 16th c.)",
+      "intrinsic_probability": "low",
+      "transcriptional_probability": "high",
+      "assessment": "This explicit Trinitarian formula is theologically sophisticated and doctrinally convenient, making it highly likely to be a scribal expansion. The asymmetry between overwhelming omission in Greek manuscripts and presence in some Latin texts points to a Western liturgical origin that was back-translated into Greek centuries later."
+    },
+    {
+      "variant_text": "ὅτι τρεῖς εἰσίν οἱ μαρτυροῦντες, τὸ πνεῦμα καὶ τὸ ὕδωρ καὶ τὸ αἷμα",
+      "manuscript_support": "א, B, A, C, P, Ψ, 048, 33, 81, 104, 323, 1739, 1881, all Greek lectionaries, Syriac versions (pesh, harkl), Coptic (sah, boh), Armenian, Ethiopic, Slavonic, early Church Fathers (Irenaeus, Clement, Tertullian, Cyprian, Origen)",
+      "intrinsic_probability": "high",
+      "transcriptional_probability": "low",
+      "assessment": "This is the original text, attested by all early manuscripts and versions. The three witnesses (Spirit, water, blood) cohere with the baptism and crucifixion imagery in Johannine theology. No scribal motive exists to omit an explicit Trinitarian statement if it were original."
+    }
+  ],
+  "disputed_passage": {
+    "designation": "Comma Johanneum (Johannine Comma)",
+    "manuscript_evidence_for": "Eight late Greek minuscules (61mg, 88mg, 221mg, 429mg, 629, 636mg, 918, 2318, all 16th–18th century); Latin Vulgate tradition (medieval manuscripts and Clementine edition); three Old Latin manuscripts (l, q, r¹, 7th–8th century); margin notes in a few later manuscripts where it was added by correctors",
+    "manuscript_evidence_against": "All Greek manuscripts before the 14th century; all early Greek Fathers (Irenaeus, Clement, Origen, Athanasius, Chrysostom); all early versions except some late Old Latin (Syriac, Coptic, Armenian, Ethiopic, Gothic); all lectionaries; unanimous testimony of Alexandrian, early Western, and Byzantine mainstream witnesses",
+    "internal_evidence": "The Comma disrupts the syntax and argument flow of verses 7-8. The phrase 'in heaven...on earth' introduces a cosmological dualism foreign to Johannine style. The precise Trinitarian terminology (Father, Word, Spirit as witnesses) reflects later dogmatic formulation rather than first-century usage. The earthly witnesses (Spirit, water, blood) make theological sense in 1 John's context of Jesus' baptism and death; the heavenly witnesses appear to be a marginal gloss explaining the earthly three in Trinitarian terms.",
+    "scholarly_consensus": "Virtually unanimous scholarly consensus since the 19th century regards the Comma as a late interpolation, probably originating as a 4th–5th century Latin marginal note that entered the Vulgate text by the 6th century. Erasmus initially omitted it from his Greek New Testament (1516, 1519) but reluctantly included it in his third edition (1522) after ecclesiastical pressure and the production of Codex Montfortianus (61), which likely added the Greek text from the Latin to prove its existence. Modern critical editions (NA28, UBS5, SBLGNT) unanimously omit it.",
+    "pastoral_note": "Modern translations universally omit the Comma from the main text. KJV and NKJV include it based on the Textus Receptus. ESV, NIV, NRSV, NASB, CSB, NET omit it entirely. Some (NRSV, NET) include a footnote explaining its absence and late Latin origin. Catholic translations (NAB, NJB) also omit it despite its presence in the Clementine Vulgate, following modern critical editions."
+  },
+  "synthesis": "1 John 5:7 is text-critically stable in its shorter form, though it became the site of Christianity's most famous interpolation, the Comma Johanneum. All early Greek manuscripts and versions support the reading 'For there are three that testify' without the Trinitarian expansion. The longer reading emerged in Latin and was retrojected into a handful of very late Greek manuscripts, making it one of the clearest cases of secondary accretion in the New Testament textual tradition.",
+  "assessment": {
+    "title": "The Comma Johanneum: A Late Latin Trinitarian Gloss Absent from All Early Greek Witnesses",
+    "reasoning": "The textual evidence against the Comma Johanneum is overwhelming and represents one of the most clear-cut cases in New Testament textual criticism. Not a single Greek manuscript before the 14th century contains the passage, and even then only in marginal notes. The earliest actual text inclusion appears in 16th-century manuscripts, several clearly produced to justify the Textus Receptus. Patristic silence is equally damning: early Fathers debating Trinitarian theology (Arius, Athanasius) never cite this verse, which would have been their strongest proof-text. The Comma appears first in Latin sources, probably originating as a scribe's marginal explanation of the three earthly witnesses (Spirit, water, blood) in Trinitarian terms. It gradually entered the Latin Vulgate by the 6th–8th centuries, became standard in medieval Latin Bibles, and was back-translated into Greek only after the Reformation when Erasmus's omission provoked controversy. Internal evidence confirms this: the phrase interrupts the grammar, introduces non-Johannine vocabulary (οὐρανός/γῆ cosmology), and reflects post-Nicene Trinitarian precision foreign to 1st-century formulation.",
+    "plain": "The famous Trinitarian verse 'For there are three that testify in heaven: the Father, the Word, and the Holy Spirit, and these three are one' is not found in any early Greek manuscript or version. It originated as a Latin marginal note centuries after the New Testament was written and gradually entered some Latin Bibles. A few very late Greek manuscripts added it by back-translation from Latin. All modern scholarly editions and most Bible translations rightly omit it as a later addition.",
+    "confidence": 0.99,
+    "recommended_reading": "NA28/UBS5/SBLGNT all present the same critically established shorter text; this is the rare case where textual certainty approaches 100%",
+    "open_questions": "The only remaining text-critical question is historical: precisely when and where did the Comma first appear as a Latin marginal gloss, and what liturgical or theological controversies motivated its creation? The text itself is not in doubt."
+  },
+  "citations": {
+    "sbl": "Bruce M. Metzger, A Textual Commentary on the Greek New Testament, 2nd ed. (Stuttgart: Deutsche Bibelgesellschaft, 1994), 647–649; Kurt Aland and Barbara Aland, The Text of the New Testament, trans. Erroll F. Rhodes, 2nd ed. (Grand Rapids: Eerdmans, 1989), 223–224; Bart D. Ehrman, Misquoting Jesus (San Francisco: HarperSanFrancisco, 2005), 81–83.",
+    "bibtex": "@book{metzger1994textual, author={Metzger, Bruce M.}, title={A Textual Commentary on the Greek New Testament}, edition={2nd}, year={1994}, publisher={Deutsche Bibelgesellschaft}, address={Stuttgart}}\n@book{aland1989text, author={Aland, Kurt and Aland, Barbara}, title={The Text of the New Testament}, translator={Rhodes, Erroll F.}, edition={2nd}, year={1989}, publisher={Eerdmans}, address={Grand Rapids}}\n@book{ehrman2005misquoting, author={Ehrman, Bart D.}, title={Misquoting Jesus: The Story Behind Who Changed the Bible and Why}, year={2005}, publisher={HarperSanFrancisco}, address={San Francisco}}"
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-04-19T15:58:05.214361",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

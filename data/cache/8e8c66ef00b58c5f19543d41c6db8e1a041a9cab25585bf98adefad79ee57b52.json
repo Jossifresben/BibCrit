@@ -1,0 +1,189 @@
+{
+  "passage": "Genesis 1:1-2:25",
+  "framework": "classic_documentary",
+  "scope_note": "This passage contains the two creation accounts: the seven-day creation (1:1-2:3) and the garden narrative (2:4-25), representing the foundational textual doublet in Pentateuchal source criticism.",
+  "source_units": [
+    {
+      "verses": "1:1-2:3",
+      "source": "P",
+      "confidence": 0.95,
+      "divine_name_used": "Elohim (31 times)",
+      "key_vocabulary": [
+        "bara (created)",
+        "tohu wabohu (formless and void)",
+        "raqia (firmament/expanse)",
+        "min (according to their kind)",
+        "male and female",
+        "sabbath"
+      ],
+      "theological_concerns": "Transcendent deity creating by speech-act; orderly cosmic structure; seven-day liturgical pattern; humanity as imago Dei; sabbath institution; cosmic temple inauguration",
+      "structural_markers": "Highly formulaic: 'And God said,' 'it was so,' 'God saw that it was good,' 'evening and morning' refrain; numbered days; genealogical-style structure (toledot formula at 2:4a); precise categorization",
+      "doublet_with": "2:4b-25",
+      "summary": "The Priestly creation account exhibits all hallmarks of P: Elohim as exclusive divine name, creation by divine fiat rather than physical action, meticulous organization, cultic concerns (sabbath), and transcendent theology. The seven-day structure reflects P's liturgical interests and temple cosmology. The formulaic repetitions and categorical precision are characteristic of Priestly style throughout the Pentateuch."
+    },
+    {
+      "verses": "2:4a",
+      "source": "P",
+      "confidence": 0.9,
+      "divine_name_used": "None (toledot formula)",
+      "key_vocabulary": [
+        "toledot (generations/account)",
+        "shamayim wa'aretz (heavens and earth)",
+        "hibbar'am (when they were created)"
+      ],
+      "theological_concerns": "Genealogical structuring device for Priestly narrative",
+      "structural_markers": "Toledot formula ('these are the generations of') used 10 times in Genesis to structure P material; employs bara (P's preferred creation verb from 1:1)",
+      "doublet_with": null,
+      "summary": "This half-verse serves as P's colophon to the seven-day creation account. The toledot formula is a signature Priestly structuring device. Some scholars see this as a redactional seam, but the use of 'created' (bara) and 'heavens and earth' links it to P's vocabulary in 1:1."
+    },
+    {
+      "verses": "2:4b-7",
+      "source": "J",
+      "confidence": 0.93,
+      "divine_name_used": "YHWH Elohim (compound name, 20 times in 2:4b-3:24)",
+      "key_vocabulary": [
+        "YHWH Elohim",
+        "yatsar (formed, potter's verb)",
+        "adamah (ground/soil)",
+        "neshama (breath)",
+        "ed (mist/stream)",
+        "shrub of the field",
+        "plant of the field"
+      ],
+      "theological_concerns": "Anthropomorphic deity working like craftsman; human centrality; agricultural context; intimate divine-human relationship",
+      "structural_markers": "Narrative style: sequential actions, cause-effect reasoning ('for the LORD God had not caused it to rain'); inverted cosmology (humanity before vegetation); concrete, earthy imagery",
+      "doublet_with": "1:1-2:3",
+      "summary": "This opening to J's creation account contrasts sharply with P: YHWH (in compound form) acts physically rather than verbally, forming (yatsar, like a potter) rather than speaking into existence. The deity is immanent and anthropomorphic. The sequence reverses P: man created before plants, requiring rain and cultivation. The earthy, agricultural setting and tactile imagery are classic J characteristics."
+    },
+    {
+      "verses": "2:8-17",
+      "source": "J",
+      "confidence": 0.94,
+      "divine_name_used": "YHWH Elohim",
+      "key_vocabulary": [
+        "gan (garden)",
+        "Eden",
+        "Pishon",
+        "Gihon",
+        "Tigris",
+        "Euphrates",
+        "tree of life",
+        "tree of knowledge of good and evil",
+        "till and keep"
+      ],
+      "theological_concerns": "Divine provision and command; knowledge/obedience test; geographical localization; human vocation as gardener",
+      "structural_markers": "Geographic specificity (four rivers, real and mythical); narrative flow with direct divine speech; command-with-consequence structure (2:16-17); double planting notice (vv. 8-9, possible internal J doublet)",
+      "doublet_with": null,
+      "summary": "J's garden narrative continues with characteristic geographical detail and anthropomorphic action: YHWH 'plants' a garden. The command not to eat (2:16-17) establishes the narrative tension for chapter 3. The specific river names reflect J's interest in connecting primordial narrative to known geography. The tree of knowledge introduces J's wisdom/moral discernment theme."
+    },
+    {
+      "verses": "2:18-20",
+      "source": "J",
+      "confidence": 0.92,
+      "divine_name_used": "YHWH Elohim",
+      "key_vocabulary": [
+        "not good",
+        "alone",
+        "helper (ezer) corresponding to him",
+        "yatsar (formed)",
+        "brought to the man",
+        "adam called names"
+      ],
+      "theological_concerns": "Human incompleteness without companionship; divine trial-and-error; human dominion through naming; search for suitable partner",
+      "structural_markers": "Divine monologue ('not good that man should be alone'); sequential narrative experimentation (animals created to solve problem); naming scene establishes hierarchy; etiological thrust",
+      "doublet_with": null,
+      "summary": "J presents YHWH in trial-and-error mode, forming animals to find a partner for the human—a thoroughly anthropomorphic portrayal impossible in P. The naming of animals establishes human authority but also highlights that none is a 'suitable helper.' This sets up the creation of woman. The iterative process contrasts with P's smooth, commanded creation."
+    },
+    {
+      "verses": "2:21-24",
+      "source": "J",
+      "confidence": 0.93,
+      "divine_name_used": "YHWH Elohim (v. 21-22), absent in v. 23-24 (human voice)",
+      "key_vocabulary": [
+        "deep sleep (tardemah)",
+        "tsela (rib/side)",
+        "banah (built)",
+        "bone of my bones",
+        "ish/ishah (man/woman)",
+        "leave and cleave",
+        "one flesh"
+      ],
+      "theological_concerns": "Sexual differentiation; marriage etiology; kinship and intimacy; human unity and complementarity",
+      "structural_markers": "Surgical imagery (YHWH as divine surgeon); etiological formula ('therefore a man leaves...'); wordplay (ish/ishah); poetry embedded in narrative (v. 23); narrative closure for creation sequence",
+      "doublet_with": "1:27 (P's 'male and female')",
+      "summary": "J's climactic creation scene shows YHWH physically constructing woman from man's rib/side. The intimate, surgical process contrasts with P's simultaneous creation of 'male and female' by divine word. The etiological conclusion (v. 24) explains marriage custom. The poetry in v. 23 and the ish/ishah wordplay are characteristic J features."
+    },
+    {
+      "verses": "2:25",
+      "source": "J",
+      "confidence": 0.91,
+      "divine_name_used": "None (narrative comment)",
+      "key_vocabulary": [
+        "both naked (arummim)",
+        "not ashamed"
+      ],
+      "theological_concerns": "Original innocence; shame as post-fall phenomenon; narrative setup for chapter 3",
+      "structural_markers": "Transitional summary statement; foreshadowing (contrast with 3:7); wordplay setup (arummim/arum in 3:1)",
+      "doublet_with": null,
+      "summary": "This verse serves as J's transition to the fall narrative, establishing the baseline of shameless nakedness that will be violated in 3:7. The wordplay between arummim (naked) and arum (cunning/shrewd) in 3:1 is a J literary technique. This closing frame prepares for the serpent's entrance."
+    }
+  ],
+  "doublets": [
+    {
+      "unit_1_verses": "1:1-2:3",
+      "unit_2_verses": "2:4b-25",
+      "description": "Two complete creation accounts with different sequences, divine names, styles, and theologies: P's cosmic, seven-day, Elohim-driven creation by word vs. J's earthy, garden-focused, YHWH-enacted creation by physical action",
+      "significance": "This is the paradigmatic doublet of the Documentary Hypothesis, demonstrating that Genesis combines distinct written sources with incompatible details (order of creation, divine characterization, literary style)."
+    },
+    {
+      "unit_1_verses": "1:27",
+      "unit_2_verses": "2:21-23",
+      "description": "Two accounts of human sexual differentiation: P's simultaneous creation of 'male and female' in the divine image vs. J's sequential creation of woman from man's rib",
+      "significance": "The different anthropologies reveal different theological concerns: P emphasizes equality and imago Dei, J emphasizes kinship and explains social institutions (marriage)."
+    }
+  ],
+  "competing_positions": [
+    {
+      "scholar": "Wellhausen (1878)",
+      "attribution": "Genesis 1:1-2:3 is P (Priestly Grundschrift, the base document); 2:4b-25 is J (Jahwist, the oldest continuous narrative source). The compound name YHWH Elohim in ch. 2 is redactional harmonization.",
+      "note": "Prolegomena to the History of Israel, pp. 8-9, 298-299"
+    },
+    {
+      "scholar": "Friedman (1987, 2003)",
+      "attribution": "1:1-2:3 is P; 2:4b-25 is J. Friedman attributes the compound divine name 'YHWH Elohim' in Genesis 2-3 to the Redactor (R) who combined J and P, harmonizing the different divine names. In The Bible with Sources Revealed (2003), he color-codes 1:1-2:3 as P (blue) and 2:4b-25 as J (red).",
+      "note": "Who Wrote the Bible? pp. 52-60; The Bible with Sources Revealed, pp. 3-10"
+    },
+    {
+      "scholar": "Baden (2012)",
+      "attribution": "1:1-2:3 is clearly P; 2:4b-25 is J. Baden emphasizes that the compound name YHWH Elohim is original to J in Genesis 2-3, not redactional, representing J's deliberate theological choice to identify YHWH with the creator Elohim. He argues for J's literary sophistication in this move.",
+      "note": "The Composition of the Pentateuch, pp. 106-107, 238-242"
+    },
+    {
+      "scholar": "Von Rad (1972)",
+      "attribution": "Von Rad affirms the P/J division but emphasizes theological interpretation: P presents creation as cosmic temple-building culminating in sabbath rest; J presents creation as the stage for human moral drama and relationship with God.",
+      "note": "Genesis: A Commentary (OTL), pp. 46-77"
+    },
+    {
+      "scholar": "Carr (1996)",
+      "attribution": "Carr argues for a later date for P than classical hypothesis, seeing P as exilic response to J. He emphasizes P's deliberate structuring and theologizing in contrast to J's older, earthier tradition.",
+      "note": "Reading the Fractures of Genesis, pp. 38-73"
+    },
+    {
+      "scholar": "Alternative: Cassuto (1961) and Conservatism",
+      "attribution": "Umberto Cassuto and conservative scholars reject source division, arguing the two accounts are complementary (ch. 1 cosmic overview, ch. 2 human-focused detail) by single author. They explain divine name variation as stylistic choice related to content.",
+      "note": "The Documentary Hypothesis, pp. 92-110 (critical response to DH)"
+    }
+  ],
+  "framework_note": "Classic Documentary Hypothesis (Wellhausen 1878, Friedman 1987, Baden 2012). Source attribution is analytical evidence based on linguistic, stylistic, and theological criteria, not definitive assignment. Scholarly debate continues on details such as the origin of the compound divine name and the relative dating of sources.",
+  "synthesis": "Genesis 1-2 presents the clearest example of doublet composition in the Pentateuch: two complete, stylistically distinct, theologically divergent creation accounts. P (1:1-2:3) offers cosmic, liturgical, transcendent theology with Elohim creating by word in seven days; J (2:4b-25) offers earthy, anthropomorphic narrative with YHWH forming by hand in a garden. The juxtaposition demonstrates redactional preservation of both traditions despite incompatibilities in sequence and detail.",
+  "bibcrit_hypothesis": {
+    "title": "P's Sabbath Polemic Against J's Agricultural Focus",
+    "reasoning": "P's seven-day structure culminating in sabbath rest may be a deliberate counter-narrative to J's agricultural creation account. Where J emphasizes human labor ('till and keep' the garden, 2:15), P subordinates work to sabbath rest (2:2-3), reflecting post-exilic priestly concerns to establish sabbath as cosmic principle rather than merely agricultural rhythm. The Priestly school may have framed J's older narrative with a liturgical cosmology that reinterprets creation's telos from human cultivation to divine-human sabbath communion.",
+    "confidence": 0.72
+  },
+  "discovery_ready": true,
+  "reference": "Genesis 1:1-2:25",
+  "cached_at": "2026-04-14T18:40:35.829981",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1"
+}

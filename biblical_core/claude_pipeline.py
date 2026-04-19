@@ -1824,55 +1824,112 @@ def _extract_cards_genealogy(reference: str, data: dict, min_confidence: float) 
 
 
 def _extract_cards_targum(reference: str, data: dict, min_confidence: float) -> list:
-    ass  = data.get('assessment', {})
-    conf = ass.get('confidence', 0) or 0
-    plain = ass.get('plain', '') or data.get('synthesis', '')
-    if not plain or conf < min_confidence:
-        return []
-    divs = data.get('key_divergences', [])
-    headline = ass.get('title', 'Targumic rendering')
-    if divs:
-        headline = f'{len(divs)} targumic divergence{"s" if len(divs) != 1 else ""}'
-    return [{
-        'reference':       reference,
-        'tool':            'targum',
-        'card_type':       'targumic_rendering',
-        'divergence_type': 'targumic_rendering',
-        'mt_word':         '',
-        'lxx_word':        '',
-        'headline':        headline,
-        'analysis_plain':  plain,
-        'summary_plain':   data.get('synthesis', ''),
-        'confidence':      conf,
-        'cached_at':       data.get('cached_at', ''),
-        'link':            f'/targum?ref={reference}',
-    }]
+    """One card per key_divergence entry — mirrors _extract_cards_theological."""
+    ass     = data.get('assessment', {})
+    conf    = ass.get('confidence', 0) or 0
+    synth   = data.get('synthesis', '')
+    ms      = data.get('manuscript', 'Targum')
+    cards   = []
+    for div in data.get('key_divergences', []):
+        explanation = div.get('explanation', '')
+        mt_word     = div.get('mt_word', '')
+        targ_word   = div.get('targ_word', '')
+        div_type    = div.get('type', 'targumic_rendering')
+        if not explanation or conf < min_confidence:
+            continue
+        headline = f'{ms}: {mt_word} → {targ_word}' if mt_word and targ_word else f'{ms} {div_type}'
+        cards.append({
+            'reference':       reference,
+            'tool':            'targum',
+            'card_type':       div_type,
+            'divergence_type': div_type,
+            'mt_word':         mt_word,
+            'lxx_word':        targ_word,
+            'headline':        headline,
+            'analysis_plain':  explanation,
+            'summary_plain':   synth,
+            'confidence':      conf,
+            'cached_at':       data.get('cached_at', ''),
+            'link':            f'/targum?ref={reference}',
+        })
+    # Fallback: if no key_divergences, emit one summary card
+    if not cards:
+        plain = ass.get('plain', '') or synth
+        if plain and conf >= min_confidence:
+            divs = data.get('key_divergences', [])
+            headline = (f'{len(divs)} targumic divergence{"s" if len(divs) != 1 else ""}'
+                        if divs else ass.get('title', 'Targumic rendering'))
+            cards.append({
+                'reference':       reference,
+                'tool':            'targum',
+                'card_type':       'targumic_rendering',
+                'divergence_type': 'targumic_rendering',
+                'mt_word':         '',
+                'lxx_word':        '',
+                'headline':        headline,
+                'analysis_plain':  plain,
+                'summary_plain':   synth,
+                'confidence':      conf,
+                'cached_at':       data.get('cached_at', ''),
+                'link':            f'/targum?ref={reference}',
+            })
+    return cards[:4]  # cap at 4 per passage
 
 
 def _extract_cards_nt_text(reference: str, data: dict, min_confidence: float) -> list:
-    ass    = data.get('assessment', {})
-    conf   = ass.get('confidence', 0) or 0
-    plain  = ass.get('plain', '') or data.get('synthesis', '')
+    """One card per variant_register entry — mirrors _extract_cards_theological."""
+    ass        = data.get('assessment', {})
+    conf       = ass.get('confidence', 0) or 0
+    synth      = data.get('synthesis', '')
     raw_rating = data.get('metzger_rating', '')
-    # metzger_rating may be a plain string ('A') or a dict {'rating': 'A', ...}
-    rating = raw_rating.get('rating', '') if isinstance(raw_rating, dict) else str(raw_rating)
-    if not plain or conf < min_confidence:
-        return []
-    headline = f'Metzger {rating} — {ass.get("title", "NT textual tradition")}' if rating else ass.get('title', 'NT textual tradition')
-    return [{
-        'reference':       reference,
-        'tool':            'nt_text',
-        'card_type':       'nt_textual_tradition',
-        'divergence_type': 'nt_textual_tradition',
-        'mt_word':         '',
-        'lxx_word':        '',
-        'headline':        headline,
-        'analysis_plain':  plain,
-        'summary_plain':   data.get('synthesis', ''),
-        'confidence':      conf,
-        'cached_at':       data.get('cached_at', ''),
-        'link':            f'/nt-text?ref={reference}',
-    }]
+    rating     = raw_rating.get('rating', '') if isinstance(raw_rating, dict) else str(raw_rating)
+    cards      = []
+    for var in data.get('variant_register', []):
+        assessment = var.get('assessment', '')
+        vtext      = var.get('variant_text', '')
+        support    = var.get('manuscript_support', '')
+        intrinsic  = var.get('intrinsic_probability', '')
+        if not assessment or conf < min_confidence:
+            continue
+        headline = vtext[:60] + ('…' if len(vtext) > 60 else '') if vtext else 'Textual variant'
+        plain = assessment
+        if support:
+            plain = f'{assessment} (Witnesses: {support})'
+        cards.append({
+            'reference':       reference,
+            'tool':            'nt_text',
+            'card_type':       'nt_variant',
+            'divergence_type': f'nt_variant_{intrinsic}' if intrinsic else 'nt_variant',
+            'mt_word':         '',
+            'lxx_word':        '',
+            'headline':        headline,
+            'analysis_plain':  plain,
+            'summary_plain':   synth,
+            'confidence':      conf,
+            'cached_at':       data.get('cached_at', ''),
+            'link':            f'/nt-text?ref={reference}',
+        })
+    # Fallback: if no variant_register, emit one summary card
+    if not cards:
+        plain = ass.get('plain', '') or synth
+        if plain and conf >= min_confidence:
+            headline = (f'Metzger {rating} — {ass.get("title", "NT textual tradition")}'
+                        if rating else ass.get('title', 'NT textual tradition'))
+            cards.append({
+                'reference':       reference,
+                'tool':            'nt_text',
+                'card_type':       'nt_textual_tradition',
+                'divergence_type': 'nt_textual_tradition',
+                'mt_word':         '',
+                'lxx_word':        '',
+                'headline':        headline,
+                'analysis_plain':  plain,
+                'summary_plain':   synth,
+                'confidence':      conf,
+                'cached_at':       data.get('cached_at', ''),
+                'link':            f'/nt-text?ref={reference}',
+            })
+    return cards[:4]  # cap at 4 per passage
 
 
 def _parse_json_response(raw: str) -> dict:

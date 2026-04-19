@@ -1593,6 +1593,10 @@ def _extract_cards(reference: str, data: dict, min_confidence: float,
         return _extract_cards_scribal(reference, data, min_confidence)
     if tool == 'genealogy':
         return _extract_cards_genealogy(reference, data, min_confidence)
+    if tool == 'targum':
+        return _extract_cards_targum(reference, data, min_confidence)
+    if tool == 'nt_text':
+        return _extract_cards_nt_text(reference, data, min_confidence)
     return []
 
 
@@ -1786,6 +1790,58 @@ def _extract_cards_genealogy(reference: str, data: dict, min_confidence: float) 
         'confidence':      conf,
         'cached_at':       data.get('cached_at', ''),
         'link':            f'/genealogy?book={reference}',
+    }]
+
+
+def _extract_cards_targum(reference: str, data: dict, min_confidence: float) -> list:
+    ass  = data.get('assessment', {})
+    conf = ass.get('confidence', 0) or 0
+    plain = ass.get('plain', '') or data.get('synthesis', '')
+    if not plain or conf < min_confidence:
+        return []
+    divs = data.get('key_divergences', [])
+    headline = ass.get('title', 'Targumic rendering')
+    if divs:
+        headline = f'{len(divs)} targumic divergence{"s" if len(divs) != 1 else ""}'
+    return [{
+        'reference':       reference,
+        'tool':            'targum',
+        'card_type':       'targumic_rendering',
+        'divergence_type': 'targumic_rendering',
+        'mt_word':         '',
+        'lxx_word':        '',
+        'headline':        headline,
+        'analysis_plain':  plain,
+        'summary_plain':   data.get('synthesis', ''),
+        'confidence':      conf,
+        'cached_at':       data.get('cached_at', ''),
+        'link':            f'/targum?ref={reference}',
+    }]
+
+
+def _extract_cards_nt_text(reference: str, data: dict, min_confidence: float) -> list:
+    ass    = data.get('assessment', {})
+    conf   = ass.get('confidence', 0) or 0
+    plain  = ass.get('plain', '') or data.get('synthesis', '')
+    raw_rating = data.get('metzger_rating', '')
+    # metzger_rating may be a plain string ('A') or a dict {'rating': 'A', ...}
+    rating = raw_rating.get('rating', '') if isinstance(raw_rating, dict) else str(raw_rating)
+    if not plain or conf < min_confidence:
+        return []
+    headline = f'Metzger {rating} — {ass.get("title", "NT textual tradition")}' if rating else ass.get('title', 'NT textual tradition')
+    return [{
+        'reference':       reference,
+        'tool':            'nt_text',
+        'card_type':       'nt_textual_tradition',
+        'divergence_type': 'nt_textual_tradition',
+        'mt_word':         '',
+        'lxx_word':        '',
+        'headline':        headline,
+        'analysis_plain':  plain,
+        'summary_plain':   data.get('synthesis', ''),
+        'confidence':      conf,
+        'cached_at':       data.get('cached_at', ''),
+        'link':            f'/nt-text?ref={reference}',
     }]
 
 

@@ -22,6 +22,8 @@ GENEALOGY_MODEL   = 'claude-sonnet-4-5-20250929'
 NT_OT_MODEL       = 'claude-sonnet-4-5-20250929'
 CHIASM_MODEL      = 'claude-sonnet-4-5-20250929'
 SOURCE_MODEL      = 'claude-sonnet-4-5-20250929'
+TARGUM_MODEL  = 'claude-sonnet-4-5-20250929'
+NT_TEXT_MODEL = 'claude-sonnet-4-5-20250929'
 
 _SONNET_COST_IN  = 3.0  / 1_000_000   # $3 per MTok input (claude-sonnet-4-5)
 _SONNET_COST_OUT = 15.0 / 1_000_000   # $15 per MTok output (claude-sonnet-4-5)
@@ -132,6 +134,22 @@ _NT_OT_SYSTEM = (
     "citation technique, text form identification (MT vs. LXX vs. recensions), and the methodology "
     "of Beale & Carson, Christopher Stanley, and Richard Hays. You determine whether NT authors "
     "cited MT or LXX forms with philological precision. "
+    "CRITICAL: Return ONLY raw JSON. No markdown, no code fences, no backticks, "
+    "no prose before or after. The response must start with { and end with }."
+)
+
+_TARGUM_SYSTEM = (
+    "You are a specialist in Jewish Aramaic translation technique and Targumic studies, "
+    "with deep expertise in Targum Onkelos (Torah) and Targum Jonathan (Prophets). "
+    "You apply the methodology of Samely, Smelik, McNamara, and Grossfeld. "
+    "CRITICAL: Return ONLY raw JSON. No markdown, no code fences, no backticks, "
+    "no prose before or after. The response must start with { and end with }."
+)
+
+_NT_TEXT_SYSTEM = (
+    "You are a specialist in New Testament textual criticism with deep expertise in "
+    "manuscript families (Alexandrian, Western, Byzantine, Caesarean), the Metzger "
+    "Textual Commentary methodology, and the SBLGNT/NA28/UBS5 critical apparatus. "
     "CRITICAL: Return ONLY raw JSON. No markdown, no code fences, no backticks, "
     "no prose before or after. The response must start with { and end with }."
 )
@@ -1100,6 +1118,84 @@ class ClaudePipeline:
         data = _parse_json_response(raw)
         data['discovery_ready'] = True
         self.save_cache(book, tool, prompt_version, model, data)
+        return data
+
+    def analyze_targum(self, reference: str, mt_text: str = '',
+                       lxx_text: str = '', targ_text: str = '',
+                       manuscript: str = 'Onkelos') -> dict:
+        """Return Targum comparison analysis for a biblical passage.
+
+        manuscript: 'Onkelos' (Torah) or 'Jonathan' (Prophets).
+        Returns dict with 'synthesis', 'rendering_fidelity', 'theological_modifications', etc.
+        On error: returns {'error': ..., 'synthesis': '', ...}.
+        """
+        model          = TARGUM_MODEL
+        prompt_version = 'v1'
+        tool           = 'targum'
+
+        cached = self.get_cached(reference, tool, prompt_version, model)
+        if cached:
+            return cached
+
+        if not self._client:
+            return {
+                'error': 'No API key configured. Set ANTHROPIC_API_KEY environment variable.',
+                'reference': reference, 'manuscript': manuscript,
+                'synthesis': '', 'rendering_fidelity': {}, 'theological_modifications': [],
+                'targumic_expansions': [], 'messianic_reinterpretation': {'present': False},
+                'lxx_alignment': {}, 'key_divergences': [],
+                'assessment': {'title': '', 'reasoning': '', 'plain': '', 'confidence': 0.0},
+                'citations': {'sbl': '', 'bibtex': ''},
+            }
+
+        budget = self.get_budget()
+        if budget['spend_usd'] >= self._cap_usd:
+            return {
+                'error': (
+                    f"Monthly analysis budget of ${self._cap_usd:.2f} reached. "
+                    "Please try again next month or donate to increase the cap."
+                ),
+                'reference': reference, 'manuscript': manuscript,
+                'synthesis': '', 'rendering_fidelity': {}, 'theological_modifications': [],
+                'targumic_expansions': [], 'messianic_reinterpretation': {'present': False},
+                'lxx_alignment': {}, 'key_divergences': [],
+                'assessment': {'title': '', 'reasoning': '', 'plain': '', 'confidence': 0.0},
+                'citations': {'sbl': '', 'bibtex': ''},
+            }
+
+        template = self.load_prompt('targum', prompt_version)
+        user_content = (
+            template
+            .replace('{{REFERENCE}}',  reference)
+            .replace('{{MANUSCRIPT}}', manuscript)
+            .replace('{{MT_TEXT}}',    mt_text)
+            .replace('{{LXX_TEXT}}',   lxx_text)
+            .replace('{{TARG_TEXT}}',  targ_text)
+        ) if template else (
+            f'Reference: {reference}\nManuscript: {manuscript}\n'
+            f'MT: {mt_text}\nLXX: {lxx_text}\nTargum: {targ_text or "(not available)"}\n'
+            'Analyze Targum rendering. Return JSON with synthesis, rendering_fidelity, '
+            'theological_modifications, targumic_expansions, messianic_reinterpretation, '
+            'lxx_alignment, key_divergences, assessment, citations.'
+        )
+
+        response = self._client.messages.create(
+            model=model,
+            max_tokens=8192,
+            system=_TARGUM_SYSTEM,
+            messages=[
+                {'role': 'user',      'content': user_content},
+                {'role': 'assistant', 'content': '{'},
+            ],
+        )
+
+        cost = (response.usage.input_tokens  * _SONNET_COST_IN +
+                response.usage.output_tokens * _SONNET_COST_OUT)
+        self.record_spend(cost)
+
+        raw  = '{' + response.content[0].text
+        data = _parse_json_response(raw)
+        self.save_cache(reference, tool, prompt_version, model, data)
         return data
 
     def analyze_divergence(self, reference: str, mt_text: str,

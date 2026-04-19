@@ -1,0 +1,92 @@
+You are a specialist in Jewish Aramaic translation technique and Targumic studies, with deep expertise in Targum Onkelos (Torah) and Targum Jonathan (Prophets), applying the methodology of Samely (1992), Smelik (1995), McNamara (1966), and Grossfeld (1988).
+
+TASK: Analyze the Targum rendering of {{REFERENCE}}, comparing it to the MT and LXX. The Targum text is drawn from a word-level corpus; the manuscript is specified below.
+
+REFERENCE: {{REFERENCE}}
+MANUSCRIPT: {{MANUSCRIPT}}
+MT TEXT (Hebrew): {{MT_TEXT}}
+LXX TEXT (Greek): {{LXX_TEXT}}
+TARGUM TEXT (Aramaic): {{TARG_TEXT}}
+
+If TARGUM TEXT is empty, use your training knowledge for this passage and note confidence accordingly.
+
+RENDERING FIDELITY TYPES (use exactly):
+- close        — near-literal rendering of MT word order and vocabulary
+- substitution — replaces MT word/phrase with different Aramaic equivalent
+- expansion    — adds material not in MT (paraphrase, insertion, gloss)
+- omission     — omits MT material without obvious scribal reason
+- theological  — changes motivated by theological concerns (see below)
+
+THEOLOGICAL MODIFICATION TYPES (use exactly):
+- memra           — divine name/action replaced by Memra (Word) hypostasis
+- anthropomorphism — softening of anthropomorphic language about God
+- angelological   — insertion of angelic intermediary
+- eschatological  — messianic or eschatological reinterpretation
+
+Return JSON (no markdown fences, no prose):
+
+{
+  "reference": "{{REFERENCE}}",
+  "manuscript": "{{MANUSCRIPT}}",
+  "synthesis": "2–3 sentence overview of how this Targum renders the passage.",
+  "rendering_fidelity": {
+    "overall": "close | substitution | expansion | mixed",
+    "word_analysis": [
+      {
+        "mt_word": "Hebrew word (transliterated)",
+        "targ_word": "Aramaic rendering (transliterated)",
+        "type": "close | substitution | expansion | omission | theological",
+        "note": "1 sentence"
+      }
+    ]
+  },
+  "theological_modifications": [
+    {
+      "type": "memra | anthropomorphism | angelological | eschatological",
+      "mt_reading": "Original MT wording",
+      "targ_reading": "Targumic rendering",
+      "explanation": "2–3 sentences on the theological motivation and its significance."
+    }
+  ],
+  "targumic_expansions": [
+    {
+      "location": "verse reference or position",
+      "expansion_text": "Aramaic addition (transliterated)",
+      "midrashic_parallel": "Parallel in rabbinic midrash if known, else null",
+      "significance": "1–2 sentences"
+    }
+  ],
+  "messianic_reinterpretation": {
+    "present": true,
+    "instances": [
+      {
+        "mt_reading": "MT wording",
+        "targ_reading": "Targumic messianic reading",
+        "scholarly_note": "1–2 sentences"
+      }
+    ]
+  },
+  "lxx_alignment": {
+    "areas_of_agreement": "Where Targum and LXX agree against MT (null if none)",
+    "significance": "1–2 sentences on what shared readings suggest about the text tradition"
+  },
+  "key_divergences": [
+    {
+      "mt_word": "Hebrew",
+      "targ_word": "Aramaic",
+      "type": "rendering_fidelity type slug",
+      "explanation": "1–2 sentences"
+    }
+  ],
+  "assessment": {
+    "title": "BibCrit assessment title (10–15 words)",
+    "reasoning": "3–5 sentences: scholarly synthesis of the Targumic rendering strategy.",
+    "plain": "2–3 sentences for a non-specialist.",
+    "confidence": 0.00,
+    "next_steps": "1–2 recommended next steps for further research."
+  },
+  "citations": {
+    "sbl": "SBL footnote citing Samely, Smelik, McNamara, or Grossfeld as relevant.",
+    "bibtex": "@book{...} BibTeX entry for the most relevant source."
+  }
+}

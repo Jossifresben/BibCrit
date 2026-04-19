@@ -116,9 +116,9 @@
   }
 
   function setLoading(on) {
-    if (emptyState) emptyState.style.display = on ? 'none' : '';
+    if (on && emptyState) emptyState.style.display = 'none'; // only hide; renderResult shows results explicitly
     if (loadState)  loadState.style.display  = on ? 'block' : 'none';
-    if (results)    results.style.display    = on ? 'none' : '';
+    if (results)    results.style.display    = on ? 'none' : 'block';
     if (on && _timer) clearInterval(_timer);
     if (on && loadTimer) {
       var secs = 0;

@@ -154,7 +154,7 @@ BibCrit enforces a **monthly Claude API spend cap** to prevent runaway costs. Th
 - When the monthly cap is reached, all SSE stream endpoints return an `error` event with a message indicating the budget is exhausted for the month.
 - Cached analyses (already stored in Supabase or disk cache) are always served without calling the Claude API and are **never** subject to the cap.
 - The cache key is `sha256(reference | tool | prompt_version | model_version)`. Cache hits are instant.
-- The Claude model used for all analysis tools is **`claude-sonnet-4-5-20250929`** ($3/MTok input, $15/MTok output).
+- The Claude model used for all analysis tools is **`claude-sonnet-4-6`** ($3/MTok input, $15/MTok output).
 
 ---
 
@@ -371,7 +371,7 @@ curl http://localhost:5000/discovery
     "analysis_plain": "In plain language, the translators of the LXX made a choice here…",
     "hypothesis": "The LXX translator interpreted עַלְמָה in light of messianic expectation…",
     "confidence": 0.88,
-    "model": "claude-sonnet-4-5-20250929",
+    "model": "claude-sonnet-4-6",
     "cached": true
   }
 }
@@ -472,7 +472,7 @@ data: {"type": "done", "data": {"reference": "Isaiah 7:14", "divergences": [...]
     "analysis_plain": "In plain language, the LXX translator here…",
     "hypothesis": "The divergences suggest the translator interpreted חֳלָיֵנוּ differently…",
     "confidence": 0.82,
-    "model": "claude-sonnet-4-5-20250929",
+    "model": "claude-sonnet-4-6",
     "cached": false
   }
 }
@@ -528,7 +528,7 @@ curl "http://localhost:5000/api/divergence?ref=Isaiah+7:14"
   "analysis_plain": "...",
   "hypothesis": "...",
   "confidence": 0.88,
-  "model": "claude-sonnet-4-5-20250929",
+  "model": "claude-sonnet-4-6",
   "cached": true
 }
 ```
@@ -833,7 +833,7 @@ HTTP 400
     "overall_profile": "The LXX translator of Isaiah was a theologically sophisticated interpreter…",
     "analysis_plain": "In plain language, this translator tended to…",
     "confidence": 0.85,
-    "model": "claude-sonnet-4-5-20250929",
+    "model": "claude-sonnet-4-6",
     "cached": false
   }
 }
@@ -905,7 +905,7 @@ curl -N -H "Accept: text/event-stream" \
     "overall_assessment": "The LXX preserves an independent numerical tradition…",
     "analysis_plain": "The Greek Bible records Adam being 230 when Seth was born, versus 130 in the Hebrew…",
     "confidence": 0.83,
-    "model": "claude-sonnet-4-5-20250929",
+    "model": "claude-sonnet-4-6",
     "cached": true
   }
 }
@@ -1043,7 +1043,7 @@ HTTP 501
     "synthesis": "Amos 5:1-17 displays a clear chiastic structure centred on the doxology…",
     "scholarly_debate": "Scholars dispute whether vv. 8-9 are a later insertion…",
     "cached": false,
-    "model": "claude-sonnet-4-5-20250929"
+    "model": "claude-sonnet-4-6"
   }
 }
 ```
@@ -1130,7 +1130,7 @@ curl -N -H "Accept: text/event-stream" \
     "overall_assessment": "Genesis 6:1-8 is uniformly J in the Classical Documentary Hypothesis…",
     "framework_notes": "Neo-Documentary (Baden) agrees; Supplementary Hypothesis treats 6:5-8 as redactional.",
     "cached": false,
-    "model": "claude-sonnet-4-5-20250929"
+    "model": "claude-sonnet-4-6"
   }
 }
 ```

@@ -1,6 +1,6 @@
 ![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue?logo=python&logoColor=white)
 ![Flask](https://img.shields.io/badge/flask-3.0%2B-lightgrey?logo=flask)
-![Claude](https://img.shields.io/badge/powered%20by-Claude%20claude--sonnet--4--5-blueviolet?logo=anthropic)
+![Claude](https://img.shields.io/badge/powered%20by-Claude%20Sonnet%204.6-blueviolet?logo=anthropic)
 ![License](https://img.shields.io/badge/license-Apache%202.0-green)
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0000--2026--0836-a6ce39)](https://orcid.org/0009-0000-2026-0836)
 [![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.19553402.svg)](https://doi.org/10.5281/zenodo.19553402)
@@ -74,7 +74,7 @@ Free, open-access web tool for biblical textual criticism at [bibcrit.com](https
 | Layer | Technology |
 |---|---|
 | Web framework | [Flask](https://flask.palletsprojects.com/) 3.0+ |
-| AI analysis | [Anthropic Python SDK](https://github.com/anthropics/anthropic-sdk-python) 0.30+ · model: `claude-sonnet-4-5-20250929` |
+| AI analysis | [Anthropic Python SDK](https://github.com/anthropics/anthropic-sdk-python) 0.30+ · model: `claude-sonnet-4-6` |
 | Visualization | [D3.js](https://d3js.org/) v7 (radar charts, bar charts) |
 | Persistence | [Supabase](https://supabase.com/) (PostgreSQL) + disk JSON fallback |
 | Production server | Gunicorn (1 worker, 2 threads) |

@@ -82,7 +82,7 @@ Bilingual operation (English and Spanish) makes the tool accessible to the signi
 
 # AI Usage Disclosure
 
-BibCrit uses the Anthropic Claude API (`claude-sonnet-4-5`) to generate analytical content for each of its thirteen tools. The AI is not used for corpus ingestion, cache management, or any deterministic processing steps. All AI-generated analysis is clearly attributed as such in the user interface, and users are informed that results should be verified against primary sources.
+BibCrit uses the Anthropic Claude API (`claude-sonnet-4-6`) to generate analytical content for each of its thirteen tools. The AI is not used for corpus ingestion, cache management, or any deterministic processing steps. All AI-generated analysis is clearly attributed as such in the user interface, and users are informed that results should be verified against primary sources.
 
 The prompt templates in `data/prompts/` are scholarly-grounded, specifying the methodological frameworks of Tov, Metzger, Hengel, and the Göttingen LXX critical apparatus explicitly. Output schemas are versioned and pinned to specific model versions to ensure reproducibility. A monthly budget cap prevents the tool from making unbounded API calls during public access.
 

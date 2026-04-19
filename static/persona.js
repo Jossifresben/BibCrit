@@ -17,16 +17,16 @@
   // CSS order value per tool per persona (lower = appears first in grid)
   // Featured tools are placed first within each persona view.
   const ORDER = {
-    //         ── featured ──────────────────────────────────────────  ── secondary ──────────────────────────────────────────────────────
-    scholar: { divergence: 1, backtranslation: 2, dss: 3, genealogy: 4, chiasm: 5, source: 6,   scribal: 7, numerical: 8, theological: 9, patristic: 10, nt_ot: 11 },
-    phd:     { divergence: 1, backtranslation: 2, dss: 3, theological: 4, source: 5,             nt_ot: 6,  scribal: 7, numerical: 8, patristic: 9, genealogy: 10, chiasm: 11 },
-    student: { divergence: 1, backtranslation: 2, dss: 3,                                        scribal: 4, numerical: 5, theological: 6, patristic: 7, genealogy: 8, chiasm: 9, source: 10, nt_ot: 11 },
+    //         ── featured (ordered by analytical depth) ─────────────────────────────────────────────  ── secondary ──────────────────────────────────────────────────────────────────────────
+    scholar: { divergence: 1, backtranslation: 2, dss: 3, targum: 4, nt_text: 5, genealogy: 6, chiasm: 7, source: 8,  scribal: 9, numerical: 10, theological: 11, patristic: 12, nt_ot: 13 },
+    phd:     { divergence: 1, backtranslation: 2, dss: 3, theological: 4, targum: 5, nt_text: 6, source: 7,            nt_ot: 8,  scribal: 9, numerical: 10, patristic: 11, genealogy: 12, chiasm: 13 },
+    student: { divergence: 1, backtranslation: 2, dss: 3,                                                              scribal: 4, numerical: 5, theological: 6, targum: 7, patristic: 8, genealogy: 9, chiasm: 10, source: 11, nt_ot: 12, nt_text: 13 },
   };
 
   // Which tool cards get the accent highlight per persona
   const HIGHLIGHT = {
-    scholar: ['divergence', 'backtranslation', 'dss', 'genealogy', 'chiasm', 'source'],
-    phd:     ['divergence', 'backtranslation', 'dss', 'theological', 'source'],
+    scholar: ['divergence', 'backtranslation', 'dss', 'targum', 'nt_text', 'genealogy', 'chiasm', 'source'],
+    phd:     ['divergence', 'backtranslation', 'dss', 'theological', 'targum', 'nt_text', 'source'],
     student: ['divergence', 'backtranslation', 'dss'],
   };
 

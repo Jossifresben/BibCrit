@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+{% block title %}{{ _t('nt_text_page_title') }}{% endblock %}
+{% block meta_description %}Analyze the textual tradition of any New Testament passage. Manuscript family support, Metzger A/B/C/D ratings, variant register, and extended analysis for disputed passages.{% endblock %}
+{% block og_title %}NT Textual Tradition Analyzer — BibCrit{% endblock %}
+{% block og_description %}Manuscript family support, Metzger ratings, and variant register for any NT passage.{% endblock %}
+
+{% block content %}
+
+<div class="tool-header">
+  <h1 class="tool-title">{{ _t('nt_text_tool_title') }}</h1>
+  <p class="tool-subtitle">{{ _t('nt_text_tool_subtitle') }}</p>
+</div>
+
+<!-- Passage Selector Bar -->
+<div class="passage-bar">
+  <div class="passage-bar-row passage-bar-main">
+    <span class="passage-label">{{ _t('passage_label') }}:</span>
+    <div class="passage-bar-selectors">
+      <select id="sel-book" class="passage-select" aria-label="{{ _t('book_label') }}">
+        <option value="">{{ _t('passage_book_placeholder') }}</option>
+      </select>
+      <select id="sel-chapter" class="passage-select" aria-label="Chapter" disabled>
+        <option value="">{{ _t('passage_ch') }}</option>
+      </select>
+      <select id="sel-verse" class="passage-select" aria-label="Verse" disabled>
+        <option value="">{{ _t('passage_vs') }}</option>
+      </select>
+    </div>
+    <span class="passage-or">{{ _t('passage_or') }}</span>
+    <input type="text" id="ref-input" class="passage-input"
+           placeholder="Mark 16:9" value="{{ reference }}"
+           aria-label="Type a reference">
+    <div class="passage-bar-actions">
+      <button id="btn-analyze" class="btn-primary">{{ _t('nt_text_analyze_btn') }}</button>
+    </div>
+  </div>
+</div>
+
+<!-- Empty / Welcome State -->
+<div id="empty-state" class="empty-state">
+  <div class="empty-inner">
+    <p>{{ _t('nt_text_empty_body') }}</p>
+    <div class="bt-legend-hero" style="margin-bottom:1.5rem;">
+      <span class="bt-legend-item"><span class="ms-rating-badge rating-a">A</span> Certain</span>
+      <span class="bt-legend-item"><span class="ms-rating-badge rating-b">B</span> Almost certain</span>
+      <span class="bt-legend-item"><span class="ms-rating-badge rating-c">C</span> Considerable doubt</span>
+      <span class="bt-legend-item"><span class="ms-rating-badge rating-d">D</span> Very high doubt</span>
+    </div>
+    <p class="featured-label">{{ _t('featured_label') }}</p>
+    <div class="featured-passages">
+      <a href="#" class="featured-ref" data-ref="Mark 16:9">{{ _t('feat_nt_mark169') | safe }}</a>
+      <a href="#" class="featured-ref" data-ref="John 7:53">{{ _t('feat_nt_john753') | safe }}</a>
+      <a href="#" class="featured-ref" data-ref="1 John 5:7">{{ _t('feat_nt_1jn57') | safe }}</a>
+      <a href="#" class="featured-ref" data-ref="Matthew 1:16">{{ _t('feat_nt_matt116') | safe }}</a>
+    </div>
+  </div>
+</div>
+
+<!-- Loading State -->
+<div id="loading-state" class="loading-state" style="display:none;" aria-live="polite">
+  <div class="loading-spinner"></div>
+  <p id="loading-step" class="loading-step-msg">{{ _t('loading_preparing') }}</p>
+  <p id="loading-timer" class="loading-timer"></p>
+</div>
+
+<!-- Passage heading -->
+<div id="passage-heading" class="passage-heading" style="display:none;"></div>
+
+<!-- Results area -->
+<div id="nt-text-results" style="display:none;">
+
+  <!-- GNT text display -->
+  <div id="gnt-text-display" class="num-section" style="display:none;">
+    <div class="num-section-label">SBLGNT Text</div>
+    <div id="gnt-text-body" class="gnt-text-body"></div>
+  </div>
+
+  <!-- Metzger rating badge -->
+  <div id="metzger-section" style="display:none;">
+    <div class="metzger-rating-row">
+      <span class="metzger-label">Metzger Rating:</span>
+      <span id="metzger-badge" class="ms-rating-badge rating-?">?</span>
+      <span id="metzger-justification" class="metzger-just"></span>
+    </div>
+  </div>
+
+  <!-- Manuscript family support -->
+  <div id="ms-families-section" class="num-section" style="display:none;">
+    <div class="num-section-label">{{ _t('nt_text_manuscript_families') }}</div>
+    <div id="ms-families-body"></div>
+  </div>
+
+  <!-- Variant register -->
+  <div id="variant-section" class="num-section" style="display:none;">
+    <div class="num-section-label">{{ _t('nt_text_variant_register') }}</div>
+    <div id="variant-body"></div>
+  </div>
+
+  <!-- Disputed passage extended section (shown only when disputed_passage is non-null) -->
+  <div id="disputed-section" class="num-section disputed-section" style="display:none;">
+    <div class="num-section-label">⚠️ {{ _t('nt_text_disputed_passage') }}</div>
+    <div id="disputed-body"></div>
+  </div>
+
+  <!-- Synthesis -->
+  <div id="synthesis-section" class="num-section" style="display:none;">
+    <div class="num-section-label">{{ _t('section_synthesis') }}</div>
+    <div id="synthesis-body"></div>
+  </div>
+
+  <!-- BibCrit Assessment -->
+  <div id="bibcrit-assessment" style="display:none;">
+    <div class="num-section-label" style="margin-top:1.5rem;">{{ _t('section_bibcrit_assessment') }}</div>
+    <div id="bibcrit-body"></div>
+  </div>
+
+  <!-- Export row -->
+  <div class="export-row" id="export-row" style="display:none;">
+    <button class="btn-export" id="btn-sbl" title="Copy SBL footnote">📋 SBL Footnote</button>
+    <button class="btn-export" id="btn-bibtex" title="Copy BibTeX">📋 BibTeX</button>
+    <button class="btn-export btn-share" id="btn-share" title="Share">
+      <span class="material-symbols-outlined" style="font-size:14px;vertical-align:-2px">qr_code_2</span> Share
+    </button>
+  </div>
+</div>
+
+<!-- Toast -->
+<div id="toast" class="toast" style="display:none;" role="status"></div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>window.TOOL_MAX_VERSES = 30;</script>
+<script src="{{ url_for('static', filename='nt_text.js') }}"></script>
+{% if reference %}
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.ntText) window.ntText.analyze('{{ reference | e }}');
+  });
+</script>
+{% endif %}
+{% endblock %}

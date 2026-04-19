@@ -10,7 +10,10 @@ import json
 import os
 import re
 import threading
+import time
+from queue import Queue, Empty
 from datetime import datetime
+from biblical_core.json_stream import extract_next_section
 
 DIVERGENCE_MODEL  = 'claude-sonnet-4-6'
 SCRIBAL_MODEL     = 'claude-sonnet-4-6'
@@ -225,6 +228,54 @@ class ClaudePipeline:
                 self._supabase = create_client(supabase_url, supabase_key)
             except ImportError:
                 pass
+
+    def _call_streaming(self, system: str, user_content: str,
+                        model: str, max_tokens: int,
+                        prefill: str = '{'):
+        """Generator: yields (key, value) pairs as top-level JSON sections complete.
+
+        Uses the Anthropic streaming API so sections arrive as Claude writes them,
+        not all at once. The prefill ('{') is prepended to match the existing
+        assistant-prefill pattern used by all blocking analyze_* methods.
+
+        After the generator exhausts, self._last_stream_text contains the full
+        raw response (for caching) and self._last_stream_usage is an
+        (input_tokens, output_tokens) tuple.
+
+        Yields:
+            (key: str, value: any) tuples in the order Claude writes them.
+        """
+        if not self._client:
+            return
+
+        self._last_stream_text = prefill
+        self._last_stream_usage = (0, 0)
+        buffer = ''  # content AFTER the prefill opening brace
+
+        with self._client.messages.stream(
+            model=model,
+            max_tokens=max_tokens,
+            system=system,
+            messages=[
+                {'role': 'user',      'content': user_content},
+                {'role': 'assistant', 'content': prefill},
+            ],
+        ) as stream:
+            for text_chunk in stream.text_stream:
+                buffer += text_chunk
+                self._last_stream_text += text_chunk
+                while True:
+                    result = extract_next_section(buffer)
+                    if result is None:
+                        break
+                    key, value, buffer = result
+                    yield key, value
+
+            final_msg = stream.get_final_message()
+            self._last_stream_usage = (
+                final_msg.usage.input_tokens,
+                final_msg.usage.output_tokens,
+            )
 
     # ── Public interface ───────────────────────────────────────────────────
 
@@ -1010,6 +1061,70 @@ class ClaudePipeline:
         data = _parse_json_response(raw)
         self.save_cache(reference, tool, prompt_version, model, data)
         return data
+
+    def stream_theological(self, reference: str, vul_text: str = ''):
+        """Streaming version of analyze_theological().
+
+        Yields (key, value) pairs as each JSON section completes.
+        Caches the complete result after the stream finishes.
+        Sets self._last_theological_result with the final parsed dict.
+        """
+        model          = THEOLOGICAL_MODEL
+        prompt_version = 'v2'
+        tool           = 'theological'
+
+        self._last_theological_result = None
+
+        # Cache hit: yield sections from stored JSON, no API call
+        cached = self.get_cached(reference, tool, prompt_version, model)
+        if cached:
+            self._last_theological_result = cached
+            for key, value in cached.items():
+                yield key, value
+                time.sleep(0.04)
+            return
+
+        if not self._client:
+            self._last_theological_result = {'error': 'No API key configured.'}
+            return
+
+        budget = self.get_budget()
+        if budget['spend_usd'] >= self._cap_usd:
+            self._last_theological_result = {'error': 'Monthly budget reached.'}
+            return
+
+        template = self.load_prompt('theological', prompt_version)
+        user_content = (
+            template
+            .replace('{{REFERENCE}}', reference)
+            .replace('{{VUL_TEXT}}', vul_text)
+        ) if template else (
+            f'Reference: {reference}\nVulgate: {vul_text or "(not loaded)"}\n'
+            'Identify theologically motivated textual changes. Return JSON.'
+        )
+
+        sections = {}
+        for key, value in self._call_streaming(
+            system=_THEOLOGICAL_SYSTEM,
+            user_content=user_content,
+            model=model,
+            max_tokens=8192,
+        ):
+            sections[key] = value
+            yield key, value
+
+        # Record spend
+        in_tok, out_tok = getattr(self, '_last_stream_usage', (0, 0))
+        self.record_spend(in_tok * _SONNET_COST_IN + out_tok * _SONNET_COST_OUT)
+
+        # Parse full response and cache
+        data = _parse_json_response(self._last_stream_text)
+        if 'parse_error' not in data:
+            self.save_cache(reference, tool, prompt_version, model, data)
+            self._last_theological_result = data
+        else:
+            # Fallback: reconstruct from yielded sections
+            self._last_theological_result = sections if sections else data
 
     def analyze_patristic(self, reference: str, gnt_text: str = '') -> dict:
         """Return patristic citation analysis for a passage.

@@ -405,7 +405,7 @@
     {# ── Hero ── #}
     <div class="guide-hero">
         <h1>How to Use BibCrit</h1>
-        <p>BibCrit is a Claude-powered biblical textual criticism toolkit. Each tool streams AI analysis directly in your browser, letting you explore divergences between the Masoretic Text (MT) and the Septuagint (LXX), profile scribal tendencies, model numerical discrepancies, reconstruct plausible Hebrew Vorlagen, compare Dead Sea Scrolls witnesses, trace patristic citations, detect theological revisions, visualize manuscript genealogies, map chiastic structures, and analyze source layers — all without installing any software.</p>
+        <p>BibCrit is a Claude-powered biblical textual criticism toolkit. Each tool streams AI analysis directly in your browser, letting you explore divergences between the Masoretic Text (MT) and the Septuagint (LXX), profile scribal tendencies, model numerical discrepancies, reconstruct plausible Hebrew Vorlagen, compare Dead Sea Scrolls witnesses, trace patristic citations, detect theological revisions, visualize manuscript genealogies, compare Targum Onkelos and Jonathan renderings, analyze NT textual traditions and variant registers, map chiastic structures, and analyze source layers — all without installing any software.</p>
     </div>
 
     {# ── Stats bar ── #}
@@ -419,7 +419,7 @@
             <span class="stat-label">LXX books</span>
         </div>
         <div class="about-stat">
-            <span class="stat-num">7</span>
+            <span class="stat-num">8</span>
             <span class="stat-label">corpus traditions</span>
         </div>
     </div>
@@ -641,12 +641,12 @@
     {# ── Data sources ── #}
     <h2 id="sources">Data Sources</h2>
 
-    <p>BibCrit's corpus layer is built on seven open academic datasets supplying word-level text across eight manuscript traditions:</p>
+    <p>BibCrit's corpus layer is built on eight open academic datasets supplying word-level text across eight manuscript traditions:</p>
 
     <ul class="scholar-list">
         <li>
             <strong>ETCBC — Eep Talstra Centre for Bible and Computer</strong> (Vrije Universiteit Amsterdam)<br>
-            Provides the Masoretic Text with full morphological tagging (lemma, part of speech, person/gender/number, clause boundaries). Also the source for the Dead Sea Scrolls corpus (1QIsaᵃ, 4QSamᵃ, 11QPaleoLev, 4QDeutn) and the Peshitta Syriac OT (all 39 OT books, 308,863 word tokens). Licensed CC-BY-NC 4.0.
+            Provides the Masoretic Text with full morphological tagging (lemma, part of speech, person/gender/number, clause boundaries) via the BHSA dataset. Also the source for the Dead Sea Scrolls corpus (1QIsaᵃ, 4QSamᵃ, 11QPaleoLev, 4QDeutᵏ) and the Peshitta Syriac OT (all 39 OT books, 308,863 word tokens). Peshitta lexical data derives from the SEDRA database (Beth Mardutho: The Syriac Institute). All three ETCBC modules are accessed via Text-Fabric (Hagen). Licensed CC-BY-NC 4.0.
             <br><a href="https://github.com/ETCBC/bhsa" target="_blank" rel="noopener" class="feature-example-link">ETCBC/BHSA on GitHub →</a>
         </li>
         <li>
@@ -670,8 +670,9 @@
             <br><a href="https://github.com/scrollmapper/bible_databases" target="_blank" rel="noopener" class="feature-example-link">scrollmapper/bible_databases on GitHub →</a>
         </li>
         <li>
-            <strong>Samaritan Pentateuch — dt-ucph/sp</strong><br>
-            The Samaritan Pentateuch corpus (Torah, 5 books) is used primarily by the Numerical Discrepancy Modeler to compare patriarchal chronologies across MT, LXX, and SP traditions.
+            <strong>Samaritan Pentateuch — dt-ucph/sp</strong> (University of Copenhagen)<br>
+            The Samaritan Pentateuch Text-Fabric module provides the SP text for the five Torah books, used primarily by the Numerical Discrepancy Modeler to compare patriarchal chronologies across MT, LXX, and SP traditions. Accessed via Text-Fabric (Hagen).
+            <br><a href="https://github.com/dt-ucph/sp" target="_blank" rel="noopener" class="feature-example-link">dt-ucph/sp on GitHub →</a>
         </li>
         <li>
             <strong>Patristic sources</strong><br>
@@ -699,7 +700,7 @@
         </li>
         <li class="faq-item">
             <div class="faq-q">Does BibCrit support the Dead Sea Scrolls or the Peshitta?</div>
-            <div class="faq-a">Yes to both. The <strong>Ancient Witness Bridge</strong> (<a href="/dss">/dss</a>) compares any passage across five ancient witnesses simultaneously: Dead Sea Scrolls, Samaritan Pentateuch, Peshitta (Syriac OT), MT, and LXX. The Peshitta is the most recent addition (v2.2). Samaritan Pentateuch data is also included in the Numerical Discrepancy Modeler, and the Manuscript Genealogy tool covers the Peshitta, Targum, and Vulgate as transmission branches.</div>
+            <div class="faq-a">Yes. The <strong>Ancient Witness Bridge</strong> (<a href="/dss">/dss</a>) compares any passage across five ancient witnesses simultaneously: Dead Sea Scrolls, Samaritan Pentateuch, Peshitta (Syriac OT), MT, and LXX. Samaritan Pentateuch data is also used by the Numerical Discrepancy Modeler. The Manuscript Genealogy tool covers Peshitta, Targum, and Vulgate as transmission branches. The <strong>Targum Comparator</strong> (<a href="/targum">/targum</a>) provides dedicated analysis of Targum Onkelos and Jonathan renderings. The Vulgate is included as a fifth-century Latin witness in several tools.</div>
         </li>
     </ul>
 

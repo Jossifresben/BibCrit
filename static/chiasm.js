@@ -158,6 +158,7 @@
     };
 
     es.onerror = function () {
+      if (_finalHandled) return;
       clearInterval(timerInterval); es.close();
       hide(loadingState);
       showToast('Connection error. Please try again.');

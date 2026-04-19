@@ -234,6 +234,7 @@
     };
 
     es.onerror = function () {
+      if (_finalHandled) return;
       es.close();
       _activeStream = null;
       stopTimer();

@@ -221,6 +221,7 @@
     };
 
     es.onerror = function () {
+      if (_finalHandled) return;
       clearInterval(timerInterval);
       es.close();
       loadingState.style.display = 'none';
@@ -290,12 +291,12 @@
   }
 
   function _finalize(data) {
-    var finalData = data || _partialData;
-    currentData = finalData;
+    var merged = Object.assign({}, _partialData, data || {});
+    currentData = merged;
     if (loadingState) loadingState.style.display = 'none';
     history.replaceState(null, '', '/nt-ot?ref=' + encodeURIComponent(currentRef));
     if (typeof updateBudgetBar === 'function') updateBudgetBar();
-    renderResults(finalData);
+    renderResults(merged);
   }
 
   // ── Render ────────────────────────────────────────────────────────────────

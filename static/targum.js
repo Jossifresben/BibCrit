@@ -405,7 +405,7 @@
   function _finalize(data) {
     _partialData = Object.assign(_partialData, data || {});
     if (loadState) loadState.style.display = 'none';
-    renderResult(data || _partialData);
+    renderResult(_partialData);
   }
 
   function analyze(ref) {

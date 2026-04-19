@@ -139,6 +139,7 @@
     _finalHandled    = false;
     _partialData     = {};
     _sectionReceived = false;
+    _lastData        = null;
 
     // Show loading, hide others
     emptyState.style.display    = 'none';
@@ -192,6 +193,7 @@
     };
 
     es.onerror = function () {
+      if (_finalHandled) return;
       clearInterval(timerInterval);
       es.close();
       loadingState.style.display = 'none';

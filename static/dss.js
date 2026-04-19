@@ -295,6 +295,12 @@
       if (msList) msList.appendChild(peshCard);
     }
 
+    // Vulgate witness card (Latin)
+    if (data.vul_witness && data.vul_witness.present) {
+      var vulCard = _buildVulWitnessCard(data.vul_witness);
+      if (msList) msList.appendChild(vulCard);
+    }
+
     // Synthesis — allow basic HTML tags (<b>, <em>, <i>) from Claude
     var synth = data.synthesis_plain || data.synthesis || '';
     if (synth && synthSec && synthBody) {
@@ -671,12 +677,87 @@
     return card;
   }
 
+  function _buildVulWitnessCard(vul) {
+    var VUL_COLOR = '#8B7355';  // parchment brown
+    var card = document.createElement('div');
+    card.className = 'dss-ms-card';
+    card.style.maxWidth   = '900px';
+    card.style.margin     = '0 auto 1rem';
+    card.style.borderLeft = '3px solid ' + VUL_COLOR;
+
+    var conf    = vul.alignment_confidence || 0;
+    var pct     = Math.round(conf * 100);
+    var confCls = conf >= 0.75 ? 'badge-high' : conf >= 0.45 ? 'badge-medium' : 'badge-low';
+
+    var header = document.createElement('div');
+    header.className = 'dss-ms-header';
+    header.setAttribute('role', 'button');
+    header.setAttribute('aria-expanded', 'true');
+    header.innerHTML =
+      '<span class="dss-ms-siglum" style="color:' + VUL_COLOR + '">VUL</span>' +
+      '<span class="dss-ms-fullname">Vulgate (Latin Clementine)</span>' +
+      _alignmentBadge(vul.alignment || 'independent') +
+      (conf ? '<span class="conf-badge ' + confCls + '" style="margin-left:4px">' + pct + '%</span>' : '') +
+      '<span class="dss-ms-toggle">▲</span>';
+
+    var body = document.createElement('div');
+    body.className = 'dss-ms-body';
+
+    var inner = '';
+    if (vul.vul_text) {
+      inner += '<div class="dss-ms-text" style="font-family:serif;font-size:1.05rem;font-style:italic">' + _esc(vul.vul_text) + '</div>';
+    }
+
+    var readings = vul.key_readings || [];
+    if (readings.length) {
+      inner +=
+        '<table class="dss-div-table"><thead><tr>' +
+        '<th>#</th><th>MT</th>' +
+        '<th style="color:' + VUL_COLOR + '">VUL</th>' +
+        '<th>Type</th><th>Note</th>' +
+        '</tr></thead><tbody>';
+      readings.forEach(function(r) {
+        inner += '<tr>' +
+          '<td>' + _esc(String(r.word_position || '')) + '</td>' +
+          '<td>' + _esc(r.mt_reading || '—') + '</td>' +
+          '<td><strong style="color:' + VUL_COLOR + ';font-style:italic">' + _esc(r.vul_reading || '—') + '</strong></td>' +
+          '<td><span class="theo-type-badge">' + _esc(r.classification || '') + '</span></td>' +
+          '<td>' + _esc(r.note || r.textual_implication || '') + '</td>' +
+          '</tr>';
+      });
+      inner += '</tbody></table>';
+    }
+
+    if (!readings.length && vul.present) {
+      inner += '<p class="dss-overall-note" style="opacity:0.7;font-style:italic">No individual key readings identified for this passage.</p>';
+    }
+
+    if (vul.overall_note) {
+      inner += '<p class="dss-overall-note">' + _safe(vul.overall_note) + '</p>';
+    }
+
+    body.innerHTML = inner;
+
+    header.addEventListener('click', function() {
+      var isOpen = !body.classList.contains('collapsed');
+      body.classList.toggle('collapsed', isOpen);
+      header.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+      var toggle = header.querySelector('.dss-ms-toggle');
+      if (toggle) toggle.textContent = isOpen ? '▼' : '▲';
+    });
+
+    card.appendChild(header);
+    card.appendChild(body);
+    return card;
+  }
+
   function _alignmentBadge(alignment) {
     var labels = {
       sides_with_mt:   window.t('dss_align_mt',          'Sides with MT'),
       sides_with_lxx:  window.t('dss_align_lxx',         'Sides with LXX'),
       sides_with_sp:   window.t('dss_align_sp',          'Sides with SP'),
       sides_with_pesh: window.t('dss_align_pesh',        'Sides with PESH'),
+      sides_with_vul:  window.t('dss_align_vul',         'Sides with VUL'),
       independent:     window.t('dss_align_independent',  'Independent'),
       absent:          window.t('dss_align_absent',       'Not extant'),
     };
@@ -685,6 +766,7 @@
       sides_with_lxx:  'dss-align-lxx',
       sides_with_sp:   'dss-align-sp',
       sides_with_pesh: 'dss-align-pesh',
+      sides_with_vul:  'dss-align-vul',
       independent:     'dss-align-ind',
       absent:          'dss-align-abs',
     };

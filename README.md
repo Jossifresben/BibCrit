@@ -96,12 +96,14 @@ BibCrit/
 │   ├── textual.py              # /divergence, /backtranslation, /dss, /genealogy + APIs
 │   ├── critical.py             # /scribal, /numerical, /theological, /patristic + APIs
 │   ├── literary.py             # /chiasm, /source + SSE APIs
+│   ├── targum.py               # /targum + /api/targum/stream
+│   ├── nt_text.py              # /nt-text + /api/nt-text/stream
 │   ├── discovery.py            # /discovery, /api/discovery/cards, /api/admin/discovery/flag
 │   └── research.py             # /health, /guide
 │
 ├── biblical_core/
 │   ├── claude_pipeline.py      # ClaudePipeline: Claude calls, Supabase cache, budget tracking
-│   ├── corpus.py               # BiblicalCorpus: loads MT, LXX, DSS, SP, GNT
+│   ├── corpus.py               # BiblicalCorpus: loads MT, LXX, DSS, SP, GNT, PESH, TARG, VUL
 │   ├── ref_utils.py            # Reference string parsing; per-tool verse-count limits
 │   └── divergence.py           # parse_claude_response, format_sbl_footnote, format_bibtex
 │
@@ -112,20 +114,27 @@ BibCrit/
 │   └── corpora/
 │       ├── mt_etcbc/           # Masoretic Text (ETCBC/BHSA morphology)
 │       ├── lxx_stepbible/      # Septuagint (Rahlfs)
-│       ├── dss/                # Dead Sea Scrolls (ETCBC, primarily 1QIsaᵃ)
+│       ├── dss/                # Dead Sea Scrolls — 1QIsaᵃ, 4QSamᵃ, 11QPaleoLev, 4QDeutn
 │       ├── sp_etcbc/           # Samaritan Pentateuch (dt-ucph/sp via ETCBC)
-│       └── gnt_opengnt/        # Greek New Testament (SBLGNT)
+│       ├── gnt_opengnt/        # Greek New Testament (SBLGNT)
+│       ├── pesh_etcbc/         # Peshitta (ETCBC/peshitta via Text-Fabric; 39 OT books)
+│       ├── targ_sefaria/       # Targum Onkelos + Jonathan (Sefaria; 26 books)
+│       └── vul_clementine/     # Clementine Vulgate (scrollmapper; 66 books)
 │
 ├── scripts/
-│   ├── precache_all.py         # Seed 91 featured passages in English
-│   ├── precache_es.py          # Translate all 91 passages to Spanish
+│   ├── preseed_featured.py     # Seed 88 featured passages across all 13 tools
+│   ├── precache_all.py         # Legacy: seed featured passages in English
+│   ├── precache_es.py          # Translate all cached EN analyses to Spanish
 │   ├── push_cache_to_supabase.py  # Push disk cache → Supabase
 │   ├── ingest_mt.py            # ETCBC/BHSA → CSV
-│   ├── ingest_lxx.py           # LXX (STEP) → CSV
 │   ├── ingest_lxx_rahlfs.py    # LXX (Rahlfs) → CSV
-│   ├── ingest_dss_1qisaa.py    # ETCBC/DSS (1QIsaᵃ) → CSV
+│   ├── ingest_dss_1qisaa.py    # ETCBC/DSS 1QIsaᵃ → CSV
+│   ├── ingest_dss_witnesses.py # ETCBC/DSS extended witnesses → CSV
 │   ├── ingest_sp.py            # SP (dt-ucph/sp) → CSV
-│   └── ingest_gnt.py           # SBLGNT → CSV
+│   ├── ingest_gnt.py           # SBLGNT → CSV
+│   ├── ingest_peshitta.py      # ETCBC/peshitta → CSV
+│   ├── ingest_targum_sefaria.py  # Sefaria Targum → CSV
+│   └── ingest_vulgate_clementine.py  # scrollmapper Vulgate → CSV
 │
 ├── templates/                  # Jinja2 templates extending base.html
 └── static/                     # CSS (bibcrit.css, style.css), JS per-tool, SVG assets
@@ -211,8 +220,12 @@ Run ingestion scripts once to populate `data/corpora/`. Each script pulls from T
 python scripts/ingest_mt.py
 python scripts/ingest_lxx_rahlfs.py
 python scripts/ingest_dss_1qisaa.py
+python scripts/ingest_dss_witnesses.py
 python scripts/ingest_sp.py
 python scripts/ingest_gnt.py
+python scripts/ingest_peshitta.py
+python scripts/ingest_targum_sefaria.py
+python scripts/ingest_vulgate_clementine.py
 ```
 
 Text-Fabric downloads corpora on first run (~several hundred MB). The ETCBC and SP corpora require acceptance of their respective licenses before use.
@@ -221,17 +234,14 @@ Text-Fabric downloads corpora on first run (~several hundred MB). The ETCBC and 
 
 ## Pre-caching Featured Passages
 
-The repo ships with analyses for featured passages across all 9 tools. To seed or refresh:
+The repo ships with analyses for featured passages across all 13 tools. To seed or refresh:
 
 ```bash
-# Seed all missing EN analyses (safe to re-run; skips already-cached)
-python scripts/precache_all.py
+# Seed all 88 featured passages across all tools (safe to re-run; skips cached)
+python scripts/preseed_featured.py
 
 # Seed a specific tool only
-python scripts/precache_all.py --type numerical
-
-# Dry run — show what would be seeded without calling the API
-python scripts/precache_all.py --dry-run
+python scripts/preseed_featured.py --tool numerical
 
 # Push disk cache to Supabase
 python scripts/push_cache_to_supabase.py
@@ -257,6 +267,11 @@ python scripts/precache_es.py
 | GET | `/theological` | Theological Revision Detector |
 | GET | `/patristic` | Patristic Citation Tracker |
 | GET | `/genealogy` | Manuscript Genealogy |
+| GET | `/nt-ot` | NT Use of OT Analyzer |
+| GET | `/chiasm` | Chiasm & Literary Structure Detector |
+| GET | `/source` | Source Criticism Tool (J/E/D/P) |
+| GET | `/targum` | Targum Comparator |
+| GET | `/nt-text` | NT Textual Tradition Analyzer |
 | GET | `/discovery` | Discovery — plain-language findings |
 | GET | `/guide` | User guide |
 | GET | `/health` | Health check (`{"status": "ok"}`) |
@@ -275,6 +290,11 @@ All stream endpoints emit `step` (progress), `done` (full JSON result), and `err
 | GET | `/api/theological/stream` | `ref` |
 | GET | `/api/patristic/stream` | `ref` |
 | GET | `/api/genealogy/stream` | `ref` |
+| GET | `/api/nt-ot/stream` | `ref` |
+| GET | `/api/chiasm/stream` | `ref` |
+| GET | `/api/source/stream` | `ref` |
+| GET | `/api/targum/stream` | `ref` |
+| GET | `/api/nt-text/stream` | `ref` |
 
 ### Open Data API
 
@@ -289,14 +309,14 @@ GET /api/cache?discovery_ready=true&limit=50&offset=0
 
 | Param | Description | Default |
 |---|---|---|
-| `tool` | Filter by tool (`divergence`, `backtranslation`, `scribal`, `numerical`, `dss`, `theological`, `patristic`, `genealogy`, `nt_ot`, `chiasm`, `source`) | all |
+| `tool` | Filter by tool (`divergence`, `backtranslation`, `scribal`, `numerical`, `dss`, `theological`, `patristic`, `genealogy`, `nt_ot`, `chiasm`, `source`, `targum`, `nt_text`) | all |
 | `ref` | Case-insensitive substring match on reference | all |
 | `discovery_ready` | `true` / `false` | all |
 | `limit` | Max records per page (max 200) | 50 |
 | `offset` | Pagination offset | 0 |
 
 All data is released under **Apache 2.0**. If you use BibCrit analyses in research, please cite:
-> Fresco Benaim, J. (2026). *BibCrit: AI-assisted biblical textual criticism*. ORCID: [0009-0000-2026-0836](https://orcid.org/0009-0000-2026-0836)
+> Fresco Benaim, J. (2026). *BibCrit: AI-assisted biblical textual criticism*. [doi:10.5281/zenodo.19358424](https://doi.org/10.5281/zenodo.19358424)
 
 ### Corpus Browser API
 
@@ -455,8 +475,8 @@ The default spend cap is `$10.00/month`. Raise it via `BIBCRIT_API_CAP_USD` in t
 - [x] **NT Textual Tradition Analyzer** (`/nt-text`) — classify NT variants across Byzantine, Alexandrian, and Western text types; UBS/NA apparatus data + AI analysis; Metzger methodology
 
 **Infrastructure**
-- [ ] **Hebrew RTL UI** (`he` locale) — full RTL layout; makes BibCrit usable by Israeli biblical scholars
-- [ ] **True Anthropic token streaming** — replace blocking `messages.create()` with `messages.stream()`; sections appear as Claude writes them, 10–20s earlier on first queries
+- [x] **True Anthropic token streaming** — `messages.stream()` live in `ClaudePipeline._call_streaming()`; sections arrive section-by-section via staggered CSS reveal
+- [ ] **Hebrew RTL UI** (`he` locale) — RTL wiring in `base.html` ✓; `he` i18n strings not yet translated
 
 ---
 
@@ -482,7 +502,7 @@ The default spend cap is `$10.00/month`. Raise it via `BIBCRIT_API_CAP_USD` in t
 | Metric | v2.2 now | v3.0 (+6 months) |
 |---|---|---|
 | Analysis tools | 13 | 15 |
-| Corpus traditions | 7 | 9 |
+| Corpus traditions | 8 | 10 |
 | UI languages | 2 (EN, ES) | 5 (+ HE, NL, PT) |
 | First-in-world open tools | 5 | 11 |
 

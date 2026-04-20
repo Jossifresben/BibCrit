@@ -588,6 +588,28 @@
 .divergent-lxx { background: var(--lxx-bg); border-bottom: 2px solid var(--lxx-color); }
 .divergent.active-divergence { outline: 2px solid currentColor; outline-offset: 1px; }
 .no-data       { color: var(--muted); font-size: 13px; }
+.corpus-loading { display: inline-flex; align-items: center; gap: 6px;
+                  color: var(--muted); font-size: 13px; font-style: italic; }
+.corpus-spinner { display: inline-block; width: 12px; height: 12px;
+                  border: 2px solid var(--border); border-top-color: var(--accent);
+                  border-radius: 50%; animation: spin 0.8s linear infinite;
+                  flex-shrink: 0; }
+.dss-streaming-banner { display: flex; align-items: center; gap: 8px; max-width: 900px;
+                        margin: 0 auto 1rem; padding: 0.6rem 1rem;
+                        color: var(--muted); font-size: 13px; font-style: italic; }
+
+/* Compact loading strip — sits above skeleton content while Claude streams */
+.loading-state.is-compact { min-height: 0; flex-direction: row; padding: 0.6rem 1rem 0.6rem;
+                             justify-content: flex-start; gap: 10px;
+                             border-bottom: 1px solid var(--border); margin-bottom: 1.25rem; }
+.loading-state.is-compact .loading-spinner { width: 18px; height: 18px; border-width: 2px; flex-shrink: 0; }
+.loading-state.is-compact .loading-step-msg { font-size: 0.875rem; font-weight: 400; color: var(--muted); }
+.loading-state.is-compact .loading-timer { display: none; }
+
+/* Skeleton shimmer rows for progressive loading placeholders */
+.dss-skel-row { border-radius: 4px; background: var(--border);
+                animation: skel-pulse 1.6s ease-in-out infinite; margin-bottom: 10px; }
+@keyframes skel-pulse { 0%, 100% { opacity: 0.3; } 55% { opacity: 0.65; } }
 
 /* ── Analysis tabs area ──────────────────────────────────────────────── */
 .tabs-area {
@@ -823,15 +845,33 @@
 
 /* Stats bar */
 .disc-stats-bar {
-  display: inline-flex; align-items: center; gap: 0;
+  display: inline-flex; align-items: center;
   background: rgba(255,255,255,0.08); border-radius: 40px;
   padding: 8px 24px; gap: 16px;
 }
 .disc-stat       { display: flex; flex-direction: column; align-items: center; }
 .disc-stat-n     { font-size: 1.4rem; font-weight: 700; color: #f0d080; line-height: 1.1; }
 .disc-stat-label { font-size: 10px; color: rgba(245,240,232,0.6); text-transform: uppercase;
-                   letter-spacing: 0.06em; }
-.disc-stat-sep   { width: 1px; height: 30px; background: rgba(255,255,255,0.2); }
+                   letter-spacing: 0.06em; text-align: center; }
+.disc-stat-sep   { width: 1px; height: 30px; background: rgba(255,255,255,0.2); flex-shrink: 0; }
+
+@media (max-width: 640px) {
+  .disc-stats-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 20px;
+    padding: 14px 20px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 340px;
+    box-sizing: border-box;
+  }
+  .disc-stat-sep { display: none; }
+  .disc-stat     { min-width: 72px; flex: 0 0 auto; }
+  .disc-stat-n   { font-size: 1.2rem; }
+  .disc-stat-label { font-size: 9px; }
+}
 
 /* Type badges */
 .disc-type-badge {
@@ -1220,6 +1260,19 @@
   width: 100%;
   height: 100%;
 }
+/* Radar chart skeleton shown while Claude is generating */
+#radar-skel {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+}
+.scribal-radar-skel-inner {
+  width: 52%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--border);
+  animation: skel-pulse 1.6s ease-in-out infinite;
+}
 
 /* Expand button overlaid on chart */
 .radar-expand-btn {
@@ -1452,33 +1505,47 @@
 .num-conf-label { font-size: 11px; color: var(--muted); margin-top: 3px; }
 
 /* ── Suggestion chips (shared: numerical, theological, patristic, dss) ─── */
+/* Header above suggestion grid */
+p.num-sug-header {
+    max-width: 700px;
+    margin: 0.5rem auto 0.35rem;
+    padding: 0 1rem;
+}
 .num-suggestions {
     max-width: 700px;
-    margin: 0.6rem auto 1.25rem;
-    padding: 0 1rem;
+    margin: 0 auto 1.5rem;
+    padding: 0.15rem 0;
     display: flex;
     flex-direction: column;
-    gap: 0.45rem;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--card-bg, #fff);
 }
 .num-sug-group {
     display: flex;
-    align-items: flex-start;
-    gap: 0.4rem;
+    align-items: center;
+    gap: 0.5rem 0.4rem;
     flex-wrap: wrap;
+    padding: 0.55rem 1rem;
+    border-bottom: 1px solid var(--border);
+}
+.num-sug-group:last-child {
+    border-bottom: none;
 }
 .num-sug-label {
-    font-size: 0.7rem;
+    font-size: 0.67rem;
     font-weight: 700;
     color: var(--muted);
-    min-width: 150px;
-    padding-top: 5px;
+    min-width: 160px;
     text-transform: uppercase;
     letter-spacing: 0.06em;
     flex-shrink: 0;
 }
 .num-sug-chip {
     font-size: 0.78rem;
-    padding: 4px 11px;
+    padding: 3px 11px;
     border: 1px solid var(--border);
     border-radius: 999px;
     background: transparent;
@@ -2216,4 +2283,340 @@ body[data-persona="student"] .tool-header { border-top-color: #059669; }
   .chiasm-row    { padding-left: 0 !important; }
   .source-legend { font-size: 0.8em; }
   .chiasm-corr-table th, .chiasm-corr-table td { padding: 5px 6px; }
+}
+
+/* ── Targum Comparator ───────────────────────────────────────────────────── */
+
+/* Three-column text display */
+.targum-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+  max-width: 900px;
+  margin: 0 auto 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--card-bg);
+}
+.targum-col {
+  padding: 1rem 1.25rem;
+  border-right: 1px solid var(--border);
+}
+.targum-col:last-child { border-right: none; }
+.targum-col-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.65rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+}
+.targum-col-text {
+  font-family: 'Noto Serif', 'SBL Hebrew', serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  word-break: break-word;
+}
+.ms-badge {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  padding: 1px 6px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+/* Rendering Fidelity table */
+.var-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  margin-top: 0.75rem;
+}
+.var-table th {
+  padding: 0.45rem 0.75rem;
+  text-align: left;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--muted);
+  border-bottom: 2px solid var(--border);
+  background: var(--bg);
+}
+.var-table td {
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.5;
+}
+.var-table tr:last-child td { border-bottom: none; }
+.var-table td:nth-child(1) { width: 14%; font-family: 'Noto Serif', serif; white-space: nowrap; }
+.var-table td:nth-child(2) { width: 14%; font-family: 'Noto Serif', serif; white-space: nowrap; }
+.var-table td:nth-child(3) { width: 14%; white-space: nowrap; }
+.var-table td:nth-child(4) { width: 58%; }
+
+/* Variant / modification cards */
+.variant-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin: 0 auto 0.75rem;
+  max-width: 900px;
+}
+.vc-type {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-light, rgba(74,111,165,.08));
+  padding: 2px 7px;
+  border-radius: 3px;
+  margin-bottom: 0.65rem;
+}
+.vc-pair {
+  font-family: 'Noto Serif', serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0.25rem;
+}
+.vc-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--muted);
+  margin-right: 4px;
+}
+.vc-note {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--fg);
+  margin: 0.5rem 0 0;
+}
+.vc-location {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+  color: var(--fg);
+}
+.vc-expansion {
+  font-family: 'Noto Serif', serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 0.35rem;
+  color: var(--fg);
+}
+.vc-parallel {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 0.3rem;
+}
+
+/* Wrap synthesis/fidelity/etc. body content in a card */
+#synthesis-body > p,
+#fidelity-body > p,
+#lxx-align-body > p { max-width: 900px; margin: 0 auto 0.5rem; }
+
+/* ── NT Textual Tradition Analyzer ──────────────────────────────────────── */
+
+/* SBLGNT text body */
+.gnt-text-body {
+  font-family: 'Noto Serif', 'SBL Greek', serif;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  max-width: 900px;
+  margin: 0 auto;
+  word-break: break-word;
+}
+
+/* Metzger rating row */
+.metzger-rating-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  max-width: 900px;
+  margin: 0 auto 0.5rem;
+  padding: 0.9rem 1.5rem;
+  flex-wrap: wrap;
+}
+.metzger-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--muted);
+  flex-shrink: 0;
+  padding-top: 4px;
+}
+.ms-rating-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px; height: 30px;
+  border-radius: 6px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0;
+  flex-shrink: 0;
+  line-height: 1;
+}
+.ms-rating-badge.rating-a { background: #1a9657; color: #fff; }
+.ms-rating-badge.rating-b { background: #2980b9; color: #fff; }
+.ms-rating-badge.rating-c { background: #e67e22; color: #fff; }
+.ms-rating-badge.rating-d { background: #c0392b; color: #fff; }
+.ms-rating-badge.rating-\? { background: var(--border); color: var(--muted); }
+.metzger-just {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--fg);
+  flex: 1;
+  min-width: 0;
+  padding-top: 3px;
+}
+
+/* Manuscript family cards */
+.ms-family-row {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.9rem 1.25rem;
+  margin: 0 auto 0.65rem;
+  max-width: 900px;
+}
+.ms-family-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.35rem;
+  flex-wrap: wrap;
+}
+.ms-family-name {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--fg);
+}
+.ms-support {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+.ms-support.support-sides-with-received { background: #e8f5e9; color: #1a7340; }
+.ms-support.support-sides-with-critical { background: #e3f2fd; color: #1565c0; }
+.ms-support.support-split               { background: #fff3e0; color: #e65100; }
+.ms-support.support-not-applicable      { background: var(--border); color: var(--muted); }
+.ms-support.support-unknown             { background: var(--border); color: var(--muted); }
+[data-theme="dark"] .ms-support.support-sides-with-received { background: rgba(26,115,64,.25); color: #4caf80; }
+[data-theme="dark"] .ms-support.support-sides-with-critical { background: rgba(21,101,192,.25); color: #64b5f6; }
+[data-theme="dark"] .ms-support.support-split               { background: rgba(230,81,0,.25);   color: #ffb74d; }
+.ms-family-witnesses {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-bottom: 0.45rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+.ms-family-note {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--fg);
+  margin: 0;
+}
+
+/* Disputed passage section */
+.disputed-section { border-left: 3px solid #e67e22; }
+.disputed-designation {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  max-width: 900px;
+  margin-left: auto; margin-right: auto;
+  color: #e67e22;
+}
+.dp-row {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  margin: 0 auto 0.45rem;
+  max-width: 900px;
+}
+.dp-row strong { color: var(--fg); }
+
+/* Variant card text line */
+.vc-text {
+  font-family: 'Noto Serif', serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0.35rem 0 0.5rem;
+  color: var(--fg);
+}
+
+/* ── BibCrit Assessment section (shared across all tools) ───────────────── */
+
+#bibcrit-assessment {
+  max-width: 900px;
+  margin: 1.5rem auto 1rem;
+  padding: 0 1.5rem;
+}
+#bibcrit-body {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  padding: 1.25rem 1.5rem;
+}
+.bc-title {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--fg);
+  margin: 0 0 0.85rem;
+}
+.bc-plain {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--fg);
+  margin: 0 0 0.75rem;
+}
+#bibcrit-body p {
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--fg);
+  margin: 0 0 0.65rem;
+}
+#bibcrit-body p:last-of-type { margin-bottom: 0; }
+#bibcrit-body p strong {
+  color: var(--fg);
+  font-weight: 700;
+}
+
+/* Confidence bar */
+.confidence-bar {
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+.confidence-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 3px;
+  transition: width 0.6s ease;
 }

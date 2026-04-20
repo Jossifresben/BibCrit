@@ -21,6 +21,7 @@
   var radarModalSvg   = document.getElementById('radar-chart-modal');
   var radarModalClose = document.getElementById('radar-modal-close');
   var radarModalLegend = document.getElementById('radar-modal-legend');
+  var radarSkel       = document.getElementById('radar-skel');
   var overallDiv = document.getElementById('scribal-overall');
   var tabsArea   = document.getElementById('tabs-area');
   var tabsNav    = document.getElementById('tabs-nav');
@@ -130,11 +131,14 @@
     _sectionReceived = false;
 
     hide(emptyState);
-    hide(radarArea);
-    hide(tabsArea);
-    hide(heading);
+    loadState.classList.add('is-compact');
+    setLoadingStep('Analyzing \u2014 this may take 40\u201360 seconds\u2026');
     show(loadState);
-    setLoadingStep(window.t('loading_preparing', 'Preparing…'));
+    show(heading);
+    heading.innerHTML = '<span class="ph-ref">' + _esc(book) + '</span>';
+    show(radarArea);
+    show(tabsArea);
+    _renderSkeleton();
 
     var elapsed = 0;
     _timerInt = setInterval(function () {
@@ -156,6 +160,7 @@
         } else if (msg.type === 'error') {
           _finalHandled = true;
           clearInterval(_timerInt);
+          loadState.classList.remove('is-compact');
           setLoadingStep('❌ ' + msg.msg);
           _es.close();
         } else if (msg.type === 'done') {
@@ -190,6 +195,7 @@
     _es.onerror = function () {
       if (_finalHandled) return;   // already handled via 'error' or 'done' message
       clearInterval(_timerInt);
+      loadState.classList.remove('is-compact');
       setLoadingStep('❌ ' + window.t('err_connection_step', 'Connection error. Please try again.'));
       if (_es) _es.close();
     };
@@ -208,19 +214,34 @@
     es2.onerror = function () { es2.close(); cb(null); };
   }
 
+  // ── Skeleton helpers ──────────────────────────────────────────────────────
+  function _skelRows(n, widths) {
+    var html = '';
+    var pcts = widths || [100, 88, 72, 58, 45];
+    for (var i = 0; i < n; i++) {
+      html += '<div class="dss-skel-row" style="height:12px;width:' + (pcts[i] || 55) + '%"></div>';
+    }
+    return html;
+  }
+
+  function _renderSkeleton() {
+    if (radarSkel) radarSkel.style.display = '';
+    if (radarSvg)  radarSvg.style.display  = 'none';
+    if (tabsNav)   tabsNav.innerHTML  = _skelRows(1, [60]);
+    if (tabsBody)  tabsBody.innerHTML =
+      '<div class="tab-panel active">' + _skelRows(5, [100, 85, 70, 55, 40]) + '</div>';
+  }
+
   // ── Progressive section rendering ─────────────────────────────────────────
   function _renderSection(key, data) {
     _partialData[key] = data;
     _sectionReceived  = true;
 
-    if (emptyState)  emptyState.style.display  = 'none';
-    if (loadState)   loadState.style.display   = 'none';
+    if (emptyState) emptyState.style.display = 'none';
 
     if (key === 'dimensions') {
-      // Render the tab area with partial dimensions
       var partial = { dimensions: data || [], book: _currentBook };
       if (heading) {
-        show(heading);
         heading.innerHTML =
           '<div class="scribal-heading-inner">' +
             '<span class="tradition-badge lxx-badge scribal-heading-badge">LXX</span>' +
@@ -231,7 +252,6 @@
           '</div>';
       }
       buildTabs(partial, null);
-      show(tabsArea);
       staggerReveal(tabsArea, 30);
     }
 
@@ -244,6 +264,7 @@
 
   function _finalize(data, data2) {
     _lastData = data || _partialData;
+    loadState.classList.remove('is-compact');
     hide(loadState);
     renderScribal(_lastData, data2);
   }
@@ -329,6 +350,8 @@
   // ── Radar chart (D3 v7) ─────────────────────────────────────────────────
   function drawRadarAll(data, data2) {
     if (!radarSvg || typeof d3 === 'undefined') return; // d3 guard
+    if (radarSkel) radarSkel.style.display = 'none';
+    radarSvg.style.display = '';
 
     var series = [{ data: data, color: SERIES_COLORS[0], label: data.book || _currentBook }];
     if (data2 && !data2.error) {

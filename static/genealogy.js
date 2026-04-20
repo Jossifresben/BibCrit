@@ -100,10 +100,13 @@
 
     hide(suggestions);
     hide(emptyState);
-    hide(results);
-    hide(heading);
+    loadState.classList.add('is-compact');
+    setLoadingStep('Analyzing \u2014 this may take 40\u201360 seconds\u2026');
     show(loadState);
-    setLoadingStep(window.t('loading_preparing', 'Preparing…'));
+    show(heading);
+    heading.innerHTML = '<span class="ph-ref">' + _esc(book) + '</span>';
+    show(results);
+    _renderSkeleton();
 
     var elapsed = 0;
     _timer = setInterval(function () {
@@ -125,6 +128,7 @@
         } else if (msg.type === 'error') {
           _finalHandled = true;
           clearInterval(_timer);
+          loadState.classList.remove('is-compact');
           setLoadingStep('❌ ' + msg.msg);
           _es.close();
         } else if (msg.type === 'done') {
@@ -143,9 +147,41 @@
     _es.onerror = function () {
       if (_finalHandled) return;
       clearInterval(_timer);
+      loadState.classList.remove('is-compact');
       setLoadingStep('❌ ' + window.t('err_connection_step', 'Connection error. Please try again.'));
       if (_es) _es.close();
     };
+  }
+
+  // ── Skeleton helpers ──────────────────────────────────────────────────────
+  function _skelRows(n, widths) {
+    var html = '';
+    var pcts = widths || [100, 88, 72, 58, 45];
+    for (var i = 0; i < n; i++) {
+      html += '<div class="dss-skel-row" style="height:12px;width:' + (pcts[i] || 55) + '%"></div>';
+    }
+    return html;
+  }
+
+  function _renderSkeleton() {
+    var stemmaSec = document.getElementById('stemma-section');
+    if (stemmaSec) {
+      var svg = document.getElementById('stemma-svg');
+      if (svg) svg.innerHTML = _skelRows(3, [100, 75, 50]);
+      stemmaSec.style.display = '';
+    }
+    var archSec  = document.getElementById('archetype-section');
+    var archBody = document.getElementById('archetype-body');
+    if (archSec && archBody) {
+      archBody.innerHTML = '<div class="bt-group-card">' + _skelRows(3, [100, 88, 72]) + '</div>';
+      archSec.style.display = '';
+    }
+    var narSec  = document.getElementById('narrative-section');
+    var narBody = document.getElementById('narrative-body');
+    if (narSec && narBody) {
+      narBody.innerHTML = '<div class="bt-group-card">' + _skelRows(4, [100, 90, 78, 60]) + '</div>';
+      narSec.style.display = '';
+    }
   }
 
   // ── Progressive section rendering ─────────────────────────────────────────
@@ -153,20 +189,18 @@
     _partialData[key] = data;
     _sectionReceived  = true;
 
-    if (emptyState)  emptyState.style.display  = 'none';
-    if (loadState)   loadState.style.display   = 'none';
-    if (results)     results.style.display     = '';
+    if (emptyState) emptyState.style.display = 'none';
 
-    if (key === 'archetype_analysis') {
+    // Archetype description — pipeline key: 'archetype_description'
+    if (key === 'archetype_description') {
       if (heading) {
-        show(heading);
         heading.innerHTML = '<span class="ph-ref">' + _esc(_currentBook) + '</span>' +
           '<span class="ph-meta"> \u2014 ' + window.t('genealogy_ms_transmission', 'Manuscript Transmission') + '</span>';
+        show(heading);
       }
       var archSec  = document.getElementById('archetype-section');
       var archBody = document.getElementById('archetype-body');
-      var desc = (data && (data.archetype_description || data.description || data.plain)) ||
-                 (typeof data === 'string' ? data : '');
+      var desc = typeof data === 'string' ? data : '';
       if (desc && archSec && archBody) {
         archBody.innerHTML =
           '<div class="bt-group-card"><p class="div-analysis">' + _esc(desc) + '</p></div>';
@@ -175,27 +209,36 @@
       }
     }
 
-    if (key === 'transmission_branches') {
-      // Render stemma if stemma_nodes/edges are inside data
-      if (data && data.stemma_nodes) {
-        renderStemma(data);
+    // Stemma nodes/edges — pipeline keys: 'stemma_nodes', 'stemma_edges'
+    if (key === 'stemma_nodes' || key === 'stemma_edges') {
+      // Attempt partial stemma render once both arrays are available
+      var nodes = _partialData.stemma_nodes;
+      var edges = _partialData.stemma_edges;
+      if (nodes && nodes.length && edges) {
+        renderStemma({ stemma_nodes: nodes, stemma_edges: edges });
       }
+    }
+
+    // Transmission narrative — pipeline keys: 'transmission_narrative' and 'transmission_plain'
+    if (key === 'transmission_narrative' || key === 'transmission_plain') {
       var narSec  = document.getElementById('narrative-section');
       var narBody = document.getElementById('narrative-body');
-      var plain = (data && (data.transmission_plain || data.plain)) ||
-                  (typeof data === 'string' ? data : '');
-      if (plain && narSec && narBody) {
+      // Prefer plain for display; fall back to narrative
+      var text = (_partialData.transmission_plain || _partialData.transmission_narrative) || '';
+      if (typeof data === 'string' && data) text = data;
+      if (text && narSec && narBody) {
         narBody.innerHTML =
-          '<div class="bt-group-card"><p class="div-analysis">' + _esc(plain) + '</p></div>';
+          '<div class="bt-group-card"><p class="div-analysis">' + _esc(text) + '</p></div>';
         show(narSec);
         staggerReveal(narSec, 0);
       }
     }
 
-    if (key === 'critical_editions') {
+    // Key divergences — pipeline key: 'key_divergences'
+    if (key === 'key_divergences') {
       var divSec  = document.getElementById('divergences-section');
       var divList = document.getElementById('divergences-list');
-      var divs = Array.isArray(data) ? data : (data && data.key_divergences) || [];
+      var divs = Array.isArray(data) ? data : [];
       if (divs.length && divSec && divList) {
         divList.innerHTML = '';
         divs.forEach(function (d) {
@@ -213,7 +256,8 @@
       }
     }
 
-    if (key === 'assessment') {
+    // BibCrit assessment — pipeline key: 'bibcrit_assessment'
+    if (key === 'bibcrit_assessment') {
       renderAssessment({ bibcrit_assessment: data, model_version: _partialData.model_version });
       if (bibSec) staggerReveal(bibSec, 0);
     }
@@ -221,6 +265,7 @@
 
   function _finalize(data) {
     _lastData = data || _partialData;
+    loadState.classList.remove('is-compact');
     hide(loadState);
     renderGenealogy(_lastData);
   }

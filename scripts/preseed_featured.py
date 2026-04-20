@@ -10,7 +10,7 @@ Usage:
     python scripts/preseed_featured.py --tool source
     python scripts/preseed_featured.py --dry-run
 
-Estimated time (first run, no cache): ~40-50 min total.
+Estimated time (first run, no cache): ~90-120 min total (~88 passages).
 """
 from __future__ import annotations
 
@@ -33,29 +33,96 @@ ENDPOINT_OVERRIDES = {
     "nt_text": "nt-text",
 }
 
+# ── Query-parameter map (tool name → param name, default "ref") ──────────────
+# Scribal and genealogy identify input by book name, not passage ref.
+PARAM_OVERRIDES: dict[str, str] = {
+    "scribal":   "book",
+    "genealogy": "book",
+}
+
 # ── Featured passages ────────────────────────────────────────────────────────
 # (tool, ref)  — tool must match a key in ENDPOINT_OVERRIDES or map directly
 # to /api/{tool}/stream.  Ordered roughly by expected Claude time (fast → slow)
 # so the script shows early progress quickly.
 
 PASSAGES: list[tuple[str, str]] = [
+    # ── DIVERGENCE ────────────────────────────────────────────────────────────
+    ("divergence",      "Isaiah 7:14"),
+    ("divergence",      "Genesis 1:1"),
+    ("divergence",      "Psalm 22:1"),
+    ("divergence",      "Deuteronomy 32:8"),
+
+    # ── SCRIBAL (book-level; param=book) ──────────────────────────────────────
+    ("scribal",         "Isaiah"),
+    ("scribal",         "Psalms"),
+    ("scribal",         "Jeremiah"),
+    ("scribal",         "Deuteronomy"),
+
+    # ── GENEALOGY (book-level; param=book) ────────────────────────────────────
+    ("genealogy",       "Isaiah"),
+    ("genealogy",       "Psalms"),
+    ("genealogy",       "Genesis"),
+    ("genealogy",       "Jeremiah"),
+    ("genealogy",       "Deuteronomy"),
+    ("genealogy",       "Daniel"),
+    ("genealogy",       "Ezekiel"),
+    ("genealogy",       "Numbers"),
+
     # ── DSS (missing: 4) ──────────────────────────────────────────────────────
     ("dss",             "Isaiah 7:14"),
     ("dss",             "Deuteronomy 32:8"),
     ("dss",             "Isaiah 53:11"),
     ("dss",             "Psalm 22:17"),
 
-    # ── BACKTRANSLATION (missing: 3) ─────────────────────────────────────────
+    # ── BACKTRANSLATION ───────────────────────────────────────────────────────
+    ("backtranslation", "Exodus 3:14"),
     ("backtranslation", "Isaiah 53:7"),
     ("backtranslation", "Psalm 2:7"),
     ("backtranslation", "Genesis 3:15"),
 
-    # ── NUMERICAL (missing: 3) ────────────────────────────────────────────────
+    # ── NUMERICAL — all suggestion-chip passages ──────────────────────────────
+    # Patriarchal ages
+    ("numerical",       "Genesis 5"),
     ("numerical",       "Genesis 11"),
-    ("numerical",       "Numbers 35"),
+    # Temple & cult
     ("numerical",       "1 Kings 6"),
+    ("numerical",       "1 Kings 7"),
+    ("numerical",       "Ezekiel 40"),
+    # Military & census
+    ("numerical",       "Numbers 1"),
+    ("numerical",       "Numbers 26"),
+    ("numerical",       "2 Samuel 24"),
+    ("numerical",       "1 Chronicles 21"),
+    ("numerical",       "Judges 20"),
+    # War casualties
+    ("numerical",       "2 Samuel 10"),
+    ("numerical",       "1 Samuel 6:19"),
+    ("numerical",       "2 Chronicles 13"),
+    # Egypt/Exodus chronology
+    ("numerical",       "Exodus 12:40"),
+    ("numerical",       "Genesis 15:13"),
+    ("numerical",       "1 Kings 6:1"),
+    # Sabbatical & jubilee
+    ("numerical",       "Leviticus 25"),
+    ("numerical",       "Daniel 9"),
+    # Royal synchronisms
+    ("numerical",       "1 Kings 14"),
+    ("numerical",       "2 Kings 15"),
+    ("numerical",       "2 Chronicles 36"),
+    # Returnees lists
+    ("numerical",       "Ezra 2"),
+    ("numerical",       "Nehemiah 7"),
+    # Levitical cities
+    ("numerical",       "Numbers 35"),
 
-    # ── THEOLOGICAL (missing: 1) ──────────────────────────────────────────────
+    # ── THEOLOGICAL — all 8 chip passages ────────────────────────────────────
+    ("theological",     "Genesis"),
+    ("theological",     "Exodus"),
+    ("theological",     "Deuteronomy"),
+    ("theological",     "Psalms"),
+    ("theological",     "Isaiah"),
+    ("theological",     "Daniel"),
+    ("theological",     "Job"),
     ("theological",     "Numbers"),
 
     # ── NT USE OF OT (new tool — all 4 featured passages) ────────────────────
@@ -116,9 +183,10 @@ def stream_passage(tool: str, ref: str, timeout: int = 240) -> tuple[bool, str, 
     t0   = time.time()
 
     try:
+        param_key = PARAM_OVERRIDES.get(tool, "ref")
         resp = requests.get(
             url,
-            params={"ref": ref, "lang": "en"},
+            params={param_key: ref, "lang": "en"},
             stream=True,
             timeout=timeout,
         )

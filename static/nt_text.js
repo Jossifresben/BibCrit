@@ -113,8 +113,70 @@
     } else if (loadTimer) { loadTimer.textContent = ''; }
   }
 
+  function _hideCompactSpinner() {
+    if (_timer) { clearInterval(_timer); _timer = null; }
+    if (loadTimer) loadTimer.textContent = '';
+    if (loadState) { loadState.classList.remove('is-compact'); loadState.style.display = 'none'; }
+  }
+
+  function _skelRows(n, widths) {
+    var html = '';
+    var pcts = widths || [100, 88, 72, 58, 45];
+    for (var i = 0; i < n; i++) {
+      html += '<div class="dss-skel-row" style="height:12px;width:' + (pcts[i % pcts.length] || 55) + '%"></div>';
+    }
+    return html;
+  }
+
+  function _renderSkeleton() {
+    var gntSec = document.getElementById('gnt-text-display');
+    var gntEl  = document.getElementById('gnt-text-body');
+    if (gntEl)  gntEl.innerHTML  = _skelRows(4, [100, 88, 76, 60]);
+    if (gntSec) gntSec.style.display = '';
+
+    var mSec  = document.getElementById('metzger-section');
+    var badge = document.getElementById('metzger-badge');
+    var just  = document.getElementById('metzger-justification');
+    if (badge) badge.innerHTML = '<div class="dss-skel-row" style="height:28px;width:40px"></div>';
+    if (just)  just.innerHTML  = _skelRows(2, [100, 70]);
+    if (mSec)  mSec.style.display = '';
+
+    var mfSec = document.getElementById('ms-families-section');
+    var mfEl  = document.getElementById('ms-families-body');
+    if (mfEl)  mfEl.innerHTML  = _skelRows(4, [100, 80, 100, 80]);
+    if (mfSec) mfSec.style.display = '';
+
+    var synSec = document.getElementById('synthesis-section');
+    var synEl  = document.getElementById('synthesis-body');
+    if (synEl)  synEl.innerHTML  = _skelRows(3, [100, 85, 65]);
+    if (synSec) synSec.style.display = '';
+  }
+
   function esc(s) {
     return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  var _SUPPORT_LABELS = {
+    'sides_with_received': 'Sides with received',
+    'sides_with_critical': 'Sides with critical',
+    'split':               'Split evidence',
+    'not_applicable':      'N/A',
+    'unknown':             'Unknown',
+  };
+
+  function _supportLabel(s) { return _SUPPORT_LABELS[s] || (s || '').replace(/_/g, ' '); }
+
+  function _buildFamilyHtml(fKey, fm) {
+    var supportClass = 'ms-support support-' + (fm.support || 'unknown').replace(/_/g, '-');
+    return '<div class="ms-family-row">' +
+      '<div class="ms-family-header">' +
+        '<span class="ms-family-name">' + esc(fKey.charAt(0).toUpperCase() + fKey.slice(1)) + '</span>' +
+        '<span class="' + supportClass + '">' + esc(_supportLabel(fm.support)) + '</span>' +
+      '</div>' +
+      (fm.witnesses && fm.witnesses.length
+        ? '<div class="ms-family-witnesses">' + esc(fm.witnesses.join(', ')) + '</div>' : '') +
+      '<p class="ms-family-note">' + esc(fm.note || '') + '</p>' +
+    '</div>';
   }
 
   function renderResult(data) {
@@ -148,16 +210,9 @@
     // Manuscript families
     if (data.manuscript_families) {
       var mfHtml = '';
-      var families = ['alexandrian', 'western', 'byzantine', 'caesarean'];
-      families.forEach(function (f) {
+      ['alexandrian', 'western', 'byzantine', 'caesarean'].forEach(function (f) {
         var fm = data.manuscript_families[f];
-        if (!fm) return;
-        var supportClass = 'support-' + (fm.support || 'unknown').replace(/_/g, '-');
-        mfHtml += '<div class="ms-family-row">' +
-          '<span class="ms-family-name">' + esc(f.charAt(0).toUpperCase() + f.slice(1)) + '</span>' +
-          '<span class="ms-family-witnesses">' + esc((fm.witnesses || []).join(', ')) + '</span>' +
-          '<span class="ms-support ' + supportClass + '">' + esc(fm.support || '') + '</span>' +
-          '<p class="ms-family-note">' + esc(fm.note || '') + '</p></div>';
+        if (fm) mfHtml += _buildFamilyHtml(f, fm);
       });
       var mfEl  = document.getElementById('ms-families-body');
       var mfSec = document.getElementById('ms-families-section');
@@ -256,9 +311,6 @@
     _sectionReceived  = true;
 
     if (emptyState)  emptyState.style.display  = 'none';
-    if (loadState)   loadState.style.display   = 'none';
-    if (results)     results.style.display     = 'block';
-    if (heading) { heading.textContent = _currentRef; heading.style.display = ''; }
 
     if (key === 'metzger_rating') {
       var r = data && data.rating ? data.rating.toUpperCase() : '';
@@ -270,18 +322,21 @@
       if (mSec) { mSec.style.display = ''; staggerReveal(mSec, 0); }
     }
 
+    if (key === '_corpus') {
+      var gntEl  = document.getElementById('gnt-text-body');
+      var gntSec = document.getElementById('gnt-text-display');
+      if (gntEl && data.gnt_text) {
+        gntEl.textContent = data.gnt_text;
+        if (gntSec) { gntSec.style.display = ''; staggerReveal(gntSec, 0); }
+      }
+      return;
+    }
+
     if (key === 'manuscript_families') {
       var mfHtml = '';
-      var families = ['alexandrian', 'western', 'byzantine', 'caesarean'];
-      families.forEach(function (f) {
+      ['alexandrian', 'western', 'byzantine', 'caesarean'].forEach(function (f) {
         var fm = data && data[f];
-        if (!fm) return;
-        var supportClass = 'support-' + (fm.support || 'unknown').replace(/_/g, '-');
-        mfHtml += '<div class="ms-family-row">' +
-          '<span class="ms-family-name">' + esc(f.charAt(0).toUpperCase() + f.slice(1)) + '</span>' +
-          '<span class="ms-family-witnesses">' + esc((fm.witnesses || []).join(', ')) + '</span>' +
-          '<span class="ms-support ' + supportClass + '">' + esc(fm.support || '') + '</span>' +
-          '<p class="ms-family-note">' + esc(fm.note || '') + '</p></div>';
+        if (fm) mfHtml += _buildFamilyHtml(f, fm);
       });
       var mfEl  = document.getElementById('ms-families-body');
       var mfSec = document.getElementById('ms-families-section');
@@ -354,7 +409,7 @@
 
   function _finalize(data) {
     _partialData = Object.assign(_partialData, data || {});
-    if (loadState) loadState.style.display = 'none';
+    _hideCompactSpinner();
     renderResult(_partialData);
   }
 
@@ -363,15 +418,35 @@
     _finalHandled    = false;
     _partialData     = {};
     _sectionReceived = false;
-    setLoading(true);
-    if (loadStep) loadStep.textContent = window.t ? window.t('loading_preparing', 'Preparing\u2026') : 'Preparing\u2026';
 
-    // Hide all result sections
-    ['gnt-text-display', 'metzger-section', 'ms-families-section', 'variant-section',
-     'disputed-section', 'synthesis-section', 'bibcrit-assessment', 'export-row'].forEach(function (id) {
+    if (emptyState) emptyState.style.display = 'none';
+
+    // Compact spinner strip at top
+    if (_timer) clearInterval(_timer);
+    if (loadState) {
+      loadState.classList.add('is-compact');
+      loadState.style.display = 'block';
+    }
+    if (loadStep) loadStep.textContent = 'Analyzing \u2014 this may take 40\u201360 seconds\u2026';
+    if (loadTimer) {
+      var s = 0; loadTimer.textContent = '';
+      _timer = setInterval(function () { loadTimer.textContent = (++s) + 's'; }, 1000);
+    }
+
+    // Show heading and results immediately
+    if (heading) {
+      heading.innerHTML = '<span class="ph-ref">' + ref + '</span>';
+      heading.style.display = '';
+    }
+    if (results) results.style.display = 'block';
+
+    // Hide non-skeleton sections
+    ['variant-section', 'disputed-section', 'bibcrit-assessment', 'export-row'].forEach(function (id) {
       var el = document.getElementById(id);
       if (el) el.style.display = 'none';
     });
+
+    _renderSkeleton();
 
     var lang = new URLSearchParams(window.location.search).get('lang') || 'en';
     var url  = '/api/nt-text/stream?ref=' + encodeURIComponent(ref) + '&lang=' + lang;
@@ -390,18 +465,19 @@
           if (_sectionReceived) {
             _finalize(msg.data);
           } else {
+            _hideCompactSpinner();
             renderResult(msg.data);
           }
         } else if (msg.type === 'error') {
           _finalHandled = true;
-          es.close(); setLoading(false); showToast(msg.msg || 'Error', 5000);
+          es.close(); _hideCompactSpinner(); showToast(msg.msg || 'Error', 5000);
         }
       } catch (_) {}
     };
 
     es.onerror = function () {
       if (_finalHandled) return;
-      es.close(); setLoading(false);
+      es.close(); _hideCompactSpinner();
       showToast(window.t ? window.t('err_connection', 'Connection error') : 'Connection error', 5000);
     };
   }

@@ -107,6 +107,14 @@ def api_targum_stream():
         targ_text = ' '.join(w.word_text for w in targ_words) if targ_words else ''
         manuscript = targ_words[0].manuscript if targ_words else 'Onkelos'
 
+        # Emit corpus texts immediately — pure DB lookup, no Claude needed.
+        # Client replaces skeleton columns before the analysis even starts.
+        if mt_text or lxx_text or targ_text:
+            yield event('section', key='_corpus', data={
+                'mt_text': mt_text, 'lxx_text': lxx_text,
+                'targ_text': targ_text, 'manuscript': manuscript,
+            })
+
         if lang == 'es':
             cached_es = pipeline.get_cached_es(reference, 'targum', _TARGUM_PROMPT, TARGUM_MODEL)
             if cached_es:

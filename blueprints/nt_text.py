@@ -101,6 +101,10 @@ def api_nt_text_stream():
         gnt_words = corpus.get_verse_words(reference, 'GNT')
         gnt_text  = ' '.join(w.word_text for w in gnt_words) if gnt_words else ''
 
+        # Emit corpus text immediately — pure DB lookup, no Claude needed.
+        if gnt_text:
+            yield event('section', key='_corpus', data={'gnt_text': gnt_text})
+
         if lang == 'es':
             cached_es = pipeline.get_cached_es(reference, 'nt_text', _NT_TEXT_PROMPT, NT_TEXT_MODEL)
             if cached_es:

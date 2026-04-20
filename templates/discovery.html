@@ -9,23 +9,32 @@
     <div class="disc-hero-label">✦ Discovery</div>
     <h1 class="disc-hero-title" id="disc-hero-title">Findings from the Text</h1>
     <p class="disc-hero-sub" id="disc-hero-sub">
-      The most fascinating discoveries in biblical manuscript scholarship —
-      no Hebrew or Greek required.
+      The most fascinating discoveries in biblical manuscript scholarship.
     </p>
     {% if stats.passages %}
     <div class="disc-stats-bar">
+      <div class="disc-stat">
+        <span class="disc-stat-n">{{ stats.books }}</span>
+        <span class="disc-stat-label">books of scripture</span>
+      </div>
+      <div class="disc-stat-sep"></div>
+      <div class="disc-stat">
+        <span class="disc-stat-n">{{ stats.traditions }}</span>
+        <span class="disc-stat-label">manuscript traditions</span>
+      </div>
+      <div class="disc-stat-sep"></div>
       <div class="disc-stat">
         <span class="disc-stat-n">{{ stats.passages }}</span>
         <span class="disc-stat-label">passages analyzed</span>
       </div>
       <div class="disc-stat-sep"></div>
       <div class="disc-stat">
-        <span class="disc-stat-n">{{ stats.divergences }}</span>
-        <span class="disc-stat-label">divergences examined</span>
+        <span class="disc-stat-n">{{ stats.theories }}</span>
+        <span class="disc-stat-label">competing theories examined</span>
       </div>
       <div class="disc-stat-sep"></div>
       <div class="disc-stat">
-        <span class="disc-stat-n">{{ cards | length }}</span>
+        <span class="disc-stat-n">{{ total }}</span>
         <span class="disc-stat-label">findings surfaced</span>
       </div>
     </div>
@@ -151,7 +160,7 @@
     },
     student: {
       title: 'Discoveries from the Ancient Manuscripts',
-      sub:   'The most fascinating finds from 3,000 years of Bible manuscripts — no Hebrew or Greek required.'
+      sub:   'The most fascinating finds from 3,000 years of Bible manuscripts.'
     }
   };
 

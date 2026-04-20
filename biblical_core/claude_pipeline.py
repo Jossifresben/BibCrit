@@ -652,10 +652,20 @@ class ClaudePipeline:
                       reverse=True)[:limit]
 
     def get_discovery_stats(self) -> dict:
-        """Return aggregate stats: total passages analyzed, total divergences."""
-        passages = 0
-        divergences = 0
+        """Return aggregate stats for the Discovery hero bar."""
+        passages  = 0
+        books: set = set()
 
+        # Books that start with a number have two-word names (1 Kings, 2 Samuel…)
+        def _book_name(ref: str) -> str:
+            if not ref:
+                return ''
+            parts = ref.split()
+            if parts and parts[0].isdigit() and len(parts) >= 2:
+                return f'{parts[0]} {parts[1]}'
+            return parts[0] if parts else ''
+
+        rows: list = []
         if self._supabase:
             try:
                 result = (
@@ -663,30 +673,40 @@ class ClaudePipeline:
                     .select('data')
                     .execute()
                 )
-                for row in result.data:
-                    passages += 1
-                    divergences += len(row['data'].get('divergences', []))
-                return {'passages': passages, 'divergences': divergences}
+                rows = [r['data'] for r in result.data]
             except Exception:
                 pass
 
-        # Disk fallback
-        if not os.path.isdir(self._cache_dir):
-            return {'passages': 0, 'divergences': 0}
-        for filename in os.listdir(self._cache_dir):
-            if not filename.endswith('.json') or filename in (
-                    'budget.json', 'votes.json'):
-                continue
-            path = os.path.join(self._cache_dir, filename)
-            try:
-                with open(path, 'r', encoding='utf-8') as f:
-                    data = json.load(f)
-                passages += 1
-                divergences += len(data.get('divergences', []))
-            except (json.JSONDecodeError, OSError):
-                continue
+        if not rows and os.path.isdir(self._cache_dir):
+            for filename in os.listdir(self._cache_dir):
+                if not filename.endswith('.json') or filename in (
+                        'budget.json', 'votes.json'):
+                    continue
+                path = os.path.join(self._cache_dir, filename)
+                try:
+                    with open(path, 'r', encoding='utf-8') as f:
+                        rows.append(json.load(f))
+                except (json.JSONDecodeError, OSError):
+                    continue
 
-        return {'passages': passages, 'divergences': divergences}
+        theories = 0
+        for data in rows:
+            passages += 1
+            ref = data.get('reference') or data.get('book', '')
+            book = _book_name(str(ref))
+            if book:
+                books.add(book)
+            theories += len(data.get('theories', []))
+
+        # Traditions: count corpus directories that have at least one CSV loaded
+        traditions = 6  # MT, LXX, DSS, SP, GNT, PESH
+
+        return {
+            'passages':   passages,
+            'books':      len(books),
+            'traditions': traditions,
+            'theories':   theories,
+        }
 
     # ── Prompts ────────────────────────────────────────────────────────────
 
@@ -1667,7 +1687,7 @@ class ClaudePipeline:
 
         response = self._client.messages.create(
             model=model,
-            max_tokens=8192,
+            max_tokens=16384,
             system=_GENEALOGY_SYSTEM,
             messages=[
                 {'role': 'user',      'content': user_content},
@@ -1729,7 +1749,7 @@ class ClaudePipeline:
                 system=_GENEALOGY_SYSTEM,
                 user_content=user_content,
                 model=model,
-                max_tokens=8192,
+                max_tokens=16384,
             ):
                 if key is None:
                     in_tok, out_tok, full_text = value

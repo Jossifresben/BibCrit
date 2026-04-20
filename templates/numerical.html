@@ -31,11 +31,48 @@
     <div class="passage-bar-selectors">
       <select id="sel-passage" class="passage-select" aria-label="{{ _t('passage_label') }}">
         <option value="">{{ _t('num_select_passage') }}</option>
-        <option value="Genesis 5" data-ref="Genesis 5">Genesis 5 — Antediluvian ages</option>
-        <option value="Genesis 11" data-ref="Genesis 11">Genesis 11 — Postdiluvian ages</option>
-        <option value="Numbers 35" data-ref="Numbers 35">Numbers 35 — Levitical cities</option>
-        <option value="1 Kings 6" data-ref="1 Kings 6">1 Kings 6 — Temple dimensions</option>
-        <option value="2 Samuel 10" data-ref="2 Samuel 10">2 Samuel 10 — Military numbers</option>
+        <optgroup label="{{ _t('num_group_patriarchal') }}">
+          <option value="Genesis 5">Genesis 5</option>
+          <option value="Genesis 11">Genesis 11</option>
+        </optgroup>
+        <optgroup label="{{ _t('num_group_temple') }}">
+          <option value="1 Kings 6">1 Kings 6</option>
+          <option value="1 Kings 7">1 Kings 7</option>
+          <option value="Ezekiel 40">Ezekiel 40</option>
+        </optgroup>
+        <optgroup label="{{ _t('num_group_military') }}">
+          <option value="Numbers 1">Numbers 1</option>
+          <option value="Numbers 26">Numbers 26</option>
+          <option value="2 Samuel 24">2 Samuel 24</option>
+          <option value="1 Chronicles 21">1 Chronicles 21</option>
+          <option value="Judges 20">Judges 20</option>
+        </optgroup>
+        <optgroup label="{{ _t('num_group_casualties') }}">
+          <option value="2 Samuel 10">2 Samuel 10</option>
+          <option value="1 Samuel 6:19">1 Samuel 6:19</option>
+          <option value="2 Chronicles 13">2 Chronicles 13</option>
+        </optgroup>
+        <optgroup label="{{ _t('num_group_exodus') }}">
+          <option value="Exodus 12:40">Exodus 12:40</option>
+          <option value="Genesis 15:13">Genesis 15:13</option>
+          <option value="1 Kings 6:1">1 Kings 6:1</option>
+        </optgroup>
+        <optgroup label="{{ _t('num_group_sabbatical') }}">
+          <option value="Leviticus 25">Leviticus 25</option>
+          <option value="Daniel 9">Daniel 9</option>
+        </optgroup>
+        <optgroup label="{{ _t('num_group_royal') }}">
+          <option value="1 Kings 14">1 Kings 14</option>
+          <option value="2 Kings 15">2 Kings 15</option>
+          <option value="2 Chronicles 36">2 Chronicles 36</option>
+        </optgroup>
+        <optgroup label="{{ _t('num_group_returnees') }}">
+          <option value="Ezra 2">Ezra 2</option>
+          <option value="Nehemiah 7">Nehemiah 7</option>
+        </optgroup>
+        <optgroup label="{{ _t('num_group_levitical') }}">
+          <option value="Numbers 35">Numbers 35</option>
+        </optgroup>
       </select>
     </div>
 
@@ -60,17 +97,11 @@
       <span class="bt-legend-item"><span class="scribal-mini-dot" style="background:var(--lxx-color)"></span> {{ _t('legend_lxx_full') }}</span>
       <span class="bt-legend-item"><span class="scribal-mini-dot" style="background:var(--sp-color, #2c7c5f)"></span> {{ _t('legend_sp_full') }}</span>
     </div>
-    <p class="featured-label">{{ _t('featured_label') }}</p>
-    <div class="featured-passages">
-      <a href="#" class="featured-ref" data-ref="Genesis 5">{{ _t('feat_num_gen5') | safe }}</a>
-      <a href="#" class="featured-ref" data-ref="Genesis 11">{{ _t('feat_num_gen11') | safe }}</a>
-      <a href="#" class="featured-ref" data-ref="Numbers 35">{{ _t('feat_num_num35') | safe }}</a>
-      <a href="#" class="featured-ref" data-ref="1 Kings 6">{{ _t('feat_num_1k6') | safe }}</a>
-    </div>
   </div>
 </div>
 
 <!-- Curated passage suggestion chips -->
+<p class="featured-label num-sug-header">{{ _t('featured_label') }}</p>
 <div class="num-suggestions" id="num-suggestions">
   <div class="num-sug-group">
     <span class="num-sug-label">{{ _t('num_group_patriarchal') }}</span>

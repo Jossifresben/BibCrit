@@ -294,16 +294,62 @@
       .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 
+  // ── Skeleton helpers ──────────────────────────────────────────────────────
+  function _skelRows(n, widths) {
+    var html = '';
+    var pcts = widths || [100, 88, 72, 58, 45];
+    for (var i = 0; i < n; i++) {
+      html += '<div class="dss-skel-row" style="height:12px;width:' + (pcts[i] || 55) + '%"></div>';
+    }
+    return html;
+  }
+
+  function _renderSkeleton() {
+    var textCols = document.getElementById('text-columns');
+    if (textCols) textCols.style.display = '';
+    var colMt   = document.getElementById('col-mt-text');
+    var colTarg = document.getElementById('col-targ-text');
+    var colLxx  = document.getElementById('col-lxx-text');
+    if (colMt)   colMt.innerHTML   = _skelRows(4, [90, 75, 60, 80]);
+    if (colTarg) colTarg.innerHTML = _skelRows(4, [85, 70, 55, 75]);
+    if (colLxx)  colLxx.innerHTML  = _skelRows(4, [80, 65, 50, 70]);
+    var synthSec  = document.getElementById('synthesis-section');
+    var synthBody = document.getElementById('synthesis-body');
+    if (synthSec && synthBody) {
+      synthBody.innerHTML = _skelRows(3, [100, 85, 70]);
+      synthSec.style.display = '';
+    }
+  }
+
   // ── Progressive section rendering ─────────────────────────────────────────
   function _renderSection(key, data) {
     _partialData[key] = data;
     _sectionReceived  = true;
 
-    if (emptyState)  emptyState.style.display  = 'none';
-    if (loadState)   loadState.style.display   = 'none';
-    if (results)     results.style.display     = 'block';
+    if (emptyState) emptyState.style.display = 'none';
 
-    if (heading) { heading.textContent = _currentRef; heading.style.display = ''; }
+    // _corpus: MT, Targum, and LXX texts from corpus — replace skeleton columns
+    // with real text immediately, before Claude analysis begins.
+    if (key === '_corpus') {
+      var colMt   = document.getElementById('col-mt-text');
+      var colTarg = document.getElementById('col-targ-text');
+      var colLxx  = document.getElementById('col-lxx-text');
+      var msBadge = document.getElementById('manuscript-badge');
+      var textCols = document.getElementById('text-columns');
+      if (colMt)   colMt.textContent   = data.mt_text   || '';
+      if (colTarg) colTarg.textContent = data.targ_text  || '';
+      if (colLxx)  colLxx.textContent  = data.lxx_text   || '';
+      if (msBadge) msBadge.textContent = data.manuscript || 'Targum';
+      if (textCols && (data.mt_text || data.targ_text)) textCols.style.display = '';
+      return;
+    }
+
+    if (key === 'synthesis') {
+      setText('synthesis-body', '<p>' + esc(String(data || '')) + '</p>');
+      showSection('synthesis-section');
+      var synthSecEl = document.getElementById('synthesis-section');
+      if (synthSecEl) staggerReveal(synthSecEl, 0);
+    }
 
     if (key === 'key_divergences' || key === 'rendering_fidelity') {
       var fid = _partialData.rendering_fidelity;
@@ -340,7 +386,7 @@
       }
     }
 
-    if (key === 'expansions') {
+    if (key === 'targumic_expansions' || key === 'expansions') {
       var exps = Array.isArray(data) ? data : (data || []);
       if (exps.length) {
         var html2 = exps.map(function (ex) {
@@ -357,7 +403,7 @@
       }
     }
 
-    if (key === 'messianic') {
+    if (key === 'messianic_reinterpretation' || key === 'messianic') {
       if (data && data.present) {
         var insts = (data.instances || []).map(function (i) {
           return '<div class="variant-card">' +
@@ -402,9 +448,15 @@
     }
   }
 
+  function _hideCompactSpinner() {
+    if (loadState) { loadState.classList.remove('is-compact'); loadState.style.display = 'none'; }
+    if (_timer) { clearInterval(_timer); _timer = null; }
+    if (loadTimer) loadTimer.textContent = '';
+  }
+
   function _finalize(data) {
     _partialData = Object.assign(_partialData, data || {});
-    if (loadState) loadState.style.display = 'none';
+    _hideCompactSpinner();
     renderResult(_partialData);
   }
 
@@ -413,8 +465,21 @@
     _finalHandled    = false;
     _partialData     = {};
     _sectionReceived = false;
-    setLoading(true);
-    if (loadStep) loadStep.textContent = window.t ? window.t('loading_preparing', 'Preparing\u2026') : 'Preparing\u2026';
+    // Show compact spinner + heading + skeleton immediately
+    if (emptyState) emptyState.style.display = 'none';
+    if (results)    results.style.display    = 'block';
+    if (loadState) {
+      loadState.classList.add('is-compact');
+      loadState.style.display = 'block';
+    }
+    if (loadStep) loadStep.textContent = 'Analyzing \u2014 this may take 40\u201360 seconds\u2026';
+    if (_timer) clearInterval(_timer);
+    if (loadTimer) {
+      var secs = 0; loadTimer.textContent = '';
+      _timer = setInterval(function () { secs++; loadTimer.textContent = secs + 's'; }, 1000);
+    }
+    if (heading) { heading.textContent = ref; heading.style.display = ''; }
+    _renderSkeleton();
 
     var lang = new URLSearchParams(window.location.search).get('lang') || 'en';
     var url  = '/api/targum/stream?ref=' + encodeURIComponent(ref) + '&lang=' + lang;
@@ -433,12 +498,13 @@
           if (_sectionReceived) {
             _finalize(msg.data);
           } else {
+            _hideCompactSpinner();
             renderResult(msg.data);
           }
         } else if (msg.type === 'error') {
           _finalHandled = true;
           es.close();
-          setLoading(false);
+          _hideCompactSpinner();
           showToast(msg.msg || 'Error', 5000);
         }
       } catch (_) {}
@@ -447,7 +513,7 @@
     es.onerror = function () {
       if (_finalHandled) return;
       es.close();
-      setLoading(false);
+      _hideCompactSpinner();
       showToast(window.t ? window.t('err_connection', 'Connection error') : 'Connection error', 5000);
     };
   }

@@ -56,7 +56,8 @@
   });
 
   // ── Suggestion chips ────────────────────────────────────────────────────
-  var suggestionsEl = document.getElementById('num-suggestions');
+  var suggestionsEl  = document.getElementById('num-suggestions');
+  var sugHeaderEl    = document.querySelector('p.num-sug-header');
 
   document.querySelectorAll('.num-sug-chip[data-ref]').forEach(function (chip) {
     chip.addEventListener('click', function () {
@@ -89,6 +90,7 @@
         var loadVisible    = loadState && loadState.style.display !== 'none';
         if (!resultsVisible && !loadVisible) {
           show(suggestionsEl);
+          show(sugHeaderEl);
           show(emptyState);
         }
       }
@@ -108,12 +110,16 @@
     _sectionReceived = false;
 
     hide(suggestionsEl);
+    hide(sugHeaderEl);
     hide(emptyState);
-    hide(results);
-    hide(tabsArea);
-    hide(heading);
+    loadState.classList.add('is-compact');
+    setLoadingStep('Analyzing \u2014 this may take 40\u201360 seconds\u2026');
     show(loadState);
-    setLoadingStep(window.t('loading_preparing', 'Preparing…'));
+    show(heading);
+    heading.innerHTML = '<span class="ph-ref">' + _esc(ref) + '</span>';
+    show(results);
+    show(tabsArea);
+    _renderSkeleton();
 
     var elapsed = 0;
     _timer = setInterval(function () {
@@ -135,6 +141,7 @@
         } else if (msg.type === 'error') {
           _finalHandled = true;
           clearInterval(_timer);
+          loadState.classList.remove('is-compact');
           setLoadingStep('❌ ' + msg.msg);
           _es.close();
         } else if (msg.type === 'done') {
@@ -153,9 +160,29 @@
     _es.onerror = function () {
       if (_finalHandled) return;   // already handled via 'error' or 'done' message
       clearInterval(_timer);
+      loadState.classList.remove('is-compact');
       setLoadingStep('❌ ' + window.t('err_connection_step', 'Connection error. Please try again.'));
       if (_es) _es.close();
     };
+  }
+
+  // ── Skeleton helpers ──────────────────────────────────────────────────────
+  function _skelRows(n, widths) {
+    var html = '';
+    var pcts = widths || [100, 88, 72, 58, 45];
+    for (var i = 0; i < n; i++) {
+      html += '<div class="dss-skel-row" style="height:12px;width:' + (pcts[i] || 55) + '%"></div>';
+    }
+    return html;
+  }
+
+  function _renderSkeleton() {
+    if (tableWrap) tableWrap.innerHTML = _skelRows(5, [100, 100, 100, 100, 100]);
+    if (timelineSvg) timelineSvg.innerHTML = '';
+    if (systematic)  systematic.innerHTML  = _skelRows(3, [60, 100, 88]);
+    if (tabsNav)  tabsNav.innerHTML  = _skelRows(1, [50]);
+    if (tabsBody) tabsBody.innerHTML =
+      '<div class="tab-panel active">' + _skelRows(5, [100, 85, 70, 55, 40]) + '</div>';
   }
 
   // ── Progressive section rendering ─────────────────────────────────────────
@@ -163,16 +190,9 @@
     _partialData[key] = data;
     _sectionReceived  = true;
 
-    if (emptyState)  emptyState.style.display  = 'none';
-    if (loadState)   loadState.style.display   = 'none';
-    if (results)     results.style.display     = '';
+    if (emptyState) emptyState.style.display = 'none';
 
     if (key === 'figures') {
-      // Show heading
-      if (heading) {
-        show(heading);
-        heading.innerHTML = '<span class="ph-ref">' + _esc(_currentRef) + '</span>';
-      }
       var figs = data || [];
       renderTable(figs);
       renderTimeline(figs);
@@ -208,6 +228,7 @@
 
   function _finalize(data) {
     _lastData = data || _partialData;
+    loadState.classList.remove('is-compact');
     hide(loadState);
 
     show(heading);

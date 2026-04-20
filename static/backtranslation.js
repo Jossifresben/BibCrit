@@ -141,22 +141,27 @@
     _sectionReceived = false;
     _lastData        = null;
 
-    // Show loading, hide others
+    // Show compact spinner, heading, and skeleton immediately
     emptyState.style.display    = 'none';
-    vorlageGrid.style.display   = 'none';
-    tabsArea.style.display      = 'none';
-    passageHeading.style.display = 'none';
+    loadingState.classList.add('is-compact');
+    setLoadingStep('Analyzing \u2014 this may take 40\u201360 seconds\u2026');
     loadingState.style.display  = 'flex';
+    if (passageHeading) {
+      passageHeading.innerHTML = '<span class="ph-ref">' + _esc(ref) + '</span>';
+      passageHeading.style.display = 'flex';
+    }
+    vorlageGrid.style.display = 'grid';
+    tabsArea.style.display    = 'block';
+    _renderSkeleton();
 
     var stepEl  = document.getElementById('loading-step');
     var timerEl = document.getElementById('loading-timer');
-    stepEl.textContent  = window.t('loading_preparing', 'Preparing…');
-    timerEl.textContent = '';
+    if (timerEl) timerEl.textContent = '';
 
     var startTime = Date.now();
     var timerInterval = setInterval(function () {
       var s = Math.floor((Date.now() - startTime) / 1000);
-      timerEl.textContent = s + 's';
+      if (timerEl) timerEl.textContent = s + 's';
     }, 1000);
 
     var es = new EventSource('/api/backtranslation/stream?ref=' + encodeURIComponent(ref) + '&lang=' + (window.bibcritLang || 'en'));
@@ -165,16 +170,18 @@
       var msg = JSON.parse(e.data);
 
       if (msg.type === 'step') {
-        stepEl.textContent = msg.msg;
+        setLoadingStep(msg.msg);
       } else if (msg.type === 'section') {
         _renderSection(msg.key, msg.data);
       } else if (msg.type === 'error') {
         _finalHandled = true;
         clearInterval(timerInterval);
         es.close();
+        loadingState.classList.remove('is-compact');
         loadingState.style.display = 'none';
         emptyState.style.display   = 'block';
-        emptyState.querySelector('h2').textContent = '⚠ ' + msg.msg;
+        var h2el = emptyState.querySelector('h2');
+        if (h2el) h2el.textContent = '\u26a0 ' + msg.msg;
 
       } else if (msg.type === 'done') {
         _finalHandled = true;
@@ -183,6 +190,7 @@
         if (_sectionReceived) {
           _finalize(msg.data);
         } else {
+          loadingState.classList.remove('is-compact');
           loadingState.style.display = 'none';
           currentData = msg.data;
           history.replaceState(null, '', '/backtranslation?ref=' + encodeURIComponent(ref));
@@ -196,9 +204,34 @@
       if (_finalHandled) return;
       clearInterval(timerInterval);
       es.close();
+      loadingState.classList.remove('is-compact');
       loadingState.style.display = 'none';
       emptyState.style.display   = 'block';
     };
+  }
+
+  // ── Skeleton helpers ──────────────────────────────────────────────────────
+  function _skelRows(n, widths) {
+    var html = '';
+    var pcts = widths || [100, 88, 72, 58, 45];
+    for (var i = 0; i < n; i++) {
+      html += '<div class="dss-skel-row" style="height:12px;width:' + (pcts[i] || 55) + '%"></div>';
+    }
+    return html;
+  }
+
+  function _renderSkeleton() {
+    if (vorlageText) vorlageText.innerHTML = _skelRows(5, [80, 65, 90, 50, 70]);
+    if (lxxText)     lxxText.innerHTML     = _skelRows(5, [75, 60, 85, 55, 65]);
+    if (mtText)      mtText.innerHTML      = _skelRows(5, [70, 80, 60, 75, 55]);
+    if (tabsNav)  tabsNav.innerHTML  = _skelRows(1, [40]);
+    if (tabsBody) tabsBody.innerHTML =
+      '<div class="tab-panel active">' + _skelRows(4, [100, 85, 70, 55]) + '</div>';
+  }
+
+  function setLoadingStep(msg) {
+    var el = document.getElementById('loading-step');
+    if (el) el.textContent = msg;
   }
 
   // ── Progressive section rendering ─────────────────────────────────────────
@@ -206,10 +239,18 @@
     _partialData[key] = data;
     _sectionReceived  = true;
 
+    // _corpus: LXX and MT word arrays from corpus — render text columns immediately.
+    // Also stash under expected keys so the vorlage_analysis handler can read them.
+    if (key === '_corpus') {
+      _partialData.lxx_words = data.lxx_words || [];
+      _partialData.mt_words  = data.mt_words  || [];
+      if (_partialData.lxx_words.length) renderLxx(_partialData.lxx_words, []);
+      if (_partialData.mt_words.length)  renderMt(_partialData.mt_words);
+      return;
+    }
+
     if (key === 'vorlage_analysis') {
-      // Hide loading only when content is ready to show (not on earlier data-only sections)
-      if (emptyState)    emptyState.style.display    = 'none';
-      if (loadingState)  loadingState.style.display  = 'none';
+      if (emptyState) emptyState.style.display = 'none';
       // Render the workbench grid with partial data
       var partial = {
         reference:          currentRef,
@@ -222,15 +263,7 @@
       renderMt(partial.mt_words);
       var legend = document.getElementById('bt-legend');
       if (legend) legend.style.display = 'flex';
-      if (vorlageGrid) vorlageGrid.style.display = 'grid';
       buildTabs(partial);
-      if (tabsArea) tabsArea.style.display = 'block';
-      if (passageHeading) {
-        passageHeading.innerHTML =
-          '<span class="ph-ref">' + _esc(currentRef) + '</span>' +
-          '<span class="ph-tool">' + window.t('bt_workbench_heading', 'Back-Translation Workbench') + '</span>';
-        passageHeading.style.display = 'flex';
-      }
       staggerReveal(tabsArea, 30);
     }
 
@@ -244,7 +277,7 @@
 
   function _finalize(data) {
     _lastData = data || _partialData;
-    if (loadingState) loadingState.style.display = 'none';
+    if (loadingState) { loadingState.classList.remove('is-compact'); loadingState.style.display = 'none'; }
 
     currentData = _lastData;
     history.replaceState(null, '', '/backtranslation?ref=' + encodeURIComponent(currentRef));

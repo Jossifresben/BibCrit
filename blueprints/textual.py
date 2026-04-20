@@ -338,6 +338,12 @@ def api_backtranslation_stream():
         lxx_text = ' '.join(w.word_text for w in lxx_words)
         mt_text  = ' '.join(w.word_text for w in mt_words)
 
+        # Emit corpus texts immediately — pure DB lookup, no Claude needed.
+        yield event('section', key='_corpus', data={
+            'lxx_words': _words_to_dicts(lxx_words),
+            'mt_words':  _words_to_dicts(mt_words),
+        })
+
         if lang == 'es':
             cached_es = pipeline.get_cached_es(reference, 'backtranslation',
                                                _BACKTRANSLATION_PROMPT, DIVERGENCE_MODEL)
@@ -487,6 +493,12 @@ def api_dss_stream():
             sp_text   = ' '.join(w.word_text for w in sp_words)   if sp_words   else ''
             pesh_text = ' '.join(w.word_text for w in pesh_words) if pesh_words else ''
             vul_text  = ' '.join(w.word_text for w in vul_words)  if vul_words  else ''
+
+        # Emit corpus verse texts immediately — pure DB lookup, no Claude needed.
+        # The client renders the verse panel while waiting for the Claude analysis.
+        _early_corpus = {'mt': mt_text, 'lxx': lxx_text, 'dss': dss_text}
+        if any(_early_corpus.values()):
+            yield event('section', key='_corpus', data=_early_corpus)
 
         if lang == 'es':
             cached_es = pipeline.get_cached_es(reference, 'dss', _DSS_PROMPT, DSS_MODEL)

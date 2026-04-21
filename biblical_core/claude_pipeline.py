@@ -27,6 +27,7 @@ CHIASM_MODEL      = 'claude-sonnet-4-6'
 SOURCE_MODEL      = 'claude-sonnet-4-6'
 TARGUM_MODEL      = 'claude-sonnet-4-6'
 NT_TEXT_MODEL     = 'claude-sonnet-4-6'
+STL_MODEL         = 'claude-sonnet-4-6'
 
 _SONNET_COST_IN  = 3.0  / 1_000_000   # $3 per MTok input (claude-sonnet-4-6)
 _SONNET_COST_OUT = 15.0 / 1_000_000   # $15 per MTok output (claude-sonnet-4-6)
@@ -185,6 +186,17 @@ _SOURCE_SYSTEM = (
     "theological concerns, doublets, and narrative style. You surface competing "
     "scholarly positions and present attributions as analytical evidence, not "
     "definitive assignments. "
+    "CRITICAL: Return ONLY raw JSON. No markdown, no code fences, no backticks, "
+    "no prose before or after. The response must start with { and end with }."
+)
+
+_STL_SYSTEM = (
+    "You are a specialist in Second Temple Judaism (516 BCE – 70 CE) with deep expertise "
+    "in 1 Enoch, Jubilees, Sirach, 4 Ezra, and Tobit. You apply the methodology of "
+    "George Nickelsburg (1 Enoch 1: Hermeneia, 2001), James VanderKam (The Book of "
+    "Jubilees, 2001), and John Collins (The Apocalyptic Imagination, 1998). You assess "
+    "allusion confidence using the criteria of Richard Hays (availability, volume, "
+    "recurrence, thematic coherence, historical plausibility, satisfaction). "
     "CRITICAL: Return ONLY raw JSON. No markdown, no code fences, no backticks, "
     "no prose before or after. The response must start with { and end with }."
 )
@@ -2007,6 +2019,90 @@ class ClaudePipeline:
         if 'parse_error' in data:
             resp2 = self._client.messages.create(
                 model=model, max_tokens=8192, system=_NT_TEXT_SYSTEM,
+                messages=[{'role': 'user', 'content': user_content}],
+            )
+            self.record_spend(resp2.usage.input_tokens * _SONNET_COST_IN +
+                              resp2.usage.output_tokens * _SONNET_COST_OUT)
+            data2 = _parse_json_response(resp2.content[0].text)
+            if 'parse_error' not in data2:
+                data = data2
+
+        if 'parse_error' not in data:
+            self.save_cache(reference, tool, prompt_version, model, data)
+        return data
+
+    def analyze_stl(self, reference: str, mt_text: str = '',
+                    lxx_text: str = '') -> dict:
+        """Return Second Temple Literature bridge analysis for a biblical passage.
+
+        No STL corpus required — uses Claude training knowledge for all five works.
+        Returns dict with 'synthesis', 'allusions', 'works_covered', etc.
+        On error: returns {'error': ..., 'synthesis': '', 'allusions': [], ...}.
+        """
+        model          = STL_MODEL
+        prompt_version = 'v1'
+        tool           = 'stl'
+
+        cached = self.get_cached(reference, tool, prompt_version, model)
+        if cached:
+            return cached
+
+        _empty = {
+            'reference': reference, 'synthesis': '', 'allusions': [],
+            'works_covered': {
+                '1_enoch':  {'present': False, 'passage_count': 0},
+                'jubilees': {'present': False, 'passage_count': 0},
+                'sirach':   {'present': False, 'passage_count': 0},
+                '4_ezra':   {'present': False, 'passage_count': 0},
+                'tobit':    {'present': False, 'passage_count': 0},
+            },
+            'dss_significance': None, 'nt_significance': None,
+            'directionality_summary': '',
+            'assessment': {'title': '', 'reasoning': '', 'plain': '',
+                           'confidence': 0.0, 'next_steps': ''},
+            'citations': {'sbl': '', 'bibtex': ''},
+        }
+
+        if not self._client:
+            return {**_empty, 'error': 'No API key configured. Set ANTHROPIC_API_KEY environment variable.'}
+
+        budget = self.get_budget()
+        if budget['spend_usd'] >= self._cap_usd:
+            return {**_empty, 'error': (
+                f"Monthly analysis budget of ${self._cap_usd:.2f} reached. "
+                "Please try again next month or donate to increase the cap."
+            )}
+
+        template = self.load_prompt('stl', prompt_version)
+        user_content = (
+            template
+            .replace('{{REFERENCE}}', reference)
+            .replace('{{MT_TEXT}}',   mt_text)
+            .replace('{{LXX_TEXT}}',  lxx_text)
+        ) if template else (
+            f'Reference: {reference}\nMT: {mt_text}\nLXX: {lxx_text or "(not available)"}\n'
+            'Analyze Second Temple Literature connections. Return JSON with synthesis, allusions, '
+            'works_covered, dss_significance, nt_significance, directionality_summary, assessment, citations.'
+        )
+
+        response = self._client.messages.create(
+            model=model,
+            max_tokens=8192,
+            system=_STL_SYSTEM,
+            messages=[{'role': 'user', 'content': user_content}],
+        )
+
+        cost = (response.usage.input_tokens  * _SONNET_COST_IN +
+                response.usage.output_tokens * _SONNET_COST_OUT)
+        self.record_spend(cost)
+
+        raw  = response.content[0].text
+        data = _parse_json_response(raw)
+
+        # Retry once if JSON parsing failed; never persist a parse error.
+        if 'parse_error' in data:
+            resp2 = self._client.messages.create(
+                model=model, max_tokens=8192, system=_STL_SYSTEM,
                 messages=[{'role': 'user', 'content': user_content}],
             )
             self.record_spend(resp2.usage.input_tokens * _SONNET_COST_IN +

@@ -59,7 +59,6 @@
   var _currentRef = '';
   var _finalHandled   = false;
   var _partialData    = {};
-  var _sectionReceived = false;
 
   // Populate book dropdown
   if (selBook) {
@@ -71,6 +70,7 @@
   }
 
   function _resetSelect(el, placeholder) {
+    if (!el) return;
     while (el.options.length > 1) el.remove(1);
     el.options[0].text = placeholder;
     el.disabled = true;
@@ -83,6 +83,7 @@
       _resetSelect(selChapter, 'Ch\u2026');
       _resetSelect(selVerse, 'Vs\u2026');
       if (!book) return;
+      if (!selChapter) return;
       var numCh = _ALL_BOOKS[book] || 0;
       for (var i = 1; i <= numCh; i++) {
         var opt = document.createElement('option');
@@ -195,7 +196,6 @@
 
   function _renderSection(key, data) {
     _partialData[key] = data;
-    _sectionReceived  = true;
 
     if (emptyState) emptyState.style.display = 'none';
 
@@ -370,7 +370,6 @@
     _currentRef      = ref;
     _finalHandled    = false;
     _partialData     = {};
-    _sectionReceived = false;
 
     if (emptyState) emptyState.style.display = 'none';
     if (results)    results.style.display    = 'block';
@@ -432,6 +431,7 @@
           _finalize(msg.data);
         }
       } else if (msg.type === 'error') {
+        _finalHandled = true;
         es.close();
         _hideCompactSpinner();
         if (results) results.style.display = 'none';

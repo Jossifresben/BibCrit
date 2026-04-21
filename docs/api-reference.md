@@ -24,6 +24,7 @@ All API endpoints return JSON unless otherwise noted. SSE endpoints return `text
    - [GET /discovery](#get-discovery)
    - [GET /targum](#get-targum)
    - [GET /nt-text](#get-nt-text)
+   - [GET /stl](#get-stl)
 3. [Textual Analysis API](#textual-analysis-api)
    - [GET /api/divergence/stream](#get-apidivergencestream)
    - [GET /api/backtranslation/stream](#get-apibacktranslationstream)
@@ -47,6 +48,7 @@ All API endpoints return JSON unless otherwise noted. SSE endpoints return `text
 7. [Corpus Traditions API (Phase 2)](#corpus-traditions-api-phase-2)
    - [GET /api/targum/stream](#get-apitargumstream)
    - [GET /api/nt-text/stream](#get-apint-textstream)
+   - [GET /api/stl/stream](#get-apistlstream)
 8. [Discovery API](#discovery-api)
    - [GET /api/discovery/cards](#get-apidiscoverycards)
    - [POST /api/admin/discovery/flag](#post-apiadmindiscoveryflag)
@@ -1223,6 +1225,62 @@ curl -N "http://localhost:5001/api/nt-text/stream?ref=Mark+16:9&lang=en"
 | `synthesis` | 2–3 sentence overview of the passage's text-critical stability |
 | `assessment` | BibCrit rating + recommended reading + open questions |
 | `citations` | SBL and BibTeX for Metzger, Aland/Aland, Ehrman, Parker |
+
+---
+
+### GET /api/stl/stream
+
+Stream Second Temple Literature Bridge analysis for a biblical passage.
+
+**Query parameters**
+
+| Name | Type | Required | Description | Example |
+|------|------|----------|-------------|---------|
+| ref  | string | required | Biblical reference | `Genesis 6:1-4` |
+| lang | string | optional | Response language (`en` or `es`) | `en` |
+
+**Response** — Server-Sent Events stream
+
+```
+data: {"type": "step", "msg": "📖 Loading verse text…"}
+data: {"type": "section", "key": "synthesis", "data": "Genesis 6:1-4 narrates…"}
+data: {"type": "section", "key": "allusions", "data": [...]}
+data: {"type": "section", "key": "works_covered", "data": {...}}
+data: {"type": "section", "key": "dss_significance", "data": "..."}
+data: {"type": "section", "key": "nt_significance", "data": "..."}
+data: {"type": "section", "key": "directionality_summary", "data": "..."}
+data: {"type": "section", "key": "assessment", "data": {...}}
+data: {"type": "done", "data": { full result object }}
+```
+
+**Result object schema**
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `reference` | string | Normalized biblical reference |
+| `synthesis` | string | 2–3 sentence overview of the passage's place in Second Temple discourse |
+| `allusions` | array | Up to 10 allusion objects (see below) |
+| `works_covered` | object | Keyed by work slug (`1_enoch`, `jubilees`, `sirach`, `4_ezra`, `tobit`): `{present, passage_count}` |
+| `dss_significance` | string\|null | 2–3 sentences on DSS relevance |
+| `nt_significance` | string\|null | 2–3 sentences on NT relevance |
+| `directionality_summary` | string | Overall dependency direction across all allusions |
+| `assessment` | object | `{title, reasoning, plain, confidence, next_steps}` |
+| `citations` | object | `{sbl, bibtex}` |
+
+**Allusion object schema**
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `stl_work` | string | Work slug: `1_enoch`, `jubilees`, `sirach`, `4_ezra`, `tobit` |
+| `stl_passage` | string | Specific reference (e.g. `1 En 6:1-2`) |
+| `stl_content` | string | Brief description of the STL passage |
+| `allusion_type` | string | `citation`, `allusion`, `echo`, or `parallel` |
+| `directionality` | string | `canonical_to_stl`, `stl_to_canonical`, `shared_tradition`, or `uncertain` |
+| `confidence` | number | 0.0–1.0 |
+| `canonical_element` | string | The specific word, phrase, or motif echoed |
+| `scholarly_note` | string | 2–3 sentences citing Nickelsburg, VanderKam, Collins, or Knibb |
+| `relevance_to_dss` | string\|null | 1 sentence on DSS relevance |
+| `relevance_to_nt` | string\|null | 1 sentence on NT relevance |
 
 ---
 

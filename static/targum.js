@@ -283,7 +283,7 @@
       btnShare.onclick = function () {
         var url = window.location.origin + '/targum?ref=' + encodeURIComponent(_currentRef);
         navigator.clipboard.writeText(url);
-        showToast('Link copied!');
+        showToast(window.t ? window.t('toast_link_copied', 'Link copied!') : 'Link copied!');
       };
     }
   }
@@ -472,7 +472,7 @@
       loadState.classList.add('is-compact');
       loadState.style.display = 'block';
     }
-    if (loadStep) loadStep.textContent = 'Analyzing \u2014 this may take 40\u201360 seconds\u2026';
+    if (loadStep) loadStep.textContent = window.t ? window.t('step_generating', 'Analyzing \u2014 this may take 40\u201360 seconds\u2026') : 'Analyzing \u2014 this may take 40\u201360 seconds\u2026';
     if (_timer) clearInterval(_timer);
     if (loadTimer) {
       var secs = 0; loadTimer.textContent = '';

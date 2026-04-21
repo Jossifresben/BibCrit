@@ -292,15 +292,15 @@
     var btnBibtex = document.getElementById('btn-bibtex');
     var btnShare  = document.getElementById('btn-share');
     if (btnSbl && data.citations && data.citations.sbl) {
-      btnSbl.onclick = function () { navigator.clipboard.writeText(data.citations.sbl); showToast('SBL copied!'); };
+      btnSbl.onclick = function () { navigator.clipboard.writeText(data.citations.sbl); showToast(window.t ? window.t('toast_sbl_copied_short', 'SBL copied!') : 'SBL copied!'); };
     }
     if (btnBibtex && data.citations && data.citations.bibtex) {
-      btnBibtex.onclick = function () { navigator.clipboard.writeText(data.citations.bibtex); showToast('BibTeX copied!'); };
+      btnBibtex.onclick = function () { navigator.clipboard.writeText(data.citations.bibtex); showToast(window.t ? window.t('toast_bibtex_copied_short', 'BibTeX copied!') : 'BibTeX copied!'); };
     }
     if (btnShare) {
       btnShare.onclick = function () {
         var url = window.location.origin + '/nt-text?ref=' + encodeURIComponent(_currentRef);
-        navigator.clipboard.writeText(url); showToast('Link copied!');
+        navigator.clipboard.writeText(url); showToast(window.t ? window.t('toast_link_copied', 'Link copied!') : 'Link copied!');
       };
     }
   }
@@ -427,7 +427,7 @@
       loadState.classList.add('is-compact');
       loadState.style.display = 'block';
     }
-    if (loadStep) loadStep.textContent = 'Analyzing \u2014 this may take 40\u201360 seconds\u2026';
+    if (loadStep) loadStep.textContent = window.t ? window.t('step_generating', 'Analyzing \u2014 this may take 40\u201360 seconds\u2026') : 'Analyzing \u2014 this may take 40\u201360 seconds\u2026';
     if (loadTimer) {
       var s = 0; loadTimer.textContent = '';
       _timer = setInterval(function () { loadTimer.textContent = (++s) + 's'; }, 1000);

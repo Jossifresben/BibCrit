@@ -2620,3 +2620,132 @@ body[data-persona="student"] .tool-header { border-top-color: #059669; }
   border-radius: 3px;
   transition: width 0.6s ease;
 }
+
+/* ── STL Bridge ────────────────────────────────────────────────────── */
+
+.stl-allusion-card {
+  margin-bottom: 1rem;
+  padding: 1rem 1.25rem;
+  background: var(--card-bg, #fff);
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 8px;
+}
+
+.stl-card-head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.stl-work-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  background: #f3f0ff;
+  color: #5b21b6;
+  border-radius: 10px;
+  padding: 2px 9px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.stl-type-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  border-radius: 10px;
+  padding: 2px 9px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.stl-passage-ref {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary, #374151);
+}
+
+.stl-content {
+  font-size: 0.88rem;
+  color: var(--text-secondary, #4b5563);
+  margin-bottom: 0.4rem;
+}
+
+.stl-canonical-elem {
+  font-size: 0.82rem;
+  color: var(--text-secondary, #6b7280);
+  margin-bottom: 0.5rem;
+}
+
+.stl-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.stl-dir-badge {
+  font-size: 0.75rem;
+  color: var(--text-secondary, #6b7280);
+  white-space: nowrap;
+}
+
+.stl-dss-note,
+.stl-nt-note {
+  font-size: 0.82rem;
+  color: var(--text-secondary, #4b5563);
+  margin-top: 0.4rem;
+  padding: 0.3rem 0.6rem;
+  background: var(--surface-secondary, #f9fafb);
+  border-radius: 4px;
+}
+
+/* Works Surveyed grid */
+.stl-works-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stl-work-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 0.75rem;
+  border-radius: 5px;
+  background: var(--surface-secondary, #f9fafb);
+  font-size: 0.88rem;
+}
+
+.stl-work-name {
+  font-weight: 500;
+  color: var(--text-primary, #1f2937);
+}
+
+.stl-work-count {
+  font-size: 0.8rem;
+}
+
+.stl-work-present {
+  color: #15803d;
+  font-weight: 600;
+}
+
+.stl-work-absent {
+  color: var(--text-muted, #9ca3af);
+}
+
+/* Skeleton cards for STL Allusions section */
+.stl-skel-card {
+  animation: skel-pulse 1.6s ease-in-out infinite;
+  pointer-events: none;
+}
+.stl-skel-card .stl-card-head { display: flex; align-items: center; gap: 0; }
+.stl-skel-card .dss-skel-row  { margin-bottom: 0; }

@@ -2115,6 +2115,74 @@ class ClaudePipeline:
             self.save_cache(reference, tool, prompt_version, model, data)
         return data
 
+    def stream_stl(self, reference: str, mt_text: str = '',
+                   lxx_text: str = ''):
+        """Streaming version of analyze_stl().
+
+        Yields (key, value) pairs as each JSON section completes,
+        followed by a final epilogue: (None, final_result_dict).
+        No JSON parse retry — if parse fails, result is not cached.
+        """
+        model          = STL_MODEL
+        prompt_version = 'v1'
+        tool           = 'stl'
+
+        cached = self.get_cached(reference, tool, prompt_version, model)
+        if cached:
+            for key, value in cached.items():
+                yield key, value
+                time.sleep(0.04)
+            yield None, cached
+            return
+
+        if not self._client:
+            yield None, {'error': 'No API key configured.'}
+            return
+
+        budget = self.get_budget()
+        if budget['spend_usd'] >= self._cap_usd:
+            yield None, {'error': 'Monthly budget reached.'}
+            return
+
+        template = self.load_prompt('stl', prompt_version)
+        user_content = (
+            template
+            .replace('{{REFERENCE}}', reference)
+            .replace('{{MT_TEXT}}',   mt_text)
+            .replace('{{LXX_TEXT}}',  lxx_text)
+        ) if template else (
+            f'Reference: {reference}\nMT: {mt_text}\nLXX: {lxx_text or "(not available)"}\n'
+            'Analyze Second Temple Literature connections. Return JSON.'
+        )
+
+        sections: dict = {}
+        in_tok = out_tok = 0
+        full_text = '{'
+        try:
+            for key, value in self._call_streaming(
+                system=_STL_SYSTEM,
+                user_content=user_content,
+                model=model,
+                max_tokens=8192,
+            ):
+                if key is None:
+                    in_tok, out_tok, full_text = value
+                else:
+                    sections[key] = value
+                    yield key, value
+        except Exception as exc:
+            yield None, {'error': str(exc)}
+            return
+        finally:
+            self.record_spend(in_tok * _SONNET_COST_IN + out_tok * _SONNET_COST_OUT)
+
+        data = _parse_json_response(full_text)
+        if 'parse_error' not in data:
+            self.save_cache(reference, tool, prompt_version, model, data)
+            yield None, data
+        else:
+            yield None, (sections if sections else data)
+
     def stream_nt_text(self, reference: str, gnt_text: str = ''):
         """Streaming version of analyze_nt_text().
 

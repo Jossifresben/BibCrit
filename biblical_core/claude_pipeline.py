@@ -197,6 +197,8 @@ _STL_SYSTEM = (
     "Jubilees, 2001), and John Collins (The Apocalyptic Imagination, 1998). You assess "
     "allusion confidence using the criteria of Richard Hays (availability, volume, "
     "recurrence, thematic coherence, historical plausibility, satisfaction). "
+    "For 1 Enoch specifically, also consult Michael Knibb (The Ethiopic Book of "
+    "Enoch, 1978) on textual variants. "
     "CRITICAL: Return ONLY raw JSON. No markdown, no code fences, no backticks, "
     "no prose before or after. The response must start with { and end with }."
 )

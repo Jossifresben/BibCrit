@@ -13,7 +13,7 @@ def make_pipeline(tmp_path) -> ClaudePipeline:
 
 def test_stl_constants_importable():
     assert isinstance(STL_MODEL, str) and STL_MODEL
-    assert isinstance(_STL_SYSTEM, str) and 'Second Temple' in _STL_SYSTEM
+    assert isinstance(_STL_SYSTEM, str) and 'second temple' in _STL_SYSTEM.lower()
 
 
 # ── analyze_stl ──────────────────────────────────────────────────────────────
@@ -89,6 +89,7 @@ def test_analyze_stl_budget_cap_returns_error(tmp_path):
 def test_stream_stl_no_client_yields_error(tmp_path):
     p = make_pipeline(tmp_path)
     items = list(p.stream_stl('Genesis 6:1-4'))
+    assert len(items) == 1
     # Last item must be the epilogue: (None, dict_with_error)
     assert items[-1][0] is None
     assert 'error' in items[-1][1]
@@ -115,15 +116,37 @@ def test_stream_stl_cache_hit_yields_sections_then_epilogue(tmp_path):
     assert keys[-1] is None
     # Synthesis section must appear
     assert 'synthesis' in keys
+    assert items[-1][1] == fake  # epilogue payload must equal the cached dict
+    assert len([k for k, _ in items if k is not None]) >= 1  # at least one section yielded
 
 
 # ── Blueprint routes ──────────────────────────────────────────────────────────
 
 @pytest.fixture
-def client():
+def client(tmp_path, monkeypatch):
+    """Flask test client with isolated tmp_path as data_dir.
+
+    Supabase env vars are blanked so the pipeline uses disk cache only,
+    ensuring tests are not affected by real cached entries in the cloud DB.
+    """
+    monkeypatch.setenv('SUPABASE_URL', '')
+    monkeypatch.setenv('SUPABASE_KEY', '')
+
+    (tmp_path / 'cache').mkdir()
+    (tmp_path / 'prompts').mkdir()
+
     import app as app_module
+    app_module.DATA_DIR = str(tmp_path)
+    app_module._initialized = False
+
+    import state as state_module
+    state_module.pipeline = None
+
     app_module.app.config['TESTING'] = True
     with app_module.app.test_client() as c:
+        # Force init with new data dir
+        with app_module.app.app_context():
+            app_module._init()
         yield c
 
 

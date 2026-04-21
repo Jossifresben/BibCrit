@@ -27,7 +27,7 @@ DIRECTIONALITY (use exactly):
 - shared_tradition  — both texts draw on a common earlier tradition without dependence
 - uncertain         — scholarly consensus is divided; see scholarly_note
 
-Return JSON (no markdown fences, no prose):
+Return JSON (no markdown fences, no prose). Include at most 10 allusions — prioritise by scholarly significance (highest confidence and most widely cited by Nickelsburg / VanderKam / Collins / Knibb).
 
 {
   "reference": "{{REFERENCE}}",

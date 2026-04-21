@@ -2640,15 +2640,30 @@ body[data-persona="student"] .tool-header { border-top-color: #059669; }
 }
 
 .stl-work-badge {
+  display: inline-block;
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: .04em;
   text-transform: uppercase;
   background: #f3f0ff;
   color: #5b21b6;
-  border-radius: 4px;
-  padding: 2px 8px;
+  border-radius: 10px;
+  padding: 2px 9px;
   white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.stl-type-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  border-radius: 10px;
+  padding: 2px 9px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-left: auto;
 }
 
 .stl-passage-ref {
@@ -2726,3 +2741,11 @@ body[data-persona="student"] .tool-header { border-top-color: #059669; }
 .stl-work-absent {
   color: var(--text-muted, #9ca3af);
 }
+
+/* Skeleton cards for STL Allusions section */
+.stl-skel-card {
+  animation: skel-pulse 1.6s ease-in-out infinite;
+  pointer-events: none;
+}
+.stl-skel-card .stl-card-head { display: flex; align-items: center; gap: 0; }
+.stl-skel-card .dss-skel-row  { margin-bottom: 0; }

@@ -453,6 +453,39 @@
       _appendAssessment(lines, data);
     }
 
+    else if (tool === 'stl') {
+      if (data.synthesis) lines.push('SYNTHESIS', data.synthesis, '');
+      var allusions = data.allusions || [];
+      if (allusions.length) {
+        lines.push('ALLUSIONS & PARALLELS (' + allusions.length + ')', '');
+        allusions.forEach(function(a, i) {
+          lines.push(
+            (i + 1) + '. [' + (a.stl_work || '').replace(/_/g,' ').toUpperCase() + '] ' +
+            (a.stl_passage || '') + '  —  ' + (a.allusion_type || '') +
+            '  conf: ' + Math.round((a.confidence || 0) * 100) + '%'
+          );
+          if (a.stl_content)      lines.push('   ' + a.stl_content);
+          if (a.canonical_element) lines.push('   Canonical element: ' + a.canonical_element);
+          if (a.scholarly_note)   lines.push('   ' + a.scholarly_note);
+          if (a.directionality)   lines.push('   Directionality: ' + a.directionality.replace(/_/g,' '));
+          lines.push('');
+        });
+      }
+      if (data.dss_significance)      lines.push('DSS SIGNIFICANCE', data.dss_significance, '');
+      if (data.nt_significance)       lines.push('NT SIGNIFICANCE',  data.nt_significance, '');
+      if (data.directionality_summary) lines.push('DIRECTIONALITY', data.directionality_summary, '');
+      var ass = data.assessment || {};
+      if (ass.title || ass.reasoning) {
+        lines.push('BIBCRIT ASSESSMENT');
+        if (ass.title)     lines.push(ass.title);
+        if (ass.reasoning) lines.push(ass.reasoning);
+        if (ass.plain)     lines.push(ass.plain);
+        if (ass.confidence !== undefined) lines.push('Confidence: ' + Math.round(ass.confidence * 100) + '%');
+        if (ass.next_steps) lines.push('Next steps: ' + ass.next_steps);
+        lines.push('');
+      }
+    }
+
     else {
       // Generic fallback
       ['summary_plain','overall_plain','transmission_plain','synthesis_plain',
@@ -489,6 +522,7 @@
       theological:     'Theological Revision',
       patristic:       'Patristic Citation',
       genealogy:       'Manuscript Genealogy',
+      stl:             'Second Temple Lit. Bridge',
     };
     return labels[tool] || tool;
   }

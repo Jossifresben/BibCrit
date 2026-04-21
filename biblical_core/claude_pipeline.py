@@ -2089,7 +2089,7 @@ class ClaudePipeline:
 
         response = self._client.messages.create(
             model=model,
-            max_tokens=8192,
+            max_tokens=16000,
             system=_STL_SYSTEM,
             messages=[{'role': 'user', 'content': user_content}],
         )
@@ -2104,7 +2104,7 @@ class ClaudePipeline:
         # Retry once if JSON parsing failed; never persist a parse error.
         if 'parse_error' in data:
             resp2 = self._client.messages.create(
-                model=model, max_tokens=8192, system=_STL_SYSTEM,
+                model=model, max_tokens=16000, system=_STL_SYSTEM,
                 messages=[{'role': 'user', 'content': user_content}],
             )
             self.record_spend(resp2.usage.input_tokens * _SONNET_COST_IN +
@@ -2165,7 +2165,7 @@ class ClaudePipeline:
                 system=_STL_SYSTEM,
                 user_content=user_content,
                 model=model,
-                max_tokens=8192,
+                max_tokens=16000,
             ):
                 if key is None:
                     in_tok, out_tok, full_text = value

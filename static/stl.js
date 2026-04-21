@@ -57,6 +57,7 @@
 
   var _timer = null;
   var _currentRef = '';
+  var _lastData       = null;
   var _finalHandled   = false;
   var _partialData    = {};
 
@@ -125,7 +126,7 @@
 
   btnAnalyze.addEventListener('click', function () {
     var ref = refInput.value.trim();
-    if (!ref) { showToast('Enter a passage reference first'); return; }
+    if (!ref) { showToast(window.t ? window.t('err_enter_passage', 'Enter a passage reference first') : 'Enter a passage reference first'); return; }
     analyze(ref);
   });
 
@@ -187,7 +188,21 @@
     var allusionSec  = document.getElementById('allusions-section');
     var allusionBody = document.getElementById('allusions-body');
     if (allusionSec && allusionBody) {
-      allusionBody.innerHTML = _skelRows(4, [100, 90, 80, 95]);
+      var skelCard = function() {
+        return (
+          '<div class="variant-card stl-allusion-card stl-skel-card">' +
+            '<div class="stl-card-head">' +
+              '<span class="dss-skel-row" style="width:70px;height:18px;border-radius:4px;display:inline-block"></span>' +
+              '<span class="dss-skel-row" style="width:90px;height:14px;border-radius:4px;display:inline-block;margin-left:8px"></span>' +
+              '<span class="dss-skel-row" style="width:60px;height:18px;border-radius:4px;display:inline-block;margin-left:auto"></span>' +
+            '</div>' +
+            '<div class="dss-skel-row" style="width:100%;margin-top:10px"></div>' +
+            '<div class="dss-skel-row" style="width:85%"></div>' +
+            '<div class="dss-skel-row" style="width:60%;margin-top:8px"></div>' +
+          '</div>'
+        );
+      };
+      allusionBody.innerHTML = skelCard() + skelCard() + skelCard();
       allusionSec.style.display = '';
     }
   }
@@ -224,7 +239,7 @@
               '<div class="stl-card-head">' +
                 '<span class="stl-work-badge">' + workLabel + '</span>' +
                 '<span class="stl-passage-ref">' + esc(a.stl_passage || '') + '</span>' +
-                '<span class="badge" style="background:' + typeColor + ';color:#fff;margin-left:auto">' +
+                '<span class="stl-type-badge" style="background:' + typeColor + ';color:#fff">' +
                   esc(a.allusion_type || '') +
                 '</span>' +
               '</div>' +
@@ -320,16 +335,28 @@
       if (k in data) _renderSection(k, data[k]);
     });
 
+    // Store for ResultActions (Copy / Download / Scholar Rating)
+    _lastData = data;
+
     // Export row
     var expRow = document.getElementById('export-row');
-    if (expRow && (data.citations || {}).sbl) expRow.style.display = '';
+    if (expRow && (data.citations || {}).sbl) {
+      expRow.style.display = '';
+      if (window.ResultActions) {
+        ResultActions.init({
+          toolName: 'stl',
+          getReference: function () { return _currentRef; },
+          getResultData: function () { return _lastData || {}; },
+        });
+      }
+    }
 
     // Copy buttons
     var btnSbl = document.getElementById('btn-sbl');
     if (btnSbl && data.citations && data.citations.sbl) {
       btnSbl.onclick = function () {
         navigator.clipboard.writeText(data.citations.sbl).then(function () {
-          showToast('SBL footnote copied!');
+          showToast(window.t ? window.t('toast_sbl_copied_short', 'SBL footnote copied!') : 'SBL footnote copied!');
         });
       };
     }
@@ -337,7 +364,7 @@
     if (btnBibtex && data.citations && data.citations.bibtex) {
       btnBibtex.onclick = function () {
         navigator.clipboard.writeText(data.citations.bibtex).then(function () {
-          showToast('BibTeX copied!');
+          showToast(window.t ? window.t('toast_bibtex_copied_short', 'BibTeX copied!') : 'BibTeX copied!');
         });
       };
     }
@@ -347,7 +374,7 @@
     if (btnShare) {
       btnShare.onclick = function () {
         var url = window.location.origin + '/stl?ref=' + encodeURIComponent(_currentRef);
-        navigator.clipboard.writeText(url).then(function () { showToast('Link copied!'); });
+        navigator.clipboard.writeText(url).then(function () { showToast(window.t ? window.t('toast_link_copied', 'Link copied!') : 'Link copied!'); });
       };
     }
   }
@@ -386,7 +413,7 @@
       loadState.classList.add('is-compact');
       loadState.style.display = 'block';
     }
-    if (loadStep) loadStep.textContent = 'Analyzing \u2014 this may take 40\u201360 seconds\u2026';
+    if (loadStep) loadStep.textContent = window.t ? window.t('step_generating', 'Analyzing \u2014 this may take 40\u201360 seconds\u2026') : 'Analyzing \u2014 this may take 40\u201360 seconds\u2026';
     if (_timer) clearInterval(_timer);
 
     // Timer
@@ -444,7 +471,7 @@
       if (!_finalHandled) {
         es.close();
         _hideCompactSpinner();
-        showToast('Connection error — please try again');
+        showToast(window.t ? window.t('err_connection', 'Connection error — please try again') : 'Connection error — please try again');
       }
     };
   }

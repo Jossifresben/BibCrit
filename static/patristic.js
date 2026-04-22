@@ -97,6 +97,35 @@
   var _partialData    = {};
   var _sectionReceived = false;
 
+  // ── Skeleton helpers ──────────────────────────────────────────────────────
+  function _skelRows(n, widths) {
+    var html = '', pcts = widths || [100, 88, 72, 58, 45];
+    for (var i = 0; i < n; i++)
+      html += '<div class="dss-skel-row" style="height:12px;width:' + (pcts[i] || 55) + '%"></div>';
+    return html;
+  }
+  function _hideCompactSpinner() {
+    if (loadState) { loadState.classList.remove('is-compact'); loadState.style.display = 'none'; }
+    clearInterval(_timer);
+  }
+  function _skelCard() {
+    return '<div class="dss-ms-card" style="max-width:900px;margin:0 auto 1rem;opacity:0.6">' +
+      '<div style="padding:1rem 1.25rem">' +
+      '<div class="dss-skel-row" style="height:16px;width:40%"></div>' +
+      '<div style="margin-top:0.75rem">' + _skelRows(3, [95, 80, 65]) + '</div>' +
+      '</div></div>';
+  }
+  function _renderSkeleton() {
+    var distSec  = document.getElementById('distribution-section');
+    var citList  = document.getElementById('citation-list');
+    var synthSec = document.getElementById('synthesis-section');
+    var bibSec   = document.getElementById('bibcrit-assessment');
+    if (distSec)  { distSec.style.display  = ''; distSec.innerHTML  = '<div style="padding:1rem">' + _skelRows(2, [70, 50]) + '</div>'; }
+    if (citList)  { citList.style.display  = ''; citList.innerHTML  = _skelCard() + _skelCard() + _skelCard(); }
+    if (synthSec) { synthSec.style.display = ''; synthSec.innerHTML = '<div style="padding:1rem">' + _skelRows(4, [100, 88, 75, 60]) + '</div>'; }
+    if (bibSec)   { bibSec.style.display   = ''; bibSec.innerHTML   = '<div style="padding:1rem">' + _skelRows(3, [95, 80, 65]) + '</div>'; }
+  }
+
   // ── Suggestion chips ────────────────────────────────────────────────────
   document.querySelectorAll('.num-sug-chip[data-ref]').forEach(function (chip) {
     chip.addEventListener('click', function () {
@@ -155,9 +184,19 @@
 
     hide(suggestions);
     hide(emptyState);
-    hide(results);
-    hide(heading);
-    show(loadState);
+    var distSec = document.getElementById('distribution-section');
+    var citList = document.getElementById('citation-list');
+    if (distSec) distSec.innerHTML = '';
+    if (citList) citList.innerHTML = '';
+    if (results) results.style.display = '';
+    if (loadState) {
+      loadState.classList.add('is-compact');
+      loadState.style.display = 'block';
+    }
+    if (heading) {
+      heading.innerHTML = '<span class="ph-ref">' + _esc(_currentRef) + '</span>';
+      show(heading);
+    }
     setLoadingStep(window.t('loading_preparing', 'Preparing…'));
 
     var elapsed = 0;
@@ -165,6 +204,7 @@
       elapsed++;
       if (loadTimer) loadTimer.textContent = elapsed + 's';
     }, 1000);
+    _renderSkeleton();
 
     history.replaceState(null, '', '/patristic?ref=' + encodeURIComponent(ref));
 
@@ -179,12 +219,12 @@
           _renderSection(msg.key, msg.data);
         } else if (msg.type === 'error') {
           _finalHandled = true;
-          clearInterval(_timer);
+          _hideCompactSpinner();
           setLoadingStep('❌ ' + msg.msg);
           _es.close();
         } else if (msg.type === 'done') {
           _finalHandled = true;
-          clearInterval(_timer);
+          _hideCompactSpinner();
           _es.close();
           if (_sectionReceived) {
             _finalize(msg.data);
@@ -197,7 +237,7 @@
 
     _es.onerror = function () {
       if (_finalHandled) return;
-      clearInterval(_timer);
+      _hideCompactSpinner();
       setLoadingStep('❌ ' + window.t('err_connection_step', 'Connection error. Please try again.'));
       if (_es) _es.close();
     };
@@ -209,7 +249,7 @@
     _sectionReceived  = true;
 
     if (emptyState)  emptyState.style.display  = 'none';
-    if (loadState)   loadState.style.display   = 'none';
+    _hideCompactSpinner();
     if (results)     results.style.display     = '';
 
     if (key === 'citations') {
@@ -253,7 +293,7 @@
 
   function _finalize(data) {
     _lastData = data || _partialData;
-    hide(loadState);
+    _hideCompactSpinner();
     if (exportRow) show(exportRow);
     staggerReveal(results, 90);
 
@@ -297,7 +337,7 @@
   // ── Render ───────────────────────────────────────────────────────────────
   function renderPatristic(data) {
     _lastData = data;
-    hide(loadState);
+    _hideCompactSpinner();
 
     show(heading);
     var total = data.total_citations_found || (data.citations || []).length;

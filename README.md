@@ -5,7 +5,7 @@
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0000--2026--0836-a6ce39)](https://orcid.org/0009-0000-2026-0836)
 [![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.19553402.svg)](https://doi.org/10.5281/zenodo.19553402)
 
-# BibCrit v3.0
+# BibCrit v3.1
 
 Free, open-access web tool for biblical textual criticism at [bibcrit.com](https://bibcrit.com). Compare MT, LXX, and Dead Sea Scrolls; reconstruct Hebrew Vorlagen; profile scribal tendencies; detect theological revisions; track patristic citations; model numerical discrepancies; detect literary structures (chiasm, inclusios, parallel panels); identify documentary source layers (J/E/D/P); and visualize manuscript genealogies — all in a browser, in English and Spanish.
 

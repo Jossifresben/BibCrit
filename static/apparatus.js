@@ -152,6 +152,24 @@
     }
   });
 
+  // ── Skeleton helpers ──────────────────────────────────────────────────────
+  function _skelRows(n, widths) {
+    var html = '', pcts = widths || [100, 88, 72, 58, 45];
+    for (var i = 0; i < n; i++)
+      html += '<div class="dss-skel-row" style="height:12px;width:' + (pcts[i] || 55) + '%"></div>';
+    return html;
+  }
+  function _hideCompactSpinner() {
+    if (loadingState) { loadingState.classList.remove('is-compact'); loadingState.style.display = 'none'; }
+    clearInterval(_timerInterval);
+  }
+  function _renderSkeleton() {
+    var analysisPanel = document.getElementById('analysis-panel');
+    if (tabsArea) tabsArea.style.display = '';
+    if (analysisPanel) analysisPanel.innerHTML =
+      '<div style="padding:1rem">' + _skelRows(5, [95, 80, 70, 85, 60]) + '</div>';
+  }
+
   // ── Analysis fetch + render ───────────────────────────────────────────────
   var _activeStream = null;
   var _timerInterval = null;
@@ -173,14 +191,19 @@
     _partialData     = {};
     _sectionReceived = false;
 
-    emptyState.style.display    = 'none';
-    apparatusGrid.style.display = 'none';
-    tabsArea.style.display      = 'none';
+    hide(emptyState);
     exportRow.style.display     = 'none';
-    if (passageHeading) passageHeading.style.display = 'none';
-    loadingState.style.display  = 'flex';
+    if (passageHeading) {
+      passageHeading.innerHTML = '<span class="ph-ref">' + escapeHtml(ref) + '</span>';
+      passageHeading.style.display = '';
+    }
+    if (loadingState) {
+      loadingState.classList.add('is-compact');
+      loadingState.style.display = 'block';
+    }
     setLoadingStep(window.t('loading_preparing', 'Preparing…'));
     startTimer();
+    _renderSkeleton();
 
     var es = new EventSource('/api/divergence/stream?ref=' + encodeURIComponent(ref) + '&lang=' + (window.bibcritLang || 'en'));
     _activeStream = es;
@@ -196,11 +219,10 @@
         _finalHandled = true;
         es.close();
         _activeStream = null;
-        stopTimer();
+        _hideCompactSpinner();
         if (_sectionReceived) {
           _finalize(msg.data);
         } else {
-          loadingState.style.display = 'none';
           currentData = msg.data;
           renderApparatus(msg.data);
           if (passageHeading) passageHeading.style.display = 'block';
@@ -227,8 +249,7 @@
         _finalHandled = true;
         es.close();
         _activeStream = null;
-        stopTimer();
-        loadingState.style.display = 'none';
+        _hideCompactSpinner();
         showError(msg.msg);
       }
     };
@@ -237,8 +258,7 @@
       if (_finalHandled) return;
       es.close();
       _activeStream = null;
-      stopTimer();
-      loadingState.style.display = 'none';
+      _hideCompactSpinner();
       showError(window.t('err_connection', 'Connection lost — please try again.'));
     };
   }
@@ -271,7 +291,7 @@
     if (key === 'divergences') {
       // Reveal containers, hide loading/empty only when content is ready
       if (emptyState)    emptyState.style.display    = 'none';
-      if (loadingState)  loadingState.style.display  = 'none';
+      _hideCompactSpinner();
       currentData = _partialData;
       var partial = { divergences: data || [], mt_words: [], lxx_words: [], reference: currentRef };
       if (passageHeading) { passageHeading.style.display = 'block'; }
@@ -284,7 +304,7 @@
 
   function _finalize(data) {
     currentData = data || _partialData;
-    loadingState.style.display = 'none';
+    _hideCompactSpinner();
 
     renderApparatus(currentData);
     if (passageHeading) passageHeading.style.display = 'block';

@@ -93,6 +93,35 @@
   var _partialData    = {};   // accumulates section key/value pairs during streaming
   var _sectionReceived = false;  // true once any section event has been handled
 
+  // ── Skeleton helpers ──────────────────────────────────────────────────────
+  function _skelRows(n, widths) {
+    var html = '', pcts = widths || [100, 88, 72, 58, 45];
+    for (var i = 0; i < n; i++)
+      html += '<div class="dss-skel-row" style="height:12px;width:' + (pcts[i] || 55) + '%"></div>';
+    return html;
+  }
+  function _hideCompactSpinner() {
+    if (loadState) { loadState.classList.remove('is-compact'); loadState.style.display = 'none'; }
+    clearInterval(_timer);
+  }
+  function _skelCard() {
+    return '<div class="dss-ms-card" style="max-width:900px;margin:0 auto 1rem;opacity:0.6">' +
+      '<div style="padding:1rem 1.25rem">' +
+      '<div class="dss-skel-row" style="height:16px;width:40%"></div>' +
+      '<div style="margin-top:0.75rem">' + _skelRows(3, [95, 80, 65]) + '</div>' +
+      '</div></div>';
+  }
+  function _renderSkeleton() {
+    var summSec  = document.getElementById('summary-section');
+    var revList  = document.getElementById('revision-list');
+    var overSec  = document.getElementById('overall-section');
+    var bibSec   = document.getElementById('bibcrit-assessment');
+    if (summSec) { summSec.style.display = ''; summSec.innerHTML = '<div style="padding:1rem">' + _skelRows(3, [100, 85, 70]) + '</div>'; }
+    if (revList) { revList.style.display = ''; revList.innerHTML = _skelCard() + _skelCard(); }
+    if (overSec) { overSec.style.display = ''; overSec.innerHTML = '<div style="padding:1rem">' + _skelRows(3, [95, 80, 65]) + '</div>'; }
+    if (bibSec)  { bibSec.style.display  = ''; bibSec.innerHTML  = '<div style="padding:1rem">' + _skelRows(3, [95, 80, 65]) + '</div>'; }
+  }
+
   // ── Suggestion chips ────────────────────────────────────────────────────
   document.querySelectorAll('.num-sug-chip[data-ref]').forEach(function (chip) {
     chip.addEventListener('click', function () {
@@ -151,9 +180,15 @@
 
     hide(suggestions);
     hide(emptyState);
-    hide(results);
-    hide(heading);
-    show(loadState);
+    if (results) results.style.display = '';
+    if (loadState) {
+      loadState.classList.add('is-compact');
+      loadState.style.display = 'block';
+    }
+    if (heading) {
+      heading.innerHTML = '<span class="ph-ref">' + _esc(_currentRef) + '</span>';
+      show(heading);
+    }
     setLoadingStep(window.t('loading_preparing', 'Preparing…'));
 
     var elapsed = 0;
@@ -161,6 +196,7 @@
       elapsed++;
       if (loadTimer) loadTimer.textContent = elapsed + 's';
     }, 1000);
+    _renderSkeleton();
 
     history.replaceState(null, '', '/theological?ref=' + encodeURIComponent(ref));
 
@@ -175,12 +211,12 @@
           _renderSection(msg.key, msg.data);
         } else if (msg.type === 'error') {
           _finalHandled = true;
-          clearInterval(_timer);
+          _hideCompactSpinner();
           setLoadingStep('❌ ' + msg.msg);
           _es.close();
         } else if (msg.type === 'done') {
           _finalHandled = true;
-          clearInterval(_timer);
+          _hideCompactSpinner();
           _es.close();
           if (_sectionReceived) {
             _finalize(msg.data);
@@ -193,7 +229,7 @@
 
     _es.onerror = function () {
       if (_finalHandled) return;
-      clearInterval(_timer);
+      _hideCompactSpinner();
       setLoadingStep('❌ ' + window.t('err_connection_step', 'Connection error. Please try again.'));
       if (_es) _es.close();
     };
@@ -207,7 +243,7 @@
     // Reveal results container, hide loading / empty states
     if (results)    results.style.display    = '';
     if (emptyState) emptyState.style.display = 'none';
-    if (loadState)  loadState.style.display  = 'none';
+    _hideCompactSpinner();
 
     // Heading: render as soon as scope is known
     if ((key === 'scope' || key === 'scope_type') && heading && _partialData.scope) {
@@ -324,7 +360,7 @@
 
   function _finalize(data) {
     _lastData = data || _partialData;
-    hide(loadState);
+    _hideCompactSpinner();
 
     // Refresh heading with authoritative scope from final data
     if (heading && data) {
@@ -400,7 +436,7 @@
   // ── Render ───────────────────────────────────────────────────────────────
   function renderRevisions(data) {
     _lastData = data;
-    hide(loadState);
+    _hideCompactSpinner();
 
     show(heading);
     var _hRef  = _esc(data.scope || _currentRef);

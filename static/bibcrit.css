@@ -2362,6 +2362,18 @@ body[data-persona="student"] .tool-header { border-top-color: #059669; }
 .var-table td:nth-child(2) { width: 14%; font-family: 'Noto Serif', serif; white-space: nowrap; }
 .var-table td:nth-child(3) { width: 14%; white-space: nowrap; }
 .var-table td:nth-child(4) { width: 58%; }
+.var-type-chip {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: lowercase;
+  color: var(--accent);
+  background: var(--accent-light, rgba(74,111,165,.08));
+  padding: 1px 7px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
 
 /* Variant / modification cards */
 .variant-card {

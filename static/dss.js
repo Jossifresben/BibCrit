@@ -133,6 +133,8 @@
       var book = this.value;
       _resetSelect(selChapter, 'Ch…');
       _resetSelect(selVerse, 'Vs…');
+      // Clear the text input so the dropdown selection takes precedence
+      if (refInput) refInput.value = '';
       if (!book) return;
       var chapters = _DSS_COVERAGE[book] || [];
       chapters.forEach(function (ch) {
@@ -149,6 +151,8 @@
       var book = selBook ? selBook.value : '';
       var ch   = parseInt(this.value, 10);
       _resetSelect(selVerse, 'Vs…');
+      // Clear the text input so the dropdown selection takes precedence
+      if (refInput) refInput.value = '';
       if (!book || !ch) return;
       var counts = _VERSE_COUNTS[book] || [];
       var total  = counts[ch - 1] || 30;
@@ -158,6 +162,13 @@
         selVerse.appendChild(opt);
       }
       selVerse.disabled = false;
+    });
+  }
+
+  if (selVerse) {
+    selVerse.addEventListener('change', function () {
+      // Clear the text input so the dropdown selection takes precedence
+      if (refInput) refInput.value = '';
     });
   }
 

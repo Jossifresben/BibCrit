@@ -18,6 +18,36 @@
   var _finalHandled   = false;
   var _partialData    = {};
   var _sectionReceived = false;
+  var _timer          = null;
+
+  // ── Skeleton helpers ──────────────────────────────────────────────────────
+  function _skelRows(n, widths) {
+    var html = '', pcts = widths || [100, 88, 72, 58, 45];
+    for (var i = 0; i < n; i++)
+      html += '<div class="dss-skel-row" style="height:12px;width:' + (pcts[i] || 55) + '%"></div>';
+    return html;
+  }
+  function _hideCompactSpinner() {
+    if (loadingState) { loadingState.classList.remove('is-compact'); loadingState.style.display = 'none'; }
+    clearInterval(_timer);
+  }
+  function _skelCard() {
+    return '<div class="dss-ms-card" style="max-width:900px;margin:0 auto 1rem;opacity:0.6">' +
+      '<div style="padding:1rem 1.25rem">' +
+      '<div class="dss-skel-row" style="height:16px;width:40%"></div>' +
+      '<div style="margin-top:0.75rem">' + _skelRows(3, [95, 80, 65]) + '</div>' +
+      '</div></div>';
+  }
+  function _renderSkeleton() {
+    var ra = document.getElementById('results-area');
+    if (!ra) return;
+    ra.style.display = '';
+    ra.innerHTML =
+      '<div style="padding:1rem">' +
+      _skelCard() + _skelCard() + _skelCard() +
+      '<div style="margin-top:1rem">' + _skelRows(3, [100, 85, 70]) + '</div>' +
+      '</div>';
+  }
 
   // ── Language ──────────────────────────────────────────────────────────────
   var LANG = window.BIBCRIT_LANG || document.documentElement.lang || 'en';
@@ -164,12 +194,21 @@
     _finalHandled    = false;
     _partialData     = {};
     _sectionReceived = false;
+    clearInterval(_timer);
 
-    // Show loading, hide others
+    // Show compact spinner + skeleton immediately
     emptyState.style.display   = 'none';
-    if (resultsArea) resultsArea.style.display = 'none';
-    if (passageHeading) passageHeading.style.display = 'none';
-    loadingState.style.display = 'flex';
+    if (resultsArea) resultsArea.style.display = '';
+    if (passageHeading) {
+      passageHeading.innerHTML =
+        '<span class="ph-ref">' + _esc(ref) + '</span>' +
+        '<span class="ph-tool">NT Use of OT</span>';
+      passageHeading.style.display = 'flex';
+    }
+    if (loadingState) {
+      loadingState.classList.add('is-compact');
+      loadingState.style.display = 'block';
+    }
 
     var stepEl  = document.getElementById('loading-step');
     var timerEl = document.getElementById('loading-timer');
@@ -183,6 +222,8 @@
         timerEl.textContent = s + 's';
       }
     }, 1000);
+    _timer = timerInterval;
+    _renderSkeleton();
 
     var es = new EventSource(
       '/api/nt-ot/stream?ref=' + encodeURIComponent(ref) + '&lang=' + encodeURIComponent(LANG)
@@ -197,21 +238,19 @@
         _renderSection(msg.key, msg.data);
       } else if (msg.type === 'error') {
         _finalHandled = true;
-        clearInterval(timerInterval);
+        _hideCompactSpinner();
         es.close();
-        loadingState.style.display = 'none';
         emptyState.style.display   = 'block';
         var h2 = emptyState.querySelector('h2');
         if (h2) h2.textContent = '\u26a0 ' + msg.msg;
 
       } else if (msg.type === 'done') {
         _finalHandled = true;
-        clearInterval(timerInterval);
+        _hideCompactSpinner();
         es.close();
         if (_sectionReceived) {
           _finalize(msg.data);
         } else {
-          loadingState.style.display = 'none';
           currentData = msg.data;
           history.replaceState(null, '', '/nt-ot?ref=' + encodeURIComponent(ref));
           if (typeof updateBudgetBar === 'function') updateBudgetBar();
@@ -222,9 +261,8 @@
 
     es.onerror = function () {
       if (_finalHandled) return;
-      clearInterval(timerInterval);
+      _hideCompactSpinner();
       es.close();
-      loadingState.style.display = 'none';
       emptyState.style.display   = 'block';
     };
   }
@@ -236,7 +274,7 @@
 
     if (key === 'citations') {
       // Hide loading and reveal results only when content is ready to show
-      if (loadingState) loadingState.style.display = 'none';
+      _hideCompactSpinner();
       if (emptyState)   emptyState.style.display   = 'none';
       if (resultsArea)  resultsArea.style.display  = '';
       if (passageHeading) passageHeading.style.display = 'flex';
@@ -293,7 +331,7 @@
   function _finalize(data) {
     var merged = Object.assign({}, _partialData, data || {});
     currentData = merged;
-    if (loadingState) loadingState.style.display = 'none';
+    _hideCompactSpinner();
     history.replaceState(null, '', '/nt-ot?ref=' + encodeURIComponent(currentRef));
     if (typeof updateBudgetBar === 'function') updateBudgetBar();
     renderResults(merged);

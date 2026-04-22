@@ -37,6 +37,31 @@
   var _partialData    = {};
   var _sectionReceived = false;
   var _currentRef     = '';
+  var _timer          = null;
+
+  // ── Skeleton helpers ──────────────────────────────────────────────────────
+  function _skelRows(n, widths) {
+    var html = '', pcts = widths || [100, 88, 72, 58, 45];
+    for (var i = 0; i < n; i++)
+      html += '<div class="dss-skel-row" style="height:12px;width:' + (pcts[i] || 55) + '%"></div>';
+    return html;
+  }
+  function _hideCompactSpinner() {
+    if (loadingState) { loadingState.classList.remove('is-compact'); loadingState.style.display = 'none'; }
+    clearInterval(_timer);
+  }
+  function _renderSkeleton() {
+    var ra = document.getElementById('results-area');
+    if (!ra) return;
+    ra.style.display = '';
+    ra.innerHTML =
+      '<div style="padding:1.5rem 1rem">' +
+      '<div class="dss-skel-row" style="height:18px;width:55%;margin-bottom:1.5rem"></div>' +
+      _skelRows(4, [100, 90, 78, 65]) +
+      '<div class="dss-skel-row" style="height:14px;width:35%;margin-top:1.5rem;margin-bottom:.75rem"></div>' +
+      _skelRows(3, [95, 82, 68]) +
+      '</div>';
+  }
 
   fetchBooks();
 
@@ -116,7 +141,16 @@
     _finalHandled    = false;
     _partialData     = {};
     _sectionReceived = false;
-    show(loadingState); hide(emptyState); hide(resultsArea); hide(passageHdr);
+    clearInterval(_timer);
+    hide(emptyState);
+    if (loadingState) {
+      loadingState.classList.add('is-compact');
+      loadingState.style.display = 'block';
+    }
+    if (passageHdr) {
+      passageHdr.textContent = ref;
+      show(passageHdr);
+    }
     document.getElementById('loading-step').textContent = '\u2026';
     document.getElementById('loading-timer').textContent = '';
 
@@ -126,6 +160,8 @@
       document.getElementById('loading-timer').textContent =
         sec > 5 ? sec + 's elapsed' : '';
     }, 1000);
+    _timer = timerInterval;
+    _renderSkeleton();
 
     var url = '/api/source/stream?ref=' + encodeURIComponent(ref) + '&lang=' + LANG;
     var es = new EventSource(url);
@@ -138,15 +174,14 @@
         _renderSection(msg.key, msg.data);
       } else if (msg.type === 'error') {
         _finalHandled = true;
-        clearInterval(timerInterval); es.close();
-        hide(loadingState); showToast(msg.msg); show(emptyState);
+        _hideCompactSpinner(); es.close();
+        showToast(msg.msg); show(emptyState);
       } else if (msg.type === 'done') {
         _finalHandled = true;
-        clearInterval(timerInterval); es.close();
+        _hideCompactSpinner(); es.close();
         if (_sectionReceived) {
           _finalize(msg.data, ref);
         } else {
-          hide(loadingState);
           renderResults(msg.data, ref);
         }
       }
@@ -154,8 +189,7 @@
 
     es.onerror = function () {
       if (_finalHandled) return;
-      clearInterval(timerInterval); es.close();
-      hide(loadingState);
+      _hideCompactSpinner(); es.close();
       showToast('Connection error. Please try again.');
       show(emptyState);
     };
@@ -168,7 +202,7 @@
 
     if (key === 'units') {
       // Hide loading and reveal results only when content is ready to show
-      if (loadingState) loadingState.style.display = 'none';
+      _hideCompactSpinner();
       if (emptyState)   emptyState.style.display   = 'none';
       if (resultsArea)  resultsArea.style.display  = '';
       if (passageHdr) { passageHdr.textContent = _currentRef; show(passageHdr); }
@@ -201,7 +235,7 @@
   }
 
   function _finalize(data, ref) {
-    hide(loadingState);
+    _hideCompactSpinner();
     renderResults(data || _partialData, ref || _currentRef);
   }
 

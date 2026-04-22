@@ -211,6 +211,67 @@
   }
 
   // ── Core analyze ────────────────────────────────────────────────────────
+  // ── Skeleton helpers ─────────────────────────────────────────────────────
+  function _skelRows(n, widths) {
+    var html = '', pcts = widths || [100, 88, 72, 58, 45];
+    for (var i = 0; i < n; i++) {
+      html += '<div class="dss-skel-row" style="height:12px;width:' + (pcts[i] || 55) + '%"></div>';
+    }
+    return html;
+  }
+
+  function _skelCard() {
+    return '<div class="dss-ms-card" style="max-width:900px;margin:0 auto 1rem;opacity:0.6">' +
+      '<div style="padding:1rem 1.25rem">' +
+        '<div class="dss-skel-row" style="height:16px;width:40%"></div>' +
+        '<div style="margin-top:0.75rem">' + _skelRows(3, [95, 80, 65]) + '</div>' +
+      '</div></div>';
+  }
+
+  function _renderSkeleton() {
+    // Remove any old verse panel
+    if (_versePanelEl && _versePanelEl.parentNode) {
+      _versePanelEl.parentNode.removeChild(_versePanelEl);
+      _versePanelEl = null;
+    }
+    // Verse-panel skeleton inserted before msList
+    var vskel = document.createElement('div');
+    vskel.className = 'bt-group-card dss-verse-panel';
+    vskel.style.cssText = 'max-width:900px;margin:0 auto 1.25rem;padding:1rem 1.25rem;';
+    vskel.innerHTML =
+      '<div style="font-size:0.7rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem">' +
+        (window.t ? window.t('dss_verse_texts', 'Verse Texts') : 'Verse Texts') +
+      '</div>' +
+      '<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">' +
+        '<div>' + _skelRows(3, [90, 75, 60]) + '</div>' +
+        '<div>' + _skelRows(3, [85, 68, 55]) + '</div>' +
+      '</div>';
+    if (msList && msList.parentNode) {
+      msList.parentNode.insertBefore(vskel, msList);
+    }
+    _versePanelEl = vskel;
+
+    // Manuscript card skeletons (3 cards)
+    if (msList) {
+      msList.innerHTML = _skelCard() + _skelCard() + _skelCard();
+    }
+    // Synthesis skeleton
+    if (synthBody && synthSec) {
+      synthBody.innerHTML = _skelRows(4, [100, 90, 78, 60]);
+      show(synthSec);
+    }
+    // Assessment skeleton
+    if (bibBody && bibSec) {
+      bibBody.innerHTML = '<div class="bt-group-card" style="padding:1rem 1.25rem">' + _skelRows(3, [95, 82, 65]) + '</div>';
+      show(bibSec);
+    }
+  }
+
+  function _hideCompactSpinner() {
+    if (loadState) { loadState.classList.remove('is-compact'); loadState.style.display = 'none'; }
+    clearInterval(_timer);
+  }
+
   function analyze(ref) {
     if (!ref) return;
     if (window.BibCrit_checkPassageLength && window.BibCrit_checkPassageLength(ref)) return;
@@ -222,17 +283,27 @@
     _partialData     = {};
     _sectionReceived = false;
 
+    // Show results + compact spinner + skeleton immediately
     hide(emptyState);
-    hide(results);
-    hide(heading);
-    show(loadState);
-    setLoadingStep(window.t('loading_preparing', 'Preparing…'));
+    if (exportRow) exportRow.style.display = 'none';
+    if (results) results.style.display = '';
+    if (loadState) {
+      loadState.classList.add('is-compact');
+      loadState.style.display = 'block';
+    }
+    if (heading) {
+      heading.innerHTML = '<span class="ph-ref">' + _esc(ref) + '</span>';
+      show(heading);
+    }
+    setLoadingStep(window.t ? window.t('step_loading', 'Analyzing…') : 'Analyzing…');
 
     var elapsed = 0;
     _timer = setInterval(function () {
       elapsed++;
       if (loadTimer) loadTimer.textContent = elapsed + 's';
     }, 1000);
+
+    _renderSkeleton();
 
     history.replaceState(null, '', '/dss?ref=' + encodeURIComponent(ref));
 
@@ -247,16 +318,16 @@
           _renderSection(msg.key, msg.data);
         } else if (msg.type === 'error') {
           _finalHandled = true;
-          clearInterval(_timer);
+          _hideCompactSpinner();
           setLoadingStep('❌ ' + msg.msg);
           _es.close();
         } else if (msg.type === 'done') {
           _finalHandled = true;
-          clearInterval(_timer);
           _es.close();
           if (_sectionReceived) {
             _finalize(msg.data);
           } else {
+            _hideCompactSpinner();
             renderDSS(msg.data);
           }
         }
@@ -265,28 +336,29 @@
 
     _es.onerror = function () {
       if (_finalHandled) return;
-      clearInterval(_timer);
+      _hideCompactSpinner();
       setLoadingStep('❌ ' + window.t('err_connection_step', 'Connection error. Please try again.'));
       if (_es) _es.close();
     };
   }
 
   // ── Progressive section rendering ─────────────────────────────────────────
+  // Results + skeleton are already visible. Each handler replaces skeleton content.
   function _renderSection(key, data) {
     _partialData[key] = data;
     _sectionReceived  = true;
 
-    if (emptyState)  emptyState.style.display  = 'none';
-    if (loadState)   loadState.style.display   = 'none';
-    if (results)     results.style.display     = '';
+    // ── _corpus: verse texts come from the database — replace skeleton instantly
+    if (key === '_corpus') {
+      // _renderVersePanel expects the full data object; pass what we have so far
+      _renderVersePanel({ _corpus: data });
+      return;
+    }
 
-    if (key === 'witness_comparison') {
-      // Render manuscript cards early
-      if (heading) {
-        show(heading);
-        heading.innerHTML = '<span class="ph-ref">' + _esc(_currentRef) + '</span>';
-      }
-      var manuscripts = ((data && data.dss_manuscripts) || data || []).slice().sort(function (a, b) {
+    // ── dss_manuscripts: replace skeleton cards with real manuscript cards ────
+    if (key === 'dss_manuscripts' || key === 'witness_comparison') {
+      var rawMs = (key === 'dss_manuscripts') ? data : ((data && data.dss_manuscripts) || data);
+      var manuscripts = (rawMs || []).slice().sort(function (a, b) {
         var aE = (a.verse_present && a.alignment !== 'absent') ? 0 : 1;
         var bE = (b.verse_present && b.alignment !== 'absent') ? 0 : 1;
         return aE - bE;
@@ -295,12 +367,15 @@
         msList.innerHTML = '';
         manuscripts.forEach(function (ms, idx) { msList.appendChild(_buildManuscriptCard(ms, idx)); });
       }
-      staggerReveal(results, 30);
+      staggerReveal(msList, 30);
     }
 
-    if (key === 'transmission_history') {
-      var synth = (data && (data.synthesis_plain || data.synthesis)) || '';
-      if (synth && synthSec && synthBody) {
+    // ── synthesis: replace skeleton rows with real synthesis text ────────────
+    if (key === 'synthesis' || key === 'synthesis_plain' || key === 'transmission_history') {
+      var synth = (key === 'transmission_history')
+        ? (data && (data.synthesis_plain || data.synthesis)) || ''
+        : (data || '');
+      if (synth && synthBody) {
         synthBody.innerHTML =
           '<div class="bt-group-card"><p class="div-analysis">' + _safe(synth) + '</p></div>';
         show(synthSec);
@@ -308,7 +383,8 @@
       }
     }
 
-    if (key === 'assessment') {
+    // ── bibcrit_assessment: replace skeleton with real assessment ─────────────
+    if (key === 'bibcrit_assessment' || key === 'assessment') {
       renderAssessment({ bibcrit_assessment: data, model_version: _partialData.model_version });
       if (bibSec) staggerReveal(bibSec, 0);
     }
@@ -316,14 +392,14 @@
 
   function _finalize(data) {
     _lastData = data || _partialData;
-    hide(loadState);
+    _hideCompactSpinner();
     renderDSS(_lastData);
   }
 
   // ── Render ───────────────────────────────────────────────────────────────
   function renderDSS(data) {
     _lastData = data;
-    hide(loadState);
+    _hideCompactSpinner();
 
     show(heading);
     heading.innerHTML = '<span class="ph-ref">' + _esc(data.reference || _currentRef) + '</span>';

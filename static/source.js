@@ -137,6 +137,7 @@
   function analyze(ref) {
     if (!ref) return;
     if (window.BibCrit_checkPassageLength && window.BibCrit_checkPassageLength(ref)) return;
+    if (window.BibCrit_requireVerse && window.BibCrit_requireVerse(ref)) return;
     _currentRef      = ref;
     _finalHandled    = false;
     _partialData     = {};
@@ -148,7 +149,7 @@
       loadingState.style.display = 'block';
     }
     if (passageHdr) {
-      passageHdr.textContent = ref;
+      passageHdr.innerHTML = '<span class="ph-ref">' + escHtml(ref) + '</span>';
       show(passageHdr);
     }
     document.getElementById('loading-step').textContent = '\u2026';
@@ -202,10 +203,9 @@
 
     if (key === 'units') {
       // Hide loading and reveal results only when content is ready to show
-      _hideCompactSpinner();
       if (emptyState)   emptyState.style.display   = 'none';
       if (resultsArea)  resultsArea.style.display  = '';
-      if (passageHdr) { passageHdr.textContent = _currentRef; show(passageHdr); }
+      if (passageHdr) { passageHdr.innerHTML = '<span class="ph-ref">' + escHtml(_currentRef) + '</span>'; show(passageHdr); }
       // Render source units
       var units = Array.isArray(data) ? data : (data && data.source_units) || [];
       var partial = { source_units: units };
@@ -241,7 +241,7 @@
 
   // ── Render ────────────────────────────────────────────────────────────────
   function renderResults(data, ref) {
-    passageHdr.textContent = data.passage || ref;
+    passageHdr.innerHTML = '<span class="ph-ref">' + escHtml(data.passage || ref) + '</span>';
     show(passageHdr);
     resultsArea.innerHTML = '';
 

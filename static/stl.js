@@ -49,9 +49,10 @@
   var loadState  = document.getElementById('loading-state');
   var loadStep   = document.getElementById('loading-step');
   var loadTimer  = document.getElementById('loading-timer');
-  var heading    = document.getElementById('passage-heading');
-  var results    = document.getElementById('stl-results');
-  var toast      = document.getElementById('toast');
+  var heading      = document.getElementById('passage-heading');
+  var corpusPanel  = document.getElementById('stl-corpus-panel');
+  var results      = document.getElementById('stl-results');
+  var toast        = document.getElementById('toast');
 
   if (!btnAnalyze) return;
 
@@ -207,6 +208,17 @@
     }
   }
 
+  // ── Corpus verse panel ────────────────────────────────────────────────────
+
+  function _renderCorpusPanel(mtText, lxxText) {
+    if (!corpusPanel || (!mtText && !lxxText)) return;
+    var rows = [];
+    if (mtText)  rows.push('<div class="bt-group-card"><div class="bt-group-label">MT</div><div class="bt-group-body hebrew-text">' + esc(mtText) + '</div></div>');
+    if (lxxText) rows.push('<div class="bt-group-card"><div class="bt-group-label">LXX</div><div class="bt-group-body greek-text">' + esc(lxxText) + '</div></div>');
+    corpusPanel.innerHTML = rows.join('');
+    corpusPanel.style.display = 'block';
+  }
+
   // ── Progressive section rendering ─────────────────────────────────────────
 
   function _renderSection(key, data) {
@@ -215,7 +227,7 @@
     if (emptyState) emptyState.style.display = 'none';
 
     if (key === '_corpus') {
-      // MT/LXX context texts — stored in _partialData for export access only
+      _renderCorpusPanel(data.mt_text || '', data.lxx_text || '');
       return;
     }
 
@@ -400,8 +412,9 @@
     _finalHandled    = false;
     _partialData     = {};
 
-    if (emptyState) emptyState.style.display = 'none';
-    if (results)    results.style.display    = 'block';
+    if (emptyState)    emptyState.style.display    = 'none';
+    if (corpusPanel) { corpusPanel.style.display   = 'none'; corpusPanel.innerHTML = ''; }
+    if (results)       results.style.display       = 'block';
 
     // Reset all sections
     ['synthesis-section','allusions-section','works-section',

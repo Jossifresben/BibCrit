@@ -71,6 +71,7 @@
   var loadingState   = document.getElementById('loading-state');
   var resultsArea    = document.getElementById('results-area');
   var passageHeading = document.getElementById('passage-heading');
+  var corpusPanel    = document.getElementById('nt-ot-corpus-panel');
 
   if (!selBook || !btnAnalyze) return;  // guard: only run on nt-ot page
 
@@ -182,6 +183,7 @@
   function analyze(ref) {
     if (!ref) return;
     if (window.BibCrit_checkPassageLength && window.BibCrit_checkPassageLength(ref)) return;
+    if (window.BibCrit_requireVerse && window.BibCrit_requireVerse(ref)) return;
 
     if (_isOtRef(ref)) {
       emptyState.style.display = 'block';
@@ -198,6 +200,7 @@
 
     // Show compact spinner + skeleton immediately
     emptyState.style.display   = 'none';
+    if (corpusPanel) { corpusPanel.innerHTML = ''; corpusPanel.style.display = 'none'; }
     if (resultsArea) resultsArea.style.display = '';
     if (passageHeading) {
       passageHeading.innerHTML =
@@ -268,13 +271,37 @@
   }
 
   // ── Progressive section rendering ─────────────────────────────────────────
+  function _renderCorpusPanel(gntText, enText) {
+    if (!corpusPanel) return;
+    var html = '<div class="bt-group-card" style="max-width:900px;margin:0 auto 1rem;padding:1rem 1.25rem;">';
+    if (gntText) {
+      html += '<div style="font-size:0.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;'
+            + 'color:var(--muted);margin-bottom:0.4rem">Greek (GNT)</div>'
+            + '<div class="greek-text verse-text" style="margin-bottom:' + (enText ? '0.9rem' : '0') + '">'
+            + _esc(gntText) + '</div>';
+    }
+    if (enText) {
+      html += '<div style="font-size:0.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;'
+            + 'color:var(--muted);margin-bottom:0.4rem">English (WEB)</div>'
+            + '<div style="font-size:1rem;line-height:1.7;color:var(--fg);font-style:italic">'
+            + _esc(enText) + '</div>';
+    }
+    html += '</div>';
+    corpusPanel.innerHTML = html;
+    corpusPanel.style.display = '';
+  }
+
   function _renderSection(key, data) {
     _partialData[key] = data;
     _sectionReceived  = true;
 
+    if (key === '_corpus') {
+      _renderCorpusPanel(data.gnt_text || '', data.en_text || '');
+      return;
+    }
+
     if (key === 'citations') {
       // Hide loading and reveal results only when content is ready to show
-      _hideCompactSpinner();
       if (emptyState)   emptyState.style.display   = 'none';
       if (resultsArea)  resultsArea.style.display  = '';
       if (passageHeading) passageHeading.style.display = 'flex';
@@ -352,12 +379,12 @@
       passageHeading.style.display = 'flex';
     }
 
-    if (data.nt_text) {
-      var verseEl = document.createElement('div');
-      verseEl.className = 'nt-ot-verse-text greek-text';
-      verseEl.textContent = data.nt_text;
-      resultsArea.appendChild(verseEl);
-    }
+    // Corpus panel (GNT + English) — use the persistent panel above resultsArea
+    var _corpus = _partialData['_corpus'] || {};
+    _renderCorpusPanel(
+      _corpus.gnt_text || data.nt_text || '',
+      _corpus.en_text  || ''
+    );
 
     // Summary card
     if (data.summary_technical || data.summary_plain) {

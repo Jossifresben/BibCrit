@@ -155,7 +155,7 @@
 
     setLoading(false);
     if (heading) {
-      heading.textContent = data.reference || _currentRef;
+      heading.innerHTML = '<span class="ph-ref">' + esc(data.reference || _currentRef) + '</span>';
       heading.style.display = '';
     }
 
@@ -461,6 +461,8 @@
   }
 
   function analyze(ref) {
+    if (!ref) return;
+    if (window.BibCrit_requireVerse && window.BibCrit_requireVerse(ref)) return;
     _currentRef      = ref;
     _finalHandled    = false;
     _partialData     = {};
@@ -478,7 +480,7 @@
       var secs = 0; loadTimer.textContent = '';
       _timer = setInterval(function () { secs++; loadTimer.textContent = secs + 's'; }, 1000);
     }
-    if (heading) { heading.textContent = ref; heading.style.display = ''; }
+    if (heading) { heading.innerHTML = '<span class="ph-ref">' + esc(ref) + '</span>'; heading.style.display = ''; }
     _renderSkeleton();
 
     var lang = new URLSearchParams(window.location.search).get('lang') || 'en';

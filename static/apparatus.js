@@ -152,6 +152,10 @@
     }
   });
 
+  // ── DOM helpers ───────────────────────────────────────────────────────────
+  function hide(el) { if (el) el.style.display = 'none'; }
+  function show(el) { if (el) el.style.display = ''; }
+
   // ── Skeleton helpers ──────────────────────────────────────────────────────
   function _skelRows(n, widths) {
     var html = '', pcts = widths || [100, 88, 72, 58, 45];
@@ -165,6 +169,15 @@
   }
   function _renderSkeleton() {
     var analysisPanel = document.getElementById('analysis-panel');
+    // Hide apparatus grid (word panels) — will re-appear when _corpus section arrives
+    if (apparatusGrid) apparatusGrid.style.display = 'none';
+    // Clear old word content and tab panels
+    if (mtText)   mtText.innerHTML   = '';
+    if (lxxText)  lxxText.innerHTML  = '';
+    if (mtMeta)   mtMeta.innerHTML   = '';
+    if (tabsNav)  tabsNav.innerHTML  = '';
+    if (tabsBody) tabsBody.innerHTML = '';
+    // Show tabs area with skeleton rows in analysis panel
     if (tabsArea) tabsArea.style.display = '';
     if (analysisPanel) analysisPanel.innerHTML =
       '<div style="padding:1rem">' + _skelRows(5, [95, 80, 70, 85, 60]) + '</div>';
@@ -181,6 +194,7 @@
   function analyze(ref) {
     if (!ref) return;
     if (window.BibCrit_checkPassageLength && window.BibCrit_checkPassageLength(ref)) return;
+    if (window.BibCrit_requireVerse && window.BibCrit_requireVerse(ref)) return;
     currentRef = ref;
     refInput.value = ref;
 
@@ -288,12 +302,28 @@
     _partialData[key] = data;
     _sectionReceived  = true;
 
+    if (key === '_corpus') {
+      // Show MT and LXX verse text immediately — corpus fetch is instant, no Claude needed.
+      if (apparatusGrid) apparatusGrid.style.display = 'grid';
+      if (tabsArea)      tabsArea.style.display = 'block';
+      if (passageHeading) passageHeading.style.display = 'block';
+      mtText.innerHTML  = renderWords(data.mt_words  || [], {}, 'mt',  null);
+      lxxText.innerHTML = renderWords(data.lxx_words || [], {}, 'lxx', null);
+      return;
+    }
+
     if (key === 'divergences') {
       // Reveal containers, hide loading/empty only when content is ready
       if (emptyState)    emptyState.style.display    = 'none';
-      _hideCompactSpinner();
       currentData = _partialData;
-      var partial = { divergences: data || [], mt_words: [], lxx_words: [], reference: currentRef };
+      // Use corpus words already received (from _corpus section or cached mt_words/lxx_words section)
+      var _corpusData = _partialData['_corpus'] || {};
+      var partial = {
+        divergences: data || [],
+        mt_words:    _partialData['mt_words']  || _corpusData.mt_words  || [],
+        lxx_words:   _partialData['lxx_words'] || _corpusData.lxx_words || [],
+        reference:   currentRef
+      };
       if (passageHeading) { passageHeading.style.display = 'block'; }
       if (apparatusGrid) apparatusGrid.style.display = 'grid';
       if (tabsArea)      tabsArea.style.display      = 'block';

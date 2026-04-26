@@ -275,6 +275,7 @@
   function analyze(ref) {
     if (!ref) return;
     if (window.BibCrit_checkPassageLength && window.BibCrit_checkPassageLength(ref)) return;
+    if (window.BibCrit_requireVerse && window.BibCrit_requireVerse(ref)) return;
     _currentRef = ref;
 
     if (_es) { _es.close(); _es = null; }
@@ -560,12 +561,13 @@
     body.style.marginTop = '0.75rem';
 
     function rowHtml(label, text, dir) {
+      var sz = dir === 'rtl' ? '1.3rem' : '1.15rem';
       return '<div style="margin-bottom:0.75rem">' +
         '<span style="font-size:0.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:0.2rem">' +
           _esc(label) +
         '</span>' +
         '<div style="direction:' + (dir || 'ltr') + ';text-align:' + (dir === 'rtl' ? 'right' : 'left') + ';' +
-             'font-family:serif;font-size:1.05rem;line-height:1.7;word-break:break-word">' +
+             'font-family:serif;font-size:' + sz + ';line-height:1.7;word-break:break-word">' +
           _esc(text) +
         '</div>' +
       '</div>';

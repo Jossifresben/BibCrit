@@ -394,6 +394,8 @@
   // ── Main analyze function ─────────────────────────────────────────────────
 
   function analyze(ref) {
+    if (!ref) return;
+    if (window.BibCrit_requireVerse && window.BibCrit_requireVerse(ref)) return;
     _currentRef      = ref;
     _finalHandled    = false;
     _partialData     = {};
@@ -424,7 +426,7 @@
     }, 1000);
 
     if (heading) {
-      heading.textContent = ref;
+      heading.innerHTML = '<span class="ph-ref">' + esc(ref) + '</span>';
       heading.style.display = '';
     }
 

@@ -393,3 +393,33 @@ window.BibCrit_checkPassageLength = function(ref) {
   }
   return true;
 };
+
+/**
+ * Require a verse number in the reference (e.g. "Isaiah 7:14", not "Isaiah 7").
+ * Returns true if the reference is chapter-only (caller should abort), false if ok.
+ */
+window.BibCrit_requireVerse = function(ref) {
+  if (!ref) return false;
+  // A valid verse reference must contain chapter:verse (digit colon digit)
+  if (/\d+:\d+/.test(ref)) return false;
+  var msg = (window.BIBCRIT_I18N && window.BIBCRIT_I18N['err_verse_required'])
+    ? window.BIBCRIT_I18N['err_verse_required']
+    : 'Please include a verse number (e.g. \u201cZechariah 12:10\u201d, not \u201cZechariah 12\u201d).';
+  if (window.showToast) {
+    window.showToast(msg, 'error');
+  } else {
+    var btn = document.getElementById('btn-analyze');
+    if (btn) {
+      var err = document.getElementById('_verse-req-err');
+      if (!err) {
+        err = document.createElement('p');
+        err.id = '_verse-req-err';
+        err.style.cssText = 'color:#c0392b;font-size:.85rem;margin:.4rem 0 0;';
+        btn.parentNode.insertBefore(err, btn.nextSibling);
+      }
+      err.textContent = msg;
+      setTimeout(function() { if (err.parentNode) err.textContent = ''; }, 6000);
+    }
+  }
+  return true;
+};

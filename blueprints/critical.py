@@ -389,8 +389,22 @@ def api_theological_stream():
             yield event('error', msg='Server not ready — pipeline not initialized')
             return
 
-        vul_words = state.corpus.get_verse_words(reference, 'VUL') if state.corpus else None
+        corpus = state.corpus
+        vul_words = corpus.get_verse_words(reference, 'VUL') if corpus else None
         vul_text  = ' '.join(w.word_text for w in vul_words) if vul_words else ''
+
+        # Fetch MT and LXX for immediate corpus display
+        yield event('step', msg=_step(lang, 'load_verse'))
+        mt_words  = corpus.get_verse_words(reference, 'MT')  if corpus else []
+        lxx_words = corpus.get_verse_words(reference, 'LXX') if corpus else []
+        mt_text   = ' '.join(w.word_text for w in mt_words)  if mt_words  else ''
+        lxx_text  = ' '.join(w.word_text for w in lxx_words) if lxx_words else ''
+
+        if mt_text or lxx_text:
+            yield event('section', key='_corpus', data={
+                'mt_text':  mt_text,
+                'lxx_text': lxx_text,
+            })
 
         if lang == 'es':
             cached_es = pipeline.get_cached_es(reference, 'theological', _THEOLOGICAL_PROMPT, THEOLOGICAL_MODEL)
@@ -520,14 +534,33 @@ def api_patristic_stream():
                 yield event('done', data=cached_es)
                 return
 
-        # Step 1: load GNT corpus text for NT passages
+        # Step 1: load corpus texts for display and context
+        yield event('step', msg=_step(lang, 'load_verse'))
+        corpus = state.corpus
         gnt_text = ''
-        if state.corpus is not None:
+        if corpus is not None:
             try:
-                gnt_words = state.corpus.get_verse_words(reference, 'GNT')
+                gnt_words = corpus.get_verse_words(reference, 'GNT')
                 gnt_text  = ' '.join(w.word_text for w in gnt_words) if gnt_words else ''
             except Exception:
                 gnt_text = ''
+
+        mt_text = lxx_text = ''
+        if corpus is not None:
+            try:
+                mt_words  = corpus.get_verse_words(reference, 'MT')
+                lxx_words = corpus.get_verse_words(reference, 'LXX')
+                mt_text   = ' '.join(w.word_text for w in mt_words)  if mt_words  else ''
+                lxx_text  = ' '.join(w.word_text for w in lxx_words) if lxx_words else ''
+            except Exception:
+                pass
+
+        if mt_text or lxx_text or gnt_text:
+            yield event('section', key='_corpus', data={
+                'mt_text':  mt_text,
+                'lxx_text': lxx_text,
+                'gnt_text': gnt_text,
+            })
 
         # Step 2: check cache
         yield event('step', msg=_step(lang, 'checking_cache'))

@@ -26,6 +26,7 @@
   var btnShare   = document.getElementById('btn-share');
   var suggestions    = document.getElementById('theo-suggestions');
   var toast      = document.getElementById('toast');
+  var corpusPanel    = document.getElementById('theo-corpus-panel');
 
   if (!btnAnalyze) return;
 
@@ -112,14 +113,16 @@
       '</div></div>';
   }
   function _renderSkeleton() {
-    var summSec  = document.getElementById('summary-section');
-    var revList  = document.getElementById('revision-list');
-    var overSec  = document.getElementById('overall-section');
-    var bibSec   = document.getElementById('bibcrit-assessment');
-    if (summSec) { summSec.style.display = ''; summSec.innerHTML = '<div style="padding:1rem">' + _skelRows(3, [100, 85, 70]) + '</div>'; }
-    if (revList) { revList.style.display = ''; revList.innerHTML = _skelCard() + _skelCard(); }
-    if (overSec) { overSec.style.display = ''; overSec.innerHTML = '<div style="padding:1rem">' + _skelRows(3, [95, 80, 65]) + '</div>'; }
-    if (bibSec)  { bibSec.style.display  = ''; bibSec.innerHTML  = '<div style="padding:1rem">' + _skelRows(3, [95, 80, 65]) + '</div>'; }
+    var revList = document.getElementById('revision-list');
+    // Write skeleton into child body refs — not into parent sections —
+    // so module-level body references (summaryBody, overallBody, bibBody) stay attached.
+    if (summarySection) summarySection.style.display = '';
+    if (summaryBody)    summaryBody.innerHTML = '<div style="padding:1rem">' + _skelRows(3, [100, 85, 70]) + '</div>';
+    if (revList)        { revList.style.display = ''; revList.innerHTML = _skelCard() + _skelCard(); }
+    if (overallSection) overallSection.style.display = '';
+    if (overallBody)    overallBody.innerHTML = '<div style="padding:1rem">' + _skelRows(3, [95, 80, 65]) + '</div>';
+    if (bibSec)         bibSec.style.display = '';
+    if (bibBody)        bibBody.innerHTML = '<div style="padding:1rem">' + _skelRows(3, [95, 80, 65]) + '</div>';
   }
 
   // ── Suggestion chips ────────────────────────────────────────────────────
@@ -169,6 +172,7 @@
   function analyze(ref) {
     if (!ref) return;
     if (window.BibCrit_checkPassageLength && window.BibCrit_checkPassageLength(ref)) return;
+    if (window.BibCrit_requireVerse && window.BibCrit_requireVerse(ref)) return;
     _currentRef  = ref;
     _activeFilter = '';
 
@@ -180,6 +184,7 @@
 
     hide(suggestions);
     hide(emptyState);
+    if (corpusPanel) { corpusPanel.innerHTML = ''; corpusPanel.style.display = 'none'; }
     if (results) results.style.display = '';
     if (loadState) {
       loadState.classList.add('is-compact');
@@ -235,15 +240,38 @@
     };
   }
 
+  function _renderCorpusPanel(mtText, lxxText) {
+    if (!corpusPanel) return;
+    var html = '<div class="bt-group-card" style="max-width:900px;margin:0 auto 1rem;padding:1rem 1.25rem;">';
+    if (mtText) {
+      html += '<div style="font-size:0.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;'
+            + 'color:var(--muted);margin-bottom:0.4rem">Hebrew (MT)</div>'
+            + '<div class="hebrew-text verse-text" style="margin-bottom:' + (lxxText ? '0.9rem' : '0') + '">'
+            + _esc(mtText) + '</div>';
+    }
+    if (lxxText) {
+      html += '<div style="font-size:0.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;'
+            + 'color:var(--muted);margin-bottom:0.4rem">Greek (LXX)</div>'
+            + '<div class="greek-text verse-text">' + _esc(lxxText) + '</div>';
+    }
+    html += '</div>';
+    corpusPanel.innerHTML = html;
+    corpusPanel.style.display = '';
+  }
+
   // ── Progressive section rendering ────────────────────────────────────────
   function _renderSection(key, data) {
     _partialData[key] = data;
     _sectionReceived  = true;
 
+    if (key === '_corpus') {
+      _renderCorpusPanel(data.mt_text || '', data.lxx_text || '');
+      return;
+    }
+
     // Reveal results container, hide loading / empty states
     if (results)    results.style.display    = '';
     if (emptyState) emptyState.style.display = 'none';
-    _hideCompactSpinner();
 
     // Heading: render as soon as scope is known
     if ((key === 'scope' || key === 'scope_type') && heading && _partialData.scope) {

@@ -183,7 +183,7 @@
     if (_timer) { clearInterval(_timer); _timer = null; }
     if (loadTimer) loadTimer.textContent = '';
     setLoading(false);
-    if (heading) { heading.textContent = data.reference || _currentRef; heading.style.display = ''; }
+    if (heading) { heading.innerHTML = '<span class="ph-ref">' + esc(data.reference || _currentRef) + '</span>'; heading.style.display = ''; }
 
     // GNT text
     if (data.gnt_text) {
@@ -414,6 +414,8 @@
   }
 
   function analyze(ref) {
+    if (!ref) return;
+    if (window.BibCrit_requireVerse && window.BibCrit_requireVerse(ref)) return;
     _currentRef      = ref;
     _finalHandled    = false;
     _partialData     = {};

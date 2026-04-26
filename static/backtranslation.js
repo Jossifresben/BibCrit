@@ -134,6 +134,7 @@
   function analyze(ref) {
     if (!ref) return;
     if (window.BibCrit_checkPassageLength && window.BibCrit_checkPassageLength(ref)) return;
+    if (window.BibCrit_requireVerse && window.BibCrit_requireVerse(ref)) return;
     currentRef = ref;
 
     _finalHandled    = false;

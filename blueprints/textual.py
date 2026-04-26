@@ -5,6 +5,7 @@ import os
 import time
 import threading
 from queue import Queue, Empty
+import requests as _requests
 from flask import Blueprint, render_template, request, jsonify, Response, stream_with_context
 from biblical_core.claude_pipeline import (
     DIVERGENCE_MODEL, DSS_MODEL, GENEALOGY_MODEL, NT_OT_MODEL, CACHE_META_KEYS,
@@ -197,6 +198,12 @@ def api_divergence_stream():
 
         mt_text  = ' '.join(w.word_text for w in mt_words)
         lxx_text = ' '.join(w.word_text for w in lxx_words)
+
+        # Emit corpus texts immediately — pure DB lookup, no Claude needed.
+        yield event('section', key='_corpus', data={
+            'mt_words':  _words_to_dicts(mt_words),
+            'lxx_words': _words_to_dicts(lxx_words),
+        })
 
         if lang == 'es':
             cached_es = pipeline.get_cached_es(reference, 'divergence', _DIVERGENCE_PROMPT, DIVERGENCE_MODEL)
@@ -920,6 +927,26 @@ def api_nt_ot_stream():
         yield event('step', msg=_step(lang, 'load_verse'))
         gnt_words = corpus.get_verse_words(reference, 'GNT')
         nt_text   = ' '.join(w.word_text for w in gnt_words) if gnt_words else ''
+
+        # Fetch English translation (World English Bible, public domain) alongside GNT
+        en_text = ''
+        try:
+            _api_ref = reference.replace(' ', '+')
+            _resp = _requests.get(
+                f'https://bible-api.com/{_api_ref}?translation=web',
+                timeout=2
+            )
+            if _resp.ok:
+                en_text = _resp.json().get('text', '').strip().replace('\n', ' ')
+        except Exception:
+            pass  # English gloss is optional; fail silently
+
+        # Emit corpus texts immediately — no Claude needed for these
+        if nt_text or en_text:
+            yield event('section', key='_corpus', data={
+                'gnt_text': nt_text,
+                'en_text':  en_text,
+            })
 
         if lang == 'es':
             cached_es = pipeline.get_cached_es(reference, 'nt_ot', _NT_OT_PROMPT, NT_OT_MODEL)

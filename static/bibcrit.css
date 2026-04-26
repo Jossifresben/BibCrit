@@ -573,8 +573,8 @@
 .col-source    { font-size: 11px; color: var(--muted); }
 
 /* ── Scripture text ──────────────────────────────────────────────────── */
-.verse-text    { line-height: 2.4; font-size: 17px; }
-.hebrew-text   { font-family: var(--font-hebrew); font-size: 19px; direction: rtl; text-align: right; }
+.verse-text    { line-height: 2.4; font-size: 19px; }
+.hebrew-text   { font-family: var(--font-hebrew); font-size: 21px; direction: rtl; text-align: right; }
 .greek-text    { font-family: var(--font-greek); }
 .verse-meta    { font-size: 11px; color: var(--lxx-color); min-height: 16px; }
 .div-count     { font-weight: 600; }

@@ -75,7 +75,7 @@ _OPENAPI_SPEC = {
                 "description": "Retroversion of the Septuagint into its probable Hebrew Vorlage, with per-word confidence ratings. Based on Tov (1981).",
                 "operationId": "streamBacktranslation",
                 "parameters": [
-                    {"name": "ref", "in": "query", "required": True, "schema": {"type": "string"}, "description": "Verse reference"},
+                    {"name": "ref", "in": "query", "required": True, "schema": {"type": "string"}, "description": "Verse reference (e.g. `Isaiah 53:7`, `Psalm 2:7`)"},
                     {"name": "lang", "in": "query", "schema": {"type": "string", "enum": ["en", "es"], "default": "en"}},
                 ],
                 "responses": {"200": {"description": "SSE stream", "content": {"text/event-stream": {"schema": {"$ref": "#/components/schemas/SSEStream"}}}}},
@@ -127,7 +127,7 @@ _OPENAPI_SPEC = {
                 "description": "Five-axis radar chart analysis: literalness, anthropomorphism reduction, messianic heightening, harmonization, paraphrase rate. Based on Sollamo (1979).",
                 "operationId": "streamScribal",
                 "parameters": [
-                    {"name": "book", "in": "query", "required": True, "schema": {"type": "string"}, "description": "Biblical book name"},
+                    {"name": "book", "in": "query", "required": True, "schema": {"type": "string"}, "description": "Biblical book name (e.g. `Isaiah`, `Genesis`)"},
                     {"name": "lang", "in": "query", "schema": {"type": "string", "enum": ["en", "es"], "default": "en"}},
                 ],
                 "responses": {"200": {"description": "SSE stream", "content": {"text/event-stream": {"schema": {"$ref": "#/components/schemas/SSEStream"}}}}},
@@ -218,7 +218,7 @@ _OPENAPI_SPEC = {
                 "description": "Manuscript family attestation for NT passages (Alexandrian, Western, Byzantine, Caesarean), Metzger A/B/C/D confidence ratings, and variant register. Based on Metzger (1994).",
                 "operationId": "streamNtText",
                 "parameters": [
-                    {"name": "ref", "in": "query", "required": True, "schema": {"type": "string"}, "description": "NT verse reference"},
+                    {"name": "ref", "in": "query", "required": True, "schema": {"type": "string"}, "description": "NT verse reference (e.g. `Romans 3:10`, `John 1:1`)"},
                     {"name": "lang", "in": "query", "schema": {"type": "string", "enum": ["en", "es"], "default": "en"}},
                 ],
                 "responses": {"200": {"description": "SSE stream", "content": {"text/event-stream": {"schema": {"$ref": "#/components/schemas/SSEStream"}}}}},

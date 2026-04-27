@@ -279,6 +279,11 @@ python scripts/precache_es.py
 | GET | `/guide` | User guide |
 | GET | `/health` | Health check (`{"status": "ok"}`) |
 
+### API Reference
+
+Interactive documentation: **[/api/docs](https://bibcrit.app/api/docs)** (Swagger UI) — try any endpoint in the browser.  
+Machine-readable spec: **[/api/v1/openapi.json](https://bibcrit.app/api/v1/openapi.json)** (OpenAPI 3.0).
+
 ### Analysis API (SSE streaming)
 
 All stream endpoints emit `step` (progress), `done` (full JSON result), and `error` frames.
@@ -302,7 +307,7 @@ All stream endpoints emit `step` (progress), `done` (full JSON result), and `err
 
 ### Open Data API
 
-BibCrit's analysis corpus is publicly readable:
+BibCrit's analysis corpus is publicly readable. Full schema and filtering options are documented at [/api/docs](https://bibcrit.app/api/docs).
 
 ```
 GET /api/cache

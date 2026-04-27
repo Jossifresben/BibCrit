@@ -54,6 +54,8 @@ BibCrit follows a three-layer architecture:
 
 **Presentation layer.** Each analytical endpoint is implemented as a Flask Server-Sent Events (SSE) stream. The front end renders structured JSON responses progressively — each section (synthesis, assessment, key divergences, transmission history) appearing as it arrives. All UI strings are defined in `data/i18n.json` with English and Spanish translations; AI-generated analysis for the Spanish locale is translated server-side and cached separately in `analysis_cache_es`.
 
+**API discoverability.** A machine-readable OpenAPI 3.0 specification is served at `/api/v1/openapi.json`, documenting all fourteen analysis stream endpoints alongside corpus browser, cache query, export, and vote routes. An interactive Swagger UI at `/api/docs` enables browser-based exploration and trial of every endpoint without client tooling.
+
 The fourteen analytical tools, their scholarly methods, and active prompt versions are summarised in Table 1.
 
 | Tool | Scholarly Method | Prompt |

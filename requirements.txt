@@ -4,3 +4,4 @@ anthropic>=0.30
 gunicorn>=21.0
 supabase>=2.0
 python-dotenv>=1.0
+markdown>=3.5

@@ -40,6 +40,8 @@ The intersection of digital humanities and biblical studies has produced several
 
 On the commercial side, Accordance and Logos Biblical Software provide rich manuscript comparison features but are closed, expensive, and produce no machine-readable structured output. The Göttingen Septuaginta critical apparatus and the Dead Sea Scrolls Digital Library offer specialist access to specific corpora but are siloed from one another.
 
+Two prior open-source tools by the same author are directly related to BibCrit. The Aramaic Root Atlas [@fresco2026atlas] is a cross-corpus triliteral root explorer for Biblical Hebrew, Jewish Aramaic, and Syriac, providing root-level cognate comparison and semantic bridge visualization across the Semitic languages; BibCrit's Flask architecture and corpus-loading infrastructure were developed from this codebase. Peshitta Constellations [@fresco2026peshitta] is a Syriac Peshitta New Testament research tool featuring passage constellation visualization, translation shift analysis, and Hebrew/Arabic cognate mapping; its Peshitta corpus work and triliteral root methodology informed BibCrit's handling of the Syriac tradition.
+
 No existing open-source tool integrates manuscript comparison across MT, LXX, DSS, and SP in a single interface, generates structured scholarly analysis grounded in the methods of the field, or exposes results as a cacheable open API. BibCrit is designed to fill this gap, targeting both individual researchers who need rapid first-pass analysis and computational projects that can build on its cached output.
 
 # Software Design
@@ -104,6 +106,8 @@ Analysis streams via SSE so progress is visible in real time, with step-by-step 
 All UI strings are defined in `data/i18n.json` with English and Spanish translations. The `lang` query parameter selects the active language; AI-generated analysis is translated server-side for the Spanish locale and cached separately.
 
 # Acknowledgements
+
+BibCrit's Flask infrastructure was developed from the Aramaic Root Atlas codebase [@fresco2026atlas]. Syriac corpus methodology draws on work developed for Peshitta Constellations [@fresco2026peshitta].
 
 Corpus data is drawn from the following sources. The Masoretic Text, Dead Sea Scrolls, and Peshitta corpora use Text-Fabric modules produced by the ETCBC (Eep Talstra Centre for Bible and Computer, Vrije Universiteit Amsterdam), released under CC BY-NC 4.0 [@hagen2017]. The Peshitta lexical data derives from the SEDRA database (Beth Mardutho: The Syriac Institute). The Septuagint corpus uses data from STEP Bible (Tyndale House, Cambridge) [@stepbible2023]. The Samaritan Pentateuch corpus uses the Text-Fabric module produced by the University of Copenhagen (dt-ucph). The Greek New Testament corpus uses MorphGNT morphological annotations (James Tauber) over the SBLGNT text (Society of Biblical Literature). Targum Onkelos and Targum Jonathan texts are retrieved via the Sefaria API (Sefaria: A Living Library of Jewish Texts). The Clementine Vulgate text uses the scrollmapper/bible_databases corpus. AI analysis is powered by Claude (Anthropic).
 

@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% block title %}BibCrit — API Reference{% endblock %}
+{% block meta_description %}Interactive OpenAPI 3.0 reference for the BibCrit API — browse and try all analysis, corpus, cache, export, and vote endpoints.{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5/swagger-ui.css">
+<style>
+/* ── Swagger UI host overrides ────────────────────────────────── */
+#swagger-wrap {
+  max-width: 1100px;
+  margin: 1.5rem auto 4rem;
+  padding: 0 1rem;
+}
+/* Top bar conflicts with our nav — hide Swagger's own topbar */
+.swagger-ui .topbar { display: none !important; }
+
+/* Heading */
+.api-page-header {
+  max-width: 1100px;
+  margin: 1.5rem auto 0;
+  padding: 0 1rem;
+}
+.api-page-header h1 {
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 700;
+  color: var(--text-primary, #1a1a2e);
+  margin: 0 0 0.35rem;
+}
+.api-page-header p {
+  font-size: 0.9rem;
+  color: var(--text-muted, #6b7280);
+  margin: 0 0 0.5rem;
+}
+.api-header-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.82rem;
+}
+.api-header-links a {
+  color: var(--accent, #3a6bc4);
+  text-decoration: underline;
+}
+
+/* Dark mode pass-through */
+@media (prefers-color-scheme: dark) {
+  .swagger-ui, .swagger-ui * { color-scheme: normal; }
+}
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="api-page-header">
+  <h1>BibCrit API Reference</h1>
+  <p>Interactive documentation for all analysis, corpus, cache, export, and vote endpoints.</p>
+  <div class="api-header-links">
+    <a href="/api/v1/openapi.json" target="_blank" rel="noopener">openapi.json ↗</a>
+    <span style="color:var(--text-muted,#9ca3af)">·</span>
+    <a href="/guide#open-data-api">Guide: Open Data API</a>
+    <span style="color:var(--text-muted,#9ca3af)">·</span>
+    <a href="https://github.com/Jossifresben/bibcrit" target="_blank" rel="noopener">GitHub ↗</a>
+    <span style="color:var(--text-muted,#9ca3af)">·</span>
+    <a href="/paper">Paper</a>
+    <span style="color:var(--text-muted,#9ca3af)">·</span>
+    <span style="color:var(--text-muted,#9ca3af)">Apache 2.0 · DOI: <a href="https://doi.org/10.5281/zenodo.19358424" target="_blank" rel="noopener">10.5281/zenodo.19358424</a></span>
+  </div>
+</div>
+
+<div id="swagger-wrap">
+  <div id="swagger-ui"></div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="https://unpkg.com/swagger-ui-dist@5/swagger-ui-bundle.js"></script>
+<script>
+  window.onload = function () {
+    SwaggerUIBundle({
+      url: '/api/v1/openapi.json',
+      dom_id: '#swagger-ui',
+      presets: [SwaggerUIBundle.presets.apis, SwaggerUIBundle.SwaggerUIStandalonePreset],
+      layout: 'BaseLayout',
+      deepLinking: true,
+      defaultModelsExpandDepth: 1,
+      defaultModelExpandDepth: 1,
+      docExpansion: 'list',
+      filter: true,
+      showExtensions: false,
+      showCommonExtensions: false,
+      tryItOutEnabled: true,
+    });
+  };
+</script>
+{% endblock %}

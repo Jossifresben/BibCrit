@@ -1119,7 +1119,7 @@ def export_generic_sbl():
         f'accessed {year}, https://bibcrit.app/{tool}?ref={ref.replace(" ", "+")}, '
         f'powered by Anthropic Claude. '
         f'Jossi Fresco Benaim, ORCID: 0009-0000-2026-0836. '
-        f'DOI: https://doi.org/10.5281/zenodo.19553402.'
+        f'DOI: https://doi.org/10.5281/zenodo.19358424.'
     )
     return jsonify({'reference': ref, 'tool': tool, 'footnote': footnote, 'footnotes': [footnote]})
 
@@ -1168,7 +1168,7 @@ def export_generic_bibtex():
         f'  title        = {{{{BibCrit {tool.title()} analysis of {ref}}}}},\n'
         f'  year         = {{2026}},\n'
         f'  howpublished = {{\\url{{https://bibcrit.app/{tool}?ref={ref.replace(" ", "+")}}}}},\n'
-        f'  doi          = {{10.5281/zenodo.19553402}},\n'
+        f'  doi          = {{10.5281/zenodo.19358424}},\n'
         f'  note         = {{Powered by {model_version}}},\n'
         f'}}'
     )

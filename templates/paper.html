@@ -1,0 +1,229 @@
+{% extends "base.html" %}
+{% block title %}BibCrit — Academic Paper{% endblock %}
+{% block meta_description %}BibCrit: An AI-Assisted Web Application for Biblical Textual Criticism. Peer-review paper describing the design, corpus layer, and scholarly methodology.{% endblock %}
+
+{% block content %}
+<div class="paper-wrap">
+
+  <!-- Title block -->
+  <header class="paper-header">
+    <div class="paper-badge">JOSS Submission · Open Access</div>
+    <h1 class="paper-title">{{ title }}</h1>
+    <div class="paper-authors">
+      {% for name, orcid in authors %}
+        <span class="paper-author">
+          {{ name }}
+          {% if orcid %}
+            <a href="https://orcid.org/{{ orcid }}" target="_blank" rel="noopener" class="orcid-link" title="ORCID">
+              <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" width="14" height="14">
+              {{ orcid }}
+            </a>
+          {% endif %}
+        </span>
+      {% endfor %}
+    </div>
+    <div class="paper-meta">
+      <span>Independent Researcher</span>
+      <span class="paper-meta-sep">·</span>
+      <span>{{ date }}</span>
+      <span class="paper-meta-sep">·</span>
+      <a href="https://doi.org/10.5281/zenodo.19358424" target="_blank" rel="noopener" class="paper-doi">
+        DOI: 10.5281/zenodo.19358424
+      </a>
+    </div>
+  </header>
+
+  <hr class="paper-rule">
+
+  <!-- Body rendered from paper.md -->
+  <div class="paper-body">
+    {{ html | safe }}
+  </div>
+
+  <!-- References -->
+  {% if refs %}
+  <section class="paper-refs">
+    <h1>References</h1>
+    <ol class="paper-ref-list">
+      {% for num, ref_html in refs %}
+      <li id="ref-{{ num }}">{{ ref_html | safe }}</li>
+      {% endfor %}
+    </ol>
+  </section>
+  {% endif %}
+
+  <!-- Footer -->
+  <footer class="paper-footer">
+    <a href="https://doi.org/10.5281/zenodo.19358424" target="_blank" rel="noopener">📄 Zenodo record</a>
+    <span class="paper-meta-sep">·</span>
+    <a href="https://github.com/Jossifresben/BibCrit" target="_blank" rel="noopener">GitHub</a>
+    <span class="paper-meta-sep">·</span>
+    <span>Apache 2.0</span>
+  </footer>
+
+</div>
+
+<style>
+/* ── Paper page layout ─────────────────────────────────────────── */
+.paper-wrap {
+  max-width: 780px;
+  margin: 2rem auto 4rem;
+  padding: 0 1.25rem;
+  font-family: var(--font-body, Georgia, serif);
+  color: var(--text-primary, #1a1a2e);
+  line-height: 1.75;
+}
+
+/* Header */
+.paper-header { margin-bottom: 1.5rem; }
+.paper-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-family: var(--font-ui, system-ui, sans-serif);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+  border-radius: 4px;
+  padding: 2px 8px;
+  margin-bottom: 0.75rem;
+}
+.paper-title {
+  font-size: clamp(1.5rem, 4vw, 2.1rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 0.75rem;
+  color: var(--text-primary, #1a1a2e);
+}
+.paper-authors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+.paper-author { display: flex; align-items: center; gap: 0.35rem; }
+.orcid-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.78rem;
+  color: #a6ce39;
+  text-decoration: none;
+  border-bottom: none;
+}
+.orcid-link:hover { text-decoration: underline; }
+.paper-meta {
+  font-size: 0.82rem;
+  color: var(--text-muted, #6b7280);
+  font-family: var(--font-ui, system-ui, sans-serif);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem;
+}
+.paper-meta-sep { opacity: 0.4; }
+.paper-doi { color: var(--text-muted, #6b7280); text-decoration: underline; }
+.paper-doi:hover { color: var(--accent, #3a6bc4); }
+.paper-rule {
+  border: none;
+  border-top: 2px solid var(--border-light, #e5e7eb);
+  margin: 1.5rem 0 2rem;
+}
+
+/* Body typography */
+.paper-body h1 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 2.5rem 0 0.75rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--border-light, #e5e7eb);
+  color: var(--text-primary, #1a1a2e);
+}
+.paper-body h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 2rem 0 0.5rem;
+  color: var(--text-primary, #1a1a2e);
+}
+.paper-body p { margin: 0 0 1rem; }
+.paper-body strong { font-weight: 600; }
+.paper-body em { font-style: italic; }
+
+/* Table */
+.paper-body table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  font-family: var(--font-ui, system-ui, sans-serif);
+  margin: 1.5rem 0 2rem;
+  overflow-x: auto;
+  display: block;
+}
+.paper-body thead { background: var(--bg-subtle, #f3f4f6); }
+.paper-body th {
+  text-align: left;
+  padding: 0.55rem 0.75rem;
+  font-weight: 600;
+  border-bottom: 2px solid var(--border-light, #e5e7eb);
+  white-space: nowrap;
+}
+.paper-body td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--border-light, #e5e7eb);
+  vertical-align: top;
+}
+.paper-body tr:last-child td { border-bottom: none; }
+
+/* Inline citations */
+sup.paper-cite {
+  font-size: 0.7rem;
+  color: var(--accent, #3a6bc4);
+  font-family: var(--font-ui, system-ui, sans-serif);
+  font-weight: 600;
+  vertical-align: super;
+  line-height: 0;
+  margin-left: 1px;
+}
+
+/* References section */
+.paper-refs { margin-top: 3rem; }
+.paper-refs h1 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--border-light, #e5e7eb);
+}
+.paper-ref-list {
+  padding-left: 1.5rem;
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+.paper-ref-list li { margin-bottom: 0.75rem; }
+.paper-ref-list a { color: var(--accent, #3a6bc4); word-break: break-all; }
+
+/* Footer */
+.paper-footer {
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-light, #e5e7eb);
+  font-size: 0.82rem;
+  font-family: var(--font-ui, system-ui, sans-serif);
+  color: var(--text-muted, #6b7280);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem;
+}
+.paper-footer a { color: var(--text-muted, #6b7280); text-decoration: underline; }
+.paper-footer a:hover { color: var(--accent, #3a6bc4); }
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .paper-badge { background: #1e3a5f; color: #93c5fd; border-color: #1d4ed8; }
+}
+</style>
+{% endblock %}

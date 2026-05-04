@@ -12,7 +12,13 @@ Render instance even with full OT + NT corpora on disk.
 
 import csv
 import os
+from collections import OrderedDict
 from dataclasses import dataclass
+
+# Maximum number of book-CSV files kept in memory simultaneously.
+# Each file is roughly 1–3 MB of Python objects; 50 files ≈ 50–150 MB,
+# leaving ample headroom on a 512 MB Render instance.
+_LRU_CAP = 50
 
 
 @dataclass(slots=True)
@@ -63,8 +69,9 @@ class BiblicalCorpus:
         self._book_names: dict = {}
         # (tradition, canonical_book_name) → csv_path  — primary lookup path
         self._canonical_to_path: dict = {}
-        # set of csv_paths already fully loaded into self._words
-        self._loaded_files: set = set()
+        # LRU cache: file_path → frozenset of (reference, tradition) keys added.
+        # Oldest entry is evicted when len exceeds _LRU_CAP.
+        self._lru: OrderedDict = OrderedDict()
 
     def set_data_dir(self, data_dir: str) -> None:
         """Set base data directory and scan available files (no CSV data loaded)."""
@@ -72,7 +79,7 @@ class BiblicalCorpus:
         self._words = {}
         self._file_index = {}
         self._book_names = {}
-        self._loaded_files = set()
+        self._lru = OrderedDict()
         self._build_file_index()
 
     # ── Index building (startup — reads filenames only, no word data) ──────
@@ -115,12 +122,24 @@ class BiblicalCorpus:
         # Fallback: stem-based (e.g., 'genesis' → 'genesis.csv')
         if not fpath:
             fpath = self._file_index.get((tradition, _book_to_stem(book)))
-        if fpath and fpath not in self._loaded_files:
-            self._load_csv(fpath, tradition)
-            self._loaded_files.add(fpath)
+        if fpath:
+            if fpath in self._lru:
+                self._lru.move_to_end(fpath)   # mark as recently used
+            else:
+                added_keys = self._load_csv(fpath, tradition)
+                self._lru[fpath] = added_keys
+                # Evict oldest entry when cap exceeded
+                while len(self._lru) > _LRU_CAP:
+                    _, evicted = self._lru.popitem(last=False)
+                    for k in evicted:
+                        self._words.pop(k, None)
 
-    def _load_csv(self, path: str, tradition: str) -> None:
-        """Read one CSV into self._words, sorting words by position."""
+    def _load_csv(self, path: str, tradition: str) -> set:
+        """Read one CSV into self._words, sorting words by position.
+
+        Returns the set of (reference, tradition) keys added, so the caller
+        can register them in the LRU index for later eviction.
+        """
         tmp: dict = {}
         with open(path, 'r', encoding='utf-8') as f:
             reader = csv.DictReader(f)
@@ -140,9 +159,12 @@ class BiblicalCorpus:
                 key = (row['reference'], tradition)
                 tmp.setdefault(key, []).append(word)
 
+        added_keys: set = set()
         for key, words in tmp.items():
             words.sort(key=lambda w: w.position)
             self._words[key] = words
+            added_keys.add(key)
+        return added_keys
 
     # ── Public query API ────────────────────────────────────────────────────
 

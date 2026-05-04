@@ -216,6 +216,27 @@
         </div>
     </div>
 
+    <!-- Cite Modal -->
+    <div id="cite-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Cite this analysis">
+        <div class="modal-content cite-modal-content">
+            <button class="modal-close" id="cite-modal-close" aria-label="Close">&times;</button>
+            <h3 class="cite-modal-title">Cite this</h3>
+            <div class="cite-tabs" id="cite-tabs" role="tablist">
+                <button class="cite-tab active" data-format="bibtex" role="tab">BibTeX</button>
+                <button class="cite-tab" data-format="chicago" role="tab">Chicago</button>
+                <button class="cite-tab" data-format="mla" role="tab">MLA</button>
+                <button class="cite-tab" data-format="apa" role="tab">APA</button>
+                <button class="cite-tab" data-format="sbl" role="tab">SBL</button>
+            </div>
+            <pre class="cite-pre" id="cite-pre"></pre>
+            <div class="cite-actions">
+                <button class="btn-export cite-copy-btn" id="cite-copy-btn">📋 Copy</button>
+                <a class="cite-doi-link" href="https://doi.org/10.5281/zenodo.19358424" target="_blank" rel="noopener">DOI: 10.5281/zenodo.19358424</a>
+            </div>
+            <p class="cite-orcid">ORCID: <a href="https://orcid.org/0009-0000-2026-0836" target="_blank" rel="noopener">0009-0000-2026-0836</a></p>
+        </div>
+    </div>
+
     <main class="main">
         {% block content %}{% endblock %}
     </main>

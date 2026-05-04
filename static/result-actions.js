@@ -56,8 +56,30 @@
     var dlSep = document.createElement('span');
     dlSep.className = 'btn-export-sep';
 
-    // Prepend: [rating] [sep] [Copy] [Download] [sep] [existing buttons...]
-    exportRow.insertBefore(dlSep, exportRow.firstChild);
+    // ── Cite ───────────────────────────────────────────────────────────────
+    var citeBtn = document.createElement('button');
+    citeBtn.className = 'btn-export';
+    citeBtn.title = 'Cite this analysis';
+    citeBtn.innerHTML = '📚 Cite';
+
+    var citeSep = document.createElement('span');
+    citeSep.className = 'btn-export-sep';
+
+    // Hide the individual SBL/BibTeX/RIS/TEI buttons — replaced by the modal
+    ['btn-sbl', 'btn-bibtex', 'btn-ris', 'btn-tei'].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) el.style.display = 'none';
+    });
+
+    citeBtn.addEventListener('click', function() {
+      var r = options.getReference ? options.getReference() : '';
+      global.ResultActions.openCiteModal(options.toolName, r);
+    });
+
+    // Prepend: [rating] [sep] [Copy] [Download] [sep] [Cite] [sep] [existing buttons...]
+    exportRow.insertBefore(citeSep, exportRow.firstChild);
+    exportRow.insertBefore(citeBtn, citeSep);
+    exportRow.insertBefore(dlSep, citeBtn);
     exportRow.insertBefore(dlBtn, dlSep);
     exportRow.insertBefore(copyBtn, dlBtn);
     exportRow.insertBefore(raSep, copyBtn);
@@ -527,8 +549,129 @@
     return labels[tool] || tool;
   }
 
+  // ── Citation generator ────────────────────────────────────────────────────
+  var _TOOL_LABELS = {
+    divergence:      'MT/LXX Divergence Analysis',
+    backtranslation: 'Back-Translation / Vorlage Reconstruction',
+    scribal:         'Scribal Tendency Profile',
+    numerical:       'Numerical Discrepancy Analysis',
+    dss:             'Ancient Witness Bridge',
+    theological:     'Theological Revision Detection',
+    patristic:       'Patristic Citation Tracker',
+    genealogy:       'Manuscript Genealogy',
+    nt_ot:           'NT Use of OT Analysis',
+    chiasm:          'Chiasm and Literary Structure Detection',
+    source:          'Documentary Source Criticism',
+    targum:          'Targum Comparator',
+    nt_text:         'NT Textual Tradition Analysis',
+    stl:             'Second Temple Literature Bridge',
+  };
+
+  var _TOOL_PATHS = {
+    nt_ot:   'nt-ot',
+    nt_text: 'nt-text',
+  };
+
+  function _buildCitations(tool, ref) {
+    var label   = _TOOL_LABELS[tool] || tool;
+    var path    = _TOOL_PATHS[tool] || tool;
+    var baseUrl = 'https://bibcrit.app/' + path + '?ref=' + encodeURIComponent(ref) + '&lang=en';
+    var title   = 'BibCrit ' + label + ': ' + ref;
+    var slug    = (tool + '_' + ref).toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
+    var doi     = '10.5281/zenodo.19358424';
+    var orcid   = '0009-0000-2026-0836';
+
+    return {
+      bibtex: [
+        '@misc{fresco2026' + slug + ',',
+        '  author    = {Fresco Benaim, Jossi},',
+        '  title     = {' + title + '},',
+        '  year      = {2026},',
+        '  version   = {3.2.0},',
+        '  doi       = {' + doi + '},',
+        '  url       = {' + baseUrl + '},',
+        '  note      = {ORCID: ' + orcid + '}',
+        '}',
+      ].join('\n'),
+
+      chicago: 'Fresco Benaim, Jossi. "' + title + '." BibCrit, 2026. ' + baseUrl + '. DOI: ' + doi + '.',
+
+      mla: 'Fresco Benaim, Jossi. "' + title + '." BibCrit, 2026, ' + baseUrl.replace('https://', '') + '.',
+
+      apa: 'Fresco Benaim, J. (2026). ' + title + ' (Version 3.2.0) [Web application]. ' + baseUrl + '. https://doi.org/' + doi,
+
+      sbl: 'Jossi Fresco Benaim, "' + title + '," 2026, ' + baseUrl + ' (DOI: ' + doi + ').',
+    };
+  }
+
+  function _openCiteModal(tool, ref) {
+    var modal  = document.getElementById('cite-modal');
+    var pre    = document.getElementById('cite-pre');
+    var tabs   = document.querySelectorAll('.cite-tab');
+    var copyBt = document.getElementById('cite-copy-btn');
+    if (!modal || !pre) return;
+
+    var citations   = _buildCitations(tool, ref);
+    var activeFormat = 'bibtex';
+
+    function showFormat(fmt) {
+      activeFormat = fmt;
+      pre.textContent = citations[fmt] || '';
+      tabs.forEach(function(t) {
+        t.classList.toggle('active', t.dataset.format === fmt);
+      });
+    }
+
+    tabs.forEach(function(tab) {
+      tab.onclick = function() { showFormat(tab.dataset.format); };
+    });
+
+    if (copyBt) {
+      copyBt.onclick = function() {
+        var text = citations[activeFormat] || '';
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(text).then(function() {
+            _flash(copyBt, '✓ Copied!');
+          });
+        } else {
+          var ta = document.createElement('textarea');
+          ta.value = text;
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+          _flash(copyBt, '✓ Copied!');
+        }
+      };
+    }
+
+    showFormat('bibtex');
+    modal.classList.add('active');
+    modal.focus();
+  }
+
+  // ── Modal close wiring (runs once on page load) ───────────────────────────
+  document.addEventListener('DOMContentLoaded', function() {
+    var modal    = document.getElementById('cite-modal');
+    var closeBtn = document.getElementById('cite-modal-close');
+    if (!modal) return;
+
+    function closeModal() { modal.classList.remove('active'); }
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+    });
+  });
+
   global.ResultActions = global.ResultActions || {};
   global.ResultActions.init = init;
+  global.ResultActions.openCiteModal = _openCiteModal;
   global.ResultActions._dlBlob = _dlBlob;
   global.ResultActions._toText = _resultToText;
 

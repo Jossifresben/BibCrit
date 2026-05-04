@@ -3438,3 +3438,77 @@ body.mode-student .plain-highlight {
 @media (max-width: 600px) {
     .text-form-columns { grid-template-columns: 1fr; }
 }
+
+/* ── Cite Modal ─────────────────────────────────────────────────────────── */
+.cite-modal-content {
+    padding: 28px 32px 24px;
+    max-width: 580px;
+    width: 95vw;
+}
+.cite-modal-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 1rem;
+    color: var(--text-primary, #1a1a2e);
+}
+.cite-tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 2px solid var(--border, #e5e7eb);
+    margin-bottom: 1rem;
+}
+.cite-tab {
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    padding: 0.45rem 1rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    color: var(--text-muted, #6b7280);
+    font-family: inherit;
+    transition: color 0.15s;
+}
+.cite-tab:hover { color: var(--text-primary, #1a1a2e); }
+.cite-tab.active {
+    color: var(--accent, #3a6bc4);
+    border-bottom-color: var(--accent, #3a6bc4);
+    font-weight: 600;
+}
+.cite-pre {
+    background: var(--card-bg, #f9fafb);
+    border: 1px solid var(--border, #e5e7eb);
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 0.8rem;
+    line-height: 1.75;
+    white-space: pre-wrap;
+    word-break: break-all;
+    overflow-x: auto;
+    margin: 0 0 1rem;
+    min-height: 90px;
+    color: var(--text-primary, #1a1a2e);
+}
+.cite-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.6rem;
+}
+.cite-doi-link {
+    font-size: 0.82rem;
+    color: var(--accent, #3a6bc4);
+    text-decoration: none;
+}
+.cite-doi-link:hover { text-decoration: underline; }
+.cite-orcid {
+    font-size: 0.78rem;
+    color: var(--text-muted, #6b7280);
+    margin: 0;
+}
+.cite-orcid a { color: var(--accent, #3a6bc4); }
+@media (max-width: 480px) {
+    .cite-modal-content { padding: 20px 18px 18px; }
+    .cite-tab { padding: 0.4rem 0.6rem; font-size: 0.8rem; }
+}

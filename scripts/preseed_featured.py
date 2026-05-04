@@ -168,6 +168,12 @@ PASSAGES: list[tuple[str, str]] = [
     ("patristic",       "Deuteronomy 6:4"),
     ("patristic",       "Proverbs 8:22"),
     ("patristic",       "Genesis 1:26"),
+
+    # ── STL BRIDGE ───────────────────────────────────────────────────────────
+    ("stl",             "Genesis 6:1-4"),
+    ("stl",             "Daniel 7:13"),
+    ("stl",             "Isaiah 24:1-23"),
+    ("stl",             "Psalm 82:1"),
 ]
 
 

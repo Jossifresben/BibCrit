@@ -36,6 +36,10 @@ app.py  ──  create_app()
 blueprints/
   ├── textual.py    /divergence  /backtranslation  /api/divergence/stream  /api/backtranslation/stream
   ├── critical.py   /scribal     /numerical         /api/scribal/stream      /api/numerical/stream
+  ├── literary.py   /chiasm      /source            /api/chiasm/stream       /api/source/stream
+  ├── targum.py     /targum      /api/targum/stream
+  ├── nt_text.py    /nt-text     /api/nt-text/stream
+  ├── stl.py        /stl         /api/stl/stream
   ├── discovery.py  /discovery   /api/discovery/cards  /api/admin/discovery/flag
   └── research.py   /health
   │
@@ -326,6 +330,7 @@ If no file exists, each analysis method falls back to a minimal inline prompt. C
 | backtranslation | `v1` | `backtranslation_v1.txt` |
 | scribal | `v1` | `scribal_v1.txt` |
 | numerical | `v1` | `numerical_v1.txt` |
+| stl | `v1` | `stl_v1.txt` |
 
 `divergence_v1.txt` is preserved for historical reference; it is not called by any current code path.
 

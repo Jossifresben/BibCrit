@@ -65,6 +65,7 @@ TOOL_VERSE_LIMITS: dict[str, int] = {
     'dss':              35,   # 5-tradition comparison, moderate density
     'targum':           35,   # 3-tradition comparison with word-level analysis
     'nt_text':          30,   # Manuscript family analysis with variant register
+    'stl':              50,   # STL Bridge — canonical context; up to one chapter
     'chiasm':           50,   # structural overview, lower output per verse
     'numerical':        50,   # chapter-level anyway
     'source':           60,   # Genesis 1:1-2:25 = 56 verses — keep just under

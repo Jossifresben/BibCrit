@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+{% block title %}{{ _t('stl_page_title') }}{% endblock %}
+{% block meta_description %}Map allusions between any biblical passage and Second Temple Literature: 1 Enoch, Jubilees, Sirach, 4 Ezra, and Tobit. Directionality assessment with Nickelsburg and VanderKam methodology.{% endblock %}
+{% block og_title %}Second Temple Literature Bridge — BibCrit{% endblock %}
+{% block og_description %}Discover allusions from 1 Enoch, Jubilees, Sirach, 4 Ezra, and Tobit to your biblical passage.{% endblock %}
+
+{% block content %}
+
+<div class="tool-header">
+  <h1 class="tool-title">{{ _t('stl_tool_title') }}</h1>
+  <p class="tool-subtitle">{{ _t('stl_tool_subtitle') }}</p>
+</div>
+
+<!-- Passage Selector Bar -->
+<div class="passage-bar">
+  <div class="passage-bar-row passage-bar-main">
+    <span class="passage-label">{{ _t('passage_label') }}:</span>
+    <div class="passage-bar-selectors">
+      <select id="sel-book" class="passage-select" aria-label="{{ _t('book_label') }}">
+        <option value="">{{ _t('passage_book_placeholder') }}</option>
+      </select>
+      <select id="sel-chapter" class="passage-select" aria-label="Chapter" disabled>
+        <option value="">{{ _t('passage_ch') }}</option>
+      </select>
+      <select id="sel-verse" class="passage-select" aria-label="Verse" disabled>
+        <option value="">{{ _t('passage_vs') }}</option>
+      </select>
+    </div>
+    <span class="passage-or">{{ _t('passage_or') }}</span>
+    <input type="text" id="ref-input" class="passage-input"
+           placeholder="Genesis 6:1-4" value="{{ reference }}"
+           aria-label="Type a reference">
+    <div class="passage-bar-actions">
+      <button id="btn-analyze" class="btn-primary">{{ _t('stl_analyze_btn') }}</button>
+    </div>
+  </div>
+</div>
+
+<!-- Empty / Welcome State -->
+<div id="empty-state" class="empty-state">
+  <div class="empty-inner">
+    <p>{{ _t('stl_empty_body') }}</p>
+    <div class="bt-legend-hero" style="margin-bottom:1.5rem;">
+      <span class="bt-legend-item"><span class="scribal-mini-dot" style="background:var(--mt-color)"></span> Canonical passage</span>
+      <span class="bt-legend-item"><span class="scribal-mini-dot" style="background:#7c3aed"></span> STL allusion</span>
+      <span class="bt-legend-item"><span class="scribal-mini-dot" style="background:#0891b2"></span> DSS connection</span>
+    </div>
+    <p class="featured-label">{{ _t('featured_label') }}</p>
+    <div class="featured-passages">
+      <a href="#" class="featured-ref" data-ref="Genesis 6:1-4">{{ _t('feat_stl_gen614') | safe }}</a>
+      <a href="#" class="featured-ref" data-ref="Daniel 7:13">{{ _t('feat_stl_dan713') | safe }}</a>
+      <a href="#" class="featured-ref" data-ref="Isaiah 24:1-23">{{ _t('feat_stl_isa2412') | safe }}</a>
+      <a href="#" class="featured-ref" data-ref="Psalm 82:1">{{ _t('feat_stl_psa821') | safe }}</a>
+    </div>
+  </div>
+</div>
+
+<!-- Loading State -->
+<div id="loading-state" class="loading-state" style="display:none;" aria-live="polite">
+  <div class="loading-spinner"></div>
+  <p id="loading-step" class="loading-step-msg">{{ _t('loading_preparing') }}</p>
+  <p id="loading-timer" class="loading-timer"></p>
+</div>
+
+<!-- Passage heading -->
+<div id="passage-heading" class="passage-heading" style="display:none;"></div>
+
+<!-- Corpus verse panel (MT + LXX) — lives outside results so it survives innerHTML clears -->
+<div id="stl-corpus-panel" style="display:none;"></div>
+
+<!-- Results area -->
+<div id="stl-results" style="display:none;">
+
+  <!-- Synthesis -->
+  <div id="synthesis-section" class="num-section" style="display:none;">
+    <div class="num-section-label">{{ _t('section_synthesis') }}</div>
+    <div id="synthesis-body"></div>
+  </div>
+
+  <!-- Allusions list -->
+  <div id="allusions-section" class="num-section" style="display:none;">
+    <div class="num-section-label">{{ _t('section_stl_allusions') }}</div>
+    <div id="allusions-body"></div>
+  </div>
+
+  <!-- Works Surveyed bar -->
+  <div id="works-section" class="num-section" style="display:none;">
+    <div class="num-section-label">{{ _t('section_stl_works') }}</div>
+    <div id="works-body"></div>
+  </div>
+
+  <!-- DSS Significance -->
+  <div id="dss-sig-section" class="num-section" style="display:none;">
+    <div class="num-section-label">{{ _t('section_stl_dss') }}</div>
+    <div id="dss-sig-body"></div>
+  </div>
+
+  <!-- NT Significance -->
+  <div id="nt-sig-section" class="num-section" style="display:none;">
+    <div class="num-section-label">{{ _t('section_stl_nt') }}</div>
+    <div id="nt-sig-body"></div>
+  </div>
+
+  <!-- Directionality Summary -->
+  <div id="dir-section" class="num-section" style="display:none;">
+    <div class="num-section-label">{{ _t('stl_directionality_summary') }}</div>
+    <div id="dir-body"></div>
+  </div>
+
+  <!-- BibCrit Assessment -->
+  <div id="bibcrit-assessment" style="display:none;">
+    <div class="num-section-label" style="margin-top:1.5rem;">{{ _t('section_bibcrit_assessment') }}</div>
+    <div id="bibcrit-body"></div>
+  </div>
+
+  <!-- Export row -->
+  <div class="export-row" id="export-row" style="display:none;">
+    <button class="btn-export" id="btn-sbl" title="Copy SBL footnote">📋 SBL Footnote</button>
+    <button class="btn-export" id="btn-bibtex" title="Copy BibTeX">📋 BibTeX</button>
+    <button class="btn-export btn-share" id="btn-share" title="Share">
+      <span class="material-symbols-outlined" style="font-size:14px;vertical-align:-2px">qr_code_2</span> Share
+    </button>
+  </div>
+</div>
+
+<!-- Toast -->
+<div id="toast" class="toast" style="display:none;" role="status"></div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>window.TOOL_MAX_VERSES = 50;</script>
+<script src="{{ url_for('static', filename='stl.js') }}"></script>
+{% if reference %}
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.stl) window.stl.analyze('{{ reference | e }}');
+  });
+</script>
+{% endif %}
+{% endblock %}

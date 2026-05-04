@@ -182,12 +182,12 @@
       var rows = (data.rendering_fidelity.word_analysis || []).map(function (w) {
         return '<tr><td>' + esc(w.mt_word || '') + '</td>' +
                '<td>' + esc(w.targ_word || '') + '</td>' +
-               '<td><span class="badge">' + esc(w.type || '') + '</span></td>' +
+               '<td><span class="var-type-chip">' + esc(w.type || '') + '</span></td>' +
                '<td>' + esc(w.note || '') + '</td></tr>';
       }).join('');
       setText('fidelity-body',
         '<p style="margin-bottom:.5rem">Overall: <strong>' + esc(data.rendering_fidelity.overall || '') + '</strong></p>' +
-        (rows ? '<table class="var-table"><thead><tr><th>MT</th><th>Targum</th><th>Type</th><th>Note</th></tr></thead><tbody>' + rows + '</tbody></table>' : ''));
+        (rows ? '<div style="overflow-x:auto"><table class="var-table" style="min-width:520px"><thead><tr><th>MT</th><th>Targum</th><th>Type</th><th>Note</th></tr></thead><tbody>' + rows + '</tbody></table></div>' : ''));
       showSection('fidelity-section');
     }
 
@@ -283,7 +283,7 @@
       btnShare.onclick = function () {
         var url = window.location.origin + '/targum?ref=' + encodeURIComponent(_currentRef);
         navigator.clipboard.writeText(url);
-        showToast('Link copied!');
+        showToast(window.t ? window.t('toast_link_copied', 'Link copied!') : 'Link copied!');
       };
     }
   }
@@ -357,12 +357,12 @@
         var rows = (fid.word_analysis || []).map(function (w) {
           return '<tr><td>' + esc(w.mt_word || '') + '</td>' +
                  '<td>' + esc(w.targ_word || '') + '</td>' +
-                 '<td><span class="badge">' + esc(w.type || '') + '</span></td>' +
+                 '<td><span class="var-type-chip">' + esc(w.type || '') + '</span></td>' +
                  '<td>' + esc(w.note || '') + '</td></tr>';
         }).join('');
         setText('fidelity-body',
           '<p style="margin-bottom:.5rem">Overall: <strong>' + esc(fid.overall || '') + '</strong></p>' +
-          (rows ? '<table class="var-table"><thead><tr><th>MT</th><th>Targum</th><th>Type</th><th>Note</th></tr></thead><tbody>' + rows + '</tbody></table>' : ''));
+          (rows ? '<div style="overflow-x:auto"><table class="var-table" style="min-width:520px"><thead><tr><th>MT</th><th>Targum</th><th>Type</th><th>Note</th></tr></thead><tbody>' + rows + '</tbody></table></div>' : ''));
         showSection('fidelity-section');
         var fidSec = document.getElementById('fidelity-section');
         if (fidSec) staggerReveal(fidSec, 0);
@@ -474,7 +474,7 @@
       loadState.classList.add('is-compact');
       loadState.style.display = 'block';
     }
-    if (loadStep) loadStep.textContent = 'Analyzing \u2014 this may take 40\u201360 seconds\u2026';
+    if (loadStep) loadStep.textContent = window.t ? window.t('step_generating', 'Analyzing \u2014 this may take 40\u201360 seconds\u2026') : 'Analyzing \u2014 this may take 40\u201360 seconds\u2026';
     if (_timer) clearInterval(_timer);
     if (loadTimer) {
       var secs = 0; loadTimer.textContent = '';

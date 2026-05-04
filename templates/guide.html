@@ -218,26 +218,62 @@
         color: var(--muted-text, inherit);
     }
 
-    /* FAQ */
+    /* FAQ accordion */
     .faq-list {
         list-style: none;
         padding: 0;
         margin: 1rem 0 1.5rem;
+        border: 1px solid var(--border, #e5e7eb);
+        border-radius: 10px;
+        overflow: hidden;
     }
     .faq-item {
-        padding: 0.9rem 0;
-        border-bottom: 1px solid var(--border, #ddd);
+        border-bottom: 1px solid var(--border, #e5e7eb);
     }
     .faq-item:last-child { border-bottom: none; }
     .faq-q {
-        font-weight: 700;
-        font-size: 0.98rem;
-        margin-bottom: 0.3rem;
-        color: var(--accent, #2c3e50);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1rem 1.25rem;
+        font-weight: 600;
+        font-size: 0.96rem;
+        color: var(--text-primary, #1f2937);
+        cursor: pointer;
+        user-select: none;
+        background: var(--card-bg, #fff);
+        transition: background 0.15s;
     }
+    .faq-q:hover { background: var(--surface-secondary, #f9fafb); }
+    .faq-q .faq-chevron {
+        flex-shrink: 0;
+        font-size: 1.1rem;
+        color: var(--muted, #9ca3af);
+        transition: transform 0.2s ease;
+        line-height: 1;
+    }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
     .faq-a {
-        font-size: 0.93rem;
-        line-height: 1.65;
+        font-size: 0.92rem;
+        line-height: 1.7;
+        padding: 0 1.25rem 1.1rem;
+        color: var(--text-secondary, #4b5563);
+        display: none;
+        background: var(--card-bg, #fff);
+    }
+    .faq-item.open .faq-a { display: block; }
+    .faq-a p { margin: 0 0 0.6rem; }
+    .faq-a p:last-child { margin-bottom: 0; }
+    .faq-group-label {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: .07em;
+        text-transform: uppercase;
+        color: var(--muted, #9ca3af);
+        padding: 0.75rem 1.25rem 0.4rem;
+        background: var(--surface-secondary, #f9fafb);
+        border-bottom: 1px solid var(--border, #e5e7eb);
     }
 
     /* Discovery CTA */
@@ -429,7 +465,7 @@
     {# ── Stats bar ── #}
     <div class="about-stats">
         <div class="about-stat">
-            <span class="stat-num">13</span>
+            <span class="stat-num">14</span>
             <span class="stat-label">analysis tools</span>
         </div>
         <div class="about-stat">
@@ -531,6 +567,12 @@
             <h4><span class="material-symbols-outlined" style="font-size:1.1em;vertical-align:-3px;margin-right:4px">fact_check</span>NT Textual Tradition Analyzer</h4>
             <p>For any New Testament passage, identifies its textual stability across the four major manuscript families — Alexandrian (P66, P75, Sinaiticus, Vaticanus), Western (Bezae, Old Latin), Byzantine (Majority Text), and Caesarean (P45, family 1, family 13) — and assigns a Metzger A/B/C/D confidence rating. Includes extended analysis for the six major disputed passages: Mark 16:9–20, John 7:53–8:11, Luke 22:43–44, 1 John 5:7–8, Acts 8:37, and Romans 16:25–27.</p>
             <a href="/nt-text?ref=Mark+16%3A9&lang={{ lang }}" class="feature-example-link">Try Mark 16:9 →</a>
+        </div>
+
+        <div class="feature-card">
+            <h4><span class="material-symbols-outlined" style="font-size:1.1em;vertical-align:-3px;margin-right:4px">temple_hindu</span>Second Temple Literature Bridge</h4>
+            <p>Map allusions and parallels between any canonical passage and five major Second Temple works: 1 Enoch, Jubilees, Sirach (Ben Sira), 4 Ezra, and Tobit. Each allusion is classified by type (citation, allusion, echo, parallel), directionality (whether the STL text depends on the canonical text or vice versa), and confidence, applying the methodology of Nickelsburg, VanderKam, Collins, Knibb, and Hays.</p>
+            <a href="/stl?ref=Genesis+6%3A1-4&lang={{ lang }}" class="feature-example-link">Try Genesis 6:1–4 — Sons of God / Nephilim →</a>
         </div>
 
     </div>
@@ -728,24 +770,130 @@ GET /api/cache?discovery_ready=true&amp;limit=50&amp;offset=0</pre>
     {# ── FAQ ── #}
     <h2>Frequently Asked Questions</h2>
 
-    <ul class="faq-list">
+    <ul class="faq-list" id="faq-list">
+
+        <li class="faq-group-label">Methodology &amp; Scholarly Use</li>
+
         <li class="faq-item">
-            <div class="faq-q">Is BibCrit peer-reviewed?</div>
-            <div class="faq-a">No. BibCrit is a research aid powered by a large language model. Its analyses reflect Claude's training on published scholarship but have not been independently verified by human specialists. Always cross-reference significant findings with primary critical editions (BHS/BHQ, Göttingen LXX) and relevant commentaries before citing in academic work.</div>
+            <div class="faq-q">Can BibCrit analyses be cited in peer-reviewed publications or dissertations? <span class="faq-chevron">▾</span></div>
+            <div class="faq-a">
+                <p>With appropriate qualification, yes. BibCrit is a research aid — not a primary source or a peer-reviewed commentary. Its analyses reflect Claude's training on published scholarship (Tov, Ulrich, Kraft, Nickelsburg, VanderKam, Metzger, and others) but have not been independently verified by human specialists.</p>
+                <p>Recommended citation practice: use BibCrit to identify hypotheses, map the terrain, and generate leads; then verify significant findings against the primary critical editions (BHS/BHQ, Göttingen LXX, DJD series) and the specialist literature BibCrit cites. When you do cite BibCrit directly, use the DOI: <a href="https://doi.org/10.5281/zenodo.19358424" target="_blank" rel="noopener">10.5281/zenodo.19358424</a>.</p>
+            </div>
         </li>
+
         <li class="faq-item">
-            <div class="faq-q">What is a Vorlage?</div>
-            <div class="faq-a">A <em>Vorlage</em> (German for "exemplar" or "master copy") is the Hebrew source text that a translator used when producing a Greek (or other language) version. When the LXX reading differs from the MT, scholars ask whether the translator had a different Hebrew manuscript in front of them — a divergent Vorlage — or whether the difference arose within the Greek transmission. The Back-Translation Workbench and Divergence Analyzer both attempt to distinguish between these two scenarios.</div>
+            <div class="faq-q">How should confidence scores be interpreted? <span class="faq-chevron">▾</span></div>
+            <div class="faq-a">
+                <p>Confidence scores (0.0–1.0) reflect the model's assessment of scholarly consensus strength for a given classification — not a probability derived from Bayesian inference or a corpus frequency count. A score of 0.85 means the model judges the classification to be well-supported by mainstream critical scholarship; 0.55 indicates genuine scholarly debate or ambiguous evidence.</p>
+                <p>The scores are calibrated against the stated methodology for each tool (e.g. Tov's divergence typology for the Divergence Analyzer, Hays' six criteria for the STL Bridge). They should be read as a proxy for scholarly consensus density, not as a statistical confidence interval. Always consult the <em>scholarly_note</em> fields for the underlying reasoning.</p>
+            </div>
         </li>
+
         <li class="faq-item">
-            <div class="faq-q">Why do numbers differ between MT and LXX?</div>
-            <div class="faq-a">Numerical discrepancies — such as the patriarchal ages in Genesis 5 or the census figures in Numbers — arise from several converging causes: Hebrew letters serving double duty as numerals (making them vulnerable to paleographic confusion), deliberate chronological adjustments to align with different calendrical or theological schemas, and transmission errors in both MT and LXX branches. The Samaritan Pentateuch provides a third independent witness that sometimes supports the LXX against the MT. BibCrit's Numerical Discrepancy Modeler analyzes each case individually.</div>
+            <div class="faq-q">How does BibCrit distinguish a different Vorlage from inner-Greek or scribal variation? <span class="faq-chevron">▾</span></div>
+            <div class="faq-a">
+                <p>The Divergence Analyzer applies Tov's four-category typology: (1) different Vorlage — the LXX translator had a Hebrew text that already differed from proto-MT; (2) inner-Greek transmission error — the difference arose in the Greek manuscript chain after translation; (3) translator technique — a deliberate rendering decision by the translator (e.g. theological tendency, lexical substitution); (4) scribal error in either tradition. The Back-Translation Workbench separately attempts to reconstruct the Hebrew that would have produced a given Greek reading, then evaluates whether that Hebrew is attested in DSS or SP.</p>
+                <p>The model's typology classification is always provisional. For high-stakes divergences (e.g. Isaiah 7:14, Deuteronomy 32:8, Psalm 22:17), the scholarly debate is centuries old and BibCrit surfaces the leading positions without adjudicating them definitively.</p>
+            </div>
         </li>
+
         <li class="faq-item">
-            <div class="faq-q">Does BibCrit support the Dead Sea Scrolls or the Peshitta?</div>
-            <div class="faq-a">Yes. The <strong>Ancient Witness Bridge</strong> (<a href="/dss">/dss</a>) compares any passage across five ancient witnesses simultaneously: Dead Sea Scrolls, Samaritan Pentateuch, Peshitta (Syriac OT), MT, and LXX. Samaritan Pentateuch data is also used by the Numerical Discrepancy Modeler. The Manuscript Genealogy tool covers Peshitta, Targum, and Vulgate as transmission branches. The <strong>Targum Comparator</strong> (<a href="/targum">/targum</a>) provides dedicated analysis of Targum Onkelos and Jonathan renderings. The Vulgate is included as a fifth-century Latin witness in several tools.</div>
+            <div class="faq-q">How are Hays' criteria applied in the Second Temple Literature Bridge? <span class="faq-chevron">▾</span></div>
+            <div class="faq-a">
+                <p>Each allusion in the STL Bridge is evaluated against Hays' six criteria from <em>Echoes of Scripture in the Letters of Paul</em> (1989): <strong>availability</strong> (was the source text accessible to the author?), <strong>volume</strong> (how extensive is the verbal/thematic overlap?), <strong>recurrence</strong> (does the author echo this source elsewhere?), <strong>thematic coherence</strong> (does the echo fit the surrounding argument?), <strong>historical plausibility</strong> (is this connection plausible within the author's social/historical context?), and <strong>satisfaction</strong> (does the allusion enrich the reading?). The confidence score aggregates across all six criteria, weighted by the primary methodology of Nickelsburg, VanderKam, Collins, or Knibb depending on the work being assessed.</p>
+            </div>
         </li>
+
+        <li class="faq-item">
+            <div class="faq-q">Are analyses deterministic? Will the same passage always return the same result? <span class="faq-chevron">▾</span></div>
+            <div class="faq-a">
+                <p>Once cached, yes — every subsequent request for the same passage and tool returns the identical JSON from the cache (Supabase + local disk). Cache keys are <code>SHA256(reference|tool|prompt_version|model_version)</code>, so results are stable until a prompt or model version changes.</p>
+                <p>The first generation of any passage is stochastic (LLM sampling). If you need reproducibility for a specific result, note the <code>model_version</code> and <code>prompt_version</code> fields returned in the response. If a prompt version is incremented (e.g. <code>divergence_v3</code>), all existing cache entries for that tool are invalidated and regenerated on next request.</p>
+            </div>
+        </li>
+
+        <li class="faq-item">
+            <div class="faq-q">How does BibCrit handle passages where the scholarly consensus is genuinely divided? <span class="faq-chevron">▾</span></div>
+            <div class="faq-a">
+                <p>Contested passages receive multi-hypothesis treatment. Rather than committing to a single classification, the model returns competing hypotheses each with a confidence weight and a scholarly note identifying the principal proponents. Confidence scores on contested readings are typically in the 0.45–0.65 range to signal ambiguity — that range is a feature, not a limitation.</p>
+                <p>For the most debated passages (Deuteronomy 32:8 MT vs. LXX/DSS; Psalm 22:17 <em>kāʿărî</em>/<em>kārû</em>; Isaiah 53:11), BibCrit surfaces the Barthélemy, Tov, and Ulrich positions rather than arbitrating. The <em>assessment</em> section explicitly names where consensus is weak.</p>
+            </div>
+        </li>
+
+        <li class="faq-group-label">Corpus &amp; Data</li>
+
+        <li class="faq-item">
+            <div class="faq-q">Which critical editions back the MT and LXX corpora? <span class="faq-chevron">▾</span></div>
+            <div class="faq-a">
+                <p>The MT corpus uses the ETCBC BHSA dataset (Biblia Hebraica Stuttgartensia with morphological encoding), the standard computational edition of the Leningrad Codex, distributed via the Text-Fabric framework from the Eep Talstra Centre for Bible and Computer (Vrije Universiteit Amsterdam) under CC BY-NC 4.0. The LXX corpus uses the STEP Bible Rahlfs-Hanhart text with morphological tags, covering 38 books. Neither corpus has been further edited or lemmatized by BibCrit — the word objects are passed to Claude unmodified with reference metadata attached.</p>
+            </div>
+        </li>
+
+        <li class="faq-item">
+            <div class="faq-q">Which DSS manuscripts are in the corpus? How are lacunae handled? <span class="faq-chevron">▾</span></div>
+            <div class="faq-a">
+                <p>Four scrolls are loaded: <strong>1QIsaᵃ</strong> (Isaiah 1–66, ~95% preserved), <strong>4QSamᵃ</strong> (Samuel fragments), <strong>11QPaleoLev</strong> (Leviticus fragments in paleo-Hebrew script), and <strong>4QDeutᵏ</strong> (Deuteronomy fragments). All are drawn from the ETCBC DSS Text-Fabric module. Lacunose words are represented as empty strings in the corpus; the model is instructed to treat them as absent evidence rather than positive witness. For 1QpHab, the tool filters for verses tagged <code>biblical=True</code> to isolate scriptural quotations from the pesher commentary.</p>
+            </div>
+        </li>
+
+        <li class="faq-item">
+            <div class="faq-q">Does the STL Bridge use an actual corpus of 1 Enoch, Jubilees, etc.? <span class="faq-chevron">▾</span></div>
+            <div class="faq-a">
+                <p>No — the STL Bridge is a pure AI tool. There is no CLTK or Open Scriptures corpus loaded for Second Temple literature. The model draws on its training knowledge of the Nickelsburg <em>Hermeneia</em> commentary on 1 Enoch, VanderKam's Jubilees edition, Collins' <em>Apocalyptic Imagination</em>, Knibb's Ethiopic Enoch, and the standard critical editions of Sirach, 4 Ezra, and Tobit. This means allusion identification for very obscure passages is less reliable than for well-studied ones; always verify specific passage references against the primary editions (Knibb 1978, VanderKam 2018 CEJL, Skehan–Di Lella AB Sirach).</p>
+            </div>
+        </li>
+
+        <li class="faq-group-label">Tools &amp; Workflow</li>
+
+        <li class="faq-item">
+            <div class="faq-q">What is the difference between the Divergence Analyzer and the Ancient Witness Bridge? <span class="faq-chevron">▾</span></div>
+            <div class="faq-a">
+                <p>The <strong>Divergence Analyzer</strong> (<a href="/divergence">/divergence</a>) focuses exclusively on MT vs. LXX, producing a word-level apparatus with divergence classification, back-translation hypothesis, and competing scholarly explanations. It is the primary tool for studying the LXX translation and its Vorlage.</p>
+                <p>The <strong>Ancient Witness Bridge</strong> (<a href="/dss">/dss</a>) is a five-tradition comparison tool: MT, LXX, Dead Sea Scrolls (corpus-backed), Samaritan Pentateuch (corpus-backed), and Peshitta (corpus-backed via ETCBC). It is designed for passages where DSS or SP alignment patterns are the central question — e.g. whether a Qumran scroll supports the LXX against MT, or stands independently.</p>
+            </div>
+        </li>
+
+        <li class="faq-item">
+            <div class="faq-q">How do I export results for use in Zotero, Endnote, or LaTeX? <span class="faq-chevron">▾</span></div>
+            <div class="faq-a">
+                <p>Every analysis result includes <strong>SBL Footnote</strong> and <strong>BibTeX</strong> export buttons in the toolbar below the results. The Divergence Analyzer additionally offers <strong>RIS</strong> (Zotero, Endnote, Mendeley) and <strong>TEI XML</strong> export. The Download button produces a plain-text file with the full structured analysis. All exports are also accessible programmatically via the <a href="https://github.com/Jossifresben/bibcrit/blob/main/docs/api-reference.md" target="_blank" rel="noopener">REST API</a> — e.g. <code>GET /api/divergence/export/bibtex?ref=Isaiah+7:14</code>.</p>
+            </div>
+        </li>
+
+        <li class="faq-item">
+            <div class="faq-q">Can I access the raw JSON output or integrate BibCrit into a research pipeline? <span class="faq-chevron">▾</span></div>
+            <div class="faq-a">
+                <p>Yes. The full analysis cache is publicly readable via <code>GET /api/cache?tool=divergence&amp;ref=Isaiah+7:14</code>. Each record returns the complete structured JSON with all fields, plus <code>model_version</code>, <code>prompt_version</code>, and <code>cached_at</code> metadata. The SSE stream endpoints (<code>/api/{tool}/stream</code>) can be consumed programmatically — they emit <code>section</code> events as each JSON key completes, then a final <code>done</code> event with the full payload. See <a href="https://github.com/Jossifresben/bibcrit/blob/main/docs/api-reference.md" target="_blank" rel="noopener">docs/api-reference.md</a> for full schema documentation.</p>
+            </div>
+        </li>
+
+        <li class="faq-item">
+            <div class="faq-q">How does the Scholar Rating system work? <span class="faq-chevron">▾</span></div>
+            <div class="faq-a">
+                <p>The ▲/▼ voting buttons below each result submit anonymous upvotes and downvotes to the BibCrit vote API (<code>POST /api/vote</code>). Votes are stored per tool + reference and inform the Discovery feed's quality ranking — highly-rated analyses surface more prominently. Your vote is stored in <code>localStorage</code> so it persists across sessions on the same device. The system is designed to let the scholarly community surface the most methodologically sound results, not to crowdsource truth — a 0.9 confidence score from Claude with 50 upvotes still requires you to check the primary sources.</p>
+            </div>
+        </li>
+
     </ul>
+
+    <script>
+    (function () {
+        document.querySelectorAll('#faq-list .faq-q').forEach(function (q) {
+            q.addEventListener('click', function () {
+                var item = this.closest('.faq-item');
+                if (!item) return;
+                var isOpen = item.classList.contains('open');
+                // Close all
+                document.querySelectorAll('#faq-list .faq-item.open').forEach(function (el) {
+                    el.classList.remove('open');
+                });
+                // Open clicked (unless it was already open)
+                if (!isOpen) item.classList.add('open');
+            });
+        });
+    })();
+    </script>
 
     {# ── Discovery CTA ── #}
     <div class="guide-cta">
@@ -767,7 +915,7 @@ GET /api/cache?discovery_ready=true&amp;limit=50&amp;offset=0</pre>
     {# ── DOI citation banner ── #}
     <div style="text-align:center;margin:1.5rem auto 2rem;padding:1rem 1.5rem;background:var(--card-bg,#fff);border:1px solid var(--border);border-radius:10px;max-width:640px;font-size:0.875rem;color:var(--muted);">
         <p style="margin:0 0 0.5rem;font-weight:600;color:var(--fg);">Cite BibCrit</p>
-        <p style="margin:0 0 0.75rem;">Fresco Benaim, J. (2026). <em>BibCrit: An AI-Assisted Web Application for Biblical Textual Criticism</em> (v1.0.0). Zenodo.</p>
+        <p style="margin:0 0 0.75rem;">Fresco Benaim, J. (2026). <em>BibCrit: An AI-Assisted Web Application for Biblical Textual Criticism</em> (v3.2.0). Zenodo.</p>
         <a href="https://doi.org/10.5281/zenodo.19358424" target="_blank" rel="noopener" style="display:inline-block;">
             <img src="https://zenodo.org/badge/1195648052.svg" alt="DOI: 10.5281/zenodo.19358424" style="height:20px;vertical-align:middle;">
         </a>

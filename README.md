@@ -5,7 +5,7 @@
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0000--2026--0836-a6ce39)](https://orcid.org/0009-0000-2026-0836)
 [![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.19358424.svg)](https://doi.org/10.5281/zenodo.19358424)
 
-# BibCrit v3.1
+# BibCrit v3.2
 
 Free, open-access web tool for biblical textual criticism at [bibcrit.com](https://bibcrit.com). Compare MT, LXX, and Dead Sea Scrolls; reconstruct Hebrew Vorlagen; profile scribal tendencies; detect theological revisions; track patristic citations; model numerical discrepancies; detect literary structures (chiasm, inclusios, parallel panels); identify documentary source layers (J/E/D/P); and visualize manuscript genealogies — all in a browser, in English and Spanish.
 
@@ -49,6 +49,7 @@ Free, open-access web tool for biblical textual criticism at [bibcrit.com](https
 | 11 | **Source Criticism Tool** | `/source` | Assigns documentary source designations (J, E, D, P, Redactor) to Pentateuchal units using classical criteria: divine name usage (YHWH vs. Elohim), vocabulary patterns, doublets, and narrative tensions. Scholarly grounding: Wellhausen, Friedman, Baden. Prompt: `source_v1`. |
 | 12 | **Targum Comparator** | `/targum` | Compares Targum Onkelos (Torah) and Targum Jonathan (Prophets) against MT and LXX; analyzes Memra substitutions, anthropomorphism avoidance, targumic expansions, and messianic reinterpretation. Prompt: `targum_v1`. |
 | 13 | **NT Textual Tradition Analyzer** | `/nt-text` | Manuscript family support (Alexandrian, Western, Byzantine, Caesarean), Metzger A/B/C/D confidence ratings, variant register, and extended analysis for all major disputed passages. Prompt: `nt_text_v1`. |
+| 14 | **Second Temple Literature Bridge** | `/stl` | Maps allusions and parallels between canonical Scripture and five Second Temple works (1 Enoch, Jubilees, Sirach, 4 Ezra, Tobit). Classifies each connection by type, directionality, and confidence using Nickelsburg / VanderKam / Collins / Knibb / Hays methodology. Pure AI tool — no external corpus required. Prompt: `stl_v1`. |
 
 ---
 
@@ -98,6 +99,7 @@ BibCrit/
 │   ├── literary.py             # /chiasm, /source + SSE APIs
 │   ├── targum.py               # /targum + /api/targum/stream
 │   ├── nt_text.py              # /nt-text + /api/nt-text/stream
+│   ├── stl.py                  # /stl + /api/stl/stream
 │   ├── discovery.py            # /discovery, /api/discovery/cards, /api/admin/discovery/flag
 │   └── research.py             # /health, /guide
 │
@@ -122,7 +124,7 @@ BibCrit/
 │       └── vul_clementine/     # Clementine Vulgate (scrollmapper; 66 books)
 │
 ├── scripts/
-│   ├── preseed_featured.py     # Seed 88 featured passages across all 13 tools
+│   ├── preseed_featured.py     # Seed 92 featured passages across all 14 tools
 │   ├── precache_all.py         # Legacy: seed featured passages in English
 │   ├── precache_es.py          # Translate all cached EN analyses to Spanish
 │   ├── push_cache_to_supabase.py  # Push disk cache → Supabase
@@ -234,10 +236,10 @@ Text-Fabric downloads corpora on first run (~several hundred MB). The ETCBC and 
 
 ## Pre-caching Featured Passages
 
-The repo ships with analyses for featured passages across all 13 tools. To seed or refresh:
+The repo ships with analyses for featured passages across all 14 tools. To seed or refresh:
 
 ```bash
-# Seed all 88 featured passages across all tools (safe to re-run; skips cached)
+# Seed all 92 featured passages across all tools (safe to re-run; skips cached)
 python scripts/preseed_featured.py
 
 # Seed a specific tool only
@@ -272,6 +274,7 @@ python scripts/precache_es.py
 | GET | `/source` | Source Criticism Tool (J/E/D/P) |
 | GET | `/targum` | Targum Comparator |
 | GET | `/nt-text` | NT Textual Tradition Analyzer |
+| GET | `/stl` | Second Temple Literature Bridge |
 | GET | `/discovery` | Discovery — plain-language findings |
 | GET | `/guide` | User guide |
 | GET | `/health` | Health check (`{"status": "ok"}`) |
@@ -300,6 +303,7 @@ All stream endpoints emit `step` (progress), `done` (full JSON result), and `err
 | GET | `/api/source/stream` | `ref` |
 | GET | `/api/targum/stream` | `ref` |
 | GET | `/api/nt-text/stream` | `ref` |
+| GET | `/api/stl/stream` | `ref` |
 
 ### Open Data API
 
@@ -314,7 +318,7 @@ GET /api/cache?discovery_ready=true&limit=50&offset=0
 
 | Param | Description | Default |
 |---|---|---|
-| `tool` | Filter by tool (`divergence`, `backtranslation`, `scribal`, `numerical`, `dss`, `theological`, `patristic`, `genealogy`, `nt_ot`, `chiasm`, `source`, `targum`, `nt_text`) | all |
+| `tool` | Filter by tool (`divergence`, `backtranslation`, `scribal`, `numerical`, `dss`, `theological`, `patristic`, `genealogy`, `nt_ot`, `chiasm`, `source`, `targum`, `nt_text`, `stl`) | all |
 | `ref` | Case-insensitive substring match on reference | all |
 | `discovery_ready` | `true` / `false` | all |
 | `limit` | Max records per page (max 200) | 50 |
@@ -440,7 +444,7 @@ The default spend cap is `$10.00/month`. Raise it via `BIBCRIT_API_CAP_USD` in t
 ## Roadmap
 
 ### ✅ Completed (v2.5 → v3.0)
-- [x] 13 analysis tools across textual, critical, literary, and discovery categories
+- [x] 14 analysis tools across textual, critical, literary, and discovery categories
 - [x] **Chiasm & Literary Structure Detector** (`/chiasm`) — first open tool of its kind
 - [x] **Source Criticism Tool** (`/source`) — J/E/D/P attribution with Wellhausen / Friedman / Baden grounding
 - [x] Full OT corpus coverage — MT (ETCBC) + LXX (Vaticanus) across all books
@@ -488,17 +492,17 @@ The default spend cap is `$10.00/month`. Raise it via `BIBCRIT_API_CAP_USD` in t
 ### 🔜 Phase 3 — Months 5–6: Synthesis
 
 **Corpus**
-- [ ] **Second Temple literature** — 1 Enoch, Jubilees, Sirach, 4 Ezra, Tobit from CLTK / Open Scriptures; register `stl_cltk/` tradition
+- [x] **Second Temple literature** — Pure AI (no external corpus required); 1 Enoch, Jubilees, Sirach, 4 Ezra, Tobit from Claude training knowledge
 - [ ] **Peshitta NT** — Syriac NT (Aramaic Primacy tradition); third NT tradition alongside SBLGNT
 
 **New tools** *(capstone — require all prior corpora)*
-- [ ] **Second Temple Literature Bridge** (`/stl`) — map allusions from 1 Enoch, Jubilees, Sirach, 4 Ezra to canonical texts; critical for DSS and NT intertextuality; Nickelsburg / VanderKam / Collins methodology
+- [x] **Second Temple Literature Bridge** (`/stl`) — map allusions from 1 Enoch, Jubilees, Sirach, 4 Ezra to canonical texts; critical for DSS and NT intertextuality; Nickelsburg / VanderKam / Collins methodology
 - [ ] **Intertextuality Mapper** (`/intertextuality`) — full allusion network for any passage: inner-biblical allusions, NT echoes, patristic citations, DSS parallels, Second Temple parallels; exportable as JSON-LD / RDF; Hays / Beale / Fishbane methodology
 
 **Infrastructure**
 - [ ] **Full open API v1** — versioned endpoints, API key management, rate limiting, Swagger docs at `/api/docs`
 - [ ] **Dutch UI** (`nl`) and **Portuguese UI** (`pt`)
-- [ ] **JOSS paper v3 + Zenodo DOI update** — reflect 15 tools and 9 corpus traditions
+- [ ] **JOSS paper v3 + Zenodo DOI update** — reflect 14 tools and 9 corpus traditions
 
 ---
 
@@ -506,7 +510,7 @@ The default spend cap is `$10.00/month`. Raise it via `BIBCRIT_API_CAP_USD` in t
 
 | Metric | v2.2 now | v3.0 (+6 months) |
 |---|---|---|
-| Analysis tools | 13 | 15 |
+| Analysis tools | 14 | 15 |
 | Corpus traditions | 8 | 10 |
 | UI languages | 2 (EN, ES) | 5 (+ HE, NL, PT) |
 | First-in-world open tools | 5 | 11 |

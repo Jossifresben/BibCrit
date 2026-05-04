@@ -45,13 +45,13 @@
     var copyBtn = document.createElement('button');
     copyBtn.className = 'btn-export';
     copyBtn.title = window.t('ra_copy_title', 'Copy analysis to clipboard');
-    copyBtn.innerHTML = window.t('ra_copy_btn', '📋 Copy');
+    copyBtn.innerHTML = '<span class="material-symbols-outlined" style="font-size:16px;vertical-align:-3px;margin-right:4px;">content_copy</span>' + window.t('ra_copy_btn', 'Copy');
 
     // ── Download ───────────────────────────────────────────────────
     var dlBtn = document.createElement('button');
     dlBtn.className = 'btn-export';
     dlBtn.title = window.t('ra_download_title', 'Download analysis');
-    dlBtn.innerHTML = window.t('ra_download_btn', '⬇ Download');
+    dlBtn.innerHTML = '<span class="material-symbols-outlined" style="font-size:16px;vertical-align:-3px;margin-right:4px;">download</span>' + window.t('ra_download_btn', 'Download');
 
     var dlSep = document.createElement('span');
     dlSep.className = 'btn-export-sep';
@@ -60,7 +60,7 @@
     var citeBtn = document.createElement('button');
     citeBtn.className = 'btn-export';
     citeBtn.title = 'Cite this analysis';
-    citeBtn.innerHTML = '📚 Cite';
+    citeBtn.innerHTML = '<span class="material-symbols-outlined" style="font-size:16px;vertical-align:-3px;margin-right:4px;">menu_book</span>Cite';
 
     var citeSep = document.createElement('span');
     citeSep.className = 'btn-export-sep';

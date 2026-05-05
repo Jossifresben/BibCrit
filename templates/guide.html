@@ -650,6 +650,17 @@
     {# ── How analysis works ── #}
     <h2>How Analysis Works</h2>
 
+    <figure style="margin: 0 0 2rem; text-align: center;">
+      <img
+        src="{{ url_for('static', filename='process.png') }}"
+        alt="BibCrit pipeline infographic — user input through corpus lookup, cache check, Claude API, SSE streaming, and structured output"
+        style="max-width: 100%; border-radius: 10px; border: 1px solid #2d3348;"
+      >
+      <figcaption style="margin-top: 0.6rem; font-size: 0.82rem; color: #64748b;">
+        The verse analysis pipeline: from passage input to structured JSON output in your browser.
+      </figcaption>
+    </figure>
+
     <p>Each BibCrit tool draws on Claude's extensive training in biblical studies, ancient languages, and the primary literature of textual criticism. When you submit a passage or book, Claude consults that training knowledge to apply the same analytical frameworks used in critical scholarship — Tov's divergence taxonomy for the Divergence Analyzer, Aejmelaeus's translation-technique categories for the Scribal Profiler, the standard Vorlage reconstruction methodology for the Back-Translation Workbench, and so on. See <a href="#scholarship">Scholarship &amp; Methodology</a> for the specific sources that inform each tool.</p>
 
     <p>Where the analysis touches manuscript data that can be verified — such as the presence of a Dead Sea Scrolls witness, the alignment of a patristic citation, or the numerical value in a specific tradition — Claude cross-checks its response against its knowledge of the standard critical editions. Results stream to your browser in real time so you can follow the analysis as it develops. Frequently analyzed passages load from a shared cache, so you see prior results immediately.</p>

@@ -8,6 +8,7 @@ import { S04_CorpusLookup } from './scenes/S04_CorpusLookup';
 import { S05_CacheCheck } from './scenes/S05_CacheCheck';
 import { S06_ClaudeAPI } from './scenes/S06_ClaudeAPI';
 import { S07_SSEStream } from './scenes/S07_SSEStream';
+import { S08_Output } from './scenes/S08_Output';
 import { S09_Transition } from './scenes/S09_Transition';
 import { S11_Outro } from './scenes/S11_Outro';
 
@@ -44,7 +45,7 @@ export const PipelineExplainer: React.FC = () => (
       <S07_SSEStream />
     </Sequence>
     <Sequence from={SCENES.S8_START}  durationInFrames={SCENES.S8_END  - SCENES.S8_START}>
-      <Placeholder label="S8 Output" />
+      <S08_Output />
     </Sequence>
     <Sequence from={SCENES.S9_START}  durationInFrames={SCENES.S9_END  - SCENES.S9_START}>
       <S09_Transition />

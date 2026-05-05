@@ -10,6 +10,7 @@ import { S06_ClaudeAPI } from './scenes/S06_ClaudeAPI';
 import { S07_SSEStream } from './scenes/S07_SSEStream';
 import { S08_Output } from './scenes/S08_Output';
 import { S09_Transition } from './scenes/S09_Transition';
+import { S10_UIDemo } from './scenes/S10_UIDemo';
 import { S11_Outro } from './scenes/S11_Outro';
 
 // Placeholder — replace each null with real scene import in Task 15
@@ -51,7 +52,7 @@ export const PipelineExplainer: React.FC = () => (
       <S09_Transition />
     </Sequence>
     <Sequence from={SCENES.S10_START} durationInFrames={SCENES.S10_END - SCENES.S10_START}>
-      <Placeholder label="S10 UI Demo" />
+      <S10_UIDemo />
     </Sequence>
     <Sequence from={SCENES.S11_START} durationInFrames={SCENES.S11_END - SCENES.S11_START}>
       <S11_Outro />

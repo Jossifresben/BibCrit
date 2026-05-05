@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BibCrit Admin — Stats</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0f1117;
+      color: #e2e8f0;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    h1 { font-size: 1.5rem; font-weight: 700; color: #f8fafc; margin-bottom: .25rem; }
+    .subtitle { font-size: .85rem; color: #64748b; margin-bottom: 2rem; }
+
+    /* Day filter pills */
+    .day-filter { display: flex; gap: .5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+    .day-filter a {
+      padding: .35rem .9rem;
+      border-radius: 999px;
+      font-size: .8rem;
+      font-weight: 600;
+      text-decoration: none;
+      background: #1e2130;
+      color: #94a3b8;
+      border: 1px solid #2d3348;
+      transition: all .15s;
+    }
+    .day-filter a:hover { background: #2d3348; color: #e2e8f0; }
+    .day-filter a.active { background: #6366f1; color: #fff; border-color: #6366f1; }
+
+    /* Summary cards */
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; margin-bottom: 2.5rem; }
+    .card {
+      background: #1e2130;
+      border: 1px solid #2d3348;
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+    }
+    .card-label { font-size: .75rem; color: #64748b; text-transform: uppercase; letter-spacing: .05em; margin-bottom: .4rem; }
+    .card-value { font-size: 2rem; font-weight: 700; color: #a5b4fc; }
+    .card-sub { font-size: .75rem; color: #475569; margin-top: .25rem; }
+
+    /* Tables */
+    .section-title {
+      font-size: 1rem; font-weight: 600; color: #cbd5e1;
+      margin-bottom: 1rem; padding-bottom: .5rem;
+      border-bottom: 1px solid #2d3348;
+    }
+
+    .table-wrap { overflow-x: auto; margin-bottom: 2.5rem; }
+    table { width: 100%; border-collapse: collapse; font-size: .82rem; }
+    th {
+      text-align: left; padding: .6rem 1rem;
+      background: #161b27; color: #64748b;
+      font-weight: 600; font-size: .75rem; text-transform: uppercase; letter-spacing: .04em;
+      border-bottom: 1px solid #2d3348;
+      position: sticky; top: 0;
+    }
+    td { padding: .55rem 1rem; border-bottom: 1px solid #1e2130; color: #cbd5e1; }
+    tr:hover td { background: #1a2035; }
+    tr:last-child td { border-bottom: none; }
+
+    /* Tool badges */
+    .badge {
+      display: inline-block;
+      padding: .15rem .55rem;
+      border-radius: 999px;
+      font-size: .72rem;
+      font-weight: 600;
+      background: #1e3a5f;
+      color: #93c5fd;
+      white-space: nowrap;
+    }
+
+    /* Day bar chart */
+    .bar-row { display: flex; align-items: center; gap: .75rem; margin-bottom: .6rem; }
+    .bar-day { font-size: .75rem; color: #64748b; width: 6rem; flex-shrink: 0; }
+    .bar-track { flex: 1; background: #1e2130; border-radius: 4px; height: 18px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, #6366f1, #818cf8); transition: width .3s; }
+    .bar-count { font-size: .75rem; color: #94a3b8; width: 2.5rem; text-align: right; flex-shrink: 0; }
+
+    .empty { color: #475569; font-style: italic; padding: 1rem 0; }
+    .footer { margin-top: 2rem; font-size: .75rem; color: #334155; }
+
+    /* Search */
+    .search-row { display: flex; gap: .75rem; margin-bottom: 1rem; align-items: center; }
+    .search-input {
+      padding: .4rem .8rem;
+      border-radius: 8px;
+      border: 1px solid #2d3348;
+      background: #1e2130;
+      color: #e2e8f0;
+      font-size: .82rem;
+      width: 260px;
+    }
+    .search-input:focus { outline: none; border-color: #6366f1; }
+    .search-label { font-size: .8rem; color: #64748b; }
+  </style>
+</head>
+<body>
+
+<div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem; margin-bottom:.25rem;">
+  <div>
+    <h1>BibCrit Admin Dashboard</h1>
+    <p class="subtitle">Generated {{ generated_at }} · {{ totals.total }} analyses in the selected window</p>
+  </div>
+  <a href="/guide" target="_blank" style="font-size:.8rem; color:#6366f1; text-decoration:none; padding:.4rem .8rem; border:1px solid #6366f1; border-radius:8px; white-space:nowrap; margin-top:.25rem;">
+    📖 Guide
+  </a>
+</div>
+
+<!-- Day range pills -->
+<div class="day-filter">
+  {% for d in [3, 7, 14, 30] %}
+    <a href="?days={{ d }}" class="{{ 'active' if days == d else '' }}">Last {{ d }} days</a>
+  {% endfor %}
+  <a href="?days=all" class="{{ 'active' if show_all else '' }}">All</a>
+</div>
+
+<!-- Summary cards -->
+<div class="cards">
+  <div class="card">
+    <div class="card-label">Total analyses</div>
+    <div class="card-value">{{ totals.total }}</div>
+    <div class="card-sub">{{ 'all time' if show_all else 'last ' ~ days ~ ' days' }}</div>
+  </div>
+  <div class="card">
+    <div class="card-label">Distinct passages</div>
+    <div class="card-value">{{ totals.distinct_refs }}</div>
+    <div class="card-sub">unique references</div>
+  </div>
+  <div class="card">
+    <div class="card-label">Tools active</div>
+    <div class="card-value">{{ totals.tools | length }}</div>
+    <div class="card-sub">{{ totals.tools | join(', ') if totals.tools else '—' }}</div>
+  </div>
+  <div class="card">
+    <div class="card-label">Active days</div>
+    <div class="card-value">{{ stats_by_day | length }}</div>
+    <div class="card-sub">{{ 'all time' if show_all else 'of ' ~ days ~ ' days' }}</div>
+  </div>
+</div>
+
+<!-- Bar chart by day -->
+<div class="section-title">Analyses per day</div>
+{% if stats_by_day %}
+  {% set max_count = stats_by_day | map(attribute='count') | max %}
+  <div style="margin-bottom: 2.5rem;">
+    {% for row in stats_by_day %}
+      <div class="bar-row">
+        <div class="bar-day">{{ row.day }}</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width: {{ (row.count / max_count * 100) | round }}%"></div>
+        </div>
+        <div class="bar-count">{{ row.count }}</div>
+      </div>
+    {% endfor %}
+  </div>
+{% else %}
+  <p class="empty">No data in this window.</p>
+{% endif %}
+
+<!-- Per-day breakdown table -->
+<div class="section-title">Daily breakdown</div>
+{% if stats_by_day %}
+<div class="table-wrap" style="margin-bottom: 2.5rem;">
+  <table>
+    <thead>
+      <tr>
+        <th>Day</th>
+        <th>Analyses</th>
+        <th>Distinct passages</th>
+        <th>Tools</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in stats_by_day %}
+      <tr>
+        <td>{{ row.day }}</td>
+        <td>{{ row.count }}</td>
+        <td>{{ row.distinct_refs }}</td>
+        <td>
+          {% for tool in row.tools.split(', ') %}
+            <span class="badge">{{ tool }}</span>
+          {% endfor %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %}
+
+<!-- All passages detail -->
+<div class="section-title">All passages processed</div>
+<div class="search-row">
+  <input class="search-input" id="search" type="text" placeholder="Filter by passage or tool…">
+  <span class="search-label" id="search-count">{{ all_entries | length }} entries</span>
+</div>
+{% if all_entries %}
+<div class="table-wrap">
+  <table id="entries-table">
+    <thead>
+      <tr>
+        <th>Timestamp (UTC)</th>
+        <th>Passage</th>
+        <th>Tool</th>
+        <th>Prompt v</th>
+        <th>Model</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for e in all_entries %}
+      <tr>
+        <td style="color:#64748b; font-size:.78rem;">{{ e.cached_at }}</td>
+        <td><strong>{{ e.reference }}</strong></td>
+        <td><span class="badge">{{ e.tool }}</span></td>
+        <td style="color:#475569;">{{ e.prompt_version }}</td>
+        <td style="color:#475569; font-size:.75rem;">{{ e.model_version }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% else %}
+  <p class="empty">No passages in this window.</p>
+{% endif %}
+
+<p class="footer">BibCrit Admin · {{ generated_at }}</p>
+
+<script>
+  const input = document.getElementById('search');
+  const countEl = document.getElementById('search-count');
+  const rows = document.querySelectorAll('#entries-table tbody tr');
+
+  input.addEventListener('input', () => {
+    const q = input.value.toLowerCase();
+    let visible = 0;
+    rows.forEach(row => {
+      const match = row.textContent.toLowerCase().includes(q);
+      row.style.display = match ? '' : 'none';
+      if (match) visible++;
+    });
+    countEl.textContent = visible + ' entries';
+  });
+</script>
+
+</body>
+</html>

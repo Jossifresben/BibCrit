@@ -3,6 +3,7 @@ import { Composition, registerRoot } from 'remotion';
 import { BibCritVideo } from './BibCritVideo';
 import { PipelineExplainer } from './compositions/PipelineExplainer/index';
 import { TOTAL_FRAMES, TIMING } from './theme';
+import { SCENES } from './compositions/PipelineExplainer/theme';
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -18,7 +19,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="PipelineExplainer"
         component={PipelineExplainer}
-        durationInFrames={2700}
+        durationInFrames={SCENES.S11_END}
         fps={30}
         width={1920}
         height={1080}

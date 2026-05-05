@@ -13,13 +13,6 @@ import { S09_Transition } from './scenes/S09_Transition';
 import { S10_UIDemo } from './scenes/S10_UIDemo';
 import { S11_Outro } from './scenes/S11_Outro';
 
-// Placeholder — replace each null with real scene import in Task 15
-const Placeholder: React.FC<{ label: string }> = ({ label }) => (
-  <AbsoluteFill style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-    <div style={{ color: '#6366f1', fontSize: 48, fontWeight: 700 }}>{label}</div>
-  </AbsoluteFill>
-);
-
 export const PipelineExplainer: React.FC = () => (
   <AbsoluteFill style={{ background: DARK.bg, fontFamily: "'Space Grotesk', sans-serif" }}>
     <style>{FONT_STYLE}</style>

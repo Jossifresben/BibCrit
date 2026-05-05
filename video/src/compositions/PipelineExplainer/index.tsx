@@ -6,6 +6,7 @@ import { S02_PipelineOverview } from './scenes/S02_PipelineOverview';
 import { S03_UserInput } from './scenes/S03_UserInput';
 import { S04_CorpusLookup } from './scenes/S04_CorpusLookup';
 import { S05_CacheCheck } from './scenes/S05_CacheCheck';
+import { S06_ClaudeAPI } from './scenes/S06_ClaudeAPI';
 import { S09_Transition } from './scenes/S09_Transition';
 import { S11_Outro } from './scenes/S11_Outro';
 
@@ -36,7 +37,7 @@ export const PipelineExplainer: React.FC = () => (
       <S05_CacheCheck />
     </Sequence>
     <Sequence from={SCENES.S6_START}  durationInFrames={SCENES.S6_END  - SCENES.S6_START}>
-      <Placeholder label="S6 Claude API" />
+      <S06_ClaudeAPI />
     </Sequence>
     <Sequence from={SCENES.S7_START}  durationInFrames={SCENES.S7_END  - SCENES.S7_START}>
       <Placeholder label="S7 SSE Stream" />

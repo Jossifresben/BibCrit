@@ -14,7 +14,7 @@ export const S01_Title: React.FC = () => {
   });
 
   const subtitleY = interpolate(frame, [18, 36], [12, 0], {
-    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
+    extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: EASE_OUT,
   });
 
   // Accent line draws from 0 to full width

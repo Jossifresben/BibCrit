@@ -36,7 +36,7 @@ export const ForkArrow: React.FC<ForkArrowProps> = ({ localFrame }) => {
           fontFamily: 'Menlo, Monaco, Consolas, monospace',
           fontSize: 20,
           color: DARK.codeValue,
-          opacity: localFrame > 15 ? 1 : 0,
+          opacity: localFrame >= 15 ? 1 : 0,
           minHeight: 30,
         }}
       >
@@ -53,7 +53,7 @@ export const ForkArrow: React.FC<ForkArrowProps> = ({ localFrame }) => {
             height: 120,
             background: DARK.border,
             borderRadius: 1,
-            opacity: localFrame > 35 ? 1 : 0,
+            opacity: localFrame >= 35 ? 1 : 0,
           }}
         />
 

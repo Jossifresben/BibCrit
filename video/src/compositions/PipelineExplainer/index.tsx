@@ -1,6 +1,8 @@
 import React from 'react';
 import { AbsoluteFill, Sequence } from 'remotion';
 import { DARK, SCENES, FONT_STYLE } from './theme';
+import { S01_Title } from './scenes/S01_Title';
+import { S11_Outro } from './scenes/S11_Outro';
 
 // Placeholder — replace each null with real scene import in Task 15
 const Placeholder: React.FC<{ label: string }> = ({ label }) => (
@@ -14,7 +16,7 @@ export const PipelineExplainer: React.FC = () => (
     <style>{FONT_STYLE}</style>
 
     <Sequence from={SCENES.S1_START}  durationInFrames={SCENES.S1_END  - SCENES.S1_START}>
-      <Placeholder label="S1 Title" />
+      <S01_Title />
     </Sequence>
     <Sequence from={SCENES.S2_START}  durationInFrames={SCENES.S2_END  - SCENES.S2_START}>
       <Placeholder label="S2 Pipeline Overview" />
@@ -44,7 +46,7 @@ export const PipelineExplainer: React.FC = () => (
       <Placeholder label="S10 UI Demo" />
     </Sequence>
     <Sequence from={SCENES.S11_START} durationInFrames={SCENES.S11_END - SCENES.S11_START}>
-      <Placeholder label="S11 Outro" />
+      <S11_Outro />
     </Sequence>
   </AbsoluteFill>
 );

@@ -4,6 +4,7 @@ import { DARK, SCENES, FONT_STYLE } from './theme';
 import { S01_Title } from './scenes/S01_Title';
 import { S02_PipelineOverview } from './scenes/S02_PipelineOverview';
 import { S03_UserInput } from './scenes/S03_UserInput';
+import { S04_CorpusLookup } from './scenes/S04_CorpusLookup';
 import { S09_Transition } from './scenes/S09_Transition';
 import { S11_Outro } from './scenes/S11_Outro';
 
@@ -28,7 +29,7 @@ export const PipelineExplainer: React.FC = () => (
       <S03_UserInput />
     </Sequence>
     <Sequence from={SCENES.S4_START}  durationInFrames={SCENES.S4_END  - SCENES.S4_START}>
-      <Placeholder label="S4 Corpus Lookup" />
+      <S04_CorpusLookup />
     </Sequence>
     <Sequence from={SCENES.S5_START}  durationInFrames={SCENES.S5_END  - SCENES.S5_START}>
       <Placeholder label="S5 Cache Check" />

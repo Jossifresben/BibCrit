@@ -2,6 +2,8 @@ import React from 'react';
 import { AbsoluteFill, Sequence } from 'remotion';
 import { DARK, SCENES, FONT_STYLE } from './theme';
 import { S01_Title } from './scenes/S01_Title';
+import { S02_PipelineOverview } from './scenes/S02_PipelineOverview';
+import { S09_Transition } from './scenes/S09_Transition';
 import { S11_Outro } from './scenes/S11_Outro';
 
 // Placeholder — replace each null with real scene import in Task 15
@@ -19,7 +21,7 @@ export const PipelineExplainer: React.FC = () => (
       <S01_Title />
     </Sequence>
     <Sequence from={SCENES.S2_START}  durationInFrames={SCENES.S2_END  - SCENES.S2_START}>
-      <Placeholder label="S2 Pipeline Overview" />
+      <S02_PipelineOverview />
     </Sequence>
     <Sequence from={SCENES.S3_START}  durationInFrames={SCENES.S3_END  - SCENES.S3_START}>
       <Placeholder label="S3 User Input" />
@@ -40,7 +42,7 @@ export const PipelineExplainer: React.FC = () => (
       <Placeholder label="S8 Output" />
     </Sequence>
     <Sequence from={SCENES.S9_START}  durationInFrames={SCENES.S9_END  - SCENES.S9_START}>
-      <Placeholder label="S9 Transition" />
+      <S09_Transition />
     </Sequence>
     <Sequence from={SCENES.S10_START} durationInFrames={SCENES.S10_END - SCENES.S10_START}>
       <Placeholder label="S10 UI Demo" />

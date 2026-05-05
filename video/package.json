@@ -5,7 +5,9 @@
   "scripts": {
     "studio": "npx remotion studio src/Root.tsx",
     "render": "npx remotion render src/Root.tsx BibCritShowcase out/bibcrit-showcase.mp4",
-    "build": "npx remotion render src/Root.tsx BibCritShowcase out/bibcrit-showcase.mp4 --codec h264"
+    "build": "npx remotion render src/Root.tsx BibCritShowcase out/bibcrit-showcase.mp4 --codec h264",
+    "render:pipeline": "npx remotion render src/Root.tsx PipelineExplainer out/pipeline-explainer.mp4",
+    "still:pipeline": "npx remotion still src/Root.tsx PipelineExplainer --frame=45 out/pipeline-still.jpg"
   },
   "dependencies": {
     "@remotion/cli": "4.0.442",

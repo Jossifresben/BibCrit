@@ -5,6 +5,7 @@ import { S01_Title } from './scenes/S01_Title';
 import { S02_PipelineOverview } from './scenes/S02_PipelineOverview';
 import { S03_UserInput } from './scenes/S03_UserInput';
 import { S04_CorpusLookup } from './scenes/S04_CorpusLookup';
+import { S05_CacheCheck } from './scenes/S05_CacheCheck';
 import { S09_Transition } from './scenes/S09_Transition';
 import { S11_Outro } from './scenes/S11_Outro';
 
@@ -32,7 +33,7 @@ export const PipelineExplainer: React.FC = () => (
       <S04_CorpusLookup />
     </Sequence>
     <Sequence from={SCENES.S5_START}  durationInFrames={SCENES.S5_END  - SCENES.S5_START}>
-      <Placeholder label="S5 Cache Check" />
+      <S05_CacheCheck />
     </Sequence>
     <Sequence from={SCENES.S6_START}  durationInFrames={SCENES.S6_END  - SCENES.S6_START}>
       <Placeholder label="S6 Claude API" />

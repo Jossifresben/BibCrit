@@ -15,6 +15,9 @@ export const DARK = {
   codeLabel:     '#475569',
   cacheHit:      '#4ade80',
   cacheMiss:     '#f59e0b',
+  uiBg:          '#0b0e18',  // UIFrame root background (BibCrit app dark)
+  uiNavBg:       '#13172a',  // UIFrame nav/passage bar background
+  uiTagBg:       '#1e1b4b',  // UIFrame tag badge background (indigo dark)
 } as const;
 
 // Absolute frame positions. All 11 scenes + gaps = 2700 frames total.

@@ -45,7 +45,7 @@ export const UIFrame: React.FC<UIFrameProps> = ({ localFrame }) => {
       style={{
         width: '100%',
         height: '100%',
-        background: '#0b0e18',
+        background: DARK.uiBg,
         display: 'flex',
         flexDirection: 'column',
         overflow: 'hidden',
@@ -56,8 +56,8 @@ export const UIFrame: React.FC<UIFrameProps> = ({ localFrame }) => {
       <div
         style={{
           opacity: navOpacity,
-          background: '#13172a',
-          borderBottom: '1px solid #2d3348',
+          background: DARK.uiNavBg,
+          borderBottom: `1px solid ${DARK.border}`,
           padding: '16px 40px',
           display: 'flex',
           alignItems: 'center',
@@ -65,17 +65,17 @@ export const UIFrame: React.FC<UIFrameProps> = ({ localFrame }) => {
           flexShrink: 0,
         }}
       >
-        <div style={{ fontSize: 22, fontWeight: 700, color: '#a5b4fc' }}>BibCrit</div>
-        <div style={{ fontSize: 15, color: '#64748b' }}>MT / LXX Divergence Analyzer</div>
+        <div style={{ fontSize: 22, fontWeight: 700, color: DARK.accentLight }}>BibCrit</div>
+        <div style={{ fontSize: 15, color: '#64748b' /* nav subtitle — between textDim and textMuted */ }}>MT / LXX Divergence Analyzer</div>
       </div>
 
       {/* Passage bar */}
       <div
         style={{
           opacity: barOpacity,
-          background: '#13172a',
+          background: DARK.uiNavBg,
           padding: '20px 40px',
-          borderBottom: '1px solid #2d3348',
+          borderBottom: `1px solid ${DARK.border}`,
           display: 'flex',
           alignItems: 'center',
           gap: 16,
@@ -84,12 +84,12 @@ export const UIFrame: React.FC<UIFrameProps> = ({ localFrame }) => {
       >
         <div
           style={{
-            background: '#1e2130',
-            border: '1px solid #6366f1',
+            background: DARK.surface,
+            border: `1px solid ${DARK.accent}`,
             borderRadius: 8,
             padding: '10px 20px',
             fontSize: 20,
-            color: '#e2e8f0',
+            color: DARK.text,
             fontWeight: 600,
             minWidth: 300,
           }}
@@ -98,7 +98,7 @@ export const UIFrame: React.FC<UIFrameProps> = ({ localFrame }) => {
         </div>
         <div
           style={{
-            background: '#6366f1',
+            background: DARK.accent,
             color: 'white',
             padding: '10px 24px',
             borderRadius: 8,
@@ -133,24 +133,24 @@ export const UIFrame: React.FC<UIFrameProps> = ({ localFrame }) => {
               style={{
                 opacity: sectionOpacity,
                 transform: `translateY(${sectionY}px)`,
-                background: '#1e2130',
-                border: '1px solid #2d3348',
+                background: DARK.surface,
+                border: `1px solid ${DARK.border}`,
                 borderRadius: 10,
                 padding: '18px 24px',
                 position: 'relative',
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 10 }}>
-                <div style={{ fontSize: 16, fontWeight: 700, color: '#a5b4fc' }}>
+                <div style={{ fontSize: 16, fontWeight: 700, color: DARK.accentLight }}>
                   {section.title}
                 </div>
                 {section.tag && (
                   <div
                     style={{
                       fontSize: 12,
-                      color: '#6366f1',
-                      background: '#1e1b4b',
-                      border: '1px solid #6366f1',
+                      color: DARK.accent,
+                      background: DARK.uiTagBg,
+                      border: `1px solid ${DARK.accent}`,
                       borderRadius: 4,
                       padding: '2px 10px',
                       fontStyle: 'italic',
@@ -160,7 +160,7 @@ export const UIFrame: React.FC<UIFrameProps> = ({ localFrame }) => {
                   </div>
                 )}
               </div>
-              <div style={{ fontSize: 14, color: '#94a3b8', lineHeight: 1.6 }}>
+              <div style={{ fontSize: 14, color: DARK.textMuted, lineHeight: 1.6 }}>
                 {section.body}
               </div>
             </div>

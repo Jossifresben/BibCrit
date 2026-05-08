@@ -15,22 +15,22 @@ from queue import Queue, Empty
 from datetime import datetime
 from biblical_core.json_stream import extract_next_section
 
-DIVERGENCE_MODEL  = 'claude-sonnet-4-6'
-SCRIBAL_MODEL     = 'claude-sonnet-4-6'
-NUMERICAL_MODEL   = 'claude-sonnet-4-6'
-DSS_MODEL         = 'claude-sonnet-4-6'
-THEOLOGICAL_MODEL = 'claude-sonnet-4-6'
-PATRISTIC_MODEL   = 'claude-sonnet-4-6'
-GENEALOGY_MODEL   = 'claude-sonnet-4-6'
-NT_OT_MODEL       = 'claude-sonnet-4-6'
-CHIASM_MODEL      = 'claude-sonnet-4-6'
-SOURCE_MODEL      = 'claude-sonnet-4-6'
-TARGUM_MODEL      = 'claude-sonnet-4-6'
-NT_TEXT_MODEL     = 'claude-sonnet-4-6'
-STL_MODEL         = 'claude-sonnet-4-6'
+DIVERGENCE_MODEL  = 'claude-opus-4-7'
+SCRIBAL_MODEL     = 'claude-opus-4-7'
+NUMERICAL_MODEL   = 'claude-opus-4-7'
+DSS_MODEL         = 'claude-opus-4-7'
+THEOLOGICAL_MODEL = 'claude-opus-4-7'
+PATRISTIC_MODEL   = 'claude-opus-4-7'
+GENEALOGY_MODEL   = 'claude-opus-4-7'
+NT_OT_MODEL       = 'claude-opus-4-7'
+CHIASM_MODEL      = 'claude-opus-4-7'
+SOURCE_MODEL      = 'claude-opus-4-7'
+TARGUM_MODEL      = 'claude-opus-4-7'
+NT_TEXT_MODEL     = 'claude-opus-4-7'
+STL_MODEL         = 'claude-opus-4-7'
 
-_SONNET_COST_IN  = 3.0  / 1_000_000   # $3 per MTok input (claude-sonnet-4-6)
-_SONNET_COST_OUT = 15.0 / 1_000_000   # $15 per MTok output (claude-sonnet-4-6)
+_SONNET_COST_IN  = 5.0  / 1_000_000   # $5 per MTok input (claude-opus-4-7)
+_SONNET_COST_OUT = 25.0 / 1_000_000   # $25 per MTok output (claude-opus-4-7)
 
 # Keys present in every cached result dict that are NOT analysis sections.
 # Blueprint SSE endpoints import this to filter the cache-hit section-event loop

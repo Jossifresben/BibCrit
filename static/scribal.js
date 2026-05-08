@@ -505,7 +505,7 @@
         (ass.title ? '<h3 class="scribal-overall-title">' + _esc(ass.title) + '</h3>' : '') +
         '<p class="div-analysis">' + _esc(d.overall_plain || '') + '</p>' +
         (ass.plain ? '<p class="div-meta" style="margin-top:8px">' + _esc(ass.plain) + '</p>' : '') +
-        '<p class="analysis-model-attr">Performed by ' + _esc(_friendlyModel(d.model_version)) + '</p>' +
+        '<p class="analysis-model-attr">Performed by ' + _esc(_friendlyModel(d.model_version)) + (_formatCached(d.cached_at) ? ' · ' + _esc(_formatCached(d.cached_at)) : '') + '</p>' +
       '</div>';
     }
 
@@ -522,7 +522,7 @@
           (ass.title ? '<h3 class="scribal-overall-title">' + _esc(ass.title) + '</h3>' : '') +
           '<p class="div-analysis">' + _esc(data.overall_plain || '') + '</p>' +
           (ass.plain ? '<p class="div-meta" style="margin-top:8px">' + _esc(ass.plain) + '</p>' : '') +
-          '<p class="analysis-model-attr">Performed by ' + _esc(_friendlyModel(data.model_version)) + '</p>' +
+          '<p class="analysis-model-attr">Performed by ' + _esc(_friendlyModel(data.model_version)) + (_formatCached(data.cached_at) ? ' · ' + _esc(_formatCached(data.cached_at)) : '') + '</p>' +
         '</div>';
     }
   }
@@ -533,6 +533,14 @@
     if (modelId.indexOf('sonnet') !== -1)  return 'Claude Sonnet';
     if (modelId.indexOf('haiku') !== -1)   return 'Claude Haiku';
     return 'Claude';
+  }
+
+  function _formatCached(isoStr) {
+    if (!isoStr) return '';
+    try {
+      var d = new Date(isoStr);
+      return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    } catch (e) { return ''; }
   }
 
   // ── Tabs ────────────────────────────────────────────────────────────────

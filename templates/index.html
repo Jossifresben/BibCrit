@@ -213,6 +213,11 @@ body[data-persona] .home-section-header { display: none; }
 .persona-hero[data-persona="phd"]     .ph-badge.accent { background: #6b5cdb; border-color: #6b5cdb; color: #fff; font-weight: 700; }
 .persona-hero[data-persona="student"] .ph-badge.accent { background: #059669; border-color: #059669; color: #fff; font-weight: 700; }
 [data-theme="dark"] .ph-badge { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.15); color: var(--muted, #a0a498); }
+/* Student academic honesty note */
+.ph-student-honesty {
+    margin: 12px 0 0; font-size: 12px; color: #065f46; opacity: 0.85; line-height: 1.5;
+}
+[data-theme="dark"] .ph-student-honesty { color: #6ee7b7; }
 
 /* Dissertation box (PhD only) — replace glassmorphism with clean muted box */
 .phd-diss-box {
@@ -374,6 +379,9 @@ body[data-persona] .home-section-header { display: none; }
         <span class="ph-badge accent">{{ _t('ph_student_badge_disc') }}</span>
         <span class="ph-badge">{{ _t('ph_student_badge_free') }}</span>
       </div>
+      <p class="ph-student-honesty">
+        <span class="material-symbols-outlined" style="font-size:14px;vertical-align:-2px;margin-right:4px;opacity:0.8;">school</span>{{ _t('ph_student_honesty') }}
+      </p>
     </div>
   </div>
   <div class="ph-tools-label">{{ _t('ph_student_tools_label') }}</div>

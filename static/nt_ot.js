@@ -405,7 +405,8 @@
     // Model attribution
     var modelAttr = document.getElementById('nt-ot-model-attr');
     if (modelAttr && data.model_version) {
-      modelAttr.textContent = 'Analysis by ' + _friendlyModel(data.model_version);
+      var _cachedDate = _formatCached(data.cached_at);
+      modelAttr.textContent = 'Analysis by ' + _friendlyModel(data.model_version) + (_cachedDate ? ' · ' + _cachedDate : '');
       modelAttr.style.display = 'inline';
     }
 
@@ -562,6 +563,14 @@
     if (modelId.indexOf('sonnet') !== -1) return 'Claude Sonnet';
     if (modelId.indexOf('haiku')  !== -1) return 'Claude Haiku';
     return 'Claude';
+  }
+
+  function _formatCached(isoStr) {
+    if (!isoStr) return '';
+    try {
+      var d = new Date(isoStr);
+      return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    } catch (e) { return ''; }
   }
 
   function _esc(s) {

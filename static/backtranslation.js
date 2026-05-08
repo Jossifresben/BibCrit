@@ -298,7 +298,8 @@
 
     var modelAttr = document.getElementById('bt-model-attr');
     if (modelAttr && _lastData.model_version) {
-      modelAttr.textContent = window.t('analysis_by', 'Analysis by') + ' ' + _friendlyModel(_lastData.model_version);
+      var _cachedDate = _formatCached(_lastData.cached_at);
+      modelAttr.textContent = window.t('analysis_by', 'Analysis by') + ' ' + _friendlyModel(_lastData.model_version) + (_cachedDate ? ' · ' + _cachedDate : '');
       modelAttr.style.display = 'inline';
     }
 
@@ -340,7 +341,8 @@
     // Model attribution badge
     var modelAttr = document.getElementById('bt-model-attr');
     if (modelAttr && currentData) {
-      modelAttr.textContent = window.t('analysis_by', 'Analysis by') + ' ' + _friendlyModel(currentData.model_version);
+      var _cachedDate = _formatCached(currentData.cached_at);
+      modelAttr.textContent = window.t('analysis_by', 'Analysis by') + ' ' + _friendlyModel(currentData.model_version) + (_cachedDate ? ' · ' + _cachedDate : '');
       modelAttr.style.display = 'inline';
     }
 
@@ -360,6 +362,14 @@
     if (modelId.indexOf('sonnet') !== -1) return 'Claude Sonnet';
     if (modelId.indexOf('haiku')  !== -1) return 'Claude Haiku';
     return 'Claude';
+  }
+
+  function _formatCached(isoStr) {
+    if (!isoStr) return '';
+    try {
+      var d = new Date(isoStr);
+      return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    } catch (e) { return ''; }
   }
 
   // ── Column renderers ──────────────────────────────────────────────────────

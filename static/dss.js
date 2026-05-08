@@ -949,7 +949,7 @@
           '<p class="div-analysis">' + _esc(plain) + '</p>' +
           (reason ? '<p class="div-meta" style="font-style:italic;margin-top:8px">' + _esc(reason) + '</p>' : '') +
           (pct ? '<p style="margin-top:10px"><span class="conf-badge ' + confCls + '">' + window.t('dss_confidence_label', 'Confidence:') + ' ' + pct + '%</span></p>' : '') +
-          '<p class="analysis-model-attr">Performed by ' + _esc(_friendlyModel(data.model_version)) + '</p>' +
+          '<p class="analysis-model-attr">Performed by ' + _esc(_friendlyModel(data.model_version)) + (_formatCached(data.cached_at) ? ' · ' + _esc(_formatCached(data.cached_at)) : '') + '</p>' +
         '</div>';
     }
     if (bibSec) show(bibSec);
@@ -1019,6 +1019,14 @@
     if (modelId.indexOf('sonnet') !== -1) return 'Claude Sonnet';
     if (modelId.indexOf('haiku')  !== -1) return 'Claude Haiku';
     return 'Claude';
+  }
+
+  function _formatCached(isoStr) {
+    if (!isoStr) return '';
+    try {
+      var d = new Date(isoStr);
+      return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    } catch (e) { return ''; }
   }
 
   // ── Public API ───────────────────────────────────────────────────────────

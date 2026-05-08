@@ -3502,6 +3502,20 @@ body.mode-student .plain-highlight {
     text-decoration: none;
 }
 .cite-doi-link:hover { text-decoration: underline; }
+.cite-ai-disclaimer {
+    margin: 8px 0 12px;
+    font-size: 11px;
+    color: var(--text-muted, #6b7280);
+    line-height: 1.5;
+    padding: 6px 10px;
+    background: var(--bg-muted, #f9fafb);
+    border-left: 3px solid var(--border, #e5e7eb);
+    border-radius: 0 4px 4px 0;
+}
+[data-theme="dark"] .cite-ai-disclaimer {
+    background: rgba(255,255,255,0.04);
+    border-left-color: rgba(255,255,255,0.12);
+}
 .cite-orcid {
     font-size: 0.78rem;
     color: var(--text-muted, #6b7280);

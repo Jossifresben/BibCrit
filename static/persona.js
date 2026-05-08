@@ -234,6 +234,7 @@
           } else {
             setPersona(p);
           }
+          if (window.startPageProgress) window.startPageProgress();
           window.location.reload();
         });
       });
@@ -252,6 +253,7 @@
           } else {
             // Navigate to home, selector will auto-show (no persona in storage)
             clearPersona();
+            if (window.startPageProgress) window.startPageProgress();
             window.location.href = '/';
           }
         });

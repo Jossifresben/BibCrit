@@ -229,22 +229,32 @@
     if (langDropdown) langDropdown.addEventListener('click', function(e) { e.stopPropagation(); });
 
     // --- Page progress bar ---
-    var progressBar = document.getElementById('page-progress');
-    if (progressBar) {
-        document.addEventListener('click', function(e) {
-            var link = e.target.closest('a');
-            if (!link) return;
-            var href = link.getAttribute('href');
-            if (!href || href.charAt(0) === '#' || href.indexOf('javascript') === 0) return;
-            if (link.getAttribute('target') === '_blank') return;
-            // Only internal links
-            try {
-                var url = new URL(href, window.location.href);
-                if (url.hostname !== window.location.hostname) return;
-            } catch(err) { return; }
-            progressBar.classList.add('running');
-        });
+    window.startPageProgress = function startPageProgress() {
+        var bar = document.getElementById('page-progress');
+        if (!bar) return;
+        // Reset without transition
+        bar.style.transition = 'none';
+        bar.style.transform = 'scaleX(0)';
+        bar.style.opacity = '1';
+        // Force reflow so browser registers the start state
+        bar.getBoundingClientRect();
+        // Now animate toward 90% over 10s
+        bar.style.transition = 'transform 10s cubic-bezier(0.05, 0.05, 0.2, 1)';
+        bar.style.transform = 'scaleX(0.9)';
     }
+
+    document.addEventListener('click', function(e) {
+        var link = e.target.closest('a');
+        if (!link) return;
+        var href = link.getAttribute('href');
+        if (!href || href.charAt(0) === '#' || href.indexOf('javascript') === 0) return;
+        if (link.getAttribute('target') === '_blank') return;
+        try {
+            var dest = new URL(href, window.location.href);
+            if (dest.hostname !== window.location.hostname) return;
+        } catch(err) { return; }
+        startPageProgress();
+    });
 
     // --- Share / QR Modal ---
     var shareBtn = document.getElementById('share-toggle');

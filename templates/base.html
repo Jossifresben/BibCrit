@@ -77,9 +77,30 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='bibcrit.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1/dist/driver.css">
+    <style>
+      #page-progress {
+        position: fixed; top: 0; left: 0; right: 0; height: 3px;
+        z-index: 99999; pointer-events: none;
+        background: linear-gradient(90deg, #6366f1, #a5b4fc);
+        transform: scaleX(0); transform-origin: left;
+        transition: transform 0.2s ease, opacity 0.3s ease;
+        opacity: 0;
+      }
+      #page-progress.running {
+        opacity: 1;
+        animation: page-progress-fill 10s cubic-bezier(0.1, 0.05, 0.4, 1) forwards;
+      }
+      @keyframes page-progress-fill {
+        0%   { transform: scaleX(0); }
+        60%  { transform: scaleX(0.75); }
+        85%  { transform: scaleX(0.87); }
+        100% { transform: scaleX(0.92); }
+      }
+    </style>
     {% block head %}{% endblock %}
 </head>
 <body>
+    <div id="page-progress"></div>
     <nav class="nav">
         <div class="nav-inner">
             <a href="/?lang={{ lang }}" class="nav-brand">

@@ -228,6 +228,24 @@
     if (settingsDropdown) settingsDropdown.addEventListener('click', function(e) { e.stopPropagation(); });
     if (langDropdown) langDropdown.addEventListener('click', function(e) { e.stopPropagation(); });
 
+    // --- Page progress bar ---
+    var progressBar = document.getElementById('page-progress');
+    if (progressBar) {
+        document.addEventListener('click', function(e) {
+            var link = e.target.closest('a');
+            if (!link) return;
+            var href = link.getAttribute('href');
+            if (!href || href.charAt(0) === '#' || href.indexOf('javascript') === 0) return;
+            if (link.getAttribute('target') === '_blank') return;
+            // Only internal links
+            try {
+                var url = new URL(href, window.location.href);
+                if (url.hostname !== window.location.hostname) return;
+            } catch(err) { return; }
+            progressBar.classList.add('running');
+        });
+    }
+
     // --- Share / QR Modal ---
     var shareBtn = document.getElementById('share-toggle');
     var shareModal = document.getElementById('share-modal');

@@ -1,0 +1,114 @@
+{
+  "reference": "Psalm 22:17",
+  "dss_manuscripts": [
+    {
+      "siglum": "5/6HevPs",
+      "full_name": "Nahal Hever Psalms Scroll (5/6Hev–Se4 Ps)",
+      "verse_present": true,
+      "dss_text": "כי סבבוני כלבים עדת מרעים הקיפו ידי ורגלי",
+      "alignment": "sides_with_lxx",
+      "alignment_confidence": 0.78,
+      "divergences": [
+        {
+          "word_position": 7,
+          "mt_reading": "כָּאֲרִי (kāʾărî, 'like a lion')",
+          "lxx_reading": "ὤρυξαν ('they dug/pierced')",
+          "dss_reading": "כארו (kāʾărû, 'they dug/pierced' — verb, 3mp perfect)",
+          "classification": "lexical",
+          "textual_implication": "The Nahal Hever scroll preserves a verbal form כארו ('they dug/pierced') rather than MT's nominal כָּאֲרִי ('like a lion'). This Hebrew Vorlage matches the LXX's ὤρυξαν and resolves the long-standing crux of MT Psalm 22:17, demonstrating that the verbal reading is ancient and not a Christian interpolation."
+        }
+      ],
+      "overall_note": "The Nahal Hever Psalms fragment (published by Flint and others) provides crucial Hebrew evidence for a verbal reading at the disputed word, supporting the LXX/Peshitta tradition over the MT. This is one of the most text-critically significant DSS readings for the Psalter, as it shows the verbal form circulated in Hebrew before the Christian era."
+    },
+    {
+      "siglum": "4QPs-f",
+      "full_name": "4QPsalms-f (4Q88)",
+      "verse_present": false,
+      "dss_text": "",
+      "alignment": "absent",
+      "alignment_confidence": 0.0,
+      "divergences": [],
+      "overall_note": "4QPs-f does not preserve Psalm 22."
+    },
+    {
+      "siglum": "11QPs-a",
+      "full_name": "Great Psalms Scroll (11Q5)",
+      "verse_present": false,
+      "dss_text": "",
+      "alignment": "absent",
+      "alignment_confidence": 0.0,
+      "divergences": [],
+      "overall_note": "11QPs-a contains Psalms primarily from Book V (Pss 101–150) plus apocryphal compositions; Psalm 22 is not preserved."
+    }
+  ],
+  "sp_witness": null,
+  "pesh_witness": {
+    "present": true,
+    "alignment": "sides_with_lxx",
+    "alignment_confidence": 0.9,
+    "pesh_text": "ܡܛܠ ܕܚܕܪܘܢܝ ܟܠܒ̈ܐ ܘܟܢܘܫܬܐ ܕܒܝܫ̈ܐ ܟܪܟܘܢܝ ܒܙܥܘ ܐ̈ܝܕܝ ܘܪ̈ܓܠܝ",
+    "divergences": [
+      {
+        "word_position": 3,
+        "mt_reading": "כְּלָבִים (dogs) — implicit number",
+        "lxx_reading": "κύνες πολλοί (many dogs)",
+        "pesh_reading": "ܟܠܒ̈ܐ (kalbē, 'dogs') — no quantifier",
+        "classification": "minus",
+        "textual_implication": "Peshitta lacks LXX's πολλοί ('many'), aligning with MT here. This suggests the Syriac translator worked from a Hebrew Vorlage like MT for this clause rather than slavishly following LXX."
+      },
+      {
+        "word_position": 7,
+        "mt_reading": "כָּאֲרִי (like a lion)",
+        "lxx_reading": "ὤρυξαν (they dug/pierced)",
+        "pesh_reading": "ܒܙܥܘ (bzaʿ, 'they pierced/bored through')",
+        "classification": "lexical",
+        "textual_implication": "Peshitta reads a verb of piercing matching LXX ὤρυξαν and the Nahal Hever verbal form כארו, against MT's כָּאֲרִי ('like a lion'). The Syriac independently confirms an ancient Hebrew Vorlage with a verbal root (likely כרה or כור), strengthening the case that MT's nominal reading is secondary."
+      },
+      {
+        "word_position": 6,
+        "mt_reading": "הִקִּיפוּנִי (they encompassed me)",
+        "lxx_reading": "περιέσχον με",
+        "pesh_reading": "ܟܪܟܘܢܝ (kraknī, 'they surrounded me')",
+        "classification": "lexical",
+        "textual_implication": "Standard Syriac equivalent for the Hebrew verb; no Vorlage difference."
+      }
+    ],
+    "overall_note": "The Peshitta sides decisively with the LXX/Hever verbal tradition at the crux ('they pierced'), but is not slavishly Septuagintal — it omits LXX's 'many' (πολλοί). This mixed profile suggests the Syriac translator used a Hebrew Vorlage close to MT but with the verbal reading כארו at v.17c, providing independent Semitic confirmation of the non-MT reading."
+  },
+  "vul_witness": {
+    "present": true,
+    "alignment": "sides_with_lxx",
+    "alignment_confidence": 0.9,
+    "vul_text": "Quoniam circumdederunt me canes multi; concilium malignantium obsedit me. Foderunt manus meas et pedes meos",
+    "key_readings": [
+      {
+        "word_position": 3,
+        "mt_reading": "כְּלָבִים",
+        "vul_reading": "canes multi ('many dogs')",
+        "classification": "plus",
+        "note": "The Gallican Psalter (used in the Clementine Vulgate) follows LXX πολλοί, against MT and Peshitta."
+      },
+      {
+        "word_position": 7,
+        "mt_reading": "כָּאֲרִי ('like a lion')",
+        "vul_reading": "foderunt ('they dug/pierced')",
+        "classification": "lexical",
+        "note": "Jerome's Gallican rendering follows LXX ὤρυξαν; notably, his later iuxta Hebraeos version reads 'vinxerunt' ('they bound'), showing he wrestled with the Hebrew but did not adopt 'like a lion'."
+      }
+    ],
+    "overall_note": "The Clementine Vulgate's Psalter is the Gallican (revised from LXX), so it transmits LXX readings: 'canes multi' and 'foderunt manus meas et pedes meos.' Jerome's iuxta Hebraeos version diverges with 'vinxerunt' (a guess from a Hebrew text he found ambiguous), revealing that even in the late 4th century the verbal interpretation was dominant and 'like a lion' was not the obvious sense."
+  },
+  "synthesis": "Psalm 22:17c presents one of the most famous text-critical cruxes in the Hebrew Bible. The Nahal Hever Psalms scroll (5/6HevPs) preserves a Hebrew verbal form כארו ('they pierced/dug'), which matches LXX ὤρυξαν, Peshitta ܒܙܥܘ, and Vulgate foderunt — three independent ancient versions converging on a verbal reading against MT's nominal כָּאֲרִי ('like a lion'). The convergence of a pre-Christian Hebrew witness with all three major versional traditions strongly suggests the verbal reading is older than the MT vocalization. MT's כָּאֲרִי likely arose through a graphic confusion of waw/yod combined with later Masoretic vocalization that nominalized an originally verbal form.",
+  "synthesis_plain": "The famous phrase in Psalm 22:17 — whether it reads 'like a lion my hands and feet' (Hebrew MT) or 'they pierced my hands and feet' (Greek, Syriac, Latin) — is illuminated by a Dead Sea Scroll from Nahal Hever that reads the Hebrew verb 'they pierced.' This shows the 'pierced' reading is genuinely ancient and not a Christian alteration, even though the Masoretic Hebrew tradition preserved a different reading.",
+  "textual_history_implication": "The combined evidence of 5/6HevPs, LXX, Peshitta, and Vulgate indicates that a Hebrew Vorlage with a verbal form (likely כארו from כרה 'to dig/bore') was widespread in the Second Temple period. The MT's כָּאֲרִי represents either a scribal/vocalization error (yod for waw) or a divergent textual stream that became dominant in later Jewish tradition. This is a textbook case where DSS evidence rehabilitates a versional reading long suspected to reflect an alternative Hebrew Vorlage.",
+  "bibcrit_assessment": {
+    "title": "Hever scroll vindicates 'pierced' over 'like a lion'",
+    "reasoning": "The single most significant insight is that a pre-Christian Hebrew manuscript (5/6HevPs) reads the verbal form כארו, matching LXX, Peshitta, and Vulgate against MT. This destroys the older claim that 'they pierced' was a Christian theological alteration of the Hebrew, and demonstrates that MT's כָּאֲרִי is a secondary development, likely from waw/yod confusion in early Hebrew script.",
+    "plain": "A Dead Sea Scroll proves that the ancient Hebrew text said 'they pierced my hands and feet' — confirming what the Greek, Syriac, and Latin versions had long read, and showing the Masoretic 'like a lion' is a later variant.",
+    "confidence": 0.85
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T08:56:03.950507",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v7"
+}

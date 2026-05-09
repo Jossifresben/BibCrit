@@ -1,0 +1,110 @@
+{
+  "reference": "Isaiah 7:14",
+  "dss_manuscripts": [
+    {
+      "siglum": "1QIsa-a",
+      "full_name": "Great Isaiah Scroll",
+      "verse_present": true,
+      "dss_text": "לכן יתן אדוני הוא לכמה אות הנה העלמה הרה ויולדת בן וקרא שמו עמנואל",
+      "alignment": "sides_with_mt",
+      "alignment_confidence": 0.85,
+      "divergences": [
+        {
+          "word_position": 13,
+          "mt_reading": "וְקָרָאת (qaratʾ — 2ms or 3fs perfect 'and you/she shall call')",
+          "lxx_reading": "καλέσεις ('you shall call' — 2ms)",
+          "dss_reading": "וקרא (qaraʾ — 3ms 'and he shall call' or impersonal 'one shall call')",
+          "classification": "morphological",
+          "textual_implication": "1QIsaᵃ reads a 3ms qatal/active form against MT's ambiguous וְקָרָאת and LXX's 2ms καλέσεις. This third reading suggests early fluidity over who names the child (mother, father, Ahaz, or impersonal), and the scroll's form may underlie the passive rendering preserved in some versions."
+        },
+        {
+          "word_position": 14,
+          "mt_reading": "עִמָּנוּ אֵל (two words)",
+          "lxx_reading": "Εμμανουηλ (single transliterated name)",
+          "dss_reading": "עמנואל (single graphic unit)",
+          "classification": "orthographic",
+          "textual_implication": "1QIsaᵃ writes the name as a single unit, agreeing with the LXX's treatment as a proper name rather than MT's two-word phrase 'God is with us.' This reflects the scroll's tendency toward plene and unified name-forms."
+        },
+        {
+          "word_position": 4,
+          "mt_reading": "לָכֶם",
+          "lxx_reading": "ὑμῖν",
+          "dss_reading": "לכמה",
+          "classification": "orthographic",
+          "textual_implication": "The scroll's characteristic plene spelling לכמה for לכם is a hallmark of the 'Qumran scribal practice' (Tov) and carries no semantic implication."
+        }
+      ],
+      "overall_note": "1QIsaᵃ broadly supports the proto-MT consonantal text of Isa 7:14 with typical Qumran orthographic expansion. The notable substantive variant is וקרא (3ms) versus MT וקראת, which preserves an alternate ancient tradition about the subject of naming. The unified spelling עמנואל aligns graphically with how the LXX treated the term as a proper name."
+    }
+  ],
+  "sp_witness": null,
+  "pesh_witness": {
+    "present": true,
+    "alignment": "sides_with_mt",
+    "alignment_confidence": 0.8,
+    "pesh_text": "ܡܛܠ ܗܢܐ ܢܬܠ ܠܟܘܢ ܡܪܝܐ ܐܠܗܐ ܐܬܐ ܗܐ ܒܬܘܠܬܐ ܒܛܢܐ ܘܝܠܕܐ ܒܪܐ ܘܢܬܩܪܐ ܫܡܗ ܥܡܢܘܐܝܠ",
+    "divergences": [
+      {
+        "word_position": 3,
+        "mt_reading": "אֲדֹנָי הוּא ('the Lord himself')",
+        "lxx_reading": "κύριος αὐτὸς",
+        "pesh_reading": "ܡܪܝܐ ܐܠܗܐ (māryā ʾalāhā, 'the LORD God')",
+        "classification": "lexical",
+        "textual_implication": "The Peshitta replaces the emphatic pronoun הוּא with אלהא ('God'), producing a divine title pair. This may reflect either a different Vorlage or, more likely, a translator's clarification harmonizing with common Peshitta divine-title formulae."
+      },
+      {
+        "word_position": 7,
+        "mt_reading": "הָעַלְמָה ('the young woman')",
+        "lxx_reading": "ἡ παρθένος ('the virgin')",
+        "pesh_reading": "ܒܬܘܠܬܐ (btūltā, 'the virgin')",
+        "classification": "lexical",
+        "textual_implication": "The Peshitta sides with LXX παρθένος in choosing 'virgin' rather than the more general 'young woman' implied by עלמה. Whether this reflects LXX influence or independent interpretive tradition within Syriac Christianity is debated, though Christian transmission likely shaped the choice."
+      },
+      {
+        "word_position": 13,
+        "mt_reading": "וְקָרָאת ('and you/she shall call')",
+        "lxx_reading": "καλέσεις ('you shall call')",
+        "pesh_reading": "ܘܢܬܩܪܐ (wnetqrē, 'and he shall be called' — passive)",
+        "classification": "morphological",
+        "textual_implication": "The Peshitta uses a passive form 'shall be called,' diverging from both MT's active and LXX's 2ms. This passive matches the Matthean citation (κληθήσεται, Matt 1:23) and suggests the Peshitta here reflects Christian gospel-influenced rendering or a shared interpretive tradition."
+      }
+    ],
+    "overall_note": "The Peshitta of Isa 7:14 generally tracks the proto-MT but exhibits three notable shifts toward Christian interpretive tradition: the divine title expansion, the choice of btūltā ('virgin'), and the passive 'shall be called.' The last two align strikingly with Matthew 1:23, indicating Christian transmission influence on the Syriac form of this messianically charged verse."
+  },
+  "vul_witness": {
+    "present": true,
+    "alignment": "sides_with_lxx",
+    "alignment_confidence": 0.85,
+    "vul_text": "Propter hoc dabit Dominus ipse vobis signum: ecce virgo concipiet, et pariet filium, et vocabitur nomen ejus Emmanuel.",
+    "key_readings": [
+      {
+        "word_position": 7,
+        "mt_reading": "הָעַלְמָה",
+        "vul_reading": "virgo",
+        "classification": "lexical",
+        "note": "Jerome chose virgo ('virgin') over a more neutral term, following LXX παρθένος despite knowing the Hebrew עלמה more properly means 'young woman'; he defended this choice in his commentaries on messianic grounds."
+      },
+      {
+        "word_position": 13,
+        "mt_reading": "וְקָרָאת",
+        "vul_reading": "vocabitur ('shall be called' — passive)",
+        "classification": "lexical",
+        "note": "Jerome adopts a passive form, matching Matt 1:23 and the Peshitta rather than MT's active or LXX's 2ms — likely harmonizing with the New Testament citation."
+      }
+    ],
+    "overall_note": "Jerome's Vulgate of Isa 7:14 famously preserves virgo, aligning with LXX παρθένος despite his stated commitment to hebraica veritas. The passive vocabitur further harmonizes with Matthew's quotation. Jerome's renderings here reveal the powerful influence of Christian christological reading on his choices, even where the Hebrew permitted other options."
+  },
+  "synthesis": "The combined witnesses to Isa 7:14 reveal a stable consonantal text with a few semantically loaded points of variation. 1QIsaᵃ confirms the proto-MT shape but reads וקרא (3ms) and writes עמנואל as a single unit, both shifts that align graphically/morphologically with later versional treatments. The Peshitta and Vulgate both render the verb passively ('shall be called') and choose 'virgin' (btūltā / virgo), aligning with LXX παρθένος and Matt 1:23. The MT עלמה preserves the older, less specific reading, while the LXX/Peshitta/Vulgate trajectory reflects an interpretive narrowing decisively shaped by Christian christological reception.",
+  "synthesis_plain": "The Dead Sea Scrolls show that the Hebrew text of Isaiah 7:14 was essentially the same 2,000+ years ago as in our printed Bibles. The ancient Greek, Syriac, and Latin translations all chose 'virgin' instead of the broader Hebrew word 'young woman,' a translation choice that became central to Christian readings of this verse.",
+  "textual_history_implication": "The Hebrew consonantal text of Isa 7:14 was firmly established by the late Second Temple period, as 1QIsaᵃ confirms. The later versions diverge not in their underlying Hebrew but in how they rendered the ambiguous עלמה and the verb of naming, producing a translational tradition strongly aligned with Matthew 1:23. This passage exemplifies how textual transmission and theological interpretation can be tightly intertwined in the versions while leaving the Hebrew base text intact.",
+  "bibcrit_assessment": {
+    "title": "Stable Hebrew text, interpretively charged versions",
+    "reasoning": "The most striking finding is that 1QIsaᵃ confirms the proto-MT Hebrew of Isa 7:14 essentially unchanged, while the LXX, Peshitta, and Vulgate cluster around a christologically charged rendering ('virgin'/passive 'shall be called') matching Matt 1:23. The variation lies almost entirely in translation and reception, not in the Hebrew Vorlage. This makes Isa 7:14 a paradigm case for distinguishing textual transmission from interpretive trajectory.",
+    "plain": "The Hebrew of Isaiah 7:14 has been remarkably stable since at least the 2nd century BC; the famous 'virgin' reading is a translation choice that arose in the Greek and was reinforced by Christian use, not a difference in the original Hebrew.",
+    "confidence": 0.88
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T08:53:19.674922",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v7"
+}

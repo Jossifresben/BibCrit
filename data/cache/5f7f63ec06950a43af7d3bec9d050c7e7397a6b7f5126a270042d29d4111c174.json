@@ -1,0 +1,140 @@
+{
+  "reference": "Isaiah 53:11",
+  "dss_manuscripts": [
+    {
+      "siglum": "1QIsa-a",
+      "full_name": "Great Isaiah Scroll",
+      "verse_present": true,
+      "dss_text": "מעמל נפשו יראה אור ישבע בדעתו יצדיק צדיק עבדי לרבים ועונתם הוא יסבול",
+      "alignment": "sides_with_lxx",
+      "alignment_confidence": 0.95,
+      "divergences": [
+        {
+          "word_position": 3,
+          "mt_reading": "יִרְאֶה (he shall see)",
+          "lxx_reading": "δεῖξαι αὐτῷ φῶς (to show him light)",
+          "dss_reading": "יראה אור (he shall see light)",
+          "classification": "plus",
+          "textual_implication": "1QIsaᵃ preserves the word אור ('light') as the object of יראה, agreeing with the LXX's φῶς against MT which lacks it. This is one of the most celebrated DSS variants, strongly suggesting that MT suffered haplography or deliberate omission, and that the Servant's 'seeing light' (resurrection/vindication imagery) is original."
+        },
+        {
+          "word_position": 1,
+          "mt_reading": "מֵעֲמַל",
+          "lxx_reading": "ἀπὸ τοῦ πόνου",
+          "dss_reading": "מעמל",
+          "classification": "orthographic",
+          "textual_implication": "Identical consonantal text to MT; only matres lectionis vary in 1QIsaᵃ's typical plene orthography."
+        },
+        {
+          "word_position": 11,
+          "mt_reading": "יִסְבֹּל",
+          "lxx_reading": "ἀνοίσει",
+          "dss_reading": "יסבול",
+          "classification": "orthographic",
+          "textual_implication": "Plene spelling characteristic of 1QIsaᵃ; no semantic difference from MT."
+        }
+      ],
+      "overall_note": "1QIsaᵃ provides the single most important textual variant in the Servant Songs: the addition of אור ('light') after יראה, confirmed independently by 1QIsaᵇ and 4QIsaᵈ as well as the LXX. This convergence of Hebrew DSS witnesses with the LXX against MT demonstrates that MT here represents a secondary, shorter text, and modern critical translations (NRSV, NIV) now generally adopt 'he shall see light.'"
+    },
+    {
+      "siglum": "1QIsa-b",
+      "full_name": "Hebrew University Isaiah Scroll",
+      "verse_present": true,
+      "dss_text": "מעמל נפשו יראה אור ישבע בדעתו...",
+      "alignment": "sides_with_lxx",
+      "alignment_confidence": 0.85,
+      "divergences": [
+        {
+          "word_position": 3,
+          "mt_reading": "יִרְאֶה",
+          "lxx_reading": "δεῖξαι αὐτῷ φῶς",
+          "dss_reading": "יראה אור",
+          "classification": "plus",
+          "textual_implication": "1QIsaᵇ, generally a proto-MT type manuscript, here sides with 1QIsaᵃ and LXX in including אור. This is significant because 1QIsaᵇ's general MT-affinity makes its agreement with the longer reading especially weighty evidence for the originality of אור."
+        }
+      ],
+      "overall_note": "1QIsaᵇ is normally a close witness to the proto-Masoretic text, so its agreement with 1QIsaᵃ and the LXX in reading אור is particularly significant. It shows that the longer reading was not confined to one textual stream but was widespread in Second Temple Hebrew Isaiah manuscripts."
+    },
+    {
+      "siglum": "4QIsa-d",
+      "full_name": "4QIsaiah-d",
+      "verse_present": true,
+      "dss_text": "[...]יראה אור ישב[ע...]",
+      "alignment": "sides_with_lxx",
+      "alignment_confidence": 0.8,
+      "divergences": [
+        {
+          "word_position": 3,
+          "mt_reading": "יִרְאֶה",
+          "lxx_reading": "δεῖξαι αὐτῷ φῶς",
+          "dss_reading": "יראה אור",
+          "classification": "plus",
+          "textual_implication": "Though fragmentary, 4QIsaᵈ preserves enough to confirm the reading 'he shall see light,' providing a third Hebrew witness to the longer text against MT."
+        }
+      ],
+      "overall_note": "4QIsaᵈ, though fragmentary, joins 1QIsaᵃ and 1QIsaᵇ in attesting אור after יראה. The triple Hebrew attestation makes the case for the originality of 'light' essentially conclusive in modern textual criticism."
+    }
+  ],
+  "sp_witness": null,
+  "pesh_witness": {
+    "present": true,
+    "alignment": "sides_with_mt",
+    "alignment_confidence": 0.8,
+    "pesh_text": "ܘܡܢ ܥܡܠܐ ܕܢܦܫܗ ܢܚܙܐ ܘܢܣܒܥ ܒܝܕܥܬܐ ܘܢܙܟܐ ܠܙܕܝ̈ܩܐ ܥܒܕܐ ܗܘ ܕܣ̈ܓܝܐܐ ܘܚ̈ܛܗܝܗܘܢ ܗܘ ܢܣܒܘܠ",
+    "divergences": [
+      {
+        "word_position": 3,
+        "mt_reading": "יִרְאֶה (he shall see)",
+        "lxx_reading": "δεῖξαι αὐτῷ φῶς",
+        "pesh_reading": "ܢܚܙܐ (he shall see) — no 'light'",
+        "classification": "minus",
+        "textual_implication": "The Peshitta lacks אור/φῶς, siding with MT against the DSS+LXX longer reading. This suggests the Peshitta's Vorlage was a proto-MT type Hebrew text without the word אור."
+      },
+      {
+        "word_position": 6,
+        "mt_reading": "יַצְדִּיק צַדִּיק עַבְדִּי לָרַבִּים (my righteous servant shall justify the many)",
+        "lxx_reading": "δικαιῶσαι δίκαιον εὖ δουλεύοντα πολλοῖς",
+        "pesh_reading": "ܘܢܙܟܐ ܠܙܕܝ̈ܩܐ ܥܒܕܐ ܗܘ ܕܣ̈ܓܝܐܐ (and he shall justify the righteous, he is the servant of many)",
+        "classification": "syntactic",
+        "textual_implication": "The Peshitta restructures the difficult Hebrew clause, taking צדיק as object ('the righteous ones') and reading עבדי as 'servant of (the many)' rather than 'my servant... for the many.' This reflects translator interpretation of an ambiguous syntactic chain rather than a different Vorlage."
+      }
+    ],
+    "overall_note": "The Peshitta of Isaiah generally follows a proto-MT Hebrew text and here lacks the crucial word אור, aligning with MT against 1QIsaᵃ/ᵇ, 4QIsaᵈ, and LXX. Its restructuring of the central clause shows interpretive translation of a syntactically dense Hebrew sentence rather than divergent Vorlage. The plural 'the righteous' (ܠܙܕܝ̈ܩܐ) is a translator's clarification of the ambiguous singular צַדִּיק."
+  },
+  "vul_witness": {
+    "present": true,
+    "alignment": "sides_with_mt",
+    "alignment_confidence": 0.9,
+    "vul_text": "Pro eo quod laboravit anima ejus, videbit et saturabitur. In scientia sua justificabit ipse justus servus meus multos, et iniquitates eorum ipse portabit.",
+    "key_readings": [
+      {
+        "word_position": 3,
+        "mt_reading": "יִרְאֶה (he shall see)",
+        "vul_reading": "videbit (he shall see) — no 'light'/'lucem'",
+        "classification": "minus",
+        "note": "Jerome's hebraica veritas reflects a proto-MT Hebrew Vorlage without אור, confirming that by the late 4th century the shorter text was standard in rabbinic Judaism."
+      },
+      {
+        "word_position": 6,
+        "mt_reading": "יַצְדִּיק צַדִּיק עַבְדִּי",
+        "vul_reading": "justificabit ipse justus servus meus",
+        "classification": "lexical",
+        "note": "Jerome construes the Hebrew naturally as 'my righteous servant shall justify,' faithfully preserving MT's word order and the messianic-servant reading."
+      }
+    ],
+    "overall_note": "The Vulgate follows MT closely, including the shorter reading without 'light,' confirming Jerome's reliance on a proto-Masoretic Hebrew text. His rendering preserves MT's striking 'iustificabit iustus servus meus' phrasing and became foundational for Western Christian interpretation of the Servant Song."
+  },
+  "synthesis": "Isaiah 53:11 presents one of the most consequential text-critical cases in the Hebrew Bible: three independent Hebrew DSS witnesses (1QIsaᵃ, 1QIsaᵇ, 4QIsaᵈ) converge with the LXX in reading יראה אור ('he shall see light') against MT's shorter יראה. The Peshitta and Vulgate, both rendered from proto-MT Hebrew Vorlagen, lack 'light' and thus align with MT. This pattern indicates that the longer text is original — 'light' (likely with eschatological/resurrection connotations) was lost in the proto-MT stream, perhaps by haplographic dropping or deliberate shortening — while the shorter MT reading prevailed in rabbinic transmission and shaped both Peshitta and Vulgate.",
+  "synthesis_plain": "The Dead Sea Scrolls preserve an extra word — 'light' — in this famous Servant Song verse, matching the ancient Greek translation: 'he shall see light.' The standard Hebrew Bible (followed by the Syriac and Latin translations) lost this word, but most modern Bibles now restore it based on the scrolls.",
+  "textual_history_implication": "This verse demonstrates how the Qumran scrolls can decisively resolve text-critical questions when multiple Hebrew witnesses agree with the LXX against MT. It also shows that the proto-MT text type — already established by Jerome's day and underlying both the Peshitta and Vulgate — sometimes preserves a shorter, secondary reading. The original Hebrew of Isaiah 53:11 almost certainly read 'he shall see light,' a phrase with profound implications for understanding the Servant's vindication.",
+  "bibcrit_assessment": {
+    "title": "Three Hebrew Scrolls Restore 'Light' to the Servant",
+    "reasoning": "The agreement of 1QIsaᵃ, 1QIsaᵇ, and 4QIsaᵈ with the LXX in reading אור after יראה is among the most decisive text-critical findings from Qumran, overturning a millennium of MT-based translation. The Peshitta and Vulgate's agreement with MT shows that the shorter reading dominated rabbinic and Christian transmission streams from antiquity, while only the Hebrew DSS preserved the original longer text alongside the LXX.",
+    "plain": "Three ancient Hebrew scrolls plus the Greek translation agree that the Servant 'will see light' — a word lost in the standard Hebrew Bible and in Syriac and Latin versions. Modern Bibles now usually restore it.",
+    "confidence": 0.95
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T08:55:08.629037",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v7"
+}

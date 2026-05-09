@@ -1,0 +1,103 @@
+{
+  "reference": "Deuteronomy 32:8",
+  "dss_manuscripts": [
+    {
+      "siglum": "4QDeut-j",
+      "full_name": "4QDeuteronomy-j (4Q37)",
+      "verse_present": true,
+      "dss_text": "בהנחל עליון גוים בהפרידו בני אדם יצב גבלת עמים למספר בני אלוהים",
+      "alignment": "sides_with_lxx",
+      "alignment_confidence": 0.9,
+      "divergences": [
+        {
+          "word_position": 12,
+          "mt_reading": "בְּנֵי יִשְׂרָאֵל (sons of Israel)",
+          "lxx_reading": "ἀγγέλων θεοῦ (angels of God) — reflecting Vorlage בני אלוהים/בני אל",
+          "dss_reading": "בני אלוהים (sons of God/gods)",
+          "classification": "theological",
+          "textual_implication": "4QDeut-j preserves what is almost certainly the original reading, presupposing a divine council in which Elyon allotted the nations to subordinate divine beings. The MT's 'sons of Israel' represents a later theological revision that eliminates polytheistic implications, while the LXX 'angels of God' reflects the same Hebrew Vorlage as 4QDeut-j with interpretive softening."
+        }
+      ],
+      "overall_note": "4QDeut-j provides the smoking-gun Hebrew evidence that the LXX's 'angels of God' rests on a genuine ancient Hebrew reading 'sons of God/Elohim,' not Greek innovation. This is one of the most important text-critical discoveries from Qumran, demonstrating that the MT here reflects a deliberate theological revision of an earlier polytheistic-sounding text."
+    },
+    {
+      "siglum": "4QDeut-q",
+      "full_name": "4QDeuteronomy-q (4Q44)",
+      "verse_present": false,
+      "dss_text": "",
+      "alignment": "absent",
+      "alignment_confidence": 1.0,
+      "divergences": [],
+      "overall_note": "4QDeut-q preserves portions of Deuteronomy 32 (Song of Moses) but the extant fragments do not cover v. 8 with the critical phrase intact."
+    }
+  ],
+  "sp_witness": {
+    "present": true,
+    "alignment": "sides_with_mt",
+    "alignment_confidence": 0.95,
+    "sp_text": "ב הנחיל עליון גוים ב הפרידו בני אדם יצב גבולת עמים ל מספר בני ישׂראל",
+    "divergences": [
+      {
+        "word_position": 2,
+        "mt_reading": "הַנְחֵל (hiphil infinitive, defective)",
+        "sp_reading": "הנחיל (hiphil infinitive, plene)",
+        "classification": "orthographic",
+        "textual_implication": "SP exhibits its characteristic plene orthography with yod, but the form and meaning are identical to MT."
+      },
+      {
+        "word_position": 12,
+        "mt_reading": "בְּנֵי יִשְׂרָאֵל",
+        "sp_reading": "בני ישׂראל",
+        "classification": "lexical",
+        "textual_implication": "SP agrees with MT against the LXX/4QDeut-j tradition, supporting the proto-MT reading 'sons of Israel.' This shows the revision had already entered the broader Hebrew tradition before the SP-MT split."
+      }
+    ],
+    "overall_note": "SP aligns squarely with MT against LXX and 4QDeut-j, confirming that 'sons of Israel' was the dominant reading in the proto-Masoretic and Samaritan branches of the Pentateuchal tradition. The only divergence from MT is the orthographic plene spelling typical of SP."
+  },
+  "pesh_witness": {
+    "present": true,
+    "alignment": "sides_with_mt",
+    "alignment_confidence": 0.9,
+    "pesh_text": "ܕܟܕ ܡܦܠܓ ܡܪܝܡܐ ܥܡ̈ܡܐ ܘܟܕ ܡܦܪܫ ܒܢ̈ܝܢܫܐ ܐܩܝܡ ܬܚܘܡܐ ܕܥܡ̈ܡܐ ܠܡܢܝܢܐ ܕܒܢ̈ܝ ܐܝܣܪܝܠ",
+    "divergences": [
+      {
+        "word_position": 12,
+        "mt_reading": "בְּנֵי יִשְׂרָאֵל",
+        "lxx_reading": "ἀγγέλων θεοῦ",
+        "pesh_reading": "ܒܢ̈ܝ ܐܝܣܪܝܠ (sons of Israel)",
+        "classification": "lexical",
+        "textual_implication": "The Peshitta supports the proto-MT reading 'sons of Israel,' aligning with the rabbinic Hebrew tradition. This is consistent with the Peshitta Pentateuch's general dependence on a Hebrew Vorlage close to MT."
+      }
+    ],
+    "overall_note": "The Peshitta sides with MT/SP against the LXX and 4QDeut-j, reading 'sons of Israel.' Its translation is otherwise straightforward and idiomatic Syriac, using participial forms (ܡܦܠܓ, ܡܦܪܫ) to render the Hebrew infinitive constructs. This supports the view that the Peshitta translator(s) worked from a proto-Masoretic Hebrew text."
+  },
+  "vul_witness": {
+    "present": true,
+    "alignment": "sides_with_mt",
+    "alignment_confidence": 0.95,
+    "vul_text": "Quando dividebat Altissimus gentes, quando separabat filios Adam, constituit terminos populorum juxta numerum filiorum Israël.",
+    "key_readings": [
+      {
+        "word_position": 12,
+        "mt_reading": "בְּנֵי יִשְׂרָאֵל",
+        "vul_reading": "filiorum Israël",
+        "classification": "lexical",
+        "note": "Jerome follows the hebraica veritas (proto-MT) reading 'sons of Israel,' rejecting the LXX's 'angels of God' that was current in the Old Latin."
+      }
+    ],
+    "overall_note": "Jerome's Vulgate aligns with MT against LXX, reflecting his commitment to the Hebrew text available to him in late 4th-century Palestine. The translation is fluid Latin with 'quando...quando' rendering the Hebrew infinitives temporally, and 'juxta numerum' precisely reflecting למספר. The reading 'filiorum Israël' confirms that the proto-MT reading had become dominant in the Hebrew tradition by Jerome's day."
+  },
+  "synthesis": "The witnesses to Deut 32:8 split decisively along a fault line at the verse's final phrase: 4QDeut-j and the LXX preserve a Vorlage reading 'sons of God/Elohim' (בני אלוהים), while MT, SP, Peshitta, and Vulgate all read 'sons of Israel.' The Qumran evidence demonstrates that the LXX's ἀγγέλων θεοῦ is not Greek interpretive innovation but a faithful translation of an authentic Hebrew tradition. The convergence of MT, SP, Peshitta, and Vulgate against the older reading reveals a successful theological revision that suppressed the divine-council imagery, likely motivated by emerging strict monotheism. This is a textbook case where Tov's and Ulrich's pluriform-text model is vindicated by manuscript evidence.",
+  "synthesis_plain": "The Dead Sea Scrolls reveal that the original Hebrew of Deuteronomy 32:8 said God divided the nations according to the number of 'sons of God' (divine beings), matching what the Greek Septuagint already suggested. Later Jewish scribes changed this to 'sons of Israel' to avoid any hint of multiple gods, and this revised reading is what we find in the standard Hebrew Bible, the Samaritan, Syriac, and Latin versions.",
+  "textual_history_implication": "Deut 32:8 is one of the clearest demonstrable cases of theological revision in the Hebrew Bible's transmission history. The 4QDeut-j reading, supported by LXX, is almost certainly earlier than the MT/SP/Peshitta/Vulgate reading, showing that the proto-MT text underwent intentional editing for theological reasons before being transmitted to the Samaritan, Syriac, and Latin traditions. This case fundamentally challenges any simple priority of MT and supports a model of multiple coexisting Hebrew text-forms in the Second Temple period.",
+  "bibcrit_assessment": {
+    "title": "Qumran Confirms Original 'Sons of God' Reading",
+    "reasoning": "4QDeut-j's preservation of בני אלוהים provides decisive Hebrew manuscript evidence that the LXX's 'angels of God' rests on an authentic, earlier Hebrew Vorlage rather than translational innovation. The unanimous agreement of MT, SP, Peshitta, and Vulgate on 'sons of Israel' represents a downstream theological harmonization that successfully obscured the original divine-council cosmology. This is among the most consequential text-critical findings from Qumran for biblical theology.",
+    "plain": "A Dead Sea Scroll preserves what scholars now believe is the original Hebrew reading—'sons of God'—which was later changed to 'sons of Israel' to remove polytheistic overtones. All the major ancient translations except the Greek Septuagint inherited the revised version.",
+    "confidence": 0.92
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T08:54:08.869854",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v7"
+}

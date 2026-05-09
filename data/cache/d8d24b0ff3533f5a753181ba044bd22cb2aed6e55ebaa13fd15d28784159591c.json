@@ -1,0 +1,177 @@
+{
+  "reconstructed_words": [
+    {
+      "position": 1,
+      "lxx_word": "διὰ τοῦτο",
+      "vorlage_word": "לָכֵן",
+      "status": "unattested",
+      "confidence": 0.35,
+      "mt_equivalent": null,
+      "dss_witness": null,
+      "reasoning": "διὰ τοῦτο is the standard LXX rendering of לָכֵן ('therefore') in prophetic contexts (cf. Jer 2:9; 5:6; Amos 5:16). The MT of Jer 31:31 (MT numeration) has הִנֵּה יָמִים בָּאִים, which is entirely unrelated. This suggests either a radically different Vorlage or, more likely, that the LXX text corresponds to a different verse in the LXX Jeremiah order (LXX Jeremiah = ~MT Jer 48), specifically LXX Jer 31:31 = MT Jer 48:31 regarding Moab.",
+      "alternatives": [
+        {
+          "reading": "עַל־כֵּן",
+          "confidence": 0.25,
+          "note": "Also rendered διὰ τοῦτο occasionally but less frequent than לָכֵן."
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "lxx_word": "ἐπὶ Μωαβ",
+      "vorlage_word": "עַל־מוֹאָב",
+      "status": "agrees_mt",
+      "confidence": 0.9,
+      "mt_equivalent": "עַל־מוֹאָב (MT Jer 48:31)",
+      "dss_witness": null,
+      "reasoning": "ἐπί + accusative/genitive for עַל is a standard LXX pattern. Μωαβ is a consistent transliteration of מוֹאָב throughout LXX. MT Jer 48:31 reads עַל־כֵּן אֶיְלִיל לְמוֹאָב, confirming מוֹאָב in the Vorlage. The LXX passage clearly corresponds to MT Jer 48:31, not MT Jer 31:31.",
+      "alternatives": []
+    },
+    {
+      "position": 3,
+      "lxx_word": "ὀλολύζετε",
+      "vorlage_word": "הֵילִילוּ",
+      "status": "agrees_mt",
+      "confidence": 0.85,
+      "mt_equivalent": "אֶיְלִיל (MT Jer 48:31)",
+      "dss_witness": null,
+      "reasoning": "ὀλολύζω is the characteristic LXX rendering of יָלַל / הֵילִיל ('to wail, howl') throughout the prophetic corpus (cf. Isa 13:6; Jer 25:34; Amos 8:3). MT Jer 48:31 has אֶיְלִיל (1cs imperfect of יָלַל), whereas the LXX imperative plural ὀλολύζετε suggests a Vorlage reading הֵילִילוּ (qal imperative plural), a divergence from MT in person and number.",
+      "alternatives": [
+        {
+          "reading": "יְלִילוּ",
+          "confidence": 0.3,
+          "note": "Imperfect 3mp also possible as Vorlage for an imperatival translation."
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "lxx_word": "πάντοθεν",
+      "vorlage_word": "מִסָּבִיב",
+      "status": "unattested",
+      "confidence": 0.55,
+      "mt_equivalent": null,
+      "dss_witness": null,
+      "reasoning": "πάντοθεν ('from all sides, on all sides') is an attested but not exclusive rendering of מִסָּבִיב in LXX (cf. Jer 6:25; 20:3; 46:5). MT Jer 48:31 does not have מִסָּבִיב at this point. This could reflect either a Vorlage expansion or the translator's conflation with nearby Moab oracles that regularly employ מִסָּבִיב (cf. Jer 48:17, 39).",
+      "alternatives": [
+        {
+          "reading": "סָבִיב",
+          "confidence": 0.3,
+          "note": "Shorter form also rendered by πάντοθεν occasionally."
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "lxx_word": "βοήσατε",
+      "vorlage_word": "זַעֲקוּ",
+      "status": "unattested",
+      "confidence": 0.5,
+      "mt_equivalent": null,
+      "dss_witness": null,
+      "reasoning": "βοάω is used to render several Hebrew roots including זָעַק, צָעַק, and occasionally קָרָא in LXX prophetic literature. MT Jer 48:31 has וּלְאַנְשֵׁי קִיר חֶרֶשׂ יֶהְגֶּה, which is entirely different. The imperative βοήσατε suggests a Vorlage imperative plural, possibly זַעֲקוּ or צַעֲקוּ, without MT parallel at this point.",
+      "alternatives": [
+        {
+          "reading": "צַעֲקוּ",
+          "confidence": 0.4,
+          "note": "צָעַק is also rendered βοάω and is equally plausible."
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "lxx_word": "ἐπ᾿ ἄνδρας Κιραδας",
+      "vorlage_word": "עַל אַנְשֵׁי קִיר חֶרֶשׂ",
+      "status": "agrees_mt",
+      "confidence": 0.72,
+      "mt_equivalent": "וּלְאַנְשֵׁי קִיר חֶרֶשׂ (MT Jer 48:31)",
+      "dss_witness": null,
+      "reasoning": "Κιραδας appears to be a transliteration of קִיר חֶרֶשׂ (or קִיר חֲרֶשֶׂת), a Moabite city mentioned in MT Jer 48:31 and Isa 16:7. The rendering ἄνδρας for אַנְשֵׁי is standard (cf. LXX Isa 16:7). The transliteration Κιραδας is a compressed form of קִיר חֶרֶשׂ, and the prepositional phrase ἐπ᾿ ἄνδρας corresponds to עַל אַנְשֵׁי / לְאַנְשֵׁי.",
+      "alternatives": [
+        {
+          "reading": "עַל אַנְשֵׁי קִיר מוֹאָב",
+          "confidence": 0.2,
+          "note": "Some MSS have variant names for the Moabite city."
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "lxx_word": "αὐχμοῦ",
+      "vorlage_word": "חֶרֶשׂ",
+      "status": "unattested",
+      "confidence": 0.38,
+      "mt_equivalent": "חֶרֶשׂ (as part of קִיר חֶרֶשׂ, MT Jer 48:31)",
+      "dss_witness": null,
+      "reasoning": "αὐχμός means 'drought, dryness, squalor' and appears to be a translation of חֶרֶשׂ (or חֹרֶב, 'drought, dryness') rather than treating it as a proper noun. This reflects a translator who parsed the place name קִיר חֶרֶשׂ as 'wall of dryness/drought' rather than as a toponym, rendering the second element semantically. This is a significant translation technique divergence — interpreting a proper noun appellatively — attested in other LXX passages.",
+      "alternatives": [
+        {
+          "reading": "חֹרֶב",
+          "confidence": 0.3,
+          "note": "חֹרֶב ('drought, desolation') would also yield αὐχμός and could be a Vorlage variant."
+        }
+      ]
+    }
+  ],
+  "summary_technical": "The LXX passage designated Jer 31:31 in the Greek numeration does not correspond to MT Jer 31:31 (the New Covenant passage) but rather to MT Jer 48:31, a lament over Moab — a consequence of the well-documented LXX Jeremiah's shorter and differently ordered text. The Vorlage substantially overlaps with MT Jer 48:31 (מוֹאָב, אַנְשֵׁי קִיר חֶרֶשׂ) but diverges in person/number of the verb (imperative plural vs. MT 1cs), the presence of מִסָּבִיב (absent in MT 48:31), and crucially in the treatment of חֶרֶשׂ as an appellative ('dryness') rather than as part of the toponym קִיר חֶרֶשׂ. No DSS witnesses directly cover MT Jer 48:31 with sufficient detail to confirm or deny the LXX's divergent readings.",
+  "summary_plain": "This Greek verse is actually a translation of a passage about Moab (MT Jeremiah 48:31), not the famous 'New Covenant' verse of MT Jeremiah 31:31, because the Greek and Hebrew Bibles arrange the book of Jeremiah in different orders. The translator mostly followed a Hebrew text similar to what we have today but made some notable interpretive choices, including reading a city name ('Kir-hareseth') as a description of dryness rather than a proper place name.",
+  "overall_confidence": 0.57,
+  "bibcrit_assessment": {
+    "title": "LXX Renders קִיר חֶרֶשׂ Appellatively as 'Drought'",
+    "reasoning": "The most philologically significant feature is αὐχμοῦ rendering חֶרֶשׂ semantically rather than as part of the toponym קִיר חֶרֶשׂ. This could reflect either a Vorlage reading חֹרֶב instead of חֶרֶשׂ, or more likely a deliberate exegetical choice by the translator to unpack the place name's etymology — a technique paralleled in LXX Isaiah's treatment of Hebrew toponyms. The imperative plural ὀλολύζετε / βοήσατε vs. MT's 1cs אֶיְלִיל may reflect a Vorlage with הֵילִילוּ / זַעֲקוּ (plural imperatives), which would be a genuine textual variant rather than translator freedom, though this remains speculative without DSS confirmation.",
+    "plain": "The most interesting scholarly puzzle here is whether the Greek translator had a slightly different Hebrew text in front of him — one that used plural commands ('wail! cry out!') instead of the singular 'I will wail' found in today's Hebrew Bible — or whether he simply chose to adapt the text for his audience.",
+    "confidence": 0.42
+  },
+  "discovery_ready": false,
+  "reference": "Jeremiah 31:31",
+  "cached_at": "2026-04-19T21:53:43.281270",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The core insight (LXX Jer 31:31 = MT Jer 48:31 due to differing book order) is correct and well-established, but several specific reconstructions and lexical claims contain inaccuracies that warrant caution.",
+    "flagged_claims": [
+      {
+        "claim": "LXX Jeremiah = ~MT Jer 48), specifically LXX Jer 31:31 = MT Jer 48:31",
+        "risk": "MEDIUM",
+        "reason": "The chapter mapping is imprecise. LXX Jer 31 corresponds to MT Jer 48 (the Moab oracle), but the verse-by-verse alignment between LXX 31:31 and MT 48:31 should be verified directly against Rahlfs/Ziegler rather than asserted as exact."
+      },
+      {
+        "claim": "διὰ τοῦτο is the standard LXX rendering of לָכֵן... reconstructing position 1 as לָכֵן",
+        "risk": "MEDIUM",
+        "reason": "MT Jer 48:31 actually opens with עַל־כֵּן, not לָכֵן. The analysis lists עַל־כֵּן only as a low-confidence alternative when it is in fact the MT reading and should be the primary reconstruction."
+      },
+      {
+        "claim": "Κιραδας appears to be a transliteration of קִיר חֶרֶשׂ",
+        "risk": "HIGH",
+        "reason": "The actual LXX reading at Jer 31(48):31 is typically Κιραδας or similar, but the segmentation here is questionable — αὐχμοῦ is treated as a separate translation of חֶרֶשׂ while Κιραδας is also said to transliterate קִיר חֶרֶשׂ, which would double-count חֶרֶשׂ. This internal inconsistency suggests the reconstruction is muddled."
+      },
+      {
+        "claim": "αὐχμοῦ means 'drought, dryness, squalor' and appears to be a translation of חֶרֶשׂ",
+        "risk": "HIGH",
+        "reason": "If Κιραδας already represents קִיר חֶרֶשׂ as a transliteration, αὐχμοῦ cannot also derive from חֶרֶשׂ. More plausibly αὐχμοῦ renders a different Hebrew word in the Vorlage or the segmentation is wrong. The 'appellative reading of toponym' claim is speculative and not well supported."
+      },
+      {
+        "claim": "πάντοθεν ('from all sides') ... attested rendering of מִסָּבִיב",
+        "risk": "MEDIUM",
+        "reason": "The reconstruction of מִסָּבִיב here is speculative since MT 48:31 lacks it; the analysis itself notes this is unattested. The confidence of 0.55 may be overstated given no positional anchor in MT."
+      },
+      {
+        "claim": "imperative plural ὀλολύζετε vs. MT's 1cs אֶיְלִיל reflects a Vorlage with הֵילִילוּ",
+        "risk": "MEDIUM",
+        "reason": "Plausible but the analysis does not adequately consider that LXX Jeremiah translators frequently alter person/number freely; presenting this as a 'genuine textual variant' overstates what can be demonstrated."
+      }
+    ],
+    "safe_claims": [
+      "LXX Jeremiah has a different chapter order than MT, with the Oracles Against the Nations relocated",
+      "ὀλολύζω is a characteristic LXX rendering of יָלַל/הֵילִיל in prophetic texts",
+      "Μωαβ is the standard LXX transliteration of מוֹאָב",
+      "βοάω renders multiple Hebrew verbs of crying out including זָעַק and צָעַק",
+      "No DSS witness preserves MT Jer 48:31 with sufficient detail to adjudicate these variants"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.633894+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

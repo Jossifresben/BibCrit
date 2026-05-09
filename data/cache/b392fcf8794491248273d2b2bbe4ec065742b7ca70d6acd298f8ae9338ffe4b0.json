@@ -168,5 +168,63 @@
   "reference": "Isaiah",
   "cached_at": "2026-03-30T23:40:16.913742",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The core textual observations are accurate and well-known, but several scholarly citations have suspect page references and one LXX reading is misquoted.",
+    "flagged_claims": [
+      {
+        "claim": "van der Kooij, The Oracle of Tyre, pp. 89-92",
+        "risk": "HIGH",
+        "reason": "Van der Kooij's 'The Oracle of Tyre' (1998) focuses on Isaiah 23, not Isaiah 7:14 or 19:18. Citing it for these passages is likely a fabricated or misapplied reference."
+      },
+      {
+        "claim": "Smelik, The Targum of Judges, pp. 78-80",
+        "risk": "HIGH",
+        "reason": "Smelik's monograph is on the Targum of Judges; citing it as evidence for Targum Isaiah 9:6 is implausible and likely a hallucinated cross-reference."
+      },
+      {
+        "claim": "Schaper, Eschatology in the Greek Psalter, pp. 54-56",
+        "risk": "MEDIUM",
+        "reason": "Schaper's work is specifically on the Psalter; while his methodology is sometimes extended to Isaiah, citing specific page numbers from this book as evidence for LXX Isaiah 42:1 is suspect."
+      },
+      {
+        "claim": "LXX Isaiah 42:1 reads 'Jacob is my servant... Israel is my chosen one'",
+        "risk": "HIGH",
+        "reason": "This is actually the LXX reading of Isaiah 42:1 with the explicit names 'Iakob' and 'Israel' added — but this matches Isaiah 41:8-9 / 42:1 LXX conflation. The reading exists in LXX but the analysis conflates it with Matthew's citation tradition; the precise wording cited needs verification."
+      },
+      {
+        "claim": "πόλις ἀσεδεκ, likely rendering עיר הצדק",
+        "risk": "MEDIUM",
+        "reason": "The standard LXX reading at Isaiah 19:18 is πόλις-ασεδεκ (transliteration) but major LXX witnesses actually read πόλις ἀσεδεκ or πόλις ἀσεδδεκ; some manuscripts read 'City of Righteousness' while others read πόλις-αχερες (City of the Sun). The textual situation is more complex than presented."
+      },
+      {
+        "claim": "Muñoz León, Gloria de la Shekina, pp. 112-118",
+        "risk": "MEDIUM",
+        "reason": "The actual title is 'Gloria de la Shekiná en los Targumim del Pentateuco' (1977). Citing it for Targum Isaiah 6:1 is possible but the specific page reference cannot be readily verified and the work focuses on Pentateuchal Targums."
+      },
+      {
+        "claim": "Levey, The Messiah: An Aramaic Interpretation, pp. 63-69",
+        "risk": "MEDIUM",
+        "reason": "Levey's book exists (1974) and does treat Targum Isaiah 53, but the specific page range should be verified; messianic discussion of Isa 53 in Levey is typically in a different page range."
+      },
+      {
+        "claim": "Chilton, The Glory of Israel, pp. 86-95",
+        "risk": "MEDIUM",
+        "reason": "Chilton's 'The Glory of Israel' (1983) does treat Targum Isaiah 53, but the specific page range requires verification."
+      }
+    ],
+    "safe_claims": [
+      "LXX Isaiah 7:14 renders almah with parthenos",
+      "Targum Jonathan to Isaiah 9:6 explicitly inserts 'Messiah' (משיחא)",
+      "Targum Isaiah 52:13 inserts 'my servant the Messiah' and reassigns suffering away from the Servant figure",
+      "Targum Isaiah 6:1 substitutes 'glory of the LORD' for direct vision of the Lord",
+      "LXX Isaiah 19:18 has a positive reading ('City of Righteousness'-type) where MT has עיר ההרס",
+      "MT Isaiah 63:9 לֹא צָר is textually difficult and the LXX renders it differently, emphasizing God's direct action",
+      "Targumic substitution of 'glory/Shekinah' for direct divine reference is a systematic anti-anthropomorphic feature"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.648355+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

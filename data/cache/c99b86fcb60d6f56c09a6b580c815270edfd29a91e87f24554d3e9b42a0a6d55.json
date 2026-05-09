@@ -1,0 +1,145 @@
+{
+  "divergences": [
+    {
+      "mt_word": "וָאֶרְאֶה (waw-conjunctive + 'I saw')",
+      "lxx_word": "καὶ εἶδον (kai eidon, 'and I saw')",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.88,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.88,
+          "explanation": "The MT's waw-consecutive imperfect וָאֶרְאֶה is rendered by the LXX translator with the standard Greek aorist indicative, a routine equivalence for waw-consecutive forms throughout Qohelet's Greek translation."
+        },
+        {
+          "type": "grammatical_shift",
+          "confidence": 0.4,
+          "explanation": "The coordination with καὶ rather than rendering the waw-consecutive aspect more dynamically may reflect the translator's tendency in Ecclesiastes to flatten Hebrew verbal aspect distinctions."
+        }
+      ],
+      "dss_witness": "4QQoha (4Q109) does not preserve 4:7 with sufficient clarity to adjudicate this verse.",
+      "citations": [
+        "Seow (1997) pp. 182–183",
+        "Schoors (2013) pp. 45–48"
+      ],
+      "analysis_technical": "The waw-consecutive imperfect וָאֶרְאֶה is a standard Hebrew narrative device indicating sequential action; the LXX translator of Qohelet consistently renders such forms with Greek aorist indicatives coordinated by καί, consistent with Pietersma's 'interlinear' model of literal translation. This is not a divergence reflecting a different Vorlage but rather a grammatical recoding required by the target language.",
+      "analysis_plain": "Hebrew uses a special verb form to show 'and then I saw,' but Greek simply says 'and I saw' — the meaning is the same, just expressed through different grammatical tools."
+    },
+    {
+      "mt_word": "הֶבֶל (hebel, 'vanity/vapor')",
+      "lxx_word": "ματαιότητα (mataiotēta, 'futility/emptiness')",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.82,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.82,
+          "explanation": "The translator's consistent choice of ματαιότης for הֶבֶל throughout Qohelet represents a semantically interpretive equivalence: the Greek term denotes moral and purposive futility, whereas the Hebrew root suggests transience and breath-like insubstantiality."
+        },
+        {
+          "type": "theological_tendency",
+          "confidence": 0.35,
+          "explanation": "The Greek ματαιότης carries stronger ethical-evaluative connotations than the Hebrew הֶבֶל, potentially nudging readers toward a more moralistic interpretation of Qohelet's skeptical observations."
+        }
+      ],
+      "dss_witness": "null",
+      "citations": [
+        "Pietersma & Wright (2007) p. 345",
+        "Fox (1999) pp. 27–35",
+        "Tov (2012) pp. 134–136"
+      ],
+      "analysis_technical": "Tov's framework of 'sense-for-sense' translation recognizes that ματαιότης is the standard LXX rendering of הֶבֶל in Ecclesiastes, a lexical choice that systematically shifts the metaphorical register from the concrete (vapor, breath) to the abstract (futility, purposelessness). As Fox notes, the Hebrew הֶבֶל in Qohelet functions primarily as a metaphor of insubstantiality, which ματαιότης only partially captures. Wevers' approach to LXX equivalences would identify this as a contextually appropriate but semantically narrowing translation.",
+      "analysis_plain": "The Hebrew word 'hebel' literally means 'breath' or 'vapor,' evoking something that disappears instantly, but the Greek translation chose a word meaning 'futility' — accurate in meaning but losing that vivid, misty image."
+    },
+    {
+      "mt_word": "תַּחַת הַשָּׁמֶשׁ (taḥat haššemeš, 'under the sun')",
+      "lxx_word": "ὑπὸ τὸν ἥλιον (hypo ton hēlion, 'under the sun')",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.92,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.92,
+          "explanation": "The phrase תַּחַת הַשָּׁמֶשׁ is a distinctive Qohelet idiom rendered throughout LXX Ecclesiastes with consistent literalness as ὑπὸ τὸν ἥλιον, representing a formal correspondence translation strategy."
+        }
+      ],
+      "dss_witness": "null",
+      "citations": [
+        "Seow (1997) p. 102",
+        "Schoors (2013) p. 19"
+      ],
+      "analysis_technical": "This phrase is idiomatic in Qohelet with no exact parallel in other Hebrew Bible books; the Greek translator reproduces it morpheme-for-morpheme, consistent with the generally literal character of LXX Ecclesiastes noted by both Tov and Pietersma. The formal equivalence here likely reflects the translator's recognition that the phrase functions as a technical term within the book's conceptual vocabulary rather than a transparent spatial expression.",
+      "analysis_plain": "Both Hebrew and Greek say 'under the sun' in exactly the same way — it's one of Qohelet's trademark phrases, and the translator kept it intact."
+    }
+  ],
+  "summary_technical": "Ecclesiastes 4:7 shows no divergences indicative of a differing Hebrew Vorlage; all MT/LXX differences are attributable to grammatical recoding of waw-consecutive syntax and consistent lexical equivalences (ματαιότης for הֶבֶל) that characterize the formally literal but semantically interpretive translation style of LXX Qohelet, consistent with Tov's assessment of this translation unit as largely reflecting its source text.",
+  "summary_plain": "The Hebrew and Greek versions of this verse say essentially the same thing — the small differences are just the translator adapting Hebrew grammar and imagery into natural Greek, not working from a different original text.",
+  "bibcrit_hypothesis": {
+    "title": "Translator's ματαιότης as proto-Stoic philosophical reframing",
+    "reasoning": "The consistent choice of ματαιότης for הֶבֶל across LXX Ecclesiastes may reflect not merely a translation convenience but a subtle philosophical reorientation toward Hellenistic moral discourse, where ματαιότης carries resonances of Stoic critiques of false goods (cf. Epictetus, Marcus Aurelius). If the translator worked in Alexandria in a milieu saturated with Stoic vocabulary, the choice would not be theologically tendentious in a Jewish sense but culturally adaptive — making Qohelet intelligible to a diaspora audience accustomed to philosophical discussions of futility. This underexplored angle suggests the translation performs a kind of cross-cultural philosophical translation, not merely linguistic, that has been underweighted in existing text-critical literature.",
+    "plain": "The Greek translator may have deliberately chosen a word familiar from Greek philosophy to help Jewish readers in Alexandria connect Qohelet's ancient wisdom with contemporary philosophical ideas about the emptiness of worldly pursuits.",
+    "confidence": 0.31
+  },
+  "discovery_ready": false,
+  "reference": "Ecclesiastes 4:7",
+  "cached_at": "2026-04-19T22:22:59.495358",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v2",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The textual observations are accurate and well-grounded, but several specific page citations and one speculative hypothesis warrant caution.",
+    "flagged_claims": [
+      {
+        "claim": "Seow (1997) pp. 182–183",
+        "risk": "MEDIUM",
+        "reason": "Specific page citations to Seow's Anchor Bible Ecclesiastes commentary cannot be verified without checking; pp. 182-183 in Seow covers 3:1-8 territory, not 4:7 or waw-consecutive discussion."
+      },
+      {
+        "claim": "Schoors (2013) pp. 45–48",
+        "risk": "MEDIUM",
+        "reason": "Schoors' 'Ecclesiastes' (HCOT, 2013) page reference is not independently verifiable and may be fabricated; the topic-page mapping is suspicious."
+      },
+      {
+        "claim": "Pietersma & Wright (2007) p. 345",
+        "risk": "MEDIUM",
+        "reason": "NETS (2007) is an English translation volume; a single page citation for a lexical/theoretical claim about ματαιότης equivalence is suspect — such discussion would more likely be in Pietersma's separate methodological essays."
+      },
+      {
+        "claim": "Fox (1999) pp. 27–35",
+        "risk": "MEDIUM",
+        "reason": "Fox's 'A Time to Tear Down and a Time to Build Up' does discuss hebel extensively, but the precise page range should be verified; could be approximate or invented."
+      },
+      {
+        "claim": "Tov (2012) pp. 134–136",
+        "risk": "MEDIUM",
+        "reason": "Tov's TCHB 3rd edition pages 134-136 do not obviously correspond to LXX Ecclesiastes translation technique discussion; citation may be imprecise."
+      },
+      {
+        "claim": "proto-Stoic philosophical reframing... cf. Epictetus, Marcus Aurelius",
+        "risk": "HIGH",
+        "reason": "Epictetus and Marcus Aurelius post-date the LXX Ecclesiastes translation (likely 2nd c. BCE to early 2nd c. CE for Qohelet, often attributed to Aquila or kaige circle); citing them as background context is anachronistic, and the Stoic-ματαιότης link is speculative and not standardly supported."
+      },
+      {
+        "claim": "4QQoha (4Q109) does not preserve 4:7 with sufficient clarity",
+        "risk": "MEDIUM",
+        "reason": "Worth verifying — 4Q109 preserves portions of chs. 5-7 primarily; the manuscript may not preserve 4:7 at all rather than preserving it unclearly."
+      },
+      {
+        "claim": "often attributed to Aquila or kaige circle... consistent with Pietersma's 'interlinear' model",
+        "risk": "MEDIUM",
+        "reason": "The 'interlinear paradigm' is Pietersma's framework but its application to Ecclesiastes specifically (vs. Aquila attribution debate) is contested; presenting it as settled framework is slightly overconfident."
+      }
+    ],
+    "safe_claims": [
+      "MT וָאֶרְאֶה corresponds to LXX καὶ εἶδον",
+      "MT הֶבֶל is rendered by ματαιότης in LXX Ecclesiastes",
+      "MT תַּחַת הַשָּׁמֶשׁ is rendered ὑπὸ τὸν ἥλιον with formal equivalence",
+      "ματαιότης is the consistent LXX equivalent for הֶבֶל in Ecclesiastes",
+      "LXX Ecclesiastes is characterized as a formally literal translation",
+      "תַּחַת הַשָּׁמֶשׁ is a distinctive idiom of Qohelet"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.617001+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

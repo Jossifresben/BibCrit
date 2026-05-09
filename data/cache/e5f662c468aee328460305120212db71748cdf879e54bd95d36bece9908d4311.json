@@ -1,0 +1,162 @@
+{
+  "reference": "Mark 16:9",
+  "text_basis": {
+    "sblgnt_reading": "ἀναστάς δέ πρωΐ πρώτῃ σαββάτου ἐφάνη πρῶτον Μαρίᾳ τῇ Μαγδαληνῇ παρ' ἧς ἐκβεβλήκει ἑπτὰ δαιμόνια",
+    "na28_alignment": "The SBLGNT and NA28/UBS5 agree on the text of 16:9 as printed, though both editions bracket or otherwise flag vv. 9–20 as a whole as a secondary addition; no meaningful word-level divergence exists between SBLGNT and NA28 within v. 9 itself.",
+    "is_disputed_locus": true,
+    "dispute_note": "Mark 16:9 is the opening verse of the so-called Longer Ending of Mark (16:9–20), one of the most extensively debated textual problems in the entire New Testament. The dispute is not about the wording of v. 9 per se but about whether vv. 9–20 were part of the original Gospel at all."
+  },
+  "manuscript_families": {
+    "alexandrian": {
+      "witnesses": [
+        "א (Sinaiticus)",
+        "B (Vaticanus)",
+        "P66 (not extant for Mark 16)",
+        "P75 (not extant for Mark 16)"
+      ],
+      "support": "supports_variant",
+      "note": "The two premier Alexandrian uncials, Sinaiticus (א) and Vaticanus (B), both end the Gospel at 16:8, omitting vv. 9–20 entirely. Vaticanus notably leaves a column blank after 16:8, suggesting the scribe was aware of additional material but deliberately excluded it; this is a significant piece of internal evidence. P66 and P75 do not survive for this portion of Mark."
+    },
+    "western": {
+      "witnesses": [
+        "D (Bezae)",
+        "Old Latin (it)",
+        "Diatessaron"
+      ],
+      "support": "sides_with_received",
+      "note": "The Western tradition generally supports inclusion of the Longer Ending; Codex Bezae (D) contains vv. 9–20, and the bulk of Old Latin manuscripts include the passage. Some Old Latin witnesses, however, attest the shorter ending or the Freer Logion variant, indicating the Western tradition was not entirely uniform on this pericope."
+    },
+    "byzantine": {
+      "witnesses": [
+        "Majority Text (𝔐)",
+        "Textus Receptus (TR)"
+      ],
+      "support": "sides_with_received",
+      "note": "The Byzantine Majority Text unanimously includes vv. 9–20, and the Textus Receptus prints the Longer Ending without annotation. This broad Byzantine support accounts for the passage's inclusion in the KJV and most pre-critical translations, but the Byzantine tradition is widely regarded as derivative and harmonistic in such cases."
+    },
+    "caesarean": {
+      "witnesses": [
+        "W (Freer Gospels)",
+        "f1 (family 1)",
+        "f13 (family 13)"
+      ],
+      "support": "split",
+      "note": "The Caesarean witnesses are notably divided: Codex W (Freer Gospels) includes vv. 9–20 but inserts an additional logion after v. 14 (the 'Freer Logion'), demonstrating secondary expansion of an already non-original ending. Family 1 and Family 13 include the Longer Ending but some members carry marginal notes flagging the passage as absent in older manuscripts, reflecting awareness of its contested status."
+    }
+  },
+  "metzger_rating": {
+    "rating": "A",
+    "justification": "Metzger and the UBS committee assigned the omission of vv. 9–20 (i.e., the text ending at 16:8) a rating of 'A' in terms of certainty that the Longer Ending was not part of the original Gospel of Mark. The external evidence from the earliest and most reliable Alexandrian witnesses (א, B), combined with the testimony of Eusebius, Jerome, and early lectionary practice, is overwhelming. The internal evidence—marked stylistic discontinuity, the reintroduction of Mary Magdalene as if unmentioned before, and the hapax-rich vocabulary of vv. 9–20—further confirms the committee's confidence that the Longer Ending is a secondary addition, making the 'A' rating appropriate for the judgment that 16:8 ends the authentic text."
+  },
+  "variant_register": [
+    {
+      "variant_text": "Omission of vv. 9–20 (Gospel ends at 16:8 with ἐφοβοῦντο γάρ)",
+      "manuscript_support": "א (Sinaiticus), B (Vaticanus), 304, the Armenian version, the Georgian version, Eusebius of Caesarea, Jerome, and a significant portion of the Syriac tradition",
+      "intrinsic_probability": "high",
+      "transcriptional_probability": "high",
+      "assessment": "The abrupt ending at 16:8 is almost certainly original; it is far more likely that scribes added endings to resolve the perceived incompleteness of the narrative than that the Longer Ending was accidentally dropped by multiple independent witnesses. The variety of endings attested (shorter ending, Longer Ending, Freer Logion) itself demonstrates scribal discomfort with 16:8 as a conclusion."
+    },
+    {
+      "variant_text": "Longer Ending (vv. 9–20) including v. 9: ἀναστάς δὲ πρωῒ πρώτῃ σαββάτου...",
+      "manuscript_support": "A (Alexandrinus), C (Ephraemi), D (Bezae), L, W, Θ, f13, Majority Text, Textus Receptus, Vulgate, Peshitta, most Old Latin",
+      "intrinsic_probability": "low",
+      "transcriptional_probability": "medium",
+      "assessment": "The Longer Ending is attested broadly but not early; its vocabulary (18 hapax legomena or words not found elsewhere in Mark), its resumptive style reintroducing Mary Magdalene, and its apparent dependence on Lukan and Johannine resurrection accounts all point to composition by a second-century author other than Mark. The widespread adoption in the Byzantine tradition reflects liturgical entrenchment rather than original textual authenticity."
+    },
+    {
+      "variant_text": "Shorter Ending only (without vv. 9–20): 'But they reported briefly to Peter and those with him all that they had been told. And after this, Jesus himself sent out through them from east to west the sacred and imperishable proclamation of eternal salvation.'",
+      "manuscript_support": "L, Ψ, 083, 099, k (Old Latin), several Sahidic and Bohairic Coptic manuscripts, some Ethiopic manuscripts",
+      "intrinsic_probability": "low",
+      "transcriptional_probability": "medium",
+      "assessment": "The Shorter Ending is clearly a secondary composition designed to provide a more satisfying conclusion than 16:8 alone; its florid, non-Markan Greek style ('sacred and imperishable proclamation of eternal salvation') betrays its artificial origin. Several manuscripts include both the Shorter Ending and the Longer Ending in sequence, confirming that scribes were trying to supplement rather than transmit an original."
+    },
+    {
+      "variant_text": "Longer Ending with Freer Logion (additional insertion after v. 14 in Codex W)",
+      "manuscript_support": "W (Freer Gospels / Washington Codex), known to Jerome",
+      "intrinsic_probability": "low",
+      "transcriptional_probability": "low",
+      "assessment": "The Freer Logion—an extended response by Christ to the disciples' excuse in v. 14—is a further secondary expansion of the already secondary Longer Ending, attested only in W and referenced by Jerome. It represents the furthest stage of scribal expansion and has virtually no claim to authenticity."
+    }
+  ],
+  "disputed_passage": {
+    "designation": "Longer Ending of Mark (Mark 16:9–20)",
+    "manuscript_evidence_for": "The Longer Ending is supported by the majority of Greek manuscripts including A (Alexandrinus, 5th c.), C (Ephraemi Rescriptus, 5th c.), D (Bezae, 5th c.), L, W (Freer Gospels, 5th c.), Θ, f13, and the entire Byzantine Majority Text. It is also found in the Latin Vulgate, the Peshitta Syriac, most Old Latin witnesses, and the majority of Coptic, Armenian, and Ethiopic versions. Irenaeus (c. 180 AD) is the earliest patristic witness to quote from it (Adv. Haer. 3.10.6, citing v. 19), and Tatian's Diatessaron likely incorporated it. Early lectionary traditions incorporated vv. 9–20 as a standard resurrection reading.",
+    "manuscript_evidence_against": "The Longer Ending is absent from the two oldest and most reliable Greek manuscripts, Sinaiticus (א, 4th c.) and Vaticanus (B, 4th c.), both of which end the Gospel at 16:8. Vaticanus uniquely leaves a blank column after 16:8, a scribal signal of awareness that additional material existed but was being intentionally excluded. The passage is also absent from the oldest Armenian and Georgian manuscripts, from several Old Latin witnesses (especially k, the Bobbio Gospels), and from significant portions of the Syriac tradition. Eusebius of Caesarea (Quaest. ad Marinum, c. 320 AD) explicitly states that 'accurate copies' of Mark end at 16:8, and Jerome (Ep. 120 ad Hedybiam) echoes this judgment. Clement of Alexandria and Origen show no knowledge of the passage.",
+    "internal_evidence": "The internal evidence against Markan authorship of 16:9–20 is formidable and widely acknowledged. (1) Vocabulary: The passage contains approximately 18 words or expressions not found elsewhere in Mark, with a density of hapax legomena unparalleled in any authentic Markan section of comparable length. (2) Style: Mark's characteristic asyndeton, historical presents, Aramaisms, and narrative urgency are entirely absent; the Greek is smoother and more literary. (3) Resumptive awkwardness: Verse 9 reintroduces Mary Magdalene with the relative clause 'from whom he had cast out seven demons,' as if she had not just been named in v. 1, which is inexplicable if the same author wrote both sections. (4) Logical discontinuity: The ending of v. 8 ('for they were afraid') is grammatically and narratively abrupt, but the transition from v. 8 to v. 9 is equally jarring—the subject shifts without warning from the women to Jesus, and the temporal marker 'early on the first day of the week' duplicates information already given. (5) Theological content: The promises of snake-handling and poison immunity (vv. 17–18) reflect second-century charismatic and apologetic concerns not characteristic of Mark. (6) Apparent dependence: The appearances narrated in vv. 9–20 appear to condense and harmonize material from Luke 24 and John 20, suggesting the author of the Longer Ending worked with those completed Gospels in hand—a second-century compositional context.",
+    "scholarly_consensus": "There is near-universal consensus among contemporary textual critics and New Testament scholars that Mark 16:9–20 was not written by the author of Mark 1:1–16:8 and was not part of the original Gospel. This position is held across confessional lines and represented in the judgments of the NA28, UBS5, SBLGNT, and all major critical commentaries (Cranfield, Taylor, Hooker, Marcus, Collins, France, Stein). The UBS committee gave the omission of vv. 9–20 an 'A' rating. The original ending of Mark remains one of the great unsolved problems of New Testament scholarship: did Mark intend to end at 16:8 (the majority view among scholars, who argue the abrupt ending is theologically deliberate), or was the original ending accidentally lost at a very early stage before any surviving manuscript was copied? Both positions have serious scholarly advocates, but neither the Longer Ending nor the Shorter Ending is regarded as an authentic Markan composition.",
+    "pastoral_note": "Major modern Bible translations uniformly signal the disputed status of 16:9–20. The ESV, NIV, NASB, CSB, NLT, and NRSV/NRSVue all include the Longer Ending but set it off with a section break and a bold or bracketed note such as 'The earliest manuscripts do not include 16:9–20' or 'Some of the earliest manuscripts do not include the following passage.' The NET Bible includes the passage with extensive text-critical footnotes. The RSV and NRSV print both the Shorter and Longer endings as appendices. No major English translation omits the passage entirely, reflecting both pastoral sensitivity and the canonical history of the text, though all responsible translations make the textual uncertainty clear to readers. Snake-handling traditions derived from v. 18, practiced in some Appalachian Christian communities, represent a significant pastoral and safety concern that underscores the practical stakes of this text-critical question."
+  },
+  "synthesis": "Mark 16:9 opens a passage (vv. 9–20) that represents one of the clearest cases of secondary addition in the New Testament textual tradition: the two earliest and most reliable Greek manuscripts omit it, the internal evidence is decisively against Markan authorship, and the variety of alternative endings attested in the manuscript tradition demonstrates active scribal supplementation of an ending perceived as incomplete. The text of v. 9 as printed in NA28 and SBLGNT is not in dispute at the word level; the dispute is entirely about whether the verse and its context belong to the original Gospel. This is a case where textual criticism and authorial criticism converge to produce an unusually confident negative judgment about a substantial passage of scripture.",
+  "assessment": {
+    "title": "Mark 16:9 Opens a Demonstrably Secondary Ending Not Written by Mark",
+    "reasoning": "The external evidence is decisive: the absence of Mark 16:9–20 from Sinaiticus and Vaticanus, corroborated by Eusebius, Jerome, and significant versional evidence, constitutes the strongest possible testimony against originality. The internal evidence compounds this: the vocabulary, style, resumptive awkwardness, and apparent dependence on Luke and John all point to a second-century author compiling a supplement to satisfy readers troubled by the abruptness of 16:8. The existence of multiple competing endings (Shorter Ending, Longer Ending, Freer Logion) is itself a telltale sign of scribal intervention rather than textual transmission. Metzger's committee was right to rate the omission at 'A' certainty, though the question of what happened to Mark's original ending—whether 16:8 was intentional or the conclusion was lost—remains genuinely open and is one of the most intriguing problems in Gospel scholarship.",
+    "plain": "The best and oldest manuscripts of Mark end the Gospel at 16:8 with the women fleeing the empty tomb in fear; verses 9–20, including the story of Jesus appearing to Mary Magdalene in v. 9, were almost certainly added by a later author in the second century who wanted to provide a more complete resurrection account. Modern Bibles include these verses because they are part of the Bible's long history of use, but they always include a note warning readers that the oldest manuscripts do not contain them.",
+    "confidence": 0.97,
+    "recommended_reading": "NA28 (Nestle-Aland 28th edition) or UBS5, both of which present the text with double brackets around vv. 9–20 indicating secondary status, accompanied by the fullest critical apparatus for evaluating the manuscript evidence. The SBLGNT with its apparatus and the SBL Greek New Testament Reader's Edition with notes are also excellent resources.",
+    "open_questions": "1. Did Mark intentionally end his Gospel at 16:8 as a deliberate theological and literary conclusion (emphasizing fear, silence, and the open-ended challenge to the reader), or was an original ending accidentally lost before any surviving manuscript was copied—a question that may be permanently unresolvable given the state of the evidence? 2. Can the author of the Longer Ending be more precisely identified or dated, and what does the compositional relationship between vv. 9–20 and the other Synoptic Gospels tell us about the second-century process by which the Gospel canon was being harmonized and supplemented?"
+  },
+  "citations": {
+    "sbl": "Bruce M. Metzger, A Textual Commentary on the Greek New Testament, 2nd ed. (Stuttgart: Deutsche Bibelgesellschaft, 1994), 102–106. See also Kurt Aland and Barbara Aland, The Text of the New Testament, trans. Erroll F. Rhodes, 2nd ed. (Grand Rapids: Eerdmans, 1989), 226–227; J. K. Elliott, 'The Text and Language of the Endings to Mark's Gospel,' Theologische Zeitschrift 27 (1971): 255–262; and James A. Kelhoffer, Miracle and Mission: The Authentication of Missionaries and Their Message in the Longer Ending of Mark (Tübingen: Mohr Siebeck, 2000).",
+    "bibtex": "@book{metzger1994textual, author={Metzger, Bruce M.}, title={A Textual Commentary on the Greek New Testament}, edition={2nd}, year={1994}, publisher={Deutsche Bibelgesellschaft}, address={Stuttgart}, pages={102--106}} @book{aland1989text, author={Aland, Kurt and Aland, Barbara}, title={The Text of the New Testament}, translator={Rhodes, Erroll F.}, edition={2nd}, year={1989}, publisher={Eerdmans}, address={Grand Rapids}} @book{kelhoffer2000miracle, author={Kelhoffer, James A.}, title={Miracle and Mission: The Authentication of Missionaries and Their Message in the Longer Ending of Mark}, year={2000}, publisher={Mohr Siebeck}, address={Tübingen}, series={Wissenschaftliche Untersuchungen zum Neuen Testament 2/112}}"
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-04-19T23:21:49.296710",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis is broadly accurate on the major text-critical issues surrounding Mark 16:9–20, but contains several specific citations and numerical claims that are imprecise, overstated, or potentially fabricated.",
+    "flagged_claims": [
+      {
+        "claim": "Vaticanus notably leaves a column blank after 16:8, suggesting the scribe was aware of additional material but deliberately excluded it",
+        "risk": "MEDIUM",
+        "reason": "The blank column in B is real, but the inference that the scribe 'deliberately excluded' known additional material is contested; some scholars argue the blank space reflects scribal habit or uncertainty rather than knowledge of vv. 9–20. Stated more confidently than evidence allows."
+      },
+      {
+        "claim": "Irenaeus (c. 180 AD) is the earliest patristic witness to quote from it (Adv. Haer. 3.10.6, citing v. 19)",
+        "risk": "MEDIUM",
+        "reason": "The citation in Irenaeus is real but is typically referenced as Adv. Haer. 3.10.5 (or 3.10.5–6 depending on edition). The chapter/paragraph reference should be verified."
+      },
+      {
+        "claim": "Jerome (Ep. 120 ad Hedybiam) echoes this judgment",
+        "risk": "MEDIUM",
+        "reason": "Jerome's reference is genuine, but his statement is widely regarded as largely dependent on Eusebius rather than independent testimony; the analysis presents it as independent confirmation."
+      },
+      {
+        "claim": "The passage contains approximately 18 words or expressions not found elsewhere in Mark",
+        "risk": "MEDIUM",
+        "reason": "Specific hapax counts vary by scholar (Metzger cites 17, others 16 or 18). The specific number '18' is defensible but presented with more precision than the data warrants."
+      },
+      {
+        "claim": "304",
+        "risk": "MEDIUM",
+        "reason": "Minuscule 304 is sometimes cited as ending at 16:8, but its testimony is disputed; some scholars argue it simply lacks the ending due to mutilation or commentary structure rather than as a textual witness to omission."
+      },
+      {
+        "claim": "Tatian's Diatessaron likely incorporated it",
+        "risk": "MEDIUM",
+        "reason": "The Diatessaron's inclusion of the Longer Ending is inferred from later harmonies (e.g., Arabic Diatessaron) and is not directly verifiable from Tatian's original; 'likely' is appropriate but the evidence chain should be acknowledged."
+      },
+      {
+        "claim": "Clement of Alexandria and Origen show no knowledge of the passage",
+        "risk": "MEDIUM",
+        "reason": "This is a standard claim (from Metzger), but it is an argument from silence; stating it as fact risks overstatement."
+      }
+    ],
+    "safe_claims": [
+      "Sinaiticus (א) and Vaticanus (B) both end the Gospel at 16:8",
+      "Codex Bezae (D) contains vv. 9–20",
+      "The Byzantine Majority Text includes vv. 9–20",
+      "Codex W contains the Freer Logion inserted after v. 14",
+      "The UBS committee assigned the shorter reading (ending at 16:8) an 'A' rating",
+      "Eusebius (Quaestiones ad Marinum) states that accurate copies end at 16:8",
+      "Multiple endings (shorter, longer, Freer Logion) are attested in the manuscript tradition",
+      "Major modern translations (ESV, NIV, NASB, CSB, NLT, NRSV) bracket or footnote vv. 9–20",
+      "Verse 9 reintroduces Mary Magdalene as if not previously named",
+      "The Greek style of vv. 9–20 differs markedly from the rest of Mark"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.628251+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

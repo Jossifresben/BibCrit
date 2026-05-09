@@ -126,5 +126,73 @@
   "reference": "Exodus 24:10",
   "cached_at": "2026-03-31T00:15:33.154569",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "Core textual observations about LXX and Targum revisions are accurate and well-known, but specific scholarly citations and one major LXX claim contain errors that undermine reliability.",
+    "flagged_claims": [
+      {
+        "claim": "καὶ εἶδον τὸν τόπον οὗ εἱστήκει ἐκεῖ ὁ θεὸς τοῦ Ισραηλ ('and they saw the place where the God of Israel stood')",
+        "risk": "HIGH",
+        "reason": "The actual LXX of Exodus 24:10 reads 'καὶ εἶδον τὸν τόπον οὗ εἱστήκει ἐκεῖ ὁ θεὸς τοῦ Ἰσραηλ' — this is correct, but the analysis later contradicts itself by giving a separate LXX rendering for 24:10b ('the things under his feet'). The LXX does not have both readings; the 'place where God stood' replaces the seeing-God clause and the feet reference is to what is under the feet of God in that restructured sentence. The split treatment misrepresents the LXX's actual structure."
+      },
+      {
+        "claim": "Smelik, The Targum of Judges, pp. 52-54",
+        "risk": "HIGH",
+        "reason": "Citing a work on Targum of Judges for an Exodus 24:10 Targumic rendering is methodologically odd and the specific page reference is unverifiable; likely a fabricated or misapplied citation."
+      },
+      {
+        "claim": "Levey, The Messiah: An Aramaic Interpretation, pp. 8-11",
+        "risk": "HIGH",
+        "reason": "Levey's work focuses on messianic interpretations in Targumim; citing it for anthropomorphism avoidance at Exodus 24:10 is implausible and the specific page range is likely fabricated."
+      },
+      {
+        "claim": "Hayward, Divine Name and Presence: The Memra, pp. 45-48",
+        "risk": "MEDIUM",
+        "reason": "Hayward's book exists but the specific page reference for this verse is unverifiable; this kind of pinpoint citation is a common hallucination pattern."
+      },
+      {
+        "claim": "Chester, Divine Revelation and Divine Titles, pp. 289-291",
+        "risk": "MEDIUM",
+        "reason": "Chester's 'Divine Revelation and Divine Titles in the Pentateuchal Targumim' exists, but pinpoint pages should be verified; potentially fabricated reference."
+      },
+      {
+        "claim": "cf. mSotah 5:2 on God 'standing'",
+        "risk": "HIGH",
+        "reason": "m.Sotah 5:2 does not concern God 'standing'; this appears to be a fabricated rabbinic cross-reference."
+      },
+      {
+        "claim": "Alexander, The Targum of Canticles, pp. 89-91",
+        "risk": "HIGH",
+        "reason": "Citing a Targum of Canticles commentary for an Exodus 24:10 merkavah harmonization claim is implausible and the specific pages are unverifiable."
+      },
+      {
+        "claim": "Le Boulluec and Sandevoir, L'Exode, pp. 232-233",
+        "risk": "MEDIUM",
+        "reason": "The work exists in La Bible d'Alexandrie series but pinpoint page citations should be independently verified."
+      },
+      {
+        "claim": "Jerome elsewhere shows awareness of Jewish interpretive traditions...cf. his correspondence with Augustine on anthropomorphisms",
+        "risk": "MEDIUM",
+        "reason": "The Jerome–Augustine correspondence concerns the Galatians 2 incident and Hebrew translation policy, not primarily anthropomorphisms; this characterization is misleading."
+      },
+      {
+        "claim": "This reflects Hellenistic Jewish philosophical concerns about divine incorporeality and transcendence, well-attested in Philo",
+        "risk": "MEDIUM",
+        "reason": "While Philo's concern with incorporeality is real, the claim that LXX Exodus 24:10's rendering reflects this philosophical program is a scholarly hypothesis presented with unwarranted certainty (confidence 0.92); some scholars view it as straightforward exegetical clarification."
+      }
+    ],
+    "safe_claims": [
+      "Targum Onqelos inserts יְקָרָא ('glory') before 'God of Israel'",
+      "Targum Onqelos replaces 'under his feet' with 'under the throne of his glory'",
+      "LXX Exodus 24:10 reads 'they saw the place where the God of Israel stood'",
+      "The Peshitta renders the Hebrew relatively literally, retaining 'feet'",
+      "The Vulgate renders literally with 'viderunt Deum Israhel et sub pedibus eius'",
+      "Targumic tradition systematically avoids divine anthropomorphism",
+      "Maimonides discusses this passage in the Guide of the Perplexed"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.640562+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

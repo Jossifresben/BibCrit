@@ -86,5 +86,82 @@
   "reference": "Isaiah 7:14",
   "cached_at": "2026-03-30T19:01:03.511537",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v2"
+  "prompt_version": "v2",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "Core textual observations are accurate, but several specific page citations, a Hebrew count, and one philological claim are questionable or likely wrong.",
+    "flagged_claims": [
+      {
+        "claim": "The Hebrew עַלְמָה (attested 7x in MT)",
+        "risk": "MEDIUM",
+        "reason": "עַלְמָה occurs 7 times in the MT but the analysis lists only 6 references (Gen 24:43, Exod 2:8, Ps 68:26, Prov 30:19, Song 1:3, 6:8) plus Isa 7:14 — verifiable but the listing is incomplete/inconsistent and the count varies in scholarship."
+      },
+      {
+        "claim": "Seeligmann (1948) p.94",
+        "risk": "MEDIUM",
+        "reason": "Specific page citation to Seeligmann's 'The Septuagint Version of Isaiah' is unverified; such precise pagination is a common fabrication risk."
+      },
+      {
+        "claim": "Tov (2001) p.230",
+        "risk": "MEDIUM",
+        "reason": "Page reference is unverified and Tov's 'Textual Criticism of the Hebrew Bible' (2001 = 2nd ed.) discussion of Isa 7:14 tendenz is not clearly at p.230."
+      },
+      {
+        "claim": "van der Kooij (1998) p.497",
+        "risk": "MEDIUM",
+        "reason": "Van der Kooij's 1998 monograph 'The Oracle of Tyre' or related works do not obviously contain a p.497 discussion of Isa 7:14; citation appears possibly fabricated."
+      },
+      {
+        "claim": "Watts (1987) p.102",
+        "risk": "MEDIUM",
+        "reason": "Watts WBC Isaiah 1-33 (1985, not 1987) discussion of 7:14 participles is on different pages; date and page both questionable."
+      },
+      {
+        "claim": "Wildberger (1972) p.284",
+        "risk": "MEDIUM",
+        "reason": "Wildberger's BKAT Jesaja 1-12 discussion of 7:14 spans pages 289ff in standard editions; p.284 reference unverified."
+      },
+      {
+        "claim": "Barthélemy (1986) p.53",
+        "risk": "HIGH",
+        "reason": "Barthélemy's CTAT vol. 2 (Isaiah, 1986) treats Isa 7:14 but the cited argument that LXX reflects a Vorlage with 'mappiq-he' making Ahaz name-giver is not a position Barthélemy is known to defend; likely misattributed."
+      },
+      {
+        "claim": "reflects a Vorlage reading וְקָרָאתָ with mappiq-he",
+        "risk": "HIGH",
+        "reason": "Mappiq is a diacritic on final he, not on taw; the philological description is technically incoherent. The proposed Vorlage form וְקָרָאתָ (2ms) is plausible, but the 'mappiq-he' explanation is wrong."
+      },
+      {
+        "claim": "Goshen-Gottstein (1995) p.38",
+        "risk": "MEDIUM",
+        "reason": "Goshen-Gottstein died in 1991; a 1995 publication exists posthumously but specific p.38 citation on this verb form is unverified."
+      },
+      {
+        "claim": "This parallels LXX treatment of Isa 9:5 where Hebrew perfects become futures",
+        "risk": "MEDIUM",
+        "reason": "The parallel is overstated; LXX Isa 9:5(6) translation history is more complex and the claim of systematic perfect-to-future conversion is not a settled scholarly position."
+      },
+      {
+        "claim": "LXX Reflects Eighth-Century Messianic Intensification Layer",
+        "risk": "HIGH",
+        "reason": "The hypothesis title refers to 'eighth-century' intensification while the reasoning describes 'post-exilic' and 'Second Temple' revision — internally contradictory and speculative beyond the evidence."
+      },
+      {
+        "claim": "Aquila later revises to νεᾶνις",
+        "risk": "MEDIUM",
+        "reason": "True in substance (Aquila reads νεᾶνις at Isa 7:14 per Origen), but stated as straightforward fact without acknowledgment that this is preserved only in Hexaplaric fragments."
+      }
+    ],
+    "safe_claims": [
+      "MT reads הָעַלְמָה while LXX reads ἡ παρθένος",
+      "MT has participial הָרָה וְיֹלֶדֶת while LXX has future ἕξει καὶ τέξεται",
+      "MT וְקָרָאת is 3fs while LXX καλέσεις is 2ms",
+      "1QIsaᵃ reads העלמה in agreement with MT",
+      "עַלְמָה denotes a young woman of marriageable age without explicit lexical reference to virginity",
+      "The shift from 3fs to 2ms changes who names the child"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.691290+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

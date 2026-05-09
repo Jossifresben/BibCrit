@@ -39,5 +39,55 @@
   "reference": "Deuteronomy 32:8",
   "cached_at": "2026-03-30T19:49:39.878962",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v2"
+  "prompt_version": "v2",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The core textual claim is well-established and accurate, but specific manuscript readings, citations, and the bibcrit hypothesis contain inaccuracies and unverifiable details.",
+    "flagged_claims": [
+      {
+        "claim": "4QDeutj (4Q37): בני אלוהים ([sons of G]od)",
+        "risk": "HIGH",
+        "reason": "The relevant Qumran reading is typically cited from 4QDeutj reading בני אלוהים, but scholars more commonly cite the fragment as preserving בני אלהים (without the mater lectionis vav). More importantly, some scholars identify the reading as from 4QDeutq rather than (or in addition to) 4QDeutj. The specific orthography 'אלוהים' should be verified."
+      },
+      {
+        "claim": "Skehan (1954) p.12-15",
+        "risk": "HIGH",
+        "reason": "Skehan's foundational article on this fragment was published in BASOR 136 (1954), but the specific page range 12-15 should be verified; this looks like a potentially fabricated precise citation."
+      },
+      {
+        "claim": "Tov (2012) p.269",
+        "risk": "MEDIUM",
+        "reason": "Tov's 'Textual Criticism of the Hebrew Bible' (3rd ed., 2012) does discuss this passage, but the exact page reference should be verified rather than trusted as given."
+      },
+      {
+        "claim": "Ulrich (2010) p.78",
+        "risk": "MEDIUM",
+        "reason": "Ulrich has written extensively on Qumran Deuteronomy, but the work title is unspecified and the page reference unverifiable as cited."
+      },
+      {
+        "claim": "MT reflects proto-rabbinic theological revision",
+        "risk": "MEDIUM",
+        "reason": "The label 'proto-rabbinic' is anachronistic; the revision, if intentional, would more accurately be attributed to proto-Masoretic or Second Temple scribal circles, predating rabbinic Judaism."
+      },
+      {
+        "claim": "Jacob's 70 descendants in Exodus 1:5",
+        "risk": "MEDIUM",
+        "reason": "MT Exodus 1:5 reads 70, but LXX reads 75; the harmonization argument depends on which textual tradition is in view, and this should be acknowledged."
+      },
+      {
+        "claim": "the original myth of 70 patron deities",
+        "risk": "MEDIUM",
+        "reason": "The number 70 is not explicit in Deut 32:8 itself; the connection to 70 nations/deities is an inference drawn from Genesis 10 and later Jewish tradition, not stated in the Deuteronomy text."
+      }
+    ],
+    "safe_claims": [
+      "MT reads בְּנֵי יִשְׂרָאֵל while LXX reads ἀγγέλων θεοῦ",
+      "4QDeut fragments preserve a reading with בני אל(ו)הים supporting the LXX Vorlage",
+      "This is a widely-cited example of theologically motivated textual variation",
+      "The variant has been categorized by Tov among ideological-theological changes"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.689135+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

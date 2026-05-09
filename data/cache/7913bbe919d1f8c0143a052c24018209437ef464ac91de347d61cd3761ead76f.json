@@ -358,5 +358,79 @@
   "reference": "Ezekiel",
   "cached_at": "2026-03-31T11:24:49.072320",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis is broadly sound on well-known features of Ezekiel's textual history but contains several specific errors and overstated claims that require correction.",
+    "flagged_claims": [
+      {
+        "claim": "the valley of dry bones preamble and extended sanctuary vision",
+        "risk": "HIGH",
+        "reason": "Mischaracterizes the content of MT 36:23c–38. This passage concerns the new heart/new spirit and restoration of the land; the valley of dry bones is chapter 37, not part of the 36:23c–38 plus."
+      },
+      {
+        "claim": "chapters 37–39 appear after chapter 39 in modern numbering",
+        "risk": "HIGH",
+        "reason": "Internally incoherent and incorrect. In Papyrus 967, chapter 37 follows chapter 38–39 (sequence is 36, 38, 39, 37, 40–48), not '37–39 after 39'. The plain-language description is garbled."
+      },
+      {
+        "claim": "creating the sequence 36:1–23b, 40–48, 37–39",
+        "risk": "HIGH",
+        "reason": "Incorrect order. Papyrus 967's actual sequence is 36:1–23b, 38, 39, 37, 40–48 — chapter 37 comes between 39 and 40, and chapters 40–48 do not precede 37–39."
+      },
+      {
+        "claim": "Aleppo Codex (A)... date: c. 920 CE... missing the end of Ezekiel from 41:3 onward",
+        "risk": "HIGH",
+        "reason": "Factually wrong. The Aleppo Codex's lacunae from the 1947 damage primarily affect the Torah and other sections; Ezekiel is largely preserved in the Aleppo Codex. The specific claim about loss from 41:3 onward is not accurate."
+      },
+      {
+        "claim": "BHQ Ezekiel... date: 2004... extensive textual commentary by Lust",
+        "risk": "HIGH",
+        "reason": "BHQ Ezekiel has not been published as of the knowledge cutoff; the fascicle is in preparation. Editor attribution and 2004 date appear fabricated."
+      },
+      {
+        "claim": "diverging by approximately 4–5% in overall length",
+        "risk": "MEDIUM",
+        "reason": "The commonly cited figure for LXX Ezekiel being shorter than MT is approximately 4–5% (around 4-5% fewer words), but the follow-up claim of '4–6 chapters shorter' is misleading since the difference is distributed throughout, not equivalent to whole chapters."
+      },
+      {
+        "claim": "the LXX consistently represents a Vorlage roughly 4–6 chapters shorter than MT",
+        "risk": "HIGH",
+        "reason": "Overstated and misleading. LXX Ezekiel is shorter by roughly 4–5% (a few hundred words), not 4–6 chapters. This conflates percentage difference with chapter count."
+      },
+      {
+        "claim": "MT 7:3–4 and 7:8–9 constitute a doublet absent in Old Greek",
+        "risk": "MEDIUM",
+        "reason": "While Ezekiel 7 is a well-known site of MT/LXX divergence with significant reordering and pluses, the specific claim that 7:8–9 is 'absent in Old Greek' as a doublet to 7:3–4 oversimplifies; the LXX has different ordering and content, not simply a single non-doubled version."
+      },
+      {
+        "claim": "long cubit = ~52 cm... standard cubit = ~45 cm",
+        "risk": "MEDIUM",
+        "reason": "The specific cm values are scholarly estimates that vary; the claim that LXX uses a standard cubit reflecting a different metrological tradition is debatable — LXX may simply not render the Hebrew gloss rather than presupposing a different measurement."
+      },
+      {
+        "claim": "Codex Leningradensis... copied by Samuel ben Jacob in Cairo",
+        "risk": "MEDIUM",
+        "reason": "Samuel ben Jacob is the named scribe, but the place of copying is traditionally identified as Cairo based on the colophon, though this is debated; stated as fact without nuance."
+      },
+      {
+        "claim": "Hexapla... c. 240 CE",
+        "risk": "MEDIUM",
+        "reason": "Date is approximate and conventionally placed c. 235–245 CE; acceptable but presented with false precision."
+      }
+    ],
+    "safe_claims": [
+      "Ezekiel composed during the Babylonian exile (593–571 BCE)",
+      "MT 36:23c–38 is absent from Papyrus 967 and the Old Greek tradition",
+      "Papyrus 967 has a different chapter order than MT for the Gog material",
+      "DSS Ezekiel fragments (11Q4, 4Q73–74, Mas1k) align closely with proto-MT",
+      "LXX Ezekiel is shorter than MT",
+      "Ziegler produced the Göttingen critical edition of LXX Ezekiel (1952)",
+      "Jerome's Vulgate translated from the Hebrew with consultation of Hexaplaric Greek",
+      "Targum Jonathan covers the Prophets including Ezekiel"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.662295+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

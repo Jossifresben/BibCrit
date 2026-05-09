@@ -1,0 +1,235 @@
+{
+  "reference": "Judges 20",
+  "subject": "Troop numbers and casualties in the Benjamite war",
+  "figures": [
+    {
+      "name": "Israelite footmen mustered (Judg 20:2)",
+      "mt_value": 400000,
+      "lxx_value": 400000,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "Samaritan Pentateuch does not contain Judges; only MT and LXX are compared throughout."
+    },
+    {
+      "name": "Benjamite warriors from the cities (Judg 20:15)",
+      "mt_value": 26000,
+      "lxx_value": 23000,
+      "sp_value": 0,
+      "divergence_type": "significant",
+      "note": "LXX (both A and B) reads 23,000 swordsmen versus MT 26,000, a 3,000-man discrepancy."
+    },
+    {
+      "name": "Elite slingers of Gibeah (Judg 20:15-16)",
+      "mt_value": 700,
+      "lxx_value": 700,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "Both traditions agree on 700 left-handed slingers from Gibeah."
+    },
+    {
+      "name": "Israelite casualties day one (Judg 20:21)",
+      "mt_value": 22000,
+      "lxx_value": 22000,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Israelite casualties day two (Judg 20:25)",
+      "mt_value": 18000,
+      "lxx_value": 18000,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Benjamite dead in field (Judg 20:35)",
+      "mt_value": 25100,
+      "lxx_value": 25100,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "Both traditions agree, though this figure conflicts with v.46's 25,000."
+    },
+    {
+      "name": "Benjamite dead summary (Judg 20:46)",
+      "mt_value": 25000,
+      "lxx_value": 25000,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "Internal MT/LXX tension with v.35 (25,100) suggests a rounded figure."
+    },
+    {
+      "name": "Benjamite survivors at Rimmon (Judg 20:47)",
+      "mt_value": 600,
+      "lxx_value": 600,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": null
+    }
+  ],
+  "systematic_analysis": {
+    "is_systematic": false,
+    "pattern": "The only material divergence is at Judg 20:15, where MT's 26,000 Benjamite swordsmen contrasts with LXX's 23,000. The MT figure creates an internal arithmetic problem: 25,000 fall (v.46) plus 600 survive (v.47) yields 25,600, leaving roughly 400 unaccounted for from MT's 26,000+700, whereas LXX's 23,000+700 = 23,700 also fails to balance, suggesting neither tradition fully resolves the casualty math. No systematic inflation/deflation pattern operates here as it does in Genesis 5/11.",
+    "pattern_plain": "Almost all the numbers in Judges 20 match between the Hebrew and Greek texts. The one notable difference is the size of the Benjamite army (26,000 vs 23,000), and neither version's totals add up cleanly with the casualty figures."
+  },
+  "theories": [
+    {
+      "name": "Scribal error in transmission",
+      "slug": "scribal_error",
+      "score": 0.7,
+      "confidence": 0.7,
+      "summary": "The 26,000/23,000 divergence at v.15 is most economically explained by graphic or numeric confusion in one Vorlage, possibly involving the Hebrew letters kaph/waw or differing methods of representing thousands. The internal tension between v.35 (25,100 fallen) and v.46 (25,000 fallen) within both MT and LXX already signals that the chapter's numbers suffered transmission accidents prior to the MT/LXX split.",
+      "summary_plain": "The most likely cause is a copying mistake when one number was miscopied long ago. Both versions already show internal inconsistencies, which suggests the numbers were vulnerable to slips.",
+      "supporting_evidence": [
+        "Only one figure diverges materially, which fits an isolated scribal slip rather than systematic revision.",
+        "Both MT and LXX preserve the same internal contradiction between 25,100 (v.35) and 25,000 (v.46), indicating shared pre-split corruption.",
+        "The 3,000-unit difference is a common magnitude for numeric confusion in Hebrew numerals written with letters or words.",
+        "LXX A and LXX B agree on 23,000, suggesting the Greek tradition is unified and the variance lies in the Hebrew Vorlage.",
+        "Neither figure produces clean arithmetic with the casualty totals, suggesting both are downstream of a corrupted archetype."
+      ],
+      "weaknesses": [
+        "Cannot determine direction: whether MT inflated 23→26 or LXX (or its Vorlage) deflated 26→23.",
+        "No extant Qumran fragment of Judg 20:15 adjudicates the reading.",
+        "Some commentators argue 26,000 is the lectio difficilior because it leaves an arithmetic remainder."
+      ]
+    },
+    {
+      "name": "Independent textual traditions",
+      "slug": "independent_traditions",
+      "score": 0.45,
+      "confidence": 0.5,
+      "summary": "The LXX of Judges (especially the divergent A and B recensions) is widely held to translate a Hebrew Vorlage distinct from the proto-MT, so the 23,000/26,000 split may reflect two genuinely parallel Hebrew exemplars rather than a single error. Bodine, Trebolle, and others have shown Judges has a complex pre-Masoretic textual prehistory.",
+      "summary_plain": "The Greek translators may have used a different Hebrew copy of Judges than the one that became the standard Hebrew Bible, so each version preserves its own legitimate reading.",
+      "supporting_evidence": [
+        "Judges is among the OT books with the most pluriform textual history in the Greek tradition.",
+        "Qumran Judges fragments (4QJudg-a, 4QJudg-b) attest variant Hebrew forms of the book.",
+        "The A and B Greek recensions of Judges differ enough to imply independent revisional layers.",
+        "Numerical variants are characteristic markers of distinct Vorlagen."
+      ],
+      "weaknesses": [
+        "The near-total agreement on every other number in the chapter undercuts a pluriform-tradition explanation for this single variant.",
+        "An independent tradition would more typically produce clusters of variants, not one isolated number.",
+        "Cannot easily explain why both traditions share the v.35/v.46 internal contradiction."
+      ]
+    },
+    {
+      "name": "MT deflation of Benjamite force",
+      "slug": "mt_deflation",
+      "score": 0.2,
+      "confidence": 0.3,
+      "summary": "One could argue MT raised the figure to 26,000 to leave a residue after subtracting the 25,000 slain and 600 survivors, dramatizing the completeness of the slaughter. This would be a minor theological adjustment rather than systematic deflation.",
+      "summary_plain": "Possibly the Hebrew text raised the Benjamite numbers slightly to make the destruction seem more total. But the evidence for this is weak.",
+      "supporting_evidence": [
+        "MT's 26,000 leaves a small unaccounted remainder, fitting a 'narrative completeness' rationale.",
+        "MT elsewhere shows occasional rounding/adjusting of military figures."
+      ],
+      "weaknesses": [
+        "The label 'deflation' is misapplied; if anything MT inflates here.",
+        "No corroborating pattern of MT manipulation across Judges 20.",
+        "Speculative motive without manuscript support."
+      ]
+    },
+    {
+      "name": "LXX inflation/harmonization",
+      "slug": "lxx_inflation",
+      "score": 0.25,
+      "confidence": 0.35,
+      "summary": "Conversely, LXX's 23,000 may represent an attempt to bring the muster figure closer to the 25,000+600 casualty/survivor total, reducing the arithmetic gap. This is a harmonizing move rather than true inflation.",
+      "summary_plain": "The Greek number might have been lowered to make the math fit the casualty list more neatly.",
+      "supporting_evidence": [
+        "LXX translators are documented elsewhere harmonizing arithmetic tensions (e.g., Exodus, Numbers).",
+        "23,000 + 700 = 23,700, closer to but still short of 25,600."
+      ],
+      "weaknesses": [
+        "23,000 still does not produce clean arithmetic, weakening the harmonization motive.",
+        "If harmonization were the goal, a figure ≥25,600 would be expected.",
+        "No external witness confirms an editorial intent."
+      ]
+    },
+    {
+      "name": "Samaritan harmonization",
+      "slug": "sp_harmonization",
+      "score": 0.0,
+      "confidence": 0.9,
+      "summary": "The Samaritan Pentateuch contains only the Torah and therefore offers no witness to Judges 20. This theory is inapplicable.",
+      "summary_plain": "The Samaritan Bible doesn't include Judges, so it can't help here.",
+      "supporting_evidence": [
+        "SP canon is restricted to the Pentateuch."
+      ],
+      "weaknesses": [
+        "Not applicable to this passage."
+      ]
+    },
+    {
+      "name": "Theological motivation",
+      "slug": "theological_motivation",
+      "score": 0.15,
+      "confidence": 0.3,
+      "summary": "It is conceivable that one tradition adjusted the Benjamite muster to highlight the moral/theological weight of the war, but there is no clear ideological gain in the difference between 23,000 and 26,000 troops. Theological motives better explain genealogical/chronological numbers than battle musters.",
+      "summary_plain": "It's unlikely the change was made for religious reasons; the difference doesn't change the story's message.",
+      "supporting_evidence": [
+        "Numerical changes in some OT passages do reflect theological agendas (e.g., 2 Sam 24)."
+      ],
+      "weaknesses": [
+        "No discernible theological payoff in 23,000 vs 26,000.",
+        "Both numbers depict a serious but defeated tribal force.",
+        "Speculative without textual or ideological corroboration."
+      ]
+    }
+  ],
+  "overall_assessment": "Judges 20 is striking precisely for the absence of the systematic numerical divergences seen in Genesis 5 and 11; MT and LXX agree on virtually every figure except the Benjamite muster of 20:15 (26,000 vs 23,000). The shared internal contradiction between vv.35 and 46 in both traditions indicates that arithmetic problems already inhabited the common archetype, and the lone v.15 variant is best explained as a localized scribal corruption in one Vorlage, possibly compounded by the known pluriformity of Judges' Hebrew text. Neither figure cleanly resolves the chapter's casualty arithmetic, so neither can be vindicated as 'original' on internal grounds alone. The episode illustrates that not all OT numerical variants stem from systematic ideological revision—many are simply transmission accidents in a book whose Hebrew base was unstable.",
+  "overall_plain": "Unlike the famous patriarchal age differences, Judges 20 shows the Hebrew and Greek versions agreeing on almost every number. The one real disagreement (26,000 vs 23,000 Benjamite soldiers) looks like an old copying mistake rather than a deliberate change, and both versions already share an internal math problem they inherited.",
+  "bibcrit_assessment": {
+    "title": "Shared Math Errors Predate the MT–LXX Split",
+    "reasoning": "The most significant finding is that both traditions preserve the v.35/v.46 contradiction (25,100 vs 25,000), proving the textual archetype behind both MT and LXX was already arithmetically inconsistent. This shows that some 'errors' in the Hebrew Bible are not products of the MT/LXX divergence at all but predate it, cautioning against using LXX as a corrective standard for MT numbers in narrative books.",
+    "plain": "Both the Hebrew and Greek Bibles inherited the same math mistake in this chapter, showing that some problems in the text are older than either version. This means we can't always fix one by appealing to the other.",
+    "confidence": 0.78
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-08T23:06:26.590306",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v3",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis is generally sound on the textual data but contains a specific factual error about the LXX reading at Judg 20:15 and some unverified claims about Greek harmonization tendencies.",
+    "flagged_claims": [
+      {
+        "claim": "LXX (both A and B) reads 23,000 swordsmen versus MT 26,000",
+        "risk": "HIGH",
+        "reason": "This is likely incorrect. LXX A (and Vaticanus/B) at Judg 20:15 generally reads 25,000 (εἴκοσι πέντε χιλιάδες), not 23,000. The 23,000 figure does not match standard critical editions of LXX Judges. This factual claim should be verified against Rahlfs or Göttingen editions."
+      },
+      {
+        "claim": "Qumran Judges fragments (4QJudg-a, 4QJudg-b) attest variant Hebrew forms of the book",
+        "risk": "MEDIUM",
+        "reason": "While 4QJudg-a famously lacks Judg 6:7-10, neither 4QJudg-a nor 4QJudg-b preserves Judges 20, and the general claim of 'variant forms' is somewhat overstated for 4QJudg-b which is fragmentary and largely consistent with MT."
+      },
+      {
+        "claim": "LXX translators are documented elsewhere harmonizing arithmetic tensions (e.g., Exodus, Numbers)",
+        "risk": "MEDIUM",
+        "reason": "This is a vague generalization presented as documented fact without specific examples; while LXX does show harmonizations, citing Exodus/Numbers as paradigmatic for arithmetic harmonization needs specific support."
+      },
+      {
+        "claim": "Bodine, Trebolle, and others have shown Judges has a complex pre-Masoretic textual prehistory",
+        "risk": "MEDIUM",
+        "reason": "While Bodine (The Greek Text of Judges) and Trebolle Barrera have indeed worked on Judges textual history, the specific claim that they demonstrate this for the numerical variant in question is not established; the citation is generic and could be misleading about the scope of their conclusions."
+      },
+      {
+        "claim": "The 3,000-unit difference is a common magnitude for numeric confusion in Hebrew numerals written with letters or words",
+        "risk": "MEDIUM",
+        "reason": "Hebrew biblical manuscripts spell numbers as words, not letters; the appeal to 'letters or words' confusion is speculative and the claim that 3,000-unit differences are 'common' lacks specific support."
+      }
+    ],
+    "safe_claims": [
+      "MT and LXX agree on most numerical figures in Judges 20",
+      "MT v.35 reads 25,100 while v.46 reads 25,000, an internal tension",
+      "The Samaritan Pentateuch does not contain Judges",
+      "Judges 20:15 (MT) reads 26,000 Benjamite swordsmen plus 700 from Gibeah",
+      "600 Benjamites survived at the rock of Rimmon (v.47)",
+      "Israelite casualties are 22,000 (day one) and 18,000 (day two)",
+      "Judges has a notably pluriform Greek textual tradition with distinct A and B recensions"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-09T08:23:20.269195+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

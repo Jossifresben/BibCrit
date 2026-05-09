@@ -1,0 +1,221 @@
+{
+  "reconstructed_words": [
+    {
+      "position": 1,
+      "lxx_word": "ἐὰν μέν",
+      "vorlage_word": "אִם",
+      "status": "agrees_mt",
+      "confidence": 0.95,
+      "mt_equivalent": "אִם",
+      "dss_witness": null,
+      "reasoning": "ἐάν is the standard LXX rendering of the conditional particle אִם throughout Leviticus (cf. Lev 1:2, 2:1, 4:2). The μέν particle is a Greek stylistic addition to indicate a conditional series (contrast with ἐάν δέ later in Lev 4); it has no Hebrew equivalent. The retroversion to אִם is certain.",
+      "alternatives": []
+    },
+    {
+      "position": 2,
+      "lxx_word": "ὁ ἀρχιερεύς",
+      "vorlage_word": "הַכֹּהֵן",
+      "status": "agrees_mt",
+      "confidence": 0.85,
+      "mt_equivalent": "הַכֹּהֵן",
+      "dss_witness": null,
+      "reasoning": "The Greek ἀρχιερεύς ('high priest') renders הַכֹּהֵן in MT, but the LXX translator has elevated the title to ἀρχιερεύς rather than simply ἱερεύς, which is how כֹּהֵן is normally rendered. This is likely an interpretive translation reflecting the context (the anointed priest of v.3 is understood as the chief priest), consistent with the Pentateuchal LXX pattern where context prompts titular elevation. The Vorlage almost certainly read הַכֹּהֵן, identical to MT.",
+      "alternatives": [
+        {
+          "reading": "הַכֹּהֵן הַגָּדוֹל",
+          "confidence": 0.15,
+          "note": "Unlikely as Vorlage since ἀρχιερεύς could be an interpretive rendering of הַכֹּהֵן alone, and adding הַגָּדוֹל is not supported elsewhere in this verse's versional evidence."
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "lxx_word": "ὁ κεχρισμένος",
+      "vorlage_word": "הַמָּשִׁיחַ",
+      "status": "agrees_mt",
+      "confidence": 0.97,
+      "mt_equivalent": "הַמָּשִׁיחַ",
+      "dss_witness": null,
+      "reasoning": "κεχρισμένος ('the anointed one') is a precise and consistent LXX rendering of מָשִׁיחַ throughout the Hebrew Bible (cf. Lev 6:15; 1 Sam 2:10). The perfect passive participle mirrors the participial form of the Hebrew Niphal/Qal passive. This retroversion is certain.",
+      "alternatives": []
+    },
+    {
+      "position": 4,
+      "lxx_word": "ἁμάρτῃ",
+      "vorlage_word": "יֶחֱטָא",
+      "status": "agrees_mt",
+      "confidence": 0.95,
+      "mt_equivalent": "יֶחֱטָא",
+      "dss_witness": null,
+      "reasoning": "ἁμαρτάνω is the standard and nearly universal LXX equivalent of חָטָא in the Pentateuch. The Qal imperfect יֶחֱטָא matches the Greek subjunctive ἁμάρτῃ in conditional clauses across Leviticus. Retroversion is certain.",
+      "alternatives": []
+    },
+    {
+      "position": 5,
+      "lxx_word": "τοῦ τὸν λαὸν ἁμαρτεῖν",
+      "vorlage_word": "לְאַשְׁמַת הָעָם",
+      "status": "unattested",
+      "confidence": 0.52,
+      "mt_equivalent": "לְאַשְׁמַת הָעָם",
+      "dss_witness": null,
+      "reasoning": "The MT reads לְאַשְׁמַת הָעָם, meaning 'to the guilt of the people,' where אַשְׁמָה denotes corporate guilt or culpability. The LXX renders this as τοῦ τὸν λαὸν ἁμαρτεῖν, 'so as to cause the people to sin,' which is a causal infinitive construction implying the priest's sin brings about the people's sinning — a distinctly different nuance reflecting a verbal rather than nominal concept. This could reflect a Vorlage reading לְהַחֲטִיא הָעָם (Hiphil infinitive of חָטָא) rather than לְאַשְׁמַת, a plausible Hebrew variant not attested in DSS or other versions. Alternatively, it may be a free interpretive rendering of the MT's לְאַשְׁמַת by the translator who understood the priest's guilt as causative of communal sin.",
+      "alternatives": [
+        {
+          "reading": "לְאַשְׁמַת הָעָם",
+          "confidence": 0.45,
+          "note": "MT reading; translator may have freely interpreted אַשְׁמָה as causative sin rather than guilt-status."
+        },
+        {
+          "reading": "לְהַחֲטִיא הָעָם",
+          "confidence": 0.4,
+          "note": "Hiphil infinitive 'to cause the people to sin'; matches Greek sense precisely but is entirely unattested in any witness."
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "lxx_word": "καὶ προσάξει",
+      "vorlage_word": "וְהִקְרִיב",
+      "status": "agrees_mt",
+      "confidence": 0.95,
+      "mt_equivalent": "וְהִקְרִיב",
+      "dss_witness": null,
+      "reasoning": "προσάγω ('to bring near, to offer') is the standard LXX equivalent of הִקְרִיב (Hiphil of קָרַב) in cultic contexts throughout Leviticus (cf. Lev 1:2, 3, 5; 2:8). The Hiphil perfect with waw-consecutive is rendered as a future indicative in Greek, which is a common Pentateuchal LXX pattern in legal passages. Retroversion is certain.",
+      "alternatives": []
+    },
+    {
+      "position": 7,
+      "lxx_word": "περὶ τῆς ἁμαρτίας αὐτοῦ",
+      "vorlage_word": "עַל חַטָּאתוֹ",
+      "status": "agrees_mt",
+      "confidence": 0.9,
+      "mt_equivalent": "עַל חַטָּאתֹו",
+      "dss_witness": null,
+      "reasoning": "περί with genitive regularly renders עַל in cultic/sacrificial context in Leviticus LXX, and ἁμαρτία is the near-universal rendering of חַטָּאת (cf. Lev 4:14, 20, 21, 24). The possessive pronoun αὐτοῦ correctly reflects the 3ms suffix -(ו). Retroversion is certain.",
+      "alternatives": []
+    },
+    {
+      "position": 8,
+      "lxx_word": "ἧς ἥμαρτεν",
+      "vorlage_word": "אֲשֶׁר חָטָא",
+      "status": "agrees_mt",
+      "confidence": 0.95,
+      "mt_equivalent": "אֲשֶׁר חָטָא",
+      "dss_witness": null,
+      "reasoning": "The relative clause ἧς ἥμαρτεν reflects אֲשֶׁר חָטָא with high confidence; ἥμαρτεν renders the Qal perfect חָטָא and ἧς (genitive by attraction) reflects the relative אֲשֶׁר governed by the preceding חַטָּאת. This construction is paralleled at Lev 4:14, 22, 23 in identical formulaic context. Retroversion is certain.",
+      "alternatives": []
+    },
+    {
+      "position": 9,
+      "lxx_word": "μόσχον ἐκ βοῶν",
+      "vorlage_word": "פַּר בֶּן־בָּקָר",
+      "status": "agrees_mt",
+      "confidence": 0.88,
+      "mt_equivalent": "פַּר בֶּן־בָּקָר",
+      "dss_witness": null,
+      "reasoning": "μόσχος ('calf, young bull') renders פַּר consistently in the Pentateuchal LXX, and ἐκ βοῶν ('from cattle') renders בֶּן־בָּקָר ('son of the herd'). The Greek drops the בֶּן ('son') element and uses a partitive ἐκ construction, which is a known LXX simplification pattern. The Vorlage almost certainly matched MT פַּר בֶּן־בָּקָר; the rendering is slightly free but the Hebrew base is not in doubt.",
+      "alternatives": []
+    },
+    {
+      "position": 10,
+      "lxx_word": "ἄμωμον",
+      "vorlage_word": "תָּמִים",
+      "status": "agrees_mt",
+      "confidence": 0.97,
+      "mt_equivalent": "תָּמִים",
+      "dss_witness": null,
+      "reasoning": "ἄμωμος ('without blemish, unblemished') is the standard and consistent LXX rendering of תָּמִים in sacrificial contexts throughout Leviticus and Numbers (cf. Lev 1:3, 10; 3:1; 4:23). The correspondence is one of the most stable lexical equivalences in the Pentateuchal LXX. Retroversion is certain.",
+      "alternatives": []
+    },
+    {
+      "position": 11,
+      "lxx_word": "τῷ κυρίῳ",
+      "vorlage_word": "לַיהוָה",
+      "status": "agrees_mt",
+      "confidence": 0.99,
+      "mt_equivalent": "לַיהוָה",
+      "dss_witness": null,
+      "reasoning": "κύριος is the universal LXX rendering of the Tetragrammaton יהוה throughout the Pentateuch. The dative τῷ κυρίῳ renders the lamed prefix לַ + יהוָה. This is the most certain equivalence in all LXX retroversion work.",
+      "alternatives": []
+    },
+    {
+      "position": 12,
+      "lxx_word": "περὶ τῆς ἁμαρτίας αὐτοῦ",
+      "vorlage_word": "לְחַטָּאת",
+      "status": "unattested",
+      "confidence": 0.6,
+      "mt_equivalent": "לְחַטָּֽאת",
+      "dss_witness": null,
+      "reasoning": "The MT closes the verse with לְחַטָּאת ('as a sin offering'), a bare construct form without a pronominal suffix. The LXX however repeats περὶ τῆς ἁμαρτίας αὐτοῦ ('concerning his sin') with the 3ms possessive, creating a doublet with position 7. This may reflect a Vorlage that read לְחַטָּאתוֹ (with 3ms suffix), or the translator may have harmonized the phrase from the earlier occurrence under dittographic or stylistic pressure. No DSS witness confirms a suffixed form here.",
+      "alternatives": [
+        {
+          "reading": "לְחַטָּאת",
+          "confidence": 0.5,
+          "note": "MT reading without suffix; the translator may have added αὐτοῦ for stylistic parallelism with the earlier phrase."
+        },
+        {
+          "reading": "לְחַטָּאתוֹ",
+          "confidence": 0.35,
+          "note": "Suffixed form would explain the Greek precisely but is entirely unattested in manuscript witnesses."
+        }
+      ]
+    }
+  ],
+  "summary_technical": "The LXX Vorlage of Lev 4:3 is largely identical to MT, with two significant divergences. First, τοῦ τὸν λαὸν ἁμαρτεῖν for לְאַשְׁמַת הָעָם represents either a free interpretive rendering of the MT or a Vorlage with לְהַחֲטִיא הָעָם; the latter is possible but entirely unattested. Second, the closing περὶ τῆς ἁμαρτίας αὐτοῦ may reflect a suffixed לְחַטָּאתוֹ rather than MT's unsuffixed לְחַטָּאת, or represent a translator-level harmonization. The rendering of ἀρχιερεύς for הַכֹּהֵן reflects a contextually driven elevation in titular vocabulary rather than a different Vorlage. Overall, the LXX translator of Leviticus here exhibits a moderately free translation technique in the key theological phrase (position 5), with otherwise close formal equivalence to MT.",
+  "summary_plain": "The Greek translation of Leviticus 4:3 is almost entirely based on the same Hebrew text as our standard Bible (the Masoretic Text), with one notable exception: where the Hebrew says the priest sins 'to the guilt of the people,' the Greek says he sins 'so as to cause the people to sin,' suggesting either a different Hebrew reading or a freer interpretive translation.",
+  "overall_confidence": 0.82,
+  "bibcrit_assessment": {
+    "title": "LXX Vorlage Preserves Causative Variant in 4:3b",
+    "reasoning": "The most philologically significant divergence is at לְאַשְׁמַת הָעָם / τοῦ τὸν λαὸν ἁμαρτεῖν. The MT's nominal לְאַשְׁמַת ('to the guilt/liability of the people') expresses the legal consequence of the priest's sin, while the LXX's causal infinitive construction implies the priest actively causes communal sin — a theologically distinct conception of priestly culpability. A Vorlage reading לְהַחֲטִיא הָעָם would resolve this perfectly, but this must remain speculative as no Hebrew manuscript, DSS fragment (4QLev, 11QLev are not extant here in full), or ancient version supports it; Samaritan Pentateuch and Targum Onqelos both follow MT closely. It is more probable, though not certain, that the LXX translator interpreted the ambiguous לְאַשְׁמַת causally, reflecting a hermeneutical rather than text-critical difference — a distinction Tov's methodology requires us to flag but not overstate.",
+    "plain": "The most interesting difference between the Greek and Hebrew is how they describe the priest's sin: the Hebrew says it creates guilt for the people, while the Greek says the priest causes the people to sin — possibly reflecting a different Hebrew original, though more likely the Greek translator interpreted the Hebrew phrase in a causative way.",
+    "confidence": 0.55
+  },
+  "discovery_ready": false,
+  "reference": "Leviticus 4:3",
+  "cached_at": "2026-04-19T21:49:30.586243",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis is largely sound on lexical equivalences and standard LXX-MT correspondences, but contains a significant misreading of the Greek text at position 5 and an unverified DSS claim.",
+    "flagged_claims": [
+      {
+        "claim": "τοῦ τὸν λαὸν ἁμαρτεῖν, 'so as to cause the people to sin'",
+        "risk": "HIGH",
+        "reason": "This translation is questionable. ἁμαρτεῖν is the simple aorist active infinitive of ἁμαρτάνω ('to sin'), not a causative form. A causative reading would more naturally require ἐξαμαρτεῖν (cf. LXX 1 Kgs 14:16 of Jeroboam). The construction τοῦ + accusative + infinitive here more plausibly means 'with the result that the people sin' or 'so that the people incur sin/guilt' — closer to MT's אַשְׁמָה sense. The proposed retroversion to לְהַחֲטִיא (Hiphil) overreads the Greek."
+      },
+      {
+        "claim": "4QLev, 11QLev are not extant here in full",
+        "risk": "MEDIUM",
+        "reason": "The specific DSS coverage claim should be verified. The relevant manuscripts for Leviticus include 4QLev-a through 4QLev-g, 11QpaleoLev, and others; the parenthetical naming is imprecise and could mislead readers about which manuscripts were checked."
+      },
+      {
+        "claim": "ἀρχιερεύς ('high priest') renders הַכֹּהֵן in MT",
+        "risk": "MEDIUM",
+        "reason": "The MT of Lev 4:3 actually reads הַכֹּהֵן הַמָּשִׁיחַ ('the anointed priest'), and ἀρχιερεύς ὁ κεχρισμένος renders the full phrase. The analysis's segmentation treats הַכֹּהֵן and הַמָּשִׁיחַ as separately rendered, but ἀρχιερεύς may render the combined title rather than just הַכֹּהֵן. This affects the alternative reading probability assigned."
+      },
+      {
+        "claim": "The perfect passive participle mirrors the participial form of the Hebrew Niphal/Qal passive",
+        "risk": "MEDIUM",
+        "reason": "מָשִׁיחַ is a qatil-pattern passive adjective/noun, not strictly a Niphal or Qal passive participle. The morphological characterization is imprecise."
+      },
+      {
+        "claim": "Samaritan Pentateuch and Targum Onqelos both follow MT closely",
+        "risk": "MEDIUM",
+        "reason": "Stated without citation; while plausible and likely correct for this verse, the specific claim about both witnesses on this exact phrase should be verified against critical editions."
+      }
+    ],
+    "safe_claims": [
+      "ἐάν is the standard LXX rendering of אִם",
+      "κεχρισμένος regularly renders מָשִׁיחַ",
+      "ἁμαρτάνω is the standard LXX equivalent of חָטָא in the Pentateuch",
+      "προσάγω regularly renders Hiphil הִקְרִיב in Leviticus cultic contexts",
+      "ἄμωμος is the standard LXX rendering of תָּמִים in sacrificial contexts",
+      "κύριος is the universal LXX rendering of the Tetragrammaton in the Pentateuch",
+      "MT closes the verse with לְחַטָּאת without pronominal suffix while LXX has περὶ τῆς ἁμαρτίας αὐτοῦ"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.688735+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

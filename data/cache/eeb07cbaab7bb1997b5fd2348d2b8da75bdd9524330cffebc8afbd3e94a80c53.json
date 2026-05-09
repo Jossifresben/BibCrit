@@ -162,5 +162,58 @@
   "discovery_ready": false,
   "cached_at": "2026-03-31T00:25:50.373997",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The general thrust (LXX dominance until Jerome) is sound, but several specific citation references and quoted Greek/Latin texts contain inaccuracies or unverifiable specifics that warrant correction.",
+    "flagged_claims": [
+      {
+        "claim": "Justin Martyr, Dialogue with Trypho, ch. 13: 'He was delivered up for our sins... and he bore the sins of many'",
+        "risk": "HIGH",
+        "reason": "Dialogue 13 quotes Isaiah 53 extensively but the chapter reference and the precise Greek wording given do not match Justin's actual citation pattern verbatim. Justin's main extended Isaiah 53 citations appear in Dial. 13, 32, 89, 114, but the quoted phrasing here appears partially reconstructed."
+      },
+      {
+        "claim": "Irenaeus... cited_text: 'μετὰ ἀνόμων ἐλογίσθη... ὑπὲρ τῶν ἀνομιῶν αὐτῶν παρεδόθη'",
+        "risk": "HIGH",
+        "reason": "Against Heresies survives primarily in Latin for Book 3; the confident provision of original Greek wording at 3.16.4 is suspect, and the phrase 'ὑπὲρ τῶν ἀνομιῶν αὐτῶν παρεδόθη' does not correspond to standard LXX Isa 53:12 (which has 'διὰ τὰς ἁμαρτίας αὐτῶν παρεδόθη')."
+      },
+      {
+        "claim": "Origen, Commentary on Matthew 16.8",
+        "risk": "MEDIUM",
+        "reason": "The specific section reference and exact quoted Greek string for Isa 53:12 in Comm. Matt. 16.8 should be verified; Origen cites Isa 53 in many works but this precise locus and wording are not easily corroborated."
+      },
+      {
+        "claim": "Athanasius, On the Incarnation, ch. 35",
+        "risk": "MEDIUM",
+        "reason": "De Incarnatione ch. 35 discusses prophetic fulfillment but the specific quotation of Isa 53:12 attributed here should be verified; Athanasius more characteristically cites earlier portions of Isa 53."
+      },
+      {
+        "claim": "Jerome, Commentary on Isaiah 15.53.12",
+        "risk": "MEDIUM",
+        "reason": "Jerome's Commentary on Isaiah is divided into 18 books; the citation 15.53.12 is plausible but the precise Latin wording attributed mixes Vulgate and commentary lemma in ways that should be checked against the CCSL edition."
+      },
+      {
+        "claim": "reading Hebrew yaḥliq as yaḥleq with different vowels",
+        "risk": "MEDIUM",
+        "reason": "The vocalization explanation for the LXX/MT divergence at 53:12a is oversimplified and not the standard scholarly account; the LXX likely read or interpreted the Hebrew differently, but the specific yaḥliq/yaḥleq vocalic explanation is not the consensus reconstruction."
+      },
+      {
+        "claim": "Confirms stability of LXX Isaiah text in early fourth-century Caesarean library, likely reflecting Origenian recension",
+        "risk": "MEDIUM",
+        "reason": "Whether Eusebius's Isaiah citations reflect the Hexaplaric/Origenian recension specifically is debated; this is stated more confidently than the evidence supports."
+      }
+    ],
+    "safe_claims": [
+      "LXX Isa 53:12 has κληρονομήσει πολλούς while MT has a different construction involving division/apportionment",
+      "LXX uses passive παρεδόθη while MT uses he'erah (poured out)",
+      "Jerome's Vulgate represents a deliberate turn toward the Hebrew text in the late fourth century",
+      "Cyprian's Testimonia ad Quirinum 2.15 contains Isaiah 53 material used as christological proof-text",
+      "Tertullian cites Isaiah 53 in Against Marcion Book 3 in anti-Marcionite argument",
+      "Old Latin versions in North Africa derived from the LXX rather than directly from Hebrew",
+      "The patristic reception of Isa 53:12 is overwhelmingly dependent on the LXX before Jerome"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.622970+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

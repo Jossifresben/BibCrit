@@ -1,0 +1,183 @@
+{
+  "reconstructed_words": [
+    {
+      "position": 1,
+      "lxx_word": "καὶ εἶπεν",
+      "vorlage_word": "וַיֹּאמֶר",
+      "status": "agrees_mt",
+      "confidence": 0.97,
+      "mt_equivalent": "וַיֹּאמֶר",
+      "dss_witness": null,
+      "reasoning": "The Greek καὶ εἶπεν is the standard LXX rendering of וַיֹּאמֶר throughout the Pentateuch, following the waw-consecutive + qal imperfect of אמר. This is one of the most stereotyped equivalences in LXX translation technique. No deviation from MT is detectable.",
+      "alternatives": []
+    },
+    {
+      "position": 2,
+      "lxx_word": "ὁ θεὸς",
+      "vorlage_word": "אֱלֹהִים",
+      "status": "agrees_mt",
+      "confidence": 0.97,
+      "mt_equivalent": "אֱלֹהִים",
+      "dss_witness": null,
+      "reasoning": "ὁ θεός is the standard LXX equivalent for אֱלֹהִים throughout the Pentateuch, attested consistently in Exodus. The use of the article with θεός here reflects definite syntactic context rather than a Hebrew article, as אֱלֹהִים lacks the article in MT. No divergence from MT is evident.",
+      "alternatives": []
+    },
+    {
+      "position": 3,
+      "lxx_word": "πρὸς Μωυσῆν",
+      "vorlage_word": "אֶל־מֹשֶׁה",
+      "status": "agrees_mt",
+      "confidence": 0.95,
+      "mt_equivalent": "אֶל־מֹשֶׁה",
+      "dss_witness": null,
+      "reasoning": "πρὸς + accusative is the dominant LXX equivalent for אֶל in speech-introduction formulas in Exodus. Μωυσῆν is the standard Greek transliteration of מֹשֶׁה in accusative. The correspondence is exact and uncontroversial.",
+      "alternatives": []
+    },
+    {
+      "position": 4,
+      "lxx_word": "ἐγώ εἰμι ὁ ὤν",
+      "vorlage_word": "אֶהְיֶה אֲשֶׁר אֶהְיֶה",
+      "status": "agrees_mt",
+      "confidence": 0.72,
+      "mt_equivalent": "אֶהְיֶה אֲשֶׁר אֶהְיֶה",
+      "dss_witness": null,
+      "reasoning": "The Greek renders the enigmatic Hebrew idiom אֶהְיֶה אֲשֶׁר אֶהְיֶה with ἐγώ εἰμι ὁ ὤν, transforming the first-person imperfect of היה into an ontological participial construction. The translator's choice of ὁ ὤν (present active participle of εἶναι) for the second אֶהְיֶה and ἐγώ εἰμι for the first reflects a deliberate philosophical interpretation rather than a strictly literal rendering, but the underlying Hebrew is almost certainly the same as MT. The confidence is medium rather than high because the Greek paraphrase obscures whether the Vorlage was identical to MT or possibly abbreviated to a single אֶהְיֶה.",
+      "alternatives": [
+        {
+          "reading": "אֶהְיֶה",
+          "confidence": 0.25,
+          "note": "A single אֶהְיֶה in the Vorlage cannot be excluded given the Greek's compression, but MT's double form is better attested and explains the translation."
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "lxx_word": "καὶ εἶπεν",
+      "vorlage_word": "וַיֹּאמֶר",
+      "status": "agrees_mt",
+      "confidence": 0.97,
+      "mt_equivalent": "וַיֹּאמֶר",
+      "dss_witness": null,
+      "reasoning": "The second καὶ εἶπεν corresponds to the second וַיֹּאמֶר in MT, which introduces the divine instruction to Moses. This waw-consecutive construction is mechanically rendered throughout LXX Exodus and matches MT exactly.",
+      "alternatives": []
+    },
+    {
+      "position": 6,
+      "lxx_word": "οὕτως ἐρεῖς",
+      "vorlage_word": "כֹּה תֹאמַר",
+      "status": "agrees_mt",
+      "confidence": 0.95,
+      "mt_equivalent": "כֹּה תֹאמַר",
+      "dss_witness": null,
+      "reasoning": "οὕτως is the regular LXX rendering of כֹּה in prophetic/divine messenger formulas throughout the Pentateuch and Former Prophets. ἐρεῖς (future indicative) renders the qal imperfect תֹאמַר with a standard prospective force. The equivalence is formulaic and unambiguous.",
+      "alternatives": []
+    },
+    {
+      "position": 7,
+      "lxx_word": "τοῖς υἱοῖς Ισραηλ",
+      "vorlage_word": "לִבְנֵי יִשְׂרָאֵל",
+      "status": "agrees_mt",
+      "confidence": 0.97,
+      "mt_equivalent": "לִבְנֵי יִשְׂרָאֵל",
+      "dss_witness": null,
+      "reasoning": "υἱοὶ Ισραηλ is the stereotyped LXX equivalent for בְּנֵי יִשְׂרָאֵל throughout Exodus. The dative τοῖς υἱοῖς corresponds to the preposition לְ. No divergence from MT is detectable.",
+      "alternatives": []
+    },
+    {
+      "position": 8,
+      "lxx_word": "ὁ ὢν",
+      "vorlage_word": "אֶהְיֶה",
+      "status": "agrees_mt",
+      "confidence": 0.78,
+      "mt_equivalent": "אֶהְיֶה",
+      "dss_witness": null,
+      "reasoning": "The Greek participial ὁ ὢν renders the single אֶהְיֶה that serves as the divine name/message in this clause. The translator uses the same participial form as in the previous divine self-declaration, achieving lexical consistency at the cost of literalness. The Vorlage is almost certainly אֶהְיֶה as in MT. The medium-high confidence reflects that the participial rendering is interpretive rather than strictly lexical, but no alternative Hebrew is evident.",
+      "alternatives": [
+        {
+          "reading": "יהוה",
+          "confidence": 0.1,
+          "note": "Highly speculative; some scholars have suggested the translator smoothed אֶהְיֶה into a participial equivalent of the Tetragrammaton, but there is no textual evidence for יהוה in the Vorlage here."
+        }
+      ]
+    },
+    {
+      "position": 9,
+      "lxx_word": "ἀπέσταλκέν με",
+      "vorlage_word": "שְׁלָחַנִי",
+      "status": "agrees_mt",
+      "confidence": 0.92,
+      "mt_equivalent": "שְׁלָחַנִי",
+      "dss_witness": null,
+      "reasoning": "ἀπέσταλκέν με (perfect active + με) renders the qal perfect with first-person singular suffix שְׁלָחַנִי. The LXX uses ἀποστέλλω consistently for שָׁלַח in the commission contexts of Exodus 3–4. The perfect tense in Greek may reflect the translator's choice to convey the divine commissioning as a completed authoritative act, but the underlying verb and pronominal suffix match MT precisely.",
+      "alternatives": []
+    },
+    {
+      "position": 10,
+      "lxx_word": "πρὸς ὑμᾶς",
+      "vorlage_word": "אֲלֵיכֶם",
+      "status": "agrees_mt",
+      "confidence": 0.95,
+      "mt_equivalent": "אֲלֵיכֶם",
+      "dss_witness": null,
+      "reasoning": "πρὸς ὑμᾶς is the regular LXX rendering of אֲלֵיכֶם (אֶל + second masculine plural suffix). This is formulaic in Exodus commission narratives. The correspondence is exact.",
+      "alternatives": []
+    }
+  ],
+  "summary_technical": "The LXX Vorlage of Exodus 3:14 is overwhelmingly congruent with MT, with all lexical units traceable to the same Hebrew text. The sole significant divergence is translational-theological rather than textual: the translator renders אֶהְיֶה אֲשֶׁר אֶהְיֶה not with two finite verb forms but with ἐγώ εἰμι ὁ ὤν, interpreting the divine self-predication through a participial ontological lens consistent with Hellenistic philosophical idiom (cf. Plato, Philo). The second occurrence of אֶהְיֶה is similarly rendered ὁ ὢν, creating lexical consistency between the two clauses. No DSS fragment (including 4QExod-Lev^f or other Exodus manuscripts from Qumran) preserves this verse with a textual variant, making DSS comparison unavailable for confirmation or challenge.",
+  "summary_plain": "The Greek translator almost certainly had in front of him the same Hebrew text as our standard Masoretic Bible; the big difference is that he chose to translate God's mysterious self-description 'I am who I am' as 'I am the one who is,' turning a dynamic Hebrew statement into a more philosophical Greek claim about God's eternal existence.",
+  "overall_confidence": 0.88,
+  "bibcrit_assessment": {
+    "title": "Philosophical Rendering Obscures Potential Vorlage Variation",
+    "reasoning": "The most textually significant issue is whether the Vorlage contained the double אֶהְיֶה אֲשֶׁר אֶהְיֶה or a shorter variant. The LXX's ἐγώ εἰμι ὁ ὤν could theoretically reflect a Vorlage with a single אֶהְיֶה, but Tov's principle of preferring the Vorlage that explains the MT over one that simplifies it, combined with the translator's demonstrated philosophical-interpretive tendency throughout Exodus 3, makes it far more probable that the translator had the full double construction and chose to render it via participial ontology rather than finite verb repetition. This is strong evidence for translator freedom (what Pietersma calls 'interlinear paradigm deviation') rather than a lost Hebrew variant; speculation about a shorter Vorlage remains unsupported by any manuscript evidence.",
+    "plain": "The Greek translator was being philosophically creative with the divine name rather than working from a different Hebrew manuscript; there is no good evidence he had a shorter or different Hebrew text in front of him.",
+    "confidence": 0.78
+  },
+  "discovery_ready": false,
+  "reference": "Exodus 3:14",
+  "cached_at": "2026-04-19T21:35:58.978057",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The core textual analysis is sound and grounded in observable LXX/MT correspondences, but several specific scholarly attributions and manuscript claims need verification.",
+    "flagged_claims": [
+      {
+        "claim": "No DSS fragment (including 4QExod-Lev^f or other Exodus manuscripts from Qumran) preserves this verse with a textual variant",
+        "risk": "MEDIUM",
+        "reason": "The manuscript siglum '4QExod-Lev^f' appears garbled; the standard sigla are 4QExod^a-d, 4QpaleoExod^m, and 4QExod-Lev^f exists but should be checked for whether it actually covers Exod 3:14. The blanket claim of non-preservation needs verification against DJD volumes."
+      },
+      {
+        "claim": "consistent with Hellenistic philosophical idiom (cf. Plato, Philo)",
+        "risk": "MEDIUM",
+        "reason": "Philo postdates the LXX Pentateuch translation, so he cannot be evidence for the translator's idiom (though he reflects later reception). The Plato comparison (presumably to ὁ ὄντως ὤν or similar) is plausible but unspecified and potentially overstated as direct influence."
+      },
+      {
+        "claim": "Tov's principle of preferring the Vorlage that explains the MT over one that simplifies it",
+        "risk": "MEDIUM",
+        "reason": "This is a loose paraphrase that conflates lectio difficilior with Tov's actual methodology; Tov's textual criticism principles are more nuanced and this specific 'principle' as phrased is not a standard formulation."
+      },
+      {
+        "claim": "what Pietersma calls 'interlinear paradigm deviation'",
+        "risk": "HIGH",
+        "reason": "Pietersma is associated with the 'interlinear paradigm' for NETS, but the specific phrase 'interlinear paradigm deviation' does not appear to be an established Pietersma term and may be fabricated."
+      },
+      {
+        "claim": "the translator's demonstrated philosophical-interpretive tendency throughout Exodus 3",
+        "risk": "MEDIUM",
+        "reason": "This generalization overstates the case; LXX Exodus is generally regarded as a relatively literal translation, and a sustained 'philosophical-interpretive tendency' across Exodus 3 is not a well-established characterization."
+      }
+    ],
+    "safe_claims": [
+      "καὶ εἶπεν is the standard LXX rendering of וַיֹּאמֶר",
+      "ὁ θεός is the standard LXX equivalent for אֱלֹהִים",
+      "πρὸς + accusative is the dominant LXX equivalent for אֶל in speech-introduction formulas",
+      "The Greek renders אֶהְיֶה אֲשֶׁר אֶהְיֶה with ἐγώ εἰμι ὁ ὤν",
+      "ὁ ὤν is the present active participle of εἶναι",
+      "υἱοὶ Ισραηλ is the stereotyped LXX equivalent for בְּנֵי יִשְׂרָאֵל",
+      "ἀπέσταλκέν με renders שְׁלָחַנִי with perfect tense"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.653720+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

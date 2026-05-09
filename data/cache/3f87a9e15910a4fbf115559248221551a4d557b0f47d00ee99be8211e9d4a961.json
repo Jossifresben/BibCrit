@@ -1,0 +1,166 @@
+{
+  "book": "Jeremiah",
+  "translator_name": "Old Greek of Jeremiah (Jeremias I / OG-Jer)",
+  "translator_profile": {
+    "literalness": 0.45,
+    "anthropomorphism_reduction": 0.25,
+    "messianic_heightening": 0.55,
+    "harmonization": 0.3,
+    "paraphrase_rate": 0.5
+  },
+  "dimensions": [
+    {
+      "dimension": "literalness",
+      "score": 0.45,
+      "confidence": 0.72,
+      "summary": "The OG of Jeremiah exhibits a mixed literalness profile. In Jer 1:5, the translator renders the Hebrew with reasonable fidelity: בֶּטֶן → κοιλίᾳ, רֶחֶם → μήτρας, יְדַעְתִּיךָ → ἐπίσταμαί σε, הִקְדַּשְׁתִּיךָ → ἡγίακά σε. The lexical equivalences are stable and the syntactic order largely preserved. However, the LXX of Jeremiah is well known for reflecting a Hebrew Vorlage approximately one-eighth shorter than MT, which means that large omissions are not translator-produced paraphrase but Vorlage-level differences (Tov, 'The Septuagint as a Translation', 1999). The sample passages for Jer 31:31 and 33:15 appear to reflect entirely different Vorlage sections, complicating literalness assessment from these verses alone. Across the book as known from Qumran (4QJer-b,d), the OG translator is moderately literal within the passages actually translated.",
+      "summary_plain": "The translator sticks fairly close to the Hebrew word-for-word when translating, but the LXX version of Jeremiah is based on a shorter Hebrew manuscript, so many differences from our standard Hebrew Bible are due to the source text, not the translator's choices.",
+      "examples": [
+        {
+          "reference": "Jeremiah 1:5",
+          "mt_text": "בְּטֶרֶם אֶצָּרְךָ בַבֶּטֶן יְדַעְתִּיךָ",
+          "lxx_text": "πρὸ τοῦ με πλάσαι σε ἐν κοιλίᾳ ἐπίσταμαί σε",
+          "note": "The translator renders אֶצָּרְךָ ('I formed you') with πλάσαι ('to form/mold'), a semantically faithful lexeme, and preserves the prepositional phrase ἐν κοιλίᾳ for בַּבֶּטֶן, indicating moderate-to-high word-level fidelity."
+        },
+        {
+          "reference": "Jeremiah 23:5",
+          "mt_text": "וַהֲקִמֹתִי לְדָוִד צֶמַח צַדִּיק וּמָלַךְ מֶלֶךְ",
+          "lxx_text": "καὶ ἀναστήσω τῷ Δαυιδ ἀνατολὴν δικαίαν καὶ βασιλεύσει βασιλεὺς",
+          "note": "צֶמַח is rendered ἀνατολήν ('rising/dawn'), a consistent and distinctive lexical choice across Jer 23:5 and Zech 3:8; 6:12, reflecting a stable translator lexicon rather than free improvisation."
+        }
+      ]
+    },
+    {
+      "dimension": "anthropomorphism_reduction",
+      "score": 0.25,
+      "confidence": 0.5,
+      "summary": "The OG-Jer translator does not show a pronounced pattern of anthropomorphism reduction within the available sample. In Jer 1:5, אֶצָּרְךָ ('I formed you [in the womb]') is rendered with πλάσαι, which retains the divine crafting metaphor rather than softening it. Tov and others have noted that the OG Jeremiah translator is not systematically inclined toward theological sanitization of divine embodiment, unlike, e.g., the translators of certain passages in OG-Isaiah or OG-Ezekiel. The confidence here is medium because the sample is not ideally suited to probe this dimension directly.",
+      "summary_plain": "This translator does not noticeably shy away from passages that describe God in human-like terms; when God is said to 'form' Jeremiah in the womb, the Greek keeps that vivid image intact.",
+      "examples": [
+        {
+          "reference": "Jeremiah 1:5",
+          "mt_text": "בְּטֶרֶם אֶצָּרְךָ בַבֶּטֶן",
+          "lxx_text": "πρὸ τοῦ με πλάσαι σε ἐν κοιλίᾳ",
+          "note": "The divine act of 'forming' (אֶצָּרְךָ, from יצר, a potter-craft verb) is preserved with πλάσαι, retaining the artisan-creator image without any theological smoothing."
+        }
+      ]
+    },
+    {
+      "dimension": "messianic_heightening",
+      "score": 0.55,
+      "confidence": 0.68,
+      "summary": "The most significant evidence for messianic heightening appears in the rendering of צֶמַח (Jer 23:5) as ἀνατολή ('rising, dawn, Branch'). This Greek term carries a well-documented messianic valence in the LXX tradition (cf. Zech 3:8; 6:12; Luke 1:78) and concentrates the eschatological force of the 'Branch of David' oracle. The rendering βασιλεύσει βασιλεὺς ('a king shall reign') mirrors MT fairly closely, but the choice of ἀνατολή for צֶמַח—a term that became a technical messianic designation in early Judaism and Christianity—represents a translational shaping with clear interpretive consequences. Jer 33:15 in the LXX appears to correspond to a different textual unit (absent from OG-Jer per Tov's analysis of the LXX Vorlage), which actually reduces the messianic doublet present in MT, suggesting the translator's Vorlage did not contain the second occurrence; this limits the evidence for active messianic amplification by the translator.",
+      "summary_plain": "When translating the famous 'Branch of David' passage, this translator chose a Greek word meaning 'sunrise' or 'dawn,' which became a powerful messianic title in early Christianity. However, some key messianic passages in our Hebrew Bible simply don't appear in the Greek version at all, since they were absent from the older Hebrew manuscript the translator was using.",
+      "examples": [
+        {
+          "reference": "Jeremiah 23:5",
+          "mt_text": "וַהֲקִמֹתִי לְדָוִד צֶמַח צַדִּיק",
+          "lxx_text": "καὶ ἀναστήσω τῷ Δαυιδ ἀνατολὴν δικαίαν",
+          "note": "צֶמַח ('sprout, branch') is rendered ἀνατολήν, the consistent LXX rendering that transforms an agricultural metaphor into a luminous/astronomical messianic figure, heightening eschatological resonance."
+        },
+        {
+          "reference": "Jeremiah 33:15",
+          "mt_text": "אַצְמִיחַ לְדָוִד צֶמַח צְדָקָה",
+          "lxx_text": "[Absent from OG-Jer; the LXX of this chapter reflects a substantially different Vorlage]",
+          "note": "The second 'Branch' oracle (MT Jer 33:15) is absent from OG-Jer, consistent with Tov's demonstration that the OG Vorlage lacked the 'doublet' expansions of MT Jer 30–33, meaning the translator did not actively introduce this messianic content."
+        }
+      ]
+    },
+    {
+      "dimension": "harmonization",
+      "score": 0.3,
+      "confidence": 0.5,
+      "summary": "The OG-Jer translator does not exhibit a strong harmonizing tendency in the passages available. The rendering of Jer 23:5 does not visibly assimilate to parallel texts in Zechariah or Isaiah beyond the shared lexical convention of ἀνατολή for צֶמַח, which may reflect a common exegetical tradition rather than deliberate harmonization by this translator. Aejmelaeus's criteria for identifying harmonization—shared wording beyond what the Vorlage demands—are not clearly met in these samples. The major textual divergences between OG-Jer and MT are best explained by Vorlage differences rather than by intra-textual harmonization.",
+      "summary_plain": "This translator does not appear to have gone out of their way to make Jeremiah agree with other biblical books or smooth over internal tensions; the big differences between the Greek and Hebrew versions are mostly due to the different manuscript they were working from.",
+      "examples": [
+        {
+          "reference": "Jeremiah 23:5",
+          "mt_text": "וּמָלַךְ מֶלֶךְ וְהִשְׂכִּיל וְעָשָׂה מִשְׁפָּט וּצְדָקָה בָּאָרֶץ",
+          "lxx_text": "καὶ βασιλεύσει βασιλεὺς καὶ συνήσει καὶ ποιήσει κρίμα καὶ δικαιοσύνην ἐπὶ τῆς γῆς",
+          "note": "The rendering follows MT closely without importing additional phrases from parallel texts (e.g., Isa 11:1–5 or Ezek 37:24–25); no evidence of cross-book harmonization here."
+        }
+      ]
+    },
+    {
+      "dimension": "paraphrase_rate",
+      "score": 0.5,
+      "confidence": 0.65,
+      "summary": "The OG-Jer translator occupies a middle position on the paraphrase spectrum. In Jer 1:5, the translation is essentially isomorphic, with each Hebrew element receiving a Greek counterpart. In Jer 23:5, the translation is also close but involves the interpretive rendering ἀνατολή for צֶמַח and κρίμα for מִשְׁפָּט (both defensible but involving semantic choice). The broader scholarly record (Aejmelaeus, Tov, Bogaert) establishes that OG-Jer is not a slavishly literal translation like OG-Aquila or Proto-Theodotion, nor is it as free as OG-Job or OG-Proverbs. The large-scale omissions visible when comparing OG-Jer to MT are Vorlage phenomena, not translator paraphrase; within translated sections, paraphrase is moderate.",
+      "summary_plain": "The translator sometimes paraphrases and sometimes translates quite literally—they fall somewhere in the middle, neither word-for-word wooden nor loosely free. The many passages that are simply missing from the Greek are due to the shorter Hebrew manuscript they used, not their own rewording.",
+      "examples": [
+        {
+          "reference": "Jeremiah 1:5",
+          "mt_text": "נָבִיא לַגֹּויִם נְתַתִּיךָ",
+          "lxx_text": "προφήτην εἰς ἔθνη τέθεικά σε",
+          "note": "A near-literal rendering: נָבִיא = προφήτην, לַגֹּויִם = εἰς ἔθνη, נְתַתִּיךָ = τέθεικά σε; the syntax is slightly reordered but the translation is formally equivalent."
+        },
+        {
+          "reference": "Jeremiah 23:5",
+          "mt_text": "וְהִשְׂכִּיל",
+          "lxx_text": "καὶ συνήσει",
+          "note": "הִשְׂכִּיל (hiphil of שָׂכַל, 'to act wisely/prosper') is rendered συνήσει ('he will understand'), a moderate semantic narrowing that reflects interpretive choice rather than wooden literalism or free paraphrase."
+        }
+      ]
+    }
+  ],
+  "overall_assessment": "The Old Greek of Jeremiah represents one of the most text-critically significant LXX translation units due to its reflection of a substantially shorter Hebrew Vorlage (attested at Qumran in 4QJer-b,d), placing the translator within a complex two-recension history of the book (Tov's 'short text' vs. the expanded MT). Within translated sections, the translator operates at a moderate literalness level—more faithful than OG-Job or OG-Proverbs, but less wooden than the later kaige-Theodotion tradition visible in some LXX books. The rendering of צֶמַח as ἀνατολή in Jer 23:5 is the most theologically consequential translational choice in the sample, aligning with a pan-LXX exegetical tradition that gave early Christianity a powerful messianic epithet. For text-critical work, the paramount methodological principle is Tov's caution: before attributing a plus or minus to translator freedom or tendency, the analyst must first evaluate whether the divergence reflects a different Vorlage; in Jeremiah's case, the answer is very frequently affirmative. Harmonization and anthropomorphism reduction are not characteristic tendencies of this translator.",
+  "overall_plain": "The Greek translator of Jeremiah worked from an older, shorter version of the Hebrew text than what eventually became the standard Bible, so many differences between the Greek and Hebrew Jeremiah are really differences between two ancient Hebrew manuscripts, not the translator's choices. When the translator did translate, they were fairly close to their source but made some interpretive choices—most notably turning the 'Branch of David' into the luminous title 'Sunrise,' which later became an important Christian messianic title. This translator sits in the middle range: not mechanically literal, not freely paraphrasing.",
+  "bibcrit_assessment": {
+    "title": "Vorlage Divergence Eclipses Translator Tendency in OG-Jer",
+    "reasoning": "The single most significant scholarly insight about OG-Jer is that the dominant explanatory framework for its divergences from MT must be Vorlage-difference rather than translator technique. Tov's demonstration that the OG Vorlage was a genuine earlier edition of Jeremiah (not an abridgment by the translator) means that traditional metrics of translator 'freedom' or 'paraphrase' systematically misidentify textual-critical phenomena as stylistic ones when applied naively to this book. The rendering ἀνατολή for צֶמַח remains the translator's most durable contribution to the history of messianic interpretation, functioning as a genuine translational shaping with lasting theological consequences.",
+    "plain": "The most important thing to understand about the Greek Jeremiah is that its many differences from the standard Hebrew Bible mostly come from the translator using an older, shorter Hebrew manuscript—not from the translator taking liberties. The one place where the translator's own interpretive choice had the biggest historical impact was rendering 'Branch' as 'Sunrise,' a title that shaped how early Christians talked about the coming Messiah.",
+    "confidence": 0.72
+  },
+  "discovery_ready": false,
+  "reference": "Jeremiah",
+  "cached_at": "2026-04-19T22:33:23.663735",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis is broadly grounded in mainstream LXX-Jeremiah scholarship (Tov's shorter-Vorlage thesis, ἀνατολή for צֶמַח), but contains a few imprecise or potentially misleading specifics that warrant correction.",
+    "flagged_claims": [
+      {
+        "claim": "attested at Qumran in 4QJer-b,d",
+        "risk": "MEDIUM",
+        "reason": "The standard sigla are 4QJer^b and 4QJer^d (with 4QJer^a and 4QJer^c reflecting proto-MT). The claim is roughly correct but the way it is cited conflates the two short-text witnesses; should be verified and stated precisely."
+      },
+      {
+        "claim": "OG-Aquila",
+        "risk": "MEDIUM",
+        "reason": "Aquila is not 'OG'; he is a separate, later (2nd c. CE) Jewish revisor explicitly distinct from the Old Greek. Calling him 'OG-Aquila' is a category error."
+      },
+      {
+        "claim": "Jer 33:15 ... [Absent from OG-Jer]",
+        "risk": "MEDIUM",
+        "reason": "MT Jer 33:14–26 is indeed absent from OG-Jer, which is a well-known fact, but the example presents this as though demonstrating translator behavior; the framing is correct but the bare claim should be checked against editions (Ziegler) to confirm complete absence rather than partial."
+      },
+      {
+        "claim": "Hebrew Vorlage approximately one-eighth shorter than MT",
+        "risk": "MEDIUM",
+        "reason": "The commonly cited figure is approximately one-seventh (about 2,700 words / ~14%) shorter, per Tov; 'one-eighth' understates the standard estimate and should be verified."
+      },
+      {
+        "claim": "Aejmelaeus's criteria for identifying harmonization",
+        "risk": "MEDIUM",
+        "reason": "Aejmelaeus has written on translation technique, but attributing a specific named set of 'criteria for identifying harmonization' to her is vague and potentially overstated; the reference is unverifiable as cited."
+      },
+      {
+        "claim": "less wooden than the later kaige-Theodotion tradition visible in some LXX books",
+        "risk": "MEDIUM",
+        "reason": "While generally defensible, this is a broad comparative claim; kaige features have actually been detected in parts of LXX-Jeremiah (Jer β, chs. 29–52, per Tov's own work), which the analysis does not acknowledge and which complicates the simple contrast."
+      }
+    ],
+    "safe_claims": [
+      "אֶצָּרְךָ rendered as πλάσαι in Jer 1:5",
+      "צֶמַח rendered as ἀνατολή in Jer 23:5, paralleling Zech 3:8 and 6:12",
+      "OG-Jer reflects a shorter Hebrew Vorlage than MT (Tov's two-edition thesis)",
+      "הִשְׂכִּיל rendered as συνήσει in Jer 23:5",
+      "נָבִיא לַגֹּויִם נְתַתִּיךָ rendered as προφήτην εἰς ἔθνη τέθεικά σε in Jer 1:5",
+      "MT Jer 33:14–26 is absent from OG-Jer"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.638175+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

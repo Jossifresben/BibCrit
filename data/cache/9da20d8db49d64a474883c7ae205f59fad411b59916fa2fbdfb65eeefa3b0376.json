@@ -367,5 +367,58 @@
   "discovery_ready": false,
   "cached_at": "2026-03-30T22:30:02.642879",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "Most numerical data and the general scholarly framing are accurate, but several specific claims about manuscript patterns, scholar attributions, and Lamech's LXX figure need verification.",
+    "flagged_claims": [
+      {
+        "claim": "Lamech (age at Noah's birth)... lxx_value: 188",
+        "risk": "HIGH",
+        "reason": "The standard LXX value for Lamech's age at Noah's birth is 188 in some traditions but 182 in others; the major LXX witnesses (Alexandrinus) typically read 188, but this should be qualified as text-critically variable. The remaining years figure (565) and total (753) are correct for that reading, but presenting a single LXX number obscures real manuscript variation."
+      },
+      {
+        "claim": "This theory, advocated by scholars including Jeremy Sexton and Henry Smith",
+        "risk": "MEDIUM",
+        "reason": "Sexton and Smith have actually argued the OPPOSITE position—that the LXX preserves the original chronology and the MT was deflated. Attributing the LXX Inflation Theory to them inverts their published views (cf. Sexton, 'Who Was Born When Enosh Was 90?' WTJ 2015; Smith's work for Associates for Biblical Research)."
+      },
+      {
+        "claim": "Several Church Fathers (Eusebius, Jerome) acknowledged awareness of competing chronologies and sometimes preferred the LXX's longer timeline",
+        "risk": "MEDIUM",
+        "reason": "Jerome generally preferred the Hebrew (Hebraica veritas), not the LXX's longer timeline. Eusebius did use LXX chronology in his Chronicon, but pairing him with Jerome as preferring LXX is misleading."
+      },
+      {
+        "claim": "Alexandrian Jewish apologetics (Demetrius, Eupolemus) emphasized biblical antiquity to compete with Egyptian chronologies claiming 10,000+ year dynasties",
+        "risk": "MEDIUM",
+        "reason": "Demetrius the Chronographer did work with LXX-style chronology, but the specific claim that he and Eupolemus emphasized antiquity 'to compete with Egyptian chronologies' is an interpretive reconstruction, not a documented motive. Eupolemus's chronological interests are debated."
+      },
+      {
+        "claim": "SP reduces Methuselah's lifespan by 249 years to prevent post-Flood survival",
+        "risk": "MEDIUM",
+        "reason": "While the harmonization motive is the standard scholarly explanation, stating it as factual intent rather than inferred motive overstates certainty. The SP figure (720) is correct, but 'to prevent post-Flood survival' is a hypothesis."
+      },
+      {
+        "claim": "The LXX pattern breaks down precisely where it would create problems: Jared (where +100 would make him beget at 262)",
+        "risk": "MEDIUM",
+        "reason": "This is a post-hoc rationalization; 262 is not inherently more 'problematic' than other high begetting ages in LXX (e.g., Methuselah at 167). The claim that the pattern breaks down for principled reasons is speculative."
+      },
+      {
+        "claim": "Jubilees and some Qumran texts show awareness of competing chronologies",
+        "risk": "MEDIUM",
+        "reason": "Jubilees has its own chronological system but does not clearly demonstrate 'awareness of competing chronologies' in Genesis 5 figures specifically. The Qumran evidence for Genesis 5 numbers is fragmentary and this claim is vague."
+      }
+    ],
+    "safe_claims": [
+      "The numerical values for MT in begetting ages, remaining years, and totals (Adam 130/800/930, Seth 105/807/912, etc.)",
+      "The systematic +100/-100 pattern in LXX for Adam through Enoch (excluding Jared)",
+      "SP agreement with MT for most early begetting ages",
+      "Methuselah's MT lifespan of 969 and the 14-year post-Flood overlap problem",
+      "Noah's age at the Flood (600) being identical across all three traditions",
+      "SP's reduced figures for Jared, Methuselah, and Lamech",
+      "The pre-Flood AM totals (MT ~1656, LXX ~2262)"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.585795+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

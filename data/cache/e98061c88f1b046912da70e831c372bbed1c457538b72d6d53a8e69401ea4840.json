@@ -93,5 +93,57 @@
   "reference": "Psalm 2:7",
   "cached_at": "2026-03-30T19:03:24.546192",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v2"
+  "prompt_version": "v2",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "Core textual observations are accurate, but several specific page citations and one DSS claim appear unverifiable or incorrect.",
+    "flagged_claims": [
+      {
+        "claim": "11QPsa and 4QPsb preserve יהוה in paleo-Hebrew",
+        "risk": "HIGH",
+        "reason": "11QPsa (11Q5) does use paleo-Hebrew for the Tetragrammaton in some places, but it does not contain Psalm 2 (it preserves later psalms, mostly Pss 101–150). 4QPsb's treatment of the divine name in Psalm 2 needs verification; the claim conflates general DSS practice with specific witnesses to this verse."
+      },
+      {
+        "claim": "Pietersma (2007) p.78",
+        "risk": "MEDIUM",
+        "reason": "Specific page citation to Pietersma is unverifiable as given; NETS Psalms introduction or 'A New English Translation of the Septuagint' do not obviously support this exact claim at this page."
+      },
+      {
+        "claim": "Kraus (1988) p.128",
+        "risk": "MEDIUM",
+        "reason": "Kraus's Psalms 1-59 commentary discusses Psalm 2 but page reference for an LXX participle-shift comment is unverifiable and Kraus rarely focuses on LXX grammatical technique."
+      },
+      {
+        "claim": "Wevers (1993) p.45",
+        "risk": "MEDIUM",
+        "reason": "Wevers wrote Notes on Greek text of Genesis, Exodus, Leviticus, Numbers, Deuteronomy—not on Psalms. Citing Wevers for LXX Psalms practice is likely a misattribution."
+      },
+      {
+        "claim": "Hossfeld-Zenger (2005) p.35",
+        "risk": "MEDIUM",
+        "reason": "Page reference for the specific claim about ancient Near Eastern enthronement parallels in Hossfeld-Zenger Psalms 1 commentary is unverifiable as cited."
+      },
+      {
+        "claim": "Participle Shift Signals Performance Context Change",
+        "risk": "MEDIUM",
+        "reason": "Speculative hypothesis about LXX translator envisioning antiphonal/liturgical performance has no direct textual support; the participle is more plausibly explained as routine Greek stylistic preference, as the analysis itself notes elsewhere."
+      },
+      {
+        "claim": "The prepositional phrase אֶל חֹק becomes direct object τὸ πρόσταγμα",
+        "risk": "MEDIUM",
+        "reason": "This characterization is imprecise—διαγγέλλων takes τὸ πρόσταγμα as object, but the Hebrew אֶל חֹק is itself debated (some read אֶל as 'concerning'); the simplification glosses over a real exegetical question."
+      }
+    ],
+    "safe_claims": [
+      "LXX renders Hebrew finite verb אֲסַפְּרָה with Greek participle διαγγέλλων",
+      "Standard LXX practice substitutes κύριος for the Tetragrammaton",
+      "DSS evidence shows the Tetragrammaton written in paleo-Hebrew script within square Aramaic text in some manuscripts",
+      "Hebrew qal perfect יְלִדְתִּיךָ is rendered by Greek perfect γεγέννηκα",
+      "πρός with accusative is standard Greek equivalent for Hebrew אֶל with verbs of speaking",
+      "Psalm 2:7 is quoted in Acts 13:33 and Hebrews 1:5"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.333059+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

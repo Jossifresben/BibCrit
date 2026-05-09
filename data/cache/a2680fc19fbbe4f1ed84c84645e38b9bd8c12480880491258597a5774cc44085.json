@@ -107,5 +107,68 @@
   "reference": "Genesis 1:1-31",
   "cached_at": "2026-04-17T08:42:03.142889",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The overall structural analysis is sound and reflects mainstream scholarship, but the analysis mischaracterizes the structure as concentric (it is parallel/panel) and contains several questionable correspondences and citation details.",
+    "flagged_claims": [
+      {
+        "claim": "structure_type: concentric",
+        "risk": "HIGH",
+        "reason": "The Days 1-3/4-6 correspondence is universally described in scholarship as a PARALLEL panel structure (forming/filling), not a concentric/chiastic one. Treating Day 4 as an 'X' pivot with A-B-C-X-C'-B'-A' inversion is idiosyncratic and not what Wenham, Cassuto, or Dorsey actually argue. Wenham explicitly presents this as parallel panels, not chiasmus."
+      },
+      {
+        "claim": "Day 6a (B') corresponds to Day 2 (B - firmament/sky)",
+        "risk": "HIGH",
+        "reason": "In the standard forming/filling schema, Day 2 (sky/sea) corresponds to Day 5 (birds/fish), and Day 3 (land/vegetation) corresponds to Day 6 (land animals/humans). The analysis has scrambled these correspondences to fit a concentric mold, contradicting the very scholars it cites."
+      },
+      {
+        "claim": "Francis Andersen (The Sentence in Biblical Hebrew, 1974: 102) notes the formulaic refrains as structural markers",
+        "risk": "MEDIUM",
+        "reason": "Andersen's 1974 work is on Hebrew syntax generally; the specific page citation for Genesis 1 day-panel refrains as structural markers is not verifiable and may be fabricated or misattributed."
+      },
+      {
+        "claim": "Dorsey (Literary Structure of the Old Testament, 1999: 52-53)",
+        "risk": "MEDIUM",
+        "reason": "Page reference should be verified; Dorsey does discuss Genesis 1 but the exact pagination and his characterization should be checked. Dorsey describes parallel panels, not a concentric structure with Day 4 as pivot."
+      },
+      {
+        "claim": "Lund (Chiasmus in the New Testament, 1942: 40-41) establishes criteria requiring lexical and thematic correspondence",
+        "risk": "MEDIUM",
+        "reason": "Lund's criteria are real but citing him for an OT/Genesis structural analysis is methodologically odd, and the specific page reference is unverifiable in this context."
+      },
+      {
+        "claim": "בָּרָא ... appears in 1:1, 1:27 (3x)",
+        "risk": "MEDIUM",
+        "reason": "The verb bara appears in 1:1, 1:21, and 1:27 (3x in v.27). The claim is ambiguously worded and could mislead readers about the distribution."
+      },
+      {
+        "claim": "radah (rule/dominion) is implicit in light's governance",
+        "risk": "MEDIUM",
+        "reason": "The verb radah does not appear in Day 1; the verb used for luminaries 'governing' in Day 4 is mashal, not radah. Claiming radah is 'implicit' in Day 1 is speculative."
+      },
+      {
+        "claim": "'signs and seasons' = festivals",
+        "risk": "MEDIUM",
+        "reason": "While moadim can mean appointed times/festivals, equating the phrase directly with festivals is an interpretive leap stated as fact."
+      },
+      {
+        "claim": "remains dependent on the vegetarian food economy established in the pivot",
+        "risk": "MEDIUM",
+        "reason": "The vegetarian food provision is established in Day 3 and Day 6 (vv. 29-30), not in the Day 4 pivot. This is a factual error about where the text places the food provision."
+      }
+    ],
+    "safe_claims": [
+      "Day 1 creates light and separates light from darkness (1:3-5)",
+      "Day 4 creates sun, moon, and stars with the phrase 'for signs and seasons and days and years' (1:14)",
+      "The Hebrew text uses tadshe ha'arets in 1:11 and yishretsu hammayim in 1:20",
+      "Humanity is created in God's image with dominion language in 1:26-28",
+      "The seven-day framework is connected to Sabbath observance in Exodus 20:11",
+      "Wenham, Cassuto, and others recognize a Days 1-3/4-6 correspondence",
+      "Genesis 1 demythologizes the sun and moon by not naming them as deities"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.632080+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

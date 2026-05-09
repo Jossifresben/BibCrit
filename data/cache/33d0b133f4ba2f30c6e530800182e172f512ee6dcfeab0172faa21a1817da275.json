@@ -1,0 +1,64 @@
+{
+  "passage": "Habakkuk 1:1",
+  "structure_detected": false,
+  "structure_type": "none",
+  "confidence_note": "Habakkuk 1:1 is a single superscription verse of five Hebrew words functioning as a title; it contains no internal repetition, no parallel panels, no pivot, and no chiastic inversion. A single clause cannot sustain the minimum bicolon required for any of the structural forms identified by Lund, Dorsey, or Walsh.",
+  "elements": [],
+  "pivot": null,
+  "correspondences": [],
+  "overall_confidence": 0.0,
+  "methodology_citations": "Dorsey (1999, pp. 15-24) requires at least two matching units flanking a center; Lund (1942, pp. 40-41) requires a minimum of three identifiable members for concentric structure; Walsh (2001, pp. 7-10) treats superscriptions as paratextual framing devices external to the literary structure of the body text. None of their criteria can be applied to a single noun-clause title.",
+  "theological_significance": "Habakkuk 1:1 functions exclusively as a superscription, identifying the genre (massaʾ, 'burden/oracle'), the mode of reception (ḥāzāh, 'he visioned'), and the named prophetic tradent (Ḥăbaqqûq hannāvîʾ). As a title it frames the entire book rather than encoding an internal structure of its own. Its theological weight is borne by its vocabulary—massaʾ implies weighty divine speech with judgment overtones—but this meaning is contextual and generic, not structural. Attempts to impose chiastic form on a superscription would violate Dorsey's criterion that structure must illuminate meaning rather than be imposed artificially.",
+  "scholarly_citations": "Francis Andersen (Habakkuk, Anchor Bible, 2001, p. 83) treats 1:1 as a straightforward editorial superscription parallel in form to Nah 1:1 and notes no internal structural complexity. Marvin Sweeney (The Twelve Prophets, Berit Olam, 2000, vol. 2, p. 456) likewise treats it as a title-formula without chiastic properties.",
+  "bibcrit_hypothesis": {
+    "title": "Superscription as Intertextual Genre Signal Only",
+    "reasoning": "The combination of massaʾ with ḥāzāh and the title hannāvîʾ deliberately aligns Habakkuk with the visionary oracle tradition of Nahum and Isaiah, signaling authority and genre to readers before the lament begins. This titling strategy is a redactional decision, not a compositional-structural one, and belongs to the prehistory of the book's editing rather than to the chiastic architecture of chapters 1-3. Any structural analysis must therefore begin at 1:2, where the first genuine literary unit (the lament complaint) commences.",
+    "confidence": 0.92
+  },
+  "discovery_ready": true,
+  "reference": "Habakkuk 1:1",
+  "cached_at": "2026-04-20T19:54:58.283787",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The structural analysis is sound, but specific page citations to Dorsey, Lund, Walsh, Andersen, and Sweeney should be verified as several appear potentially imprecise.",
+    "flagged_claims": [
+      {
+        "claim": "Francis Andersen (Habakkuk, Anchor Bible, 2001, p. 83)",
+        "risk": "MEDIUM",
+        "reason": "Andersen's Habakkuk is in the Anchor Bible series (2001), but the specific page reference (p. 83) for the superscription comment is unverified and should be checked; the commentary's discussion of 1:1 may fall on different pages."
+      },
+      {
+        "claim": "Marvin Sweeney (The Twelve Prophets, Berit Olam, 2000, vol. 2, p. 456)",
+        "risk": "MEDIUM",
+        "reason": "Sweeney's Twelve Prophets in Berit Olam (2000) is real, but Habakkuk is treated in vol. 2; the specific page 456 for the superscription comment is unverified and may be inaccurate."
+      },
+      {
+        "claim": "Dorsey (1999, pp. 15-24) requires at least two matching units flanking a center",
+        "risk": "MEDIUM",
+        "reason": "Dorsey's The Literary Structure of the Old Testament (1999) discusses structural criteria in its introduction, but the precise page range and the specific formulation attributed to him should be verified."
+      },
+      {
+        "claim": "Lund (1942, pp. 40-41) requires a minimum of three identifiable members for concentric structure",
+        "risk": "MEDIUM",
+        "reason": "Lund's Chiasmus in the New Testament (1942) articulates laws of chiastic structure, but the specific page citation and the 'three members minimum' formulation as stated may not correspond exactly to Lund's wording."
+      },
+      {
+        "claim": "Walsh (2001, pp. 7-10) treats superscriptions as paratextual framing devices external to the literary structure",
+        "risk": "MEDIUM",
+        "reason": "Walsh's Style and Structure in Biblical Hebrew Narrative (2001) addresses literary structure, but the claim that he specifically treats superscriptions as 'paratextual framing devices external to the body text' on pp. 7-10 is a specific attribution that may not be precisely what Walsh argues."
+      }
+    ],
+    "safe_claims": [
+      "Habakkuk 1:1 is a single superscription verse",
+      "The verse contains massaʾ ('burden/oracle') and ḥāzāh ('he visioned') and identifies Habakkuk as hannāvîʾ",
+      "Habakkuk 1:1 is parallel in form to Nahum 1:1 in using massaʾ",
+      "A single noun-clause cannot sustain a chiastic or concentric structure",
+      "The superscription functions to signal genre and frame the book"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.631804+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

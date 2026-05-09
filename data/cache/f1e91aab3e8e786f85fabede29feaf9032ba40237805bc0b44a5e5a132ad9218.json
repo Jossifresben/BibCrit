@@ -158,5 +158,58 @@
   "discovery_ready": false,
   "cached_at": "2026-03-31T00:30:50.090541",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis is broadly accurate in its general claims about LXX dominance and Matthean harmonization, but contains several specific citation references and quotation wordings that need verification, and one likely misattributed chapter reference.",
+    "flagged_claims": [
+      {
+        "claim": "Jerome, Commentary on Micah, chapter_section '2.5.2'",
+        "risk": "MEDIUM",
+        "reason": "Jerome's Commentary on Micah is divided into two books treating the prophet's chapters; the citation format '2.5.2' is non-standard. The Latin text quoted is closer to the Vulgate of Micah 5:2 itself, but the precise reference should be verified."
+      },
+      {
+        "claim": "Tertullian, Against Marcion 3.13",
+        "risk": "MEDIUM",
+        "reason": "Tertullian's discussion of Micah 5:2 in Adversus Marcionem is more commonly located in Book 3, but the specific chapter and exact wording cited should be verified; Tertullian's actual citations of this verse vary across his works."
+      },
+      {
+        "claim": "Cyril of Jerusalem, Catechetical Lectures 12.20",
+        "risk": "MEDIUM",
+        "reason": "Catechesis 12 does discuss the incarnation and Bethlehem, but the precise section number and exact wording attributed need verification; the English wording given closely mirrors KJV phrasing, raising suspicion of modernization rather than translation from Cyril's Greek."
+      },
+      {
+        "claim": "Eusebius's LXX citation 'all align precisely with LXX Codex Vaticanus tradition'",
+        "risk": "MEDIUM",
+        "reason": "Claiming precise alignment with a specific manuscript tradition (Vaticanus) for Eusebius is an over-specific genealogical claim; Eusebius used Caesarean/Hexaplaric materials, and direct dependency on the Vaticanus textual tradition is not straightforwardly demonstrable."
+      },
+      {
+        "claim": "Justin's citation 'art not the least' follows Matthew's interpretive rendering",
+        "risk": "MEDIUM",
+        "reason": "While Justin's Dialogue 78 does cite this passage and shows Matthean influence, the exact wording 'art not the least among the princes of Judah' should be checked against Justin's Greek, which in some editions reads differently and may not perfectly match Matthew 2:6."
+      },
+      {
+        "claim": "Origen directly cites Matthew 2:6 rather than Micah itself",
+        "risk": "MEDIUM",
+        "reason": "Contra Celsum 1.51 does discuss Bethlehem prophecy, but the claim that Origen cites Matthew rather than Micah requires verification of the specific Greek wording; Origen elsewhere shows knowledge of the LXX form."
+      },
+      {
+        "claim": "Irenaeus, Against Heresies 3.21.6 — wording 'from days of eternity'",
+        "risk": "MEDIUM",
+        "reason": "Irenaeus does cite Micah 5:2 in Adv. Haer., but the quoted English wording and precise section reference should be verified; the relevant discussion in Book 3 about Bethlehem birth is typically situated near 3.9 or 3.21, and the exact citation form needs checking."
+      }
+    ],
+    "safe_claims": [
+      "Matthew 2:6 differs from both MT and LXX of Micah 5:2 in reading 'by no means least' instead of 'small/little'",
+      "LXX reads ὀλιγοστὸς εἶ ἐν χιλιάσιν Ἰούδα for Micah 5:2",
+      "Jerome translated the Vulgate from Hebrew (hebraica veritas) rather than from the LXX",
+      "MT reads מִימֵי עוֹלָם at the end of Micah 5:2",
+      "Old Latin tradition in North Africa was based on LXX",
+      "Matthew 2:6 conflates Micah 5:2 with elements reminiscent of 2 Samuel 5:2",
+      "Augustine in North Africa used Old Latin texts alongside the emerging Vulgate"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.430468+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

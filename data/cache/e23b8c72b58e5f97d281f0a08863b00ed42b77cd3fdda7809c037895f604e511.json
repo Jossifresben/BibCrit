@@ -80,5 +80,72 @@
   "reference": "Genesis 1:1",
   "cached_at": "2026-03-31T10:19:10.378475",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis is generally grounded in well-known textual features of Genesis 1:1, but contains several specific claims about Targumic readings and page-numbered citations that require verification.",
+    "flagged_claims": [
+      {
+        "claim": "Targum Neofiti: בְּחוּכְמָא בְרָא יְיָ (With wisdom the LORD created); Targum Pseudo-Jonathan: בְּחוּכְמָא בְרָא יְיָ (With wisdom the LORD created)",
+        "risk": "HIGH",
+        "reason": "The 'with wisdom' (בחוכמא) reading is well-attested in Targum Neofiti and the Fragmentary Targum, but Targum Pseudo-Jonathan actually reads 'מן לקדמין' (from the beginning) and does not contain בחוכמא in Gen 1:1. Attributing identical wording to both Targums is likely inaccurate. Also, Targum Onqelos retains 'בקדמין' without the wisdom expansion."
+      },
+      {
+        "claim": "McNamara, Targum Neofiti 1: Genesis, p. 51",
+        "risk": "MEDIUM",
+        "reason": "Specific page citation is unverifiable here; McNamara's volume discusses Gen 1:1 but the precise page number could be fabricated or imprecise."
+      },
+      {
+        "claim": "Maher, Targum Pseudo-Jonathan: Genesis, p. 27",
+        "risk": "MEDIUM",
+        "reason": "Page citation unverifiable; combined with the questionable claim that Ps-J reads 'with wisdom,' this citation may not support the claim made."
+      },
+      {
+        "claim": "Hayward, Targums and the Transmission of Scripture into Judaism and Christianity, p. 47",
+        "risk": "MEDIUM",
+        "reason": "Specific page reference cannot be verified; risk of fabricated pagination."
+      },
+      {
+        "claim": "Wevers, Notes on the Greek Text of Genesis, p. 1",
+        "risk": "MEDIUM",
+        "reason": "While Wevers's volume exists and discusses Gen 1:1, the 'p. 1' citation appears suspiciously convenient and should be verified."
+      },
+      {
+        "claim": "van der Kooij, The Septuagint of Genesis 1 and Ancient Egyptian Creation Accounts, p. 180",
+        "risk": "HIGH",
+        "reason": "This title does not match a standard known publication by Arie van der Kooij; possibly a fabricated or misremembered title."
+      },
+      {
+        "claim": "Salvesen, The Peshitta of Genesis 1-11, p. 45",
+        "risk": "HIGH",
+        "reason": "No widely known Salvesen monograph by this exact title is verifiable; likely fabricated or misattributed."
+      },
+      {
+        "claim": "Hayward, Divine Name and Presence: The Memra, p. 92",
+        "risk": "MEDIUM",
+        "reason": "Hayward's work on Memra exists (Divine Name and Presence: The Memra, 1981), but specific page reference is unverifiable in this context."
+      },
+      {
+        "claim": "characteristic of Tannaitic hermeneutical method",
+        "risk": "MEDIUM",
+        "reason": "Dating Targumic Wisdom expansion specifically to the Tannaitic period is more confident than the evidence supports; Palestinian Targum dating is contested and could be later (Amoraic)."
+      },
+      {
+        "claim": "anticipating later Memra theology",
+        "risk": "MEDIUM",
+        "reason": "The relationship between Wisdom and Memra theology is debated; presenting this as a clear trajectory overstates scholarly consensus."
+      }
+    ],
+    "safe_claims": [
+      "The LXX renders בראשית with ἐν ἀρχῇ (anarthrous)",
+      "The Peshitta renders אלהים with the singular ܐܠܗܐ",
+      "Targum Neofiti contains the expansion 'with wisdom' at Gen 1:1",
+      "John 1:1 echoes the LXX phrasing ἐν ἀρχῇ",
+      "Genesis 1:1 is textually stable across major traditions",
+      "The Hebrew בראשית is grammatically ambiguous between absolute and construct readings"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.414566+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

@@ -157,5 +157,57 @@
   "reference": "Deuteronomy",
   "cached_at": "2026-03-30T21:35:08.797817",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The overall profile of LXX Deuteronomy as relatively literal is well-established, but several specific Greek citations and characterizations contain inaccuracies or overstatements that require correction.",
+    "flagged_claims": [
+      {
+        "claim": "lxx_text: 'καὶ ἔσῃ τότε ἄνω καὶ οὐκ ἔσῃ ὑποκάτω' for Deut 28:13",
+        "risk": "HIGH",
+        "reason": "The actual Göttingen/Rahlfs LXX reads 'καταστήσαι σε κύριος ὁ θεός σου εἰς κεφαλὴν καὶ μὴ εἰς οὐράν' earlier and uses ἐπάνω/ὑποκάτω in 28:13b; the quoted form with 'τότε' appears fabricated or misremembered."
+      },
+      {
+        "claim": "lxx_text: 'καὶ ἀποστρέψει κύριος ἀπὸ θυμοῦ τῆς ὀργῆς αὐτοῦ' for Deut 13:17",
+        "risk": "MEDIUM",
+        "reason": "The standard LXX reading is 'ἀποστραφῇ κύριος ἀπὸ θυμοῦ τῆς ὀργῆς αὐτοῦ' (subjunctive, not future indicative); the quotation appears slightly inaccurate."
+      },
+      {
+        "claim": "Deut 33:5 LXX: 'καὶ ἔσται ἐν τῷ ἠγαπημένῳ ἄρχων'",
+        "risk": "MEDIUM",
+        "reason": "The standard LXX text reads 'καὶ ἔσται ἐν τῷ ἠγαπημένῳ ἄρχων' is approximate; actual Göttingen reading is 'καὶ ἔσται ἐν τῷ ἠγαπημένῳ ἄρχων συναχθέντων ἀρχόντων λαῶν' — the citation is incomplete and the framing of ἄρχων as rendering 'king' should be checked."
+      },
+      {
+        "claim": "Deut 28:27 lxx_text 'ἐν ἕλκει Αἰγυπτίου ἐν ταῖς ἕδραις'",
+        "risk": "MEDIUM",
+        "reason": "The standard LXX reads 'ἐν ἕλκει Αἰγυπτίῳ ἐν ταῖς ἕδραις' — the genitive 'Αἰγυπτίου' is likely incorrect; should be dative 'Αἰγυπτίῳ' modifying ἕλκει."
+      },
+      {
+        "claim": "comparable to Leviticus but distinct from Genesis's more flexible approach",
+        "risk": "MEDIUM",
+        "reason": "Scholarly consensus (e.g., Wevers, Aejmelaeus) typically ranks Deuteronomy as moderately literal but less wooden than some other Pentateuchal books; the specific comparative ranking with Leviticus and Genesis is an oversimplification of a contested issue."
+      },
+      {
+        "claim": "places Deuteronomy among the most literal LXX Pentateuchal books",
+        "risk": "MEDIUM",
+        "reason": "This contradicts the more common scholarly view that Deuteronomy LXX shows considerable stylistic freedom and is not typically ranked among the most literal Pentateuchal translations."
+      },
+      {
+        "claim": "literalness score of 0.88",
+        "risk": "MEDIUM",
+        "reason": "The numerical precision implies a quantitative measurement, but no such standardized metric exists in LXX scholarship; the score is the AI's own construct presented with false precision."
+      }
+    ],
+    "safe_claims": [
+      "Deut 6:4 LXX rendering 'Ἄκουε Ισραηλ κύριος ὁ θεὸς ἡμῶν κύριος εἷς ἐστιν' is accurate.",
+      "Deut 18:15's ἀναστήσει was used in Acts 3:22 in messianic application.",
+      "Deut 32:43 LXX contains expansions including reference to 'sons of God' worshiping, with parallels in 4QDeutq.",
+      "The LXX preserves the Deut 5 'observe' (φύλαξαι) vs. Exod 20 'remember' distinction in the Decalogue Sabbath command.",
+      "κύριος is the standard LXX equivalent for יהוה.",
+      "LXX Deuteronomy generally preserves anthropomorphic language including divine 'arms' and 'finger.'"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.553924+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

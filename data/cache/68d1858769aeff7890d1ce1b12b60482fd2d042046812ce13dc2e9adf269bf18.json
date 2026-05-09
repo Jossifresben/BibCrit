@@ -1,0 +1,79 @@
+{
+  "divergences": [
+    {
+      "mt_word": "לֹא כַבְּרִית אֲשֶׁר כָּרַתִּי אֶת־אֲבֹותָם (Not like the covenant which I made with their fathers)",
+      "lxx_word": "ὡς κλαυθμὸν Ιαζηρ ἀποκλαύσομαί σοι ἄμπελος Σεβημα (As the weeping of Jazer I will weep for you, O vine of Sibmah)",
+      "divergence_type": "different_vorlage",
+      "confidence": 0.95,
+      "hypotheses": [
+        {
+          "type": "different_vorlage",
+          "confidence": 0.95,
+          "explanation": "The LXX text corresponds to Jeremiah 48:32 in the MT versification, not MT Jeremiah 31:32. The LXX translator was working from a Hebrew Vorlage with a substantially different arrangement of oracles, consistent with the well-documented shorter and differently-ordered LXX recension of Jeremiah."
+        },
+        {
+          "type": "scribal_error",
+          "confidence": 0.05,
+          "explanation": "A scribal displacement in the transmission of the LXX could theoretically account for the insertion of 48:32 material here, though this is far less likely given the systematic nature of the LXX Jeremiah's divergent ordering."
+        }
+      ],
+      "dss_witness": "4QJer-b (4Q71) supports the shorter LXX-type arrangement of Jeremiah, consistent with the LXX Vorlage differing structurally from proto-MT; no fragment specifically witnesses Jer 31:32 vs. 48:32 transposition.",
+      "citations": [
+        "Tov (1999) pp. 145–167",
+        "Janzen (1973) pp. 11–35",
+        "Stulman (1986) pp. 71–90"
+      ],
+      "analysis_technical": "The LXX text provided for Jer 31:32 corresponds precisely to LXX Jer 38:32 in Rahlfs (= MT 48:32), a lament over Sibmah's vine, demonstrating the well-established phenomenon that LXX Jeremiah follows a Hebrew Vorlage approximately one-eighth shorter than the MT and with the Foreign Nation Oracles repositioned to the book's center. Tov's two-edition hypothesis posits that the proto-MT and proto-LXX Vorlagen represent distinct literary editions, not merely scribal variants. The referencing mismatch in the query itself reflects this versification divergence, which 4QJer-b corroborates by aligning with the LXX-type text.",
+      "analysis_plain": "The Greek text given here is simply from a completely different chapter of Jeremiah — the LXX version of the book arranges its contents in a different order than the Hebrew Bible, so what appears at this address in Greek is a lament about a vineyard, not the New Covenant passage at all."
+    }
+  ],
+  "summary_technical": "The MT/LXX divergence at the reference Jeremiah 31:32 is not a lexical or theological variant but a macro-structural displacement: the LXX text supplied derives from MT 48:32 (LXX 38:32), confirming Tov's two-edition hypothesis that the Vorlage of LXX Jeremiah represents an earlier, shorter, and differently-organized literary edition of the book than the proto-MT. This renders word-level comparison of the two texts at this address philologically incoherent.",
+  "summary_plain": "The Hebrew and Greek texts given here are from entirely different parts of the book of Jeremiah — the ancient Greek translation arranged Jeremiah's contents in a different order, so there is no meaningful word-for-word comparison possible between these two passages.",
+  "bibcrit_hypothesis": {
+    "title": "Versification Mismatch Reveals Edition-Level Divergence",
+    "reasoning": "The juxtaposition of MT Jer 31:32 (the New Covenant pericope) with LXX Jer 38:32 (the Sibmah vine lament) is itself a textual-critical data point: it illustrates that versification systems imposed on LXX Jeremiah by modern editors like Rahlfs, attempting alignment with MT chapter numbers, can misleadingly imply correspondence where none exists. An underexplored implication is that readers of bilingual synopses who encounter these passages side-by-side may wrongly infer theological tendenz where the difference is purely structural-editorial. This speculative observation suggests that pedagogical and database representations of MT-LXX parallels in Jeremiah require explicit edition-disambiguation flags.",
+    "plain": "When scholars or software line up the Hebrew and Greek Jeremiah by chapter number without flagging that they follow different arrangements, they can accidentally compare completely unrelated passages — this is a systemic problem in how biblical databases present this book.",
+    "confidence": 0.82
+  },
+  "discovery_ready": false,
+  "reference": "Jeremiah 31:32",
+  "cached_at": "2026-04-26T17:32:05.802006",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v2",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The core observation is correct (LXX Jeremiah has a different order and the Greek text supplied is from the Sibmah oracle), but several specific claims about versification, manuscript witness, and citations require scrutiny.",
+    "flagged_claims": [
+      {
+        "claim": "corresponds precisely to LXX Jer 38:32 in Rahlfs (= MT 48:32)",
+        "risk": "MEDIUM",
+        "reason": "The Sibmah vine lament (MT 48:32) corresponds to LXX Jer 31:32 in Rahlfs's versification (since LXX places the Oracles Against the Nations earlier, around chs. 25–31), not LXX 38:32. The analysis appears to have the LXX chapter number wrong, which ironically undermines its own point about versification."
+      },
+      {
+        "claim": "4QJer-b (4Q71) supports the shorter LXX-type arrangement of Jeremiah",
+        "risk": "MEDIUM",
+        "reason": "4QJerb is generally cited as supporting the shorter LXX-type *text* (notably in Jer 9–10), but it is a small fragment and does not directly attest the rearrangement of the Oracles Against the Nations; conflating shorter text with rearranged order overstates the evidence."
+      },
+      {
+        "claim": "Stulman (1986) pp. 71–90",
+        "risk": "MEDIUM",
+        "reason": "Stulman's 1986 work (The Other Text of Jeremiah / The Prose Sermons) exists, but the specific page range is not verified and may be fabricated; citations should be checked."
+      },
+      {
+        "claim": "approximately one-eighth shorter",
+        "risk": "MEDIUM",
+        "reason": "The standard figure cited in scholarship (Tov, Janzen) is roughly one-seventh (about 2,700 words) shorter; 'one-eighth' understates the conventional estimate."
+      }
+    ],
+    "safe_claims": [
+      "The Greek text supplied is the Sibmah vine lament, not the New Covenant passage",
+      "LXX Jeremiah follows a shorter and differently-ordered Hebrew Vorlage than the MT",
+      "Tov's two-edition hypothesis posits distinct literary editions behind proto-MT and proto-LXX Jeremiah",
+      "The Oracles Against the Nations are positioned differently in LXX vs MT Jeremiah",
+      "Word-level comparison at this reference is not philologically meaningful given the displacement"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.664334+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

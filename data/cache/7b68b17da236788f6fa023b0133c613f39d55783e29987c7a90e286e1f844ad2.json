@@ -162,5 +162,53 @@
   "discovery_ready": false,
   "cached_at": "2026-03-30T23:35:07.489428",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "HIGH",
+    "confidence_note": "The analysis presents well-established patristic uses of Isaiah 7:14 with generally accurate citations, though some specific chapter references and quoted Greek/Latin forms warrant verification.",
+    "flagged_claims": [
+      {
+        "claim": "Eusebius uses 'λήψεται' (shall receive/conceive) found in some LXX manuscripts instead of 'ἕξει'",
+        "risk": "MEDIUM",
+        "reason": "The specific verb form attributed to Eusebius's Demonstratio Evangelica VII.1 should be verified; Eusebius's actual citations vary and this specific lexical claim could be inaccurate."
+      },
+      {
+        "claim": "Cyril of Jerusalem, Catechetical Lectures XII.21",
+        "risk": "MEDIUM",
+        "reason": "While Cyril does discuss Isaiah 7:14 in Lecture XII (on the incarnation), the specific section number 21 should be verified; the citation is plausible but the precise locus needs checking."
+      },
+      {
+        "claim": "Chrysostom...shows no awareness of or interest in Hebrew textual issues",
+        "risk": "MEDIUM",
+        "reason": "This is an argument from silence; Chrysostom in Homily 5 on Matthew (not 4) actually does engage the question of 'virgin' vs. 'young woman' against Jewish interpreters, contradicting the claim."
+      },
+      {
+        "claim": "Homilies on Matthew, Hom. 4.2–3",
+        "risk": "MEDIUM",
+        "reason": "Chrysostom's main treatment of Isaiah 7:14 is in Homily 5 on Matthew, not Homily 4; the chapter reference appears incorrect."
+      },
+      {
+        "claim": "Tertullian...noting that Jewish interpreters of his day read 'adolescentula' (young woman)",
+        "risk": "MEDIUM",
+        "reason": "The specific Latin term 'adolescentula' attributed to Tertullian's report of Jewish readings should be verified; Tertullian's Adversus Judaeos 9 discusses the issue but the precise vocabulary attribution needs checking."
+      },
+      {
+        "claim": "Justin's citation precisely matches the LXX reading...and uses the plural 'they shall call' (καλέσουσι)",
+        "risk": "MEDIUM",
+        "reason": "LXX Isaiah 7:14 actually reads 'καλέσεις' (singular, you shall call) in the standard text, not plural 'καλέσουσι'; Matthew 1:23 has 'καλέσουσιν'. The claim that LXX has the plural is textually inaccurate."
+      }
+    ],
+    "safe_claims": [
+      "LXX reads 'parthenos' while MT reads 'almah'",
+      "Justin Martyr discusses Isaiah 7:14 extensively in Dialogue with Trypho (chs. 43, 66-67, 71, 84)",
+      "Irenaeus discusses Isaiah 7:14 in Against Heresies III.21",
+      "Origen knew via Hexapla that Aquila, Symmachus, and Theodotion rendered 'almah' as 'neanis'",
+      "Jerome's Vulgate translates as 'virgo' while his commentary acknowledges 'almah' semantic range",
+      "Origen defends LXX 'parthenos' against Celsus in Contra Celsum I.34-35",
+      "The patristic tradition uniformly transmits the 'parthenos/virgo' reading"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.424442+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

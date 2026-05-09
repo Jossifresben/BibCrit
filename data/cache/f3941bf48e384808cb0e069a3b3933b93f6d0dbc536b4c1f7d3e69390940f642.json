@@ -133,5 +133,47 @@
   "reference": "Isaiah",
   "cached_at": "2026-03-30T20:54:47.420763",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis is largely grounded in observable textual data with accurate Greek and Hebrew citations, but contains some questionable intertextual claims and one inaccurate cross-reference that need qualification.",
+    "flagged_claims": [
+      {
+        "claim": "may evoke Num 24:17's messianic 'flower' (ἄνθος in LXX)",
+        "risk": "HIGH",
+        "reason": "Num 24:17 LXX does not read ἄνθος; it reads ἄνθρωπος ('a man shall rise out of Israel') or ἀνατελεῖ ἄστρον ('a star shall rise'). The claim that ἄνθος appears in Num 24:17 LXX appears to be fabricated or confused with a different verse."
+      },
+      {
+        "claim": "Num 24:17 LXX (ἄνθος ἐξ Ισραηλ)",
+        "risk": "HIGH",
+        "reason": "This specific Greek citation is incorrect. Num 24:17 LXX reads 'ἀνατελεῖ ἄστρον ἐξ Ιακωβ καὶ ἀναστήσεται ἄνθρωπος ἐξ Ισραηλ' — there is no ἄνθος in this verse."
+      },
+      {
+        "claim": "placing LXX-Isaiah among the freer translation units alongside Job and Proverbs",
+        "risk": "MEDIUM",
+        "reason": "While LXX-Isaiah is recognized as relatively free, scholarly consensus typically classifies it as less free than LXX-Job or LXX-Proverbs; this comparison overstates its paraphrastic character."
+      },
+      {
+        "claim": "evokes divine council imagery and angelomorphic Christology",
+        "risk": "MEDIUM",
+        "reason": "Attributing 'angelomorphic Christology' to a pre-Christian Jewish translator is anachronistic; the term Christology presupposes Christian theological framework not present in the original LXX-Isaiah translation context."
+      },
+      {
+        "claim": "ἕξει for הרה",
+        "risk": "MEDIUM",
+        "reason": "The Hebrew הָרָה is a stative adjective/participle ('pregnant'), and the LXX rendering is ἐν γαστρὶ ἕξει ('will conceive/have in womb') as a future periphrastic — the lexical mapping presented is somewhat oversimplified, though the broader observation is correct."
+      }
+    ],
+    "safe_claims": [
+      "LXX Isa 7:14 renders עלמה as παρθένος",
+      "LXX Isa 9:6 condenses the throne names into 'Μεγάλης βουλῆς Ἄγγελος'",
+      "LXX Isa 11:1 uses ῥίζα for both גֵּזַע and שָׁרָשׁ, collapsing the distinction",
+      "ἄνθος is used for נֵצֶר in Isa 11:1",
+      "The translator shows interpretive freedom rather than mechanical equivalence",
+      "LXX-Isaiah exhibits messianic heightening as a recognized scholarly observation"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.634318+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

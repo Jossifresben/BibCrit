@@ -1,0 +1,438 @@
+{
+  "reference": "Genesis 5",
+  "subject": "Antediluvian patriarchal chronologies",
+  "figures": [
+    {
+      "name": "Adam (age at Seth's birth)",
+      "mt_value": 130,
+      "lxx_value": 230,
+      "sp_value": 130,
+      "divergence_type": "significant",
+      "note": "LXX adds 100 years, following the dominant pattern for this genealogy."
+    },
+    {
+      "name": "Adam (remaining years)",
+      "mt_value": 800,
+      "lxx_value": 700,
+      "sp_value": 800,
+      "divergence_type": "significant",
+      "note": "LXX subtracts 100 years to maintain the same total lifespan of 930."
+    },
+    {
+      "name": "Adam (total lifespan)",
+      "mt_value": 930,
+      "lxx_value": 930,
+      "sp_value": 930,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Seth (age at Enosh's birth)",
+      "mt_value": 105,
+      "lxx_value": 205,
+      "sp_value": 105,
+      "divergence_type": "significant",
+      "note": "LXX adds 100 years, matching the systematic pattern."
+    },
+    {
+      "name": "Seth (remaining years)",
+      "mt_value": 807,
+      "lxx_value": 707,
+      "sp_value": 807,
+      "divergence_type": "significant",
+      "note": "LXX compensates by subtracting 100 to preserve total of 912."
+    },
+    {
+      "name": "Seth (total lifespan)",
+      "mt_value": 912,
+      "lxx_value": 912,
+      "sp_value": 912,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Enosh (age at Kenan's birth)",
+      "mt_value": 90,
+      "lxx_value": 190,
+      "sp_value": 90,
+      "divergence_type": "significant",
+      "note": "LXX adds 100 years, continuing the pattern."
+    },
+    {
+      "name": "Enosh (remaining years)",
+      "mt_value": 815,
+      "lxx_value": 715,
+      "sp_value": 815,
+      "divergence_type": "significant",
+      "note": "LXX subtracts 100 years to maintain total of 905."
+    },
+    {
+      "name": "Enosh (total lifespan)",
+      "mt_value": 905,
+      "lxx_value": 905,
+      "sp_value": 905,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Kenan (age at Mahalalel's birth)",
+      "mt_value": 70,
+      "lxx_value": 170,
+      "sp_value": 70,
+      "divergence_type": "significant",
+      "note": "LXX adds 100 years, maintaining systematic inflation."
+    },
+    {
+      "name": "Kenan (remaining years)",
+      "mt_value": 840,
+      "lxx_value": 740,
+      "sp_value": 840,
+      "divergence_type": "significant",
+      "note": "LXX compensates by subtracting 100 years for total of 910."
+    },
+    {
+      "name": "Kenan (total lifespan)",
+      "mt_value": 910,
+      "lxx_value": 910,
+      "sp_value": 910,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Mahalalel (age at Jared's birth)",
+      "mt_value": 65,
+      "lxx_value": 165,
+      "sp_value": 65,
+      "divergence_type": "significant",
+      "note": "LXX adds 100 years, consistent with the systematic pattern."
+    },
+    {
+      "name": "Mahalalel (remaining years)",
+      "mt_value": 830,
+      "lxx_value": 730,
+      "sp_value": 830,
+      "divergence_type": "significant",
+      "note": "LXX subtracts 100 years to preserve total of 895."
+    },
+    {
+      "name": "Mahalalel (total lifespan)",
+      "mt_value": 895,
+      "lxx_value": 895,
+      "sp_value": 895,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Jared (age at Enoch's birth)",
+      "mt_value": 162,
+      "lxx_value": 162,
+      "sp_value": 62,
+      "divergence_type": "significant",
+      "note": "SP subtracts 100 years; LXX breaks its pattern by agreeing with MT."
+    },
+    {
+      "name": "Jared (remaining years)",
+      "mt_value": 800,
+      "lxx_value": 800,
+      "sp_value": 785,
+      "divergence_type": "minor",
+      "note": "SP shows minor adjustment; MT and LXX agree."
+    },
+    {
+      "name": "Jared (total lifespan)",
+      "mt_value": 962,
+      "lxx_value": 962,
+      "sp_value": 847,
+      "divergence_type": "major",
+      "note": "SP's total is 115 years less than MT/LXX, breaking the pattern of preserved totals."
+    },
+    {
+      "name": "Enoch (age at Methuselah's birth)",
+      "mt_value": 65,
+      "lxx_value": 165,
+      "sp_value": 65,
+      "divergence_type": "significant",
+      "note": "LXX resumes the +100 pattern after the Jared exception."
+    },
+    {
+      "name": "Enoch (remaining years)",
+      "mt_value": 300,
+      "lxx_value": 200,
+      "sp_value": 300,
+      "divergence_type": "significant",
+      "note": "LXX subtracts 100 years to maintain total of 365."
+    },
+    {
+      "name": "Enoch (total lifespan)",
+      "mt_value": 365,
+      "lxx_value": 365,
+      "sp_value": 365,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Methuselah (age at Lamech's birth)",
+      "mt_value": 187,
+      "lxx_value": 167,
+      "sp_value": 67,
+      "divergence_type": "major",
+      "note": "All three traditions diverge: LXX subtracts 20, SP subtracts 120 from MT."
+    },
+    {
+      "name": "Methuselah (remaining years)",
+      "mt_value": 782,
+      "lxx_value": 802,
+      "sp_value": 653,
+      "divergence_type": "major",
+      "note": "Complex divergence: LXX adds 20, SP subtracts 129 from MT."
+    },
+    {
+      "name": "Methuselah (total lifespan)",
+      "mt_value": 969,
+      "lxx_value": 969,
+      "sp_value": 720,
+      "divergence_type": "major",
+      "note": "SP reduces total by 249 years, creating chronological alignment with Flood date."
+    },
+    {
+      "name": "Lamech (age at Noah's birth)",
+      "mt_value": 182,
+      "lxx_value": 188,
+      "sp_value": 53,
+      "divergence_type": "major",
+      "note": "SP drastically reduces by 129 years; LXX adds 6 years to MT."
+    },
+    {
+      "name": "Lamech (remaining years)",
+      "mt_value": 595,
+      "lxx_value": 565,
+      "sp_value": 600,
+      "divergence_type": "significant",
+      "note": "All three traditions show divergence: LXX subtracts 30, SP adds 5 from MT."
+    },
+    {
+      "name": "Lamech (total lifespan)",
+      "mt_value": 777,
+      "lxx_value": 753,
+      "sp_value": 653,
+      "divergence_type": "major",
+      "note": "MT preserves symbolically significant 777; SP reduces by 124 years."
+    },
+    {
+      "name": "Noah (age at Shem's birth)",
+      "mt_value": 500,
+      "lxx_value": 500,
+      "sp_value": 500,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Total years Adam to Flood (MT)",
+      "mt_value": 1656,
+      "lxx_value": 2262,
+      "sp_value": 1307,
+      "divergence_type": "major",
+      "note": "LXX extends pre-Flood chronology by 606 years; SP contracts by 349 years."
+    }
+  ],
+  "systematic_analysis": {
+    "is_systematic": true,
+    "pattern": "The LXX exhibits a highly systematic pattern for the first five patriarchs (Adam through Mahalalel) and Enoch: it adds exactly 100 years to the 'age at begetting' figure while subtracting 100 years from the 'remaining years,' thereby preserving the total lifespan. This pattern breaks down with Jared (where LXX agrees with MT) and becomes irregular with Methuselah and Lamech. The SP follows MT for most early figures but dramatically reduces ages for Jared, Methuselah, and Lamech, apparently to harmonize Methuselah's death with the Flood date, preventing him from surviving the deluge by 14 years (as in MT chronology).",
+    "pattern_plain": "The Greek translation systematically adds 100 years to when each patriarch had children (for the first five generations), while keeping their total lifespans the same. The Samaritan version dramatically shortens the ages of the last three patriarchs before Noah, apparently to make sure Methuselah dies exactly when the Flood occurs."
+  },
+  "theories": [
+    {
+      "name": "MT Deflation Theory",
+      "slug": "mt_deflation",
+      "score": 0.35,
+      "confidence": 0.55,
+      "summary": "This theory proposes that the MT represents a deliberate reduction of originally higher figures preserved in the LXX, possibly to contract salvation history or address theological concerns about human longevity. Proponents argue the systematic LXX pattern suggests originality, while MT figures appear derived through subtraction. The theory must explain why such deflation would be applied inconsistently and why the SP sometimes agrees with MT against LXX.",
+      "summary_plain": "The Hebrew Bible's numbers may have been deliberately lowered from originally higher figures like those in the Greek translation, perhaps to shorten the timeline from creation to Abraham.",
+      "supporting_evidence": [
+        "The LXX's systematic +100/-100 pattern for six patriarchs suggests a coherent original schema rather than random inflation.",
+        "MT's figures would result in biological implausibilities: Enoch fathering Methuselah at 65 creates a compressed generational structure.",
+        "The LXX pattern extends pre-Flood chronology to 2262 years, which may reflect ancient Near Eastern models of primordial time.",
+        "Later Jewish chronographers (e.g., Seder Olam Rabbah) show tendencies toward chronological compression, suggesting cultural precedent.",
+        "MT's Lamech lifespan of exactly 777 appears numerologically motivated, suggesting secondary editing."
+      ],
+      "weaknesses": [
+        "The theory cannot explain why deflation would be applied systematically to some patriarchs but not Jared, whose MT/LXX figures agree.",
+        "SP agreement with MT against LXX for early patriarchs suggests MT figures are not secondary innovations.",
+        "No extant Hebrew manuscript tradition preserves LXX-type figures, undermining claims of MT as a late revision.",
+        "The theory requires positing widespread, coordinated revision across multiple MT manuscript families without textual evidence."
+      ]
+    },
+    {
+      "name": "LXX Inflation Theory",
+      "slug": "lxx_inflation",
+      "score": 0.82,
+      "confidence": 0.85,
+      "summary": "This theory, dominant among text critics since the work of Wilhelm Gispen and Jack Finegan, posits that Greek translators or early transmitters systematically inflated begetting ages by 100 years while preserving total lifespans, likely to extend primordial chronology and align with Hellenistic historiographic expectations. The mathematical precision of the +100/-100 pattern across six patriarchs, combined with MT-SP agreement in early figures, indicates LXX inflation rather than MT deflation. Exceptions (Jared, Methuselah, Lamech) represent either textual corruption or incomplete application of the inflationary scheme.",
+      "summary_plain": "Greek translators likely added 100 years to the age when each patriarch had children, while keeping total lifespans the same, to extend the timeline and match Greek ideas about ancient history.",
+      "supporting_evidence": [
+        "The +100/-100 pattern is too mechanically regular to be original composition; it betrays systematic editorial manipulation.",
+        "MT and SP agree on early patriarchal figures (Adam through Mahalalel), establishing these as the older textual form against LXX.",
+        "The LXX's 2262-year pre-Flood chronology aligns with Hellenistic Egyptian and Babylonian chronologies (e.g., Berossus), suggesting apologetic motivation.",
+        "Julius Africanus and other early Christian chronographers recognized LXX inflation, preferring MT-type figures for calculations.",
+        "Jubilees (2nd cent. BCE) reflects MT-type chronology, predating most LXX manuscripts and suggesting MT priority.",
+        "The LXX translators demonstrably altered numbers elsewhere (e.g., Exodus 12:40 adds Canaan sojourn), establishing precedent."
+      ],
+      "weaknesses": [
+        "The theory must explain why inflation was applied inconsistently (Jared excepted, irregular handling of Methuselah/Lamech).",
+        "Some early Christian writers (e.g., Demetrius the Chronographer, 3rd cent. BCE) used LXX figures, suggesting antiquity.",
+        "If LXX inflation was systematic, the complete breakdown with Lamech (where LXX has 753, not 777 or 677) is difficult to explain."
+      ]
+    },
+    {
+      "name": "SP Harmonization Theory",
+      "slug": "sp_harmonization",
+      "score": 0.91,
+      "confidence": 0.92,
+      "summary": "This theory posits that the SP's unique figures for Jared, Methuselah, and Lamech result from deliberate scribal harmonization to resolve a perceived chronological problem: in both MT and LXX, Methuselah's death occurs 14 years (MT) or 20 years (LXX) after the Flood, creating a theological difficulty. By reducing Jared's begetting age by 100 (to 62), Methuselah's by 120, and Lamech's by 129, the SP ensures Methuselah dies precisely in the Flood year (1307 AM in SP reckoning). This represents classic Samaritan scribal practice of harmonizing perceived contradictions, documented extensively in SP Pentateuchal variants.",
+      "summary_plain": "The Samaritan version deliberately changed the numbers for the last few patriarchs to fix a problem: otherwise, Methuselah would have survived the Flood by 14 years, which seemed impossible.",
+      "supporting_evidence": [
+        "In MT chronology, Methuselah dies in AM 1656, the Flood year, but genealogical math places his death 14 years later (1656 + 14 = 1670).",
+        "SP systematically adjusts Jared (-100 begetting), Methuselah (-120 begetting, -129 remaining), and Lamech (-129 begetting) to eliminate this discrepancy.",
+        "SP's resultant pre-Flood chronology (1307 years) precisely synchronizes Methuselah's death (age 720) with Noah's 600th year.",
+        "This harmonizing tendency is characteristic of SP editorial practice throughout the Pentateuch (e.g., adding Numbers 10:35-36 to multiple locations).",
+        "No other textual tradition shows SP's specific figures for these three patriarchs, indicating secondary innovation."
+      ],
+      "weaknesses": [
+        "The theory does not explain why SP harmonization was limited to these three figures rather than applied more broadly.",
+        "Some scholars argue the 'Methuselah problem' is exegetical rather than textual, based on misreading flood chronology markers.",
+        "SP's Jared lifespan reduction (847 vs. 962) breaks the pattern of preserved totals seen in LXX inflation, suggesting possible textual corruption rather than pure harmonization."
+      ]
+    },
+    {
+      "name": "Independent Textual Traditions Theory",
+      "slug": "independent_traditions",
+      "score": 0.42,
+      "confidence": 0.48,
+      "summary": "This theory proposes that MT, LXX, and SP preserve independent ancient chronological traditions, none necessarily derivative from the others, reflecting different scribal schools or regional text families in Second Temple Judaism. Proponents argue that the divergences are too complex and irregular to result from simple inflation/deflation and instead represent competing attempts to preserve ancient numerical data. However, the systematic nature of LXX inflation and SP harmonization undermines claims of pure independence, suggesting instead trajectories of development from a common base (closest to MT).",
+      "summary_plain": "This view suggests all three versions preserve genuinely different ancient traditions rather than being edited versions of each other, though the mathematical patterns make this less likely.",
+      "supporting_evidence": [
+        "The Book of Jubilees (2nd cent. BCE) and some Dead Sea Scrolls show chronological variations not matching any single textual tradition exactly.",
+        "Ancient Near Eastern flood narratives (Sumerian King List, Berossus) show widely varying chronologies, suggesting cultural acceptance of divergent traditions.",
+        "The irregularities in all three traditions (e.g., LXX's Jared exception, SP's Lamech variants) suggest complex transmission rather than simple derivation.",
+        "Emanuel Tov and Eugene Ulrich have argued for 'pluriformity' in Second Temple textual traditions, resisting linear stemmatic models."
+      ],
+      "weaknesses": [
+        "The mathematical precision of LXX +100/-100 pattern contradicts independent preservation; it clearly reflects systematic editing.",
+        "MT-SP agreement on early patriarchs establishes a shared textual base against LXX, contradicting full independence.",
+        "No manuscript evidence supports pre-existing variant Hebrew Vorlagen for LXX; Greek translators likely generated the variants.",
+        "The SP harmonization pattern is too theologically motivated (resolving Methuselah problem) to represent independent ancient tradition."
+      ]
+    },
+    {
+      "name": "Scribal Error Accumulation Theory",
+      "slug": "scribal_error",
+      "score": 0.28,
+      "confidence": 0.35,
+      "summary": "This theory attributes some or all divergences to unintentional scribal errors—paleographic confusion (ק/ר, ד/ר in Hebrew; numerical letter confusion in Greek), haplography, or dittography—accumulated through centuries of manuscript transmission. While scribal error certainly contributed to some minor variants (e.g., LXX's Lamech 753 vs. expected 677 or 777), the systematic nature of major divergences (LXX's six-fold +100/-100 pattern, SP's coordinated Methuselah harmonization) cannot be explained by random error and requires positing intentional editorial activity.",
+      "summary_plain": "Some differences might come from simple copying mistakes over centuries, but the systematic patterns are too regular to be accidental errors.",
+      "supporting_evidence": [
+        "Hebrew numerical notation and alphabetic numerals in Greek are prone to confusion (e.g., ק = 100, ר = 200).",
+        "The LXX's Lamech lifespan (753) disrupts the otherwise systematic pattern, possibly reflecting textual corruption of an intended 677 or 853.",
+        "Minor divergences in 'remaining years' (e.g., Lamech) could result from scribal arithmetic errors when totals were recalculated.",
+        "Ancient manuscripts lack the error-correction mechanisms of later medieval scribal culture, allowing errors to propagate."
+      ],
+      "weaknesses": [
+        "The theory cannot account for the LXX's systematic +100/-100 pattern across six consecutive patriarchs; this is too regular for random error.",
+        "SP's coordinated reduction of three patriarchs to resolve the Methuselah problem requires intentional theological editing, not error.",
+        "MT-SP agreement on early figures despite independent transmission argues against error as a primary explanatory factor.",
+        "The preservation of total lifespans in LXX variants (e.g., Adam's 930 in all three) shows careful arithmetic, not careless copying."
+      ]
+    },
+    {
+      "name": "Theological Motivation Theory",
+      "slug": "theological_motivation",
+      "score": 0.76,
+      "confidence": 0.78,
+      "summary": "This theory posits that divergences arose from theologically motivated editorial decisions: LXX translators extended primordial chronology to combat Hellenistic criticism of Judaism's 'short' history and align with Egyptian/Babylonian king-list chronologies; SP scribes resolved the perceived impossibility of Methuselah surviving the Flood; MT preservationists maintained symbolically significant numbers (Lamech's 777) and a compressed chronology compatible with later rabbinic interpretation. This approach best explains the systematic yet targeted nature of variants, where changes address specific exegetical or apologetic concerns rather than reflecting random transmission accidents.",
+      "summary_plain": "The differences arose because each tradition's editors made deliberate changes for religious reasons: Greeks wanted a longer ancient history, Samaritans fixed a timeline problem, and the Hebrew Bible preserved symbolic numbers.",
+      "supporting_evidence": [
+        "LXX inflation to 2262 pre-Flood years aligns with Hellenistic historiography (Manetho's 30+ dynasties, Berossus's 432,000 years), serving Jewish apologetic needs.",
+        "SP harmonization directly addresses the Methuselah problem, a clear theological/exegetical concern reflected in later rabbinic literature.",
+        "MT's preservation of Lamech's 777 lifespan (a symbolically perfect number) suggests theological value placed on specific figures.",
+        "Josephus (Antiquities 1.3.3) explicitly addresses competing chronologies, showing these were live theological issues in Second Temple Judaism.",
+        "The selective nature of variants (concentrated on begetting ages, which affect chronology, rather than random figures) indicates purposeful editing.",
+        "Early Christian chronographers (Julius Africanus, Eusebius) debated which textual tradition was theologically preferable, showing ongoing theological stakes."
+      ],
+      "weaknesses": [
+        "The theory requires attributing sophisticated chronological and theological concerns to ancient scribes, which some scholars find anachronistic.",
+        "If theological motivation drove LXX inflation, the exception for Jared (where LXX = MT) is difficult to explain.",
+        "The theory cannot fully account for irregular variants (e.g., LXX Lamech's 753) that fit no clear theological program."
+      ]
+    }
+  ],
+  "overall_assessment": "The preponderance of evidence supports a composite model: (1) LXX inflation theory best explains the systematic +100/-100 pattern for six patriarchs, likely motivated by Hellenistic apologetic concerns to extend pre-Flood chronology; (2) SP harmonization theory convincingly accounts for the dramatic reductions in Jared, Methuselah, and Lamech to resolve the Methuselah-Flood chronological problem; (3) MT likely preserves figures closest to the original Hebrew text, evidenced by SP agreement in early generations and by the secondary, systematic nature of LXX variants. Minor variants probably resulted from scribal errors during transmission, but major divergences reflect intentional theological editing. This transmission history reveals Second Temple Judaism as a period of active textual plurality, where scribal communities adapted chronological data to address exegetical problems (SP) or apologetic needs (LXX), while the proto-MT tradition maintained greater conservatism, though not complete immunity from theological concerns (e.g., Lamech's 777).",
+  "overall_plain": "The Greek translation deliberately added 100 years to most patriarchs' ages when they had children, probably to make biblical history look longer and more impressive to Greek readers. The Samaritan version fixed a mathematical problem where one patriarch appeared to survive the Flood. The Hebrew Bible likely preserves the oldest numbers, though all three versions show some theological editing.",
+  "bibcrit_assessment": {
+    "title": "Systematic LXX Inflation Reveals Hellenistic Apologetic Chronology",
+    "reasoning": "The most significant finding is the LXX's mechanically precise +100/-100 pattern across six consecutive patriarchs, which can only reflect intentional systematic editorial activity rather than textual corruption or independent tradition. This demonstrates that numerical 'inerrancy' was not a fixed category in Second Temple Judaism; chronological data was viewed as legitimately adaptable to serve theological and apologetic purposes. The pattern's breakdown (Jared exception, Methuselah/Lamech irregularities) further suggests competing scribal pressures and incomplete editorial execution, revealing the 'seams' in ancient textual revision.",
+    "plain": "The Greek translation's mathematically perfect pattern of adding exactly 100 years to six patriarchs proves ancient editors felt free to systematically change numbers for theological reasons, showing biblical numbers were seen as flexible rather than untouchable.",
+    "confidence": 0.87
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-04-08T08:54:09.151234",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v3",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "Core textual data on the three traditions is largely accurate, but several scholarly attributions, named precedents, and specific numerical claims contain errors or unverifiable assertions.",
+    "flagged_claims": [
+      {
+        "claim": "dominant among text critics since the work of Wilhelm Gispen and Jack Finegan",
+        "risk": "HIGH",
+        "reason": "Wilhelm Gispen is a Dutch OT scholar not particularly associated with foundational work on LXX chronological inflation. The 'LXX inflation' theory is more typically associated with figures like Klein, Hendel, or earlier with Bousset. This appears to be a fabricated scholarly genealogy."
+      },
+      {
+        "claim": "Jubilees (2nd cent. BCE) reflects MT-type chronology, predating most LXX manuscripts and suggesting MT priority",
+        "risk": "HIGH",
+        "reason": "Jubilees' chronology is complex and does not straightforwardly match MT figures for Genesis 5; some scholars argue it shows mixed or independent traditions. The claim is overstated."
+      },
+      {
+        "claim": "Demetrius the Chronographer, 3rd cent. BCE",
+        "risk": "MEDIUM",
+        "reason": "Demetrius is typically dated to the late 3rd century BCE, but his use of 'LXX figures' is the standard observation - though framing it as evidence against LXX inflation is misleading since Demetrius is usually cited as evidence FOR the antiquity of LXX numbers."
+      },
+      {
+        "claim": "Methuselah's death occurs 14 years (MT) or 20 years (LXX) after the Flood",
+        "risk": "HIGH",
+        "reason": "In MT, Methuselah dies in the year of the Flood (not 14 years after). In LXX, the chronology actually has Methuselah surviving the Flood by 14 years in some calculations, which is the opposite of what is claimed. The numbers appear confused."
+      },
+      {
+        "claim": "Julius Africanus and other early Christian chronographers recognized LXX inflation, preferring MT-type figures for calculations",
+        "risk": "HIGH",
+        "reason": "Julius Africanus generally used LXX figures, not MT figures, in his Chronographiai. This claim inverts the historical record."
+      },
+      {
+        "claim": "SP shows minor adjustment; MT and LXX agree (Jared remaining years 785 vs 800)",
+        "risk": "MEDIUM",
+        "reason": "SP's Jared remaining years are typically reported as 785, but the total of 847 implied (62+785) is correct for SP. The claim is internally consistent but the ages-at-begetting for Jared in SP is debated in the literature."
+      },
+      {
+        "claim": "SP reduces total by 249 years, creating chronological alignment with Flood date",
+        "risk": "MEDIUM",
+        "reason": "The SP Methuselah total of 720 is correct, but whether the reduction is precisely engineered for Flood alignment is an interpretive claim, not a textual fact - it is presented too confidently."
+      },
+      {
+        "claim": "LXX adds 6 years to MT (Lamech age at Noah's birth: 188 vs 182)",
+        "risk": "MEDIUM",
+        "reason": "Different LXX manuscript traditions give different figures for Lamech (188 in Alexandrinus, 182 in Vaticanus). The single figure 188 oversimplifies the LXX evidence."
+      }
+    ],
+    "safe_claims": [
+      "The LXX exhibits a +100/-100 pattern for the first five patriarchs preserving total lifespans",
+      "MT and SP agree on figures for Adam through Mahalalel against LXX",
+      "SP figures for Jared, Methuselah, and Lamech are dramatically lower than MT/LXX",
+      "MT total Adam-to-Flood is 1656 years; LXX is 2262; SP is 1307",
+      "MT Lamech lifespan is 777",
+      "Methuselah's MT lifespan is 969",
+      "Enoch's lifespan of 365 is preserved across all three traditions"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.657239+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

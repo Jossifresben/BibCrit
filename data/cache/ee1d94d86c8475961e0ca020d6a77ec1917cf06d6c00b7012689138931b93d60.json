@@ -170,5 +170,74 @@
   "reference": "Deuteronomy",
   "cached_at": "2026-03-31T00:04:21.570305",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The textual observations are largely accurate and reflect well-known scholarly discussions, but several specific page-numbered citations and journal references appear fabricated or unverifiable, and some claims about Targum readings need verification.",
+    "flagged_claims": [
+      {
+        "claim": "Wevers, Notes on the Greek Text of Deuteronomy, p. 77",
+        "risk": "MEDIUM",
+        "reason": "Wevers' Notes does discuss 4:19, but the specific page number cannot be verified and may be fabricated; AI commonly invents precise page references."
+      },
+      {
+        "claim": "Skehan, A Fragment of the Song of Moses, JBL 1954",
+        "risk": "HIGH",
+        "reason": "Skehan's famous article on 4QDeut(j)/Song of Moses was published in BASOR 136 (1954), not JBL. The journal attribution appears incorrect."
+      },
+      {
+        "claim": "Skehan, The Structure of the Song of Moses, CBQ 1951",
+        "risk": "HIGH",
+        "reason": "Skehan published 'The Structure of the Song of Moses in Deuteronomy (Deut. 32:1-43)' in CBQ 13 (1951), so this is plausible, but it should be verified; AI often confuses Skehan's multiple essays on this topic."
+      },
+      {
+        "claim": "Kasher, Targum Onqelos on Deuteronomy 26, Tarbiz 1982",
+        "risk": "HIGH",
+        "reason": "This specific Tarbiz article cannot be readily verified and the title/year appear potentially fabricated."
+      },
+      {
+        "claim": "Schaper, Eschatology in the Greek Psalter, p. 89",
+        "risk": "MEDIUM",
+        "reason": "Schaper's monograph exists (1995) but treats Psalms, not Deuteronomy 32; citation for a Deut 32:43 discussion is questionable and the page number unverifiable."
+      },
+      {
+        "claim": "van der Kooij, The Ending of the Song of Moses, p. 271",
+        "risk": "MEDIUM",
+        "reason": "Van der Kooij has written on related topics but this specific essay title and page reference cannot be confirmed and may be fabricated."
+      },
+      {
+        "claim": "MT (confirmed by 4QDeut) reads 'sons of God/El'",
+        "risk": "MEDIUM",
+        "reason": "Imprecise: MT actually reads 'sons of Israel' (bənê yiśrāʾēl); it is 4QDeut(j) that reads 'sons of God/El,' supporting the LXX Vorlage. The analysis conflates MT and Qumran readings."
+      },
+      {
+        "claim": "expansion (confirmed by 4QDeut) likely reflects pre-LXX liturgical development",
+        "risk": "MEDIUM",
+        "reason": "4QDeut(q) supports parts of the LXX expansion at 32:43 but not all eight cola; the claim that Qumran 'confirms' the full expansion overstates the evidence."
+      },
+      {
+        "claim": "Le Déaut, Targum du Pentateuque, vol. 5, p. 332",
+        "risk": "MEDIUM",
+        "reason": "Le Déaut's Targum du Pentateuque has 4 volumes plus an index volume; the page reference is unverifiable and volume numbering may be incorrect."
+      },
+      {
+        "claim": "ἠγαπημένῳ (beloved) for Jeshurun may invoke Davidic covenant language (beloved = David, cf. 2 Sam 12:25)",
+        "risk": "MEDIUM",
+        "reason": "Speculative connection; Jedidiah in 2 Sam 12:25 uses different terminology, and ἠγαπημένος is the standard LXX rendering for Jeshurun without necessary Davidic-messianic overtones."
+      }
+    ],
+    "safe_claims": [
+      "LXX 4:19 uses ἔδειξεν where MT has ḥālaq",
+      "Targum Onqelos systematically inserts Memra to mediate divine action",
+      "MT Deut 32:8 reads 'sons of Israel' while LXX reads 'angels of God' and 4QDeut(j) reads 'sons of God/El'",
+      "LXX Deut 32:43 is significantly longer than MT with additional cola involving heavens and angels",
+      "Targumim render 'wandering Aramean' in Deut 26:5 as Laban seeking to destroy Jacob",
+      "Targum at Deut 33:2 introduces angelic mediation of Torah",
+      "Targum Pseudo-Jonathan at Deut 32:39 expands with 'world to come' resurrection language",
+      "LXX Deut 33:5 uses ἄρχων rather than βασιλεύς"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.334869+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

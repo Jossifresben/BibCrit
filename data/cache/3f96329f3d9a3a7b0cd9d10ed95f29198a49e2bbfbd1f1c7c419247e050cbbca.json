@@ -218,5 +218,72 @@
   "discovery_ready": false,
   "cached_at": "2026-03-30T23:13:02.515194",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis correctly identifies the well-known systematic 100-year pattern but contains several specific numerical errors in the data table and some questionable historical claims.",
+    "flagged_claims": [
+      {
+        "claim": "remaining years also differ (MT 403, LXX 430, SP 303)",
+        "risk": "HIGH",
+        "reason": "For Arpachshad, MT gives 403 remaining years; LXX typically gives 430 (or 400 in some witnesses); SP gives 303. These figures need verification against critical editions—SP's 303 is correct but the relationship between numbers should be checked carefully."
+      },
+      {
+        "claim": "Shelah... remaining years also differ (MT 403, LXX 330, SP 303)",
+        "risk": "HIGH",
+        "reason": "MT Genesis 11:15 gives Shelah 403 remaining years, which is correct, but the LXX value of 330 and SP 303 should be verified; some editions show different values."
+      },
+      {
+        "claim": "Eber... remaining years differ (MT 430, LXX 370, SP 270)",
+        "risk": "HIGH",
+        "reason": "SP's value for Eber's remaining years is typically 270 or 370 depending on edition; the LXX value of 370 matches MT-style counting in some witnesses. Numbers need verification."
+      },
+      {
+        "claim": "Nahor... remaining years differ (MT 119, LXX 129, SP 69)",
+        "risk": "HIGH",
+        "reason": "MT Genesis 11:25 gives Nahor 119 remaining years (correct), but LXX standardly gives 125 or 129 depending on witness, and SP gives 69—these specific numbers need critical edition verification."
+      },
+      {
+        "claim": "MT records ~292 years, SP ~942 years (650-year difference), and LXX ~1,072 years",
+        "risk": "MEDIUM",
+        "reason": "The standard figures cited in scholarship are MT ~292, SP ~942, LXX ~1172 (or ~1072 without Cainan). The specific totals require verification and the SP total is debated."
+      },
+      {
+        "claim": "favored by scholars including Jeremy Sexton",
+        "risk": "HIGH",
+        "reason": "Jeremy Sexton has actually argued the OPPOSITE position—he defends the LXX/SP longer chronology as original and argues MT was deflated. This attribution is reversed and constitutes a factual error."
+      },
+      {
+        "claim": "Greek chronographers (Demetrius the Chronographer, 3rd century BCE) demonstrate Hellenistic Jewish interest in extending biblical chronology",
+        "risk": "MEDIUM",
+        "reason": "Demetrius the Chronographer used LXX-style chronology but the claim that he demonstrates interest in 'extending' chronology to compete with Egyptian/Babylonian lists is an interpretive overreach not directly evidenced in his fragments."
+      },
+      {
+        "claim": "Rabbinic sources (Seder Olam Rabbah, 2nd century CE) demonstrate Jewish interest in compressing antediluvian and postdiluvian chronologies",
+        "risk": "MEDIUM",
+        "reason": "Seder Olam Rabbah uses MT chronology but characterizing it as 'compressing' presupposes the conclusion; it may simply reflect the received MT tradition rather than active compression."
+      },
+      {
+        "claim": "The insertion of Cainan, which appears to be independent LXX innovation based on Luke 3:36 or vice versa",
+        "risk": "MEDIUM",
+        "reason": "The relationship between LXX Cainan and Luke 3:36 is genuinely debated, but framing it as 'based on Luke or vice versa' is anachronistic—LXX clearly predates Luke, so the dependency direction is constrained."
+      },
+      {
+        "claim": "SP's dependence on LXX chronology is plausible given evidence of Hellenistic influence on Samaritan textual traditions",
+        "risk": "MEDIUM",
+        "reason": "Direct LXX influence on SP chronology is not a mainstream scholarly position; SP and LXX agreements are typically explained by shared pre-Samaritan/proto-textual traditions, not SP borrowing from LXX."
+      }
+    ],
+    "safe_claims": [
+      "MT records lower begetting ages while LXX and SP add 100 years to several patriarchs",
+      "LXX uniquely includes a second Cainan/Kenan absent from MT and SP",
+      "Shem's age at begetting (100) agrees across all three traditions",
+      "Terah's age at begetting Abraham (70) agrees across all three traditions",
+      "The pattern is systematic rather than random",
+      "Early Christian chronographers generally relied on LXX chronology"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.617909+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

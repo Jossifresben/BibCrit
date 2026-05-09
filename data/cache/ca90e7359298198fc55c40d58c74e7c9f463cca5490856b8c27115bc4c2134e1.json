@@ -1,0 +1,178 @@
+{
+  "book": "Zechariah",
+  "translator_name": "Old Greek of Zechariah (Deutero-Zechariah translator, chs. 9–14)",
+  "translator_profile": {
+    "literalness": 0.45,
+    "anthropomorphism_reduction": 0.25,
+    "messianic_heightening": 0.72,
+    "harmonization": 0.38,
+    "paraphrase_rate": 0.55
+  },
+  "dimensions": [
+    {
+      "dimension": "literalness",
+      "score": 0.45,
+      "confidence": 0.72,
+      "summary": "The translator demonstrates a mixed literalness profile: some equivalences are formally close (e.g., ἐκχεῶ for שָׁפַכְתִּי in 12:10; πνεῦμα χάριτος for רוּחַ חֵן), while other renderings show significant departures from the Hebrew word order and lexical choices. In 13:7, the Hebrew singular הָרֹעֶה ('the shepherd') and יָדִי עַל הַצֹּעֲרִים ('my hand upon the young') become plural ποιμένας and the phrase ἐπὶ τοὺς ποιμένας (omitting 'the young'), indicating selective rather than systematic literalness. Aejmelaeus's criteria for quantitative representation and lexical consistency reveal a translator who is moderately bound to the Vorlage but willing to restructure for Greek idiom.",
+      "summary_plain": "This translator follows the Hebrew fairly closely in some places but freely rewrites in others, suggesting a middle-ground approach rather than a purely word-for-word or purely free style.",
+      "examples": [
+        {
+          "reference": "Zechariah 12:10",
+          "mt_text": "וְשָׁפַכְתִּי... רוּחַ חֵן וְתַחֲנוּנִים",
+          "lxx_text": "ἐκχεῶ... πνεῦμα χάριτος καὶ οἰκτιρμοῦ",
+          "note": "The verbal and nominal equivalences are close, showing the translator's capacity for formal correspondence when the Greek allows it."
+        },
+        {
+          "reference": "Zechariah 13:7",
+          "mt_text": "הַךְ אֶת־הָרֹעֶה... וַהֲשִׁבֹתִי יָדִי עַל הַצֹּעֲרִים",
+          "lxx_text": "πατάξατε τοὺς ποιμένας... καὶ ἐπάξω τὴν χεῖρά μου ἐπὶ τοὺς ποιμένας",
+          "note": "The singular is pluralized and the final clause's referent is changed, demonstrating departure from strict literalness at semantically significant points."
+        }
+      ]
+    },
+    {
+      "dimension": "anthropomorphism_reduction",
+      "score": 0.25,
+      "confidence": 0.55,
+      "summary": "There is minimal systematic reduction of anthropomorphisms in these sample passages. The divine hand in 13:7 (יָדִי → τὴν χεῖρά μου) is retained rather than softened, which is consistent with the general LXX practice of preserving such expressions in prophetic contexts. The pouring of the spirit (12:10) likewise maintains the physical metaphor. The evidence does not support a strong theological program of anthropomorphism reduction in this translation unit, though the limited sample prevents strong conclusions.",
+      "summary_plain": "This translator does not appear to be systematically removing physical descriptions of God from the text, which was a concern for some ancient Jewish translators.",
+      "examples": [
+        {
+          "reference": "Zechariah 13:7",
+          "mt_text": "וַהֲשִׁבֹתִי יָדִי עַל הַצֹּעֲרִים",
+          "lxx_text": "ἐπάξω τὴν χεῖρά μου ἐπὶ τοὺς ποιμένας",
+          "note": "The divine hand is preserved verbatim, suggesting no impulse to avoid this anthropomorphism, even as the referent is changed."
+        },
+        {
+          "reference": "Zechariah 12:10",
+          "mt_text": "וְשָׁפַכְתִּי... רוּחַ חֵן",
+          "lxx_text": "ἐκχεῶ... πνεῦμα χάριτος",
+          "note": "The vivid pouring/effusion metaphor is retained intact, consistent with low anthropomorphism reduction."
+        }
+      ]
+    },
+    {
+      "dimension": "messianic_heightening",
+      "score": 0.72,
+      "confidence": 0.78,
+      "summary": "This is the most prominent tendential feature visible in the samples. In 9:9, the MT's עָנִי ('humble/poor') is rendered πραΰς ('gentle/meek'), a term with strong positive messianic-royal connotations in Greek usage and later NT reception; the MT's הָרִיעִי ('shout for joy') becomes κήρυσσε ('proclaim/herald'), shifting from celebratory cry to prophetic announcement. In 12:10, the highly ambiguous MT אֲשֶׁר-דָּקָרוּ is rendered κατωρχήσαντο ('they danced mockingly over'), which avoids piercing language that could be read as messianic but may reflect a different Vorlage or exegetical tradition. The pluralization of 'shepherd' in 13:7 (singular → plural) may deflect a singular messianic reading, but 9:9's heightening is clear and consistent with known tendencies in Deutero-Zechariah's LXX.",
+      "summary_plain": "The translator sometimes subtly emphasizes the special, divinely-appointed nature of the coming king, most clearly in the famous 'riding on a donkey' passage, which is made to sound more like a royal proclamation than a joyful shout.",
+      "examples": [
+        {
+          "reference": "Zechariah 9:9",
+          "mt_text": "הָרִיעִי בַּת יְרוּשָׁלִַם... עָנִי וְרֹכֵב",
+          "lxx_text": "κήρυσσε θύγατερ Ιερουσαλημ... πραΰς καὶ ἐπιβεβηκώς",
+          "note": "הָרִיעִי ('shout') → κήρυσσε ('proclaim/preach') elevates the passage from communal celebration to prophetic proclamation; עָנִי ('poor/humble') → πραΰς ('meek') is a lexical choice with strong messianic-royal resonance in Hellenistic Judaism."
+        },
+        {
+          "reference": "Zechariah 9:9",
+          "mt_text": "וְעַל עַיִר בֶּן אֲתֹנֹות",
+          "lxx_text": "καὶ πῶλον νέον",
+          "note": "The compound expression describing the foal is simplified to πῶλον νέον ('a new/young colt'), which may reflect exegetical smoothing or a slightly different Vorlage, but functionally clarifies the royal entry image."
+        }
+      ]
+    },
+    {
+      "dimension": "harmonization",
+      "score": 0.38,
+      "confidence": 0.48,
+      "summary": "The evidence for systematic harmonization is limited in these passages. The pluralization of 'shepherd' in 13:7 could reflect assimilation to the context of vv. 5–6 or the broader shepherd theme in chs. 11–13, but this may equally reflect an alternative Vorlage or inner-Greek development. The rendering of תַּחֲנוּנִים as οἰκτιρμοῦ in 12:10 (rather than δεήσεων, 'supplications,' which is more literal) might reflect harmonization with prophetic mercy-language elsewhere, but the evidence is insufficiently concentrated to posit a strong harmonizing tendency.",
+      "summary_plain": "There is some mild smoothing of the text to align with nearby passages or common theological language, but this does not appear to be a defining characteristic of this translator.",
+      "examples": [
+        {
+          "reference": "Zechariah 13:7",
+          "mt_text": "הַךְ אֶת הָרֹעֶה (singular)",
+          "lxx_text": "πατάξατε τοὺς ποιμένας (plural)",
+          "note": "Pluralization may harmonize with the surrounding shepherd-judgment context (chs. 11–13), though a Vorlage with plural cannot be excluded."
+        }
+      ]
+    },
+    {
+      "dimension": "paraphrase_rate",
+      "score": 0.55,
+      "confidence": 0.7,
+      "summary": "The translator exhibits a moderate-to-high paraphrase rate, especially when faced with semantically difficult or theologically sensitive Hebrew. The rendering of אֲשֶׁר-דָּקָרוּ as κατωρχήσαντο in 12:10 is a striking interpretive choice—'pierced' becomes 'danced/mocked over'—suggesting either a radically different Vorlage (though no other textual witness supports this) or a paraphrastic exegetical substitution. Similarly, הַצֹּעֲרִים ('the young/little ones') disappearing from 13:7 and being replaced by ποιμένας is a significant departure. These patterns suggest a translator comfortable with interpretive expansion when the source text is obscure or theologically freighted, consistent with the general profile of Deutero-Zechariah LXX as noted by Dogniez and Harl.",
+      "summary_plain": "This translator was not afraid to rewrite difficult passages rather than produce a puzzling literal translation, which sometimes means the Greek says something noticeably different from the Hebrew.",
+      "examples": [
+        {
+          "reference": "Zechariah 12:10",
+          "mt_text": "אֵת אֲשֶׁר דָּקָרוּ ('whom they pierced')",
+          "lxx_text": "ἀνθ᾿ ὧν κατωρχήσαντο ('because of those over whom they danced mockingly')",
+          "note": "This is one of the most dramatic paraphrastic departures in the LXX Minor Prophets; the well-attested Hebrew root דקר ('pierce') is replaced by a term for mockery, representing either a very divergent Vorlage or bold interpretive paraphrase."
+        },
+        {
+          "reference": "Zechariah 13:7",
+          "mt_text": "וַהֲשִׁבֹתִי יָדִי עַל הַצֹּעֲרִים ('the little ones/young')",
+          "lxx_text": "ἐπάξω τὴν χεῖρά μου ἐπὶ τοὺς ποιμένας ('the shepherds')",
+          "note": "הַצֹּעֲרִים is either misread as הָרֹעִים or deliberately reinterpreted; in either case the Greek diverges significantly from the probable MT meaning."
+        }
+      ]
+    }
+  ],
+  "overall_assessment": "The Old Greek of Zechariah (particularly Deutero-Zechariah, chs. 9–14) represents a moderately free translation with notable interpretive tendencies, most prominently messianic heightening and a significant paraphrase rate when confronting obscure or theologically charged passages. The translator is neither as literally rigorous as the LXX of Psalms or Proverbs' more formal sections, nor as freely paraphrastic as LXX Job. The profile most closely resembles portions of LXX Isaiah and LXX Amos, where the translator serves as interpreter as much as linguistic mediator. For text-critical work (following Tov's methodology), passages like Zech 12:10 must be treated with particular caution: the divergence at κατωρχήσαντο likely reflects translator interpretation rather than a divergent Vorlage, and should not be used to reconstruct a Hebrew text differing from MT without strong corroborating evidence. The messianic heightening visible in 9:9 (κήρυσσε, πραΰς) has had enormous downstream influence on NT reception of this passage (Matt 21:5; John 12:15) and represents one of the most consequential translation decisions in the entire Greek Minor Prophets.",
+  "overall_plain": "This translator was a skilled interpreter who sometimes chose to explain or elaborate on the Hebrew text rather than translate it word-for-word, especially when passages were difficult or had obvious religious importance. Their choices in translating the 'king on a donkey' passage directly shaped how early Christians read the Palm Sunday story. Scholars need to be careful not to assume that when the Greek differs from the Hebrew, there was necessarily a different original text—often the translator was simply making an interpretive choice.",
+  "bibcrit_assessment": {
+    "title": "Interpretive Paraphrase Masking Messianic Exegetical Agenda",
+    "reasoning": "The single most significant scholarly insight is that this translator's paraphrastic departures are not random but cluster around messianic and eschatological cruxes, suggesting a coherent, if not programmatic, hermeneutical agenda. The transformation of הָרִיעִי to κήρυσσε and עָנִי to πραΰς in 9:9, alongside the dramatic reinterpretation of דָּקָרוּ in 12:10, demonstrates a translator who functions as a theological commentator. This has profound implications for understanding Second Temple Jewish messianism and the bridge between the Hebrew prophetic tradition and Hellenistic Jewish exegesis that prepared the ground for early Christian readings.",
+    "plain": "This translator was not just converting Hebrew into Greek—they were quietly reshaping certain passages to emphasize that these prophecies pointed to a special future king or deliverer. Their choices became the version that early Christians read, directly influencing how they interpreted Jesus's life and death.",
+    "confidence": 0.74
+  },
+  "discovery_ready": false,
+  "reference": "Zechariah",
+  "cached_at": "2026-04-19T21:35:11.122395",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis is broadly sound on observable LXX/MT differences but contains some questionable transcriptions, an inaccurate Hebrew gloss, and overstated scholarly attributions.",
+    "flagged_claims": [
+      {
+        "claim": "יָדִי עַל הַצֹּעֲרִים ('my hand upon the young')",
+        "risk": "HIGH",
+        "reason": "The MT of Zech 13:7 reads הַצֹּעֲרִים meaning 'the little ones' (from צער), not 'the young'—and more importantly, the analysis later treats הַצֹּעֲרִים as if it might be misread as הָרֹעִים, but the LXX equivalent τοὺς ποιμένας (shepherds) is standardly explained via this confusion. The gloss 'the young' is imprecise; standard rendering is 'little ones.'"
+      },
+      {
+        "claim": "ἀνθ᾿ ὧν κατωρχήσαντο",
+        "risk": "MEDIUM",
+        "reason": "The standard LXX text of Zech 12:10 reads 'ἐπιβλέψονται πρός με ἀνθ᾿ ὧν κατωρχήσαντο.' The citation is partial and the translation 'because of those over whom they danced mockingly' is interpretive; κατορχέομαι more neutrally means 'to treat despitefully/mock.' Verify exact wording against Göttingen edition."
+      },
+      {
+        "claim": "πραΰς ('gentle/meek'), a term with strong positive messianic-royal connotations in Greek usage",
+        "risk": "MEDIUM",
+        "reason": "πραΰς in Hellenistic Greek does not have inherently 'strong messianic-royal connotations' independent of its biblical usage; this risks circular reasoning by reading later NT reception back into the translator's lexical choice."
+      },
+      {
+        "claim": "consistent with the general profile of Deutero-Zechariah LXX as noted by Dogniez and Harl",
+        "risk": "MEDIUM",
+        "reason": "Dogniez and Harl edited La Bible d'Alexandrie volumes, but attributing a specific 'profile of Deutero-Zechariah LXX' to them as a discrete scholarly claim is unverifiable as stated and risks fabricated citation; also, LXX scholarship generally treats the Twelve as a single translation unit, not separating Deutero-Zechariah."
+      },
+      {
+        "claim": "Deutero-Zechariah translator, chs. 9–14",
+        "risk": "MEDIUM",
+        "reason": "The translator profile assumes a separate translator for chs. 9–14, but the LXX of the Twelve is generally regarded as the work of a single translator (per Ziegler, Dines, and others). Treating Deutero-Zechariah as having its own translator profile conflates source-critical divisions of the Hebrew with translation-unit divisions of the Greek."
+      },
+      {
+        "claim": "Aejmelaeus's criteria for quantitative representation and lexical consistency",
+        "risk": "MEDIUM",
+        "reason": "These criteria (quantitative representation, lexical consistency) are more standardly associated with Tov and Barr's translation-technique frameworks; Aejmelaeus's distinctive contributions concern parataxis and free renderings. Attribution may be imprecise."
+      },
+      {
+        "claim": "κήρυσσε ('proclaim/herald')",
+        "risk": "MEDIUM",
+        "reason": "The standard LXX reading at Zech 9:9 is κήρυσσε θύγατερ Ιερουσαλημ; this should be verified, as some witnesses read different forms. The exact text should be checked against the Göttingen edition."
+      }
+    ],
+    "safe_claims": [
+      "ἐκχεῶ corresponds to שָׁפַכְתִּי in 12:10",
+      "πνεῦμα χάριτος corresponds to רוּחַ חֵן",
+      "The MT singular הָרֹעֶה in 13:7 is rendered with a plural ποιμένας in LXX",
+      "MT עָנִי in 9:9 is rendered πραΰς in LXX",
+      "Zech 9:9 LXX is quoted/alluded to in Matt 21:5 and John 12:15",
+      "MT אֲשֶׁר־דָּקָרוּ in 12:10 is not literally rendered as 'pierced' in the standard LXX text",
+      "The LXX of Zech 9:9 has influenced NT reception of the passage"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.637866+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

@@ -90,5 +90,74 @@
   "reference": "Exodus 3:14",
   "cached_at": "2026-03-30T19:20:00.148309",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v2"
+  "prompt_version": "v2",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The core textual observation about אֶהְיֶה vs ὁ ὤν is accurate and reflects mainstream scholarship, but specific page citations and some interpretive claims warrant verification.",
+    "flagged_claims": [
+      {
+        "claim": "Wevers (1990) p.35",
+        "risk": "MEDIUM",
+        "reason": "Wevers' Notes on the Greek Text of Exodus was published in 1990, but the specific page reference for this claim is unverifiable here and could be inaccurate. Page-level citations are easily fabricated by LLMs."
+      },
+      {
+        "claim": "Propp (1999) p.224",
+        "risk": "MEDIUM",
+        "reason": "Propp's Anchor Bible Exodus 1-18 (1999) does discuss this passage, but the specific page number requires verification; AB commentary discussion of 3:14 typically spans multiple pages around pp. 204-225."
+      },
+      {
+        "claim": "van der Kooij (2006) p.78",
+        "risk": "HIGH",
+        "reason": "Citation lacks specific work title; van der Kooij has multiple 2006 publications. Unverifiable as stated."
+      },
+      {
+        "claim": "Tov (2001) p.258",
+        "risk": "MEDIUM",
+        "reason": "Likely refers to Textual Criticism of the Hebrew Bible 2nd ed. (2001), but the specific claim about Ὁ ὤν as 'characteristic theological updating' at this page needs verification."
+      },
+      {
+        "claim": "Pietersma (2000) p.89",
+        "risk": "HIGH",
+        "reason": "Work title not specified; Pietersma's 2000 publications relevant to LXX are limited and the page reference is unverifiable."
+      },
+      {
+        "claim": "Rösel (2006) p.442",
+        "risk": "MEDIUM",
+        "reason": "Rösel has written on divine names in LXX, but specific citation needs verification; could be conflated with his JSOT article on LXX divine names."
+      },
+      {
+        "claim": "Evans (2001) p.112",
+        "risk": "HIGH",
+        "reason": "Citation is too vague (no work title) and Evans is a common surname in biblical studies; unverifiable."
+      },
+      {
+        "claim": "reflecting Hellenistic philosophical categories of being",
+        "risk": "MEDIUM",
+        "reason": "This is a contested interpretation. Some scholars (e.g., Bartelmus, McDonough) argue ὁ ὤν need not reflect Platonic ontology and could be a natural Greek rendering. Stated with more certainty than warranted."
+      },
+      {
+        "claim": "The Samaritan Pentateuch's liturgical emphasis on divine presence formulas suggests textual plurality",
+        "risk": "MEDIUM",
+        "reason": "The bibcrit hypothesis speculates about a 'proto-Samaritan Vorlage' for Exod 3:14 with no manuscript evidence; SP reads identically to MT here. The hypothesis itself acknowledges this is circumstantial."
+      },
+      {
+        "claim": "Wevers notes the translator's consistent hellenization of divine names",
+        "risk": "MEDIUM",
+        "reason": "Wevers is generally cautious about attributing 'hellenization' broadly; this characterization may overstate his position, which tends to emphasize translator's competence rather than systematic philosophical agenda."
+      }
+    ],
+    "safe_claims": [
+      "MT אֶהְיֶה אֲשֶׁר אֶהְיֶה corresponds to LXX Ἐγώ εἰμι ὁ ὤν",
+      "Hebrew employs Qal imperfect of היה",
+      "Greek ὁ ὤν is a substantival present participle with article",
+      "MT אֶהְיֶה שְׁלָחַנִי corresponds to LXX Ὁ ὢν ἀπέσταλκέν με",
+      "Greek ἀπέσταλκέν is perfect indicative",
+      "Hebrew שְׁלָחַנִי is qal perfect",
+      "The LXX shifts from first-person verbal form to third-person articular participle as title",
+      "This divergence influenced Patristic theology and Christian metaphysics"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.685469+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

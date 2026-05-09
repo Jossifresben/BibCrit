@@ -181,5 +181,48 @@
   "reference": "Zechariah 9:9",
   "cached_at": "2026-03-30T20:20:06.114902",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis is largely sound on observable LXX-MT correspondences but contains a significant error regarding the Greek word in position 3 and some overstated claims of lexical universality.",
+    "flagged_claims": [
+      {
+        "claim": "lxx_word: κήρυσσε ... The MT has הָרִיעִי",
+        "risk": "HIGH",
+        "reason": "The actual LXX of Zech 9:9 reads κήρυσσε θύγατερ Ιερουσαλημ — but the standard Göttingen/Rahlfs text has κήρυσσε rendering הָרִיעִי. This is correct, but the analysis fails to note that κηρύσσω does occasionally render רוע-related shouting/proclamation contexts; the framing that κηρύσσω 'typically translates קָרָא or נָגַד, not רוּעַ' is overstated and the suggested alternative Vorlage צַהֲלִי is speculative without manuscript support."
+      },
+      {
+        "claim": "δίκαιος is the universal LXX equivalent for צַדִּיק ... No variant is conceivable.",
+        "risk": "MEDIUM",
+        "reason": "The phrase 'No variant is conceivable' is rhetorically overstated; while δίκαιος is the dominant equivalent, absolute claims of universality are imprecise."
+      },
+      {
+        "claim": "ὑποζύγιον (beast of burden, donkey) is the standard LXX rendering of חֲמוֹר throughout the Pentateuch and Historical Books",
+        "risk": "MEDIUM",
+        "reason": "The extensive verse list is largely accurate but presented with suspicious precision; some cited references (e.g., Ex 22:3, 8, 9 versification) may not align across LXX/MT numbering, and ὄνος also frequently renders חֲמוֹר. The claim of exclusivity is overstated."
+      },
+      {
+        "claim": "πραΰς is attested as a LXX rendering of עָנִי in ... Ps 34:3, 37:11; Isa 11:4, 29:19",
+        "risk": "MEDIUM",
+        "reason": "Ps 37:11 (LXX 36:11) does have πραεῖς for עֲנָוִים (not עָנִי), and Isa 11:4 has ταπεινούς not πραεῖς in most witnesses. Specific verse citations need verification; the underlying Hebrew in several is עָנָו not עָנִי."
+      },
+      {
+        "claim": "may preserve a genuine textual variant *וּמוֹשִׁיעַ (Hiphil active participle), unattested in MT or DSS",
+        "risk": "MEDIUM",
+        "reason": "This is reasonable speculation but presented as a leading hypothesis; the more common scholarly view treats καὶ σῴζων as interpretive rendering of the Niphal (which can have tolerative/reflexive sense 'victorious'), and the reconstructed Vorlage is conjectural."
+      }
+    ],
+    "safe_claims": [
+      "χαῖρε σφόδρα corresponds to גִּילִי מְאֹד",
+      "θύγατερ Σιων renders בַּת צִיּוֹן",
+      "ἰδού regularly renders הִנֵּה",
+      "ἔρχεταί σοι corresponds to יָבוֹא לָךְ",
+      "MT וְנוֹשָׁע is a Niphal participle while LXX καὶ σῴζων is an active participle",
+      "MT has וְעַל עַיִר בֶּן אֲתֹנוֹת with a second preposition that LXX does not represent",
+      "ἐπιβαίνω renders רָכַב in this verse"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.684236+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

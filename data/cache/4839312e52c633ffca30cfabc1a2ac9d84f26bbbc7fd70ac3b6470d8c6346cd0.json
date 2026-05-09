@@ -106,5 +106,80 @@
   "discovery_ready": false,
   "cached_at": "2026-04-19T15:56:02.061812",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis correctly represents the mainstream scholarly consensus on Mark 16:9-20, but contains several specific manuscript and patristic claims that are inaccurate or overstated.",
+    "flagged_claims": [
+      {
+        "claim": "Codex 304 and some other Alexandrian witnesses also attest the shorter ending",
+        "risk": "MEDIUM",
+        "reason": "Minuscule 304 is typically classified as Byzantine, not Alexandrian. Its omission of 16:9-20 is debated (some scholars argue the manuscript is simply damaged/incomplete rather than intentionally ending at 16:8)."
+      },
+      {
+        "claim": "Codex Bezae (D) contains 16:9-20",
+        "risk": "MEDIUM",
+        "reason": "D does include 16:9-20, but listing D under 'Western' as supporting inclusion alongside 'it' and Diatessaron oversimplifies; Old Latin k famously contains only the Shorter Ending, which contradicts the framing."
+      },
+      {
+        "claim": "some Old Latin manuscripts (k and the Sinaitic Syriac) omit it",
+        "risk": "MEDIUM",
+        "reason": "Old Latin k does not simply omit 16:9-20; it contains the Shorter Ending only. The Sinaitic Syriac is not an Old Latin manuscript and is miscategorized here."
+      },
+      {
+        "claim": "W (Codex Washingtonianus) includes the Longer Ending with the unique Freer Logion inserted between verses 14 and 15",
+        "risk": "MEDIUM",
+        "reason": "The Freer Logion is inserted within verse 14 (after 16:14), not between verses 14 and 15."
+      },
+      {
+        "claim": "Caesarean witnesses... f1, f13",
+        "risk": "MEDIUM",
+        "reason": "f1 manuscripts typically include 16:9-20 but with a marginal note about its absence in some copies; f13 includes it. Classifying these as 'split' on the Longer Ending question overstates internal disagreement within these families."
+      },
+      {
+        "claim": "Irenaeus (ca. 180), Diatessaron",
+        "risk": "MEDIUM",
+        "reason": "Irenaeus (Adv. Haer. 3.10.5) does cite Mark 16:19, which is solid. The Diatessaron's inclusion of the Longer Ending is inferred from later witnesses (Arabic, Ephrem's commentary) and is less certain than presented."
+      },
+      {
+        "claim": "approximately 100 Armenian manuscripts",
+        "risk": "MEDIUM",
+        "reason": "The figure commonly cited is that the majority of Armenian manuscripts omit 16:9-20; the specific number '100' is approximate and varies by source. Should be qualified."
+      },
+      {
+        "claim": "Clement of Alexandria, Origen (who show no knowledge of 16:9-20)",
+        "risk": "MEDIUM",
+        "reason": "This is an argument from silence. While these fathers do not cite 16:9-20, claiming they 'show no knowledge' is stronger than the evidence supports."
+      },
+      {
+        "claim": "16 words or expressions foreign to Mark appearing in just 12 verses",
+        "risk": "MEDIUM",
+        "reason": "The exact count of non-Markan vocabulary varies significantly by scholar (Metzger cites 17 non-Markan words; others give different counts). The precise '16' figure should be sourced."
+      },
+      {
+        "claim": "Jerome (acknowledges absence in nearly all Greek manuscripts)",
+        "risk": "MEDIUM",
+        "reason": "Jerome's statement (Epistle 120 to Hedibia) is often cited but may largely repeat Eusebius rather than represent independent verification; the 'nearly all Greek manuscripts' phrasing should be qualified."
+      },
+      {
+        "claim": "Old Georgian",
+        "risk": "MEDIUM",
+        "reason": "The earliest Old Georgian manuscripts (Adysh, Opiza, Tbeti) reportedly omit 16:9-20, but this should be verified rather than asserted as a settled witness category."
+      }
+    ],
+    "safe_claims": [
+      "Sinaiticus (א) and Vaticanus (B) both omit verses 9-20",
+      "NA28 and UBS5 print the Longer Ending in double brackets",
+      "The Byzantine tradition includes the Longer Ending",
+      "Eusebius notes the absence of these verses in accurate copies",
+      "The UBS committee assigned an A rating to the bracketed text",
+      "Mary Magdalene is reintroduced in 16:9 as if for the first time despite 16:1",
+      "Mark 16:8 ends with ἐφοβοῦντο γάρ",
+      "The Longer Ending shows apparent dependence on Matthew 28, Luke 24, and John 20-21",
+      "Codex Washingtonianus contains the Freer Logion"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.671977+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

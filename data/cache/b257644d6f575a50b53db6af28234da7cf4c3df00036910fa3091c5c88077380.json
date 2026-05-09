@@ -99,5 +99,60 @@
   "reference": "Amos 5:1-17",
   "cached_at": "2026-04-14T18:36:50.851752",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The structural analysis is largely sound and reflects mainstream scholarship, but several specific page citations and one textual detail require verification.",
+    "flagged_claims": [
+      {
+        "claim": "First 'seek me and live' oracle with prohibition against cultic sites (Bethel, Gilgal, Beersheba)",
+        "risk": "MEDIUM",
+        "reason": "Amos 5:5 mentions Bethel, Gilgal, and Beersheba, but the inclusion of Beersheba here is correct for v.5; however, the summary should be checked—Beersheba is named but the warning is structured around the first two. This is minor but worth verifying the framing."
+      },
+      {
+        "claim": "Dorsey (Literary Structure of the OT, 283-284) identifies Amos 5:1-17 as a seven-part concentric structure",
+        "risk": "MEDIUM",
+        "reason": "Dorsey does treat Amos 5:1-17 concentrically, but the exact page numbers (283-284) should be verified; AI-generated page citations are frequently inaccurate."
+      },
+      {
+        "claim": "Shalom Paul (Amos, Hermeneia, 163-168) recognizes the concentric pattern with vv.8-9 as pivot",
+        "risk": "HIGH",
+        "reason": "Shalom Paul's Amos commentary is in the Hermeneia series, and he does discuss the chiastic structure, but the specific page range (163-168) is unverifiable here and may be fabricated. Paul is also known for being somewhat cautious about the centrality claim."
+      },
+      {
+        "claim": "Jörg Jeremias (The Book of Amos, 96-99) discusses the structural function of the hymnic fragment",
+        "risk": "MEDIUM",
+        "reason": "Jeremias does treat the hymnic fragments, but the specific page range needs verification; AI commonly invents precise pagination."
+      },
+      {
+        "claim": "Hans Walter Wolff (Amos the Prophet, 234-235)",
+        "risk": "HIGH",
+        "reason": "Wolff's major Amos commentary is titled 'Joel and Amos' (Hermeneia), not 'Amos the Prophet' (which is a different, shorter work). The citation conflates or misnames the source, and the pagination is suspect."
+      },
+      {
+        "claim": "Lund's criteria of 'shift at the center' and 'identical or antithetical ideas'",
+        "risk": "MEDIUM",
+        "reason": "Nils Lund did articulate criteria for chiasmus, but the exact wording of these 'criteria' as quoted should be verified against Chiasmus in the New Testament; paraphrases are sometimes presented as direct citations."
+      },
+      {
+        "claim": "Walsh's emphasis on pivot significance",
+        "risk": "MEDIUM",
+        "reason": "Likely refers to Jerome T. Walsh's 'Style and Structure in Biblical Hebrew Narrative,' but no specific citation is given and the attribution is vague."
+      }
+    ],
+    "safe_claims": [
+      "Amos 5:1-17 exhibits a concentric/chiastic structure widely recognized in scholarship",
+      "Verses 1-3 contain a קִינָה (funeral lament) over Israel",
+      "Verses 4-6 contain the formula דִּרְשׁוּנִי וִחְיוּ ('seek me and live')",
+      "Verse 7 accuses those who turn מִשְׁפָּט to wormwood",
+      "Verses 8-9 form a hymnic doxology referencing Pleiades and Orion",
+      "Verses 14-15 contain דִּרְשׁוּ־טוֹב ('seek good')",
+      "Verses 16-17 return to mourning imagery (מִסְפֵּד)",
+      "The hymnic fragments in Amos (4:13, 5:8-9, 9:5-6) are commonly discussed as a related set in Amos scholarship",
+      "The redactional question regarding the doxologies is a well-established scholarly discussion"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.651678+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

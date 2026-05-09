@@ -1,0 +1,175 @@
+{
+  "reference": "John 7:53",
+  "text_basis": {
+    "sblgnt_reading": "John 7:53 is omitted entirely in the SBLGNT, as the editors (Holmes et al.) exclude the Pericope Adulterae (7:53–8:11) from the main text, reflecting the overwhelming critical consensus that this passage was not part of the original Gospel of John.",
+    "na28_alignment": "The NA28 and UBS5 likewise place 7:53–8:11 outside the main text, printing it in double brackets [[ ]] to signal its secondary status while retaining it for pastoral and traditional reasons. The SBLGNT's approach is slightly more decisive in its exclusion from the body text.",
+    "is_disputed_locus": true,
+    "dispute_note": "John 7:53 is the opening verse of the Pericope Adulterae (PA), one of the most famous non-original interpolations in the New Testament. It is absent from the earliest and best Greek manuscripts and appears to be a floating tradition inserted at various points in the Gospel tradition."
+  },
+  "manuscript_families": {
+    "alexandrian": {
+      "witnesses": [
+        "P66",
+        "P75",
+        "א",
+        "B"
+      ],
+      "support": "supports_variant",
+      "note": "All major Alexandrian witnesses omit 7:53–8:11 entirely. P66 and P75 (early papyri from Egypt, c. 200 CE) skip directly from 7:52 to 8:12, and the great uncials א and B likewise lack the passage. This is the strongest single category of evidence against authenticity."
+    },
+    "western": {
+      "witnesses": [
+        "D",
+        "it"
+      ],
+      "support": "split",
+      "note": "Codex Bezae (D) notably includes the Pericope Adulterae, and several Old Latin manuscripts (e.g., itaur, itb, itc) also contain it, suggesting the passage circulated early in Western transmission. However, the inclusion in Western witnesses is irregular, and some Old Latin manuscripts omit it, indicating it was not universally present even in that tradition."
+    },
+    "byzantine": {
+      "witnesses": [
+        "Majority Text",
+        "TR"
+      ],
+      "support": "sides_with_received",
+      "note": "The Byzantine Majority Text and Textus Receptus include 7:53–8:11 without brackets or asterisks, which explains why the passage became standard in translations based on the TR (e.g., KJV). However, even within Byzantine manuscripts, a significant minority mark the passage with obeli or asterisks, and some Byzantine-type manuscripts omit it entirely, revealing awareness of its disputed status within that tradition."
+    },
+    "caesarean": {
+      "witnesses": [
+        "P45",
+        "f1",
+        "f13"
+      ],
+      "support": "split",
+      "note": "Family 1 (f1) includes the pericope but places it after John 21:25, while Family 13 (f13) inserts it after Luke 21:38, demonstrating the passage's textual instability and floating character. P45 omits the passage. This displacement pattern is itself strong evidence against the pericope's originality at this location."
+    }
+  },
+  "metzger_rating": {
+    "rating": "A",
+    "justification": "The Metzger committee assigned the omission of 7:53–8:11 a virtual certainty rating (effectively 'A' for the omission), noting that the evidence against inclusion is overwhelming. No early Greek manuscript before the 9th century reliably contains the passage outside the Byzantine tradition, and the combination of Alexandrian, papyrus, and early versional evidence for omission is among the strongest in the entire New Testament. The passage's displacement across different manuscript locations further confirms it is a secondary insertion."
+  },
+  "variant_register": [
+    {
+      "variant_text": "Καὶ ἐπορεύθη ἕκαστος εἰς τὸν οἶκον αὐτοῦ (And each one went to his own home) — the received text of 7:53",
+      "manuscript_support": "D, f13 (at Luke 21:38 location), Byzantine Majority Text, TR, some Old Latin, Vulgate, Peshitta (in some mss), several minuscules",
+      "intrinsic_probability": "low",
+      "transcriptional_probability": "low",
+      "assessment": "This verse functions as a narrative bridge introducing the pericope adulterae. Its vocabulary and style diverge from Johannine usage, and the transition from 7:52 to 8:12 in manuscripts omitting the pericope is entirely smooth, suggesting 7:53 was composed as part of the insertion rather than belonging to the original Johannine text."
+    },
+    {
+      "variant_text": "Omission of 7:53 (and the entire pericope 7:53–8:11)",
+      "manuscript_support": "P66, P75, א, B, A, C, L, N, T, W, X, Y, Δ, Θ, Ψ, 0141, 0211, 22, 33, 124, 157, 209, 228, 788, 828, 1230, 1241, 1242, 1253, 2193, Coptic (Sahidic and Bohairic), Gothic, many Latin Fathers (Tertullian, Origen, Cyprian, Chrysostom did not comment on it), Armenian, Georgian",
+      "intrinsic_probability": "high",
+      "transcriptional_probability": "high",
+      "assessment": "The omission is supported by the earliest papyri, the best uncials across multiple textual traditions, and early versional and patristic evidence. It is nearly inconceivable that so many independent and geographically diverse witnesses would all independently omit a genuine Johannine passage; the omission represents the original text of the Gospel of John."
+    },
+    {
+      "variant_text": "Placement after John 21:25 (by f1 and related manuscripts)",
+      "manuscript_support": "Family 1 (f1), including minuscules 1, 1582, and related manuscripts",
+      "intrinsic_probability": "low",
+      "transcriptional_probability": "medium",
+      "assessment": "The alternative placement of the pericope at the end of John by Family 1 manuscripts demonstrates that scribes themselves were uncertain where the floating tradition belonged. This textual wandering is a hallmark of secondary material and further undermines any claim to a fixed original location within John."
+    },
+    {
+      "variant_text": "Placement after Luke 21:38 (by f13)",
+      "manuscript_support": "Family 13 (f13), including minuscules 13, 69, 124, 346, 543, 788, 826, 828, 983, 1689, 1709",
+      "intrinsic_probability": "low",
+      "transcriptional_probability": "medium",
+      "assessment": "The Lukan placement in f13 has led some scholars (e.g., Jeremias, Becker) to propose the pericope may have originated in the Lukan tradition, given partial vocabulary overlap with Luke-Acts. However, the passage is absent from all early Lukan manuscripts, making this theory speculative, and the f13 placement likely reflects a scribe's contextual judgment rather than historical memory."
+    }
+  ],
+  "disputed_passage": {
+    "designation": "Pericope Adulterae (PA) — John 7:53–8:11",
+    "manuscript_evidence_for": "Codex Bezae (D, 5th c.), Byzantine Majority Text from the 9th century onward, Textus Receptus, Vulgate (Jerome noted it in many Latin mss of his day), some Old Latin manuscripts (itaur, itb, ite, itff2, itj, itr1), Didascalia Apostolorum (3rd c., Syriac, appears to allude to it), Didymus of Alexandria (4th c., possibly), Ambrose and Augustine (Latin West, both cite and defend it), Codex Fuldensis (6th c. Latin), minuscules in the hundreds from medieval period, Apostolic Constitutions (cites a related story), Papias (Eusebius reports Papias knew a story of a woman accused before the Lord, HE 3.39.17)",
+    "manuscript_evidence_against": "P66 (c. 200), P75 (c. 175–225), Codex Sinaiticus (א, 4th c.), Codex Vaticanus (B, 4th c.), Codex Alexandrinus (A, 5th c.), Codex Ephraemi (C, 5th c.), Codex Washington (W, 5th c.), Codex Regius (L, 8th c.), Codex Koridethi (Θ), the majority of early uncials, all Coptic versions (Sahidic and Bohairic), Gothic version, earliest Armenian and Georgian versions, Diatessaron (Tatian, 2nd c.), Origen (no comment), Chrysostom (no comment in homilies on John), Cyril of Alexandria (no comment), Tertullian (no mention), Cyprian (no mention), the earliest Syriac versions (Sinaitic and Curetonian), Peshitta omits in oldest copies; even among Byzantine manuscripts, an estimated 1–4% mark the passage with asterisks or obeli signaling doubt",
+    "internal_evidence": "The vocabulary of 7:53–8:11 is markedly non-Johannine: words like πρεσβύτεροι (elders), κατακρίνω in this form, ὄρθρος (dawn), and the narrative style resemble Luke-Acts more than John. The phrase 'Mount of Olives' (8:1) appears nowhere else in John but is characteristic of the Synoptic tradition. The passage interrupts the tight literary sequence of John 7:37–8:12, where 8:12 follows seamlessly from 7:52 in terms of both setting (the Feast of Tabernacles, temple treasury) and theological discourse. Johannine stylistic markers (e.g., the beloved disciple, 'I AM' sayings in context, specific Johannine irony) are absent. The pericope also lacks any clear Johannine theological themes (incarnational Christology, realized eschatology, Paraclete). Positively, the story has strong claims to historical verisimilitude and many scholars consider it to preserve a genuine memory of Jesus' teaching, even if not Johannine in origin. Augustine (c. 400 CE) notably suggested some scribes removed it from fear it would be used to justify adultery.",
+    "scholarly_consensus": "The overwhelming consensus among NT textual critics — including Westcott-Hort, Metzger, Aland, Ehrman, Holmes, Parker, Comfort, and Wasserman — is that the Pericope Adulterae (John 7:53–8:11) was not part of the original Gospel of John. It is classified as a secondary interpolation, likely a genuine early oral or written tradition about Jesus that circulated independently before being inserted into the Johannine text, probably in the Western church. Tommy Wasserman and Jennifer Knust's 2019 monograph 'To Cast the First Stone' (Princeton University Press) provides the most comprehensive recent analysis, confirming non-originality while tracing the complex transmission history. Some scholars (e.g., Chris Keith) have studied its scribal and social history. A small minority (e.g., J. D. M. Derrett, Zane Hodges) have argued for authenticity, but these views are not mainstream in critical scholarship.",
+    "pastoral_note": "Most modern translations retain the passage but signal its secondary status: the NIV, ESV, NASB, NET, and CSB place it in brackets or include a note such as 'The earliest manuscripts do not include 7:53–8:11.' The NRSV brackets it with a note. The NLT includes it with a footnote. The KJV and NKJV include it without any notation, following the TR. Some study Bibles (e.g., ESV Study Bible) provide extensive notes explaining the textual situation. The passage remains in the lectionary of many churches and is deeply embedded in Christian preaching and devotional tradition. Pastors and teachers are generally encouraged to treat it as a meaningful early Christian tradition worthy of reflection while being transparent about its text-critical status."
+  },
+  "synthesis": "John 7:53 belongs to the Pericope Adulterae, one of the clearest cases of secondary interpolation in the New Testament, absent from all early papyri, the best Alexandrian uncials, and a wide range of versional and patristic witnesses. The passage's textual instability — appearing at multiple different locations across manuscript families — is itself decisive evidence that it was not part of the original Gospel. While it likely preserves an authentic early tradition about Jesus, its absence from the critical text is virtually certain.",
+  "assessment": {
+    "title": "John 7:53 as the Opening of a Celebrated Non-Johannine Interpolation",
+    "reasoning": "John 7:53 is the initial verse of the Pericope Adulterae, which all major critical editions (NA28, UBS5, SBLGNT) exclude from the primary text of John on the basis of overwhelming external and internal evidence. The earliest papyri (P66, P75, c. 175–225 CE), the premier Alexandrian uncials (א, B), and a geographically diverse range of versional and patristic witnesses all omit it, while its inclusion is confined primarily to the later Byzantine tradition and Codex Bezae. The passage's displacement to multiple different locations (after John 21:25 in f1; after Luke 21:38 in f13) proves it was a floating tradition with no fixed canonical address. Internally, the non-Johannine vocabulary, style, and theological framework further confirm it did not originate within the Fourth Gospel, though it may preserve an authentic memory of Jesus.",
+    "plain": "John 7:53 is the start of the famous story of the woman caught in adultery (John 7:53–8:11), which almost certainly was not written by the author of the Gospel of John. The oldest and most reliable manuscripts of John skip directly from 7:52 to 8:12 without any mention of this story, and scholars are nearly unanimous that it was added later by scribes, even though it may reflect a real early tradition about Jesus.",
+    "confidence": 0.97,
+    "recommended_reading": "NA28 or UBS5 with double brackets [[ ]] for the pericope, accompanied by the critical apparatus noting manuscript omissions. The SBLGNT is also reliable. Metzger's Textual Commentary (1994, pp. 187–189) and Wasserman & Knust (2019) provide the most thorough scholarly treatment.",
+    "open_questions": "1) What was the original source or context of the Pericope Adulterae before its insertion into John — was it a Lukan tradition, an independent logion, or something else entirely? 2) When, where, and by whom was the pericope first inserted into the Johannine text, and what scribal or social dynamics drove its eventual widespread acceptance in the Byzantine tradition?"
+  },
+  "citations": {
+    "sbl": "Bruce M. Metzger, A Textual Commentary on the Greek New Testament, 2nd ed. (Stuttgart: Deutsche Bibelgesellschaft, 1994), 187–189; Kurt Aland and Barbara Aland, The Text of the New Testament, trans. Erroll F. Rhodes, 2nd ed. (Grand Rapids: Eerdmans, 1989), 307–308; Tommy Wasserman and Jennifer Knust, To Cast the First Stone: The Transmission of a Gospel Story (Princeton: Princeton University Press, 2019); David C. Parker, The Living Text of the Gospels (Cambridge: Cambridge University Press, 1997), 94–102.",
+    "bibtex": "@book{metzger1994textual, author={Metzger, Bruce M.}, title={A Textual Commentary on the Greek New Testament}, edition={2nd}, year={1994}, publisher={Deutsche Bibelgesellschaft}, address={Stuttgart}, pages={187--189}} @book{wasserman2019cast, author={Wasserman, Tommy and Knust, Jennifer}, title={To Cast the First Stone: The Transmission of a Gospel Story}, year={2019}, publisher={Princeton University Press}, address={Princeton}} @book{aland1989text, author={Aland, Kurt and Aland, Barbara}, title={The Text of the New Testament}, edition={2nd}, translator={Rhodes, Erroll F.}, year={1989}, publisher={Eerdmans}, address={Grand Rapids}}"
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-04-19T23:23:05.813335",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The overall thesis (PA non-originality) is solidly established, but the analysis contains several specific manuscript and patristic claims that are inaccurate or overstated.",
+    "flagged_claims": [
+      {
+        "claim": "P75 (c. 175–225 CE)",
+        "risk": "MEDIUM",
+        "reason": "P75 is typically dated c. 175–225 in older scholarship but more recent dating tends toward early 3rd century; the analysis elsewhere says 'c. 200' for both P66 and P75 which is also imprecise (P66 is usually c. 200, P75 early 3rd c.)."
+      },
+      {
+        "claim": "manuscript_support for omission lists '124, 788, 828' among omitting witnesses",
+        "risk": "HIGH",
+        "reason": "Minuscules 124, 788, and 828 are members of Family 13, which INCLUDES the pericope (relocated after Luke 21:38). Listing them as witnesses to omission contradicts the analysis's own f13 section."
+      },
+      {
+        "claim": "Chrysostom (no comment in homilies on John), Cyril of Alexandria (no comment)",
+        "risk": "MEDIUM",
+        "reason": "While it is true their Johannine homilies/commentaries skip the passage, listing them as 'evidence against' is standard but the parenthetical 'no comment' framing is correct; however pairing 'Origen (no comment)' as evidence is conventional but the claim that Tertullian and Cyprian make 'no mention' is an argument from silence presented as positive evidence."
+      },
+      {
+        "claim": "Didascalia Apostolorum (3rd c., Syriac, appears to allude to it)",
+        "risk": "MEDIUM",
+        "reason": "The Didascalia is originally Greek (3rd c.), preserved fully in Syriac; the allusion is real but the language attribution is misleading."
+      },
+      {
+        "claim": "Papias (Eusebius reports Papias knew a story of a woman accused before the Lord, HE 3.39.17)",
+        "risk": "MEDIUM",
+        "reason": "Eusebius HE 3.39.17 does mention Papias's story of a woman accused of many sins, but whether this is the same as the PA is debated; presenting it as evidence 'for' the PA overstates the connection."
+      },
+      {
+        "claim": "Peshitta omits in oldest copies",
+        "risk": "MEDIUM",
+        "reason": "The Peshitta consistently omits the PA in its earliest and standard form; the qualifier 'in oldest copies' is misleading since the PA was added only in much later Syriac tradition."
+      },
+      {
+        "claim": "even among Byzantine manuscripts, an estimated 1–4% mark the passage with asterisks or obeli",
+        "risk": "MEDIUM",
+        "reason": "The specific percentage range is presented with false precision; while some Byzantine MSS mark the passage, the exact figure is not standardly cited this way."
+      },
+      {
+        "claim": "Augustine (c. 400 CE) notably suggested some scribes removed it from fear it would be used to justify adultery",
+        "risk": "MEDIUM",
+        "reason": "This is a real claim (De Adulterinis Coniugiis 2.7) but no citation is given, and the framing as established fact rather than Augustine's speculation is slightly overstated."
+      },
+      {
+        "claim": "Jeremias, Becker proposed Lukan origin",
+        "risk": "MEDIUM",
+        "reason": "Attribution of this view specifically to these named scholars is unverified in the form stated; while a Lukan-origin theory exists, the named attribution risks fabrication."
+      },
+      {
+        "claim": "Tatian's Diatessaron (2nd c.) listed as evidence against",
+        "risk": "MEDIUM",
+        "reason": "The Diatessaron's treatment of the PA is uncertain due to the lack of an original text; some reconstructions suggest its absence but this is not as firm as listed."
+      }
+    ],
+    "safe_claims": [
+      "SBLGNT, NA28, and UBS5 exclude/bracket 7:53–8:11",
+      "P66, P75, Sinaiticus, and Vaticanus omit the pericope",
+      "Codex Bezae (D) includes the pericope",
+      "Family 1 places the pericope after John 21:25",
+      "Family 13 places the pericope after Luke 21:38",
+      "The vocabulary of the pericope contains non-Johannine features",
+      "Modern translations (NIV, ESV, NASB, NET, CSB, NRSV) bracket or footnote the passage",
+      "Wasserman and Knust's 2019 monograph 'To Cast the First Stone' (Princeton) addresses the PA",
+      "The transition from 7:52 to 8:12 reads smoothly without the pericope"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.420154+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

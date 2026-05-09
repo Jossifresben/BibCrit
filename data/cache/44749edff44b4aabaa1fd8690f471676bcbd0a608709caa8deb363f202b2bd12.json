@@ -150,5 +150,62 @@
   "discovery_ready": false,
   "cached_at": "2026-03-31T08:22:30.995548",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis is broadly accurate on the central textual fact (LXX ἔκτισεν vs. Hebrew qānānî) and major theological contours, but contains several specific citation references that are imprecise, possibly fabricated, or misattributed.",
+    "flagged_claims": [
+      {
+        "claim": "Justin Martyr, Dialogue with Trypho, ch. 61, 129",
+        "risk": "MEDIUM",
+        "reason": "Justin does cite Prov 8:22 in Dialogue 61 and 129, but the specific cited Greek wording should be verified; Justin's actual phrasing in Dial. 61 is 'κύριος ἔκτισέ με ἀρχὴν ὁδῶν αὐτοῦ εἰς ἔργα αὐτοῦ' — the quotation given omits a word and may be paraphrased."
+      },
+      {
+        "claim": "Arius's letter cited as 'Fragment preserved in Athanasius, De Synodis 16'",
+        "risk": "HIGH",
+        "reason": "Arius's Letter to Eusebius of Nicomedia is preserved in Theodoret (HE 1.5) and Epiphanius, not in De Synodis 16. De Synodis 15–16 preserves Arius's Thalia, not the letter to Eusebius. The citation conflates two distinct sources."
+      },
+      {
+        "claim": "Athanasius, Orations Against the Arians, Oration 2, sections 18–82",
+        "risk": "MEDIUM",
+        "reason": "The extended treatment of Prov 8:22 is in Oration 2, but the section range 18–82 is overstated; the Prov 8:22 exegesis runs roughly chs. 18–82 in some editions but this is unusually broad and should be verified."
+      },
+      {
+        "claim": "Hilary of Poitiers, De Trinitate, Book 12, sections 35–50",
+        "risk": "MEDIUM",
+        "reason": "Hilary does treat Prov 8:22 in De Trinitate Book 12, but the claim that he cites both 'creavit' and 'possedit' and prefers 'possedit' needs verification — Hilary's Latin tradition predates Jerome's Vulgate and the 'possedit' reading attribution to Hilary may be anachronistic."
+      },
+      {
+        "claim": "Jerome, Letter 140 (to Cyprian); Ep. 140.3",
+        "risk": "HIGH",
+        "reason": "Jerome's Letter 140 is to Cyprian on Psalm 89, not primarily on Prov 8:22. The reference to Ep. 140.3 discussing 'possedit me' for Prov 8:22 appears misattributed; Jerome's main discussion of Prov 8:22 and the Hebrew is in other works (e.g., commentary fragments, Hebrew Questions)."
+      },
+      {
+        "claim": "Jerome, Commentary on Ephesians, on Eph. 3:9 discussing Prov 8:22",
+        "risk": "MEDIUM",
+        "reason": "Jerome's Commentary on Ephesians at 3:9 may allude to Wisdom/creation themes but a direct citation of Prov 8:22 with 'possedit me' there should be verified; this looks like a plausible-sounding but unconfirmed reference."
+      },
+      {
+        "claim": "Basil, Against Eunomius, Book 2, section 20",
+        "risk": "MEDIUM",
+        "reason": "Basil discusses Prov 8:22 against Eunomius but the precise location (Book 2.20) needs verification; some of this exegesis appears in Book 4 (whose Basilian authorship is disputed) or in homilies, not necessarily 2.20."
+      },
+      {
+        "claim": "Tertullian's 'Dominus condidit me initium viarum suarum' from Against Praxeas ch. 6–7",
+        "risk": "MEDIUM",
+        "reason": "Tertullian cites Prov 8:22 in Adv. Prax. 6–7, but his Latin actually uses 'condidit' in some places and 'creavit' or other verbs elsewhere; the exact wording given should be verified against the critical edition."
+      }
+    ],
+    "safe_claims": [
+      "LXX Prov 8:22 reads ἔκτισέν με while MT has qānānî, which can mean 'possessed/acquired/created'.",
+      "Prov 8:22 was central to the Arian controversy.",
+      "Jerome's Vulgate translates with 'possedit me' based on Hebrew.",
+      "Athanasius accepted the LXX wording and reinterpreted it rather than emending the text.",
+      "Arius used ἔκτισεν as proof the Son was created.",
+      "Justin Martyr applies Prov 8:22 to the pre-incarnate Logos in Dialogue with Trypho."
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.663984+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

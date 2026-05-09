@@ -188,5 +188,69 @@
   "reference": "Numbers 24:17",
   "cached_at": "2026-03-30T18:47:26.734935",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v2"
+  "prompt_version": "v2",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "Core textual observations of MT/LXX differences are accurate, but several specific page citations and one DSS claim are unverifiable or likely fabricated.",
+    "flagged_claims": [
+      {
+        "claim": "Wevers (1998) p.402 / p.403 / p.404",
+        "risk": "MEDIUM",
+        "reason": "Wevers's 'Notes on the Greek Text of Numbers' (1998) is a real work, but the specific page numbers cited across multiple divergences should be verified; precise pagination in AI-generated citations is frequently fabricated."
+      },
+      {
+        "claim": "Tov (2012) p.234 / p.236",
+        "risk": "MEDIUM",
+        "reason": "Tov's 'Textual Criticism of the Hebrew Bible' (3rd ed. 2012) exists, but specific page references to this verse are unverifiable and likely fabricated."
+      },
+      {
+        "claim": "Albright (1944) p.207",
+        "risk": "MEDIUM",
+        "reason": "Albright's 1944 BASOR article 'The Oracles of Balaam' is real, but the specific argument that שֵׁבֶט means 'leader' in archaic poetry attributed here, with this page, should be verified—Albright's actual emendations in that article differ."
+      },
+      {
+        "claim": "Pietersma (2006) p.89",
+        "risk": "MEDIUM",
+        "reason": "Citation is vague (no work title) and the claim about 'LXX's tendency toward verbal dynamism' as a Pietersma principle is not a well-known formulation; possibly fabricated."
+      },
+      {
+        "claim": "Vermes (1961) p.59",
+        "risk": "MEDIUM",
+        "reason": "Vermes's 'Scripture and Tradition in Judaism' (1961) discusses Balaam traditions, but the specific page reference is unverifiable."
+      },
+      {
+        "claim": "4QNumb preserves partial text but lacks this specific clause",
+        "risk": "HIGH",
+        "reason": "This claim about 4QNumb's specific content at Num 24:17 needs verification against DJD XII; making negative claims about what a fragmentary manuscript 'lacks' requires direct consultation of the edition."
+      },
+      {
+        "claim": "Qumran texts (CD 7:19-20, 1QSb 5:27) attest early personalized messianic reading",
+        "risk": "MEDIUM",
+        "reason": "CD 7:19-20 does cite Num 24:17 (the Damascus Document's 'star' interpretation), but the claim that 1QSb 5:27 personalizes this verse should be checked; 1QSb 5 uses related royal imagery but the specific link to Num 24:17 personalization is debatable."
+      },
+      {
+        "claim": "LXX may also relocate this clause to govern the following verb ἀνατελεῖ",
+        "risk": "MEDIUM",
+        "reason": "This syntactic re-parsing claim is speculative and not standardly argued in the literature; presented with more confidence than warranted."
+      },
+      {
+        "claim": "The absence of עַתָּה's equivalent suggests the translator may have... rendered it with ἐγγίζει",
+        "risk": "MEDIUM",
+        "reason": "ἐγγίζει corresponds to קָרוֹב, not to עַתָּה; the analysis appears to conflate the two temporal markers."
+      }
+    ],
+    "safe_claims": [
+      "MT אֶרְאֶנּוּ vs LXX δείξω αὐτῷ reflects a Hiphil/Qal distinction in the underlying Hebrew",
+      "LXX has ἄνθρωπος where MT has שֵׁבֶט",
+      "LXX has ἀρχηγούς where MT has פַּאֲתֵי",
+      "LXX uses ἀνατελεῖ (standard astronomical term) for MT's דָּרַךְ",
+      "קרקר is a rare/difficult verb in Hebrew",
+      "CD 7 cites Numbers 24:17 in a messianic context",
+      "LXX προνομεύσει renders MT וְקַרְקַר",
+      "The perfect-to-future tense shift is observable in the Greek rendering"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.622247+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

@@ -129,5 +129,66 @@
   "discovery_ready": false,
   "cached_at": "2026-04-19T15:57:01.786603",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The overall thesis (Pericope Adulterae is secondary) is solidly grounded, but several specific manuscript citations and patristic claims contain inaccuracies and overstatements.",
+    "flagged_claims": [
+      {
+        "claim": "Alexandrian witnesses include 'A' and 'C'",
+        "risk": "HIGH",
+        "reason": "Codex Alexandrinus (A) and Codex Ephraemi (C) are lacunose at this point in John; the relevant pages are missing. Scholars infer omission from space calculations, but these MSS cannot be cited as direct witnesses to the omission."
+      },
+      {
+        "claim": "omitted by early Church Fathers including Origen, Chrysostom, Cyril of Alexandria, Tertullian, Cyprian",
+        "risk": "MEDIUM",
+        "reason": "While these fathers do not comment on the pericope, listing 'Tertullian' and 'Cyprian' as omitting a passage in John is methodologically questionable since their commentary on John is limited; the standard list emphasizes Greek commentators on John."
+      },
+      {
+        "claim": "Papias mentioned a similar story",
+        "risk": "MEDIUM",
+        "reason": "Eusebius (Hist. eccl. 3.39.17) reports Papias mentioned a story of a woman accused of many sins before the Lord, found in the Gospel of the Hebrews—the connection to the Pericope Adulterae is plausible but debated, and the analysis presents it too confidently."
+      },
+      {
+        "claim": "The word γραμματεῖς (scribes) appears here but nowhere else in John",
+        "risk": "MEDIUM",
+        "reason": "This is a commonly stated claim and largely correct, but should be verified; the term is indeed absent from the rest of John, so this is likely accurate but is the kind of specific claim worth checking."
+      },
+      {
+        "claim": "f13 minuscules listed as '13, 69, 124, 346, 556, 788, 826, 828, 983, 1689mg'",
+        "risk": "MEDIUM",
+        "reason": "The exact list of family 13 members that transpose the pericope to after Luke 21:38 should be verified; '556' and '1689mg' are not standard f13 members in the usual lists."
+      },
+      {
+        "claim": "Caesarean witnesses... place the pericope... after John 7:36",
+        "risk": "HIGH",
+        "reason": "The well-known alternative locations are after John 7:36 (associated with minuscule 225, not f13 generally), after John 21:25 (f1), after Luke 21:38 (f13), and after Luke 24:53. The attribution to f13 of placement after 7:36 is incorrect."
+      },
+      {
+        "claim": "appears in no Greek manuscript before the fifth century (D)",
+        "risk": "MEDIUM",
+        "reason": "Codex Bezae (D) is generally dated to the fifth century, so this is approximately correct, but the claim is stated with more precision than warranted; some date D to c. 400."
+      },
+      {
+        "claim": "Western evidence is divided. Codex Bezae (D) includes the pericope but other Western witnesses omit it",
+        "risk": "MEDIUM",
+        "reason": "The 'Western' text is largely represented by D and Old Latin for John; characterizing the Western tradition as 'split' oversimplifies—most Western witnesses that contain John include the pericope."
+      }
+    ],
+    "safe_claims": [
+      "P66 and P75 omit the pericope, jumping from 7:52 to 8:12",
+      "Sinaiticus (א) and Vaticanus (B) omit the pericope",
+      "NA28/UBS5 enclose the passage in double brackets",
+      "The Byzantine majority includes the pericope at its traditional location",
+      "f1 places the pericope after John 21:25",
+      "f13 places the pericope after Luke 21:38",
+      "Metzger assigns the passage a high level of doubt regarding originality",
+      "Modern translations (ESV, NIV, NRSV, NASB, CSB) bracket or footnote the passage",
+      "Jerome acknowledged the passage's absence from many Greek manuscripts",
+      "The narrative flow from 7:52 to 8:12 reads coherently without the pericope"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.639895+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

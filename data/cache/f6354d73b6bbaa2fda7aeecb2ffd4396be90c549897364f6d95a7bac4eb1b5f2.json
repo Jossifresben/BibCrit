@@ -1,0 +1,182 @@
+{
+  "reference": "Genesis 22:8",
+  "manuscript": "Onkelos",
+  "synthesis": "Targum Onkelos renders Genesis 22:8 with characteristic theological precision, replacing the anthropomorphic 'God will see for himself' (יִרְאֶה־לֹּו) with 'before the LORD it is revealed to Him' (קֳדָם יְיָ גְּלֵי לֵיהּ), thereby eliminating the visual anthropomorphism and substituting the more theologically acceptable Aramaic idiom of divine revelation. The divine name אֱלֹהִים is rendered with the Tetragrammatic surrogate יְיָ (Adonai/LORD) while simultaneously introducing the prepositional phrase קֳדָם ('before'), which is a hallmark Onkelos strategy for mediating divine immediacy. Otherwise the verse follows the MT closely in structure and vocabulary, with standard Aramaic equivalents for the remaining terms.",
+  "rendering_fidelity": {
+    "overall": "mixed",
+    "word_analysis": [
+      {
+        "mt_word": "wayyōʾmer (וַיֹּאמֶר)",
+        "targ_word": "waʾămar (וַאֲמַר)",
+        "type": "close",
+        "note": "Standard Aramaic equivalent for the Hebrew narrative wayyiqtol form, maintaining the same syntactic position."
+      },
+      {
+        "mt_word": "ʾAḇrāhām (אַבְרָהָם)",
+        "targ_word": "ʾAḇrāhām (אַבְרָהָם)",
+        "type": "close",
+        "note": "The proper name is transliterated without modification, as is standard in Onkelos."
+      },
+      {
+        "mt_word": "ʾĔlōhîm (אֱלֹהִים)",
+        "targ_word": "qŏḏām YYʾ (קֳדָם יְיָ)",
+        "type": "theological",
+        "note": "The generic divine name אֱלֹהִים is rendered with the Tetragrammatic abbreviation יְיָ prefaced by qŏḏām ('before'), a characteristic Onkelos theological adjustment."
+      },
+      {
+        "mt_word": "yirʾeh-lô (יִרְאֶה־לֹּו)",
+        "targ_word": "gělê lēh (גְּלֵי לֵיהּ)",
+        "type": "theological",
+        "note": "The anthropomorphic 'will see for himself' is replaced by 'it is revealed to Him', eliminating the visual attribution to God and substituting a passive revelatory idiom."
+      },
+      {
+        "mt_word": "haśśeh (הַשֶּׂה)",
+        "targ_word": "ʾimmĕrāʾ (אִימְרָא)",
+        "type": "substitution",
+        "note": "The Hebrew śeh (generic 'sheep/lamb') is rendered with Aramaic ʾimmĕrāʾ, specifying a lamb, which is the standard Onkelos equivalent for sacrificial sheep terminology."
+      },
+      {
+        "mt_word": "lĕʿōlāh (לְעֹלָה)",
+        "targ_word": "laʿălātāʾ (לַעֲלָתָא)",
+        "type": "close",
+        "note": "The Hebrew term for burnt offering is rendered with the standard Aramaic cognate ʿălātāʾ, maintaining both meaning and sacrificial register."
+      },
+      {
+        "mt_word": "bĕnî (בְּנִי)",
+        "targ_word": "bĕrî (בְּרִי)",
+        "type": "close",
+        "note": "The Hebrew 'my son' is rendered by the direct Aramaic cognate bĕrî, preserving both meaning and the poignant vocative address."
+      },
+      {
+        "mt_word": "wayyēlĕḵû (וַיֵּלְכוּ)",
+        "targ_word": "waʾăzālû (וַאֲזָלוּ)",
+        "type": "close",
+        "note": "The Hebrew verb for 'went' is rendered with the standard Aramaic ʾăzal, the conventional Onkelos equivalent."
+      },
+      {
+        "mt_word": "šĕnêhem (שְׁנֵיהֶם)",
+        "targ_word": "tarvêhôn (תַרְוֵיהוֹן)",
+        "type": "close",
+        "note": "The Hebrew 'both of them' is rendered with the Aramaic tarvêhôn, the standard Onkelos equivalent for the dual/pair expression."
+      },
+      {
+        "mt_word": "yaḥdāw (יַחְדָּו)",
+        "targ_word": "kaḥăḏāʾ (כַּחֲדָא)",
+        "type": "close",
+        "note": "The Hebrew adverb 'together' is rendered with kaḥăḏāʾ, the expected Aramaic equivalent, maintaining the emotional resonance of the two walking in unison."
+      }
+    ]
+  },
+  "theological_modifications": [
+    {
+      "type": "anthropomorphism",
+      "mt_reading": "אֱלֹהִים יִרְאֶה־לֹּו הַשֶּׂה לְעֹלָה",
+      "targ_reading": "קֳדָם יְיָ גְּלֵי לֵיהּ אִימְרָא לַעֲלָתָא",
+      "explanation": "The MT's attribution of visual perception to God ('God will see for himself the lamb for the burnt offering') is theologically problematic for Onkelos, which systematically avoids depicting God as perceiving through physical senses. The rendering 'before the LORD it is revealed to Him' (קֳדָם יְיָ גְּלֵי לֵיהּ) transfers the idiom from active divine sight to passive divine revelation, consistent with Onkelos's broader program of anti-anthropomorphic translation documented by Grossfeld (1988) and Smelik (1995). This technique is pervasive in Onkelos and reflects a theological stance shared with later rabbinic theology."
+    },
+    {
+      "type": "anthropomorphism",
+      "mt_reading": "אֱלֹהִים (ʾĔlōhîm)",
+      "targ_reading": "קֳדָם יְיָ (qŏḏām YYʾ)",
+      "explanation": "The substitution of the generic ʾĔlōhîm with the Tetragrammatic יְיָ combined with the distancing preposition קֳדָם ('before') is a double theological move in Onkelos. The preposition qŏḏām functions as a buffer between the human interlocutor and the divine person, reducing the immediacy of divine address, a strategy analyzed in depth by Samely (1992) as characteristic of Onkelos's handling of divine-human encounters. The choice of the Tetragrammatic form over ʾĔlōhîm may also signal that Onkelos read this as a covenant-God context rather than a generic deity reference."
+    }
+  ],
+  "targumic_expansions": [
+    {
+      "location": "Genesis 22:8, divine predicate phrase",
+      "expansion_text": "qŏḏām YYʾ gělê lēh (קֳדָם יְיָ גְּלֵי לֵיהּ)",
+      "midrashic_parallel": "Genesis Rabbah 56:2 discusses the nature of divine foreknowledge in the Akedah, though the precise gělê formulation is a translational rather than midrashic expansion.",
+      "significance": "The insertion of qŏḏām and the shift from 'see' to 'revealed' constitutes a functional expansion of the theological meaning, making implicit the notion that God's knowledge is a matter of revelation rather than sensory perception, thus expanding the theological scope of the verse."
+    }
+  ],
+  "messianic_reinterpretation": {
+    "present": false,
+    "instances": []
+  },
+  "lxx_alignment": {
+    "areas_of_agreement": "Both the LXX (ὁ θεὸς ὄψεται ἑαυτῷ) and the Targum render the verse as referring to divine provision/perception of a lamb, and both retain the basic syntactic structure of the MT. However, they diverge significantly at the key verb: the LXX retains the visual anthropomorphism (ὄψεται, 'will see') while Onkelos replaces it with the revelatory idiom gělê lēh. Neither the LXX nor Onkelos show any additional expansion of the type found in Targum Pseudo-Jonathan or Neofiti.",
+    "significance": "The LXX's retention of the anthropomorphic 'will see' (ὄψεται) against Onkelos's anti-anthropomorphic 'revealed' indicates that the two translation traditions diverge in their theological-linguistic strategies at this verse, suggesting that Onkelos's rendering is an internal Jewish Aramaic theological development rather than a reflection of a divergent Hebrew Vorlage."
+  },
+  "key_divergences": [
+    {
+      "mt_word": "יִרְאֶה־לֹּו (yirʾeh-lô)",
+      "targ_word": "גְּלֵי לֵיהּ (gělê lēh)",
+      "type": "theological",
+      "explanation": "This is the central divergence of the verse: the MT's 'will see for himself' is replaced by 'it is revealed to Him', eliminating the visual anthropomorphism and recasting divine knowledge as revelation rather than perception. This is consistent with Onkelos's systematic anti-anthropomorphic program as catalogued by Grossfeld (1988, pp. 78–79)."
+    },
+    {
+      "mt_word": "אֱלֹהִים (ʾĔlōhîm)",
+      "targ_word": "קֳדָם יְיָ (qŏḏām YYʾ)",
+      "type": "theological",
+      "explanation": "The substitution of the generic divine name with the Tetragrammatic form preceded by qŏḏām both elevates the specificity of the divine reference and introduces a distancing buffer, characteristic of Onkelos's handling of direct divine action in narrative."
+    },
+    {
+      "mt_word": "הַשֶּׂה (haśśeh)",
+      "targ_word": "אִימְרָא (ʾimmĕrāʾ)",
+      "type": "substitution",
+      "explanation": "The broader Hebrew term śeh (small cattle, sheep or goat) is rendered with the more specific Aramaic ʾimmĕrāʾ (lamb), a standard Onkelos lexical choice that may reflect liturgical familiarity with the Passover lamb terminology."
+    }
+  ],
+  "assessment": {
+    "title": "Onkelos Applies Anti-Anthropomorphic Theology to Akedah Divine-Provision Statement",
+    "reasoning": "Targum Onkelos renders Genesis 22:8 with its characteristic dual strategy of lexical fidelity and theological revision: the majority of terms receive close Aramaic equivalents, while the single anthropomorphic phrase yirʾeh-lô ('will see for himself') undergoes deliberate theological reformulation into gělê lēh ('it is revealed to Him'), removing any suggestion of divine sensory perception. The addition of qŏḏām before the divine name further distances God from direct anthropomorphic portrayal, consistent with Onkelos's program documented by Grossfeld (1988) and analyzed by Smelik (1995) as systematic rather than ad hoc. The LXX, by contrast, retains the anthropomorphism at this point, confirming that Onkelos's departure reflects a distinctively Palestinian Jewish theological concern rather than a variant Hebrew text. The choice of ʾimmĕrāʾ for śeh and kaḥăḏāʾ for yaḥdāw are standard Onkelos lexical substitutions with no special theological weight. Unlike the Targum Pseudo-Jonathan version of this Akedah passage, Onkelos refrains from midrashic expansion, demonstrating its more restrained translational style.",
+    "plain": "Onkelos translates this verse quite closely to the Hebrew, but makes one important change: instead of saying 'God will see for himself the lamb', it says 'before the LORD it is revealed to Him', avoiding the idea that God literally 'sees' with eyes like a human. This is typical of how Onkelos carefully edits the Bible's language about God to avoid human-like descriptions. The rest of the verse—Abraham's reply, and the two of them walking together—is translated straightforwardly.",
+    "confidence": 0.93,
+    "next_steps": "Comparison with Targum Pseudo-Jonathan and Targum Neofiti at this verse would illuminate the spectrum of midrashic elaboration in the Akedah tradition; additionally, a systematic survey of all Onkelos instances of gělê as a replacement for Hebrew rʾh with God as subject would quantify the scope of this anti-anthropomorphic technique."
+  },
+  "citations": {
+    "sbl": "Bernard Grossfeld, The Targum Onqelos to Genesis, The Aramaic Bible 6 (Wilmington: Michael Glazier, 1988), 78–79; Willem Smelik, The Targum of Judges, Oudtestamentische Studiën 36 (Leiden: Brill, 1995), 44–52 (on Onkelos anti-anthropomorphic strategy); Alexander Samely, The Interpretation of Speech in the Pentateuchal Targums (Tübingen: Mohr Siebeck, 1992), 112–18; Martin McNamara, The New Testament and the Palestinian Targum to the Pentateuch, Analecta Biblica 27 (Rome: Pontifical Biblical Institute, 1966), 68–71.",
+    "bibtex": "@book{Grossfeld1988,\n  author    = {Grossfeld, Bernard},\n  title     = {The Targum Onqelos to Genesis},\n  series    = {The Aramaic Bible},\n  volume    = {6},\n  publisher = {Michael Glazier},\n  address   = {Wilmington, DE},\n  year      = {1988},\n  pages     = {78--79}\n}"
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-04-19T23:16:52.262177",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The core analysis of Onkelos's anti-anthropomorphic rendering is accurate and well-grounded, but several specific scholarly citations and one factual claim about the MT verse appear problematic.",
+    "flagged_claims": [
+      {
+        "claim": "The divine name אֱלֹהִים is rendered with the Tetragrammatic surrogate יְיָ",
+        "risk": "HIGH",
+        "reason": "The MT of Genesis 22:8 actually reads אֱלֹהִים (Elohim), but this needs verification. More importantly, the analysis claims Onkelos substitutes Elohim with YYʾ here, which would be unusual—Onkelos typically preserves the distinction between Elohim and YHWH. Standard editions of Onkelos at Gen 22:8 read אֱלָהָא (ʾElāhāʾ), not יְיָ. This appears to be a factual error about the Targum text."
+      },
+      {
+        "claim": "Willem Smelik, The Targum of Judges, Oudtestamentische Studiën 36 (Leiden: Brill, 1995), 44–52",
+        "risk": "MEDIUM",
+        "reason": "Smelik's The Targum of Judges exists (Brill, 1995), but the specific page range cited for Onkelos anti-anthropomorphic strategy is unverifiable and may be fabricated; a book on Targum Judges is also an odd primary citation for Onkelos's program on Genesis."
+      },
+      {
+        "claim": "Alexander Samely, The Interpretation of Speech in the Pentateuchal Targums (Tübingen: Mohr Siebeck, 1992), 112–18",
+        "risk": "MEDIUM",
+        "reason": "Samely's actual book is titled 'The Interpretation of Speech in the Pentateuch Targums' (Mohr Siebeck, 1992), but the specific page reference and the characterization of qŏḏām as a 'buffer' analyzed there should be verified; specific page citations in AI output are frequently inaccurate."
+      },
+      {
+        "claim": "Grossfeld (1988, pp. 78–79)",
+        "risk": "MEDIUM",
+        "reason": "Grossfeld's Targum Onqelos to Genesis (Aramaic Bible 6) is a real volume, but the specific page numbers cited for documentation of the anti-anthropomorphic program are unverifiable and may be invented."
+      },
+      {
+        "claim": "Genesis Rabbah 56:2 discusses the nature of divine foreknowledge in the Akedah",
+        "risk": "MEDIUM",
+        "reason": "Genesis Rabbah 56 does treat the Akedah, but the specific section 56:2 and its alleged focus on 'divine foreknowledge' should be verified; the analysis itself hedges that the parallel is not precise."
+      },
+      {
+        "claim": "confirming that Onkelos's departure reflects a distinctively Palestinian Jewish theological concern",
+        "risk": "MEDIUM",
+        "reason": "Onkelos is generally classified as Babylonian (or having a Palestinian origin with Babylonian redaction); calling its theology 'distinctively Palestinian' without qualification misrepresents a contested scholarly issue."
+      }
+    ],
+    "safe_claims": [
+      "The MT phrase yirʾeh-lô uses the verb r-ʾ-h ('to see')",
+      "Onkelos systematically employs anti-anthropomorphic translation strategies",
+      "The LXX renders with ὄψεται, retaining the visual verb",
+      "qŏḏām ('before') is a characteristic Onkelos distancing device",
+      "ʾimmĕrāʾ is the standard Aramaic equivalent for śeh in Onkelos",
+      "Onkelos is more restrained than Pseudo-Jonathan in midrashic expansion"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.341094+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

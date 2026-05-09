@@ -1,0 +1,155 @@
+{
+  "divergences": [
+    {
+      "mt_word": "אֶהְיֶה אֲשֶׁר אֶהְיֶה ('ehyeh 'asher 'ehyeh, 'I will be/am what I will be/am')",
+      "lxx_word": "ἐγώ εἰμι ὁ ὤν (egō eimi ho ōn, 'I am the Being/the One who is')",
+      "divergence_type": "theological_tendency",
+      "confidence": 0.88,
+      "hypotheses": [
+        {
+          "type": "theological_tendency",
+          "confidence": 0.88,
+          "explanation": "The LXX translator rendered the dynamic, first-person Hebrew imperfect/future 'ehyeh with the Greek ontological participle ὤν, transforming a relational divine self-identification into a Platonic-style statement of absolute being, likely under the influence of Hellenistic philosophical categories."
+        },
+        {
+          "type": "translation_idiom",
+          "confidence": 0.55,
+          "explanation": "The translator may have sought the closest Greek semantic equivalent for an untranslatable Hebrew construction, choosing the participial ὤν as the best approximation of the root הָיָה in Greek idiom, without necessarily intending a philosophical statement."
+        }
+      ],
+      "dss_witness": "4QExod-Lev^f contains portions of Exodus but not this verse; no DSS witness alters the MT reading here; MT consonantal text is consistently attested.",
+      "citations": [
+        "Tov, E. (2012) Textual Criticism of the Hebrew Bible, pp. 135–137",
+        "Wevers, J.W. (1990) Notes on the Greek Text of Exodus, pp. 34–36",
+        "Pietersma, A. & Wright, B.G. (2007) NETS, p. 48",
+        "Dörrie, H. (1974) Platonism and Exegesis, pp. 1–10",
+        "Tobin, T.H. (1983) The Creation of Man: Philo and the History of Interpretation, pp. 55–60"
+      ],
+      "analysis_technical": "The MT 'ehyeh 'asher 'ehyeh is a qal imperfect of הָיָה with the relative pronoun אֲשֶׁר, functioning as an idem per idem construction conveying either indefiniteness or dynamic self-determination ('I will be what I will be'). The LXX translator chose ἐγώ εἰμι ὁ ὤν, where ὤν (present active participle of εἶναι) introduces ontological absoluteness absent from the Hebrew. Wevers identifies this as a theologically motivated rendering aligning with Alexandrian philosophical milieu, and Tov notes this as a prime example of inner-translational theological adaptation rather than a different Hebrew Vorlage.",
+      "analysis_plain": "In Hebrew, God's name sounds like 'I will be what I will be' — mysterious and relational. The Greek translators turned it into 'I am the One who IS,' which sounds more like a philosophy textbook statement about God's eternal existence — a significant shift in meaning driven by Greek ways of thinking."
+    },
+    {
+      "mt_word": "אֶהְיֶה שְׁלָחַנִי ('ehyeh shelaḥani, 'I-Am/I-Will-Be has sent me')",
+      "lxx_word": "ὁ ὢν ἀπέσταλκέν με (ho ōn apestalken me, 'The Being/the One who IS has sent me')",
+      "divergence_type": "theological_tendency",
+      "confidence": 0.85,
+      "hypotheses": [
+        {
+          "type": "theological_tendency",
+          "confidence": 0.85,
+          "explanation": "The LXX consistently renders the divine name-form with the participial ὁ ὤν in the messenger formula, confirming that the theological transformation of the first divergence is deliberate and programmatic throughout the verse, not accidental."
+        },
+        {
+          "type": "grammatical_shift",
+          "confidence": 0.6,
+          "explanation": "The MT uses the first-person 'ehyeh as a proper-name-like subject of the verb שְׁלָחַנִי (third masculine singular with first-person suffix), while the LXX shifts to the articular participle ὁ ὤν as a third-person nominal subject with the perfect ἀπέσταλκέν, reflecting a Greek grammatical preference for nominal subjects over verbal ones."
+        }
+      ],
+      "dss_witness": "No DSS witness attests a variant in this clause; the MT form is stable across manuscript traditions.",
+      "citations": [
+        "Wevers, J.W. (1990) Notes on the Greek Text of Exodus, pp. 36–37",
+        "Pietersma, A. (2010) LXX Lexicography and the NETS Project, pp. 12–14",
+        "Tov, E. (2012) Textual Criticism of the Hebrew Bible, p. 136",
+        "Rösel, M. (1998) Adonaj – Warum Gott 'Herr' genannt wird, pp. 45–50"
+      ],
+      "analysis_technical": "In the messenger formula, the MT retains 'ehyeh as subject, using the first-person imperfect as a quasi-proper noun — an unusual but deliberate syntactic move. The LXX employs ὁ ὤν with the Greek perfect ἀπέσταλκέν, which carries connotations of a completed action with present relevance, subtly reinforcing God's ontological constancy as the basis for the ongoing validity of Moses' commission. Rösel notes that the LXX translator treats the divine name as a title denoting permanent being, not a transient self-revelation.",
+      "analysis_plain": "Where Hebrew has 'I-Am has sent me' (using a verbal form as a name), the Greek has 'The One Who IS has sent me,' turning a strange grammatical formation in Hebrew into a dignified-sounding Greek title — like the difference between 'Will-Be sent me' and 'The Eternal One sent me.'"
+    },
+    {
+      "mt_word": "שְׁלָחַנִי (shelaḥani, 'has sent me', qal perfect 3ms + 1cs suffix)",
+      "lxx_word": "ἀπέσταλκέν με (apestalken me, 'has sent me', perfect active indicative + acc. pronoun)",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.72,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.72,
+          "explanation": "The Hebrew qal perfect שָׁלַח with object suffix is straightforwardly rendered by the Greek perfect ἀπέσταλκεν, which is a standard LXX rendering of the Hebrew perfect; the choice of ἀποστέλλω rather than πέμπω may carry the nuance of authoritative divine commissioning consistent with the LXX's theological framing."
+        },
+        {
+          "type": "grammatical_shift",
+          "confidence": 0.5,
+          "explanation": "Greek requires a separate accusative pronoun με where Hebrew suffixes the object directly to the verb, a routine morphosyntactic shift with no text-critical implication."
+        }
+      ],
+      "dss_witness": "null",
+      "citations": [
+        "Wevers, J.W. (1990) Notes on the Greek Text of Exodus, p. 37",
+        "Conybeare, F.C. & Stock, G. (1905) Grammar of Septuagint Greek, pp. 70–72"
+      ],
+      "analysis_technical": "The choice of ἀποστέλλω (to send with authority/on a mission) rather than the more neutral πέμπω is consistent with LXX translational tendencies when rendering divine commissioning language; Wevers notes this lexical preference reflects the translator's awareness of the authoritative-appointment context. The separation of verb and object pronoun is a straightforward morphological adaptation from Hebrew to Greek with no source-text implications.",
+      "analysis_plain": "The Greek word for 'sent' here (ἀπέσταλκεν) is the root of our word 'apostle' — sent with authority — which the translator seems to have chosen deliberately to underscore that Moses is God's official envoy, not just a messenger."
+    }
+  ],
+  "summary_technical": "The principal divergences in Exodus 3:14 do not reflect a different Hebrew Vorlage but represent deliberate theological-translational decisions by the LXX translator, who systematically rendered the dynamic, relational Hebrew 'ehyeh construction through the ontological Greek participial formula ὁ ὤν, consistent with Hellenistic-Jewish philosophical theology attested in Philo; Tov and Wevers concur that these are inner-Greek theological adaptations, not text-critical variants.",
+  "summary_plain": "The Hebrew and Greek versions of this famous verse differ profoundly in theological flavor: the Hebrew God says something mysterious and relational ('I will be what I will be'), while the Greek God claims timeless philosophical existence ('I am the One Who IS') — a difference that shaped centuries of Jewish and Christian theology.",
+  "bibcrit_hypothesis": {
+    "title": "ὁ ὤν as Reversionary Correction, Not Originary Hellenism",
+    "reasoning": "Scholars typically explain ὁ ὤν as reflecting Platonic influence on the Alexandrian translator ab initio, but an underexplored possibility is that the participial formula represents a revisionary layer — that an earlier, more literal rendering (perhaps *ἔσομαι ὃ ἔσομαι*, preserving the futurity of 'ehyeh) was subsequently corrected toward ὁ ὤν by a reviser operating in a philosophical milieu, analogous to the kaige revisional tendency documented by Barthélemy. This hypothesis would explain why ὁ ὤν appears so polished and terminologically precise compared to the surrounding translation's variable quality, and might account for the absence of any parallel futural rendering in the LXX tradition. This remains speculative in the absence of a recoverable earlier Greek text of Exodus.",
+    "plain": "It's possible that an earlier Greek translation kept the future sense of the Hebrew ('I will be what I will be') and a later editor deliberately changed it to the philosophical 'I AM' formula — meaning the famous Greek phrasing may be a revision, not the original translation.",
+    "confidence": 0.28
+  },
+  "discovery_ready": false,
+  "reference": "Exodus 3:14",
+  "cached_at": "2026-04-20T20:00:40.672329",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v2",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The core textual observations about the MT/LXX divergence are accurate and well-known, but several specific page citations and one bibliographic entry appear potentially fabricated or unverifiable.",
+    "flagged_claims": [
+      {
+        "claim": "Dörrie, H. (1974) Platonism and Exegesis, pp. 1–10",
+        "risk": "HIGH",
+        "reason": "This citation appears fabricated or garbled. Heinrich Dörrie wrote on Platonism but no standard work titled 'Platonism and Exegesis' from 1974 is readily verifiable; the page range looks generic."
+      },
+      {
+        "claim": "Tobin, T.H. (1983) The Creation of Man: Philo and the History of Interpretation, pp. 55–60",
+        "risk": "MEDIUM",
+        "reason": "While Tobin's CBQMS volume exists (1983), the specific page range cited for Exodus 3:14 / ὁ ὤν discussion is unverified and may not address this verse directly."
+      },
+      {
+        "claim": "Pietersma, A. (2010) LXX Lexicography and the NETS Project, pp. 12–14",
+        "risk": "HIGH",
+        "reason": "This title and date do not correspond to a clearly identifiable Pietersma publication; appears to be a fabricated or conflated citation."
+      },
+      {
+        "claim": "Rösel, M. (1998) Adonaj – Warum Gott 'Herr' genannt wird",
+        "risk": "MEDIUM",
+        "reason": "Rösel's book 'Adonaj – Warum Gott Herr genannt wird' was published in 2000 (FAT 29), not 1998; date appears incorrect."
+      },
+      {
+        "claim": "Wevers identifies this as a theologically motivated rendering aligning with Alexandrian philosophical milieu",
+        "risk": "MEDIUM",
+        "reason": "Wevers in his Notes on the Greek Text of Exodus is generally cautious about attributing translational choices to Hellenistic philosophy; this characterization may overstate his actual position."
+      },
+      {
+        "claim": "4QExod-Lev^f contains portions of Exodus but not this verse",
+        "risk": "MEDIUM",
+        "reason": "The specific claim about coverage of 4QExod-Levf needs verification; the manuscript's contents should be checked against DJD editions rather than asserted."
+      },
+      {
+        "claim": "Tov notes this as a prime example of inner-translational theological adaptation",
+        "risk": "MEDIUM",
+        "reason": "Attribution of this specific characterization to Tov on pp. 135-137 of TCHB needs verification; Tov discusses translation technique broadly but the specific framing may be paraphrased beyond what he claims."
+      },
+      {
+        "claim": "an earlier, more literal rendering (perhaps *ἔσομαι ὃ ἔσομαι*) was subsequently corrected toward ὁ ὤν by a reviser",
+        "risk": "MEDIUM",
+        "reason": "This is acknowledged as speculative (confidence 0.28), but readers should note there is no manuscript evidence whatsoever for such a Vorlage; the analogy to kaige is loose since kaige typically moves toward more literal, not less literal, renderings."
+      }
+    ],
+    "safe_claims": [
+      "MT 'ehyeh 'asher 'ehyeh is rendered ἐγώ εἰμι ὁ ὤν in LXX",
+      "ὤν is the present active participle of εἶναι",
+      "The Hebrew construction is an idem per idem formulation",
+      "ἀποστέλλω carries connotations of authoritative commissioning vs. neutral πέμπω",
+      "Greek requires a separate accusative pronoun where Hebrew uses a verbal suffix",
+      "The LXX renders the divine self-identification with ontological/participial language absent from the Hebrew",
+      "No DSS witness preserves a variant for Exodus 3:14 in this clause"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.665398+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

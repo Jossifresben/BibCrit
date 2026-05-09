@@ -168,5 +168,70 @@
   "reference": "Psalms",
   "cached_at": "2026-03-31T00:00:42.633296",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "Core textual observations are accurate, but several scholarly citations have suspicious page numbers and at least one manuscript identification is incorrect.",
+    "flagged_claims": [
+      {
+        "claim": "Qumran manuscript 5/6ḤevPs preserves כארו",
+        "risk": "HIGH",
+        "reason": "The manuscript with the כארו reading at Ps 22:17 is 5/6ḤevPs (Naḥal Ḥever), which is technically correct, but it is often cited as 5/6HevPs or XHev/Se. The reading itself is debated — some scholars read כארו ('they dug/pierced'), others read differently. The certainty implied here overstates the paleographic consensus."
+      },
+      {
+        "claim": "van der Kooij, The Oracle of Tyre, p. 45",
+        "risk": "HIGH",
+        "reason": "Van der Kooij's 'The Oracle of Tyre' is a study of LXX Isaiah 23, not Psalms. Citing it for Psalm 8:5 anthropomorphism avoidance and again for Psalm 68:18 Targumic expansion is almost certainly fabricated or misattributed."
+      },
+      {
+        "claim": "de Waard, A Handbook on the Psalms, p. 89",
+        "risk": "HIGH",
+        "reason": "The UBS Handbook on Psalms is by Bratcher and Reyburn, not de Waard. De Waard co-authored handbooks on other books (Ruth, Lamentations, Amos). This citation appears fabricated."
+      },
+      {
+        "claim": "Chilton, The Isaiah Targum, p. 134",
+        "risk": "HIGH",
+        "reason": "Chilton's work on Targum Isaiah would not be the appropriate source for a claim about Targum Psalms 45:6. This appears to be a misattributed citation."
+      },
+      {
+        "claim": "Schaper, Eschatology in the Greek Psalter, pp. 89-91 / 95-97 / 112-118 / 122-125",
+        "risk": "MEDIUM",
+        "reason": "While Schaper's monograph (1995, WUNT 2/76) is a real and relevant work, the multiple specific page ranges cited cannot be verified and the pattern of round, sequential page citations is suspicious."
+      },
+      {
+        "claim": "some manuscripts preserve 'kiss purity' or 'the chosen one'",
+        "risk": "MEDIUM",
+        "reason": "These alternative renderings of Ps 2:12 (e.g., Aquila, Symmachus, Jerome reading 'pure/sincerely') exist in scholarship, but the specific gloss 'the chosen one' is not a standard attested variant and may conflate different traditions."
+      },
+      {
+        "claim": "The LXX systematically renders אֱלֹהִים as ἄγγελοι when applied to humans' relation to the divine",
+        "risk": "MEDIUM",
+        "reason": "Overstated as 'systematic.' The LXX renders elohim as angeloi in only a few specific cases (e.g., Ps 8:5, 97:7, 138:1); calling it a systematic policy overstates the evidence."
+      },
+      {
+        "claim": "Hay, Glory at the Right Hand, pp. 34-36",
+        "risk": "MEDIUM",
+        "reason": "David Hay's 'Glory at the Right Hand: Psalm 110 in Early Christianity' is a real work, but the specific page range is unverifiable and citations to round consecutive pages are a common hallucination pattern."
+      },
+      {
+        "claim": "Targum Ps 110:1: 'The LORD said in his Memra to give strength to the King Messiah'",
+        "risk": "MEDIUM",
+        "reason": "The wording is plausible but the specific Targumic Psalms text should be verified against Stec's edition; paraphrastic citations of Targum Psalms are frequently inaccurate in AI output."
+      }
+    ],
+    "safe_claims": [
+      "LXX Ps 2:12 reads δράξασθε παιδείας instead of MT's 'kiss the son'",
+      "LXX Ps 8:5 renders elohim as angeloi ('angels')",
+      "LXX Ps 16:10 uses διαφθοράν ('corruption') where MT has שחת",
+      "Acts 2:27 and 13:35 quote LXX Ps 16:10 in resurrection arguments",
+      "LXX Ps 22:17 reads ὤρυξαν ('they pierced/dug') against MT's כארי",
+      "Hebrews 1:8 quotes Ps 45:6 with theos as vocative",
+      "LXX Ps 110:1 uses κύριος for both YHWH and adoni, exploited in Matt 22:44",
+      "MT Ps 145 lacks a nun-verse in its acrostic; LXX and 11QPsa supply one",
+      "Targum Psalms expands Ps 68:18 with reference to Moses ascending and giving Torah, paralleling Ephesians 4:8's interpretive direction"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.421748+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

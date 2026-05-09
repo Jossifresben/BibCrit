@@ -1,0 +1,240 @@
+{
+  "scope": "Exodus",
+  "scope_type": "book",
+  "summary": "The book of Exodus presents a remarkably dense site of theologically motivated textual revision across all major traditions. The dominant strategy is anthropomorphism avoidance, particularly in the LXX and Targums, where translators systematically softened or eliminated direct references to God's physical presence, hands, face, and emotions. Secondary patterns include proto-rabbinic halakhic adjustment in the Targums, harmonization tendencies in the Samaritan Pentateuch, and occasional messianic heightening in the LXX, following the methodological categories established by Caird, Schaper, van der Kooij, and de Waard.",
+  "summary_plain": "Across different ancient translations of Exodus, scribes and translators made deliberate changes to the text for religious reasons. Most commonly, they softened or removed descriptions of God having a body or human-like feelings. They also occasionally adjusted legal passages, smoothed out apparent contradictions, and in some cases introduced foreshadowings of future messianic figures.",
+  "revisions": [
+    {
+      "reference": "Exodus 24:10",
+      "tradition": "LXX",
+      "revision_type": "anthropomorphism_avoidance",
+      "mt_reading": "וַיִּרְאוּ אֵת אֱלֹהֵי יִשְׂרָאֵל — 'they saw the God of Israel,' with a description of what was under his feet",
+      "revised_reading": "καὶ εἴδοσαν τὸν τόπον οὗ εἱστήκει ἐκεῖ ὁ θεὸς τοῦ Ἰσραήλ — 'they saw the place where the God of Israel stood,' removing direct visual encounter with the deity",
+      "confidence": 0.95,
+      "evidence": "The LXX translator substitutes 'the place where God stood' for the MT's blunt 'they saw the God of Israel,' a theologically explosive claim of direct divine vision. This is not a lexical necessity but a deliberate circumlocution avoiding the anthropomorphic scandal of a direct divine sighting. The same avoidance pattern recurs in the LXX of Numbers 12:8 and Psalm 17:15, confirming a systemic strategy. Van der Kooij has argued that LXX translators exercised hermeneutical freedom precisely at anthropomorphic crisis points.",
+      "evidence_plain": "The original Hebrew says the elders 'saw God,' which was theologically uncomfortable. The Greek translation changed it to say they saw 'the place where God stood,' avoiding the idea that humans could visually perceive God directly.",
+      "scholarly_citations": [
+        "van der Kooij, 'Perspectives on the Study of the Septuagint,' VT 40 (1990)",
+        "Caird, Language and Imagery of the Bible, pp. 172–174",
+        "Wevers, Notes on the Greek Text of Exodus, pp. 381–383"
+      ],
+      "counter_arguments": "Some argue the LXX translator was working from a slightly different Hebrew Vorlage in which מָקוֹם ('place') was already present, making this a text-critical rather than theological divergence."
+    },
+    {
+      "reference": "Exodus 24:10–11",
+      "tradition": "Targum",
+      "revision_type": "anthropomorphism_avoidance",
+      "mt_reading": "וַיִּרְאוּ אֵת אֱלֹהֵי יִשְׂרָאֵל ... וַיֶּחֱזוּ אֶת הָאֱלֹהִים — 'they saw the God of Israel ... they beheld God'",
+      "revised_reading": "Targum Onkelos: 'they saw the Glory of the God of Israel ... they saw the Glory of the LORD' (יְקָרָא דַּייָ — the Memra/Shekinah/Yeqara substitution)",
+      "confidence": 0.98,
+      "evidence": "Targum Onkelos consistently introduces the Aramaic term יְקָרָא ('glory') as a buffer between the human observers and the divine subject, a technique Samely and Hayward have identified as systematic anthropomorphism avoidance. This is not a translation equivalent but an interpretive buffer-term with no Hebrew correspondent. Pseudo-Jonathan amplifies this further by adding extended angelological commentary. The technique is replicated at every point in the Targums where direct divine perception is claimed.",
+      "evidence_plain": "The Aramaic translation replaces 'they saw God' with 'they saw the glory of God,' inserting a buffer concept to avoid the idea that human beings directly encountered God's physical form.",
+      "scholarly_citations": [
+        "Hayward, Divine Name and Presence: The Memra, pp. 26–45",
+        "Samely, The Interpretation of Speech in the Pentateuch Targums, pp. 33–50",
+        "Alexander, 'The Targumim and Early Exegesis of Sons of God,' JJS 23 (1972)"
+      ],
+      "counter_arguments": "The Yeqara terminology may reflect an independent theological tradition about divine glory rather than being a reactive avoidance strategy; some scholars see it as genuinely representing an early liturgical theology of divine presence."
+    },
+    {
+      "reference": "Exodus 4:24–26",
+      "tradition": "LXX",
+      "revision_type": "anthropomorphism_avoidance",
+      "mt_reading": "וַיְבַקֵּשׁ הֲמִיתוֹ — 'and he [the LORD] sought to kill him [Moses]'",
+      "revised_reading": "καὶ ἀπήντησεν αὐτῷ ἄγγελος κυρίου καὶ ἐζήτει αὐτὸν ἀποκτεῖναι — 'an angel of the LORD met him and sought to kill him'",
+      "confidence": 0.9,
+      "evidence": "The MT reads with stark anthropomorphic directness that the LORD himself was the violent aggressor. The LXX interposes 'an angel of the LORD' as the agent, buffering the troubling divine violence and the physical intimacy implied by the encounter. This is a classic mediation technique paralleled in LXX Genesis 16:7 and elsewhere, where divine violence or physical presence is re-attributed to angelic agents. Wevers and Childs both note that the LXX rendering is theologically, not textually, motivated.",
+      "evidence_plain": "The Hebrew says God himself tried to kill Moses, which was theologically awkward. The Greek translation changed it to say an angel of God tried to kill him, making God more distant from the violent act.",
+      "scholarly_citations": [
+        "Wevers, Notes on the Greek Text of Exodus, pp. 51–53",
+        "Childs, Exodus: A Critical-Theological Commentary, pp. 95–101",
+        "Propp, Exodus 1–18 (AB), pp. 233–238"
+      ],
+      "counter_arguments": "The LXX translator may have been harmonizing with the pattern of the Angel of the LORD appearing in such theophanic confrontations (cf. Numbers 22), making this harmonization rather than anthropomorphism avoidance per se."
+    },
+    {
+      "reference": "Exodus 32:14",
+      "tradition": "LXX",
+      "revision_type": "anthropomorphism_avoidance",
+      "mt_reading": "וַיִּנָּחֶם יְהוָה עַל הָרָעָה — 'and the LORD repented/changed his mind concerning the evil he had planned'",
+      "revised_reading": "καὶ ἱλάσθη κύριος περὶ τῆς κακίας — 'and the LORD was propitiated/became merciful concerning the evil'",
+      "confidence": 0.85,
+      "evidence": "The Hebrew נָחַם (niham) carries an unmistakable anthropomorphic nuance of divine regret or change of mind, creating theological tension with passages affirming divine immutability (cf. Numbers 23:19; 1 Samuel 15:29). The LXX rendering with ἱλάσθη ('was propitiated') re-frames the event as a cultic act of mercy, removing the implication that God's will underwent a change. This is consistent with what Caird calls the 'translation as theology' phenomenon, where lexical choices carry doctrinal weight. The substitution aligns with Hellenistic philosophical concerns about divine apatheia.",
+      "evidence_plain": "The Hebrew says God 'changed his mind,' which seemed to contradict the idea that God never changes. The Greek translation replaced this with language saying God 'was merciful,' removing the implication that God's mind had shifted.",
+      "scholarly_citations": [
+        "Caird, Language and Imagery of the Bible, pp. 19–21",
+        "Fretheim, The Suffering of God, pp. 45–52",
+        "Wevers, Notes on the Greek Text of Exodus, pp. 527–528"
+      ],
+      "counter_arguments": "ἱλάσθη may reflect a legitimate semantic overlap in the translator's understanding of the Hebrew root; some argue נָחַם covers a semantic range including 'be comforted' and the LXX rendering is a plausible translation within that range."
+    },
+    {
+      "reference": "Exodus 19:3",
+      "tradition": "SP",
+      "revision_type": "harmonization",
+      "mt_reading": "וְדִבֶּר אֵלָיו יְהוָה לֵאמֹר — 'and the LORD spoke to him, saying' (introduction to the Sinai theophany commands)",
+      "revised_reading": "Samaritan Pentateuch introduces a command regarding Mount Gerizim as the place of worship, harmonizing Sinai legislation with Samaritan cultic geography by inserting Deuteronomy 27:2–7 at Exodus 20:17 and adjusting references to divine election of a central sanctuary toward Gerizim",
+      "confidence": 0.93,
+      "evidence": "The Samaritan Pentateuch famously inserts material from Deuteronomy 11 and 27 into the Decalogue context of Exodus 20, making the tenth commandment (in SP numbering) a command to build an altar on Gerizim. This is one of the most extensively documented cases of ideologically motivated interpolation in biblical textual history, reflecting the Samaritan community's claim that Gerizim, not Jerusalem, was the divinely ordained cultic center. Purvis, Tal, and Tov have all documented this as a deliberate sectarian revision.",
+      "evidence_plain": "The Samaritan version of the Ten Commandments adds an extra commandment directing worship at Mount Gerizim, the Samaritan holy site. This was a deliberate religious change to support Samaritan claims against the Jerusalem temple.",
+      "scholarly_citations": [
+        "Tov, Textual Criticism of the Hebrew Bible, 3rd ed., pp. 80–88",
+        "Purvis, The Samaritan Pentateuch and the Origin of the Samaritan Sect, pp. 71–82",
+        "Tal, 'The Samaritan Pentateuch and the Dead Sea Scrolls,' Textus 22 (2005)"
+      ],
+      "counter_arguments": "SP advocates argue that SP preserves an older pre-Masoretic textual tradition in which the Gerizim material was original and was later excised by Judean scribes; the question of which is the revision depends on one's text-critical starting point."
+    },
+    {
+      "reference": "Exodus 3:14",
+      "tradition": "LXX",
+      "revision_type": "eschatological_sharpening",
+      "mt_reading": "אֶהְיֶה אֲשֶׁר אֶהְיֶה — 'I AM WHAT I AM' or 'I WILL BE WHAT I WILL BE'",
+      "revised_reading": "ἐγώ εἰμι ὁ ὤν — 'I am THE BEING' (ho ōn, the ontologically absolute 'the One Who Is')",
+      "confidence": 0.88,
+      "evidence": "The LXX renders the deliberately enigmatic Hebrew self-designation with the Greek philosophical concept of absolute, essential being (ὁ ὤν), importing Platonic-Hellenistic ontological categories into the divine name. This is not a neutral translation but a theological reinterpretation that aligns the biblical God with the unchanging Being of Hellenistic metaphysics, removing the future/dynamic orientation of the Hebrew אֶהְיֶה. Philo of Alexandria builds his entire philosophical theology on this LXX rendering, confirming its theological weight. Schaper and de Waard have noted this as a case where translation constitutes theological reformulation.",
+      "evidence_plain": "The Hebrew name for God here is dynamic and mysterious — roughly 'I will be what I will be.' The Greek translation hardened this into a philosophical statement about God being 'pure eternal Being,' reflecting Greek philosophical ideas about the nature of existence.",
+      "scholarly_citations": [
+        "de Waard, A Handbook on Exodus (UBS Handbook Series), pp. 42–46",
+        "Schaper, 'The Septuagint Psalter,' in The Septuagint as Christian Scripture, pp. 18–22",
+        "Dohmen, Exodus 1–18 (HThKAT), pp. 148–152"
+      ],
+      "counter_arguments": "Some lexicographers argue that ὁ ὤν is a legitimate translation equivalent given the LXX translator's linguistic context, and that the ontological reading is a later reception-historical development rather than the translator's own theological agenda."
+    },
+    {
+      "reference": "Exodus 33:20–23",
+      "tradition": "Targum",
+      "revision_type": "anthropomorphism_avoidance",
+      "mt_reading": "לֹא תוּכַל לִרְאֹת אֶת פָּנָי ... וְרָאִיתָ אֶת אֲחֹרָי — 'you cannot see my face ... you shall see my back'",
+      "revised_reading": "Targum Onkelos: 'you shall not be able to see the face of my Shekinah ... you shall see what is behind me' (replacing anatomical terms with abstract divine presence-language throughout)",
+      "confidence": 0.97,
+      "evidence": "Onkelos systematically replaces every direct anatomical reference to God in this passage — face (פָּנַי), hand (כַּפִּי), back (אֲחֹרַי) — with either Shekinah equivalents or abstract spatial language. This is one of the most extensively documented anthropomorphic passages in the Pentateuch and Onkelos's treatment of it is held up as a paradigm case of Targumic theological revision by McNamara, Hayward, and Levine. The revision is systemic, not coincidental: every body-part term is addressed.",
+      "evidence_plain": "The Bible describes Moses seeing God's back and being shielded from God's face — vivid physical images. The Aramaic translation replaced all these body-part words with abstract terms about God's presence, avoiding the idea that God has a body.",
+      "scholarly_citations": [
+        "McNamara, Targum and Testament, pp. 98–107",
+        "Hayward, Divine Name and Presence: The Memra, pp. 59–72",
+        "Levine, 'The Targums,' in Mikra (CRINT), pp. 330–345"
+      ],
+      "counter_arguments": "One could argue that Onkelos is not avoiding anthropomorphism but is being faithful to the theological substance of the passage — the impossibility of direct divine encounter — using Aramaic idiom that naturally expresses divine transcendence differently from Hebrew."
+    },
+    {
+      "reference": "Exodus 21:22–25",
+      "tradition": "LXX",
+      "revision_type": "proto_rabbinic",
+      "mt_reading": "וְנָתַן בִּפְלִלִים — 'and he shall pay as the judges determine' (in the context of a miscarriage caused by fighting men, with fines for the loss of the fetus and life-for-life if the woman dies)",
+      "revised_reading": "LXX: introduces a distinction between an 'unformed' (ἐξεικονισμένον / μὴ ἐξεικονισμένον) and 'formed' fetus, with different penalties — only a fine for the unformed, but life-for-life for the formed fetus, implying full personhood at formation",
+      "confidence": 0.82,
+      "evidence": "The LXX introduces a two-stage fetal development theory (Aristotelian in origin) absent from the MT, fundamentally re-reading the passage's legal logic. The MT distinguishes only between harm to the woman (capital penalty) and harm to the fetus (monetary penalty), while the LXX creates a new distinction within the fetal category based on formation/ensoulment. This is a proto-philosophical-legal revision with massive downstream effects in Christian canonical law and patristic debate. De Waard and Wevers both flag this as a theologically/philosophically motivated reinterpretation rather than a translation variant.",
+      "evidence_plain": "A complex law about injury to a pregnant woman was translated differently in Greek. The Greek version introduced a distinction between an early-stage and a later-stage fetus, with different legal consequences — a philosophical idea about when a fetus becomes fully human that was not in the Hebrew original.",
+      "scholarly_citations": [
+        "Wevers, Notes on the Greek Text of Exodus, pp. 331–334",
+        "de Waard, Handbook on Exodus, pp. 234–237",
+        "Childs, Exodus, pp. 469–471"
+      ],
+      "counter_arguments": "Some scholars argue the LXX translator was working from a Hebrew Vorlage that had already incorporated distinctions influenced by Near Eastern law, and that the Aristotelian framing is incidental rather than the driving interpretive agenda."
+    },
+    {
+      "reference": "Exodus 7:1",
+      "tradition": "LXX",
+      "revision_type": "softening",
+      "mt_reading": "רְאֵה נְתַתִּיךָ אֱלֹהִים לְפַרְעֹה — 'See, I have made you God to Pharaoh'",
+      "revised_reading": "ἰδοὺ δέδωκά σε θεὸν Φαραώ — this is retained literally in LXX, but Targum Onkelos revises: 'I have made you a master/ruler (רַב) to Pharaoh', avoiding the equation of Moses with אֱלֹהִים",
+      "confidence": 0.8,
+      "evidence": "While the LXX here follows MT closely, Targum Onkelos substitutes רַב ('master') for the theologically explosive identification of Moses as אֱלֹהִים. The MT's claim that Moses functions as 'God to Pharaoh' was susceptible to anti-Jewish polemic (charging deification of Moses) and internal theological tension. The Targum's substitution reflects proto-rabbinic anxiety about any language that could suggest Moses's divinity or blur the creator-creature distinction. McNamara documents this as part of the Targum's broader Moses-demythologization program.",
+      "evidence_plain": "The Hebrew says God made Moses 'like God' to Pharaoh — a startling statement. The Aramaic translation replaced 'God' with 'master' or 'ruler,' toning down the comparison to avoid any suggestion that Moses was being called divine.",
+      "scholarly_citations": [
+        "McNamara, Targum and Testament, pp. 78–80",
+        "Levine, 'The Targums,' in Mikra, pp. 337–338",
+        "Meeks, The Prophet-King: Moses Traditions and the Johannine Christology, pp. 100–115"
+      ],
+      "counter_arguments": "Onkelos may simply be using idiomatic Aramaic where רַב expresses superiority or authority in a way that functionally conveys the same meaning as אֱלֹהִים without requiring theological revision."
+    },
+    {
+      "reference": "Exodus 15:3",
+      "tradition": "LXX",
+      "revision_type": "anthropomorphism_avoidance",
+      "mt_reading": "יְהוָה אִישׁ מִלְחָמָה — 'The LORD is a man of war'",
+      "revised_reading": "κύριος συντρίβων πολέμους — 'The LORD who crushes wars / shatters battles'",
+      "confidence": 0.92,
+      "evidence": "The MT's description of God as 'a man (אִישׁ) of war' is one of the most anthropomorphic divine epithets in the Pentateuch. The LXX translator entirely reformulates the phrase, replacing the nominal identification of God as a 'man' with a participial description of God as an agent who shatters wars — eliminating the gender-specific human categorization. This is not a lexical gap; the translator had Greek equivalents for 'warrior' (πολεμιστής, μαχητής) and chose none of them. Van der Kooij and Schaper have identified this as a paradigm case of the LXX's anti-anthropomorphic agenda in poetic material.",
+      "evidence_plain": "The Hebrew song calls God 'a man of war,' using a very human image. The Greek translation changed it to say God 'shatters wars,' keeping the warlike power but removing the description of God as a man.",
+      "scholarly_citations": [
+        "van der Kooij, 'On the Place of Origin of the Old Greek of Psalms,' VT 33 (1983)",
+        "Schaper, Eschatology in the Greek Psalter, pp. 37–42",
+        "Cross, Canaanite Myth and Hebrew Epic, pp. 112–114"
+      ],
+      "counter_arguments": "One could argue the LXX translator was navigating a genuine Greek stylistic difficulty — attributing 'manhood' to the deity felt linguistically awkward in Greek even apart from theological concerns — and the revision reflects aesthetic rather than theological motivation."
+    }
+  ],
+  "dominant_strategy": "Anthropomorphism avoidance is overwhelmingly the dominant revision strategy across Exodus's textual traditions. God's bodily presence, physical attributes, emotional changes of mind, violent personal agency, and direct visual accessibility are systematically softened or mediated in both the LXX and the Targums, often independently of one another, suggesting that anthropomorphic passages in Exodus generated broad and early theological anxiety. The sheer density of anthropomorphic material in Exodus — the burning bush, the Sinai theophany, Moses's face-to-face encounters, the Song of the Sea, God's hands and back — made it the primary testing ground for developing strategies of divine transcendence across all tradent communities.",
+  "overall_assessment": "The pattern of theological revision across Exodus reveals two largely independent streams of anti-anthropomorphic concern operating simultaneously: a Hellenistic-philosophical stream in the LXX, influenced by emerging concerns about divine transcendence and immutability drawn from Platonic metaphysics (most visible in Exodus 3:14 and 15:3), and an Aramaic-halakhic stream in the Targums, driven by proto-rabbinic concerns about the integrity of monotheism and the creator-creature distinction (most visible in Exodus 24:10, 33:20–23, and 7:1). The Samaritan Pentateuch's revisions represent a third, explicitly sectarian stream of motivated revision, using harmonization and interpolation to serve Gerizim-centered cultic claims. The LXX's re-reading of the fetal development law (Exodus 21:22–25) stands apart as a philosophically motivated legal revision with no real parallel in the other traditions, revealing that the Greek translation tradition was willing to introduce entirely new conceptual frameworks — not merely soften existing ones. Taken together, the revisionary strategies visible in Exodus demonstrate that this book, precisely because of its unparalleled concentration of theophanic, legal, and cosmological material, became the crucible in which early Judaism's and early Christianity's competing theologies of divine nature were most intensively negotiated.",
+  "overall_plain": "Ancient translators and scribes made many deliberate changes to the book of Exodus because it contains some of the most vivid and theologically challenging descriptions of God in the entire Bible — God appearing visibly, having a body, changing his mind, acting violently. Different communities (Greek-speaking Jews, Aramaic-speaking Jews, and Samaritans) each revised these passages in their own ways to make them fit their developing beliefs about who God is and how God acts. The result is that no two ancient versions of Exodus are quite the same, and the differences tell us a great deal about the religious debates of the ancient world.",
+  "bibcrit_assessment": {
+    "title": "Exodus as Crucible of Anti-Anthropomorphic Biblical Theology",
+    "reasoning": "The most significant implication of the Exodus revision pattern is that the book's extraordinary density of theophanic material — more direct divine-human encounter than any other book of the Pentateuch — forced every major tradent community to develop and systematize its theology of divine transcendence in response to Exodus's raw text. The result is that Exodus's textual history is not incidental to the history of Jewish and Christian theology but is constitutive of it: doctrines of divine immutability, divine invisibility, and divine mediation were hammered out not in abstract philosophical treatises but in the practical, passage-by-passage decisions of translators working with Exodus's theophanies.",
+    "plain": "Exodus contains so many descriptions of God appearing, speaking, and acting in human-like ways that it forced ancient translators to invent new theological language to explain God's transcendence. The debates about what God is really like — that we find in later Jewish and Christian theology — were largely worked out by anonymous translators making quiet but radical changes to the text of Exodus.",
+    "confidence": 0.88
+  },
+  "discovery_ready": false,
+  "reference": "Exodus",
+  "cached_at": "2026-04-20T20:39:26.014768",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v2",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis correctly identifies well-known textual phenomena in Exodus, but several specific scholarly citations have inaccurate page numbers, journal details, or attributions that require verification.",
+    "flagged_claims": [
+      {
+        "claim": "Alexander, 'The Targumim and Early Exegesis of Sons of God,' JJS 23 (1972)",
+        "risk": "HIGH",
+        "reason": "Philip Alexander's article 'The Targumim and Early Exegesis of \"Sons of God\" in Genesis 6' was published in JJS 23 (1972), but it concerns Genesis 6, not Exodus 24, and is irrelevant to the Yeqara/Memra discussion cited here. This is a misapplied citation."
+      },
+      {
+        "claim": "Schaper, 'The Septuagint Psalter,' in The Septuagint as Christian Scripture, pp. 18–22",
+        "risk": "HIGH",
+        "reason": "Schaper is known for Eschatology in the Greek Psalter (1995). The cited essay/page range appears fabricated or garbled, and Schaper's work on Psalms is not a standard citation for Exodus 3:14 LXX."
+      },
+      {
+        "claim": "de Waard, A Handbook on Exodus (UBS Handbook Series), pp. 42–46",
+        "risk": "MEDIUM",
+        "reason": "The UBS Exodus Handbook is by Noel D. Osborn and Howard A. Hatton, not de Waard. De Waard co-authored handbooks on other books; this attribution appears incorrect."
+      },
+      {
+        "claim": "Tal, 'The Samaritan Pentateuch and the Dead Sea Scrolls,' Textus 22 (2005)",
+        "risk": "MEDIUM",
+        "reason": "Specific article title and journal volume should be verified; Abraham Tal has written on the SP but this exact citation may be inaccurate."
+      },
+      {
+        "claim": "following the methodological categories established by Caird, Schaper, van der Kooij, and de Waard",
+        "risk": "MEDIUM",
+        "reason": "These scholars do not constitute a recognized methodological school with shared categories; this groups disparate scholars under a fabricated unified framework."
+      },
+      {
+        "claim": "Philo of Alexandria builds his entire philosophical theology on this LXX rendering",
+        "risk": "MEDIUM",
+        "reason": "Overstated; Philo certainly engages ho ōn (e.g., De Vita Mosis, De Mutatione Nominum), but claiming his 'entire philosophical theology' rests on it is hyperbole."
+      },
+      {
+        "claim": "van der Kooij, 'Perspectives on the Study of the Septuagint,' VT 40 (1990)",
+        "risk": "MEDIUM",
+        "reason": "Citation details (title, journal, year) should be verified; van der Kooij's well-known works are on Isaiah, and this specific article reference may be inaccurate."
+      },
+      {
+        "claim": "The same avoidance pattern recurs in the LXX of Numbers 12:8 and Psalm 17:15",
+        "risk": "MEDIUM",
+        "reason": "LXX Numbers 12:8 actually retains relatively direct language ('the glory of the Lord he beheld'), and the claim of a systemic pattern across these verses is overstated."
+      }
+    ],
+    "safe_claims": [
+      "LXX Exodus 24:10 reads 'they saw the place where the God of Israel stood' instead of MT's 'they saw the God of Israel'",
+      "Targum Onkelos introduces Yeqara ('Glory') as a buffer term in Exodus 24:10-11",
+      "LXX Exodus 4:24 introduces 'an angel of the Lord' where MT has YHWH as the agent",
+      "LXX Exodus 32:14 renders niham with hilasthē",
+      "The Samaritan Pentateuch inserts material related to Mount Gerizim into the Decalogue context of Exodus 20",
+      "LXX Exodus 3:14 renders ehyeh asher ehyeh as egō eimi ho ōn",
+      "Targum Onkelos uses Shekinah terminology in Exodus 33:20-23 to buffer the seeing of God's face"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.561007+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

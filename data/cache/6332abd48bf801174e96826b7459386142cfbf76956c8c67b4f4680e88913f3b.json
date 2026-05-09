@@ -80,5 +80,53 @@
   "reference": "Genesis 6:1-8",
   "cached_at": "2026-04-14T18:53:32.540352",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "HIGH",
+    "confidence_note": "The analysis reflects mainstream documentary scholarship with generally accurate source attributions and citations, though some page references should be verified.",
+    "flagged_claims": [
+      {
+        "claim": "The Bible with Sources Revealed (2003), pp. 41-42",
+        "risk": "MEDIUM",
+        "reason": "Friedman does assign 6:1-8 to J in this work, but the exact page numbers should be verified; precise pagination is easily misremembered."
+      },
+      {
+        "claim": "Who Wrote the Bible? (1987), pp. 246-247",
+        "risk": "MEDIUM",
+        "reason": "Page citation should be verified; Who Wrote the Bible? does not contain extensive verse-by-verse attribution discussion in this page range."
+      },
+      {
+        "claim": "Baden (2012)... pp. 107-108",
+        "risk": "MEDIUM",
+        "reason": "Baden's The Composition of the Pentateuch discusses Flood sources, but specific page reference should be verified; also Baden operates with a Neo-Documentary framework that differs from 'classic' Wellhausenian J."
+      },
+      {
+        "claim": "Carr (1996)... pp. 245-250",
+        "risk": "MEDIUM",
+        "reason": "Carr's Reading the Fractures of Genesis discusses Gen 6, but the specific page range and characterization of his view on 6:1-4 as 'pre-J tradition' should be verified against his actual argument, which is more nuanced about Genesis composition."
+      },
+      {
+        "claim": "Westermann (1984)... pp. 365-379",
+        "risk": "MEDIUM",
+        "reason": "Westermann's Genesis 1-11 commentary does treat 6:1-4 as independent material, but the exact page range should be verified."
+      },
+      {
+        "claim": "confidence: 0.95 for 6:5-8 as J",
+        "risk": "MEDIUM",
+        "reason": "While 6:5-8 is widely assigned to J (or non-P), 0.95 confidence may overstate the consensus given that some scholars (e.g., supplementary hypothesis advocates) question classical J attribution."
+      }
+    ],
+    "safe_claims": [
+      "Exclusive use of YHWH in 6:5-8",
+      "YHWH appears in v. 3",
+      "Anthropomorphic language of God grieving and being sorry",
+      "6:11-13 uses different vocabulary (corrupt, violence) than 6:5-8",
+      "The Sons of God passage explains the Nephilim",
+      "The 120-year lifespan limit appears in v. 3",
+      "Noah finding favor appears in v. 8"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.579026+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

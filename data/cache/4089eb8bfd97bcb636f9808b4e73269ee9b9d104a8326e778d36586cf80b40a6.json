@@ -1,0 +1,211 @@
+{
+  "divergences": [
+    {
+      "mt_word": "אֲדֹנָי (ʾădōnāy, 'my Lord')",
+      "lxx_word": "κύριος (kyrios, 'Lord')",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.82,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.82,
+          "explanation": "The LXX renders אֲדֹנָי with κύριος, its standard equivalence throughout Isaiah, reflecting translational convention rather than a different Hebrew Vorlage."
+        },
+        {
+          "type": "theological_tendency",
+          "confidence": 0.25,
+          "explanation": "Some scholars argue κύριος carries divine-name resonance that subtly elevates the theological weight of the sign."
+        }
+      ],
+      "dss_witness": "1QIsa-a reads אדני, confirming MT consonantal form",
+      "citations": [
+        "Tov (2012) p.237",
+        "Watts (1985) p.96"
+      ],
+      "analysis_technical": "The equivalence אֲדֹנָי = κύριος is a systematic LXX translator convention for Isaiah; Wevers and Pietersma's NETS approach identifies this as a target-language default rather than exegetical intervention. 1QIsa-a confirms אדני, ruling out a divergent Vorlage. The functional equivalence is unremarkable at the lexical level.",
+      "analysis_plain": "Both Hebrew and Greek say 'the Lord will give a sign' — the translator simply used the standard Greek word for 'Lord' that was conventional in Jewish Greek scripture."
+    },
+    {
+      "mt_word": "הָעַלְמָה (hāʿalmāh, 'the young woman')",
+      "lxx_word": "ἡ παρθένος (hē parthenos, 'the virgin')",
+      "divergence_type": "theological_tendency",
+      "confidence": 0.88,
+      "hypotheses": [
+        {
+          "type": "theological_tendency",
+          "confidence": 0.88,
+          "explanation": "The LXX translator rendered עַלְמָה (a young woman of marriageable age, not technically 'virgin') as παρθένος, a Greek word typically denoting a virgin, likely under the influence of messianic-eschatological expectation or an exegetical tradition identifying the sign as miraculous."
+        },
+        {
+          "type": "different_vorlage",
+          "confidence": 0.12,
+          "explanation": "A minority view that the translator's Hebrew text read בְּתוּלָה (betulah, 'virgin') is rejected by 1QIsa-a and all Hebrew witnesses, which uniformly attest עַלְמָה."
+        },
+        {
+          "type": "translation_idiom",
+          "confidence": 0.3,
+          "explanation": "παρθένος occasionally glosses עַלְמָה in the LXX tradition (cf. Gen 24:43) and may reflect a broader semantic range for παρθένος in Ptolemaic Greek, though this explanation is insufficient alone for Isaiah 7:14 given the theological stakes."
+        }
+      ],
+      "dss_witness": "1QIsa-a col. VI reads העלמה, confirming MT; no DSS evidence for בתולה",
+      "citations": [
+        "Tov (2012) pp.265–266",
+        "Stökl Ben Ezra (2003) p.51",
+        "Williamson (2006) p.98",
+        "Pietersma & Wright (2007) p.xxxi"
+      ],
+      "analysis_technical": "This is the most contested divergence in LXX Isaiah scholarship. The Hebrew עַלְמָה denotes a young woman of marriageable age (cf. Gen 24:43; Exod 2:8; Prov 30:19) without requiring virginity, while παρθένος in classical and Koine Greek typically implies sexual inexperience. 1QIsa-a unambiguously confirms עַלְמָה, eliminating any divergent-Vorlage hypothesis. Tov identifies this as a theologically motivated translation choice by the LXX translator(s) of Isaiah, reflecting an exegetical tradition that read the sign as transcendent; Williamson notes that the use of the definite article (ἡ παρθένος) may itself signal the translator was referencing a known, specific figure.",
+      "analysis_plain": "The Hebrew says 'the young woman' — a perfectly ordinary term for a marriageable girl — but the Greek translator wrote 'the virgin,' a word with a much more specific meaning. This single word choice became one of the most consequential translation decisions in all of Scripture."
+    },
+    {
+      "mt_word": "הָרָה וְיֹלֶדֶת (hārāh wəyōledet, 'is pregnant and bearing')",
+      "lxx_word": "ἐν γαστρὶ ἕξει καὶ τέξεται (en gastri hexei kai texetai, 'will conceive and will bear')",
+      "divergence_type": "grammatical_shift",
+      "confidence": 0.8,
+      "hypotheses": [
+        {
+          "type": "grammatical_shift",
+          "confidence": 0.8,
+          "explanation": "MT uses participial forms (הָרָה as adjective/participle, יֹלֶדֶת as active participle), conveying present or imminent action, while LXX uses future indicatives, projecting the event forward as a future prophecy — a temporal reframing with exegetical consequences."
+        },
+        {
+          "type": "theological_tendency",
+          "confidence": 0.55,
+          "explanation": "The shift to future tense aligns the LXX with a prophetic-predictive reading of the oracle, consistent with the translator's rendering of παρθένος, suggesting a coherent messianic interpretive strategy."
+        }
+      ],
+      "dss_witness": "1QIsa-a preserves the participial forms, confirming MT morphology",
+      "citations": [
+        "Seeligmann (1948) p.95",
+        "Williamson (2006) p.101",
+        "Tov (2012) p.265"
+      ],
+      "analysis_technical": "The MT participials suggest a present-tense or imminent scenario ('the young woman is pregnant and is giving birth'), consistent with a sign addressed to Ahaz in the immediate historical context (8th c. BCE). The LXX future tense (ἕξει, τέξεται) is a systematic grammatical shift that transforms a contemporaneous sign into a prospective prophecy. Seeligmann's landmark study of LXX Isaiah identified this as characteristic of the translator's eschatologizing tendency. The shift coheres internally with παρθένος, forming a unified messianic reinterpretation.",
+      "analysis_plain": "In Hebrew, the woman is already pregnant right now; in Greek, she will become pregnant in the future. This subtle tense-shift turns an immediate sign for King Ahaz into a prediction pointing toward a distant event."
+    },
+    {
+      "mt_word": "וְקָרָאת (wəqārāʾt, 'and she will call' [3fs or 2ms])",
+      "lxx_word": "καλέσεις (kaleseis, 'you [sg.] will call' [2ms])",
+      "divergence_type": "grammatical_shift",
+      "confidence": 0.72,
+      "hypotheses": [
+        {
+          "type": "grammatical_shift",
+          "confidence": 0.72,
+          "explanation": "The MT וְקָרָאת is ambiguous — it may be read as 3fs ('she will call') or 2ms ('you will call') due to scriptio defectiva; the LXX resolves the ambiguity in favor of the 2ms, perhaps addressing Ahaz or the reader."
+        },
+        {
+          "type": "different_vorlage",
+          "confidence": 0.35,
+          "explanation": "The translator's Vorlage may have had וְקָרָאתָ (2ms with mater lectionis), a reading that would explain the Greek without positing interpretive intervention, though no Hebrew MS attests this."
+        },
+        {
+          "type": "scribal_error",
+          "confidence": 0.2,
+          "explanation": "A scribal misreading of the consonantal form, confusing 3fs and 2ms in an unpointed text, is possible but cannot be distinguished from deliberate exegesis."
+        }
+      ],
+      "dss_witness": "1QIsa-a reads וקראת, orthographically identical to MT, offering no disambiguation",
+      "citations": [
+        "Barthélemy (1986) vol.2 p.441",
+        "Williamson (2006) p.102",
+        "Blenkinsopp (2000) p.231"
+      ],
+      "analysis_technical": "The consonantal form וְקָרָאת is orthographically ambiguous in unpointed Hebrew; MT vocalization points it as 3fs ('she will call', referring to the mother), while LXX's 2ms καλέσεις addresses a masculine interlocutor. Barthélemy's CTAT analysis notes that rabbinic tradition consistently preserves the 3fs reading, and the MT Masoretic pointing is likely original to the Isaianic tradition. The LXX reading may reflect the translator's attempt to engage the prophecy directly with its initial audience (Ahaz) or a later reader.",
+      "analysis_plain": "The Hebrew is ambiguous about who names the child — the mother or a 'you' — and the Greek translator chose to make it 'you will call him,' shifting the naming agent and making the oracle feel more like a direct address."
+    },
+    {
+      "mt_word": "עִמָּנוּ אֵל (ʿimmānû ʾēl, 'God is with us' — two Hebrew words)",
+      "lxx_word": "Εμμανουηλ (Emmanouel — one transliterated proper name)",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.85,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.85,
+          "explanation": "The LXX transliterates rather than translates עִמָּנוּ אֵל, converting the Hebrew phrase into a proper name Εμμανουηλ, a choice that reinforces the individuation of the figure as a named messianic personage rather than a symbolic descriptive title."
+        },
+        {
+          "type": "theological_tendency",
+          "confidence": 0.6,
+          "explanation": "Transliteration as a proper name heightens the referential specificity and messianic potential of the name, consistent with the broader interpretive trajectory of παρθένος and the future-tense verbs in the LXX version."
+        }
+      ],
+      "dss_witness": "1QIsa-a reads עמנו אל as two words, confirming MT; no transliteration",
+      "citations": [
+        "Pietersma & Wright (2007) p.831",
+        "Seeligmann (1948) p.96",
+        "Tov (2012) p.266"
+      ],
+      "analysis_technical": "The decision to transliterate עִמָּנוּ אֵל as Εμμανουηλ rather than render it semantically (e.g., μεθ' ἡμῶν ὁ θεός, as found in Isa 8:8,10 LXX) is a significant translator choice. Pietersma's interlinear paradigm notes that transliteration typically signals proper-name status; here it functions to create a personal name for the child, elevating the sign from a descriptive label to a messianic title. The contrast with LXX Isa 8:8,10 — where the phrase is translated rather than transliterated — suggests the 7:14 transliteration was deliberate and exegetically motivated.",
+      "analysis_plain": "In Hebrew, 'God-with-us' is a descriptive phrase like a title; in Greek, the translator wrote it as a single proper name, Emmanouel, making it sound like the child's actual birth name and giving the prophecy a more concrete, individual focus."
+    }
+  ],
+  "summary_technical": "Isaiah 7:14 exhibits a coherent pattern of LXX theological reinterpretation: the substitution of παρθένος for עַלְמָה, the shift from participial to future-tense verbs, the transliteration of Immanuel as a proper name, and the 2ms address in καλέσεις collectively constitute a systematic messianic-eschatological rereading of the Masoretic text, none of which is supported by divergent Vorlage evidence from 1QIsa-a or any other Hebrew witness.",
+  "summary_plain": "The Greek translator made a series of small but interconnected choices — 'virgin' instead of 'young woman,' future tense instead of present, a proper name instead of a phrase — that together transformed an 8th-century political sign for King Ahaz into a prophecy pointing toward a future messianic birth.",
+  "bibcrit_hypothesis": {
+    "title": "Unified Eschatological Rereading by Single LXX Translator",
+    "reasoning": "The five divergences in LXX Isa 7:14 are not independent translational accidents but form a mutually reinforcing interpretive system: παρθένος requires future-tense verbs to remain coherent (a present virgin giving birth loses miraculous force), the future tenses require a named individual (Εμμανουηλ) to anchor the prophecy referentially, and the 2ms καλέσεις personalizes the oracle for whoever receives it. This internal coherence suggests a single translator operating with a pre-existing exegetical tradition — possibly documented in proto-rabbinic circles or Alexandrian Jewish eschatological speculation — rather than ad hoc choices. The underexplored angle is that LXX Isa 8:8,10's semantic translation of עִמָּנוּ אֵל may deliberately contrast with 7:14's transliteration, signaling that the translator distinguished between the symbolic use of the phrase and its specific titular use at 7:14.",
+    "plain": "The Greek translator of Isaiah 7:14 seems to have been working from a deliberate theological blueprint, not just making isolated word choices — each decision reinforces the others, building a portrait of a future miraculous birth that goes well beyond what the Hebrew text says on its own.",
+    "confidence": 0.52
+  },
+  "discovery_ready": false,
+  "reference": "Isaiah 7:14",
+  "cached_at": "2026-04-19T21:34:18.142022",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v2",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis is largely sound on observable textual data and reflects mainstream scholarship, but contains several specific page citations and one factual error about 1QIsa-a column numbering that warrant verification.",
+    "flagged_claims": [
+      {
+        "claim": "1QIsa-a col. VI reads העלמה",
+        "risk": "MEDIUM",
+        "reason": "Isaiah 7:14 in 1QIsa-a is in column VII (or VI depending on counting convention), but the specific column citation should be verified. The reading העלמה itself is correct, but the column reference is the kind of precise detail prone to error."
+      },
+      {
+        "claim": "Watts (1985) p.96",
+        "risk": "MEDIUM",
+        "reason": "Generic citation for the unremarkable claim that LXX Isaiah uses κύριος for אֲדֹנָי; the specific page reference is unverifiable and the citation seems decorative rather than substantive."
+      },
+      {
+        "claim": "Stökl Ben Ezra (2003) p.51",
+        "risk": "MEDIUM",
+        "reason": "Stökl Ben Ezra's 2003 work is primarily on Yom Kippur (The Impact of Yom Kippur on Early Christianity); citing him for the παρθένος/עלמה issue is suspicious and likely misattributed."
+      },
+      {
+        "claim": "Williamson notes that the use of the definite article (ἡ παρθένος) may itself signal the translator was referencing a known, specific figure",
+        "risk": "MEDIUM",
+        "reason": "This specific interpretive claim attributed to Williamson should be verified; the definite article in Greek often simply mirrors the Hebrew article (הָ-) and its interpretive weight is debated."
+      },
+      {
+        "claim": "Barthélemy's CTAT analysis notes that rabbinic tradition consistently preserves the 3fs reading",
+        "risk": "MEDIUM",
+        "reason": "Specific attribution to Barthélemy's CTAT (Critique textuelle de l'Ancien Testament) vol. 2 p. 441 for this particular claim about rabbinic tradition needs verification; CTAT vol. 2 covers Isaiah-Jeremiah-Lamentations but the specific page and framing should be checked."
+      },
+      {
+        "claim": "Pietersma's interlinear paradigm notes that transliteration typically signals proper-name status",
+        "risk": "MEDIUM",
+        "reason": "Pietersma's interlinear paradigm is about LXX as a subservient translation to a Hebrew source text, not specifically a theory about transliteration signaling proper-name status; this may misrepresent his framework."
+      },
+      {
+        "claim": "possibly documented in proto-rabbinic circles or Alexandrian Jewish eschatological speculation",
+        "risk": "MEDIUM",
+        "reason": "Speculative historical reconstruction presented without evidence; 'proto-rabbinic' is anachronistic for 2nd c. BCE Alexandrian translation context."
+      }
+    ],
+    "safe_claims": [
+      "MT reads הָעַלְמָה while LXX reads ἡ παρθένος",
+      "1QIsa-a confirms the consonantal reading העלמה",
+      "עַלְמָה denotes a young woman of marriageable age (cf. Gen 24:43; Exod 2:8; Prov 30:19)",
+      "MT uses participial forms while LXX uses future indicatives",
+      "LXX transliterates עִמָּנוּ אֵל as Εμμανουηλ at 7:14 but translates the phrase semantically at Isa 8:8,10",
+      "The consonantal form וְקָרָאת is orthographically ambiguous between 3fs and 2ms",
+      "Seeligmann identified eschatologizing tendency as characteristic of LXX Isaiah",
+      "παρθένος glosses עַלְמָה in Gen 24:43 LXX"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.664622+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

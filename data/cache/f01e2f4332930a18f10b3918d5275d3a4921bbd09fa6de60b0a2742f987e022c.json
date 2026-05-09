@@ -134,5 +134,52 @@
   "discovery_ready": false,
   "cached_at": "2026-03-30T22:44:34.823586",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The core numerical claims (6 cities, 48 Levitical cities, 1000/2000 cubit measurements) are accurate and verifiable across MT/LXX/SP, but the analysis contains several unverifiable or overstated framing claims and one factual issue with the pastureland math.",
+    "flagged_claims": [
+      {
+        "claim": "The internal mathematical relationship (1000 + 1000 = 2000 on each side) provided built-in error detection",
+        "risk": "MEDIUM",
+        "reason": "The relationship between the 1000 and 2000 cubit measurements in Num 35:4-5 is famously difficult and disputed (already debated in rabbinic literature, e.g., Sotah 27b, Eruvin 51a). Presenting it as a clean self-checking equation oversimplifies a textual crux."
+      },
+      {
+        "claim": "Rabbinic literature preserves detailed traditions about these measurements, suggesting early stabilization of the numerical data",
+        "risk": "MEDIUM",
+        "reason": "Rabbinic discussion of these measurements (m. Sotah, b. Sotah, Sifre Numbers) actually centers on the apparent contradiction between vv. 4 and 5, which complicates rather than supports the claim of unproblematic early stabilization."
+      },
+      {
+        "claim": "stable textual form before the major MT-LXX-SP divergences emerged (likely pre-5th century BCE)",
+        "risk": "MEDIUM",
+        "reason": "Dating the divergence of MT/LXX/SP textual families to pre-5th century BCE is too specific; standard scholarship locates the proto-SP and proto-LXX bifurcations considerably later (Hellenistic period)."
+      },
+      {
+        "claim": "Other legal portions of Numbers show similar cross-traditional stability, suggesting early canonical fixity",
+        "risk": "MEDIUM",
+        "reason": "Generalization is unsupported; SP in particular contains harmonizing expansions in legal Numbers material, and Qumran witnesses show variation. The claim of broad legal-text stability across traditions is overstated."
+      },
+      {
+        "claim": "No known Second Temple exegetical tradition treats these numbers as prophetically significant",
+        "risk": "MEDIUM",
+        "reason": "An argument from silence stated as fact; Philo (De Fuga et Inventione) does in fact assign symbolic/allegorical significance to the six cities of refuge, contradicting the claim."
+      },
+      {
+        "claim": "written out in Hebrew text rather than using complex numerical notation",
+        "risk": "MEDIUM",
+        "reason": "True for MT as preserved, but some Qumran and epigraphic Hebrew witnesses do use numerical signs; the categorical claim is overstated as a transmission mechanism."
+      }
+    ],
+    "safe_claims": [
+      "All three textual traditions attest six cities of refuge",
+      "MT, LXX, and SP agree on 48 total Levitical cities",
+      "The 1000-cubit and 2000-cubit pastureland measurements are consistent across MT, LXX, and SP",
+      "Deuteronomy 4:41-43 and 19:1-13 contain parallel cities-of-refuge legislation",
+      "Joshua 20-21 provides parallel attestation of the cities of refuge and Levitical city allotments",
+      "Numerical divergence is significant in Genesis 5, 11 chronologies compared to this chapter"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.422473+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

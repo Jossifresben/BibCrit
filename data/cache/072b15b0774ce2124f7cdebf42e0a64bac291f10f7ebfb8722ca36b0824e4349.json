@@ -80,5 +80,64 @@
   "reference": "Psalm 110:1",
   "cached_at": "2026-03-31T00:23:11.119131",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis is broadly sound on observable textual differences but includes several specific scholarly citations and one likely-incorrect Talmudic reference that warrant verification.",
+    "flagged_claims": [
+      {
+        "claim": "rabbinic exegetical tradition attested in b. Sanhedrin 38b",
+        "risk": "HIGH",
+        "reason": "b. Sanhedrin 38b discusses Metatron and 'two powers,' not specifically Psalm 110:1. The classic rabbinic discussions of Ps 110 appear elsewhere (e.g., b. Nedarim 32b regarding Melchizedek, or Midrash Tehillim 110). This citation appears misattributed."
+      },
+      {
+        "claim": "Loader, The Septuagint, Sexuality, and the New Testament, p. 89",
+        "risk": "HIGH",
+        "reason": "This work focuses on sexuality issues; it is implausible as a source for Ps 110:1 messianic-temporal grammar. Citation appears fabricated or misapplied."
+      },
+      {
+        "claim": "Schaper, Eschatology in the Greek Psalter, pp. 117-119",
+        "risk": "MEDIUM",
+        "reason": "Schaper's actual title is 'Eschatology in the Greek Psalter' (Mohr Siebeck, 1995); the page range should be verified as Schaper's main treatment of Ps 110 may not be at this exact location."
+      },
+      {
+        "claim": "Samely, The Interpretation of Speech in the Pentateuch Targums, pp. 234-237",
+        "risk": "MEDIUM",
+        "reason": "Samely's book concerns Pentateuch Targums, not Targum Psalms, so its relevance to Ps 110:1's Memra usage is indirect at best; specific page citation is unverifiable as applied here."
+      },
+      {
+        "claim": "Gillingham, Psalms Through the Centuries, vol. 2, pp. 234-236",
+        "risk": "MEDIUM",
+        "reason": "Specific page reference for Peshitta Ps 110 in Gillingham's reception-history volume should be verified; Gillingham focuses more on Christian/Jewish reception than Peshitta translation technique."
+      },
+      {
+        "claim": "pre-Christian sources (e.g., 11Q13) already applied Psalm 110 messianically",
+        "risk": "HIGH",
+        "reason": "11Q13 (Melchizedek) draws on Ps 82 and Isa 61 primarily; its direct citation or application of Ps 110 is debated and not clearly established. This overstates the evidence."
+      },
+      {
+        "claim": "The perfect 'dixit' frames the divine utterance as a completed, definitive historical act",
+        "risk": "MEDIUM",
+        "reason": "Latin 'dixit' is the standard rendering of Hebrew נְאֻם / Greek εἶπεν in Jerome's Psalter and elsewhere; reading theological intentionality into this conventional choice overstates the case (the counter-argument actually concedes this)."
+      },
+      {
+        "claim": "The addition of τῶν ποδῶν σου ('of your feet') after ὑποπόδιον... intensifies the imagery",
+        "risk": "MEDIUM",
+        "reason": "ὑποπόδιον τῶν ποδῶν is a standard Greek construction and the genitive is typical with this noun; characterizing it as an 'addition' overstates the case since Hebrew הֲדֹם לְרַגְלֶיךָ also contains 'your feet.'"
+      }
+    ],
+    "safe_claims": [
+      "The MT reads נְאֻם יְהוָה לַאדֹנִי with dual 'adon' terminology",
+      "The LXX renders with εἶπεν ὁ κύριος τῷ κυρίῳ μου and uses ἕως ἂν θῶ",
+      "The Targum inserts Memra (בְּמֵימְרֵיהּ) and identifies the addressee as the King Messiah",
+      "NT citations of Ps 110:1 follow LXX wording (Acts 2:34-35, Heb 1:13)",
+      "The Peshitta uses 'beneath your feet' rather than 'footstool'",
+      "Stec's Targum of Psalms is a legitimate reference work for Targum Psalms",
+      "Hay's Glory at the Right Hand is a standard study of Ps 110 reception",
+      "Chilton's The Glory of Israel addresses Targumic Memra theology"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.644045+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

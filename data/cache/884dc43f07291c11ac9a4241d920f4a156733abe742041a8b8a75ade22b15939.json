@@ -1,0 +1,104 @@
+{
+  "allusions": [
+    {
+      "ot_reference": "Proverbs 17:3 / Job 23:10",
+      "nt_words": "τό δοκίμιον ὑμῶν τῆς πίστεως κατεργάζεται ὑπομονήν",
+      "ot_mt_form": "Prov 17:3 – 'The crucible is for silver and the furnace for gold, but the LORD tests hearts' (מַצְרֵף לַכֶּסֶף וְכוּר לַזָּהָב וּבֹחֵן לִבּוֹת יְהוָה); Job 23:10 – 'when he has tested me, I shall come out as gold' (בְּחָנַנִי כַּזָּהָב אֵצֵא)",
+      "ot_lxx_form": "Prov 17:3 LXX – ὥσπερ δοκιμάζεται ἐν καμίνῳ ἄργυρος καὶ χρυσός, οὕτως ἐκλεκταὶ καρδίαι παρὰ κυρίῳ; Job 23:10 LXX – δεδοκιμασμένος δὲ ἐξελεύσομαι ὥσπερ χρυσίον",
+      "nt_alignment": "independent",
+      "alignment_confidence": 0.45,
+      "key_word": "δοκίμιον",
+      "textual_implication": "The noun δοκίμιον ('testing' or 'means of testing') does not appear verbatim in LXX Proverbs 17:3 or Job 23:10, though the cognate verb δοκιμάζω is well attested in both contexts. James appears to be drawing on a broad semantic field of refining and testing tradition rather than a specific locus, possibly reflecting a Hellenistic Jewish catechetical tradition or a paraenetic topos that circulated independently of fixed scriptural wording. The term δοκίμιον also appears in 1 Peter 1:7 with nearly identical application, suggesting a shared early Christian paraenetic source or common reception tradition of the OT testing motif.",
+      "textual_implication_plain": "James uses the idea of testing faith like precious metal being refined by fire, which echoes several Old Testament passages but doesn't quote any one of them word for word, suggesting he's drawing on a widely shared Jewish and early Christian teaching tradition.",
+      "scholarly_note": "Beale and Carson (Commentary on the NT Use of the OT, pp. 997–998) note that James 1:3 participates in a broad OT/Jewish testing tradition (cf. Prov 17:3; Job 23:10; Sir 2:1–6; Wis 3:5–6) without constituting a direct citation, and that the verbal parallel with 1 Pet 1:7 is significant for reconstructing early Christian paraenesis.",
+      "contested": true
+    },
+    {
+      "ot_reference": "Sirach 2:1–6",
+      "nt_words": "τό δοκίμιον ὑμῶν τῆς πίστεως κατεργάζεται ὑπομονήν",
+      "ot_mt_form": "No extant Hebrew Vorlage for Sir 2:1–6 preserved in DSS; grandson's Greek translation used as primary text. Hebrew fragments (Cairo Geniza) read: 'My son, if you come to serve the Lord, prepare your soul for testing'",
+      "ot_lxx_form": "Sir 2:1–6 – τέκνον, εἰ προσέρχῃ δουλεύειν κυρίῳ θεῷ, ἑτοίμασον τὴν ψυχήν σου εἰς πειρασμόν... ὅτι ἐν πυρὶ δοκιμάζεται χρυσός, καὶ ἄνθρωποι δεκτοὶ ἐν καμίνῳ ταπεινώσεως",
+      "nt_alignment": "independent",
+      "alignment_confidence": 0.52,
+      "key_word": "ὑπομονήν (cf. Sir 2:2 ὑπόμεινον)",
+      "textual_implication": "Sirach 2:2–5 combines the motifs of testing (δοκιμάζεται), gold refined by fire, and the exhortation to patient endurance (ὑπόμεινον), making it the closest single locus to James 1:2–4 in both vocabulary and conceptual sequence. The pairing of testing with ὑπομονή ('endurance/patience') in both texts suggests James may be consciously drawing on the sapiential tradition represented by Sirach, though without direct verbal citation. This alignment is significant because it supports the view that James is deeply embedded in Hellenistic Jewish wisdom literature, treating Sirach as a near-authoritative source for ethical instruction.",
+      "textual_implication_plain": "The book of Sirach (a Jewish wisdom text written around 180 BC) contains the closest match to James's language about testing producing endurance, suggesting James was especially influenced by this Jewish wisdom tradition.",
+      "scholarly_note": "Peter Davids (NIGTC James, pp. 68–70) and Beale/Carson observe that Sirach 2:1–6 is the most proximate parallel to the conceptual and verbal sequence of James 1:2–4, with testing, gold, fire, and ὑπομονή all appearing in close proximity, though the relationship remains one of tradition dependence rather than citation.",
+      "contested": true
+    },
+    {
+      "ot_reference": "Wisdom of Solomon 3:4–6",
+      "nt_words": "τό δοκίμιον ὑμῶν τῆς πίστεως",
+      "ot_mt_form": "No Hebrew original; Wisdom of Solomon is a Greek composition with no Semitic Vorlage",
+      "ot_lxx_form": "Wis 3:5–6 – ὀλίγα παιδευθέντες μεγάλα εὐεργετηθήσονται, ὅτι ὁ θεὸς ἐπείρασεν αὐτοὺς καὶ εὗρεν αὐτοὺς ἀξίους ἑαυτοῦ· ὡς χρυσὸν ἐν χωνευτηρίῳ ἐδοκίμασεν αὐτοὺς",
+      "nt_alignment": "independent",
+      "alignment_confidence": 0.38,
+      "key_word": "ἐδοκίμασεν / δοκίμιον",
+      "textual_implication": "Wisdom 3:5–6 employs the gold-refining metaphor (ὡς χρυσὸν ἐν χωνευτηρίῳ ἐδοκίμασεν) in the context of divine testing of the righteous, contributing to the same sapiential complex James draws upon. While the noun δοκίμιον does not appear in Wisdom, the verbal and conceptual parallels indicate James is operating within a shared Hellenistic Jewish theological tradition about divine testing as salvific refinement. The collective presence of Proverbs 17:3, Job 23:10, Sirach 2:1–6, and Wisdom 3:5–6 suggests James synthesizes multiple streams of the testing tradition rather than citing a single text.",
+      "textual_implication_plain": "The Wisdom of Solomon also describes God testing the righteous like gold in a furnace, showing that James is drawing on a broad Jewish tradition about suffering as divine refinement rather than copying from just one book.",
+      "scholarly_note": "Luke Timothy Johnson (AB James, pp. 177–179) argues that James 1:2–4 reflects a well-established Hellenistic Jewish paideia tradition visible across Sirach, Wisdom, and Philo, making literary dependence on any single source unlikely and pointing instead to common catechetical tradition.",
+      "contested": true
+    }
+  ],
+  "summary_technical": "James 1:3 does not constitute a formal citation of any OT text but rather participates in a broad and well-attested Hellenistic Jewish sapiential tradition of testing-as-refinement, with the closest lexical and conceptual parallels in Sirach 2:1–6, Proverbs 17:3, Job 23:10, and Wisdom 3:5–6; the noun δοκίμιον is not directly derived from any single LXX locus and most likely reflects either a Hellenistic Jewish catechetical formulation or a shared early Christian paraenetic source, given its near-verbatim parallel in 1 Peter 1:7. The alignment is best classified as 'independent' with strong intertextual resonance with the LXX wisdom tradition rather than formal citation technique.",
+  "summary_plain": "James 1:3 doesn't quote the Old Testament directly but echoes a well-known Jewish teaching about how God tests and strengthens the faithful, the way fire purifies gold.",
+  "bibcrit_hypothesis": {
+    "title": "James Employs Pre-Formed Paraenetic Testing Tradition",
+    "reasoning": "The most parsimonious explanation for the language of James 1:2–4, including δοκίμιον and ὑπομονή, is that James is not citing OT texts directly but deploying a pre-formed Jewish-Christian catechetical topos on testing that had already synthesized Proverbs 17:3, Sirach 2:1–6, Job 23:10, and Wisdom 3:5–6 into a standard paraenetic unit. The near-verbatim parallel in 1 Peter 1:7 (τὸ δοκίμιον ὑμῶν τῆς πίστεως... τιμιώτερον χρυσίου) strongly implies both authors draw on this shared tradition rather than independently constructing it from OT sources. This hypothesis aligns with Hays's concept of 'echo' and Stanley's caution about overconfident citation identification, while accounting for the absence of any single identifiable OT Vorlage.",
+    "plain": "James and 1 Peter likely both draw on a common early Christian teaching about tested faith, which itself was built from several Old Testament wisdom passages, rather than either author independently quoting the Bible.",
+    "confidence": 0.67
+  },
+  "discovery_ready": false,
+  "reference": "James 1:3",
+  "cached_at": "2026-04-26T17:46:11.159603",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis is generally sound in its overall thesis (James draws on a sapiential testing tradition rather than citing a single text), but several specific bibliographic page references and textual-form claims should be verified before publication.",
+    "flagged_claims": [
+      {
+        "claim": "Beale and Carson (Commentary on the NT Use of the OT, pp. 997–998)",
+        "risk": "MEDIUM",
+        "reason": "Specific page citation for the James section in Beale/Carson's Commentary on the NT Use of the OT should be verified; the James chapter is authored by D.A. Carson, and exact page numbers are easily fabricated."
+      },
+      {
+        "claim": "Peter Davids (NIGTC James, pp. 68–70)",
+        "risk": "MEDIUM",
+        "reason": "Page reference is plausible (Davids' NIGTC James commentary does discuss 1:2-4 in this range) but specific pagination should be verified rather than trusted as cited."
+      },
+      {
+        "claim": "Luke Timothy Johnson (AB James, pp. 177–179)",
+        "risk": "MEDIUM",
+        "reason": "Johnson's Anchor Bible James commentary discusses 1:2-4 around pp. 176-184, but the specific page range and the attribution of this exact argument should be verified; Johnson's emphasis is typically more on Greco-Roman moral philosophy parallels than on 'Hellenistic Jewish paideia' as framed here."
+      },
+      {
+        "claim": "Hebrew fragments (Cairo Geniza) read: 'My son, if you come to serve the Lord, prepare your soul for testing'",
+        "risk": "HIGH",
+        "reason": "Sirach 2:1-6 is NOT extant in the Cairo Geniza Hebrew Sirach fragments (MSS A, B, C, D, E, F); the Geniza manuscripts begin with chapter 3 onward for most material, and ch. 2 is not preserved. This is likely a fabrication or confusion."
+      },
+      {
+        "claim": "LXX Prov 17:3 – ὥσπερ δοκιμάζεται ἐν καμίνῳ ἄργυρος καὶ χρυσός, οὕτως ἐκλεκταὶ καρδίαι παρὰ κυρίῳ",
+        "risk": "MEDIUM",
+        "reason": "The actual LXX of Prov 17:3 reads 'ὥσπερ δοκιμάζεται ἐν καμίνῳ ἄργυρος καὶ χρυσός, οὕτως ἐκλεκταὶ καρδίαι παρὰ κυρίῳ' is approximately correct but should be verified against Rahlfs/Göttingen; minor wording variations are common in AI reproductions of LXX text."
+      },
+      {
+        "claim": "δοκίμιον also appears in 1 Peter 1:7 with nearly identical application",
+        "risk": "MEDIUM",
+        "reason": "True that 1 Pet 1:7 contains τὸ δοκίμιον ὑμῶν τῆς πίστεως, but the textual/lexical question of whether δοκίμιον is a noun or neuter adjective ('genuine part') is contested in both James and 1 Peter; the analysis presents the parallel without acknowledging this lexical debate (BDAG, Deissmann)."
+      }
+    ],
+    "safe_claims": [
+      "The noun δοκίμιον does not appear verbatim in LXX Proverbs 17:3 or Job 23:10",
+      "The cognate verb δοκιμάζω is attested in both Prov 17:3 LXX and Job 23:10 LXX",
+      "Sirach 2:1-6 combines testing, gold/fire imagery, and endurance language",
+      "Wisdom of Solomon is a Greek composition with no Semitic Vorlage",
+      "Wis 3:5-6 employs gold-refining imagery in the context of divine testing",
+      "1 Peter 1:7 contains the phrase τὸ δοκίμιον ὑμῶν τῆς πίστεως",
+      "James 1:3 is best classified as allusion/echo rather than formal citation"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.680018+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

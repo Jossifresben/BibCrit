@@ -155,5 +155,52 @@
   "discovery_ready": false,
   "cached_at": "2026-04-19T15:54:42.386287",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The core observation about Onkelos's theological reinterpretation of 'like one of us' is correct, but the analysis contains a significant misreading of the actual Targumic text and questionable scholarly citations.",
+    "flagged_claims": [
+      {
+        "claim": "yəḥidai bə'alma minneh (unique in the world from him)",
+        "risk": "HIGH",
+        "reason": "The standard Targum Onkelos reading is 'yeḥidai be'alma minneh leyda'/lemiḏa' tav ubish' meaning 'unique in the world by himself to know good and evil.' The translation 'from him' for 'minneh' is misleading; in context 'minneh' functions reflexively ('by himself/of his own accord') rather than 'from him.' This affects the theological interpretation offered."
+      },
+      {
+        "claim": "Alexander Samely, The Interpretation of Speech in the Pentateuch Targums... (Tübingen: Mohr Siebeck, 1992), 214–18",
+        "risk": "HIGH",
+        "reason": "Samely's book on speech in Pentateuch Targums was published by Oxford University Press (1992), not Mohr Siebeck. The publisher attribution appears fabricated."
+      },
+      {
+        "claim": "Willem F. Smelik, The Targum of Judges (Leiden: Brill, 1995), 45–67 on theological modification techniques",
+        "risk": "MEDIUM",
+        "reason": "Smelik's Targum of Judges (Brill, 1995) exists, but the specific page range and the attribution of the term 'theological updating' to him at those pages is unverified and may be fabricated."
+      },
+      {
+        "claim": "Genesis Rabbah 21:5 discusses the problematic 'one of us' and offers multiple rabbinic interpretations avoiding polytheism",
+        "risk": "MEDIUM",
+        "reason": "Genesis Rabbah does discuss Gen 3:22, but the precise section number and characterization should be verified; the relevant discussion may be in a different paragraph of GenR 21."
+      },
+      {
+        "claim": "Definite article dropped, standard Targumic practice for proper nouns",
+        "risk": "MEDIUM",
+        "reason": "Onkelos typically renders 'ha-adam' as 'adam' here, but the explanation is imprecise—'adam' in this verse is not strictly a proper noun, and Aramaic handles definiteness via the emphatic state, not by simply dropping the article."
+      },
+      {
+        "claim": "ha-adam → adam",
+        "risk": "MEDIUM",
+        "reason": "Standard editions of Onkelos read 'adam' here, but some witnesses preserve definiteness; the simple equation without noting the emphatic state convention is potentially misleading."
+      }
+    ],
+    "safe_claims": [
+      "Targum Onkelos reinterprets 'like one of us' to eliminate the divine plural",
+      "LXX retains the structure 'hōs heis ex hēmōn' parallel to MT",
+      "The Targum's divergence at this point reflects interpretive translation rather than a variant Vorlage",
+      "Aramaic 'ṭav ubish' renders Hebrew 'tov wara'",
+      "Aramaic 'nsb' commonly replaces Hebrew 'lqḥ' in Targumic translation",
+      "The rendering reflects rabbinic concern to protect monotheism"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.551699+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

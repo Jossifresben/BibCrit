@@ -1,0 +1,193 @@
+{
+  "reconstructed_words": [
+    {
+      "position": 1,
+      "lxx_word": "καὶ ἔχθραν θήσω",
+      "vorlage_word": "וְאֵיבָה אָשִׁית",
+      "status": "agrees_mt",
+      "confidence": 0.95,
+      "mt_equivalent": "וְאֵיבָ֣ה׀ אָשִׁ֗ית",
+      "dss_witness": null,
+      "reasoning": "ἔχθρα is the standard LXX rendering of אֵיבָה (enmity/hostility), attested across the corpus (Num 35:21–22; Ezek 25:15). τίθημι consistently renders שׁית in the sense of 'to place/set,' and the word order καί + noun + verb mirrors Hebrew VSO inversion for emphasis. The correspondence is direct and unambiguous.",
+      "alternatives": [
+        {
+          "reading": "אֵיבָה אֶשִּׂים",
+          "confidence": 0.15,
+          "note": "שׂים is a near synonym of שׁית but τίθημι maps more regularly to שׁית in LXX Genesis."
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "lxx_word": "ἀνὰ μέσον σου",
+      "vorlage_word": "בֵּינְךָ",
+      "status": "agrees_mt",
+      "confidence": 0.98,
+      "mt_equivalent": "בֵּֽינְךָ֙",
+      "dss_witness": null,
+      "reasoning": "ἀνὰ μέσον is Wevers' documented rendering of בֵּין in LXX Genesis, consistently used to represent the preposition of separation/interval. The second-person singular suffix -ךָ maps exactly to σου. This is a formulaic translation unit with no ambiguity.",
+      "alternatives": []
+    },
+    {
+      "position": 3,
+      "lxx_word": "καὶ ἀνὰ μέσον τῆς γυναικὸς",
+      "vorlage_word": "וּבֵין הָאִשָּׁה",
+      "status": "agrees_mt",
+      "confidence": 0.97,
+      "mt_equivalent": "וּ בֵ֣ין הָֽאִשָּׁ֔ה",
+      "dss_witness": null,
+      "reasoning": "γυνή is the standard and sole LXX rendering of אִשָּׁה throughout Genesis (cf. Gen 2:22–25; 3:1–6). The waw-conjunction plus בֵּין structure is faithfully reproduced by καὶ ἀνὰ μέσον. The definite article τῆς reflects the Hebrew definite article הָ before אִשָּׁה.",
+      "alternatives": []
+    },
+    {
+      "position": 4,
+      "lxx_word": "καὶ ἀνὰ μέσον τοῦ σπέρματός σου",
+      "vorlage_word": "וּבֵין זַרְעֲךָ",
+      "status": "agrees_mt",
+      "confidence": 0.96,
+      "mt_equivalent": "וּ בֵ֥ין זַרְעֲךָ֖",
+      "dss_witness": null,
+      "reasoning": "σπέρμα is the standard and nearly exclusive LXX equivalent of זֶרַע in Genesis, used for both literal seed and offspring (Gen 1:11–12; 3:15; 12:7). The genitive σου renders the second-person masculine singular suffix -ךָ. The parallel structure to the preceding colon confirms a formulaic Vorlage.",
+      "alternatives": []
+    },
+    {
+      "position": 5,
+      "lxx_word": "καὶ ἀνὰ μέσον τοῦ σπέρματος αὐτῆς",
+      "vorlage_word": "וּבֵין זַרְעָהּ",
+      "status": "agrees_mt",
+      "confidence": 0.96,
+      "mt_equivalent": "וּ בֵ֣ין זַרְעָ֑הּ",
+      "dss_witness": null,
+      "reasoning": "αὐτῆς (feminine genitive third person) directly renders the feminine third-person singular suffix -הּ on זַרְעָהּ, referring back to הָאִשָּׁה. This is a straightforward lexical and morphological correspondence. The translator maintains the same σπέρμα = זֶרַע equivalence throughout the verse.",
+      "alternatives": []
+    },
+    {
+      "position": 6,
+      "lxx_word": "αὐτός",
+      "vorlage_word": "הוּא",
+      "status": "agrees_mt",
+      "confidence": 0.92,
+      "mt_equivalent": "ה֚וּא",
+      "dss_witness": null,
+      "reasoning": "αὐτός in subject position renders the independent pronoun הוּא, which functions as the explicit subject of the main clause. The LXX uses the nominative αὐτός (not a reflexive or oblique form) precisely because הוּא is the disjunctive subject pronoun in Biblical Hebrew, fronted for emphasis. This is a well-attested LXX translation pattern.",
+      "alternatives": [
+        {
+          "reading": "אוּא (archaic spelling of הוּא)",
+          "confidence": 0.05,
+          "note": "Archaic forms appear occasionally in ancient Hebrew but no textual evidence supports this here."
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "lxx_word": "σου τηρήσει κεφαλήν",
+      "vorlage_word": "יְשׁוּפְךָ רֹאשׁ",
+      "status": "agrees_mt",
+      "confidence": 0.72,
+      "mt_equivalent": "יְשׁוּפְךָ֣ רֹ֔אשׁ",
+      "dss_witness": null,
+      "reasoning": "τηρέω for שׁוּף is the central and most discussed interpretive crux of this verse. שׁוּף is a hapax (or near-hapax; cf. Job 9:17; Ps 139:11) of uncertain meaning, rendered by some as 'to bruise/crush' and by others as 'to lie in wait for/snap at.' The LXX translator chose τηρέω ('to watch, guard, keep in view'), which implies a Vorlage of שׁוּף interpreted through the semantic range 'to watch/lurk,' possibly via confusion with שׁוּר ('to watch, spy') or שָׁמַר ('to keep'). κεφαλή is the standard rendering of רֹאשׁ ('head'), confirming that word is unambiguous. The genitive σου renders the suffix -ךָ on יְשׁוּפְךָ correctly.",
+      "alternatives": [
+        {
+          "reading": "יְשׁוּרְךָ רֹאשׁ (from שׁוּר, 'to watch')",
+          "confidence": 0.38,
+          "note": "A graphically similar root שׁוּר could explain τηρέω more precisely, suggesting possible confusion of waw/pe in an unpointed text or a distinct Vorlage."
+        },
+        {
+          "reading": "יְשַׁסְּפְךָ רֹאשׁ",
+          "confidence": 0.05,
+          "note": "Some medieval interpreters read 'crush,' but this has no direct Greek reflex and is speculative."
+        }
+      ]
+    },
+    {
+      "position": 8,
+      "lxx_word": "καὶ σὺ τηρήσεις αὐτοῦ πτέρναν",
+      "vorlage_word": "וְאַתָּה תְּשׁוּפֶנּוּ עָקֵב",
+      "status": "agrees_mt",
+      "confidence": 0.8,
+      "mt_equivalent": "וְ אַתָּ֖ה תְּשׁוּפֶ֥נּוּ עָקֵֽב׃",
+      "dss_witness": null,
+      "reasoning": "σύ renders אַתָּה (2ms independent pronoun); τηρήσεις again renders תְּשׁוּפֶנּוּ (from שׁוּף + 3ms suffix -נּוּ), with αὐτοῦ in genitive rendering the pronominal suffix on the verb rather than a free-standing pronoun (a minor Greek restructuring). πτέρνα ('heel') is the precise and unambiguous equivalent of עָקֵב; cf. Gen 25:26 where the same lexeme is used. The translator applies the same τηρέω = שׁוּף equivalence consistently across both cola of the verse.",
+      "alternatives": [
+        {
+          "reading": "וְאַתָּה תְּשׁוּרֶנּוּ עָקֵב",
+          "confidence": 0.3,
+          "note": "If τηρέω reflects שׁוּר rather than שׁוּף, the Vorlage may have read תְּשׁוּרֶנּוּ, but this remains speculative without DSS or versional support."
+        }
+      ]
+    }
+  ],
+  "summary_technical": "The LXX Vorlage for Gen 3:15 is almost certainly identical to MT in its consonantal skeleton for all elements except the verb שׁוּף (יְשׁוּפְךָ / תְּשׁוּפֶנּוּ). The translator's consistent rendering of שׁוּף with τηρέω ('to watch/guard') across both cola suggests either a deliberate interpretive choice (reading שׁוּף through the semantic field of 'lurking/watching') or a Vorlage that had שׁוּר instead of שׁוּף—a plausible graphic confusion of ף/ר in an unpointed text. No DSS fragment (e.g., 4QGen-Exod^a or related manuscripts) preserves this specific verse with a variant reading at this point. The ἀνὰ μέσον formula for בֵּין and σπέρμα for זֶרַע are consistent with Wevers' documented translation technique for LXX Genesis.",
+  "summary_plain": "The Greek translation of Genesis 3:15 almost perfectly matches the Hebrew text we have today (the Masoretic Text), with one significant exception: the Hebrew verb שׁוּף, whose meaning is uncertain ('to crush' or 'to snap at'), is rendered in the Greek as τηρέω ('to watch/guard'), which may reflect either the translator's interpretive decision or a slightly different Hebrew spelling in his source text.",
+  "overall_confidence": 0.88,
+  "bibcrit_assessment": {
+    "title": "שׁוּף vs. שׁוּר: Vorlage or Exegesis?",
+    "reasoning": "The most philologically significant divergence in Gen 3:15 LXX is the rendering of שׁוּף (MT) by τηρέω. Two explanations are possible: (1) the translator had שׁוּף in his Vorlage but interpreted it via the semantically adjacent root שׁוּר ('to watch, observe'), yielding τηρέω through exegetical bridging—a technique well-documented in Tov's analysis of LXX translation technique; or (2) the Vorlage actually read שׁוּר (waw vs. pe being graphically distinct but conceptually confusable in some script traditions), which would make this an unattested variant not preserved in any extant Hebrew witness. Given that τηρέω appears consistently for both instances of שׁוּף in the verse, the translator was working with a deliberate equivalence, suggesting option (1) is more likely than a scribal error; however, the possibility of a שׁוּר Vorlage cannot be excluded without corroborating manuscript evidence.",
+    "plain": "The Greek translator rendered the rare and ambiguous Hebrew verb שׁוּף (possibly meaning 'to crush' or 'to strike') as τηρέω ('to watch'), which may mean he interpreted the Hebrew creatively, or that his copy of the text had a slightly different word—a question scholars still debate because no surviving ancient Hebrew manuscript confirms either reading for this verse.",
+    "confidence": 0.52
+  },
+  "discovery_ready": false,
+  "reference": "Genesis 3:15",
+  "cached_at": "2026-04-19T22:56:44.659532",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis is largely sound on lexical equivalences but contains a critical factual error regarding the LXX rendering of שׁוּף, which undermines the central interpretive claim.",
+    "flagged_claims": [
+      {
+        "claim": "The LXX translator chose τηρέω ('to watch, guard, keep in view')",
+        "risk": "HIGH",
+        "reason": "This is factually incorrect. The LXX of Gen 3:15 reads τηρήσει/τηρήσεις, but the standard critical text (Wevers/Göttingen) and Rahlfs both have τηρήσει for the first instance and τηρήσεις for the second. However, the entire interpretive framework built on τηρέω needs verification — many editions and discussions note that the verb choice is debated, and the analysis treats this as settled while building a speculative Vorlage argument on it. More importantly, the claim that τηρέω implies 'watch/guard' as the translator's understanding of שׁוּף is plausible but the proposed שׁוּר Vorlage confusion (waw vs. pe) is linguistically confused — the analysis says 'waw/pe' confusion but means resh/pe (ר/פ), which is the actual graphic similarity at issue."
+      },
+      {
+        "claim": "possibly via confusion with שׁוּר ('to watch, spy') or שָׁמַר ('to keep')",
+        "risk": "MEDIUM",
+        "reason": "The שָׁמַר suggestion is gratuitous and unsupported; שָׁמַר and שׁוּף share no graphic similarity. Including it as a possible source of confusion is speculative padding."
+      },
+      {
+        "claim": "graphic confusion of ף/ר in an unpointed text",
+        "risk": "HIGH",
+        "reason": "Final pe (ף) and resh (ר) are not particularly graphically confusable in standard Aramaic square script or paleo-Hebrew. Medial pe (פ) and resh share more similarity in some hands, but the analysis specifically cites final pe. This claim about script confusion is technically imprecise."
+      },
+      {
+        "claim": "waw/pe in an unpointed text",
+        "risk": "HIGH",
+        "reason": "This is an internal contradiction/error: the alternatives section says 'waw/pe' confusion to explain שׁוּר vs שׁוּף, but the actual letters distinguishing these roots are resh (ר) vs pe (פ), not waw vs pe. This is a clear technical mistake."
+      },
+      {
+        "claim": "cf. Job 9:17; Ps 139:11",
+        "risk": "MEDIUM",
+        "reason": "These are the standard cited parallels for שׁוּף but their meanings in those contexts are themselves disputed; presenting them without that caveat overstates lexical clarity."
+      },
+      {
+        "claim": "a technique well-documented in Tov's analysis of LXX translation technique",
+        "risk": "MEDIUM",
+        "reason": "Vague attribution to Tov without specific citation; while Tov does discuss exegetical translation, the specific 'semantic bridging' technique invoked here is not a labeled category in Tov's standard taxonomy and risks being a fabricated attribution."
+      },
+      {
+        "claim": "Wevers' documented rendering of בֵּין in LXX Genesis",
+        "risk": "MEDIUM",
+        "reason": "Appeals to Wevers' Notes on the Greek Text of Genesis are plausible but unverified here; the claim is generally correct that ἀνὰ μέσον regularly renders בֵּין, but attributing this specifically to Wevers without page reference is loose."
+      },
+      {
+        "claim": "No DSS fragment (e.g., 4QGen-Exod^a or related manuscripts) preserves this specific verse",
+        "risk": "MEDIUM",
+        "reason": "This negative claim about DSS coverage is generally correct (Gen 3:15 is not extant in published DSS Genesis fragments), but the specific manuscript siglum 4QGen-Exod^a should be verified; the standard siglum is 4QGen-Exodª (4Q1) and its contents should be checked against the claim."
+      }
+    ],
+    "safe_claims": [
+      "ἔχθρα is the standard LXX rendering of אֵיבָה",
+      "ἀνὰ μέσον regularly renders בֵּין in LXX Genesis",
+      "γυνή is the standard LXX rendering of אִשָּׁה",
+      "σπέρμα is the standard LXX equivalent of זֶרַע",
+      "πτέρνα corresponds to עָקֵב (cf. Gen 25:26)",
+      "שׁוּף is a rare verb whose meaning is disputed",
+      "The LXX renders both instances of שׁוּף with the same Greek verb"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.675849+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

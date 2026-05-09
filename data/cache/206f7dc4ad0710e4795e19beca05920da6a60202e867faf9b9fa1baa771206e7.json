@@ -1,0 +1,149 @@
+{
+  "divergences": [
+    {
+      "mt_word": "שְׁלָחַנִי (šəlāḥanî — 'he sent me', qatal perfect)",
+      "lxx_word": "ἀπέσταλκέν με ('he has sent me', perfect with present relevance)",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.72,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.72,
+          "explanation": "The LXX renders MT's simple qatal with a Greek perfect (ἀπέσταλκεν), reflecting the translator's Aktionsart sensitivity: the divine commission is ongoing and presently authoritative, not merely past."
+        },
+        {
+          "type": "different_vorlage",
+          "confidence": 0.18,
+          "explanation": "Less likely, but a Hebrew Vorlage with שלחני construed as a stative or present-oriented form cannot be entirely excluded."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Wevers (1993) p.112",
+        "Tov (2012) p.217"
+      ],
+      "analysis_technical": "The Greek perfect ἀπέσταλκεν idiomatically renders the Hebrew qatal, consistent with the LXX Kings translator's tendency to select aspectually marked Greek tense-forms to convey the continuing force of divine mandate. Wevers identifies similar translation choices in LXX Kings where divine speech acts are given present relevance. Tov's model of 'translation technique' rather than Vorlage difference is most parsimonious here.",
+      "analysis_plain": "Where Hebrew uses a simple past tense ('God sent me'), Greek uses a form meaning 'God has sent me and still means it' — the translator is emphasizing that the divine order is still in effect."
+    },
+    {
+      "mt_word": "וַיֵּרְדוּ (wayyērdû — 'and they went down')",
+      "lxx_word": "καὶ ἦλθον ('and they came/went')",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.82,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.82,
+          "explanation": "MT uses the directional verb ירד ('to go down'), topographically precise since Gilgal sits at higher elevation than Bethel; LXX uses the neutral ἔρχομαι ('come/go'), flattening the geographical nuance."
+        },
+        {
+          "type": "different_vorlage",
+          "confidence": 0.15,
+          "explanation": "A Vorlage with הלך or בוא instead of ירד is conceivable but poorly supported."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Tov (2012) p.253",
+        "Pietersma (2010) p.44"
+      ],
+      "analysis_technical": "MT ירד reflects precise topographical knowledge: Gilgal (~250m) is higher than Bethel (~880m asl) in some traditions, though this reverses conventional elevation; the MT may preserve a different geographical reference point. More likely, the LXX translator's use of ἦλθον reflects a standard hellenizing tendency to replace directional Hebrew motion verbs with the unmarked Greek verb of motion, consistent with Pietersma's observation that LXX Kings often neutralizes Semitic directional specificity.",
+      "analysis_plain": "Hebrew says they 'went down' to Bethel — a precise geographic detail — while Greek just says they 'went,' losing the sense of direction and elevation change."
+    },
+    {
+      "mt_word": "אִם־אֶעֶזְבֶךָּ (ʾim-ʾeʿezbəkkā — conditional: 'if I leave you' [oath formula])",
+      "lxx_word": "εἰ καταλείψω σε ('if I will leave you' [oath formula])",
+      "divergence_type": "grammatical_shift",
+      "confidence": 0.78,
+      "hypotheses": [
+        {
+          "type": "grammatical_shift",
+          "confidence": 0.78,
+          "explanation": "MT uses the yiqtol (imperfect) in a negative oath formula (ʾim + yiqtol = 'I will certainly not'), which LXX renders with the future indicative εἰ καταλείψω, preserving the oath structure but shifting to a Greek idiom for conditional self-imprecation."
+        },
+        {
+          "type": "translation_idiom",
+          "confidence": 0.2,
+          "explanation": "The LXX future accurately captures the Hebrew modal force; the shift is more about Greek grammatical convention than a different underlying text."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Joüon-Muraoka (2006) §165e",
+        "Wevers (1993) p.89"
+      ],
+      "analysis_technical": "The Hebrew oath formula חַי־יְהוָה ... אִם + yiqtol is a standard asseverative construction in which אִם negates the following action ('as YHWH lives, I will NOT leave you'). The LXX εἰ καταλείψω σε mirrors this Semitic oath idiom through a Greek conditional, which Greek readers would understand as a self-curse if violated, showing the translator's awareness of Hebrew oath syntax even when reproducing it somewhat opaquely in Greek.",
+      "analysis_plain": "Both Hebrew and Greek use a special oath formula where saying 'if I leave you' actually means 'I absolutely will not leave you' — it's like crossing your heart and promising. The translator understood the idiom but rendered it in a Greek way."
+    }
+  ],
+  "summary_technical": "The MT/LXX divergences in 2 Kgs 2:2 are predominantly traceable to translation technique rather than a divergent Hebrew Vorlage: the LXX translator systematically neutralizes topographical precision (ירד → ἔρχομαι), upgrades verbal aspect for theological effect (qatal → Greek perfect), and reproduces Semitic oath syntax through Greek conditional idiom. No DSS witnesses for this verse alter the picture significantly.",
+  "summary_plain": "The Greek translation of this verse makes small but meaningful changes — smoothing out geographical details, emphasizing the ongoing authority of God's command, and adapting a Hebrew oath formula for Greek readers — all without changing the basic story.",
+  "bibcrit_hypothesis": {
+    "title": "LXX Kings Systematically De-topographizes Directional Motion Verbs",
+    "reasoning": "The replacement of ירד with ἔρχομαι in this verse may not be isolated but part of a programmatic LXX Kings translator strategy to render Hebrew directional motion verbs (עלה, ירד, בוא) with Greek aspectually neutral equivalents, reflecting either a Diaspora audience lacking Palestinian topographical intuition or a deliberate theological universalizing move. If this pattern holds across 1–2 Kings, it would constitute a translation-level ideological choice underexplored in Wevers' and Thackeray's Kings commentaries and worth systematic corpus analysis.",
+    "plain": "The Greek translator may have consistently stripped out directional words like 'went up' or 'went down' throughout Kings, possibly because his audience didn't know the Palestinian landscape — a subtle but significant reframing of the geography of salvation history.",
+    "confidence": 0.38
+  },
+  "discovery_ready": false,
+  "reference": "2 Kings 2:2",
+  "cached_at": "2026-04-19T21:34:05.194918",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v2",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The core textual observations about MT/LXX differences are accurate, but several specific page citations and a factual error about elevations weaken reliability.",
+    "flagged_claims": [
+      {
+        "claim": "Wevers (1993) p.112",
+        "risk": "HIGH",
+        "reason": "Wevers did not produce a major published commentary or notes volume on LXX Kings (his Notes series covers the Pentateuch). This citation appears fabricated or misattributed."
+      },
+      {
+        "claim": "Wevers (1993) p.89",
+        "risk": "HIGH",
+        "reason": "Same problem — Wevers' 1993 work is Notes on the Greek Text of Deuteronomy, not Kings. The citation is likely fabricated."
+      },
+      {
+        "claim": "Wevers identifies similar translation choices in LXX Kings where divine speech acts are given present relevance",
+        "risk": "HIGH",
+        "reason": "Wevers is not a primary authority on LXX Kings; this attribution is unverifiable and likely invented."
+      },
+      {
+        "claim": "Pietersma (2010) p.44",
+        "risk": "HIGH",
+        "reason": "Specific page reference to a Pietersma 2010 publication on LXX Kings directional verbs is unverifiable; Pietersma's NETS work and interlinear paradigm articles do not obviously support this specific claim."
+      },
+      {
+        "claim": "Gilgal (~250m) is higher than Bethel (~880m asl)",
+        "risk": "HIGH",
+        "reason": "This is internally contradictory and factually wrong. Bethel sits at ~880m and Gilgal (near Jericho) is in the Jordan Valley (well below sea level or low elevation), so going from Gilgal to Bethel is going UP, not down. The MT ירד here is itself a known crux, not a confirmation of 'precise topographical knowledge.'"
+      },
+      {
+        "claim": "topographically precise since Gilgal sits at higher elevation than Bethel",
+        "risk": "HIGH",
+        "reason": "Factually incorrect. Bethel is at higher elevation than the Jericho-area Gilgal. The MT's use of ירד at 2 Kgs 2:2 is a recognized geographical puzzle, often explained by positing a different Gilgal in the hill country."
+      },
+      {
+        "claim": "Tov (2012) p.217 / p.253",
+        "risk": "MEDIUM",
+        "reason": "Tov's Textual Criticism of the Hebrew Bible (3rd ed., 2012) is a real work, but the specific page references should be verified; they are not obviously the loci for these particular claims."
+      },
+      {
+        "claim": "Joüon-Muraoka (2006) §165e",
+        "risk": "MEDIUM",
+        "reason": "Joüon-Muraoka does treat oath formulas (around §165), but the exact subsection should be verified; asseverative אם is typically discussed at §165 with sub-letters that vary by edition."
+      }
+    ],
+    "safe_claims": [
+      "MT שלחני is rendered by LXX ἀπέσταλκέν με (Greek perfect)",
+      "MT וירדו is rendered by LXX καὶ ἦλθον",
+      "MT אם־אעזבך is rendered by LXX εἰ καταλείψω σε",
+      "Hebrew אם + yiqtol after a divine-name oath functions as a strong negative asseveration",
+      "The LXX uses a conditional construction to mirror the Hebrew oath idiom",
+      "No DSS evidence materially affects this verse"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.423590+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

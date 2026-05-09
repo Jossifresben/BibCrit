@@ -1,0 +1,161 @@
+{
+  "passage": "Psalm 136:1-26",
+  "structure_detected": true,
+  "structure_type": "concentric",
+  "confidence_note": "Strong evidence for a concentric/ring composition with parallel panels organized around a theological center (vv. 10-15, the Exodus), with clear lexical and thematic correspondences between opening doxology, creation, Exodus, wilderness, land-gift, and closing doxology; the recurring refrain כִּי לְעוֹלָם חַסְדּוֹ functions as a structural marker throughout, and the poem's macro-architecture reflects Dorsey's criterion of thematic chiasm supported by inclusio.",
+  "elements": [
+    {
+      "label": "A",
+      "verses": "136:1-3",
+      "summary": "Opening triple imperatives calling Israel to give thanks to the God of gods and Lord of lords, establishing the refrain.",
+      "text_excerpt": "הוֹדוּ לַיהוָה כִּי־טוֹב / כִּי לְעוֹלָם חַסְדּוֹ",
+      "confidence": 0.97
+    },
+    {
+      "label": "B",
+      "verses": "136:4-9",
+      "summary": "YHWH's wonders in creation: heavens, earth, waters, lights (sun, moon, stars).",
+      "text_excerpt": "לְעֹשֵׂה נִפְלָאוֹת גְּדֹלוֹת לְבַדּוֹ / לְרֹקַע הָאָרֶץ עַל־הַמָּיִם",
+      "confidence": 0.92
+    },
+    {
+      "label": "C",
+      "verses": "136:10-12",
+      "summary": "The smiting of Egypt's firstborn and the Exodus with a mighty hand and outstretched arm.",
+      "text_excerpt": "לְמַכֵּה מִצְרַיִם בִּבְכוֹרֵיהֶם / וַיּוֹצֵא יִשְׂרָאֵל מִתּוֹכָם",
+      "confidence": 0.91
+    },
+    {
+      "label": "X",
+      "verses": "136:13-15",
+      "summary": "The splitting of the Sea of Reeds and the destruction of Pharaoh and his army — the theological center of the psalm.",
+      "text_excerpt": "לְגֹזֵר יַם־סוּף לִגְזָרִים / וְנִעֵר פַּרְעֹה וְחֵילוֹ בְיַם־סוּף",
+      "confidence": 0.89
+    },
+    {
+      "label": "C'",
+      "verses": "136:16-20",
+      "summary": "YHWH's guidance through the wilderness and the defeat of kings Sihon and Og, mirroring the conquest of hostile powers.",
+      "text_excerpt": "לְמוֹלִיךְ עַמּוֹ בַּמִּדְבָּר / לְמַכֵּה מְלָכִים גְּדֹלִים",
+      "confidence": 0.87
+    },
+    {
+      "label": "B'",
+      "verses": "136:21-22",
+      "summary": "The gift of the land as נַחֲלָה to Israel, corresponding to the original ordering of the earth in creation.",
+      "text_excerpt": "וְנָתַן אַרְצָם לְנַחֲלָה / נַחֲלָה לְיִשְׂרָאֵל עַבְדּוֹ",
+      "confidence": 0.85
+    },
+    {
+      "label": "A'",
+      "verses": "136:23-26",
+      "summary": "Closing doxology: YHWH remembered Israel in her low estate and gives food to all flesh, returning to universal praise.",
+      "text_excerpt": "שֶׁבְּשִׁפְלֵנוּ זָכַר לָנוּ / הוֹדוּ לְאֵל הַשָּׁמָיִם",
+      "confidence": 0.95
+    }
+  ],
+  "pivot": {
+    "label": "X",
+    "verses": "136:13-15",
+    "summary": "The parting of the Sea of Reeds and drowning of Pharaoh's army form the structural and theological center, the supreme act of divine deliverance that generates the entire psalm's praise.",
+    "theological_weight": "The Red Sea event is the paradigmatic act of divine חֶסֶד — covenantal loyalty enacted in historical rescue — and its centrality in the concentric design signals that all creation (B) and all later history (C, C', B') flow outward from this singular salvific moment. The destruction of Pharaoh 'in the midst of the sea' (בְיַם־סוּף) answers the oppression of Egypt (C) and anticipates the defeat of Sihon and Og (C'), making the Exodus the hermeneutical key to understanding both cosmic and political history in this psalm."
+  },
+  "correspondences": [
+    {
+      "pair": [
+        "A",
+        "A'"
+      ],
+      "evidence": "Both units employ the imperative הוֹדוּ with divine titles; A opens with triple praise (YHWH / God of gods / Lord of lords) and A' closes with הוֹדוּ לְאֵל הַשָּׁמָיִם; the refrain כִּי לְעוֹלָם חַסְדּוֹ appears in all 26 verses but the imperative frames create a formal inclusio.",
+      "confidence": 0.97
+    },
+    {
+      "pair": [
+        "B",
+        "B'"
+      ],
+      "evidence": "B describes YHWH spreading (רָקַע) the earth and ordering cosmic space; B' describes the giving (נָתַן) of land (אֶרֶץ) as inheritance (נַחֲלָה) to Israel — both units concern the ordering and granting of terrestrial space, earth as both cosmic and covenantal gift.",
+      "confidence": 0.86
+    },
+    {
+      "pair": [
+        "C",
+        "C'"
+      ],
+      "evidence": "C uses the verb מָכָה (smite) for Egypt's firstborn; C' uses the same root מָכָה for kings Sihon and Og (v. 17: לְמַכֵּה מְלָכִים גְּדֹלִים); both units describe the violent defeat of Israel's enemies by YHWH's hand, bracketing the Sea miracle.",
+      "confidence": 0.93
+    }
+  ],
+  "overall_confidence": 0.88,
+  "methodology_citations": "Dorsey, The Literary Structure of the Old Testament (1999), pp. 31-36 on criteria for valid structural analysis and pp. 174-177 on Psalms; Lund, Chiasmus in the New Testament (1942), pp. 30-40 on the law of the center bearing theological weight; Walsh, Style and Structure in Biblical Hebrew Narrative (2001), pp. 9-14 on lexical repetition as structural signal; the refrain criterion follows Lund's structural marker principle.",
+  "theological_significance": "The concentric architecture reveals that Psalm 136 is not merely a catalog of historical events but a theologically ordered meditation in which creation and land-gift are interpreted as extensions of the same חֶסֶד that split the sea — cosmic, political, and covenantal history are concentric circles radiating from a single center. The placing of the Sea miracle at the structural heart means that the psalm's repeated affirmation כִּי לְעוֹלָם חַסְדּוֹ finds its definitive historical grounding precisely there, not distributed equally across all events. This structure also creates a 'salvation-history sandwich' in which universal creation (B) and particular land-gift (B') are held together by the same divine faithfulness, suggesting that Israel's territorial inheritance is as cosmically grounded as the ordering of the heavens.",
+  "scholarly_citations": "William P. Brown (Seeing the Psalms, 2002, pp. 210-213) notes the liturgical architecture of Psalm 136 as a 'Great Hallel' with structural movement from creation to Exodus to land; Walter Brueggemann and William Bellinger (Psalms, New Cambridge Bible Commentary, 2014, pp. 571-574) observe the concentric movement from universal doxology to particular history and back to universal provision, supporting the ring composition reading.",
+  "bibcrit_hypothesis": {
+    "title": "Psalm 136 as Liturgical Covenant Renewal Recital",
+    "reasoning": "The concentric structure of Psalm 136 suggests a Levitical or priestly compositional hand that deliberately arranged traditional salvation-history material (Exodus, wilderness, conquest) in a ring around the Sea event, possibly for Second Temple antiphonal liturgy where the refrain was sung by the congregation in response to a cantor's recitation. The structural centering of the Sea miracle rather than Sinai is theologically significant and may reflect a tradition stream in which the Exodus-deliverance, not law-giving, is the foundational covenant act — consistent with the Deuteronomic theology of YHWH as redeemer-king. This compositional strategy transforms a historical recital into a typological statement: every future act of YHWH (including post-exilic restoration implied in vv. 23-24) is interpreted in light of the paradigmatic sea-crossing at the center.",
+    "confidence": 0.78
+  },
+  "discovery_ready": true,
+  "reference": "Psalm 136",
+  "cached_at": "2026-04-19T23:09:45.398414",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The structural analysis is reasonable and broadly defensible, but several specific page citations and some structural claims (especially the B/B' pairing and verse divisions in C/C') are over-precise or questionable.",
+    "flagged_claims": [
+      {
+        "claim": "Dorsey, The Literary Structure of the Old Testament (1999), pp. 31-36... pp. 174-177 on Psalms",
+        "risk": "HIGH",
+        "reason": "Dorsey's book focuses primarily on prose and does not have a dedicated Psalms section at pp. 174-177; the cited page ranges should be verified as they appear potentially fabricated."
+      },
+      {
+        "claim": "Lund, Chiasmus in the New Testament (1942), pp. 30-40 on the law of the center",
+        "risk": "MEDIUM",
+        "reason": "Lund's 'laws of chiasmus' are real but the specific page range 30-40 is suspiciously round; needs verification."
+      },
+      {
+        "claim": "William P. Brown (Seeing the Psalms, 2002, pp. 210-213)",
+        "risk": "HIGH",
+        "reason": "Seeing the Psalms is a relatively short book (~270 pp) but the specific page range and characterization as 'Great Hallel' liturgical architecture should be verified; risk of fabricated specific pagination."
+      },
+      {
+        "claim": "Brueggemann and Bellinger (Psalms, New Cambridge Bible Commentary, 2014, pp. 571-574)",
+        "risk": "MEDIUM",
+        "reason": "The commentary exists but specific page citations for Ps 136 should be verified; the characterization is plausible but pagination may be invented."
+      },
+      {
+        "claim": "C' (vv. 16-20) ... defeat of kings Sihon and Og",
+        "risk": "MEDIUM",
+        "reason": "Sihon and Og are named in vv. 19-20, but v. 16 is wilderness guidance and vv. 17-18 speak of 'great kings' / 'mighty kings' generally before naming them; grouping these as a single C' unit is an interpretive choice, not self-evident."
+      },
+      {
+        "claim": "the refrain כִּי לְעוֹלָם חַסְדּוֹ appears in all 26 verses",
+        "risk": "MEDIUM",
+        "reason": "This is correct but stated as supporting an inclusio argument; since the refrain is universal it cannot itself mark inclusio between A and A' — the reasoning is slightly muddled though the textual claim is true."
+      },
+      {
+        "claim": "B' describes the giving (נָתַן) of land... corresponding to the original ordering of the earth in creation",
+        "risk": "MEDIUM",
+        "reason": "The lexical link between רָקַע (B) and נָתַן + נַחֲלָה (B') is thematic rather than verbal; the correspondence is interpretively plausible but weaker than presented (confidence 0.86 may be inflated)."
+      },
+      {
+        "claim": "possibly for Second Temple antiphonal liturgy where the refrain was sung by the congregation in response to a cantor's recitation",
+        "risk": "MEDIUM",
+        "reason": "This is speculative reconstruction of Sitz im Leben; presented appropriately as 'possibly' but the specific antiphonal cantor/congregation model is conjecture without direct evidence."
+      }
+    ],
+    "safe_claims": [
+      "The refrain כִּי לְעוֹלָם חַסְדּוֹ occurs in every verse of Psalm 136",
+      "Verses 1-3 contain triple imperatives with divine titles (YHWH, God of gods, Lord of lords)",
+      "The verb root נכה/מכה is used for both the smiting of Egypt's firstborn and the smiting of kings",
+      "Verses 13-15 describe the splitting of the Sea of Reeds and drowning of Pharaoh's host",
+      "Verses 19-20 name Sihon and Og specifically",
+      "The psalm moves from creation to Exodus to wilderness/conquest to land-gift to closing praise",
+      "Psalm 136 is traditionally associated with the 'Great Hallel'"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.548183+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

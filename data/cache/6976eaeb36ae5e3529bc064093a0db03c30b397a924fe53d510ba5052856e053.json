@@ -1,0 +1,56 @@
+{
+  "allusions": [
+    {
+      "ot_reference": "No direct OT citation or allusion",
+      "nt_words": "τόν μέν πρῶτον λόγον ἐποιησάμην περί πάντων ὦ Θεόφιλε ὧν ἤρξατο ὁ Ἰησοῦς ποιεῖν τέ καί διδάσκειν",
+      "ot_mt_form": "No MT source identified for this prologue formula",
+      "ot_lxx_form": "No LXX source identified; however, the phrase 'ποιεῖν τε καὶ διδάσκειν' (to do and to teach) may carry loose resonance with Deuteronomic traditions of Moses as paradigmatic doer-and-teacher of the Law (e.g., Deut 4:5; Sir 45:5)",
+      "nt_alignment": "independent",
+      "alignment_confidence": 0.15,
+      "key_word": "ποιεῖν τε καὶ διδάσκειν",
+      "textual_implication": "Acts 1:1 is a Hellenistic literary prologue addressed to a patron (Theophilus), closely paralleling Luke 1:1-4 in genre and function; it does not cite or formally allude to an OT text. The phrase 'ποιεῖν τε καὶ διδάσκειν' (to do and to teach) has been noted by commentators as typologically evoking Moses or Deuteronomic figures who both perform and instruct, but this is at most a Mosaic typology operative at the level of narrative theology rather than textual citation. The verbal pair more plausibly reflects a Hellenistic biographical topos about the ideal teacher, while the Lukan Jesus-Moses typology established throughout Luke-Acts lends secondary scriptural coloring.",
+      "textual_implication_plain": "Acts 1:1 is not quoting the Old Testament; it is a standard Greco-Roman literary introduction. The phrase 'to do and to teach' may subtly present Jesus as a new Moses, but this is a thematic echo, not a formal quotation.",
+      "scholarly_note": "Beale and Carson do not treat Acts 1:1 as containing a formal OT citation; the Mosaic typology in Luke-Acts is discussed broadly by Beale & Carson (2007) in their treatment of Acts, noting that Luke frames Jesus in terms reminiscent of Moses as teacher-lawgiver without direct quotation at this verse.",
+      "contested": false
+    }
+  ],
+  "summary_technical": "Acts 1:1 contains no formally identifiable OT citation or textually determinate allusion; it is a Hellenistic dedicatory prologue whose literary form is indebted to Greek historiographical convention (cf. Josephus, Against Apion 1.1; Diodorus Siculus). Any scriptural resonance is typological and intertextual at the level of Lukan narrative theology rather than explicit lemmatic citation, making MT/LXX alignment analysis inapplicable to this verse.",
+  "summary_plain": "Acts 1:1 is simply the author's introduction to his second volume addressed to Theophilus, and it does not quote or directly reference any Old Testament passage.",
+  "bibcrit_hypothesis": {
+    "title": "Lukan Prologue Deploys Mosaic Typology Implicitly",
+    "reasoning": "The deliberate pairing of 'doing and teaching' (ποιεῖν τε καὶ διδάσκειν) in Acts 1:1 likely activates a Mosaic typological frame already established in Luke's Gospel, where Jesus is portrayed as a prophet-like-Moses figure (cf. Deut 18:15, cited explicitly in Acts 3:22). This implicit typology does not require a textual citation because the Lukan narrative has already established the typological grid; the prologue thus functions as a thematic recapitulation. The absence of direct OT quotation here underscores that Lukan intertextuality operates on multiple registers, from explicit citation to deep structural typology.",
+    "plain": "Luke subtly presents Jesus as a new Moses by describing him as one who both 'did and taught,' but he is not quoting scripture here—he is setting up a theme he will develop throughout Acts.",
+    "confidence": 0.62
+  },
+  "discovery_ready": false,
+  "reference": "Acts 1:1",
+  "cached_at": "2026-04-20T19:35:37.481665",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "HIGH",
+    "confidence_note": "The analysis correctly identifies Acts 1:1 as a Hellenistic prologue with no formal OT citation, and appropriately hedges any typological claims.",
+    "flagged_claims": [
+      {
+        "claim": "Mosaic typology in Luke-Acts is discussed broadly by Beale & Carson (2007) in their treatment of Acts, noting that Luke frames Jesus in terms reminiscent of Moses as teacher-lawgiver without direct quotation at this verse",
+        "risk": "MEDIUM",
+        "reason": "Attributes a specific framing to the Beale & Carson Commentary on the NT Use of the OT (2007) without page reference; the volume's Acts section (by I.H. Marshall) does not substantively treat Acts 1:1 as containing Mosaic typology, so this attribution may overstate or misrepresent the source."
+      },
+      {
+        "claim": "loose resonance with Deuteronomic traditions of Moses as paradigmatic doer-and-teacher of the Law (e.g., Deut 4:5; Sir 45:5)",
+        "risk": "MEDIUM",
+        "reason": "Sir 45:5 speaks of Moses receiving the law to teach Jacob, but the specific 'doer-and-teacher' pairing is not a fixed Deuteronomic formula; the parallel is suggestive but the framing risks overstating an established intertextual link."
+      }
+    ],
+    "safe_claims": [
+      "Acts 1:1 contains no formally identifiable OT citation",
+      "It is a Hellenistic dedicatory prologue addressed to Theophilus",
+      "The verse parallels Luke 1:1-4 in genre and function",
+      "Deut 18:15 is cited explicitly in Acts 3:22",
+      "Greek historiographical prologues (e.g., Josephus, Against Apion 1.1) provide formal parallels"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.585232+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

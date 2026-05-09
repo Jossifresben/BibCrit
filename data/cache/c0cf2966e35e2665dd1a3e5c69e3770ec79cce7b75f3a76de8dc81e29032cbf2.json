@@ -1,0 +1,547 @@
+{
+  "book": "Psalms",
+  "period_range": "10th century BCE – 10th century CE",
+  "archetype_description": "The Psalter reached something close to its final 150-psalm form during the Second Temple period (roughly 5th–3rd centuries BCE), but individual psalms draw on compositional layers extending from the monarchic period through the Hellenistic era. The proto-text was not a single authorial composition but a gradually anthologized collection, with at least five discernible editorial stages corresponding to the five 'books' of the Psalter; the Qumran evidence demonstrates that as late as the 1st century BCE the sequence and even the number of canonical psalms remained fluid in some communities. The degree of textual unity is therefore moderate: the first 89 psalms show a relatively stable textual tradition across witnesses, while the final third (Psalms 90–150) exhibits the greatest divergence between the MT, the LXX, and the Qumran psalms scrolls.",
+  "stemma_nodes": [
+    {
+      "id": "archetype",
+      "label": "Proto-Text",
+      "type": "archetype",
+      "date": "10th–5th c. BCE (compositional layers)",
+      "description": "Hypothetical proto-Psalter representing the gradual anthologization of individual psalms and sub-collections (Davidic, Asaphite, Korahite, Hallel, etc.) before stabilization into a five-book structure."
+    },
+    {
+      "id": "pre-exilic-collections",
+      "label": "Pre-Exilic Sub-Collections",
+      "type": "intermediate",
+      "date": "10th–6th c. BCE",
+      "description": "Reconstructed early sub-collections (Psalms 2–89 core: Davidic Psalter I and II, Asaph collection, Korah collection) circulating independently before exilic and post-exilic redaction."
+    },
+    {
+      "id": "post-exilic-redaction",
+      "label": "Post-Exilic Editorial Stage",
+      "type": "intermediate",
+      "date": "6th–4th c. BCE",
+      "description": "Exilic and post-exilic redactional stage that organized sub-collections into a five-book structure (Pss 1–41, 42–72, 73–89, 90–106, 107–150), added doxologies, and incorporated the Hallel and Psalms of Ascent."
+    },
+    {
+      "id": "second-temple-psalter",
+      "label": "Second Temple Psalter",
+      "type": "intermediate",
+      "date": "4th–2nd c. BCE",
+      "description": "A partially stabilized Hebrew Psalter text-form circulating in Second Temple Judaism, representing the common ancestor of the proto-MT and the Vorlage of the LXX, but prior to the full canonical fixation attested at Qumran."
+    },
+    {
+      "id": "proto-mt",
+      "label": "Proto-MT",
+      "type": "intermediate",
+      "date": "c. 2nd c. BCE – 1st c. CE",
+      "description": "The proto-Masoretic text-form of Psalms, reflecting the Palestinian textual tradition that was eventually standardized by the rabbinic activity after 70 CE and transmitted through the Masoretes."
+    },
+    {
+      "id": "mt",
+      "label": "MT",
+      "type": "tradition",
+      "tradition": "MT",
+      "date": "c. 100 CE (standardization); 6th–10th c. CE (Masoretic vocalization)",
+      "full_name": "Masoretic Text",
+      "language": "Hebrew",
+      "description": "The consonantal text of Psalms as stabilized by proto-rabbinic scribes and subsequently furnished with vocalization, accentuation, and Masorah by the Tiberian Masoretes (Ben Asher school), comprising 150 psalms in canonical sequence."
+    },
+    {
+      "id": "aleppo-codex",
+      "label": "Aleppo Codex (A)",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "c. 925 CE",
+      "full_name": "Codex Aleppo (Keter Aram Tzova)",
+      "language": "Hebrew",
+      "description": "The oldest nearly complete Tiberian Masoretic manuscript, vocalized by Aaron ben Moses ben Asher; portions of Psalms survive though parts of the codex were lost in 1947."
+    },
+    {
+      "id": "leningrad-codex",
+      "label": "Leningrad Codex (B19A / L)",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "1008/9 CE",
+      "full_name": "Codex Leningradensis (Russian National Library, Firkovitch B 19A)",
+      "language": "Hebrew",
+      "description": "The oldest complete manuscript of the Hebrew Bible in the Ben Asher Tiberian tradition and the primary base text for BHS and BHQ Psalms."
+    },
+    {
+      "id": "bhs",
+      "label": "BHS",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "1977 CE",
+      "full_name": "Biblia Hebraica Stuttgartensia",
+      "language": "Hebrew",
+      "description": "Critical edition of the MT Psalms based on Leningrad Codex with apparatus; widely used in scholarship and ministry since 1977."
+    },
+    {
+      "id": "bhq",
+      "label": "BHQ Psalms",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "2011 CE (fascicle)",
+      "full_name": "Biblia Hebraica Quinta, Psalms fascicle (ed. A. Schenker et al.)",
+      "language": "Hebrew",
+      "description": "Revised critical edition of Psalms based on Leningrad Codex with expanded text-critical apparatus incorporating DSS, LXX, and other witnesses; fascicle published 2011."
+    },
+    {
+      "id": "dss-psalms",
+      "label": "DSS Psalms Scrolls",
+      "type": "tradition",
+      "tradition": "DSS",
+      "date": "2nd–1st c. BCE",
+      "full_name": "Dead Sea Scrolls Psalms Manuscripts",
+      "language": "Hebrew",
+      "description": "Over 40 manuscripts of Psalms from the Judean Desert (principally 4Q83–98, 11Q5, 11Q6, 1Q10–12, 2Q14, 3Q2, 5Q5, 8QPs), representing the largest DSS corpus for any biblical book."
+    },
+    {
+      "id": "11q5",
+      "label": "11QPsalms-a (11Q5)",
+      "type": "edition",
+      "tradition": "DSS",
+      "date": "c. 30–50 CE (manuscript); 1st c. BCE – 1st c. CE (text)",
+      "full_name": "11QPsalms-a (Great Psalms Scroll, Cave 11)",
+      "language": "Hebrew",
+      "description": "The largest and most important DSS Psalms manuscript, containing 49 compositions in a sequence diverging markedly from the MT for Psalms 101–150, including non-canonical psalms such as Ps 151 and the Apostrophe to Zion; central to debates about late Psalter canonization."
+    },
+    {
+      "id": "4q83",
+      "label": "4QPsalms-a (4Q83)",
+      "type": "edition",
+      "tradition": "DSS",
+      "date": "c. 50 BCE – 50 CE",
+      "full_name": "4QPsalms-a (Cave 4, Qumran)",
+      "language": "Hebrew",
+      "description": "Largest Cave 4 Psalms manuscript, generally closer to the proto-MT sequence in the first half of the Psalter, providing important textual variants for Psalms 5–71."
+    },
+    {
+      "id": "proto-lxx",
+      "label": "Proto-LXX / LXX Vorlage",
+      "type": "intermediate",
+      "date": "3rd–2nd c. BCE",
+      "description": "The Hebrew Vorlage underlying the Greek translation of Psalms, closely related to the proto-MT but with a number of readings diverging from the later Masoretic form, reflecting a slightly different stage of the text or a different Palestinian/Alexandrian sub-tradition."
+    },
+    {
+      "id": "old-greek-psalms",
+      "label": "Old Greek (LXX) Psalms",
+      "type": "intermediate",
+      "date": "c. 3rd–2nd c. BCE",
+      "description": "The original Greek translation of the Psalter made in Alexandria, exhibiting a relatively literal translation technique with 151 psalms (including LXX Ps 151) and a verse-numbering system offset by one from MT from Ps 10/11 onward."
+    },
+    {
+      "id": "lxx",
+      "label": "LXX",
+      "type": "tradition",
+      "tradition": "LXX",
+      "date": "3rd c. BCE – 4th c. CE",
+      "full_name": "Septuagint Psalms (LXX Psalmoi)",
+      "language": "Greek",
+      "description": "The Greek Psalter tradition, transmitting 151 psalms with a psalm-numbering offset from MT (Pss 9–10 and 114–115 merged; Pss 116 and 147 split), and serving as the liturgical Psalter of Greek-speaking Judaism and early Christianity."
+    },
+    {
+      "id": "rahlfs-psalmi",
+      "label": "Rahlfs LXX Psalmi",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "1931 CE",
+      "full_name": "Septuaginta (ed. Alfred Rahlfs, Stuttgart 1931; rev. Hanhart 2006), Psalmi",
+      "language": "Greek",
+      "description": "The standard hand edition of the Greek Psalter, based primarily on Codices Vaticanus, Sinaiticus, and Alexandrinus, widely used pending the Göttingen critical edition."
+    },
+    {
+      "id": "goettingen-psalms",
+      "label": "Göttingen LXX Psalms",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "Planned / in progress",
+      "full_name": "Psalmi (Göttingen Septuaginta; volume not yet published as of 2024)",
+      "language": "Greek",
+      "description": "The Göttingen critical edition of the Greek Psalter has not yet appeared as a full volume; Rahlfs's 1931 edition (revised 2006) remains the standard scholarly text."
+    },
+    {
+      "id": "codex-vaticanus-pss",
+      "label": "Codex Vaticanus (B), Psalms",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "4th c. CE",
+      "full_name": "Codex Vaticanus Graecus 1209 (B), Psalms section",
+      "language": "Greek",
+      "description": "Principal witness to the Old Greek Psalter, generally regarded as preserving a relatively uncontaminated text of the Alexandrian LXX tradition."
+    },
+    {
+      "id": "hexapla-psalms",
+      "label": "Origen's Hexapla (Psalms column)",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "c. 240 CE",
+      "full_name": "Origenis Hexapla, Psalmi (columns III–V: Aquila, Symmachus, LXX with obeli and asterisks, Theodotion)",
+      "language": "Greek / Hebrew",
+      "description": "Origen's six-column synopsis for Psalms, correcting the LXX toward the Hebrew with obeli and asterisks; survives fragmentarily, most notably in the Mercati palimpsest (Milan, Ambrosiana), and profoundly influenced subsequent LXX manuscript transmission."
+    },
+    {
+      "id": "aquila-psalms",
+      "label": "Aquila (Psalms)",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "c. 125 CE",
+      "full_name": "Aquila's Greek translation of Psalms (fragmentary)",
+      "language": "Greek",
+      "description": "Hyper-literal Greek revision of the Psalter toward a proto-MT Hebrew Vorlage, surviving in fragments within the Hexapla and in Cairo Geniza palimpsests."
+    },
+    {
+      "id": "symmachus-psalms",
+      "label": "Symmachus (Psalms)",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "c. 200 CE",
+      "full_name": "Symmachus's Greek translation of Psalms (fragmentary)",
+      "language": "Greek",
+      "description": "Elegantly idiomatic Greek revision of the Psalter, preferring literary Greek over word-for-word equivalence; known through Hexaplaric fragments and patristic citations."
+    },
+    {
+      "id": "lucianic-psalms",
+      "label": "Lucianic Recension (Psalms)",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "c. 300 CE",
+      "full_name": "Lucianic (Antiochene) recension of the Greek Psalter",
+      "language": "Greek",
+      "description": "Secondary Greek recension associated with Lucian of Antioch, smoothing the LXX toward better Greek style and occasionally incorporating readings closer to the Hebrew; transmitted in manuscripts of the Antiochene type and important for recovering the Old Greek."
+    },
+    {
+      "id": "nets-psalms",
+      "label": "NETS Psalms",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "2007 CE",
+      "full_name": "A New English Translation of the Septuagint, Psalms (tr. Albert Pietersma, 2007)",
+      "language": "English",
+      "description": "Modern critical English translation of the Greek Psalter based on Rahlfs's edition, produced according to the interlinear paradigm and accompanied by extensive text-critical annotation."
+    },
+    {
+      "id": "peshitta-psalms",
+      "label": "Peshitta Psalms",
+      "type": "tradition",
+      "tradition": "Peshitta",
+      "date": "1st–3rd c. CE",
+      "full_name": "Peshitta Psalms (Syriac Old Testament)",
+      "language": "Syriac",
+      "description": "Syriac translation of the Psalter made directly from a Hebrew Vorlage closely resembling the proto-MT, with occasional influence from the LXX and possible use by early Syriac-speaking Christian communities in liturgy."
+    },
+    {
+      "id": "leiden-peshitta-psalms",
+      "label": "Leiden Peshitta, Psalms",
+      "type": "edition",
+      "tradition": "Peshitta",
+      "date": "1980 CE",
+      "full_name": "The Old Testament in Syriac (Peshitta), Part II fasc. 3: Psalms (Leiden: Brill, 1980)",
+      "language": "Syriac",
+      "description": "Critical edition of the Peshitta Psalter published by the Peshitta Institute Leiden, the standard scholarly text for text-critical work."
+    },
+    {
+      "id": "targum-psalms",
+      "label": "Targum Psalms",
+      "type": "tradition",
+      "tradition": "Targum",
+      "date": "4th–7th c. CE (final redaction)",
+      "full_name": "Targum Tehillim (Targum of Psalms)",
+      "language": "Jewish Palestinian Aramaic / Babylonian Aramaic",
+      "description": "The Aramaic translation-paraphrase of the Psalter, exhibiting an expansive, midrashic character unlike the relatively literal Targum Onkelos; its final redaction is post-Talmudic but contains earlier Palestinian traditions, and its Hebrew Vorlage conforms closely to the proto-MT."
+    },
+    {
+      "id": "vulgate-psalterium-iuxta-hebraeos",
+      "label": "Psalterium iuxta Hebraeos (Jerome)",
+      "type": "tradition",
+      "tradition": "Vulgate",
+      "date": "c. 392 CE",
+      "full_name": "Psalterium iuxta Hebraeos (Jerome's translation from the Hebrew veritas)",
+      "language": "Latin",
+      "description": "Jerome's direct translation of the Psalter from a Hebrew text closely resembling the proto-MT (the 'Hebrew truth'), the version quoted in the given Latin incipit (Beatus vir qui non abiit…) and Jerome's own preferred text; distinguished from his two earlier LXX-based revisions."
+    },
+    {
+      "id": "psalterium-gallicanum",
+      "label": "Psalterium Gallicanum",
+      "type": "recension",
+      "tradition": "Vulgate",
+      "date": "c. 387–390 CE",
+      "full_name": "Psalterium Gallicanum (Jerome's second revision of the Old Latin from the Hexaplaric LXX)",
+      "language": "Latin",
+      "description": "Jerome's second Psalter revision, correcting the Old Latin against Origen's Hexaplaric column of the LXX; became the standard liturgical Psalter of the Western Church and is the text printed in most Vulgate editions, despite the iuxta Hebraeos being Jerome's preferred scholarly translation."
+    },
+    {
+      "id": "weber-gryson-vulgate-pss",
+      "label": "Weber-Gryson Vulgate, Psalms",
+      "type": "edition",
+      "tradition": "Vulgate",
+      "date": "1969 CE (rev. 1994, 2007)",
+      "full_name": "Biblia Sacra Vulgata (ed. Weber-Gryson), Psalmi; Stuttgart: Deutsche Bibelgesellschaft",
+      "language": "Latin",
+      "description": "Standard critical edition of the Latin Vulgate including the Psalterium Gallicanum as the canonical Vulgate Psalms text, with apparatus referencing iuxta Hebraeos variants."
+    }
+  ],
+  "stemma_edges": [
+    {
+      "from": "archetype",
+      "to": "pre-exilic-collections"
+    },
+    {
+      "from": "pre-exilic-collections",
+      "to": "post-exilic-redaction"
+    },
+    {
+      "from": "post-exilic-redaction",
+      "to": "second-temple-psalter"
+    },
+    {
+      "from": "second-temple-psalter",
+      "to": "proto-mt"
+    },
+    {
+      "from": "second-temple-psalter",
+      "to": "proto-lxx"
+    },
+    {
+      "from": "second-temple-psalter",
+      "to": "dss-psalms"
+    },
+    {
+      "from": "proto-mt",
+      "to": "mt"
+    },
+    {
+      "from": "proto-mt",
+      "to": "peshitta-psalms"
+    },
+    {
+      "from": "proto-mt",
+      "to": "targum-psalms"
+    },
+    {
+      "from": "proto-mt",
+      "to": "vulgate-psalterium-iuxta-hebraeos"
+    },
+    {
+      "from": "mt",
+      "to": "aleppo-codex"
+    },
+    {
+      "from": "mt",
+      "to": "leningrad-codex"
+    },
+    {
+      "from": "leningrad-codex",
+      "to": "bhs"
+    },
+    {
+      "from": "leningrad-codex",
+      "to": "bhq"
+    },
+    {
+      "from": "dss-psalms",
+      "to": "11q5"
+    },
+    {
+      "from": "dss-psalms",
+      "to": "4q83"
+    },
+    {
+      "from": "proto-lxx",
+      "to": "old-greek-psalms"
+    },
+    {
+      "from": "old-greek-psalms",
+      "to": "lxx"
+    },
+    {
+      "from": "lxx",
+      "to": "hexapla-psalms"
+    },
+    {
+      "from": "lxx",
+      "to": "lucianic-psalms"
+    },
+    {
+      "from": "lxx",
+      "to": "codex-vaticanus-pss"
+    },
+    {
+      "from": "hexapla-psalms",
+      "to": "aquila-psalms"
+    },
+    {
+      "from": "hexapla-psalms",
+      "to": "symmachus-psalms"
+    },
+    {
+      "from": "hexapla-psalms",
+      "to": "psalterium-gallicanum"
+    },
+    {
+      "from": "lxx",
+      "to": "rahlfs-psalmi"
+    },
+    {
+      "from": "rahlfs-psalmi",
+      "to": "nets-psalms"
+    },
+    {
+      "from": "rahlfs-psalmi",
+      "to": "goettingen-psalms"
+    },
+    {
+      "from": "peshitta-psalms",
+      "to": "leiden-peshitta-psalms"
+    },
+    {
+      "from": "vulgate-psalterium-iuxta-hebraeos",
+      "to": "weber-gryson-vulgate-pss"
+    },
+    {
+      "from": "psalterium-gallicanum",
+      "to": "weber-gryson-vulgate-pss"
+    }
+  ],
+  "key_divergences": [
+    {
+      "title": "Psalm 22:17 (16): 'dug' vs. 'like a lion'",
+      "passage": "Psalm 22:17 (MT) / Psalm 21:17 (LXX)",
+      "witnesses": [
+        "MT",
+        "LXX",
+        "DSS"
+      ],
+      "plain": "The MT reads כָּאֲרִי ('like a lion, [they are at] my hands and feet'), whereas the LXX and several Qumran fragments (notably 5/6HevPs) read ὤρυξαν ('they have dug/pierced my hands and feet'). The Christian tradition read the LXX as a prophecy of crucifixion, while the MT yields a less obviously messianic text, making this one of the most contested variant readings in the entire Psalter.",
+      "technical": "The MT reading כארי is explicable as the noun 'lion' (כְּאַרְיֵה or כָּאֲרִי), whereas the LXX, the Nahal Hever Greek Minor Prophets scroll, and 4QPsf (4Q88) support a verb כָּארוּ ('they have dug'), a qal perfect 3mp from כרה; the single letter difference (waw/yod) is a classic case of graphic confusion. Stegemann, Flint, Ulrich, and the BHQ editors have discussed the DSS evidence extensively; the BHQ apparatus favors the verb form as the more difficult reading (lectio difficilior)."
+    },
+    {
+      "title": "Psalm 145 Acrostic: Missing Nun Verse",
+      "passage": "Psalm 145:13b (MT lacuna) / 11QPsalms-a (11Q5) and LXX",
+      "witnesses": [
+        "MT",
+        "LXX",
+        "DSS"
+      ],
+      "plain": "The alphabetic acrostic of Psalm 145 in the MT is missing the line beginning with the Hebrew letter nun (נ), breaking the literary pattern. Both the LXX and the Dead Sea Scrolls (11Q5) preserve a nun-verse, suggesting the MT has suffered a scribal omission, and modern critical editions (NRSV, BHQ) restore the verse on this basis.",
+      "technical": "11Q5 col. xvi preserves נאמן אלהים בדבריו וחסיד בכל מעשיו ('Faithful is God in his words and gracious in all his deeds'), matching the LXX πιστὸς κύριος ἐν τοῖς λόγοις αὐτοῦ καὶ ὅσιος ἐν πᾶσι τοῖς ἔργοις αὐτοῦ; this is a case of homoioteleuton-induced parablepsis in the proto-MT tradition. P. Flint (The Dead Sea Psalms Scrolls, 1997) and the BHQ editors regard this as a clear case where DSS and LXX together correct the MT."
+    },
+    {
+      "title": "11QPsalms-a Divergent Order and Non-Canonical Psalms",
+      "passage": "Psalms 101–150 (sequence in 11Q5)",
+      "witnesses": [
+        "DSS",
+        "MT"
+      ],
+      "plain": "The great Qumran Psalms scroll (11Q5) presents the final third of the Psalter in a sequence radically different from the MT, interspersed with compositions not found in any Bible, including the so-called Apostrophe to Zion and Psalm 151. This forces scholars to ask whether the MT order was not yet fixed in the 1st century BCE, or whether 11Q5 represents a liturgical collection rather than a canonical Psalter.",
+      "technical": "Peter Flint and James Sanders argue that 11Q5 witnesses to an alternative edition of the Psalter ('Psalter B') in which Books IV–V were not yet canonically fixed; Patrick Skehan, Gerald Wilson, and Shemaryahu Talmon counter that 11Q5 is a liturgical compilation dependent on an already-canonical Psalter. The debate is fundamental to understanding the closing of the Psalms canon and is exhaustively treated in Flint's 1997 monograph and Wilson's The Editing of the Hebrew Psalter (1985)."
+    },
+    {
+      "title": "Psalm 40:7 (6): 'a body' vs. 'ears'",
+      "passage": "Psalm 40:7 (MT) / Psalm 39:7 (LXX) / Hebrews 10:5",
+      "witnesses": [
+        "MT",
+        "LXX"
+      ],
+      "plain": "The MT reads 'ears you have dug/opened for me' (אָזְנַיִם כָּרִיתָ לִּי), but the LXX has 'a body you have prepared for me' (σῶμα δὲ κατηρτίσω μοι), a reading cited verbatim in the New Testament Epistle to the Hebrews (10:5). The divergence reflects either a different Hebrew Vorlage or a translator's interpretive or theological expansion.",
+      "technical": "The LXX reading σῶμα ('body') is generally explained either as a free rendering of the 'ears' synecdoche (whole body for the organ of hearing), as a theologically motivated expansion by the Greek translator, or as reflecting a different Hebrew Vorlage. Barthélemy (CTAT III) and Hossfeld-Zenger (Psalms 2, Hermeneia) treat it as a case of translational interpretation rather than a Vorlage variant; the NT citation of the LXX in Heb 10:5 has given this divergence enormous reception-historical importance."
+    },
+    {
+      "title": "Psalm 14 vs. Psalm 53: Recensional Doublet",
+      "passage": "Psalm 14 (MT/LXX) and Psalm 53 (MT/LXX) / Romans 3:10–18",
+      "witnesses": [
+        "MT",
+        "LXX"
+      ],
+      "plain": "Psalms 14 and 53 are near-identical poems with different divine names (YHWH vs. Elohim) and with the LXX text of Psalm 13 (= MT Ps 14) containing a substantial plus of six additional verses absent from the MT of Ps 14, a plus cited by Paul in Romans 3:10–18. This demonstrates both the Elohistic redaction of Books II–III and the divergence between the LXX Psalter Vorlage and the proto-MT.",
+      "technical": "The LXX plus in Ps 13:3 (LXX) = a catena of verses drawn from Ps 5:10, 139:4, 9:28, Is 59:7–8, Ps 35:2, expanding the indictment of universal sinfulness; the plus is absent from all known Hebrew manuscripts and is generally regarded as a Greek-stage addition rather than a variant Vorlage (so Barthélemy, CTAT III; Pietersma, NETS notes). The Elohistic Psalter (Pss 42–83) replacing YHWH with Elohim is a recognized editorial layer discussed by Wilson, Hossfeld-Zenger, and already by Wellhausen."
+    }
+  ],
+  "transmission_narrative": "The Psalter was composed and anthologized over roughly half a millennium, with individual psalms originating in monarchic-era cultic practice and the final five-book structure reaching approximate stability in the post-exilic period; the most consequential moment of textual divergence is attested at Qumran, where scrolls like 11Q5 demonstrate that the sequence and contents of the last third of the Psalter were not universally fixed as late as the first century BCE, making Psalms the biblical book with the most striking evidence for a late and contested canonical closure. The Greek Psalter (LXX), translated in Alexandria probably in the 3rd–2nd centuries BCE from a Hebrew Vorlage closely related to but not identical with the proto-MT, introduced a different psalm-numbering system and a 151st psalm, and became the authoritative Psalter for Greek-speaking Judaism and early Christianity; Origen's Hexapla (c. 240 CE) attempted to reconcile the LXX with the Hebrew, and his revision (the Hexaplaric column) decisively contaminated subsequent LXX manuscript transmission, while the Lucianic recension created a further Antiochene text-form. Jerome translated the Psalter three times—twice from the LXX (Psalterium Romanum and Gallicanum) and once directly from the Hebrew (Psalterium iuxta Hebraeos, c. 392 CE)—but the Gallicanum became the standard Western liturgical Psalter, while the MT tradition was stabilized by the Tiberian Masoretes and preserved in the Leningrad Codex (1008/9 CE), the base text of BHS and BHQ; current critical scholarship, as represented by BHQ fascicle (2011), integrates MT, LXX, and DSS evidence to reconstruct the most defensible text while acknowledging that Psalms may never have had a single Urtext in the classical sense.",
+  "transmission_plain": "The Book of Psalms grew over many centuries as hymns and prayers were collected into the five-part anthology we know today; because this process happened gradually, different ancient communities ended up with slightly different versions—some Dead Sea Scrolls from around 2,000 years ago even contain extra psalms and a different order. When Jewish scholars in Alexandria translated the Psalms into Greek (the Septuagint), they numbered the psalms differently and added a 151st psalm, and that Greek version became the Psalter of the early Christian church; meanwhile, Jewish tradition preserved the Hebrew text through generations of meticulous copyists called Masoretes, whose work survives in the Leningrad Codex (1009 CE), the manuscript that modern Hebrew Bibles are based on.",
+  "bibcrit_assessment": {
+    "title": "Psalms Canon Remained Fluid Into the First Century BCE",
+    "plain": "Unlike most biblical books whose text was fixed relatively early, the final third of the Psalter was still being arranged differently in some Jewish communities as late as the first century BCE—the great Dead Sea Scrolls Psalms scroll (11Q5) has a completely different order and includes extra compositions, suggesting that 'the Book of Psalms' as a fixed 150-psalm sequence was not universally accepted until after the destruction of the Second Temple in 70 CE.",
+    "confidence": 0.71
+  },
+  "discovery_ready": true,
+  "reference": "Psalms",
+  "cached_at": "2026-04-20T19:28:31.129427",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v2",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis is broadly sound and reflects mainstream scholarship on the Psalter, but contains several specific factual errors regarding manuscript counts, psalm numbering, and edition details that require correction.",
+    "flagged_claims": [
+      {
+        "claim": "the first 89 psalms show a relatively stable textual tradition across witnesses, while the final third (Psalms 90–150) exhibits the greatest divergence",
+        "risk": "MEDIUM",
+        "reason": "While this reflects a common scholarly view (associated with Flint and Sanders), it is stated more categorically than warranted; some scholars (e.g., Skehan, Goshen-Gottstein) argued 11Q5 is liturgical rather than evidence of fluid canonical sequence."
+      },
+      {
+        "claim": "BHQ Psalms... 2011 CE (fascicle)",
+        "risk": "HIGH",
+        "reason": "The BHQ Psalms fascicle has not yet been published as of 2024; the editor listed (Schenker) was the general editor of BHQ, not specifically the Psalms fascicle editor. This appears to be fabricated."
+      },
+      {
+        "claim": "11QPsalms-a (11Q5)... c. 30–50 CE (manuscript)",
+        "risk": "MEDIUM",
+        "reason": "The standard paleographic dating of 11Q5 is typically given as the first half of the 1st century CE (c. 1–50 CE) or sometimes 30–50 CE; the dating is plausible but stated with more precision than universally accepted."
+      },
+      {
+        "claim": "11Q5... containing 49 compositions",
+        "risk": "MEDIUM",
+        "reason": "The exact count of compositions in 11Q5 varies by reckoning; commonly cited as containing approximately 50 compositions including non-canonical ones. The number 49 is in the range but specific counts vary among scholars."
+      },
+      {
+        "claim": "LXX... Pss 9–10 and 114–115 merged; Pss 116 and 147 split",
+        "risk": "MEDIUM",
+        "reason": "Partially correct but imprecise: LXX merges MT 9-10 and MT 114-115, and splits MT 116 into LXX 114-115 and MT 147 into LXX 146-147. The framing is slightly confused as stated."
+      },
+      {
+        "claim": "transmitting 151 psalms",
+        "risk": "MEDIUM",
+        "reason": "LXX Psalm 151 is explicitly marked as 'outside the number' (ἔξωθεν τοῦ ἀριθμοῦ) in manuscripts; saying the LXX transmits 151 psalms obscures this important canonical distinction."
+      },
+      {
+        "claim": "Aquila (Psalms)... c. 125 CE",
+        "risk": "MEDIUM",
+        "reason": "The dating of Aquila's translation is traditionally placed c. 130-140 CE based on rabbinic sources; 125 CE is slightly early and stated with false precision."
+      },
+      {
+        "claim": "Lucianic Recension (Psalms)... c. 300 CE",
+        "risk": "MEDIUM",
+        "reason": "The existence of a distinct Lucianic recension specifically for the Psalter is debated; some scholars (e.g., Rahlfs himself) doubted whether a true Lucianic recension of Psalms can be isolated."
+      },
+      {
+        "claim": "4QPsalms-a (4Q83)... providing important textual variants for Psalms 5–71",
+        "risk": "MEDIUM",
+        "reason": "The exact range of psalms preserved in 4Q83 should be verified; the manuscript is fragmentary and the cited range may not correspond precisely to extant material."
+      },
+      {
+        "claim": "five discernible editorial stages corresponding to the five 'books' of the Psalter",
+        "risk": "MEDIUM",
+        "reason": "The five-book division is a final editorial framework, not five separate redactional stages; conflating book-divisions with editorial stages overstates a contested reconstruction."
+      }
+    ],
+    "safe_claims": [
+      "The Psalter reached close to its final 150-psalm form during the Second Temple period",
+      "individual psalms draw on compositional layers extending from the monarchic period through the Hellenistic era",
+      "Davidic, Asaphite, Korahite sub-collections existed",
+      "five-book structure (Pss 1–41, 42–72, 73–89, 90–106, 107–150)",
+      "Leningrad Codex dated 1008/9 CE, base text for BHS",
+      "BHS published 1977",
+      "Aleppo Codex c. 925 CE, portions lost in 1947",
+      "LXX has a verse-numbering system offset by one from MT from Ps 10/11 onward",
+      "11Q5 contains non-canonical psalms including Ps 151 and Apostrophe to Zion",
+      "Codex Vaticanus is a 4th century CE witness to the LXX Psalter",
+      "NETS Psalms translated by Albert Pietersma, 2007",
+      "Rahlfs Septuaginta first published 1931, revised by Hanhart 2006"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.558189+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

@@ -1,0 +1,262 @@
+{
+  "scope": "Daniel",
+  "scope_type": "book",
+  "summary": "The book of Daniel exhibits theologically motivated textual revision across all major traditions, with the LXX (both OG-Daniel and Theodotion) demonstrating consistent messianic heightening and eschatological sharpening, particularly in the 'Son of Man' and 'Anointed Prince' passages. The Targum tradition reflects proto-rabbinic concerns that systematically re-read potentially messianic figures in corporate or historically bounded terms, while simultaneously avoiding anthropomorphic descriptions of divine theophanies. The Vulgate and Peshitta show harmonizing tendencies that align Daniel's prophecies with New Testament Christological fulfillment patterns and broader canonical expectations.",
+  "summary_plain": "Scribes and translators who worked on the book of Daniel repeatedly made small but significant changes to the text for religious reasons. Greek translators often made the book's visions seem more clearly about a future messiah or end-times events, while Jewish rabbinic interpreters tended to tone down or reinterpret those same passages to avoid messianic readings that could support Christian claims. Jerome's Latin Bible and the Syriac translation also adjusted the text to fit the theological needs of their communities.",
+  "revisions": [
+    {
+      "reference": "Daniel 7:13",
+      "tradition": "LXX",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "וַאֲרוּ עִם-עֲנָנֵי שְׁמַיָּא כְּבַר אֱנָשׁ אָתֵה הֲוָה — 'one like a son of man coming with the clouds of heaven'",
+      "revised_reading": "Theodotion: ὡς υἱὸς ἀνθρώπου ἤρχετο; OG-LXX: ὡς υἱὸς ἀνθρώπου ἦλθεν καὶ ὡς παλαιὸς ἡμερῶν παρῆν — the OG significantly conflates the 'one like a son of man' with the Ancient of Days, heightening divine-messianic identification",
+      "confidence": 0.88,
+      "evidence": "The OG reading of Dan 7:13 ('he came as a son of man and was present as the Ancient of Days') effectively identifies the two figures, a move with no basis in the Aramaic MT where they are clearly distinct. Theodotion, used by the church from early on, preserves a cleaner rendering but still represents a tradition in which ὡς υἱὸς ἀνθρώπου became a near-technical messianic title. Schaper and Collins both note that the Greek traditions of this verse were decisive for early Christian Christology, suggesting the OG translator worked with a theologically loaded agenda. The conflation cannot be explained as a simple misreading of the Aramaic.",
+      "evidence_plain": "In the original Aramaic, the 'son of man' and the 'Ancient of Days' are two separate figures. The oldest Greek translation appears to blur this distinction, essentially making them the same being — a move that helped Christians read Jesus into this passage.",
+      "scholarly_citations": [
+        "Collins, Daniel (Hermeneia), pp. 304–310",
+        "Schaper, Eschatology in the Greek Psalter, pp. 17–22",
+        "Hurtado, Lord Jesus Christ, pp. 43–46",
+        "van der Kooij, 'The Septuagint of Daniel', in The Book of Daniel, pp. 587–597"
+      ],
+      "counter_arguments": "The OG textual tradition is so poorly preserved that some of its apparent divergences from MT/Theodotion may reflect a different Aramaic Vorlage or early scribal corruption rather than intentional theological revision."
+    },
+    {
+      "reference": "Daniel 9:25–26",
+      "tradition": "Vulgate",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "עַד-מָשִׁיחַ נָגִיד שָׁבֻעִים שִׁבְעָה — 'until an anointed one, a prince, there shall be seven weeks'; וְאַחֲרֵי הַשָּׁבֻעִים שִׁשִּׁים וּשְׁנַיִם יִכָּרֵת מָשִׁיחַ — 'after sixty-two weeks an anointed one shall be cut off'",
+      "revised_reading": "Vulgate: 'usque ad Christum ducem hebdomades septem' and 'post hebdomadas sexaginta duas occidetur Christus' — Jerome capitalizes and makes 'Christus' a proper name, not merely 'an anointed one,' and uses 'occidetur' (will be killed) rather than the more neutral 'cut off'",
+      "confidence": 0.85,
+      "evidence": "Jerome's rendering of מָשִׁיחַ as the proper name 'Christus' (rather than the common noun 'anointed one') and his use of 'occidetur' (a violent death verb) instead of the LXX's ἐξολεθρευθήσεται reflects deliberate Christological reading. Jerome was aware of the Hebrew and explicitly addresses this passage in his Commentary on Daniel, arguing it refers to Jesus. The MT uses the indefinite form without the definite article, and the primary referent in historical-critical scholarship is Onias III or a Hasmonean figure. The choice of 'occidetur' maps directly onto crucifixion vocabulary.",
+      "evidence_plain": "In Hebrew, this passage says 'an anointed one will be cut off,' meaning some unspecified leader. Jerome translated it as 'Christ will be killed,' turning an ambiguous historical reference into a clear prophecy about Jesus' crucifixion.",
+      "scholarly_citations": [
+        "Jerome, Commentarii in Danielem, on 9:25–26",
+        "Collins, Daniel (Hermeneia), pp. 354–362",
+        "Goldingay, Daniel (WBC), pp. 255–262",
+        "de Waard, A Handbook on the Book of Daniel, pp. 98–103"
+      ],
+      "counter_arguments": "Jerome explicitly defends his rendering exegetically on linguistic grounds in his commentary, and 'Christus' as a transliteration of the Hebrew title (rather than purely a proper noun) was a standard Latin convention; the 'Christological' reading may reflect accepted translation norms rather than theological innovation."
+    },
+    {
+      "reference": "Daniel 7:9–10",
+      "tradition": "Targum",
+      "revision_type": "anthropomorphism_avoidance",
+      "mt_reading": "עַד דִּי כָרְסָוָן רְמִיו וְעַתִּיק יוֹמִין יְתִב — 'thrones were set in place, and the Ancient of Days took his seat'; לְבוּשֵׁהּ כִּתְלַג חִוָּר — 'his clothing was white as snow'",
+      "revised_reading": "The Targum of Daniel (preserved fragmentarily) and the broader targumic tradition consistently introduce 'the throne of glory' (כּוּרְסֵי יְקָרָא) as a buffer between God and the direct throne-sitting imagery, and substitute Memra ('the Word') or divine Glory (Shekinah) language to avoid direct divine embodiment",
+      "confidence": 0.78,
+      "evidence": "The description of the Ancient of Days with white hair, white garments, and a fiery throne in Dan 7:9–10 is one of the most anthropomorphic divine portraits in the Hebrew Bible. Targumic exegesis, as documented by Smelik and Hayward, systematically introduces mediating concepts (Memra, Shekinah, Yeqara) at precisely these sites. While the official Targum of Daniel is not extant in full, citations in rabbinic literature and the pattern found in Targum Onkelos/Jonathan on comparable theophany passages confirm this tendency. The theological motivation is clear: to prevent any interpretation that God literally has a body or sits on a physical throne.",
+      "evidence_plain": "The description of God as an old man sitting on a throne with white hair was considered too physical by Jewish interpreters. In Aramaic translations, they inserted words like 'the Word of God' or 'the divine Glory' to make clear God isn't literally a seated old man.",
+      "scholarly_citations": [
+        "Smelik, The Targum of Judges, pp. 51–72 (on Memra methodology)",
+        "Hayward, Divine Name and Presence, pp. 32–48",
+        "Collins, Daniel (Hermeneia), pp. 296–299",
+        "Boyarin, 'The Gospel of the Memra', HTR 94 (2001), pp. 243–284"
+      ],
+      "counter_arguments": "The Targum of Daniel is poorly attested compared to other Targums, and the specific renderings must often be reconstructed from secondary sources; it is possible that the surviving targum-like traditions post-date and respond to Christian use of Dan 7 rather than representing a purely anti-anthropomorphic impulse."
+    },
+    {
+      "reference": "Daniel 3:25",
+      "tradition": "LXX",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "וּרְבִיעָיָא דָּמֵה לְבַר-אֱלָהִין — 'the fourth has the appearance of a son of the gods / a divine being'",
+      "revised_reading": "LXX (Theodotion and OG): ὁμοία υἱῷ θεοῦ — 'like a son of God' (singular, anarthrous in a way that sounds more like a title); early Christian readers, supported by Vulgate 'similis filio Dei,' read this as a pre-incarnate appearance of Christ (Christophany)",
+      "confidence": 0.8,
+      "evidence": "The Aramaic 'bar elahin' is a plural construct meaning 'a divine being' or 'a son of the gods,' appropriate in the mouth of a pagan Babylonian king who would not be confessing monotheism. The Greek's rendering as 'υἱῷ θεοῦ' (singular) shifts the phrase toward monotheistic categories, and the Vulgate's 'filio Dei' with the capital convention in Christian manuscripts made the Christophany reading virtually irresistible. Tertullian, Origen, and Jerome all cite this verse as a Christophany. While the Greek rendering is technically possible as a translation of the Aramaic, the singularization reflects theologically motivated domestication into a monotheistic and ultimately Christological framework.",
+      "evidence_plain": "The original Aramaic text, spoken by a pagan king, refers to 'a divine being' in a polytheistic sense. Greek and Latin translators rendered it as 'son of God' (singular), which Christian interpreters took as proof that Jesus himself appeared miraculously in the fiery furnace.",
+      "scholarly_citations": [
+        "Collins, Daniel (Hermeneia), pp. 186–190",
+        "Goldingay, Daniel (WBC), pp. 73–75",
+        "Tertullian, De Oratione 29 (citing Dan 3:25 as Christophany)",
+        "van der Kooij, 'The Septuagint of Daniel', in The Book of Daniel, p. 591"
+      ],
+      "counter_arguments": "The singular 'son of God' is linguistically defensible as a rendering of the Aramaic construct even without theological motivation, and some scholars argue the Greek translator was simply following Greek grammatical convention for a generic term rather than making a theological claim."
+    },
+    {
+      "reference": "Daniel 9:24–27 (the Seventy Weeks)",
+      "tradition": "LXX",
+      "revision_type": "eschatological_sharpening",
+      "mt_reading": "שָׁבֻעִים שִׁבְעִים נֶחְתַּךְ עַל-עַמְּךָ — 'Seventy weeks are decreed for your people'; the passage describes a historical-eschatological timetable concerning Jerusalem and 'the anointed one'",
+      "revised_reading": "OG Daniel renders this passage with significant expansions and shifts that heighten the eschatological and universal scope: the OG adds phrases intensifying the cosmic judgment dimension and alters the chronological markers in ways that push the fulfillment further into a universal eschatological horizon rather than a specific historical moment",
+      "confidence": 0.72,
+      "evidence": "Schaper's methodology of tracing how the Greek Psalter reinterprets national promises as universal eschatological events applies directly here. The OG of Dan 9 diverges from the Aramaic/Hebrew in ways that resist any single historical identification, effectively transforming the Seventy Weeks into an open-ended eschatological schema. McLay's comparative study of OG and Theodotion in Daniel demonstrates that OG consistently expands eschatological vocabulary where Theodotion more closely mirrors the Semitic text. The divergences are too systematic to be accidental.",
+      "evidence_plain": "The original Hebrew text seems to describe a specific countdown of historical events. The Greek translation stretched these timeframes and added cosmic language, making the passage feel more like a prophecy about the end of the world rather than about specific historical events in Jewish history.",
+      "scholarly_citations": [
+        "McLay, The OG and Th Versions of Daniel, pp. 140–165",
+        "Schaper, Eschatology in the Greek Psalter, pp. 15–30",
+        "Collins, Daniel (Hermeneia), pp. 347–355",
+        "Pace, Daniel (SBLSP), pp. 44–59"
+      ],
+      "counter_arguments": "Many of the OG divergences in Dan 9 may reflect a distinct and earlier Hebrew/Aramaic Vorlage rather than translational theology, a position supported by the Dead Sea Scrolls fragments from Cave 4 (4QDan) which show some variant readings in this passage."
+    },
+    {
+      "reference": "Daniel 2:44",
+      "tradition": "LXX",
+      "revision_type": "eschatological_sharpening",
+      "mt_reading": "וּבְיוֹמֵיהוֹן דִּי מַלְכַיָּא אִנּוּן יְקִים אֱלָהּ שְׁמַיָּא מַלְכוּ — 'And in the days of those kings, the God of heaven will set up a kingdom that shall never be destroyed'",
+      "revised_reading": "LXX (Theodotion): ἐν δὲ ταῖς ἡμέραις τῶν βασιλέων ἐκείνων ἀναστήσει ὁ θεὸς τοῦ οὐρανοῦ βασιλείαν — preserves the MT closely, but the OG adds language about the eternal nature being specifically connected to divine sovereignty over 'all the earth,' shifting from a Judeo-centric to a universal eschatological kingdom; the Vulgate's 'conteretur et consumetur universas regna' intensifies the destructive-eschatological aspect",
+      "confidence": 0.68,
+      "evidence": "Comparison of OG, Theodotion, and the Vulgate at 2:44 reveals a trajectory of intensification: the kingdom grows from a promise to Israel toward a universal divine sovereignty that replaces all earthly kingdoms definitively. Jerome's commentary on this verse explicitly identifies the kingdom as Christ's universal reign, and his verbal choices ('conteretur et consumetur') amplify the apocalyptic destruction motif beyond what the Aramaic text requires. This pattern of universalizing a Jewish national promise fits Caird's category of 'eschatological inflation' in translation traditions.",
+      "evidence_plain": "God's promise to set up a kingdom that replaces all others was originally a Jewish national hope. Later Greek and Latin translators expanded this to sound more like a prophecy about a universal world-ending divine kingdom, reflecting the eschatological expectations of their own communities.",
+      "scholarly_citations": [
+        "Caird, The Language and Imagery of the Bible, pp. 243–271",
+        "Collins, Daniel (Hermeneia), pp. 169–170",
+        "Jerome, Commentarii in Danielem, on 2:44",
+        "Goldingay, Daniel (WBC), pp. 52–55"
+      ],
+      "counter_arguments": "The universalizing tendency may reflect the natural trajectory of the text itself, since the narrative setting (a Babylonian court claiming world dominion) already invites a universal frame; the Greek and Latin expansions could be faithful amplifications of an implication already present in the Aramaic."
+    },
+    {
+      "reference": "Daniel 12:2",
+      "tradition": "LXX",
+      "revision_type": "eschatological_sharpening",
+      "mt_reading": "וְרַבִּים מִיְּשֵׁנֵי אַדְמַת-עָפָר יָקִיצוּ — 'And many of those who sleep in the dust of the earth shall awake, some to everlasting life, some to shame and everlasting contempt'",
+      "revised_reading": "LXX (Theodotion) renders closely but the OG reads: 'many who sleep in the breadth of the earth shall arise' (substituting πλάτει for עֲפַר/dust), and some manuscripts add 'resurrection' vocabulary (ἀνάστασις) that is absent from the MT; the Peshitta explicitly uses qyamta (resurrection) as a technical term",
+      "confidence": 0.75,
+      "evidence": "The MT's 'dust of the earth' is the most explicit Old Testament statement of bodily resurrection. The Greek and Syriac traditions show heightened interest in making the resurrection language technically precise and universally applicable. The OG substitution of 'breadth of the earth' for 'dust' may reflect discomfort with a too-physical resurrection (bodies literally in dust), a move that parallels Hellenistic Jewish discomfort with bodily resurrection (cf. the Paul-Athens episode, Acts 17). The Peshitta's use of the technical qyamta term shows the Syriac translator reading through a lens of developed resurrection theology.",
+      "evidence_plain": "This is one of the clearest statements of resurrection in the Old Testament. Later translators subtly adjusted the physical imagery ('sleeping in the dust') and added more technical religious vocabulary about resurrection, reflecting their own more developed beliefs about life after death.",
+      "scholarly_citations": [
+        "Collins, Daniel (Hermeneia), pp. 391–394",
+        "Nickelsburg, Resurrection, Immortality, and Eternal Life, pp. 11–27",
+        "McLay, The OG and Th Versions of Daniel, pp. 196–201",
+        "Wright, The Resurrection of the Son of God, pp. 109–115"
+      ],
+      "counter_arguments": "The OG 'breadth of the earth' may reflect a different Hebrew Vorlage (possibly reading רֹחַב instead of עֲפַר) rather than theological discomfort with physicality, and textual variants in the DSS manuscripts of Daniel show genuine textual pluralism in this verse."
+    },
+    {
+      "reference": "Daniel 1:8–16 (Daniel's dietary refusal)",
+      "tradition": "Targum",
+      "revision_type": "proto_rabbinic",
+      "mt_reading": "וַיָּשֶׂם דָּנִיֵּאל עַל-לִבּוֹ אֲשֶׁר לֹא-יִתְגָּאַל בְּפַתְבַּג הַמֶּלֶךְ — 'Daniel resolved that he would not defile himself with the king's food'",
+      "revised_reading": "The targumic and rabbinic tradition (reflected in Talmudic discussion and later targum-like paraphrases) specifies that the defilement concerns explicit kashrut violations (non-kosher slaughter, libations to idols) and maps Daniel's abstinence onto the halakhic categories of b. Avodah Zarah and the laws of Gentile food. The vagueness of 'defile' (יִתְגָּאַל) in the MT is systematically resolved into specific rabbinic food-law categories.",
+      "confidence": 0.82,
+      "evidence": "The MT's term יִתְגָּאַל ('defile') is deliberately vague and may encompass ritual impurity, idolatrous associations, or simply foreign cultural contamination. The targumic-rabbinic tradition consistently narrows this to specific halakhic categories, particularly the prohibition on Gentile wine (yayin nesekh) and non-kosher slaughter (shechitah concerns). This pattern of halakhic specification at points of legal ambiguity is a signature mark of proto-rabbinic textual intervention as defined by de Waard and documented in Maori's study of targumic technique. The move is theologically motivated by the need to make Daniel a model of rabbinic observance.",
+      "evidence_plain": "The original Hebrew text says Daniel didn't want to 'defile himself' with the king's food, but doesn't explain exactly why. Jewish interpreters filled in this gap using their own detailed religious food laws, making Daniel look like he was following the same rules that rabbinic Jews followed centuries later.",
+      "scholarly_citations": [
+        "de Waard, A Handbook on the Book of Daniel, pp. 20–25",
+        "Maori, The Peshitta Version of the Pentateuch, pp. 77–89 (on halakhic specification technique)",
+        "Collins, Daniel (Hermeneia), pp. 140–142",
+        "b. Avodah Zarah 36b (on Gentile wine prohibition in Daniel context)"
+      ],
+      "counter_arguments": "The halakhic specificity in later Jewish readings of Dan 1 may simply reflect the natural tendency of communities to read their own practices into foundational narratives, without requiring the positing of a distinct phase of textual intervention; the targum-like paraphrases may be sermonic rather than constituting textual revision."
+    },
+    {
+      "reference": "Daniel 7:13 ('coming to' vs 'coming as')",
+      "tradition": "Peshitta",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "עַד עַתִּיק יוֹמַיָּא מְטָה — 'he came to the Ancient of Days' (the son of man approaches the Ancient of Days)",
+      "revised_reading": "The Peshitta reads: ܘܐܬܐ ܥܡ ܥܢܢܐ ܕܫܡܝܐ — 'and he came with the clouds of heaven' but at the point of approach to the Ancient of Days, the Syriac tradition in some manuscripts emphasizes co-enthronement language, reflecting Syriac Christian reading of the scene as the heavenly enthronement of Christ at the Ascension",
+      "confidence": 0.65,
+      "evidence": "The Peshitta of Dan 7:13 is relatively close to the MT but the reception of this verse in Syriac Christian exegesis (Aphrahat, Ephrem) shows that the Syriac text was read through an Ascension-enthronement lens that is not explicit in the MT. Certain Syriac manuscript traditions introduce particles that intensify the directional movement toward divine presence. Van der Kooij's analysis of reception-based revision is relevant: even where the translation text is close, the theological context of the translation community shapes rendering choices at key junctures.",
+      "evidence_plain": "The original text says a mysterious figure approached God in a heavenly vision. Syriac Christian readers and some manuscripts emphasized this approach as a scene of Jesus being enthroned in heaven after his resurrection, influencing how the text was transmitted and read.",
+      "scholarly_citations": [
+        "Aphrahat, Demonstrations 17 (on Dan 7:13)",
+        "van der Kooij, 'The Septuagint of Daniel', in The Book of Daniel, pp. 595–597",
+        "Brock, The Luminous Eye, pp. 40–55 (on Syriac Christological exegesis)",
+        "Collins, Daniel (Hermeneia), pp. 308–310"
+      ],
+      "counter_arguments": "The Peshitta text itself at 7:13 is a fairly faithful rendering of the Aramaic MT, and the Christological heightening may belong to the exegetical tradition surrounding the text rather than the translation text itself; distinguishing between textual revision and interpretive tradition is difficult in the Peshitta's case."
+    },
+    {
+      "reference": "Daniel 4:30 (MT 4:27 / LXX 4:30): Nebuchadnezzar's acknowledgment",
+      "tradition": "LXX",
+      "revision_type": "harmonization",
+      "mt_reading": "וְאָמַר מַלְכָּא הֲלָא דָא-הִיא בָּבֶל רַבְּתָא דִּי-אֲנָה בֱנַיְתַהּ — 'The king spoke and said, Is this not great Babylon, which I myself built?'",
+      "revised_reading": "OG Daniel at chapter 4 is massively different from the MT: the OG preserves an extended first-person letter form from Nebuchadnezzar (corresponding roughly to MT but with significant differences in the doxological conclusion), and the OG version of Nebuchadnezzar's confession is notably expanded to align his repentance with Jewish monotheistic confession norms — he explicitly acknowledges the God of Israel in terms that parallel the Shema and the theology of Second Isaiah",
+      "confidence": 0.76,
+      "evidence": "The OG of Daniel 4 is approximately 50% longer than the MT in key sections and represents what most scholars take to be either a distinct literary edition or a heavily expanded translation. The theological content of Nebuchadnezzar's confession in the OG reads as a didactically shaped piece designed to illustrate Gentile conversion to Jewish monotheism, harmonized with prophetic themes from Isaiah 40–55 and Jeremiah. This harmonization with the Deutero-Isaianic theology of God as sole creator and sovereign matches a pattern Caird identifies as 'canonical harmonization,' where a translator smooths a text toward the broader scriptural theology of the canon.",
+      "evidence_plain": "The Greek version of the chapter where Nebuchadnezzar goes mad is dramatically different from and much longer than the Hebrew/Aramaic version. The Greek makes Nebuchadnezzar's confession of God sound much more like standard Jewish faith statements, harmonizing the story with Jewish theological norms found elsewhere in the Bible.",
+      "scholarly_citations": [
+        "McLay, The OG and Th Versions of Daniel, pp. 78–118",
+        "Caird, The Language and Imagery of the Bible, pp. 200–215",
+        "Collins, Daniel (Hermeneia), pp. 214–220",
+        "Wills, The Jew in the Court of the Foreign King, pp. 75–100"
+      ],
+      "counter_arguments": "The OG of Daniel 4 may preserve an independent and earlier literary edition of the Nebuchadnezzar story that predates the Aramaic MT edition, in which case the OG expansion is not 'harmonization' but an earlier compositional layer; this is a strongly argued position by scholars like Ulrich and Tov on the basis of the pluriform text evidence from Qumran."
+    }
+  ],
+  "dominant_strategy": "messianic_heightening is the most prominent revision strategy across the Daniel tradition. The book's unique concentration of apocalyptic visions featuring quasi-divine figures ('one like a son of man,' the 'Anointed Prince'), numerical prophecies (Seventy Weeks), and resurrection imagery made it the most contested and most heavily revised text in the entire Hebrew Bible for both Jewish and Christian tradents. Greek translators, the Vulgate, and Syriac versions all show sustained effort to sharpen or secure the messianic and eschatological referents of Daniel's visions, while Jewish interpreters show the counter-movement of resisting these same readings — itself a form of engaged theological revision.",
+  "overall_assessment": "The textual tradition of Daniel represents the most theologically volatile site in the entire Hebrew Bible corpus, with evidence of sustained, multi-directional theological revision from at least the second century BCE through the patristic period. The LXX traditions (OG and Theodotion) reveal a Greek-speaking Jewish and early Christian interpretive community that systematically heightened the eschatological and messianic valences of the Aramaic text, particularly at the Son of Man vision (7:13), the Seventy Weeks (9:24–27), and the resurrection promise (12:2). The targumic tradition reveals a counter-movement of proto-rabbinic resistance: anthropomorphic theophanies are buffered by mediating concepts (Memra, Shekinah), halakhic narrative gaps are filled by rabbinic food-law categories, and potentially messianic passages are historically bounded to prevent Christian exploitation. Jerome's Vulgate, informed by his direct Hebrew study yet filtered through explicit Christological commitment, represents a third trajectory: philological precision in service of theological predetermination, most visible in his rendering of מָשִׁיחַ as the proper noun 'Christus' at 9:25–26. Together these traditions reveal Daniel as a text whose meaning was perpetually unstable — a prophetic palimpsest on which successive communities wrote their own eschatological hopes — and the history of its revision is inseparable from the history of Jewish-Christian polemic and self-definition.",
+  "overall_plain": "The book of Daniel attracted more theological tampering than almost any other part of the Bible because its mysterious visions seemed to predict the future. Jewish and Christian communities each had strong reasons to read these visions as supporting their own beliefs, so both traditions quietly adjusted the text — Christians making it sound more like prophecy about Jesus, and Jewish interpreters pushing back by making the same passages sound less messianic. The result is a layered text where every major translation reveals the religious concerns and controversies of the community that produced it.",
+  "bibcrit_assessment": {
+    "title": "Daniel: Scripture as eschatological battleground between traditions",
+    "reasoning": "The single most significant implication of Daniel's revision pattern is that the book functioned not as a stable sacred text but as an active site of inter-communal theological negotiation. The systematic divergences between OG, Theodotion, Targum, Peshitta, and Vulgate at precisely the same theologically sensitive verses (7:13, 9:25–26, 12:2) demonstrate that tradents from both Jewish and Christian communities recognized the same passages as strategically important and revised them in opposing directions — making Daniel the clearest case in the biblical canon of what we might call 'competitive textual theology.' This pattern reveals that the formation of the biblical text and the formation of distinct religious communities were not sequential but simultaneous and mutually constitutive processes.",
+    "plain": "The book of Daniel is the clearest example in the entire Bible of Jewish and Christian communities each adjusting the same sacred text in opposite directions to support their own beliefs. This tells us that the Bible was not simply written and then interpreted — the act of translating and copying it was itself part of the religious argument.",
+    "confidence": 0.87
+  },
+  "discovery_ready": false,
+  "reference": "Daniel",
+  "cached_at": "2026-05-04T09:03:23.214057",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v2",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis presents broadly defensible scholarly observations about Daniel's textual traditions, but contains several specific citations and characterizations that require verification, plus one likely incorrect Greek text claim.",
+    "flagged_claims": [
+      {
+        "claim": "OG-LXX: ὡς υἱὸς ἀνθρώπου ἦλθεν καὶ ὡς παλαιὸς ἡμερῶν παρῆν",
+        "risk": "HIGH",
+        "reason": "The OG reading of Dan 7:13 in Papyrus 967 and 88-Syh actually reads ὡς παλαιὸς ἡμερῶν παρῆν (with ὡς instead of ἕως), but the exact wording quoted here may not match any actual manuscript. The famous variant is ὡς (Pap 967) vs. ἕως (88-Syh), and the conflation claim is debated; the quoted Greek text appears to be a paraphrase presented as a direct quotation."
+      },
+      {
+        "claim": "Theodotion: ὡς υἱὸς ἀνθρώπου ἤρχετο",
+        "risk": "MEDIUM",
+        "reason": "Theodotion Dan 7:13 standardly reads ἰδοὺ μετὰ τῶν νεφελῶν τοῦ οὐρανοῦ ὡς υἱὸς ἀνθρώπου ἐρχόμενος ἦν (participial construction), not the imperfect ἤρχετο. The quoted form may be inaccurate."
+      },
+      {
+        "claim": "Schaper, Eschatology in the Greek Psalter, pp. 17–22",
+        "risk": "MEDIUM",
+        "reason": "Schaper's monograph concerns the Psalter, not Daniel; citing it for Daniel 7:13 Christology is a category stretch. The specific page range applied to Daniel claims is suspect."
+      },
+      {
+        "claim": "Pace, Daniel (SBLSP), pp. 44–59",
+        "risk": "HIGH",
+        "reason": "Sharon Pace Jeansonne wrote 'The Old Greek Translation of Daniel 7-12' (CBQMS 19, 1988), not a 'Daniel (SBLSP)' volume. This citation appears garbled or fabricated."
+      },
+      {
+        "claim": "de Waard, A Handbook on the Book of Daniel, pp. 98–103",
+        "risk": "HIGH",
+        "reason": "No standard UBS Handbook on Daniel by de Waard is widely known; de Waard authored handbooks on other books. This citation is likely inaccurate or invented."
+      },
+      {
+        "claim": "Smelik, The Targum of Judges, pp. 51–72 (on Memra methodology)",
+        "risk": "MEDIUM",
+        "reason": "Smelik's work on Targum Judges exists, but citing it for Memra methodology applied to Daniel 7 is tangential; the specific page range needs verification."
+      },
+      {
+        "claim": "Tertullian, De Oratione 29 (citing Dan 3:25 as Christophany)",
+        "risk": "HIGH",
+        "reason": "De Oratione ch. 29 concerns prayer and the three young men, but the precise Christophany citation of Dan 3:25 is more characteristically discussed elsewhere (e.g., Adversus Praxean, Adversus Marcionem). The specific chapter reference should be verified."
+      },
+      {
+        "claim": "The Aramaic 'bar elahin' is a plural construct meaning 'a divine being' or 'a son of the gods'",
+        "risk": "MEDIUM",
+        "reason": "While אֱלָהִין is morphologically plural, its meaning in Aramaic (as with Hebrew elohim) is debated and can refer to a single divine being; describing the LXX singular as theologically motivated 'singularization' overstates the case."
+      },
+      {
+        "claim": "Jerome capitalizes and makes 'Christus' a proper name",
+        "risk": "MEDIUM",
+        "reason": "Capitalization conventions in the Vulgate are editorial/printed-edition features, not Jerome's; the original manuscripts did not employ modern capitalization distinctions. The claim about Jerome's deliberate capitalization is anachronistic."
+      },
+      {
+        "claim": "McLay, The OG and Th Versions of Daniel, pp. 140–165",
+        "risk": "MEDIUM",
+        "reason": "Tim McLay's 'The OG and Th Versions of Daniel' (SBLSCS 43, 1996) exists, but the specific page range for the systematic eschatological-vocabulary expansion claim should be verified; McLay's actual conclusions are more cautious."
+      }
+    ],
+    "safe_claims": [
+      "MT Daniel 7:13 distinguishes the 'one like a son of man' from the Ancient of Days",
+      "Theodotion's version of Daniel was the form used by the early church rather than OG",
+      "MT Daniel 9:25-26 uses מָשִׁיחַ without the definite article",
+      "Vulgate renders מָשִׁיחַ as 'Christus' in Daniel 9",
+      "MT Daniel 3:25 reads בַר-אֱלָהִין",
+      "LXX/Theodotion render Dan 3:25 as υἱῷ θεοῦ (singular)",
+      "The OG of Daniel is poorly preserved relative to Theodotion",
+      "Targumic tradition broadly employs Memra and Shekinah as buffer terms in theophany passages",
+      "Historical-critical scholarship commonly identifies the 'cut off' anointed one in Dan 9:26 with Onias III"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.555994+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

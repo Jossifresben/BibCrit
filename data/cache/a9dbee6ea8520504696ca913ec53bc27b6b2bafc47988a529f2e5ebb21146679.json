@@ -79,5 +79,66 @@
   "reference": "Isaiah 9:6",
   "cached_at": "2026-03-30T19:02:07.744324",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v2"
+  "prompt_version": "v2",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis correctly identifies the major textual divergences but includes several specific scholarly citations and claims that cannot be verified and contains at least one likely factual error about Isaiah 9:6 versification and the LXX text.",
+    "flagged_claims": [
+      {
+        "claim": "Williamson notes the LXX consistently uses passive voice for divine naming in Isaiah",
+        "risk": "HIGH",
+        "reason": "This is a specific generalization attributed to Williamson that is unverifiable and likely overstated; LXX Isaiah does not consistently use passives for divine naming."
+      },
+      {
+        "claim": "Blenkinsopp (2000) p.253",
+        "risk": "MEDIUM",
+        "reason": "Page-specific citation in Blenkinsopp's Anchor Bible Isaiah 1-39 commentary cannot be verified from the analysis; risk of fabricated pinpoint reference."
+      },
+      {
+        "claim": "Williamson (2006) p.271",
+        "risk": "MEDIUM",
+        "reason": "Williamson's ICC Isaiah commentary in 2006 only covered Isaiah 1-5; a 2006 reference to Isaiah 9:6 commentary is chronologically problematic and likely misattributed."
+      },
+      {
+        "claim": "Seeligmann (1948) p.95",
+        "risk": "MEDIUM",
+        "reason": "Specific page citation to Seeligmann's 'The Septuagint Version of Isaiah' is unverified; while Seeligmann did discuss theological tendencies, the precise page and argument framing should be checked."
+      },
+      {
+        "claim": "Van der Kooij suggests LXX read מלאך for מלך",
+        "risk": "HIGH",
+        "reason": "This proposed graphic confusion is unusual and the attribution to van der Kooij is unverifiable; van der Kooij's known work on LXX Isaiah emphasizes contextual interpretation, not such mechanical errors."
+      },
+      {
+        "claim": "Ottley (1906) p.167 / Ziegler (1934) p.89",
+        "risk": "MEDIUM",
+        "reason": "Specific page citations to Ottley's 'Book of Isaiah According to the Septuagint' and Ziegler's 'Untersuchungen zur Septuaginta des Buches Isaias' are unverified and the specific claims attributed to them are generic."
+      },
+      {
+        "claim": "LXX employs present passive, likely interpreting as divine passive",
+        "risk": "MEDIUM",
+        "reason": "καλεῖται is middle/passive in form but commonly translated as 'is called'; calling this a deliberate 'divine passive' theological move overstates the evidence — it may simply be standard Greek idiom."
+      },
+      {
+        "claim": "1QIsaᵃ preserves all four MT titles with minor orthographic variants",
+        "risk": "MEDIUM",
+        "reason": "Verifiable claim but should be checked: 1QIsaa at this passage (Isa 9:5 MT numbering) does largely agree with MT, but the specific characterization of variants should be confirmed."
+      },
+      {
+        "claim": "The LXX's radical abbreviation",
+        "risk": "MEDIUM",
+        "reason": "The standard LXX of Isa 9:6(5) actually contains a longer reading in many witnesses including additional epithets; characterizing LXX as merely 'Μεγάλης βουλῆς Ἄγγελος' ignores that some manuscripts add further titles, and this is a well-known textual complexity not addressed."
+      }
+    ],
+    "safe_claims": [
+      "MT uses wayyiqtol וַיִּקְרָא while LXX uses καλεῖται",
+      "LXX renders the four Hebrew titles with Μεγάλης βουλῆς Ἄγγελος",
+      "MT וַתְּהִי is rendered by LXX with ἐγενήθη in a relative clause construction",
+      "The divergence in throne-names is the major translational issue in this verse",
+      "1QIsaa generally supports the MT consonantal text at this verse"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.663437+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

@@ -1,0 +1,316 @@
+{
+  "reference": "2 Kings 15",
+  "subject": "Regnal chronologies of Israelite and Judahite kings in 2 Kings 15 (Azariah/Uzziah, Zechariah, Shallum, Menahem, Pekahiah, Pekah, Jotham)",
+  "figures": [
+    {
+      "name": "Azariah (Uzziah) of Judah — accession synchronism (year of Jeroboam II)",
+      "mt_value": 27,
+      "lxx_value": 27,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "SP does not contain Kings; LXX (Vaticanus and Alexandrinus) preserves 27th year, agreeing with MT."
+    },
+    {
+      "name": "Azariah (Uzziah) of Judah — total reign length (years)",
+      "mt_value": 52,
+      "lxx_value": 52,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "All Greek manuscript traditions preserve 52 years in agreement with MT; SP has no parallel text."
+    },
+    {
+      "name": "Azariah (Uzziah) — age at accession",
+      "mt_value": 16,
+      "lxx_value": 16,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "MT and LXX agree on 16 years; no SP witness for Kings."
+    },
+    {
+      "name": "Zechariah of Israel — accession synchronism (year of Uzziah)",
+      "mt_value": 38,
+      "lxx_value": 38,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "MT and LXX agree; the Greek tradition shows no divergence at this point."
+    },
+    {
+      "name": "Zechariah of Israel — reign length (months)",
+      "mt_value": 6,
+      "lxx_value": 6,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "Six months is preserved uniformly across Greek and Hebrew traditions."
+    },
+    {
+      "name": "Shallum of Israel — accession synchronism (year of Uzziah)",
+      "mt_value": 39,
+      "lxx_value": 39,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "Consistent across witnesses."
+    },
+    {
+      "name": "Shallum of Israel — reign length (months/duration)",
+      "mt_value": 1,
+      "lxx_value": 1,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "One month (chodesh echad) is preserved uniformly."
+    },
+    {
+      "name": "Menahem of Israel — accession synchronism (year of Uzziah)",
+      "mt_value": 39,
+      "lxx_value": 39,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "MT and LXX agree; Menahem's synchronism is stable across traditions."
+    },
+    {
+      "name": "Menahem of Israel — reign length (years)",
+      "mt_value": 10,
+      "lxx_value": 10,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "Ten years is uniformly attested."
+    },
+    {
+      "name": "Pekahiah of Israel — accession synchronism (year of Uzziah)",
+      "mt_value": 50,
+      "lxx_value": 50,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "Consistent across MT and LXX."
+    },
+    {
+      "name": "Pekahiah of Israel — reign length (years)",
+      "mt_value": 2,
+      "lxx_value": 2,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "Two years is uniformly preserved."
+    },
+    {
+      "name": "Pekah of Israel — accession synchronism (year of Uzziah)",
+      "mt_value": 52,
+      "lxx_value": 52,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "52nd year of Uzziah is consistent across witnesses."
+    },
+    {
+      "name": "Pekah of Israel — reign length (years)",
+      "mt_value": 20,
+      "lxx_value": 20,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "Twenty years is preserved uniformly, though this figure creates well-known external synchronization difficulties with Assyrian records."
+    },
+    {
+      "name": "Jotham of Judah — accession synchronism (year of Pekah)",
+      "mt_value": 2,
+      "lxx_value": 2,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "Consistent across MT and LXX traditions."
+    },
+    {
+      "name": "Jotham of Judah — age at accession",
+      "mt_value": 25,
+      "lxx_value": 25,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "Twenty-five years is uniformly attested."
+    },
+    {
+      "name": "Jotham of Judah — reign length (years)",
+      "mt_value": 16,
+      "lxx_value": 16,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "Sixteen years is preserved uniformly; however some LXX manuscripts and the parallel in 2 Kings 15:30 create an internal tension with a 20th year of Jotham, addressed separately in scholarship."
+    },
+    {
+      "name": "Jotham of Judah — secondary synchronism (year of Pekah, v.30)",
+      "mt_value": 20,
+      "lxx_value": 20,
+      "sp_value": 0,
+      "divergence_type": "minor",
+      "note": "The reference to 'twentieth year of Jotham' in v.30 (MT and LXX) is textually consistent but chronologically anomalous given the stated 16-year reign, representing an internal tension rather than a cross-tradition divergence."
+    }
+  ],
+  "systematic_analysis": {
+    "is_systematic": false,
+    "pattern": "Unlike the antediluvian or patriarchal genealogies of Genesis where MT, LXX, and SP show systematic numerical offsets of 100 years applied to multiple figures by a consistent rule, the figures in 2 Kings 15 show no cross-tradition divergence between MT and LXX at any data point. The SP has no witness to Kings at all. The only 'divergences' are internal to the canonical text itself: the tension between Jotham's stated 16-year reign (v.33) and the reference to his 20th year in v.30, and the difficulty of reconciling Pekah's 20-year reign with Assyrian annals, both of which are problems of historical reconstruction rather than textual transmission divergence.",
+    "pattern_plain": "All the numbers in 2 Kings 15 are the same in the Hebrew Bible and the Greek translation — there is no pattern of one tradition inflating or deflating the other. The only puzzles here are internal contradictions within the text itself, not differences between manuscripts."
+  },
+  "theories": [
+    {
+      "name": "Independent Traditions",
+      "slug": "independent_traditions",
+      "score": 0.55,
+      "confidence": 0.62,
+      "summary": "The agreement between MT and LXX across all figures in 2 Kings 15 could reflect a common source ancestor for all extant textual traditions by the time the LXX translation of Kings was made (likely 2nd century BCE), meaning any earlier divergences had already been harmonized or never arose. Scholars such as Thackeray and Barthélemy have noted that the LXX of Kings (particularly the kaige recension sections) often closely tracks proto-MT, limiting opportunities for numerical divergence. This contrasts sharply with the Genesis genealogies where independent numerical traditions clearly survived into the manuscript era.",
+      "summary_plain": "The Hebrew and Greek versions of 2 Kings 15 agree because by the time the Greek translation was made, all copies were already based on the same source numbers.",
+      "supporting_evidence": [
+        "The LXX of Kings belongs substantially to the kaige recension, which reflects systematic revision toward proto-MT, explaining minimal numerical divergence.",
+        "Scholarly consensus (Barthélemy, Trebolle Barrera) holds that the textual plurality visible in other biblical books is less pronounced in the Kings material available to us.",
+        "The Qumran scrolls (4QKings) show no significant numerical variants from MT in the Kings material, supporting a stable transmission lineage.",
+        "Kings was likely translated into Greek later than the Pentateuch and may have had less time for divergent numerical traditions to develop.",
+        "The absence of SP witness for Kings removes the third axis of comparison that makes Genesis divergences so analytically tractable."
+      ],
+      "weaknesses": [
+        "The theory cannot be definitively tested because the SP provides no parallel text for comparison, leaving only two witnesses.",
+        "It is possible that divergent numerical traditions existed in antiquity but were lost before any surviving manuscript was copied.",
+        "The kaige revision hypothesis, while broadly accepted, does not uniformly explain all LXX-MT agreements in Kings."
+      ]
+    },
+    {
+      "name": "Scribal Error (Internal)",
+      "slug": "scribal_error",
+      "score": 0.6,
+      "confidence": 0.65,
+      "summary": "The internal chronological tension in 2 Kings 15 — specifically the reference to Hoshea's conspiracy in the 'twentieth year of Jotham' (v.30) despite Jotham's stated 16-year reign (v.33) — is most plausibly explained as a scribal or editorial error introduced during the compilation of the Deuteronomistic History. Edwin Thiele and more recently Leslie McFall have proposed that '20th year of Jotham' is an error that should read '4th year of Ahaz,' but this emendation is not supported by any manuscript evidence. The error is thus internal and predates all surviving textual traditions, explaining why it appears in both MT and LXX.",
+      "summary_plain": "The confusing numbers within 2 Kings 15 itself (like Jotham reigning 16 years but a 20th year being mentioned) seem to be an old copying mistake that occurred before any of our surviving manuscripts were made.",
+      "supporting_evidence": [
+        "The 20th year of Jotham in v.30 contradicts his 16-year reign in v.33 and appears in both MT and LXX, indicating the error predates the LXX translation.",
+        "Thiele's reconstruction requires emending 'twentieth year of Jotham' to 'fourth year of Ahaz' to produce a coherent chronology, a widely accepted but text-critically unsupported move.",
+        "Pekah's 20-year reign creates difficulties with Assyrian synchronisms (Tiglath-Pileser III's annals), which some scholars resolve by positing the 20 years includes a period of rival or co-regency, itself possibly a scribal simplification.",
+        "The Deuteronomistic editors are known to have compiled sources of varying chronological systems, creating seams where numerical errors could be introduced."
+      ],
+      "weaknesses": [
+        "No manuscript tradition supports the emendation of v.30, making scribal error here an inference from context rather than a text-critical finding.",
+        "Alternative explanations (co-regency, antedating systems, interregna) can resolve the internal tension without positing error.",
+        "Attributing the difficulty to scribal error risks conflating editorial complexity with transmission corruption."
+      ]
+    },
+    {
+      "name": "Theological Motivation",
+      "slug": "theological_motivation",
+      "score": 0.25,
+      "confidence": 0.35,
+      "summary": "In the Genesis patriarchal genealogies, theological motivation (particularly the desire to compress or extend time for eschatological or apologetic purposes) has been proposed by scholars such as Holladay and Hendel as a driver of numerical modification. For 2 Kings 15, however, no pattern of theologically motivated alteration is identifiable: the kings in question include both righteous and wicked rulers, and no consistent direction of modification (inflating good kings' reigns, deflating bad ones) is discernible. The theological framework of 2 Kings 15 is primarily the Deuteronomistic evaluation formula rather than a numerological program.",
+      "summary_plain": "While theologians sometimes changed numbers in the Bible for symbolic reasons, there is no evidence of that happening in 2 Kings 15 — the numbers here do not seem shaped by any religious agenda.",
+      "supporting_evidence": [
+        "The 52-year reign of Uzziah could theoretically carry Jubilee symbolism, but this is not reflected in any divergence between textual traditions.",
+        "Pekah's anomalously long 20-year reign has been linked by some to political legitimacy claims, but this is an editorial rather than numerological motivation.",
+        "The Deuteronomistic History's theological agenda is expressed through evaluative formulas, not through manipulation of regnal lengths."
+      ],
+      "weaknesses": [
+        "The absence of detectable theological motivation may reflect the limitations of our analysis rather than its actual absence.",
+        "Theological motivations for numerical changes in later transmission cannot be ruled out simply because no divergence is visible in surviving manuscripts.",
+        "This theory cannot be falsified without access to pre-MT source documents."
+      ]
+    },
+    {
+      "name": "MT Deflation",
+      "slug": "mt_deflation",
+      "score": 0.05,
+      "confidence": 0.1,
+      "summary": "The MT deflation hypothesis, developed extensively by scholars like Hendel and Methuselah for the Genesis genealogies, posits that the proto-MT tradition systematically reduced numbers relative to the LXX Vorlage. In 2 Kings 15, this theory finds no application: the MT and LXX values are identical across all attested figures, and there is no statistical pattern suggesting a systematic reduction in the Hebrew relative to the Greek. The theory is simply inapplicable to this passage.",
+      "summary_plain": "There is no evidence that the Hebrew Bible shrank any numbers in 2 Kings 15 compared to the Greek translation — they all match.",
+      "supporting_evidence": [
+        "The theory has strong support in the Genesis genealogies where MT values are consistently lower than LXX by structured amounts.",
+        "In principle, scribal communities could have motivations to reduce regnal lengths, but no such reduction is visible in 2 Kings 15."
+      ],
+      "weaknesses": [
+        "MT and LXX agree completely in 2 Kings 15, making this theory wholly inapplicable to this passage.",
+        "No mathematical pattern consistent with MT deflation can be constructed from the 2 Kings 15 data.",
+        "The inapplicability here underscores that MT deflation is a phenomenon specific to the antediluvian and patriarchal genealogical material."
+      ]
+    },
+    {
+      "name": "LXX Inflation",
+      "slug": "lxx_inflation",
+      "score": 0.05,
+      "confidence": 0.1,
+      "summary": "The LXX inflation hypothesis holds that the Greek translators or their Vorlagen expanded numbers beyond the original Hebrew for theological or apologetic reasons (notably discussed by Sexton and Green in the context of making the Genesis chronology compatible with Greek chronographic traditions). In 2 Kings 15, the LXX shows no inflation whatsoever relative to MT — all figures are identical. The theory is inapplicable here and its absence in Kings is consistent with the view that LXX inflation was specifically targeted at the primeval and patriarchal periods.",
+      "summary_plain": "The Greek translation did not inflate any numbers in 2 Kings 15 — all figures match the Hebrew exactly.",
+      "supporting_evidence": [
+        "LXX inflation is well-documented in Genesis 5 and 11, where Greek values exceed MT by structured increments.",
+        "The absence of inflation in Kings is consistent with the hypothesis that the motivation was specific to primeval chronology rather than royal chronology."
+      ],
+      "weaknesses": [
+        "LXX and MT are identical in 2 Kings 15, making this theory inapplicable.",
+        "No Greek manuscript tradition shows inflated regnal lengths for the kings of 2 Kings 15.",
+        "The contrast with Genesis suggests the LXX translators or their sources did not apply a consistent numerical program across all biblical books."
+      ]
+    },
+    {
+      "name": "SP Harmonization",
+      "slug": "sp_harmonization",
+      "score": 0.0,
+      "confidence": 0.05,
+      "summary": "The Samaritan Pentateuch harmonization theory, associated with the SP's tendency to smooth chronological and textual tensions (notably in Genesis 5 and 11 where SP values often occupy a middle position between MT and LXX), is entirely inapplicable to 2 Kings 15. The Samaritan Pentateuch contains only the Five Books of Moses and therefore has no text corresponding to 2 Kings 15. Any application of this theory to the passage would be methodologically invalid.",
+      "summary_plain": "The Samaritan Pentateuch simply does not include the book of Kings, so it cannot be compared here at all.",
+      "supporting_evidence": [
+        "The SP harmonization pattern is well-established for the Pentateuch, particularly in Genesis 5 and 11.",
+        "The Samaritan community did preserve the Pentateuch with characteristic numerical adjustments, providing a useful three-way comparison for Genesis."
+      ],
+      "weaknesses": [
+        "The SP has no witness to 2 Kings 15, making this theory entirely inapplicable.",
+        "No Samaritan textual tradition for Kings is known to exist in any manuscript corpus.",
+        "The theory's inapplicability here is a reminder that the three-tradition comparison model is specific to the Pentateuch."
+      ]
+    }
+  ],
+  "overall_assessment": "2 Kings 15 presents a striking contrast to the famous numerical divergences of the Pentateuchal genealogies: across all attested figures — regnal synchronisms, reign lengths, and accession ages — the MT and LXX show complete agreement, and the SP provides no witness at all. The analytically significant 'divergences' in this chapter are internal tensions within the canonical text (the Jotham 16/20 discrepancy and the Pekah chronological problem), which appear uniformly in all surviving manuscript traditions and therefore predate the LXX translation, pointing to editorial-level complexity in the Deuteronomistic source compilation rather than transmission-era numerical modification. The kaige character of the LXX Kings tradition largely explains the close agreement with proto-MT, but it is also likely that the genre of royal annals was less susceptible to the kind of theologically or apologetically motivated numerical revision that shaped the primeval genealogies. Scholars such as Thiele, Galil, and McFall have shown that the chronological difficulties in 2 Kings 15 require sophisticated solutions involving co-regencies, rival kingdoms, and different calendar systems — historical reconstruction problems that text criticism alone cannot resolve.",
+  "overall_plain": "All the numbers in 2 Kings 15 are the same in the Hebrew Bible and the ancient Greek translation, so there is no mystery about copying differences between traditions. The real puzzles — like why Jotham seems to have a 20th year when he only reigned 16 years — are problems baked into the text before any of our copies were made, probably because the ancient editors were working with conflicting historical records.",
+  "bibcrit_assessment": {
+    "title": "Kings Chronology: Internal Tensions, Not Cross-Tradition Divergence",
+    "reasoning": "The complete numerical agreement between MT and LXX in 2 Kings 15 is itself a text-critically significant finding, because it establishes that the chapter's chronological difficulties are pre-textual — embedded in the Deuteronomistic editorial layer before the LXX Vorlage was fixed — rather than products of later scribal or theological intervention. This contrasts fundamentally with the Genesis genealogies and suggests that the Deuteronomistic compilers worked with genuinely conflicting archival sources that they preserved honestly (including contradictions) rather than harmonizing, a different editorial posture than that visible in the Pentateuchal traditions. The implication for transmission history is that the royal chronological framework was treated as a fixed, authoritative record even when internally inconsistent, foreclosing the kind of corrective numerical adjustment that occurred in the more theologized genealogical material.",
+    "plain": "The fact that all manuscripts agree on the numbers in 2 Kings 15 tells us that the confusing chronology was already in the text before anyone made copies — the original editors preserved contradictory records rather than cleaning them up, which is different from what happened with the Genesis family trees.",
+    "confidence": 0.72
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-04-20T20:31:21.093188",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v3",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The core textual data (numbers in MT and LXX) is broadly accurate, but several specific claims about manuscript witnesses, scholarly attributions, and recensional theory are stated with more confidence than the evidence supports.",
+    "flagged_claims": [
+      {
+        "claim": "The Qumran scrolls (4QKings) show no significant numerical variants from MT in the Kings material, supporting a stable transmission lineage.",
+        "risk": "HIGH",
+        "reason": "4QKings (4Q54) is a very small fragment containing portions of 1 Kings 7-8 only; it provides no witness to 2 Kings 15 and is too limited to support a general claim about numerical stability in Kings."
+      },
+      {
+        "claim": "theological motivation ... has been proposed by scholars such as Holladay and Hendel",
+        "risk": "HIGH",
+        "reason": "Hendel has written on Genesis textual criticism but the attribution of theological-motivation-for-numerical-modification specifically to 'Holladay' is unclear and likely a confusion (possibly with Hughes or Larsson); this attribution should be verified."
+      },
+      {
+        "claim": "Edwin Thiele and more recently Leslie McFall have proposed that '20th year of Jotham' is an error that should read '4th year of Ahaz'",
+        "risk": "MEDIUM",
+        "reason": "Thiele addressed this tension via co-regency rather than emendation to '4th year of Ahaz'; the specific emendation proposal as described needs verification."
+      },
+      {
+        "claim": "The LXX of Kings belongs substantially to the kaige recension",
+        "risk": "MEDIUM",
+        "reason": "Only portions of 2 Kings (specifically 2 Kings beginning around 2 Kgs 2:11 / Barthélemy's βγ section) are kaige; the statement is partially correct but oversimplified, and its application to numerical stability is an inference."
+      },
+      {
+        "claim": "Pekah's anomalously long 20-year reign has been linked by some to political legitimacy claims",
+        "risk": "MEDIUM",
+        "reason": "Vague attribution ('by some') without identifiable scholarly source; may be a generalization rather than a documented position."
+      },
+      {
+        "claim": "LXX (Vaticanus and Alexandrinus) preserves 27th year",
+        "risk": "MEDIUM",
+        "reason": "Specific manuscript-level claims about Vaticanus/Alexandrinus readings at each verse are presented uniformly without citation; should be verified against an apparatus (e.g., Brooke-McLean or Göttingen, though Göttingen Kings is not yet published)."
+      }
+    ],
+    "safe_claims": [
+      "MT gives Azariah 52 years and age 16 at accession",
+      "Zechariah reigned 6 months; Shallum 1 month; Menahem 10 years; Pekahiah 2 years; Pekah 20 years",
+      "Jotham's 16-year reign (v.33) stands in tension with the reference to his 20th year (v.30)",
+      "SP does not contain Kings",
+      "Pekah's 20-year reign creates difficulties with Tiglath-Pileser III's Assyrian annals",
+      "The 2 Kings 15 figures show no systematic MT/LXX divergence comparable to the Genesis genealogies"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.549396+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

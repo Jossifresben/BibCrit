@@ -1,0 +1,188 @@
+{
+  "reconstructed_words": [
+    {
+      "position": 1,
+      "lxx_word": "μεγάλη ἡ ἀρχὴ αὐτοῦ",
+      "vorlage_word": "גדולה המשרה",
+      "status": "unattested",
+      "confidence": 0.62,
+      "mt_equivalent": "לםרבה המשרה",
+      "dss_witness": null,
+      "reasoning": "LXX reads 'great is his rule' where MT has לםרבה (lĕmarbēh) 'to increase/for increase' with anomalous medial mem. The translator likely read גדולה (gedolah) 'great' for what appears to be a corrupt MT text. The LXX reflects a simpler, sensible reading that avoids MT's unique orthographic difficulty.",
+      "alternatives": [
+        {
+          "reading": "רבה המשרה",
+          "confidence": 0.45,
+          "note": "Direct vocalization of MT consonants as 'great is the rule' without ל prefix"
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "lxx_word": "καὶ τῆς εἰρήνης αὐτοῦ",
+      "vorlage_word": "ולשלום",
+      "status": "agrees_mt",
+      "confidence": 0.95,
+      "mt_equivalent": "ולשלום",
+      "dss_witness": null,
+      "reasoning": "Standard equivalence: εἰρήνη regularly translates שלום throughout LXX Isaiah. The Greek genitive with article reflects Hebrew construct with ל preposition. This matches MT exactly in consonantal structure.",
+      "alternatives": []
+    },
+    {
+      "position": 3,
+      "lxx_word": "οὐκ ἔστιν ὅριον",
+      "vorlage_word": "אין קץ",
+      "status": "agrees_mt",
+      "confidence": 0.98,
+      "mt_equivalent": "אין קץ",
+      "dss_witness": null,
+      "reasoning": "Direct translation: οὐκ ἔστιν = אין (standard negation), ὅριον = קץ 'end/limit' (cf. Dan 12:4 LXX, Eccl 12:12). This is a characteristic LXX rendering of this Hebrew construction with high lexical certainty.",
+      "alternatives": []
+    },
+    {
+      "position": 4,
+      "lxx_word": "ἐπὶ τὸν θρόνον Δαυιδ",
+      "vorlage_word": "על כסא דוד",
+      "status": "agrees_mt",
+      "confidence": 0.99,
+      "mt_equivalent": "על כסא דוד",
+      "dss_witness": null,
+      "reasoning": "Perfect correspondence: ἐπί = על, θρόνος = כסא (consistent throughout LXX), Δαυιδ = דוד. This phrase shows no variation from MT and represents standard translation equivalents with no textual issues.",
+      "alternatives": []
+    },
+    {
+      "position": 5,
+      "lxx_word": "καὶ τὴν βασιλείαν αὐτοῦ",
+      "vorlage_word": "ועל ממלכתו",
+      "status": "agrees_mt",
+      "confidence": 0.92,
+      "mt_equivalent": "ועל ממלכתו",
+      "dss_witness": null,
+      "reasoning": "βασιλεία consistently renders ממלכה/מלכות in LXX Isaiah. The Greek καί with accusative reflects Hebrew ועל construction. MT has ועל ממלכתו; LXX simplifies by not repeating the preposition explicitly in Greek, standard translation technique.",
+      "alternatives": []
+    },
+    {
+      "position": 6,
+      "lxx_word": "κατορθῶσαι αὐτὴν καὶ ἀντιλαβέσθαι αὐτῆς",
+      "vorlage_word": "להכין ולסעדה",
+      "status": "unattested",
+      "confidence": 0.58,
+      "mt_equivalent": "להכין אתה ולסעדה",
+      "dss_witness": null,
+      "reasoning": "MT has להכין 'to establish' and ולסעדה 'and to uphold it.' LXX κατορθῶσαι 'to direct rightly/establish' reflects הכין, while ἀντιλαβέσθαι 'to take hold of/support' reflects סעד. The double infinitival construction is preserved, though LXX may have read slightly different vowel pointing or understood the semantic range differently.",
+      "alternatives": [
+        {
+          "reading": "לכונן ולסעדה",
+          "confidence": 0.4,
+          "note": "κατορθόω sometimes reflects כון 'establish' rather than הכין"
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "lxx_word": "ἐν δικαιοσύνῃ καὶ ἐν κρίματι",
+      "vorlage_word": "במשפט ובצדקה",
+      "status": "agrees_mt",
+      "confidence": 0.96,
+      "mt_equivalent": "במשפט ובצדקה",
+      "dss_witness": null,
+      "reasoning": "Standard word pair: δικαιοσύνη = צדקה (righteousness), κρίμα = משפט (judgment/justice). However, LXX reverses the order (righteousness then judgment vs. MT's judgment then righteousness), a common technique for stylistic reasons in Greek, but reflecting the same Hebrew lexemes.",
+      "alternatives": []
+    },
+    {
+      "position": 8,
+      "lxx_word": "ἀπὸ τοῦ νῦν καὶ εἰς τὸν αἰῶνα χρόνον",
+      "vorlage_word": "מעתה ועד עולם",
+      "status": "agrees_mt",
+      "confidence": 0.94,
+      "mt_equivalent": "מעתה ועד עולם",
+      "dss_witness": null,
+      "reasoning": "ἀπὸ τοῦ νῦν = מעתה 'from now,' εἰς τὸν αἰῶνα = עד עולם 'until forever.' The addition of χρόνον is a Greek clarifying gloss (temporal specification), not reflecting additional Hebrew. This represents typical LXX expansive translation for clarity.",
+      "alternatives": []
+    },
+    {
+      "position": 9,
+      "lxx_word": "ὁ ζῆλος κυρίου σαβαωθ",
+      "vorlage_word": "קנאת יהוה צבאות",
+      "status": "agrees_mt",
+      "confidence": 0.98,
+      "mt_equivalent": "קנאת יהוה צבאות",
+      "dss_witness": null,
+      "reasoning": "Direct equivalents: ζῆλος = קנאה 'zeal,' κύριος = יהוה (Tetragrammaton), σαβαωθ = צבאות (transliteration of 'hosts/armies'). This phrase is rendered with maximal literalness and shows complete agreement with MT.",
+      "alternatives": []
+    },
+    {
+      "position": 10,
+      "lxx_word": "ποιήσει ταῦτα",
+      "vorlage_word": "תעשה זאת",
+      "status": "agrees_mt",
+      "confidence": 0.97,
+      "mt_equivalent": "תעשה זאת",
+      "dss_witness": null,
+      "reasoning": "ποιέω consistently translates עשה 'do/make,' and ταῦτα (neuter plural) reflects זאת (feminine singular), a standard LXX technique of rendering Hebrew feminine singular demonstratives with Greek neuter plural for emphasis or comprehensiveness.",
+      "alternatives": []
+    }
+  ],
+  "summary_technical": "The reconstructed Vorlage agrees substantially with MT except at position 1, where LXX's μεγάλη ἡ ἀρχή likely reflects גדולה המשרה rather than MT's problematic לםרבה (with anomalous medial mem). The translator used standard lexical equivalents throughout with one minor reversal of word order (δικαιοσύνη/κρίμα). LXX adds clarifying χρόνον (temporal gloss) without Hebrew basis, typical of Isaiah LXX technique.",
+  "summary_plain": "The Greek translation follows the Hebrew text closely except in the opening phrase, where the translator appears to have read a different (and grammatically simpler) Hebrew word than what survives in our traditional Hebrew Bible.",
+  "overall_confidence": 0.89,
+  "bibcrit_assessment": {
+    "title": "LXX Preserves Pre-Masoretic Reading at Isaiah 9:6a",
+    "reasoning": "The most significant divergence occurs at μεγάλη ἡ ἀρχή vs. MT's לםרבה. The MT preserves a hapax orthography (medial mem sofit) that has puzzled scribes and scholars for millennia. LXX's 'great is his rule' suggests the translator's Vorlage read גדולה rather than the morphologically anomalous לםרבה, pointing to either: (1) an earlier, pre-corruption text, or (2) an early scribal attempt to make sense of an already difficult reading. Given that no DSS witness survives for this verse, LXX becomes the earliest textual evidence, and the reading גדולה represents a plausible conjecture of what the original Hebrew may have been before the unusual medial mem form entered the textual tradition. This is evidence-based textual criticism: LXX demonstrates that textual difficulty existed in antiquity.",
+    "plain": "The Greek translator likely read a simpler, clearer Hebrew text at the verse opening ('great is his rule') before the unusual spelling found in today's Hebrew Bible entered the manuscript tradition, making the Greek version an important witness to earlier textual history.",
+    "confidence": 0.68
+  },
+  "discovery_ready": false,
+  "reference": "Isaiah 9:6",
+  "cached_at": "2026-04-08T07:53:34.779090",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis correctly identifies the famous לםרבה crux but contains several questionable lexical and reconstructive claims, plus a verse-numbering issue (this material is Isaiah 9:6 in MT/English but 9:7 in some traditions; the famous 'wonderful counselor' titles are at 9:5 MT/9:6 English).",
+    "flagged_claims": [
+      {
+        "claim": "LXX reads 'great is his rule' where MT has לםרבה",
+        "risk": "MEDIUM",
+        "reason": "The reconstruction גדולה המשרה is speculative. Many scholars argue LXX's μεγάλη ἡ ἀρχή reflects a reading of רבה or simply a paraphrastic handling of the difficult MT, not necessarily a different Vorlage with גדולה. Presenting this as the likely Vorlage overstates certainty."
+      },
+      {
+        "claim": "ὅριον = קץ 'end/limit' (cf. Dan 12:4 LXX, Eccl 12:12)",
+        "risk": "MEDIUM",
+        "reason": "The cited parallels are questionable: ὅριον in Dan 12:4 LXX and Eccl 12:12 does not straightforwardly render קץ in those contexts as claimed. The standard LXX equivalent for קץ is πέρας or τέλος; ὅριον for קץ here may be a contextual choice, not a 'characteristic' rendering."
+      },
+      {
+        "claim": "ταῦτα (neuter plural) reflects זאת (feminine singular), a standard LXX technique",
+        "risk": "MEDIUM",
+        "reason": "Calling this a 'standard LXX technique' overstates the case; it is a contextual translation choice, not a documented systematic technique."
+      },
+      {
+        "claim": "MT's problematic לםרבה (with anomalous medial mem)",
+        "risk": "MEDIUM",
+        "reason": "The description is slightly imprecise: the anomaly is the use of final mem (ם) in medial position within לםרבה, not a 'medial mem.' The phrasing 'anomalous medial mem' is potentially misleading though the underlying observation is correct."
+      },
+      {
+        "claim": "MT has להכין אתה ולסעדה",
+        "risk": "HIGH",
+        "reason": "This appears to misquote MT. The standard MT reading is להכין אתה ולסעדה for Isa 9:6, but the reconstruction labels להכין ולסעדה as the Vorlage and treats אתה as absent in LXX—however the LXX αὐτήν does correspond to אתה. The status 'unattested' for this position is therefore poorly justified."
+      },
+      {
+        "claim": "LXX's 'great is his rule' suggests the translator's Vorlage read גדולה rather than the morphologically anomalous לםרבה, pointing to either: (1) an earlier, pre-corruption text",
+        "risk": "MEDIUM",
+        "reason": "The claim that LXX preserves a 'pre-Masoretic' or 'pre-corruption' reading is a strong text-critical judgment that many scholars would contest; the medial-final mem in לםרבה is widely regarded as an intentional scribal feature, not necessarily a corruption, and confidence 0.68 may overstate the case."
+      }
+    ],
+    "safe_claims": [
+      "εἰρήνη regularly translates שלום in LXX",
+      "θρόνος regularly renders כסא",
+      "σαβαωθ is a transliteration of צבאות",
+      "LXX reverses the order of righteousness/judgment relative to MT",
+      "χρόνον has no direct Hebrew counterpart and functions as a Greek clarifying element",
+      "No DSS witness survives for this verse",
+      "MT לםרבה contains the unusual feature of final-form mem in non-final position"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.627281+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

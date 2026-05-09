@@ -1,0 +1,235 @@
+{
+  "reference": "Isaiah 53:12",
+  "total_citations_found": 8,
+  "period_summary": "Citations cluster in the 2nd through 4th centuries CE, reflecting the apologetic and christological controversies of that era; the passage's soteriological density made it a locus classicus for demonstrating the atoning work of Christ against both Jewish and Gnostic interlocutors, with usage intensifying after Origen's philological work forced greater precision about which text form was being cited.",
+  "citations": [
+    {
+      "father": "Justin Martyr",
+      "dates_ce": "c. 100–165",
+      "region": "Syria/Rome",
+      "work": "Dialogue with Trypho",
+      "chapter_section": "ch. 13; ch. 89",
+      "cited_text": "καὶ αὐτὸς ἁμαρτίας πολλῶν ἀνήνεγκεν καὶ διὰ τὰς ἁμαρτίας αὐτῶν παρεδόθη",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.78,
+      "text_form_note": "Justin's rendering of 'he bore the sins of many' (ἀνήνεγκεν) and 'was handed over because of their sins' aligns closely with the LXX tradition (παρεδόθη διὰ τὰς ἁμαρτίας αὐτῶν); the verb ἀνήνεγκεν distinguishes the LXX from the MT's נָשָׂא (nasa') by emphasizing cultic carrying/offering rather than simply 'lifting.' The Göttingen LXX apparatus confirms this verb as the dominant Greek tradition.",
+      "theological_use": "Justin uses Isa 53:12 to demonstrate prophetic fulfillment in Christ's crucifixion, arguing to Trypho that the 'handing over' was foretold and that Christ bore sin vicariously; this supports his broader apologetic that the Torah's sacrificial system was a typological anticipation.",
+      "transmission_implication": "Justin's citation, among the earliest patristic witnesses, attests a stable LXX-type text for this verse circulating in Rome and Syria already in the mid-2nd century."
+    },
+    {
+      "father": "Irenaeus of Lyons",
+      "dates_ce": "c. 130–202",
+      "region": "Other",
+      "work": "Against Heresies (Adversus Haereses)",
+      "chapter_section": "Bk. III, 20.4; Bk. IV, 33.12",
+      "cited_text": "ipse peccata multorum tulit et pro eis oravit",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.72,
+      "text_form_note": "Irenaeus cites via the Old Latin (Vetus Latina), which is itself translated from the LXX; 'tulit' corresponds to ἀνήνεγκεν/ἔφερεν rather than to MT's נָשָׂא used in a different syntactic frame, and 'pro eis oravit' reflects the LXX's καὶ διὰ τὰς ἁμαρτίας αὐτῶν παρεδόθη with secondary influence from the intercession clause present in both MT and LXX. The Latin layer introduces minor smoothing but does not reflect an independent Hebrew tradition.",
+      "theological_use": "Irenaeus deploys the verse against Gnostic docetism: if Christ truly 'bore' the sins of many, he possessed a real, suffering body, refuting any claim that his passion was merely apparent.",
+      "transmission_implication": "The Irenaean Latin citation demonstrates that an Old Latin version dependent on the Greek LXX was already in circulation in the western churches by the late 2nd century."
+    },
+    {
+      "father": "Origen of Alexandria",
+      "dates_ce": "c. 185–254",
+      "region": "Alexandria",
+      "work": "Commentary on Matthew; Contra Celsum",
+      "chapter_section": "Comm. Matt. XIII.9; C. Cels. I.55",
+      "cited_text": "καὶ αὐτὸς ἁμαρτίας πολλῶν ἀνήνεγκεν καὶ διὰ τὰς ἁμαρτίας αὐτῶν παρεδόθη [noting also the Hebrew: וְלַפֹּשְׁעִים יַפְגִּיעַ]",
+      "text_form": "mixed",
+      "text_form_confidence": 0.82,
+      "text_form_note": "Origen is uniquely positioned: he cites the LXX text form in his exegesis but in his Hexapla explicitly notes the divergence between the Hebrew and the Greek, particularly for the closing clause 'he made intercession for the transgressors' (MT: יַפְגִּיעַ; LXX: παρεδόθη); his awareness of both text forms and his use of Aquila and Theodotion make his citations classifiable as mixed in that he integrates philological comparison into his theological use.",
+      "theological_use": "Origen uses the verse in C. Celsum to rebut Celsus's denial of Christ's deity and salvific work, arguing that the prophetic precision of Isaiah proves Christ's death was not accidental but cosmically ordained; he further uses it in the Matthew commentary to explicate the high-priestly intercessory dimension of the crucifixion.",
+      "transmission_implication": "Origen's Hexapla work reveals already in the 3rd century that the LXX and MT diverged meaningfully at this verse, particularly in the final clause, and that learned Christian readers were aware of multiple competing text forms."
+    },
+    {
+      "father": "Cyprian of Carthage",
+      "dates_ce": "c. 200–258",
+      "region": "Carthage",
+      "work": "Testimonia (Ad Quirinum)",
+      "chapter_section": "Bk. II, ch. 15",
+      "cited_text": "ipse peccata multorum portavit et pro transgressoribus rogavit",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.75,
+      "text_form_note": "Cyprian's 'portavit' and 'rogavit' match the Vetus Latina tradition dependent on the LXX; the use of 'transgressoribus' for the final clause is notable because it more accurately represents the MT's פֹּשְׁעִים (transgressors) than the LXX's more general framing, possibly reflecting a Latin text that had already been partially corrected toward the Hebrew, or simply that the LXX's final clause (though framed as 'παρεδόθη') was being rendered with a noun drawn from the Hebrew semantic field.",
+      "theological_use": "In the Testimonia Cyprian assembles this verse as proof-text that Christ bore the sins of the many and interceded for sinners, using it catechetically to ground North African theology of atonement and intercession.",
+      "transmission_implication": "Cyprian's citation is evidence that a distinct North African Vetus Latina tradition of Isaiah 53:12 was in circulation, broadly LXX-derived but with possible secondary Hebrew influence in the final clause."
+    },
+    {
+      "father": "Eusebius of Caesarea",
+      "dates_ce": "c. 260–340",
+      "region": "Caesarea",
+      "work": "Demonstratio Evangelica",
+      "chapter_section": "Bk. X, ch. 8",
+      "cited_text": "ὅτι παρεδόθη εἰς θάνατον ἡ ψυχὴ αὐτοῦ, καὶ ἐν τοῖς ἀνόμοις ἐλογίσθη· καὶ αὐτὸς ἁμαρτίας πολλῶν ἀνήνεγκεν, καὶ διὰ τὰς ἁμαρτίας αὐτῶν παρεδόθη",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.85,
+      "text_form_note": "Eusebius's citation is extensive and matches the LXX very closely, including the framing 'παρεδόθη εἰς θάνατον ἡ ψυχὴ αὐτοῦ' and 'ἐν τοῖς ἀνόμοις ἐλογίσθη' which correspond to the LXX's distinct rendering of MT's חֶלֶק and יַחְלֹק; the Göttingen LXX apparatus (Ziegler) confirms these as standard LXX readings. The final 'παρεδόθη' diverges from MT's 'יַפְגִּיעַ' (he interceded), confirming LXX rather than MT dependence.",
+      "theological_use": "Eusebius uses the verse programmatically in the Demonstratio to prove that Isaiah foretold the Passion in detail, including Christ's reckoning among criminals (cf. Luke 22:37), thus demonstrating Christianity as the fulfillment of Jewish prophecy to pagan readers.",
+      "transmission_implication": "Eusebius's extensive and precise LXX citation, informed by his access to Origen's Hexapla at Caesarea, attests that the LXX text of Isa 53:12 was stable and authoritative in the eastern church by the early 4th century."
+    },
+    {
+      "father": "Athanasius of Alexandria",
+      "dates_ce": "c. 296–373",
+      "region": "Alexandria",
+      "work": "De Incarnatione Verbi",
+      "chapter_section": "ch. 35",
+      "cited_text": "αὐτὸς ἁμαρτίας πολλῶν ἀνήνεγκεν",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.77,
+      "text_form_note": "Athanasius cites only the central clause about bearing sins, which matches the LXX's ἀνήνεγκεν rather than any alternative Greek version; the citation is partial but unambiguous in its text form affiliation.",
+      "theological_use": "Athanasius deploys the clause as a compact soteriological formula demonstrating that the Incarnate Word genuinely assumed and bore human sin, directly serving his anti-Arian argument that only a truly divine subject could effect such a transfer.",
+      "transmission_implication": "The Athanasian citation, though partial, confirms that the LXX text of the central clause of Isa 53:12 was the unquestioned standard in Alexandrian theological writing of the 4th century."
+    },
+    {
+      "father": "John Chrysostom",
+      "dates_ce": "c. 347–407",
+      "region": "Antioch",
+      "work": "Homilies on Matthew",
+      "chapter_section": "Hom. 83.1 (on Matt 26:28)",
+      "cited_text": "καὶ αὐτὸς ἁμαρτίας πολλῶν ἀνήνεγκεν",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.76,
+      "text_form_note": "Chrysostom's citation matches the LXX verb ἀνήνεγκεν and general phrasing; as an Antiochene exegete he was alert to the Hebrew text (via Lucian's recension and awareness of Hexapla), yet at this point he cites without deviation from the LXX tradition, suggesting the LXX form was liturgically established and required no correction.",
+      "theological_use": "Chrysostom connects Isa 53:12 to the words of institution in Matthew 26:28 ('for the remission of sins'), arguing that Isaiah's prophecy and Christ's own words interpret each other: the Eucharist enacts the sin-bearing prophesied by Isaiah.",
+      "transmission_implication": "Chrysostom's citation reflects the Antiochene tradition's reception of the LXX text of Isa 53:12 as liturgically and exegetically normative, even in a school known for Hebrew philological sensitivity."
+    },
+    {
+      "father": "Jerome",
+      "dates_ce": "c. 347–420",
+      "region": "Jerusalem",
+      "work": "Commentariorum in Isaiam Prophetam",
+      "chapter_section": "Bk. XIV (on Isa 53:12)",
+      "cited_text": "ideo dispertiam ei plurimos et fortium dividet spolia pro eo quod tradidit in mortem animam suam et cum sceleratis reputatus est et ipse peccata multorum tulit et pro transgressoribus rogavit",
+      "text_form": "closer_to_mt",
+      "text_form_confidence": 0.8,
+      "text_form_note": "Jerome's Vulgate rendering and his commentary explicitly align with the Hebrew MT, reflecting his Hebraica Veritas principle: 'dispertiam ei plurimos' corresponds to MT's אֲחַלֶּק-לוֹ בָרַבִּים (I will divide him a portion with the many) rather than the LXX's κληρονομήσει πολλούς (he will inherit many); the final 'pro transgressoribus rogavit' renders MT's וְלַפֹּשְׁעִים יַפְגִּיעַ (he interceded for the transgressors) rather than the LXX's παρεδόθη (he was handed over); these two divergences are the most theologically significant between MT and LXX at this verse.",
+      "theological_use": "Jerome uses his MT-aligned translation to argue in the commentary that the passage predicts Christ's intercession (rogavit) at the right hand of the Father, a reading the LXX's παρεδόθη obscures; he sees the MT's 'intercession' as prophetically fulfilled in Hebrews 7:25 and Romans 8:34.",
+      "transmission_implication": "Jerome's MT-oriented citation stands as the most significant patristic witness to an alternative text tradition for this verse, demonstrating that by the late 4th century the divergence between Hebrew and LXX at the closing clause was recognized and theologically consequential."
+    }
+  ],
+  "text_form_distribution": {
+    "closer_to_mt": 1,
+    "closer_to_lxx": 6,
+    "mixed": 1,
+    "independent": 0,
+    "uncertain": 0
+  },
+  "transmission_synthesis": "The patristic citations of Isaiah 53:12 collectively attest an overwhelmingly LXX-dominant textual tradition in Christian usage from Justin Martyr in the mid-2nd century through Chrysostom in the early 5th, with the LXX text being reproduced with notable stability across geographically disparate regions (Rome, Lyons, Alexandria, Caesarea, Antioch, Carthage). The most significant divergence between MT and LXX at this verse — the final clause, where LXX reads παρεδόθη ('he was handed over') against MT's יַפְגִּיעַ ('he interceded/made intercession') — is largely invisible in most patristic citations because most fathers cite the verse only partially or follow the LXX without noting the difference; Origen and Jerome are the critical exceptions who explicitly engage the Hebrew tradition. The Vetus Latina citations (Irenaeus, Cyprian) confirm that the Old Latin was translated from a LXX Vorlage consistent with the Göttingen apparatus tradition rather than from an independent Hebrew source, though Cyprian's 'transgressoribus' hints at a possible secondary Hebraizing element. Collectively, the citations imply that the LXX text of Isa 53:12 was so thoroughly integrated into Christian liturgy, catechesis, and anti-Jewish apologetics that it functioned as a self-authorizing textual tradition independent of ongoing Hebrew philological scrutiny, a situation only disrupted by Jerome's deliberate Hebraica Veritas project.",
+  "transmission_synthesis_plain": "Almost all early Christian writers who quoted Isaiah 53:12 used the Greek Septuagint version, which in one key phrase differs significantly from the Hebrew: it says Christ 'was handed over' rather than 'he interceded for transgressors.' This LXX reading was so deeply embedded in Christian worship and argument that most writers never noticed or questioned the difference. Only Origen (who had access to multiple Bible versions side by side) and Jerome (who deliberately retranslated from Hebrew) drew attention to the gap — Jerome's new Latin translation ultimately restored the 'intercession' reading that the Hebrew had always contained.",
+  "notable_variants": [
+    {
+      "reading": "παρεδόθη (he was handed over) [LXX] vs. יַפְגִּיעַ / rogavit (he interceded) [MT/Jerome]",
+      "fathers_using_it": [
+        "Justin Martyr",
+        "Irenaeus of Lyons",
+        "Origen of Alexandria",
+        "Cyprian of Carthage",
+        "Eusebius of Caesarea",
+        "Athanasius of Alexandria",
+        "John Chrysostom"
+      ],
+      "text_form_alignment": "closer_to_lxx",
+      "significance": "This is the most consequential variant in the verse: the LXX's παρεδόθη ('was handed over') converts the final clause from an intercession statement (MT) into a passive suffering statement, reorienting the theology of the verse from priestly intercession toward Passion theology; the near-universal patristic adoption of the LXX reading shows how profoundly this translation decision shaped early Christian atonement doctrine, and Jerome's restoration of 'rogavit' (he prayed/interceded) introduced a reading with major implications for the theology of Christ's post-resurrection heavenly intercession."
+    },
+    {
+      "reading": "κληρονομήσει πολλούς (he will inherit many) [LXX] vs. אֲחַלֶּק-לוֹ בָרַבִּים / dispertiam ei plurimos (I will allot him a portion among many) [MT/Jerome]",
+      "fathers_using_it": [
+        "Eusebius of Caesarea",
+        "Jerome"
+      ],
+      "text_form_alignment": "mixed",
+      "significance": "The LXX renders the opening clause as Christ inheriting many (a gift to the Son), while the MT frames it as God dividing a portion to his servant among the great (a reward for vicarious suffering); Eusebius exploits the LXX reading christologically to speak of Christ's cosmic lordship over many peoples, while Jerome's MT-based rendering emphasizes the servant's vindication, illustrating how a single translation choice bifurcates the verse's theological function."
+    },
+    {
+      "reading": "ἀνήνεγκεν (bore/offered up) for MT's נָשָׂא (bore/lifted)",
+      "fathers_using_it": [
+        "Justin Martyr",
+        "Origen of Alexandria",
+        "Eusebius of Caesarea",
+        "Athanasius of Alexandria",
+        "John Chrysostom"
+      ],
+      "text_form_alignment": "closer_to_lxx",
+      "significance": "The LXX's choice of ἀνήνεγκεν (a verb with clear cultic/sacrificial resonance — used of offering sacrifices to an altar) over a more neutral rendering of נָשָׂא gives the verse an explicitly sacrificial-priestly coloring that multiple fathers exploit; Chrysostom's connection of this verb to the Eucharist and Athanasius's anti-Arian use both depend on this LXX semantic choice, demonstrating that the Greek translation decision itself became a theological engine in patristic soteriology."
+    }
+  ],
+  "bibcrit_assessment": {
+    "title": "LXX's παρεδόθη Eclipsed MT's Intercession in Patristic Transmission",
+    "reasoning": "The single most significant finding of this citation history is that the LXX's mistranslation (or deliberate reinterpretation) of the final clause — substituting παρεδόθη ('was handed over') for MT's יַפְגִּיעַ ('he interceded/made intercession for the transgressors') — was so pervasively adopted in patristic citation that an entire tradition of Passion-centered atonement theology was built on a textual variant unknown to the Hebrew tradition; the priestly intercession reading preserved in the MT and recovered by Jerome was functionally invisible to most of the church for three centuries. This implies that the LXX, far from being merely a translation, operated as an independent textual tradition that generated its own theological grammar, and that patristic citation practice actively reinforced rather than interrogated that grammar except in explicitly philological contexts (Origen, Jerome). The implications for textual criticism are substantial: where a LXX reading is universally attested in patristic sources but diverges from MT, we cannot assume this reflects a different Hebrew Vorlage — it may instead reflect a Greek translator's interpretive decision that then became self-perpetuating through Christian liturgical and apologetic practice.",
+    "plain": "Early Christian writers almost unanimously quoted a Greek Bible that described Christ as 'handed over' at the end of Isaiah 53:12, but the original Hebrew says he 'interceded for transgressors' — a very different idea. Because the Greek version was so embedded in preaching, worship, and debate, most church fathers never realized the two texts disagreed, and an entire branch of Christian thinking about Jesus's suffering was shaped by what was essentially a translator's choice made centuries earlier.",
+    "confidence": 0.83
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-04-19T23:30:17.066046",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v3",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis correctly identifies the major MT/LXX divergence at Isa 53:12 and most citations are plausible, but several specific chapter/section references and attributions are inaccurate or unverifiable, and one citation appears partially fabricated.",
+    "flagged_claims": [
+      {
+        "claim": "Justin Martyr, Dialogue with Trypho, ch. 13; ch. 89",
+        "risk": "MEDIUM",
+        "reason": "Justin's most extensive citation of Isaiah 53 appears in Dial. 13 and Dial. 89 does discuss the cross, but the specific quotation of v. 12 with the wording given needs verification; Justin typically cites the Servant Song as a unit, and the precise form 'παρεδόθη διὰ τὰς ἁμαρτίας αὐτῶν' should be checked against Marcovich's edition."
+      },
+      {
+        "claim": "Irenaeus, Against Heresies, Bk. III, 20.4; Bk. IV, 33.12",
+        "risk": "MEDIUM",
+        "reason": "Irenaeus does cite Isaiah 53 in these vicinities, but the specific Latin wording 'ipse peccata multorum tulit et pro eis oravit' should be verified; 'pro eis oravit' does not match the LXX παρεδόθη and the citation_note's explanation of this discrepancy is convoluted and unconvincing."
+      },
+      {
+        "claim": "Origen, Commentary on Matthew XIII.9; Contra Celsum I.55",
+        "risk": "HIGH",
+        "reason": "Contra Celsum I.54-55 does discuss Isaiah 53 extensively against Celsus, but the specific framing about Origen 'noting the Hebrew יַפְגִּיעַ' within the citation appears to be a synthetic construction by the AI rather than a direct quotation; Origen's Hexaplaric notes on this clause are not preserved in the form suggested."
+      },
+      {
+        "claim": "Cyprian, Testimonia Bk. II, ch. 15",
+        "risk": "MEDIUM",
+        "reason": "Ad Quirinum Bk. II contains christological testimonia but the specific chapter number for Isa 53:12 needs verification; Cyprian's citations of Isa 53 are typically in Test. II.13 or II.15, and the wording 'portavit...rogavit' should be checked against CCSL editions."
+      },
+      {
+        "claim": "the use of 'transgressoribus' for the final clause is notable because it more accurately represents the MT's פֹּשְׁעִים",
+        "risk": "MEDIUM",
+        "reason": "The speculation that Cyprian's Latin reflects 'secondary Hebrew influence' is implausible; 'transgressoribus' could simply render an LXX variant or reflect Latin idiom. This claim overreaches the evidence."
+      },
+      {
+        "claim": "Eusebius, Demonstratio Evangelica Bk. X, ch. 8",
+        "risk": "MEDIUM",
+        "reason": "Eusebius cites Isaiah 53 extensively in the Demonstratio, but the major treatment is in Book III (esp. III.2) and Book X primarily concerns the Passion narrative; the chapter assignment needs verification."
+      },
+      {
+        "claim": "Athanasius, De Incarnatione, ch. 35",
+        "risk": "MEDIUM",
+        "reason": "De Incarnatione 35 discusses prophecies of the Passion but the specific isolated citation of Isa 53:12c needs verification; Athanasius more commonly cites Isa 53:3-4 in this context."
+      },
+      {
+        "claim": "Chrysostom, Homilies on Matthew, Hom. 83.1 (on Matt 26:28)",
+        "risk": "MEDIUM",
+        "reason": "Hom. 82 (not 83) in Chrysostom's Matthew homilies typically covers Matt 26:26-28 in the standard numbering; the citation of Isa 53:12 here should be verified."
+      },
+      {
+        "claim": "Jerome, Commentariorum in Isaiam, Bk. XIV (on Isa 53:12)",
+        "risk": "MEDIUM",
+        "reason": "Jerome's Isaiah commentary treats Isa 53 in Book XIV, which is correct in general, but the cited Latin matches the Vulgate verbatim; Jerome's commentary lemma sometimes differs slightly from his final Vulgate. Verification against CCSL 73A is needed."
+      },
+      {
+        "claim": "his awareness of both text forms and his use of Aquila and Theodotion make his citations classifiable as mixed",
+        "risk": "MEDIUM",
+        "reason": "Calling Origen's citations 'mixed' in text_form is methodologically questionable—he typically cites the LXX in running exegesis and discusses other versions separately; this is an analytical overreach."
+      }
+    ],
+    "safe_claims": [
+      "LXX reads παρεδόθη where MT reads יַפְגִּיעַ at the final clause of Isa 53:12",
+      "MT אֲחַלֶּק-לוֹ בָרַבִּים differs from LXX κληρονομήσει πολλούς",
+      "Jerome's Vulgate aligns with the Hebrew (Hebraica Veritas principle)",
+      "The Old Latin (Vetus Latina) is dependent on the Greek LXX",
+      "Origen's Hexapla compared Hebrew and Greek versions",
+      "The verb ἀνήνεγκεν is the standard LXX rendering at Isa 53:12",
+      "Patristic citations of Isa 53:12 overwhelmingly follow the LXX tradition"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:51:15.176868+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

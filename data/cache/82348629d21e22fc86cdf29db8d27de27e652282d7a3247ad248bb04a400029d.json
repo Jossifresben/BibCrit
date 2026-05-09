@@ -371,5 +371,59 @@
   "reference": "Genesis 37",
   "cached_at": "2026-04-14T18:49:29.059970",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis follows mainstream classic Documentary Hypothesis source divisions for Genesis 37 with reasonable fidelity, but contains several specific claims stated with more confidence than warranted and a few questionable attributions.",
+    "flagged_claims": [
+      {
+        "claim": "Verse 1 employs P's characteristic language of 'sojournings' (megurei) linking Jacob to Abraham's status",
+        "risk": "MEDIUM",
+        "reason": "While 'megurim' is associated with P (cf. Gen 17:8, 28:4, 36:7), the assignment of 37:1 to P is debated; some scholars assign it to R or J. The confidence (0.75) is reasonable but the claim is presented as more settled than it is."
+      },
+      {
+        "claim": "divine_name_used: Elohim (v. 5, implicit in 'dream')",
+        "risk": "HIGH",
+        "reason": "Elohim does not actually appear in Gen 37:5-11 in the MT. Claiming it is 'implicit in dream' is an interpretive leap presented as textual evidence; the source attribution to E rests on the dream motif, not on actual divine name usage."
+      },
+      {
+        "claim": "Reuben as the intercessor reflects E's northern orientation (Reuben as firstborn of Leah, northern tribe)",
+        "risk": "MEDIUM",
+        "reason": "The characterization of Reuben as a 'northern tribe' tied to E is an oversimplification; Reuben's tribal territory is east of the Jordan, and the J/E geographic correlation with Judah/Reuben is a heuristic, not a firm rule."
+      },
+      {
+        "claim": "E's version appears to have Midianites taking Joseph directly to Egypt (continued in 37:36 E)",
+        "risk": "MEDIUM",
+        "reason": "The classic source division of 37:28 and 37:36 between J (Ishmaelites) and E (Midianites) is contested; some scholars (e.g., Westermann) argue the doublet is overstated or reflects synonymous usage. Stated more confidently than the evidence permits."
+      },
+      {
+        "claim": "Joseph's response 'hineni' (Here I am) echoes E's usage in Gen 22:1, 7, 11",
+        "risk": "MEDIUM",
+        "reason": "While 'hineni' appears in Gen 22, the formula is not exclusive to E (it appears in clearly J or mixed contexts as well, e.g., Gen 27:1, 18). Treating it as an E marker is overstated."
+      },
+      {
+        "claim": "Shechem is a northern locale associated with E traditions (cf. Gen 33:18-20 E)",
+        "risk": "MEDIUM",
+        "reason": "The source assignment of Gen 33:18-20 is itself disputed; some assign portions to P or J. Citing it as confirmed E to support another E assignment risks circular reasoning."
+      },
+      {
+        "claim": "ba'al hacholomot",
+        "risk": "MEDIUM",
+        "reason": "Minor transliteration issue: the MT has 'ba'al ha-chalomot' (חֲלֹמוֹת); the form given is acceptable but the vocalization claim should be checked."
+      }
+    ],
+    "safe_claims": [
+      "The toledot formula appears in Gen 2:4, 5:1, 6:9, 10:1, etc.",
+      "Gen 37 contains doublets including two intercessors (Reuben and Judah) and two sets of traders (Ishmaelites and Midianites)",
+      "The term 'ketonet passim' appears in v. 3 and again in v. 23",
+      "Dreams are a recurring feature in narratives traditionally assigned to E",
+      "Jacob is called 'Israel' in v. 3 and elsewhere in the chapter",
+      "Joseph is said to be seventeen years old in v. 2",
+      "The brothers 'could not speak peaceably' to Joseph (v. 4)",
+      "Twenty pieces of silver is the stated sale price in v. 28"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.644473+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

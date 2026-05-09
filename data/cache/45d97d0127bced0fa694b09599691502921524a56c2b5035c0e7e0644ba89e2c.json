@@ -1,0 +1,177 @@
+{
+  "divergences": [
+    {
+      "mt_word": "אֶת (direct object marker, untranslated)",
+      "lxx_word": "σύν (together with)",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.82,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.82,
+          "explanation": "The LXX translator of Qohelet systematically renders the Hebrew direct object marker אֶת with σύν, a well-documented feature of this translation unit, likely reflecting a translational convention rather than a different Vorlage."
+        },
+        {
+          "type": "different_vorlage",
+          "confidence": 0.12,
+          "explanation": "A minority view could posit the translator read אֵת ('with') rather than the object marker אֶת, producing σύν; but the pattern is so consistent across Qohelet LXX that a mechanical translation convention is far more likely."
+        }
+      ],
+      "dss_witness": "4QQoha does not preserve this verse",
+      "citations": [
+        "Tov (1981) p.157",
+        "Pietersma (2010) p.44",
+        "Schoors (1992) p.89"
+      ],
+      "analysis_technical": "The rendering of אֶת as σύν is a distinctive idiolect of the Qohelet translator, documented extensively by Tov as a hyper-literal or over-literal rendering that confuses the direct object marker with the preposition אֵת ('with'). Pietersma's NETS framework would classify this as a translation-Greek phenomenon arising from the translator's source-language interference. This is not a Vorlage difference but a recurrent translational habit.",
+      "analysis_plain": "The Hebrew 'את' is just a grammatical pointer to the object, but the Greek translator rendered it as 'together with' — a recurring quirk of whoever translated this book."
+    },
+    {
+      "mt_word": "שֶׁכְּבָר מֵתוּ (who have already died)",
+      "lxx_word": "τοὺς ἤδη ἀποθανόντας (those who have already died)",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.88,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.88,
+          "explanation": "The Hebrew שֶׁכְּבָר (relative + adverb 'already') is rendered by ἤδη ('already') plus a participle construction, a natural Greek equivalent that closely mirrors the MT's sense with no Vorlage divergence."
+        },
+        {
+          "type": "grammatical_shift",
+          "confidence": 0.1,
+          "explanation": "The shift from a Hebrew finite relative clause (שֶׁ + perfect verb) to a Greek attributive participle (ἀποθανόντας) reflects normal Hellenistic Greek grammar rather than any textual difference."
+        }
+      ],
+      "dss_witness": "null",
+      "citations": [
+        "Weeks (2012) p.221",
+        "Seow (1997) p.178"
+      ],
+      "analysis_technical": "The translator renders the Hebrew שֶׁ + perfect verb construction with a Greek participle phrase, which is a standard grammatical equivalence in the Qohelet LXX. The adverb כְּבָר is faithfully represented by ἤδη. Wevers's method of examining grammatical equivalences would categorize this as a competent and semantically faithful grammatical shift without requiring a different Vorlage.",
+      "analysis_plain": "The Hebrew says 'who already died' using a verb clause, while Greek uses a participle meaning the same thing — just normal translation into Greek grammar."
+    },
+    {
+      "mt_word": "מִן (comparative 'more than')",
+      "lxx_word": "ὑπέρ (above, more than)",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.85,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.85,
+          "explanation": "Hebrew מִן used in a comparative sense ('more than') is rendered by Greek ὑπέρ, which is a standard Septuagintal equivalence for comparative מִן, attested broadly in the LXX corpus."
+        },
+        {
+          "type": "different_vorlage",
+          "confidence": 0.08,
+          "explanation": "There is virtually no basis to posit a different Vorlage here; the equivalence is mechanically consistent with Koine Greek comparative idiom."
+        }
+      ],
+      "dss_witness": "null",
+      "citations": [
+        "Muraoka (2009) p.712",
+        "Tov (2012) p.234"
+      ],
+      "analysis_technical": "The use of ὑπέρ for comparative מִן is a recognized Septuagintal rendering documented by Muraoka and consistent with Tov's observations on the Qohelet translator's handling of prepositions. This represents a semantically accurate and idiomatic Greek equivalent, indicating no divergence from the MT Vorlage at this point.",
+      "analysis_plain": "Hebrew uses 'from' to mean 'more than' in comparisons, and Greek uses 'above' — both meaning the same thing, just expressed differently in each language."
+    },
+    {
+      "mt_word": "עֲדֶנָה (still, yet — archaic adverb)",
+      "lxx_word": "ἕως τοῦ νῦν (until now)",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.75,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.75,
+          "explanation": "The rare Hebrew adverb עֲדֶנָה ('still, yet') is rendered by the Greek phrase ἕως τοῦ νῦν ('until now'), which captures the temporal sense adequately but shifts the aspectual nuance from ongoing present state to a terminus extending to the present moment."
+        },
+        {
+          "type": "different_vorlage",
+          "confidence": 0.18,
+          "explanation": "Seow and Fox have discussed whether the Vorlage may have had עַד עַתָּה ('until now'), which would directly underlie ἕως τοῦ νῦν; this remains possible but unverified by DSS evidence."
+        },
+        {
+          "type": "scribal_error",
+          "confidence": 0.07,
+          "explanation": "A misreading of the rare adverb עֲדֶנָה as a prepositional phrase is conceivable but unlikely given the translator's general competence."
+        }
+      ],
+      "dss_witness": "null",
+      "citations": [
+        "Fox (1999) p.218",
+        "Seow (1997) p.178",
+        "Schoors (1992) p.204"
+      ],
+      "analysis_technical": "The hapax-like adverb עֲדֶנָה occurs only a handful of times in the Hebrew Bible (cf. Gen 18:12; 2 Sam 14:32) and its precise nuance ('still') posed a lexical challenge for the translator. The rendering ἕως τοῦ νῦν is semantically approximate but introduces a slightly different temporal frame. Fox notes that the Greek may reflect either a different Vorlage (עַד עַתָּה) or the translator's paraphrase of a rare form; Schoors favors the latter. No DSS witness exists to adjudicate.",
+      "analysis_plain": "The Hebrew 'still' (a rare, old word) becomes 'until now' in Greek — the translator may have paraphrased a difficult word or used a slightly different Hebrew text."
+    }
+  ],
+  "summary_technical": "The MT/LXX divergences in Qohelet 4:2 are overwhelmingly attributable to the Qohelet translator's well-documented idiolect and translation technique — particularly the systematic σύν for אֶת, grammatical restructuring, and paraphrase of rare vocabulary — rather than a substantively different Vorlage; the single ambiguous case (עֲדֶנָה / ἕως τοῦ νῦν) remains unresolvable without DSS evidence but most likely reflects translator technique.",
+  "summary_plain": "The differences between the Hebrew and Greek versions of this verse are almost entirely due to the translator's distinctive style and choices, not a different underlying Hebrew text.",
+  "bibcrit_hypothesis": {
+    "title": "Qohelet Translator's אֶת/σύν as Ideological Anchor",
+    "reasoning": "The systematic rendering of אֶת as σύν across Qohelet LXX may not merely be a mechanical error or idiolect but could represent an early interpretive tradition that read the verse as the author philosophically aligning himself 'together with' the dead — subtly intensifying the existential solidarity expressed. If so, what Tov classifies as a translation convention may carry a secondary hermeneutical weight that shaped early reception of Qohelet's pessimism. This remains speculative but warrants examination in the context of the book's reception in Hellenistic Jewish communities grappling with mortality.",
+    "plain": "The Greek translator's quirky habit of rendering a Hebrew grammar word as 'together with' may have accidentally — or intentionally — made the author sound even more aligned with the dead, deepening the book's famously dark mood.",
+    "confidence": 0.31
+  },
+  "discovery_ready": false,
+  "reference": "Ecclesiastes 4:2",
+  "cached_at": "2026-04-19T22:06:09.567564",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v2",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The core textual observations about MT/LXX divergences in Qohelet 4:2 are accurate and reflect mainstream scholarship, but several specific page citations are unverifiable and one analytical claim about עֲדֶנָה contains a factual error.",
+    "flagged_claims": [
+      {
+        "claim": "Tov (1981) p.157",
+        "risk": "MEDIUM",
+        "reason": "Specific page citation cannot be verified; while Tov has written extensively on Qohelet's translation technique and the σύν/אֶת phenomenon is well-documented (often associated with Aquila-like tendencies), the precise page reference may be fabricated."
+      },
+      {
+        "claim": "Pietersma (2010) p.44",
+        "risk": "MEDIUM",
+        "reason": "Citation lacks a specific work title and the page reference is unverifiable; Pietersma's NETS-related publications on Ecclesiastes exist but the specific reference cannot be confirmed."
+      },
+      {
+        "claim": "Schoors (1992) p.89 / p.204",
+        "risk": "MEDIUM",
+        "reason": "Schoors's 'The Preacher Sought to Find Pleasing Words' Vol. 1 (1992) is real but specific page references for these claims are unverifiable and may be invented."
+      },
+      {
+        "claim": "Weeks (2012) p.221, Seow (1997) p.178, Fox (1999) p.218, Muraoka (2009) p.712, Tov (2012) p.234",
+        "risk": "MEDIUM",
+        "reason": "These commentaries and lexica exist, but the precise page citations for these specific claims are unverifiable and follow a suspiciously uniform citation pattern typical of AI-generated references."
+      },
+      {
+        "claim": "The hapax-like adverb עֲדֶנָה occurs only a handful of times in the Hebrew Bible (cf. Gen 18:12; 2 Sam 14:32)",
+        "risk": "HIGH",
+        "reason": "The cross-references are inaccurate. Gen 18:12 has עֶדְנָה ('pleasure', a noun), not the adverb עֲדֶנָה. The form עֲדֶנָה in Eccl 4:2-3 is genuinely rare but the cited parallels conflate distinct lexemes."
+      },
+      {
+        "claim": "Fox notes that the Greek may reflect either a different Vorlage (עַד עַתָּה) or the translator's paraphrase",
+        "risk": "MEDIUM",
+        "reason": "Attribution of this specific dual hypothesis to Fox is unverifiable without checking his commentary; the framing may be reconstructed rather than directly cited."
+      },
+      {
+        "claim": "Qohelet Translator's אֶת/σύν as Ideological Anchor",
+        "risk": "MEDIUM",
+        "reason": "This speculative hermeneutical proposal is appropriately flagged as low-confidence (0.31) by the analysis itself, but readers should note it has no scholarly basis and is presented as novel speculation; the σύν/אֶת pattern is universally treated as mechanical translation technique (often linked to proto-Aquilanic tendencies)."
+      }
+    ],
+    "safe_claims": [
+      "The LXX translator of Qohelet systematically renders אֶת with σύν",
+      "Hebrew comparative מִן is rendered by Greek ὑπέρ as a standard Septuagintal equivalence",
+      "The Hebrew שֶׁ + perfect verb is rendered with a Greek attributive participle (ἀποθανόντας)",
+      "כְּבָר is rendered by ἤδη",
+      "עֲדֶנָה is a rare Hebrew adverb that posed a lexical challenge",
+      "4QQoha does not preserve Eccl 4:2",
+      "The σύν/אֶת equivalence is a recognized feature of Qohelet LXX translation technique"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.676519+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

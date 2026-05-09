@@ -1,0 +1,85 @@
+{
+  "allusions": [
+    {
+      "ot_reference": "Isaiah 65:23 / Philippians 2:16 (OT background: Isaiah 49:4; 65:23)",
+      "nt_words": "οὐ κενή γέγονεν",
+      "ot_mt_form": "Isaiah 49:4: אֲנִי אָמַרְתִּי לְרִיק יָגַעְתִּי ('I said, I have labored in vain'); Isaiah 65:23: לֹא יִיגְעוּ לָרִיק ('they shall not labor in vain')",
+      "ot_lxx_form": "Isaiah 49:4: εἰς κενὸν ἐκοπίασα ('I toiled in vain'); Isaiah 65:23: οὐ κοπιάσουσιν εἰς κενόν ('they shall not toil in vain')",
+      "nt_alignment": "independent",
+      "alignment_confidence": 0.45,
+      "key_word": "κενή (empty, in vain)",
+      "textual_implication": "The phrase 'οὐ κενή γέγονεν' does not constitute a direct citation of any OT verse but rather resonates with a wider Isaianic idiom of labor not being 'in vain' (εἰς κενόν / לְרִיק), language especially prominent in Isa 49:4 and 65:23. Paul exploits the same semantic field—apostolic labor that risks futility—without formally citing either MT or LXX text. This makes the allusion functionally independent but thematically anchored in Second Isaiah's servant/eschatological community motifs.",
+      "textual_implication_plain": "Paul echoes a common Old Testament idea that God-given work will not be wasted or empty, but he does not quote any specific verse directly—it is more of a shared vocabulary than a formal citation.",
+      "scholarly_note": "Beale and Carson (Commentary on NT Use of OT, p. 871) note that Paul's use of κενός language in 1 Thessalonians draws on the Isaianic backdrop of servant labor, particularly the 'labor in vain' motif, treating it as a theological echo rather than a formal allusion.",
+      "contested": true
+    },
+    {
+      "ot_reference": "Isaiah 45:18–19 / broader LXX usage: κενός as theological category",
+      "nt_words": "οὐ κενή γέγονε(ν)",
+      "ot_mt_form": "Isaiah 45:19: לֹא בְסֵתֶר דִּבַּרְתִּי ... לֹא תֹהוּ ('I did not speak in secret ... not in vain/chaos')",
+      "ot_lxx_form": "Isaiah 45:19: οὐκ ἐν κρυφῇ λελάληκα ... οὐκ εἰς κενόν ('I did not speak in secret ... not in vain')",
+      "nt_alignment": "independent",
+      "alignment_confidence": 0.3,
+      "key_word": "κενόν / κενή (vain, empty)",
+      "textual_implication": "While the lexical connection to Isa 45:19 LXX (οὐκ εἰς κενόν) is plausible, the grammatical and syntactical divergence—Paul uses the predicate adjective κενή with γέγονεν rather than the adverbial εἰς κενόν—indicates the language is ambient idiom rather than textual borrowing. The term κενός in Paul more broadly signals the eschatological stakes of missionary proclamation (cf. 1 Cor 15:14; Gal 2:2; Phil 2:16), suggesting a developed Pauline theological vocabulary shaped by but not dependent on a single OT locus.",
+      "textual_implication_plain": "Paul uses the word 'empty' in a way that sounds like Old Testament language about God's word not being futile, but he is likely drawing on a general theological idea rather than quoting a specific text.",
+      "scholarly_note": "Richard Hays (Echoes of Scripture in the Letters of Paul, p. 22) would classify this as a 'faint echo' where the Isaianic semantic field is activated without formal citation, relying on the audience's scriptural competence to register the resonance.",
+      "contested": true
+    }
+  ],
+  "summary_technical": "1 Thessalonians 2:1 contains no formal OT citation; the phrase οὐ κενή γέγονεν functions as a thematic echo of Isaianic 'labor in vain' language (Isa 49:4; 65:23 LXX: εἰς κενόν), deployed within Paul's broader eschatological vocabulary of apostolic legitimacy. The alignment is best classified as independent/ambient rather than MT- or LXX-dependent, as no syntactic or lexical feature compels derivation from a single textual tradition.",
+  "summary_plain": "Paul is not quoting the Old Testament here but is using language that resonates with Isaiah's theme that faithful work for God will not be wasted or empty.",
+  "bibcrit_hypothesis": {
+    "title": "Paul's κενός Idiom as Isaianic Servant Echo",
+    "reasoning": "Paul's repeated use of κενός language in missionary contexts (1 Thess 2:1; 3:5; Phil 2:16; Gal 2:2) suggests a coherent Pauline theological construct shaped by Second Isaiah's servant-labor motif rather than any single textual citation. The independence from both MT and LXX word-for-word forms indicates Paul has internalized the semantic range of these Isaianic passages and deploys them as a theological idiom marking authentic apostolic mission. This is consistent with Hays's model of authorial metalepsis, where the resonance operates at the level of narrative logic rather than verbal reproduction.",
+    "plain": "Paul has deeply absorbed Old Testament ideas about God's servant not working in vain, and he expresses this as his own theological language rather than a direct quote, using it to defend his authentic ministry.",
+    "confidence": 0.55
+  },
+  "discovery_ready": false,
+  "reference": "1 Thessalonians 2:1",
+  "cached_at": "2026-04-19T21:55:12.464858",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis is methodologically sound and appropriately cautious about classifying the echo as independent, but it contains specific page citations to secondary literature that should be verified, and it overstates the Isaianic background for what is more likely a general Pauline idiom.",
+    "flagged_claims": [
+      {
+        "claim": "Beale and Carson (Commentary on NT Use of OT, p. 871)",
+        "risk": "HIGH",
+        "reason": "Specific page citation is unverifiable as stated; the 1 Thessalonians section in Beale/Carson's Commentary on the NT Use of the OT is authored by Jeffrey Weima, and the page number should be checked. Attribution to 'Beale and Carson' as authors (rather than editors) is imprecise."
+      },
+      {
+        "claim": "Richard Hays (Echoes of Scripture in the Letters of Paul, p. 22)",
+        "risk": "HIGH",
+        "reason": "Page 22 of Hays's Echoes does not specifically address 1 Thess 2:1 or κενός language; this appears to be a fabricated or misattributed page reference. Hays's seven criteria are introduced around pp. 29-32, not p. 22."
+      },
+      {
+        "claim": "thematically anchored in Second Isaiah's servant/eschatological community motifs",
+        "risk": "MEDIUM",
+        "reason": "Isa 65:23 is in Trito-Isaiah (chs. 56-66), not Second Isaiah (chs. 40-55). Conflating these is a minor but real categorical error."
+      },
+      {
+        "claim": "Paul's repeated use of κενός language in missionary contexts (1 Thess 2:1; 3:5; Phil 2:16; Gal 2:2)",
+        "risk": "MEDIUM",
+        "reason": "1 Thess 3:5 uses εἰς κενόν (adverbial), as do Gal 2:2 and Phil 2:16, which actually weakens the claim that 1 Thess 2:1's predicate adjective κενή is part of the same idiom; the analysis elsewhere acknowledges this divergence but still groups them."
+      },
+      {
+        "claim": "consistent with Hays's model of authorial metalepsis",
+        "risk": "MEDIUM",
+        "reason": "Metalepsis in Hays's model specifically requires the unstated subtext to carry meaning into the new context; a 'faint echo' without verbal reproduction does not straightforwardly qualify as metalepsis, so the methodological label is loosely applied."
+      }
+    ],
+    "safe_claims": [
+      "1 Thessalonians 2:1 contains no formal OT citation",
+      "Isaiah 49:4 LXX reads εἰς κενὸν ἐκοπίασα",
+      "Isaiah 65:23 LXX contains οὐ κοπιάσουσιν εἰς κενόν",
+      "Isaiah 45:19 LXX contains οὐκ εἰς κενόν",
+      "Paul uses the predicate adjective κενή with γέγονεν rather than adverbial εἰς κενόν",
+      "The alignment is best classified as independent rather than MT- or LXX-dependent"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.642695+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

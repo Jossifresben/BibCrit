@@ -148,5 +148,62 @@
   "discovery_ready": false,
   "cached_at": "2026-03-31T08:20:10.836704",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis correctly identifies the well-known LXX vs. MT parsing difference at Isaiah 40:3, but several specific patristic citation references and quoted texts appear imprecise or potentially fabricated.",
+    "flagged_claims": [
+      {
+        "claim": "Justin Martyr, Dialogue with Trypho, ch. 50",
+        "risk": "HIGH",
+        "reason": "Justin cites Isaiah 40:3 in Dialogue with Trypho ch. 50 in connection with John the Baptist, but the exact chapter and the precise Greek wording given (especially 'τοῦ Θεοῦ ἡμῶν') should be verified; Justin's actual citation in Dial. 50 follows the LXX but the chapter reference and exact form need checking against the critical edition."
+      },
+      {
+        "claim": "Origen, Commentary on John, 6.24",
+        "risk": "MEDIUM",
+        "reason": "Origen does discuss Isaiah 40:3 extensively in Commentary on John Book 6, but the specific section number 6.24 and the exact cited form with 'αὐτοῦ' rather than 'τοῦ Θεοῦ ἡμῶν' should be verified; Origen's discussion is more typically located in Book 6 sections treating John the Baptist."
+      },
+      {
+        "claim": "Eusebius, Proof of the Gospel, 8.3",
+        "risk": "MEDIUM",
+        "reason": "Eusebius's Demonstratio Evangelica book/section reference for Isaiah 40:3 needs verification; the citation appears in Demonstratio but the precise location 8.3 may be inaccurate."
+      },
+      {
+        "claim": "Cyril of Jerusalem, Catechetical Lectures 3.6",
+        "risk": "MEDIUM",
+        "reason": "While Cyril's Catechesis 3 deals with baptism and references John the Baptist, the specific section 3.6 citing Isaiah 40:3 needs verification against the actual text."
+      },
+      {
+        "claim": "Chrysostom, Homilies on Matthew, Hom. 10.2",
+        "risk": "MEDIUM",
+        "reason": "Chrysostom discusses John the Baptist in his Matthew homilies but the specific reference Hom. 10.2 may not match where Isaiah 40:3 is actually quoted; Hom. 10 in Matthew may not be the location."
+      },
+      {
+        "claim": "Jerome, Commentary on Isaiah, 11.40.3",
+        "risk": "MEDIUM",
+        "reason": "Jerome's Commentary on Isaiah is divided into 18 books; book 11 covers the relevant section, but the specific citation form 'rectas facite in solitudine semitas Dei nostri' conflates Vulgate and Old Latin readings and should be verified — the standard Vulgate reads differently."
+      },
+      {
+        "claim": "Tertullian, Against Marcion 4.18, 'Vox clamantis in eremo: Parate viam Domini, dirigite in solitudine semitas Dei nostri'",
+        "risk": "MEDIUM",
+        "reason": "Tertullian quotes Isaiah 40:3 in Adv. Marc. 4.18 in connection with John the Baptist, but the exact Latin wording given mixes phrases and should be checked against Evans's or Kroymann's critical edition."
+      },
+      {
+        "claim": "Irenaeus, Against Heresies 3.9.1",
+        "risk": "MEDIUM",
+        "reason": "Irenaeus does cite Isaiah 40:3 in Adv. Haer., but the specific reference 3.9.1 and the exact Old Latin form quoted should be verified; the surviving Latin translation of Irenaeus is itself a textual witness whose precise wording matters."
+      }
+    ],
+    "safe_claims": [
+      "LXX parses Isaiah 40:3 with 'in the wilderness' attached to the voice, while MT attaches it to the preparation command",
+      "Patristic tradition overwhelmingly follows the LXX parsing of Isaiah 40:3",
+      "Old Latin translations of Isaiah 40:3 derive from LXX Vorlagen",
+      "Jerome was aware of Hebrew/Greek divergence in this verse",
+      "Gospel harmonization (Matt 3:3 'his paths') influenced patristic citation forms toward 'αὐτοῦ' rather than 'τοῦ Θεοῦ ἡμῶν'",
+      "Early Christian use of Isaiah 40:3 is closely tied to John the Baptist typology"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.672653+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

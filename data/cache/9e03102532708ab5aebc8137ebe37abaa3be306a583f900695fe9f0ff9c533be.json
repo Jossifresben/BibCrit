@@ -198,5 +198,46 @@
   "reference": "Isaiah 7:14",
   "cached_at": "2026-03-30T19:59:48.442640",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis is generally sound on lexical equivalences but contains a significant factual error about the Dead Sea Scrolls evidence and overstates some translation regularities.",
+    "flagged_claims": [
+      {
+        "claim": "1QIsaª reads הָעַלְמָה identically to MT",
+        "risk": "HIGH",
+        "reason": "This contradicts the later statement in the bibcrit_assessment that '1QIsaª lacks this verse' / 'has lacuna here.' In fact, 1QIsaª does contain Isaiah 7:14 and reads העלמה, but the analysis is internally inconsistent on this point. The summary_technical claim 'No DSS witness for Isaiah 7:14 exists' and 'lacuna here' is factually wrong—1QIsaª preserves this verse."
+      },
+      {
+        "claim": "No DSS witness for Isaiah 7:14 exists to adjudicate these variants; 1QIsaª has lacuna here",
+        "risk": "HIGH",
+        "reason": "Factually incorrect. 1QIsaª preserves Isaiah 7:14 and reads וקרא (3ms 'he will call') rather than MT's וקראת—a highly relevant variant that the analysis entirely misses. This is a major omission given the discussion of the naming verb."
+      },
+      {
+        "claim": "The demonstrative particle ἰδοὺ invariably represents הִנֵּה in LXX",
+        "risk": "MEDIUM",
+        "reason": "Overstated. ἰδοὺ commonly renders הִנֵּה but also renders הֵן and occasionally other particles; 'invariably' is too strong."
+      },
+      {
+        "claim": "The noun σημεῖον is the consistent LXX rendering of אוֹת ('sign') throughout the Hebrew Bible",
+        "risk": "MEDIUM",
+        "reason": "Generally true but not absolute; אוֹת is occasionally rendered otherwise (e.g., by other terms in specific contexts). 'Consistent' overstates uniformity."
+      },
+      {
+        "claim": "The accusative noun υἱόν directly corresponds to Hebrew בֵּן ('son'). This is an invariable lexical equivalent in LXX",
+        "risk": "MEDIUM",
+        "reason": "בֵּן is rendered by various Greek terms in LXX (παῖς, τέκνον, etc.) depending on context. 'Invariable' is inaccurate."
+      }
+    ],
+    "safe_claims": [
+      "διὰ τοῦτο is the standard LXX rendering of לָכֵן",
+      "LXX παρθένος renders MT הָעַלְמָה at this verse",
+      "LXX reads καλέσεις (2ms) against MT וְקָרָאת (vocalized as 3fs)",
+      "ἐν γαστρὶ ἕξει καὶ τέξεται renders the Hebrew with future-tense interpretation",
+      "Εμμανουηλ transliterates עִמָּנוּ אֵל"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.589451+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

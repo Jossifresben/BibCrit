@@ -1,0 +1,316 @@
+{
+  "passage": "Exodus 19:1-20:21",
+  "framework": "classic_documentary",
+  "scope_note": "This analysis examines the Sinai pericope and Decalogue through the lens of the classic Documentary Hypothesis, identifying probable J, E, and P source layers amid a densely redacted and theologically pivotal narrative that has challenged source critics since Wellhausen.",
+  "source_units": [
+    {
+      "verses": "19:1-2a",
+      "source": "P",
+      "confidence": 0.78,
+      "divine_name_used": "none (itinerary formula)",
+      "key_vocabulary": [
+        "third month",
+        "day",
+        "wilderness of Sinai",
+        "departed",
+        "came"
+      ],
+      "theological_concerns": "Precise chronological and geographical notation characteristic of P's itinerary framework; links the Sinai arrival to a broader chronological schema (cf. Exod 12:2, Num 10:11).",
+      "structural_markers": "The formula 'on this day they came' with a month-date marker is a P-style itinerary notice; the phrase 'wilderness of Sinai' parallels P usage in Numbers.",
+      "doublet_with": "19:2b",
+      "summary": "The opening chronological and geographic notice (third month, wilderness of Sinai) bears hallmarks of P's itinerary framework. Wellhausen and Noth assigned such temporal precision to P. Friedman concurs that P provides the chronological spine of the Exodus narrative here. The repetition in 19:2b ('and they encamped in the wilderness; and Israel encamped there before the mountain') suggests a seam between P and the following narrative layer."
+    },
+    {
+      "verses": "19:2b-8",
+      "source": "E",
+      "confidence": 0.65,
+      "divine_name_used": "Elohim (v.3, v.7 implied; YHWH appears but see note)",
+      "key_vocabulary": [
+        "eagle's wings",
+        "treasure",
+        "holy nation",
+        "kingdom of priests",
+        "heard with one voice",
+        "Moses went up to God"
+      ],
+      "theological_concerns": "Covenant mediation through Moses, conditional covenant formulation ('if you obey my voice and keep my covenant'), the people as a corporate holy entity; fear-inducing divine encounter mediated through a human intermediary.",
+      "structural_markers": "Moses as sole mediator ascending to God; the phrase 'Moses went up to God (ha-Elohim)' is characteristic E usage; the covenant-conditional formula parallels E's covenant theology; the eagle-wings metaphor is absent in J or P.",
+      "doublet_with": "19:9-15",
+      "summary": "The theophany preparation in 19:2b-8 is widely attributed to E by Friedman and Baden. The ascent formula 'Moses went up to Elohim/God' and the conditional covenant structure align with E's Horeb tradition. YHWH does appear in v.3 ('YHWH called to him from the mountain'), which has led some scholars such as Dozeman to posit J material here, but Friedman maintains the divine name shift may reflect redactional harmonization. Baden notes the covenant speech in vv.5-6 belongs to a distinct compositional layer emphasizing priestly-national identity."
+    },
+    {
+      "verses": "19:9",
+      "source": "E",
+      "confidence": 0.6,
+      "divine_name_used": "YHWH (possibly redactional substitution)",
+      "key_vocabulary": [
+        "thick cloud",
+        "people may hear",
+        "believe you forever",
+        "Moses told YHWH the words"
+      ],
+      "theological_concerns": "Auditory theophany for the purpose of legitimizing Moses' prophetic authority; the cloud as mediating presence aligns with E's tendency to obscure direct divine-human encounter.",
+      "structural_markers": "The 'thick cloud' (anan ha-kaved) as auditory vehicle is E-typical; the goal of establishing belief in Moses parallels E's Horeb/Sinai tradition in Deut 5 (Elohist substratum).",
+      "doublet_with": "19:16-19",
+      "summary": "Verse 9 is a brief notice preparing for the theophany by focusing on Moses' authentication before the people, consistent with E's prophetic-mediation theology. The phrase 'Moses told the words of the people to YHWH' is conversational and may reflect a J-style aside or a redactional bridge. Wellhausen treated this verse as fragmentary; Baden sees it as an E anticipatory notice before the Sinai theophany account."
+    },
+    {
+      "verses": "19:10-13",
+      "source": "J",
+      "confidence": 0.62,
+      "divine_name_used": "YHWH",
+      "key_vocabulary": [
+        "YHWH said to Moses",
+        "consecrate",
+        "wash garments",
+        "set limits",
+        "touch the mountain",
+        "stone or shot",
+        "when the ram's horn sounds long"
+      ],
+      "theological_concerns": "Physical boundaries protecting the sanctity of divine presence; direct YHWH speech to Moses; the danger of divine contact for unprepared humans; anthropomorphic divine 'coming down' (v.11).",
+      "structural_markers": "YHWH as subject of direct speech; the 'come down in sight of all the people' (v.11) echoes J's anthropomorphic descent language (cf. Gen 11:5, 18:21); the ram's horn signal for ascent is not found in E's parallel account.",
+      "doublet_with": "19:20-25",
+      "summary": "The boundary-setting and consecration instructions in 19:10-13 are attributed to J by Wellhausen on the basis of YHWH as the dominant divine name and the vivid, direct style of divine descent. Friedman assigns this material to J, noting the physical, boundary-enforcing conception of divine holiness differs from E's cloud-and-voice approach. Baden sees vv.10-13 and 19:20-25 as representing the same source (J) with a repeated divine descent, creating an internal doublet within J itself or between J and a second J-strand."
+    },
+    {
+      "verses": "19:14-15",
+      "source": "J",
+      "confidence": 0.58,
+      "divine_name_used": "none (narrative action)",
+      "key_vocabulary": [
+        "Moses went down",
+        "consecrated the people",
+        "washed their garments",
+        "do not go near a woman"
+      ],
+      "theological_concerns": "Ritual purity preparation for theophany; sexual abstinence as cultic requirement; Moses as executor of divine commands.",
+      "structural_markers": "Continuation of the boundary-setting and purification thread of J; the sexual abstinence instruction reflects J's concern with purity in the context of divine encounter and is absent from E's Sinai preparation.",
+      "doublet_with": null,
+      "summary": "Verses 14-15 narrate Moses' execution of the consecration commands given in vv.10-13 and are therefore continuous with that J unit. The practical, bodily concern with purity (washing garments, abstinence) is consistent with J's earthy narrative style. Some scholars (e.g., Childs) treat vv.14-15 as redactional bridging material, but the majority view following Wellhausen places them within the J narrative thread."
+    },
+    {
+      "verses": "19:16-19",
+      "source": "E",
+      "confidence": 0.7,
+      "divine_name_used": "Elohim (v.17 'to meet Elohim'; v.19 'Elohim answered')",
+      "key_vocabulary": [
+        "thunder and lightning",
+        "thick cloud on the mountain",
+        "very loud trumpet blast",
+        "people trembled",
+        "Moses brought the people to meet Elohim",
+        "Elohim answered in thunder"
+      ],
+      "theological_concerns": "Auditory and atmospheric theophany; communal fear as appropriate response to divine presence; the theophany confirmed through sound (thunder, trumpet, voice); Moses as guide of the people toward Elohim.",
+      "structural_markers": "Elohim as divine name (vv.17, 19); the trembling of the people before God aligns with E's 'fear of God' motif; 'thick cloud' (he-anan ha-kaved) and thunder-theophany are E's preferred manifestation forms; the trumpet blast (shofar) appears in E contexts.",
+      "doublet_with": "19:10-13",
+      "summary": "The Sinai theophany in 19:16-19 is the strongest candidate for E-source material in the passage. The explicit use of Elohim, the communal trembling, and the auditory (thunder, trumpet, voice) rather than visual theophany all align with E's characteristic presentation. Wellhausen identified this section as belonging to a distinct source from the J boundary-setting material in vv.10-13. Friedman and Baden concur, with Baden noting that the Elohim-answered-in-thunder formula in v.19 is an E signature."
+    },
+    {
+      "verses": "19:20-25",
+      "source": "J",
+      "confidence": 0.6,
+      "divine_name_used": "YHWH",
+      "key_vocabulary": [
+        "YHWH came down",
+        "YHWH called Moses to the top",
+        "lest they break through to YHWH",
+        "priests who come near YHWH",
+        "Moses went down to the people"
+      ],
+      "theological_concerns": "YHWH's physical descent to the mountaintop; reinforcement of boundaries against priestly and popular trespass; the danger of YHWH 'breaking out' against those who approach improperly.",
+      "structural_markers": "YHWH as divine name throughout; the language of YHWH 'breaking out' (parats) against violators reflects J's conception of uncontrolled divine power; the reference to 'priests' here is pre-Aaronide and anomalous in P's framework, suggesting J's earlier priestly institution.",
+      "doublet_with": "19:10-13",
+      "summary": "Verses 19:20-25 are widely seen as a second J account of the Sinai boundary instructions, creating an internal tension with vv.10-13. Wellhausen recognized the repetition as evidence of source seams. The mention of priests in v.22 who are neither Aaron's sons nor Levites suggests a pre-P priestly tradition. Friedman attributes this section to J; Baden treats the doublet as resulting from the juxtaposition of J with another narrative strand, possibly a second J recension or a pre-J tradition."
+    },
+    {
+      "verses": "20:1-17",
+      "source": "E",
+      "confidence": 0.72,
+      "divine_name_used": "Elohim (v.1 'God spoke all these words'; vv.2ff use YHWH within the Decalogue text but the framing is Elohim)",
+      "key_vocabulary": [
+        "God spoke all these words",
+        "I am YHWH your God",
+        "no other gods before me",
+        "you shall not",
+        "six days you shall labor",
+        "honor your father and mother",
+        "do not murder",
+        "do not commit adultery",
+        "do not steal",
+        "do not bear false witness",
+        "do not covet"
+      ],
+      "theological_concerns": "Apodictic law as expression of covenant relationship; prohibition of images; sabbath observance grounded in Exodus-redemption (not creation as in P's Decalogue parallel in Deut 5); exclusive loyalty to YHWH; social ethics as covenant obligation.",
+      "structural_markers": "The framing formula 'Elohim spoke all these words' (v.1) is E's declarative introduction; the Decalogue's apodictic 'you shall not' style is E-typical; the sabbath grounding in the Exodus from Egypt (anticipated but absent here—present in Deut 5:15) vs. the creation rest (Exod 20:11, see below) introduces a P insert; communal hearing of divine speech without human mediation is a distinctive E-Horeb feature.",
+      "doublet_with": "Deuteronomy 5:6-21",
+      "summary": "The Decalogue in 20:1-17 is framed as direct divine speech to the people, which aligns with E's tradition of the people hearing God at Horeb/Sinai. Most source critics including Friedman attribute the Decalogue core to E, with P's hand visible in the sabbath rationale grounded in creation (v.11, 'for in six days YHWH made heaven and earth'). Baden treats the Decalogue as a pre-source composition incorporated by E, noting that the prohibition of images (v.4) is particularly E-consistent with northern anti-image polemic. The Decalogue's parallel in Deuteronomy 5 reflects D's reworking of this E tradition."
+    },
+    {
+      "verses": "20:11",
+      "source": "P",
+      "confidence": 0.68,
+      "divine_name_used": "YHWH (within Decalogue text)",
+      "key_vocabulary": [
+        "YHWH made heaven and earth",
+        "the sea and all that is in them",
+        "rested on the seventh day",
+        "therefore YHWH blessed the sabbath day"
+      ],
+      "theological_concerns": "Sabbath grounded in creation theology; the seven-day creation schema of Gen 1 (P); divine rest as the model for human sabbath observance.",
+      "structural_markers": "The creation-rest rationale for sabbath directly parallels Gen 2:2-3 (P); the list 'heaven, earth, sea, and all that is in them' is a P-style cosmic enumeration; in Deuteronomy 5:15 this rationale is replaced by the Exodus, strongly suggesting the creation rationale was inserted by P into an earlier E Decalogue tradition.",
+      "doublet_with": "Deuteronomy 5:15",
+      "summary": "The sabbath rationale in 20:11 stands out as a probable P insertion into the E Decalogue. The grounding of sabbath in the six-day creation of Gen 1 (universally attributed to P) vs. the Exodus rationale of Deut 5:15 reveals a seam between E and P. Wellhausen already noted this tension; Friedman explicitly identifies v.11 as P. Baden agrees that this verse represents P's theological reframing of an older sabbath law to align it with the P creation account."
+    },
+    {
+      "verses": "20:18-21",
+      "source": "E",
+      "confidence": 0.73,
+      "divine_name_used": "Elohim (vv.19, 20, 21)",
+      "key_vocabulary": [
+        "people saw the thunder and lightning",
+        "mountain smoking",
+        "people were afraid and trembled",
+        "do not come near us lest we die",
+        "Moses said: do not fear",
+        "God has come to test you",
+        "fear of God may be before you",
+        "people stood far off",
+        "Moses drew near to the thick darkness"
+      ],
+      "theological_concerns": "Communal fear of direct divine encounter; Moses as mediator replacing direct divine communication; the 'fear of God' as obedience-producing awe; thick darkness as divine dwelling; the people's request for mediated revelation as origin of prophetic institution.",
+      "structural_markers": "Elohim used exclusively in this section; 'fear of God' (yir'at ha-Elohim) is a classic E marker; 'test' (nasah) as divine purpose is an E motif (cf. Gen 22:1 E; Exod 16:4 E); 'thick darkness' (arafel) where God dwells is E's obscured-presence theology; the people's withdrawal and Moses' approach establishes the Mosaic prophetic mediation model central to E.",
+      "doublet_with": "Deuteronomy 5:22-31",
+      "summary": "Exodus 20:18-21 is the most clearly E-attributed section of the passage. The concentration of E-markers—Elohim, fear of God, testing, thick darkness, prophetic mediation—makes this the paradigmatic E pericope in the Sinai narrative. Wellhausen identified this as the E source's account of the people's response to theophany. Friedman and Baden both firmly attribute this section to E. The theological move—from direct divine speech (vv.1-17) to the people requesting Moses as mediator—establishes the theological underpinning for the entire Mosaic prophetic tradition in E."
+    }
+  ],
+  "doublets": [
+    {
+      "unit_1_verses": "19:10-13",
+      "unit_2_verses": "19:20-25",
+      "description": "Both units contain divine instructions about setting boundaries at the mountain and warning against trespass, involving Moses descending and ascending, with threats of death for violators.",
+      "significance": "This internal repetition is a classic seam indicating the juxtaposition of two originally independent accounts of Sinai boundary-setting, most likely J and an alternate strand (possibly a second J recension or E-parallel), preserved by a redactor who saw both as necessary."
+    },
+    {
+      "unit_1_verses": "19:16-19",
+      "unit_2_verses": "19:10-13",
+      "description": "Two distinct theophany approaches: vv.16-19 describe an auditory, cloud-based, Elohim-centered theophany with communal trembling; vv.10-13 describe a boundary-enforcing YHWH-descent with physical purity preparation.",
+      "significance": "The two theophany preparations represent the distinct E and J source traditions being spliced together by a redactor, explaining why Moses descends and ascends multiple times in chapter 19."
+    },
+    {
+      "unit_1_verses": "20:1-17",
+      "unit_2_verses": "Deuteronomy 5:6-21",
+      "description": "Two versions of the Decalogue with minor but theologically significant variations, particularly in the sabbath rationale (creation in Exod 20:11 vs. Exodus in Deut 5:15).",
+      "significance": "The doublet reveals D's reworking of the E Decalogue tradition, substituting a redemption-history rationale for P's creation rationale, providing a window into the compositional history of Israel's foundational law."
+    },
+    {
+      "unit_1_verses": "20:18-21",
+      "unit_2_verses": "Deuteronomy 5:22-31",
+      "description": "Both passages narrate the people's fear following the Decalogue and their request for Mosaic mediation rather than direct divine speech.",
+      "significance": "The near-parallel structure of the two texts demonstrates D's direct dependence on the E Sinai tradition in Exodus 19-20, which D recasts in hortatory style for its own theological program."
+    }
+  ],
+  "competing_positions": [
+    {
+      "scholar": "Wellhausen (1878)",
+      "attribution": "Wellhausen identified two primary threads in Exodus 19: a J thread (YHWH, physical descent, boundary-setting, vv.10-13, 20-25) and an E thread (Elohim, atmospheric theophany, vv.16-19), with chapter 20 belonging primarily to E (Decalogue and people's response). He regarded the P contribution in Exodus 19 as minimal, limited to the chronological framework. Wellhausen was particularly attentive to the multiple Moses ascents/descents as evidence of redactional combination.",
+      "note": "Prolegomena zur Geschichte Israels (1878), pp. 336-354 (German); pp. 339ff in English translation"
+    },
+    {
+      "scholar": "Friedman (1987, 2003)",
+      "attribution": "Friedman follows the broad Wellhausen division but assigns 19:1-2a to P (chronological itinerary), 19:2b-8 and 19:16-19 to E, 19:10-15 and 19:20-25 to J, 20:1-17 to E with P insertion at v.11, and 20:18-21 firmly to E. He emphasizes the Elohim/YHWH distribution as the primary diagnostic in chapter 19. In The Bible with Sources Revealed (2003), he color-codes these sections accordingly, showing J in red and E in blue throughout.",
+      "note": "Who Wrote the Bible? (1987), Ch. 4; The Bible with Sources Revealed (2003), pp. 130-138"
+    },
+    {
+      "scholar": "Baden (2012)",
+      "attribution": "Baden approaches Exodus 19-20 as one of the most heavily combined passages in the Pentateuch. He argues for a more rigorous separation: J source runs through 19:10-15 and 19:20-25 (physical boundary, YHWH descent); E source contains the atmospheric theophany (19:16-19), the Decalogue frame (20:1-17), and the people's response (20:18-21). Baden emphasizes that the repeated Moses ascents/descents (at least three in chapter 19) are inexplicable in a unified composition but fully explicable as editorial splicing. He is more skeptical than Friedman about P's role in chapter 19, attributing the chronological notice to P but treating the remainder as J/E.",
+      "note": "The Composition of the Pentateuch (2012), pp. 162-184"
+    },
+    {
+      "scholar": "Childs (1974)",
+      "attribution": "Childs, while familiar with source-critical analysis, emphasizes the canonical form and argues that the source divisions in Exodus 19-20 are less clean than Wellhausen supposed. He notes that the divine names in chapter 19 are not reliable diagnostics given the mixed tradition history of the Sinai pericope. He accepts broad J and E distinction but resists precise verse-by-verse assignment, treating the passage as a composite with a unifying theological purpose in its final form.",
+      "note": "Exodus: A Commentary (1974), pp. 340-360"
+    },
+    {
+      "scholar": "Dozeman (2009)",
+      "attribution": "Dozeman's Hermeneia commentary argues for a more complex compositional history, positing that the theophany in 19:16-19 belongs to a pre-Priestly tradition (which he labels 'Elohist' but distinguishes from the classic E source), while the legal-contractual framework of 19:2b-8 represents a Deuteronomistic reworking. He is particularly cautious about equating 'Elohim in Exodus' with the E source as defined by the Documentary Hypothesis.",
+      "note": "Exodus (Hermeneia, 2009), pp. 425-460"
+    }
+  ],
+  "framework_note": "Classic Documentary Hypothesis (Wellhausen 1878, Friedman 1987/2003, Baden 2012). Source attribution is analytical evidence, not definitive assignment. Scholarly debate is ongoing, and Exodus 19-20 remains one of the most contested passages in Pentateuchal source criticism.",
+  "synthesis": "Exodus 19:1-20:21 represents one of the most complex source-critical challenges in the Pentateuch, with clear evidence of at least three source layers (P, J, E) woven together by a redactor who preserved parallel and sometimes contradictory theophany accounts. The J source is most visible in the YHWH-descent, physical-boundary, and purity-preparation material of chapter 19, while E dominates the atmospheric theophany, the Decalogue frame, and the people's fear-response, with P providing the chronological itinerary notice and the creation-based sabbath rationale in 20:11. The multiple Moses ascents/descents and the tension between direct divine speech to the people (E's Decalogue) and the need for Mosaic mediation (E's 20:18-21) are best explained as the editorial combination of originally independent source narratives rather than the product of a single author.",
+  "bibcrit_hypothesis": {
+    "title": "Sinai Theophany as Tripartite Redactional Convergence",
+    "reasoning": "The Sinai pericope achieves its theological density precisely because three independent source traditions—J's boundary-enforcing YHWH-descent, E's fear-inducing atmospheric theophany, and P's chronological-liturgical framework—were preserved in full rather than harmonized, producing a canonical text that holds multiple theologies of divine encounter in productive tension. The redactor's choice to preserve rather than resolve the tensions between J and E in chapter 19 suggests an editorial theology that values the irreducibility of divine encounter to any single mode of representation. This compositional strategy anticipates the later canonical principle of preserving variant sacred traditions side by side, visible also in the double Psalter, the four Gospels, and rabbinic dispute literature.",
+    "confidence": 0.61
+  },
+  "discovery_ready": false,
+  "reference": "Exodus 19:1-20:21",
+  "cached_at": "2026-04-19T23:13:47.531453",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis follows mainstream Documentary Hypothesis assignments but contains several specific scholarly attributions that misrepresent named scholars' positions, particularly regarding Baden and Friedman.",
+    "flagged_claims": [
+      {
+        "claim": "Baden treats the Decalogue as a pre-source composition incorporated by E",
+        "risk": "HIGH",
+        "reason": "Joel Baden's published work (e.g., 'The Composition of the Pentateuch') generally treats the Decalogue as part of E proper, not as a pre-source composition incorporated by E. This appears to misrepresent his position."
+      },
+      {
+        "claim": "Baden sees vv.10-13 and 19:20-25 as representing the same source (J) with a repeated divine descent, creating an internal doublet within J itself or between J and a second J-strand",
+        "risk": "HIGH",
+        "reason": "Baden explicitly rejects the idea of internal doublets within a single source as a methodological principle; positing 'a second J recension' contradicts his neo-Documentarian methodology."
+      },
+      {
+        "claim": "Friedman concurs that P provides the chronological spine of the Exodus narrative here",
+        "risk": "MEDIUM",
+        "reason": "While Friedman does assign chronological framework to P generally, the specific assignment of 19:1-2a to P and the framing of his view as confirming a 'chronological spine' is paraphrased without verifiable citation."
+      },
+      {
+        "claim": "the 'thick cloud' (anan ha-kaved) as auditory vehicle is E-typical",
+        "risk": "MEDIUM",
+        "reason": "The cloud of divine presence is more commonly associated with P (kavod tradition) than with E in standard source-critical analysis; this attribution is contestable."
+      },
+      {
+        "claim": "the trumpet blast (shofar) appears in E contexts",
+        "risk": "MEDIUM",
+        "reason": "There is no established corpus of 'E shofar contexts' that would make this a diagnostic marker; the claim is presented with more confidence than warranted."
+      },
+      {
+        "claim": "Dozeman to posit J material here",
+        "risk": "HIGH",
+        "reason": "Thomas Dozeman is associated with non-Documentarian, post-Wellhausen approaches and generally does not work with classical J/E categories in the way described; this attribution likely misrepresents his methodology."
+      },
+      {
+        "claim": "Wellhausen treated this verse [19:9] as fragmentary",
+        "risk": "MEDIUM",
+        "reason": "Specific attribution to Wellhausen of a particular treatment of 19:9 as 'fragmentary' is unverifiable and may be fabricated."
+      },
+      {
+        "claim": "the prohibition of images (v.4) is particularly E-consistent with northern anti-image polemic",
+        "risk": "MEDIUM",
+        "reason": "While E is traditionally associated with northern provenance, the specific link between Exod 20:4 and 'northern anti-image polemic' attributed to Baden is unverifiable."
+      },
+      {
+        "claim": "the reference to 'priests' here is pre-Aaronide and anomalous in P's framework, suggesting J's earlier priestly institution",
+        "risk": "MEDIUM",
+        "reason": "The interpretive leap from 'priests' in 19:22 to a distinct 'J priestly institution' is speculative and overstates a contested point."
+      }
+    ],
+    "safe_claims": [
+      "19:2b contains a repetition ('and they encamped in the wilderness; and Israel encamped there before the mountain') that has long been noted as a possible seam",
+      "The Decalogue in Exod 20 has a parallel in Deuteronomy 5:6-21",
+      "Exod 20:11 grounds sabbath in creation, paralleling Gen 2:2-3, while Deut 5:15 grounds it in the Exodus",
+      "Divine name alternation between YHWH and Elohim occurs across the Sinai pericope",
+      "19:20-25 and 19:10-13 contain overlapping boundary-setting instructions",
+      "The Decalogue uses apodictic 'you shall not' formulations",
+      "Exod 20:1 introduces the Decalogue with 'Elohim spoke all these words'"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.623536+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

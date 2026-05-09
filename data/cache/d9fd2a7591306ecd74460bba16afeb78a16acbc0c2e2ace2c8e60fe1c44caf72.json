@@ -1,0 +1,209 @@
+{
+  "book": "Isaiah",
+  "translator_name": "Old Greek of Isaiah (LXX-Isa)",
+  "translator_profile": {
+    "literalness": 0.35,
+    "anthropomorphism_reduction": 0.3,
+    "messianic_heightening": 0.82,
+    "harmonization": 0.45,
+    "paraphrase_rate": 0.72
+  },
+  "dimensions": [
+    {
+      "dimension": "literalness",
+      "score": 0.35,
+      "confidence": 0.85,
+      "summary": "The LXX-Isa translator demonstrates consistently low literalness, regularly departing from morpheme-by-morpheme equivalence in favor of sense-driven rendering. In Isa 53:4, חֳלָיֵנוּ ('our diseases/sicknesses') is rendered ἁμαρτίας ('sins'), a substantial semantic shift not explicable as mechanical equivalence. In 11:1, מִגֵּזַע ('from the trunk/stump') becomes ἐκ τῆς ῥίζης ('from the root'), collapsing the stump-imagery and aligning both cola to 'root.' In 40:3, מְסִלָּה ('highway/raised road') becomes τὰς τρίβους ('paths/tracks'), a semantically weaker lexeme. These are not isolated errors but reflect a translator who consistently privileges Greek readability and theological coherence over Hebrew formal equivalence. Aejmelaeus's criteria of free particle renderings, added explicating elements, and semantic substitution are all abundantly attested in this book.",
+      "summary_plain": "This translator did not work word-for-word from the Hebrew. Instead, they regularly substituted Greek ideas that felt equivalent in meaning or theology, sometimes changing the image significantly.",
+      "examples": [
+        {
+          "reference": "Isaiah 53:4",
+          "mt_text": "חֳלָיֵנוּ הוּא נָשָׂא וּמַכְאֹבֵינוּ סְבָלָם",
+          "lxx_text": "οὗτος τὰς ἁμαρτίας ἡμῶν φέρει καὶ περὶ ἡμῶν ὀδυνᾶται",
+          "note": "חֳלָיֵנוּ ('our sicknesses') becomes ἁμαρτίας ('our sins') — a theologically motivated semantic substitution, not literal rendering; מַכְאֹבֵינוּ ('our pains') becomes περὶ ἡμῶν ὀδυνᾶται ('he grieves on our behalf'), transforming a noun into a verbal clause."
+        },
+        {
+          "reference": "Isaiah 11:1",
+          "mt_text": "וְיָצָא חֹטֶר מִגֵּזַע יִשַׁי",
+          "lxx_text": "καὶ ἐξελεύσεται ῥάβδος ἐκ τῆς ῥίζης Ιεσσαι",
+          "note": "גֵּזַע ('stump/trunk') is rendered ῥίζης ('root'), flattening the specific image of a cut-down stump sprouting a shoot; the stump-motif of dynastic discontinuity is partially lost in favor of a simpler botanical metaphor."
+        },
+        {
+          "reference": "Isaiah 40:3",
+          "mt_text": "יַשְּׁרוּ בָּעֲרָבָה מְסִלָּה לֵאלֹהֵינוּ",
+          "lxx_text": "εὐθείας ποιεῖτε τὰς τρίβους τοῦ θεοῦ ἡμῶν",
+          "note": "מְסִלָּה ('raised highway/causeway') rendered τὰς τρίβους ('the paths'), a semantically lighter term; the singular monumental road becomes plural tracks, reducing the grandeur of the image."
+        }
+      ]
+    },
+    {
+      "dimension": "anthropomorphism_reduction",
+      "score": 0.3,
+      "confidence": 0.65,
+      "summary": "The LXX-Isa translator shows moderate anthropomorphism reduction, but it is not a dominant or systematic tendency. In Isa 42:1, נַפְשִׁי ('my soul/self') is retained as ἡ ψυχή μου, preserving divine psychē language without smoothing. In 52:13 the divine emotional investment implied by the context is preserved, not reduced. However, in 9:6, קִנְאַת יְהוָה ('the zeal/jealousy of YHWH') is retained as ὁ ζῆλος κυρίου, with no reduction. The translator does not show the consistent pattern of replacing body-part or emotion language with abstract equivalents that characterizes, for example, certain sections of LXX-Ezekiel or the Pentateuchal translators. Some individual cases of theological smoothing occur (e.g., in chs. 6, 66 elsewhere in the book), but the sample passages do not establish this as a dominant profile feature.",
+      "summary_plain": "This translator did not consistently tone down descriptions of God's emotions or body parts. Divine 'soul,' 'jealousy,' and spirit language are generally preserved as-is.",
+      "examples": [
+        {
+          "reference": "Isaiah 42:1",
+          "mt_text": "רָצְתָה נַפְשִׁי",
+          "lxx_text": "προσεδέξατο αὐτὸν ἡ ψυχή μου",
+          "note": "The divine נַפְשִׁי ('my soul') is preserved as ἡ ψυχή μου; no reduction to an abstract term like βούλησις or θέλημα, showing the translator did not reflexively eliminate divine soul-language."
+        },
+        {
+          "reference": "Isaiah 9:6",
+          "mt_text": "קִנְאַת יְהוָה צְבָאֹות תַּעֲשֶׂה זֹּאת",
+          "lxx_text": "ὁ ζῆλος κυρίου σαβαωθ ποιήσει ταῦτα",
+          "note": "קִנְאָה ('jealousy/zeal') is rendered ζῆλος, which carries both competitive passion and zealous devotion in Greek — direct lexical equivalence retained, with no theological softening of the divine emotion."
+        }
+      ]
+    },
+    {
+      "dimension": "messianic_heightening",
+      "score": 0.82,
+      "confidence": 0.9,
+      "summary": "Messianic heightening is the single most prominent and scholarly well-attested tendency of LXX-Isa, visible across multiple passage types and widely affirmed in the scholarship of Ziegler, Seeligmann, and van der Kooij. In 7:14, עַלְמָה ('young woman of marriageable age') is rendered παρθένος ('virgin'), transforming a historically specific sign into a prophecy of virginal conception; this is the most famous individual translation decision in the entire LXX corpus. In 11:1, the translator's rendering of נֵצֶר as ἄνθος ('flower/blossom') while also rendering גֵּזַע as ῥίζα aligns the verse with eschatological flourishing imagery. In 42:1, the addition of Ιακωβ and Ισραηλ as identifiers of the Servant — absent from the MT — reflects an exegetical tradition but may simultaneously serve to shape the Servant toward a national-eschatological figure. In 52:13, וְגָבַהּ ('and be high') becomes καὶ δοξασθήσεται ('and be glorified'), a theological intensification that moves toward divine exaltation language. In 53:4, חֳלָיֵנוּ → ἁμαρτίας reframes physical suffering as sin-bearing, heightening atonement theology.",
+      "summary_plain": "More than any other tendency, this translator boosted the messianic and eschatological meaning of passages. The famous translation of 'young woman' as 'virgin' in chapter 7 is the clearest example, but the same impulse appears throughout.",
+      "examples": [
+        {
+          "reference": "Isaiah 7:14",
+          "mt_text": "הִנֵּה הָעַלְמָה הָרָה וְיֹלֶדֶת בֵּן",
+          "lxx_text": "ἰδοὺ ἡ παρθένος ἐν γαστρὶ ἕξει καὶ τέξεται υἱόν",
+          "note": "עַלְמָה ('young woman') rendered παρθένος ('virgin'), transforming a contextually plausible historical sign-oracle into a statement that has been universally read as predicting virginal conception; this is the paradigmatic case of messianic heightening in the entire LXX."
+        },
+        {
+          "reference": "Isaiah 52:13",
+          "mt_text": "יָרוּם וְנִשָּׂא וְגָבַהּ מְאֹד",
+          "lxx_text": "καὶ ὑψωθήσεται καὶ δοξασθήσεται σφόδρα",
+          "note": "וְגָבַהּ ('and be high/exalted') becomes δοξασθήσεται ('be glorified'), elevating the Servant's status toward the divine-glory sphere; the rendering of all three verbs as passives (divine passives) also heightens the theological register."
+        },
+        {
+          "reference": "Isaiah 53:4",
+          "mt_text": "אָכֵן חֳלָיֵנוּ הוּא נָשָׂא וּמַכְאֹבֵינוּ סְבָלָם",
+          "lxx_text": "οὗτος τὰς ἁμαρτίας ἡμῶν φέρει καὶ περὶ ἡμῶν ὀδυνᾶται",
+          "note": "The shift from 'sicknesses' to ἁμαρτίας ('sins') recasts the Servant's role from one who shares human physical suffering to one who bears the community's moral guilt — a decisive heightening of atonement theology that prefigures NT use."
+        },
+        {
+          "reference": "Isaiah 42:1",
+          "mt_text": "הֵן עַבְדִּי אֶתְמָךְ־בּוֹ בְּחִירִי",
+          "lxx_text": "Ιακωβ ὁ παῖς μου ἀντιλήμψομαι αὐτοῦ Ισραηλ ὁ ἐκλεκτός μου",
+          "note": "The addition of Ιακωβ and Ισραηλ (absent from MT) identifies the anonymous Servant with Israel as a collective eschatological actor; παῖς ('servant/child') also allows a dual reading as both 'servant' and 'son,' enriching messianic potential."
+        }
+      ]
+    },
+    {
+      "dimension": "harmonization",
+      "score": 0.45,
+      "confidence": 0.6,
+      "summary": "Harmonization within the sample passages is present but not at the level of a dominant tendency. The most suggestive example is Isa 11:1, where rendering גֵּזַע as ῥίζης (same as the second colon's שָׁרָשָׁיו) harmonizes the two halves of the verse through lexical assimilation, reducing the poetic contrast between stump and root. In 9:6, the translator supplies εἰς τὸν αἰῶνα χρόνον ('to the age/time') expanding עַד־עֹולָם in a manner that echoes Davidic covenant language from Ps 89 and 2 Sam 7, possibly reflecting harmonization with those traditions. The rendering of 40:3's מְסִלָּה as τρίβους (plural) may reflect influence from parallel desert-road texts. However, these instances are not sufficiently systematic to place harmonization as a primary feature; medium confidence reflects genuine scholarly debate about intentionality.",
+      "summary_plain": "This translator sometimes made passages echo each other or align with other familiar texts, but this was not a constant habit — it happened occasionally rather than as a rule.",
+      "examples": [
+        {
+          "reference": "Isaiah 11:1",
+          "mt_text": "וְיָצָא חֹטֶר מִגֵּזַע יִשַׁי וְנֵצֶר מִשָּׁרָשָׁיו יִפְרֶה",
+          "lxx_text": "καὶ ἐξελεύσεται ῥάβδος ἐκ τῆς ῥίζης Ιεσσαι καὶ ἄνθος ἐκ τῆς ῥίζης ἀναβήσεται",
+          "note": "Both cola now read ἐκ τῆς ῥίζης ('from the root'), harmonizing the two halves of the verse; the MT distinction between גֶּזַע (trunk/stump) and שֹׁרֶשׁ (root) is leveled, suggesting intra-verse harmonization."
+        },
+        {
+          "reference": "Isaiah 9:6",
+          "mt_text": "מֵעַתָּה וְעַד־עֹולָם",
+          "lxx_text": "ἀπὸ τοῦ νῦν καὶ εἰς τὸν αἰῶνα χρόνον",
+          "note": "The expansion εἰς τὸν αἰῶνα χρόνον echoes the Davidic covenant formulae of Ps 89 (LXX 88) and 2 Sam 7:13, 16; this may reflect harmonization of the Isaianic royal oracle with the broader Davidic covenant tradition."
+        }
+      ]
+    },
+    {
+      "dimension": "paraphrase_rate",
+      "score": 0.72,
+      "confidence": 0.85,
+      "summary": "Paraphrase is a pervasive feature of LXX-Isa and represents one of the most distinctive characteristics noted since Seeligmann's 1948 monograph. The translator regularly expands, contracts, reorders, and substitutes at the clause and phrase level. In 53:4, two noun clauses of bearing sickness become a verbalized sin-bearing and an added emotional clause (περὶ ἡμῶν ὀδυνᾶται), restructuring the entire verse's syntax. In 61:1, the MT's פְּקַח־קֹוחַ ('opening of bonds/prison') becomes καὶ τυφλοῖς ἀνάβλεψιν ('and recovery of sight to the blind'), a significant lexical substitution that transforms a liberation-from-prison image into a healing of blindness — a paraphrase with profound reception-historical consequences (cf. Luke 4:18). In 42:1, the translator introduces Jacob and Israel as subjects where the MT has only anonymous pronouns, adding substantial interpretive content. These moves characterize what Tov would classify as a 'free' translation technique consistently in the range of OG-Proverbs or OG-Job, though LXX-Isa maintains closer average proximity to the Hebrew than those books.",
+      "summary_plain": "The translator frequently rewrote phrases rather than translating them directly. Sometimes a single Hebrew image becomes an entirely different Greek image, such as when 'opening of prison' becomes 'sight to the blind' in chapter 61.",
+      "examples": [
+        {
+          "reference": "Isaiah 61:1",
+          "mt_text": "לַאֲסוּרִים פְּקַח־קֹוחַ",
+          "lxx_text": "καὶ τυφλοῖς ἀνάβλεψιν",
+          "note": "פְּקַח־קֹחַ ('opening of bonds' or 'complete opening') for prisoners is transformed into ἀνάβλεψιν ('recovery of sight') for the blind — a dramatic paraphrase that replaces imprisonment-release with a healing miracle, directly shaping Luke 4:18's citation."
+        },
+        {
+          "reference": "Isaiah 53:4",
+          "mt_text": "וּמַכְאֹבֵינוּ סְבָלָם",
+          "lxx_text": "καὶ περὶ ἡμῶν ὀδυνᾶται",
+          "note": "The Hebrew noun phrase 'he bore our pains' becomes a Greek verbal clause 'he grieves on our behalf' — the translator has converted a concrete physical bearing into an emotional solidarity, restructuring the clause type and changing the image."
+        },
+        {
+          "reference": "Isaiah 42:1",
+          "mt_text": "הֵן עַבְדִּי אֶתְמָךְ־בּוֹ",
+          "lxx_text": "Ιακωβ ὁ παῖς μου ἀντιλήμψομαι αὐτοῦ Ισραηλ ὁ ἐκλεκτός μου",
+          "note": "The entirely anonymous Hebrew ('behold my servant, I uphold him') receives two full proper-noun identifications (Jacob, Israel) absent from any plausible Hebrew Vorlage, representing interpretive expansion that qualifies as paraphrase at the discourse level."
+        }
+      ]
+    }
+  ],
+  "overall_assessment": "The Old Greek of Isaiah presents one of the most theologically tendentious and paraphrastically free translation units in the entire LXX corpus. Following Seeligmann's foundational characterization and van der Kooij's detailed analysis, the translator functions as much as an interpreter and preacher as a translator, consistently amplifying messianic and eschatological potential while freely restructuring Hebrew expressions into idiomatic Greek with substantial semantic substitution. The book's literalness score places it in a middle-free range — less free than OG-Proverbs or OG-Job but substantially freer than the kaige-revision tradition or the Pentateuchal translators. For text-critical work (following Tov's methodology), this low literalness profile significantly limits the retroversional use of LXX-Isa as a witness to a variant Hebrew Vorlage: many apparent 'variants' are better explained as translational paraphrase than as divergent Hebrew textual traditions. The messianic heightening tendency, confirmed across multiple passage types at high confidence, establishes this translation as a major contributor to early Jewish messianic exegesis and, through NT citation (esp. Matt 1:23; Luke 4:18; Acts 8:32–33), to the formation of Christian theology.",
+  "overall_plain": "The ancient translator of Isaiah in Greek was a creative interpreter who saw messianic predictions everywhere and regularly rewrote rather than translated the Hebrew. This makes the Greek Isaiah one of the most theologically influential books of the entire Old Testament in Greek, but also one of the least reliable for reconstructing what the original Hebrew text said. When we find differences between the Hebrew and Greek in Isaiah, they are usually due to the translator's choices, not a different Hebrew copy.",
+  "bibcrit_assessment": {
+    "title": "Paraphrase Disguises Messianism, Not Textual Variants",
+    "reasoning": "The most significant scholarly insight about LXX-Isa is the methodological warning it poses for text-criticism: the translator's high paraphrase rate and systematic messianic heightening together create a situation where superficially 'variant' readings (such as παρθένος for עַלְמָה, ἁμαρτίας for חֳלָיֵנוּ, ἀνάβλεψιν for פְּקַח־קֹחַ) should be attributed first to translational theology and only secondarily to a divergent Vorlage. This means that the retroversional value of LXX-Isa, as assessed by Tov's text-critical framework, must be substantially discounted relative to more literal LXX books, and that the theological profile of the translator must be reconstructed before any text-critical inference can be responsibly made.",
+    "plain": "When the Greek Isaiah says something different from the Hebrew, scholars used to wonder if the translator had a different Hebrew copy. But the evidence shows the translator was mostly making theological and interpretive choices — choosing words that pointed to the Messiah, not copying a different Hebrew text. This changes how scholars use the Greek Isaiah as evidence for the original text.",
+    "confidence": 0.88
+  },
+  "discovery_ready": false,
+  "reference": "Isaiah",
+  "cached_at": "2026-04-19T21:36:20.672278",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis is broadly sound and reflects mainstream LXX-Isaiah scholarship, but contains several specific textual citations that are inaccurate or misattributed (notably the 9:6 reference, which conflates Isa 9:6 [MT 9:5] with 9:7 [MT 9:6]).",
+    "flagged_claims": [
+      {
+        "claim": "Isaiah 9:6: קִנְאַת יְהוָה צְבָאֹות תַּעֲשֶׂה זֹּאת",
+        "risk": "HIGH",
+        "reason": "This phrase is from Isa 9:7 (MT 9:6), not 9:6. The verse reference is incorrect, which compounds into the harmonization example as well (מֵעַתָּה וְעַד־עֹולָם is also from 9:7/MT 9:6)."
+      },
+      {
+        "claim": "In 11:1, the translator's rendering of נֵצֶר as ἄνθος ('flower/blossom')",
+        "risk": "MEDIUM",
+        "reason": "The LXX text cited (ῥάβδος... ἄνθος) appears to conflate readings; the standard Göttingen LXX-Isa 11:1 reads ῥάβδος... ἄνθος ἐκ τῆς ῥίζης, but the claim that נֵצֶר→ἄνθος in this position should be checked against the actual word order, since the first colon's חֹטֶר is rendered ῥάβδος."
+      },
+      {
+        "claim": "παῖς ('servant/child') also allows a dual reading as both 'servant' and 'son,' enriching messianic potential",
+        "risk": "MEDIUM",
+        "reason": "While παῖς can mean 'child,' the claim that this 'enriches messianic potential' in 42:1 is interpretive speculation presented as translator intent; the addition of Iakob/Israel actually points toward collective rather than individual messianic reading."
+      },
+      {
+        "claim": "widely affirmed in the scholarship of Ziegler, Seeligmann, and van der Kooij",
+        "risk": "MEDIUM",
+        "reason": "These scholars are real and relevant, but van der Kooij in particular has nuanced views; Seeligmann emphasized contemporizing actualization more than 'messianic heightening' per se. The grouping risks oversimplifying their distinct positions."
+      },
+      {
+        "claim": "this is the most famous individual translation decision in the entire LXX corpus",
+        "risk": "MEDIUM",
+        "reason": "Rhetorical superlative that is unverifiable and arguably overstated; other candidates (e.g., Gen 1:1 ἐν ἀρχῇ, Exod 3:14 ἐγώ εἰμι ὁ ὤν) compete for this distinction."
+      },
+      {
+        "claim": "Tov would classify as a 'free' translation technique consistently in the range of OG-Proverbs or OG-Job",
+        "risk": "MEDIUM",
+        "reason": "Tov typically places LXX-Isaiah as 'free' but distinct from the more paraphrastic Job and Proverbs; the claim that LXX-Isa is 'in the range of' those books overstates the equivalence even with the qualifier that follows."
+      },
+      {
+        "claim": "In 52:13 the divine emotional investment implied by the context is preserved, not reduced",
+        "risk": "MEDIUM",
+        "reason": "Vague claim without textual specificity; Isa 52:13 in MT does not contain explicit divine emotion language to reduce, making the example weak as evidence for the dimension."
+      }
+    ],
+    "safe_claims": [
+      "In Isa 53:4, חֳלָיֵנוּ ('our diseases/sicknesses') is rendered ἁμαρτίας ('sins')",
+      "In 7:14, עַלְמָה is rendered παρθένος",
+      "In 40:3, מְסִלָּה becomes τὰς τρίβους (plural)",
+      "In 42:1, the addition of Ιακωβ and Ισραηλ as identifiers of the Servant — absent from the MT",
+      "In 52:13, וְגָבַהּ becomes καὶ δοξασθήσεται",
+      "In 61:1, פְּקַח־קֹוחַ becomes καὶ τυφλοῖς ἀνάβλεψιν",
+      "LXX-Isa is generally a 'free' translation in Tov's typology",
+      "Seeligmann's 1948 monograph is foundational for LXX-Isaiah studies"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.653349+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

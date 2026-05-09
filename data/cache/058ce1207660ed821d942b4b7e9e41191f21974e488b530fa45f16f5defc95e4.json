@@ -1,0 +1,116 @@
+{
+  "reconstructed_words": [
+    {
+      "position": 1,
+      "lxx_word": "εὐλογήσαι σε",
+      "vorlage_word": "יְבָרֶכְךָ",
+      "status": "agrees_mt",
+      "confidence": 0.98,
+      "mt_equivalent": "יְבָרֶכְךָ",
+      "dss_witness": "4Q119 (4QLXXNum) does not preserve this verse; 1QM XII, 3 cites the blessing but not in a text-critical sense for this word",
+      "reasoning": "εὐλογέω is the standard LXX rendering of ברך in the Piel stem throughout the Pentateuch (Gen 1:22, 12:2, etc.). The second-person singular suffix -κε reflects the Hebrew pronominal suffix -ךָ with complete regularity. The optative εὐλογήσαι corresponds precisely to the jussive יְבָרֶכְךָ, a well-attested equivalence in LXX Pentateuch translation technique.",
+      "alternatives": [
+        {
+          "reading": "בָּרַךְ",
+          "confidence": 0.02,
+          "note": "Qal perfect is extremely unlikely given the optative mood of the Greek verb."
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "lxx_word": "κύριος",
+      "vorlage_word": "יְהוָה",
+      "status": "agrees_mt",
+      "confidence": 0.99,
+      "mt_equivalent": "יְהוָה",
+      "dss_witness": null,
+      "reasoning": "κύριος is the consistent LXX rendering of the Tetragrammaton throughout the Pentateuch, following the established Alexandrian translation convention. The word order matches MT exactly: verb + divine name. This is one of the most statistically certain retroversions in all of LXX studies.",
+      "alternatives": [
+        {
+          "reading": "אֲדֹנָי",
+          "confidence": 0.01,
+          "note": "Virtually impossible; אֲדֹנָי would also yield κύριος but the liturgical context and pentateuchal consistency confirm יְהוָה."
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "lxx_word": "καὶ",
+      "vorlage_word": "וְ",
+      "status": "agrees_mt",
+      "confidence": 0.97,
+      "mt_equivalent": "וְ",
+      "dss_witness": null,
+      "reasoning": "The waw-consecutive/copulative וְ prefixed to the second verb is rendered uniformly as καί throughout the LXX Pentateuch. The καί here reflects a simple coordinate conjunction corresponding precisely to the waw on וְיִשְׁמְרֶךָ in MT. No variation is attested.",
+      "alternatives": []
+    },
+    {
+      "position": 4,
+      "lxx_word": "φυλάξαι σε",
+      "vorlage_word": "יִשְׁמְרֶֽךָ",
+      "status": "agrees_mt",
+      "confidence": 0.97,
+      "mt_equivalent": "יִשְׁמְרֶֽךָ",
+      "dss_witness": "No DSS manuscript preserves Num 6:24 in Hebrew with a textual variant here; the Nash Papyrus does not include this passage",
+      "reasoning": "φυλάσσω is the dominant LXX equivalent of שׁמר throughout the Pentateuch, appearing scores of times in this correspondence (e.g., Gen 2:15, 3:24, Exod 12:17). The optative φυλάξαι precisely mirrors the Hebrew jussive יִשְׁמְרֶךָ, and the second-person accusative pronoun σε reflects the pronominal suffix -ךָ. The lexical and morphological correspondence is exact.",
+      "alternatives": [
+        {
+          "reading": "יִנְצְרֶךָ",
+          "confidence": 0.05,
+          "note": "נצר is occasionally rendered φυλάσσω (e.g., Isa 27:3 LXX) but is far less common in the Pentateuch and lacks contextual support here."
+        }
+      ]
+    }
+  ],
+  "summary_technical": "The LXX of Num 6:24 exhibits a virtually letter-perfect correspondence with MT across all four reconstructed units, with no lexical, morphological, or syntactic divergence detectable. The translator's technique is isomorphic and literalistic, consistent with what Tov identifies as the translation style of the Pentateuch LXX, where jussive forms are rendered by Greek optatives and pronominal suffixes by enclitic pronouns. No DSS Hebrew manuscript preserves this specific verse with a textual variant, and no inner-Greek recensional activity (Hexaplaric, Lucianic) introduces divergence. The retroversion achieves near-maximal confidence across all positions.",
+  "summary_plain": "The Greek translation of Numbers 6:24 follows the Hebrew text in our Bibles (the Masoretic Text) word-for-word with no detectable differences, and the translator's choices are completely standard for the ancient Greek Pentateuch.",
+  "overall_confidence": 0.98,
+  "bibcrit_assessment": {
+    "title": "Aaronite Blessing: LXX Confirms MT Fidelity",
+    "reasoning": "This verse is among the most liturgically stable texts in the Hebrew Bible, and the LXX provides no evidence of a divergent Vorlage; all Greek choices are mechanically explicable from the MT consonantal text without remainder. The most notable philological observation is negative: the absence of any plus, minus, or transposition in the Greek strongly suggests the Aaronite blessing formula was already textually fixed and authoritative in the Alexandrian diaspora community by the time of translation, leaving the translator no latitude or motivation for interpretive deviation. This stability is evidence-based rather than speculative, grounded in the complete lexical accountability of every Greek element to a known Hebrew equivalent.",
+    "plain": "The Greek and Hebrew versions of this famous priestly blessing match so perfectly that scholars can be highly confident the ancient translators were working from a text virtually identical to the one we have today.",
+    "confidence": 0.97
+  },
+  "discovery_ready": false,
+  "reference": "Numbers 6:24",
+  "cached_at": "2026-04-19T21:39:45.467122",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "HIGH",
+    "confidence_note": "The analysis is textually accurate and well-grounded; minor terminological imprecisions do not undermine the core claims.",
+    "flagged_claims": [
+      {
+        "claim": "1QM XII, 3 cites the blessing but not in a text-critical sense for this word",
+        "risk": "MEDIUM",
+        "reason": "1QM XII does contain blessing language echoing priestly themes, but a direct citation of Num 6:24 at XII:3 is not clearly established; the allusion claim is imprecise and could mislead readers."
+      },
+      {
+        "claim": "The optative εὐλογήσαι corresponds precisely to the jussive יְבָרֶכְךָ",
+        "risk": "MEDIUM",
+        "reason": "εὐλογήσαι is more naturally parsed as aorist active infinitive or 3rd sg aorist active optative; the form is ambiguous, and the broader claim that LXX Pentateuch routinely renders jussives by optatives is overstated—indicatives and subjunctives also occur."
+      },
+      {
+        "claim": "The waw-consecutive/copulative וְ prefixed to the second verb",
+        "risk": "MEDIUM",
+        "reason": "The form is a simple copulative waw before a jussive (וְיִשְׁמְרֶךָ), not a waw-consecutive; the terminology conflates two distinct categories."
+      },
+      {
+        "claim": "the second-person singular suffix -κε reflects the Hebrew pronominal suffix",
+        "risk": "MEDIUM",
+        "reason": "There is no '-κε' suffix in Greek; the pronoun is the separate enclitic σε. This appears to be a typo or confused morphological description."
+      }
+    ],
+    "safe_claims": [
+      "κύριος is the consistent LXX rendering of the Tetragrammaton throughout the Pentateuch",
+      "εὐλογέω is the standard LXX rendering of ברך in the Pentateuch",
+      "φυλάσσω is the dominant LXX equivalent of שׁמר in the Pentateuch",
+      "The LXX of Num 6:24 corresponds closely with MT with no significant lexical or syntactic divergence",
+      "4Q119 (4QLXXNum) does not preserve this verse"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.560678+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

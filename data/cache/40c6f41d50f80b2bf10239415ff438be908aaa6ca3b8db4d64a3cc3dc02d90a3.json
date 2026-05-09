@@ -473,5 +473,64 @@
   "reference": "Deuteronomy",
   "cached_at": "2026-03-31T11:21:28.026218",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis reflects mainstream text-critical scholarship on Deuteronomy but contains several specific factual errors regarding manuscript classifications, dates, and edition details that need correction.",
+    "flagged_claims": [
+      {
+        "claim": "4QDeut-n (4Q30)... Pre-Samaritan type manuscript from Qumran preserving readings aligned with the Samaritan Pentateuch tradition",
+        "risk": "HIGH",
+        "reason": "The Qumran siglum is incorrect: 4QDeut-n = 4Q41, not 4Q30 (which is 4QDeut-c). Furthermore, 4QDeut-n is not typically classified as 'pre-Samaritan'; it is a liturgical/excerpted text containing the Decalogue and Shema, notable for combining Exodus and Deuteronomy Decalogue forms."
+      },
+      {
+        "claim": "4QDeut-q (4Q33)... Proto-Masoretic type manuscript",
+        "risk": "HIGH",
+        "reason": "4QDeut-q is typically numbered 4Q44, not 4Q33. Moreover, 4QDeut-q is famous for preserving a Hebrew text of the Song of Moses (Deut 32) that aligns with the LXX Vorlage rather than MT (e.g., 'sons of God/Elohim' reading), so labeling it 'proto-Masoretic' is the opposite of the scholarly consensus."
+      },
+      {
+        "claim": "4QDeut-j (4Q29)... c. 150-125 BCE",
+        "risk": "MEDIUM",
+        "reason": "4QDeut-j is generally dated to the Herodian period (late 1st c. BCE / early 1st c. CE), not 150-125 BCE. The siglum 4Q29 is also questionable; 4QDeut-j is commonly catalogued as 4Q37."
+      },
+      {
+        "claim": "Old Greek Deuteronomy... mid-2nd c. BCE",
+        "risk": "MEDIUM",
+        "reason": "The Greek Pentateuch (including Deuteronomy) is conventionally dated to the mid-3rd century BCE (Ptolemy II era), not mid-2nd century BCE."
+      },
+      {
+        "claim": "Göttingen LXX Deuteronomy... 1977 (2nd ed.)... ed. J. W. Wevers and U. Quast",
+        "risk": "MEDIUM",
+        "reason": "Wevers' Göttingen edition of Deuteronomium was published in 1977 (1st ed.); a 2nd revised edition appeared in 2006. The edition is by Wevers (with Quast as collaborator), but the date/edition pairing here is muddled."
+      },
+      {
+        "claim": "Samaritan Pentateuch... approximately 6,000 variants from MT across the Pentateuch",
+        "risk": "MEDIUM",
+        "reason": "The figure ~6,000 variants is a traditional estimate often cited but should be qualified; modern collations differ, and many are orthographic rather than substantive."
+      },
+      {
+        "claim": "Targum Neofiti... 1st-2nd c. CE (tradition)",
+        "risk": "MEDIUM",
+        "reason": "The dating of Neofiti's underlying tradition is highly contested; the manuscript is 16th c. CE and the textual tradition is variously dated from the 1st to the 4th century CE or later. Assigning '1st-2nd c. CE' is overconfident."
+      },
+      {
+        "claim": "Codex Vaticanus... Premier witness to the Alexandrian text-type of LXX Deuteronomy",
+        "risk": "MEDIUM",
+        "reason": "For the Pentateuch/Deuteronomy specifically, Vaticanus is generally regarded as a strong Old Greek witness, but the 'Alexandrian text-type' terminology is more proper to NT criticism; in LXX Deuteronomy Wevers identified specific text groups, and Vaticanus's affiliations are more nuanced."
+      }
+    ],
+    "safe_claims": [
+      "The original text of Deuteronomy likely emerged in the 7th century BCE, possibly connected to Josiah's reform",
+      "Aleppo Codex c. 930 CE, vocalized by Aaron ben Asher",
+      "Leningrad Codex 1008 CE, basis for BHS",
+      "Vulgate c. 390-405 CE, Jerome's translation",
+      "Aquila c. 130 CE hyper-literal translation",
+      "Origen's Hexapla c. 240 CE",
+      "BHQ Deuteronomy edited by C. McCarthy (2006)",
+      "Pre-Samaritan manuscripts at Qumran show expansionist/harmonizing tendencies"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.417335+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

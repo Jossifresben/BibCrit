@@ -1,0 +1,212 @@
+{
+  "reference": "Proverbs 8:22",
+  "total_citations_found": 8,
+  "period_summary": "Citations concentrated heavily in 4th century Arian controversy, when Proverbs 8:22 became the premier proof-text for debates over Christ's ontological status. The passage's theological utility drove intensive scrutiny of its wording, especially the Greek verb κτίζω.",
+  "citations": [
+    {
+      "father": "Justin Martyr",
+      "dates_ce": "c. 100–165",
+      "region": "Rome",
+      "work": "Dialogue with Trypho",
+      "chapter_section": "ch. 61.3",
+      "cited_text": "ἀρχὴν πρὸ πάντων τῶν κτισμάτων ὁ θεὸς ἐγέννησέ με",
+      "text_form": "mixed",
+      "text_form_confidence": 0.68,
+      "text_form_note": "Justin uses 'ἐγέννησεν' (begot) where LXX has 'ἔκτισέν με' (created me). The phrase 'ἀρχὴν πρὸ πάντων τῶν κτισμάτων' aligns with LXX structure but substitutes generative for creative language, possibly reflecting pre-Nicene theological interpretation or a variant textual tradition.",
+      "theological_use": "Justin applies this to the pre-incarnate Logos as eternally begotten before creation, interpreting Wisdom christologically. He uses it to argue for Christ's distinct personhood and pre-existence against Trypho's Jewish interpretation.",
+      "transmission_implication": "Suggests early 2nd-century Christian recension or interpretive substitution of γεννάω for κτίζω to mitigate subordinationist implications."
+    },
+    {
+      "father": "Irenaeus of Lyons",
+      "dates_ce": "c. 130–202",
+      "region": "Gaul",
+      "work": "Against Heresies",
+      "chapter_section": "4.20.3",
+      "cited_text": "Dominus me creavit initium viarum suarum in opera sua",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.82,
+      "text_form_note": "The Old Latin 'creavit' directly reflects LXX ἔκτισέν with no modification. 'Initium viarum' = ἀρχὴν ὁδῶν and 'in opera sua' = εἰς τὰ ἔργα αὐτοῦ match standard LXX exactly, transmitted through early Latin translation.",
+      "theological_use": "Irenaeus identifies Wisdom with the Son in the divine economy, emphasizing Christ's role in creation as the Father's agent. The 'creation' language is not problematic for Irenaeus's high Christology since he distinguishes eternal generation from economic function.",
+      "transmission_implication": "Confirms LXX text form was standard in 2nd-century Gaul via Old Latin translation with no textual adjustment for theological concerns."
+    },
+    {
+      "father": "Tertullian",
+      "dates_ce": "c. 155–220",
+      "region": "Carthage",
+      "work": "Against Praxeas",
+      "chapter_section": "ch. 6",
+      "cited_text": "Dominus condidit me initium viarum suarum in opera sua",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.85,
+      "text_form_note": "Latin 'condidit' (founded/established) represents ἔκτισεν. Tertullian's citation is precise and matches standard LXX transmitted through Vetus Latina. No deviation from received Greek text observable in his Latin rendering.",
+      "theological_use": "Tertullian uses this to support his doctrine of the Son's distinct subsistence within the Trinity, arguing Wisdom/Son was 'established' in God's plan before creation while maintaining eternal deity. He interprets 'creation' here economically, not ontologically.",
+      "transmission_implication": "North African Old Latin tradition by early 3rd century faithfully represents LXX form with no theological correction of κτίζω."
+    },
+    {
+      "father": "Origen",
+      "dates_ce": "c. 185–254",
+      "region": "Caesarea",
+      "work": "On First Principles (De Principiis)",
+      "chapter_section": "1.2.2",
+      "cited_text": "Κύριος ἔκτισέν με ἀρχὴν ὁδῶν αὐτοῦ εἰς ἔργα αὐτοῦ",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.95,
+      "text_form_note": "Origen's citation precisely matches standard LXX ἔκτισέν με with no alteration. He cites the full verse accurately, showing he worked from an established Greek text identical to what we know as LXX Proverbs. His extensive textual work makes this a highly reliable witness.",
+      "theological_use": "Origen interprets this christologically with nuance: the Son as Wisdom is 'created' in his economic role for salvation but eternally generated in his essential being. This distinction allows him to use κτίζω without subordinationism, though his language later fueled Arian appropriation.",
+      "transmission_implication": "Confirms LXX text form with ἔκτισέν was firmly established in scholarly Caesarean tradition by mid-3rd century with no variant readings noted."
+    },
+    {
+      "father": "Athanasius of Alexandria",
+      "dates_ce": "c. 296–373",
+      "region": "Alexandria",
+      "work": "Orations Against the Arians",
+      "chapter_section": "2.18-82 (extended treatment)",
+      "cited_text": "Κύριος ἔκτισέν με ἀρχὴν ὁδῶν αὐτοῦ εἰς ἔργα αὐτοῦ",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.98,
+      "text_form_note": "Athanasius cites the standard LXX text with ἔκτισέν repeatedly throughout his anti-Arian treatises. He does not emend the text but instead argues extensively for interpreting κτίζω as referring to Christ's incarnation/economy rather than his eternal essence, accepting the received wording.",
+      "theological_use": "Athanasius's entire Second Oration addresses Arian misuse of this text. He argues κτίζω here means 'constituted' in the incarnation for redemptive work, not 'created' in essence. This represents orthodox Nicene response to Arian exploitation of the verse.",
+      "transmission_implication": "Demonstrates LXX form was universally received by mid-4th century; no textual variants available for theological exploitation, forcing hermeneutical rather than textual solutions."
+    },
+    {
+      "father": "Eusebius of Caesarea",
+      "dates_ce": "c. 260–339",
+      "region": "Caesarea",
+      "work": "Ecclesiastical Theology",
+      "chapter_section": "2.7.1",
+      "cited_text": "ἔκτισέν με ἀρχὴν ὁδῶν αὐτοῦ",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.92,
+      "text_form_note": "Eusebius cites standard LXX ἔκτισέν without modification. His quotations across multiple works consistently use this form, reflecting the established Palestinian text tradition he inherited from Origen's Hexapla work in Caesarea.",
+      "theological_use": "Eusebius uses this to support a moderate subordinationist Christology, understanding the Son as first of God's works while still divine. His position represents the broad center between Arius and Athanasius before Nicene terminology crystallized.",
+      "transmission_implication": "Caesarean scholarly tradition maintained uniform LXX text through early 4th century with no evidence of competing readings despite theological tensions."
+    },
+    {
+      "father": "Hilary of Poitiers",
+      "dates_ce": "c. 310–367",
+      "region": "Gaul",
+      "work": "On the Trinity (De Trinitate)",
+      "chapter_section": "12.35-37",
+      "cited_text": "Dominus creavit me initium viarum suarum ad opera sua",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.88,
+      "text_form_note": "Latin 'creavit' represents LXX ἔκτισέν faithfully. Hilary's citation matches the Old Latin Proverbs tradition consistently. Minor word order variation ('ad opera' vs 'in opera') reflects Latin syntactic preference but no Greek Vorlage difference.",
+      "theological_use": "Hilary, writing in Latin against Arianism, interprets 'created' as referring to Christ's assumption of humanity. He argues the verse describes the incarnation and economic mission, not the eternal generation. This follows Athanasian hermeneutics in the West.",
+      "transmission_implication": "Western Latin tradition maintained LXX-based text uniformly through mid-4th century; theological controversy generated exegetical not textual divergence."
+    },
+    {
+      "father": "Epiphanius of Salamis",
+      "dates_ce": "c. 310–403",
+      "region": "Cyprus",
+      "work": "Panarion (Against Heresies)",
+      "chapter_section": "69.17",
+      "cited_text": "Κύριος ἔκτισέ με ἀρχὴν ὁδῶν αὐτοῦ εἰς ἔργα αὐτοῦ",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.9,
+      "text_form_note": "Epiphanius preserves standard LXX ἔκτισέ με exactly. His heresiological work quotes extensively to refute Arians, always using the received text without variant, which he then interprets against their reading through appeal to Nicene theology.",
+      "theological_use": "Epiphanius attacks Arian interpretation while maintaining the LXX text verbatim. He argues Arians misread κτίζω by ignoring context; Wisdom speaks of the incarnational economy. This shows late 4th-century orthodox strategy: keep text, reframe meaning.",
+      "transmission_implication": "Confirms no textually divergent tradition existed even in Cyprus by late 4th century; universal LXX text form across all Christian geographical regions."
+    }
+  ],
+  "text_form_distribution": {
+    "closer_to_mt": 0,
+    "closer_to_lxx": 7,
+    "mixed": 1,
+    "independent": 0,
+    "uncertain": 0
+  },
+  "transmission_synthesis": "Patristic citations reveal overwhelming dominance of the LXX text form with ἔκτισέν με across all geographical regions and theological parties from the 2nd through 5th centuries. The single significant variant—Justin's ἐγέννησέν—appears to be an early Christian theological modification that did not enter mainstream transmission. Crucially, the Arian controversy did not generate textual pluriformity; both Arians and Nicenes cited the identical LXX text with ἔκτισέν, fighting hermeneutically rather than textually. This demonstrates that by the early 4th century, Christian biblical manuscript tradition had achieved sufficient stability that even intense theological motivation could not displace the received reading. The uniform patristic witness to LXX Proverbs 8:22 suggests a relatively early stabilization of this text within Christian Scripture, likely complete by the 3rd century.",
+  "transmission_synthesis_plain": "Early Christian writers from Rome to North Africa to Alexandria all cite Proverbs 8:22 in virtually identical form, following the Greek translation (LXX). Even when the verse became explosive in 4th-century theological debates about Christ's divinity, neither side changed the wording—they just argued over what it meant. This shows the biblical text was already firmly fixed in Christian manuscripts before major controversies erupted.",
+  "notable_variants": [
+    {
+      "reading": "ἐγέννησέν με (begot me) instead of ἔκτισέν με (created me)",
+      "fathers_using_it": [
+        "Justin Martyr"
+      ],
+      "text_form_alignment": "mixed",
+      "significance": "This substitution of generative for creative language in Justin represents the earliest known Christian attempt to modify Proverbs 8:22 for theological purposes, replacing the potentially subordinationist κτίζω with γεννάω. The reading's complete absence in all later fathers suggests it was an isolated modification that failed to gain traction, demonstrating early limits on theologically motivated textual change."
+    },
+    {
+      "reading": "ἔκτισέν με (created me) - the standard LXX reading",
+      "fathers_using_it": [
+        "Irenaeus",
+        "Tertullian",
+        "Origen",
+        "Athanasius",
+        "Eusebius",
+        "Hilary",
+        "Epiphanius"
+      ],
+      "text_form_alignment": "closer_to_lxx",
+      "significance": "The universal patristic attestation of ἔκτισέν across all parties in the Arian controversy is textually remarkable. Arians exploited it to argue Christ was created; Nicenes reinterpreted it as incarnational. That neither side emended the text despite theological stakes reveals the authority and fixity of the received biblical text by the 4th century, when manuscript tradition was too established to alter even under doctrinal pressure."
+    }
+  ],
+  "bibcrit_assessment": {
+    "title": "Theological Crisis Confirms Rather Than Disrupts Textual Stability",
+    "reasoning": "The Arian controversy's failure to generate textual variants in Proverbs 8:22 constitutes powerful negative evidence for early textual stabilization. If theological controversy of this magnitude—where a single word (ἔκτισέν) became the linchpin of Christological debate—could not motivate successful textual emendation, the Christian manuscript tradition must have achieved authoritative fixity remarkably early, likely by the early 3rd century. Justin's isolated ἐγέννησέν demonstrates that 2nd-century fluidity existed but was overcome by standardization before the great controversies.",
+    "plain": "When Christians bitterly divided over whether Christ was created or begotten, they all kept quoting exactly the same biblical words—even when those words seemed to hurt their argument. This shows the Bible's text had become too fixed to change, even under enormous theological pressure.",
+    "confidence": 0.92
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-04-08T08:29:54.027671",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v3",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis correctly identifies the broad patristic landscape and the LXX reading, but several specific citation references and attributions need verification, and one key claim about Justin Martyr's wording is questionable.",
+    "flagged_claims": [
+      {
+        "claim": "Justin uses 'ἐγέννησεν' (begot) where LXX has 'ἔκτισέν με'",
+        "risk": "HIGH",
+        "reason": "Justin's Dialogue 61 actually cites Proverbs 8 with both verbs in different sections, and the precise wording 'ἀρχὴν πρὸ πάντων τῶν κτισμάτων ὁ θεὸς ἐγέννησέ με' conflates Prov 8:22 with 8:25 (where γεννᾷ με does appear in LXX). The presentation as a 'variant' for 8:22 specifically misrepresents Justin's citation practice, which mixes verses 22-25."
+      },
+      {
+        "claim": "Athanasius, Orations Against the Arians, 2.18-82 (extended treatment)",
+        "risk": "MEDIUM",
+        "reason": "The section range is plausible but the citation given is generic; specific verse-by-verse engagement should be pinpointed. The cited Greek text form is reliable but the chapter span is loosely indicated."
+      },
+      {
+        "claim": "Eusebius of Caesarea, Ecclesiastical Theology, 2.7.1 [actually 3.2 area is more standard for Prov 8:22 discussion]",
+        "risk": "MEDIUM",
+        "reason": "Eusebius does discuss Prov 8:22 in Ecclesiastical Theology and Demonstratio Evangelica, but the specific reference 2.7.1 needs verification; main treatment is typically located elsewhere (e.g., DE 5.1)."
+      },
+      {
+        "claim": "Epiphanius, Panarion 69.17",
+        "risk": "MEDIUM",
+        "reason": "Panarion 69 (the Arian heresy section) does discuss Prov 8:22, but the specific subsection 69.17 should be verified; Epiphanius's treatment spans multiple sections."
+      },
+      {
+        "claim": "Hilary, De Trinitate 12.35-37",
+        "risk": "MEDIUM",
+        "reason": "Hilary does treat Prov 8:22 in Book 12 of De Trinitate, but this needs verification against the actual Latin text and standard editions; the 'ad opera' vs 'in opera' claim requires checking against CSEL/SC editions."
+      },
+      {
+        "claim": "Irenaeus, Against Heresies 4.20.3",
+        "risk": "MEDIUM",
+        "reason": "Irenaeus does cite Prov 8 in Adv. Haer. 4.20, but the specific verse 8:22 citation with the exact Latin wording given should be verified; the precise location may differ."
+      },
+      {
+        "claim": "Tertullian, Against Praxeas, ch. 6 with 'Dominus condidit me'",
+        "risk": "MEDIUM",
+        "reason": "Tertullian does discuss Wisdom in Adv. Praxean 6-7, but he often uses 'condidit' alongside other Wisdom texts (Prov 8:22-25 conflated with Sirach); the exact wording attributed needs verification."
+      },
+      {
+        "claim": "Justin's reading suggests 'early 2nd-century Christian recension or interpretive substitution'",
+        "risk": "HIGH",
+        "reason": "Speculative claim about a textual recension built on a possibly misidentified citation; no manuscript evidence supports a recensional activity, and the apparent variant likely reflects citation conflation with Prov 8:25."
+      }
+    ],
+    "safe_claims": [
+      "LXX Proverbs 8:22 reads ἔκτισέν με",
+      "The verse became central in 4th-century Arian controversy",
+      "Athanasius devoted significant portions of Orations Against the Arians (especially Book 2) to this verse",
+      "Both Arians and Nicenes cited the same Greek text and disputed interpretation rather than wording",
+      "Old Latin tradition rendered ἔκτισέν as 'creavit' or 'condidit'",
+      "Eusebius held a moderate subordinationist position",
+      "Origen distinguished economic and essential aspects of the Son in interpreting this verse"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.556659+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

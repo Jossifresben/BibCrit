@@ -436,5 +436,84 @@
   "reference": "Daniel",
   "cached_at": "2026-03-31T11:23:24.505328",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis reflects mainstream scholarship on Daniel's textual history but contains several specific claims about manuscript contents, dates, and attributions that are imprecise or potentially incorrect.",
+    "flagged_claims": [
+      {
+        "claim": "Hebrew chapters 1:1–2:4a, 8–12",
+        "risk": "MEDIUM",
+        "reason": "The bilingual division is standard but the parenthetical formatting is confusing; Hebrew portions are 1:1–2:4a and 8:1–12:13, not '8-12' as a chapter range stated alongside verse-level precision for the first segment."
+      },
+      {
+        "claim": "The Qumran manuscripts (8 copies)",
+        "risk": "MEDIUM",
+        "reason": "The standard count is 8 Daniel manuscripts from Qumran, but the list given (1QDana-b, 4QDana-e, 6QDan, pap4QDan) totals 8 only if pap4QDan is counted separately from 4QDana-e; some scholars count differently. Additionally, '6QDan' is typically called 6QpapDan (papyrus)."
+      },
+      {
+        "claim": "1QDana ... Earliest extant Daniel manuscript (Dan 1:10–17, 2:2–6), preserving Hasmonean-era text",
+        "risk": "HIGH",
+        "reason": "4QDanc is generally considered the earliest Daniel manuscript (c. late 2nd century BCE), not 1QDana. The dating claim here appears reversed."
+      },
+      {
+        "claim": "4QDanc ... c. 125 BCE ... Preserves Dan 10:16–20, 11:1–2",
+        "risk": "HIGH",
+        "reason": "4QDanc is typically dated c. 125–100 BCE and is often cited as the oldest Daniel MS. Its content extends beyond just Dan 10:16-20, 11:1-2; this verse range appears too narrow."
+      },
+      {
+        "claim": "4QDanb ... c. 50 BCE ... Contains Dan 5:10–7:28",
+        "risk": "MEDIUM",
+        "reason": "The verse range and date are approximate; 4QDanb actually preserves portions from Dan 5-8, and dating estimates vary."
+      },
+      {
+        "claim": "Codex 88 / Syh ... 9th–10th century CE",
+        "risk": "MEDIUM",
+        "reason": "Codex Chisianus 88 is typically dated to the 9th–11th century, while the Syro-Hexapla (Codex Ambrosianus C. 313 Inf.) is 8th–9th century. Conflating their dates is imprecise."
+      },
+      {
+        "claim": "Papyrus 967 ... c. late 2nd century CE",
+        "risk": "MEDIUM",
+        "reason": "Papyrus 967 is generally dated to the late 2nd or early 3rd century CE, with many scholars favoring early 3rd century."
+      },
+      {
+        "claim": "Earliest extant witness to Theodotion-Daniel ... Papyrus 967",
+        "risk": "HIGH",
+        "reason": "Papyrus 967 is famously a witness to the OLD GREEK Daniel, not Theodotion-Daniel. This is a significant error - P967 is the primary pre-Hexaplaric OG witness alongside MS 88 and Syh."
+      },
+      {
+        "claim": "BHQ Daniel ... 2010 ... ed. P. Flint",
+        "risk": "HIGH",
+        "reason": "The BHQ Daniel fascicle has not yet been published as of the audit's knowledge cutoff; this appears fabricated. Peter Flint died in 2016 and the Daniel fascicle remains forthcoming."
+      },
+      {
+        "claim": "Origen's Hexapla ... placing Theodotion-Daniel (not OG) in LXX column",
+        "risk": "MEDIUM",
+        "reason": "The Hexapla had separate columns for LXX (Septuagint) and Theodotion. The claim that Theodotion replaced OG in the 'LXX column' oversimplifies; rather, Origen's preference for Theodotion-Daniel led to its later dominance in Christian transmission."
+      },
+      {
+        "claim": "Codex Amiatinus ... c. 716 CE ... Oldest complete Vulgate manuscript",
+        "risk": "MEDIUM",
+        "reason": "Date is approximately correct (c. 700-716), but 'oldest complete Vulgate' status is sometimes contested; the claim is generally accepted but should be qualified."
+      },
+      {
+        "claim": "Stuttgart Vulgate ... 1969",
+        "risk": "MEDIUM",
+        "reason": "First edition was 1969 (ed. Weber); Gryson's revision came in the 5th edition (2007). Attributing to 'Weber/Gryson' with a 1969 date conflates editions."
+      }
+    ],
+    "safe_claims": [
+      "Book of Daniel is bilingual (Hebrew and Aramaic)",
+      "Composed in mid-2nd century BCE during Maccabean crisis (mainstream scholarly view)",
+      "Three additions (Prayer of Azariah/Song of the Three, Susanna, Bel and the Dragon) appear only in Greek witnesses",
+      "Theodotion-Daniel displaced OG-Daniel in Christian transmission",
+      "OG-Daniel diverges substantially from MT especially in chapters 4-6",
+      "MT places Daniel in Ketuvim rather than Prophets",
+      "Leningrad Codex dated 1008 CE",
+      "Aleppo Codex Daniel folios were lost (in the 1947 events)"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.413542+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

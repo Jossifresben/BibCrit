@@ -122,5 +122,59 @@
   "reference": "Genesis 1:1-2:3",
   "cached_at": "2026-04-14T18:52:19.497422",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The core structural analysis is sound and well-established, but the analysis conflates two structural models (parallel panel vs. concentric/chiastic) and contains some citation details that need verification.",
+    "flagged_claims": [
+      {
+        "claim": "structure_type: concentric",
+        "risk": "HIGH",
+        "reason": "The dominant scholarly view (including Cassuto, Wenham, Dorsey cited here) describes Genesis 1 as a PARALLEL PANEL structure (Days 1-3 || Days 4-6), not a concentric/chiastic structure. The analysis's own correspondence pairs (A-D, B-C', C-B') reflect parallel paneling, not chiasm. Forcing a concentric reading with Day 7 as 'X' pivot misrepresents the consensus structure."
+      },
+      {
+        "claim": "Dorsey (Literary Structure of the Old Testament, 1999:52) identifies Genesis 1:1-2:3 as exhibiting 'parallel panel structure'",
+        "risk": "MEDIUM",
+        "reason": "Dorsey's book is real (1999) but the specific page reference and exact phrase 'parallel panel structure' attributed to him should be verified; Dorsey actually treats this differently than a simple panel structure."
+      },
+      {
+        "claim": "Lund (Chiasmus in the New Testament, 1942:30-31) establishes that genuine chiasm requires 'terms repeated in inverted order' and 'center as turning point'",
+        "risk": "MEDIUM",
+        "reason": "Lund's work and his 'laws of chiastic structure' are real, but the specific page citation and exact quoted phrases need verification; his laws are typically cited from a different page range."
+      },
+      {
+        "claim": "Walsh (Style and Structure, 2001:178-179)",
+        "risk": "MEDIUM",
+        "reason": "Jerome Walsh's 'Style and Structure in Biblical Hebrew Narrative' (2001) exists, but the specific page citation regarding refrain formulas in Gen 1 needs verification."
+      },
+      {
+        "claim": "introduction of 'eight creation days (including Sabbath)'",
+        "risk": "MEDIUM",
+        "reason": "The text describes seven days, not eight. This appears to be an error in the confidence_note, even if Day 6 is subdivided into 6a/6b in the analysis."
+      },
+      {
+        "claim": "Both use תּוֹצֵא הָאָרֶץ (let the earth bring forth), indicating earth's productive capacity [for C-B' pair]",
+        "risk": "MEDIUM",
+        "reason": "Day 3 actually uses תַּדְשֵׁא הָאָרֶץ ('let the earth sprout'), not תּוֹצֵא. The verb תּוֹצֵא appears on Day 6 (1:24). The lexical parallel claimed is therefore inaccurate as stated."
+      },
+      {
+        "claim": "Sailhamer (Genesis Unbound, 1996:38-41)",
+        "risk": "MEDIUM",
+        "reason": "Sailhamer's Genesis Unbound exists, but its primary thesis concerns the historical/geographical scope of Gen 1, not functional ontology supporting cosmic temple readings—this attribution may misrepresent his argument."
+      }
+    ],
+    "safe_claims": [
+      "Day 7 lacks the 'evening and morning' closing formula present in Days 1-6",
+      "The verb הִבְדִּיל (separate) appears on Day 1 and Day 4",
+      "Day 2 lacks the 'God saw that it was good' formula",
+      "Day 6 receives the 'very good' (טוֹב מְאֹד) evaluation",
+      "The Hebrew text of 1:26 reads נַעֲשֶׂה אָדָם בְּצַלְמֵנוּ כִּדְמוּתֵנוּ",
+      "God blesses and sanctifies (וַיְקַדֵּשׁ) the seventh day in 2:3",
+      "Wenham (Genesis 1-15, WBC, 1987) discusses the symmetrical structure of the creation account",
+      "Walton (The Lost World of Genesis One, 2009) argues for functional ontology and cosmic temple inauguration"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.587946+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

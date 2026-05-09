@@ -1,0 +1,83 @@
+{
+  "reconstructed_words": [
+    {
+      "position": 1,
+      "lxx_word": "Αδαμ",
+      "vorlage_word": "אָדָם",
+      "status": "agrees_mt",
+      "confidence": 0.98,
+      "mt_equivalent": "אָדָ֥ם",
+      "dss_witness": null,
+      "reasoning": "The Greek transliteration Αδαμ directly represents the Hebrew proper noun אָדָם with no morphological transformation. LXX consistently transliterates this name throughout Genesis and Chronicles genealogies. The consonantal correspondence α=א, δ=ד, α=א, μ=מ is standard Septuagintal transliteration practice for this name.",
+      "alternatives": []
+    },
+    {
+      "position": 2,
+      "lxx_word": "Σηθ",
+      "vorlage_word": "שֵׁת",
+      "status": "agrees_mt",
+      "confidence": 0.97,
+      "mt_equivalent": "שֵׁ֖ת",
+      "dss_witness": null,
+      "reasoning": "Greek Σηθ is a standard transliteration of Hebrew שֵׁת, with sigma representing shin, eta representing the tsere vowel pattern, and theta representing taw. This transliteration is consistent across LXX Genesis 4:25–5:8 and the parallel genealogical passages. No divergence from MT is evident.",
+      "alternatives": []
+    },
+    {
+      "position": 3,
+      "lxx_word": "Ενως",
+      "vorlage_word": "אֱנֹושׁ",
+      "status": "agrees_mt",
+      "confidence": 0.96,
+      "mt_equivalent": "אֱנֹֽושׁ",
+      "dss_witness": null,
+      "reasoning": "Greek Ενως represents Hebrew אֱנֹושׁ through standard transliteration: epsilon for aleph with segol, nu for nun, omega for holem-waw, and sigma for shin. The final sigma is a standard Greek masculine nominative ending added to a transliterated Semitic name, representing no additional Hebrew consonant. This pattern is consistent with LXX Genesis 4:26; 5:6–11.",
+      "alternatives": []
+    }
+  ],
+  "summary_technical": "The LXX of 1 Chr 1:1 consists entirely of transliterated proper nouns and shows complete agreement with the MT consonantal text. The passage is a bare asyndetic list of three names with no connecting particles, no verbs, and no syntactic markers in either the Greek or the Hebrew, reflecting the genealogical list genre attested from Genesis 5. No DSS witness to this specific verse has been identified among the Chronicles fragments (4QChr, though fragmentary, does not preserve this verse), and no plausible divergence from MT can be detected. The transliteration technique is consistent with the LXX Chronicler's broader practice of rendering proper nouns phonetically rather than semantically.",
+  "summary_plain": "The Greek translation of this verse is simply a phonetic spelling of three Hebrew names — Adam, Seth, and Enosh — and matches the standard Hebrew Bible text exactly, with no variant readings.",
+  "overall_confidence": 0.97,
+  "bibcrit_assessment": {
+    "title": "Bare Asyndetic List: Vorlage Identical to MT",
+    "reasoning": "Because this verse contains only three transliterated proper nouns with no syntactic connectives, it offers virtually no leverage for detecting Vorlage divergence from MT; transliteration masks vowel variation and minor orthographic differences that might otherwise be detectable. The most one can observe is that the LXX translator did not add the conjunctive waw between names (contrast some later scribal traditions), suggesting the Vorlage lacked וְ connectors, in agreement with MT. Any claim of a divergent Vorlage here would be purely speculative given the absence of DSS coverage and the minimal translatable content.",
+    "plain": "Because the verse is just three names spelled out phonetically in Greek, there is almost no way to tell if the translator had a different Hebrew text — and the evidence strongly suggests he had exactly what is in the standard Hebrew Bible today.",
+    "confidence": 0.97
+  },
+  "discovery_ready": false,
+  "reference": "1 Chronicles 1:1",
+  "cached_at": "2026-04-19T22:31:54.824179",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "HIGH",
+    "confidence_note": "The analysis is straightforward and accurate for a verse consisting of three transliterated proper names with no detectable Vorlage divergence from MT.",
+    "flagged_claims": [
+      {
+        "claim": "theta representing taw",
+        "risk": "MEDIUM",
+        "reason": "In Σηθ, the final theta represents Hebrew taw (ת), which is correct, but the explanation conflates it with a tsere vowel ('eta representing the tsere vowel pattern') in a slightly imprecise way. Minor technical issue rather than fabrication."
+      },
+      {
+        "claim": "4QChr, though fragmentary, does not preserve this verse",
+        "risk": "MEDIUM",
+        "reason": "The Chronicles material from Qumran is extremely limited (4Q118 is the main fragment and covers only portions of 2 Chronicles). The specific claim about '4QChr' coverage is stated with more precision than typical reference works support, and the siglum usage is loose."
+      },
+      {
+        "claim": "contrast some later scribal traditions",
+        "risk": "MEDIUM",
+        "reason": "Vague reference to unspecified 'later scribal traditions' adding waw between names in 1 Chr 1:1 is unverifiable as stated and may be speculative."
+      }
+    ],
+    "safe_claims": [
+      "Αδαμ transliterates אָדָם",
+      "Σηθ transliterates שֵׁת",
+      "Ενως transliterates אֱנֹושׁ",
+      "The verse is an asyndetic list of three proper nouns with no connecting particles in either Greek or Hebrew",
+      "The LXX agrees with the MT consonantal text for this verse",
+      "Transliteration of proper nouns masks vowel and minor orthographic variation"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.661951+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

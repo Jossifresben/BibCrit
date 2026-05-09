@@ -1,0 +1,184 @@
+{
+  "passage": "Amos 5:1-17",
+  "structure_detected": true,
+  "structure_type": "concentric",
+  "confidence_note": "Amos 5:1-17 is one of the most widely cited examples of chiastic structure in the prophetic literature; the concentric arrangement A-B-C-D-X-D'-C'-B'-A' is supported by strong lexical, thematic, and formal correspondences at every level and is broadly accepted in scholarship.",
+  "elements": [
+    {
+      "label": "A",
+      "verses": "5:1-3",
+      "summary": "A funeral lament (qinah) over fallen Israel: the virgin Israel has fallen, and the city that marched out a thousand will have a hundred left.",
+      "text_excerpt": "נְפִילָה לֹא-תוֹסִיף קוּם בְּתוּלַת יִשְׂרָאֵל / 'Fallen, no more to rise, is the virgin Israel'",
+      "confidence": 0.97
+    },
+    {
+      "label": "B",
+      "verses": "5:4-6",
+      "summary": "First seek-YHWH exhortation paired with a warning not to seek Bethel/Gilgal/Beersheba, with fire imagery threatening the house of Joseph.",
+      "text_excerpt": "דִּרְשׁוּנִי וִחְיוּ / 'Seek me and live'",
+      "confidence": 0.95
+    },
+    {
+      "label": "C",
+      "verses": "5:7",
+      "summary": "Woe against those who turn justice to wormwood and cast righteousness to the ground.",
+      "text_excerpt": "הַהֹפְכִים לַלַּעֲנָה מִשְׁפָּט / 'those who turn justice to wormwood'",
+      "confidence": 0.9
+    },
+    {
+      "label": "D",
+      "verses": "5:8-9",
+      "summary": "Hymnic doxology praising YHWH as creator of Pleiades and Orion, who turns darkness to morning and calls the waters of the sea.",
+      "text_excerpt": "עֹשֵׂה כִימָה וּכְסִיל / 'He who made the Pleiades and Orion'",
+      "confidence": 0.93
+    },
+    {
+      "label": "X",
+      "verses": "5:10-13",
+      "summary": "The structural center: indictment of the gate—hate of the reprover, trampling of the poor, bribery of the just—culminating in the shrewdest keeping silence, for the time is evil.",
+      "text_excerpt": "שָׂנְאוּ בַשַּׁעַר מוֹכִיחַ / 'They hate the one who reproves in the gate'",
+      "confidence": 0.91
+    },
+    {
+      "label": "D'",
+      "verses": "5:14-15a",
+      "summary": "Second doxological-like affirmation: YHWH God of hosts will be with you as you have claimed, conditional on establishing justice in the gate.",
+      "text_excerpt": "יְהוָה אֱלֹהֵי-צְבָאוֹת יִהְיֶה עִמָּכֶם / 'YHWH, God of hosts, will be with you'",
+      "confidence": 0.88
+    },
+    {
+      "label": "C'",
+      "verses": "5:15b",
+      "summary": "Command to establish justice in the gate with a remnant hope, mirroring the perverted justice of C.",
+      "text_excerpt": "וְהַצִּיגוּ בַשַּׁעַר מִשְׁפָּט / 'establish justice in the gate'",
+      "confidence": 0.9
+    },
+    {
+      "label": "B'",
+      "verses": "5:16-17a",
+      "summary": "Second seek/lament section: YHWH God of hosts declares lamentation in all the squares, wailing in all the streets, calling for mourners.",
+      "text_excerpt": "יְהוָה אֱלֹהֵי-צְבָאוֹת / 'Thus says YHWH, God of hosts'",
+      "confidence": 0.9
+    },
+    {
+      "label": "A'",
+      "verses": "5:17b",
+      "summary": "Closing funeral note: wailing in all the vineyards, for YHWH will pass through the midst of Israel—an exodus reversal echoing the opening lament.",
+      "text_excerpt": "כִּי-אֶעֱבֹר בְּקִרְבְּךָ אָמַר יְהוָה / 'for I will pass through your midst, says YHWH'",
+      "confidence": 0.92
+    }
+  ],
+  "pivot": {
+    "label": "X",
+    "verses": "5:10-13",
+    "summary": "The center exposes the root cause of Israel's doom: the systemic perversion of justice at the gate, the oppression of the righteous poor, and the silencing of reproof—the very behaviors that make YHWH's judgment unavoidable.",
+    "theological_weight": "By placing the gate-justice indictment at the center, the chiasm declares that Israel's covenant failure is not primarily liturgical (Bethel, Gilgal) but juridical—the corruption of the one institution entrusted to embody YHWH's own righteousness. The final statement that 'the prudent will keep silence, for it is an evil time' (v. 13) stands as the theological nadir: when prophetic reproof is silenced and justice is sold, the community has reached the point of no return, making the surrounding laments (A/A') not merely predictive but inevitable."
+  },
+  "correspondences": [
+    {
+      "pair": [
+        "A",
+        "A'"
+      ],
+      "evidence": "Both frame the passage with death-language: A opens with the qinah meter and the fallen virgin Israel (נְפִילָה, v.2); A' closes with wailing in the vineyards and YHWH 'passing through' (עָבַר), evoking the Passover plague and communal death. The lament genre (קִינָה, v.1) bookends the unit.",
+      "confidence": 0.95
+    },
+    {
+      "pair": [
+        "B",
+        "B'"
+      ],
+      "evidence": "Both sections use the divine title יְהוָה אֱלֹהֵי-צְבָאוֹת (absent elsewhere in vv.1-17 except these two units), and both describe lamentation/fire consuming the populace—B warns of fire on the house of Joseph (v.6); B' announces lamentation in all the squares and streets (vv.16-17).",
+      "confidence": 0.92
+    },
+    {
+      "pair": [
+        "C",
+        "C'"
+      ],
+      "evidence": "Lexical mirror on מִשְׁפָּט ('justice'): C condemns those who 'turn justice (מִשְׁפָּט) to wormwood' (v.7); C' commands 'establish justice (מִשְׁפָּט) in the gate' (v.15). The gate (שַׁעַר) is implicit in C (public legal sphere) and explicit in C', forming a thematic inversion from perversion to prescription.",
+      "confidence": 0.93
+    },
+    {
+      "pair": [
+        "D",
+        "D'"
+      ],
+      "evidence": "Both units affirm divine sovereignty and presence: D is the hymnic doxology declaring YHWH's cosmic power (vv.8-9); D' is the conditional promise 'YHWH God of hosts will be with you' (v.14). The title אֱלֹהֵי צְבָאוֹת links them, and both function as theological grounding—one cosmic, one covenantal.",
+      "confidence": 0.88
+    }
+  ],
+  "overall_confidence": 0.93,
+  "methodology_citations": "Dorsey, The Literary Structure of the Old Testament (1999), pp. 277-279, identifies a seven-part concentric structure for Amos 5:1-17 with vv.10-13 at center. Lund, Chiasmus in the New Testament (1942), ch.2, establishes the law that the center of a chiasm bears the main emphasis. Walsh, Style and Structure in Biblical Hebrew Narrative (2001), pp. 10-15, provides criteria for distinguishing genuine from coincidental structural parallelism; all criteria are met here including lexical repetition, thematic inversion, and formal genre markers.",
+  "theological_significance": "The concentric structure reveals that the funeral lament in vv.1-3 is not rhetorical hyperbole but the inevitable conclusion of the injustice exposed at the center: Israel is already mourning because the gate-justice that defines covenant community has been hollowed out. The structure also creates a powerful irony—the very place where Israel should 'seek YHWH and live' (B) has become the place where reproof is hated and the poor are trampled (X), so the seeking produces only more lamentation (B'). The chiasm thus transforms the passage from a collection of oracles into a single argument: cosmic lordship (D/D') demands social righteousness (C/C'), the absence of which constitutes a death already in progress (A/A').",
+  "scholarly_citations": "Dorsey (1999, p.278) explicitly charts this passage as a concentric structure with the injustice pericope at center, calling it 'one of the clearest examples of chiasm in the prophets.' Francis Andersen and David Noel Freedman (Amos, AB 24A, 1989, pp. 480-510) also note the chiastic arrangement and the pivotal role of vv.10-13 in anchoring the passage's rhetorical logic.",
+  "bibcrit_hypothesis": {
+    "title": "Chiastic unity challenges composite-source fragmentation of Amos 5",
+    "reasoning": "Source critics (e.g., Harper, ICC, 1905) have sometimes treated the doxology fragments (vv.8-9) as secondary interpolations; however, the chiastic structure demonstrates that vv.8-9 occupy a structurally integral position as D, corresponding to D' (vv.14-15a) in a way that would be destroyed by their removal. The concentric architecture therefore argues strongly for the compositional intentionality of the passage as a literary unit, even if the doxological tradition was adapted from a separate hymnic source, suggesting a sophisticated redactor who embedded inherited material within a carefully designed structure.",
+    "confidence": 0.82
+  },
+  "discovery_ready": true,
+  "reference": "Amos 5:1-17",
+  "cached_at": "2026-04-19T23:07:13.499098",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The chiastic analysis reflects a real and widely cited proposal (Dorsey), but several specific textual and lexical claims contain inaccuracies that warrant correction before publication.",
+    "flagged_claims": [
+      {
+        "claim": "First seek-YHWH exhortation paired with a warning not to seek Bethel/Gilgal/Beersheba",
+        "risk": "MEDIUM",
+        "reason": "Amos 5:5 mentions Bethel, Gilgal, and Beersheba, but the inclusion of Beersheba should be verified; some translations and the structure of v.5 emphasize Bethel and Gilgal primarily, with Beersheba as a secondary clause. The claim is broadly correct but the framing 'Bethel/Gilgal/Beersheba' as parallel objects of warning slightly flattens the verse."
+      },
+      {
+        "claim": "נְפִילָה לֹא-תוֹסִיף קוּם בְּתוּלַת יִשְׂרָאֵל",
+        "risk": "HIGH",
+        "reason": "The MT of Amos 5:2 reads נָפְלָה לֹא-תוֹסִיף קוּם בְּתוּלַת יִשְׂרָאֵל ('she has fallen,' a finite verb), not נְפִילָה (a nominal form meaning 'a falling'). This appears to be a transcription error of the Hebrew text."
+      },
+      {
+        "claim": "the divine title יְהוָה אֱלֹהֵי-צְבָאוֹת (absent elsewhere in vv.1-17 except these two units)",
+        "risk": "HIGH",
+        "reason": "This is factually incorrect. The full title יהוה אלהי הצבאות appears in v.14, v.15, v.16, and v.27 (and adonai YHWH variants); the claim that it is 'absent elsewhere except B and B'' is wrong since D' (v.14) per the analysis itself contains the title, and v.15 also contains it. The argument for B/B' lexical correspondence on this title is therefore weakened."
+      },
+      {
+        "claim": "B warns of fire on the house of Joseph (v.6); B' announces lamentation",
+        "risk": "MEDIUM",
+        "reason": "The correspondence between 'fire on Joseph' and 'lamentation in streets' is thematic at best; calling both 'lamentation/fire consuming the populace' overstates the lexical parallel."
+      },
+      {
+        "claim": "Andersen and Freedman (Amos, AB 24A, 1989, pp. 480-510) also note the chiastic arrangement and the pivotal role of vv.10-13",
+        "risk": "MEDIUM",
+        "reason": "Andersen and Freedman's Amos commentary does discuss structure extensively, but the specific page range and the precise claim that they identify vv.10-13 as 'pivotal' in a concentric scheme should be verified; their structural analysis differs in important ways from Dorsey's."
+      },
+      {
+        "claim": "Harper, ICC, 1905",
+        "risk": "MEDIUM",
+        "reason": "W.R. Harper's ICC volume on Amos and Hosea was published in 1905, which is correct, but the specific attribution that he treats vv.8-9 as 'secondary interpolations' should be verified; while this is a common critical view, it is often associated more with later scholars (e.g., Wolff)."
+      },
+      {
+        "claim": "evoking the Passover plague",
+        "risk": "MEDIUM",
+        "reason": "The verb עָבַר in Amos 5:17 is sometimes linked to Exodus 12, but this allusion is debated; presenting it as established 'exodus reversal' overstates scholarly consensus."
+      },
+      {
+        "claim": "Lund, Chiasmus in the New Testament (1942), ch.2, establishes the law that the center of a chiasm bears the main emphasis",
+        "risk": "MEDIUM",
+        "reason": "Lund's work does articulate this principle, but attributing it to 'ch.2' specifically should be verified; Lund formulates several 'laws' across the volume and pinpointing chapter 2 may be inaccurate."
+      }
+    ],
+    "safe_claims": [
+      "Amos 5:1-17 is widely cited as a chiastic/concentric structure with vv.10-13 at the center",
+      "Dorsey (1999) proposes a seven-part concentric structure for this passage",
+      "Amos 5:2 is in qinah meter and uses the image of the fallen virgin Israel",
+      "Amos 5:7 contains the phrase 'turn justice to wormwood'",
+      "Amos 5:8 mentions Pleiades (כִימָה) and Orion (כְּסִיל)",
+      "Amos 5:15 contains the imperative to establish justice in the gate",
+      "The lexeme מִשְׁפָּט links v.7 and v.15",
+      "Amos 5:17 contains the phrase 'I will pass through your midst'"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.591950+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

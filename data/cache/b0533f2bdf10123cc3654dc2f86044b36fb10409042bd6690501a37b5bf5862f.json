@@ -139,5 +139,57 @@
   "reference": "Jeremiah",
   "cached_at": "2026-03-30T21:28:40.911359",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis reflects mainstream scholarly views on LXX Jeremiah but contains several specific numerical and textual claims that are imprecise or incorrect.",
+    "flagged_claims": [
+      {
+        "claim": "a Greek version that is about one-eighth shorter than the Hebrew Bible's Jeremiah",
+        "risk": "MEDIUM",
+        "reason": "The widely cited figure for LXX Jeremiah's brevity vis-à-vis MT is approximately one-seventh (about 2,700 words shorter, ~13-15%), not one-eighth. This figure is repeated multiple times in the analysis."
+      },
+      {
+        "claim": "Jeremiah 27-29 (LXX 34-36)",
+        "risk": "HIGH",
+        "reason": "Incorrect chapter mapping. MT Jer 27-29 corresponds to LXX 34-36 only loosely; the standard mapping is MT 27 = LXX 34, MT 28 = LXX 35, MT 29 = LXX 36, but the example then references the Oracles Against the Nations relocation (MT 46-51), which is a separate phenomenon. The example conflates two distinct structural issues."
+      },
+      {
+        "claim": "MT chs. 46-51 appear as LXX 25-31",
+        "risk": "MEDIUM",
+        "reason": "Imprecise. The Oracles Against the Nations (MT 46-51) appear in LXX as chapters 25:14-31:44 (i.e., inserted into the middle of LXX ch. 25 and continuing through 31), not as a clean ch. 25-31 block. The internal ordering of nations also differs."
+      },
+      {
+        "claim": "Jeremiah 30:9 (LXX 37:9) ... LXX rendering preserves straightforward reference",
+        "risk": "MEDIUM",
+        "reason": "The actual LXX text is not cited; the claim that it 'preserves straightforward reference' is asserted without evidence and should be verified against the actual Greek."
+      },
+      {
+        "claim": "comparable only to Job and certain portions of the Twelve",
+        "risk": "MEDIUM",
+        "reason": "Overstated. LXX Jeremiah is generally considered moderately free but not as free as OG Job or Proverbs; many scholars (e.g., Tov) actually classify Jeremiah's translator as relatively faithful to a shorter Vorlage, not as paraphrastic in the manner of Job."
+      },
+      {
+        "claim": "literalness scores rivaling Job and portions of the Twelve",
+        "risk": "MEDIUM",
+        "reason": "This characterization runs against significant scholarly opinion (Tov, Stipp, others) that LXX Jeremiah's translator was relatively literal and that the brevity reflects Vorlage rather than free translation. The analysis acknowledges the Vorlage view but inconsistently maintains a 'paraphrastic translator' framing."
+      },
+      {
+        "claim": "ἐσπούδασα ἐπ' αὐτῷ for Jer 31:20",
+        "risk": "MEDIUM",
+        "reason": "The actual LXX rendering of Jer 38:20 should be verified; the standard text reads something closer to 'ἔσπευσα ἐπ' αὐτῷ' or similar, and the gloss should be checked for accuracy."
+      }
+    ],
+    "safe_claims": [
+      "LXX Jeremiah is significantly shorter than MT Jeremiah",
+      "The Oracles Against the Nations are placed differently in LXX vs MT",
+      "Qumran evidence (4QJer-b, 4QJer-d) supports a shorter Hebrew Vorlage behind LXX",
+      "Scholarly consensus increasingly favors a different Vorlage over translational compression",
+      "διατίθημι διαθήκην is the standard LXX rendering of כרת ברית",
+      "LXX Jeremiah does not show the messianic intensification characteristic of LXX Isaiah"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.587200+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

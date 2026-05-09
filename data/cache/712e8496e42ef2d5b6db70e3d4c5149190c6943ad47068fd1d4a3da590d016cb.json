@@ -1,0 +1,215 @@
+{
+  "reference": "Isaiah 9:6",
+  "total_citations_found": 8,
+  "period_summary": "Citations cluster heavily in the 2nd-4th centuries, particularly among anti-Arian controversialists who exploited the passage's christological titles to defend Christ's divinity, revealing its central role in early christological debates.",
+  "citations": [
+    {
+      "father": "Justin Martyr",
+      "dates_ce": "c. 100–165",
+      "region": "Rome",
+      "work": "Dialogue with Trypho",
+      "chapter_section": "ch. 87",
+      "cited_text": "For unto us a child is born, and unto us a son is given, whose government is upon his shoulder; and his name is called the Angel of Great Counsel",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.92,
+      "text_form_note": "The title 'Angel of Great Counsel' (Ἄγγελος μεγάλης βουλῆς) is uniquely LXX and absent from MT which has 'Wonderful Counselor' (פֶּלֶא יוֹעֵץ). Justin's citation follows the Greek tradition precisely.",
+      "theological_use": "Justin uses this passage to identify Christ as the pre-incarnate Angel of the Lord, arguing that the divine titles (especially 'Angel of Great Counsel') prove Christ's pre-existence and divine nature in dialogue with Trypho the Jew.",
+      "transmission_implication": "Demonstrates that the LXX text form with its distinctive christological reading was already established and authoritative in mid-2nd century Christian communities."
+    },
+    {
+      "father": "Irenaeus of Lyons",
+      "dates_ce": "c. 130–202",
+      "region": "Gaul",
+      "work": "Against Heresies",
+      "chapter_section": "Book 3, ch. 16.3",
+      "cited_text": "For a child is born to us, and a son is given to us, whose government is upon His shoulder; and His name is called Messenger of great counsel",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.88,
+      "text_form_note": "Irenaeus uses 'Messenger of great counsel' (Latin: magni consilii angelus/nuntius), clearly reflecting the LXX 'Ἄγγελος μεγάλης βουλῆς' rather than MT's distinct formulation of multiple discrete titles.",
+      "theological_use": "Irenaeus employs the passage to demonstrate the prophetic prediction of the Incarnation and to refute Gnostic denials of Christ's true humanity, emphasizing that the eternal Son truly became a human child born in time.",
+      "transmission_implication": "The Old Latin version used by Irenaeus preserves the LXX reading, indicating the Greek textual tradition had already been translated and circulated in Western Latin-speaking churches."
+    },
+    {
+      "father": "Tertullian",
+      "dates_ce": "c. 155–220",
+      "region": "Carthage",
+      "work": "Against Praxeas",
+      "chapter_section": "ch. 28",
+      "cited_text": "For unto us a child is born, unto us a son is given... and his name shall be called the Angel of great counsel",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.85,
+      "text_form_note": "Tertullian's Latin citation 'magni consilii angelus' follows the LXX tradition. He appears to conflate or abbreviate the series of names, focusing particularly on the 'Angel' title for his christological argument.",
+      "theological_use": "Tertullian uses this passage against modalist Monarchianism to prove the Son's distinct personal existence while sharing divine nature with the Father, arguing the prophetic titles demonstrate both unity and distinction in the Godhead.",
+      "transmission_implication": "North African Latin Christianity relied on Old Latin versions derived from LXX, not independent translations from Hebrew, by the late 2nd century."
+    },
+    {
+      "father": "Eusebius of Caesarea",
+      "dates_ce": "c. 260–339",
+      "region": "Caesarea",
+      "work": "Proof of the Gospel (Demonstratio Evangelica)",
+      "chapter_section": "Book 7, ch. 1",
+      "cited_text": "For a child is born to us, a son is given to us, on whose shoulder the government is, and his name is called Angel of Great Counsel, Wonderful Counsellor, Mighty God, Prince of Peace, Father of the age to come",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.9,
+      "text_form_note": "Eusebius provides the full series of LXX titles including the distinctive 'Angel of Great Counsel' and 'Father of the age to come' (πατὴρ τοῦ μέλλοντος αἰῶνος), both absent from MT which has 'Everlasting Father' (אֲבִיעַד).",
+      "theological_use": "Eusebius uses the complete list of divine titles to demonstrate that Old Testament prophecy clearly predicted Christ's divine attributes, providing apologetic proof that Christianity's claims about Jesus were prophetically grounded.",
+      "transmission_implication": "The full LXX text form remained stable and standard in Eastern Greek-speaking Christianity through the 4th century, serving as the authoritative prophetic witness."
+    },
+    {
+      "father": "Athanasius of Alexandria",
+      "dates_ce": "c. 296–373",
+      "region": "Alexandria",
+      "work": "Against the Arians (Orations Against the Arians)",
+      "chapter_section": "Oration 2, ch. 13",
+      "cited_text": "Unto us a Child is born, unto us a Son is given... and His name shall be called Angel of Great Counsel, Wonderful, Counsellor, Mighty God",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.91,
+      "text_form_note": "Athanasius follows the LXX with 'Angel of Great Counsel' and 'Mighty God' (θεὸς ἰσχυρός), the latter matching LXX against MT's אֵל גִּבּוֹר (El Gibbor). The title sequence follows Greek tradition.",
+      "theological_use": "Athanasius deploys this text as a proof-text against Arianism, arguing that Isaiah's prophecy explicitly calls the coming Son 'Mighty God,' thereby proving Christ's full divinity and consubstantiality with the Father from prophetic scripture.",
+      "transmission_implication": "The LXX reading with explicit divine titles remained the textual basis for Nicene christological argumentation, suggesting no awareness of or appeal to alternative Hebrew readings in theological controversy."
+    },
+    {
+      "father": "Cyril of Jerusalem",
+      "dates_ce": "c. 313–386",
+      "region": "Jerusalem",
+      "work": "Catechetical Lectures",
+      "chapter_section": "Lecture 10, section 10",
+      "cited_text": "For unto us a Child is born, unto us a Son is given, and the government shall be upon His shoulder; and His name shall be called Angel of Great Counsel",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.87,
+      "text_form_note": "Cyril cites the distinctive LXX title 'Angel of Great Counsel,' though he truncates the full list of names, focusing on this particular designation for his catechetical purposes.",
+      "theological_use": "Cyril uses the passage in catechetical instruction to teach candidates for baptism about Christ's pre-existence and role as divine mediator, the 'Angel' title demonstrating his function as messenger between God and humanity.",
+      "transmission_implication": "Even in Jerusalem, geographically close to Hebrew-speaking communities, the LXX remained the authoritative form for Christian teaching and liturgical instruction."
+    },
+    {
+      "father": "Gregory of Nazianzus",
+      "dates_ce": "c. 329–390",
+      "region": "Constantinople",
+      "work": "Oration 29 (Third Theological Oration)",
+      "chapter_section": "section 19",
+      "cited_text": "For unto us a Child is born, unto us a Son is given... whose name is called the Angel of Great Counsel, Wonderful, Counsellor, Mighty God, Potentate, Prince of Peace, Father of the world to come",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.93,
+      "text_form_note": "Gregory provides an extensive citation closely matching the full LXX series including 'Angel of Great Counsel,' 'Mighty God' (θεὸς ἰσχυρός), and 'Father of the world to come,' all characteristic of the Greek tradition versus MT.",
+      "theological_use": "Gregory uses the multiplicity of divine titles to argue for the richness of Christ's person and work, demonstrating that prophetic scripture already revealed the complex unity of Christ's divine and human natures that Nicene theology articulated.",
+      "transmission_implication": "The sophisticated theological use of the full LXX title series in Cappadocian theology shows this text form was not only transmitted but deeply integrated into 4th-century trinitarian and christological discourse."
+    },
+    {
+      "father": "Jerome",
+      "dates_ce": "c. 347–420",
+      "region": "Jerusalem/Bethlehem",
+      "work": "Commentary on Isaiah",
+      "chapter_section": "Book 4, on Isaiah 9:6",
+      "cited_text": "Parvulus enim natus est nobis, et filius datus est nobis... et vocabitur nomen eius, Admirabilis, Consiliarius, Deus, Fortis, Pater futuri saeculi, Princeps pacis",
+      "text_form": "closer_to_mt",
+      "text_form_confidence": 0.82,
+      "text_form_note": "Jerome's Vulgate rendering from Hebrew omits 'Angel of Great Counsel' entirely, instead rendering the Hebrew titles as 'Admirabilis, Consiliarius' (Wonderful, Counselor as separate titles) and 'Pater futuri saeculi' (Father of the future age), closer to MT structure than LXX.",
+      "theological_use": "Jerome acknowledges the LXX reading in his commentary but argues for the Hebrew text's superiority, using the passage to affirm Christ's divinity while correcting what he views as the LXX's christological over-interpretation with the 'Angel' title.",
+      "transmission_implication": "Jerome's work marks a pivotal shift toward the Hebrew text in Western textual tradition, though his innovation met resistance from those accustomed to the established LXX-based readings."
+    }
+  ],
+  "text_form_distribution": {
+    "closer_to_mt": 1,
+    "closer_to_lxx": 7,
+    "mixed": 0,
+    "independent": 0,
+    "uncertain": 0
+  },
+  "transmission_synthesis": "The patristic citation evidence reveals overwhelming dominance of the LXX text form from the 2nd through 4th centuries across all geographical regions—Rome, Gaul, North Africa, Palestine, Egypt, and Constantinople. The distinctive LXX reading 'Angel of Great Counsel' (Ἄγγελος μεγάλης βουλῆς) absent from MT appears in virtually every citation, indicating this was the stable, authoritative text form in Christian communities regardless of proximity to Hebrew-speaking Judaism. Jerome's late 4th-century turn to the Hebrew represents a deliberate scholarly innovation against established tradition, not recovery of an earlier Christian reading. The uniformity of the LXX tradition suggests Christians inherited and transmitted a single Greek text form without awareness of or interest in the Hebrew variant during the critical formative centuries, with this text form already established before Justin's mid-2nd century testimony.",
+  "transmission_synthesis_plain": "Early Christian writers universally used a Greek translation (the Septuagint) that included the phrase 'Angel of Great Counsel'—a reading not found in the Hebrew Bible. This remained the standard Christian form of the text for over 300 years across the entire Mediterranean world until Jerome translated directly from Hebrew in the late 300s CE, showing how Christians preserved and passed down one specific version of Isaiah's prophecy.",
+  "notable_variants": [
+    {
+      "reading": "Angel of Great Counsel (Ἄγγελος μεγάλης βουλῆς)",
+      "fathers_using_it": [
+        "Justin Martyr",
+        "Irenaeus",
+        "Tertullian",
+        "Eusebius",
+        "Athanasius",
+        "Cyril of Jerusalem",
+        "Gregory of Nazianzus"
+      ],
+      "text_form_alignment": "closer_to_lxx",
+      "significance": "This title, absent from MT which has 'Wonderful Counselor' (פֶּלֶא יוֹעֵץ), became foundational for early Christian angel-christology and pre-existence theology. Its universal presence in patristic citations demonstrates that the LXX interpretive tradition shaped Christian christological imagination from the earliest period, creating theological trajectories not directly available from the Hebrew text."
+    },
+    {
+      "reading": "Father of the age/world to come (πατὴρ τοῦ μέλλοντος αἰῶνος)",
+      "fathers_using_it": [
+        "Eusebius",
+        "Gregory of Nazianzus"
+      ],
+      "text_form_alignment": "closer_to_lxx",
+      "significance": "The LXX's eschatological emphasis ('Father of the coming age') differs subtly from MT's 'Everlasting Father' (אֲבִיעַד), orienting the title toward Christ's role in inaugurating the messianic age rather than emphasizing eternal duration. This reading supported early Christian eschatological frameworks in which Christ brings the 'age to come.'"
+    },
+    {
+      "reading": "Wonderful, Counselor (as separate titles: Admirabilis, Consiliarius)",
+      "fathers_using_it": [
+        "Jerome"
+      ],
+      "text_form_alignment": "closer_to_mt",
+      "significance": "Jerome's separation of these terms as distinct titles reflects the Hebrew construct chain (פֶּלֶא יוֹעֵץ) rather than the LXX's conflation. This represents the first major challenge to the established Christian textual tradition, initiating a debate about the authority of Hebrew versus Greek sources that would influence medieval and Reformation textual scholarship."
+    }
+  ],
+  "bibcrit_assessment": {
+    "title": "LXX Uniformity Reveals Isolated Christian Textual Transmission",
+    "reasoning": "The most significant finding is the complete absence of any Hebrew-influenced readings in Christian citations before Jerome (late 4th century), despite Christianity's Jewish origins and ongoing proximity to Jewish communities. This demonstrates that early Christian textual transmission operated in effective isolation from contemporary Jewish Hebrew Bible traditions, relying exclusively on inherited Greek manuscripts. The 'Angel of Great Counsel' reading's universality across diverse regions and three centuries indicates Christians possessed and transmitted a fixed LXX textual form that had already diverged substantially from the Hebrew before Christianity emerged, with no subsequent corrections from Hebrew sources.",
+    "plain": "Christians used only one version of this verse for 300+ years—a Greek translation quite different from the Hebrew Bible. This shows early Christians copied their own scriptures independently from Jewish communities, even though Christianity started within Judaism.",
+    "confidence": 0.94
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-04-08T08:27:36.390787",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v3",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis correctly identifies the well-known LXX/MT divergence at Isaiah 9:6 (Angel of Great Counsel), but several specific patristic citation references appear imprecise or potentially misattributed and warrant verification.",
+    "flagged_claims": [
+      {
+        "claim": "Tertullian, Against Praxeas, ch. 28: 'and his name shall be called the Angel of great counsel'",
+        "risk": "HIGH",
+        "reason": "Against Praxeas ch. 28 deals with the Father/Son distinction but the specific citation of Isaiah 9:6 with 'magni consilii angelus' at this location is not clearly attested; Tertullian more typically cites this passage in Adversus Marcionem (e.g., 3.19) or Adversus Judaeos. The chapter reference may be incorrect."
+      },
+      {
+        "claim": "Athanasius, Orations Against the Arians, Oration 2, ch. 13",
+        "risk": "MEDIUM",
+        "reason": "Athanasius does cite Isaiah 9:6 but the specific location (Oration 2.13) should be verified; his major use of the passage appears in different sections of the Orations."
+      },
+      {
+        "claim": "Cyril of Jerusalem, Catechetical Lectures, Lecture 10, section 10",
+        "risk": "MEDIUM",
+        "reason": "Lecture 10 concerns 'One Lord Jesus Christ' and does cite messianic prophecies, but the precise section number and exact wording cited should be verified against the actual text."
+      },
+      {
+        "claim": "Gregory of Nazianzus, Oration 29, section 19, with extensive citation including 'Potentate, Prince of Peace, Father of the world to come'",
+        "risk": "HIGH",
+        "reason": "Oration 29.17-18 does reference Isaiah 9:6 titles, but the extensive verbatim citation attributed here, including 'Potentate' as a discrete title, is not a standard LXX rendering and may be a confected expansion. The inclusion of 'Potentate' alongside 'Mighty God' is suspicious."
+      },
+      {
+        "claim": "Justin Martyr, Dialogue with Trypho, ch. 87",
+        "risk": "MEDIUM",
+        "reason": "Justin cites Isaiah 9:6 multiple times in the Dialogue, but ch. 87 primarily concerns the spirits of Isaiah 11; the citation may belong to a different chapter (e.g., 76 or 126). Reference needs verification."
+      },
+      {
+        "claim": "Athanasius cites 'Mighty God' as θεὸς ἰσχυρός matching LXX",
+        "risk": "MEDIUM",
+        "reason": "LXX manuscripts of Isaiah 9:6 vary; the shorter LXX form (esp. older witnesses) lacks several titles entirely, having only 'Angel of Great Counsel.' The longer Greek title list ('Mighty God,' etc.) reflects later hexaplaric/recensional additions, not the original LXX. The analysis conflates these."
+      },
+      {
+        "claim": "The distinctive LXX reading 'Angel of Great Counsel' absent from MT appears in virtually every citation",
+        "risk": "MEDIUM",
+        "reason": "Overstated: the textual situation in LXX Isaiah 9:6 is more complex, with the original Old Greek being notably shorter and the longer title list being a secondary expansion under hexaplaric influence. The synthesis flattens this complexity."
+      }
+    ],
+    "safe_claims": [
+      "MT has פֶּלֶא יוֹעֵץ (Wonderful Counselor) where LXX has Ἄγγελος μεγάλης βουλῆς (Angel of Great Counsel)",
+      "Jerome's Vulgate rendering ('Admirabilis, Consiliarius, Deus Fortis, Pater futuri saeculi, Princeps pacis') follows the Hebrew rather than the LXX",
+      "Jerome represents a shift toward Hebraica veritas in Western textual tradition",
+      "Early Christian writers predominantly used LXX-based text forms for Isaiah 9:6",
+      "The 'Angel of Great Counsel' title was significant for early christological argumentation",
+      "Isaiah 9:6 was used in anti-Arian controversies to argue for Christ's divinity"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.330362+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

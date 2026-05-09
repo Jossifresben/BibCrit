@@ -365,5 +365,63 @@
   "reference": "Isaiah",
   "cached_at": "2026-03-31T09:51:39.540029",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis is broadly sound and reflects mainstream text-critical consensus on Isaiah, but contains several specific factual errors regarding manuscript counts, dates, and editorial attributions.",
+    "flagged_claims": [
+      {
+        "claim": "4QIsaᵃ⁻ᑫ (18 scrolls)",
+        "risk": "HIGH",
+        "reason": "Cave 4 yielded 18 Isaiah manuscripts is incorrect; the standard count is 4QIsaᵃ through 4QIsaʳ = 18 manuscripts only if one counts all Cave 4 Isaiah scrolls, but the actual count from Qumran Cave 4 is typically given as 18 Isaiah scrolls total—however, the label '4QIsaᵃ⁻ᑫ' uses an apparently invented siglum (ᑫ is not a Hebrew letter); the standard range is 4QIsaᵃ–4QIsaʳ."
+      },
+      {
+        "claim": "BHQ Isaiah ... date: 2004 ... ed. J. de Waard",
+        "risk": "HIGH",
+        "reason": "BHQ Isaiah has not yet been published as of the knowledge cutoff; de Waard edited BHQ Proverbs (2008), not Isaiah. The Isaiah fascicle of BHQ is still in preparation."
+      },
+      {
+        "claim": "Göttingen LXX Isaiah ... 1939 (Ziegler)",
+        "risk": "MEDIUM",
+        "reason": "Ziegler's Göttingen Isaias was published in 1939, which is correct, but the description that it reconstructs OG 'based on Alexandrinus, Vaticanus, and Sinaiticus' oversimplifies; Ziegler used a much wider range of witnesses including Hexaplaric and Lucianic materials."
+      },
+      {
+        "claim": "1QIsaᵇ ... attested in part by 1QIsaᵇ and 4QIsaᵈ",
+        "risk": "MEDIUM",
+        "reason": "While 1QIsaᵇ and 4QIsaᵈ are generally proto-Masoretic, the specific claim about 4QIsaᵈ requires verification; some scholars classify different Cave 4 Isaiah scrolls as proto-MT."
+      },
+      {
+        "claim": "Theodotion's Isaiah ... preserving elements of both OG and kaige traditions",
+        "risk": "MEDIUM",
+        "reason": "The relationship of Theodotion to kaige is debated and complex; this claim is plausible but stated with more confidence than the fragmentary evidence for Theodotion-Isaiah specifically warrants."
+      },
+      {
+        "claim": "Lucianic Isaiah ... c. 300 CE ... Antiochene revision ... attributed to Lucian",
+        "risk": "MEDIUM",
+        "reason": "The existence of a distinct Lucianic recension specifically for Isaiah (as opposed to historical books) is disputed; Ziegler identified an Antiochene/Lucianic group but its attribution to Lucian himself is traditional rather than demonstrable."
+      },
+      {
+        "claim": "Wilcox and Paton-Williams",
+        "risk": "MEDIUM",
+        "reason": "This appears to reference P. Wilcox and D. Paton-Williams' 1988 JSOT article on the servant; citation is plausible but should be verified for accuracy in the context of 53:11 textual criticism specifically."
+      },
+      {
+        "claim": "53:9: MT בְּמֹתָיו (in his deaths/tomb, plural form) vs. LXX/Peshitta singular",
+        "risk": "MEDIUM",
+        "reason": "The MT form בְּמֹתָיו is morphologically plural but the variant tradition and 1QIsaᵃ reading (במותו) should be cited; the claim conflates LXX and Peshitta agreement without nuance."
+      }
+    ],
+    "safe_claims": [
+      "Tripartite division of Isaiah into Proto-, Deutero-, and Trito-Isaiah",
+      "1QIsaᵃ dated c. 125 BCE and represents a non-proto-Masoretic text",
+      "Isaiah 7:14 MT 'almah vs. LXX parthenos",
+      "Isaiah 53:11 1QIsaᵃ reads יראה אור with LXX support (ὄψεται φῶς)",
+      "Aleppo Codex c. 930 CE; Leningrad Codex 1008/1009 CE",
+      "Jerome's Vulgate Isaiah translated from Hebrew c. 390–405 CE",
+      "Targum Jonathan to the Prophets is expansive and theologically interpretive"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.336820+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

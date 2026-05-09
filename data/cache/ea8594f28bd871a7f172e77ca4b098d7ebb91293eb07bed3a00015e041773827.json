@@ -1,0 +1,498 @@
+{
+  "book": "1 Kings",
+  "period_range": "10th century BCE – 15th century CE",
+  "archetype_description": "The proto-text of 1 Kings is best understood as a composite literary product emerging from Deuteronomistic editorial activity, drawing on older source documents (the Book of the Acts of Solomon, the Annals of the Kings of Israel and Judah, prophetic narratives). The text underwent at least two major Deuteronomistic redactional stages (Dtr1, a pre-exilic Josianic edition, and Dtr2, an exilic revision), yielding divergent Hebrew textual forms that served as the Vorlagen for the MT and LXX branches respectively. The degree of textual disunity between MT and LXX 1 Kings is among the most dramatic in the Hebrew Bible, with the LXX (especially 3 Kingdoms in the Old Greek tradition) reflecting a substantially shorter and differently arranged Hebrew Vorlage.",
+  "stemma_nodes": [
+    {
+      "id": "archetype",
+      "label": "Proto-Text",
+      "type": "archetype",
+      "date": "10th–7th c. BCE",
+      "description": "Hypothetical common ancestor of all 1 Kings textual traditions, incorporating pre-Deuteronomistic source documents and oral traditions about the Solomonic and divided monarchy periods."
+    },
+    {
+      "id": "dtr1",
+      "label": "Dtr1 (Josianic Edition)",
+      "type": "intermediate",
+      "date": "c. 620 BCE",
+      "description": "First Deuteronomistic redaction of 1 Kings, associated with the court of Josiah, producing a teleological narrative oriented toward the Jerusalem temple and Davidic covenant."
+    },
+    {
+      "id": "dtr2",
+      "label": "Dtr2 (Exilic Edition)",
+      "type": "intermediate",
+      "date": "c. 560 BCE",
+      "description": "Exilic Deuteronomistic revision supplementing and reinterpreting the Josianic edition in light of the Babylonian destruction, adding material explaining the exile and softening the Josianic optimism."
+    },
+    {
+      "id": "proto-lxx-vorlage",
+      "label": "Proto-LXX Hebrew Vorlage",
+      "type": "intermediate",
+      "date": "5th–4th c. BCE",
+      "description": "A divergent Hebrew text-form, ancestral to the Old Greek of 3 Kingdoms, characterized by a shorter text in certain sections (especially 1 Kgs 2, 4–5) and a different arrangement of the Solomon narrative and Elijah cycle relative to the proto-MT."
+    },
+    {
+      "id": "proto-mt",
+      "label": "Proto-MT",
+      "type": "intermediate",
+      "date": "4th–2nd c. BCE",
+      "description": "The expanded Hebrew textual tradition ancestral to the Masoretic Text, representing a fuller, often longer text-form with additional pluses and a different arrangement of certain pericopes compared to the proto-LXX Vorlage."
+    },
+    {
+      "id": "mt",
+      "label": "MT",
+      "type": "tradition",
+      "tradition": "MT",
+      "date": "c. 1st c. CE (consonantal stabilization)",
+      "full_name": "Masoretic Text",
+      "language": "Hebrew",
+      "description": "The received Hebrew text of 1 Kings, representing the proto-rabbinic tradition stabilized by the end of the 1st century CE, with full Tiberian vocalization and cantillation added by the Masoretes of Tiberias (6th–10th c. CE)."
+    },
+    {
+      "id": "aleppo",
+      "label": "Aleppo Codex",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "c. 930 CE",
+      "full_name": "Codex Aleppo (Crown of Aleppo / Keter Aram Tsova)",
+      "language": "Hebrew",
+      "description": "The most authoritative manuscript of the Tiberian Masoretic tradition, vocalized and annotated by Aaron ben Moses ben Asher; portions of 1 Kings survive (1 Kgs 1 is partially damaged/lost, remainder largely intact)."
+    },
+    {
+      "id": "leningrad",
+      "label": "Leningrad Codex (B19A)",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "1008/9 CE",
+      "full_name": "Codex Leningradensis (St. Petersburg, Russian National Library, Evr. I B 19a)",
+      "language": "Hebrew",
+      "description": "The oldest complete manuscript of the Hebrew Bible in the ben Asher Masoretic tradition, serving as the primary base text for BHS and BHQ for 1 Kings."
+    },
+    {
+      "id": "bhs",
+      "label": "BHS",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "1977 CE",
+      "full_name": "Biblia Hebraica Stuttgartensia",
+      "language": "Hebrew",
+      "description": "Critical edition of the Hebrew Bible based on the Leningrad Codex with critical apparatus, edited by Steuernagel et al.; the 1 Kings fascicle includes text-critical notes on LXX and versional divergences."
+    },
+    {
+      "id": "bhq",
+      "label": "BHQ",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "In progress (1 Kings volume not yet published as of 2024)",
+      "full_name": "Biblia Hebraica Quinta",
+      "language": "Hebrew",
+      "description": "The successor to BHS with a substantially revised and expanded critical apparatus; the 1 Kings volume is in preparation within the Deutsche Bibelgesellschaft BHQ project."
+    },
+    {
+      "id": "old-greek-3kgdms",
+      "label": "Old Greek (3 Kingdoms)",
+      "type": "intermediate",
+      "date": "3rd–2nd c. BCE",
+      "full_name": "Old Greek of 3 Kingdoms (3 Basileion)",
+      "language": "Greek",
+      "description": "The original Greek translation of 1 Kings (designated 3 Kingdoms / 3 Basileion in the LXX tradition), produced in Alexandria and reflecting a Hebrew Vorlage that diverges significantly from the proto-MT in arrangement and length, especially in the Solomon and Elijah narratives."
+    },
+    {
+      "id": "lxx",
+      "label": "LXX",
+      "type": "tradition",
+      "tradition": "LXX",
+      "date": "3rd–2nd c. BCE (translation); manuscript tradition 2nd–4th c. CE",
+      "full_name": "Septuagint (3 Kingdoms)",
+      "language": "Greek",
+      "description": "The broader Greek manuscript tradition of 1 Kings (3 Kingdoms), transmitted in diverse manuscript families including the Alexandrian (B-text) and Antiochene (Lucianic) branches, reflecting complex recensional activity."
+    },
+    {
+      "id": "codex-vaticanus",
+      "label": "Codex Vaticanus (B)",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "4th c. CE",
+      "full_name": "Codex Vaticanus (Vat. gr. 1209)",
+      "language": "Greek",
+      "description": "The principal manuscript for the pre-Hexaplaric Old Greek of 3 Kingdoms, preserving a relatively early text relatively free of kaige revision in the sections 1 Kgs 1–2:11 and 1 Kgs 22 – 2 Kgs 25; the middle section (1 Kgs 2:12–21:43) is kaige-revised."
+    },
+    {
+      "id": "codex-alexandrinus",
+      "label": "Codex Alexandrinus (A)",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "5th c. CE",
+      "full_name": "Codex Alexandrinus (British Library Royal MS 1 D. VIII)",
+      "language": "Greek",
+      "description": "An important LXX manuscript for 3 Kingdoms showing Hexaplaric influence and serving as a key witness to the transmission of the Greek text in its Alexandrian form."
+    },
+    {
+      "id": "kaige-recension",
+      "label": "Kaige Recension",
+      "type": "recension",
+      "date": "1st c. BCE – 1st c. CE",
+      "full_name": "Kaige-Theodotion Recension",
+      "language": "Greek",
+      "description": "A proto-rabbinic revision of the Old Greek toward the proto-MT Hebrew, identifiable by characteristic translation stereotypes (e.g. kaige = וְגַם); in 3 Kingdoms, the kaige recension affects the middle section (1 Kgs 2:12–21:43 in Vaticanus), first identified by Barthélemy (1963)."
+    },
+    {
+      "id": "hexapla",
+      "label": "Origen's Hexapla",
+      "type": "recension",
+      "date": "c. 240 CE",
+      "full_name": "Origen's Hexapla (5th column, Septuagint with diacritical marks)",
+      "language": "Greek",
+      "description": "Origen's six-column synopsis aligned the LXX of 3 Kingdoms with the Hebrew MT and other Greek versions, inserting Hexaplaric asterisked additions and obelized minuses; Hexaplaric readings are preserved in margin of manuscripts and daughter versions."
+    },
+    {
+      "id": "lucianic",
+      "label": "Lucianic Recension",
+      "type": "recension",
+      "date": "c. 300 CE",
+      "full_name": "Lucianic (Antiochene) Recension",
+      "language": "Greek",
+      "description": "The Antiochene recension associated with Lucian of Antioch, significant for 3 Kingdoms because it may preserve Old Greek readings in sections where Vaticanus is kaige-revised, making it a key witness for reconstructing the Old Greek Vorlage; analyzed extensively by Fernández Marcos and Busto Saiz."
+    },
+    {
+      "id": "aquila",
+      "label": "Aquila",
+      "type": "recension",
+      "date": "c. 125 CE",
+      "full_name": "Aquila's Greek Version",
+      "language": "Greek",
+      "description": "An extremely literal Greek revision of the Hebrew for 3 Kingdoms, surviving only in fragments and quotations, representing the furthest extent of proto-MT alignment in Greek."
+    },
+    {
+      "id": "symmachus",
+      "label": "Symmachus",
+      "type": "recension",
+      "date": "c. 200 CE",
+      "full_name": "Symmachus's Greek Version",
+      "language": "Greek",
+      "description": "A more idiomatic Greek revision for 3 Kingdoms, surviving in fragments within the Hexaplaric tradition, prized for its elegance and faithfulness to the Hebrew sense."
+    },
+    {
+      "id": "gottingen-lxx",
+      "label": "Göttingen LXX (3 Kingdoms)",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "Vol. published: Rahlfs 1935 (hand edition); critical edition of 3 Kingdoms: Brooke-McLean-Thackeray 1930 (Cambridge LXX, not Göttingen); Göttingen 3 Kingdoms critical edition in preparation",
+      "full_name": "Cambridge Larger LXX / Göttingen Septuagint — 3 Kingdoms",
+      "language": "Greek",
+      "description": "The major critical edition for 3 Kingdoms is the Cambridge Larger Septuagint (Brooke, McLean, Thackeray, 1930), as the Göttingen critical edition for Kings has not yet been published; Rahlfs's hand edition serves as the standard eclectic text."
+    },
+    {
+      "id": "nets",
+      "label": "NETS (3 Kingdoms)",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "2007 CE",
+      "full_name": "New English Translation of the Septuagint — 3 Kingdoms",
+      "language": "English",
+      "description": "The NETS translation of 3 Kingdoms by Melvin K. H. Peters, based on Rahlfs's eclectic text, rendering the distinctive Old Greek form of 1 Kings into English for scholarly comparison with the MT."
+    },
+    {
+      "id": "targum-jonathan",
+      "label": "Targum Jonathan",
+      "type": "tradition",
+      "tradition": "Targum",
+      "date": "Redacted c. 3rd–7th c. CE; traditions earlier",
+      "full_name": "Targum Jonathan ben Uzziel to the Former Prophets",
+      "language": "Jewish Aramaic",
+      "description": "The official Aramaic targum to the Former Prophets including 1 Kings, attributed to Jonathan ben Uzziel but representing a complex multi-layered oral and written tradition with a Babylonian redaction aligned with the proto-MT."
+    },
+    {
+      "id": "peshitta",
+      "label": "Peshitta",
+      "type": "tradition",
+      "tradition": "Peshitta",
+      "date": "1st–2nd c. CE (translation); manuscripts from 5th c. CE",
+      "full_name": "Peshitta to 1 Kings",
+      "language": "Syriac",
+      "description": "The Syriac Peshitta of 1 Kings translates from a Hebrew Vorlage closely aligned with the proto-MT, though with secondary influence from the LXX in certain passages; it is a key versional witness for reconstructing the Hebrew text."
+    },
+    {
+      "id": "peshitta-ms",
+      "label": "Peshitta Manuscripts (5b1, etc.)",
+      "type": "edition",
+      "tradition": "Peshitta",
+      "date": "5th–12th c. CE",
+      "full_name": "Peshitta Institute Critical Edition (Leiden Peshitta): 1 Kings (ed. Dirksen, 1985)",
+      "language": "Syriac",
+      "description": "The Leiden Peshitta critical edition for 1 Kings, edited by P. B. Dirksen (1985), collating principal Syriac manuscripts including 5b1 (Milan Ambrosiana) and British Library Add. 14442."
+    },
+    {
+      "id": "vulgate-jerome",
+      "label": "Vulgate (Jerome)",
+      "type": "tradition",
+      "tradition": "Vulgate",
+      "date": "c. 398–405 CE",
+      "full_name": "Vulgate — Liber Regum III (Jerome's translation)",
+      "language": "Latin",
+      "description": "Jerome's Latin translation of 1 Kings (his 'Liber Regum III' in the fourfold division, or part of his Kings volumes) translated from the Hebrew veritas, demonstrating in the sample verse (Et rex David senuerat…) a close adherence to the MT Hebrew with minimal LXX contamination; Jerome occasionally cites LXX readings in his commentary but the translation text prioritizes the Hebrew."
+    },
+    {
+      "id": "vulgate-ms",
+      "label": "Vulgate Manuscripts (Codex Amiatinus, etc.)",
+      "type": "edition",
+      "tradition": "Vulgate",
+      "date": "7th–8th c. CE",
+      "full_name": "Codex Amiatinus (Florence, Biblioteca Medicea Laurenziana, Amiatino 1)",
+      "language": "Latin",
+      "description": "The oldest complete Latin Vulgate manuscript (Northumbrian, c. 716 CE), a primary witness for Jerome's text of 1 Kings, used in the Weber-Gryson Stuttgart Vulgate critical edition."
+    },
+    {
+      "id": "nova-vulgata",
+      "label": "Nova Vulgata",
+      "type": "edition",
+      "tradition": "Vulgate",
+      "date": "1979/1986 CE",
+      "full_name": "Nova Vulgata Bibliorum Sacrorum Editio (Vatican, 1979; 2nd ed. 1986)",
+      "language": "Latin",
+      "description": "The revised official Latin Bible of the Roman Catholic Church for 1 Kings, updating Jerome's Vulgate on the basis of modern critical scholarship while retaining the Latin ecclesiastical tradition."
+    }
+  ],
+  "stemma_edges": [
+    {
+      "from": "archetype",
+      "to": "dtr1"
+    },
+    {
+      "from": "dtr1",
+      "to": "dtr2"
+    },
+    {
+      "from": "dtr2",
+      "to": "proto-lxx-vorlage"
+    },
+    {
+      "from": "dtr2",
+      "to": "proto-mt"
+    },
+    {
+      "from": "proto-mt",
+      "to": "mt"
+    },
+    {
+      "from": "mt",
+      "to": "aleppo"
+    },
+    {
+      "from": "mt",
+      "to": "leningrad"
+    },
+    {
+      "from": "leningrad",
+      "to": "bhs"
+    },
+    {
+      "from": "leningrad",
+      "to": "bhq"
+    },
+    {
+      "from": "proto-lxx-vorlage",
+      "to": "old-greek-3kgdms"
+    },
+    {
+      "from": "old-greek-3kgdms",
+      "to": "lxx"
+    },
+    {
+      "from": "lxx",
+      "to": "codex-vaticanus"
+    },
+    {
+      "from": "lxx",
+      "to": "codex-alexandrinus"
+    },
+    {
+      "from": "lxx",
+      "to": "kaige-recension"
+    },
+    {
+      "from": "kaige-recension",
+      "to": "codex-vaticanus"
+    },
+    {
+      "from": "proto-mt",
+      "to": "kaige-recension"
+    },
+    {
+      "from": "lxx",
+      "to": "hexapla"
+    },
+    {
+      "from": "hexapla",
+      "to": "aquila"
+    },
+    {
+      "from": "hexapla",
+      "to": "symmachus"
+    },
+    {
+      "from": "hexapla",
+      "to": "lucianic"
+    },
+    {
+      "from": "old-greek-3kgdms",
+      "to": "lucianic"
+    },
+    {
+      "from": "lxx",
+      "to": "gottingen-lxx"
+    },
+    {
+      "from": "gottingen-lxx",
+      "to": "nets"
+    },
+    {
+      "from": "proto-mt",
+      "to": "targum-jonathan"
+    },
+    {
+      "from": "proto-mt",
+      "to": "peshitta"
+    },
+    {
+      "from": "peshitta",
+      "to": "peshitta-ms"
+    },
+    {
+      "from": "proto-mt",
+      "to": "vulgate-jerome"
+    },
+    {
+      "from": "vulgate-jerome",
+      "to": "vulgate-ms"
+    },
+    {
+      "from": "vulgate-ms",
+      "to": "nova-vulgata"
+    }
+  ],
+  "key_divergences": [
+    {
+      "title": "Solomon Narrative Arrangement and the Jeroboam Pericope",
+      "passage": "1 Kings 12:24 (LXX addition / MT absence) and surrounding material",
+      "witnesses": [
+        "LXX (3 Kingdoms)",
+        "MT"
+      ],
+      "plain": "The Greek translation of 1 Kings contains a long additional passage after chapter 12 (sometimes called the 'LXX supplement') that tells the story of Jeroboam in a substantially different way and at a different point in the narrative than the Hebrew. This suggests the two traditions were working from different versions of the text, not just translating the same original differently.",
+      "technical": "After 1 Kgs 12:24, the Old Greek inserts a lengthy doublet (12:24a–z) covering Jeroboam's genealogy, his Egyptian sojourn, and the division of the kingdom in an order divergent from MT. Trebolle Barrera demonstrated that this represents a genuinely divergent Hebrew Vorlage, not Greek compositional expansion; the passage is absent from MT and constitutes the most dramatic evidence for two distinct literary editions of the Jeroboam narrative. Cross and Nelson had also analyzed the redactional implications."
+    },
+    {
+      "title": "Solomon's Administrative Districts and Officers List",
+      "passage": "1 Kings 4:1–19 and 4:20–5:14 (MT) / 3 Kingdoms 2:46a–l (LXX)",
+      "witnesses": [
+        "LXX (3 Kingdoms)",
+        "MT"
+      ],
+      "plain": "The lists of Solomon's high officials and district administrators appear in very different positions in the Hebrew and Greek texts, and the Greek version includes additional material not in the Hebrew. This displacement of whole sections is a hallmark of the two editions of 1 Kings and shows the texts were organized differently at a foundational level.",
+      "technical": "The LXX of 3 Kingdoms 2:46a–l places material corresponding to MT 1 Kgs 4:1–5:14 in a different narrative location, and the LXX text is shorter. Gooding (1967) argued for LXX priority as reflecting an earlier edition, while Trebolle Barrera (1980, 1989) built on Cross's local-text theory to argue for two distinct Hebrew editions; most current scholarship (van Keulen, Knoppers) accepts that both reflect genuine Hebrew Vorlagen rather than scribal transposition in the Greek."
+    },
+    {
+      "title": "Elijah Narrative: Placement of 1 Kings 21 (Naboth's Vineyard)",
+      "passage": "1 Kings 20–21 (MT) / 3 Kingdoms 21–20 (LXX)",
+      "witnesses": [
+        "LXX (3 Kingdoms)",
+        "MT"
+      ],
+      "plain": "The chapters dealing with Ahab's wars against Aram and the story of Naboth's vineyard appear in reversed order in the Hebrew and Greek Bibles. What is chapter 20 in the Hebrew (Ahab's wars) is chapter 21 in the Greek, and vice versa. This transposition changes the narrative logic of Elijah's ministry and Ahab's characterization and is one of the clearest examples of the two textual editions.",
+      "technical": "MT 1 Kgs 20 (Ahab-Aram wars) = LXX 3 Kgdms 21; MT 1 Kgs 21 (Naboth) = LXX 3 Kgdms 20. The reversal is attested consistently across the Greek manuscript tradition and cannot be attributed to scribal error. Trebolle Barrera (1984) argued the LXX order reflects the earlier Hebrew arrangement; the MT order is the product of later editorial rearrangement, a view now broadly accepted and significant for reconstructing the compositional history of the Elijah-Ahab cycle."
+    },
+    {
+      "title": "Solomon's Prayer at Temple Dedication: Plus in LXX",
+      "passage": "1 Kings 8:12–13 (MT) / 3 Kingdoms 8:53a (LXX plus referencing 'Book of Song')",
+      "witnesses": [
+        "LXX (3 Kingdoms)",
+        "MT"
+      ],
+      "plain": "After Solomon's short poetic oracle at the temple dedication, the Greek text adds a verse citing the 'Book of Song' (sepher tēs ōidēs) as the source of the quotation. This reference is missing from the Hebrew Bible entirely and implies that the translator or his Vorlage knew a source collection not otherwise preserved.",
+      "technical": "LXX 3 Kgdms 8:53a preserves a citation formula referencing the 'Book of Song' (= Hebrew שִׁיר, sepher hashir?), absent from MT 1 Kgs 8:12–13. This reading is widely analyzed as reflecting a genuine Hebrew Vorlage that preserved an ancient source attribution later lost in the MT tradition; Albright, Cross, and Weinfeld have discussed it in the context of ancient poetic sources behind Kings. The verse may correspond to what 2 Chr 6:13 handles differently."
+    },
+    {
+      "title": "Kaige Section and the Vaticanus Middle Section",
+      "passage": "1 Kings 2:12–21:43 (kaige-revised section in Vaticanus)",
+      "witnesses": [
+        "LXX (Vaticanus B, kaige)",
+        "LXX (Lucianic)"
+      ],
+      "plain": "Scholars discovered that the middle portion of 1 Kings in the oldest Greek manuscript (Vaticanus) has been systematically revised toward a more literal translation of the Hebrew, while the Lucianic manuscripts in the same section preserve what appears to be the older, less revised Greek translation. This paradoxical situation means the Lucianic recension—normally considered secondary—is actually more original in this part of the book.",
+      "technical": "Barthélemy (1963, Les Devanciers d'Aquila) identified the kaige recension as a systematic proto-rabbinic revision of the OG toward the proto-MT, affecting 3 Kgdms 2:12–21:43 in Vaticanus. In this section, the Lucianic (Antiochene) text preserves pre-kaige Old Greek readings and thus functions as the primary witness to the Vorlage. Fernández Marcos and Busto Saiz's critical edition of the Antiochene text (1989) is the essential tool; this finding fundamentally restructures the LXX stemma for Kings and has major implications for retroversion to the Hebrew Vorlage."
+    }
+  ],
+  "transmission_narrative": "The composition and transmission of 1 Kings is one of the most complex cases in the Hebrew Bible, characterized by the coexistence of two distinct literary editions—one reflected in the Masoretic Text and one underlying the Old Greek (3 Kingdoms)—which scholarship from Cross, Trebolle Barrera, and Schenker has demonstrated to be genuine Hebrew variants rather than Greek redactional activity. The proto-MT reflects an expanded, editorially advanced form of the text, while the proto-LXX Vorlage preserves an earlier, shorter, and differently arranged Hebrew edition, particularly visible in the Jeroboam supplement (1 Kgs 12:24 LXX), the transposition of chapters 20–21, and the displacement of administrative lists. Within the Greek tradition, Barthélemy's identification of the kaige recension—affecting the middle section of Vaticanus (1 Kgs 2:12–21:43)—revolutionized understanding of LXX transmission, revealing that the Lucianic manuscripts paradoxically preserve the older Greek text in that section. The Peshitta, Targum Jonathan, and Jerome's Vulgate all translate from a Hebrew Vorlage closely aligned with the proto-MT, confirming the MT's text-form as dominant in the 1st century CE Jewish community, while the absence of Dead Sea Scrolls witnesses for 1 Kings leaves the pre-Masoretic Hebrew tradition without direct manuscript confirmation.",
+  "transmission_plain": "The book of 1 Kings exists in two quite different ancient versions: the Hebrew Bible tradition that became our standard text, and the Greek translation (called '3 Kingdoms') that was made from a Hebrew version that was actually arranged and worded differently in key places. Over centuries, both traditions were copied, revised, and translated into Syriac, Aramaic, and Latin, with scholars in Alexandria, Antioch, Caesarea, and Babylon each leaving their marks on the text. Today, scholars must carefully compare all these versions to reconstruct what the earliest text of 1 Kings looked like, and the evidence shows that the book went through substantial literary development before any of our surviving manuscripts were made.",
+  "bibcrit_assessment": {
+    "title": "Two Distinct Hebrew Editions Underlie MT and LXX 1 Kings",
+    "plain": "Unlike most biblical books where differences between the Hebrew and Greek are minor, 1 Kings survives in two genuinely different ancient editions with whole chapters in different orders and major sections added or missing — a finding that forces scholars to reconsider what the 'original' text even means for this book.",
+    "confidence": 0.72
+  },
+  "discovery_ready": true,
+  "reference": "1 Kings",
+  "cached_at": "2026-04-26T17:46:52.017833",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v2",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis reflects mainstream textual criticism of 1 Kings but contains several specific bibliographic and editorial errors that require correction.",
+    "flagged_claims": [
+      {
+        "claim": "BHS ... edited by Steuernagel et al.",
+        "risk": "HIGH",
+        "reason": "BHS was edited by Karl Elliger and Wilhelm Rudolph, not Steuernagel. Carl Steuernagel was associated with earlier BHK (Biblia Hebraica Kittel) work, not BHS."
+      },
+      {
+        "claim": "the kaige recension affects the middle section (1 Kgs 2:12–21:43 in Vaticanus)",
+        "risk": "MEDIUM",
+        "reason": "The standard Barthélemy boundaries for the kaige sections in Kingdoms are βγ = 2 Sam 11:2–1 Kgs 2:11 and γδ = 1 Kgs 22:1–2 Kgs 25. 1 Kgs 2:12–21:43 is the *non-kaige* section in Vaticanus, so the claim is inverted."
+      },
+      {
+        "claim": "preserving a relatively early text relatively free of kaige revision in the sections 1 Kgs 1–2:11 and 1 Kgs 22 – 2 Kgs 25",
+        "risk": "HIGH",
+        "reason": "This is reversed: 1 Kgs 1–2:11 (end of βγ) and 1 Kgs 22–2 Kgs 25 (γδ) are precisely the kaige sections in Vaticanus, while 1 Kgs 2:12–21:43 is the non-kaige (Old Greek) section."
+      },
+      {
+        "claim": "NETS translation of 3 Kingdoms by Melvin K. H. Peters",
+        "risk": "HIGH",
+        "reason": "The NETS translation of 3 Reigns (3 Kingdoms) was done by Paul D. McLean, not Melvin Peters. Peters translated Deuteronomy in NETS."
+      },
+      {
+        "claim": "Cambridge Larger Septuagint (Brooke, McLean, Thackeray, 1930)",
+        "risk": "MEDIUM",
+        "reason": "The Cambridge Larger LXX volume containing 1–2 Kings (I and II Kings) was published in 1930 by Brooke, McLean, and Thackeray as part of vol. II.2, but the date and exact contents should be verified; the wording conflates this with the Göttingen edition unhelpfully."
+      },
+      {
+        "claim": "Leiden Peshitta critical edition for 1 Kings, edited by P. B. Dirksen (1985)",
+        "risk": "MEDIUM",
+        "reason": "Dirksen edited Judges in the Leiden Peshitta; the Kings volume (Peshitta IV/3 'Kings') was edited by H. Gottlieb and E. Hammershaimb (1976). The attribution to Dirksen for 1 Kings appears incorrect."
+      },
+      {
+        "claim": "Dtr1, a pre-exilic Josianic edition, and Dtr2, an exilic revision",
+        "risk": "MEDIUM",
+        "reason": "Stated as fact, but the Cross/Nelson double-redaction model is one of several competing hypotheses (vs. Noth's single exilic Dtr, Smend/Dietrich's DtrG/DtrP/DtrN). Should be presented as hypothesis, not consensus."
+      },
+      {
+        "claim": "(1 Kgs 1 is partially damaged/lost, remainder largely intact)",
+        "risk": "MEDIUM",
+        "reason": "The Aleppo Codex famously lost most of the Torah and parts of other books in the 1947 fire/looting, but the Former Prophets including Kings are largely preserved; the specific claim that 1 Kgs 1 is damaged needs verification."
+      }
+    ],
+    "safe_claims": [
+      "1 Kings has dramatic textual divergence between MT and LXX",
+      "LXX 3 Kingdoms reflects a Hebrew Vorlage with different arrangement and length",
+      "Leningrad Codex dates to 1008/9 CE and is the base for BHS",
+      "Aquila produced an extremely literal Greek revision",
+      "Symmachus produced a more idiomatic Greek revision",
+      "Targum Jonathan covers the Former Prophets including Kings",
+      "Peshitta of Kings translates from a Hebrew Vorlage close to proto-MT with some LXX influence",
+      "Jerome's Vulgate translation of Kings dates to c. 398–405 CE",
+      "The kaige recension was first identified by Barthélemy in 1963"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.529703+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

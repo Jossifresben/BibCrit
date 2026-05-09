@@ -499,5 +499,74 @@
   "reference": "Genesis",
   "cached_at": "2026-03-31T11:17:43.496511",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis presents a generally sound overview of Genesis textual transmission but contains several specific factual errors regarding manuscript contents, dates, and editorial details that require correction.",
+    "flagged_claims": [
+      {
+        "claim": "4QGen-Exodᵃ (4Q1)... containing Genesis 1:18–27",
+        "risk": "HIGH",
+        "reason": "4QGen-Exoda (4Q1) contains portions of Genesis 22, 27, 34-37, 39-43, 45-49 and Exodus, not Genesis 1:18-27. The content description appears fabricated or confused with another manuscript."
+      },
+      {
+        "claim": "4QGenʲ (4Q8)... Hasmonean manuscript with fragments from Genesis 1, preserving pre-Samaritan textual features",
+        "risk": "HIGH",
+        "reason": "4QGen-j (4Q8) preserves portions of Genesis 41-43, not Genesis 1, and is not generally characterized as pre-Samaritan. The dating and content are likely incorrect."
+      },
+      {
+        "claim": "4QGenᵏ (4Q9)... Contains Genesis 1:1–11",
+        "risk": "MEDIUM",
+        "reason": "4QGen-k contains fragments of Genesis 1-3, but the precise verse range and characterization of agreements with SP need verification."
+      },
+      {
+        "claim": "approximately 6,000 divergences from MT",
+        "risk": "MEDIUM",
+        "reason": "The figure ~6,000 is the traditional count for the entire Samaritan Pentateuch, not Genesis specifically; placement in the Genesis-specific entry may mislead, though the figure itself is conventional."
+      },
+      {
+        "claim": "Hexapla... date: c. 245 CE",
+        "risk": "MEDIUM",
+        "reason": "Origen's Hexapla is generally dated to c. 230-245 CE with completion debated; a single-year date of 245 CE is overly precise."
+      },
+      {
+        "claim": "Targum Neofiti... date: 1st–2nd c. CE (core)",
+        "risk": "HIGH",
+        "reason": "The dating of Neofiti's core to the 1st-2nd century CE is highly contested; most scholars date it considerably later (3rd-4th century or later for the core), and this early dating is not mainstream consensus."
+      },
+      {
+        "claim": "Peshitta... produced within Jewish or Judaeo-Christian circles",
+        "risk": "MEDIUM",
+        "reason": "The origin of the Peshitta Pentateuch (Jewish vs. Christian) remains debated among scholars; presenting this as established is over-confident."
+      },
+      {
+        "claim": "Codex Amiatinus... preserving pure Hieronymian text",
+        "risk": "MEDIUM",
+        "reason": "Amiatinus preserves an excellent but not 'pure' Hieronymian text; it has its own textual peculiarities and is one important witness among several."
+      },
+      {
+        "claim": "Old Greek (OG)... by a single translator",
+        "risk": "MEDIUM",
+        "reason": "While the unity of LXX Genesis translation is widely accepted, stating it categorically as 'a single translator' is an over-confident assertion of a debated point."
+      },
+      {
+        "claim": "Targum Onqelos... 2nd c. CE (standardized)",
+        "risk": "MEDIUM",
+        "reason": "The standardization of Onqelos is generally dated to the Babylonian academies in the 4th-5th century CE, not the 2nd century; the 2nd century is sometimes proposed for proto-Onqelos origins but not standardization."
+      }
+    ],
+    "safe_claims": [
+      "Leningrad Codex dated 1008/1009 CE, copied by Samuel ben Jacob",
+      "Aleppo Codex Pentateuch lost in 1947 fire",
+      "BHS based on Leningrad Codex",
+      "Göttingen Genesis edited by John William Wevers, 1974",
+      "Vulgate produced c. 390-405 CE by Jerome from Hebrew",
+      "Targum Neofiti discovered in Vatican Library in 1956",
+      "Codex Vaticanus dated mid-4th century",
+      "SP exhibits expansionist and harmonizing tendencies"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.531372+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

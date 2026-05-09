@@ -134,5 +134,67 @@
   "discovery_ready": false,
   "cached_at": "2026-03-31T00:33:02.933102",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The overall thesis (LXX-form uniformity for Psalm 2:7 in patristic citations) is well-established, but several specific citation references are inaccurate or misattributed and require correction.",
+    "flagged_claims": [
+      {
+        "claim": "Justin Martyr, Dialogue with Trypho, ch. 88",
+        "risk": "MEDIUM",
+        "reason": "Justin cites Psalm 2:7 most famously in Dialogue 88 in connection with the baptism, but the citation form there is the well-known one. The reference is plausible but should be verified; Justin also quotes it in Dialogue 122. Worth checking the chapter."
+      },
+      {
+        "claim": "Origen, Commentary on John, 1.32",
+        "risk": "HIGH",
+        "reason": "The specific citation of Psalm 2:7 at Commentary on John 1.32 is not verified; Origen discusses Ps 2:7 more prominently in De Principiis 1.2.4 and 4.4.1, and in his Homilies/Commentary on Romans. This precise location may be fabricated."
+      },
+      {
+        "claim": "Athanasius, Orations Against the Arians, 2.51",
+        "risk": "MEDIUM",
+        "reason": "Athanasius cites Ps 2:7 multiple times in the Orations, but the exact section 2.51 should be verified; the discussion of begotten sonship in Oration 2 spans many chapters and the precise citation locus needs checking."
+      },
+      {
+        "claim": "Hilary of Poitiers, On the Trinity, 6.23",
+        "risk": "MEDIUM",
+        "reason": "Hilary cites Ps 2:7 in De Trinitate, but the specific reference 6.23 needs verification; Hilary's main treatments appear in books 4, 6, and 12, and citation locations are easy to misremember."
+      },
+      {
+        "claim": "Basil of Caesarea, Against Eunomius, 2.17",
+        "risk": "MEDIUM",
+        "reason": "While Basil engages Ps 2:7 in trinitarian polemic, the precise reference Adversus Eunomium 2.17 needs verification."
+      },
+      {
+        "claim": "Augustine... region: Carthage",
+        "risk": "MEDIUM",
+        "reason": "Augustine was bishop of Hippo Regius, not Carthage. The regional attribution is inaccurate, though Hippo is in the broader Roman Africa province."
+      },
+      {
+        "claim": "by the early 2nd century, the LXX form of Psalm 2:7 had become the exclusive authoritative text",
+        "risk": "MEDIUM",
+        "reason": "Overstated. Hebrews 1:5, 5:5, and Acts 13:33 already cite this form in the 1st century; calling the tradition 'closed' and 'exclusive' overstates the evidence and ignores the Western text variant at Luke 3:22 ('today I have begotten you') which complicates the transmission picture."
+      },
+      {
+        "claim": "Justin uses... 'today' refers to the eternal generation of the Son",
+        "risk": "HIGH",
+        "reason": "This is anachronistic. The doctrine of eternal generation is developed by Origen and later Nicene theologians; Justin in Dial. 88 connects Ps 2:7 to Jesus' baptism, not to eternal generation. This appears to retroject later Nicene theology onto Justin."
+      },
+      {
+        "claim": "Tertullian, Against Praxeas, ch. 11",
+        "risk": "MEDIUM",
+        "reason": "Tertullian does cite Ps 2:7 in Adv. Praxean (notably ch. 7 and elsewhere) and in Adv. Marcionem; the specific chapter 11 needs verification."
+      }
+    ],
+    "safe_claims": [
+      "The cited Greek form υἱός μου εἶ σύ, ἐγὼ σήμερον γεγέννηκά σε matches LXX Psalm 2:7 verbatim",
+      "Latin 'hodie genui te' is a transparent rendering of σήμερον γεγέννηκά σε",
+      "Old Latin translations of the Psalms were generally based on the LXX rather than Hebrew",
+      "Origen had access to Hebrew and alternative Greek versions through the Hexapla",
+      "Augustine generally retained Old Latin Psalter readings even after Jerome's revisions",
+      "Psalm 2:7 was central to anti-Arian polemic in the 4th century"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.681455+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

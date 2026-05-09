@@ -163,5 +163,57 @@
   "discovery_ready": false,
   "cached_at": "2026-03-31T00:28:29.453167",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis correctly identifies the LXX form and broad patristic reception of Ps 110:1, but several specific chapter/section citations are imprecise or potentially fabricated, and the claim of total unanimity overstates the evidence.",
+    "flagged_claims": [
+      {
+        "claim": "Irenaeus, Against Heresies 3.6.1, 4.33.13",
+        "risk": "MEDIUM",
+        "reason": "While Irenaeus does cite Ps 110:1 in AH, the specific section 4.33.13 should be verified; AH 3.6.1 discusses 'God said to my Lord' but the exact textual form cited may vary in surviving Latin/Armenian witnesses."
+      },
+      {
+        "claim": "Origen, Commentary on Matthew 16.8",
+        "risk": "MEDIUM",
+        "reason": "Origen cites Ps 110:1 in many works, but the specific reference to ComMatt 16.8 should be verified; Origen's most extensive treatments are in Contra Celsum and ComJohn."
+      },
+      {
+        "claim": "Athanasius, Against the Arians 1.54, 2.14",
+        "risk": "MEDIUM",
+        "reason": "Athanasius cites Ps 110:1 frequently in Contra Arianos but the specific sections 1.54 and 2.14 should be checked; the citation is often paired with broader exegetical sections."
+      },
+      {
+        "claim": "John Chrysostom, Homilies on Matthew, Hom. 71.2",
+        "risk": "MEDIUM",
+        "reason": "Hom. 71 on Matthew covers Matt 22, where Jesus cites Ps 110:1, so this is plausible, but the specific subsection 71.2 needs verification."
+      },
+      {
+        "claim": "Augustine, Enarrationes in Psalmos, Ps. 109.1-3",
+        "risk": "MEDIUM",
+        "reason": "Augustine's Enarratio on Ps 109 (LXX numbering = Ps 110 MT) does exist and treats this verse, but the specific 'cited_text' wording attributed should be checked against Augustine's actual lemma which sometimes varies."
+      },
+      {
+        "claim": "No father cited a text form closer to the MT or attested any significant textual variants",
+        "risk": "MEDIUM",
+        "reason": "Overstated; Jerome's iuxta Hebraeos psalter and some patristic discussions (including Origen's Hexapla notes) do reflect awareness of Hebrew variants for this psalm, even if the dominant citation form is LXX."
+      },
+      {
+        "claim": "Tertullian, Against Marcion 5.9",
+        "risk": "MEDIUM",
+        "reason": "Tertullian cites Ps 110 in AM but the primary discussion is more commonly located at AM 5.9 in connection with 1 Cor 15; the precise wording attributed should be verified against the Latin critical edition."
+      }
+    ],
+    "safe_claims": [
+      "The LXX renders both YHWH and Adonai as κύριος",
+      "Ps 110:1 is among the most frequently cited OT texts in patristic literature",
+      "Justin Martyr cites Ps 110:1 in Dialogue with Trypho chs. 32-33 and 56 and 83",
+      "The LXX reading κάθου ἐκ δεξιῶν μου and ὑποπόδιον τῶν ποδῶν σου is standard",
+      "Augustine generally preferred Old Latin psalter readings over Jerome's Hebrew-based revisions",
+      "Eusebius had access to Origen's Hexapla at the Caesarean library"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.612470+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

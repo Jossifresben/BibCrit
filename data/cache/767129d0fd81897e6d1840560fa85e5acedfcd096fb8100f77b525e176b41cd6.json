@@ -157,5 +157,64 @@
   "reference": "Psalms",
   "cached_at": "2026-03-30T21:32:03.348602",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis is broadly consistent with mainstream LXX-Psalms scholarship, but several specific examples contain inaccuracies in versification, Hebrew citation, or overstated interpretive claims.",
+    "flagged_claims": [
+      {
+        "claim": "Psalms 89:14 ... זְרוֹעַ עִם־גְּבוּרָה ... ὁ βραχίων σου μετὰ δυνάμεως",
+        "risk": "HIGH",
+        "reason": "The Hebrew of Ps 89:14 (MT 89:14) reads 'lekha zeroa im-gevurah'; the cited LXX Greek includes 'sou' (your) which fits the MT context, but the verse numbering and the precise Greek form should be verified—LXX Ps 88:14 actually reads 'σὸς ὁ βραχίων μετὰ δυναστείας' in Rahlfs, not 'ὁ βραχίων σου μετὰ δυνάμεως'. The lexical choice (dynasteia vs dynamis) is misreported."
+      },
+      {
+        "claim": "Psalms 44:24 ... ἵνα τί τὸ πρόσωπόν σου ἀποστρέφεις",
+        "risk": "MEDIUM",
+        "reason": "The MT verb is 'tastir' (hide), and the LXX (Ps 43:24) uses 'apostrepheis' (turn away) rather than a verb for hiding (e.g., apokryptō). This itself is a minor anthropomorphism shift that contradicts the example's claim that the face is 'retained without reduction'—the example partially undermines its own point."
+      },
+      {
+        "claim": "Psalms 110:3 ... ἐν ταῖς λαμπρότησιν τῶν ἁγίων",
+        "risk": "MEDIUM",
+        "reason": "The standard Rahlfs LXX reading at Ps 109:3 is 'ἐν ταῖς λαμπρότησιν τῶν ἁγίων' which does exist, but the claim that this 'creates eschatological community imagery that heightens messianic-apocalyptic interpretation' is interpretive overreach; the plural may simply reflect a different Vorlage (hadrey is already plural in Hebrew) rather than deliberate messianic heightening."
+      },
+      {
+        "claim": "comparable to Isaiah and greater than Jeremiah",
+        "risk": "MEDIUM",
+        "reason": "Quantitative comparisons of messianic heightening across LXX books are contested in scholarship (cf. debates between Schaper, Pietersma, Rösel); stating a definitive ranking overstates scholarly consensus."
+      },
+      {
+        "claim": "LXX Psalms 13 and 52 show greater verbal uniformity than MT",
+        "risk": "MEDIUM",
+        "reason": "This claim about harmonization between LXX Pss 13/52 (MT 14/53) is plausible but specific; the actual textual evidence is mixed, and some divergences are preserved in LXX as well. The claim is asserted without specific lexical demonstration."
+      },
+      {
+        "claim": "Psalms 18 title/superscription ... Shows harmonization toward Samuel parallel in some readings",
+        "risk": "MEDIUM",
+        "reason": "Vague and unverifiable as stated; specific harmonizing readings are not identified. The direction of harmonization between LXX Ps 17 and LXX 2 Sam 22 is debated."
+      },
+      {
+        "claim": "Tov would classify this as 'literal with interpretive tendencies'",
+        "risk": "MEDIUM",
+        "reason": "This phrase is presented as a Tov classification but is not a standard category in Tov's actual taxonomy of LXX translation technique; risks misattributing terminology."
+      },
+      {
+        "claim": "Psalms 68:19 ... ἔλαβες δόματα ἐν ἀνθρώπῳ",
+        "risk": "MEDIUM",
+        "reason": "LXX Ps 67:19 actually reads 'ἔλαβες δόματα ἐν ἀνθρώποις' (plural), not singular 'ἀνθρώπῳ'. This is a textual misquotation."
+      }
+    ],
+    "safe_claims": [
+      "Ps 2:12 'kiss the son' rendered as 'lay hold of instruction' (δράξασθε παιδείας)",
+      "Ps 22:17 LXX reads ὤρυξαν ('they pierced') where MT has כָּאֲרִי",
+      "Ps 18:9 LXX renders 'nostrils' with ὀργῇ ('wrath')",
+      "Ps 40:7 LXX reads σῶμα ('body') where MT has 'ears', as cited in Hebrews 10:5",
+      "meshiach standardly rendered as christos in LXX",
+      "Ps 2:2 cited in Acts 4:26",
+      "LXX-Psalms is moderately literal, between extremes of Ecclesiastes and Job",
+      "Ps 14 and Ps 53 are near-duplicate psalms in MT"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.330814+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

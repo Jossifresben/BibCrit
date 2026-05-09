@@ -1,0 +1,56 @@
+{
+  "allusions": [
+    {
+      "ot_reference": "Amos 9:11-12",
+      "nt_words": "ὅπως ἄν ἐκζητήσωσι(ν) οἱ κατάλοιποι τῶν ἀνθρώπων τόν κύριον καί πάντα τά ἔθνη ἐπί οὕς ἐπικέκληται τό ὄνομα μου ἐπί αὐτούς",
+      "ot_mt_form": "לְמַעַן יִירְשׁוּ אֶת־שְׁאֵרִית אֱדוֹם וְכָל־הַגּוֹיִם אֲשֶׁר־נִקְרָא שְׁמִי עֲלֵיהֶם ('in order that they may possess the remnant of Edom and all the nations over whom my name is called')",
+      "ot_lxx_form": "ὅπως ἐκζητήσωσιν οἱ κατάλοιποι τῶν ἀνθρώπων καὶ πάντα τὰ ἔθνη ἐφ᾽ οὓς ἐπικέκληται τὸ ὄνομά μου ἐπ᾽ αὐτούς ('in order that the remnant of humanity may seek [the Lord] and all the nations over whom my name is called')",
+      "nt_alignment": "lxx",
+      "alignment_confidence": 0.98,
+      "key_word": "ἐκζητήσωσιν ('seek') vs. MT יִירְשׁוּ ('possess'); κατάλοιποι τῶν ἀνθρώπων ('remnant of humanity') vs. MT שְׁאֵרִית אֱדוֹם ('remnant of Edom')",
+      "textual_implication": "James quotes almost verbatim from the LXX, which diverges dramatically from the MT due to either a different Vorlage or interpretive translation (יִדְרְשׁוּ for יִירְשׁוּ; אָדָם for אֱדוֹם). The LXX reading transforms a nationalistic oracle about Israel possessing Edom into a universalistic promise that gentiles will seek the Lord. This textual difference is theologically decisive for the Jerusalem Council's debate, as the LXX form directly supports the inclusion of gentiles without requiring full conversion to Judaism, whereas the MT would not provide such support.",
+      "textual_implication_plain": "James quotes the Greek Old Testament (LXX), which says gentiles will 'seek the Lord,' while the Hebrew says Israel will 'possess Edom.' This difference completely changes the meaning and supports James's argument for accepting gentile believers.",
+      "scholarly_note": "Beale & Carson note this is 'one of the most striking examples in the NT of dependence on the LXX rather than the MT' and that the theological argument depends entirely on the LXX reading (CNTUOT, 585-586).",
+      "contested": false
+    }
+  ],
+  "summary_technical": "Acts 15:17 represents an unambiguous citation of LXX Amos 9:12, with near-verbatim agreement including the critical verbal and nominal forms that diverge sharply from MT. The alignment is determinative for Luke's (or James's) theological argument regarding gentile inclusion in the messianic community.",
+  "summary_plain": "James quotes the Greek Old Testament word-for-word, and the different wording from the Hebrew completely supports his argument about including non-Jewish believers.",
+  "bibcrit_hypothesis": {
+    "title": "LXX Reading Enables Gentile Mission Theology",
+    "reasoning": "The theological viability of James's scriptural argument at the Jerusalem Council depends entirely on a Greek text-form that differs substantively from the MT, suggesting either that early Christian communities used Greek scriptures as authoritative for halakhic decisions, or that Luke retrojects a LXX-based argument onto an Aramaic-speaking historical scene. This raises critical questions about the linguistic and textual milieu of earliest Christianity's self-understanding vis-à-vis Israel's scriptures.",
+    "plain": "The fact that this crucial decision about gentile believers relies on a Greek translation that differs from the Hebrew suggests early Christians viewed the Greek Bible as fully authoritative, even when it differed from Hebrew manuscripts.",
+    "confidence": 0.92
+  },
+  "discovery_ready": false,
+  "reference": "Acts 15:17",
+  "cached_at": "2026-04-13T21:35:40.010177",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "HIGH",
+    "confidence_note": "The analysis accurately represents a well-established and uncontroversial case of LXX-dependent NT citation, with one minor citation detail worth verifying.",
+    "flagged_claims": [
+      {
+        "claim": "Beale & Carson note this is 'one of the most striking examples in the NT of dependence on the LXX rather than the MT' (CNTUOT, 585-586)",
+        "risk": "MEDIUM",
+        "reason": "The direct quotation and specific page numbers should be verified. CNTUOT (Commentary on the New Testament Use of the Old Testament) does treat this passage extensively, and the Acts section is by I. H. Marshall (not Beale or Carson, who are editors). The page range is plausible but the exact wording attributed as a direct quote may be paraphrase or fabricated."
+      },
+      {
+        "claim": "יִדְרְשׁוּ for יִירְשׁוּ; אָדָם for אֱדוֹם",
+        "risk": "MEDIUM",
+        "reason": "The proposed Vorlage reconstruction (יִדְרְשׁוּ and אָדָם) is a standard scholarly hypothesis but is presented somewhat confidently; some scholars argue the LXX reflects interpretive translation rather than a different Hebrew Vorlage. The framing 'either a different Vorlage or interpretive translation' does acknowledge this, so the risk is modest."
+      }
+    ],
+    "safe_claims": [
+      "Acts 15:17 cites LXX Amos 9:12 with near-verbatim agreement",
+      "The LXX reads ἐκζητήσωσιν ('seek') while MT reads יִירְשׁוּ ('possess')",
+      "The LXX reads κατάλοιποι τῶν ἀνθρώπων ('remnant of humanity') while MT reads שְׁאֵרִית אֱדוֹם ('remnant of Edom')",
+      "The LXX form supports James's argument for gentile inclusion in a way the MT form would not",
+      "This is a standard example in NT scholarship of NT dependence on LXX over MT"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.428574+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

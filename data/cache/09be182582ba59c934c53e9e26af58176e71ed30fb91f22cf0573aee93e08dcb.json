@@ -1,0 +1,126 @@
+{
+  "reconstructed_words": [
+    {
+      "position": 1,
+      "lxx_word": "καὶ ἔχθραν θήσω",
+      "vorlage_word": "וְאֵיבָה אָשִׁית",
+      "status": "agrees_mt",
+      "confidence": 0.95,
+      "mt_equivalent": "וְאֵיבָה אָשִׁית",
+      "dss_witness": null,
+      "reasoning": "The Greek ἔχθρα consistently renders אֵיבָה (enmity) in LXX (Num 35:21-22, Ezek 25:15, 35:5). The verb τίθημι regularly translates שִׂים/שִׁית in Genesis (Gen 2:8, 9:13, 13:16). Word order and syntax match MT exactly.",
+      "alternatives": []
+    },
+    {
+      "position": 2,
+      "lxx_word": "ἀνὰ μέσον σου καὶ ἀνὰ μέσον τῆς γυναικός",
+      "vorlage_word": "בֵּינְךָ וּבֵין הָאִשָּׁה",
+      "status": "agrees_mt",
+      "confidence": 0.98,
+      "mt_equivalent": "בֵּינְךָ וּבֵין הָאִשָּׁה",
+      "dss_witness": null,
+      "reasoning": "The distributive construction ἀνὰ μέσον is the standard LXX rendering of בֵּין in Genesis (Gen 1:4, 1:6, 1:14, 1:18, 3:15). The pronominal suffix σου reflects בֵּינְךָ, and τῆς γυναικός reflects הָאִשָּׁה. This is formulaic LXX translation technique.",
+      "alternatives": []
+    },
+    {
+      "position": 3,
+      "lxx_word": "καὶ ἀνὰ μέσον τοῦ σπέρματός σου καὶ ἀνὰ μέσον τοῦ σπέρματος αὐτῆς",
+      "vorlage_word": "וּבֵין זַרְעֲךָ וּבֵין זַרְעָהּ",
+      "status": "agrees_mt",
+      "confidence": 0.98,
+      "mt_equivalent": "וּבֵין זַרְעֲךָ וּבֵין זַרְעָהּ",
+      "dss_witness": null,
+      "reasoning": "The noun σπέρμα consistently translates זֶרַע in Genesis (Gen 3:15, 4:25, 7:3, 12:7, 13:15-16). The pronominal suffixes σου and αὐτῆς match the Hebrew suffixes זַרְעֲךָ and זַרְעָהּ. The repetition of ἀνὰ μέσον mirrors the Hebrew repetition of וּבֵין.",
+      "alternatives": []
+    },
+    {
+      "position": 4,
+      "lxx_word": "αὐτός σου τηρήσει κεφαλήν",
+      "vorlage_word": "הוּא יְשׁוּפְךָ רֹאשׁ",
+      "status": "unattested",
+      "confidence": 0.55,
+      "mt_equivalent": "הוּא יְשׁוּפְךָ רֹאשׁ",
+      "dss_witness": null,
+      "reasoning": "The Greek τηρέω (watch, guard, observe) is unexpected for MT שׁוּף (crush, strike, bruise). MT reads the pronominal suffix as object (יְשׁוּפְךָ, 'will crush you'), but LXX αὐτός σου suggests the translator parsed the suffix as possessive, yielding 'he will watch your head.' This could reflect a different vocalization or understanding of שׁוּף as a root related to watching/guarding, though no cognate supports this. Alternative: the translator softened the violent imagery.",
+      "alternatives": [
+        {
+          "reading": "הוּא יִשְׁמָרְךָ רֹאשׁ",
+          "confidence": 0.35,
+          "note": "If Vorlage had שָׁמַר instead of שׁוּף, τηρέω would be natural, but no textual evidence supports this variant."
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "lxx_word": "καὶ σὺ τηρήσεις αὐτοῦ πτέρναν",
+      "vorlage_word": "וְאַתָּה תְּשׁוּפֶנּוּ עָקֵב",
+      "status": "unattested",
+      "confidence": 0.55,
+      "mt_equivalent": "וְאַתָּה תְּשׁוּפֶנּוּ עָקֵב",
+      "dss_witness": null,
+      "reasoning": "Again τηρέω renders MT שׁוּף, maintaining parallelism with the previous clause. The Greek αὐτοῦ as genitive ('his heel') reflects MT תְּשׁוּפֶנּוּ parsed as possessive rather than object. The noun πτέρνα consistently translates עָקֵב (Gen 25:26, Jer 13:22, Hos 12:4). The translator appears to have understood both clauses as 'watching' rather than 'striking/crushing,' possibly for theological or interpretive reasons.",
+      "alternatives": [
+        {
+          "reading": "וְאַתָּה תִּשְׁמֹר עֲקֵבוֹ",
+          "confidence": 0.3,
+          "note": "A Vorlage with שָׁמַר would naturally yield τηρέω, but remains entirely speculative without manuscript support."
+        }
+      ]
+    }
+  ],
+  "summary_technical": "The LXX Vorlage matches MT closely in syntax and lexicon for the first half (enmity, between-constructions, seed). The critical divergence occurs in the final two clauses: where MT has שׁוּף (strike/crush) twice, LXX employs τηρέω (watch/guard), suggesting either (a) a different Hebrew root in the Vorlage, (b) a different vocalization/parsing of שׁוּף, or (c) interpretive translation softening violent imagery. The pronominal parsing (possessive vs. accusative) also differs. No DSS witness survives for Gen 3:15 to adjudicate.",
+  "summary_plain": "The Greek translation matches the Hebrew Bible closely except in the final verbs, where 'watch' or 'guard' appears instead of 'crush' or 'strike,' possibly reflecting a different Hebrew text or an interpretive choice by the translator.",
+  "overall_confidence": 0.78,
+  "bibcrit_assessment": {
+    "title": "τηρέω as Witness to Lost Hebrew Variant?",
+    "reasoning": "The double use of τηρέω for MT שׁוּף is the passage's most significant textual problem. Three scenarios: (1) the translator had שׁוּף but interpreted it non-violently (least likely given consistent LXX lexical choices elsewhere); (2) a Hebrew root related to 'watching' stood in the Vorlage (no known cognate supports this); (3) the Vorlage read שָׁמַר, which regularly translates as τηρέω (plausible but entirely speculative without manuscript evidence). The pronominal parsing differences (σου/αὐτοῦ as possessive) may indicate the translator struggled with a difficult or ambiguous text. Given lack of DSS or versional support, this remains an unattested reading, possibly reflecting early exegetical tradition rather than a variant Hebrew manuscript.",
+    "plain": "The Greek verb 'watch' instead of 'crush' may reflect either a different Hebrew word in the translator's manuscript or an early interpretive tradition, but no ancient Hebrew manuscripts confirm this alternative reading.",
+    "confidence": 0.5
+  },
+  "discovery_ready": false,
+  "reference": "Genesis 3:15",
+  "cached_at": "2026-04-08T07:52:44.861183",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis correctly identifies the LXX/MT divergence at שׁוּף/τηρέω but contains a significant factual error about the LXX rendering of this verb in Gen 3:15.",
+    "flagged_claims": [
+      {
+        "claim": "the Greek τηρέω (watch, guard, observe) is unexpected for MT שׁוּף",
+        "risk": "HIGH",
+        "reason": "The LXX of Gen 3:15 actually reads τηρήσει...τηρήσεις in some manuscript traditions, but the critical text (Wevers/Göttingen) reads αὐτός σου τηρήσει κεφαλήν - this needs verification. More importantly, many LXX witnesses and the standard critical edition may differ; the reconstruction should acknowledge that τηρέω here is a known crux but the claim that it 'consistently' diverges needs nuance."
+      },
+      {
+        "claim": "πτέρνα consistently translates עָקֵב (Gen 25:26, Jer 13:22, Hos 12:4)",
+        "risk": "MEDIUM",
+        "reason": "Jer 13:22 in LXX uses different vocabulary (the verse references should be verified; Hos 12:4 [MT 12:3/4] does use πτέρνα for עָקֵב, but the citation list should be checked against actual LXX text)."
+      },
+      {
+        "claim": "ἔχθρα consistently renders אֵיבָה in LXX (Num 35:21-22, Ezek 25:15, 35:5)",
+        "risk": "MEDIUM",
+        "reason": "Citations should be verified; while ἔχθρα does commonly render אֵיבָה, the specific verse list needs checking, particularly whether all listed passages use this exact correspondence."
+      },
+      {
+        "claim": "τίθημι regularly translates שִׂים/שִׁית in Genesis (Gen 2:8, 9:13, 13:16)",
+        "risk": "MEDIUM",
+        "reason": "Gen 2:8 uses ἔθετο for וַיָּשֶׂם, but the broader claim of 'regular' correspondence needs verification across the listed verses; Gen 13:16 concerns seed multiplication and the verbal correspondence should be checked."
+      },
+      {
+        "claim": "the translator parsed the suffix as possessive, yielding 'he will watch your head'",
+        "risk": "MEDIUM",
+        "reason": "This is a reasonable interpretation but presented as the explanation when alternative analyses exist (e.g., the LXX may simply reflect interpretive translation with σου as a separate constituent, not necessarily a possessive parsing of the Hebrew suffix)."
+      }
+    ],
+    "safe_claims": [
+      "ἀνὰ μέσον is the standard LXX rendering of בֵּין",
+      "σπέρμα translates זֶרַע in Genesis",
+      "MT שׁוּף is rendered by τηρέω in LXX Gen 3:15",
+      "No DSS witness survives for Gen 3:15",
+      "The pronominal parsing differs between MT and LXX in the final clauses"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.659635+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

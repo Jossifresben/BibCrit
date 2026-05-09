@@ -1,0 +1,158 @@
+{
+  "divergences": [
+    {
+      "mt_word": "בְּהַנְחֵל עֶלְיֹון גֹּויִם (when Elyon apportioned nations)",
+      "lxx_word": "ὅτε διεμέριζεν ὁ ὕψιστος ἔθνη (when the Most High divided nations)",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.88,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.88,
+          "explanation": "The Hiphil infinitive בְּהַנְחֵל is rendered with διεμέριζεν ('divided/distributed'), capturing the sense of apportionment; the translator chose a Greek equivalent emphasizing division rather than inheritance-allotment."
+        },
+        {
+          "type": "different_vorlage",
+          "confidence": 0.25,
+          "explanation": "Possibly a Vorlage with a different root, but the semantic range overlap makes translation idiom the more economical explanation."
+        }
+      ],
+      "dss_witness": "4QDeutj (4Q37) preserves this verse but the opening clause is fragmentary; the key textual variant is the final phrase, not this opening.",
+      "citations": [
+        "Tov (2012) p.254",
+        "Wevers (1995) p.527",
+        "Pietersma & Wright (2007) p.177"
+      ],
+      "analysis_technical": "The Greek διεμέριζεν renders the Hiphil of נחל, which carries a nuance of granting inheritance/possession; the LXX translator chose the 'dividing' semantic field, which is linguistically acceptable but loses the inheritance/patrimony overtone. Wevers notes the translator of Deuteronomy tends toward functional equivalence in such verbal phrases. This does not require a divergent Vorlage.",
+      "analysis_plain": "Both the Hebrew and Greek describe God parceling out the nations, but the Hebrew emphasizes giving them as an inheritance while the Greek stresses the act of dividing them up."
+    },
+    {
+      "mt_word": "בְּהַפְרִידֹו בְּנֵי אָדָם (when he separated the sons of Adam/humankind)",
+      "lxx_word": "ὡς διέσπειρεν υἱοὺς Αδαμ (as he scattered the sons of Adam)",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.8,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.8,
+          "explanation": "The Hiphil of פרד ('to separate/divide') is rendered by διέσπειρεν ('scattered/dispersed'), a stronger and more directional term possibly evoking the Tower of Babel diaspora tradition, reflecting interpretive amplification by the translator."
+        },
+        {
+          "type": "different_vorlage",
+          "confidence": 0.3,
+          "explanation": "A Vorlage reading a root related to scattering (זרה or פוץ) cannot be entirely excluded but lacks textual support."
+        }
+      ],
+      "dss_witness": "4QDeutj preserves בני אדם consistent with MT at this point; no variant in the verb attested.",
+      "citations": [
+        "Wevers (1995) p.528",
+        "Tigay (1996) p.303"
+      ],
+      "analysis_technical": "The Greek διέσπειρεν intensifies the MT's בְּהַפְרִידֹו by adding a connotation of dispersion rather than mere separation, likely under the influence of the Babel narrative (Gen 11:8, where the same Greek root appears in LXX). This is a theologically inflected translation idiom, consistent with Pietersma's model of the LXX translator as an interlinear reader with intertextual awareness.",
+      "analysis_plain": "The Hebrew says God 'separated' humanity; the Greek says he 'scattered' them, a word that echoes the story of the Tower of Babel and suggests the translator had that story in mind."
+    },
+    {
+      "mt_word": "לְמִסְפַּר בְּנֵי יִשְׂרָאֵל (according to the number of the sons of Israel)",
+      "lxx_word": "κατὰ ἀριθμὸν ἀγγέλων θεοῦ (according to the number of the angels of God)",
+      "divergence_type": "different_vorlage",
+      "confidence": 0.92,
+      "hypotheses": [
+        {
+          "type": "different_vorlage",
+          "confidence": 0.92,
+          "explanation": "4QDeutj reads בני אלהים ('sons of God') confirming the LXX reflects a pre-MT Vorlage; the MT reading 'sons of Israel' represents a later theological correction to remove the divine council/polytheistic implication."
+        },
+        {
+          "type": "theological_tendency",
+          "confidence": 0.85,
+          "explanation": "The LXX ἀγγέλων θεοῦ ('angels of God') may itself be a secondary monotheizing softening of an older בני אלהים reading, replacing 'sons of God' with 'angels of God' while the DSS preserves the more original form."
+        }
+      ],
+      "dss_witness": "4QDeutj (4Q37) reads בְּנֵי אֱלֹהִים ('sons of God'), supporting the LXX tradition over MT; this is the most celebrated textual variant in Deuteronomy.",
+      "citations": [
+        "Tov (2012) pp.248–250",
+        "Skehan (1954) p.12",
+        "Heiser (2001) p.52",
+        "Sanders (1994) p.86",
+        "Wevers (1995) p.529"
+      ],
+      "analysis_technical": "4QDeutj's בני אלהים represents the earliest attested reading and almost certainly the original text, reflected in the LXX tradition (ἀγγέλων θεοῦ being a further interpretive step). The MT בני ישראל is a tendentious revision, documented by Tov as a case of rabbinic/proto-Masoretic theological correction to eliminate the implication that the nations were assigned to subordinate divine beings. This is a text-critically decisive case where DSS, LXX, and internal criteria converge.",
+      "analysis_plain": "The Dead Sea Scrolls confirm that the original text said God assigned nations 'according to the number of the sons of God' — meaning divine beings — but later scribes changed this to 'sons of Israel' to avoid the implication that other gods exist."
+    }
+  ],
+  "summary_technical": "Deut 32:8 presents one of the most text-critically significant MT/LXX divergences in the Hebrew Bible: the final phrase demonstrates a three-stage transmission (בני אלהים → ἀγγέλων θεοῦ → בני ישראל), with 4QDeutj confirming the LXX preserves the earlier Vorlage and the MT exhibiting a secondary theological correction. The opening verbal divergences are best explained as translation idiom within the LXX translator's usual range.",
+  "summary_plain": "Ancient manuscripts reveal that Deuteronomy 32:8 once described God assigning each nation to one of his divine council members; later scribes quietly changed 'sons of God' to 'sons of Israel' to make the text safer for strict monotheism.",
+  "bibcrit_hypothesis": {
+    "title": "LXX 'Angels' as Intermediate Monotheizing Stage",
+    "reasoning": "If the Vorlage of the LXX already read בני אלהים, then the LXX translator's rendering as ἀγγέλων θεοῦ ('angels of God') rather than υἱῶν θεοῦ ('sons of God') represents a deliberate intermediary domestication — converting potentially independent divine beings into subordinate messengers — occurring within the Greek translation process itself, not in the Hebrew transmission. This suggests two independent monotheizing corrections: one in the Greek and one in the proto-Masoretic Hebrew tradition, evolving in parallel under similar theological pressures but through different mechanisms. This underexplored parallel trajectory may explain why no single ancient tradition preserves the 'raw' mythological reading without some softening.",
+    "plain": "It seems both the Greek translators and the Hebrew scribes independently felt uncomfortable with 'sons of God' and each softened it in their own way — the Greeks called them 'angels,' the Hebrew scribes replaced them with 'sons of Israel' altogether.",
+    "confidence": 0.62
+  },
+  "discovery_ready": false,
+  "reference": "Deuteronomy 32:8",
+  "cached_at": "2026-04-19T22:24:42.230515",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v2",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The core analysis of Deut 32:8 is well-grounded in established scholarship, but several specific page citations and one DSS reading detail need verification.",
+    "flagged_claims": [
+      {
+        "claim": "4QDeutj (4Q37) reads בְּנֵי אֱלֹהִים ('sons of God')",
+        "risk": "MEDIUM",
+        "reason": "The actual 4QDeutj reading is commonly reported as בני אלוהים or, per some reconstructions, בני אל; the precise spelling/form should be verified against the DJD edition (Sanders, DJD XIV) rather than asserted with vocalized pointing."
+      },
+      {
+        "claim": "Skehan (1954) p.12",
+        "risk": "MEDIUM",
+        "reason": "Skehan's 1954 BASOR article on a fragment of Deuteronomy 32 from Qumran exists, but the specific page citation should be verified; AI-generated page numbers for older journal articles are frequently fabricated."
+      },
+      {
+        "claim": "Heiser (2001) p.52",
+        "risk": "MEDIUM",
+        "reason": "Heiser wrote on this passage (notably his BSac 2001 article 'Deuteronomy 32:8 and the Sons of God'), but the exact page reference is unverifiable here and may be fabricated."
+      },
+      {
+        "claim": "Wevers (1995) p.527 / p.528 / p.529",
+        "risk": "MEDIUM",
+        "reason": "Wevers' Notes on the Greek Text of Deuteronomy (1995) does cover this verse, but the sequential page numbers given for three separate items look suspiciously tidy and should be verified."
+      },
+      {
+        "claim": "Tov (2012) pp.248–250",
+        "risk": "MEDIUM",
+        "reason": "Tov's Textual Criticism of the Hebrew Bible (3rd ed., 2012) discusses this case, but the specific page range needs checking; this is a commonly miscited reference."
+      },
+      {
+        "claim": "Pietersma & Wright (2007) p.177",
+        "risk": "MEDIUM",
+        "reason": "NETS Deuteronomy is by Peters, not directly tied to a Pietersma/Wright commentary at p.177; the citation conflates the NETS volume editors with a page that may not correspond to substantive commentary on this verse."
+      },
+      {
+        "claim": "consistent with Pietersma's model of the LXX translator as an interlinear reader with intertextual awareness",
+        "risk": "MEDIUM",
+        "reason": "Pietersma's interlinear paradigm actually emphasizes the subservience of the Greek to the Hebrew and is often invoked AGAINST claims of intertextual theological amplification; this characterization inverts his framework."
+      },
+      {
+        "claim": "διέσπειρεν ... likely under the influence of the Babel narrative (Gen 11:8, where the same Greek root appears in LXX)",
+        "risk": "MEDIUM",
+        "reason": "While διασπείρω does appear in LXX Gen 11, the claim of deliberate intertextual allusion is speculative and presented with more confidence than the evidence warrants; it could simply be standard lexical choice."
+      },
+      {
+        "claim": "Tigay (1996) p.303",
+        "risk": "MEDIUM",
+        "reason": "Tigay's JPS Deuteronomy commentary discusses 32:8 but the relevant material is typically around pp. 302–303 and in the excursus; specific page should be verified."
+      }
+    ],
+    "safe_claims": [
+      "MT reads בני ישראל while LXX reads ἀγγέλων θεοῦ at Deut 32:8",
+      "4QDeutj preserves a reading reflecting 'sons of God/elohim' rather than 'sons of Israel'",
+      "The MT reading is widely regarded as a secondary theological revision",
+      "διεμέριζεν renders the Hiphil of נחל",
+      "διέσπειρεν renders the Hiphil of פרד",
+      "This is one of the most discussed text-critical cases in Deuteronomy"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.666188+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

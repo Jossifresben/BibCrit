@@ -1,0 +1,80 @@
+{
+  "allusions": [
+    {
+      "ot_reference": "Deuteronomy 32:43",
+      "nt_words": "καὶ προσκυνησάτωσαν αὐτῷ πάντες ἄγγελοι θεοῦ",
+      "ot_mt_form": "הרנינו גוים עמו (Rejoice, O nations, his people) - MT lacks any reference to angels worshiping",
+      "ot_lxx_form": "καὶ προσκυνησάτωσαν αὐτῷ πάντες υἱοὶ θεοῦ (and let all sons of God worship him) - also attested as ἄγγελοι θεοῦ in some LXX witnesses and 4QDeut^q",
+      "nt_alignment": "lxx",
+      "alignment_confidence": 0.95,
+      "key_word": "προσκυνησάτωσαν αὐτῷ πάντες ἄγγελοι θεοῦ",
+      "textual_implication": "The NT citation follows the LXX/4QDeut^q tradition which adds an entire colon about divine beings worshiping that is completely absent from the MT. The variant between υἱοὶ θεοῦ and ἄγγελοι θεοῦ reflects inner-Greek textual fluidity, with both readings attested in LXX manuscripts. This demonstrates the author of Hebrews relied on an expanded Greek text tradition that preserved material from a Hebrew Vorlage different from the proto-MT.",
+      "textual_implication_plain": "The quotation comes from the Greek Old Testament, which contains an entire line about angels worshiping that doesn't exist in the Hebrew Bible. This shows the author used Greek scriptures that sometimes preserved older Hebrew readings now lost.",
+      "scholarly_note": "Beale & Carson note this is one of the clearest cases where NT authors cite material present in LXX/Qumran but absent from MT, demonstrating textual pluriformity in Second Temple Judaism.",
+      "contested": false
+    },
+    {
+      "ot_reference": "Psalm 97:7 (LXX 96:7)",
+      "nt_words": "προσκυνησάτωσαν αὐτῷ πάντες ἄγγελοι θεοῦ",
+      "ot_mt_form": "השתחוו לו כל־אלהים (Worship him, all gods/divine beings)",
+      "ot_lxx_form": "προσκυνήσατε αὐτῷ πάντες οἱ ἄγγελοι αὐτοῦ (Worship him, all his angels)",
+      "nt_alignment": "lxx",
+      "alignment_confidence": 0.85,
+      "key_word": "ἄγγελοι (angels) translating אלהים; imperative προσκυνησάτωσαν",
+      "textual_implication": "The LXX renders אלהים (gods/divine beings) as ἄγγελοι, a monotheizing interpretive translation that eliminates polytheistic overtones. Hebrews follows this demythologized reading, using third-person imperative προσκυνησάτωσαν rather than LXX's second-person προσκυνήσατε, possibly influenced by the Deuteronomy 32:43 form or for syntactical reasons. The choice of ἄγγελοι θεοῦ rather than LXX's ἄγγελοι αὐτοῦ may reflect harmonization with Deut 32:43 or a different textual tradition.",
+      "textual_implication_plain": "The Greek version translated 'gods' as 'angels' to avoid polytheism, and Hebrews follows this interpretation. The author may have combined wording from this psalm with Deuteronomy 32:43.",
+      "scholarly_note": "Many scholars (including contributors to Beale & Carson) debate whether Deut 32:43 or Ps 97:7 is primary, or whether Hebrews conflates both, with the majority favoring Deuteronomy as the main source.",
+      "contested": true
+    }
+  ],
+  "summary_technical": "Hebrews 1:6 primarily cites Deuteronomy 32:43 LXX/4QDeut^q, a text-form containing material absent from MT, possibly with secondary influence from Psalm 97:7 LXX. The citation demonstrates the author's reliance on Greek textual traditions that sometimes preserve earlier Hebrew readings divergent from the proto-Masoretic tradition.",
+  "summary_plain": "The author quotes from Greek scriptures that contain material not found in the traditional Hebrew Bible, showing reliance on older textual traditions.",
+  "bibcrit_hypothesis": {
+    "title": "Composite Royal Enthronement Testimonia Collection",
+    "reasoning": "The fusion of Deut 32:43 and Ps 97:7 with shared vocabulary (προσκυνησάτωσαν αὐτῷ πάντες ἄγγελοι θεοῦ) suggests the author drew from a pre-formed testimonia collection linking texts about YHWH's kingship and angelic worship, now applied christologically. The παλιν ('again') may indicate this 'second' bringing of the firstborn refers to parousia, creating eschatological reapplication of enthronement imagery. The conflation pattern mirrors other Hebrews citations (e.g., 10:5-7) where liturgical or catechetical collections may underlie the text.",
+    "plain": "The author likely used an early Christian collection of Old Testament texts about God's kingship that had already been grouped together and were now applied to Jesus as the enthroned Son.",
+    "confidence": 0.72
+  },
+  "discovery_ready": false,
+  "reference": "Hebrews 1:6",
+  "cached_at": "2026-04-13T21:28:44.280542",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "HIGH",
+    "confidence_note": "The analysis accurately represents the well-known textual situation in Hebrews 1:6, with appropriate hedging on contested points.",
+    "flagged_claims": [
+      {
+        "claim": "also attested as ἄγγελοι θεοῦ in some LXX witnesses and 4QDeut^q",
+        "risk": "MEDIUM",
+        "reason": "4QDeut^q reads בני אלוהים (sons of God/gods) in Hebrew, not ἄγγελοι θεοῦ (which is Greek). The Hebrew Qumran text supports the 'sons of God' reading; the ἄγγελοι θεοῦ form is found in some Greek witnesses (Odes 2:43) but conflating these as if 4QDeut^q directly attests ἄγγελοι θεοῦ is imprecise."
+      },
+      {
+        "claim": "Beale & Carson note this is one of the clearest cases where NT authors cite material present in LXX/Qumran but absent from MT",
+        "risk": "MEDIUM",
+        "reason": "Attribution to the Beale & Carson Commentary on the NT Use of the OT is plausible but the specific framing ('one of the clearest cases') is not directly verifiable and risks paraphrasing as quotation."
+      },
+      {
+        "claim": "the majority favoring Deuteronomy as the main source",
+        "risk": "MEDIUM",
+        "reason": "Scholarly opinion is genuinely divided; some major commentators (e.g., Attridge) lean toward Deut 32:43 but characterizing this as 'majority' view is an overstatement of consensus."
+      },
+      {
+        "claim": "The conflation pattern mirrors other Hebrews citations (e.g., 10:5-7) where liturgical or catechetical collections may underlie the text",
+        "risk": "MEDIUM",
+        "reason": "The testimonia hypothesis for Hebrews is speculative; Heb 10:5-7 is a single Psalm 40 citation, not obviously a conflation, so the parallel is weak."
+      }
+    ],
+    "safe_claims": [
+      "MT of Deut 32:43 lacks the colon about divine beings/angels worshiping",
+      "LXX Deut 32:43 contains an additional colon absent from MT",
+      "LXX Ps 96:7 renders אלהים as ἄγγελοι",
+      "Hebrews uses third-person imperative προσκυνησάτωσαν",
+      "LXX Ps 96:7 reads ἄγγελοι αὐτοῦ where Hebrews has ἄγγελοι θεοῦ",
+      "The Hebrew Vorlage at Qumran (4QDeut-q) supports a longer text than MT at Deut 32:43"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.639210+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

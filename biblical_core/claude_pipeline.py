@@ -578,6 +578,8 @@ class ClaudePipeline:
             except (json.JSONDecodeError, OSError):
                 continue
             if data.get('discovery_ready'):
+                if data.get('_validation', {}).get('reliability') == 'LOW':
+                    continue  # skip LOW-reliability entries regardless of discovery_ready flag
                 tool = _detect_tool(data)
                 cards.extend(_extract_cards(data.get('reference', '') or data.get('book', '') or filename[:-5][:32], data, min_confidence, tool=tool))
 
@@ -658,6 +660,8 @@ class ClaudePipeline:
                     data = json.load(f)
             except (json.JSONDecodeError, OSError):
                 continue
+            if data.get('_validation', {}).get('reliability') == 'LOW':
+                continue  # skip LOW-reliability entries from discovery
             tool = _detect_tool(data)
             cards.extend(_extract_cards(data.get('reference', '') or data.get('book', '') or filename[:-5][:32], data,
                                         min_confidence, tool=tool))

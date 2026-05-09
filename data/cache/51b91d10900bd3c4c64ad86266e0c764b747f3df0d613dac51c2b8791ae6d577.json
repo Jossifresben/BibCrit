@@ -99,5 +99,70 @@
   "reference": "Proverbs 8:22",
   "cached_at": "2026-03-31T00:16:55.600206",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis correctly identifies the major translation differences and theological stakes of Proverbs 8:22, but contains several questionable or likely fabricated specific citations and overstates conscious theological intent for some translators.",
+    "flagged_claims": [
+      {
+        "claim": "Athanasios, Orations Against the Arians 2.18",
+        "risk": "MEDIUM",
+        "reason": "While Athanasius does discuss Prov 8:22 extensively in Orations Against the Arians (especially Book 2), the specific paragraph 2.18 reference should be verified; the bulk of his exegesis of this verse is in chapters 44-82 of Book 2."
+      },
+      {
+        "claim": "Jerome, Epistula 108.10",
+        "risk": "HIGH",
+        "reason": "Epistle 108 is the Epitaphium Sanctae Paulae (eulogy for Paula) and does not, to standard knowledge, address the Prov 8:22 translation controversy. This citation appears fabricated or misattributed."
+      },
+      {
+        "claim": "Laato, Proverbs 8:22-31 in Early Christian Exegesis, pp. 78-85",
+        "risk": "HIGH",
+        "reason": "This monograph title and author combination is not verifiable as a standard published work; likely fabricated."
+      },
+      {
+        "claim": "Schaper, Eschatology in the Greek Psalter, pp. 134-135",
+        "risk": "MEDIUM",
+        "reason": "Schaper's monograph is on the Psalter, not Proverbs; cited page range's relevance to Prov 8:22 is questionable."
+      },
+      {
+        "claim": "ייי ברני בחוכמתא קדמאה לעובדוי ('The Lord created me with primordial wisdom for his works')",
+        "risk": "HIGH",
+        "reason": "The actual Targum of Proverbs 8:22 reads more closely 'בראני בריש בריתיה קדם עובדוי' or similar; the cited Aramaic with 'be-hokhmata qadma'ah' does not match standard editions of Targum Proverbs and appears to be a constructed rather than transcribed text."
+      },
+      {
+        "claim": "Jerome explicitly addresses the translation controversy in his correspondence, indicating conscious theological choice",
+        "risk": "HIGH",
+        "reason": "While Jerome's choice of 'possedit' is well-known, the claim that he explicitly defends it against Arian readings in correspondence requires specific citation; this overstates the documentary evidence."
+      },
+      {
+        "claim": "Samely, The Interpretation of Speech in the Pentateuch Targums, pp. 234-237",
+        "risk": "MEDIUM",
+        "reason": "Samely's work is on Pentateuch Targums, so its relevance to Targum Proverbs (a non-Pentateuchal Targum with different translation character) is questionable."
+      },
+      {
+        "claim": "Peshitta usage patterns in Genesis 14:19, 22 suggest preference for 'acquire/establish' over 'create'",
+        "risk": "MEDIUM",
+        "reason": "This generalization about Peshitta translation technique for קנה based on two verses is an overreach without broader corpus analysis cited."
+      },
+      {
+        "claim": "facilitating proto-Christian identification of Wisdom with the preexistent Logos/Christ ... the translator intended an ontological statement",
+        "risk": "MEDIUM",
+        "reason": "Imputing proto-Christian or ontological intent to a pre-Christian LXX translator is anachronistic and speculative; the LXX of Proverbs predates Christian Logos theology."
+      }
+    ],
+    "safe_claims": [
+      "The LXX renders qanani with ἔκτισέν με ('created me')",
+      "The Vulgate renders qanani with possedit ('possessed')",
+      "Hebrew קנה has a semantic range including 'acquire,' 'possess,' and possibly 'create'",
+      "Genesis 14:19, 22 and Deut 32:6 are cited as instances where qanah may mean 'create'",
+      "Prov 8:22 became central to Arian/Nicene Christological controversy",
+      "The LXX renders me'az with πρὸ τοῦ αἰῶνος",
+      "Wisdom of Solomon 7:22-8:1 develops Wisdom cosmology in Hellenistic Jewish thought",
+      "Cook's The Septuagint of Proverbs is a standard reference for LXX Proverbs",
+      "Fox's Proverbs 1-9 (Anchor Bible) is a standard commentary"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.649254+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

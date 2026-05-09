@@ -1,0 +1,203 @@
+{
+  "reconstructed_words": [
+    {
+      "position": 1,
+      "lxx_word": "καὶ αὐτὸς",
+      "vorlage_word": "והוא",
+      "status": "agrees_mt",
+      "confidence": 0.95,
+      "mt_equivalent": "והוא",
+      "dss_witness": "1QIsaᵃ: והוא",
+      "reasoning": "Standard equivalence: καί = ו and αὐτός = הוא. This opening formula matches MT exactly and is confirmed by 1QIsaᵃ. The LXX translator consistently renders the conjunction-pronoun construction this way throughout Isaiah.",
+      "alternatives": []
+    },
+    {
+      "position": 2,
+      "lxx_word": "διὰ τὸ κεκακῶσθαι",
+      "vorlage_word": "נענה",
+      "status": "unattested",
+      "confidence": 0.4,
+      "mt_equivalent": "נגש",
+      "dss_witness": "1QIsaᵃ: נגש",
+      "reasoning": "The LXX reads 'because he was afflicted' suggesting a Niphal form of ענה ('be afflicted') instead of MT's Niphal נגש ('be oppressed/driven'). The perfect passive participle κεκακῶσθαι with causal διὰ τό suggests the translator read a passive verbal form with affliction semantics. This represents a different verbal root from MT.",
+      "alternatives": [
+        {
+          "reading": "בהענותו",
+          "confidence": 0.35,
+          "note": "Infinitive construct with preposition, explaining the causal construction"
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "lxx_word": "οὐκ ἀνοίγει τὸ στόμα",
+      "vorlage_word": "לא יפתח־פיו",
+      "status": "agrees_mt",
+      "confidence": 0.9,
+      "mt_equivalent": "לא יפתח־פיו",
+      "dss_witness": "1QIsaᵃ: לוא יפתח פיהו",
+      "reasoning": "Direct equivalence: οὐκ = לא, ἀνοίγει = יפתח (Qal imperfect), τὸ στόμα = פיו. The LXX consistently translates פתח with ἀνοίγω and פה with στόμα. Minor orthographic variation in DSS (plene spelling) doesn't affect meaning.",
+      "alternatives": []
+    },
+    {
+      "position": 4,
+      "lxx_word": "ὡς πρόβατον",
+      "vorlage_word": "כשה",
+      "status": "agrees_mt",
+      "confidence": 0.95,
+      "mt_equivalent": "כשה",
+      "dss_witness": "1QIsaᵃ: כשה",
+      "reasoning": "Standard equivalence: ὡς = כ (comparative) and πρόβατον = שה (sheep, generic). The LXX translator uses πρόβατον for both שה and צאן in Isaiah. This reading is confirmed by both MT and 1QIsaᵃ.",
+      "alternatives": []
+    },
+    {
+      "position": 5,
+      "lxx_word": "ἐπὶ σφαγὴν",
+      "vorlage_word": "לטבח",
+      "status": "agrees_mt",
+      "confidence": 0.92,
+      "mt_equivalent": "לטבח",
+      "dss_witness": "1QIsaᵃ: לטבח",
+      "reasoning": "The preposition ἐπί with accusative expresses direction/purpose, matching Hebrew ל. σφαγή ('slaughter') is the standard LXX equivalent for טבח. This translation pattern appears consistently in prophetic literature.",
+      "alternatives": []
+    },
+    {
+      "position": 6,
+      "lxx_word": "ἤχθη",
+      "vorlage_word": "יובל",
+      "status": "agrees_mt",
+      "confidence": 0.93,
+      "mt_equivalent": "יובל",
+      "dss_witness": "1QIsaᵃ: יובל",
+      "reasoning": "ἤχθη (aorist passive of ἄγω, 'was led') corresponds to Hophal יובל from יבל/הלך ('be led/brought'). The passive voice and lexical choice match perfectly. The aorist may represent Hebrew perfect or imperfect depending on context.",
+      "alternatives": []
+    },
+    {
+      "position": 7,
+      "lxx_word": "καὶ ὡς ἀμνὸς",
+      "vorlage_word": "וכרחל",
+      "status": "unattested",
+      "confidence": 0.5,
+      "mt_equivalent": "וכרחל",
+      "dss_witness": "1QIsaᵃ: וכרחל",
+      "reasoning": "The LXX reads ἀμνός ('lamb', masculine) where MT has רחל ('ewe', feminine). While both refer to sheep, the gender and specific term differ. The translator may have read כבש or טלה instead, or interpreted רחל generically. Some argue for contextual harmonization with preceding πρόβατον.",
+      "alternatives": [
+        {
+          "reading": "וככבש",
+          "confidence": 0.45,
+          "note": "Masculine 'lamb' would better match ἀμνός gender and semantics"
+        },
+        {
+          "reading": "וכטלה",
+          "confidence": 0.3,
+          "note": "Another term for lamb, though less common in this context"
+        }
+      ]
+    },
+    {
+      "position": 8,
+      "lxx_word": "ἐναντίον τοῦ κείροντος αὐτὸν",
+      "vorlage_word": "לפני גזזיה",
+      "status": "agrees_mt",
+      "confidence": 0.9,
+      "mt_equivalent": "לפני גזזיה",
+      "dss_witness": "1QIsaᵃ: לפני גוזזיה",
+      "reasoning": "ἐναντίον ('before') = לפני, τοῦ κείροντος (present participle 'the one shearing') = גזזיה (Qal active participle with suffix). The articular participle with genitive pronoun matches Hebrew construct chain. 1QIsaᵃ shows plene spelling with ו.",
+      "alternatives": []
+    },
+    {
+      "position": 9,
+      "lxx_word": "ἄφωνος",
+      "vorlage_word": "נאלמה",
+      "status": "agrees_mt",
+      "confidence": 0.88,
+      "mt_equivalent": "נאלמה",
+      "dss_witness": "1QIsaᵃ: נאלמה",
+      "reasoning": "ἄφωνος ('voiceless, silent') represents the Niphal perfect נאלמה from אלם ('be silent/dumb'). This is a precise semantic match. The adjective form in Greek corresponds to the Hebrew stative verb, a common LXX rendering strategy for Hebrew verbal adjectives.",
+      "alternatives": []
+    },
+    {
+      "position": 10,
+      "lxx_word": "οὕτως",
+      "vorlage_word": "כן",
+      "status": "agrees_mt",
+      "confidence": 0.95,
+      "mt_equivalent": "כן",
+      "dss_witness": "1QIsaᵃ: כן",
+      "reasoning": "Standard equivalence: οὕτως = כן ('thus, so'). This adverb functions identically in both languages to draw the comparison. Universal attestation across textual witnesses.",
+      "alternatives": []
+    },
+    {
+      "position": 11,
+      "lxx_word": "οὐκ ἀνοίγει τὸ στόμα αὐτοῦ",
+      "vorlage_word": "לא יפתח פיו",
+      "status": "agrees_mt",
+      "confidence": 0.92,
+      "mt_equivalent": "לא יפתח פיו",
+      "dss_witness": "1QIsaᵃ: לוא יפתח פיהו",
+      "reasoning": "Repetition of position 3 with explicit pronoun αὐτοῦ matching Hebrew suffix. The LXX adds the pronoun for clarity (Greek stylistic preference), though the Hebrew suffix is implicit in פיו. This refrain structure emphasizes the silence motif.",
+      "alternatives": []
+    }
+  ],
+  "summary_technical": "The reconstructed Vorlage largely agrees with MT and 1QIsaᵃ with two significant exceptions. Position 2 shows the LXX reading a form of ענה ('be afflicted') with causal construction instead of MT's נגש, suggesting textual variation or interpretive translation. Position 7 presents ἀμνός (masculine lamb) for MT's רחל (ewe), possibly indicating a different Hebrew term or dynamic equivalence. The repetition of 'does not open mouth' and overall syntax align with attested Hebrew witnesses.",
+  "summary_plain": "The Greek translation mostly follows the Hebrew text we have today, with two notable differences: the reason given for silence ('because afflicted' vs. 'oppressed') and the term for sheep in the second comparison ('lamb' vs. 'ewe').",
+  "overall_confidence": 0.82,
+  "bibcrit_assessment": {
+    "title": "LXX Preserves Variant in Affliction Causality",
+    "reasoning": "The most significant potential variant is διὰ τὸ κεκακῶσθαι (position 2), suggesting a Vorlage with ענה rather than MT's נגש. This is not merely interpretive; the causal construction (διὰ τό + infinitive) implies a Hebrew prepositional phrase or subordinate clause the translator encountered. Given that ענה appears frequently in Isaiah's Servant Songs (50:4; 53:4) and describes the servant's suffering, a scribe could easily have harmonized or the LXX may preserve an earlier reading. However, this remains speculative without DSS support—1QIsaᵃ confirms נגש. The ἀμνός/רחל variation is more likely dynamic equivalence than textual difference.",
+    "plain": "The Greek suggests the servant was silent 'because he was afflicted' using a different Hebrew word than our current text's 'oppressed,' possibly preserving an earlier version or reflecting interpretive translation within the suffering servant theme.",
+    "confidence": 0.55
+  },
+  "discovery_ready": false,
+  "reference": "Isaiah 53:7",
+  "cached_at": "2026-04-08T07:51:26.784169",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis correctly identifies the major LXX/MT divergences in Isaiah 53:7, but contains a significant error regarding the MT reading at position 2 and some questionable Vorlage reconstructions.",
+    "flagged_claims": [
+      {
+        "claim": "mt_equivalent: נגש ... MT's Niphal נגש ('be oppressed/driven')",
+        "risk": "HIGH",
+        "reason": "The MT of Isaiah 53:7 reads נִגַּשׂ (nigash, Niphal of נגשׂ, 'he was oppressed/hard-pressed'), not נגש (nagash, 'draw near'). More importantly, the verse opens with נִגַּשׂ וְהוּא נַעֲנֶה — so the MT actually contains BOTH נגשׂ AND נענה (Niphal of ענה, 'afflicted'). The LXX's διὰ τὸ κεκακῶσθαι likely renders נענה, which is already in the MT, not a variant. The analysis appears to have missed a Hebrew word entirely."
+      },
+      {
+        "claim": "vorlage_word: נענה for position 2 while listing position 1 as only והוא",
+        "risk": "HIGH",
+        "reason": "The Hebrew sequence is נִגַּשׂ וְהוּא נַעֲנֶה. The reconstruction omits נגשׂ entirely and misaligns the word order. This structural error undermines the position-by-position analysis."
+      },
+      {
+        "claim": "ἤχθη ... corresponds to Hophal יובל from יבל/הלך",
+        "risk": "MEDIUM",
+        "reason": "יובל is Hophal of יבל ('be brought/led'); conflating it with הלך is incorrect. These are distinct roots."
+      },
+      {
+        "claim": "The LXX translator uses πρόβατον for both שה and צאן in Isaiah",
+        "risk": "MEDIUM",
+        "reason": "Generalization stated without qualification; LXX Isaiah's lexical choices for צאן vary (also ποίμνιον, etc.). Verifiable but overstated."
+      },
+      {
+        "claim": "ענה appears frequently in Isaiah's Servant Songs (50:4; 53:4)",
+        "risk": "MEDIUM",
+        "reason": "Isaiah 50:4 contains ענה in the sense of 'answer/respond' (different root or homonym), not 'afflict.' The citation conflates homonymous roots ענה I (answer) and ענה II (afflict)."
+      },
+      {
+        "claim": "alternative reading בהענותו with confidence 0.35",
+        "risk": "MEDIUM",
+        "reason": "Speculative reconstruction presented with a specific confidence number; no manuscript evidence supports this hypothetical form."
+      }
+    ],
+    "safe_claims": [
+      "καί = ו and αὐτός = הוא is a standard equivalence",
+      "1QIsaᵃ shows plene spelling variations (לוא, פיהו, גוזזיה)",
+      "ἀμνός is masculine 'lamb' while רחל is feminine 'ewe'",
+      "ἄφωνος ('voiceless') corresponds well to נאלמה (Niphal of אלם)",
+      "οὕτως = כן is a standard equivalence",
+      "The LXX adds explicit pronoun αὐτοῦ where Hebrew uses suffix"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.665779+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

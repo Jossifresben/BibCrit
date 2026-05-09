@@ -96,5 +96,68 @@
   "reference": "Exodus 4:24",
   "cached_at": "2026-03-31T00:20:23.332651",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "Core observations about Targumic angelic mediation and expansion are well-grounded, but several specific patristic citations, page references, and lexical claims about the Vulgate and Peshitta are questionable or overstated.",
+    "flagged_claims": [
+      {
+        "claim": "later Christian exegesis that emphasizes the son (Origen, Hom. Ex. 5.5)",
+        "risk": "HIGH",
+        "reason": "Origen's Homilies on Exodus 5 deals with other material; the specific reference 5.5 addressing Exodus 4:24 and the son as object of attack is not verifiable and appears fabricated."
+      },
+      {
+        "claim": "Jerome's use of 'voluit' (to wish, will) rather than a more forceful verb like 'quaesivit'... subtly mitigates the aggressive divine action",
+        "risk": "HIGH",
+        "reason": "The Vulgate of Exod 4:24 actually reads 'occurrit ei Dominus et volebat occidere eum' in many editions; more importantly, 'volo + infinitive' is standard Latin idiom for 'sought to,' not a theological softening. The claim of intentional mitigation is speculative and likely overread."
+      },
+      {
+        "claim": "Kamesar, Jerome, Greek Scholarship, and the Hebrew Bible, pp. 112-114",
+        "risk": "MEDIUM",
+        "reason": "Specific page citation for Jerome's handling of Exod 4:24 in Kamesar is unverified and likely fabricated; Kamesar's work focuses on hexaplaric scholarship, not this passage specifically."
+      },
+      {
+        "claim": "Grossfeld, The Targum Onqelos to Exodus, pp. 19-20",
+        "risk": "MEDIUM",
+        "reason": "Specific page citations should be checked; Grossfeld's Aramaic Bible volume on Exodus exists but the precise pagination for this verse is unverified."
+      },
+      {
+        "claim": "Alexander, The Targum of Canticles, pp. 23-24 (comparative angelology)",
+        "risk": "MEDIUM",
+        "reason": "Citing a Targum of Canticles volume for Exodus 4 angelology is tangential and the page reference appears speculative."
+      },
+      {
+        "claim": "Vermes, Scripture and Tradition in Judaism, pp. 178-179",
+        "risk": "MEDIUM",
+        "reason": "Vermes does discuss the bridegroom of blood in this volume, but the exact pagination should be verified; risk of citation drift."
+      },
+      {
+        "claim": "Peshitta's substitution of 'cast before' for 'touched'... The Syriac verb ܫܕܐ",
+        "risk": "MEDIUM",
+        "reason": "The Peshitta reading at Exod 4:25 should be checked against the Leiden edition; the claim that the Peshitta uses 'cast' rather than a cognate of 'touch' (ܩܪܒ or similar) needs verification, and the theological motivation attributed is speculative."
+      },
+      {
+        "claim": "Neofiti adds: 'How precious is the blood of circumcision which has saved this bridegroom from the hands of the angel of death'",
+        "risk": "MEDIUM",
+        "reason": "The quotation is approximately accurate to Targum Neofiti's expansion at Exod 4:25-26 but the precise wording should be verified against Díez Macho's edition; paraphrase risk."
+      },
+      {
+        "claim": "Philo's silence on this passage",
+        "risk": "MEDIUM",
+        "reason": "Argument from silence used as positive evidence of discomfort is methodologically weak and unverifiable as a deliberate avoidance."
+      }
+    ],
+    "safe_claims": [
+      "Targum Onqelos replaces YHWH as direct agent with 'an angel of the LORD'",
+      "Targum Pseudo-Jonathan reads 'an angel sent from before the LORD'",
+      "The MT pronominal antecedent in Exod 4:24 is ambiguous between Moses and his son",
+      "The LXX renders the Hebrew closely with ἐζήτει αὐτὸν ἀποκτεῖναι",
+      "Targumic expansions introduce circumcision-blood as expiatory and reference a divine decree being annulled",
+      "Hebrew רַגְלַיִם can function as a euphemism in some biblical contexts",
+      "Targumic anthropomorphism avoidance via angelic mediation is a well-attested pattern"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.647674+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

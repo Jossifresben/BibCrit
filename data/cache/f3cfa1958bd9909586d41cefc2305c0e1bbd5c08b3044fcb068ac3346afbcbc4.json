@@ -1,0 +1,73 @@
+{
+  "reconstructed_words": [
+    {
+      "position": 1,
+      "lxx_word": "Καιναν",
+      "vorlage_word": "קֵינָן",
+      "status": "agrees_mt",
+      "confidence": 0.97,
+      "mt_equivalent": "קֵינָ֥ן",
+      "dss_witness": null,
+      "reasoning": "Καιναν is the standard LXX transliteration of קֵינָן, consistent across Genesis and Chronicles genealogies. The Greek rendering faithfully represents the consonantal form qyn with the standard -an ending. No DSS fragment of 1 Chr 1:2 is known to attest a variant here.",
+      "alternatives": []
+    },
+    {
+      "position": 2,
+      "lxx_word": "Μαλελεηλ",
+      "vorlage_word": "מַהֲלַלְאֵל",
+      "status": "agrees_mt",
+      "confidence": 0.96,
+      "mt_equivalent": "מַהֲלַלְאֵ֖ל",
+      "dss_witness": null,
+      "reasoning": "Μαλελεηλ is the conventional LXX transliteration of מַהֲלַלְאֵל throughout the Pentateuchal and Chronistic genealogies, with the theophoric element -אֵל rendered as -ηλ and the initial מ as Μ. The internal /h/ and laryngeals are collapsed as expected in LXX transliteration practice. This matches MT exactly.",
+      "alternatives": []
+    },
+    {
+      "position": 3,
+      "lxx_word": "Ιαρεδ",
+      "vorlage_word": "יָרֶד",
+      "status": "agrees_mt",
+      "confidence": 0.97,
+      "mt_equivalent": "יָֽרֶד",
+      "dss_witness": null,
+      "reasoning": "Ιαρεδ straightforwardly represents יָרֶד, with the initial yod rendered as Ι and the segol-class vowel rendered as ε in the final syllable, a consistent pattern in LXX proper noun transliteration. The Greek form aligns precisely with the MT consonantal and vocalic tradition.",
+      "alternatives": []
+    }
+  ],
+  "summary_technical": "The LXX of 1 Chr 1:2 presents three personal names — Καιναν, Μαλελεηλ, Ιαρεδ — each of which reflects a Vorlage identical to the MT: קֵינָן מַהֲלַלְאֵל יָרֶד. The translator employed standard transliteration conventions for proper nouns in genealogical lists, collapsing laryngeals and representing matres lectionis in Greek approximation. There are no divergences from MT, no attested DSS variants for this specific verse, and no Greek idioms without a Hebrew correlate; the verse is a minimal nominal list with no syntactic complexity requiring transformation.",
+  "summary_plain": "The Greek translation of this verse simply writes out three ancestor names — Kenan, Mahalalel, and Jared — that match the Hebrew Bible exactly. There are no meaningful differences between the Greek and Hebrew versions here.",
+  "overall_confidence": 0.97,
+  "bibcrit_assessment": {
+    "title": "Genealogical Names: LXX Fully Reflects MT",
+    "reasoning": "This verse offers virtually no scope for identifying a divergent Vorlage, since all three items are proper nouns rendered by mechanical transliteration without semantic translation choices. The most philologically interesting observation is the absence of any additional name here in the LXX tradition: in Gen 5 the LXX inserts a second Καιναν (grandson of Arphaxad) absent from MT, but no such plus appears in 1 Chr 1:2, suggesting the Chronicler's Vorlage was stable in this section. This is evidence-based rather than speculative, resting on the consistent alignment of all textual witnesses for this specific verse.",
+    "plain": "All three names in this verse are identical in the Greek and Hebrew traditions, so there is nothing here that points to a lost or different version of the original Hebrew text.",
+    "confidence": 0.97
+  },
+  "discovery_ready": false,
+  "reference": "1 Chronicles 1:2",
+  "cached_at": "2026-04-19T22:32:24.428926",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "HIGH",
+    "confidence_note": "The analysis is restricted to straightforward transliteration observations of three proper nouns and is verifiable against standard editions of MT and LXX.",
+    "flagged_claims": [
+      {
+        "claim": "in Gen 5 the LXX inserts a second Καιναν (grandson of Arphaxad) absent from MT",
+        "risk": "MEDIUM",
+        "reason": "The second Cainan plus is in the LXX genealogy of Gen 11 (and Gen 10/Luke 3:36), not Gen 5. Gen 5 has the original Kenan in both MT and LXX. This is a minor but factual misattribution of chapter."
+      }
+    ],
+    "safe_claims": [
+      "Καιναν is the standard LXX transliteration of קֵינָן",
+      "Μαλελεηλ is the conventional LXX transliteration of מַהֲלַלְאֵל",
+      "Ιαρεδ represents יָרֶד",
+      "The verse is a minimal nominal list with no syntactic complexity",
+      "No DSS fragment is cited for 1 Chr 1:2 (null witness)",
+      "All three names align with MT"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.544556+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

@@ -109,5 +109,46 @@
   "reference": "Micah",
   "cached_at": "2026-03-30T21:41:19.346570",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis is largely grounded in observable textual data from Micah 5:2 (Hebrew 5:1 in MT), but it overgeneralizes from a single verse and contains a notable textual error in the LXX citation.",
+    "flagged_claims": [
+      {
+        "claim": "'ἐκ σοῦ μοι ἐξελεύσεται' mirrors 'מִמְּךָ לִי יֵצֵא'",
+        "risk": "MEDIUM",
+        "reason": "The standard LXX (Rahlfs/Göttingen) text of Micah 5:1 reads 'ἐξ οὗ μοι ἐξελεύσεται' (from whom shall come forth to me), not 'ἐκ σοῦ' (from you). This is a well-known divergence from MT and undermines the claim of close formal correspondence at this point."
+      },
+      {
+        "claim": "Throughout Micah, divine emotional language and bodily imagery are generally preserved (e.g., God's anger, walking before Israel)",
+        "risk": "MEDIUM",
+        "reason": "No specific verses are cited to support this generalization across Micah; the only example given is the pronoun 'μοι', which is not anthropomorphic. The claim is unverifiable as stated."
+      },
+      {
+        "claim": "the translation 'ὀλιγοστὸς εἶ' ... intensifies the paradox ... and likely reflects messianic interpretation heightening",
+        "risk": "MEDIUM",
+        "reason": "ὀλιγοστός is a common LXX equivalent for צָעִיר/קָטֹן and need not signal messianic heightening; attributing this to deliberate messianic exegesis rather than standard lexical choice is interpretively over-confident."
+      },
+      {
+        "claim": "the retention of 'from days of eternity' emphasizes pre-existence and eternal origins, consistent with messianic exaltation",
+        "risk": "MEDIUM",
+        "reason": "ἐξ ἡμερῶν αἰῶνος is a fairly direct rendering of מִימֵי עוֹלָם; calling this 'messianic heightening' rather than literal translation overstates the translator's interpretive intervention."
+      },
+      {
+        "claim": "The translator's Vorlage was likely close to MT",
+        "risk": "MEDIUM",
+        "reason": "Stated without engagement with specific Vorlage differences (e.g., the 'ἐξ οὗ' vs 'מִמְּךָ' issue itself may suggest a different Vorlage or reading); the claim is plausible but presented with more certainty than the single-verse evidence warrants."
+      }
+    ],
+    "safe_claims": [
+      "LXX-Twelve Prophets is generally a moderately literal translation",
+      "The Hebrew word order in Micah 5:2 is largely preserved in the Greek",
+      "αἱ ἔξοδοι αὐτοῦ corresponds to מוֹצָאֹתָיו",
+      "ἀπ᾽ ἀρχῆς corresponds to מִקֶּדֶם",
+      "Micah 5:2 was a significant text in Second Temple and early Christian messianic interpretation"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.541999+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

@@ -1,0 +1,331 @@
+{
+  "reference": "John 1:1",
+  "gnt_reference_text": "ἐν ἀρχῇ ἦν ὁ λόγος καί ὁ λόγος ἦν πρός τόν θεόν καί θεός ἦν ὁ λόγος",
+  "citations": [
+    {
+      "father": "Irenaeus of Lyons",
+      "work": "Adversus Haereses",
+      "section": "1.8.5",
+      "date": "c. 180",
+      "quoted_text": "in principio erat Verbum et Verbum erat apud Deum et Deus erat Verbum",
+      "language": "Latin",
+      "text_form": "Old Latin",
+      "comparison": "Latin translation, complete citation of all three clauses",
+      "variants": "None substantive from standard Old Latin"
+    },
+    {
+      "father": "Irenaeus of Lyons",
+      "work": "Adversus Haereses",
+      "section": "3.11.1",
+      "date": "c. 180",
+      "quoted_text": "In principio erat Verbum",
+      "language": "Latin",
+      "text_form": "Old Latin",
+      "comparison": "Partial citation, first clause only",
+      "variants": "None"
+    },
+    {
+      "father": "Tertullian",
+      "work": "Adversus Praxean",
+      "section": "5.1",
+      "date": "c. 213",
+      "quoted_text": "In principio erat sermo et sermo erat apud deum et deus erat sermo",
+      "language": "Latin",
+      "text_form": "Old Latin",
+      "comparison": "Uses 'sermo' instead of 'verbum' for λόγος",
+      "variants": "Consistent use of sermo throughout Tertullian's works"
+    },
+    {
+      "father": "Tertullian",
+      "work": "Adversus Hermogenem",
+      "section": "19.3",
+      "date": "c. 205",
+      "quoted_text": "In principio erat sermo",
+      "language": "Latin",
+      "text_form": "Old Latin",
+      "comparison": "Partial citation with 'sermo'",
+      "variants": "None"
+    },
+    {
+      "father": "Hippolytus of Rome",
+      "work": "Contra Noetum",
+      "section": "10.1",
+      "date": "c. 215",
+      "quoted_text": "ἐν ἀρχῇ ἦν ὁ λόγος καὶ ὁ λόγος ἦν πρὸς τὸν θεόν καὶ θεὸς ἦν ὁ λόγος",
+      "language": "Greek",
+      "text_form": "Agrees with SBLGNT",
+      "comparison": "Complete citation, exact agreement with reference text",
+      "variants": "None"
+    },
+    {
+      "father": "Origen",
+      "work": "Commentarii in Evangelium Joannis",
+      "section": "1.23",
+      "date": "c. 232",
+      "quoted_text": "ἐν ἀρχῇ ἦν ὁ λόγος καὶ ὁ λόγος ἦν πρὸς τὸν θεόν καὶ θεὸς ἦν ὁ λόγος",
+      "language": "Greek",
+      "text_form": "Agrees with SBLGNT",
+      "comparison": "Extensive commentary, text matches reference exactly",
+      "variants": "None"
+    },
+    {
+      "father": "Origen",
+      "work": "De Principiis",
+      "section": "1.2.2",
+      "date": "c. 220-230",
+      "quoted_text": "in principio erat Verbum et Verbum erat apud Deum et Deus erat Verbum",
+      "language": "Latin",
+      "text_form": "Old Latin (Rufinus translation)",
+      "comparison": "Complete citation in Rufinus' Latin translation",
+      "variants": "Translation, not original Greek"
+    },
+    {
+      "father": "Novatian",
+      "work": "De Trinitate",
+      "section": "31",
+      "date": "c. 250",
+      "quoted_text": "In principio erat Verbum et Verbum erat apud Deum et Deus erat Verbum",
+      "language": "Latin",
+      "text_form": "Old Latin",
+      "comparison": "Complete citation, standard Old Latin form",
+      "variants": "None"
+    },
+    {
+      "father": "Cyprian of Carthage",
+      "work": "Testimoniorum Libri III",
+      "section": "2.1",
+      "date": "c. 248-258",
+      "quoted_text": "In principio erat Verbum",
+      "language": "Latin",
+      "text_form": "Old Latin",
+      "comparison": "Partial citation, first clause",
+      "variants": "None"
+    },
+    {
+      "father": "Athanasius",
+      "work": "Orationes contra Arianos",
+      "section": "1.11",
+      "date": "c. 339-345",
+      "quoted_text": "ἐν ἀρχῇ ἦν ὁ λόγος καὶ ὁ λόγος ἦν πρὸς τὸν θεόν καὶ θεὸς ἦν ὁ λόγος",
+      "language": "Greek",
+      "text_form": "Agrees with SBLGNT",
+      "comparison": "Exact agreement, cited extensively in anti-Arian polemic",
+      "variants": "None"
+    },
+    {
+      "father": "Athanasius",
+      "work": "De Decretis Nicaenae Synodi",
+      "section": "12",
+      "date": "c. 350-352",
+      "quoted_text": "ἐν ἀρχῇ ἦν ὁ λόγος",
+      "language": "Greek",
+      "text_form": "Agrees with SBLGNT",
+      "comparison": "Partial citation",
+      "variants": "None"
+    },
+    {
+      "father": "Hilary of Poitiers",
+      "work": "De Trinitate",
+      "section": "2.13",
+      "date": "c. 356-360",
+      "quoted_text": "In principio erat Verbum et Verbum erat apud Deum et Deus erat Verbum",
+      "language": "Latin",
+      "text_form": "Old Latin",
+      "comparison": "Complete citation, standard form",
+      "variants": "None"
+    },
+    {
+      "father": "Basil of Caesarea",
+      "work": "Adversus Eunomium",
+      "section": "2.12",
+      "date": "c. 364",
+      "quoted_text": "ἐν ἀρχῇ ἦν ὁ λόγος καὶ ὁ λόγος ἦν πρὸς τὸν θεόν καὶ θεὸς ἦν ὁ λόγος",
+      "language": "Greek",
+      "text_form": "Agrees with SBLGNT",
+      "comparison": "Complete citation, exact agreement",
+      "variants": "None"
+    },
+    {
+      "father": "Gregory of Nazianzus",
+      "work": "Orationes",
+      "section": "29.17",
+      "date": "c. 380",
+      "quoted_text": "ἐν ἀρχῇ ἦν ὁ λόγος",
+      "language": "Greek",
+      "text_form": "Agrees with SBLGNT",
+      "comparison": "Partial citation, first clause",
+      "variants": "None"
+    },
+    {
+      "father": "Gregory of Nyssa",
+      "work": "Contra Eunomium",
+      "section": "3.1.109",
+      "date": "c. 380-383",
+      "quoted_text": "ἐν ἀρχῇ ἦν ὁ λόγος καὶ ὁ λόγος ἦν πρὸς τὸν θεόν καὶ θεὸς ἦν ὁ λόγος",
+      "language": "Greek",
+      "text_form": "Agrees with SBLGNT",
+      "comparison": "Complete citation, exact agreement",
+      "variants": "None"
+    },
+    {
+      "father": "John Chrysostom",
+      "work": "Homiliae in Joannem",
+      "section": "2.1",
+      "date": "c. 390-391",
+      "quoted_text": "ἐν ἀρχῇ ἦν ὁ λόγος καὶ ὁ λόγος ἦν πρὸς τὸν θεόν καὶ θεὸς ἦν ὁ λόγος",
+      "language": "Greek",
+      "text_form": "Agrees with SBLGNT",
+      "comparison": "Beginning of extensive homiletical commentary, exact text",
+      "variants": "None"
+    },
+    {
+      "father": "Ambrose of Milan",
+      "work": "De Fide",
+      "section": "1.13.83",
+      "date": "c. 378-380",
+      "quoted_text": "In principio erat Verbum et Verbum erat apud Deum et Deus erat Verbum",
+      "language": "Latin",
+      "text_form": "Old Latin/early Vulgate",
+      "comparison": "Complete citation, standard Latin form",
+      "variants": "None"
+    },
+    {
+      "father": "Jerome",
+      "work": "Epistulae",
+      "section": "65.9",
+      "date": "c. 397",
+      "quoted_text": "In principio erat Verbum et Verbum erat apud Deum et Deus erat Verbum",
+      "language": "Latin",
+      "text_form": "Vulgate",
+      "comparison": "Jerome's own Vulgate translation, becomes standard",
+      "variants": "None from his Vulgate standard"
+    },
+    {
+      "father": "Augustine",
+      "work": "Tractatus in Evangelium Joannis",
+      "section": "1.1",
+      "date": "c. 406-421",
+      "quoted_text": "In principio erat Verbum et Verbum erat apud Deum et Deus erat Verbum",
+      "language": "Latin",
+      "text_form": "Vulgate/Old Latin mixed",
+      "comparison": "Beginning of extensive commentary series, uses standard Latin text",
+      "variants": "None"
+    },
+    {
+      "father": "Augustine",
+      "work": "De Trinitate",
+      "section": "6.2.3",
+      "date": "c. 400-416",
+      "quoted_text": "In principio erat Verbum",
+      "language": "Latin",
+      "text_form": "Vulgate/Old Latin",
+      "comparison": "Partial citation in Trinitarian argument",
+      "variants": "None"
+    },
+    {
+      "father": "Cyril of Alexandria",
+      "work": "Commentarii in Joannem",
+      "section": "1.1",
+      "date": "c. 425-428",
+      "quoted_text": "ἐν ἀρχῇ ἦν ὁ λόγος καὶ ὁ λόγος ἦν πρὸς τὸν θεόν καὶ θεὸς ἦν ὁ λόγος",
+      "language": "Greek",
+      "text_form": "Agrees with SBLGNT",
+      "comparison": "Opening of detailed commentary, exact agreement",
+      "variants": "None"
+    }
+  ],
+  "summary": {
+    "total_citations": 21,
+    "text_stability": "Extremely high - this verse shows remarkable textual stability across all patristic witnesses",
+    "major_variants": "None substantive. The only variation is lexical choice in Latin between 'verbum' and 'sermo' for λόγος, with 'verbum' becoming standard",
+    "greek_witnesses": "All Greek citations (Hippolytus, Origen, Athanasius, Basil, Gregory of Nazianzus, Gregory of Nyssa, Chrysostom, Cyril) show complete agreement with SBLGNT",
+    "latin_witnesses": "Old Latin and Vulgate show consistent translation pattern. Tertullian's preference for 'sermo' is notable but does not affect meaning",
+    "theological_importance": "This verse was central to Trinitarian controversies (2nd-5th centuries). Its textual stability despite intensive theological debate is remarkable and demonstrates its early establishment in the textual tradition"
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-04-05T22:02:32.645517",
+  "model_version": "claude-sonnet-4-5-20250929",
+  "prompt_version": "v2",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The general picture (high textual stability of John 1:1, Tertullian's 'sermo' preference, Vulgate standardization) is sound, but several specific section/paragraph references and date ranges appear imprecise or potentially fabricated.",
+    "flagged_claims": [
+      {
+        "claim": "Irenaeus, Adversus Haereses 1.8.5 quotes John 1:1 in full Latin",
+        "risk": "MEDIUM",
+        "reason": "AH 1.8.5 does discuss Valentinian use of the Johannine prologue, but the citation form and the Latin wording given here should be verified; Irenaeus survives primarily in Latin translation of unknown date, and labeling it 'Old Latin' as if it represents an early Latin biblical text-form is imprecise."
+      },
+      {
+        "claim": "Hippolytus, Contra Noetum 10.1",
+        "risk": "MEDIUM",
+        "reason": "Section numbering for Contra Noetum varies by edition; the specific reference and exact-match Greek wording should be verified against a critical edition."
+      },
+      {
+        "claim": "Origen, Commentarii in Evangelium Joannis 1.23",
+        "risk": "MEDIUM",
+        "reason": "Origen's Commentary on John book/section numbering is complex; book 1 discusses John 1:1 extensively but the specific section '1.23' reference is unverified and possibly inexact."
+      },
+      {
+        "claim": "Origen, De Principiis 1.2.2 ... 'in principio erat Verbum et Verbum erat apud Deum et Deus erat Verbum'",
+        "risk": "MEDIUM",
+        "reason": "De Principiis 1.2 discusses the Logos but a verbatim three-clause quotation at 1.2.2 should be checked; Rufinus's translation paraphrases freely."
+      },
+      {
+        "claim": "Novatian, De Trinitate 31",
+        "risk": "MEDIUM",
+        "reason": "Specific chapter reference unverified; Novatian's De Trinitate citation conventions vary."
+      },
+      {
+        "claim": "Athanasius, Orationes contra Arianos 1.11",
+        "risk": "MEDIUM",
+        "reason": "Specific section reference for full three-clause citation should be verified; Athanasius cites John 1:1 frequently but pinpoint reference may be inaccurate."
+      },
+      {
+        "claim": "Basil, Adversus Eunomium 2.12, dated c. 364",
+        "risk": "MEDIUM",
+        "reason": "The specific section reference and verbatim full-citation claim should be checked against a critical edition."
+      },
+      {
+        "claim": "Gregory of Nyssa, Contra Eunomium 3.1.109",
+        "risk": "MEDIUM",
+        "reason": "The Jaeger numbering is real but the specific section assignment for a full John 1:1 citation is unverified."
+      },
+      {
+        "claim": "Hilary of Poitiers, De Trinitate 2.13",
+        "risk": "MEDIUM",
+        "reason": "Specific section reference for full citation should be verified."
+      },
+      {
+        "claim": "Ambrose, De Fide 1.13.83, text_form 'Old Latin/early Vulgate'",
+        "risk": "MEDIUM",
+        "reason": "Ambrose predates the wide circulation of Jerome's Vulgate Gospels (c. 384); calling his text 'early Vulgate' is anachronistic — he used Old Latin."
+      },
+      {
+        "claim": "Jerome, Epistulae 65.9, dated c. 397, 'Vulgate'",
+        "risk": "MEDIUM",
+        "reason": "Epistle 65 is on Psalm 44; a John 1:1 citation there is plausible but should be verified, and calling Jerome's own quotations 'Vulgate' conflates his translation work with his prose citations."
+      },
+      {
+        "claim": "Augustine, De Trinitate 6.2.3",
+        "risk": "MEDIUM",
+        "reason": "Specific subsection reference should be verified; Augustine cites John 1:1 in many places."
+      },
+      {
+        "claim": "Cyril of Alexandria, Commentarii in Joannem 1.1",
+        "risk": "MEDIUM",
+        "reason": "Cyril's commentary opens on the prologue, but the section reference '1.1' as cited is a simplification that should be checked against Pusey's edition."
+      }
+    ],
+    "safe_claims": [
+      "Tertullian consistently uses 'sermo' rather than 'verbum' for λόγος (well-established)",
+      "John 1:1 shows extremely high textual stability across patristic witnesses",
+      "The verse was central to Trinitarian controversies",
+      "Old Latin tradition generally renders λόγος as 'verbum', which becomes standard in the Vulgate",
+      "Greek patristic citations of John 1:1 broadly agree with the modern critical text",
+      "Origen wrote an extensive commentary on John whose first book treats John 1:1"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.558940+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

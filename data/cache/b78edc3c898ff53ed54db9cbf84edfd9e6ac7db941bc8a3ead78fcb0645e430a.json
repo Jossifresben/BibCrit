@@ -113,5 +113,67 @@
   "reference": "Micah 5:2",
   "cached_at": "2026-03-30T19:53:43.025187",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v2"
+  "prompt_version": "v2",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "Core textual observations are accurate, but several specific page-number citations and one biblical cross-reference are unverifiable or incorrect, and some interpretive claims (Exodus typology, pre-cosmic Wisdom parallel) are speculative.",
+    "flagged_claims": [
+      {
+        "claim": "Hillers (1984) p.65",
+        "risk": "MEDIUM",
+        "reason": "Hillers' Hermeneia commentary on Micah was published in 1984, but specific page references for individual divergence claims should be verified; pages cited across multiple entries appear formulaic."
+      },
+      {
+        "claim": "Pietersma (2007) p.89",
+        "risk": "HIGH",
+        "reason": "Citation is vague—Pietersma has multiple 2007 publications; no work title given, and the page reference cannot be verified without specifying the volume (likely NETS introduction or a SBL paper)."
+      },
+      {
+        "claim": "Muraoka (2009) p.94",
+        "risk": "MEDIUM",
+        "reason": "Muraoka's 2009 Greek-English Lexicon of the Septuagint exists, but a single page reference for the μושל/ἄρχων equivalence is suspiciously precise; the lexicon entry for ἄρχων is not on p.94 in standard editions."
+      },
+      {
+        "claim": "Wevers (1993) p.128",
+        "risk": "HIGH",
+        "reason": "Wevers' 1993 work is Notes on the Greek Text of Genesis (or Deuteronomy series); he did not publish a notes volume on Micah/Twelve Prophets, making this citation likely fabricated or misattributed."
+      },
+      {
+        "claim": "cf. Isa 16:1, Jer 51:46",
+        "risk": "HIGH",
+        "reason": "Jer 51:46 in MT does not contain מושל rendered as ἄρχων in any straightforward way; the cross-reference appears invented to support the lexical-equivalence claim."
+      },
+      {
+        "claim": "Nogalski (2011) p.587",
+        "risk": "MEDIUM",
+        "reason": "Nogalski's 2011 Smyth & Helwys commentary on the Book of the Twelve covers Micah, but page 587 should be verified; the claim about ἔξοδοι Exodus typology is not a standard Nogalski thesis."
+      },
+      {
+        "claim": "Waltke (2007) p.301",
+        "risk": "MEDIUM",
+        "reason": "Waltke's 2007 Micah commentary (Eerdmans) exists, but the page reference for the מוֹצָאֹת discussion should be checked; Waltke's actual treatment is in a different page range."
+      },
+      {
+        "claim": "translator subtly encodes typological framework: future Davidide as eternal divine agent active in Israel's foundational salvation history",
+        "risk": "MEDIUM",
+        "reason": "Speculative interpretive claim presented in the bibcrit_hypothesis with confidence 0.58; the ἔξοδοι→Exodus typology link is not established in mainstream LXX scholarship and risks over-reading a standard lexical equivalent."
+      },
+      {
+        "claim": "aligning with sapiential traditions of pre-cosmic Wisdom (Prov 8:22-23 LXX uses ἀρχή)",
+        "risk": "MEDIUM",
+        "reason": "While Prov 8:22 LXX does use ἀρχή, the proposed connection to LXX Micah's translator intent is conjectural and not supported by demonstrable intertextual translation technique."
+      }
+    ],
+    "safe_claims": [
+      "MT employs adjectival צָעִיר without copula; LXX supplies ὀλιγοστὸς εἶ with explicit copula",
+      "Hebrew אֶלֶף carries dual semantic range of 'thousand' or 'clan/tribal unit'",
+      "LXX renders מוֹשֵׁל with ἄρχων",
+      "MT מִקֶּדֶם מִימֵי עוֹלָם is rendered ἀπ᾽ ἀρχῆς ἐξ ἡμερῶν αἰῶνος in LXX",
+      "MT מוֹצָאֹתָיו is rendered αἱ ἔξοδοι αὐτοῦ in LXX",
+      "No vorlage variants are evident in these divergences"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.414187+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

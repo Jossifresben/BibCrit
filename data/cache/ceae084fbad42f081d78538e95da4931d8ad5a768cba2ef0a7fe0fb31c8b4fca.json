@@ -1,0 +1,228 @@
+{
+  "reconstructed_words": [
+    {
+      "position": 1,
+      "lxx_word": "καὶ αὐτὸς",
+      "vorlage_word": "וְהוּא",
+      "status": "agrees_mt",
+      "confidence": 0.9,
+      "mt_equivalent": "וְהוּא",
+      "dss_witness": "1QIsa-a col. 44: וְהוּא (confirmed)",
+      "reasoning": "The Greek καὶ αὐτὸς straightforwardly renders the Hebrew conjunction וְ plus the independent pronoun הוּא. This is a standard LXX rendering pattern; the translator represents both elements explicitly. 1QIsa-a confirms the reading.",
+      "alternatives": [
+        {
+          "reading": "וְהֵם",
+          "confidence": 0.05,
+          "note": "A plural form is grammatically impossible given the singular context throughout the passage."
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "lxx_word": "διὰ τὸ κεκακῶσθαι",
+      "vorlage_word": "נִגַּשׂ",
+      "status": "unattested",
+      "confidence": 0.38,
+      "mt_equivalent": "נִגַּשׂ",
+      "dss_witness": "1QIsa-a col. 44: נגש (same as MT)",
+      "reasoning": "The MT has נִגַּשׂ ('he was oppressed/pressed upon'), while LXX renders διὰ τὸ κεκακῶσθαι ('because of being mistreated/humiliated'), which uses the perfect passive infinitive of κακόω. The verb κακόω most often renders עָנָה (Niphal) or רָעַע in the LXX, not נגשׂ. The Greek phrase introduces a causal sense absent in MT. Possibly the translator's Vorlage had עֻנּוֹ or a form of עָנָה (cf. the immediately following MT וְנַעֲנֶה), or this represents a significant interpretive/free rendering of נִגַּשׂ that merged the semantic content of the first two MT verbs.",
+      "alternatives": [
+        {
+          "reading": "עֻנּוֹ",
+          "confidence": 0.3,
+          "note": "A nominal form of עָנָה could underlie κεκακῶσθαι if the translator's Vorlage transposed or conflated the two opening verbs."
+        },
+        {
+          "reading": "נִגַּשׂ וְנַעֲנֶה",
+          "confidence": 0.35,
+          "note": "The translator may have merged both Hebrew verbs into one Greek phrase, treating the whole as a single causal clause."
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "lxx_word": "οὐκ ἀνοίγει τὸ στόμα",
+      "vorlage_word": "לֹא יִפְתַּח פִּיו",
+      "status": "agrees_mt",
+      "confidence": 0.92,
+      "mt_equivalent": "וְלֹא יִפְתַּח־פִּיו",
+      "dss_witness": "1QIsa-a col. 44: ולא יפתח פיו (confirmed)",
+      "reasoning": "The LXX ἀνοίγω τὸ στόμα is the standard equivalent for פתח פה/פִּי throughout the LXX corpus (cf. Ps 38:14 LXX; Ezek 3:27). The negative particle οὐκ corresponds to לֹא, and the present active indicative ἀνοίγει reflects the Hebrew imperfect יִפְתַּח. The omission of the pronominal suffix on πίου (no αὐτοῦ here, unlike the second occurrence) matches the MT's construct chain פִּיו in context.",
+      "alternatives": [
+        {
+          "reading": "לֹא יִפְתַּח שְׂפָתָיו",
+          "confidence": 0.08,
+          "note": "Use of שְׂפָתָיו ('his lips') is possible but unsupported and unattested."
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "lxx_word": "ὡς πρόβατον ἐπὶ σφαγὴν ἤχθη",
+      "vorlage_word": "כַּשֶּׂה לַטֶּבַח יוּבָל",
+      "status": "agrees_mt",
+      "confidence": 0.88,
+      "mt_equivalent": "כַּשֶּׂה לַטֶּבַח יוּבָל",
+      "dss_witness": "1QIsa-a col. 44: כשה לטבח יובל (confirmed, spelling plene in 1QIsa-a: כשה)",
+      "reasoning": "The Greek ὡς πρόβατον renders כַּשֶּׂה (LXX regularly uses πρόβατον for שֶׂה; cf. Gen 22:7–8); σφαγή is the standard rendering of טֶבַח (slaughter), and ἄγω in the passive (ἤχθη) renders יוּבָל (Hophal of יָבַל, 'to be led'). The word order is identical to MT. 1QIsa-a confirms this reading.",
+      "alternatives": [
+        {
+          "reading": "כַּכֶּבֶשׂ לַטֶּבַח יוּבָל",
+          "confidence": 0.12,
+          "note": "כֶּבֶשׂ ('lamb') is possible since ἀμνός appears later for רָחֵל, but πρόβατον more naturally points to שֶׂה."
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "lxx_word": "καὶ ὡς ἀμνὸς",
+      "vorlage_word": "וּכְרָחֵל",
+      "status": "unattested",
+      "confidence": 0.55,
+      "mt_equivalent": "וּכְרָחֵל",
+      "dss_witness": "1QIsa-a col. 44: וכרחל (same as MT)",
+      "reasoning": "The MT has וּכְרָחֵל ('and like a ewe/Rachel'), while the LXX renders ὡς ἀμνός ('like a lamb'). The translator appears to have interpreted רָחֵל as a common noun meaning 'ewe-lamb' (which it can mean in Hebrew) and then rendered it with the more gender/age-specific Greek ἀμνός. This is a semantic choice, not necessarily a different Vorlage, though it diverges from how modern translations read the term. The rendering makes the simile more parallel to πρόβατον in the preceding clause.",
+      "alternatives": [
+        {
+          "reading": "כְּכֶבֶשׂ",
+          "confidence": 0.2,
+          "note": "A Vorlage with כֶּבֶשׂ ('lamb') would explain ἀμνός directly, but this is entirely unattested."
+        },
+        {
+          "reading": "וּכְרָחֵל (interpreted as 'ewe')",
+          "confidence": 0.6,
+          "note": "Most likely the translator had the same consonantal text as MT but interpreted רָחֵל as a common noun for ewe, a well-documented semantic option."
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "lxx_word": "ἐναντίον τοῦ κείροντος αὐτὸν",
+      "vorlage_word": "לִפְנֵי גֹזְזֶיהָ",
+      "status": "unattested",
+      "confidence": 0.62,
+      "mt_equivalent": "לִפְנֵי גֹזְזֶיהָ",
+      "dss_witness": "1QIsa-a col. 44: לפני גוזזיה (confirmed plural with mappiq he)",
+      "reasoning": "The Greek ἐναντίον renders לִפְנֵי accurately (standard equivalence throughout LXX). The participle κείροντος (singular genitive, 'the one shearing him') renders גֹזְזֶיהָ (MT/1QIsa-a: plural, 'her shearers'), but the LXX has singular and masculine pronoun αὐτὸν rather than the feminine plural suffix -הָ of MT. This shift to singular masculine is significant: either the translator's Vorlage had גֹזְזוֹ (singular masculine, 'his shearer') or the translator harmonized grammatically to the masculine singular referent (the Servant) throughout the verse.",
+      "alternatives": [
+        {
+          "reading": "גֹזְזוֹ",
+          "confidence": 0.45,
+          "note": "A singular masculine form would directly explain both κείροντος (singular) and αὐτὸν (masculine), suggesting a possible Vorlage variant not attested in known manuscripts."
+        },
+        {
+          "reading": "גֹזְזֶיהָ (= MT, freely rendered)",
+          "confidence": 0.5,
+          "note": "The translator may have harmonized the gender and number to fit the masculine Servant, a documented LXX interpretive tendency in this section."
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "lxx_word": "ἄφωνος",
+      "vorlage_word": "נֶאֱלָמָה",
+      "status": "agrees_mt",
+      "confidence": 0.82,
+      "mt_equivalent": "נֶאֱלָמָה",
+      "dss_witness": "1QIsa-a col. 44: נאלמה (confirmed)",
+      "reasoning": "The Greek ἄφωνος ('voiceless, silent, mute') renders the Niphal participle/perfect נֶאֱלָמָה ('was dumb/silent') from the root אלם. This equivalence is confirmed by Ps 38:14 LXX (ὡσεὶ ἄφωνος) and Ezek 3:26 LXX. The feminine form נֶאֱלָמָה agrees with the feminine referent רָחֵל in MT; the translator renders it as a predicate adjective ἄφωνος. 1QIsa-a confirms the reading.",
+      "alternatives": [
+        {
+          "reading": "נֶאֱלַם",
+          "confidence": 0.18,
+          "note": "A masculine form would harmonize with the Servant, but MT/1QIsa-a both have feminine -ה agreeing with רָחֵל."
+        }
+      ]
+    },
+    {
+      "position": 8,
+      "lxx_word": "οὕτως οὐκ ἀνοίγει τὸ στόμα αὐτοῦ",
+      "vorlage_word": "וְלֹא יִפְתַּח פִּיו",
+      "status": "agrees_mt",
+      "confidence": 0.88,
+      "mt_equivalent": "וְלֹא יִפְתַּח פִּיו",
+      "dss_witness": "1QIsa-a col. 44: ולא יפתח פיו (confirmed)",
+      "reasoning": "The second occurrence of the refrain in MT (וְלֹא יִפְתַּח פִּיו) is faithfully rendered by the LXX, including the pronominal suffix αὐτοῦ corresponding to the third-masculine-singular suffix -וֹ on פִּיו. The addition of οὕτως ('thus/so') does not necessarily reflect an extra Hebrew word (כֵּן); rather, it is a Greek stylistic connective used to close the comparison introduced by ὡς...ὡς. This is a feature of Greek rhetorical style (idiom_only for οὕτως), while the main clause is a faithful translation of MT.",
+      "alternatives": [
+        {
+          "reading": "כֵּן וְלֹא יִפְתַּח פִּיו",
+          "confidence": 0.22,
+          "note": "A Vorlage with כֵּן before the final clause is possible but unattested and is more likely a Greek stylistic addition."
+        }
+      ]
+    }
+  ],
+  "summary_technical": "The LXX of Isa 53:7 reflects a Vorlage largely consonant with the MT and 1QIsa-a, but with three notable divergences: (1) the opening διὰ τὸ κεκακῶσθαι appears to conflate or reinterpret נִגַּשׂ וְנַעֲנֶה into a single causal phrase, possibly reflecting a different syntactic parsing or a Vorlage that had already merged these two verbs; (2) ὡς ἀμνός for וּכְרָחֵל represents a semantic interpretation of רָחֵל as a common noun 'ewe-lamb' rather than a different Vorlage; (3) the shift from plural feminine גֹזְזֶיהָ (MT/1QIsa-a) to singular masculine κείροντος αὐτὸν is the most significant divergence, possibly reflecting a Vorlage גֹזְזוֹ or a harmonizing interpretive tendency by the translator toward the masculine Servant. The overall translation technique is moderately free, with expansions in Greek idiom (οὕτως) and grammatical harmonization, consistent with the translator's practice elsewhere in Deutero-Isaiah.",
+  "summary_plain": "The ancient Greek translation of Isaiah 53:7 mostly matches the Hebrew Bible we have today, but in a few places the translator seems to have slightly changed the meaning or grammar—most notably turning 'his shearers' (plural, feminine) into 'the one shearing him' (singular, masculine), possibly because the translator was thinking of the male 'Servant' figure throughout the passage.",
+  "overall_confidence": 0.72,
+  "bibcrit_assessment": {
+    "title": "Singular Vorlage Variant Behind κείροντος αὐτὸν",
+    "reasoning": "The most philologically significant divergence is the LXX's κείροντος αὐτὸν (singular masculine) against MT/1QIsa-a's plural feminine גֹזְזֶיהָ. While the harmonization explanation (translator adjusting to the Servant's masculine singular identity) is plausible and consistent with documented LXX tendencies in the Servant Songs, one cannot exclude the possibility that the translator's Vorlage read גֹזְזוֹ — a singular masculine form that would be both lexically and grammatically transparent as the source of the Greek. This reading is entirely unattested in any known manuscript, so this remains speculative, but it is grounded in the direct correspondence between proposed Hebrew and Greek forms and is more economical than positing interpretive harmonization.",
+    "plain": "The Greek says 'his shearer' (one person) where the Hebrew says 'her shearers' (many people); this might mean the translator had a slightly different Hebrew text, or simply chose to reframe the image to focus on the singular Servant — we cannot be certain which.",
+    "confidence": 0.48
+  },
+  "discovery_ready": false,
+  "reference": "Isaiah 53:7",
+  "cached_at": "2026-04-19T22:54:58.830525",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis is largely sound on observable Greek-Hebrew correspondences, but contains several specific manuscript citations and grammatical claims that are inaccurate or unverifiable.",
+    "flagged_claims": [
+      {
+        "claim": "1QIsa-a col. 44",
+        "risk": "HIGH",
+        "reason": "Isaiah 53 is found in column 44 of 1QIsa-a, but this column reference is repeated mechanically across all positions without verification of the actual column numbering convention (some editions use col. XLIV); more importantly, the cited DSS readings need verification word-by-word."
+      },
+      {
+        "claim": "1QIsa-a col. 44: לפני גוזזיה (confirmed plural with mappiq he)",
+        "risk": "HIGH",
+        "reason": "The parenthetical 'mappiq he' is a Masoretic pointing feature and would not typically be marked in an unpointed Qumran scroll; this is likely a confused or fabricated detail."
+      },
+      {
+        "claim": "1QIsa-a col. 44: כשה לטבח יובל (confirmed, spelling plene in 1QIsa-a: כשה)",
+        "risk": "MEDIUM",
+        "reason": "The claim of 'plene' spelling for כשה is incoherent—כשה is the same short spelling as MT, not a plene (fuller) variant. This appears to be a fabricated or confused orthographic claim."
+      },
+      {
+        "claim": "The verb κακόω most often renders עָנָה (Niphal) or רָעַע in the LXX",
+        "risk": "MEDIUM",
+        "reason": "While κακόω does render forms of these roots, the specific frequency claim ('most often') is unverified and the LXX equivalents for κακόω are more varied (including רעע, ענה, צרר, and others)."
+      },
+      {
+        "claim": "cf. Ps 38:14 LXX; Ezek 3:27",
+        "risk": "MEDIUM",
+        "reason": "Ps 38:14 LXX (= MT Ps 39:10) does use ἄφωνος-related vocabulary, but the citation of Ezek 3:27 for ἀνοίγω τὸ στόμα is unverified in this exact form; reference checking needed."
+      },
+      {
+        "claim": "Ezek 3:26 LXX",
+        "risk": "MEDIUM",
+        "reason": "Cited as a parallel for ἄφωνος rendering אלם—needs verification; Ezek 3:26 does describe muteness but the specific Greek equivalence claim should be checked."
+      },
+      {
+        "claim": "documented LXX interpretive tendency in this section",
+        "risk": "MEDIUM",
+        "reason": "Claim of a 'documented tendency' toward masculine harmonization in LXX Isa 53 is asserted without citation and may overstate the consensus."
+      },
+      {
+        "claim": "the present active indicative ἀνοίγει reflects the Hebrew imperfect יִפְתַּח",
+        "risk": "MEDIUM",
+        "reason": "Minor but: ἀνοίγει here functions in narrative context; characterizing this simply as rendering an 'imperfect' is technically fine but the analysis ignores the more common LXX practice of using aorist or future for Hebrew yiqtol in such contexts."
+      }
+    ],
+    "safe_claims": [
+      "καὶ αὐτὸς renders וְהוּא",
+      "MT has נִגַּשׂ where LXX has διὰ τὸ κεκακῶσθαι, representing a divergence",
+      "LXX renders ὡς ἀμνός where MT has וּכְרָחֵל",
+      "LXX has singular κείροντος αὐτὸν where MT has plural feminine גֹזְזֶיהָ",
+      "ἄφωνος corresponds to נֶאֱלָמָה",
+      "οὕτως in the final clause has no clear Hebrew equivalent in MT",
+      "πρόβατον is a standard LXX equivalent for שֶׂה",
+      "רָחֵל can mean 'ewe' as a common noun in Hebrew"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.426307+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

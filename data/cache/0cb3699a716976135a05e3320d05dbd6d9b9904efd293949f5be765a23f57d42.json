@@ -97,5 +97,41 @@
   "reference": "Psalm 22:1",
   "cached_at": "2026-03-31T11:14:54.317007",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis correctly identifies the major LXX-MT divergences in Ps 22:1[2] but contains a significant error regarding πρόσχες μοι and some questionable reasoning about παραπτωμάτων.",
+    "flagged_claims": [
+      {
+        "claim": "This imperative 'pay attention to me' has no equivalent in MT Ps 22:2",
+        "risk": "HIGH",
+        "reason": "πρόσχες μοι in LXX Ps 21:2 is widely understood to correspond to a reading reflecting Hebrew text; however more importantly, the analysis misses that some LXX witnesses place this differently. The claim of 'no equivalent' overstates certainty—the Greek may render an element the analyst hasn't identified, and labeling it 'unattested' without engaging the Hebrew text more carefully is risky."
+      },
+      {
+        "claim": "ἵνα τί is the standard LXX rendering of למה",
+        "risk": "MEDIUM",
+        "reason": "While ἵνα τί does render למה in places, the more common LXX equivalent is διὰ τί or simply τί. The 'standard rendering' claim is overstated."
+      },
+      {
+        "claim": "The translator may have read שגי (from שגה 'go astray') or misread שאגתי as a form related to transgression",
+        "risk": "MEDIUM",
+        "reason": "Speculative paleographic reconstruction presented as plausible explanation; παράπτωμα does not standardly render שגה, and the proposed misreading is conjectural without manuscript support."
+      },
+      {
+        "claim": "παράπτωμα (typically rendering פשע)",
+        "risk": "MEDIUM",
+        "reason": "παράπτωμα in LXX more typically renders מעל or פשע variably; the 'typically' claim oversimplifies the lexical correspondence patterns. Other Hebrew terms (חטא, אשם) also map to παράπτωμα."
+      }
+    ],
+    "safe_claims": [
+      "MT has אֵלִי אֵלִי while LXX uses ὁ θεὸς ὁ θεός μου",
+      "ἐγκαταλείπω regularly translates עזב in the LXX",
+      "σωτηρία is a standard equivalent for ישועה",
+      "MT reads דברי שאגתי where LXX has οἱ λόγοι τῶν παραπτωμάτων μου",
+      "LXX Ps 21:2 contains πρόσχες μοι which has no direct equivalent in MT Ps 22:2"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.547781+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

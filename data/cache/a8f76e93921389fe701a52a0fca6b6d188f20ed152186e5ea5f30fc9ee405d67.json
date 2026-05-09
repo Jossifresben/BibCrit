@@ -64,5 +64,57 @@
   "reference": "Genesis 18:1",
   "cached_at": "2026-03-31T00:18:58.233085",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The core textual observations about Targumic mediation are accurate and well-established, but several specific scholarly citations appear fabricated or misattributed.",
+    "flagged_claims": [
+      {
+        "claim": "Schaper, Anthropomorphism Avoidance in Targum Onqelos, p. 45-52",
+        "risk": "HIGH",
+        "reason": "No such monograph by Joachim Schaper is known. Schaper works on LXX and Psalms; this title appears fabricated."
+      },
+      {
+        "claim": "van der Kooij, Oracle of Tyre, p. 89",
+        "risk": "HIGH",
+        "reason": "Van der Kooij's 'Oracle of Tyre' concerns Isaiah 23 in the LXX; it is irrelevant to Genesis 18:1 Targumic anthropomorphism. This citation appears misappropriated."
+      },
+      {
+        "claim": "Hayward, Divine Name and Presence: The Memra, p. 78-81",
+        "risk": "MEDIUM",
+        "reason": "Robert Hayward did write a book titled 'Divine Name and Presence: The Memra' (1981), but specific page citations should be verified; the topical relevance is plausible but page numbers cannot be confirmed."
+      },
+      {
+        "claim": "Rösel, Übersetzung als Vollendung der Auslegung, p. 156",
+        "risk": "MEDIUM",
+        "reason": "Martin Rösel's monograph by this title (1994) on LXX Genesis is real, but the specific page citation should be verified independently."
+      },
+      {
+        "claim": "Wevers, Notes on the Greek Text of Genesis, p. 243",
+        "risk": "MEDIUM",
+        "reason": "Wevers's Notes on Genesis is a real and standard reference work, but the specific page reference should be checked; its inclusion is plausible but unverified."
+      },
+      {
+        "claim": "some LXX manuscripts and traditions show variation between ὁ θεός and ὁ κύριος, with θεός potentially representing a more philosophical, less anthropomorphic divine title",
+        "risk": "MEDIUM",
+        "reason": "The critical LXX text reads κύριος here (Wevers/Göttingen), and the suggestion that θεός is 'more philosophical/less anthropomorphic' than κύριος in Hellenistic Jewish usage is speculative and not a standard scholarly position."
+      },
+      {
+        "claim": "Targum Neofiti: 'And the Glory of the Shekinah of the LORD was revealed to him'",
+        "risk": "MEDIUM",
+        "reason": "The general formula is characteristic of Neofiti, but the exact wording at Gen 18:1 should be verified against the manuscript; paraphrase is presented as quotation."
+      }
+    ],
+    "safe_claims": [
+      "Targum Onqelos uses 'was revealed' (אִתְגְּלִי) and 'Glory' (יְקָרָא) language at theophanic moments",
+      "MT Genesis 18:1 reads וַיֵּרָא אֵלָיו יְהוָה",
+      "LXX renders with ὤφθη",
+      "Targum Pseudo-Jonathan identifies the three figures as angels in human likeness",
+      "There is a tension in the MT between YHWH appearing in v.1 and three men in v.2",
+      "Targumic intermediation via Memra/Shekinah/Yeqara is a well-documented phenomenon"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.586467+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

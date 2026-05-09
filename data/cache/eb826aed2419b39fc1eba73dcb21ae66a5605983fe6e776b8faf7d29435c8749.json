@@ -146,5 +146,55 @@
   "discovery_ready": false,
   "cached_at": "2026-03-30T23:15:14.510264",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "Core textual claim about MT/LXX agreement on 700/40,000 is correct, but the analysis repeatedly invokes the Samaritan Pentateuch as a witness to 2 Samuel 10, which is methodologically incoherent since SP covers only the Pentateuch.",
+    "flagged_claims": [
+      {
+        "claim": "sp_value: 700 ... All textual traditions consistently report 700 charioteers killed",
+        "risk": "HIGH",
+        "reason": "The Samaritan Pentateuch does not contain 2 Samuel. Listing an SP value for this verse is a category error; the figure cannot be 'attested' by SP."
+      },
+      {
+        "claim": "sp_value: 40000 ... All traditions uniformly attest 40,000 footmen",
+        "risk": "HIGH",
+        "reason": "Same issue: SP has no text of Samuel, so it cannot witness this figure."
+      },
+      {
+        "claim": "Perfect numerical agreement across three independent textual families (MT, LXX, SP)",
+        "risk": "HIGH",
+        "reason": "Treats SP as a textual witness for Samuel, which is incorrect. Only MT, LXX, and possibly Qumran (4QSam) and versional witnesses (Vulgate, Peshitta, Targum) are relevant."
+      },
+      {
+        "claim": "confusion of Hebrew numerical notation: ת״ש (700) versus ז׳ אלפים (7,000)",
+        "risk": "HIGH",
+        "reason": "Biblical Hebrew manuscripts spell numbers out as words (שבע מאות / שבעת אלפים); alphabetic numeral notation (gematria-style) is a later rabbinic convention not used in the Samuel/Chronicles textual transmission. The proposed paleographic confusion mechanism is anachronistic."
+      },
+      {
+        "claim": "Ancient versions (Vulgate, Targums, Peshitta) uniformly support the 700/40,000 figures",
+        "risk": "MEDIUM",
+        "reason": "Stated without citation; while plausible, the uniform agreement of all these versions on both figures should be verified rather than asserted as established."
+      },
+      {
+        "claim": "The error pattern (tenfold increase) matches known paleographic confusion in alphabetic numerals",
+        "risk": "HIGH",
+        "reason": "Alphabetic numerals are not used in the MT of Samuel-Chronicles; this explanation does not match the actual orthographic conventions of the manuscripts."
+      },
+      {
+        "claim": "agreement across confessionally distinct communities (Jewish MT, Christian LXX, Samaritan SP)",
+        "risk": "HIGH",
+        "reason": "Mischaracterizes the LXX as 'Christian' (it is a Jewish translation later adopted by Christians) and again treats SP as a witness to Samuel."
+      }
+    ],
+    "safe_claims": [
+      "MT and LXX agree on 700 charioteers and 40,000 footmen in 2 Samuel 10:18",
+      "1 Chronicles 19:18 reads 7,000 charioteers, diverging from 2 Samuel 10:18",
+      "The Samaritan Pentateuch covers only Genesis through Deuteronomy",
+      "Parallel accounts in Samuel-Kings versus Chronicles frequently show numerical discrepancies"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.337724+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

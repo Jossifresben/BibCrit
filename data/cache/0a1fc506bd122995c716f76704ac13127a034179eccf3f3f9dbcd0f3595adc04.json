@@ -72,5 +72,62 @@
   "reference": "Joel 3:1",
   "cached_at": "2026-03-30T19:51:10.694743",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v2"
+  "prompt_version": "v2",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The textual observations about MT/LXX differences are accurate, but several scholarly citations and theological interpretations are overstated or unverifiable.",
+    "flagged_claims": [
+      {
+        "claim": "LXX partitive construction ἀπὸ τοῦ πνεύματός suggests partial outpouring, avoiding implication that God exhausts or diminishes divine spirit, reflecting Hellenistic theological sensibilities about divine immutability",
+        "risk": "HIGH",
+        "reason": "This theological motivation is speculative. The partitive ἀπό in LXX Joel 3:1 (MT) likely reflects standard translation technique or possible Vorlage variation; attributing it to Hellenistic divine immutability concerns overreads the evidence. Acts 2:17 cites this LXX form, suggesting it was simply the available text."
+      },
+      {
+        "claim": "Pietersma & Wright (2007) p.789",
+        "risk": "HIGH",
+        "reason": "NETS (A New English Translation of the Septuagint) page reference is unverifiable as cited; specific page citations to NETS for this kind of theological commentary are suspect since NETS is primarily a translation, not a commentary."
+      },
+      {
+        "claim": "Tov (2001) p.257",
+        "risk": "MEDIUM",
+        "reason": "Page reference to Tov's Textual Criticism of the Hebrew Bible attributing a specific 'partitive constructions as characteristic LXX theological tendency' claim is unverifiable and likely misrepresents Tov's actual discussion."
+      },
+      {
+        "claim": "Wevers (1990) p.124",
+        "risk": "HIGH",
+        "reason": "Wevers's Notes commentaries cover the Pentateuch, not the Minor Prophets/Joel. A Wevers citation for Joel grammatical patterns is likely fabricated or misattributed."
+      },
+      {
+        "claim": "Dogniez & Harl (1999) p.203",
+        "risk": "MEDIUM",
+        "reason": "La Bible d'Alexandrie volume on the Twelve Prophets exists but the specific page citation for this lexical equivalence claim is unverifiable and may be invented."
+      },
+      {
+        "claim": "Greek idiom requires passive voice for dream-reception where Hebrew uses active with internal object",
+        "risk": "MEDIUM",
+        "reason": "Overstated. Greek does not 'require' passive for dream verbs; ἐνυπνιάζομαι is a deponent/middle-passive verb whose form is lexically determined, not a translation strategy for cognate accusatives."
+      },
+      {
+        "claim": "Partitive Spirit as Anti-Montanist Precursor",
+        "risk": "HIGH",
+        "reason": "Highly speculative reception-history claim with no documented patristic evidence linking Joel 3:1 LXX partitive to anti-Montanist exegesis. The hypothesis itself acknowledges low confidence (0.35) but presents specific historical claims as facts."
+      },
+      {
+        "claim": "Pentecost's reversion to MT sense in Acts 2:17-18",
+        "risk": "HIGH",
+        "reason": "Factually incorrect. Acts 2:17 reads ἐκχεῶ ἀπὸ τοῦ πνεύματός μου, following the LXX partitive, NOT reverting to MT. This is a significant factual error."
+      }
+    ],
+    "safe_claims": [
+      "MT אֶשְׁפּוֹךְ אֶת רוּחִי vs LXX ἐκχεῶ ἀπὸ τοῦ πνεύματός μου represents a real textual difference",
+      "MT employs cognate accusative construction חֲלֹמוֹת יַחֲלֹמוּן",
+      "LXX uses ἐνυπνιασθήσονται (future of ἐνυπνιάζομαι) for the dream clause",
+      "The vision clause shows straightforward active-voice correspondence between MT and LXX",
+      "νεανίσκος is a standard equivalent for בָּחוּר",
+      "No DSS witness is cited for this verse"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.672324+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

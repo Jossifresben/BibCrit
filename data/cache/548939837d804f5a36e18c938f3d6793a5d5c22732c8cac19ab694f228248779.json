@@ -157,5 +157,57 @@
   "reference": "Exodus",
   "cached_at": "2026-03-30T21:36:32.924852",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis captures broadly accurate features of LXX Exodus but contains several specific textual claims that misrepresent the actual Greek text and one questionable harmonization example.",
+    "flagged_claims": [
+      {
+        "claim": "lxx_text: ὤφθη δὲ αὐτῷ ἄγγελος κυρίου ἐν πυρὶ φλογὸς ἐκ τοῦ βάτου",
+        "risk": "MEDIUM",
+        "reason": "The standard Göttingen/Rahlfs text reads 'ἐν πυρὶ φλογὸς ἐκ τοῦ βάτου' but this is actually a fairly idiomatic Greek genitive ('in fire of flame'), which the note then misdescribes; also the example contradicts the claim of strict word order isomorphism since Greek inserts δέ and rearranges elements."
+      },
+      {
+        "claim": "Exodus 15:3 ... κύριος συντρίβων πολέμους ... 'the bold anthropomorphism is retained with literal rendering'",
+        "risk": "HIGH",
+        "reason": "This is factually backwards. 'συντρίβων πολέμους' ('shattering wars') is one of the most famous anthropomorphism reductions in LXX Exodus, eliminating 'man of war' entirely. The note's interpretation directly contradicts the Greek text cited."
+      },
+      {
+        "claim": "Exodus 32:14 ... καὶ ἱλάσθη κύριος περὶ τῆς κακίας",
+        "risk": "MEDIUM",
+        "reason": "The Göttingen text typically reads 'καὶ ἱλάσθη κύριος περὶ τῆς κακίας ἧς εἶπεν ποιῆσαι τὸν λαὸν αὐτοῦ'; the rendering and gloss are roughly correct but ἱλάσκομαι here means 'relented/was appeased,' not strictly 'was propitious/merciful' — a minor mischaracterization."
+      },
+      {
+        "claim": "Exodus 22:28 ... θεοὺς οὐ κακολογήσεις",
+        "risk": "MEDIUM",
+        "reason": "The plural θεούς is theologically significant (rendering אלהים as 'gods' rather than 'God/judges') and is itself a notable interpretive choice, but the analysis treats it merely as a 'slight interpretive expansion for Greek legal register,' missing the actual phenomenon."
+      },
+      {
+        "claim": "Wevers and Aejmelaeus both note the mechanical quality of this rendering",
+        "risk": "MEDIUM",
+        "reason": "Wevers (Notes on the Greek Text of Exodus; THGE) actually characterizes Exodus as relatively free compared to other Pentateuchal books, and Aejmelaeus's work focuses more on Genesis/translation technique generally. The attribution risks misrepresenting both scholars' positions on Exodus specifically."
+      },
+      {
+        "claim": "The Exodus translator exhibits highly isomorphic technique ... score 0.82",
+        "risk": "MEDIUM",
+        "reason": "Scholarly consensus (Wevers, Aejmelaeus, Perkins) generally rates LXX Exodus as moderately literal but freer than LXX Genesis or Numbers, with notable expansions and reorderings. A literalness score of 0.82 may overstate this."
+      },
+      {
+        "claim": "Exodus 35-40 ... Reordered and partially harmonized in Greek ... demonstrating the translator's willingness to coordinate parallel material",
+        "risk": "MEDIUM",
+        "reason": "The OG tabernacle account in chs. 35-40 differs substantially from MT in order and content, but scholars debate whether this reflects translator activity, a different Vorlage, or a second translator (Aejmelaeus, Wade, Wevers). Attributing it confidently to harmonizing intent oversimplifies a contested issue."
+      }
+    ],
+    "safe_claims": [
+      "Exodus 20:13-15 prohibitions rendered with οὐ + future indicative",
+      "Exodus 12:40 LXX adds 'and in the land of Canaan' to the 430-year sojourn",
+      "Exodus 24:10 LXX inserts 'the place where stood' rather than 'they saw the God of Israel'",
+      "Exodus 28:30 renders Urim and Thummim as δήλωσις καὶ ἀλήθεια",
+      "Exodus 3:14 rendered as ἐγώ εἰμι ὁ ὤν",
+      "General observation that no overt messianic heightening characterizes LXX Exodus"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.633456+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

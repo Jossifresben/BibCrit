@@ -38,7 +38,7 @@ import anthropic
 # ── Config ────────────────────────────────────────────────────────────────────
 CACHE_DIR     = Path(__file__).parent.parent / 'data' / 'cache'
 VALIDATION_MODEL = 'claude-opus-4-7'
-MAX_TOKENS    = 2048
+MAX_TOKENS    = 4096
 
 # Keys that are metadata, not analysis content — don't send to critic
 _META_KEYS = {

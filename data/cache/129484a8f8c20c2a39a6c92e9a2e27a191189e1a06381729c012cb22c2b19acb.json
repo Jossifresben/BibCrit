@@ -1,0 +1,164 @@
+{
+  "reference": "1 John 5:7",
+  "text_basis": {
+    "sblgnt_reading": "ὅτι τρεῖς εἰσίν οἱ μαρτυροῦντες",
+    "na28_alignment": "The SBLGNT and NA28/UBS5 are in full agreement on the shorter text of 1 John 5:7, omitting the Comma Johanneum ('ἐν τῷ οὐρανῷ, ὁ Πατήρ, ὁ Λόγος, καὶ τὸ Ἅγιον Πνεῦμα, καὶ οὗτοι οἱ τρεῖς ἕν εἰσι') found in the Textus Receptus. All major critical editions (TNTC, Nestle-Aland, UBS) are unified in excluding the Comma.",
+    "is_disputed_locus": true,
+    "dispute_note": "1 John 5:7 is the site of the 'Comma Johanneum,' a Trinitarian interpolation found in the Textus Receptus but absent from all Greek manuscripts before the 14th–16th centuries. It is one of the most celebrated textual disputes in New Testament scholarship and the history of biblical translation."
+  },
+  "manuscript_families": {
+    "alexandrian": {
+      "witnesses": [
+        "P66 (not extant here)",
+        "א (Sinaiticus)",
+        "B (Vaticanus)",
+        "A (Alexandrinus)",
+        "Ψ",
+        "1739",
+        "1881"
+      ],
+      "support": "supports_variant",
+      "note": "All Alexandrian witnesses uniformly attest the short text (ὅτι τρεῖς εἰσίν οἱ μαρτυροῦντες) without any trace of the Comma Johanneum. The earliest and most reliable papyri and uncials show no knowledge of the expanded Trinitarian phrase, constituting the strongest possible Greek manuscript evidence against the Comma."
+    },
+    "western": {
+      "witnesses": [
+        "D (Bezae, not extant for Catholic Epistles in Greek)",
+        "Old Latin (it)",
+        "Vulgate (most MSS)",
+        "Diatessaron"
+      ],
+      "support": "split",
+      "note": "The Old Latin tradition is divided: early Latin Fathers (Tertullian, Cyprian, Augustine) cite 1 John 5:7–8 without the Comma, and the earliest Latin manuscripts (e.g., Codex Fuldensis, 541 CE) lack it. The Comma appears in a small number of late Latin manuscripts and was eventually incorporated into the Clementine Vulgate (1592), but this represents a late secondary development, not original Western tradition."
+    },
+    "byzantine": {
+      "witnesses": [
+        "Majority Text (𝔐)",
+        "Textus Receptus (TR)"
+      ],
+      "support": "sides_with_received",
+      "note": "The Textus Receptus includes the full Comma Johanneum, derived from Erasmus's 1522 third edition under pressure to include readings found in a small number of late Greek manuscripts (principally minuscules 61, 629, 918, and 2318, all dating from the 14th–18th centuries). The Majority Text proper does not include the Comma; its presence in the TR is anomalous even within the Byzantine tradition."
+    },
+    "caesarean": {
+      "witnesses": [
+        "P45 (not extant here)",
+        "W (Freer Gospels, not applicable)",
+        "f1",
+        "f13"
+      ],
+      "support": "not_applicable",
+      "note": "The Caesarean text type is not well-attested for the Catholic Epistles, and neither family 1 nor family 13 provides significant support for the Comma Johanneum. Where Caesarean-adjacent witnesses exist for this passage, they align with the shorter text."
+    }
+  },
+  "metzger_rating": {
+    "rating": "A",
+    "justification": "The shorter text (without the Comma Johanneum) is rated 'A' (certain) by the UBS committee. The Comma is absent from every Greek manuscript prior to the 14th century, from all early versional evidence, and from all patristic citations up to the 5th century — an absence that is inexplicable if the words were original. Metzger's Textual Commentary devotes extensive discussion to demonstrating that the Comma is a Latin theological gloss that migrated into the Greek tradition only in the late medieval period."
+  },
+  "variant_register": [
+    {
+      "variant_text": "ὅτι τρεῖς εἰσίν οἱ μαρτυροῦντες (SHORT TEXT — without Comma Johanneum)",
+      "manuscript_support": "Virtually all Greek manuscripts before the 14th century: א, A, B, C, Ψ, 048, 0296, 1739, 1881, and the vast bulk of the minuscule tradition; early Latin Fathers (Tertullian, Cyprian, Augustine, Jerome in his prologue); Coptic versions; Armenian and Ethiopic versions; the Peshitta.",
+      "intrinsic_probability": "high",
+      "transcriptional_probability": "high",
+      "assessment": "This is overwhelmingly the original text. Its universality in the earliest and most geographically diverse witnesses, combined with the complete silence of the Greek patristic tradition regarding any Trinitarian expansion in this verse, makes the short text virtually certain as the reading of the autograph."
+    },
+    {
+      "variant_text": "ὅτι τρεῖς εἰσίν οἱ μαρτυροῦντες ἐν τῷ οὐρανῷ, ὁ Πατήρ, ὁ Λόγος, καὶ τὸ Ἅγιον Πνεῦμα, καὶ οὗτοι οἱ τρεῖς ἕν εἰσι· καὶ τρεῖς εἰσίν οἱ μαρτυροῦντες ἐν τῇ γῇ (COMMA JOHANNEUM — long text)",
+      "manuscript_support": "Greek minuscules 61 (Codex Montfortianus, ca. 1520, likely written to force Erasmus's hand), 629 (14th c.), 918 (16th c.), 2318 (18th c.); a small number of late Latin manuscripts; the Clementine Vulgate (1592); margin of Codex Ravianus.",
+      "intrinsic_probability": "low",
+      "transcriptional_probability": "low",
+      "assessment": "The Comma Johanneum is almost certainly a Latin theological gloss, probably originating in a marginal comment on the threefold witness in North African Latin Christianity, that was subsequently incorporated into the text of some Latin manuscripts and, much later, into a handful of Greek manuscripts to support its inclusion in Erasmus's printed Greek text. Codex Montfortianus (61) is widely considered to have been manufactured specifically to compel Erasmus to include the Comma in his 1522 edition."
+    },
+    {
+      "variant_text": "ὅτι τρεῖς εἰσίν οἱ μαρτυροῦντες, τὸ Πνεῦμα καὶ τὸ ὕδωρ καὶ τὸ αἷμα (CONTINUATION — verse 8 conflated)",
+      "manuscript_support": "Some versional witnesses conflate or rearrange vv. 7–8 differently, but no significant Greek manuscript evidence supports a distinct third form of v. 7 alone.",
+      "intrinsic_probability": "low",
+      "transcriptional_probability": "medium",
+      "assessment": "Minor variations in the arrangement of the earthly witnesses (Spirit, water, blood) exist in some Latin and versional manuscripts, reflecting scribal uncertainty about how verses 7 and 8 related once the Comma began circulating, but these are secondary developments of no independent genealogical significance."
+    }
+  ],
+  "disputed_passage": {
+    "designation": "Comma Johanneum (1 John 5:7b–8a)",
+    "manuscript_evidence_for": "Only a handful of late Greek manuscripts include the Comma: minuscule 61 (Codex Montfortianus, ca. 1520 CE, strongly suspected of being fabricated), 629 (14th century, Italian provenance), 918 (16th century), 2318 (18th century), and the margin of Codex Ravianus. In Latin, it appears in a number of late Vulgate manuscripts and in the Clementine Vulgate (1592), but is absent from the earliest Latin witnesses including Codex Fuldensis (541 CE) and the Old Latin tradition as a whole.",
+    "manuscript_evidence_against": "Every Greek manuscript prior to the 14th century omits the Comma — a total of over 5,000 Greek manuscripts for the Catholic Epistles that contain 1 John 5 without the expanded Trinitarian phrase. Key witnesses include א (Sinaiticus, 4th c.), A (Alexandrinus, 5th c.), B (Vaticanus, 4th c.), C (Ephraemi, 5th c.), Ψ, 048, 0296, the minuscules 1739 and 1881, the Peshitta, Coptic versions, Armenian, and Ethiopic. Crucially, no Greek Father — not even those most concerned with defending Trinitarian orthodoxy against Arianism (Athanasius, Basil, the Cappadocians, Cyril of Alexandria) — ever cites this verse with the Comma, an omission inconceivable if the words stood in their copies of the Greek text.",
+    "internal_evidence": "The short text exhibits tight grammatical coherence in Greek: the three earthly witnesses (Spirit, water, blood) are neuter nouns but take a masculine participle (οἱ μαρτυροῦντες), a grammatical irregularity that has been explained as a personification or as reflecting a semitic substratum — but which becomes absurd if the three heavenly witnesses (Father, Word, Holy Spirit) originally preceded them and would have already 'explained' the masculine. The Comma disrupts the rhetorical and argumentative flow of the passage, which concerns the threefold witness in vv. 6–8 as a unified unit. The vocabulary and style of the Comma differ from John's characteristic patterns in 1 John. Theologically, it is notable that the Comma's explicit Trinitarian formulation would have been the decisive proof-text in the Arian controversy, yet no 4th-century orthodox writer deploys it — a silence that is inexplicable if the text were genuine.",
+    "scholarly_consensus": "There is overwhelming and essentially universal scholarly consensus that the Comma Johanneum is a non-original interpolation. Metzger's Textual Commentary (2nd ed., 1994) provides a detailed refutation of its authenticity. The UBS committee assigned the short text an 'A' rating. Bruce Metzger, Kurt Aland, Barbara Aland, Carlo Martini, and virtually every modern text critic regard the Comma as a Latin gloss of probable North African origin (perhaps as early as the 3rd–4th century as a marginal comment) that gradually entered the Latin text tradition and was artificially introduced into a few Greek manuscripts in the late medieval and Renaissance periods. The Catholic Church's Pontifical Biblical Commission acknowledged in 1927 that the Comma need not be regarded as authentic in the sense required for Catholic doctrine, and the Nova Vulgata (1979) of the Roman Catholic Church omits it.",
+    "pastoral_note": "All major modern Bible translations — including the NIV, ESV, NASB, NRSV, NLT, CSB, NET, REB, NJB, and the Catholic NAB — omit the Comma Johanneum from the main text of 1 John 5:7–8, printing only the shorter text ('For there are three that testify: the Spirit and the water and the blood, and these three agree'). Some translations (e.g., the KJV/NKJV, which follow the Textus Receptus) include the full Comma: 'For there are three that bear record in heaven, the Father, the Word, and the Holy Ghost: and these three are one. And there are three that bear witness in earth, the Spirit, and the water, and the blood: and these three agree in one.' Modern translations that omit the Comma typically include a footnote explaining its late manuscript origin. The passage as printed in all critical editions remains theologically significant as a witness to the Spirit's testimony, without needing the interpolated Trinitarian formula."
+  },
+  "synthesis": "The text of 1 John 5:7 in all critical editions (SBLGNT, NA28, UBS5) is the short reading ὅτι τρεῖς εἰσίν οἱ μαρτυροῦντες, supported by the totality of the early Greek manuscript tradition and all major versional and patristic evidence. The Comma Johanneum, present only in a tiny number of demonstrably late Greek manuscripts and a segment of the Latin tradition, represents the most clearly documented interpolation in the New Testament textual tradition. The stability of the short text is 'A'-rated and uncontested in modern critical scholarship.",
+  "assessment": {
+    "title": "Comma Johanneum: The Most Certain Interpolation in New Testament Textual Criticism",
+    "reasoning": "The short text of 1 John 5:7 (ὅτι τρεῖς εἰσίν οἱ μαρτυροῦντες) is one of the most text-critically secure readings in the entire New Testament, supported by the unanimous witness of all Greek manuscripts before the 14th century, all early patristic authors including the Trinitarian controversialists of the 4th century, and the broad versional tradition. The Comma Johanneum, the expanded Trinitarian clause found in the Textus Receptus and the KJV, entered Greek manuscripts only in the Renaissance period through manuscripts of suspect provenance, including one (Codex Montfortianus) almost certainly fabricated to satisfy Erasmus's stated condition for including the reading. The internal evidence — grammatical, stylistic, and the silence of Trinitarian apologists who would have deployed the Comma as their strongest proof-text against Arianism — corroborates the external evidence with unusual force.",
+    "plain": "The extra Trinitarian words in 1 John 5:7 ('the Father, the Word, and the Holy Ghost: and these three are one') found in the King James Bible are not original to the New Testament. They appear in essentially none of the thousands of ancient Greek manuscripts and were never quoted by early Christian writers, even those who were desperately searching for Bible verses to defend the Trinity. Modern Bible translations correctly omit these words.",
+    "confidence": 0.99,
+    "recommended_reading": "NA28 / UBS5 — both present the short text with an 'A' rating and provide detailed apparatus notes documenting the late manuscript evidence for the Comma. The SBLGNT likewise reflects the correct critical text. For full discussion, Metzger's Textual Commentary on the Greek New Testament (2nd ed., 1994), pp. 647–649, remains the standard reference.",
+    "open_questions": "1. The precise origin and dating of the Comma as a Latin gloss remains debated: some scholars (e.g., Thiele, McDonald) have argued for a North African origin as early as the 3rd century in the context of Montanist or anti-Priscillianist theological activity, while others date its liturgical or homiletical genesis to 4th–5th century Spain (the Priscillianist connection proposed by Künstle and others). 2. The exact circumstances under which Codex Montfortianus (61) was produced — whether by Roy or another party — and whether Erasmus was genuinely deceived or complicit in its inclusion in his 1522 edition, remain subjects of historical-critical discussion."
+  },
+  "citations": {
+    "sbl": "Bruce M. Metzger, A Textual Commentary on the Greek New Testament, 2nd ed. (Stuttgart: Deutsche Bibelgesellschaft, 1994), 647–649; Kurt Aland and Barbara Aland, The Text of the New Testament, trans. Erroll F. Rhodes, 2nd ed. (Grand Rapids: Eerdmans, 1989), 311; Tommy Wasserman, 'The Comma Johanneum,' in The Greek New Testament as a Codex, ed. Lincoln Blumell and Thomas Wayment (Peabody, MA: Hendrickson, 2010).",
+    "bibtex": "@book{metzger1994textual, author={Metzger, Bruce M.}, title={A Textual Commentary on the Greek New Testament}, edition={2nd}, year={1994}, publisher={Deutsche Bibelgesellschaft}, address={Stuttgart}, pages={647--649}}"
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-04-19T23:24:29.159192",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "HIGH",
+    "confidence_note": "The analysis reflects mainstream textual-critical consensus on the Comma Johanneum and is largely accurate, with a few minor overstatements and questionable specifics that warrant caveat.",
+    "flagged_claims": [
+      {
+        "claim": "Erasmus's 1522 third edition under pressure to include readings",
+        "risk": "MEDIUM",
+        "reason": "The 'Erasmus's promise' story (that he pledged to include the Comma if shown a Greek MS) is a popular narrative but has been challenged by scholars like H.J. de Jonge as likely apocryphal; stating it as fact overstates certainty."
+      },
+      {
+        "claim": "Codex Montfortianus (61) is widely considered to have been manufactured specifically to compel Erasmus to include the Comma",
+        "risk": "MEDIUM",
+        "reason": "While 61 is late and suspect, the claim that it was fabricated specifically to influence Erasmus is contested; de Jonge and others have argued this is a legend."
+      },
+      {
+        "claim": "minuscules 61, 629, 918, and 2318, all dating from the 14th–18th centuries",
+        "risk": "MEDIUM",
+        "reason": "Dating of 629 (Ottobonianus) is typically given as 14th c., but some date it later; 918 is often dated 16th c. and 2318 to the 18th c.—dates are roughly correct but the standard list also includes 88 (margin), 221 (margin), 429 (margin), 636 (margin), and 2473, which is omitted here."
+      },
+      {
+        "claim": "over 5,000 Greek manuscripts for the Catholic Epistles that contain 1 John 5",
+        "risk": "HIGH",
+        "reason": "This number is inflated; only roughly 500–600 Greek manuscripts contain the Catholic Epistles, not 5,000+ (the 5,000+ figure refers to all NT Greek MSS combined)."
+      },
+      {
+        "claim": "Jerome in his prologue",
+        "risk": "MEDIUM",
+        "reason": "The 'Prologue to the Canonical Epistles' attributed to Jerome actually defends the Comma and complains of its omission; citing Jerome's prologue as a witness against the Comma is the opposite of what that prologue says (though the prologue's authenticity as Jerome's is itself disputed—it is likely pseudonymous)."
+      },
+      {
+        "claim": "Augustine cite 1 John 5:7–8 without the Comma",
+        "risk": "MEDIUM",
+        "reason": "Augustine's testimony is debated; his Contra Maximinum 2.22.3 contains an allegorical interpretation that some have argued reflects knowledge of the Comma. Listing him simply as a witness against without qualification overstates the case."
+      },
+      {
+        "claim": "The Catholic Church's Pontifical Biblical Commission acknowledged in 1927",
+        "risk": "MEDIUM",
+        "reason": "The 1927 Holy Office decree (not strictly the PBC) permitted scholars to deny authenticity 'after mature examination'; the framing here is roughly correct but the attributing body and exact wording should be verified."
+      },
+      {
+        "claim": "Codex Fuldensis (541 CE) lack it",
+        "risk": "MEDIUM",
+        "reason": "Fuldensis lacks the Comma in its main text but its preface/prologue references it; the bare statement omits this nuance."
+      }
+    ],
+    "safe_claims": [
+      "SBLGNT and NA28 agree on the short text omitting the Comma",
+      "The Comma is absent from all Greek manuscripts before the late medieval period",
+      "א, A, B, C, Ψ, 1739, 1881 attest the short text",
+      "The Peshitta, Coptic, Armenian, and Ethiopic versions lack the Comma",
+      "The KJV/NKJV include the Comma; modern translations (NIV, ESV, NASB, NRSV, NLT, CSB, NET) omit it",
+      "The three earthly witnesses (Spirit, water, blood) are neuter but take a masculine participle",
+      "The Nova Vulgata (1979) omits the Comma",
+      "UBS rates the short text 'A'",
+      "No Greek Father in the 4th-century Trinitarian controversies cites the Comma"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:36:30.733649+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

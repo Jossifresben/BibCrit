@@ -115,5 +115,51 @@
   "reference": "Zechariah",
   "cached_at": "2026-03-30T21:43:12.183865",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The core textual observations about Zech 9:9 (LXX vs MT) are accurate, but several characterizations and one specific Greek citation contain inaccuracies or overconfident claims.",
+    "flagged_claims": [
+      {
+        "claim": "lxx_text\": \"χαῖρε σφόδρα... κήρυσσε\"",
+        "risk": "HIGH",
+        "reason": "The actual LXX of Zech 9:9 reads χαῖρε σφόδρα, θύγατερ Σιων· κήρυσσε, θύγατερ Ιερουσαλημ. While κήρυσσε is correct for הָרִיעִי, the pairing here is fine, but note that χαῖρε renders גִּילִי — this is correct. However, the claim that this shows 'standard equivalents' for גִּילִי→χαῖρε is questionable; χαίρω more typically renders שׂמח, not גיל."
+      },
+      {
+        "claim": "lxx_text\": \"ἐπὶ ὑποζύγιον καὶ πῶλον νέον\"",
+        "risk": "HIGH",
+        "reason": "The actual Göttingen LXX text of Zech 9:9 reads ἐπὶ ὑποζύγιον καὶ πῶλον νέον — this appears correct, but the MT phrase עַל חֲמוֹר וְעַל עַיִר בֶּן אֲתֹנוֹת contains a double עַל that is NOT preserved in the Greek (only one ἐπί appears, not ἐπί...ἐπί). The claim that 'the double preposition structure is preserved (ἐπὶ...καὶ)' is incorrect — καί is not a preposition and does not preserve the double-עַל structure."
+      },
+      {
+        "claim": "passive participial form וְנוֹשָׁע (and saved/delivered) becomes the active present participle σῴζων",
+        "risk": "MEDIUM",
+        "reason": "The observation about MT niphal vs. LXX active is correct, but calling σῴζων unambiguously a 'messianic heightening' reflecting Second Temple messianism is a specific scholarly interpretation. An alternative explanation (translator misreading or different Vorlage with hiphil מוֹשִׁיעַ) is equally plausible and widely discussed; the analysis presents one view as established."
+      },
+      {
+        "claim": "comparable to portions of Jeremiah or Minor Prophets",
+        "risk": "MEDIUM",
+        "reason": "Zechariah is part of the Minor Prophets (Twelve), so comparing it to 'portions of Minor Prophets' is internally odd. The Twelve are generally considered a single translation unit by most scholars (Ziegler, Dines), making this comparison imprecise."
+      },
+      {
+        "claim": "The addition of ὡς (as, like) creates simile rather than direct identity, moderately reducing anthropomorphic directness",
+        "risk": "MEDIUM",
+        "reason": "The presence of ὡς in LXX Zech 2:12 is debated; some manuscripts and editions read without ὡς. Also, the traditional interpretation is that ὡς reflects a tiqqun sopherim concern, not necessarily LXX-translator reduction — this is a contested scribal/textual issue, not clearly a translator's choice."
+      },
+      {
+        "claim": "exploited by Matthew 21:5",
+        "risk": "MEDIUM",
+        "reason": "Matt 21:5 quotes Zech 9:9 but the relationship to LXX vs. a different Greek tradition is debated; Matthew's citation diverges from extant LXX in several respects (e.g., omits δίκαιος καὶ σῴζων). Saying the LXX πραΰς was 'exploited by Matthew' overstates the directness of dependence."
+      }
+    ],
+    "safe_claims": [
+      "MT וְנוֹשָׁע is a niphal participle while LXX σῴζων is an active participle",
+      "MT עָנִי is rendered πραΰς in LXX Zech 9:9",
+      "LXX Zechariah maintains θύγατερ Σιων / θύγατερ Ἰερουσαλήμ as standard equivalents",
+      "The Hebrew construct chain עַיִר בֶּן אֲתֹנוֹת is condensed in the Greek",
+      "Zechariah 9–14 is commonly designated Deutero-Zechariah in scholarship"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.420902+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

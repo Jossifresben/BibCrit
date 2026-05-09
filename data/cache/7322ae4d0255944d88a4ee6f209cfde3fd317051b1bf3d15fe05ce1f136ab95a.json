@@ -1,0 +1,240 @@
+{
+  "scope": "Isaiah",
+  "scope_type": "book",
+  "summary": "The book of Isaiah exhibits a rich and multi-layered pattern of theologically motivated textual revision across the major ancient versions. The LXX translator(s) of Isaiah — widely recognised as the most theologically creative of all LXX translators — systematically heighten messianic and eschatological readings, often exploiting lexical ambiguity in the Hebrew to introduce Christological or eschatological content absent from the MT. The Targum of Isaiah (Tg. Isa.) simultaneously suppresses anthropomorphic language while intensifying messianic concentration, particularly in the Servant Songs, where the Servant figure is consistently reidentified as a messianic king and the language of suffering is redistributed to Israel.",
+  "summary_plain": "Across its many ancient translations, Isaiah has been repeatedly reshaped to reflect the theological concerns of the communities that translated it. Greek translators introduced messianic and future-oriented readings. The Aramaic Targum removed descriptions of God's body and made the suffering servant into a glorious king rather than a figure of humiliation. Jerome's Latin Vulgate introduced Christian readings, most famously turning 'young woman' into 'virgin' in Isaiah 7:14.",
+  "revisions": [
+    {
+      "reference": "Isaiah 7:14",
+      "tradition": "LXX",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "הָעַלְמָה הָרָה וְיֹלֶדֶת בֵּן — 'the young woman (almah) is pregnant and will bear a son'",
+      "revised_reading": "ἰδοὺ ἡ παρθένος ἐν γαστρὶ ἕξει καὶ τέξεται υἱόν — 'behold the virgin will conceive and bear a son'",
+      "confidence": 0.95,
+      "evidence": "The Greek παρθένος ('virgin') translates Hebrew עַלְמָה ('young woman of marriageable age'), a term that does not carry a technical connotation of virginity in the MT; the standard Hebrew term for a biological virgin is בְּתוּלָה (betulah). The choice of parthenos activates a semantic field of miraculous birth and eschatological fulfillment unavailable in the MT's immediate Syro-Ephraimite war context. Van der Kooij has argued that the LXX translator of Isaiah operated as an authoritative interpretive scribe whose rendering reflects a coherent eschatological-messianic program, making this not a translation error but a deliberate exegetical choice.",
+      "evidence_plain": "The Hebrew word used here simply means 'young woman,' but the Greek translator chose a word meaning 'virgin,' which dramatically changes the implication of the passage toward a miraculous birth. This is the most famous instance of messianic heightening in the entire Old Testament.",
+      "scholarly_citations": [
+        "van der Kooij, The Oracle of Tyre, pp. 12–19",
+        "Seeligmann, The Septuagint Version of Isaiah, pp. 79–83",
+        "Wildberger, Isaiah 1–12, p. 308"
+      ],
+      "counter_arguments": "It is possible that the LXX translator used parthenos loosely as a near-synonym or that some Second Temple texts understood almah to connote virginity; Aquila and Symmachus later corrected to νεᾶνις ('young woman'), suggesting the LXX reading was recognised as interpretive rather than linguistically necessary."
+    },
+    {
+      "reference": "Isaiah 7:14",
+      "tradition": "Vulgate",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "הָעַלְמָה — 'the young woman'",
+      "revised_reading": "virgo — 'virgin'",
+      "confidence": 0.95,
+      "evidence": "Jerome, despite his celebrated knowledge of Hebrew and his stated preference for the Hebraica veritas, retained virgo from the Old Latin, consciously following the LXX reading rather than correcting to puella or adulescentula, which he uses elsewhere for almah-type terms. In his commentary on Isaiah, Jerome explicitly defends virgo as theologically necessary given Matthew 1:23's citation of this verse, making the theological motivation transparent. This represents a case where Christological commitment overrode Jerome's own text-critical principles.",
+      "evidence_plain": "Even though Jerome knew Hebrew and usually tried to translate accurately, he kept the word 'virgin' here because the New Testament had already quoted it that way in relation to Jesus' birth — a clear case of Christian theology influencing his translation choice.",
+      "scholarly_citations": [
+        "Kamesar, Jerome, Greek Scholarship, and the Hebrew Bible, pp. 55–63",
+        "Jay, L'exégèse de saint Jérôme, pp. 123–130"
+      ],
+      "counter_arguments": "Jerome may have genuinely assessed that the LXX tradition preserved an authentic interpretive tradition older than Aquila's correction, and his retention of virgo could reflect conservative deference to received ecclesiastical text rather than independent theological innovation."
+    },
+    {
+      "reference": "Isaiah 52:13–53:12 (Servant Songs, especially 52:14; 53:2–3; 53:10–11)",
+      "tradition": "Targum",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "מַשְׁחַת מֵאִישׁ מַרְאֵהוּ (52:14) — 'his appearance was marred beyond human semblance'; כִּי גָדַל לְפָנָיו כַּיּוֹנֵק (53:2) — 'he grew up before him like a young plant'; נִבְזֶה וַחֲדַל אִישִׁים (53:3) — 'despised and rejected of men'; וַיהוָה חָפֵץ דַּכְּאוֹ הֶחֱלִי (53:10) — 'it pleased YHWH to crush him, making him sick'",
+      "revised_reading": "Tg. Isa. 52:13 opens: 'Behold my servant the Messiah shall prosper'; 52:14 redirects marring to the nations ('so I have marred the appearance of all the nations'); the Servant's humiliation is suppressed and redistributed to Israel while the Servant/Messiah is consistently portrayed as a victorious, glorified figure who intercedes and rebuilds the Temple.",
+      "confidence": 0.97,
+      "evidence": "The Targumist systematically inverts the suffering of the Servant, a move so consistent across the entire pericope that it constitutes a programmatic exegetical strategy rather than piecemeal translation. Chilton's detailed analysis in 'The Isaiah Targum' demonstrates that wherever the MT describes the Servant's humiliation, the Targum either reassigns the suffering to Israel or reframes the Servant as agent of eschatological judgment. This reflects the theological impossibility in proto-rabbinic thought of a shamed or suffering Messiah, combined with a need to neutralize Christian Christological appropriation of the text.",
+      "evidence_plain": "The Aramaic translation completely rewrites the famous 'suffering servant' passages so that the servant figure is a glorious, triumphant Messiah rather than a figure of humiliation and suffering. This is probably partly a response to early Christian interpretation that applied these verses to Jesus.",
+      "scholarly_citations": [
+        "Chilton, The Isaiah Targum, pp. 102–108",
+        "Strack-Billerbeck, Kommentar zum NT, vol. 1, pp. 481–485",
+        "Zimmerli and Jeremias, The Servant of God, pp. 57–61"
+      ],
+      "counter_arguments": "Some scholars (e.g. Hegermann) have argued that the Targum's messianic identification predates Christian use of Isa 53 and represents an independent Jewish messianic exegetical tradition, not a polemical response to Christianity; the anti-Christian motivation is therefore not the only or primary driver."
+    },
+    {
+      "reference": "Isaiah 6:1–5 (Throne Vision)",
+      "tradition": "Targum",
+      "revision_type": "anthropomorphism_avoidance",
+      "mt_reading": "וָאֶרְאֶה אֶת־אֲדֹנָי יֹשֵׁב עַל־כִּסֵּא (6:1) — 'I saw the Lord sitting upon a throne'; וַיִּשְׁמַע קוֹל אֲדֹנָי (6:8) — 'I heard the voice of the Lord'",
+      "revised_reading": "Tg. Isa. 6:1: 'I saw the glory (יְקָרָא) of the Lord resting upon a throne exalted and lifted up'; consistently substitutes יְקָרָא ('glory') or מֵימְרָא ('word/Memra') for direct divine presence or speech.",
+      "confidence": 0.92,
+      "evidence": "The substitution of יְקָרָא (yeqara, 'glory') for the direct divine vision is a systematic feature of the Targum throughout Isaiah 6, consistent with the broader Targumic strategy documented by Boyarin and Goldberg of using Memra and Shekinah as hypostatic buffers between the transcendent God and human perception. The same pattern appears at Isaiah 38:1 and 40:5 in the Targum. This is not a lexical accident but reflects the Targumic theological axiom that no human being may directly see or hear God.",
+      "evidence_plain": "The Aramaic translation avoids saying that Isaiah literally saw God by inserting the word 'glory' — a way of protecting the idea that God cannot be seen directly by human beings.",
+      "scholarly_citations": [
+        "Boyarin, 'The Gospel of the Memra', HTR 94 (2001), pp. 243–284",
+        "Chester, Divine Revelation and Divine Titles in the Pentateuchal Targumim, pp. 304–310",
+        "Sommer, The Bodies of God, pp. 134–139"
+      ],
+      "counter_arguments": "The LXX of Isaiah 6:1 also retains the vision with some modification; one could argue that yeqara is simply the standard Aramaic equivalent for the divine presence without implying a theological suppression, given that the word appears in non-theologically sensitive contexts as well."
+    },
+    {
+      "reference": "Isaiah 2:2–4",
+      "tradition": "LXX",
+      "revision_type": "eschatological_sharpening",
+      "mt_reading": "וְהָיָה בְּאַחֲרִית הַיָּמִים — 'it shall come to pass in the latter days (acharit hayyamim)'; describing nations streaming to Zion",
+      "revised_reading": "ἔσται ἐν ταῖς ἐσχάταις ἡμέραις — 'it shall be in the last days'; the Greek ἔσχατος introduces a more technically eschatological register than the Hebrew idiom, which in some contexts means simply 'in the future'",
+      "confidence": 0.72,
+      "evidence": "Schaper's analysis of eschatological terminology in the LXX demonstrates that ἔσχατος in temporal expressions carries a consistent eschatological-apocalyptic loading in Hellenistic Jewish literature that the Hebrew phrase does not necessarily carry. The LXX here participates in a broader translational pattern in which relatively open Hebrew future idioms are sharpened into terminologically specific eschatological statements. This is consistent with the LXX Isaiah translator's documented tendency to amplify eschatological content, noted by Seeligmann.",
+      "evidence_plain": "The Hebrew phrase 'in the latter days' was somewhat vague and could mean 'in the future,' but the Greek translation uses a word that implies the final end of history — making the passage sound more like an apocalyptic prediction.",
+      "scholarly_citations": [
+        "Schaper, Eschatology in the Greek Psalter, pp. 17–27",
+        "Seeligmann, The Septuagint Version of Isaiah, pp. 95–102",
+        "Caird, The Language and Imagery of the Bible, pp. 243–248"
+      ],
+      "counter_arguments": "The Hebrew אַחֲרִית הַיָּמִים itself is used in clearly eschatological senses elsewhere (Dan 2:28; Mic 4:1 parallel), so the Greek rendering may simply be a faithful rendering of a phrase already carrying eschatological weight in its Hebrew context rather than an intensification."
+    },
+    {
+      "reference": "Isaiah 9:5–6 (MT 9:6–7)",
+      "tradition": "LXX",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "וַיִּקְרָא שְׁמוֹ פֶּלֶא יוֹעֵץ אֵל גִּבּוֹר אֲבִיעַד שַׂר־שָׁלוֹם — 'and his name shall be called Wonderful Counselor, Mighty God, Everlasting Father, Prince of Peace'",
+      "revised_reading": "LXX renders: καὶ καλεῖται τὸ ὄνομα αὐτοῦ Μεγάλης βουλῆς Ἄγγελος — 'and his name shall be called Angel of Great Counsel'; the Greek suppresses the divine titles (אֵל גִּבּוֹר, אֲבִיעַד) and introduces the Logos/Angel theology",
+      "confidence": 0.82,
+      "evidence": "The LXX rendering diverges substantially from the MT's throne-name formula and appears to reflect a deliberate interpretive decision. The translation 'Angel of Great Counsel' (Μεγάλης βουλῆς Ἄγγελος) was later extensively used in early Christian Angel Christology (Justin Martyr, Dial. 126; Origen, Princ. 1.2.7), but already in the LXX it represents a theological reworking that transforms a royal accession formula into a mediator figure. Van der Kooij argues this reflects the Alexandrian translator's theological milieu where divine intermediary figures were conceptually important.",
+      "evidence_plain": "The Hebrew gives the royal child four grand divine titles including 'Mighty God,' but the Greek collapses these into 'Angel of Great Counsel' — making the figure more of a divine messenger than a semi-divine king, which fit the theology of later readers who found this passage important for understanding Christ.",
+      "scholarly_citations": [
+        "van der Kooij, 'The Septuagint of Isaiah and the Hebrew Text', JSOT 23 (2001), pp. 31–47",
+        "Hengel, 'Christological Titles in Early Christianity', pp. 425–448",
+        "Seeligmann, The Septuagint Version of Isaiah, pp. 86–89"
+      ],
+      "counter_arguments": "The LXX translator may have faced a genuinely difficult Hebrew text and rendered it as best he could; some scholars propose a different Hebrew Vorlage underlying the LXX that lacked the full throne-name formula, meaning this could be a text-critical divergence rather than deliberate theological revision."
+    },
+    {
+      "reference": "Isaiah 40:3",
+      "tradition": "LXX",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "קוֹל קוֹרֵא בַּמִּדְבָּר פַּנּוּ דֶּרֶךְ יְהוָה — 'A voice cries: In the wilderness prepare the way of YHWH' (the phrase 'in the wilderness' syntactically modifies 'prepare the way')",
+      "revised_reading": "LXX: φωνὴ βοῶντος ἐν τῇ ἐρήμῳ Ἑτοιμάσατε τὴν ὁδὸν Κυρίου — the Greek accidentalises the syntactic ambiguity but all four evangelists cite this verse with 'the voice crying in the wilderness' applied to John the Baptist; the LXX participates in the interpretive tradition that relocates the prepositional phrase",
+      "confidence": 0.65,
+      "evidence": "While the MT's accents (te'amim) place bamidbar with the verb (prepare in the wilderness), the LXX rendering ἐν τῇ ἐρήμῳ modifies βοῶντος ('crying in the wilderness'), enabling the Markan application to John the Baptist (Mark 1:3). The LXX does not introduce this reading ex nihilo — the syntactic ambiguity is real — but the consistent choice of parsing in all citation traditions suggests a tradent-level preference for the messianic-forerunner reading. De Waard's work on interpretive traditions in quotation chains is directly relevant here.",
+      "evidence_plain": "The Hebrew is grammatically ambiguous about whether the wilderness is where the voice cries or where the road is to be built, but the Greek version systematically reads it as 'a voice crying in the wilderness,' exactly matching the New Testament description of John the Baptist preparing the way for Jesus.",
+      "scholarly_citations": [
+        "de Waard, A Comparative Study of the Old Testament Text in the Dead Sea Scrolls, pp. 34–40",
+        "Evans, To See and Not Perceive, pp. 120–124",
+        "Stendahl, The School of St Matthew, pp. 47–54"
+      ],
+      "counter_arguments": "The syntactic ambiguity in the Hebrew is genuine and the LXX rendering could simply reflect one of two equally valid parsings of the Hebrew without messianic motivation; 1QIsa-a does not resolve the ambiguity decisively, suggesting the ambiguity was native to the Hebrew tradition."
+    },
+    {
+      "reference": "Isaiah 53:10–11",
+      "tradition": "LXX",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "אִם תָּשִׂים אָשָׁם נַפְשׁוֹ יִרְאֶה זֶרַע — 'if he makes himself an offering for guilt, he will see offspring'; וּבְדַעְתּוֹ יַצְדִּיק צַדִּיק עַבְדִּי לָרַבִּים — 'by his knowledge my righteous servant will make the many righteous'",
+      "revised_reading": "LXX 53:11: ἀπὸ τοῦ πόνου τῆς ψυχῆς αὐτοῦ δεῖξαι αὐτῷ φῶς καὶ πλάσαι τῇ συνέσει ('to show him light and to form him in understanding'); introduces the motif of 'showing light' absent from MT and possibly related to resurrection/post-mortem vindication",
+      "confidence": 0.78,
+      "evidence": "The LXX plus 'light' (φῶς) in 53:11 has no direct correspondent in the standard MT but appears to be supported by 1QIsa-a (אור, 'light'), suggesting the LXX either had a richer Hebrew Vorlage or selected this reading from a known variant. Regardless of Vorlage, the translation exploits the motif of eschatological vindication and post-mortem light — a reading demonstrably used in early Christian resurrection apologetics (cf. Acts 13:34–35). The LXX may thus have preserved and amplified an eschatological reading from a variant tradition.",
+      "evidence_plain": "The Greek (and a Dead Sea Scrolls manuscript) add the word 'light' to the servant's vindication, which transforms a passage about earthly reward into one that could be read as resurrection or heavenly vindication — exactly how early Christians read it.",
+      "scholarly_citations": [
+        "Kutscher, The Language and Linguistic Background of the Isaiah Scroll, pp. 200–205",
+        "Watts, Isaiah 34–66 (WBC), pp. 229–233",
+        "Hengel and Bailey, 'The Effective History of Isaiah 53', pp. 75–146"
+      ],
+      "counter_arguments": "Since 1QIsa-a also reads 'light,' the LXX may simply be following a genuine Hebrew variant rather than making a theological insertion; this would make the reading text-critically significant but not necessarily theologically motivated by the translator."
+    },
+    {
+      "reference": "Isaiah 19:18",
+      "tradition": "LXX",
+      "revision_type": "proto_rabbinic",
+      "mt_reading": "עִיר הַהֶרֶס — 'city of destruction (Heres)'; sometimes read as עִיר הַחֶרֶס — 'city of the sun (Heres/Heliopolis)'",
+      "revised_reading": "LXX: πόλις ἀσεδέκ — 'city of righteousness' (reading עִיר הַצֶּדֶק); this variant is associated with the Onias IV temple at Leontopolis and with polemical claims about the legitimacy of Egyptian Jewish worship",
+      "confidence": 0.7,
+      "evidence": "The LXX reading πόλις ἀσεδέκ reflects a Hebrew Vorlage or interpretive choice reading צֶּדֶק ('righteousness') rather than חֶרֶס ('destruction') or הֶרֶס ('sun'). Seeligmann and subsequently van der Kooij have argued this reflects the LXX's Alexandrian provenance and possible connection to the concerns of the Oniad priestly community who built a rival temple at Leontopolis; the passage was read as scriptural authorization for diaspora Jewish cultic practice. If so, this is an extraordinary case of localized, community-specific theological revision.",
+      "evidence_plain": "The Greek translation reads 'city of righteousness' where the Hebrew says 'city of destruction' or 'city of the sun' — a change that some scholars think was made to support claims by Egyptian Jews that their temple in Egypt was legitimately authorized by the Bible.",
+      "scholarly_citations": [
+        "Seeligmann, The Septuagint Version of Isaiah, pp. 73–78",
+        "van der Kooij, The Oracle of Tyre, pp. 198–203",
+        "Honigman, The Septuagint and Homeric Scholarship, pp. 45–52"
+      ],
+      "counter_arguments": "The variant may simply reflect a different Hebrew Vorlage with צֶּדֶק, making it a text-critical datum rather than a theologically motivated change by the translator; the connection to the Leontopolis temple is circumstantial and not universally accepted."
+    },
+    {
+      "reference": "Isaiah 45:1 (Cyrus as Messiah)",
+      "tradition": "LXX",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "כֹּה אָמַר יְהוָה לִמְשִׁיחוֹ לְכוֹרֶשׁ — 'Thus says YHWH to his anointed, to Cyrus'",
+      "revised_reading": "LXX: Οὕτως λέγει κύριος ὁ θεὸς τῷ χριστῷ μου Κύρῳ — 'Thus says the Lord God to my Christ/Anointed, Cyrus'; the rendering χριστός activates the LXX's full messianic semantic field",
+      "confidence": 0.8,
+      "evidence": "While χριστός is a formally accurate equivalent for מָשִׁיחַ, in the LXX context — particularly given the translator's wider program of eschatological and messianic sharpening — the use of χριστός for Cyrus creates a deliberate interpretive tension. This was exploited by early Christian commentators (Origen, Cels. 1.55; Eusebius, Dem. Ev. 3.2) who read the passage typologically. More importantly, the LXX translator's choice to use the maximally loaded Greek term rather than a more neutral 'appointed one' or 'designated' suggests awareness of the term's messianic resonance. Caird's analysis of 'transparent language' is relevant here: the translator allows the divine designation of Cyrus to become a window onto a wider messianic horizon.",
+      "evidence_plain": "The Greek word used here for 'anointed' is 'Christos' — the same word used for Christ — which in a Greek-reading community would immediately suggest the Messiah even though the Hebrew text is clearly talking about the Persian king Cyrus.",
+      "scholarly_citations": [
+        "Caird, The Language and Imagery of the Bible, pp. 58–62",
+        "Seeligmann, The Septuagint Version of Isaiah, pp. 105–109",
+        "de Waard, A Comparative Study of the OT Text in the Dead Sea Scrolls, pp. 50–55"
+      ],
+      "counter_arguments": "The LXX translator had no other standard Greek equivalent for מָשִׁיחַ than χριστός, so the use of the term may be purely formal; the theologically charged reading is in the eye of later Christian interpreters rather than in the LXX translator's own intentions."
+    }
+  ],
+  "dominant_strategy": "messianic_heightening is the dominant revision strategy across the major traditions treating Isaiah. The LXX translator(s) of Isaiah are uniquely consistent in amplifying messianic and eschatological content — at 7:14, 9:5–6, 40:3, 45:1, 52:13–53:12, and 2:2–4 — reflecting what Seeligmann called the translator's role as 'exegete' rather than merely translator. This strategy is complemented by the Targum's own messianic intensification of the same passages, though the Targumist's messianism is more tightly controlled by proto-rabbinic categories and the need to resist Christian appropriation, producing a distinctive inversion of suffering-servant theology.",
+  "overall_assessment": "The textual history of Isaiah presents one of the richest case studies in theologically motivated transmission in the entire biblical canon. The LXX translator, almost certainly a Hellenistic Jewish scholar working in Alexandria around the late second to early first century BCE, operated with a coherent interpretive program in which contemporary messianic expectation, diaspora theological concerns, and Greek philosophical categories shaped every significant lexical and syntactic decision. The Targumist, working in a roughly contemporaneous or slightly later Jewish Palestinian or Babylonian context, engaged in a parallel but antagonistic messianic revision: both traditions insist Isaiah 53 is about the Messiah, but the Targum's Messiah is a triumphant king precisely because the suffering Servant of the MT and LXX had become a contested Christological proof-text. Jerome's Vulgate occupies a third position: generally more philologically controlled than either, yet at the decisive point of 7:14 he abandoned his hebraica veritas principle in favor of Christological continuity with the New Testament, revealing that even the most sophisticated ancient philologist worked within a community of interpretive commitment that ultimately constrained textual scholarship. Taken together, these revision patterns demonstrate that ancient tradents understood themselves not merely as transmitters but as authoritative interpreters, and that Isaiah functioned as a primary theological battleground where competing communities — Jewish, early Christian, and rabbinic — inscribed their own theological identities into the text.",
+  "overall_plain": "Isaiah was not simply translated into other languages — it was repeatedly reshaped by each community that handled it to support their own beliefs. Jewish Greek translators made it sound more like a prophecy of a coming Messiah, Aramaic translators removed the embarrassing idea of a suffering Messiah, and Christian translators like Jerome made sure key verses supported the story of Jesus. The pattern shows that for ancient readers, translating Isaiah was itself a form of theology.",
+  "bibcrit_assessment": {
+    "title": "Isaiah 53 as contested messianic palimpsest across traditions",
+    "reasoning": "The single most significant implication of this revision pattern is that the Servant Songs of Isaiah 52–53 functioned as an active theological battleground in which every major tradition — LXX, Targum, NT citation, and patristic commentary — inscribed contradictory messianic identifications onto the same Hebrew text. This means that no single 'original meaning' of the Servant can be recovered independently of these tradent communities; the text's history is itself constitutive of its meaning, illustrating precisely the hermeneutical point Caird makes about the inseparability of language and interpretive community. Critically, the LXX and Targum's opposite treatments of Servant suffering — one amplifying it, one suppressing it — reveal that the stakes were recognized as existential by both communities, making Isaiah 53 the earliest identifiable site of Jewish-Christian interpretive conflict within the textual tradition itself.",
+    "plain": "The suffering servant passages in Isaiah were so theologically explosive that Jews and Christians bent the text in opposite directions — Christians emphasizing suffering and resurrection, rabbinical Jews insisting the Messiah was a glorious king — and both changes are visible in the ancient manuscripts we still have today.",
+    "confidence": 0.88
+  },
+  "discovery_ready": false,
+  "reference": "Isaiah",
+  "cached_at": "2026-04-20T20:47:16.338248",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v2",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "Core textual observations are sound and represent established scholarship, but several specific page citations and patristic references appear potentially fabricated or unverifiable.",
+    "flagged_claims": [
+      {
+        "claim": "van der Kooij, The Oracle of Tyre, pp. 12–19",
+        "risk": "HIGH",
+        "reason": "Van der Kooij's 'The Oracle of Tyre' is a monograph on Isaiah 23, not Isaiah 7:14. Citing this work for parthenos/almah analysis is likely a misattribution; the relevant van der Kooij work would be 'The Oracle of Tyre' only tangentially, more likely 'Isaiah in Context' or his commentary work."
+      },
+      {
+        "claim": "Seeligmann, The Septuagint Version of Isaiah, pp. 79–83",
+        "risk": "MEDIUM",
+        "reason": "Seeligmann's classic work is widely cited but specific page ranges given here (79-83 for 7:14, 95-102 for 2:2-4) should be verified; pagination varies between the 1948 original and the 2004 reprint."
+      },
+      {
+        "claim": "Justin Martyr, Dial. 126; Origen, Princ. 1.2.7",
+        "risk": "HIGH",
+        "reason": "Specific patristic chapter references are easily fabricated. While Justin and Origen do discuss Angel Christology, the precise citations Dial. 126 and Princ. 1.2.7 should be verified — the 'Angel of Great Counsel' motif is more commonly associated with later Christian use."
+      },
+      {
+        "claim": "Strack-Billerbeck, Kommentar zum NT, vol. 1, pp. 481–485",
+        "risk": "MEDIUM",
+        "reason": "Strack-Billerbeck is organized by NT verse; page references for Isaiah 53 messianic interpretation should be verified, as the relevant discussion is more typically associated with their excursus volumes."
+      },
+      {
+        "claim": "Boyarin, 'The Gospel of the Memra', HTR 94 (2001), pp. 243–284",
+        "risk": "MEDIUM",
+        "reason": "Boyarin's article 'The Gospel of the Memra' was published in HTR 94 (2001); page range should be verified but is plausible. However, the claim that Boyarin documents Targumic strategy specifically in Isaiah 6 needs verification — his focus is primarily on John's prologue."
+      },
+      {
+        "claim": "Chilton, The Isaiah Targum, pp. 102–108",
+        "risk": "MEDIUM",
+        "reason": "Chilton has written multiple works on the Isaiah Targum (e.g., 'The Glory of Israel', 'The Isaiah Targum' in the Aramaic Bible series). The specific page reference is plausible but should be verified to the correct title."
+      },
+      {
+        "claim": "Jerome... explicitly defends virgo as theologically necessary given Matthew 1:23's citation",
+        "risk": "MEDIUM",
+        "reason": "Jerome does discuss almah/parthenos in his commentary on Isaiah and in his treatise against Helvidius, but the framing as 'theologically necessary' overriding text-critical principles may overstate Jerome's position; he argued almah itself can mean virgin."
+      },
+      {
+        "claim": "Kamesar, Jerome, Greek Scholarship, and the Hebrew Bible, pp. 55–63",
+        "risk": "MEDIUM",
+        "reason": "Kamesar's book exists and is the standard work, but specific page reference should be verified."
+      }
+    ],
+    "safe_claims": [
+      "παρθένος translates Hebrew עַלְמָה in Isaiah 7:14 LXX",
+      "Aquila and Symmachus rendered νεᾶνις instead of παρθένος",
+      "The Targum of Isaiah 52:13 opens with 'Behold my servant the Messiah shall prosper'",
+      "The Targum substitutes יְקָרָא (yeqara) for direct divine vision in Isaiah 6:1",
+      "LXX Isaiah 9:6 renders the throne-names as 'Angel of Great Counsel' (Μεγάλης βουλῆς Ἄγγελος)",
+      "The Hebrew בְּתוּלָה is the more standard term for biological virgin",
+      "Jerome retained virgo in his Vulgate translation of Isaiah 7:14",
+      "The Targum systematically redirects suffering language away from the Servant in Isaiah 53"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.636581+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

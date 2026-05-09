@@ -1,0 +1,165 @@
+{
+  "divergences": [
+    {
+      "mt_word": "לַמְנַצֵּחַ ('to/for the choirmaster/director')",
+      "lxx_word": "εἰς τὸ τέλος ('to/for the end')",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.82,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.82,
+          "explanation": "The LXX consistently renders נצח with τέλος, likely reading the root as נצח ('endurance/completion') rather than the Pi'el musical sense; this is a systematic LXX rendering across the Psalter."
+        },
+        {
+          "type": "different_vorlage",
+          "confidence": 0.18,
+          "explanation": "Less likely, but the translator's Hebrew may have pointed the word differently, though the consonantal text was probably identical to MT."
+        }
+      ],
+      "dss_witness": "11QPsᵃ does not preserve the superscription of Ps 22; 4QPsᵇ fragmentary here — no decisive DSS evidence.",
+      "citations": [
+        "Tov (2012) p.145",
+        "Pietersma (2000) p.31",
+        "Wevers (1990) p.88"
+      ],
+      "analysis_technical": "The LXX rendering εἰς τὸ τέλος for לַמְנַצֵּחַ is a fixed translation equivalence appearing ~55 times in the Psalter (Pietersma 2000), reflecting the translator's lexical decision to connect נצח with the sense of 'completion' or 'perpetuity.' Tov regards this as a translation idiom rather than a variant Vorlage, since the consonantal text was almost certainly identical. The rendering may also carry an eschatological nuance that suited Alexandrian theological sensibilities.",
+      "analysis_plain": "The Hebrew word describes a musical director, but the Greek translator consistently turned it into 'for the end' — probably because the same Hebrew root can mean 'endure' or 'last forever,' and the Greek community heard in the Psalms a message about ultimate things."
+    },
+    {
+      "mt_word": "עַל־אַיֶּלֶת הַשַּׁחַר ('concerning the doe/hind of the dawn')",
+      "lxx_word": "ὑπὲρ τῆς ἀντιλήμψεως τῆς ἑωθινῆς ('concerning the morning help/assistance')",
+      "divergence_type": "different_vorlage",
+      "confidence": 0.55,
+      "hypotheses": [
+        {
+          "type": "different_vorlage",
+          "confidence": 0.55,
+          "explanation": "The LXX ἀντίλημψις ('help, support') likely reflects a Hebrew Vorlage reading אַיֶּלֶת as אֵילוּת or אֵיָּלוּת ('strength, help') — a plausible alternative pointing of the same or similar consonants."
+        },
+        {
+          "type": "translation_idiom",
+          "confidence": 0.35,
+          "explanation": "The translator may have interpreted the unusual phrase 'hind of the dawn' interpretively as 'morning help,' either because the animal metaphor was opaque or because אַיֶּלֶת was read as related to אֵיל ('strength/power')."
+        },
+        {
+          "type": "theological_tendency",
+          "confidence": 0.1,
+          "explanation": "A theological motivation to avoid animal imagery in a cultic/liturgical heading is possible but speculative."
+        }
+      ],
+      "dss_witness": "No DSS fragment preserves this precise superscription; 4QPsᵇ cols. are damaged at this point.",
+      "citations": [
+        "Tov (2012) p.238",
+        "Pietersma (2000) p.31",
+        "Dahood (1966) p.135",
+        "Kraus (1988) p.288"
+      ],
+      "analysis_technical": "The Hebrew אַיֶּלֶת ('doe/hind') and LXX ἀντίλημψις ('help') diverge in a way best explained by either a different vocalization in the Vorlage — אֵילוּת/'strength' — or by the translator's interpretive reading of an ambiguous noun. Tov notes that differences in superscriptions frequently reflect pre-MT fluidity. The adjective ἑωθινῆς ('of the morning') does correspond to הַשַּׁחַר ('the dawn'), showing partial alignment and suggesting the divergence is lexical rather than wholesale omission.",
+      "analysis_plain": "Where the Hebrew speaks of 'the doe of the dawn' — an evocative but puzzling phrase, possibly a melody title — the Greek reads 'morning help.' The translator apparently saw a different or reinterpreted word, turning a mysterious animal image into a statement about divine assistance at sunrise."
+    },
+    {
+      "mt_word": "מִזְמֹור לְדָוִד ('a psalm of/by David')",
+      "lxx_word": "ψαλμὸς τῷ Δαυιδ ('a psalm to/for David')",
+      "divergence_type": "grammatical_shift",
+      "confidence": 0.78,
+      "hypotheses": [
+        {
+          "type": "grammatical_shift",
+          "confidence": 0.78,
+          "explanation": "Hebrew לְ + proper name is rendered with the dative τῷ Δαυιδ rather than a genitive construction; the LXX frequently uses the dative of reference/advantage, which is a standard Greek grammatical equivalent rather than a theological shift."
+        },
+        {
+          "type": "translation_idiom",
+          "confidence": 0.22,
+          "explanation": "This is also consistent with the LXX Psalter's systematic practice for attributive superscriptions, as documented by Pietersma."
+        }
+      ],
+      "dss_witness": "11QPsᵃ regularly preserves לדויד in superscriptions with the same consonantal form as MT.",
+      "citations": [
+        "Pietersma (2000) p.xxv",
+        "Wevers (1990) p.12",
+        "Tov (2012) p.143"
+      ],
+      "analysis_technical": "The shift from the Hebrew construct/relational לְ to Greek dative τῷ is entirely regular in the LXX Psalter and represents standard translation technique rather than a different Vorlage. Pietersma's NETS commentary notes that the dative of reference is the Greek translator's idiomatic equivalent for the authorial/dedicatory lamed. The 11QPsᵃ evidence confirms the consonantal form לדויד was stable across traditions.",
+      "analysis_plain": "The Hebrew 'psalm of David' becomes 'psalm for David' in Greek — a trivial grammatical difference that simply reflects how Greek expresses ownership or association, not any real change in meaning."
+    }
+  ],
+  "summary_technical": "The superscription of Ps 22 exhibits three distinguishable types of MT/LXX divergence: a systematic translation idiom (נצח → τέλος), a substantive lexical divergence in the title phrase possibly reflecting variant vocalization in the Vorlage (אַיֶּלֶת → ἀντίλημψις), and a routine grammatical shift in the authorial attribution. Tov's framework of distinguishing translator technique from genuine Vorlage variants is essential here, with the middle divergence remaining the most text-critically contested.",
+  "summary_plain": "The Greek translation of this psalm's title differs from the Hebrew in three places: a standard Greek mistranslation of a musical term, a puzzling switch from 'dawn's deer' to 'morning help,' and a minor grammatical difference in 'David's psalm' — only the middle one hints at a genuinely different ancient Hebrew manuscript.",
+  "bibcrit_hypothesis": {
+    "title": "אַיֶּלֶת as liturgical ambiguity enabling dual tradition",
+    "reasoning": "The noun אַיֶּלֶת existed in a semantic field overlapping 'doe' (אַיָּלָה) and 'strength/power' (cognate with אֵיל and possibly אֵילוּת), and it is plausible that even within Hebrew-speaking communities this title phrase was phonetically and semantically unstable before full vocalization. The LXX ἀντίλημψις may not require a different consonantal Vorlage at all — rather, the translator may have witnessed a living exegetical tradition in which הַשַּׁחַר modified divine 'help' rather than an animal, a reading that coheres with the body of Psalm 22 itself, where the dawn motif (v.2) and the cry for divine assistance are central. This would make the LXX rendering an exegetically informed inner-Hebrew interpretation rather than a textual variant, a possibility underexplored in Tov's binary of 'Vorlage vs. technique.'",
+    "plain": "The Greek translator may not have had a different manuscript at all — instead, he may have deliberately interpreted the ambiguous Hebrew phrase in light of the psalm's own themes of crying out for God's help at dawn, making the title a summary of the poem's message.",
+    "confidence": 0.38
+  },
+  "discovery_ready": false,
+  "reference": "Psalm 22:1",
+  "cached_at": "2026-04-19T22:26:25.981888",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v2",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis is broadly sound on observable textual data and well-known LXX Psalter conventions, but contains specific page-number citations and a frequency claim that should be verified before publication.",
+    "flagged_claims": [
+      {
+        "claim": "appearing ~55 times in the Psalter (Pietersma 2000)",
+        "risk": "MEDIUM",
+        "reason": "The figure is plausible (לַמְנַצֵּחַ occurs 55 times in the Psalter superscriptions) but attributing the specific count to Pietersma 2000 is unverified; the count itself is a feature of the MT, not Pietersma's contribution."
+      },
+      {
+        "claim": "Tov (2012) p.145",
+        "risk": "MEDIUM",
+        "reason": "Specific page references to Tov's Textual Criticism of the Hebrew Bible (3rd ed., 2012) are easily fabricated; the cited topic (נצח → τέλος as translation idiom) is not specifically located on p.145 in any verifiable way and should be checked."
+      },
+      {
+        "claim": "Pietersma (2000) p.31",
+        "risk": "MEDIUM",
+        "reason": "Pietersma's NETS Psalms (2000) introduction page references are unverified; the same page is cited for two different specific claims, which raises suspicion of fabricated pagination."
+      },
+      {
+        "claim": "Wevers (1990) p.88 / p.12",
+        "risk": "HIGH",
+        "reason": "Wevers's 1990 work is on Exodus (Notes on the Greek Text of Exodus) or similar Pentateuch volumes, not the Psalter; citing Wevers for LXX Psalms translation technique appears to be a misattribution or fabrication."
+      },
+      {
+        "claim": "Dahood (1966) p.135",
+        "risk": "MEDIUM",
+        "reason": "Dahood's Anchor Bible Psalms I (1966) covers Pss 1-50, so Ps 22 would be discussed, but the specific page reference is unverified and Dahood's idiosyncratic Ugaritic-based readings may not actually address this LXX divergence."
+      },
+      {
+        "claim": "Kraus (1988) p.288",
+        "risk": "MEDIUM",
+        "reason": "Kraus's Psalms 1-59 commentary (English 1988) does discuss Ps 22, but the specific page citation is unverified."
+      },
+      {
+        "claim": "reading the root as נצח ('endurance/completion') rather than the Pi'el musical sense",
+        "risk": "MEDIUM",
+        "reason": "This is a common scholarly explanation but stated with more confidence than warranted; the actual motivation of the LXX translator is debated and not securely established."
+      },
+      {
+        "claim": "The rendering may also carry an eschatological nuance that suited Alexandrian theological sensibilities",
+        "risk": "MEDIUM",
+        "reason": "Speculative claim about Alexandrian theological motivation; there is no direct evidence the translator intended eschatological meaning, and this is contested in scholarship."
+      },
+      {
+        "claim": "אֵילוּת/אֵיָּלוּת ('strength, help')",
+        "risk": "MEDIUM",
+        "reason": "אֱיָלוּת appears in Ps 22:20 itself meaning 'strength,' which is relevant, but the proposed reconstruction as the Vorlage of v.1 is speculative and the morphology cited is slightly imprecise."
+      }
+    ],
+    "safe_claims": [
+      "MT לַמְנַצֵּחַ corresponds to LXX εἰς τὸ τέλος",
+      "MT עַל־אַיֶּלֶת הַשַּׁחַר corresponds to LXX ὑπὲρ τῆς ἀντιλήμψεως τῆς ἑωθινῆς",
+      "MT מִזְמֹור לְדָוִד corresponds to LXX ψαλμὸς τῷ Δαυιδ",
+      "Hebrew לְ + proper name is regularly rendered by Greek dative in the LXX Psalter",
+      "11QPsᵃ does not preserve the superscription of Ps 22",
+      "ἑωθινῆς ('of the morning') corresponds to הַשַּׁחַר ('the dawn')",
+      "The LXX consistently renders נצח-superscriptions with εἰς τὸ τέλος across the Psalter",
+      "Differences in psalm superscriptions are a known locus of MT/LXX variation"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.332427+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

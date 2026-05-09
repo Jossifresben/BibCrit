@@ -167,5 +167,64 @@
   "reference": "Exodus",
   "cached_at": "2026-03-31T00:02:28.900673",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The textual claims are largely accurate and represent well-known LXX/Targum phenomena, but several specific page citations and one revision (Exod 32:14 Pseudo-Jonathan 'angel of death') appear potentially fabricated or misattributed.",
+    "flagged_claims": [
+      {
+        "claim": "Pseudo-Jonathan inserts 'through the angel of death' [in Exod 32:14]",
+        "risk": "HIGH",
+        "reason": "Targum Pseudo-Jonathan to Exod 32:14 does not, to my knowledge, contain an explicit reference to an 'angel of death' as the executor of judgment. This appears to be either a confusion with another passage or a fabrication."
+      },
+      {
+        "claim": "Wevers, Notes on the Greek Text of Exodus, p. 389 [for Exod 24:10]",
+        "risk": "MEDIUM",
+        "reason": "Specific page citations to Wevers's Notes should be verified; the volume's pagination does not obviously align with these references across multiple entries (pp. 54, 184, 308, 365, 389, 547), suggesting some may be approximated or invented."
+      },
+      {
+        "claim": "Aberbach & Grossfeld, Targum Onkelos to Exodus, p. 157 / p. 172",
+        "risk": "MEDIUM",
+        "reason": "Specific page numbers in Aberbach & Grossfeld are unverifiable here and have a pattern of plausible-sounding citation typical of fabricated references."
+      },
+      {
+        "claim": "Rofé, The Belief in Angels in the Bible and in Early Israel, p. 112 [cited for Exod 19:13 LXX]",
+        "risk": "HIGH",
+        "reason": "Rofé's work on angels is in Hebrew and would not naturally be cited for an LXX harmonization of trumpet/cloud imagery; the citation appears topically irrelevant and likely fabricated."
+      },
+      {
+        "claim": "cf. b. Berakhot 17a [on beatific vision in the world to come, cited for Exod 33:20]",
+        "risk": "MEDIUM",
+        "reason": "b. Berakhot 17a does describe the world to come (righteous sitting with crowns enjoying the divine presence), but the specific link to Targum Pseudo-Jonathan's 'world to come' addition at Exod 33:20 is an interpretive bridge, not a direct parallel established in the literature."
+      },
+      {
+        "claim": "Hayward, The Targums and the Transmission of Scripture, p. 44",
+        "risk": "MEDIUM",
+        "reason": "Hayward has written on Targums but the exact title and page citation should be verified; risk of slightly garbled reference."
+      },
+      {
+        "claim": "McNamara, Targum and Testament Revisited, p. 89",
+        "risk": "MEDIUM",
+        "reason": "The book exists but the specific page reference for the Exod 33:20 'world to come' point is unverified and could be approximated."
+      },
+      {
+        "claim": "Rösel, Übersetzung als Vollendung der Auslegung, p. 102 / p. 78",
+        "risk": "MEDIUM",
+        "reason": "Rösel's monograph on LXX Genesis (1994) is the better-known work; whether these specific pages address Exod 24:10 and Exod 12:40 is uncertain, and the title is more commonly associated with Genesis than Exodus."
+      }
+    ],
+    "safe_claims": [
+      "LXX Exod 24:10 reads 'they saw the place where the God of Israel stood' rather than 'they saw the God of Israel'",
+      "Targum Onqelos and Pseudo-Jonathan use 'glory of the Shekinah' as a buffer term in Exod 24:11",
+      "LXX Exod 12:40 adds 'and in the land of Canaan' to the 430-year chronology",
+      "LXX Exod 22:28 uses plural θεούς for אֱלֹהִים",
+      "Some LXX witnesses to Exod 4:24 read 'angel of the Lord' for 'the Lord'",
+      "LXX Exod 19:13 expands the trumpet signal with reference to voices/cloud",
+      "Targum Pseudo-Jonathan at Exod 33:20 includes an eschatological 'world to come' contrast",
+      "Targumic tradition systematically substitutes Shekinah/Memra for direct divine references"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.427844+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

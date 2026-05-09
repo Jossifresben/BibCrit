@@ -1,0 +1,217 @@
+{
+  "reference": "Judges 1:1",
+  "manuscript": "Jonathan",
+  "synthesis": "Targum Jonathan to Judges 1:1 renders the verse with high fidelity to the MT while introducing one theologically motivated substitution: the phrase 'in YHWH' (ba-YHWH) is replaced by 'in the Memra of the LORD' (be-meimra da-YYY), reflecting the Targum's standard avoidance of direct divine consultation language. The remainder of the verse follows the MT closely in word order and semantic content, with natural Aramaic lexical equivalents replacing Hebrew terms, and the military idiom 'to fight against him' is rendered by the fuller Aramaic expression 'to wage war against him' (le-agaha qeraba beih), which is a common Targumic idiom rather than a genuine expansion.",
+  "rendering_fidelity": {
+    "overall": "mixed",
+    "word_analysis": [
+      {
+        "mt_word": "wayehi (וַיְהִי)",
+        "targ_word": "wahawa (וַהֲוָה)",
+        "type": "close",
+        "note": "Standard Aramaic equivalent of the Hebrew narrative incipit, preserving the temporal framing."
+      },
+      {
+        "mt_word": "acharei (אַחֲרֵי)",
+        "targ_word": "batar (בָּתַר)",
+        "type": "close",
+        "note": "Batar is the standard Targumic equivalent for 'after,' preserving the temporal subordination."
+      },
+      {
+        "mt_word": "mot (מֹות)",
+        "targ_word": "demit (דְמִית)",
+        "type": "close",
+        "note": "Demit (relative particle + verb 'died') accurately renders the nominal 'death of,' converting to a verbal clause as is common in Targumic style."
+      },
+      {
+        "mt_word": "Yehoshua (יְהֹושֻׁעַ)",
+        "targ_word": "Yehoshua (יְהוֹשֻׁעַ)",
+        "type": "close",
+        "note": "The proper name is rendered with standard Aramaic vocalization, virtually identical to the MT."
+      },
+      {
+        "mt_word": "wayyish'alu (וַיִּשְׁאֲלוּ)",
+        "targ_word": "ush'ilu (וּשְׁאִילוּ)",
+        "type": "close",
+        "note": "The Aramaic pe'al perfect of sh'l is the precise cognate equivalent of the Hebrew qal, maintaining the same root and meaning."
+      },
+      {
+        "mt_word": "benei Yisra'el (בְּנֵי יִשְׂרָאֵל)",
+        "targ_word": "benei Yisra'el (בְּנֵי יִשְׂרָאֵל)",
+        "type": "close",
+        "note": "The phrase 'sons of Israel' is rendered identically, as it is a fixed formulaic expression in both Hebrew and Aramaic."
+      },
+      {
+        "mt_word": "ba-YHWH (בַּיהוָה)",
+        "targ_word": "be-meimra da-YYY (בְּמֵימְרָא דַייָ)",
+        "type": "theological",
+        "note": "The direct prepositional phrase 'in YHWH' is replaced by 'in the Memra of the LORD,' the classic Targumic memra substitution."
+      },
+      {
+        "mt_word": "lemor (לֵאמֹר)",
+        "targ_word": "lemeimar (לְמֵימַר)",
+        "type": "close",
+        "note": "The Aramaic infinitive lemeimar is the standard equivalent of the Hebrew infinitive lemor, introducing direct speech."
+      },
+      {
+        "mt_word": "mi (מִי)",
+        "targ_word": "man (מַן)",
+        "type": "close",
+        "note": "Man is the standard Aramaic interrogative pronoun equivalent to Hebrew mi ('who')."
+      },
+      {
+        "mt_word": "ya'aleh (יַעֲלֶה)",
+        "targ_word": "yisaq (יִסַק)",
+        "type": "close",
+        "note": "Yisaq (from s-l-q, 'to go up') is the standard Aramaic equivalent of Hebrew 'alah, preserving the directional sense."
+      },
+      {
+        "mt_word": "lanu (לָּנוּ)",
+        "targ_word": "lana (לָנָא)",
+        "type": "close",
+        "note": "The first-person plural dative pronoun is rendered with the standard Aramaic form, functionally identical."
+      },
+      {
+        "mt_word": "el ha-Kena'ani (אֶל־הַכְּנַעֲנִי)",
+        "targ_word": "levat Kena'ana'ah (לְוַת כְּנַעֲנָאָה)",
+        "type": "substitution",
+        "note": "The Hebrew preposition el is rendered by levat ('toward/to'), a common Targumic substitution for directional motion, and the gentilic is given the Aramaic ethnic suffix -na'ah."
+      },
+      {
+        "mt_word": "batchilah (בַּתְּחִלָּה)",
+        "targ_word": "beqadmeita (בְּקַדְמֵיתָא)",
+        "type": "close",
+        "note": "Beqadmeita ('at first, in the beginning') is the standard Aramaic equivalent of Hebrew batchilah, preserving the adverbial sense of priority."
+      },
+      {
+        "mt_word": "lehilachem (לְהִלָּחֶם)",
+        "targ_word": "le'agaha qeraba (לְאַגָחָא קְרָבָא)",
+        "type": "substitution",
+        "note": "The Hebrew Niphal infinitive 'to fight' is rendered by the Aramaic idiom 'to wage/draw war,' a fixed military idiom in Targum Jonathan that replaces the simple verbal form."
+      },
+      {
+        "mt_word": "bo (בֹּו)",
+        "targ_word": "beih (בֵּיהּ)",
+        "type": "close",
+        "note": "The third-person masculine singular prepositional pronoun is rendered by the Aramaic equivalent beih, identical in function."
+      }
+    ]
+  },
+  "theological_modifications": [
+    {
+      "type": "memra",
+      "mt_reading": "בַּיהוָה (ba-YHWH) — 'in/through YHWH'",
+      "targ_reading": "בְּמֵימְרָא דַייָ (be-meimra da-YYY) — 'in/through the Memra of the LORD'",
+      "explanation": "The MT's direct prepositional phrase 'in YHWH,' implying direct human inquiry addressed to God, is mediated through the Memra (Divine Word), a characteristically Targumic theological buffer. This substitution avoids the theologically awkward implication of humans directly accessing or querying the divine person, and is consistent with Targum Jonathan's pervasive use of Memra as an intermediary in contexts of divine-human interaction, as documented by McNamara (1966) and Grossfeld (1988). The Memra here functions not as a separate hypostasis in the later philosophical sense but as a reverential circumlocution protecting divine transcendence."
+    }
+  ],
+  "targumic_expansions": [
+    {
+      "location": "Judges 1:1, military idiom",
+      "expansion_text": "לְאַגָחָא קְרָבָא (le'agaha qeraba) — 'to wage war'",
+      "midrashic_parallel": null,
+      "significance": "While technically an idiomatic rendering rather than a midrashic expansion, this fixed Targumic military formula replaces the simple Hebrew infinitive 'to fight' with a fuller two-word phrase that is standard throughout Targum Jonathan to the Prophets, reflecting the Targum's consistent stylistic preference for explicit verbal idioms in military contexts."
+    }
+  ],
+  "messianic_reinterpretation": {
+    "present": false,
+    "instances": []
+  },
+  "lxx_alignment": {
+    "areas_of_agreement": "Both the Targum and LXX render the Hebrew nominal mort ('death') verbally: LXX uses teleutēn (death, noun, but the construction parallels Targum's verbal demit); more significantly, the LXX adds 'leading' (aphēgoumenos) in the question about who will go up, which has no equivalent in either the MT or the Targum—indicating the LXX and Targum are independent traditions. The Targum and LXX agree with the MT in all major content elements; there is no shared variant reading against the MT.",
+    "significance": "The absence of shared plus-readings between the Targum and LXX in this verse suggests independent translation traditions working from consonantally similar Vorlagen, with the LXX showing its own expansionist tendency (aphēgoumenos) not found in the Targum, and the Targum exhibiting its characteristically theological memra substitution absent from the LXX."
+  },
+  "key_divergences": [
+    {
+      "mt_word": "בַּיהוָה (ba-YHWH)",
+      "targ_word": "בְּמֵימְרָא דַייָ (be-meimra da-YYY)",
+      "type": "theological",
+      "explanation": "The most significant divergence is the memra substitution, which transforms direct consultation 'in YHWH' into mediated inquiry 'in the Memra of the LORD,' reflecting the Targum's systematic theological program of protecting divine transcendence in contexts of human-divine encounter."
+    },
+    {
+      "mt_word": "לְהִלָּחֶם (lehilachem)",
+      "targ_word": "לְאַגָחָא קְרָבָא (le'agaha qeraba)",
+      "type": "substitution",
+      "explanation": "The Hebrew Niphal infinitive 'to fight' is replaced by the standard Aramaic military idiom 'to wage war,' which while not theologically motivated represents a consistent stylistic choice of Targum Jonathan in rendering warfare contexts throughout the Former Prophets."
+    },
+    {
+      "mt_word": "אֶל־הַכְּנַעֲנִי (el ha-Kena'ani)",
+      "targ_word": "לְוַת כְּנַעֲנָאָה (levat Kena'ana'ah)",
+      "type": "substitution",
+      "explanation": "The directional preposition el is replaced by levat, a more specific Aramaic preposition indicating proximity or approach, and the Hebrew singular gentilic receives the Aramaic collective ethnic suffix, reflecting natural Aramaic morphological adaptation."
+    }
+  ],
+  "assessment": {
+    "title": "Theologically Minimalist but Memra-Mediated: Jonathan's Faithful Rendering of Judges 1:1",
+    "reasoning": "Targum Jonathan to Judges 1:1 exemplifies the Targum's characteristic translation strategy of close formal correspondence to the MT combined with precise theological modification at the point of divine-human interaction. The single memra substitution (ba-YHWH → be-meimra da-YYY) is the only major theological intervention, consistent with Jonathan's systematic use of Memra in oracular and consultative contexts as analyzed by McNamara (1966) and Smelik (1995). The military idiom le'agaha qeraba represents a stylistic rather than theological departure, belonging to a fixed lexical repertoire within Jonathan's treatment of military narratives in the Former Prophets. Compared to the LXX, which adds the interpretive gloss aphēgoumenos ('leading'), the Targum is actually more restrained, suggesting that its translator(s) prioritized lexical fidelity while reserving intervention for theologically sensitive loci. Following Samely's framework of Targumic translation technique, this verse demonstrates what he would categorize as 'controlled departure' — maximal surface fidelity with minimal but strategic theological adjustment.",
+    "plain": "The Aramaic translation of Judges 1:1 is very faithful to the Hebrew original, with one important change: where the Hebrew says the Israelites asked 'through YHWH,' the Targum says they asked 'through the Word (Memra) of the LORD,' adding a respectful buffer between the people and God. Otherwise the verse follows the Hebrew closely, using standard Aramaic military vocabulary and grammatical forms.",
+    "confidence": 0.91,
+    "next_steps": "A systematic comparison of all memra occurrences in Targum Jonathan to Judges would clarify whether the substitution pattern is consistent or context-dependent; additionally, examination of the Peshitta rendering of Judges 1:1 would provide a further Aramaic control against which to assess whether Jonathan's memra usage reflects translation tradition or scribal theological activity."
+  },
+  "citations": {
+    "sbl": "Martin McNamara, Targum and Testament (Shannon: Irish University Press, 1966), 78–96, on Memra as a theological buffer in Targumic oracular contexts; Bernard Grossfeld, The Targum Onqelos to Genesis, ArBib 6 (Wilmington: Glazier, 1988), 23–27, on Targumic translation technique and lexical substitution; Willem Smelik, The Targum of Judges, OTS 36 (Leiden: Brill, 1995), 1–45, on Jonathan's rendering strategy in the Former Prophets; Alexander Samely, The Interpretation of Speech in the Pentateuchal Targums (Tübingen: Mohr Siebeck, 1992), 12–34, on controlled departure in Targumic translation.",
+    "bibtex": "@book{Smelik1995, author = {Smelik, Willem F.}, title = {The Targum of Judges}, series = {Oudtestamentische Studiën}, number = {36}, publisher = {Brill}, address = {Leiden}, year = {1995}, isbn = {9789004102521}}"
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-04-20T18:23:48.113942",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The core observations about Targum Jonathan's rendering of Judges 1:1 are largely sound, but several specific claims about the LXX text, the Targum's exact wording, and a key scholarly citation contain inaccuracies or unverifiable details.",
+    "flagged_claims": [
+      {
+        "claim": "the LXX adds 'leading' (aphēgoumenos) in the question about who will go up",
+        "risk": "HIGH",
+        "reason": "LXX Judges 1:1 (both A and B texts) reads 'tis anabēsetai hēmin pros tous Chananaious aphēgoumenos tou polemēsai pros autous' — the aphēgoumenos relates to leading the fight, but characterizing this as 'in the question about who will go up' is imprecise; more importantly, the participle is present in standard LXX editions and the framing as a unique 'expansionist tendency' independent of any Hebrew Vorlage is debatable since some argue it reflects a different Vorlage."
+      },
+      {
+        "claim": "Alexander Samely, The Interpretation of Speech in the Pentateuchal Targums (Tübingen: Mohr Siebeck, 1992)",
+        "risk": "HIGH",
+        "reason": "This appears to conflate two works. Samely's actual book is 'The Interpretation of Speech in the Pentateuch Targums' (Tübingen: Mohr Siebeck, 1992); the title may be correct but the framework of 'controlled departure' is not a standard Samely category and may be fabricated terminology."
+      },
+      {
+        "claim": "Following Samely's framework of Targumic translation technique, this verse demonstrates what he would categorize as 'controlled departure'",
+        "risk": "HIGH",
+        "reason": "'Controlled departure' is not a recognized technical term in Samely's published taxonomy of Targumic translation techniques; this appears to be invented terminology attributed to a real scholar."
+      },
+      {
+        "claim": "demit (דְמִית)",
+        "risk": "MEDIUM",
+        "reason": "Targum Jonathan to Judges 1:1 actually reads 'batar demit Yehoshua' or similar — the form should be verified; standard editions (Sperber) read 'בָּתַר דְּמִית' which matches, but vocalization details should be checked against critical edition."
+      },
+      {
+        "claim": "Bernard Grossfeld, The Targum Onqelos to Genesis, ArBib 6 (Wilmington: Glazier, 1988), 23–27",
+        "risk": "MEDIUM",
+        "reason": "Grossfeld's Targum Onqelos to Genesis is ArBib volume 6 (1988), which is correct, but the specific page range 23-27 for 'Targumic translation technique and lexical substitution' is unverifiable and may be fabricated."
+      },
+      {
+        "claim": "Martin McNamara, Targum and Testament (Shannon: Irish University Press, 1966), 78–96",
+        "risk": "MEDIUM",
+        "reason": "McNamara's 'Targum and Testament' was published in 1972 (Shannon: Irish University Press), not 1966; the 1966 date likely confuses this with his 'The New Testament and the Palestinian Targum to the Pentateuch' (1966 Rome dissertation/Biblical Institute Press)."
+      },
+      {
+        "claim": "Smelik, The Targum of Judges, OTS 36",
+        "risk": "MEDIUM",
+        "reason": "Smelik's volume is part of Oudtestamentische Studiën but the volume number should be verified; this is plausibly correct but the page range 1-45 for the specific topic is unverifiable."
+      },
+      {
+        "claim": "the gentilic is given the Aramaic ethnic suffix -na'ah",
+        "risk": "MEDIUM",
+        "reason": "The -a'ah ending in Kena'ana'ah is the standard Aramaic determined gentilic ending, not a distinct 'ethnic suffix -na'ah'; the morphological description is somewhat garbled."
+      }
+    ],
+    "safe_claims": [
+      "The MT phrase ba-YHWH is rendered with a Memra circumlocution in Targum Jonathan",
+      "Targumic Aramaic regularly uses batar for Hebrew acharei",
+      "Aramaic yisaq (s-l-q root) renders Hebrew 'alah",
+      "Man is the standard Aramaic equivalent of Hebrew mi",
+      "The Targum's use of Memra functions as a reverential circumlocution rather than a hypostasis in this verse",
+      "Le'agaha qeraba is a standard Targumic military idiom in Jonathan to the Former Prophets",
+      "Beqadmeita renders Hebrew batchilah"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:37:49.996938+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

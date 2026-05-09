@@ -185,5 +185,71 @@
   "reference": "Genesis 1:1-2:25",
   "cached_at": "2026-04-14T18:40:35.829981",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "HIGH",
+    "confidence_note": "The analysis presents mainstream Documentary Hypothesis scholarship accurately, with generally reliable source attributions and citations, though a few specific page references and numerical claims warrant verification.",
+    "flagged_claims": [
+      {
+        "claim": "Elohim (31 times)",
+        "risk": "MEDIUM",
+        "reason": "The exact count of Elohim in Gen 1:1-2:3 is commonly cited as 35 occurrences, not 31. The number requires verification."
+      },
+      {
+        "claim": "YHWH Elohim (compound name, 20 times in 2:4b-3:24)",
+        "risk": "MEDIUM",
+        "reason": "The standard count of YHWH Elohim in Gen 2-3 is typically given as 20, but this should be verified; some counts give different numbers depending on inclusion criteria."
+      },
+      {
+        "claim": "Wellhausen (1878)... Prolegomena to the History of Israel, pp. 8-9, 298-299",
+        "risk": "MEDIUM",
+        "reason": "Specific page citations to Wellhausen's Prolegomena should be verified; the cited pages may not correspond to the specific claims about Gen 1-2 attribution in standard editions."
+      },
+      {
+        "claim": "Friedman... The Bible with Sources Revealed, pp. 3-10",
+        "risk": "MEDIUM",
+        "reason": "Page references to Friedman's works should be verified; the Genesis 1-2 discussion in Sources Revealed appears later in the volume than pp. 3-10 (which is typically introductory material)."
+      },
+      {
+        "claim": "Baden (2012)... pp. 106-107, 238-242",
+        "risk": "MEDIUM",
+        "reason": "Specific page citations to Baden's Composition of the Pentateuch require verification; the claim that Baden treats YHWH Elohim as original to J (not redactional) needs checking against his actual argument."
+      },
+      {
+        "claim": "Cassuto (1961)... The Documentary Hypothesis, pp. 92-110",
+        "risk": "HIGH",
+        "reason": "The citation appears garbled. Cassuto's relevant work is 'The Documentary Hypothesis and the Composition of the Pentateuch' (1941/1961 ET), but the specific argument about Gen 1-2 as complementary is more associated with his Genesis commentary ('From Adam to Noah'). Page references should be verified."
+      },
+      {
+        "claim": "Carr argues for a later date for P than classical hypothesis, seeing P as exilic response to J",
+        "risk": "MEDIUM",
+        "reason": "Carr's position in Reading the Fractures is more nuanced; he discusses multiple proto-Genesis compositions and is not simply arguing P is an exilic response to J. Characterization may oversimplify."
+      },
+      {
+        "claim": "Toledot formula... used 10 times in Genesis to structure P material",
+        "risk": "MEDIUM",
+        "reason": "The toledot count is debated (often given as 10 or 11 depending on whether 36:1 and 36:9 are counted separately); attribution of all toledot to P is also contested in current scholarship."
+      },
+      {
+        "claim": "tardemah (deep sleep)",
+        "risk": "MEDIUM",
+        "reason": "Minor: vocalization typically given as tardemah is correct, but its categorization as distinctively J vocabulary is not strongly established."
+      }
+    ],
+    "safe_claims": [
+      "Gen 1:1-2:3 uses Elohim exclusively while Gen 2:4b-25 uses YHWH Elohim",
+      "P uses bara for creation; J uses yatsar (form, like a potter)",
+      "The two accounts present different sequences (e.g., humans relative to vegetation/animals)",
+      "P's account features formulaic refrains ('and God said,' 'it was good,' 'evening and morning')",
+      "Gen 2:23 contains the ish/ishah wordplay",
+      "The arummim (2:25) / arum (3:1) wordplay is a recognized literary feature",
+      "P emphasizes sabbath and seven-day structure",
+      "J features anthropomorphic divine action (forming, planting, building)",
+      "Cassuto and conservative scholars reject source division, viewing the accounts as complementary",
+      "Wellhausen is the foundational figure of the classical Documentary Hypothesis"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.329902+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

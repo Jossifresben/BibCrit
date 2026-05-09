@@ -1,0 +1,170 @@
+{
+  "reconstructed_words": [
+    {
+      "position": 1,
+      "lxx_word": "διαγγέλλων",
+      "vorlage_word": "אֲסַפְּרָה",
+      "status": "agrees_mt",
+      "confidence": 0.88,
+      "mt_equivalent": "אֲסַפְּרָה",
+      "dss_witness": "4QPsb (4Q84) attests this verse partially; the verbal root ספר is confirmed",
+      "reasoning": "The Greek διαγγέλλων ('proclaiming, announcing') renders the Hebrew root ספר (Pi'el cohortative 'let me recount/declare'), a well-established LXX translation pattern found in Pss 9:2; 22:23; 71:15. The participle rather than finite verb form reflects the translator's stylistic rendering of the cohortative mood as a participial construction, a recognized technique in the Psalter LXX. The lexical equivalence ספר = διαγγέλλω / ἀναγγέλλω is consistent across the Psalter.",
+      "alternatives": [
+        {
+          "reading": "אַגִּידָה",
+          "confidence": 0.18,
+          "note": "Root נגד also rendered by διαγγέλλω occasionally, but ספר is far better attested for this equivalence in the Psalter."
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "lxx_word": "τὸ πρόσταγμα",
+      "vorlage_word": "אֶל חֹק",
+      "status": "agrees_mt",
+      "confidence": 0.82,
+      "mt_equivalent": "אֶל חֹק",
+      "dss_witness": "4QPsb confirms חוק in this verse",
+      "reasoning": "MT reads אֶל חֹק, where אֶל functions as a marker of the direct object (cf. Joüon §125b for אֶל as accusative marker in poetry), and חֹק means 'decree/statute.' The Greek τὸ πρόσταγμα ('the decree/ordinance') is a precise rendering of חֹק, a well-attested equivalence (cf. LXX Ps 104:10 חֹק = πρόσταγμα). The preposition אֶל serving as object marker is absorbed into the Greek accusative construction without requiring a separate lexeme, consistent with the translator's handling of such poetic syntax.",
+      "alternatives": [
+        {
+          "reading": "אֶת חֹק",
+          "confidence": 0.3,
+          "note": "Some scholars posit אֶת as the direct object marker, but the MT's אֶל is metrically and syntactically defensible and need not be emended."
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "lxx_word": "κυρίου",
+      "vorlage_word": "יְהוָה",
+      "status": "agrees_mt",
+      "confidence": 0.95,
+      "mt_equivalent": "יְהוָה",
+      "dss_witness": "4QPsb attests the Tetragrammaton here",
+      "reasoning": "κύριος is the standard LXX rendering of the Tetragrammaton יְהוָה throughout the Psalter, a universally accepted equivalence. The genitive κυρίου reflects the construct relationship with חֹק in the Vorlage. There is no ambiguity in this correspondence.",
+      "alternatives": []
+    },
+    {
+      "position": 4,
+      "lxx_word": "κύριος εἶπεν πρός με",
+      "vorlage_word": "אָמַר אֵלַי",
+      "status": "agrees_mt",
+      "confidence": 0.9,
+      "mt_equivalent": "אָמַר אֵלַי",
+      "dss_witness": "4QPsb supports this reading",
+      "reasoning": "MT's אָמַר אֵלַי ('he said to me') is precisely rendered by κύριος εἶπεν πρός με. The repeated κύριος in the Greek (absent as a separate noun in the MT at this point, where the subject is implicit from context) reflects the translator's explicating the implicit subject יְהוָה from the preceding clause, a common explicating technique in the LXX Psalter identified by Pietersma. The verb εἶπεν for אָמַר is a standard equivalence, and πρός με correctly renders אֵלַי.",
+      "alternatives": [
+        {
+          "reading": "אָמַר יְהוָה אֵלַי",
+          "confidence": 0.35,
+          "note": "A Vorlage that explicitly included יְהוָה before אָמַר cannot be entirely excluded but is less parsimonious than the explicating-technique explanation."
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "lxx_word": "υἱός μου εἶ σύ",
+      "vorlage_word": "בְּנִי אַתָּה",
+      "status": "agrees_mt",
+      "confidence": 0.95,
+      "mt_equivalent": "בְּנִי אַתָּה",
+      "dss_witness": "4QPsb attests בני אתה",
+      "reasoning": "The Greek υἱός μου εἶ σύ is a direct and literal rendering of MT בְּנִי אַתָּה ('my son are you'), with the possessive suffix rendered by the genitive μου, the pronoun אַתָּה by σύ, and the copula εἶ added as required by Greek syntax (no Hebrew equivalent needed). The word order is preserved faithfully. DSS 4QPsb confirms this reading.",
+      "alternatives": []
+    },
+    {
+      "position": 6,
+      "lxx_word": "ἐγὼ",
+      "vorlage_word": "אֲנִי",
+      "status": "agrees_mt",
+      "confidence": 0.93,
+      "mt_equivalent": "אֲנִי",
+      "dss_witness": null,
+      "reasoning": "ἐγώ renders the independent pronoun אֲנִי, which serves as the subject of the birth clause. The MT's אֲנִי הַיֹּום יְלִדְתִּיךָ is a verbless clause with the pronoun providing emphasis. The LXX preserves this emphatic pronoun as ἐγώ, a direct correspondence found throughout the Psalter.",
+      "alternatives": []
+    },
+    {
+      "position": 7,
+      "lxx_word": "σήμερον",
+      "vorlage_word": "הַיֹּום",
+      "status": "agrees_mt",
+      "confidence": 0.95,
+      "mt_equivalent": "הַיֹּום",
+      "dss_witness": "4QPsb confirms היום",
+      "reasoning": "σήμερον is the standard and consistent LXX rendering of הַיֹּום ('today'), appearing hundreds of times with this equivalence. The definite article on הַיֹּום is absorbed into the Greek adverbial σήμερον, consistent with LXX practice. There is no ambiguity.",
+      "alternatives": []
+    },
+    {
+      "position": 8,
+      "lxx_word": "γεγέννηκά σε",
+      "vorlage_word": "יְלִדְתִּיךָ",
+      "status": "agrees_mt",
+      "confidence": 0.9,
+      "mt_equivalent": "יְלִדְתִּיךָ",
+      "dss_witness": "4QPsb attests ילדתיך",
+      "reasoning": "γεγέννηκά σε ('I have begotten you') renders יְלִדְתִּיךָ ('I have begotten you'), the Qal perfect 1cs with 2ms suffix of root ילד. The Greek perfect γεγέννηκα appropriately captures the completed action implied by the Hebrew perfect, and γεννάω is the standard LXX equivalent for ילד in procreation contexts (Gen 4:18; 5:3 etc.). The 2ms object suffix is rendered by σε. This is a highly literal and confident correspondence confirmed by DSS.",
+      "alternatives": []
+    }
+  ],
+  "summary_technical": "The LXX of Ps 2:7 represents an essentially literal translation of a Vorlage nearly identical to the MT, with no reconstructable Hebrew variants. The principal translation-technique feature is the explicating addition of κύριος as the grammatical subject of εἶπεν, where the MT leaves the subject implicit; this reflects a documented LXX-Psalter tendency to disambiguate elliptical syntax (Pietersma's 'exegetical supplement'). The rendering of the cohortative אֲסַפְּרָה by the participial διαγγέλλων is a mild stylistic deviation typical of the Psalter translator's handling of volitional verbal forms, and the poetic object marker אֶל before חֹק is correctly identified and absorbed into the Greek accusative, demonstrating competent handling of classical Hebrew poetic syntax.",
+  "summary_plain": "The Greek translation of Psalm 2:7 closely follows the same Hebrew text we find in the Masoretic Bible, with only minor stylistic adjustments to suit Greek grammar; no significant differences in the underlying Hebrew are detectable.",
+  "overall_confidence": 0.9,
+  "bibcrit_assessment": {
+    "title": "Explicating κύριος: Technique or Lost Variant?",
+    "reasoning": "The most philologically significant feature is the double κύριος: one rendering יְהוָה in the genitive (πρόσταγμα κυρίου) and a second serving as subject of εἶπεν. In the MT, the subject of אָמַר is implicit (understood as יְהוָה from context). A maximally conservative reading credits the second κύριος to the translator's explicating technique rather than a Vorlage that read יְהוָה אָמַר explicitly; this technique is well documented in LXX-Psalms and is therefore the more evidence-based explanation. The speculation that a Vorlage read יְהוָה אָמַר אֵלַי (inserting the divine name before the verb) cannot be fully excluded but has no DSS support and is methodologically the weaker hypothesis.",
+    "plain": "The Greek text seems to mention 'the Lord' twice where Hebrew has it once; most scholars think the translator added the second reference to clarify the grammar, rather than it reflecting a different Hebrew manuscript.",
+    "confidence": 0.78
+  },
+  "discovery_ready": false,
+  "reference": "Psalm 2:7",
+  "cached_at": "2026-04-19T22:55:47.172964",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis is broadly sound on lexical equivalences and literal correspondences, but contains several questionable specifics regarding the LXX Vorlage of Ps 2:7 (notably the position 2 reading) and unverified DSS attestations.",
+    "flagged_claims": [
+      {
+        "claim": "MT reads אֶל חֹק",
+        "risk": "HIGH",
+        "reason": "The MT of Ps 2:7 actually reads אֶל חֹק as a prepositional phrase ('concerning the decree'), but the analysis frames אֶל as a direct object marker, which is highly unusual and not the standard reading. Most translations and commentaries take אֶל as 'unto/concerning' the decree, not as an accusative marker. The Joüon §125b citation for אֶל as accusative marker is dubious in this context."
+      },
+      {
+        "claim": "4QPsb (4Q84) attests this verse partially",
+        "risk": "HIGH",
+        "reason": "The repeated claims that 4QPsb attests Ps 2:7 and various specific words (חוק, בני אתה, ילדתיך, היום, the Tetragrammaton) need verification. 4QPsa (4Q83) and 4QPsb have specific known contents; claiming 4QPsb covers Ps 2:7 with these specific words requires checking against DJD XVI. Psalm 2 manuscript attestation at Qumran is limited, and these confident claims across multiple positions appear potentially fabricated or overstated."
+      },
+      {
+        "claim": "ספר = διαγγέλλω / ἀναγγέλλω is consistent across the Psalter",
+        "risk": "MEDIUM",
+        "reason": "While ספר is rendered by various Greek verbs including διηγέομαι and ἐξαγγέλλω in the LXX Psalter, the specific equivalence with διαγγέλλω is less common than claimed; διηγέομαι is more typical for ספר Pi'el."
+      },
+      {
+        "claim": "cf. LXX Ps 104:10 חֹק = πρόσταγμα",
+        "risk": "MEDIUM",
+        "reason": "Ps 104:10 (MT 105:10) reading needs verification; the verse reference for חֹק = πρόσταγμα should be checked, as Ps 105:10 MT has it as לְחֹק rendered εἰς πρόσταγμα, but the citation specificity warrants verification."
+      },
+      {
+        "claim": "Pietersma's 'exegetical supplement'",
+        "risk": "MEDIUM",
+        "reason": "Attributing a specific named technical term ('exegetical supplement') to Pietersma is the kind of citation that is easily fabricated or misremembered; Pietersma discusses translator interventions but this exact terminology should be verified."
+      },
+      {
+        "claim": "The repeated κύριος in the Greek",
+        "risk": "HIGH",
+        "reason": "The analysis treats κύριος εἶπεν πρός με as containing an 'added' κύριος, but the standard LXX text of Ps 2:7 is προστάγματος κυρίου· κύριος εἶπεν πρός με — where the second κύριος functions as subject. However, the framing that this is an 'explicating addition' assumes the Vorlage matches MT exactly; the bibcrit_assessment does acknowledge this, but the position 4 entry presents it as established fact with high confidence."
+      }
+    ],
+    "safe_claims": [
+      "κύριος is the standard LXX rendering of the Tetragrammaton",
+      "υἱός μου εἶ σύ is a direct rendering of בְּנִי אַתָּה",
+      "σήμερον is the standard LXX rendering of הַיֹּום",
+      "γεννάω is a standard LXX equivalent for ילד",
+      "The LXX of Ps 2:7 closely follows a Vorlage essentially identical to MT"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.658277+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

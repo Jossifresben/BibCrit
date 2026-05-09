@@ -100,5 +100,82 @@
   "reference": "Isaiah 7:14",
   "cached_at": "2026-03-31T00:11:22.951355",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "Core textual observations about MT/LXX/Vulgate readings are accurate, but several scholarly citations appear fabricated or misattributed and some interpretive claims about the Targum and Peshitta overreach the evidence.",
+    "flagged_claims": [
+      {
+        "claim": "Smelik, Targum Judges, pp. 234-237",
+        "risk": "HIGH",
+        "reason": "Smelik's work on Targum Judges is irrelevant to Isaiah 7:14; citation appears fabricated or misapplied as supporting evidence for Targum Isaiah."
+      },
+      {
+        "claim": "Cathcart & Gordon, The Targum of the Minor Prophets, pp. 12-14",
+        "risk": "HIGH",
+        "reason": "This volume concerns the Minor Prophets, not Isaiah; citing it for Targum Isaiah 7:14 is a category error suggesting fabricated support."
+      },
+      {
+        "claim": "Lane, The Peshitta of Leviticus, pp. 23-25",
+        "risk": "HIGH",
+        "reason": "A work on Peshitta Leviticus is not a credible source for Peshitta Isaiah 7:14; appears to be a misattributed or fabricated citation."
+      },
+      {
+        "claim": "Gelston, The Peshitta of the Twelve Prophets, pp. 78-82",
+        "risk": "HIGH",
+        "reason": "Gelston's monograph is on the Twelve Prophets, not Isaiah; specific page citation for Isaiah 7:14 discussion is unverifiable and likely misattributed."
+      },
+      {
+        "claim": "Schaper, Eschatology in the Greek Psalter, pp. 45-47",
+        "risk": "HIGH",
+        "reason": "Schaper's monograph is on the Psalter, not Isaiah; cited as evidence for LXX Isaiah translation choices, which is outside its scope."
+      },
+      {
+        "claim": "van der Kooij, The Oracle of Tyre, pp. 89-92",
+        "risk": "MEDIUM",
+        "reason": "Van der Kooij's Oracle of Tyre concerns LXX Isaiah 23; specific pages on 7:14 παρθένος rendering would need verification and seem unlikely."
+      },
+      {
+        "claim": "Aitken, The Significance of Rhetoric in the Greek Pentateuch, pp. 156-159",
+        "risk": "HIGH",
+        "reason": "A work on the Greek Pentateuch is not a relevant source for LXX Isaiah's rendering of 7:14; citation appears misapplied."
+      },
+      {
+        "claim": "Grelot, L'exégèse messianique d'Isaïe VII 14, pp. 169-188",
+        "risk": "MEDIUM",
+        "reason": "Grelot did write on Isa 7:14 messianic exegesis, but the page range and exact title should be verified; risk of slight fabrication."
+      },
+      {
+        "claim": "The pluralization of addressees ('you' = house of David, not Ahaz alone) in v. 13",
+        "risk": "MEDIUM",
+        "reason": "The plural 'you' (לָכֶם) is already in the MT of v. 14 and the address to the house of David is in v. 13 of the MT itself, not a Targumic innovation; the analysis misrepresents this as a targumic shift."
+      },
+      {
+        "claim": "The LXX shifts the naming agent from the mother (feminine singular קָרָאת in MT) to a masculine singular addressee... καλέσεις",
+        "risk": "MEDIUM",
+        "reason": "The MT form וְקָרָאת is ambiguous and frequently read as 2ms ('you shall call'); many manuscripts and witnesses (including 1QIsaa with וקרא) vary. Framing this as a clear LXX theological shift overstates the case."
+      },
+      {
+        "claim": "Jerome explicitly defends the translation 'virgin' on christological grounds while acknowledging that עַלְמָה means 'young woman' in Hebrew",
+        "risk": "MEDIUM",
+        "reason": "Jerome actually argues in his Commentary on Isaiah and Adversus Helvidium that 'almah connotes a hidden/secluded virgin, not merely 'young woman'; the analysis misrepresents Jerome's philological position."
+      },
+      {
+        "claim": "The Peshitta's conservatism may reflect resistance to christological appropriation in a Jewish-Christian contact zone",
+        "risk": "MEDIUM",
+        "reason": "Speculative and contested; the Peshitta of Isaiah is generally considered to have Christian transmission, making 'resistance to christological appropriation' historically problematic."
+      }
+    ],
+    "safe_claims": [
+      "LXX renders עַלְמָה as παρθένος",
+      "Vulgate reads 'ecce virgo concipiet et pariet filium'",
+      "Targum uses the Aramaic cognate עוּלֵימְתָּא",
+      "Peshitta uses the Syriac cognate ʿalymtā",
+      "νεᾶνις was an available Greek alternative meaning 'young woman'",
+      "Matthew 1:23 cites Isaiah 7:14 in its παρθένος form"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.576354+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

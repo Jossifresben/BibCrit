@@ -92,5 +92,67 @@
   "discovery_ready": false,
   "cached_at": "2026-04-19T15:58:05.214361",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The overall conclusion (Comma Johanneum is a late interpolation) is unquestionably correct and represents settled scholarly consensus, but several specific factual claims about manuscripts, Fathers, and dates are inaccurate or overstated.",
+    "flagged_claims": [
+      {
+        "claim": "early Church Fathers (Irenaeus, Clement, Tertullian, Cyprian, Origen)",
+        "risk": "HIGH",
+        "reason": "Listing these Fathers as positive witnesses to the shorter reading of 1 John 5:7-8 is misleading. Cyprian is actually cited by some (controversially) as possibly knowing the Comma. More importantly, these Fathers are not typically cited as direct witnesses to this specific verse in the standard apparatus; their 'silence' is the argument, not their citation."
+      },
+      {
+        "claim": "three Old Latin manuscripts (l, q, r¹, 7th–8th century)",
+        "risk": "HIGH",
+        "reason": "The Old Latin sigla are inconsistent and partially incorrect. The Comma appears in Old Latin manuscripts typically cited as l (Legionensis), q, and others, but the dating and identification given here is imprecise. Manuscript q is a Gospels manuscript (Munich), not 1 John. Standard citations include manuscripts like ar, l, m (Speculum)."
+      },
+      {
+        "claim": "no Greek manuscript before the 14th century contains the passage",
+        "risk": "MEDIUM",
+        "reason": "Standard scholarship (Metzger) states no Greek manuscript before the 16th century contains the Comma in the text proper; the earliest is GA 629 (14th c., possibly later) or Codex Montfortianus (61, c. 1520). The '14th century' framing is partially correct for 629 but the language is imprecise."
+      },
+      {
+        "claim": "early Fathers debating Trinitarian theology (Arius, Athanasius) never cite this verse, which would have been their strongest proof-text",
+        "risk": "MEDIUM",
+        "reason": "Accurate in substance but rhetorically overstated; this is a standard argument from silence. Attributing this specific reasoning is fine but the framing 'their strongest proof-text' is editorial."
+      },
+      {
+        "claim": "margin of Codex Montfortianus (61, early 16th c.)",
+        "risk": "MEDIUM",
+        "reason": "Codex Montfortianus (GA 61) contains the Comma in the text itself, not in the margin. The marginal additions are in other manuscripts (88mg, 221mg, etc.)."
+      },
+      {
+        "claim": "produced Codex Montfortianus (61), which likely added the Greek text from the Latin to prove its existence",
+        "risk": "MEDIUM",
+        "reason": "The traditional story (Erasmus's promise to include it if a Greek MS were produced) is widely repeated but has been questioned by some recent scholarship (e.g., H.J. de Jonge). The claim is plausible but somewhat legendary."
+      },
+      {
+        "claim": "Metzger assigns an {A} rating",
+        "risk": "MEDIUM",
+        "reason": "Metzger's Textual Commentary actually rates the omission of the Comma as {A} in earlier editions but the rating system and specific rating should be verified; the discussion in Metzger is extensive but the rating attribution should be checked against the 2nd edition."
+      },
+      {
+        "claim": "Erasmus initially omitted it from his Greek New Testament (1516, 1519) but reluctantly included it in his third edition (1522)",
+        "risk": "MEDIUM",
+        "reason": "Dates are correct, but 'reluctantly...after ecclesiastical pressure' reflects the traditional narrative which has been nuanced by de Jonge and others who argue Erasmus's promise may be apocryphal."
+      },
+      {
+        "claim": "Caesarean text-type... Available witnesses that might belong to this family all omit the Comma Johanneum",
+        "risk": "MEDIUM",
+        "reason": "The Caesarean text-type is itself a contested category even in the Gospels and is generally not applied to the Catholic Epistles at all; the statement is technically vacuous."
+      }
+    ],
+    "safe_claims": [
+      "All major Alexandrian witnesses (Sinaiticus, Vaticanus, Alexandrinus) omit the Comma",
+      "Modern critical editions (NA28, UBS5, SBLGNT) unanimously omit the Comma",
+      "KJV and NKJV include it; ESV, NIV, NRSV, NASB, CSB, NET omit it",
+      "The Comma originated in the Latin tradition and entered the Vulgate",
+      "Internal evidence: the Comma disrupts the grammar/argument flow of vv. 7-8",
+      "Virtually unanimous scholarly consensus regards the Comma as a late interpolation"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.339897+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

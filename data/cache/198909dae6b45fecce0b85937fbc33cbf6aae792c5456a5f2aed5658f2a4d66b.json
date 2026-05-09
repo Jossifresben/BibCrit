@@ -1,0 +1,180 @@
+{
+  "book": "Proverbs",
+  "translator_name": "Old Greek of Proverbs (OG-Prov)",
+  "translator_profile": {
+    "literalness": 0.22,
+    "anthropomorphism_reduction": 0.35,
+    "messianic_heightening": 0.72,
+    "harmonization": 0.48,
+    "paraphrase_rate": 0.85
+  },
+  "dimensions": [
+    {
+      "dimension": "literalness",
+      "score": 0.22,
+      "confidence": 0.88,
+      "summary": "The OG-Prov translator ranks among the least literal translators in the entire LXX corpus, comparable to OG-Job and OG-Esther in freedom of rendering. In Prov 8:22 the translator renders קָנָנִי ('acquired/possessed me') as ἔκτισέν με ('created me'), a non-equivalent lexical choice driven by theological interpretation rather than lexical correspondence, and the prepositional phrase קֶדֶם מִפְעָלָיו ('before his works') is transposed into the instrumental εἰς ἔργα αὐτοῦ ('for/unto his works'), collapsing temporal priority into purposive instrumentality. In 8:30 אָמֹון ('craftsman/nursling') is rendered ἁρμόζουσα ('one who fits/arranges'), a lexical choice with no direct Hebrew basis that imports architectural-creative connotations absent from the MT. Across the book the translator adds, omits, and reorders stichoi at a rate unparalleled in the Pentateuchal translations.",
+      "summary_plain": "This translator worked very freely, often changing words, adding ideas, and rearranging sentences rather than translating word-for-word. The Greek text of Proverbs sometimes reads more like a paraphrase or an adaptation than a translation.",
+      "examples": [
+        {
+          "reference": "Proverbs 8:22",
+          "mt_text": "יְהוָה קָנָנִי רֵאשִׁית דַּרְכֹּו קֶדֶם מִפְעָלָיו מֵאָז",
+          "lxx_text": "κύριος ἔκτισέν με ἀρχὴν ὁδῶν αὐτοῦ εἰς ἔργα αὐτοῦ",
+          "note": "קָנָנִי (qanani, 'possessed/acquired me') is rendered ἔκτισέν με ('created me'), showing lexical non-equivalence driven by theological reasoning rather than lexical correspondence; the temporal clause קֶדֶם מִפְעָלָיו is restructured as a purposive phrase εἰς ἔργα αὐτοῦ."
+        },
+        {
+          "reference": "Proverbs 8:30",
+          "mt_text": "וָאֶהְיֶה אֶצְלֹו אָמֹון",
+          "lxx_text": "ἤμην παρ᾿ αὐτῷ ἁρμόζουσα",
+          "note": "The notoriously difficult אָמֹון is rendered ἁρμόζουσα ('fitting/harmonizing'), a creative interpretive choice not derived from standard lexical equivalences, demonstrating the translator's willingness to supply meaning from context and theological inference."
+        }
+      ]
+    },
+    {
+      "dimension": "anthropomorphism_reduction",
+      "score": 0.35,
+      "confidence": 0.62,
+      "summary": "The evidence for systematic anthropomorphism reduction in OG-Prov is moderate and inconsistent. In Prov 8:30 the MT's לְפָנָיו ('before his face') is preserved as ἐν προσώπῳ αὐτοῦ, showing no reduction of divine corporeal language in this instance. Elsewhere in the book (e.g., Prov 15:3; 15:11) divine perception and the divine heart (לֵב יְהוָה) are rendered with some degree of abstraction, but this is not a dominant programmatic tendency as in OG-Isaiah or the Targums. The translator's freedom more often serves theological heightening than anthropomorphism reduction per se, and the evidence is mixed enough to preclude a high score.",
+      "summary_plain": "This translator occasionally softened references to God's body parts or emotions, but this was not a strong or consistent pattern—it happened sometimes but was not a major priority.",
+      "examples": [
+        {
+          "reference": "Proverbs 8:30",
+          "mt_text": "מְשַׂחֶקֶת לְפָנָיו בְּכָל־עֵת",
+          "lxx_text": "εὐφραινόμην ἐν προσώπῳ αὐτοῦ ἐν παντὶ καιρῷ",
+          "note": "The expression לְפָנָיו ('before his face') is retained as ἐν προσώπῳ αὐτοῦ without reduction, suggesting the translator did not systematically eliminate divine facial/corporal references in this passage."
+        },
+        {
+          "reference": "Proverbs 15:11",
+          "mt_text": "שְׁאֹול וַאֲבַדֹּון נֶגֶד יְהוָה",
+          "lxx_text": "ᾅδης καὶ ἀπώλεια φανερὰ παρὰ τῷ κυρίῳ",
+          "note": "The translator renders straightforwardly without notable anthropomorphic softening, though the addition of φανερά ('manifest') slightly abstracts the divine perception."
+        }
+      ]
+    },
+    {
+      "dimension": "messianic_heightening",
+      "score": 0.72,
+      "confidence": 0.82,
+      "summary": "Messianic and proto-Christological heightening is among the most extensively documented tendencies of OG-Prov, and the evidence from Prov 8 is central to this judgment. The choice of ἔκτισέν με for קָנָנִי in 8:22 is widely recognized in scholarship (Cook, Barthélemy, Tov) as reflecting or enabling a reading of Wisdom as a distinct created hypostasis at the beginning of God's creative activity—a reading foundational to early Jewish and Christian theological reflection. The rendering ἁρμόζουσα in 8:30 further heightens Wisdom's creative agency and her intimate cosmological role. These choices, whether originally theologically motivated or subsequently leveraged, represent a consistent pattern of heightening the theological significance of personified Wisdom in ways amenable to messianic and pre-existent Logos interpretation. Additional evidence appears in the LXX pluses in Prov 8 and 9 that expand Wisdom's role and attributes.",
+      "summary_plain": "The translator amplified passages about divine Wisdom in ways that made them sound more like descriptions of a divine being or a coming savior—this is exactly the kind of language that early Christians later used to describe Jesus.",
+      "examples": [
+        {
+          "reference": "Proverbs 8:22",
+          "mt_text": "יְהוָה קָנָנִי רֵאשִׁית דַּרְכֹּו",
+          "lxx_text": "κύριος ἔκτισέν με ἀρχὴν ὁδῶν αὐτοῦ",
+          "note": "Rendering קָנָנִי as ἔκτισέν με ('created me') transforms the ambiguous 'possessed/acquired' into an explicit statement of creation, making Wisdom a distinct pre-existent created being; this verse became a central proof-text in Arian-orthodox debates (Athanasius, De Decretis)."
+        },
+        {
+          "reference": "Proverbs 8:30",
+          "mt_text": "וָאֶהְיֶה אֶצְלֹו אָמֹון",
+          "lxx_text": "ἤμην παρ᾿ αὐτῷ ἁρμόζουσα",
+          "note": "ἁρμόζουσα ('one who fits, arranges, harmonizes') elevates Wisdom from a nursling/craftsman alongside God to an active co-architect of creation, heightening her divine-adjacent cosmological function."
+        }
+      ]
+    },
+    {
+      "dimension": "harmonization",
+      "score": 0.48,
+      "confidence": 0.58,
+      "summary": "Harmonization in OG-Prov is present but difficult to isolate from the translator's general paraphrastic freedom. The LXX of Proverbs contains numerous stichoi that have no MT parallel (so-called 'pluses') as well as reordering of verses, but these are more often creative expansions or doublets than harmonizations with specific parallel texts in the same or other biblical books. Some instances of apparent harmonization with Sirach (Ben Sira) or wisdom traditions have been proposed (Cook 1997), and certain OG-Prov pluses reflect wisdom motifs common across the sapiential tradition. However, the evidence for deliberate intra-biblical harmonization of the kind seen in OG-Exodus (alignment with parallel legal pericopes) is less systematic in OG-Prov, warranting only a medium score.",
+      "summary_plain": "The translator sometimes added or rearranged material to make Proverbs align better with related wisdom teachings, but this was not as systematic as in some other books.",
+      "examples": [
+        {
+          "reference": "Proverbs 8:22",
+          "mt_text": "קֶדֶם מִפְעָלָיו מֵאָז",
+          "lxx_text": "εἰς ἔργα αὐτοῦ",
+          "note": "The temporal priority clause is reshaped into a purposive one, possibly aligning the passage more closely with the tradition of Wisdom as instrument of creation found in Ps 104:24 and Sir 1:4, harmonizing with a broader wisdom-cosmology tradition."
+        },
+        {
+          "reference": "Proverbs 9:10 (LXX plus context)",
+          "mt_text": "[No direct MT parallel for certain LXX expansions in this section]",
+          "lxx_text": "[Extended LXX material following 9:12 with no MT equivalent]",
+          "note": "The LXX of chapters 8–9 contains significant expansions that scholars such as Johann Cook have connected to harmonizing the book's sapiential theology across chapters, suggesting an editorial tendency to create thematic coherence."
+        }
+      ]
+    },
+    {
+      "dimension": "paraphrase_rate",
+      "score": 0.85,
+      "confidence": 0.92,
+      "summary": "Paraphrase is the defining characteristic of OG-Prov and represents the scholarly consensus about this translation unit from Lagarde through Johann Cook's 1997 monograph and the work of Tov and Aejmelaeus. The translator routinely adds explanatory expansions, substitutes semantically non-equivalent terms, changes the syntactic structure of couplets, and introduces lexemes whose motivation is theological or contextual rather than lexical. In 8:30 alone, וָאֶהְיֶה שַׁעֲשֻׁעִים ('I was delights') is rendered ᾗ προσέχαιρεν ('at which he rejoiced'), transforming an abstract noun predicate into a relative clause describing divine emotion, while מְשַׂחֶקֶת ('playing/laughing') becomes εὐφραινόμην ('I was gladdened'), a shift from active play to passive joy. The paraphrase rate of OG-Prov is the highest of any major LXX poetic book and rivals OG-Job in overall departure from the MT.",
+      "summary_plain": "More than almost any other ancient Bible translator, this person wrote freely—adding ideas, changing word meanings, and restructuring sentences so significantly that the Greek Proverbs often reads as a creative reimagining of the Hebrew, not just a translation.",
+      "examples": [
+        {
+          "reference": "Proverbs 8:30",
+          "mt_text": "וָאֶהְיֶה שַׁעֲשֻׁעִים יֹום יֹום מְשַׂחֶקֶת לְפָנָיו בְּכָל־עֵת",
+          "lxx_text": "ἤμην ᾗ προσέχαιρεν καθ᾿ ἡμέραν δὲ εὐφραινόμην ἐν προσώπῳ αὐτοῦ ἐν παντὶ καιρῷ",
+          "note": "The MT's nominal predicate שַׁעֲשֻׁעִים ('delight/delights') is transformed into a relative clause ᾗ προσέχαιρεν from the divine subject's perspective, and the active participle מְשַׂחֶקֶת is replaced by middle/passive εὐφραινόμην—both departures show paraphrase restructuring subject, voice, and semantic field."
+        },
+        {
+          "reference": "Proverbs 8:22",
+          "mt_text": "קֶדֶם מִפְעָלָיו מֵאָז",
+          "lxx_text": "εἰς ἔργα αὐτοῦ",
+          "note": "The temporal adverbial phrase expressing Wisdom's existence 'before' God's works is paraphrastically collapsed into a purposive phrase 'for his works,' entirely eliminating the temporal priority motif present in the MT."
+        }
+      ]
+    }
+  ],
+  "overall_assessment": "The Old Greek of Proverbs represents one of the most paraphrastic and theologically creative translation units in the entire LXX corpus. Its translator—writing in an Alexandrian Jewish milieu most likely in the 3rd–2nd century BCE—worked with pronounced freedom, consistently prioritizing theological interpretation and contextual coherence over lexical or syntactic fidelity to the Vorlage. The most significant scholarly implication is that OG-Prov cannot be used straightforwardly for retroversion or MT text-criticism without extensive control for the translator's own compositional tendencies, as divergences from the MT may reflect translation technique rather than a different Hebrew Vorlage (following Tov's methodological principle of distinguishing translation-technique variants from Vorlage variants). In this OG-Prov is comparable to OG-Job and stands in marked contrast to the kaige-Theodotion revision tradition and the literalistic rendering of OG-Qohelet. The messianic heightening of the Wisdom passages, especially Prov 8:22–31, had enormous downstream theological consequences in both Jewish and early Christian interpretation, making text-critical analysis of this unit indispensable for the history of biblical theology.",
+  "overall_plain": "The ancient Greek translator of Proverbs was unusually creative, rewriting the text rather than simply translating it, and in doing so produced a version that shaped how both Jewish and Christian thinkers understood divine Wisdom for centuries. Scholars must be cautious about using this Greek text to draw conclusions about what the original Hebrew said, because the differences often reflect the translator's own ideas rather than a different Hebrew source.",
+  "bibcrit_assessment": {
+    "title": "Paraphrase as Theology: OG-Prov's Creative Interpretive Rewriting",
+    "reasoning": "The single most significant scholarly insight about OG-Prov is that its extreme paraphrase rate is not merely a stylistic preference but a theologically motivated interpretive strategy: the translator consistently reshaped ambiguous or difficult Hebrew into theologically coherent Greek, most consequentially in the Wisdom hymn of chapter 8. The rendering of קָנָנִי as ἔκτισέν με is not a translation error but a deliberate theological interpretation that transformed a Hebrew text about Wisdom's origins into a Greek text that explicitly addresses the metaphysical question of Wisdom's created or uncreated status—a question the Hebrew does not resolve. This makes OG-Prov a primary witness to the history of Jewish wisdom theology in the Hellenistic period, but a highly problematic witness for the recovery of the MT's Vorlage.",
+    "plain": "The translator of Greek Proverbs was not just translating—they were theologizing, using their translation as an opportunity to clarify and amplify ideas about divine Wisdom that the Hebrew left ambiguous. This means the Greek Proverbs is as much a theological document as a translation, and scholars must read it with that in mind.",
+    "confidence": 0.87
+  },
+  "discovery_ready": false,
+  "reference": "Proverbs",
+  "cached_at": "2026-04-20T19:37:41.950894",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis correctly identifies the major translational features of OG-Proverbs but contains some questionable LXX text citations and a potentially fabricated patristic reference.",
+    "flagged_claims": [
+      {
+        "claim": "εὐφραινόμην ἐν προσώπῳ αὐτοῦ",
+        "risk": "HIGH",
+        "reason": "The standard Rahlfs/Göttingen LXX text of Prov 8:30 reads 'προσέχαιρεν αὐτῷ' / 'εὐφραίνετο' rather than 'ἐν προσώπῳ αὐτοῦ.' The phrase ἐν προσώπῳ αὐτοῦ does not appear to be the established Greek reading and may be a fabrication or confusion with another text. This undermines the entire anthropomorphism_reduction example."
+      },
+      {
+        "claim": "ἤμην παρ᾿ αὐτῷ ἁρμόζουσα",
+        "risk": "MEDIUM",
+        "reason": "The standard LXX reading of Prov 8:30 is 'ἤμην παρ' αὐτῷ ἁρμόζουσα' in some witnesses but the more widely accepted Rahlfs text reads differently; the citation conflates variants without acknowledging textual uncertainty."
+      },
+      {
+        "claim": "this verse became a central proof-text in Arian-orthodox debates (Athanasius, De Decretis)",
+        "risk": "MEDIUM",
+        "reason": "While Prov 8:22 was indeed central to the Arian controversy and Athanasius did discuss it, the specific work citation 'De Decretis' should be verified—Athanasius treats Prov 8:22 most extensively in Orationes contra Arianos II, not primarily in De Decretis."
+      },
+      {
+        "claim": "harmonizing the passage more closely with the tradition of Wisdom as instrument of creation found in Ps 104:24 and Sir 1:4",
+        "risk": "MEDIUM",
+        "reason": "This specific harmonization claim linking the εἰς ἔργα αὐτοῦ rendering to Ps 104:24 and Sir 1:4 is speculative and not a documented scholarly position; presented with more confidence than the evidence warrants."
+      },
+      {
+        "claim": "scholars such as Johann Cook have connected to harmonizing the book's sapiential theology across chapters",
+        "risk": "MEDIUM",
+        "reason": "Cook's 1997 monograph 'The Septuagint of Proverbs' addresses Hellenistic/Stoic influence and theological tendency, but characterizing his thesis as 'harmonizing across chapters' may misrepresent his actual argument."
+      },
+      {
+        "claim": "scholarly consensus about this translation unit from Lagarde through Johann Cook's 1997 monograph and the work of Tov and Aejmelaeus",
+        "risk": "MEDIUM",
+        "reason": "Aejmelaeus is primarily known for work on the Pentateuch (especially Exodus) and translation technique generally, not specifically for OG-Proverbs; this name-dropping may be inaccurate."
+      }
+    ],
+    "safe_claims": [
+      "OG-Prov renders קָנָנִי as ἔκτισέν με in Prov 8:22",
+      "OG-Prov is among the most paraphrastic books in the LXX, comparable to OG-Job",
+      "אָמֹון in Prov 8:30 is rendered as ἁρμόζουσα",
+      "The translator adds, omits, and reorders stichoi at high rates",
+      "Prov 8:22 was significant in early Christological debate",
+      "OG-Prov contains numerous pluses without MT parallel, especially in chapters 8-9",
+      "Johann Cook published a major 1997 monograph on LXX Proverbs",
+      "OG-Prov is generally dated to the 3rd-2nd century BCE Alexandrian milieu"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.559591+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

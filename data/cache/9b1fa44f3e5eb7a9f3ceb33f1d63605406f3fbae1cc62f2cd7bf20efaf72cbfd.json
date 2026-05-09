@@ -1,0 +1,85 @@
+{
+  "allusions": [
+    {
+      "ot_reference": "Isaiah 7:14",
+      "nt_words": "ἰδού ἡ παρθένος ἐν γαστρί ἕξει καί τέξεται υἱόν καί καλέσουσι(ν) τό ὄνομα αὐτοῦ Ἐμμανουήλ",
+      "ot_mt_form": "הִנֵּה הָעַלְמָה הָרָה וְיֹלֶדֶת בֵּן וְקָרָאת שְׁמוֹ עִמָּנוּ אֵל — 'Behold, the young woman is pregnant and will bear a son, and she will call his name Immanuel'",
+      "ot_lxx_form": "ἰδοὺ ἡ παρθένος ἐν γαστρὶ ἕξει καὶ τέξεται υἱόν καὶ καλέσεις τὸ ὄνομα αὐτοῦ Εμμανουηλ — 'Behold, the virgin will conceive and bear a son, and you (sg.) will call his name Emmanuel'",
+      "nt_alignment": "lxx",
+      "alignment_confidence": 0.93,
+      "key_word": "παρθένος (virgin) vs. MT עַלְמָה (young woman); also καλέσουσιν (3pl.) vs. LXX καλέσεις (2sg.) and MT וְקָרָאת (3fs. or 2ms.)",
+      "textual_implication": "Matthew's use of παρθένος decisively follows the LXX tradition rather than the MT's עַלְמָה, which denotes a young woman of marriageable age without necessitating virginity. This lexical choice is theologically loaded: it grounds Matthew's virginal conception narrative in the Greek Isaianic text and indicates that Matthew or his tradents likely read Isaiah through the LXX. The one significant divergence — καλέσουσιν (they will call) versus the LXX's καλέσεις (you will call) — may reflect a harmonization with a variant LXX manuscript tradition, an independent rendering of the MT's ambiguous vocalization, or a deliberate Matthean adaptation to make the naming communal rather than directed to an individual.",
+      "textual_implication_plain": "Matthew uses the Greek word for 'virgin' that comes from the ancient Greek translation of the Old Testament (the LXX), not from the original Hebrew, which just meant 'young woman.' The small difference in who does the naming ('they will call' instead of 'you will call') might reflect a different manuscript or Matthew's own editorial touch.",
+      "scholarly_note": "Beale and Carson (Commentary on the NT Use of the OT, pp. 8–13) acknowledge that Matthew follows the LXX against the MT in using παρθένος, and they discuss the third-person plural καλέσουσιν as a possible independent reading or variant LXX manuscript tradition not otherwise preserved.",
+      "contested": true
+    },
+    {
+      "ot_reference": "Isaiah 7:14 (translation gloss)",
+      "nt_words": "ὅ ἐστί(ν) μεθερμηνευόμενον μετά ἡμῶν ὁ θεός",
+      "ot_mt_form": "עִמָּנוּ אֵל — 'God with us' (compound name)",
+      "ot_lxx_form": "Εμμανουηλ — transliteration only, no Greek gloss provided in Isaiah 7:14 LXX",
+      "nt_alignment": "independent",
+      "alignment_confidence": 0.88,
+      "key_word": "μεθερμηνευόμενον (being translated/interpreted)",
+      "textual_implication": "Matthew supplies an interpretive translation of the Hebrew name עִמָּנוּ אֵל that does not appear in the LXX of Isaiah 7:14, which simply transliterates as Εμμανουηλ. This translation gloss is a Matthean editorial intervention that makes the theological significance of the name explicit for Greek-speaking readers unfamiliar with Hebrew onomastics. The formula μεθερμηνευόμενον is a characteristic Matthean technique (cf. Matt 27:33) and signals the evangelist's own interpretive voice rather than a source text.",
+      "textual_implication_plain": "The explanation 'which means God with us' is Matthew's own addition to help his Greek readers understand the Hebrew name — the old Greek translation (LXX) did not include this explanation.",
+      "scholarly_note": "R. T. France, cited in Beale and Carson (p. 9), notes that such translation glosses are editorial Matthean insertions typical of the evangelist's practice of making OT names transparent to a diaspora or Greek-literate audience.",
+      "contested": false
+    }
+  ],
+  "summary_technical": "Matthew 1:23 represents a formal citation of Isaiah 7:14 that is overwhelmingly dependent on the LXX tradition, most critically in the rendering παρθένος for MT עַלְמָה, but introduces a minor independent variant in the person/number of the verb καλέσουσιν and appends an independent translation gloss (μεθερμηνευόμενον μετά ἡμῶν ὁ θεός) absent from both MT and LXX. The citation thus exemplifies a pattern documented across Matthew's formula quotations: a Greek Vorlage closely aligned with the LXX that nonetheless bears evidence of occasional independent adjustment, whether from a divergent LXX manuscript, a targum, or the evangelist's own redactional hand.",
+  "summary_plain": "Matthew quotes Isaiah 7:14 mainly from the ancient Greek Bible (LXX), which is why he uses 'virgin' instead of the Hebrew's 'young woman,' and he adds his own explanation of what the name 'Emmanuel' means in Greek.",
+  "bibcrit_hypothesis": {
+    "title": "Matthew Theologizes LXX Isaiah via Virginal Exegesis",
+    "reasoning": "Matthew's dependence on the LXX's παρθένος rather than the MT's עַלְמָה reflects not merely a text-critical accident but a deliberate hermeneutical decision: the LXX reading made the Isaianic oracle directly serviceable for the virginal conception narrative in a way the Hebrew text did not. The shift from καλέσεις/וְקָרָאת (singular) to καλέσουσιν (plural) may represent Matthew's awareness of an alternative LXX tradition or his own adaptation to distribute the naming act communally across the believing community — a subtle but significant theological move. The appended translation gloss anchors the entire pericope in the Matthean theological program of presenting Jesus as the embodied divine presence, drawing the Isaianic name into the narrative world of the Gospel as a hermeneutical key.",
+    "plain": "Matthew chose the Greek Bible's 'virgin' because it fit his story of Jesus's birth perfectly, and his small changes and added explanation show he was actively shaping the quotation to teach his readers that Jesus is literally 'God with us.'",
+    "confidence": 0.81
+  },
+  "discovery_ready": false,
+  "reference": "Matthew 1:23",
+  "cached_at": "2026-04-19T23:04:34.006298",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The core textual observations are accurate, but several specific scholarly citations and manuscript claims are stated with more precision than is verifiable.",
+    "flagged_claims": [
+      {
+        "claim": "Beale and Carson (Commentary on the NT Use of the OT, pp. 8–13) acknowledge that Matthew follows the LXX against the MT in using παρθένος, and they discuss the third-person plural καλέσουσιν as a possible independent reading or variant LXX manuscript tradition not otherwise preserved.",
+        "risk": "HIGH",
+        "reason": "Specific page range citation appears fabricated. The Matthew section in Beale/Carson is authored by Craig Blomberg, not Beale or Carson directly, and the cited page range (8–13) does not correspond to the Matthew 1:23 discussion in that volume."
+      },
+      {
+        "claim": "R. T. France, cited in Beale and Carson (p. 9), notes that such translation glosses are editorial Matthean insertions",
+        "risk": "HIGH",
+        "reason": "This nested citation (France via Beale/Carson at a specific page) is unverifiable as stated and likely fabricated; while France did discuss Matthean translation glosses, the specific cross-reference appears invented."
+      },
+      {
+        "claim": "may reflect a harmonization with a variant LXX manuscript tradition",
+        "risk": "MEDIUM",
+        "reason": "No extant LXX manuscript of Isaiah 7:14 is known to read καλέσουσιν; this is speculative and should be qualified. Most scholars treat the plural as Matthean redaction or reflecting an alternative reading without claiming actual MS support."
+      },
+      {
+        "claim": "MT's ambiguous vocalization",
+        "risk": "MEDIUM",
+        "reason": "The form וְקָרָאת is debated (2ms or 3fs), but calling this 'ambiguous vocalization' conflates consonantal text with Masoretic vocalization; the issue is morphological/syntactic, not vocalization per se."
+      },
+      {
+        "claim": "cf. Matt 27:33",
+        "risk": "MEDIUM",
+        "reason": "Matt 27:33 uses ὅ ἐστιν...λεγόμενος (Golgotha), not μεθερμηνευόμενον. The μεθερμηνεύω formula is more characteristic of Mark (e.g., Mark 5:41, 15:22, 15:34) and John 1:38, 41. The cross-reference is imprecise."
+      }
+    ],
+    "safe_claims": [
+      "Matthew uses παρθένος matching LXX against MT עַלְמָה",
+      "LXX Isaiah 7:14 reads καλέσεις (2sg) where Matthew has καλέσουσιν (3pl)",
+      "LXX Isaiah 7:14 transliterates Εμμανουηλ without a Greek gloss",
+      "The translation 'μεθερμηνευόμενον μετά ἡμῶν ὁ θεός' is Matthew's editorial addition",
+      "עַלְמָה denotes a young woman of marriageable age without necessarily specifying virginity",
+      "Matthew 1:23 is a formula citation closely aligned with the LXX"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.671091+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

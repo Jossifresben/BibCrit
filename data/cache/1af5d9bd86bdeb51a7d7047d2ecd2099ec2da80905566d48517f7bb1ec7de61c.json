@@ -1,0 +1,576 @@
+{
+  "book": "Isaiah",
+  "period_range": "8th century BCE – 15th century CE",
+  "archetype_description": "The proto-text of Isaiah is a complex compositional entity, widely understood in critical scholarship to comprise multiple editorial layers: a core of authentic 8th-century Isaianic material (Proto-Isaiah, chs. 1–39), a Deutero-Isaianic corpus from the exilic period (chs. 40–55), and a Trito-Isaianic stratum (chs. 56–66), though some scholars (e.g., Childs, Seitz) argue for a more unified canonical form. The Vorlage underlying the major ancient translations diverged significantly from proto-MT, as attested by 1QIsa-a and the LXX, indicating textual plurality in the Second Temple period. No single Urtext can be reconstructed with certainty; the archetype node represents the earliest recoverable textual stratum underlying all surviving witnesses.",
+  "stemma_nodes": [
+    {
+      "id": "archetype",
+      "label": "Proto-Text (Urtext)",
+      "type": "archetype",
+      "date": "8th–6th c. BCE",
+      "description": "Hypothetical earliest recoverable form of the Isaiah tradition, encompassing the compositional strata that gave rise to all surviving textual witnesses."
+    },
+    {
+      "id": "proto-isaiah-editorial",
+      "label": "Second Temple Editorial Stage",
+      "type": "intermediate",
+      "date": "c. 500–300 BCE",
+      "description": "Post-exilic editorial consolidation of Isaiah's multiple compositional layers into a unified scroll, attested in broad outline by both the DSS and the LXX Vorlage."
+    },
+    {
+      "id": "proto-mt-isa",
+      "label": "Proto-MT Isaiah",
+      "type": "intermediate",
+      "date": "c. 300–100 BCE",
+      "description": "The pre-Masoretic Hebrew text-form of Isaiah, ancestral to the later rabbinic/Tiberian tradition, exhibiting a shorter and more conservative text than 1QIsa-a."
+    },
+    {
+      "id": "proto-lxx-isa",
+      "label": "Proto-LXX Vorlage (Isaiah)",
+      "type": "intermediate",
+      "date": "c. 250–200 BCE",
+      "description": "The Hebrew Vorlage underlying the Old Greek translation of Isaiah, differing from proto-MT in numerous readings, word order, and apparent theological expansions."
+    },
+    {
+      "id": "dss-isa-a",
+      "label": "1QIsa-a (Great Isaiah Scroll)",
+      "type": "tradition",
+      "tradition": "DSS",
+      "date": "c. 125–100 BCE",
+      "full_name": "1QIsa-a, Great Isaiah Scroll, Cave 1, Qumran",
+      "language": "Hebrew",
+      "description": "The most complete DSS manuscript of Isaiah, predating the MT by over a millennium and exhibiting a fuller, more expansive text-form with numerous orthographic, phonological, and some substantive variants from MT."
+    },
+    {
+      "id": "dss-isa-b",
+      "label": "1QIsa-b",
+      "type": "tradition",
+      "tradition": "DSS",
+      "date": "c. 50–25 BCE",
+      "full_name": "1QIsa-b, Cave 1, Qumran",
+      "language": "Hebrew",
+      "description": "A second, fragmentary Isaiah scroll from Cave 1, closer to the proto-MT text-form than 1QIsa-a, covering portions of chapters 10–66."
+    },
+    {
+      "id": "dss-4qisa",
+      "label": "4QIsa Fragments (4QIsa-a through 4QIsa-r)",
+      "type": "tradition",
+      "tradition": "DSS",
+      "date": "c. 150–50 BCE",
+      "full_name": "4QIsa-a through 4QIsa-r, multiple fragmentary Isaiah manuscripts from Cave 4",
+      "language": "Hebrew",
+      "description": "A collection of approximately eighteen fragmentary Isaiah manuscripts from Cave 4, collectively representing diverse text-forms including some proto-MT aligned witnesses and some with affinities to 1QIsa-a."
+    },
+    {
+      "id": "mt",
+      "label": "Masoretic Text (MT)",
+      "type": "tradition",
+      "tradition": "MT",
+      "date": "c. 100 CE (consonantal); 6th–10th c. CE (vocalized)",
+      "full_name": "Masoretic Text of Isaiah",
+      "language": "Hebrew",
+      "description": "The standardized proto-rabbinic Hebrew text of Isaiah, stabilized around the 1st century CE, subsequently vocalized and annotated by the Tiberian Masoretes (Ben Asher school, 6th–10th c. CE)."
+    },
+    {
+      "id": "aleppo-codex",
+      "label": "Aleppo Codex (Crown of Aleppo)",
+      "type": "edition",
+      "date": "c. 925 CE",
+      "full_name": "Codex Aleppiensis (Keter Aram Tzova), vocalized by Aharon ben Moses ben Asher",
+      "language": "Hebrew",
+      "description": "The most authoritative Ben Asher manuscript, though the Isaiah portion (chapters 1–37 largely missing) is used as the base text for the Hebrew University Bible Project (HUBP); considered the most faithful representative of the Tiberian Masoretic tradition."
+    },
+    {
+      "id": "leningrad-codex",
+      "label": "Leningrad Codex (B19A)",
+      "type": "edition",
+      "date": "1008/9 CE",
+      "full_name": "Codex Leningradensis (Firkovitch B19A), St. Petersburg National Library",
+      "language": "Hebrew",
+      "description": "The oldest complete Hebrew Bible manuscript, copied in Cairo in 1008/9 CE according to the Ben Asher Masoretic tradition; serves as the base text for BHS and BHQ for Isaiah."
+    },
+    {
+      "id": "bhs",
+      "label": "BHS (Biblia Hebraica Stuttgartensia)",
+      "type": "edition",
+      "date": "1977 CE",
+      "full_name": "Biblia Hebraica Stuttgartensia, edited by D. Winton Thomas and K. Elliger (Isaiah fascicle: D. W. Thomas / H. Wildberger)",
+      "language": "Hebrew",
+      "description": "The standard 20th-century critical edition of the Hebrew Bible based on the Leningrad Codex, with a full critical apparatus; superseded for Isaiah by BHQ."
+    },
+    {
+      "id": "bhq",
+      "label": "BHQ Isaiah",
+      "type": "edition",
+      "date": "Forthcoming / in preparation (BHQ series ongoing, Isaiah not yet published as of 2024)",
+      "full_name": "Biblia Hebraica Quinta, Isaiah fascicle (in preparation)",
+      "language": "Hebrew",
+      "description": "The successor to BHS, employing improved Masoretic scholarship and a more rigorous critical apparatus; the Isaiah volume is in preparation as part of the Deutsche Bibelgesellschaft BHQ project."
+    },
+    {
+      "id": "hubp",
+      "label": "Hebrew University Bible Project (HUBP) Isaiah",
+      "type": "edition",
+      "date": "1995 CE",
+      "full_name": "The Book of Isaiah: The Hebrew University Bible, edited by Moshe Goshen-Gottstein (1995)",
+      "language": "Hebrew",
+      "description": "A critical edition of Isaiah based on the Aleppo Codex with a full apparatus including DSS, LXX, Peshitta, Targum, and Vulgate variants; a landmark in Isaiah textual criticism."
+    },
+    {
+      "id": "old-greek-isa",
+      "label": "Old Greek (OG) Isaiah",
+      "type": "intermediate",
+      "date": "c. 200–150 BCE",
+      "description": "The original Greek translation of Isaiah, produced in Alexandria or Egypt, exhibiting a distinctive theological interpretation and numerous deviations from proto-MT, attributed to a single translator by Seeligmann and Ziegler."
+    },
+    {
+      "id": "lxx",
+      "label": "LXX Isaiah",
+      "type": "tradition",
+      "tradition": "LXX",
+      "date": "c. 200 BCE – 4th c. CE (manuscript tradition)",
+      "full_name": "Septuagint of Isaiah",
+      "language": "Greek",
+      "description": "The Greek translation tradition of Isaiah, known for its dynamic translation technique and numerous theological renderings; the manuscript tradition is represented primarily by Vaticanus (B), Sinaiticus (א), and Alexandrinus (A)."
+    },
+    {
+      "id": "lxx-ms-vaticanus",
+      "label": "Codex Vaticanus (B)",
+      "type": "edition",
+      "date": "4th c. CE",
+      "full_name": "Codex Vaticanus (Vat. gr. 1209), Isaiah text",
+      "language": "Greek",
+      "description": "One of the primary LXX manuscripts for Isaiah, representing a relatively pre-hexaplaric text-form of the Septuagint; a key witness in the Göttingen critical edition."
+    },
+    {
+      "id": "lxx-ms-sinaiticus",
+      "label": "Codex Sinaiticus (א)",
+      "type": "edition",
+      "date": "4th c. CE",
+      "full_name": "Codex Sinaiticus (Brit. Lib. Add. 43725), Isaiah text",
+      "language": "Greek",
+      "description": "A major early LXX manuscript preserving Isaiah with important textual variants; reflects a text-form with some hexaplaric influence but also independent pre-hexaplaric readings."
+    },
+    {
+      "id": "hexapla",
+      "label": "Origen's Hexapla (Isaiah)",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "c. 240 CE",
+      "full_name": "Origen's Hexapla, Isaiah column (with asterisks and obeli)",
+      "language": "Greek/Hebrew",
+      "description": "Origen's six-column synopsis of Isaiah including the Hebrew text, transliteration, Aquila, Symmachus, the LXX (with critical marks), and Theodotion; profoundly influenced the subsequent LXX manuscript tradition."
+    },
+    {
+      "id": "aquila",
+      "label": "Aquila (Isaiah)",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "c. 130 CE",
+      "full_name": "Aquila's Greek translation of Isaiah",
+      "language": "Greek",
+      "description": "Aquila's hyper-literal Greek translation of Isaiah from the Hebrew, surviving in fragments, notable for its woodenly literal rendering technique aimed at precise correspondence with the proto-MT."
+    },
+    {
+      "id": "symmachus",
+      "label": "Symmachus (Isaiah)",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "c. 200 CE",
+      "full_name": "Symmachus's Greek translation of Isaiah",
+      "language": "Greek",
+      "description": "Symmachus's idiomatic Greek rendering of Isaiah, surviving in fragments through the Hexapla, valued for its elegant Greek style and occasionally preserving exegetical traditions independent of the LXX."
+    },
+    {
+      "id": "lucianic-isa",
+      "label": "Lucianic Recension (Isaiah)",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "c. 300 CE",
+      "full_name": "Lucianic (Antiochene) recension of the LXX, Isaiah",
+      "language": "Greek",
+      "description": "The Antiochene text of Isaiah associated with Lucian of Antioch, characterized by stylistic smoothing, conflations, and some proto-MT assimilations; attested in a cluster of manuscripts (e.g., 22, 36, 48, 51, 231)."
+    },
+    {
+      "id": "goettingen-lxx-isa",
+      "label": "Göttingen LXX Isaiah (Ziegler)",
+      "type": "edition",
+      "date": "1939 CE (revised 1983)",
+      "full_name": "Septuaginta: Vetus Testamentum Graecum, vol. XIV, Isaias, edited by Joseph Ziegler (Göttingen: Vandenhoeck & Ruprecht, 1939; 3rd ed. 1983)",
+      "language": "Greek",
+      "description": "The standard critical edition of LXX Isaiah, edited by Joseph Ziegler, reconstructing the Old Greek on the basis of all major manuscript groups with a comprehensive apparatus; the foundation for all modern LXX Isaiah scholarship."
+    },
+    {
+      "id": "nets-isa",
+      "label": "NETS Isaiah",
+      "type": "edition",
+      "date": "2007 CE",
+      "full_name": "A New English Translation of the Septuagint (NETS), Isaiah, translated by Arie van der Kooij and colleagues",
+      "language": "English",
+      "description": "Modern English translation of the Göttingen LXX Isaiah, treating the Greek text as a literary document in its own right while noting departures from the Hebrew Vorlage."
+    },
+    {
+      "id": "peshitta-vorlage",
+      "label": "Syriac Vorlage (Isaiah)",
+      "type": "intermediate",
+      "date": "c. 1st–2nd c. CE",
+      "description": "The Hebrew text-form underlying the Peshitta of Isaiah, generally close to proto-MT but with some independent variants and apparent awareness of targum traditions."
+    },
+    {
+      "id": "peshitta",
+      "label": "Peshitta (Isaiah)",
+      "type": "tradition",
+      "tradition": "Peshitta",
+      "date": "c. 2nd c. CE",
+      "full_name": "Peshitta of Isaiah",
+      "language": "Syriac",
+      "description": "The Syriac translation of Isaiah, closely aligned with the proto-MT but exhibiting influence from targumic traditions and occasional LXX-type readings; a significant witness for textual criticism."
+    },
+    {
+      "id": "peshitta-ms-7a1",
+      "label": "Peshitta MS 7a1 (Ambrosianus)",
+      "type": "edition",
+      "date": "6th–7th c. CE",
+      "full_name": "Milan, Biblioteca Ambrosiana, MS B. 21 inf. (7a1), the primary Peshitta manuscript for Isaiah",
+      "language": "Syriac",
+      "description": "The primary manuscript witness for the Peshitta of Isaiah used in the Leiden Peshitta critical edition."
+    },
+    {
+      "id": "leiden-peshitta-isa",
+      "label": "Leiden Peshitta Edition (Isaiah)",
+      "type": "edition",
+      "date": "1987 CE",
+      "full_name": "The Old Testament in Syriac According to the Peshitta Version, Part III fasc. 1, Isaiah, edited by S. P. Brock (Leiden: Brill, 1987)",
+      "language": "Syriac",
+      "description": "The standard critical edition of the Peshitta of Isaiah, edited by Sebastian Brock for the Peshitta Institute Leiden."
+    },
+    {
+      "id": "targum-jonathan-isa",
+      "label": "Targum Jonathan (Isaiah)",
+      "type": "tradition",
+      "tradition": "Targum",
+      "date": "c. 3rd–7th c. CE (oral origins earlier)",
+      "full_name": "Targum Jonathan ben Uzziel to the Prophets, Isaiah",
+      "language": "Aramaic",
+      "description": "The official Babylonian Aramaic targum of the Prophets, including Isaiah; attributed to Jonathan ben Uzziel, extensively paraphrastic with marked messianic and eschatological exegesis, attested in MSS such as British Library Or. 2211."
+    },
+    {
+      "id": "targum-ms-bl2211",
+      "label": "BL Or. 2211 (Targum Jonathan MS)",
+      "type": "edition",
+      "date": "c. 11th–12th c. CE",
+      "full_name": "British Library Oriental MS 2211, principal manuscript of Targum Jonathan to Isaiah",
+      "language": "Aramaic",
+      "description": "One of the primary manuscript witnesses for Targum Jonathan to Isaiah, used in Sperber's critical edition."
+    },
+    {
+      "id": "sperber-targum-isa",
+      "label": "Sperber's Edition of Targum Jonathan (Isaiah)",
+      "type": "edition",
+      "date": "1959 CE",
+      "full_name": "The Bible in Aramaic, vol. III: The Latter Prophets According to Targum Jonathan, edited by Alexander Sperber (Leiden: Brill, 1959)",
+      "language": "Aramaic",
+      "description": "The standard critical edition of Targum Jonathan to the Latter Prophets including Isaiah, based on the BL Or. 2211 manuscript with a full apparatus."
+    },
+    {
+      "id": "vulgate-isa",
+      "label": "Vulgate (Isaiah)",
+      "type": "tradition",
+      "tradition": "Vulgate",
+      "date": "c. 395–405 CE",
+      "full_name": "Vulgata Latina, Liber Isaiae, translated by Jerome from Hebrew",
+      "language": "Latin",
+      "description": "Jerome's Latin translation of Isaiah from the Hebrew veritas (c. 395–405 CE), closely following a proto-MT text-form while occasionally noting LXX and targumic readings; the Vulgate Isaiah sample (Isa 1:1: 'Visio Isaiæ filii Amos…') demonstrates Jerome's literal fidelity to the Hebrew syntax and nomenclature."
+    },
+    {
+      "id": "vulgate-ms-amiatinus",
+      "label": "Codex Amiatinus",
+      "type": "edition",
+      "date": "c. 700–716 CE",
+      "full_name": "Codex Amiatinus (Biblioteca Medicea Laurenziana, MS Amiatino 1), the earliest complete Vulgate manuscript",
+      "language": "Latin",
+      "description": "The earliest surviving complete manuscript of the Latin Vulgate, produced at Wearmouth-Jarrow; the primary manuscript witness for the Vulgate Isaiah used in the Wordsworth-White critical edition."
+    },
+    {
+      "id": "stuttgarter-vulgate-isa",
+      "label": "Biblia Sacra Vulgata (Stuttgart Edition)",
+      "type": "edition",
+      "date": "1969 CE (5th ed. 2007)",
+      "full_name": "Biblia Sacra Iuxta Vulgatam Versionem, edited by R. Weber and R. Gryson (Stuttgart: Deutsche Bibelgesellschaft)",
+      "language": "Latin",
+      "description": "The standard critical edition of the Vulgate including Isaiah, based on Codex Amiatinus and other major witnesses with a full apparatus."
+    }
+  ],
+  "stemma_edges": [
+    {
+      "from": "archetype",
+      "to": "proto-isaiah-editorial"
+    },
+    {
+      "from": "proto-isaiah-editorial",
+      "to": "proto-mt-isa"
+    },
+    {
+      "from": "proto-isaiah-editorial",
+      "to": "proto-lxx-isa"
+    },
+    {
+      "from": "proto-isaiah-editorial",
+      "to": "dss-isa-a"
+    },
+    {
+      "from": "proto-mt-isa",
+      "to": "dss-isa-b"
+    },
+    {
+      "from": "proto-mt-isa",
+      "to": "dss-4qisa"
+    },
+    {
+      "from": "proto-mt-isa",
+      "to": "mt"
+    },
+    {
+      "from": "mt",
+      "to": "aleppo-codex"
+    },
+    {
+      "from": "mt",
+      "to": "leningrad-codex"
+    },
+    {
+      "from": "leningrad-codex",
+      "to": "bhs"
+    },
+    {
+      "from": "leningrad-codex",
+      "to": "bhq"
+    },
+    {
+      "from": "aleppo-codex",
+      "to": "hubp"
+    },
+    {
+      "from": "proto-lxx-isa",
+      "to": "old-greek-isa"
+    },
+    {
+      "from": "old-greek-isa",
+      "to": "lxx"
+    },
+    {
+      "from": "lxx",
+      "to": "lxx-ms-vaticanus"
+    },
+    {
+      "from": "lxx",
+      "to": "lxx-ms-sinaiticus"
+    },
+    {
+      "from": "lxx",
+      "to": "hexapla"
+    },
+    {
+      "from": "hexapla",
+      "to": "aquila"
+    },
+    {
+      "from": "hexapla",
+      "to": "symmachus"
+    },
+    {
+      "from": "hexapla",
+      "to": "lucianic-isa"
+    },
+    {
+      "from": "lxx-ms-vaticanus",
+      "to": "goettingen-lxx-isa"
+    },
+    {
+      "from": "lxx-ms-sinaiticus",
+      "to": "goettingen-lxx-isa"
+    },
+    {
+      "from": "lucianic-isa",
+      "to": "goettingen-lxx-isa"
+    },
+    {
+      "from": "goettingen-lxx-isa",
+      "to": "nets-isa"
+    },
+    {
+      "from": "proto-mt-isa",
+      "to": "peshitta-vorlage"
+    },
+    {
+      "from": "peshitta-vorlage",
+      "to": "peshitta"
+    },
+    {
+      "from": "peshitta",
+      "to": "peshitta-ms-7a1"
+    },
+    {
+      "from": "peshitta-ms-7a1",
+      "to": "leiden-peshitta-isa"
+    },
+    {
+      "from": "proto-mt-isa",
+      "to": "targum-jonathan-isa"
+    },
+    {
+      "from": "targum-jonathan-isa",
+      "to": "targum-ms-bl2211"
+    },
+    {
+      "from": "targum-ms-bl2211",
+      "to": "sperber-targum-isa"
+    },
+    {
+      "from": "mt",
+      "to": "vulgate-isa"
+    },
+    {
+      "from": "vulgate-isa",
+      "to": "vulgate-ms-amiatinus"
+    },
+    {
+      "from": "vulgate-ms-amiatinus",
+      "to": "stuttgarter-vulgate-isa"
+    }
+  ],
+  "key_divergences": [
+    {
+      "title": "Virgin or Young Woman: Isaiah 7:14",
+      "passage": "Isaiah 7:14",
+      "witnesses": [
+        "MT",
+        "LXX",
+        "DSS"
+      ],
+      "plain": "The Hebrew word in this verse (עַלְמָה, 'almah) means 'young woman,' but the LXX translated it as παρθένος ('virgin'), a reading that became foundational in Christian interpretation of the birth of Jesus. This divergence has generated more scholarly and theological discussion than almost any other passage in the Hebrew Bible.",
+      "technical": "MT reads הָעַלְמָה ('the young woman') while LXX reads ἡ παρθένος ('the virgin'); 1QIsa-a supports MT's consonantal reading (העלמה). The LXX rendering likely reflects either a different exegetical tradition or a deliberate theological interpretation of the translator; the direction of change is from Hebrew 'almah → Greek parthenos, not vice versa. Key scholars: Seeligmann (LXX Isaiah as exegesis), Wildberger (Jesaja commentary), Barthélemy (CTAT vol. 2), and van der Kooij."
+    },
+    {
+      "title": "Shorter vs. Longer Text: Isaiah 2:22",
+      "passage": "Isaiah 2:22",
+      "witnesses": [
+        "MT",
+        "LXX"
+      ],
+      "plain": "The final verse of Isaiah 2 in the MT ('Turn away from man…') is entirely absent from the main LXX manuscript tradition, suggesting the verse may be a later addition to the Hebrew text or that the LXX Vorlage lacked it. This shows that the book's text was still developing when the Greek translation was made.",
+      "technical": "MT Isa 2:22 (חִדְלוּ לָכֶם מִן-הָאָדָם) is absent from LXX B, S, A, and most LXX MSS; Ziegler's Göttingen edition places it in the apparatus as a probable post-LXX addition to the Hebrew. 1QIsa-a supports MT. The verse appears to be a late scribal addition (a gloss) in the Hebrew tradition post-dating the translation; cf. Barthélemy CTAT II, Wildberger, and Blenkinsopp."
+    },
+    {
+      "title": "The Servant's Disfigured Form: Isaiah 52:14",
+      "passage": "Isaiah 52:14",
+      "witnesses": [
+        "MT",
+        "LXX",
+        "DSS"
+      ],
+      "plain": "In this verse about the suffering servant, the MT says 'his appearance was marred beyond human semblance,' but the LXX has 'his appearance shall be without glory,' reflecting what appears to be a different Hebrew text or a very free interpretation. The divergence matters because this passage is central to both Jewish and Christian interpretations of the Servant Songs.",
+      "technical": "MT reads מִשְׁחַת מֵאִישׁ מַרְאֵהוּ while LXX has ἀδοξήσει ἀπὸ ἀνθρώπων τὸ εἶδός σου, suggesting the LXX Vorlage may have read מִשְׁחַת as related to שׁחת ('pit/ruin') or reflected a different vocalization; 1QIsa-a reads משׁחת supporting consonantal MT but with plene spelling. Barthélemy (CTAT II) and Oswalt reconstruct the likely Vorlage divergence; the LXX translator's exegetical freedom is well-documented by van der Kooij."
+    },
+    {
+      "title": "Plus or Minus: Isaiah 36–39 and 2 Kings 18–20",
+      "passage": "Isaiah 36:1–39:8",
+      "witnesses": [
+        "MT",
+        "LXX",
+        "DSS"
+      ],
+      "plain": "Chapters 36–39 of Isaiah are nearly identical to 2 Kings 18–20, raising the question of which text is older and which was copied from the other. The LXX and DSS support slightly different versions of this narrative, giving scholars a window into how ancient scribes copied material between books.",
+      "technical": "The synoptic relationship between Isa 36–39 and 2 Kgs 18:13–20:19 involves significant variants: notably, 2 Kgs 18:14–16 (Hezekiah's tribute) is absent from Isaiah; the LXX of Isa 36–39 largely agrees with 2 Kgs LXX, suggesting that Isaiah borrowed from Kings (Vermeylen, Clements) or both derive from a common source. 1QIsa-a supports MT for the Isaiah version. Key treatments by Stade, Clements (Isaiah and the Deliverance of Jerusalem), and Barthélemy (CTAT II)."
+    },
+    {
+      "title": "Messianic Reading of Isaiah 53:11 (1QIsa-a Variant)",
+      "passage": "Isaiah 53:11",
+      "witnesses": [
+        "MT",
+        "LXX",
+        "DSS"
+      ],
+      "plain": "In this central 'Servant Song' verse, 1QIsa-a and the LXX add the word 'light' (אור/φῶς) to the text, reading 'he shall see light and be satisfied,' while the standard MT simply reads 'he shall see and be satisfied.' The addition of 'light' significantly enriches the verse's interpretive possibilities and was likely original, lost from the MT by haplography.",
+      "technical": "1QIsa-a (col. XLIV) reads יראה אור וישבע while MT reads יראה ישבע; LXX δεῖξαι αὐτῷ φῶς supports the longer reading. The scholarly consensus since the publication of 1QIsa-a (Millar Burrows 1950, Sukenik) is that אור was lost from MT by haplography (homoioteleuton before וישבע); Barthélemy (CTAT II) and Tov (Textual Criticism of the Hebrew Bible, 3rd ed.) agree that the MT is here secondary. The BHS apparatus and HUBP edition note the plus."
+    }
+  ],
+  "transmission_narrative": "The textual history of Isaiah is among the most complex in the Hebrew Bible, shaped by its multi-layered compositional origin (8th–5th century BCE), its transmission in at least two divergent Hebrew text-forms during the Second Temple period, and its extraordinary importance for both Jewish and early Christian interpretation. The discovery of the Qumran Isaiah scrolls (1947–1956), especially 1QIsa-a, demonstrated that by the 2nd century BCE two distinct Hebrew text-forms were already circulating: one expansive and orthographically updated (ancestral to or related to 1QIsa-a), and one closer to proto-MT (1QIsa-b, 4QIsa fragments). The Old Greek translation, probably made in Alexandria around 200–150 BCE, attests yet another Vorlage with numerous deviations from MT, interpreted by Seeligmann as reflecting an exegetically active translator and by van der Kooij as evidence for a distinct Hebrew text-form. The Masoretic text was stabilized ca. 100 CE, preserved through the Tiberian Masoretes (Ben Asher school), and transmitted in the Leningrad and Aleppo Codices, which remain the basis for modern critical editions; the HUBP edition (Goshen-Gottstein, 1995) represents the current gold standard for Isaiah textual criticism.",
+  "transmission_plain": "The book of Isaiah began as a collection of prophetic writings composed over several centuries, starting in the 8th century BCE, and was eventually copied, translated, and interpreted across multiple ancient communities. When scholars discovered the Dead Sea Scrolls in 1947, they found a nearly complete copy of Isaiah from around 100 BCE — more than a thousand years older than any previously known Hebrew manuscript — which showed that the text had already developed in slightly different forms by that time. Today, scholars use all these ancient copies (Hebrew, Greek, Syriac, Aramaic, and Latin) together with modern critical editions to reconstruct the book's original wording as accurately as possible.",
+  "bibcrit_assessment": {
+    "title": "1QIsa-a reveals pre-MT textual plurality in Isaiah",
+    "plain": "The Great Isaiah Scroll from the Dead Sea, copied around 100 BCE, proved that the book of Isaiah circulated in substantially different textual forms more than a millennium before the earliest previously known Hebrew manuscripts, fundamentally changing our understanding of how the Bible was transmitted and stabilized.",
+    "confidence": 0.78
+  },
+  "discovery_ready": true,
+  "reference": "Isaiah",
+  "cached_at": "2026-04-20T19:25:48.627444",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v2",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis is broadly sound and reflects mainstream Isaiah textual scholarship, but contains several specific factual errors regarding editions, editors, and manuscript details that require correction.",
+    "flagged_claims": [
+      {
+        "claim": "BHS ... edited by D. Winton Thomas and K. Elliger (Isaiah fascicle: D. W. Thomas / H. Wildberger)",
+        "risk": "HIGH",
+        "reason": "The BHS Isaiah fascicle was edited by David Winton Thomas (1968), not Wildberger. The general BHS editors were Elliger and Rudolph, not Thomas and Elliger. Wildberger is known for his Isaiah commentary, not the BHS fascicle."
+      },
+      {
+        "claim": "NETS Isaiah ... translated by Arie van der Kooij and colleagues",
+        "risk": "HIGH",
+        "reason": "NETS Isaiah was translated by Moisés Silva, not Arie van der Kooij. Van der Kooij is a prominent LXX Isaiah scholar but did not translate the NETS Isaiah volume."
+      },
+      {
+        "claim": "HUBP Isaiah ... 1995 CE ... edited by Moshe Goshen-Gottstein",
+        "risk": "MEDIUM",
+        "reason": "The HUBP Isaiah volume was published in two parts (1975 and 1981) by Goshen-Gottstein, not 1995. The date appears incorrect."
+      },
+      {
+        "claim": "LXX Isaiah ... attributed to a single translator by Seeligmann and Ziegler",
+        "risk": "MEDIUM",
+        "reason": "Seeligmann argued for a single translator; this is a defensible attribution, but coupling Ziegler to this specific claim is imprecise—Ziegler's contributions concerned vocabulary and style studies, not primarily the single-translator thesis."
+      },
+      {
+        "claim": "Göttingen LXX Isaiah (Ziegler) ... 1939 CE (revised 1983)",
+        "risk": "MEDIUM",
+        "reason": "Ziegler's Isaias was first published in 1939; the 3rd edition is 1983, but it is not a substantial revision by Ziegler himself (who died in 1988); the characterization as 'revised 1983' may overstate the nature of the update."
+      },
+      {
+        "claim": "approximately eighteen fragmentary Isaiah manuscripts from Cave 4",
+        "risk": "MEDIUM",
+        "reason": "The standard count is 4QIsaa–4QIsar = 18 manuscripts, but some have been reclassified; the figure should be stated with the caveat that the precise count is debated (some scholars count 17 or 21 depending on classification)."
+      },
+      {
+        "claim": "Lucianic ... attested in a cluster of manuscripts (e.g., 22, 36, 48, 51, 231)",
+        "risk": "MEDIUM",
+        "reason": "The specific Rahlfs numbers listed for the Lucianic group in Isaiah should be verified; the canonical Lucianic cluster in the Prophets is typically given as 22, 36, 48, 51, 62, 90, 93, 144, 147, 233, 308 (per Ziegler), so this list is partial and possibly imprecise."
+      },
+      {
+        "claim": "Aleppo Codex ... vocalized by Aharon ben Moses ben Asher",
+        "risk": "MEDIUM",
+        "reason": "Tradition holds that Aaron ben Asher vocalized and added Masorah to the Aleppo Codex (the consonants were written by Shlomo ben Buya'a). The claim is conventional but is a tradition rather than firmly established fact."
+      },
+      {
+        "claim": "Peshitta MS 7a1 (Ambrosianus) ... 6th–7th c. CE",
+        "risk": "MEDIUM",
+        "reason": "The Codex Ambrosianus (7a1) is generally dated to the 6th or 7th century, but more commonly assigned to the 6th–7th century; some scholars date it specifically to the 6th c. The dating range is acceptable but should be cited with caution."
+      }
+    ],
+    "safe_claims": [
+      "Three-part compositional theory of Isaiah (Proto-, Deutero-, Trito-Isaiah)",
+      "Childs and Seitz argue for canonical/unified readings of Isaiah",
+      "1QIsaa exhibits a fuller, more expansive text-form with orthographic and substantive variants vs. MT",
+      "1QIsab is closer to the proto-MT than 1QIsaa",
+      "Leningrad Codex dated 1008/9 CE serves as base text for BHS",
+      "Aleppo Codex is missing Isaiah 1–37 (and more)",
+      "Aquila's translation is hyper-literal; Symmachus's is more idiomatic",
+      "Origen's Hexapla had six columns including Aquila, Symmachus, LXX, Theodotion",
+      "Ziegler's Göttingen Isaias (1939) is the standard critical edition of LXX Isaiah",
+      "Peshitta Isaiah is generally close to proto-MT with some targumic affinities"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.335875+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

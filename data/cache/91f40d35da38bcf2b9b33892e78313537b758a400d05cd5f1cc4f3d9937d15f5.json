@@ -157,5 +157,60 @@
   "reference": "Genesis",
   "cached_at": "2026-03-30T21:33:38.336423",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis is largely sound and reflects mainstream scholarship on LXX Genesis, but contains several specific textual citations that are inaccurate or misquoted from the actual LXX/MT.",
+    "flagged_claims": [
+      {
+        "claim": "Genesis 3:15 ... lxx_text: αὐτός σου τηρήσει κεφαλήν, καὶ σὺ τηρήσεις αὐτοῦ πτέρναν",
+        "risk": "HIGH",
+        "reason": "The actual LXX reads αὐτός σου τηρήσει κεφαλήν with the verb τηρήσει, but the standard LXX uses different verbs in the two halves and the textual citation here omits portions and may be inaccurate; some manuscripts read τηρήσει/τηρήσεις but Rahlfs prints αὐτός σου τηρήσει κεφαλήν, καὶ σὺ τηρήσεις αὐτοῦ πτέρναν — needs verification against critical edition."
+      },
+      {
+        "claim": "Genesis 6:6 ... lxx_text: καὶ ἐνεθυμήθη ὁ θεὸς ὅτι ἐποίησεν τὸν ἄνθρωπον ἐπὶ τῆς γῆς καὶ διενοήθη",
+        "risk": "HIGH",
+        "reason": "This is a misquotation. The actual LXX of Gen 6:6 reads καὶ ἐνεθυμήθη ὁ θεὸς ὅτι ἐποίησεν τὸν ἄνθρωπον ἐπὶ τῆς γῆς, καὶ διενοήθη. Actually the standard text uses ἐνεθυμήθη but the claim that this preserves anthropopathism is questionable — ἐνεθυμήθη ('considered/pondered') is widely cited as an example of anthropopathic SOFTENING of MT's וַיִּנָּחֶם ('regretted'), contradicting the analysis's own argument."
+      },
+      {
+        "claim": "Genesis 22:17 lxx_text: ἦ μὴν εὐλογῶν εὐλογήσω σε καὶ πληθύνων πληθυνῶ",
+        "risk": "MEDIUM",
+        "reason": "The LXX actually reads εἰ μὴν (not ἦ μὴν) in most critical editions of Gen 22:17, reflecting a common Koine spelling — minor but the citation should be checked."
+      },
+      {
+        "claim": "Genesis 2:7 lxx_text: καὶ ἔπλασεν ὁ θεὸς τὸν ἄνθρωπον χοῦν ἀπὸ τῆς γῆς",
+        "risk": "MEDIUM",
+        "reason": "The LXX actually reads καὶ ἔπλασεν ὁ θεὸς τὸν ἄνθρωπον χοῦν ἀπὸ τῆς γῆς — but most editions include κύριος (κύριος ὁ θεός) rendering יְהוָה אֱלֹהִים. The omission of κύριος in the citation is inaccurate."
+      },
+      {
+        "claim": "comparable to Judges and portions of the Minor Prophets in formal adherence",
+        "risk": "MEDIUM",
+        "reason": "LXX Genesis is generally classified by scholars (Tov, Wevers) as moderately literal but not at the extreme end; the kaige-Judges (B-text) and certain Minor Prophets (Naḥal Ḥever) are far more wooden. This comparison overstates Genesis's literalism."
+      },
+      {
+        "claim": "literalness score of 0.82 ... highly literal end of the Septuagint translation spectrum",
+        "risk": "MEDIUM",
+        "reason": "Mainstream scholarship (Wevers, Hiebert, Rösel) characterizes LXX Genesis as relatively free and stylistically polished compared to Pentateuchal norms, not as extremely literal. The score and characterization may overstate the case."
+      },
+      {
+        "claim": "Genesis 5:3 vs 5:6 ... Standardized γεννάω formulas",
+        "risk": "MEDIUM",
+        "reason": "The example provides no actual textual data, only a vague generalization, making the harmonization claim unverifiable as presented."
+      }
+    ],
+    "safe_claims": [
+      "καὶ ἐγένετο renders wayehi in Gen 1:5",
+      "ἡμέρα μία preserves the cardinal 'day one' rather than ordinal",
+      "Hebrew infinitive absolute is rendered with participle + finite verb (εὐλογῶν εὐλογήσω)",
+      "περιπατοῦντος ἐν τῷ παραδείσῳ in Gen 3:8 preserves anthropomorphic walking",
+      "ὠσφράνθη in Gen 8:21 preserves divine smelling",
+      "Gen 49:10 renders שׁילה as ᾧ ἀπόκειται",
+      "σπέρμα in Gen 22:18 preserves singular-collective ambiguity",
+      "ἀδολεσχῆσαι in Gen 24:63 renders rare Hebrew שׂוּחַ interpretively",
+      "τῶν καρπῶν τῆς γῆς in Gen 43:11 renders זִמְרָה interpretively"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.571533+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

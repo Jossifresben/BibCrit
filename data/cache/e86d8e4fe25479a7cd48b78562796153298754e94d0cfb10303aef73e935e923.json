@@ -110,5 +110,78 @@
   "reference": "Zechariah 9:9",
   "cached_at": "2026-03-30T19:55:58.426377",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v2"
+  "prompt_version": "v2",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "Core textual observations are accurate, but several specific page citations are unverifiable and one key philological claim is questionable.",
+    "flagged_claims": [
+      {
+        "claim": "MT niphal participle נוֹשָׁע presents a king who is himself 'saved'",
+        "risk": "MEDIUM",
+        "reason": "While the niphal of ישע can be passive ('saved'), many scholars argue נוֹשָׁע here has a tolerative/reflexive or even active sense ('victorious', 'having salvation'). The analysis presents the passive reading as settled when it is actually contested; NRSV/ESV render 'victorious' or 'having salvation'."
+      },
+      {
+        "claim": "Mitchell (1912) p.268",
+        "risk": "MEDIUM",
+        "reason": "Mitchell's ICC commentary on Haggai/Zechariah is 1912, but the specific page reference cannot be verified without checking; precise page citations to century-old commentaries are a common hallucination pattern."
+      },
+      {
+        "claim": "Petersen (1995) p.62",
+        "risk": "MEDIUM",
+        "reason": "Petersen's Zechariah 9-14 commentary (OTL) is 1995, but the specific page citation is unverifiable and may be fabricated."
+      },
+      {
+        "claim": "Stead (2009) p.147",
+        "risk": "MEDIUM",
+        "reason": "Stead's 'The Intertextuality of Zechariah 1-8' (2009) focuses on chapters 1-8, not chapter 9; citing it for Zech 9:9 textual issues is suspicious."
+      },
+      {
+        "claim": "Hanhart (1998) p.789",
+        "risk": "MEDIUM",
+        "reason": "Hanhart edited the Göttingen LXX of the Twelve Prophets (1943), and his Dodekapropheton volume does not obviously correspond to a p.789 reference; citation appears suspect."
+      },
+      {
+        "claim": "Petterson (2015) p.219",
+        "risk": "MEDIUM",
+        "reason": "Specific page citation unverifiable; appears to be a generic authoritative-sounding reference."
+      },
+      {
+        "claim": "Barthélemy (2015) p.912",
+        "risk": "HIGH",
+        "reason": "Dominique Barthélemy died in 2002. A 2015 publication is impossible unless posthumous; the CTAT volume on Twelve Prophets is from 1992. This citation is likely fabricated or misdated."
+      },
+      {
+        "claim": "Wevers (1982) p.45",
+        "risk": "MEDIUM",
+        "reason": "Wevers worked primarily on Pentateuch LXX, not Twelve Prophets; a 1982 Wevers citation on Zechariah is implausible without specific work title."
+      },
+      {
+        "claim": "Dogniez (2010) p.234",
+        "risk": "MEDIUM",
+        "reason": "Cécile Dogniez has worked on LXX Twelve Prophets, but the specific page reference is unverifiable."
+      },
+      {
+        "claim": "LXX consistently renders עני/ענו with πραΰς when emphasizing character (Ps 37:11, Prov 3:34)",
+        "risk": "MEDIUM",
+        "reason": "Prov 3:34 LXX uses ταπεινοῖς, not πραΰς, for the humble (contrasted with scoffers). The example is incorrect; Ps 37:11 (LXX 36:11) does use πραεῖς."
+      },
+      {
+        "claim": "consonantal ambiguity (both plausible with yod/waw confusion)",
+        "risk": "MEDIUM",
+        "reason": "נושע vs מושיע differ in initial consonant (nun vs mem) and internal yod, not merely a yod/waw confusion. This mischaracterizes the orthographic relationship between the forms."
+      }
+    ],
+    "safe_claims": [
+      "MT has וְנוֹשָׁע (niphal) while LXX has σῴζων (active participle)",
+      "MT עָנִי is rendered πραΰς in LXX",
+      "MT עַיִר בֶּן אֲתֹנוֹת is rendered πῶλον νέον in LXX",
+      "MT גִּילִי מְאֹד corresponds to χαῖρε σφόδρα in LXX",
+      "Hebrew עני has semantic range from poverty to humility",
+      "The shift from passive to active participle changes the king's role",
+      "LXX Zechariah sometimes reduces Hebrew poetic redundancy"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.684914+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

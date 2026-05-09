@@ -461,5 +461,74 @@
   "reference": "Jeremiah",
   "cached_at": "2026-03-31T11:19:45.829415",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis is broadly accurate on well-established Jeremiah text-critical issues but contains several specific factual errors regarding LXX chapter numbering, BHQ editorship, and manuscript details.",
+    "flagged_claims": [
+      {
+        "claim": "with the oracle against nations in chapters 25-26 rather than 46-51",
+        "risk": "HIGH",
+        "reason": "In the LXX/short Hebrew edition, the Oracles Against the Nations are placed after Jer 25:13 and span roughly LXX chapters 25-31, not 25-26. This appears to be an internal inconsistency since the analysis correctly states 25-31 elsewhere."
+      },
+      {
+        "claim": "approximately 2,700 words shorter than proto-MT",
+        "risk": "MEDIUM",
+        "reason": "The commonly cited figure is approximately 2,700 words shorter (or about 1/7 to 1/8 shorter); the figure is plausible but often cited as ~3,000 words shorter in scholarship (Tov). The precision here may be overstated."
+      },
+      {
+        "claim": "BHQ Jeremiah ... 2013 ... editor Tov",
+        "risk": "HIGH",
+        "reason": "BHQ Jeremiah was edited by Richard D. Weis, not Emanuel Tov. Tov edited related volumes but not BHQ Jeremiah. Also, BHQ Jeremiah's publication date should be verified — it was long delayed and may not have been published in 2013."
+      },
+      {
+        "claim": "4QJera (4Q70) ... representing the short text tradition corresponding closely to the Hebrew Vorlage of the LXX",
+        "risk": "HIGH",
+        "reason": "This is reversed. 4QJera is generally classified as a proto-MT witness; 4QJerb and 4QJerd are the manuscripts associated with the short/LXX-Vorlage tradition."
+      },
+      {
+        "claim": "4QJerb (4Q71) ... representing the proto-MT expanded text tradition with characteristic MT readings",
+        "risk": "HIGH",
+        "reason": "This is the opposite of the standard scholarly classification. 4QJerb is the key DSS witness to the SHORT Hebrew edition aligning with the LXX Vorlage, not proto-MT."
+      },
+      {
+        "claim": "4QJerc ... Mixed text with some agreements with LXX Vorlage and some with MT",
+        "risk": "MEDIUM",
+        "reason": "4QJerc is generally classified as a proto-MT witness, not a mixed text. Mixed/short-text classification typically applies to 4QJerb and 4QJerd."
+      },
+      {
+        "claim": "Papyrus 967 ... Jer 1-28, Baruch 1-5, Lamentations, Letter of Jeremiah, then Jer 29-52",
+        "risk": "HIGH",
+        "reason": "Papyrus 967's contents and arrangement of Jeremiah are described with suspicious specificity; P967 is best known for its Ezekiel and Daniel portions, and its Jeremiah contents/arrangement claim needs verification."
+      },
+      {
+        "claim": "Lucianic Recension ... c. 300-320 CE",
+        "risk": "MEDIUM",
+        "reason": "Lucian of Antioch died c. 312 CE, so the date range is roughly plausible, but attributing a coherent 'Lucianic recension' specifically to this date for Jeremiah involves traditional assumptions that modern scholarship has questioned."
+      },
+      {
+        "claim": "Göttingen LXX Jeremiah ... 1957 (Ziegler)",
+        "risk": "MEDIUM",
+        "reason": "Ziegler's Ieremias volume in the Göttingen series was published in 1957, which appears correct, but the full title and contents listing should be verified."
+      },
+      {
+        "claim": "Peshitta Jeremiah ... c. 2nd-3rd century CE",
+        "risk": "MEDIUM",
+        "reason": "Peshitta OT dating is debated; commonly placed 1st-2nd century CE for some books. The dating is plausible but presented with more confidence than the evidence supports."
+      }
+    ],
+    "safe_claims": [
+      "Two major editions circulated in antiquity: a shorter Hebrew text and a longer expanded Hebrew text",
+      "differing by approximately one-eighth of the content",
+      "The scroll dictated by Jeremiah to Baruch and burned by King Jehoiakim (Jer 36)",
+      "Leningrad Codex 1008 CE serving as base text for BHS",
+      "Aleppo Codex c. 920 CE vocalized by Aaron ben Asher",
+      "Jerome's Vulgate translation from Hebrew representing MT tradition",
+      "Old Latin versions based on the LXX",
+      "Targum Jonathan as Aramaic translation of the Prophets"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.412597+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

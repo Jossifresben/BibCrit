@@ -1,0 +1,258 @@
+{
+  "reference": "Leviticus 25",
+  "subject": "Jubilee and Sabbatical year cycle numerics (7-year sabbaticals, 49/50-year jubilee, debt release, land valuation, redemption periods)",
+  "figures": [
+    {
+      "name": "Sabbatical year cycle (shemitah period in years)",
+      "mt_value": 7,
+      "lxx_value": 7,
+      "sp_value": 7,
+      "divergence_type": "none",
+      "note": "All three traditions agree on the 7-year sabbatical cycle (Lev 25:3-4); no textual variation documented in critical apparatuses."
+    },
+    {
+      "name": "Number of sabbatical cycles before Jubilee (Lev 25:8)",
+      "mt_value": 7,
+      "lxx_value": 7,
+      "sp_value": 7,
+      "divergence_type": "none",
+      "note": "Seven weeks of years (7x7=49) is universally attested across all traditions with no numeric variant."
+    },
+    {
+      "name": "Total years in Jubilee count: 7x7 product (Lev 25:8)",
+      "mt_value": 49,
+      "lxx_value": 49,
+      "sp_value": 49,
+      "divergence_type": "none",
+      "note": "The arithmetic product 49 is consistently rendered across MT, LXX, and SP without divergence."
+    },
+    {
+      "name": "Jubilee year number (Lev 25:10-11)",
+      "mt_value": 50,
+      "lxx_value": 50,
+      "sp_value": 50,
+      "divergence_type": "none",
+      "note": "The fiftieth year designation for the Jubilee is unanimous across all three textual traditions."
+    },
+    {
+      "name": "Years of agricultural labor before sabbath rest (Lev 25:3)",
+      "mt_value": 6,
+      "lxx_value": 6,
+      "sp_value": 6,
+      "divergence_type": "none",
+      "note": "Six years of sowing and harvesting before the seventh-year rest is uniformly attested."
+    },
+    {
+      "name": "Years remaining after sale for land valuation multiplier (Lev 25:15-16, principle)",
+      "mt_value": 0,
+      "lxx_value": 0,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "The valuation principle is relative and formulaic rather than a fixed number; all traditions express it proportionally with no numeric divergence in the underlying figures."
+    },
+    {
+      "name": "Redemption window for urban house (years, Lev 25:29-30)",
+      "mt_value": 1,
+      "lxx_value": 1,
+      "sp_value": 1,
+      "divergence_type": "none",
+      "note": "The one-year full redemption period for a house within a walled city is consistent across all three traditions."
+    },
+    {
+      "name": "Year of release for Hebrew slave/servant (Lev 25:40, service until Jubilee)",
+      "mt_value": 50,
+      "lxx_value": 50,
+      "sp_value": 50,
+      "divergence_type": "none",
+      "note": "The Jubilee year as the release point for indentured Israelite servants is unanimously attested with no numeric variation."
+    }
+  ],
+  "systematic_analysis": {
+    "is_systematic": false,
+    "pattern": "Leviticus 25 presents a striking and textually significant negative result: unlike the antediluvian patriarchal chronologies of Genesis 5 and 11, which show systematic, mathematically patterned divergences of +100 years (first-son birth age) between MT, LXX, and SP, Leviticus 25 exhibits zero numeric divergence across all three textual traditions in its core calendrical and economic figures (7, 49, 50, 6, 1). The absence of variation is itself a datum of text-critical importance, suggesting these ritual-legal numbers were transmitted with exceptional fidelity, possibly because their liturgical and juridical function made alteration both detectable and consequential.",
+    "pattern_plain": "All three ancient versions of Leviticus 25 agree perfectly on every number — the 7-year sabbatical, the 49-year count, the 50-year Jubilee, and so on. Unlike the famous disagreements over the ages of ancient patriarchs, these legal numbers were apparently never changed by any copyist tradition."
+  },
+  "theories": [
+    {
+      "name": "Scribal Error",
+      "slug": "scribal_error",
+      "score": 0.05,
+      "confidence": 0.85,
+      "summary": "The scribal error hypothesis posits that numerical divergences arise from careless or mechanical copying mistakes, typically involving confusion of similar Hebrew letter-numerals (e.g., dalet/resh confusion). In Leviticus 25, this theory finds essentially no application: the numbers involved (7, 49, 50, 6, 1) are small, unambiguous, and reinforced by internal arithmetic relationships (7x7=49, 49+1=50) that would expose any copying error immediately. The complete absence of any numeric variant in the critical apparatus of BHS, the Göttingen LXX, or the SP strongly argues that scribal error played no role here.",
+      "summary_plain": "Copying mistakes cannot explain anything in Leviticus 25 because there are no numerical differences to explain — the numbers match perfectly in all versions.",
+      "supporting_evidence": [
+        "The theoretical possibility that letter-numeral confusion (ז for ו, etc.) could corrupt small numbers exists but left no trace in any extant manuscript.",
+        "The internal arithmetic checks (7×7=49; 49+1=50) embedded within the passage itself would expose any scribal error, creating a self-correcting textual environment.",
+        "No apparatus note in BHS, Kennicott, de Rossi, or the Göttingen LXX critical edition records a numeric variant for the core figures of Leviticus 25."
+      ],
+      "weaknesses": [
+        "The theory is not falsified — it simply has no evidence to operate on in this passage.",
+        "Absence of error could reflect later correction rather than error-free transmission, though no corrected variants have been documented."
+      ]
+    },
+    {
+      "name": "MT Deflation",
+      "slug": "mt_deflation",
+      "score": 0.03,
+      "confidence": 0.8,
+      "summary": "The MT deflation hypothesis, associated with scholars such as Skinner, Holladay, and more recently Jeremy Sexton, proposes that the Masoretic tradition systematically reduced certain numerals for theological or calendrical reasons, most visibly in the Genesis 5 and 11 patriarchal genealogies. Applied to Leviticus 25, this theory has no evidentiary basis: the MT values for the Jubilee cycle (7, 49, 50) are identical to the LXX and SP values, offering no deflation signal. The structural centrality of the number 50 to ancient Near Eastern sabbatical and jubilee traditions (attested in Mesopotamian mīšarum and andurārum edicts) further constrains any motivation for reduction.",
+      "summary_plain": "The theory that Jewish scribes deliberately lowered numbers does not apply here because the MT's numbers are exactly the same as in the other ancient versions.",
+      "supporting_evidence": [
+        "Sexton's (2015, JETS) deflation model operates specifically on antediluvian and postdiluvian genealogical numbers, not on legal-calendrical ordinances.",
+        "The Jubilee's 50-year structure is independently corroborated by ancient Near Eastern parallels (Babylonian šemittah equivalents), suggesting these numbers were treated as sacrosanct.",
+        "No Masoretic manuscript tradition is known to have transmitted an alternative jubilee period (e.g., 49 years as the jubilee rather than the count toward it)."
+      ],
+      "weaknesses": [
+        "The theory's entire evidentiary base lies in genealogical numbers, not cultic law, so its inapplicability to Leviticus 25 is entirely expected.",
+        "The absence of MT deflation here cannot be used to argue against MT deflation elsewhere; different categories of number may have been treated differently."
+      ]
+    },
+    {
+      "name": "LXX Inflation",
+      "slug": "lxx_inflation",
+      "score": 0.03,
+      "confidence": 0.8,
+      "summary": "The LXX inflation hypothesis, associated with scholars like R. W. Klein and Cassuto's critics, holds that the Greek translators or their Vorlage inflated certain patriarchal ages to extend antediluvian chronology, often by adding 100 years to first-son birth ages. In Leviticus 25, this hypothesis finds no purchase: the Greek text of Leviticus (translated by a different hand than Genesis within the LXX corpus) preserves the same numerical values as the MT. The juridical and economic precision required by the Jubilee laws would have made any inflation immediately contradictory and practically unworkable for communities using LXX as a legal text.",
+      "summary_plain": "The theory that Greek translators inflated numbers does not apply to Leviticus 25 because the Greek version has exactly the same numbers as the Hebrew.",
+      "supporting_evidence": [
+        "The LXX Leviticus (part of the Pentateuchal translation attributable to a distinct translator from Genesis) shows no pattern of numeric alteration in legal material.",
+        "Jubilee numerics serve active liturgical-legal functions in Second Temple Judaism (cf. Book of Jubilees, 11QMelchizedek), making inflation practically disruptive.",
+        "Joseph Ziegler's Göttingen critical text of LXX Leviticus records no numeric variants for chapter 25 figures."
+      ],
+      "weaknesses": [
+        "The LXX inflation hypothesis, even where evidenced in Genesis, remains contested; its inapplicability to Leviticus 25 is unsurprising given the different translator and text type.",
+        "The uniformity of LXX Leviticus numbers might reflect dependence on a common Hebrew Vorlage rather than independent restraint by the translator."
+      ]
+    },
+    {
+      "name": "SP Harmonization",
+      "slug": "sp_harmonization",
+      "score": 0.05,
+      "confidence": 0.75,
+      "summary": "The SP harmonization hypothesis holds that the Samaritan Pentateuch systematically smoothed numerical and theological tensions, particularly by aligning divergent figures or inserting harmonizing readings drawn from parallel passages (e.g., adding Deuteronomy's version of commandments into Exodus). In Leviticus 25, this theory is inapplicable because the SP preserves identical values to MT and LXX; the Jubilee numbers (7, 49, 50) appear in no parallel Pentateuchal passage that could serve as a harmonization source. The internal consistency of the Jubilee arithmetic itself may have insulated these numbers from SP's harmonizing tendency.",
+      "summary_plain": "The Samaritan Pentateuch sometimes changed texts to smooth out contradictions, but it left the numbers in Leviticus 25 exactly as they were.",
+      "supporting_evidence": [
+        "The SP's known harmonizations are primarily narrative and legal expansions, not numeric alterations of clearly defined cultic calendar numbers.",
+        "Leviticus 25 has no parallel in Deuteronomy that the SP could have used as a harmonization source for these specific numbers.",
+        "August von Gall's critical edition of the SP records no numeric variants for the Jubilee figures of Leviticus 25."
+      ],
+      "weaknesses": [
+        "SP harmonization in Leviticus is less studied than in Genesis-Exodus; the absence of variants may partly reflect gaps in SP manuscript scholarship.",
+        "The theory cannot explain a null result: harmonization theories are falsified by variants, not by their absence."
+      ]
+    },
+    {
+      "name": "Independent Traditions",
+      "slug": "independent_traditions",
+      "score": 0.72,
+      "confidence": 0.78,
+      "summary": "The independent traditions hypothesis, associated with Cross, Tov, and the multi-recension model of the Pentateuch's textual history, posits that MT, LXX, and SP descend from distinguishable textual families (Babylonian, Alexandrian, and Palestinian respectively) that occasionally preserved different numerical values. The complete agreement of all three traditions in Leviticus 25 is strong evidence that the Jubilee cycle numerics predate the divergence of these textual families — i.e., these numbers were fixed in the common ancestor of all three traditions and were never a site of variation. This is consistent with the hypothesis that the Jubilee institution's deep antiquity and cultic authority stabilized its numerical expression before the text families diverged circa 400–200 BCE.",
+      "summary_plain": "Even though ancient Jewish communities in different regions had slightly different versions of the Bible, they all agreed on the Jubilee numbers, suggesting these figures were fixed very early and considered too sacred to alter.",
+      "supporting_evidence": [
+        "The three textual families diverge most dramatically in narrative genealogical material (Genesis 5, 11) and in sections with expanded readings (Exodus 35-40 in LXX); their agreement in Leviticus 25 is consistent with early fixation of cultic law.",
+        "The Dead Sea Scrolls (4QLeviticus fragments) corroborate the MT readings for Leviticus 25 numbers, extending textual uniformity back to the 2nd century BCE.",
+        "The Book of Jubilees (2nd century BCE) presupposes the same 49+1 jubilee structure, indicating the number was a shared datum across ideologically distinct Jewish communities.",
+        "11QMelchizedek from Qumran interprets the Jubilee year as the 50th year, confirming LXX-MT-SP unanimity was the universal textual reality at Qumran.",
+        "Emanuel Tov's text-critical analysis assigns Leviticus to a zone of relative textual stability compared to the expansionistic and harmonizing zones of Exodus and Numbers."
+      ],
+      "weaknesses": [
+        "Agreement among all three traditions could theoretically reflect convergent correction rather than original unanimity, though no evidence for such correction exists.",
+        "The independent traditions model better explains divergence than agreement; the null result here is consistent with but not uniquely predicted by this theory.",
+        "The internal arithmetic relationships (7×7=49; 49+1=50) may have stabilized the text independently of any tradition-level decision, making it impossible to use these numbers to distinguish textual families."
+      ]
+    },
+    {
+      "name": "Theological Motivation",
+      "slug": "theological_motivation",
+      "score": 0.15,
+      "confidence": 0.65,
+      "summary": "Theological motivation as an explanatory factor for numeric divergence operates where different communities had competing ideological interests in a number's value (e.g., MT's 480 years in 1 Kgs 6:1 as a symbolic generation count). In Leviticus 25, the jubilee cycle's numbers carried intense theological freight — the 50-year jubilee was associated with eschatological liberation (Isa 61:1-2, Luke 4:18-19), messianic release (11QMelchizedek), and Priestly theology's conception of sacred time. This theological weight, paradoxically, likely inhibited rather than motivated divergence: altering the jubilee number would have constituted an attack on a foundational sacral institution, giving all communities strong motivation to preserve rather than change it. The one area of potential theological-motivated divergence — the 49 vs. 50 year question debated internally within Jewish exegesis — never manifested as a textual variant.",
+      "summary_plain": "Although the Jubilee year was deeply meaningful religiously and politically, this religious importance likely caused all groups to preserve the numbers carefully rather than change them.",
+      "supporting_evidence": [
+        "The theological stakes of the jubilee (land redistribution, slave release, economic reset) would make any numeric alteration immediately noticed and resisted by affected communities.",
+        "Second Temple exegetical debates about whether the jubilee was the 49th or 50th year (attested in rabbinic literature and at Qumran) were resolved through interpretation, not textual alteration.",
+        "The Priestly Holiness Code context of Leviticus 25 is one of the most theologically stable sections of the Pentateuch across all textual traditions per Tov's statistical analysis of variant density."
+      ],
+      "weaknesses": [
+        "Theological motivation typically explains why numbers were changed, not why they were preserved; the theory is being applied inversely here.",
+        "The argument that high theological stakes prevented change is unfalsifiable — any unchanging theologically significant number could be explained this way.",
+        "Internal Jewish debate about the 49 vs. 50 year jubilee did occasionally appear in non-canonical retellings (e.g., Temple Scroll), suggesting theological motivation was not entirely absent from jubilee numerics, even if it left no trace in MT/LXX/SP."
+      ]
+    }
+  ],
+  "overall_assessment": "Leviticus 25 presents the text critic with a paradox of consensus: in a chapter whose numbers carry perhaps more theological, economic, and eschatological weight than any other set of figures in the Pentateuch, all three major textual traditions — Masoretic, Septuagintal, and Samaritan — are in complete numerical agreement. The absence of divergence is itself the primary finding and demands explanation. The most defensible scholarly synthesis is that the Jubilee cycle's numbers (7, 49, 50) were fixed in the common ancestor of the three textual families before their divergence, a fixation reinforced by the numbers' internal arithmetic transparency and their active liturgical-legal use in multiple Second Temple communities. This contrasts sharply with the Genesis 5 and 11 patriarchal chronologies, where the numbers served primarily historiographical and theological functions and were systematically altered within specific tradent communities. The evidence supports the independent traditions model as the primary explanatory framework, with theological motivation functioning as a secondary preservation mechanism, while theories of active textual manipulation (MT deflation, LXX inflation, SP harmonization) are entirely inapplicable to this passage.",
+  "overall_plain": "All ancient copies of Leviticus 25 agree on every number — the 7-year rest cycle, the 49-year count, and the 50-year Jubilee — which is actually unusual compared to other parts of the Bible. Scholars believe these numbers were agreed upon very early in the text's history and were treated as too important to religious and economic life to ever change.",
+  "bibcrit_assessment": {
+    "title": "Perfect Numeric Unanimity Reveals Pre-Divergence Fixation",
+    "reasoning": "The complete absence of numerical divergence in Leviticus 25 across MT, LXX, and SP is a methodologically significant negative result that, when placed in contrast with the systematic divergences of Genesis 5 and 11, reveals a fundamental distinction in how ancient tradents treated different categories of number: genealogical-chronological figures were malleable and subject to tradent-community adjustment, while cultic-legal-calendrical figures were fixed early and treated as inviolable. This finding supports Tov's model of differentiated textual zones within the Pentateuch and suggests that the criterion of 'active institutional use' — whether a number governed ongoing religious practice — may be a stronger predictor of textual stability than theological importance alone. The Leviticus 25 evidence thus provides a control case for evaluating divergence theories, isolating those theories to the genealogical materials where they properly belong.",
+    "plain": "The fact that nobody ever changed these numbers, even over centuries of copying, tells us something important: numbers that governed real religious practices in people's daily lives were treated as untouchable, while numbers in old genealogies were more open to revision.",
+    "confidence": 0.82
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-04-20T20:26:35.512803",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v3",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The core textual claim (no numeric divergence in Lev 25 across MT/LXX/SP) is accurate, but several supporting scholarly attributions and parallels are imprecise, mislabeled, or potentially fabricated.",
+    "flagged_claims": [
+      {
+        "claim": "Mesopotamian mīšarum and andurārum edicts ... attested",
+        "risk": "MEDIUM",
+        "reason": "While mīšarum/andurārum edicts are real, the claim that they attest a '50-year structure' is incorrect — these were irregular royal proclamations, not 50-year cycles. The parallel is overstated."
+      },
+      {
+        "claim": "Babylonian šemittah equivalents",
+        "risk": "HIGH",
+        "reason": "'Šemittah' is a Hebrew term (שמיטה), not Babylonian. There is no Babylonian institution by this name; this appears to be a fabricated or confused parallel."
+      },
+      {
+        "claim": "Sexton's (2015, JETS) deflation model",
+        "risk": "HIGH",
+        "reason": "Jeremy Sexton's article on genealogies appeared in JETS in 2015 ('Who Was Born When Enosh Was 90?'), but the citation as a 'deflation model' is a loose characterization; readers may not be able to verify the specific claim attributed."
+      },
+      {
+        "claim": "LXX Leviticus (part of the Pentateuchal translation attributable to a distinct translator from Genesis)",
+        "risk": "MEDIUM",
+        "reason": "While multiple translators for the LXX Pentateuch is a defensible scholarly view (cf. Wevers), stating it as established fact overstates consensus."
+      },
+      {
+        "claim": "MT, LXX, and SP descend from distinguishable textual families (Babylonian, Alexandrian, and Palestinian respectively)",
+        "risk": "MEDIUM",
+        "reason": "This is the older Cross local-text theory; Tov has actually critiqued and modified this model. Conflating Cross and Tov under one 'multi-recension model' misrepresents the scholarly landscape."
+      },
+      {
+        "claim": "text families diverged circa 400–200 BCE",
+        "risk": "MEDIUM",
+        "reason": "Specific dating of textual family divergence is contested and speculative; presenting this range as established is overconfident."
+      },
+      {
+        "claim": "No apparatus note in BHS, Kennicott, de Rossi, or the Göttingen LXX critical edition records a numeric variant",
+        "risk": "MEDIUM",
+        "reason": "There is no Göttingen LXX volume for Leviticus by Ziegler — Wevers produced the Göttingen Leviticus (1986). The attribution to Ziegler later in the analysis is incorrect."
+      },
+      {
+        "claim": "Joseph Ziegler's Göttingen critical text of LXX Leviticus",
+        "risk": "HIGH",
+        "reason": "Factually incorrect: the Göttingen critical edition of Leviticus was edited by John William Wevers (1986), not Ziegler. Ziegler edited the Prophets."
+      },
+      {
+        "claim": "August von Gall's critical edition of the SP records no numeric variants",
+        "risk": "MEDIUM",
+        "reason": "Von Gall's edition (1914-18) exists but is dated and does not include all later-discovered SP manuscripts; the claim of 'no variants' based on it is verifiable but should be qualified."
+      }
+    ],
+    "safe_claims": [
+      "All three traditions agree on the 7-year sabbatical cycle (Lev 25:3-4)",
+      "Seven weeks of years (7x7=49) is universally attested",
+      "The fiftieth year designation for the Jubilee is unanimous",
+      "Six years of sowing and harvesting before the seventh-year rest",
+      "The one-year full redemption period for a house within a walled city",
+      "The Jubilee year as the release point for indentured Israelite servants",
+      "Leviticus 25 exhibits zero numeric divergence across MT, LXX, and SP in its core figures"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.637132+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

@@ -99,5 +99,65 @@
   "reference": "Psalm 136",
   "cached_at": "2026-04-17T08:43:41.765235",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The structural analysis is plausible and largely grounded in observable textual features, but several specific scholarly citations include page numbers and claims that cannot be reliably verified and may be fabricated.",
+    "flagged_claims": [
+      {
+        "claim": "Dorsey (Literary Structure of the OT, pp. 192-193) identifies concentric structures in Psalms based on refrain analysis",
+        "risk": "HIGH",
+        "reason": "Dorsey's 'Literary Structure of the Old Testament' famously omits the Psalms (he treats narrative and prophetic books primarily); a citation locating Psalm 136 analysis there is likely fabricated."
+      },
+      {
+        "claim": "Lund (Chiasmus in the New Testament, 1942, pp. 40-41) establishes that refrains function as structural markers",
+        "risk": "HIGH",
+        "reason": "Lund's work focuses on NT chiasmus; specific page citations for OT refrain function are unverifiable and the connection appears constructed."
+      },
+      {
+        "claim": "Walsh (Style and Structure, 2001, pp. 8-10)",
+        "risk": "MEDIUM",
+        "reason": "Jerome Walsh's 'Style and Structure in Biblical Hebrew Narrative' was published 2001, but the specific page reference for these criteria is unverified and Walsh focuses on narrative, not Psalms."
+      },
+      {
+        "claim": "Michael Goulder (The Psalms of the Sons of Korah, 1982, p. 245) identifies the wilderness verse as central to the psalm's architecture",
+        "risk": "HIGH",
+        "reason": "Psalm 136 is not a Korahite psalm and would fall outside Goulder's 'Sons of Korah' volume; this citation is likely misattributed or fabricated."
+      },
+      {
+        "claim": "Leslie Allen (Psalms 101-150, WBC, 2002)",
+        "risk": "MEDIUM",
+        "reason": "Allen's WBC Psalms 101-150 first edition is 1983; revised edition is 2002. Citation is plausible but the claim about what Allen does/does not develop is unverified."
+      },
+      {
+        "claim": "Mitchell Dahood (Psalms III, AB, 1970, pp. 278-280)",
+        "risk": "MEDIUM",
+        "reason": "Dahood Psalms III (AB) is correctly dated 1970, but the specific page range and characterization of his observations on Ps 136 needs verification."
+      },
+      {
+        "claim": "lexical link through זָכַר 'remember' motif",
+        "risk": "MEDIUM",
+        "reason": "זָכַר appears in B' (v.23) but not in B (vv.4-9); claiming this as a 'lexical link' between the panels is misleading since the verb does not occur in B."
+      },
+      {
+        "claim": "B' verses 136:23-25 versus standard division",
+        "risk": "MEDIUM",
+        "reason": "The structural division placing v.26 alone as A' and treating v.25 ('gives food to all flesh') as part of B' is a defensible but not universally accepted boundary; some scholars treat vv.23-26 as a unit."
+      }
+    ],
+    "safe_claims": [
+      "Uniform refrain 'for his hesed endures forever' runs through all 26 verses",
+      "Verse 1 opens with הוֹדוּ לַיהוָה כִּי־טוֹב",
+      "Verse 26 opens with הוֹדוּ לְאֵל הַשָּׁמָיִם, forming an inclusio with v.1",
+      "Verses 4-9 describe creation (wonders, heavens, earth, sun, moon, stars)",
+      "Verses 10-15 recount the Exodus (firstborn, Red Sea, Pharaoh)",
+      "Verse 16 references YHWH leading his people through the wilderness",
+      "Verses 17-22 describe defeat of Sihon and Og and the land grant",
+      "The participle לְמַכֵּה appears in both v.10 (Egypt) and v.17 (kings), forming a genuine lexical parallel",
+      "The psalm moves through a creation–exodus–conquest historical sequence"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.628895+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

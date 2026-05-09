@@ -299,5 +299,59 @@
   "reference": "Exodus 19:1-20:21",
   "cached_at": "2026-04-17T08:45:24.310551",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis applies standard classic Documentary Hypothesis categories competently, but several specific source assignments and claims about 'characteristic' features overstate scholarly consensus and reflect contested or idealized reconstructions.",
+    "flagged_claims": [
+      {
+        "claim": "19:1-2a ... source: P ... confidence 0.85",
+        "risk": "MEDIUM",
+        "reason": "While the dating formula is widely assigned to P, attributing this with 0.85 confidence overstates consensus; some scholars (e.g., Noth) treat the itinerary differently, and the 'doublet' with 19:2b is debated."
+      },
+      {
+        "claim": "19:18 ... source: J",
+        "risk": "MEDIUM",
+        "reason": "The J/E division within Exodus 19:16-19 is one of the most disputed in source criticism; assigning v.18 specifically to J with 0.8 confidence is more confident than the evidence allows. Some classic analyses (e.g., Wellhausen, Friedman) differ on these verse boundaries."
+      },
+      {
+        "claim": "The Decalogue is attributed to E by most documentary scholars",
+        "risk": "HIGH",
+        "reason": "This overstates consensus. The source attribution of the Decalogue is highly contested; many scholars regard it as a later insertion (Dtr or independent) rather than original E material. Noth, for example, treated it as secondary."
+      },
+      {
+        "claim": "the people 'trust' Moses ... reflects E's concern with prophetic authentication",
+        "risk": "MEDIUM",
+        "reason": "The characterization of E as concerned with 'prophetic authentication' is a generalization from older scholarship (von Rad, Jenks) that is not universally accepted and risks circular reasoning."
+      },
+      {
+        "claim": "anthropomorphic language ('YHWH descended') and fire imagery are characteristic J motifs",
+        "risk": "MEDIUM",
+        "reason": "Fire theophany is not exclusively J; it appears in materials assigned to E and Deuteronomic tradition as well. The 'characteristic J' framing oversimplifies."
+      },
+      {
+        "claim": "doublet_with: Deuteronomy 5:6-21",
+        "risk": "MEDIUM",
+        "reason": "Calling Deut 5 a 'doublet' within the documentary framework conflates Pentateuchal source criticism with the relationship between Exodus and Deuteronomy, which is a separate redactional question."
+      },
+      {
+        "claim": "The temporal marker connects to P's chronological framework beginning in Exodus 12:2",
+        "risk": "MEDIUM",
+        "reason": "Plausible but presented as fact; the precise scope of P's chronological system is reconstructed and debated."
+      }
+    ],
+    "safe_claims": [
+      "Exodus 19:3 uses Elohim while surrounding verses use YHWH",
+      "20:1 introduces the Decalogue with 'Elohim spoke all these words'",
+      "19:16-17 emphasizes thunder, lightning, thick cloud, and trumpet",
+      "19:18 describes YHWH descending in fire with smoke like a kiln",
+      "19:14-15 includes the instruction not to go near a woman",
+      "20:18-21 has the people standing far off and asking Moses to mediate",
+      "The Sabbath rationale differs between Exodus 20 and Deuteronomy 5",
+      "19:2 contains an apparent double notice of arrival/encampment"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.550377+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

@@ -166,5 +166,78 @@
   "reference": "Job",
   "cached_at": "2026-03-31T00:08:02.671281",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The overall textual observations about LXX Job are well-grounded in mainstream scholarship, but several specific citations appear fabricated or misattributed and some textual claims are imprecise.",
+    "flagged_claims": [
+      {
+        "claim": "Van der Kooij, The Oracle of Tyre, pp. 89-91",
+        "risk": "HIGH",
+        "reason": "Van der Kooij's 'The Oracle of Tyre' (concerning LXX Isaiah 23) is not a relevant source for Targum Job 1:6 satanology; this citation appears fabricated or misapplied."
+      },
+      {
+        "claim": "Schaper, Eschatology in the Greek Psalter, pp. 45-47",
+        "risk": "HIGH",
+        "reason": "Schaper's monograph specifically concerns the Greek Psalter, not LXX Job 7:20; citing it for an anthropomorphism issue in Job is implausible and likely fabricated."
+      },
+      {
+        "claim": "Schaper, Eschatology in the Greek Psalter, pp. 119-122",
+        "risk": "HIGH",
+        "reason": "Same source misapplied; Schaper does not provide primary discussion of LXX Job 42:17's resurrection addition."
+      },
+      {
+        "claim": "Cox, De Exegetische Methode van de Septuaginta-Vertaling, pp. 112-115",
+        "risk": "HIGH",
+        "reason": "Claude Cox writes on LXX Job in English; this Dutch-titled work does not correspond to a known publication by Cox and appears fabricated."
+      },
+      {
+        "claim": "Heater, A Septuagint Translation Technique in the Book of Job",
+        "risk": "MEDIUM",
+        "reason": "Heater's actual title is 'A Septuagint Translation Technique in the Book of Job' (CBQMS 11, 1982) — title is approximately correct, but the specific page citations should be verified as they may not match the actual content."
+      },
+      {
+        "claim": "Gard, The Exegetical Method of the Greek Translator of the Book of Job",
+        "risk": "MEDIUM",
+        "reason": "Gard's 1952 SBL monograph exists, but specific page citations (pp. 28-32, 51-54) should be independently verified."
+      },
+      {
+        "claim": "LXX is notably shorter (approximately one-sixth briefer than MT)",
+        "risk": "MEDIUM",
+        "reason": "Standard scholarship typically describes the OG Job as roughly one-sixth (about 17%) shorter, but estimates range from 1/6 to 1/4 depending on what one counts; the figure is reasonable but stated with false precision."
+      },
+      {
+        "claim": "removal of the definite article from 'the satan' (adversary/accuser as role) creates Satan as a demonic proper name",
+        "risk": "MEDIUM",
+        "reason": "Targum Job's treatment of ha-satan varies by recension (11QtgJob vs. later Targum Job); the claim oversimplifies and the specific rendering 'angels of God came to stand in judgment' should be verified against an actual Targum Job edition."
+      },
+      {
+        "claim": "Job 9:22b-24 ... LXX omits ... entirely, jumping from 'I say' directly to verse 25",
+        "risk": "MEDIUM",
+        "reason": "OG Job does shorten this section, but the claim of complete omission of vv. 22b-24 needs verification; the Old Greek does render some content here, though abbreviated."
+      },
+      {
+        "claim": "The LXX's 'delivered into his hands' suggests future divine judgment rather than present divine patronage",
+        "risk": "MEDIUM",
+        "reason": "Job 12:6 in LXX is textually difficult and the proposed semantic shift may be over-interpreted; the Greek does not clearly convey 'future judgment' as claimed."
+      },
+      {
+        "claim": "Targum identifies Job as a contemporary of Jacob",
+        "risk": "MEDIUM",
+        "reason": "The contemporary-of-Jacob identification is rabbinic (b. Bava Batra 15a-b offers multiple datings) but is not unambiguously the Targum Job position; conflation of Targum with broader rabbinic tradition."
+      }
+    ],
+    "safe_claims": [
+      "OG/LXX Job is significantly shorter than MT Job",
+      "LXX Job 42:17 contains an additional epilogue mentioning Job's resurrection and a Syriac/Edomite genealogy",
+      "Targum Job renders 'sons of God' (bene ha-elohim) as 'angels'",
+      "MT Job 9:22-24 contains Job's accusation that God destroys both blameless and wicked",
+      "The pattern of LXX Job softening anthropomorphic and theologically scandalous content is a well-established scholarly observation (Gard, Orlinsky, Heater, Cox)",
+      "MT Job 7:20 uses target/burden imagery against God",
+      "MT Job 40:4-5 contains Job's hand-on-mouth gesture"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.654536+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

@@ -1,0 +1,224 @@
+{
+  "reference": "Genesis 1:26",
+  "total_citations_found": 8,
+  "period_summary": "Citations cluster heavily in the 2nd through 4th centuries CE, driven almost entirely by the Trinitarian and anthropological controversies in which Gen 1:26 ('Let us make man in our image') served as a premier proof-text; this theological pressure ensured the verse was cited more frequently than almost any other Genesis passage, providing unusually rich evidence for its early textual transmission.",
+  "citations": [
+    {
+      "father": "Justin Martyr",
+      "dates_ce": "c. 100–165",
+      "region": "Syria/Rome",
+      "work": "Dialogue with Trypho",
+      "chapter_section": "ch. 62",
+      "cited_text": "ποιήσωμεν ἄνθρωπον κατ' εἰκόνα ἡμετέραν καὶ καθ' ὁμοίωσιν",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.82,
+      "text_form_note": "Justin's citation reproduces the LXX plural cohortative ποιήσωμεν and uses the prepositional phrases κατ' εἰκόνα and καθ' ὁμοίωσιν that match the standard LXX rendering; no Hebraizing variants are detectable, and the word order is consistent with the LXX Göttingen edition (Wevers).",
+      "theological_use": "Justin employs the divine plural 'Let us make' as direct scriptural proof that God spoke to his pre-existent Logos-Son at creation, arguing against Trypho that the plural cannot refer to angels; this is one of the earliest Trinitarian/Logos readings of the text.",
+      "transmission_implication": "Justin's citation, made in Rome with likely Syrian formation, confirms that the standard LXX rendering was already the dominant Greek text form in mid-2nd century Diaspora apologetic contexts."
+    },
+    {
+      "father": "Irenaeus of Lyons",
+      "dates_ce": "c. 130–202",
+      "region": "Other",
+      "work": "Adversus Haereses",
+      "chapter_section": "Book V, ch. 1.3; also Book IV, Pref. 4",
+      "cited_text": "faciamus hominem ad imaginem et similitudinem nostram (Latin); in Greek fragments: ποιήσωμεν ἄνθρωπον κατ' εἰκόνα καὶ ὁμοίωσιν ἡμῶν",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.78,
+      "text_form_note": "Irenaeus's Old Latin rendering faciamus/ad imaginem et similitudinem is a direct calque of the LXX and matches the Vetus Latina tradition dependent on it; the Greek fragments align with the Göttingen LXX. The possessive pronoun position (ἡμῶν postposited rather than ἡμετέραν) may reflect a slightly variant LXX manuscript tradition.",
+      "theological_use": "Irenaeus famously distinguishes εἰκών (imago, the bodily or rational likeness already granted) from ὁμοίωσις (similitudo, the moral/spiritual perfection still to be attained), a distinction foundational to his recapitulation theology that depends critically on the LXX's two-term formula.",
+      "transmission_implication": "The convergence of Irenaeus's Old Latin and Greek fragments with the LXX tradition confirms that the Western church received Gen 1:26 via Greek-LXX channels and that the Vetus Latina was translating from a LXX-type Vorlage by the late 2nd century."
+    },
+    {
+      "father": "Clement of Alexandria",
+      "dates_ce": "c. 150–215",
+      "region": "Alexandria",
+      "work": "Protrepticus; Stromateis",
+      "chapter_section": "Protr. 10.98.4; Strom. II.19.102",
+      "cited_text": "ποιήσωμεν ἄνθρωπον κατ' εἰκόνα ἡμετέραν καὶ καθ' ὁμοίωσιν",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.85,
+      "text_form_note": "Clement's citations closely reproduce the standard Alexandrian LXX text form including the possessive adjective ἡμετέραν, which distinguishes his text from those using the genitive ἡμῶν; this is consistent with the Alexandrian LXX manuscript tradition and suggests direct access to a high-quality LXX codex.",
+      "theological_use": "Clement uses the image-and-likeness formula to argue that the Logos is the archetypal Image of God and that human rationality constitutes the divine image; the likeness is then the telos to be achieved through philosophical and spiritual progress, linking Platonic paideia with Scripture.",
+      "transmission_implication": "Clement's consistent, stable LXX citations suggest that in Alexandria the text of Gen 1:26 was well-settled by c. 200 CE and that the Alexandrian LXX was the authoritative text even for exegetical precision."
+    },
+    {
+      "father": "Origen of Alexandria",
+      "dates_ce": "c. 185–254",
+      "region": "Alexandria | Caesarea",
+      "work": "De Principiis; Homilies on Genesis; Selecta in Genesim",
+      "chapter_section": "De Princ. I.2.6; Hom. Gen. 1.13; Sel. Gen. PG 12.93",
+      "cited_text": "ποιήσωμεν ἄνθρωπον κατ' εἰκόνα ἡμετέραν καὶ καθ' ὁμοίωσιν; also aware of Hebrew: 'in our image, after our likeness'",
+      "text_form": "mixed",
+      "text_form_confidence": 0.76,
+      "text_form_note": "Origen regularly cites the LXX form but in his Hexaplaric work he explicitly notes the Hebrew and compares Aquila's and Symmachus's renderings of the verse; he is aware that Hebrew uses a single prepositional pattern (בְּצַלְמֵנוּ כִּדְמוּתֵנוּ) and discusses the distinction between εἰκών and ὁμοίωσις while acknowledging the Hebrew does not straightforwardly support the theological weight Greeks placed on it.",
+      "theological_use": "Origen uses the verse to distinguish the Logos as the perfect Image from humans who bear the image derivatively; the distinction of εἰκών and ὁμοίωσις underpins his protological and eschatological theology of the soul's journey back to God.",
+      "transmission_implication": "Origen's bilingual engagement is the most important 3rd-century witness to the gap between the Hebrew and LXX forms of this verse, and his Hexapla represents the first systematic effort to reckon with competing text traditions of Gen 1:26."
+    },
+    {
+      "father": "Tertullian",
+      "dates_ce": "c. 155–240",
+      "region": "Carthage",
+      "work": "Adversus Praxean; De Anima; Adversus Hermogenem",
+      "chapter_section": "Adv. Prax. 12; De An. 22; Adv. Herm. 18",
+      "cited_text": "faciamus hominem ad imaginem et similitudinem nostram",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.8,
+      "text_form_note": "Tertullian's Latin citations follow the Vetus Latina form, which was itself translated from a Greek LXX Vorlage; the two-term structure imaginem/similitudinem faithfully mirrors the LXX's εἰκών/ὁμοίωσις distinction, and Tertullian explicitly exploits the grammatically plural faciamus as proof of the plural divine Persons.",
+      "theological_use": "Tertullian deploys the verse as the cornerstone of his anti-Praxean/anti-Monarchian argument, insisting that the divine plural 'us' and 'our' demonstrates that the Father spoke with the Son and Spirit at creation, thus proving the plurality of divine Persons against Sabellian modalism.",
+      "transmission_implication": "Tertullian's consistent North African Vetus Latina citations confirm that the Latin church in Carthage received Gen 1:26 through a LXX-based translation chain, not directly from a Hebrew Vorlage, by the early 3rd century."
+    },
+    {
+      "father": "Basil of Caesarea",
+      "dates_ce": "c. 330–379",
+      "region": "Caesarea",
+      "work": "Homiliae in Hexaemeron; De Spiritu Sancto",
+      "chapter_section": "Hex. Hom. 9.6; De Sp. S. 16.38",
+      "cited_text": "ποιήσωμεν ἄνθρωπον κατ' εἰκόνα ἡμετέραν καὶ καθ' ὁμοίωσιν",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.88,
+      "text_form_note": "Basil's citation is verbatim with the standard Göttingen LXX text; he uses the adjective ἡμετέραν and maintains both prepositional phrases without variation, and there is no indication of Hexaplaric asterisk-marked material influencing his text.",
+      "theological_use": "Basil argues that the plural 'let us make' demonstrates the unity-in-distinction of Father, Son, and Spirit, and uses the passage against the Pneumatomachi to show the Spirit's co-equal participation in the creative act; the image-likeness distinction also grounds his ascetic theology.",
+      "transmission_implication": "Basil's 4th-century Cappadocian citations show that the LXX text remained stable and unrevised in the post-Hexaplaric Greek church, with no signs of Hebraizing revision infiltrating the main liturgical tradition."
+    },
+    {
+      "father": "Gregory of Nyssa",
+      "dates_ce": "c. 335–394",
+      "region": "Caesarea",
+      "work": "De Opificio Hominis; In Hexaemeron",
+      "chapter_section": "De Op. Hom. 3–4; 16",
+      "cited_text": "ποιήσωμεν ἄνθρωπον κατ' εἰκόνα ἡμετέραν καὶ καθ' ὁμοίωσιν",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.87,
+      "text_form_note": "Gregory's citations reproduce the standard LXX text faithfully; he goes beyond paraphrase to conduct detailed word-by-word exegesis of κατ' εἰκόνα and καθ' ὁμοίωσιν, which presupposes a stable, authoritative text form that he treats as fixed and self-evidently correct.",
+      "theological_use": "Gregory develops one of the most sophisticated patristic theologies of the divine image: the image resides not in the body but in the soul's virtues and the capacity for participation in divine goodness; the distinction of image and likeness drives his theology of epektasis, the soul's endless progress toward God.",
+      "transmission_implication": "Gregory's exegetically dense citations confirm that by the late 4th century in Cappadocia the LXX text of Gen 1:26 was treated as a fixed canonical text requiring no appeal to alternative recensions."
+    },
+    {
+      "father": "Ambrose of Milan",
+      "dates_ce": "c. 340–397",
+      "region": "Other",
+      "work": "Hexameron; De Paradiso; De Noe",
+      "chapter_section": "Hex. VI.7.42–43; De Par. 3.16",
+      "cited_text": "faciamus hominem ad imaginem et similitudinem nostram",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.83,
+      "text_form_note": "Ambrose's Latin consistently follows the Vetus Latina/LXX-derived tradition; though he was capable of consulting Greek texts, his exegetical arguments track the two-term Latin formula imaginem/similitudinem in a way that shows no influence from the Hebrew's different syntactic arrangement or from Jerome's emerging Hebraica Veritas approach.",
+      "theological_use": "Ambrose uses the verse to ground his theology of the soul's God-given dignity, the Trinity's unified creative will, and the ethical imperative of moral renewal; his Trinitarian reading of the divine plural draws directly from Tertullian and Basil's traditions.",
+      "transmission_implication": "Ambrose's late 4th-century Latin citations illustrate the Western church's continued dependence on the LXX-based Vetus Latina tradition even as Jerome was beginning the Hebraica Veritas project that would eventually produce the Vulgate's divergent reading."
+    }
+  ],
+  "text_form_distribution": {
+    "closer_to_mt": 0,
+    "closer_to_lxx": 6,
+    "mixed": 1,
+    "independent": 0,
+    "uncertain": 1
+  },
+  "transmission_synthesis": "The patristic citation history of Genesis 1:26 reveals an overwhelming uniformity: from Justin Martyr in the mid-2nd century through Ambrose in the late 4th, both Greek and Latin fathers consistently attest a text form derived from the LXX tradition, with the two-term εἰκών/ὁμοίωσις and the divine plural ποιήσωμεν standing as fixed, uncontested features. The sole exception is Origen, whose Hexaplaric scholarship represents a conscious, scholarly engagement with the Hebrew and competing Greek recensions (Aquila, Symmachus, Theodotion), but even Origen's liturgical and homiletical citations default to the LXX form, suggesting the Hebrew-MT tradition had no independent liturgical currency in Greek Christianity. The Vetus Latina's faithful calquing of the LXX's two-term structure confirms that the Latin West received the text exclusively through Greek-LXX channels, not through independent contact with Hebrew tradition, a situation that would only begin to change with Jerome's Hebraica Veritas program at the very end of the 4th century. Collectively, these citations imply that the text of Gen 1:26 was not a site of major scribal controversy or competing recensions in early Christianity; its stability was enforced paradoxically by the theological weight placed upon it, since modifying the divine plural or the two-term image-likeness formula would have disrupted crucial Trinitarian and anthropological arguments.",
+  "transmission_synthesis_plain": "Early Christian writers from the 2nd through 4th centuries almost universally quoted Genesis 1:26 from the Greek Old Testament (the Septuagint), not from the Hebrew Bible, and their Latin translations were in turn derived from that Greek text. The verse's enormous importance for arguments about the Trinity and human nature meant that its wording was treated as fixed and authoritative, which actually helped preserve a stable text form across multiple regions and languages. It was not until Jerome's new Latin translation in the late 4th century that Western Christianity began to encounter readings more directly based on the Hebrew original.",
+  "notable_variants": [
+    {
+      "reading": "ποιήσωμεν ἄνθρωπον κατ' εἰκόνα ἡμετέραν (using possessive adjective ἡμετέραν)",
+      "fathers_using_it": [
+        "Justin Martyr",
+        "Clement of Alexandria",
+        "Basil of Caesarea",
+        "Gregory of Nyssa"
+      ],
+      "text_form_alignment": "closer_to_lxx",
+      "significance": "The use of the possessive adjective ἡμετέραν rather than the genitive pronoun ἡμῶν aligns with the Alexandrian LXX manuscript tradition and appears in geographically diverse fathers (Rome, Alexandria, Cappadocia), suggesting this was the dominant and early form of the Greek text; the Göttingen LXX critical apparatus treats ἡμετέραν as the preferred reading, and patristic evidence strongly supports its priority."
+    },
+    {
+      "reading": "faciamus hominem ad imaginem et similitudinem nostram (Latin Vetus Latina form)",
+      "fathers_using_it": [
+        "Irenaeus of Lyons",
+        "Tertullian",
+        "Ambrose of Milan"
+      ],
+      "text_form_alignment": "closer_to_lxx",
+      "significance": "The Latin two-term formula imaginem/similitudinem is a direct calque of the LXX's εἰκών/ὁμοίωσις, and its appearance in North Africa (Tertullian), Gaul/Rome (Irenaeus), and Milan (Ambrose) across three centuries demonstrates that the Vetus Latina translation was made from a single LXX-type Vorlage and then propagated with striking stability; this convergence is valuable evidence that the Vetus Latina of Genesis was not pluriform in this verse the way it was in other books."
+    },
+    {
+      "reading": "Hexaplaric awareness that Hebrew uses a single preposition structure (בְּצַלְמֵנוּ כִּדְמוּתֵנוּ) distinguishable from LXX's two prepositional phrases",
+      "fathers_using_it": [
+        "Origen of Alexandria"
+      ],
+      "text_form_alignment": "mixed",
+      "significance": "Origen's Hexaplaric note that the Hebrew does not straightforwardly separate image from likeness in the way the LXX's two prepositional phrases suggest is the first patristic acknowledgment of a meaningful divergence between the Hebrew Vorlage and the LXX text form of this verse; this has significant implications for textual criticism because the entire Irenaean image/likeness theological distinction rests on a feature that is at best ambiguous in the Hebrew and was introduced or amplified by the LXX translators."
+    }
+  ],
+  "bibcrit_assessment": {
+    "title": "LXX Two-Term Formula Theologically Frozen, Resisting Hebraizing Revision",
+    "reasoning": "The most significant finding of this patristic citation history is that the LXX's two-term εἰκών/ὁμοίωσις rendering of the Hebrew צֶלֶם/דְּמוּת pair became so theologically indispensable—undergirding the Irenaean image-likeness distinction, Trinitarian exegesis of the divine plural, and Cappadocian anthropology—that it effectively immunized Gen 1:26 against the Hebraizing revisions that affected other passages in the same period. Even Origen, who identified the LXX-MT divergence, did not disturb the liturgical and theological form. This represents a case where reception history actively determined textual stability, a phenomenon the Göttingen critical apparatus notes but does not always explain in transmission-historical terms.",
+    "plain": "Early Christian theologians relied so heavily on the specific wording of this verse for their arguments about the Trinity and human nature that the Greek translation's particular phrasing became essentially untouchable—nobody dared change a text so central to their theology, which paradoxically made it one of the most stable passages in the early Christian Bible.",
+    "confidence": 0.84
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-04-19T23:43:07.808310",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v3",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis is broadly accurate in its big-picture claims about LXX dominance and Trinitarian use of Gen 1:26, but several specific citation references and textual details are imprecise or potentially fabricated.",
+    "flagged_claims": [
+      {
+        "claim": "Irenaeus, Adversus Haereses Book V, ch. 1.3; also Book IV, Pref. 4",
+        "risk": "MEDIUM",
+        "reason": "Irenaeus's principal discussion of Gen 1:26 with the image/likeness distinction is typically located in AH V.6.1 and V.16.1-2, not V.1.3. The cited locations may not contain the verse."
+      },
+      {
+        "claim": "Clement... Protr. 10.98.4; Strom. II.19.102",
+        "risk": "MEDIUM",
+        "reason": "These specific section references should be verified; Clement's citation pattern and exact wording (especially 'ποιήσωμεν ἄνθρωπον κατ' εἰκόνα ἡμετέραν') needs checking against critical editions rather than asserted verbatim."
+      },
+      {
+        "claim": "Origen... Sel. Gen. PG 12.93",
+        "risk": "MEDIUM",
+        "reason": "Selecta in Genesim is a catena compilation of disputed authenticity; specific PG column citations for Gen 1:26 commentary need verification, and attributing detailed Hexaplaric awareness specifically to this passage requires care."
+      },
+      {
+        "claim": "Origen... is aware that Hebrew uses a single prepositional pattern (בְּצַלְמֵנוּ כִּדְמוּתֵנוּ) and discusses... acknowledging the Hebrew does not straightforwardly support the theological weight Greeks placed on it",
+        "risk": "HIGH",
+        "reason": "This is a strong interpretive claim about Origen's self-awareness of LXX/Hebrew theological divergence on this verse that is not well-attested in the surviving Hexaplaric fragments for Gen 1:26; risks overstating extant evidence."
+      },
+      {
+        "claim": "Tertullian... Adv. Prax. 12; De An. 22; Adv. Herm. 18",
+        "risk": "MEDIUM",
+        "reason": "Adv. Prax. 12 does discuss the divine plural, but the other references should be verified; De Anima 22 is not a standard locus for Gen 1:26."
+      },
+      {
+        "claim": "Basil... Hex. Hom. 9.6",
+        "risk": "HIGH",
+        "reason": "Basil's authentic Hexaemeron contains 9 homilies, and Homily 9 ends without reaching Gen 1:26; the homilies on the creation of humanity (often numbered 10-11) are of disputed authenticity (sometimes attributed to Gregory of Nyssa). The reference 'Hex. Hom. 9.6' for Gen 1:26 is problematic."
+      },
+      {
+        "claim": "Justin's citation, made in Rome with likely Syrian formation",
+        "risk": "MEDIUM",
+        "reason": "Justin was born in Samaria (Flavia Neapolis), not Syria proper; 'Syrian formation' is imprecise and may mislead about his textual milieu."
+      },
+      {
+        "claim": "the possessive pronoun position (ἡμῶν postposited rather than ἡμετέραν) may reflect a slightly variant LXX manuscript tradition",
+        "risk": "MEDIUM",
+        "reason": "The Göttingen LXX reads ἡμετέραν; claiming a variant ἡμῶν tradition based on Greek fragments of Irenaeus requires citation of specific manuscript evidence not provided here."
+      },
+      {
+        "claim": "Ambrose... Hex. VI.7.42–43; De Par. 3.16",
+        "risk": "MEDIUM",
+        "reason": "Specific section numbers in Ambrose's Hexameron should be verified; the standard discussion of Gen 1:26 is in book VI but exact subdivisions vary by edition."
+      }
+    ],
+    "safe_claims": [
+      "LXX uses ποιήσωμεν with two prepositional phrases κατ' εἰκόνα and καθ' ὁμοίωσιν",
+      "Justin Martyr in Dialogue with Trypho ch. 62 uses Gen 1:26 against Trypho's angelic interpretation",
+      "Irenaeus distinguishes image (imago) from likeness (similitudo)",
+      "Tertullian Adversus Praxean uses the divine plural against modalism",
+      "The Vetus Latina renders the verse with faciamus/imaginem/similitudinem, calquing the LXX",
+      "Jerome's Hebraica Veritas project began at the end of the 4th century",
+      "Gen 1:26 was a major proof-text in Trinitarian controversies of the 2nd-4th centuries"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:48:31.465477+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

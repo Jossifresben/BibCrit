@@ -170,5 +170,78 @@
   "reference": "Genesis",
   "cached_at": "2026-03-30T23:58:47.973253",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis captures broadly accepted patterns of Targumic anti-anthropomorphism and LXX theological interpretation, but contains several specific claims about Targumic readings and citations that are inaccurate or unverifiable.",
+    "flagged_claims": [
+      {
+        "claim": "Pseudo-Jonathan explicitly names Michael, Gabriel, and other angels as divine interlocutors at Gen 1:26",
+        "risk": "HIGH",
+        "reason": "Targum Pseudo-Jonathan on Gen 1:26 refers to God consulting the angels (ministering angels) but does not explicitly name Michael, Gabriel, etc. as the interlocutors. This appears to be a fabricated specific detail."
+      },
+      {
+        "claim": "Neofiti explicitly identifies them as Michael, Gabriel, and Raphael (Gen 18:1-2)",
+        "risk": "HIGH",
+        "reason": "While later midrashic tradition (e.g., b. Bava Metzia 86b) identifies the three as Michael, Gabriel, and Raphael, Targum Neofiti at Gen 18 does not explicitly name them. This conflates rabbinic midrash with the Targum text."
+      },
+      {
+        "claim": "Targum Onqelos at Gen 6:6-7: 'The LORD said in His Memra that He had made humankind on earth, and He restrained Himself in His Memra'",
+        "risk": "MEDIUM",
+        "reason": "The quoted Onqelos rendering is paraphrased loosely; the actual Onqelos uses 'tav' (relented/turned) language and is not cited with precision here."
+      },
+      {
+        "claim": "Targum Onqelos at Gen 11:5: 'The LORD was revealed to punish'",
+        "risk": "MEDIUM",
+        "reason": "Onqelos reads 'itgli YHWH' (the LORD revealed Himself) but does not insert 'to punish'; this appears to be an interpretive paraphrase presented as the targumic text."
+      },
+      {
+        "claim": "Hayward, The Jewish Temple, pp. 89–92",
+        "risk": "MEDIUM",
+        "reason": "Citation page range is unverifiable in this context; Hayward's work on the Jewish Temple may not address Gen 1:26 at these specific pages."
+      },
+      {
+        "claim": "Hayward, Divine Name and Presence: The Memra, pp. 56–60",
+        "risk": "MEDIUM",
+        "reason": "Robert Hayward's monograph is titled 'Divine Name and Presence: The Memra' (1981), but the specific page citation is unverifiable and may be fabricated."
+      },
+      {
+        "claim": "Muñoz León, Dios-Palabra: Memrá en los Targumim, pp. 112–118",
+        "risk": "MEDIUM",
+        "reason": "While Muñoz León's work exists, the specific page range applied to Gen 18 cannot be verified and may be invented."
+      },
+      {
+        "claim": "Klein, Anthropomorphisms and Anthropopathisms in the Targumim, pp. 45–52",
+        "risk": "MEDIUM",
+        "reason": "Michael Klein's actual work is titled 'Anthropomorphisms and Anthropopathisms in the Targumim of the Pentateuch' (1982); the precise page citation is unverifiable."
+      },
+      {
+        "claim": "Smelik, The Targum of Judges, pp. 234–237",
+        "risk": "HIGH",
+        "reason": "Citing a work on Targum of Judges to support a claim about Gen 11:5 in the Pentateuchal Targumim is methodologically suspect; the page reference appears decorative rather than substantive."
+      },
+      {
+        "claim": "LXX Gen 6:2 reads 'angels of God' (hoi angeloi tou theou) in some witnesses",
+        "risk": "MEDIUM",
+        "reason": "The reading 'angeloi tou theou' is attested in some LXX manuscripts (e.g., Codex Alexandrinus) but the critical text reads 'huioi tou theou'. The analysis acknowledges this is debated, but the claim should be more cautious about whether this represents original LXX or later recension."
+      },
+      {
+        "claim": "LXX Gen 22:14 uses aorist 'kyrios eiden' transforming future-oriented cultic aetiology",
+        "risk": "MEDIUM",
+        "reason": "The LXX actually reads 'Kyrios eiden' for the first occurrence but the second clause uses a different formulation ('en tō orei kyrios ōphthē'). The framing oversimplifies the Greek and the theological inference about 'Alexandrian distance from Jerusalem cult' is speculative."
+      }
+    ],
+    "safe_claims": [
+      "Targum Onqelos and Neofiti systematically use Memra at anthropomorphic junctures including Gen 3:8",
+      "MT Gen 6:6 uses wayyinnahem ('regretted') and Targumim recalibrate this to avoid divine mutability",
+      "MT Gen 11:5 uses wayyered YHWH ('the LORD came down') and Targumim substitute revelation language (itgeli)",
+      "Targumim insert Shekinah/Glory language at theophany passages such as Gen 18",
+      "MT Gen 49:10 'ad ki yavo shiloh is textually obscure and LXX renders with eschatological overtones",
+      "LXX Gen 22:14 shifts the verbal aspect compared to MT's future-oriented formulation",
+      "The general pattern of Targumic anthropomorphism avoidance is well-established in scholarship"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.534312+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

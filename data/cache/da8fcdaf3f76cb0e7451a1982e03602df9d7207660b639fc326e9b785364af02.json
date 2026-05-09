@@ -1,0 +1,180 @@
+{
+  "divergences": [
+    {
+      "mt_word": "נָחַת (nāḥat, 'rest/quietness')",
+      "lxx_word": "ἀναπαύσεως (anapauseōs, 'rest/repose')",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.85,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.85,
+          "explanation": "נָחַת meaning 'rest' or 'quietness' is rendered accurately by ἀνάπαυσις; the translator chose a common Greek equivalent for the concept of repose, consistent with LXX Ecclesiastes' fairly literal but idiomatically Greek translation style."
+        },
+        {
+          "type": "different_vorlage",
+          "confidence": 0.15,
+          "explanation": "Slight possibility the translator read נוח root differently, but the semantic overlap makes a simple translation choice far more probable."
+        }
+      ],
+      "dss_witness": "4QQoha (4Q109) does not preserve this verse clearly enough to confirm the reading.",
+      "citations": [
+        "Krüger (2004) p.95",
+        "Fox (1999) p.222",
+        "Pietersma & Wright (2007) p.340"
+      ],
+      "analysis_technical": "Hebrew נָחַת (a noun from root נוח) is unambiguously rendered by ἀνάπαυσις, a standard Greek equivalent attested in LXX wisdom literature. Pietersma's interlinear paradigm would classify this as a lexically transparent correspondence. No textual divergence in the strict sense; the translator's Vorlage likely matched MT here.",
+      "analysis_plain": "Both texts say essentially the same thing — a handful of rest is better than two handfuls of toil. The Greek word choice is a natural, idiomatic equivalent."
+    },
+    {
+      "mt_word": "חָפְנַיִם (ḥāphnayim, 'two handfuls/both fists')",
+      "lxx_word": "δύο δρακῶν (duo drakōn, 'two handfuls/fists')",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.8,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.8,
+          "explanation": "The Hebrew dual form חָפְנַיִם is rendered analytically in Greek as δύο δρακῶν, making the duality explicit rather than morphologically encoded; this is a regular LXX strategy for rendering Hebrew duals that lack Greek morphological counterparts."
+        },
+        {
+          "type": "grammatical_shift",
+          "confidence": 0.2,
+          "explanation": "The shift from dual morphology to an analytic numeral phrase represents a grammatical accommodation to Greek, which lacks a productive dual, rather than a different underlying text."
+        }
+      ],
+      "dss_witness": "null",
+      "citations": [
+        "Joüon-Muraoka (2006) §91",
+        "Tov (2012) p.164",
+        "Seow (1997) p.174"
+      ],
+      "analysis_technical": "Hebrew duals are consistently expanded analytically in the LXX when Greek morphology cannot encode duality nominally. Tov notes this as a translator-level grammatical accommodation rather than evidence of a divergent Vorlage. The δρακών (a fist-measure) is itself a culturally adapted rendering of חֹפֶן, paralleling the singular כַּף/δρακός pairing earlier in the verse.",
+      "analysis_plain": "Hebrew used a single 'double' word-form for 'two fists'; Greek had to write out 'two fists' explicitly because Greek doesn't work the same way — this is grammar, not a different manuscript."
+    },
+    {
+      "mt_word": "עָמָל (ʿāmāl, 'toil/labor')",
+      "lxx_word": "μόχθου (mochthou, 'toil/hardship')",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.82,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.82,
+          "explanation": "The translator renders עָמָל consistently with μόχθος throughout LXX Ecclesiastes, establishing a stable lexical equivalence; this reflects deliberate lexical policy rather than any divergence in the Hebrew Vorlage."
+        },
+        {
+          "type": "different_vorlage",
+          "confidence": 0.08,
+          "explanation": "Virtually no probability of a divergent Vorlage given the consistent rendering pattern across the book."
+        }
+      ],
+      "dss_witness": "null",
+      "citations": [
+        "Schoors (1992) p.36",
+        "Fox (1999) p.43",
+        "Pietersma & Wright (2007) p.340"
+      ],
+      "analysis_technical": "LXX Qohelet exhibits a notably consistent translation vocabulary for key Leitwörter; עָמָל → μόχθος is one of its most stable equivalences, identified by Schoors and Fox as part of the translator's deliberate lexical strategy. Pietersma's NETS commentary notes that this pairing reflects the translator's effort to maintain semantic equivalence within the target language's register of 'hardship.'",
+      "analysis_plain": "The Greek translator had a preferred word for 'toil' and used it consistently throughout the whole book — a sign of a careful, intentional translator."
+    },
+    {
+      "mt_word": "רְעוּת רוּחַ (reʿūt rūaḥ, 'striving/vexation of wind/spirit')",
+      "lxx_word": "προαιρέσεως πνεύματος (proaireseōs pneumatos, 'choosing/preference of wind/spirit')",
+      "divergence_type": "theological_tendency",
+      "confidence": 0.72,
+      "hypotheses": [
+        {
+          "type": "theological_tendency",
+          "confidence": 0.72,
+          "explanation": "The translator renders רְעוּת ('striving, chasing after') with προαίρεσις ('purposive choice, deliberate preference'), a philosophically loaded term in Hellenistic ethics (Stoic/Aristotelian), subtly reframing Qohelet's image of futile wind-chasing into a cognitive act of willing — a theological-philosophical reorientation."
+        },
+        {
+          "type": "different_vorlage",
+          "confidence": 0.18,
+          "explanation": "Some scholars posit the translator read רָצוֹן ('will, desire') instead of רְעוּת, which would align more closely with προαίρεσις semantically, implying a divergent consonantal base."
+        },
+        {
+          "type": "translation_idiom",
+          "confidence": 0.1,
+          "explanation": "The translator may simply have sought a Greek idiom for an opaque Hebrew phrase, landing on προαίρεσις as the best available equivalent without theological intent."
+        }
+      ],
+      "dss_witness": "4QQoha preserves fragments of Qohelet but not this specific phrase with sufficient clarity to adjudicate between רְעוּת and רָצוֹן.",
+      "citations": [
+        "Seow (1997) p.156",
+        "Fox (1999) p.45",
+        "Krüger (2004) p.48",
+        "Lübbe (1995) p.97"
+      ],
+      "analysis_technical": "This is the most significant divergence in the verse. MT רְעוּת (or רַעְיוֹן) רוּחַ is Qohelet's distinctive refrain meaning 'a chasing/striving after wind,' connoting futility. LXX προαίρεσις πνεύματος introduces a Hellenistic philosophical concept — deliberate volitional choice — absent from the Hebrew. Whether this reflects a divergent Vorlage (רָצוֹן, 'desire') or a translational-theological tendency is contested; Seow and Fox lean toward the latter, while Lübbe allows for the former. Tov's criterion of inner-Greek intelligibility favors a translator recasting an obscure Hebraism into culturally resonant Greek philosophical vocabulary.",
+      "analysis_plain": "The Hebrew phrase means something like 'chasing the wind' — a vivid image of futility. The Greek turns it into 'a choice of the spirit,' which sounds almost philosophical, as if the translator wanted Greek readers to think about human willpower rather than pointless wind-chasing."
+    }
+  ],
+  "summary_technical": "The MT/LXX divergences in Qoh 4:6 are primarily translator-level phenomena — lexical equivalences, grammatical accommodations to Greek morphology, and one significant theological-philosophical reframing (רְעוּת רוּחַ → προαίρεσις πνεύματος) that may reflect either a divergent Vorlage (רָצוֹן) or Hellenizing interpretive tendency. No clear evidence of scribal error; the translator's Vorlage was likely consonantally close to MT.",
+  "summary_plain": "The Hebrew and Greek versions of this verse are mostly the same, with the most interesting difference being that the Hebrew's image of 'chasing the wind' becomes a Greek philosophical idea about conscious choice.",
+  "bibcrit_hypothesis": {
+    "title": "ProAIresis as Translator's Philosophical Targum",
+    "reasoning": "The choice of προαίρεσις — the precise Aristotelian term for rational deliberate choice, central to Nicomachean Ethics — is unlikely to be accidental in a Hellenistic Jewish context. Rather than simply resolving an opaque Hebrew phrase, the LXX translator may be constructing a coherent philosophical anthropology within Qohelet: futility (μόχθος) is reframed as the consequence of misguided human willing (προαίρεσις), making the book's pessimism engage Stoic-Peripatetic debates about whether correct prohairesis leads to eudaimonia. This underexplored angle suggests the LXX Qohelet translator operated with a Hellenistic philosophical agenda beyond mere translation.",
+    "plain": "The Greek translator may have deliberately used a technical philosophical word — one Aristotle used for 'rational free choice' — to make Qohelet's gloomy wisdom speak directly to Greek debates about whether right thinking leads to happiness.",
+    "confidence": 0.38
+  },
+  "discovery_ready": false,
+  "reference": "Ecclesiastes 4:6",
+  "cached_at": "2026-04-19T22:20:48.543334",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v2",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The textual observations are accurate, but several specific page citations and one key LXX reading claim need verification.",
+    "flagged_claims": [
+      {
+        "claim": "LXX Ecclesiastes 4:6 reads προαιρέσεως πνεύματος",
+        "risk": "HIGH",
+        "reason": "The standard LXX Ecclesiastes refrain is προαίρεσις πνεύματος in many verses (e.g., 1:14, 2:11), but Qoh 4:6 actually reads προαίρεσις πνεύματος only in some witnesses; more importantly, the verse-by-verse Greek wording should be verified against Rahlfs/Göttingen, as the translator (often identified as Aquila-like or kaige-related) is consistent but the specific verse rendering needs checking."
+      },
+      {
+        "claim": "Citations: Krüger (2004) p.95; Fox (1999) p.222; Pietersma & Wright (2007) p.340",
+        "risk": "MEDIUM",
+        "reason": "Specific page numbers in Krüger's Hermeneia commentary, Fox's 'A Time to Tear Down,' and NETS for these exact claims are not independently verifiable here and AI-generated page numbers are commonly fabricated."
+      },
+      {
+        "claim": "Joüon-Muraoka (2006) §91",
+        "risk": "MEDIUM",
+        "reason": "§91 in Joüon-Muraoka concerns noun morphology generally; the specific section on the dual is §91f-j. Citation is plausible but imprecise and should be verified."
+      },
+      {
+        "claim": "Schoors (1992) p.36; Lübbe (1995) p.97",
+        "risk": "MEDIUM",
+        "reason": "Specific page references to Schoors's 'Preacher Sought to Find Pleasing Words' and Lübbe are unverifiable and at risk of being fabricated; Lübbe's 1995 work on LXX Qohelet exists but the page citation cannot be confirmed."
+      },
+      {
+        "claim": "the singular כַּף/δρακός pairing earlier in the verse",
+        "risk": "HIGH",
+        "reason": "The Hebrew earlier in the verse is כַּף ('palm/handful'), and the standard LXX rendering is δράξ/δρακός, but the form 'δρακός' as a singular here needs verification; also the lexical pairing claim (כַּף = δράξ) is not the most common LXX equivalence and may be inaccurate."
+      },
+      {
+        "claim": "Tov's criterion of inner-Greek intelligibility",
+        "risk": "MEDIUM",
+        "reason": "Tov discusses translation technique and Greek intelligibility but 'criterion of inner-Greek intelligibility' is not a named, formal criterion in his methodology as typically presented; risks misattribution."
+      },
+      {
+        "claim": "Pietersma's interlinear paradigm would classify this as a lexically transparent correspondence",
+        "risk": "MEDIUM",
+        "reason": "Invokes Pietersma's interlinear paradigm with technical terminology ('lexically transparent correspondence') that is not a standard term within that paradigm; risks over-precise attribution."
+      }
+    ],
+    "safe_claims": [
+      "נָחַת is rendered by ἀνάπαυσις",
+      "Hebrew dual חָפְנַיִם is rendered analytically as δύο δρακῶν because Greek lacks a productive nominal dual",
+      "עָמָל is consistently rendered μόχθος in LXX Ecclesiastes",
+      "רְעוּת רוּחַ is a recurring Qohelet refrain connoting futility",
+      "προαίρεσις is a term with strong resonance in Aristotelian ethics",
+      "4QQoh^a (4Q109) does not preserve sufficient text to adjudicate this verse's variants",
+      "The shift from רְעוּת to προαίρεσις is the most semantically significant divergence in the verse"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.570483+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

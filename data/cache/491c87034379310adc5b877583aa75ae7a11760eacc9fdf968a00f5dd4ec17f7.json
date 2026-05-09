@@ -1,0 +1,104 @@
+{
+  "allusions": [
+    {
+      "ot_reference": "Sirach 2:1-5",
+      "nt_words": "πειρασμοῖς περιπέσητε ποικίλοις / χαράν ἡγήσασθε",
+      "ot_mt_form": "No Hebrew Vorlage extant for canonical comparison; Hebrew fragments from Cairo Geniza read: 'My son, if you come to serve the Lord, prepare your soul for testing' (Sir 2:1), with testing producing joy and endurance as themes",
+      "ot_lxx_form": "Sir 2:1-5 LXX: 'τέκνον εἰ προσέρχῃ δουλεύειν Κυρίῳ... ἐν ἀλλαγαῖς ταπεινώσεώς σου... δόκιμος χρυσὸς ἐν πυρί'; joy in trials and the metaphor of testing as refinement are shared themes; περιπίπτω + πειρασμός is thematically proximate",
+      "nt_alignment": "independent",
+      "alignment_confidence": 0.52,
+      "key_word": "πειρασμοῖς περιπέσητε",
+      "textual_implication": "The verb περιπίπτω (to fall into, encounter) combined with πειρασμοί (trials/testings) has its closest conceptual antecedent in Sirach's sapiential tradition of embracing trials as spiritually formative. However, James does not reproduce the LXX wording directly; the pairing is compositionally independent, suggesting James draws on a shared sapiential tradition rather than a specific textual source. The instruction to count such trials as 'all joy' (πᾶσαν χαράν) intensifies the Sirach motif but lacks a verbatim parallel in any known LXX witness.",
+      "textual_implication_plain": "James echoes the Jewish wisdom tradition's teaching that trials are spiritually beneficial, but he doesn't quote any specific verse word-for-word. He is drawing on a shared pool of ideas rather than a single text.",
+      "scholarly_note": "Beale and Carson (Commentary on the NT Use of the OT, 2007) note that James 1:2 reflects the sapiential tradition represented by Sirach 2:1-5 without constituting a formal citation, and classify it as a thematic allusion shaped by Jewish Diaspora wisdom paraenesis.",
+      "contested": true
+    },
+    {
+      "ot_reference": "Psalm 34:19 (LXX 33:20) / Job 5:17-19",
+      "nt_words": "χαράν ἡγήσασθε... πειρασμοῖς",
+      "ot_mt_form": "Ps 34:19 MT: רַבּוֹת רָעוֹת צַדִּיק (many are the afflictions of the righteous); Job 5:17 MT: הִנֵּה אַשְׁרֵי אֱנוֹשׁ יוֹכִחֶנּוּ אֱלוֹהַּ (Blessed is the man whom God reproves) — both present suffering as integral to the righteous life but without the explicit 'joy' command",
+      "ot_lxx_form": "Ps 33:20 LXX: πολλαὶ αἱ θλίψεις τῶν δικαίων; Job 5:17 LXX: μακάριος δὲ ἄνθρωπος ὃν ἤλεγξεν ὁ Κύριος — the macarism form (μακάριος / blessing in suffering) is conceptually parallel to James's injunction to treat trials as joy, though the Greek wording is not reproduced",
+      "nt_alignment": "independent",
+      "alignment_confidence": 0.38,
+      "key_word": "χαράν ἡγήσασθε",
+      "textual_implication": "The command to 'regard' or 'count' trials as joy has no verbatim parallel in the Psalter or Wisdom literature, though the underlying theology of blessed suffering pervades both. James's use of ἡγήσασθε (to consider, regard) as the governing verb reflects a Hellenistic Jewish rhetorical convention for reframing adversity, attested in Stoic-influenced Jewish texts, which may point to an independent compositional strategy rather than LXX dependence. The absence of a matching Greek phrase across known LXX manuscripts supports classification as independent formulation within a shared conceptual field.",
+      "textual_implication_plain": "While the Old Testament often calls suffering a blessing, James uses a unique phrasing—'count it all joy'—that doesn't exactly match any single verse. He seems to be creatively expressing a well-known idea in his own words.",
+      "scholarly_note": "Christopher Stanley (Arguing with Scripture, 2004) would classify this as audience-dependent allusion where shared sapiential assumptions are operative without formal citation, and cautions against over-identifying specific OT loci when the verbal correspondence is minimal.",
+      "contested": true
+    },
+    {
+      "ot_reference": "Tobit 4:3 / Wisdom of Solomon 3:4-6",
+      "nt_words": "πειρασμοῖς ποικίλοις",
+      "ot_mt_form": "No MT equivalent; deuterocanonical texts only",
+      "ot_lxx_form": "Wis 3:5-6 LXX: 'ὀλίγα παιδευθέντες μεγάλα εὐεργετηθήσονται... ὡς χρυσὸν ἐν χωνευτηρίῳ ἐδοκίμασεν αὐτούς'; the image of God testing the righteous through varied (ποικίλος-type) trials is fully developed; Tobit 4:3 LXX and related texts reinforce God's testing of the faithful through diverse hardships",
+      "nt_alignment": "independent",
+      "alignment_confidence": 0.44,
+      "key_word": "ποικίλοις (various/diverse)",
+      "textual_implication": "The adjective ποικίλοις (various, manifold) modifying πειρασμοί is a distinctive Jamesian touch; while Wisdom of Solomon employs the imagery of manifold testing, the exact collocation πειρασμοῖς ποικίλοις does not appear in any known LXX witness. This suggests James either coined the phrase within the sapiential tradition or drew upon oral/compositional conventions of Diaspora Jewish paraenesis. The use of ποικίλος elsewhere in the NT (e.g., 2 Tim 3:6; Titus 3:3; 1 Pet 1:6) to denote variety or diversity suggests it was a recognized lexical choice in early Christian paraenesis for describing the multiform nature of trials.",
+      "textual_implication_plain": "James describes 'various' or 'all kinds of' trials using a word that appears in several early Christian letters, suggesting it was a common way for early Christians to talk about the different hardships believers face.",
+      "scholarly_note": "Richard Hays (Echoes of Scripture in the Letters of Paul, 1989), while focused on Paul, provides methodological criteria (volume, recurrence, thematic coherence) that applied here yield low 'volume' for any single OT source but high thematic coherence with the broader sapiential tradition, supporting a diffuse allusion rather than a targeted citation.",
+      "contested": true
+    }
+  ],
+  "summary_technical": "James 1:2 contains no formal citation of the OT but operates within a dense network of sapiential allusions, primarily to Sirach 2:1-5, Wisdom of Solomon 3:4-6, and the broader Psalmic theology of righteous suffering; the vocabulary (πειρασμοῖς, ποικίλοις, περιπέσητε) reflects Hellenistic Jewish paraenetic convention rather than any single textual source, and all alignments are best classified as independent formulation within a shared tradition. The absence of an introductory formula (γέγραπται, etc.) and the lack of verbatim correspondence with any LXX witness confirm that James is composing freely within the sapiential tradition rather than citing.",
+  "summary_plain": "James 1:2 doesn't quote the Old Testament directly but draws on widely shared Jewish wisdom teachings about the spiritual value of suffering, expressing them in his own words.",
+  "bibcrit_hypothesis": {
+    "title": "James 1:2 as Free Sapiential Paraenesis",
+    "reasoning": "James 1:2 represents the compositional independence of a Jewish-Christian wisdom teacher who has internalized the sapiential tradition (Sirach, Wisdom of Solomon, Psalms) so thoroughly that he no longer needs to cite it textually; the verse's unique formulations (πᾶσαν χαράν ἡγήσασθε, πειρασμοῖς ποικίλοις) are authorial constructions within a recognized genre. This supports the hypothesis that the Epistle of James derives from a milieu of oral-sapiential instruction where the authoritative tradition was performed and paraphrased rather than quoted. The compositional technique is closer to Sirach's own free use of Proverbs and Deuteronomy than to Pauline citation practice.",
+    "plain": "James is not quoting any specific Bible verse here; instead, he is freely expressing ideas from the Jewish wisdom tradition that he has deeply absorbed, much like a preacher summarizing a theme rather than reading a text.",
+    "confidence": 0.71
+  },
+  "discovery_ready": false,
+  "reference": "James 1:2",
+  "cached_at": "2026-04-26T17:45:56.492799",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis correctly identifies well-known sapiential parallels and exercises appropriate caution about formal citation, but several specific scholarly attributions and one Sirach Hebrew claim need verification.",
+    "flagged_claims": [
+      {
+        "claim": "Hebrew fragments from Cairo Geniza read: 'My son, if you come to serve the Lord, prepare your soul for testing' (Sir 2:1)",
+        "risk": "HIGH",
+        "reason": "Sirach 2:1 is not extant in the surviving Cairo Geniza Hebrew fragments of Sirach (which preserve portions of chs. 3-16, 18, 19, 25-51, but not ch. 2). This Hebrew Vorlage citation appears fabricated."
+      },
+      {
+        "claim": "Beale and Carson (Commentary on the NT Use of the OT, 2007) note that James 1:2 reflects the sapiential tradition represented by Sirach 2:1-5 without constituting a formal citation, and classify it as a thematic allusion shaped by Jewish Diaspora wisdom paraenesis",
+        "risk": "MEDIUM",
+        "reason": "While the Beale/Carson volume exists and does treat James, the specific characterization 'thematic allusion shaped by Jewish Diaspora wisdom paraenesis' should be verified against the actual entry (authored by D. A. Carson on James) rather than paraphrased with quoted-sounding precision."
+      },
+      {
+        "claim": "Christopher Stanley (Arguing with Scripture, 2004) would classify this as audience-dependent allusion",
+        "risk": "MEDIUM",
+        "reason": "Stanley's 'Arguing with Scripture' focuses on Pauline citation practice, not James. Projecting his framework onto James 1:2 is speculative ('would classify') and should not be presented as a scholarly position on this verse."
+      },
+      {
+        "claim": "Tobit 4:3",
+        "risk": "MEDIUM",
+        "reason": "Tobit 4:3 concerns burial of one's mother, not testing of the faithful. The reference is misapplied; the testing motif in Tobit is more relevant at 12:13-14, not 4:3."
+      },
+      {
+        "claim": "ποικίλος elsewhere in the NT (e.g., 2 Tim 3:6; Titus 3:3; 1 Pet 1:6)",
+        "risk": "MEDIUM",
+        "reason": "2 Tim 3:6 uses ποικίλαις of desires, Titus 3:3 of desires/pleasures, and 1 Pet 1:6 does parallel πειρασμοῖς ποικίλοις closely—but the strongest and most directly relevant parallel (1 Pet 1:6) is buried in a list rather than highlighted as the key lexical match."
+      },
+      {
+        "claim": "compositional technique is closer to Sirach's own free use of Proverbs and Deuteronomy than to Pauline citation practice",
+        "risk": "MEDIUM",
+        "reason": "Plausible but presented as established; the comparison to Sirach's compositional technique is an interpretive claim that should be hedged."
+      }
+    ],
+    "safe_claims": [
+      "James 1:2 lacks an introductory citation formula such as γέγραπται",
+      "πειρασμοῖς ποικίλοις has a close NT parallel in 1 Peter 1:6",
+      "Wisdom 3:5-6 contains the gold-refining-by-fire testing imagery",
+      "Ps 33:20 LXX reads πολλαὶ αἱ θλίψεις τῶν δικαίων",
+      "Job 5:17 LXX uses the macarism μακάριος... ὃν ἤλεγξεν ὁ Κύριος",
+      "There is no verbatim LXX parallel to πᾶσαν χαράν ἡγήσασθε... πειρασμοῖς ποικίλοις",
+      "Hays's criteria (volume, recurrence, thematic coherence) yield low verbal volume here"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.649607+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

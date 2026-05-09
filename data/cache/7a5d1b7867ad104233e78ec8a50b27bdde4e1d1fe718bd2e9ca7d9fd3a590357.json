@@ -98,5 +98,83 @@
   "reference": "Genesis 1:26",
   "cached_at": "2026-03-31T00:14:07.845498",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis correctly identifies broad translation tendencies and well-known interpretive patterns, but contains several likely fabricated or unverifiable scholarly citations and overstates some specific textual claims.",
+    "flagged_claims": [
+      {
+        "claim": "Hayward, Targumic Traditions and Genesis 1:26-27, JJS 1988",
+        "risk": "HIGH",
+        "reason": "This citation appears fabricated or distorted. Robert Hayward has written on Targums but this specific article title and date cannot be verified; the JJS volume/page is missing."
+      },
+      {
+        "claim": "van der Heide, Anthropomorphisms in the Targums, in The Aramaic Bible, p. 45",
+        "risk": "HIGH",
+        "reason": "Likely fabricated. 'The Aramaic Bible' is a translation series, not an essay collection, and no such van der Heide chapter is known at this reference."
+      },
+      {
+        "claim": "Mulder, Theological and Ideological Tendencies in Targum Neofiti, JSOT 1985",
+        "risk": "HIGH",
+        "reason": "Cannot verify; M.J. Mulder's known work does not include this title in JSOT 1985, and the citation looks invented."
+      },
+      {
+        "claim": "Chester, Messiah and Exaltation, p. 78",
+        "risk": "MEDIUM",
+        "reason": "Andrew Chester's 'Messiah and Exaltation' (2007) exists, but the specific page citation linking it to Memra/Gen 1:26 needs verification."
+      },
+      {
+        "claim": "Schaper, Eschatology in the Greek Psalter, p. 15 (on LXX theological translation technique)",
+        "risk": "HIGH",
+        "reason": "The book exists but is about Psalms; citing it for Gen 1:26 LXX translation technique is irrelevant and the page reference appears arbitrary."
+      },
+      {
+        "claim": "Martin, The Antecedents of the Christian Doctrine of the Image of God, JTS 1982",
+        "risk": "HIGH",
+        "reason": "Cannot verify this article in JTS 1982; appears to be a fabricated citation."
+      },
+      {
+        "claim": "Mathews, Genesis 1-11:26 (on Peshitta translation approach), p. 89",
+        "risk": "MEDIUM",
+        "reason": "K.A. Mathews's NAC Genesis commentary exists but is not a Peshitta-focused source; citation is misleading."
+      },
+      {
+        "claim": "Ephrem, Commentary on Genesis I.28-29",
+        "risk": "MEDIUM",
+        "reason": "Ephrem's Commentary on Genesis exists but the precise section numbering I.28-29 needs verification; citation could be invented."
+      },
+      {
+        "claim": "Targum Pseudo-Jonathan introduces the Memra (Word) formula and references consultation with the Torah/Wisdom as pre-existent entity",
+        "risk": "MEDIUM",
+        "reason": "Tg. Ps.-J. on Gen 1:26 references God consulting angels of ministry, but the claim about Memra formula and Torah/Wisdom consultation at this verse conflates traditions from elsewhere (e.g., Gen Rabbah) and may not be accurate to Ps.-J. at 1:26."
+      },
+      {
+        "claim": "Targum Neofiti: 'I shall create man in my image'",
+        "risk": "MEDIUM",
+        "reason": "Neofiti actually reads closer to 'Let us create' retaining plural-like phrasing; the singular reading attributed here needs verification against the actual Neofiti text."
+      },
+      {
+        "claim": "Fragment Targum adds that God took counsel from the works of heaven and earth",
+        "risk": "MEDIUM",
+        "reason": "This specific Fragment Targum reading at Gen 1:26 is unverified and may be conflated with midrashic (Genesis Rabbah) traditions."
+      },
+      {
+        "claim": "the choice of εἰκών and ὁμοίωσις imports Platonic philosophical vocabulary",
+        "risk": "MEDIUM",
+        "reason": "Overstated; these are standard lexical equivalents and the 'Platonic loading' claim is contested—the analysis's own counter-argument acknowledges this."
+      }
+    ],
+    "safe_claims": [
+      "MT reads בְּצַלְמֵנוּ כִּדְמוּתֵנוּ with plural 'na'aseh'",
+      "LXX renders κατ' εἰκόνα ἡμετέραν καὶ καθ' ὁμοίωσιν",
+      "Vulgate reads 'ad imaginem et similitudinem nostram'",
+      "Targumic tradition broadly engages in anti-anthropomorphic interpretation",
+      "Genesis Rabbah 8 contains rabbinic debate about whom God addressed in the plural",
+      "Philo (De Opificio Mundi) interprets the image allegorically",
+      "Augustine developed Trinitarian readings of imago/similitudo in De Trinitate"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.342623+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

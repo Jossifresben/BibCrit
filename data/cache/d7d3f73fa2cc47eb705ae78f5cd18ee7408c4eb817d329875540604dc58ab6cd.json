@@ -146,5 +146,61 @@
   "discovery_ready": false,
   "cached_at": "2026-03-31T00:24:18.880516",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The overall thesis (LXX dominance for Psalm 22:1 in patristic citations) is sound, but several specific citation references and quoted forms appear inaccurate or unverifiable.",
+    "flagged_claims": [
+      {
+        "claim": "Justin Martyr, First Apology, 38: 'Θεέ μου, Θεέ μου, ἵνα τί ἐγκατέλιπές με;'",
+        "risk": "MEDIUM",
+        "reason": "First Apology 38 discusses Psalm 22 but the specific quotation cited there focuses on verses about piercing hands/feet and casting lots; the 'forsaken me' citation is more characteristically found in Dialogue with Trypho (chs. 98–99, 103), not Apology 38."
+      },
+      {
+        "claim": "Justin Martyr, Dialogue with Trypho 99: 'Θεέ μου, Θεέ μου, πρόσχες μοι· ἵνα τί ἐγκατέλιπές με;'",
+        "risk": "MEDIUM",
+        "reason": "Justin in Dialogue 99 cites the Gospel form (Matt 27:46), which does NOT contain 'πρόσχες μοι.' The claim that Justin includes the fuller LXX phrase here is likely fabricated; the fuller LXX form may appear elsewhere but needs verification."
+      },
+      {
+        "claim": "Irenaeus, Against Heresies 4.33.12: 'Deus meus, Deus meus, ut quid dereliquisti me?'",
+        "risk": "MEDIUM",
+        "reason": "Irenaeus does discuss Psalm 22 in AH 4.33, but the specific citation of 22:1 at this exact section needs verification; Irenaeus more commonly cites other verses of Ps 22 (e.g., 'they pierced')."
+      },
+      {
+        "claim": "Origen, Commentary on Matthew 27.46 (fragments preserved in catena)",
+        "risk": "HIGH",
+        "reason": "Origen's extant Commentary on Matthew breaks off before Matt 27; coverage of Matt 27:46 survives only in the Latin Commentariorum Series, not in Greek catena fragments numbered 27.46. The citation reference is suspect."
+      },
+      {
+        "claim": "Eusebius, Demonstratio Evangelica 10.8: 'Ὁ Θεός, ὁ Θεός μου, πρόσχες μοι· ἵνα τί ἐγκατέλιπές με;'",
+        "risk": "MEDIUM",
+        "reason": "DE Book 10 does treat Psalm 22 extensively, but the exact wording and section attribution should be verified; the conventional LXX opening is 'ὁ θεὸς ὁ θεός μου, πρόσχες μοι, ἵνα τί ἐγκατέλιπές με' so the reading is plausible but the precise locus needs checking."
+      },
+      {
+        "claim": "Athanasius, On the Incarnation 25",
+        "risk": "HIGH",
+        "reason": "De Incarnatione ch. 25 discusses the manner of Christ's death (cross vs. other deaths) and does not, to my knowledge, quote Psalm 22:1. This citation appears misattributed or fabricated."
+      },
+      {
+        "claim": "Chrysostom's 'ἵνατί' ... represents Byzantine liturgical standardization ... important for dating stages of Byzantine recension",
+        "risk": "MEDIUM",
+        "reason": "ἵνατί as a univerbation is a common orthographic/morphological feature in Greek manuscripts long before Chrysostom and is not a reliable marker of 'Byzantine recension'; the inference is overstated."
+      },
+      {
+        "claim": "Tertullian, Against Marcion 4.42: 'Deus meus, Deus meus, respice in me, ut quid me dereliquisti?'",
+        "risk": "MEDIUM",
+        "reason": "Tertullian does cite Ps 22:1 in Adv. Marc. 4.42 in the context of the Passion, but the specific Latin wording with 'respice in me' should be verified against the critical edition; Tertullian often cites the Gospel form rather than the fuller Psalter form."
+      }
+    ],
+    "safe_claims": [
+      "LXX Ps 21:2 reads 'ἵνα τί ἐγκατέλιπές με' against MT 'lamah azavtani'",
+      "The LXX includes 'πρόσχες μοι' which is absent from the Gospel citations in Matt 27:46 / Mark 15:34",
+      "Origen compiled the Hexapla comparing Hebrew and Greek versions",
+      "Old Latin versions in the West were translated from Greek (LXX) rather than Hebrew",
+      "Patristic citations of Psalm 22:1 overwhelmingly reflect the LXX rather than MT-aligned readings"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.548797+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

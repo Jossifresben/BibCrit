@@ -159,5 +159,66 @@
   "discovery_ready": false,
   "cached_at": "2026-03-31T00:29:35.540232",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The overall thesis about LXX dominance in patristic citation of Isaiah 9:6 is well-grounded, but several specific citation references and quoted forms contain inaccuracies or unverifiable details.",
+    "flagged_claims": [
+      {
+        "claim": "Justin Martyr, Dialogue with Trypho, ch. 76",
+        "risk": "MEDIUM",
+        "reason": "Justin cites Isaiah 9:6 in Dialogue 76, but the wording given here is somewhat reconstructed; Justin's actual citations of this verse appear in multiple places (e.g., 1 Apology 35) and the exact form should be verified."
+      },
+      {
+        "claim": "Irenaeus... 'Messenger of the Great Counsel, Wonderful Counselor, Mighty God, Eternal Father, Prince of Peace'",
+        "risk": "HIGH",
+        "reason": "This 'hybrid' citation conflating LXX and MT-style titles is suspect. Irenaeus typically follows the LXX, which in many manuscripts gives only 'Angel of Great Counsel' without the full MT-style title list. The claim of Irenaeus uniquely combining both traditions may be a fabrication."
+      },
+      {
+        "claim": "Tertullian, Against Praxeas, ch. 11",
+        "risk": "MEDIUM",
+        "reason": "Tertullian cites Isaiah 9:6 in Against Praxeas, but the specific chapter and exact Latin wording ('Angelus magni consilii') should be verified; Tertullian's citation locations of this verse are more commonly noted in Adversus Marcionem and Adversus Judaeos."
+      },
+      {
+        "claim": "John Chrysostom, Homilies on Isaiah, Homily 5.1",
+        "risk": "MEDIUM",
+        "reason": "Chrysostom's extant Commentary/Homilies on Isaiah only cover Isaiah 1–8 (with the rest fragmentary in Greek/Armenian). A citation of Isaiah 9:6 in 'Homily 5.1' on Isaiah is questionable; the work and section reference may be fabricated."
+      },
+      {
+        "claim": "Gregory of Nazianzus, Oration 29, ch. 19",
+        "risk": "MEDIUM",
+        "reason": "Gregory does discuss titles of Christ in the Theological Orations, but the specific quotation including 'Father of the Age to Come' attributed to Oration 29.19 should be verified; this title cluster appears more prominently in Oration 30."
+      },
+      {
+        "claim": "Cyril of Alexandria, Commentary on Isaiah, Book 2, on Isaiah 9:6",
+        "risk": "MEDIUM",
+        "reason": "Cyril's Commentary on Isaiah exists and discusses 9:6, but the Christological framing as 'defending Chalcedonian Christology' is anachronistic—the commentary predates Chalcedon (451) and Cyril died in 444."
+      },
+      {
+        "claim": "Eusebius, Proof of the Gospel, Book 7, ch. 1",
+        "risk": "MEDIUM",
+        "reason": "Eusebius cites Isaiah 9:6 in Demonstratio Evangelica, but the specific section reference and the inclusion of the full MT-style title list ('Wonderful Counselor, Mighty God, Everlasting Father') alongside 'Messenger of Great Counsel' is unusual for the standard LXX and needs verification."
+      },
+      {
+        "claim": "Athanasius, Orations Against the Arians, Oration 3, ch. 29",
+        "risk": "MEDIUM",
+        "reason": "Athanasius does cite Isaiah 9:6 in anti-Arian contexts, but the specific section 3.29 should be verified; the standard LXX reading typically lacks 'Mighty God' as a separate title in shorter manuscript forms."
+      },
+      {
+        "claim": "Father of the Age to Come (πατὴρ τοῦ μέλλοντος αἰῶνος)",
+        "risk": "MEDIUM",
+        "reason": "While this rendering does appear in some Greek patristic citations, it is not the standard LXX reading of Isaiah 9:6 (Rahlfs LXX has only 'Angel of Great Counsel' without the additional throne names). Attributing this consistently to LXX transmission oversimplifies the textual situation."
+      }
+    ],
+    "safe_claims": [
+      "The LXX reading 'Angel/Messenger of Great Counsel' (ἄγγελος μεγάλης βουλῆς) differs from the MT's title sequence",
+      "MT Isaiah 9:6 contains 'Wonderful Counselor' (פֶּלֶא יוֹעֵץ)",
+      "The Septuagint generally functioned as the primary Old Testament for Greek-speaking and Latin-speaking early Christians",
+      "Old Latin versions in North Africa were translated from Greek (LXX), not Hebrew",
+      "Isaiah 9:6 was central to Christological debates including the Arian controversy"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.423266+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

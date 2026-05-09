@@ -129,5 +129,58 @@
   "discovery_ready": false,
   "cached_at": "2026-04-19T15:53:13.565609",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The core analysis of Targum Jonathan's transformation of Isaiah 53:5 is broadly accurate and well-established, but several specific citations and parallels are questionable or fabricated.",
+    "flagged_claims": [
+      {
+        "claim": "Alexander Smelik, 'The Rabbinic Reception of Early Bible Translations as Holy Writings and Oral Torah,' JAB 1 (1999): 249–72",
+        "risk": "HIGH",
+        "reason": "The author's name is likely Willem Smelik (not Alexander). The article title and journal need verification; this looks like a corrupted or fabricated citation."
+      },
+      {
+        "claim": "Cf. Sukkah 52a (Messiah ben Joseph's suffering)",
+        "risk": "MEDIUM",
+        "reason": "While Sukkah 52a does discuss Messiah ben Joseph, citing it as a 'midrashic parallel' for the Temple-building motif in Targum Jonathan Isa 53:5 is a stretch — the parallel is to Temple building, not suffering, making this citation tangential or misapplied."
+      },
+      {
+        "claim": "Cf. Isaiah Rabbah on this verse emphasizing Torah instruction",
+        "risk": "HIGH",
+        "reason": "There is no extant classical midrash called 'Isaiah Rabbah' — the Rabbah midrashim cover Pentateuch and the Five Megillot, not Isaiah. This appears to be fabricated."
+      },
+      {
+        "claim": "Standard rabbinic conditional forgiveness formulas (e.g., mShabbat 12:3, teshuvah contingent on Torah observance)",
+        "risk": "HIGH",
+        "reason": "mShabbat 12:3 concerns Sabbath writing laws, not teshuvah or conditional forgiveness. This citation is incorrect or fabricated."
+      },
+      {
+        "claim": "MT's mḥōlāl is a passive participle",
+        "risk": "MEDIUM",
+        "reason": "mḥōlāl is a Polal/Pual participle — technically a passive stem participle, but the analysis's morphological labels should be checked; minor but worth verifying."
+      },
+      {
+        "claim": "the profanation (ḥll in both Hebrew and Aramaic) from the servant's body to the sanctuary",
+        "risk": "MEDIUM",
+        "reason": "The wordplay claim assumes mḥōlāl derives from ḥll 'profane' rather than ḥll 'pierce/wound' — these are debated as separate or related roots, and the assertion of intentional Targumic wordplay is speculative."
+      },
+      {
+        "claim": "Bruce Chilton, The Isaiah Targum, ArBib 11 (Wilmington: Glazier, 1987), 103–4",
+        "risk": "MEDIUM",
+        "reason": "Chilton's Isaiah Targum in the Aramaic Bible series is genuine, but the specific page reference (103–4) for Isa 53:5 should be verified; Isa 53 commentary is typically found in this volume but exact pagination needs checking."
+      }
+    ],
+    "safe_claims": [
+      "Targum Jonathan replaces 'wounded for our transgressions' with language about rebuilding the Temple profaned by sins",
+      "The Targum substitutes 'his teaching/words' (pitgāmôhî, ulpan-) for the MT's references to wounds and chastisement",
+      "Forgiveness in the Targum is made conditional on obedience to the Messiah's teaching",
+      "Both MT and LXX preserve the vicarious suffering framework that the Targum eliminates",
+      "The Targum identifies the servant messianically while removing suffering elements",
+      "The Hebrew mûsar carries semantic range including both 'discipline' and 'instruction'",
+      "The Targum's reinterpretation is consistent with its handling of other verses in Isaiah 53"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.650084+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

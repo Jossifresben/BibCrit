@@ -149,5 +149,71 @@
   "discovery_ready": false,
   "cached_at": "2026-03-31T08:21:15.853170",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The overall thesis (LXX dominance in patristic Shema citations) is sound, but several specific citation references and quoted Greek/Latin forms appear imprecise or potentially fabricated.",
+    "flagged_claims": [
+      {
+        "claim": "Justin Martyr, Dialogue with Trypho, ch. 96, citing Deut 6:4",
+        "risk": "HIGH",
+        "reason": "Dialogue with Trypho ch. 96 does not contain a citation of the Shema. Justin discusses Deut 21:23 (curse on the hanged) and Deut 27:26 in nearby chapters. The Shema is not prominently cited in the Dialogue at this location."
+      },
+      {
+        "claim": "Irenaeus, Against Heresies, Book 3.6.5, citing the Shema in Latin",
+        "risk": "HIGH",
+        "reason": "AH 3.6 discusses the title 'God' and 'Lord' applied to Father and Son, citing Ps 110, Ps 45, Gen 19, etc. A direct citation of Deut 6:4 at 3.6.5 is not clearly attested; the reference may be conflated with other 'one God' passages in Book 2 or 4."
+      },
+      {
+        "claim": "Tertullian, Against Praxeas ch. 13, citing 'Audi Israël, Dominus Deus tuus unus est'",
+        "risk": "MEDIUM",
+        "reason": "While Tertullian does engage Deut 6:4 in Adv. Praxean, the exact chapter and Latin wording given should be verified; Tertullian's actual citations of the Shema appear at different points and forms."
+      },
+      {
+        "claim": "Origen, Against Celsus, Book 8.12, citing the Shema",
+        "risk": "MEDIUM",
+        "reason": "Contra Celsum 8.12 discusses worship of Father and Son and 'I and the Father are one,' but a direct quotation of Deut 6:4 in the form given requires verification; Origen's Shema citations more securely appear in Commentary on John and homilies."
+      },
+      {
+        "claim": "Eusebius, Demonstratio Evangelica Book 5.9, citing Shema with ἡμῶν",
+        "risk": "MEDIUM",
+        "reason": "The specific chapter location and exact wording with ἡμῶν rather than σου should be verified; the variant pronoun claim is plausible but the precise reference is unverified."
+      },
+      {
+        "claim": "Athanasius, Orations Against the Arians, Oration 3.6",
+        "risk": "MEDIUM",
+        "reason": "Athanasius does cite the Shema in the Orations, but the specific section 3.6 may not be the location; verification needed."
+      },
+      {
+        "claim": "Gregory of Nyssa, Against Eunomius Book 1.38",
+        "risk": "MEDIUM",
+        "reason": "Section numbering of Contra Eunomium varies between editions (Jaeger vs. older); the precise citation at 1.38 requires verification, and Gregory's Shema usage is more prominent in Ad Ablabium."
+      },
+      {
+        "claim": "Augustine, On Christian Doctrine Book 2.16, citing Deut 6:4",
+        "risk": "HIGH",
+        "reason": "De Doctrina Christiana 2.16 concerns knowledge of things (numbers, music, etc.) for understanding Scripture, not the Shema. Augustine's Shema citations appear in De Trinitate and sermons, not here."
+      },
+      {
+        "claim": "'no evidence of competing MT-based Greek translations or direct appeal to Hebrew readings'",
+        "risk": "MEDIUM",
+        "reason": "Overstated; Origen's Hexapla included Aquila, Symmachus, and Theodotion columns of Deut, and Jerome explicitly engages the Hebrew. The claim ignores known recensional activity."
+      },
+      {
+        "claim": "'the LXX achieved de facto canonical status for this text remarkably early, before 150 CE'",
+        "risk": "MEDIUM",
+        "reason": "Speculative inference from limited citation data; the dating is more confident than the evidence base of one Justin citation warrants."
+      }
+    ],
+    "safe_claims": [
+      "LXX Deut 6:4 includes the copula ἐστιν absent in MT Hebrew nominal syntax",
+      "The LXX form features doubled κύριος corresponding to MT YHWH...YHWH",
+      "Pronoun variation between σου and ἡμῶν reflects liturgical adaptation",
+      "Old Latin translations of Deut 6:4 derive from LXX rather than Hebrew",
+      "Patristic theological discourse on divine unity engaged the Shema in Greek/Latin forms"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.639495+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

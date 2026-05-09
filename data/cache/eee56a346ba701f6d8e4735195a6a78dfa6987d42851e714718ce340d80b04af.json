@@ -1,0 +1,587 @@
+{
+  "book": "Deuteronomy",
+  "period_range": "7th century BCE – 15th century CE",
+  "archetype_description": "The proto-text of Deuteronomy is most plausibly located in a late 7th-century BCE Josianic compositional layer (the so-called Urdeuteronomium, Deut 5–26, 28), subsequently expanded through Deuteronomistic editing in the exilic and early post-exilic periods. By the 4th–3rd centuries BCE at the latest, a relatively stable Hebrew Vorlage existed from which the major manuscript families derive, though the witnesses diverge significantly in orthography, in secondary expansions, and in the arrangement of certain pericopes. The degree of textual plurality attested at Qumran demonstrates that no single 'original' text of Deuteronomy can be reconstructed with certainty; rather, scholars work with a plurality of early text-forms, some closer to proto-MT, others to a pre-Samaritan tradition, and yet others reflecting the Vorlage of the LXX.",
+  "stemma_nodes": [
+    {
+      "id": "archetype",
+      "label": "Proto-Text (Urdeuteronomium)",
+      "type": "archetype",
+      "date": "late 7th c. BCE",
+      "description": "The hypothetical core Deuteronomic composition, identified with a Josianic law-book (Deut 5–26, 28), before exilic-era Deuteronomistic expansions and the framing speeches."
+    },
+    {
+      "id": "dtr-edition",
+      "label": "Deuteronomistic Edition (Dtr1/Dtr2)",
+      "type": "intermediate",
+      "date": "c. 620–550 BCE",
+      "description": "The exilic Deuteronomistic redaction(s) that expanded the core with parenetic frameworks (Deut 1–4, 29–34) and integrated Deuteronomy into the Deuteronomistic History, producing a substantially fuller literary form."
+    },
+    {
+      "id": "proto-hebrew",
+      "label": "Common Proto-Hebrew Vorlage",
+      "type": "intermediate",
+      "date": "c. 450–350 BCE",
+      "description": "The post-exilic Hebrew text-form that, following Pentateuchal redaction and Ezran-era scribal activity, served as the ancestor of the main surviving manuscript families, though already exhibiting incipient plurality."
+    },
+    {
+      "id": "proto-mt",
+      "label": "Proto-MT",
+      "type": "intermediate",
+      "date": "c. 300–100 BCE",
+      "description": "The proto-Masoretic text-form of Deuteronomy, closely related to the majority of Qumran Deuteronomy fragments, characterized by a relatively conservative, shorter text and consistent orthographic conventions."
+    },
+    {
+      "id": "proto-sp",
+      "label": "Pre-Samaritan / Proto-SP",
+      "type": "intermediate",
+      "date": "c. 300–100 BCE",
+      "description": "A Hebrew text-form attested at Qumran (notably 4QDeutn and related scrolls) featuring secondary harmonizing expansions and insertions characteristic of the Samaritan textual tradition, predating sectarian SP adaptation."
+    },
+    {
+      "id": "proto-lxx",
+      "label": "LXX Vorlage (Proto-LXX Hebrew)",
+      "type": "intermediate",
+      "date": "c. 250–200 BCE",
+      "description": "The Hebrew Vorlage underlying the Old Greek translation of Deuteronomy, slightly shorter than proto-MT in some passages and exhibiting distinctive variants not explainable as translation technique alone."
+    },
+    {
+      "id": "mt",
+      "label": "Masoretic Text",
+      "type": "tradition",
+      "tradition": "MT",
+      "date": "c. 100 CE (consonantal stabilization)",
+      "full_name": "Masoretic Text of Deuteronomy",
+      "language": "Hebrew",
+      "description": "The rabbinic consonantal text of Deuteronomy, stabilized around the 1st–2nd century CE, received with Tiberian vocalization and cantillation by the Ben Asher Masoretes at Tiberias, c. 9th–10th century CE."
+    },
+    {
+      "id": "tiberian-masorah",
+      "label": "Tiberian Masoretic Tradition",
+      "type": "intermediate",
+      "date": "c. 7th–10th c. CE",
+      "description": "The Ben Asher school's vocalized and accentuated Tiberian text, transmitted through the Aaron ben Moses ben Asher recension and underlying both the Aleppo and Leningrad codices."
+    },
+    {
+      "id": "aleppo",
+      "label": "Aleppo Codex (Keter Aram Tzova)",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "c. 920 CE",
+      "full_name": "Codex Aleppo (A)",
+      "language": "Hebrew",
+      "description": "The oldest and most authoritative Ben Asher Masoretic codex, vocalized by Aaron ben Moses ben Asher; Deuteronomy is extant from 28:17 onward due to lacunae, yet it remains the base text for HUB and the Hebrew University Bible."
+    },
+    {
+      "id": "leningrad",
+      "label": "Leningrad Codex (B19A)",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "1008/9 CE",
+      "full_name": "Codex Leningradensis (L)",
+      "language": "Hebrew",
+      "description": "The oldest complete Hebrew Bible, copied in 1008/9 CE, serving as the textual base for BHS and BHQ; Deuteronomy is fully extant and follows the Ben Asher Tiberian tradition closely."
+    },
+    {
+      "id": "bhs",
+      "label": "BHS",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "1977 CE",
+      "full_name": "Biblia Hebraica Stuttgartensia",
+      "language": "Hebrew",
+      "description": "The standard critical edition of the Hebrew Bible based on Leningrad Codex B19A, with critical apparatus; the Deuteronomy fascicle was edited by John William Wevers and remains the most widely used scholarly edition."
+    },
+    {
+      "id": "bhq",
+      "label": "BHQ Deuteronomy",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "2007 CE",
+      "full_name": "Biblia Hebraica Quinta, Deuteronomy",
+      "language": "Hebrew",
+      "description": "The BHQ fascicle for Deuteronomy, edited by Carmel McCarthy, provides an improved critical apparatus with expanded DSS and versional evidence, superseding BHS for Deuteronomy in text-critical research."
+    },
+    {
+      "id": "dss-deut",
+      "label": "Qumran Deuteronomy Scrolls",
+      "type": "tradition",
+      "tradition": "DSS",
+      "date": "c. 250 BCE – 68 CE",
+      "full_name": "Qumran Deuteronomy manuscripts (4QDeut-a through 4QDeut-q, 1QDeut-a/b, 5QDeut, 6QDeut, 11QDeut, etc.)",
+      "language": "Hebrew",
+      "description": "Deuteronomy is the most frequently attested book at Qumran with over 30 manuscripts, displaying textual plurality: some align closely with proto-MT, others with pre-Samaritan expansionism (4QDeutn), and a few with the LXX Vorlage, documenting live plurality before stabilization."
+    },
+    {
+      "id": "4qdeutn",
+      "label": "4QDeutn",
+      "type": "edition",
+      "tradition": "DSS",
+      "date": "c. 50 BCE",
+      "full_name": "4QDeutn (4Q41)",
+      "language": "Hebrew",
+      "description": "A notable Qumran Deuteronomy scroll containing Deut 8–9; 11 in a pre-Samaritan text-form with expansions, representing a distinct text-type and crucial evidence for SP's Hebrew antecedents."
+    },
+    {
+      "id": "4qdeutj",
+      "label": "4QDeutj",
+      "type": "edition",
+      "tradition": "DSS",
+      "date": "c. 100–50 BCE",
+      "full_name": "4QDeutj (4Q37)",
+      "language": "Hebrew",
+      "description": "A Qumran scroll of Deuteronomy with a text closely aligned to the proto-Masoretic tradition, attesting chapters 5–6; 8; 10–11; 30–33 and providing key evidence for the early proto-MT text-form."
+    },
+    {
+      "id": "sp",
+      "label": "Samaritan Pentateuch",
+      "type": "tradition",
+      "tradition": "SP",
+      "date": "c. 100 BCE – ongoing (oldest MSS c. 12th c. CE)",
+      "full_name": "Samaritan Pentateuch",
+      "language": "Hebrew (Samaritan script)",
+      "description": "The Samaritan textual tradition of Deuteronomy, derived from the pre-Samaritan text-form with additional sectarian adaptations (notably centralizing worship at Gerizim and the insertion of the Gerizim commandment after Exod 20:17/Deut 5:18), preserved in manuscripts from the 12th century CE onward."
+    },
+    {
+      "id": "old-greek",
+      "label": "Old Greek (OG) Deuteronomy",
+      "type": "intermediate",
+      "date": "c. 250–200 BCE",
+      "full_name": "Old Greek translation of Deuteronomy",
+      "language": "Greek",
+      "description": "The original Greek translation of Deuteronomy, likely produced in Alexandria as part of the Septuagint project, characterized by relatively literal but occasionally paraphrastic renderings and a Vorlage occasionally shorter or differing from proto-MT."
+    },
+    {
+      "id": "lxx",
+      "label": "LXX Manuscript Tradition",
+      "type": "tradition",
+      "tradition": "LXX",
+      "date": "c. 2nd c. BCE – ongoing",
+      "full_name": "Septuagint tradition of Deuteronomy",
+      "language": "Greek",
+      "description": "The broader Greek manuscript transmission of Deuteronomy, encompassing papyri (P. Fouad 266, P. Rylands Gk 458), uncials (Vaticanus, Alexandrinus, Sinaiticus), and minuscules, transmitting the Old Greek with progressive recensional corrections toward the MT."
+    },
+    {
+      "id": "p-fouad-266",
+      "label": "P. Fouad Inv. 266",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "c. 1st c. BCE",
+      "full_name": "Papyrus Fouad Inventory 266 (Rahlfs 942/848)",
+      "language": "Greek",
+      "description": "The oldest manuscript witnesses to the Greek Deuteronomy, preserving portions of chapters 10–33 with the Tetragrammaton written in paleo-Hebrew script within the Greek text, a hallmark of early pre-Hexaplaric LXX manuscripts."
+    },
+    {
+      "id": "vaticanus",
+      "label": "Codex Vaticanus (B)",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "c. 325–350 CE",
+      "full_name": "Codex Vaticanus Graecus 1209",
+      "language": "Greek",
+      "description": "The principal manuscript for the Göttingen LXX of Deuteronomy, containing the most reliable pre-Hexaplaric Old Greek text; John William Wevers used it as the primary witness for his Göttingen edition."
+    },
+    {
+      "id": "hexapla",
+      "label": "Origen's Hexapla",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "c. 240 CE",
+      "full_name": "Hexapla of Origen (5th column, Deuteronomy)",
+      "language": "Greek",
+      "description": "Origen's critical edition marking pluses and minuses between the LXX and Hebrew with obeloi and asterisks, importing kaige/Theodotionic readings for Deuteronomy, and profoundly influencing subsequent manuscript transmission through the Hexaplaric recension."
+    },
+    {
+      "id": "lucianic",
+      "label": "Lucianic Recension",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "c. 300 CE",
+      "full_name": "Lucianic (Antiochene) Recension of Deuteronomy",
+      "language": "Greek",
+      "description": "The Antiochene recension attributed to Lucian of Antioch, characterized by stylistic revisions, doublets, and occasionally preserving pre-Hexaplaric readings; for Deuteronomy, the Lucianic manuscripts (b, o, c2, e2 groups in Wevers) are important for recovering OG readings."
+    },
+    {
+      "id": "aquila",
+      "label": "Aquila's Recension",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "c. 125 CE",
+      "full_name": "Aquila's Greek translation of Deuteronomy",
+      "language": "Greek",
+      "description": "The hyper-literal Greek revision of Deuteronomy by Aquila of Sinope, surviving in fragments (including Cairo Geniza materials), used by Origen in the Hexapla and valued for reconstructing the proto-MT consonantal text."
+    },
+    {
+      "id": "symmachus",
+      "label": "Symmachus's Version",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "c. 175–200 CE",
+      "full_name": "Symmachus's Greek translation of Deuteronomy",
+      "language": "Greek",
+      "description": "The idiomatic Greek revision/translation by Symmachus, preserved fragmentarily in the Hexapla and in patristic citations, providing an important witness to the Hebrew text and to elegant Hellenistic Greek rendering of Deuteronomy."
+    },
+    {
+      "id": "gottingen-lxx",
+      "label": "Göttingen LXX Deuteronomy",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "1977 CE",
+      "full_name": "Septuaginta: Vetus Testamentum Graecum III/2, Deuteronomium (ed. Wevers)",
+      "language": "Greek",
+      "description": "The definitive critical edition of the Greek Deuteronomy by John William Wevers (Göttingen, 1977), reconstructing the Old Greek from all available papyri, uncials, minuscules, and daughter versions using rigorous genealogical method."
+    },
+    {
+      "id": "nets",
+      "label": "NETS Deuteronomy",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "2007 CE",
+      "full_name": "A New English Translation of the Septuagint: Deuteronomy (ed. Melvin Peters)",
+      "language": "English",
+      "description": "The NETS translation of Deuteronomy based on the Göttingen critical text, providing a modern English rendering for scholarly and ecumenical use with sensitivity to the LXX's literary character relative to the Hebrew."
+    },
+    {
+      "id": "peshitta",
+      "label": "Peshitta Deuteronomy",
+      "type": "tradition",
+      "tradition": "Peshitta",
+      "date": "c. 1st–2nd c. CE",
+      "full_name": "Peshitta of Deuteronomy",
+      "language": "Syriac",
+      "description": "The Syriac Peshitta translation of Deuteronomy, likely produced in Jewish or early Christian milieu in the 1st–2nd century CE from a Hebrew Vorlage close to proto-MT but with occasional agreements with the LXX, attested in the Ambrosianus (7a1) and other manuscripts."
+    },
+    {
+      "id": "peshitta-edition",
+      "label": "Leiden Peshitta (II/1b)",
+      "type": "edition",
+      "tradition": "Peshitta",
+      "date": "1991 CE",
+      "full_name": "The Old Testament in Syriac II/1b: Deuteronomy (Peshitta Institute, Leiden)",
+      "language": "Syriac",
+      "description": "The standard critical edition of the Peshitta Deuteronomy, edited by D. M. Walter for the Peshitta Institute, based on the Codex Ambrosianus and collation of major Syriac manuscripts."
+    },
+    {
+      "id": "targum-onkelos",
+      "label": "Targum Onkelos",
+      "type": "tradition",
+      "tradition": "Targum",
+      "date": "c. 2nd c. CE (redacted c. 3rd–5th c. CE in Babylonia)",
+      "full_name": "Targum Onkelos to Deuteronomy",
+      "language": "Aramaic (Babylonian)",
+      "description": "The official Babylonian Aramaic Targum of Deuteronomy, highly literal and closely following the proto-MT Vorlage, standardized in Babylon by the 5th century CE and authoritative for synagogal use; it occasionally offers independent evidence for the Hebrew text."
+    },
+    {
+      "id": "targum-ps-jonathan",
+      "label": "Targum Pseudo-Jonathan",
+      "type": "tradition",
+      "tradition": "Targum",
+      "date": "c. 7th–8th c. CE (Palestinian Aramaic, earlier strata)",
+      "full_name": "Targum Pseudo-Jonathan to Deuteronomy",
+      "language": "Aramaic (Palestinian)",
+      "description": "The expansive Palestinian Aramaic Targum of Deuteronomy, containing haggadic expansions, occasionally reflecting older Palestinian textual traditions and providing evidence for inner-Jewish exegesis and variant text-forms."
+    },
+    {
+      "id": "targum-neofiti",
+      "label": "Targum Neofiti",
+      "type": "tradition",
+      "tradition": "Targum",
+      "date": "c. 1st–3rd c. CE (final redaction later)",
+      "full_name": "Targum Neofiti 1, Deuteronomy",
+      "language": "Aramaic (Palestinian)",
+      "description": "The Palestinian Targum of Deuteronomy in Codex Neofiti 1, discovered in the Vatican Library by Diez Macho in 1956, providing extensive paraphrastic material from an ancient Palestinian Aramaic tradition."
+    },
+    {
+      "id": "vulgate",
+      "label": "Vulgate Deuteronomy",
+      "type": "tradition",
+      "tradition": "Vulgate",
+      "date": "c. 390–405 CE",
+      "full_name": "Vulgata Deuteronomium (Jerome's iuxta Hebraeos)",
+      "language": "Latin",
+      "description": "Jerome's Latin translation of Deuteronomy from the Hebrew veritas (a proto-MT Hebrew text closely resembling the consonantal MT), completed c. 390–405 CE; Jerome occasionally consulted the LXX and Aquila for difficult passages, as evidenced in his Epistulae and Commentarii, but his Deuteronomy Vorlage was fundamentally the Hebrew."
+    },
+    {
+      "id": "vulgate-edition",
+      "label": "Stuttgart Vulgate Deuteronomy",
+      "type": "edition",
+      "tradition": "Vulgate",
+      "date": "1969/1994 CE",
+      "full_name": "Biblia Sacra iuxta Vulgatam Versionem (Deuteronomium), eds. Weber-Gryson",
+      "language": "Latin",
+      "description": "The standard critical edition of the Latin Vulgate Deuteronomy, based primarily on the 8th-century Codex Amiatinus and a broad collation of Vulgate manuscripts, published by the Deutsche Bibelgesellschaft."
+    }
+  ],
+  "stemma_edges": [
+    {
+      "from": "archetype",
+      "to": "dtr-edition"
+    },
+    {
+      "from": "dtr-edition",
+      "to": "proto-hebrew"
+    },
+    {
+      "from": "proto-hebrew",
+      "to": "proto-mt"
+    },
+    {
+      "from": "proto-hebrew",
+      "to": "proto-sp"
+    },
+    {
+      "from": "proto-hebrew",
+      "to": "proto-lxx"
+    },
+    {
+      "from": "proto-mt",
+      "to": "mt"
+    },
+    {
+      "from": "proto-mt",
+      "to": "dss-deut"
+    },
+    {
+      "from": "proto-sp",
+      "to": "dss-deut"
+    },
+    {
+      "from": "proto-sp",
+      "to": "sp"
+    },
+    {
+      "from": "dss-deut",
+      "to": "4qdeutn"
+    },
+    {
+      "from": "dss-deut",
+      "to": "4qdeutj"
+    },
+    {
+      "from": "mt",
+      "to": "tiberian-masorah"
+    },
+    {
+      "from": "tiberian-masorah",
+      "to": "aleppo"
+    },
+    {
+      "from": "tiberian-masorah",
+      "to": "leningrad"
+    },
+    {
+      "from": "leningrad",
+      "to": "bhs"
+    },
+    {
+      "from": "leningrad",
+      "to": "bhq"
+    },
+    {
+      "from": "proto-lxx",
+      "to": "old-greek"
+    },
+    {
+      "from": "old-greek",
+      "to": "lxx"
+    },
+    {
+      "from": "lxx",
+      "to": "p-fouad-266"
+    },
+    {
+      "from": "lxx",
+      "to": "vaticanus"
+    },
+    {
+      "from": "lxx",
+      "to": "hexapla"
+    },
+    {
+      "from": "hexapla",
+      "to": "aquila"
+    },
+    {
+      "from": "hexapla",
+      "to": "symmachus"
+    },
+    {
+      "from": "hexapla",
+      "to": "lucianic"
+    },
+    {
+      "from": "vaticanus",
+      "to": "gottingen-lxx"
+    },
+    {
+      "from": "lucianic",
+      "to": "gottingen-lxx"
+    },
+    {
+      "from": "gottingen-lxx",
+      "to": "nets"
+    },
+    {
+      "from": "proto-mt",
+      "to": "peshitta"
+    },
+    {
+      "from": "peshitta",
+      "to": "peshitta-edition"
+    },
+    {
+      "from": "mt",
+      "to": "targum-onkelos"
+    },
+    {
+      "from": "proto-hebrew",
+      "to": "targum-ps-jonathan"
+    },
+    {
+      "from": "proto-hebrew",
+      "to": "targum-neofiti"
+    },
+    {
+      "from": "mt",
+      "to": "vulgate"
+    },
+    {
+      "from": "vulgate",
+      "to": "vulgate-edition"
+    }
+  ],
+  "key_divergences": [
+    {
+      "title": "The Shema and Divine Name in Deut 6:4",
+      "passage": "Deuteronomy 6:4",
+      "witnesses": [
+        "MT",
+        "LXX",
+        "DSS",
+        "SP"
+      ],
+      "plain": "The most sacred verse in Jewish liturgy — 'Hear O Israel, YHWH our God, YHWH is one' — shows variation across manuscripts in how the divine name and the predicate are rendered, with the LXX expanding and the DSS partially supporting the MT; this matters because it touches on the very centre of Israelite monotheistic confession.",
+      "technical": "MT reads אֶחָד with final waw enlarged; LXX (κύριος ὁ θεὸς ἡμῶν κύριος εἷς ἐστίν) adds ἐστίν, possibly reflecting a slightly different Vorlage or translational explication. 4QDeutk (4Q35) supports the MT consonantal text closely. Wevers (1995 Göttingen Notes) and Rofé (1994) have discussed whether LXX reflects exegetical amplification or a longer Vorlage; S. D. Fraade (2002) contextualizes the liturgical transmission."
+    },
+    {
+      "title": "Song of Moses: Deut 32 (4QDeutq)",
+      "passage": "Deuteronomy 32:8",
+      "witnesses": [
+        "MT",
+        "LXX",
+        "DSS"
+      ],
+      "plain": "In describing how God apportioned the nations, the MT reads 'according to the number of the sons of Israel,' while the Dead Sea Scrolls (4QDeutq) and the LXX read 'according to the number of the sons of God (divine beings),' implying a polytheistic world-order presupposed by an early version of the poem and later sanitized in proto-MT.",
+      "technical": "MT בְּנֵי יִשְׂרָאֵל versus 4QDeutq and LXX ἀγγέλων θεοῦ / בְּנֵי אֱלֹהִים; the DSS reading (4Q37 and 4Q44) aligns with LXX against MT, pointing to deliberate proto-MT theological correction. Cross (1953), Skehan (1954), Tigay (1996), and Sanders (2002) identify this as one of the clearest instances of anti-polytheistic scribal revision in the Pentateuch; Tov discusses it as a MT inner-Israelite Tendenz correction."
+    },
+    {
+      "title": "Gerizim Commandment in the Decalogue",
+      "passage": "Deuteronomy 5:18 (after verse 18 in SP)",
+      "witnesses": [
+        "MT",
+        "SP",
+        "DSS"
+      ],
+      "plain": "The Samaritan Pentateuch inserts a commandment about building an altar on Mount Gerizim as the tenth commandment (replacing the MT's commandment about coveting), making Gerizim the divinely chosen cultic site; this is not in MT or LXX and represents the most dramatic sectarian adaptation in the entire Samaritan textual tradition.",
+      "technical": "SP inserts at this point a composite text drawn from Deut 11:29–30; 27:2–3, 4–7 and Exod 20:17 directing worship to Gerizim. Qumran's 4QDeutn (4Q41) lacks this insertion, confirming it as a secondary SP sectarian addition rather than a preserved early reading. Purvis (1968), Tov (2012), and Kartveit (2009) analyse the SP's Gerizim theology; the text-critical consensus is that this is a late secondary expansion with no pre-Samaritan antecedent."
+    },
+    {
+      "title": "Deut 27:4: Gerizim vs. Ebal",
+      "passage": "Deuteronomy 27:4",
+      "witnesses": [
+        "MT",
+        "SP",
+        "LXX"
+      ],
+      "plain": "The MT instructs that an altar be built on Mount Ebal (a northern mountain associated with cursing), while the Samaritan Pentateuch reads Gerizim (the Samaritan holy mountain); this single-word difference carries enormous religious-political significance for the legitimacy of Samaritan versus Judean worship.",
+      "technical": "MT הַר עֵיבָל versus SP הַר גְּרִזִּים; the Old Latin and one LXX manuscript tradition support Gerizim, and Zechariah Kallai and Alan Crown have debated which is original. Knoppers (2013) and Böhm (1999) argue that either reading could be original and that the variant reflects the Samaritan-Judean schism; Tov (2012) considers Ebal the lectio difficilior and more likely original. Josephus's text (Antiquities IV) attests Ebal, supporting MT."
+    },
+    {
+      "title": "Deut 32:43: LXX/DSS Longer Doxology",
+      "passage": "Deuteronomy 32:43",
+      "witnesses": [
+        "MT",
+        "LXX",
+        "DSS"
+      ],
+      "plain": "At the climax of the Song of Moses, the MT has a brief two-line doxology, while the LXX and a Dead Sea Scroll (4QDeutq) preserve a longer four-stich form calling all the nations and heavenly beings to praise God; this suggests the MT represents a shorter, revised version of an originally more polytheistically framed hymn.",
+      "technical": "4QDeutq (4Q44) and LXX share a six-colon version against MT's two cola; the DSS text reads הַרְנִינוּ שָׁמַיִם עִמּוֹ ('Rejoice, O heavens, with him') and refers to כָּל-אֱלֹהִים ('all divine beings'), supporting LXX's πάντες υἱοὶ θεοῦ. Skehan (1954), Cross and Freedman (1975), and Tigay (1996) argue the MT is a Tendenz-shortened revision suppressing explicit Divine Council language; this passage is paradigmatic for Tov's category of proto-MT scribal ideology."
+    }
+  ],
+  "transmission_narrative": "Deuteronomy's textual transmission begins with a late 7th-century Josianic compositional core subsequently expanded through exilic Deuteronomistic editing, producing by the 4th century BCE a common proto-Hebrew Vorlage from which three major text-types diverged: the proto-Masoretic tradition (closely attested in most Qumran Deuteronomy fragments), a pre-Samaritan expansionist tradition (attested in 4QDeutn and related scrolls, ancestor of SP), and the Hebrew Vorlage of the Old Greek (slightly divergent from proto-MT, translated in Alexandria c. 250–200 BCE). The plurality of text-forms at Qumran — over 30 Deuteronomy manuscripts representing different alignments — is the most important datum for understanding the book's pre-stabilization transmission, demonstrating that 'Deuteronomy' was not a single fixed text before the 1st century CE. The proto-MT was stabilized by rabbinic activity c. 100 CE and transmitted through the Tiberian Masoretes (Ben Asher tradition, 9th–10th centuries) to the Aleppo and Leningrad codices, which underlie BHS and BHQ; meanwhile the Old Greek underwent profound recensional interference through Origen's Hexapla (c. 240 CE), making reconstruction of the original LXX a complex text-critical task accomplished systematically only with Wevers's Göttingen edition (1977). The Peshitta and Vulgate (Jerome's iuxta Hebraeos, c. 390–405 CE) both follow a Hebrew Vorlage very close to proto-MT, while the Targums (Onkelos, Pseudo-Jonathan, Neofiti) reflect Palestinian and Babylonian interpretive traditions with relatively stable proto-MT Vorlagen.",
+  "transmission_plain": "Deuteronomy was composed and repeatedly edited over centuries in ancient Israel before becoming the ancestor of several distinct manuscript families — the Hebrew texts used in rabbinic Judaism (which became today's standard Hebrew Bible), a Greek translation made in Egypt (the Septuagint), a Samaritan version with significant expansions, and Aramaic, Syriac, and Latin translations. The discovery of the Dead Sea Scrolls showed that in the centuries around the turn of the Common Era, multiple different versions of Deuteronomy coexisted side by side, and that our modern Hebrew Bible represents only one of several early forms of the text. Scholars today use critical editions like the Göttingen Septuagint and BHQ to compare all these witnesses and reconstruct as closely as possible what earlier forms of the text looked like.",
+  "bibcrit_assessment": {
+    "title": "Qumran Reveals Deuteronomy's Pre-Stabilization Textual Plurality",
+    "plain": "The Dead Sea Scrolls preserve fragments of Deuteronomy in at least three distinct text-types simultaneously — proto-Masoretic, pre-Samaritan, and LXX-related — demonstrating that the book existed in multiple living forms before Jewish scribal standardization around 100 CE, and that no single 'original' Deuteronomy can be recovered without careful weighing of all witnesses.",
+    "confidence": 0.74
+  },
+  "discovery_ready": true,
+  "reference": "Deuteronomy",
+  "cached_at": "2026-04-20T20:06:17.650040",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v2",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis is broadly sound and reflects mainstream text-critical consensus, but contains several specific factual errors regarding manuscript identifications, editorial attributions, and dates that require correction.",
+    "flagged_claims": [
+      {
+        "claim": "the Deuteronomy fascicle was edited by John William Wevers and remains the most widely used scholarly edition",
+        "risk": "HIGH",
+        "reason": "The BHS Deuteronomy fascicle was edited by J. Hempel, not John William Wevers. Wevers edited the Göttingen LXX Deuteronomy. This is a clear factual error."
+      },
+      {
+        "claim": "4QDeutn (4Q41) ... A notable Qumran Deuteronomy scroll containing Deut 8–9; 11 in a pre-Samaritan text-form with expansions",
+        "risk": "HIGH",
+        "reason": "4QDeutn is generally classified as a liturgical/excerpted text containing Deut 8:5-10 and 5:1-6:1, not a pre-Samaritan witness. The pre-Samaritan-aligned Deuteronomy scroll typically cited is 4QpaleoDeutr or others; this attribution conflates manuscripts."
+      },
+      {
+        "claim": "4QDeutj (4Q37) ... attesting chapters 5–6; 8; 10–11; 30–33",
+        "risk": "MEDIUM",
+        "reason": "4QDeutj is an excerpted/liturgical text; the listed chapter range and proto-MT alignment claim need verification, as such excerpted texts are not straightforwardly classified as proto-MT witnesses."
+      },
+      {
+        "claim": "Göttingen LXX Deuteronomy ... 1977 CE",
+        "risk": "MEDIUM",
+        "reason": "Wevers's Göttingen Deuteronomium was published in 1977, but BHS Deuteronomy was published earlier (fascicle 1972). Date is plausible but the conflation with BHS dating in the same year is suspicious."
+      },
+      {
+        "claim": "P. Fouad Inv. 266 ... preserving portions of chapters 10–33",
+        "risk": "MEDIUM",
+        "reason": "P. Fouad 266 actually consists of three separate manuscripts (Rahlfs 847, 848, 942) covering different portions of Genesis and Deuteronomy; the chapter range and Rahlfs numbers given (942/848) need verification for accuracy."
+      },
+      {
+        "claim": "importing kaige/Theodotionic readings for Deuteronomy",
+        "risk": "MEDIUM",
+        "reason": "While Origen used Theodotion to fill Hebrew pluses, the specific characterization of kaige influence in Hexaplaric Deuteronomy is overstated; Deuteronomy is not a primary kaige book."
+      },
+      {
+        "claim": "Aleppo Codex ... it remains the base text for HUB and the Hebrew University Bible",
+        "risk": "MEDIUM",
+        "reason": "HUB (Hebrew University Bible) is the project; 'HUB and the Hebrew University Bible' is redundant. Also, since Deuteronomy is largely missing from Aleppo (only 28:17 onward survives, per the analysis itself), HUB Deuteronomy has not yet been published and cannot use Aleppo as its full base."
+      },
+      {
+        "claim": "Lucianic manuscripts (b, o, c2, e2 groups in Wevers)",
+        "risk": "MEDIUM",
+        "reason": "Wevers's manuscript group sigla for Deuteronomy should be verified; these specific group letters may be misremembered from Lucianic sigla used in other Göttingen volumes (e.g., Samuel-Kings)."
+      },
+      {
+        "claim": "Dtr1/Dtr2 ... c. 620–550 BCE",
+        "risk": "MEDIUM",
+        "reason": "The Cross/Nelson Dtr1/Dtr2 model is one specific scholarly framework (American school), competing with Smend's Göttingen layers (DtrH/DtrP/DtrN); presenting it as the Deuteronomistic edition is over-specific."
+      }
+    ],
+    "safe_claims": [
+      "Deuteronomy is the most frequently attested Pentateuchal book at Qumran with over 30 manuscripts",
+      "Leningrad Codex is dated 1008/9 CE and serves as the base for BHS and BHQ",
+      "BHQ Deuteronomy was edited by Carmel McCarthy (2007)",
+      "The Samaritan Pentateuch contains the Gerizim commandment expansion",
+      "P. Fouad 266 writes the Tetragrammaton in paleo-Hebrew script within Greek text",
+      "Codex Vaticanus dates to the 4th century CE",
+      "Aquila produced a hyper-literal Greek revision c. early 2nd century CE",
+      "Qumran Deuteronomy manuscripts display textual plurality across proto-MT, pre-SP, and LXX-aligned forms"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.678961+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

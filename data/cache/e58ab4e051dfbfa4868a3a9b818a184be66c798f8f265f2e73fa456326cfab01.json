@@ -139,5 +139,53 @@
   "reference": "Proverbs",
   "cached_at": "2026-03-30T21:38:07.261284",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis correctly captures the well-established paraphrastic character of LXX-Proverbs, but contains several specific textual claims that are inaccurate or misleading on close inspection.",
+    "flagged_claims": [
+      {
+        "claim": "The translator substitutes 'wisdom' (sophia) for 'knowledge' (da'at)",
+        "risk": "HIGH",
+        "reason": "The LXX of Prov 1:7 actually reads 'ἀρχὴ σοφίας φόβος θεοῦ' but this corresponds to a different clause structure; the standard LXX rendering of Prov 1:7a is 'Ἀρχὴ σοφίας φόβος κυρίου' (or θεοῦ), and this reflects the well-known issue that LXX 1:7 may conflate with Prov 9:10/Ps 110:10. The claim oversimplifies; moreover the example given doesn't cleanly demonstrate 'sophia for da'at' since the Hebrew has 'reshit da'at' = 'beginning of knowledge,' not 'beginning of wisdom.'"
+      },
+      {
+        "claim": "Proverbs 25:1-29:27 ... LXX presents these chapters in radically different sequence: 30-31, then 25:1-29:27",
+        "risk": "HIGH",
+        "reason": "The actual LXX order of Proverbs 24-31 is more complex: after 24:22 the LXX inserts material, then has 30:1-14, 24:23-34, 30:15-33, 31:1-9, 25-29, 31:10-31. The summary given here is inaccurate and oversimplified."
+      },
+      {
+        "claim": "Proverbs 9:12a-e ... LXX has 6 verses, including 12c-e absent from MT",
+        "risk": "MEDIUM",
+        "reason": "LXX Prov 9 has additional material after v.12 (commonly numbered 9:12a-c, three additional cola/verses), not 12c-e, and the count of 'six verses' is imprecise. The general phenomenon is real but the specific versification is wrong."
+      },
+      {
+        "claim": "Scholarly consensus (Cook, Tov, Lange) recognizes this as a 'free' or 'paraphrastic' translation",
+        "risk": "MEDIUM",
+        "reason": "While Cook and Tov have written extensively on LXX-Proverbs, attributing a unified 'consensus' label including Lange specifically is an overgeneralization; Cook in particular has nuanced views distinguishing translator creativity from Vorlage differences."
+      },
+      {
+        "claim": "rivaled only by Job and Esther",
+        "risk": "MEDIUM",
+        "reason": "While Job and Esther are indeed paraphrastic, the ranking of LXX-Prov as having 'the highest paraphrase rate' is a subjective assessment; some scholars would place Job ahead of Proverbs in paraphrastic freedom."
+      },
+      {
+        "claim": "Proverbs 11:16 ... γυνὴ εὐχάριστος ἐγείρει ἀνδρὶ δόξαν",
+        "risk": "MEDIUM",
+        "reason": "The Greek text cited should be checked; standard LXX reads 'γυνὴ εὐχάριστος ἐγείρει ἀνδρὶ δόξαν' is approximately correct, but the full citation needs verification against Rahlfs/Göttingen edition."
+      }
+    ],
+    "safe_claims": [
+      "LXX-Proverbs is among the most paraphrastic books in the Septuagint",
+      "The translator adds material not present in MT and reorganizes chapters",
+      "Prov 15:3 retains the 'eyes of the Lord' anthropomorphism",
+      "Prov 8:22 uses ἔκτισέν (later figuring in Arian controversies)",
+      "LXX-Prov has a different macrostructure than MT in the latter chapters",
+      "The book uses Hellenistic philosophical/ethical vocabulary",
+      "Retroversion to a Hebrew Vorlage is methodologically difficult due to translator freedom"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.422101+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

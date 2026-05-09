@@ -172,5 +172,73 @@
   "reference": "Numbers",
   "cached_at": "2026-04-17T08:41:10.397611",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis correctly identifies well-known textual phenomena and patterns of revision, but several specific scholarly citations appear inaccurate or fabricated, and some Greek/Aramaic readings are reconstructed loosely.",
+    "flagged_claims": [
+      {
+        "claim": "καὶ τὴν δόξαν κυρίου εἶδεν ('and he saw the glory of the Lord')",
+        "risk": "HIGH",
+        "reason": "This is not the actual LXX reading of Num 12:8. The LXX reads καὶ τὴν δόξαν κυρίου εἶδεν only loosely; the actual Greek is 'καὶ τὴν δόξαν κυρίου εἶδεν' is paraphrased. The LXX reads 'καὶ τὴν δόξαν κυρίου εἶδεν' — needs verification against Wevers' edition where the rendering involves εἶδος-related terms. The claim that δόξα replaces temunah here should be checked carefully."
+      },
+      {
+        "claim": "οὐχ ὡς ἄνθρωπος ὁ θεὸς διαρτηθῆναι οὐδὲ ὡς υἱὸς ἀνθρώπου ἀπειληθῆναι",
+        "risk": "HIGH",
+        "reason": "The actual LXX of Num 23:19 reads 'οὐχ ὡς ἄνθρωπος ὁ θεὸς διαρτηθῆναι οὐδὲ ὡς υἱὸς ἀνθρώπου ἀπειληθῆναι' — this transcription needs verification. More importantly, the claim that ἀπειληθῆναι means 'be threatened' rather than rendering נחם is correct in form, but the gloss and its theological interpretation as systematic immutability concern is contested and stated too confidently."
+      },
+      {
+        "claim": "Cathcart and Gordon, The Targum of the Minor Prophets, pp. 23-25",
+        "risk": "HIGH",
+        "reason": "Cited as evidence for Targum Numbers 24:17, but Cathcart and Gordon's volume is on the Minor Prophets, not Numbers. This citation is misapplied or fabricated for this context."
+      },
+      {
+        "claim": "Hayward, The Targum of Jeremiah, pp. 34-36",
+        "risk": "HIGH",
+        "reason": "Cited as evidence for Numbers 25:4 Targum analysis, but Hayward's Targum of Jeremiah volume is not a natural source for Numbers exegesis; appears to be a misapplied or fabricated citation."
+      },
+      {
+        "claim": "Schaper, Eschatology in the Greek Psalter, pp. 45-48",
+        "risk": "MEDIUM",
+        "reason": "Schaper's work is on the Psalter, not Numbers; while he discusses messianism in LXX broadly, citing specific pages for Num 24:7 analysis is questionable without verification."
+      },
+      {
+        "claim": "van der Kooij, The Oracle of Tyre, pp. 156-159",
+        "risk": "MEDIUM",
+        "reason": "Van der Kooij's 'Oracle of Tyre' is on Isaiah 23; citation for Num 24:7 is suspect unless he has a specific excursus, which needs verification."
+      },
+      {
+        "claim": "Gog replacing Agag in some LXX manuscripts (B)",
+        "risk": "MEDIUM",
+        "reason": "The Gog/Agag variant in Num 24:7 is real, but is typically attested in different witnesses (some Greek MSS, not specifically Vaticanus/B as the primary witness). The specific MS attribution should be verified."
+      },
+      {
+        "claim": "Targum Onqelos: וְיִתְרַבֵּי מְשִׁיחָא מִיִּשְׂרָאֵל ('and the Messiah shall be multiplied/increased from Israel')",
+        "risk": "MEDIUM",
+        "reason": "Targum Onqelos at Num 24:17 reads 'וְיִתְרַבָּא מְשִׁיחָא' meaning 'the Messiah shall be anointed/exalted,' from the root רבי/רבא ('to anoint/grow great'), not 'multiplied.' The gloss 'multiplied/increased' is misleading."
+      },
+      {
+        "claim": "Alexander, 'Targum, Targumim,' ABD 6:327",
+        "risk": "MEDIUM",
+        "reason": "Philip Alexander did write the ABD article on Targum, but the specific page reference for the karet/world-to-come claim should be verified; risk of citation padding."
+      },
+      {
+        "claim": "Sysling, Teḥiyyat Ha-Metim, pp. 145-149",
+        "risk": "MEDIUM",
+        "reason": "Harry Sysling's Tehiyyat Ha-Metim is a real work on resurrection in Palestinian Targums, but the specific page citation should be verified."
+      }
+    ],
+    "safe_claims": [
+      "MT Num 12:8 reads תְּמֻנַת יְהוָה יַבִּיט",
+      "Num 23:19 MT contrasts God with man regarding lying and repenting",
+      "Targum Onqelos and Pseudo-Jonathan render 'star' and 'scepter' in Num 24:17 with explicit 'king' and 'Messiah' terminology",
+      "Num 24:17 was applied messianically in Second Temple reception (Bar Kokhba)",
+      "Num 25:4 MT contains a moral/legal ambiguity about who is to be executed",
+      "Targum Pseudo-Jonathan expands karet penalties with 'this world and the world to come' language in various passages",
+      "LXX systematically softens anthropomorphic language as a general pattern"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.588709+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

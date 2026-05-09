@@ -87,5 +87,52 @@
   "reference": "Deuteronomy 32:8",
   "cached_at": "2026-03-31T11:15:36.376239",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The core textual-critical claim about position 5 is well-established and accurate, but several lexical equivalence claims and proof-text citations contain inaccuracies or overstatements.",
+    "flagged_claims": [
+      {
+        "claim": "The root נחל (Hiphil 'to give as inheritance, to apportion') is consistently translated with διαμερίζω or cognates in passages dealing with territorial division (Josh 13:7, 14:1)",
+        "risk": "HIGH",
+        "reason": "This is inaccurate. נחל in Hiphil is typically rendered with κατακληρονομέω or κληροδοτέω in LXX, not διαμερίζω. The cited Joshua passages do not use διαμερίζω for נחל."
+      },
+      {
+        "claim": "διασπείρω is attested as LXX equivalent for פרד in contexts of scattering or separating peoples (Gen 10:5, 32)",
+        "risk": "MEDIUM",
+        "reason": "Gen 10:5, 32 LXX uses διασπείρω, but the underlying Hebrew verb in those verses is פרד in niphal; the claim is roughly correct but the specific verse references should be verified, and διασπείρω more commonly renders פוץ."
+      },
+      {
+        "claim": "ἔστησεν regularly translates Hiphil forms of נצב/יצב meaning 'to set, establish' (Exod 17:12, Deut 27:2)",
+        "risk": "MEDIUM",
+        "reason": "Deut 27:2 concerns setting up stones and uses a different verb (קום Hiphil) in MT; the proof-text citation may be inaccurate."
+      },
+      {
+        "claim": "MT בְּנֵי יִשְׂרָאֵל is a later theological correction",
+        "risk": "MEDIUM",
+        "reason": "While this is a widely held scholarly view, stating it as fact rather than the dominant hypothesis overstates certainty; some scholars (e.g., MT priority defenders) dispute this."
+      },
+      {
+        "claim": "4QDeutj: למספר בני אלוהים; 4QDeutq: למספר בני אל",
+        "risk": "MEDIUM",
+        "reason": "The standard scholarly reading is that 4QDeutj reads בני אלוהים (or reconstructed as such) and 4QDeutq reads בני אלוהים as well; the attribution of בני אל specifically to 4QDeutq should be verified against DJD editions, as readings are fragmentary and reconstructed."
+      },
+      {
+        "claim": "LXX often harmonizes עַמִּים and גּוֹיִם to ἔθνη in poetic contexts",
+        "risk": "MEDIUM",
+        "reason": "ἔθνη commonly renders both terms but characterizing this as 'harmonization' in 'poetic contexts' is an overgeneralization; λαοί is also frequently used for עמים."
+      }
+    ],
+    "safe_claims": [
+      "ὕψιστος is the standard LXX rendering of עֶלְיוֹן",
+      "ἔθνη consistently translates גּוֹיִם throughout the Pentateuch",
+      "υἱοὺς Ἀδάμ directly renders בְּנֵי אָדָם",
+      "LXX ἀγγέλων θεοῦ presupposes בְּנֵי אֵל or בְּנֵי אֱלֹהִים rather than MT בְּנֵי יִשְׂרָאֵל",
+      "Qumran evidence supports a Vorlage reading 'sons of God/El' at Deut 32:8",
+      "κατὰ ἀριθμόν renders לְמִסְפַּר"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.552334+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

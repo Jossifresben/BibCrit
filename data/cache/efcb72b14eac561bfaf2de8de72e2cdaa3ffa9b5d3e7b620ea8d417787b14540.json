@@ -1,0 +1,236 @@
+{
+  "reference": "Psalm 82:1",
+  "synthesis": "Psalm 82:1 depicts YHWH (Elohim) standing in the divine assembly (ʿadat-ʾel) to judge among the gods (elohim), a scene rooted in the ancient Near Eastern divine council tradition. This verse became a locus of intense theological reflection in the Second Temple period, as communities wrestled with questions of divine sovereignty, the status of angelic or heavenly beings, and the just governance of the nations. Its imagery of a heavenly tribunal fed directly into apocalyptic traditions concerning the judgment of wayward angels and cosmic powers.",
+  "allusions": [
+    {
+      "stl_work": "1_enoch",
+      "stl_passage": "1 En. 14:18-22",
+      "stl_content": "Enoch's throne-room vision depicts the Great Glory seated on a lofty throne surrounded by myriads of holy ones, with fire encircling the divine presence; the scene constitutes a heavenly court where the Watchers' fate is about to be pronounced.",
+      "allusion_type": "parallel",
+      "directionality": "shared_tradition",
+      "confidence": 0.82,
+      "canonical_element": "ʿadat-ʾel / 'divine assembly' and God standing in judgment",
+      "scholarly_note": "Nickelsburg (1 Enoch 1, Hermeneia, 2001, pp. 261–270) identifies 1 En. 14 as drawing on the same divine-council tradition visible in Psalm 82, noting that both texts present a heavenly court scene in which a supreme deity presides over subordinate divine beings. Collins (The Apocalyptic Imagination, 1998, pp. 48–51) situates the Book of Watchers within a trajectory that intensifies and narrativizes the divine-assembly motif of the Psalter. Knibb (The Ethiopic Book of Enoch, 1978, vol. 2, pp. 100–104) notes textual variants in the Ethiopic that preserve the plurality of heavenly beings consistent with Ps 82's ʾelohim.",
+      "relevance_to_dss": "4QEnocha (4Q201) preserves portions of 1 En. 14 and confirms the antiquity of the divine-council framework in pre-Christian apocalyptic literature.",
+      "relevance_to_nt": "Revelation 4–5 draws on this same heavenly-court tradition, with the Lamb before the throne functioning as a development of the divine-assembly scene."
+    },
+    {
+      "stl_work": "1_enoch",
+      "stl_passage": "1 En. 6:1-8",
+      "stl_content": "The opening of the Book of Watchers describes the Watchers as 'sons of heaven' (bene shamayim) who descend and corrupt the earth, setting the stage for their trial before the divine council; they are the rebellious members of the heavenly assembly whose judgment Psalm 82 anticipates.",
+      "allusion_type": "parallel",
+      "directionality": "shared_tradition",
+      "confidence": 0.78,
+      "canonical_element": "ʾelohim judged in the midst of the assembly / gods who will 'die like men' (v.7)",
+      "scholarly_note": "Nickelsburg (1 Enoch 1, 2001, pp. 174–180) argues that the Watchers myth in 1 En. 6–11 is the narrative elaboration of the scenario implied by Psalm 82, where divine beings fail in their appointed roles and face divine judgment. Collins (The Apocalyptic Imagination, 1998, p. 47) notes that both texts share the tradition of subordinate heavenly beings whose misconduct necessitates adjudication by the chief deity. Knibb (1978, vol. 2, pp. 67–70) discusses the Aramaic Vorlage preserved at Qumran and its bearing on the original wording of the divine-beings terminology.",
+      "relevance_to_dss": "4QEnGiants and 4Q201–202 confirm the Watcher tradition's currency at Qumran and its connection to the divine-council punishment motif.",
+      "relevance_to_nt": "2 Peter 2:4 and Jude 6 echo the tradition of imprisoned fallen divine beings, which develops from precisely this nexus of Ps 82 and the Watcher myth."
+    },
+    {
+      "stl_work": "1_enoch",
+      "stl_passage": "1 En. 9:1-11",
+      "stl_content": "The archangels Michael, Sariel, Raphael, and Gabriel observe the earth's corruption caused by the Watchers and bring a petition before the 'Lord of lords' and 'God of gods,' appealing for divine judgment against the offending heavenly beings.",
+      "allusion_type": "echo",
+      "directionality": "shared_tradition",
+      "confidence": 0.74,
+      "canonical_element": "God judging 'in the midst of the gods' (bəqerev ʾelohim yishpot)",
+      "scholarly_note": "Nickelsburg (1 Enoch 1, 2001, pp. 200–208) shows that the intercession scene in 1 En. 9 presupposes a divine council in which senior angels petition the supreme deity to exercise judgment, directly echoing the judicial function of the deity in Psalm 82. Collins (1998, pp. 49–50) notes the structural parallel: both texts assume a hierarchical heavenly assembly where the chief deity renders verdicts over lesser divine figures. The address 'God of gods' in 1 En. 9:4 mirrors the theological world of Ps 82 where YHWH is distinguished from the subordinate ʾelohim.",
+      "relevance_to_dss": "4Q202 (4QEnochb ar) preserves this chapter, confirming pre-Maccabean knowledge of the divine-petition-and-judgment schema.",
+      "relevance_to_nt": "The intercessory role of angels before a divine tribunal has resonances with Revelation 8:3-4 and the heavenly court imagery in Hebrews 12:22-24."
+    },
+    {
+      "stl_work": "1_enoch",
+      "stl_passage": "1 En. 62:1-3",
+      "stl_content": "In the Similitudes, the Lord of Spirits seats himself on the throne of glory to judge the kings and mighty ones of the earth; the Son of Man sits beside him and the assembly of the holy ones and the Elect One participates in a cosmic judicial scene.",
+      "allusion_type": "echo",
+      "directionality": "canonical_to_stl",
+      "confidence": 0.7,
+      "canonical_element": "God standing in the divine assembly to judge (nitsav baʿadat-ʾel)",
+      "scholarly_note": "Nickelsburg (1 Enoch 1, 2001, pp. 46–47) discusses how the Similitudes reappropriate the divine-council and judgment motifs of Psalms 82 and 89, projecting them onto an eschatological tribunal presided over by the Son of Man. Collins (The Apocalyptic Imagination, 1998, pp. 177–180) situates the Similitudes as the apex of a tradition in which Psalm 82's divine assembly becomes a fully apocalypticized end-time court. The transformation from spatial (Ps 82's assembly) to temporal (Similitudes' eschatological session) is characteristic of Second Temple apocalyptic hermeneutics.",
+      "relevance_to_dss": "The Similitudes are absent from Qumran, but the Son of Man/judgment tradition they reflect parallels DSS texts like 4Q246 and 11QMelchizedek.",
+      "relevance_to_nt": "Matthew 25:31-32 and John 5:22 develop the Son of Man as eschatological judge in ways that build on the same Psalm 82 tradition mediated through texts like 1 En. 62."
+    },
+    {
+      "stl_work": "1_enoch",
+      "stl_passage": "1 En. 90:20-27",
+      "stl_content": "The Animal Apocalypse depicts an eschatological judgment in which a great throne is set up and books are opened; the fallen stars (fallen angels/Watchers) are judged and sentenced before the white-robed deity, mirroring the divine-council judgment of Psalm 82.",
+      "allusion_type": "parallel",
+      "directionality": "shared_tradition",
+      "confidence": 0.68,
+      "canonical_element": "God's judicial role over divine beings in a formal assembly setting",
+      "scholarly_note": "Nickelsburg (1 Enoch 1, 2001, pp. 401–406) identifies 1 En. 90:20-27 as combining the book-of-deeds tradition with the divine-council judgment schema, both of which find their scriptural anchor partly in Psalm 82. Collins (1998, pp. 68–70) situates the Animal Apocalypse's judgment scene within the broader trajectory of divine-council jurisprudence that runs from Psalm 82 through the Enochic literature. VanderKam (The Book of Jubilees, 2001, p. 24) notes parallels between the Animal Apocalypse's angelic judgment and the Jubilees tradition of Mastema's accountability before God.",
+      "relevance_to_dss": "4Q204 (4QEnochc ar) preserves portions of the Dream Visions confirming the antiquity of this judgment schema at Qumran.",
+      "relevance_to_nt": "Revelation 20:11-15's great white throne judgment replicates the structure of this eschatological divine-council court, with opened books and sentenced cosmic beings."
+    },
+    {
+      "stl_work": "jubilees",
+      "stl_passage": "Jub. 15:31-32",
+      "stl_content": "Jubilees states that God appointed spirits (angelic princes) over all nations except Israel, whom he governs directly; the angels over the nations are implicitly accountable to him for their stewardship, echoing Psalm 82's scenario of gods assigned to oversee nations.",
+      "allusion_type": "echo",
+      "directionality": "canonical_to_stl",
+      "confidence": 0.72,
+      "canonical_element": "Divine assembly of gods who govern nations (underlying motif of Ps 82 read with Deut 32:8-9)",
+      "scholarly_note": "VanderKam (The Book of Jubilees, 2001, pp. 63–64) explicates how Jubilees' theology of angelic national guardians directly reinterprets the tradition of Deuteronomy 32:8-9 and Psalm 82, presenting the governing angels as divinely appointed but ultimately subordinate and accountable to the Lord. Collins (1998, p. 85) notes that Jubilees demythologizes the divine-council by replacing ʾelohim with angelic 'princes,' a move that makes explicit what Psalm 82 leaves ambiguous. This passage thus represents a hermeneutically motivated transformation of the divine-assembly theology.",
+      "relevance_to_dss": "4Q216–4Q228 (4QJubileesa-h) confirm the importance of this angelic-nations theology at Qumran, where similar ideas appear in the War Scroll (1QM) and Songs of the Sabbath Sacrifice (4Q400–407).",
+      "relevance_to_nt": "Paul's reference to 'principalities and powers' (Eph 6:12; Col 1:16) as cosmic authorities over nations reflects this same tradition of national angelic governance derived from the Ps 82 complex."
+    },
+    {
+      "stl_work": "jubilees",
+      "stl_passage": "Jub. 5:6-11",
+      "stl_content": "Jubilees narrates the judgment of the Watchers and their imprisonment, describing how God adjudicates their case and pronounces sentence, using language of a formal juridical proceeding that mirrors the divine-council court of Psalm 82.",
+      "allusion_type": "parallel",
+      "directionality": "shared_tradition",
+      "confidence": 0.65,
+      "canonical_element": "God standing in judgment among the gods / 'You shall die like men' (Ps 82:6-7)",
+      "scholarly_note": "VanderKam (The Book of Jubilees, 2001, pp. 37–40) demonstrates that Jubilees' account of the Watcher judgment in ch. 5 condenses the longer Enochic narrative while preserving its essential juridical structure, which itself echoes the divine-council judgment of Psalm 82. Collins (1998, p. 83) notes that Jubilees consistently frames angelic transgression in terms of accountability to the heavenly court, a framework anchored in Psalm 82's depiction of God as judge among the gods. The motif of immortal beings subjected to death-like punishment (Jub. 5:10) resonates with Ps 82:7's oracle that the unjust gods will 'die like men.'",
+      "relevance_to_dss": "The Watcher-judgment tradition is extensively paralleled at Qumran in texts such as CD 2:17-21 and 4QEnoch, confirming its widespread reception.",
+      "relevance_to_nt": "The reference to angels 'kept in eternal chains' in Jude 6 reflects a punitive tradition that ultimately derives from the Ps 82–Watcher-judgment nexus."
+    },
+    {
+      "stl_work": "sirach",
+      "stl_passage": "Sir. 17:17",
+      "stl_content": "Ben Sira states that God appointed a ruler over every nation, but Israel is the Lord's own portion; this reflects the tradition of national angelic oversight that underlies Psalm 82 and implies the accountability of those rulers to God.",
+      "allusion_type": "echo",
+      "directionality": "canonical_to_stl",
+      "confidence": 0.6,
+      "canonical_element": "The gods of the divine assembly assigned governance over nations (motif implicit in Ps 82 read with Deut 32:8-9)",
+      "scholarly_note": "Collins (The Apocalyptic Imagination, 1998, p. 85) notes that Sir. 17:17 is part of a broader wisdom appropriation of the divine-council tradition in which national rulers—whether angelic or human—are held accountable to the creator deity, mirroring the judicial scenario of Psalm 82. Nickelsburg (Jewish Literature Between the Bible and the Mishnah, 2005, p. 63) observes that Ben Sira domesticates the mythological divine-assembly into a wisdom theology of divine providence over nations. VanderKam (2001, p. 64) compares Sirach's formulation closely to Jubilees 15:31, suggesting a common exegetical tradition based on Ps 82 and Deut 32.",
+      "relevance_to_dss": "Ben Sira's Hebrew text is partially preserved at Masada and Cave 2 (2Q18), and the tradition of angelic national rulers is prominent in DSS sectarian texts.",
+      "relevance_to_nt": "Acts 17:26-27 reflects similar wisdom-theological language about God's governance of nations through appointed agents, distantly echoing this tradition."
+    },
+    {
+      "stl_work": "4_ezra",
+      "stl_passage": "4 Ezra 7:33-38",
+      "stl_content": "In 4 Ezra's eschatological vision, the Most High sits on the judgment seat and the nations are judged, with all deeds laid bare; the scene constitutes a universalized and temporalized version of the divine-assembly judgment in Psalm 82.",
+      "allusion_type": "parallel",
+      "directionality": "canonical_to_stl",
+      "confidence": 0.62,
+      "canonical_element": "God standing in the divine assembly to render judgment (nitsav / yishpot)",
+      "scholarly_note": "Collins (The Apocalyptic Imagination, 1998, pp. 208–212) situates 4 Ezra's judgment scene within the long trajectory from Psalm 82 through the Enochic literature, noting that 4 Ezra strips the divine council of its mythological plurality and reconceives the assembly as humanity before God's throne. The judicial terminology in 4 Ezra 7:33 ('the judgment shall remain, the truth shall stand') resonates with Psalm 82's emphasis on justice as the divine prerogative in the heavenly court. Stone (Fourth Ezra, Hermeneia, 1990, pp. 228–232) notes that 4 Ezra's interest in divine justice as theodicy builds on the same canonical tradition.",
+      "relevance_to_dss": "While 4 Ezra is post-70 CE and not found at Qumran, its eschatological judgment schema parallels earlier Qumran texts such as 1QS 4:11-14 and 1QM 1:10-11.",
+      "relevance_to_nt": "Revelation 20:11-15 and Matthew 25:31-46 develop the universal judgment tribunal that 4 Ezra inherits from the same Psalm 82 tradition."
+    },
+    {
+      "stl_work": "tobit",
+      "stl_passage": "Tob. 3:16-17",
+      "stl_content": "The prayers of Tobit and Sarah ascend before God in heaven, where Raphael is present in the divine court and is dispatched to resolve their situations; the scene presupposes a heavenly court with senior angelic beings attending the divine presence.",
+      "allusion_type": "echo",
+      "directionality": "shared_tradition",
+      "confidence": 0.45,
+      "canonical_element": "ʿadat-ʾel / divine assembly as the locus of God's governance and judicial activity",
+      "scholarly_note": "Collins (The Apocalyptic Imagination, 1998, p. 39) notes that Tobit's angelic-court scene, while not explicitly judicial, assumes the same structure of a divine assembly in which senior angels serve as agents of divine administration, a motif rooted partly in Psalm 82's divine council. Nickelsburg (Jewish Literature Between the Bible and the Mishnah, 2005, pp. 35–36) observes that Raphael's self-identification as one of seven angels 'who stand before the Lord' (Tob. 12:15) reflects the divine-assembly tradition. However, Tobit's primary interest is in angelic intercession and healing rather than judgment, making this a more distant and thematic echo.",
+      "relevance_to_dss": "Aramaic fragments of Tobit from Qumran (4Q196–4Q199) confirm the text's circulation in communities deeply invested in angelology.",
+      "relevance_to_nt": "Revelation 8:2's 'seven angels who stand before God' directly echoes Tob. 12:15, carrying forward the divine-assembly attendant tradition."
+    }
+  ],
+  "works_covered": {
+    "1_enoch": {
+      "present": true,
+      "passage_count": 4
+    },
+    "jubilees": {
+      "present": true,
+      "passage_count": 2
+    },
+    "sirach": {
+      "present": true,
+      "passage_count": 1
+    },
+    "4_ezra": {
+      "present": true,
+      "passage_count": 1
+    },
+    "tobit": {
+      "present": true,
+      "passage_count": 1
+    }
+  },
+  "dss_significance": "Psalm 82's divine-assembly theology is extensively confirmed by DSS materials: the Songs of the Sabbath Sacrifice (4Q400–407) presuppose a richly populated heavenly court where angelic priests worship before the divine throne, directly extending the ʿadat-ʾel motif. 11QMelchizedek (11Q13) is the most direct DSS exegetical engagement with Psalm 82, explicitly reading the ʾelohim of the assembly as Melchizedek who executes divine judgment over Belial and his lot in the eschatological year of Jubilee. 4QEnoch manuscripts (4Q201–204) confirm the antiquity of the Watcher-judgment tradition that the Enochic literature derives partly from Psalm 82.",
+  "nt_significance": "John 10:34-36 is the most explicit NT citation of Psalm 82:6, where Jesus quotes 'I said, you are gods' in a juridical self-defense argument about divine agency, showing the psalm's continued exegetical vitality. The heavenly-court imagery of Revelation 4–5, 20:11-15 and the Christological re-reading of divine council beings in Hebrews 1–2 build on the same theological tradition. Paul's 'principalities and powers' language (Eph 1:21; 6:12; Col 2:15) reflects the post-Psalm 82 trajectory in which formerly authoritative divine beings are subjected to Christ's sovereignty.",
+  "directionality_summary": "The dominant directionality is canonical-to-STL: Psalm 82's divine-assembly judgment scene provided the scriptural template that Enochic, Jubilees, and other Second Temple texts narrativized, eschatologized, and angelologically elaborated. Several connections reflect shared tradition (especially with early 1 Enoch), indicating that both Psalm 82 and the Watcher literature drew on common ancient Near Eastern divine-council mythological stock.",
+  "assessment": {
+    "title": "Psalm 82:1's Divine Assembly as Generative Matrix for Second Temple Angelological and Judicial Traditions",
+    "reasoning": "Psalm 82:1 functioned as one of the most generative canonical texts in Second Temple Judaism precisely because it preserved the mythological vocabulary of a heavenly council of divine beings subject to the supreme deity's judgment. The Enochic tradition (Book of Watchers, Similitudes, Animal Apocalypse) provides the richest and most direct elaboration, narrativizing the scenario into the Watcher myth and its eschatological resolution. Jubilees domesticates the ʾelohim into appointed angelic national princes while preserving their judicial accountability, and Sirach performs a parallel wisdom-theological rationalization. The 11QMelchizedek scroll at Qumran represents the most sophisticated exegetical development, recasting Psalm 82's assembly as an end-time tribunal. The trajectory culminates in the NT's Christological reappropriation in John 10 and Revelation.",
+    "plain": "Psalm 82:1's image of God judging other divine beings in a heavenly assembly became a launching pad for a wide range of Jewish writings between 500 BCE and 100 CE, each of which reimagined who those divine beings were (angels, fallen Watchers, national princes) and what their judgment would look like at the end of time. The Dead Sea Scrolls show this tradition was alive and highly developed at Qumran, especially in the 11QMelchizedek text that quotes Psalm 82 directly. The New Testament then reuses the same passage to make claims about Jesus.",
+    "confidence": 0.76,
+    "next_steps": "Scholars should pursue a dedicated study of 11QMelchizedek alongside Psalm 82 using the methodological framework of Hays' allusion criteria, and a comparative analysis of the divine-council terminology across the Aramaic Enoch fragments (4Q201-204) and the MT/LXX variants of Psalm 82 would sharpen our understanding of the textual tradition underlying the Second Temple elaborations."
+  },
+  "citations": {
+    "sbl": "George W. E. Nickelsburg, 1 Enoch 1: A Commentary on the Book of 1 Enoch, Chapters 1–36; 81–108, Hermeneia (Minneapolis: Fortress, 2001), 174–180, 261–270; John J. Collins, The Apocalyptic Imagination: An Introduction to Jewish Apocalyptic Literature, 2nd ed. (Grand Rapids: Eerdmans, 1998), 47–51, 85; James C. VanderKam, The Book of Jubilees, Guides to Apocrypha and Pseudepigrapha (Sheffield: Sheffield Academic Press, 2001), 37–40, 63–64; Michael A. Knibb, The Ethiopic Book of Enoch: A New Edition in the Light of the Aramaic Dead Sea Fragments, 2 vols. (Oxford: Clarendon, 1978), 2:67–70, 100–104.",
+    "bibtex": "@book{nickelsburg2001enoch,\n  author    = {Nickelsburg, George W. E.},\n  title     = {1 Enoch 1: A Commentary on the Book of 1 Enoch, Chapters 1--36; 81--108},\n  series    = {Hermeneia},\n  publisher = {Fortress Press},\n  address   = {Minneapolis},\n  year      = {2001},\n  isbn      = {9780800660086}\n}"
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-04-21T13:29:22.435445",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The overall framework (divine council tradition linking Ps 82 to Enochic and Jubilees literature) is mainstream and defensible, but several specific page citations and manuscript designations need verification and some are likely imprecise or wrong.",
+    "flagged_claims": [
+      {
+        "claim": "Nickelsburg (1 Enoch 1, Hermeneia, 2001, pp. 261–270) identifies 1 En. 14 as drawing on the same divine-council tradition visible in Psalm 82",
+        "risk": "MEDIUM",
+        "reason": "Nickelsburg's commentary on 1 En. 14 is in this general range, but the specific page span should be verified; Nickelsburg's primary parallels for 1 En. 14 are Ezekiel 1 and Daniel 7, not Psalm 82 specifically."
+      },
+      {
+        "claim": "Knibb (The Ethiopic Book of Enoch, 1978, vol. 2, pp. 100–104) notes textual variants in the Ethiopic that preserve the plurality of heavenly beings consistent with Ps 82's ʾelohim",
+        "risk": "HIGH",
+        "reason": "This characterization of Knibb's commentary linking Ethiopic variants to Ps 82's ʾelohim plurality appears to be a fabricated or over-specific framing; Knibb's textual notes are typically philological, not theological in this way."
+      },
+      {
+        "claim": "4QEnocha (4Q201) preserves portions of 1 En. 14",
+        "risk": "HIGH",
+        "reason": "4Q201 (4QEnoch a) preserves portions of 1 En. 1–12 (Book of Watchers opening). Portions of 1 En. 14 are preserved in 4Q204 (4QEnoch c), not 4Q201."
+      },
+      {
+        "claim": "4QEnGiants and 4Q201–202 confirm the Watcher tradition's currency at Qumran",
+        "risk": "MEDIUM",
+        "reason": "The designation '4QEnGiants' is imprecise; Book of Giants manuscripts have specific sigla (4Q203, 4Q530–533, etc.). The lumping is sloppy."
+      },
+      {
+        "claim": "Knibb (1978, vol. 2, pp. 67–70) discusses the Aramaic Vorlage preserved at Qumran and its bearing on the original wording of the divine-beings terminology",
+        "risk": "MEDIUM",
+        "reason": "Specific page citation and characterization should be verified; risk of fabricated precision."
+      },
+      {
+        "claim": "VanderKam (The Book of Jubilees, 2001, p. 24) notes parallels between the Animal Apocalypse's angelic judgment and the Jubilees tradition of Mastema's accountability",
+        "risk": "MEDIUM",
+        "reason": "VanderKam's 2001 Guides to Apocrypha and Pseudepigrapha volume on Jubilees is short; the specific page citation linking the Animal Apocalypse to Mastema's accountability needs verification."
+      },
+      {
+        "claim": "VanderKam (The Book of Jubilees, 2001, pp. 63–64) explicates how Jubilees' theology of angelic national guardians directly reinterprets... Psalm 82",
+        "risk": "MEDIUM",
+        "reason": "The page range and explicit linkage to Ps 82 (rather than just Deut 32:8) should be verified."
+      },
+      {
+        "claim": "4Q216–4Q228 (4QJubileesa-h)",
+        "risk": "MEDIUM",
+        "reason": "The Qumran Jubilees manuscripts are typically catalogued as 4Q216–4Q224 (Jubilees a–h); the range 4Q216–4Q228 is too broad and may include non-Jubilees texts."
+      },
+      {
+        "claim": "Collins (1998, p. 85) notes that Jubilees demythologizes the divine-council by replacing ʾelohim with angelic 'princes'",
+        "risk": "MEDIUM",
+        "reason": "Specific page citation in The Apocalyptic Imagination needs verification; the framing of Jubilees as 'demythologizing' is a strong interpretive claim attributed to a specific page."
+      },
+      {
+        "claim": "Collins (The Apocalyptic Imagination, 1998, pp. 177–180) situates the Similitudes as the apex of a tradition in which Psalm 82's divine assembly becomes a fully apocalypticized end-time court",
+        "risk": "MEDIUM",
+        "reason": "Collins discusses the Similitudes in this range but the explicit linkage to Psalm 82 as the textual anchor needs verification."
+      }
+    ],
+    "safe_claims": [
+      "Psalm 82:1 depicts God standing in the divine assembly to judge among the elohim",
+      "The verse reflects ancient Near Eastern divine council tradition",
+      "1 En. 14 contains a throne-room vision with myriads of holy ones",
+      "1 En. 6 describes Watchers descending and corrupting the earth",
+      "1 En. 9 describes archangels petitioning God regarding the Watchers' corruption",
+      "The Similitudes (1 En. 37–71) are absent from the Qumran finds",
+      "Jubilees describes God assigning spirits/angels over the nations while taking Israel as his own portion",
+      "Jude 6 and 2 Peter 2:4 reference imprisoned fallen angels",
+      "Sir. 17:17 states God appointed a ruler over every nation with Israel as the Lord's portion"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.579514+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

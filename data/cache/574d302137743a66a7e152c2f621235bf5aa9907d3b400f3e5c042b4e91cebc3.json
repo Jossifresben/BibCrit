@@ -99,5 +99,68 @@
   "reference": "Ruth 1:1-22",
   "cached_at": "2026-04-17T08:42:54.361644",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The structural analysis is largely defensible and grounded in the Hebrew text, but several specific page citations and the count of שׁוב occurrences need verification.",
+    "flagged_claims": [
+      {
+        "claim": "Dorsey (Literary Structure of the OT, p. 119-120) identifies concentric patterns in Ruth",
+        "risk": "MEDIUM",
+        "reason": "Dorsey's treatment of Ruth in 'The Literary Structure of the Old Testament' (1999) is in a different page range; pp. 119-120 likely fall in his discussion of another book. Page reference appears unverified."
+      },
+      {
+        "claim": "Walsh (Style and Structure, 2001, p. 176-178) on covenant formulas as structural pivots",
+        "risk": "MEDIUM",
+        "reason": "Walsh's 'Style and Structure in Biblical Hebrew Narrative' was published in 2001 by Liturgical Press, but the cited page range and specific topic of 'covenant formulas as structural pivots' is unverifiable and likely fabricated."
+      },
+      {
+        "claim": "Hubbard (NICOT Ruth, 1988, p. 119-120) ... identifies vv. 16-17 as 'the thematic heart of the book.'",
+        "risk": "MEDIUM",
+        "reason": "Direct quotation with specific page numbers should be verified; the exact phrasing 'thematic heart of the book' may be paraphrase presented as quotation."
+      },
+      {
+        "claim": "Block (Judges-Ruth NAC, 1999, p. 625-627)",
+        "risk": "MEDIUM",
+        "reason": "Page reference verifiable in principle but specific range unverified; Block's NAC Ruth section needs checking."
+      },
+      {
+        "claim": "Trible (God and the Rhetoric of Sexuality, 1978, p. 166-199)",
+        "risk": "MEDIUM",
+        "reason": "Trible's Ruth chapter exists in this volume but the page range should be verified; 33 pages may be over- or under-stated."
+      },
+      {
+        "claim": "The emphasis on return (שׁוב, seven times in ch. 1)",
+        "risk": "HIGH",
+        "reason": "שׁוב actually occurs approximately 12 times in Ruth 1 (a well-known feature noted by Hubbard and others), not seven. This is a verifiable factual error."
+      },
+      {
+        "claim": "covenant language ... that echoes Sinai formulae",
+        "risk": "MEDIUM",
+        "reason": "The 'your people my people' formula is more commonly linked by scholars to kinship/marriage adoption language than to Sinai covenant formulae specifically; the Sinai connection is asserted with more confidence than evidence supports."
+      },
+      {
+        "claim": "Ruth as Counter-Ezran Inclusion Narrative",
+        "risk": "MEDIUM",
+        "reason": "This is a known scholarly hypothesis but its post-exilic dating is heavily contested; presenting it with 0.78 confidence overstates consensus. Many scholars date Ruth pre-exilic."
+      },
+      {
+        "claim": "יְהוָה הֵעַנִי בִּי (The LORD has testified against me)",
+        "risk": "MEDIUM",
+        "reason": "The form ענה here is debated—could be 'afflicted' (II ענה) or 'testified against' (I ענה); the translation choice is contested and shouldn't be presented without note."
+      }
+    ],
+    "safe_claims": [
+      "Geographic inclusio between Bethlehem-to-Moab (1:1) and Moab-to-Bethlehem (1:22)",
+      "Ruth's declaration in 1:16-17 contains the phrase עַמֵּךְ עַמִּי וֵאלֹהַיִךְ אֱלֹהָי",
+      "Naomi uses divine names YHWH and Shaddai in her lament (1:20-21)",
+      "Contrast between פָקַד (provision of bread) in 1:6 and Naomi's emptiness language in 1:21",
+      "Orpah returns while Ruth clings (דבק) to Naomi",
+      "Chapter ends with arrival at the beginning of barley harvest",
+      "שׁוב is a thematically prominent verb in chapter 1"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.638902+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

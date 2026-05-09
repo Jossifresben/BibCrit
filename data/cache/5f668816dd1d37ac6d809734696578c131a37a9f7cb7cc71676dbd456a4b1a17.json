@@ -409,5 +409,69 @@
   "reference": "Numbers",
   "cached_at": "2026-03-31T11:26:34.454529",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis is broadly accurate in its overall stemma and characterization of witnesses, but contains several specific factual errors regarding manuscript identification, dates, and editorial attributions that require correction.",
+    "flagged_claims": [
+      {
+        "claim": "Papyrus 963 ... full_name: Papyrus Fouad 266",
+        "risk": "HIGH",
+        "reason": "These are two distinct manuscripts conflated. Papyrus 963 is Chester Beatty VI (containing Numbers and Deuteronomy, c. 2nd c. CE). Papyrus Fouad 266 is a separate Deuteronomy manuscript. The conflation is a clear factual error."
+      },
+      {
+        "claim": "Papyrus 963 ... date: c. 2nd c. BCE",
+        "risk": "HIGH",
+        "reason": "Chester Beatty VI (P963) is dated to the 2nd century CE, not BCE. Even Fouad 266 is 1st c. BCE. The BCE dating is incorrect for either identification."
+      },
+      {
+        "claim": "BHQ Numbers ... date: 2020 ... ed. Innocent Himbaza",
+        "risk": "HIGH",
+        "reason": "As of the knowledge cutoff, the BHQ fascicle for Numbers has not been published. Himbaza has worked on Leviticus (BHQ); attribution of Numbers to him appears fabricated or speculative."
+      },
+      {
+        "claim": "4QpaleoNum (4Q23) ... preserving Numbers 1, exhibiting affinities with pre-Samaritan text-type",
+        "risk": "MEDIUM",
+        "reason": "4Q23 is 4QLev-Num-a (mixed Leviticus-Numbers manuscript), not a paleo-Hebrew manuscript dedicated to Numbers 1. The paleo-Hebrew Pentateuch fragments have different sigla. The identification and content description appear inaccurate."
+      },
+      {
+        "claim": "Lucianic Recension ... date: c. 300 CE",
+        "risk": "MEDIUM",
+        "reason": "The applicability of a 'Lucianic recension' to the Pentateuch (including Numbers) is disputed; Lucianic recension is primarily identified in the historical books, not consistently in the Pentateuch."
+      },
+      {
+        "claim": "Targum Onqelos ... date: 1st–2nd c. CE (Palestinian origin)",
+        "risk": "MEDIUM",
+        "reason": "The dating and Palestinian origin of Onqelos are debated; many scholars date its final form to the 3rd–5th c. CE in Babylonia. Stating 1st–2nd c. CE Palestinian origin overstates one position."
+      },
+      {
+        "claim": "approximately 6,000 variants from MT in the Pentateuch",
+        "risk": "MEDIUM",
+        "reason": "The traditional figure cited is approximately 6,000 differences between SP and MT, but this number stems from older counts (Gesenius) and is approximate; presenting it without qualification overstates precision."
+      },
+      {
+        "claim": "Vulgate Numbers ... date: c. 398 CE",
+        "risk": "MEDIUM",
+        "reason": "Jerome's translation of the Pentateuch from Hebrew is generally dated c. 400–405 CE, not 398. The precise date for Numbers specifically is not securely attested."
+      },
+      {
+        "claim": "MT consonantal stabilization 1st c. CE ... standardized ca. 100 CE",
+        "risk": "MEDIUM",
+        "reason": "While a common scholarly view, the notion of a discrete 'standardization ca. 100 CE' (often associated with Jamnia) is contested in current scholarship; presented here with more certainty than warranted."
+      }
+    ],
+    "safe_claims": [
+      "MT, LXX, and SP converge on census totals 603,550 (Num 1) and 601,730 (Num 26)",
+      "Leningrad Codex dated 1008 CE, basis for BHS",
+      "Aleppo Codex c. 930 CE, Ben Asher tradition",
+      "Göttingen LXX Numbers edited by John William Wevers (1982)",
+      "SP characterized by harmonizations and Gerizim-oriented alterations",
+      "4QNum-b (4Q27) preserves portions of Num 11–36 and aligns with proto-MT (with some pre-Samaritan affinities, debated)",
+      "Peshitta is a Syriac translation generally proto-MT in character",
+      "BHS published 1977 reproducing Leningrad Codex"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.650596+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

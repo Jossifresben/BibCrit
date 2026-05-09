@@ -78,5 +78,63 @@
   "reference": "Isaiah 6:3",
   "cached_at": "2026-03-31T00:18:08.061881",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The core textual observations about the Targum, LXX, and Peshitta readings are accurate and well-known, but several scholarly citations have inaccurate page references or potentially incorrect titles, and one claim about LXX grammar is overstated.",
+    "flagged_claims": [
+      {
+        "claim": "Smelik, 'The Targum of Isaiah 6', in The Targums and Rabbinic Literature, pp. 147-158",
+        "risk": "HIGH",
+        "reason": "This citation appears fabricated. While Willem Smelik has written on Targum Isaiah, this specific essay title and volume are not verifiable as a standard reference."
+      },
+      {
+        "claim": "Samely, The Interpretation of Speech in the Pentateuch Targums, pp. 234-235",
+        "risk": "HIGH",
+        "reason": "Alexander Samely's actual book is titled 'The Interpretation of Speech in the Pentateuchal Targums' (1992), and it concerns the Pentateuch, not Isaiah—so it is unlikely to discuss Isaiah 6:3 substantively. The page reference is suspect."
+      },
+      {
+        "claim": "Lane, The Peshitta of Isaiah: Introduction and Translation, p. 89",
+        "risk": "HIGH",
+        "reason": "D.J. Lane's known Peshitta work concerns Leviticus, not Isaiah. No standard monograph by Lane on Peshitta Isaiah with this title is verifiable."
+      },
+      {
+        "claim": "Gelston, The Peshitta of the Twelve Prophets, pp. 45-46",
+        "risk": "MEDIUM",
+        "reason": "Gelston's book exists but concerns the Twelve Prophets, not Isaiah; citing it for an Isaiah 6:3 lexical choice is methodologically odd unless making a general Peshitta-technique argument, which should be noted."
+      },
+      {
+        "claim": "Ottley, The Book of Isaiah According to the Septuagint, vol. 2, p. 146",
+        "risk": "MEDIUM",
+        "reason": "Ottley's work exists but the specific page reference for this grammatical observation should be verified; pagination claims like this are commonly fabricated."
+      },
+      {
+        "claim": "The LXX renders the construct relationship with the adjective 'plērēs' (full) rather than maintaining MT's ambiguous construct 'melo'... The choice may reflect desire to avoid cosmological speculation about divine 'fullness' as semi-independent entity",
+        "risk": "MEDIUM",
+        "reason": "This theological motivation is speculative and likely overreads a routine Greek syntactic choice. The counter-argument the analysis itself offers is the mainstream view; framing this as theological revision overstates the evidence."
+      },
+      {
+        "claim": "anticipates later rabbinic numerological exegesis",
+        "risk": "MEDIUM",
+        "reason": "Unsupported interpretive leap; the targumic expansion is spatial-temporal, not numerological, and the connection to gematria-style exegesis is not established."
+      },
+      {
+        "claim": "proto-rabbinic concern to articulate divine transcendence",
+        "risk": "MEDIUM",
+        "reason": "The label 'proto-rabbinic' as a 'revision_type' is idiosyncratic rather than a standard text-critical category; it may overstate dating precision for Targum Jonathan's redactional layers."
+      }
+    ],
+    "safe_claims": [
+      "Targum Jonathan expands the threefold 'holy' into a triadic formula referring to heaven, earth, and eternity",
+      "The Targum uses Shekinah terminology characteristic of targumic mediating theology",
+      "The Targum inserts 'ziv' (radiance) before 'yeqar' (glory)",
+      "LXX reads Ἅγιος ἅγιος ἅγιος κύριος σαβαωθ· πλήρης πᾶσα ἡ γῆ τῆς δόξης αὐτοῦ",
+      "The Peshitta uses tešbuḥtā to render Hebrew kavod",
+      "Isaiah 6:3 shows remarkable textual stability across major versional traditions",
+      "Chilton's The Isaiah Targum is a standard reference work for Targum Jonathan to Isaiah"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.678003+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

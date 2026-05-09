@@ -1,0 +1,211 @@
+{
+  "divergences": [
+    {
+      "mt_word": "אֶת־כָּל־עָמָל (et-kol-ʿamal, 'all toil')",
+      "lxx_word": "σὺν πάντα τὸν μόχθον (syn panta ton mokhthon, 'with all toil')",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.82,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.82,
+          "explanation": "The LXX translator renders the Hebrew accusative marker אֶת with σύν, a well-documented Qoheleth translation technique where the particle is rendered as a preposition rather than recognized as the direct object marker, following a literal isomorphic strategy."
+        },
+        {
+          "type": "different_vorlage",
+          "confidence": 0.15,
+          "explanation": "Some scholars suggest the translator may have read אֶת as the preposition 'with,' but this is more likely a systematic rendering choice than a variant Vorlage."
+        }
+      ],
+      "dss_witness": "4QQoh-a does not preserve this verse",
+      "citations": [
+        "Tov (2012) p.54",
+        "Fredericks (2010) p.113",
+        "Pietersma & Wright (2007) p.xxviii"
+      ],
+      "analysis_technical": "The LXX translator of Qoheleth is known for hyper-literal, isomorphic translation that mirrors Hebrew syntax mechanically; rendering אֶת as σύν rather than as a direct object marker is consistent with this tendency documented by Tov. Pietersma's NETS framework identifies this as a source-oriented strategy typical of the Qoheleth translator. No DSS evidence complicates this reading.",
+      "analysis_plain": "The Hebrew word 'et' is just a grammatical marker for a direct object, but the Greek translator mistakenly (or deliberately) treated it as the preposition 'with,' slightly shifting the sentence's construction."
+    },
+    {
+      "mt_word": "כִּשְׁרֹון הַמַּעֲשֶׂה (kishron ha-maʿaseh, 'skill/success of the deed')",
+      "lxx_word": "ἀνδρείαν τοῦ ποιήματος (andreian tou poiematos, 'manliness/courage of the work')",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.78,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.78,
+          "explanation": "כִּשְׁרֹון, a rare term meaning 'advantage, skill, profit,' is rendered by ἀνδρεία ('manliness, courage, prowess'), likely because the translator associated כשר with concepts of strength or excellence rather than mere skill, possibly influenced by Aramaic usage."
+        },
+        {
+          "type": "different_vorlage",
+          "confidence": 0.2,
+          "explanation": "It is possible the translator read a form closer to גִּבּוֹר or a related strength root, but this is speculative given the rare lexeme's ambiguity."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Seow (1997) p.173",
+        "Krüger (2004) p.90",
+        "Fox (1999) p.222"
+      ],
+      "analysis_technical": "כִּשְׁרֹון occurs only in Qoheleth (2:21; 4:4; 5:10) and its semantic field is debated; the LXX translator's choice of ἀνδρεία suggests a reading of 'prowess' or 'vigorous accomplishment,' which while semantically adjacent is not precise. This may reflect the translator's reliance on Aramaic cognates (כשר as 'fit, able-bodied') combined with a tendency to amplify vigorous human effort. Wevers-style analysis of LXX lexical choices suggests this is an interpretive gloss rather than a variant Vorlage.",
+      "analysis_plain": "The Hebrew word for 'skill' or 'success' was translated into Greek as 'manliness' or 'courage,' suggesting the translator understood the word to mean something like 'vigorous human effort' rather than mere proficiency."
+    },
+    {
+      "mt_word": "קִנְאַת־אִישׁ מֵרֵעֵהוּ (qinʾat-ʾish me-reʿehu, 'envy of a man from his neighbor')",
+      "lxx_word": "ζῆλος ἀνδρὸς ἀπὸ τοῦ ἑταίρου αὐτοῦ (zelos andros apo tou hetairou autou, 'zeal/jealousy of a man from his companion')",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.85,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.85,
+          "explanation": "The Greek ζῆλος preserves the semantic ambiguity of the Hebrew קִנְאָה ('envy/zeal/jealousy'), and ἑταῖρος ('companion, associate') renders רֵעַ ('neighbor, friend') with a slightly more collegial nuance, suggesting a commercial or intellectual rivalry context."
+        },
+        {
+          "type": "theological_tendency",
+          "confidence": 0.15,
+          "explanation": "The choice of ζῆλος over φθόνος (pure envy) may slightly soften the negative connotation, presenting competitive drive as potentially ambiguous rather than purely sinful."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Fox (1999) p.222",
+        "Lohfink (2003) p.68",
+        "Seow (1997) p.174"
+      ],
+      "analysis_technical": "The LXX preserves the syntactic structure of the MT closely here, with ἀπό rendering the Hebrew מִן of comparison/separation. The selection of ἑταῖρος for רֵעַ is noteworthy: in Hellenistic Greek ἑταῖρος connotes a companion in a professional or social circle, subtly recasting the rivalry as between social peers rather than neighbors in a residential sense. This reflects the translator's Hellenistic cultural context, consistent with Tov's observations on culturally adaptive lexical choices.",
+      "analysis_plain": "Both Hebrew and Greek capture the idea of one person being envious of another, but the Greek word for 'neighbor' suggests more of a social peer or colleague, hinting at workplace or intellectual rivalry rather than just neighborly competition."
+    },
+    {
+      "mt_word": "רְעוּת רוּחַ (reʿut ruaḥ, 'striving/shepherding of wind')",
+      "lxx_word": "προαίρεσις πνεύματος (proairesis pneumatos, 'choice/preference of wind/spirit')",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.8,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.8,
+          "explanation": "The idiom רְעוּת רוּחַ (possibly from רָעָה 'to shepherd' or רְעוּת 'desire, inclination') is rendered as προαίρεσις ('deliberate choice, preference'), which emphasizes volitional desire and aligns with a Stoic-influenced Greek philosophical vocabulary."
+        },
+        {
+          "type": "different_vorlage",
+          "confidence": 0.18,
+          "explanation": "Some scholars propose the translator read רְצוֹן ('will, desire') or a synonym, but the consistent use of προαίρεσις across Qoheleth's refrain suggests a translator convention rather than a variant text."
+        }
+      ],
+      "dss_witness": "4QQoh-a preserves some portions of Qoheleth but not this specific refrain clearly",
+      "citations": [
+        "Fox (1999) p.43",
+        "Fredericks (2010) p.45",
+        "Seow (1997) p.120",
+        "Krüger (2004) p.50"
+      ],
+      "analysis_technical": "The refrain רְעוּת רוּחַ is one of Qoheleth's most debated phrases; Fox argues for 'desire of wind' (futile longing) while others read 'striving after wind.' The LXX's consistent rendering as προαίρεσις πνεύματος imports Stoic philosophical terminology—προαίρεσις is the technical Stoic term for rational will or deliberate choice—suggesting the translator may have been interpreting Qoheleth's pessimism through a Hellenistic philosophical lens. This is consistent with Tov's observation that the Qoheleth translator occasionally interprets rather than merely translates.",
+      "analysis_plain": "The Hebrew phrase about 'chasing wind' is translated using a sophisticated Greek philosophical term meaning 'deliberate choice,' making Qoheleth sound almost like a Stoic philosopher reflecting on the futility of human will."
+    },
+    {
+      "mt_word": "גַּם־זֶה הֶבֶל (gam-zeh hevel, 'also this is vanity')",
+      "lxx_word": "καί γε τοῦτο ματαιότης (kai ge touto mataiotēs, 'and indeed this is vanity')",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.88,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.88,
+          "explanation": "The Hebrew particle גַּם is rendered by καί γε, a common LXX technique for the emphatic 'also/indeed,' following the translator's systematic isomorphic correspondence documented throughout Qoheleth LXX."
+        },
+        {
+          "type": "grammatical_shift",
+          "confidence": 0.1,
+          "explanation": "The shift from simple 'also' to the emphatic 'and indeed' slightly intensifies the evaluative force of the refrain in Greek."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Pietersma & Wright (2007) p.xxviii",
+        "Seow (1997) p.174",
+        "Tov (2012) p.60"
+      ],
+      "analysis_technical": "The rendering of גַּם as καί γε is a standard feature of the Qoheleth translator's isomorphic method and has been catalogued by Tov as evidence of the translator's hyper-literal approach. The Greek ματαιότης for הֶבֶל ('vapor, breath') is the standard LXX Qoheleth rendering and carries stronger philosophical connotations of futility (cognate with μάταιος), slightly heightening the theological weight of the Hebrew image.",
+      "analysis_plain": "The familiar refrain 'this too is vanity' is translated straightforwardly, though the Greek word for 'vanity' carries a heavier philosophical meaning of absolute futility compared to the Hebrew image of a fleeting breath or vapor."
+    }
+  ],
+  "summary_technical": "The LXX of Eccl 4:4 reflects the Qoheleth translator's well-documented hyper-literal, isomorphic methodology (Tov), combined with selective Hellenistic cultural and philosophical recontextualization, most visible in ἀνδρεία for כִּשְׁרֹון and προαίρεσις for רְעוּת רוּחַ; no substantial variant Vorlage is required to explain these divergences, as they are consistent with this translator's attested habits.",
+  "summary_plain": "The Greek translation of this verse follows the Hebrew quite closely in structure but repeatedly substitutes philosophically loaded Greek terms that give the text a Stoic flavor, making Qoheleth's observations about envy and futility sound more like Greek philosophy than ancient Israelite wisdom.",
+  "bibcrit_hypothesis": {
+    "title": "Stoic Proairesis as Hermeneutic Frame for Qoheleth",
+    "reasoning": "The consistent use of προαίρεσις for רְעוּת רוּחַ across Qoheleth LXX, combined with ἀνδρεία for כִּשְׁרֹון here, suggests the translator may have operated with a deliberate Stoic hermeneutic framework in which Qoheleth's pessimism about human striving maps onto the Stoic diagnosis of misguided προαίρεσις (will directed at externals). This is speculative but underexplored: if intentional, it would mean the translator was not merely linguistically isomorphic but philosophically interpretive in a way that anticipates later Hellenistic Jewish wisdom synthesis. The selection of ἑταῖρος for רֵעַ reinforces this, recasting the social world as a Hellenistic intellectual community.",
+    "plain": "The Greek translator may have intentionally reframed Qoheleth's ancient Hebrew wisdom using Stoic philosophical vocabulary, turning a book about the fleeting nature of life into something that would resonate with Greek-speaking Jews familiar with Stoic ideas about willpower and futility.",
+    "confidence": 0.32
+  },
+  "discovery_ready": false,
+  "reference": "Ecclesiastes 4:4",
+  "cached_at": "2026-04-19T22:08:58.813559",
+  "model_version": "claude-sonnet-4-6",
+  "prompt_version": "v2",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The analysis correctly identifies major LXX-MT divergences in Eccl 4:4 and reflects mainstream scholarship on the Qoheleth translator's isomorphic method, but contains several unverifiable page-specific citations and overstates the Stoic philosophical framing.",
+    "flagged_claims": [
+      {
+        "claim": "Tov (2012) p.54",
+        "risk": "MEDIUM",
+        "reason": "Specific page citations to Tov's Textual Criticism of the Hebrew Bible are repeated across multiple unrelated points (p.54, p.60); these page numbers are not verified and may be approximate or fabricated."
+      },
+      {
+        "claim": "Fox (1999) p.43 ... Fox (1999) p.222",
+        "risk": "MEDIUM",
+        "reason": "Page references to Fox's A Time to Tear Down and a Time to Build Up are given with precision but are not verifiable from the analysis; risk of fabricated pagination."
+      },
+      {
+        "claim": "Pietersma's NETS framework identifies this as a source-oriented strategy typical of the Qoheleth translator",
+        "risk": "MEDIUM",
+        "reason": "While Pietersma's interlinear paradigm exists, attributing this specific identification regarding et→syn to NETS framework is an oversimplification; the et→syn phenomenon is more commonly associated with Aquila and the kaige tradition, which is a major scholarly point not addressed here."
+      },
+      {
+        "claim": "προαίρεσις is the technical Stoic term for rational will or deliberate choice",
+        "risk": "MEDIUM",
+        "reason": "Προαίρεσις is more centrally an Aristotelian term (Nicomachean Ethics III) before being adopted by Epictetus; calling it 'the technical Stoic term' is imprecise and the Stoic-hermeneutic-frame hypothesis built on it is overstated."
+      },
+      {
+        "claim": "the consistent use of προαίρεσις across Qoheleth's refrain",
+        "risk": "HIGH",
+        "reason": "LXX Qoheleth actually renders רְעוּת/רַעְיוֹן רוּחַ variably, including with προαίρεσις πνεύματος but also other forms; the claim of fully 'consistent' rendering as a translator convention requires verification and is overstated."
+      },
+      {
+        "claim": "כִּשְׁרֹון occurs only in Qoheleth (2:21; 4:4; 5:10)",
+        "risk": "MEDIUM",
+        "reason": "The hapax-to-Qoheleth claim and specific verse list should be verified; 5:10 reference may be off (Eccl 5:11 MT is sometimes cited) depending on versification."
+      },
+      {
+        "claim": "the translator may have been interpreting Qoheleth's pessimism through a Hellenistic philosophical lens",
+        "risk": "MEDIUM",
+        "reason": "This contradicts the dominant scholarly view (and the analysis's own framing) that LXX Qoheleth is hyper-literal/kaige-aligned and resistant to philosophical interpretation; the Stoic-hermeneutic hypothesis is speculative and somewhat self-contradictory with the isomorphic methodology cited."
+      },
+      {
+        "claim": "ἑταῖρος ... subtly recasting the rivalry as between social peers rather than neighbors in a residential sense",
+        "risk": "MEDIUM",
+        "reason": "ἑταῖρος is a standard LXX equivalent for רֵעַ across many books; reading sociocultural Hellenistic recontextualization into this lexical choice is interpretive overreach."
+      },
+      {
+        "claim": "Lohfink (2003) p.68",
+        "risk": "MEDIUM",
+        "reason": "Specific page citation to Lohfink's Qoheleth commentary is unverified and given the pattern of precise pagination across sources, may be fabricated."
+      }
+    ],
+    "safe_claims": [
+      "MT אֶת is rendered by σύν in LXX Qoheleth (well-established feature)",
+      "כִּשְׁרֹון is rendered by ἀνδρεία in this verse",
+      "רְעוּת רוּחַ is rendered προαίρεσις πνεύματος",
+      "גַּם is rendered καί γε (well-documented kaige feature)",
+      "הֶבֶל is rendered ματαιότης",
+      "The LXX Qoheleth translator follows a hyper-literal/isomorphic method",
+      "4QQoh-a does not preserve the relevant text for this verse"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-08T22:41:15.538997+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
+}

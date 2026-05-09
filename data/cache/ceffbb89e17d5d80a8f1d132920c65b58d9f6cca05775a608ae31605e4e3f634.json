@@ -83,5 +83,58 @@
   "reference": "Deuteronomy 32:8",
   "cached_at": "2026-03-31T00:12:38.550606",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The core textual-critical claims about Deut 32:8 are well-grounded and represent mainstream scholarship, but several specific citations and the Peshitta reading require verification.",
+    "flagged_claims": [
+      {
+        "claim": "Peshitta: 'according to the number of the sons of the angels' (ܠܡܢܝܢܐ ܕܒܢܝ̈ ܡܠܐܟ̈ܐ)",
+        "risk": "HIGH",
+        "reason": "The Peshitta of Deut 32:8 actually reads 'sons of Israel' (bnay Israel), following MT, not 'sons of angels.' The 'sons of angels/God' reading is found in LXX manuscripts, not the Peshitta. This appears to be a factual error."
+      },
+      {
+        "claim": "αγγέλων θεοῦ in some LXX manuscripts",
+        "risk": "MEDIUM",
+        "reason": "The standard LXX reading is υἱῶν θεοῦ; ἀγγέλων θεοῦ is the reading found in some LXX witnesses but the framing here conflates this with Jerome's awareness in an unverifiable way."
+      },
+      {
+        "claim": "Brown, 'Jerome and the Vulgate', in The New Cambridge History of the Bible (2012), pp. 355-356",
+        "risk": "HIGH",
+        "reason": "This citation appears fabricated or misattributed. The relevant chapter on Jerome in NCHB vol. 1 (2012) is by Michael Graves or similar, not 'Brown'; page numbers and attribution should be verified."
+      },
+      {
+        "claim": "van der Kooij, 'The Ending of the Song of Moses: On the Pre-Masoretic Version of Deut 32:43', in Studies in Deuteronomy (1994), pp. 93-100",
+        "risk": "MEDIUM",
+        "reason": "Citation specifics (volume, page range) need verification; van der Kooij has written on Deut 32 but exact bibliographic details may be inaccurate, and this concerns v. 43, not v. 8."
+      },
+      {
+        "claim": "Dirksen, 'The Old Testament Peshitta', in Mikra (1988), p. 272",
+        "risk": "MEDIUM",
+        "reason": "Page reference for a claim about Peshitta Deut 32:8 specifically is unverifiable and the underlying claim (that Peshitta reads 'angels') is itself questionable."
+      },
+      {
+        "claim": "The Qumran evidence (4QDeutj, 4QDeutq) demonstrates this revision post-dates the 2nd century BCE",
+        "risk": "MEDIUM",
+        "reason": "The Qumran manuscripts demonstrate that the 'sons of God' reading existed in the 2nd–1st c. BCE; they do not date the revision itself, which could be later. This overstates what the manuscript evidence shows."
+      },
+      {
+        "claim": "4QDeutq (בני אלוהים 'sons of gods')",
+        "risk": "MEDIUM",
+        "reason": "4QDeutj reads bny ’lwhym; 4QDeutq's reading at this point is often cited but the reconstruction and exact spelling differ in scholarly reports. Distinguishing 'sons of God' vs. 'sons of gods' based on אלוהים spelling is linguistically questionable."
+      }
+    ],
+    "safe_claims": [
+      "MT reads בְּנֵי יִשְׂרָאֵל ('sons of Israel') at Deut 32:8",
+      "LXX reads υἱῶν θεοῦ ('sons of God') in major witnesses",
+      "4QDeutj preserves a reading with bny 'lhym",
+      "Vulgate reads 'juxta numerum filiorum Israhel'",
+      "The MT reading creates a chronological tension since Israel does not yet exist at the time described",
+      "Targum Onqelos expands with reference to seventy souls",
+      "Psalm 82 and related texts reflect divine council imagery"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.669182+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

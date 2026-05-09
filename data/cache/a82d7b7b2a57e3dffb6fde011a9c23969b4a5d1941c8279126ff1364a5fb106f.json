@@ -145,5 +145,62 @@
   "reference": "Job",
   "cached_at": "2026-03-30T21:39:18.020195",
   "model_version": "claude-sonnet-4-5-20250929",
-  "prompt_version": "v1"
+  "prompt_version": "v1",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The overall framing of LXX Job as the freest LXX translation with ~1/6 abbreviation is well-established, but several specific Greek citations appear inaccurate or fabricated and need verification.",
+    "flagged_claims": [
+      {
+        "claim": "Job 6:14-15 ... lxx_text: ἔλεος παρὰ φίλου",
+        "risk": "HIGH",
+        "reason": "This does not match the actual OG text of Job 6:14, which reads ἀπείπατό με ἔλεος / ἐπισκοπὴ δὲ κυρίου ὑπερεῖδέν με. The cited Greek appears fabricated or oversimplified."
+      },
+      {
+        "claim": "Job 9:13 ... lxx_text: ὁ γὰρ ὀργὴν ἄτρεπτος / 'for his anger is unchangeable'",
+        "risk": "HIGH",
+        "reason": "The OG of Job 9:13 reads αὐτὸς γὰρ ἀπέστραπται ὀργήν or similar; ἄτρεπτος is not the attested rendering. Likely fabricated Greek."
+      },
+      {
+        "claim": "Job 13:9 ... lxx_text: εἰ δὲ καὶ πάντα ἐρευνῶντες ποιήσετε",
+        "risk": "HIGH",
+        "reason": "The actual OG renders this with language about searching/examining but not in this exact form; quotation needs verification and looks paraphrased rather than cited."
+      },
+      {
+        "claim": "Job 19:25 ... lxx_text: ἀέναος ἐστιν ὃν μέλλει ἐπὶ γῆς ἀνιστάναι",
+        "risk": "HIGH",
+        "reason": "The OG reads οἶδα γὰρ ὅτι ἀέναός ἐστιν ὁ ἐκλύειν με μέλλων ἐπὶ γῆς. The quotation conflates and misrepresents the actual Greek wording."
+      },
+      {
+        "claim": "Job 3:3-10 ... Condensed to approximately five verses",
+        "risk": "MEDIUM",
+        "reason": "The specific verse-count compression claim is not standard in scholarship; LXX Job 3 is somewhat shorter but the precise '8 to 5' figure is unverified."
+      },
+      {
+        "claim": "Job 15:17-19 ... Condensed to approximately 1.5 verses",
+        "risk": "MEDIUM",
+        "reason": "The fractional verse-count metric is impressionistic and not a standard scholarly measurement; appears invented for illustration."
+      },
+      {
+        "claim": "Approximately one-sixth of the MT Job material is absent in the OG",
+        "risk": "MEDIUM",
+        "reason": "Commonly cited figures range from 1/6 to 1/5 (about 389 stichoi or ~17%); the figure is roughly correct but stated with more precision than warranted without citation to Ziegler/Heater/Gentry."
+      },
+      {
+        "claim": "Job 10:4 ... lxx_text: ἢ καθὰ βλέπει βροτός",
+        "risk": "MEDIUM",
+        "reason": "The OG actually reads ἦ ὥσπερ βροτὸς ὁρᾷ καθορᾷς; the quoted form is close in sense but not verbatim and should be checked against Ziegler's edition."
+      }
+    ],
+    "safe_claims": [
+      "LXX Job is the most freely translated book of the LXX corpus",
+      "Job 39:13-18 (ostrich passage) is absent in the Old Greek",
+      "Job 1:6 'sons of God' is rendered as ἄγγελοι τοῦ θεοῦ",
+      "Job 42:17 contains an LXX addition about Job rising again (γέγραπται δὲ αὐτὸν πάλιν ἀναστήσεσθαι)",
+      "The translator demonstrates high literary competence in Greek with minimal commitment to formal equivalence",
+      "LXX Job's minuses cannot be straightforwardly attributed to a shorter Hebrew Vorlage"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-08T22:41:15.630458+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

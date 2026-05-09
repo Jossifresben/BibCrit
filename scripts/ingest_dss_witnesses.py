@@ -109,13 +109,14 @@ def _load_tf() -> None:
 
 
 def _find_scroll_node_v2(scroll_id: str) -> int | None:
-    for n in range(1, 3_000_000):
-        try:
-            sc = _F.scroll.v(n)
-            if sc == scroll_id:
-                return n
-        except Exception:
-            break
+    """Return the scroll-type node for the given scroll identifier.
+
+    Iterates only over scroll-otype nodes (not all integer nodes) to avoid
+    hitting word-level nodes that share the same scroll feature value.
+    """
+    for n in _F.otype.s('scroll'):
+        if _F.scroll.v(n) == scroll_id:
+            return n
     return None
 
 

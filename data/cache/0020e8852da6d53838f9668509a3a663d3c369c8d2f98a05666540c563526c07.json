@@ -1,0 +1,82 @@
+{
+  "divergences": [
+    {
+      "mt_word": "בָּרָא (created)",
+      "lxx_word": "ἐποίησεν (made)",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.85,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.85,
+          "explanation": "Greek lacks a precise equivalent for בָּרָא, a verb reserved in MT for divine creation. The translator chose the general ποιέω, used elsewhere for עשה."
+        },
+        {
+          "type": "theological_tendency",
+          "confidence": 0.25,
+          "explanation": "Possible flattening of the unique Hebrew theological term, though more likely lexical pragmatism than ideological choice."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Wevers (1993) p.1",
+        "Rösel (1994) pp.30-32",
+        "Tov (2012) p.119"
+      ],
+      "analysis_technical": "Wevers notes that LXX-Genesis consistently renders both ברא and עשה with ποιέω, neutralizing a distinction the Priestly author cultivated. Rösel argues this reflects translation strategy rather than Vorlage variance, since Greek κτίζω was reserved later for founding/colonizing senses and not yet theologized.",
+      "analysis_plain": "Hebrew uses a special verb 'create' that only God performs; Greek had no such word, so the translator used ordinary 'made'. The unique theological flavor is lost in translation."
+    },
+    {
+      "mt_word": "אֱלֹהִים (God)",
+      "lxx_word": "ὁ θεός (the God)",
+      "divergence_type": "grammatical_shift",
+      "confidence": 0.9,
+      "hypotheses": [
+        {
+          "type": "grammatical_shift",
+          "confidence": 0.9,
+          "explanation": "Greek requires the article for definite reference; the addition of ὁ is standard syntactic accommodation, not a textual variant."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Wevers (1993) p.1",
+        "Tov (2012) p.130"
+      ],
+      "analysis_technical": "The articular θεός renders anarthrous אֱלֹהִים, reflecting Greek syntactic norms where proper deity terms regularly take the article. This is a translational regularity, not evidence of a divergent Vorlage.",
+      "analysis_plain": "Greek grammar adds 'the' before 'God' where Hebrew doesn't need it. This is just how the languages differ."
+    },
+    {
+      "mt_word": "אֵת (direct object marker)",
+      "lxx_word": "(no equivalent)",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.95,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.95,
+          "explanation": "אֵת is a Hebrew syntactic particle marking definite direct objects with no Greek counterpart; its non-representation is expected."
+        }
+      ],
+      "dss_witness": null,
+      "citations": [
+        "Wevers (1993) p.1"
+      ],
+      "analysis_technical": "The accusative case in Greek subsumes the function of אֵת. No translational decision of substance is involved.",
+      "analysis_plain": "Hebrew has a tiny word marking the object of a verb; Greek shows this through case endings instead."
+    }
+  ],
+  "summary_technical": "Divergences in Gen 1:1 are overwhelmingly translational rather than textual: lexical neutralization of ברא→ποιέω and routine syntactic adjustments. No evidence of variant Vorlage.",
+  "summary_plain": "The Greek of Genesis 1:1 closely matches the Hebrew, with small differences reflecting how the two languages work rather than a different original text.",
+  "bibcrit_hypothesis": {
+    "title": "Lost Priestly Lexeme: ברא's Untranslatability",
+    "reasoning": "The Priestly author's deliberate lexical reservation of ברא for divine creation constitutes a theological argument carried by vocabulary itself. The LXX's collapse of ברא/עשה into ποιέω inadvertently erases this argument, suggesting that third-century Alexandrian Judaism may not have perceived ברא's specialized status as semantically critical—or judged Greek incapable of preserving it. This raises the underexplored question whether later Greek κτίζω-theology in Wisdom and 2 Maccabees represents a compensatory recovery of what Genesis-LXX surrendered.",
+    "plain": "Hebrew has a special verb 'create' used only of God, but Greek lacked an equivalent and used ordinary 'make'. Later Jewish Greek writers may have invented new vocabulary to recover what was lost.",
+    "confidence": 0.6
+  },
+  "discovery_ready": false,
+  "reference": "Genesis 1:1",
+  "cached_at": "2026-05-09T20:27:07.251572",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v2"
+}

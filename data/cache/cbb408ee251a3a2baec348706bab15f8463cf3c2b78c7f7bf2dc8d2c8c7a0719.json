@@ -1,0 +1,43 @@
+{
+  "divergences": [
+    {
+      "mt_word": "בְּנֵי יִשְׂרָאֵל (sons of Israel)",
+      "lxx_word": "ἀγγέλων θεοῦ (angels of God)",
+      "divergence_type": "theological_tendency",
+      "confidence": 0.92,
+      "hypotheses": [
+        {
+          "type": "different_vorlage",
+          "confidence": 0.85,
+          "explanation": "4QDeutj reads בני אלוהים ('sons of God'), confirming the LXX Vorlage. MT's 'sons of Israel' likely reflects a later anti-polytheistic revision."
+        },
+        {
+          "type": "theological_tendency",
+          "confidence": 0.75,
+          "explanation": "MT scribes substituted 'Israel' to eliminate the implication of a divine council where Yahweh receives Israel as his allotted nation among other gods."
+        }
+      ],
+      "dss_witness": "4QDeutj: בני אלוהים; 4QDeutq fragment supports divine beings reading",
+      "citations": [
+        "Tov (2012) p.248-249",
+        "Skehan (1954) p.12-15",
+        "Wevers (1995) p.513"
+      ],
+      "analysis_technical": "The DSS evidence (4QDeutj) decisively supports a Vorlage reading בני אלוהים, which LXX rendered as ἀγγέλων θεοῦ (cf. Job 1:6 LXX). Tov classifies this as a theologically motivated MT alteration to suppress the polytheistic background of an Elyon distributing nations to subordinate deities. The numerical logic ('70 sons of Israel' in Gen 46:27 matching 70 nations of Gen 10) was a secondary harmonization made possible by the textual change.",
+      "analysis_plain": "The original text said God divided up the nations according to the number of divine beings — implying a heavenly council. Later Jewish scribes changed it to 'sons of Israel' to remove any hint of other gods, and the Dead Sea Scrolls preserve the older reading."
+    }
+  ],
+  "summary_technical": "A clear case of MT theological revision, confirmed by 4QDeutj, where an original mythological reference to the divine council (בני אלוהים) was replaced with 'sons of Israel' to align with strict monotheism.",
+  "summary_plain": "The Greek preserves an older version where God assigned each nation to a divine being; the Hebrew was edited to remove this idea.",
+  "bibcrit_hypothesis": {
+    "title": "Elyon's Council and the Numerical Trigger",
+    "reasoning": "The substitution likely succeeded because בני אלוהים and בני ישראל share consonantal architecture amenable to ideologically-motivated swap, but the deeper catalyst was the numeric coincidence: Genesis 10's 70 nations and Genesis 46:27's 70 souls of Jacob made 'sons of Israel' feel exegetically natural once the theological pressure mounted. This suggests MT's revision was not crude censorship but a sophisticated harmonization that exploited an existing typological pattern, making the variant invisible to later readers.",
+    "plain": "The scribes didn't just delete an awkward idea — they cleverly replaced it with one that fit perfectly, since both Genesis 10 and Jacob's family list mention 70, making the new reading feel native.",
+    "confidence": 0.6
+  },
+  "discovery_ready": false,
+  "reference": "Deuteronomy 32:8",
+  "cached_at": "2026-05-09T20:28:02.132783",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v2"
+}

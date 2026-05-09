@@ -1,0 +1,69 @@
+{
+  "reference": "Isaiah 7:14",
+  "divergences": [
+    {
+      "mt_word": "הָעַלְמָה (the young woman)",
+      "lxx_word": "ἡ παρθένος (the virgin)",
+      "citations": [
+        "Wevers (1990) p.117",
+        "Tov (2012) p.127",
+        "Rösel (2007) p.83"
+      ],
+      "confidence": 0.85,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.7,
+          "explanation": "LXX translators rendered ʿalmâ with parthenos, a term whose semantic range in 3rd-c. BCE Greek included 'young woman of marriageable age,' not strictly anatomical virginity (cf. Gen 34:3 LXX of Dinah post-rape)."
+        },
+        {
+          "type": "theological_tendency",
+          "confidence": 0.3,
+          "explanation": "Some scholars see incipient messianic/miraculous reading, though this is more pronounced in later Christian reception than in the original LXX rendering."
+        }
+      ],
+      "dss_witness": "1QIsaª reads הָעַלְמָה, agreeing with MT",
+      "analysis_plain": "The Hebrew word means 'young woman,' but the Greek translators chose 'parthenos,' which in their day could mean either 'virgin' or simply 'maiden.' Christian readers later seized on the narrower meaning, but the original translators likely weren't making that theological claim.",
+      "divergence_type": "translation_idiom",
+      "analysis_technical": "The Hebrew ʿalmâ denotes a young woman of childbearing age without specifying virginity (for which betûlâ is more typical, though not exclusive). LXX parthenos in Hellenistic usage was semantically broader than later Christian readings assume; Tov classifies this as a lexical equivalence rather than ideological shift. 1QIsaª confirms the MT Vorlage."
+    },
+    {
+      "mt_word": "וְקָרָאת (and you [fem.] / she shall call)",
+      "lxx_word": "καλέσεις (you [masc. sg.] shall call)",
+      "citations": [
+        "Tov (2012) p.176",
+        "Wildberger (1991) p.286",
+        "Ulrich (2010) p.342"
+      ],
+      "confidence": 0.6,
+      "hypotheses": [
+        {
+          "type": "different_vorlage",
+          "confidence": 0.5,
+          "explanation": "LXX may reflect וְקָרָאתָ (2ms, addressing Ahaz), as attested in 1QIsaª (וקרא) and supported by some MT manuscripts."
+        },
+        {
+          "type": "grammatical_shift",
+          "confidence": 0.4,
+          "explanation": "Translator may have read ambiguous consonantal text and chose 2ms to address Ahaz directly, fitting the rhetorical context of the sign."
+        }
+      ],
+      "dss_witness": "1QIsaª reads וקרא (3ms 'he shall call'); MT vocalization wəqārāʾt is ambiguous (2ms or 3fs)",
+      "analysis_plain": "The Hebrew is grammatically ambiguous about who names the child—the mother, the father (Ahaz), or the child himself. The Greek picks 'you will call,' likely addressing King Ahaz, while a Dead Sea Scroll reads 'he will call.'",
+      "divergence_type": "different_vorlage",
+      "analysis_technical": "The consonantal text וקראת permits 2ms or 3fs parsing; LXX's καλέσεις resolves toward 2ms, while 1QIsaª's וקרא suggests a 3ms variant tradition. This represents one of several naming-formula variants in the verse's textual history, suggesting fluidity in the subject of the naming."
+    }
+  ],
+  "summary_plain": "The Greek translation of Isaiah 7:14 isn't as theologically loaded as later Christian tradition made it, and the verse shows real textual variation in who names the child.",
+  "discovery_ready": false,
+  "summary_technical": "The famous parthenos rendering is best explained as standard Hellenistic lexical equivalence rather than theological innovation, while the naming verb shows genuine textual fluidity attested across MT, 1QIsaª, and LXX traditions.",
+  "bibcrit_hypothesis": {
+    "plain": "The translators probably weren't predicting a virgin birth—they were just using their standard word for a young woman. The theological bombshell came centuries later when Matthew quoted the Greek version.",
+    "title": "Parthenos as semantic default, not Christology",
+    "reasoning": "The LXX Isaiah translator consistently uses parthenos for ʿalmâ and neaniskos elsewhere with little semantic precision; the choice here likely reflects translational habit rather than messianic intention. The naming-verb variation (2ms/3fs/3ms) across witnesses suggests the original sign-oracle's referent was already opaque to early tradents, who resolved ambiguity in different directions. The Christological weight is entirely a product of Matthean reception, retrojected onto a translation choice that was philologically unremarkable in its Ptolemaic context.",
+    "confidence": 0.7
+  },
+  "cached_at": "2026-05-09T09:11:48.754564+00:00",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v2"
+}

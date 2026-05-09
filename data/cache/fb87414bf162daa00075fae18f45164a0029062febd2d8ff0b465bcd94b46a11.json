@@ -1,0 +1,69 @@
+{
+  "divergences": [
+    {
+      "mt_word": "לַמְנַצֵּחַ (to the choirmaster)",
+      "lxx_word": "εἰς τὸ τέλος (to the end)",
+      "divergence_type": "translation_idiom",
+      "confidence": 0.85,
+      "hypotheses": [
+        {
+          "type": "translation_idiom",
+          "confidence": 0.85,
+          "explanation": "LXX consistently renders מנצח via the root נצח understood as 'endurance/perpetuity' (cf. Aramaic נצח 'forever'), yielding εἰς τὸ τέλος. The translator did not recognize the technical musical/directorial sense."
+        },
+        {
+          "type": "different_vorlage",
+          "confidence": 0.1,
+          "explanation": "Unlikely; the consistency across the Psalter argues for a lexical-semantic choice rather than a different Vorlage."
+        }
+      ],
+      "dss_witness": "4QPsf preserves portions of Ps 22 but the superscription is not extant for this lemma",
+      "citations": [
+        "Pietersma (2000) NETS Psalms intro",
+        "Wevers (1976) on LXX Psalter conventions",
+        "Tov (2012) TCHB p.127"
+      ],
+      "analysis_technical": "The Greek translator construes נצח through its Aramaic-influenced sense 'perpetuity, end' rather than the Piel participle 'one who directs/oversees.' This is a stereotyped equivalence throughout LXX Psalms (55× εἰς τὸ τέλος), reflecting what Pietersma calls the translator's 'isomorphic but lexically uninformed' approach to technical musical superscriptions.",
+      "analysis_plain": "The Hebrew likely meant 'for the choir director,' but the Greek translator, unfamiliar with this technical term, rendered it 'unto the end'—a guess based on a related Aramaic root meaning 'forever.'"
+    },
+    {
+      "mt_word": "אַיֶּלֶת הַשַּׁחַר (doe of the dawn)",
+      "lxx_word": "τῆς ἀντιλήμψεως τῆς ἑωθινῆς (the help of the morning)",
+      "divergence_type": "different_vorlage",
+      "confidence": 0.6,
+      "hypotheses": [
+        {
+          "type": "different_vorlage",
+          "confidence": 0.55,
+          "explanation": "LXX 'ἀντίλημψις' regularly translates עזר/עזרה. The translator may have read אילות (cf. Ps 22:20 'אֱיָלוּתִי' = 'my help/strength') instead of אַיֶּלֶת, suggesting a Vorlage with אילות or contextual harmonization with v. 20."
+        },
+        {
+          "type": "translation_idiom",
+          "confidence": 0.35,
+          "explanation": "Translator may have understood אילת via the root איל ('strength, help') rather than as 'doe,' a lexical reanalysis without textual variation."
+        }
+      ],
+      "dss_witness": "Not extant in DSS for this lemma",
+      "citations": [
+        "Schaper (1995) Eschatology in the Greek Psalter pp.49-51",
+        "Pietersma (2000) NETS",
+        "Tov (2015) Textual Criticism of the Hebrew Bible"
+      ],
+      "analysis_technical": "The rendering ἀντίλημψις presupposes a root איל/אול denoting 'strength, help' (as in v. 20 אֱיָלוּתִי translated by LXX as τὴν ἀντίλημψίν μου). Whether this reflects a genuinely different Vorlage or an inner-Greek lexical choice is debated; Schaper sees a possible messianic/eschatological re-reading ('morning help' = dawn deliverance), while Pietersma favors lexical analysis based on consonantal ambiguity.",
+      "analysis_plain": "The Hebrew speaks of 'the doe of the dawn' (probably a tune name), but the Greek says 'the help at dawn.' The translator likely read the consonants as a word for 'help/strength' rather than 'doe,' perhaps influenced by the same root appearing later in the psalm."
+    }
+  ],
+  "summary_technical": "Both divergences in the superscription reflect the LXX Psalter translator's tendency to convert opaque technical/musical Hebrew terms into theologically meaningful Greek via stereotyped lexical equivalences, possibly aided by consonantal ambiguity.",
+  "summary_plain": "The Greek translator turned a Hebrew musical heading ('to the choirmaster, on Doe-of-Dawn') into a quasi-theological phrase ('to the end, concerning the morning help').",
+  "bibcrit_hypothesis": {
+    "title": "Superscription as Inner-Greek Theological Reframing",
+    "reasoning": "The pairing of εἰς τὸ τέλος with ἀντίλημψις ἑωθινή may not be merely accidental lexical guessing but a coherent eschatological-liturgical reframing: 'unto the end, concerning the dawn deliverance.' Given that ἀντίλημψις elsewhere connotes divine rescue and ἑωθινή evokes resurrection-dawn imagery later seized by Christian readers, the translator may have produced—consciously or not—a superscription cohering with the psalm's movement from suffering to vindication. This remains speculative but explains why two opaque terms were rendered with semantically loaded equivalents rather than transliterated.",
+    "plain": "The Greek translator may have transformed an obscure musical heading into a phrase hinting at end-time deliverance at dawn, fitting the psalm's arc from anguish to rescue—though we cannot be sure this was deliberate.",
+    "confidence": 0.4
+  },
+  "discovery_ready": false,
+  "reference": "Psalm 22:1",
+  "cached_at": "2026-05-09T20:27:41.332747",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v2"
+}

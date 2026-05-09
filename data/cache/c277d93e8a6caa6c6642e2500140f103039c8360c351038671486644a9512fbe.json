@@ -1,0 +1,30 @@
+{
+  "allusions": [
+    {
+      "ot_reference": "Isaiah 7:14",
+      "nt_words": "ἰδού ἡ παρθένος ἐν γαστρὶ ἕξει καὶ τέξεται υἱόν",
+      "ot_mt_form": "הִנֵּה הָעַלְמָה הָרָה וְיֹלֶדֶת בֵּן וְקָרָאת שְׁמוֹ עִמָּנוּ אֵל ('Behold, the young woman is pregnant and is bearing a son, and she shall call his name Immanuel')",
+      "ot_lxx_form": "ἰδοὺ ἡ παρθένος ἐν γαστρὶ ἕξει καὶ τέξεται υἱόν, καὶ καλέσεις τὸ ὄνομα αὐτοῦ Εμμανουηλ",
+      "nt_alignment": "lxx",
+      "alignment_confidence": 0.95,
+      "key_word": "παρθένος",
+      "textual_implication": "Matthew's use of παρθένος ('virgin') reflects the LXX rendering of עַלְמָה ('young woman'), which the MT does not unambiguously specify as a virgin. The future ἕξει (rather than the participial הָרָה) likewise matches LXX, confirming Matthew's dependence on a Greek text-form. Only καλέσουσιν (3rd plural) diverges from LXX καλέσεις (2nd sing.) and MT וְקָרָאת (2nd fem. sing. or 3rd fem.), suggesting a Matthean adjustment to fit the broader fulfillment context.",
+      "textual_implication_plain": "Matthew quotes the Greek translation of Isaiah, which says 'virgin'—a stronger word than the Hebrew 'young woman.' This Greek wording is what makes the prophecy fit Jesus' miraculous birth so precisely.",
+      "scholarly_note": "Beale & Carson (Commentary, ad loc.) and Hays (Echoes) note Matthew's reliance on LXX παρθένος as foundational to his virgin-birth Christology, though Matthew alters the verb of naming to καλέσουσιν.",
+      "contested": false
+    }
+  ],
+  "summary_technical": "Matthew 1:23 follows the LXX of Isaiah 7:14 verbatim except for the verb of naming (καλέσουσιν vs. LXX καλέσεις), with the LXX's παρθένος being indispensable to Matthew's fulfillment hermeneutic.",
+  "summary_plain": "Matthew quotes Isaiah's prophecy from the Greek Bible, which uses 'virgin'—the very wording that fits Jesus' birth from Mary.",
+  "bibcrit_hypothesis": {
+    "title": "Matthean Plural Naming Universalizes Immanuel",
+    "reasoning": "Matthew's shift from LXX καλέσεις (singular, addressed to Ahaz/Mary) to καλέσουσιν (3rd plural) is not a textual variant but a redactional move that broadens the naming community to the believing people who will recognize Jesus as 'God with us.' This coheres with Matthew's inclusio in 28:20 ('I am with you'), framing the gospel as the corporate confession of Immanuel. The change preserves LXX wording where it serves Christology (παρθένος) while subtly modifying it where ecclesiology is in view.",
+    "plain": "Matthew slightly changes 'you will call' to 'they will call,' suggesting that the whole community of believers—not just Mary—will recognize Jesus as 'God with us.'",
+    "confidence": 0.7
+  },
+  "discovery_ready": false,
+  "reference": "Matthew 1:23",
+  "cached_at": "2026-05-09T21:49:47.947953",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v1"
+}

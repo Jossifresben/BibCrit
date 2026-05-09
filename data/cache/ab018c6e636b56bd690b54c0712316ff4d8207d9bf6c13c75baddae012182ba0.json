@@ -1,0 +1,74 @@
+{
+  "reconstructed_words": [
+    {
+      "position": 1,
+      "lxx_word": "διαγγέλλων τὸ πρόσταγμα κυρίου",
+      "vorlage_word": "אֲסַפְּרָה אֶל חֹק יְהוָה",
+      "status": "agrees_mt",
+      "confidence": 0.7,
+      "mt_equivalent": "אֲסַפְּרָה אֶל חֹק יְהוָה",
+      "dss_witness": null,
+      "reasoning": "The LXX participle διαγγέλλων reflects ספר in Piel ('declare/recount'), a standard equivalence (cf. Ps 9:15; 21:23 LXX). The translator likely read אֶל as a preposition governing חֹק, rendering the phrase as 'proclaiming the decree of the Lord.' πρόσταγμα regularly translates חֹק (cf. Ps 80:5 LXX).",
+      "alternatives": [
+        {
+          "reading": "מְסַפֵּר",
+          "confidence": 0.3,
+          "note": "A participial form would more naturally yield διαγγέλλων, but the cohortative אֲסַפְּרָה is defensible since LXX often levels verbal forms."
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "lxx_word": "κύριος εἶπεν πρός με",
+      "vorlage_word": "יְהוָה אָמַר אֵלַי",
+      "status": "unattested",
+      "confidence": 0.65,
+      "mt_equivalent": "אָמַר אֵלַי",
+      "dss_witness": null,
+      "reasoning": "The LXX includes an explicit subject κύριος, which is absent in MT. This may reflect a Vorlage with יהוה repeated as subject of אָמַר, or it may be a translator's clarifying addition since MT's syntax leaves the speaker implicit. The doubling of κύριος is striking and suggests a possible Hebrew variant.",
+      "alternatives": [
+        {
+          "reading": "אָמַר אֵלַי",
+          "confidence": 0.35,
+          "note": "The doubled κύριος could be a translator's gloss to disambiguate the speaker without a Vorlage variant."
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "lxx_word": "υἱός μου εἶ σύ",
+      "vorlage_word": "בְּנִי אַתָּה",
+      "status": "agrees_mt",
+      "confidence": 0.95,
+      "mt_equivalent": "בְּנִי אַתָּה",
+      "dss_witness": null,
+      "reasoning": "Direct equivalence: בְּנִי = υἱός μου and אַתָּה = εἶ σύ, with the explicit copula εἶ supplied per Greek syntax. This is standard LXX rendering of nominal clauses.",
+      "alternatives": []
+    },
+    {
+      "position": 4,
+      "lxx_word": "ἐγὼ σήμερον γεγέννηκά σε",
+      "vorlage_word": "אֲנִי הַיּוֹם יְלִדְתִּיךָ",
+      "status": "agrees_mt",
+      "confidence": 0.95,
+      "mt_equivalent": "אֲנִי הַיּוֹם יְלִדְתִּיךָ",
+      "dss_witness": null,
+      "reasoning": "Word-for-word correspondence: אֲנִי = ἐγώ, הַיּוֹם = σήμερον, יְלִדְתִּיךָ = γεγέννηκά σε. The Greek perfect γεγέννηκα accurately renders the Hebrew qatal of ילד.",
+      "alternatives": []
+    }
+  ],
+  "summary_technical": "The Vorlage largely matches MT, with standard LXX equivalences (ספר=διαγγέλλω, חֹק=πρόσταγμα, ילד=γεννάω). The principal divergence is the doubled κύριος, which may reflect a Hebrew Vorlage with יהוה repeated as the subject of אָמַר, or alternatively a translator's clarification. No extant DSS witness preserves Ps 2:7 to adjudicate.",
+  "summary_plain": "The Greek translator's Hebrew text was very close to the standard Masoretic Text. The one notable difference is that the Greek says 'the Lord said' twice, possibly reflecting a slightly different Hebrew or a translator's clarification.",
+  "overall_confidence": 0.78,
+  "bibcrit_assessment": {
+    "title": "Doubled κύριος hints at expanded Vorlage",
+    "reasoning": "The most significant feature is the apparent doubling of יהוה in 'proclaiming the decree of YHWH; YHWH said to me.' MT has only one occurrence; the LXX repetition could reflect either an expansionist Vorlage (consistent with pre-Masoretic plurality of texts) or, more cautiously, a translator's stylistic disambiguation. Without DSS attestation for this verse, the variant remains speculative but methodologically plausible.",
+    "plain": "The Greek's repetition of 'Lord' suggests the translator's Hebrew Bible may have included an extra divine name, though this cannot be confirmed without surviving manuscripts.",
+    "confidence": 0.55
+  },
+  "discovery_ready": false,
+  "reference": "Psalm 2:7",
+  "cached_at": "2026-05-09T21:15:56.997053",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v1"
+}

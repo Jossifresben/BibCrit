@@ -1,0 +1,150 @@
+{
+  "reference": "Isaiah 9:6",
+  "total_citations_found": 7,
+  "period_summary": "Citations of Isaiah 9:6 concentrate from the mid-second century (Justin) through the fifth (Cyril of Alexandria, Theodoret), peaking in fourth-century Trinitarian controversies. This distribution reveals the verse's central role in Christological apologetics, especially against Jewish interlocutors and Arian theology.",
+  "citations": [
+    {
+      "father": "Justin Martyr",
+      "dates_ce": "c. 100–165",
+      "region": "Syria/Rome",
+      "work": "Dialogue with Trypho",
+      "chapter_section": "ch. 76, also chs. 126, 129",
+      "cited_text": "παιδίον ἐγεννήθη ἡμῖν, καὶ νεανίσκος ἡμῖν, οὗ ἡ ἀρχὴ ἐπὶ τοῦ ὤμου αὐτοῦ· καὶ καλεῖται τὸ ὄνομα αὐτοῦ μεγάλης βουλῆς ἄγγελος",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.88,
+      "text_form_note": "Justin reproduces the distinctive LXX rendering 'μεγάλης βουλῆς ἄγγελος' (Messenger of Great Counsel), which compresses and reinterprets the Hebrew string of throne-names. This is unmistakably the Old Greek tradition.",
+      "theological_use": "Justin marshals the verse against Trypho to prove Christ's pre-existent divinity and his role as the angelic agent of the Father's plan, especially under the title 'Messenger of Great Counsel.'",
+      "transmission_implication": "Confirms that the OG/LXX form with 'μεγάλης βουλῆς ἄγγελος' was already standard Christian Scripture by the mid-second century."
+    },
+    {
+      "father": "Irenaeus of Lyons",
+      "dates_ce": "c. 130–202",
+      "region": "Gaul (Asia Minor origin)",
+      "work": "Adversus Haereses",
+      "chapter_section": "3.16.3; 4.33.11",
+      "cited_text": "Puer natus est nobis, filius datus est nobis, cuius principatus super humerum eius, et vocabitur nomen eius Admirabilis, Consiliarius, Deus fortis",
+      "text_form": "mixed",
+      "text_form_confidence": 0.7,
+      "text_form_note": "Irenaeus's Latin (preserved via the Old Latin translation of his Greek) includes the expanded list of titles ('Admirabilis, Consiliarius, Deus fortis') matching the Hebrew/longer Greek recension rather than the short OG 'μεγάλης βουλῆς ἄγγελος.' This suggests use of a recensional Greek text or expanded reading.",
+      "theological_use": "Irenaeus employs the verse to demonstrate Christ's full deity ('Deus fortis') against Gnostic and adoptionist denials of the Son's divine status.",
+      "transmission_implication": "Indicates circulation of an expanded Greek text of Isaiah 9:6 already in the late second century, alongside Justin's shorter form."
+    },
+    {
+      "father": "Tertullian",
+      "dates_ce": "c. 155–220",
+      "region": "Carthage",
+      "work": "Adversus Marcionem; Adversus Praxean",
+      "chapter_section": "Adv. Marc. 3.19; Adv. Prax. 13",
+      "cited_text": "Natus est nobis puer... cuius imperium super humeros eius, et vocabitur magni consilii nuntius / Admirabilis, Consiliarius, Deus, Fortis",
+      "text_form": "mixed",
+      "text_form_confidence": 0.65,
+      "text_form_note": "Tertullian variously cites both 'magni consilii nuntius' (= LXX short form) and the expanded titles, reflecting access to multiple Latin/Greek text forms.",
+      "theological_use": "Used against Marcion to prove the OT prophesied Christ's birth, and in Adv. Prax. to defend the Son's divinity within Trinitarian formulation.",
+      "transmission_implication": "Witnesses to early Latin North Africa using both OG short and expanded forms in parallel."
+    },
+    {
+      "father": "Eusebius of Caesarea",
+      "dates_ce": "c. 260–340",
+      "region": "Caesarea",
+      "work": "Demonstratio Evangelica; Commentary on Isaiah",
+      "chapter_section": "Dem. Ev. 7.1; Comm. Isa. ad loc.",
+      "cited_text": "ὅτι παιδίον ἐγεννήθη ἡμῖν, υἱὸς καὶ ἐδόθη ἡμῖν... καὶ καλεῖται τὸ ὄνομα αὐτοῦ Θαυμαστὸς σύμβουλος, Θεὸς ἰσχυρός, ἐξουσιαστής, ἄρχων εἰρήνης, πατὴρ τοῦ μέλλοντος αἰῶνος",
+      "text_form": "mixed",
+      "text_form_confidence": 0.85,
+      "text_form_note": "Eusebius cites the expanded list of titles, almost certainly drawing on the hexaplaric/recensional Greek (Aquila, Symmachus, Theodotion) which Origen had collated, supplementing or replacing the OG.",
+      "theological_use": "Eusebius reads the titles Christologically as proof of the Son's divine sonship and messianic kingship, against both Jewish exegesis and subordinationist readings.",
+      "transmission_implication": "Demonstrates the post-Origen shift toward hexaplaric readings closer to the proto-MT in Caesarean scholarship."
+    },
+    {
+      "father": "Athanasius of Alexandria",
+      "dates_ce": "c. 296–373",
+      "region": "Alexandria",
+      "work": "Orationes contra Arianos; De Incarnatione",
+      "chapter_section": "C. Ar. 2.71; 3.28",
+      "cited_text": "παιδίον ἐγεννήθη ἡμῖν, υἱὸς καὶ ἐδόθη ἡμῖν... καλεῖται τὸ ὄνομα αὐτοῦ μεγάλης βουλῆς ἄγγελος, Θαυμαστὸς σύμβουλος, Θεὸς ἰσχυρός",
+      "text_form": "mixed",
+      "text_form_confidence": 0.78,
+      "text_form_note": "Athanasius conflates the OG 'μεγάλης βουλῆς ἄγγελος' with hexaplaric titles ('Θεὸς ἰσχυρός'), showing harmonized reception in fourth-century Alexandria.",
+      "theological_use": "Central anti-Arian proof-text: 'Θεὸς ἰσχυρός' demonstrates the Son's full deity, while 'παιδίον ἐγεννήθη' anchors the Incarnation in prophecy.",
+      "transmission_implication": "Shows fourth-century Alexandrian liturgical/exegetical text combining OG and hexaplaric readings as a single authoritative form."
+    },
+    {
+      "father": "John Chrysostom",
+      "dates_ce": "c. 349–407",
+      "region": "Antioch/Constantinople",
+      "work": "Commentary on Isaiah; Homilies",
+      "chapter_section": "Comm. Isa. 9.6",
+      "cited_text": "παιδίον ἐγεννήθη ἡμῖν... καὶ καλεῖται τὸ ὄνομα αὐτοῦ μεγάλης βουλῆς ἄγγελος, Θαυμαστὸς σύμβουλος, Θεὸς ἰσχυρός, ἐξουσιαστής, ἄρχων εἰρήνης",
+      "text_form": "mixed",
+      "text_form_confidence": 0.8,
+      "text_form_note": "Chrysostom explicitly notes textual variation, comparing the OG short reading with the longer hexaplaric titles drawn from Aquila/Theodotion/Symmachus.",
+      "theological_use": "Chrysostom expounds each title Christologically, especially 'Father of the Age to Come' as eschatological assertion of Christ's divine authority.",
+      "transmission_implication": "Provides explicit patristic evidence of awareness of competing text forms and conscious harmonization in Antiochene exegesis."
+    },
+    {
+      "father": "Cyril of Alexandria",
+      "dates_ce": "c. 376–444",
+      "region": "Alexandria",
+      "work": "Commentary on Isaiah; Thesaurus de Trinitate",
+      "chapter_section": "Comm. Isa. ad 9:6",
+      "cited_text": "παιδίον ἐγεννήθη ἡμῖν, υἱὸς καὶ ἐδόθη ἡμῖν... Θαυμαστὸς σύμβουλος, Θεὸς ἰσχυρός, ἐξουσιαστής, ἄρχων εἰρήνης",
+      "text_form": "mixed",
+      "text_form_confidence": 0.82,
+      "text_form_note": "Cyril prefers the expanded hexaplaric titles, omitting or subordinating the OG 'μεγάλης βουλῆς ἄγγελος,' reflecting fifth-century preference for the longer form.",
+      "theological_use": "Cyril deploys the verse for high Christology in his Trinitarian and (proto-)Nestorian polemics, emphasizing 'Θεὸς ἰσχυρός' as proving the unity of the divine Word with the incarnate child.",
+      "transmission_implication": "Confirms that by the fifth century the hexaplaric long form had largely displaced the OG short reading in Alexandrian theological discourse."
+    }
+  ],
+  "text_form_distribution": {
+    "closer_to_mt": 0,
+    "closer_to_lxx": 1,
+    "mixed": 6,
+    "independent": 0,
+    "uncertain": 0
+  },
+  "transmission_synthesis": "The patristic citation history of Isaiah 9:6 reveals a striking textual bifurcation between the Old Greek's compressed 'Messenger of Great Counsel' and the longer list of throne-names ('Wonderful Counselor, Mighty God, Eternal Father, Prince of Peace') that aligns with the proto-MT and the later Greek recensions of Aquila, Symmachus, and Theodotion. Justin's mid-second-century citation attests the pure OG short form, but already by Irenaeus and Tertullian a longer expanded form circulates, suggesting early Christian access to recensional or proto-hexaplaric materials. After Origen's Hexapla, the longer form increasingly dominates (Eusebius, Athanasius, Chrysostom, Cyril), often conflated with vestigial OG readings, indicating a deliberate harmonizing tendency. This trajectory exemplifies Hengel's thesis that the Christian LXX was not a frozen text but a living textual tradition increasingly assimilated to the Hebrew through hexaplaric mediation.",
+  "transmission_synthesis_plain": "Early Christian writers cited Isaiah 9:6 in two strikingly different forms: a short Greek reading ('Messenger of Great Counsel') used by Justin Martyr, and a longer list of titles ('Wonderful Counselor, Mighty God…') closer to the Hebrew, which gradually came to dominate. This shift shows that Christians were not using a single fixed Old Testament text but were progressively revising their Greek Bible toward the Hebrew, especially after Origen's scholarly work in the third century.",
+  "notable_variants": [
+    {
+      "reading": "μεγάλης βουλῆς ἄγγελος (Messenger of Great Counsel)",
+      "fathers_using_it": [
+        "Justin Martyr",
+        "Tertullian",
+        "Athanasius (partial)"
+      ],
+      "text_form_alignment": "closer_to_lxx",
+      "significance": "This distinctive Old Greek reading has no Hebrew counterpart and represents an interpretive compression of the four Hebrew throne-names; its retention into the fourth century shows OG persistence in Christian liturgy and apologetics."
+    },
+    {
+      "reading": "Θαυμαστὸς σύμβουλος, Θεὸς ἰσχυρός, ἐξουσιαστής, ἄρχων εἰρήνης (Wonderful Counselor, Mighty God, Ruler, Prince of Peace)",
+      "fathers_using_it": [
+        "Irenaeus",
+        "Eusebius",
+        "Athanasius",
+        "Chrysostom",
+        "Cyril of Alexandria"
+      ],
+      "text_form_alignment": "closer_to_mt",
+      "significance": "This expanded series corresponds to the Hebrew and to the later recensions (Aquila/Symmachus/Theodotion); its rise in patristic citation tracks the Christian assimilation of OG Isaiah to a Hebraizing standard via the Hexapla."
+    },
+    {
+      "reading": "Omission of 'Eternal Father / πατὴρ τοῦ μέλλοντος αἰῶνος'",
+      "fathers_using_it": [
+        "Athanasius (varies)",
+        "Cyril (varies)"
+      ],
+      "text_form_alignment": "mixed",
+      "significance": "The selective omission of 'Father of the Age to Come' in some Christological citations may reflect Trinitarian discomfort with attributing 'Father' to the Son, suggesting theologically motivated citation practice."
+    }
+  ],
+  "bibcrit_assessment": {
+    "title": "Hexaplaric Hebraization Reshapes a Christological Proof-Text",
+    "reasoning": "The most significant finding is the documented progression from Justin's pure Old Greek 'Messenger of Great Counsel' to the increasingly Hebraizing throne-name series in fourth- and fifth-century fathers. This trajectory provides one of the clearest case studies in patristic Isaiah of how Origen's Hexapla reshaped Christian Scripture—even at the cost of losing a distinctive Christological reading ('μεγάλης βουλῆς ἄγγελος') that had been central to second-century apologetics. The text form Christians cited was not stable but actively negotiated against Jewish and Hebrew textual standards.",
+    "plain": "Early Christians initially used a uniquely Greek version of Isaiah 9:6 to prove Jesus' divinity, but over time they revised their Bibles to match the Hebrew more closely, even when this meant abandoning beloved older readings. This shows that the Christian Old Testament text was a moving target in the first five centuries.",
+    "confidence": 0.83
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T22:07:36.544086",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v3"
+}

@@ -1,0 +1,91 @@
+{
+  "reconstructed_words": [
+    {
+      "position": 1,
+      "lxx_word": "καὶ αὐτὸς διὰ τὸ κεκακῶσθαι",
+      "vorlage_word": "והוא נענה",
+      "status": "unattested",
+      "confidence": 0.6,
+      "mt_equivalent": "נִגַּשׂ וְהוּא נַעֲנֶה",
+      "dss_witness": "1QIsaª reads נגש והואה נענה (agrees with MT)",
+      "reasoning": "The LXX appears to lack an equivalent for נִגַּשׂ ('he was oppressed/approached') and renders נַעֲנֶה causally with διὰ τὸ κεκακῶσθαι. κακόω regularly translates ענה II in LXX (cf. Gen 15:13; Exod 1:11). The translator either had a shorter Vorlage or condensed the parallelism, treating the two passive verbs as one idea.",
+      "alternatives": [
+        {
+          "reading": "נגש והוא נענה",
+          "confidence": 0.3,
+          "note": "Translator may have collapsed both verbs into one causal phrase."
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "lxx_word": "οὐκ ἀνοίγει τὸ στόμα",
+      "vorlage_word": "ולא יפתח־פיו",
+      "status": "agrees_mt",
+      "confidence": 0.9,
+      "mt_equivalent": "וְלֹא יִפְתַּח־פִּיו",
+      "dss_witness": "1QIsaª: ולוא יפתח פיו",
+      "reasoning": "Standard rendering of פתח פה with ἀνοίγω τὸ στόμα (cf. Ps 38:14 LXX). The absence of αὐτοῦ in the Greek may reflect translator choice rather than a different Vorlage, since the suffix is implied.",
+      "alternatives": []
+    },
+    {
+      "position": 3,
+      "lxx_word": "ὡς πρόβατον ἐπὶ σφαγὴν ἤχθη",
+      "vorlage_word": "כשה לטבח יובל",
+      "status": "agrees_mt",
+      "confidence": 0.95,
+      "mt_equivalent": "כַּשֶּׂה לַטֶּבַח יוּבָל",
+      "dss_witness": "1QIsaª: כשה לטבח יובל",
+      "reasoning": "πρόβατον = שֶׂה, σφαγή = טֶבַח (cf. Jer 12:3), and ἄγω = יבל hophal (cf. Ps 45:15 LXX). Direct word-for-word correspondence with MT.",
+      "alternatives": []
+    },
+    {
+      "position": 4,
+      "lxx_word": "καὶ ὡς ἀμνὸς ἐναντίον τοῦ κείροντος αὐτὸν ἄφωνος",
+      "vorlage_word": "וכרחל לפני גזזיה נאלמה",
+      "status": "agrees_mt",
+      "confidence": 0.85,
+      "mt_equivalent": "וּכְרָחֵל לִפְנֵי גֹזְזֶיהָ נֶאֱלָמָה",
+      "dss_witness": "1QIsaª: וכרחל לפני גוזזיה נאלמה",
+      "reasoning": "ἀμνός renders רָחֵל (ewe), though grammatical gender shifts to masculine in Greek; κείρω = גזז (cf. Gen 31:19); ἄφωνος = נאלם niphal of אלם (cf. Ps 38:14 LXX ἐγενήθην ὡσεὶ ἄνθρωπος... ἄφωνος). The pronoun αὐτόν (masc.) reflects the translator's masculinization of the lamb image.",
+      "alternatives": [
+        {
+          "reading": "וכרחל לפני גוזזיו",
+          "confidence": 0.2,
+          "note": "αὐτόν might suggest masc. suffix, but more likely translator's adjustment."
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "lxx_word": "οὕτως οὐκ ἀνοίγει τὸ στόμα αὐτοῦ",
+      "vorlage_word": "כן לא יפתח פיו",
+      "status": "unattested",
+      "confidence": 0.55,
+      "mt_equivalent": "וְלֹא יִפְתַּח פִּיו",
+      "dss_witness": "1QIsaª: ולוא יפתח פיו (agrees with MT)",
+      "reasoning": "The LXX adds οὕτως ('thus'), which has no equivalent in MT or 1QIsaª. This may be a translator's stylistic addition to complete the comparative ὡς...οὕτως construction rather than reflect כֵּן in the Vorlage. The presence of αὐτοῦ here (vs. its absence in position 2) shows the translator's variation.",
+      "alternatives": [
+        {
+          "reading": "כן לא יפתח פיו",
+          "confidence": 0.3,
+          "note": "A Vorlage with כן is possible but unattested in any Hebrew witness."
+        }
+      ]
+    }
+  ],
+  "summary_technical": "The LXX of Isa 53:7 largely reflects a Hebrew text close to MT and 1QIsaª, with two notable divergences: (1) the opening נִגַּשׂ appears unrepresented, with the translator collapsing the doubled passive into a single causal clause διὰ τὸ κεκακῶσθαι; (2) the addition of οὕτως in the final clause completes a Greek comparative structure without Hebrew warrant. The animal-imagery line shows precise lexical correspondence to MT.",
+  "summary_plain": "The Greek translator mostly followed a Hebrew text matching what we have today, but smoothed out the opening (dropping or merging 'he was oppressed') and added 'so' at the end to make the comparison flow better in Greek.",
+  "overall_confidence": 0.78,
+  "bibcrit_assessment": {
+    "title": "Translator's Compression of Doubled Passives",
+    "reasoning": "The most significant divergence is the apparent loss or merging of נִגַּשׂ at the opening. While 1QIsaª confirms MT, the LXX's διὰ τὸ κεκακῶσθαι suggests either a shorter Vorlage or, more probably, the translator's interpretive consolidation of two near-synonymous passives into a single causal phrase. This is best read as translation technique rather than evidence of a lost variant, since no Hebrew witness supports omission.",
+    "plain": "The Greek translator may have simplified the Hebrew opening 'he was oppressed and afflicted' into a single phrase, but this is a stylistic choice rather than evidence of a different Hebrew text.",
+    "confidence": 0.7
+  },
+  "discovery_ready": false,
+  "reference": "Isaiah 53:7",
+  "cached_at": "2026-05-09T21:15:31.984456",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v1"
+}

@@ -1,0 +1,162 @@
+{
+  "reference": "1 Kings 7",
+  "subject": "Dimensions and capacities of Solomon's temple furnishings",
+  "figures": [
+    {
+      "name": "Molten Sea capacity (1 Kgs 7:26)",
+      "mt_value": 2000,
+      "lxx_value": 2000,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "MT and LXX agree at 2,000 baths; 2 Chr 4:5 reads 3,000 baths, creating an inner-canonical tension rather than an MT/LXX divergence. SP does not contain Kings."
+    },
+    {
+      "name": "Number of gourds under Sea's brim (1 Kgs 7:24)",
+      "mt_value": 300,
+      "lxx_value": 300,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "Two rows of gourds, ten per cubit; MT and LXX agree numerically."
+    },
+    {
+      "name": "Hiram's age/skill descriptor — height of pillars (1 Kgs 7:15)",
+      "mt_value": 18,
+      "lxx_value": 18,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "Both traditions give 18 cubits; 2 Chr 3:15 reads 35 cubits, a parallel-text divergence."
+    },
+    {
+      "name": "Capitals on pillars, height (1 Kgs 7:16)",
+      "mt_value": 5,
+      "lxx_value": 5,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "Agreement at 5 cubits in both MT and LXX."
+    },
+    {
+      "name": "Length of House of Forest of Lebanon (1 Kgs 7:2)",
+      "mt_value": 100,
+      "lxx_value": 100,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "Dimensions (100x50x30 cubits) transmitted identically in MT and LXX."
+    },
+    {
+      "name": "Pomegranates per row on capitals (1 Kgs 7:20, cf. Jer 52:23)",
+      "mt_value": 200,
+      "lxx_value": 100,
+      "sp_value": 0,
+      "divergence_type": "minor",
+      "note": "LXX of 1 Kgs 7:20 (3 Kgdms 7) lacks the second row formula present in MT; the count of 100 vs. 200 reflects whether one or two rows are tallied."
+    },
+    {
+      "name": "Number of bases/stands (1 Kgs 7:27)",
+      "mt_value": 10,
+      "lxx_value": 10,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "Both traditions specify ten bronze stands."
+    },
+    {
+      "name": "Capacity of each laver (1 Kgs 7:38)",
+      "mt_value": 40,
+      "lxx_value": 40,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "Forty baths in both MT and LXX."
+    }
+  ],
+  "systematic_analysis": {
+    "is_systematic": false,
+    "pattern": "Unlike the patriarchal chronologies of Genesis 5 and 11, the numerical data of 1 Kings 7 exhibits no systematic arithmetic offset between MT and LXX. The divergences that exist are localized: the Greek 3 Kingdoms reorders and abbreviates the Hiram/temple-furnishings pericope (notably 7:1–12 placement and the pomegranate/capitals description), producing isolated numerical differences rather than a uniform inflation or deflation. The Samaritan Pentateuch is irrelevant since Kings lies outside the Samaritan canon.",
+    "pattern_plain": "There is no consistent mathematical pattern here, unlike the famous 100-year shifts in Genesis. The few number differences come from the Greek translator rearranging the chapter, not from a systematic chronological scheme."
+  },
+  "theories": [
+    {
+      "name": "Independent transmission streams in Kings",
+      "slug": "independent_traditions",
+      "score": 0.78,
+      "confidence": 0.75,
+      "summary": "The Old Greek of 3 Kingdoms reflects a Hebrew Vorlage genuinely distinct from the proto-MT, especially in the Solomonic narrative where order and detail diverge substantially. Numerical differences in 1 Kings 7 are byproducts of separate editorial recensions of the temple-construction account rather than scribal arithmetic on a shared base. This is the consensus view since Thackeray, Shenkel, and Trebolle Barrera.",
+      "summary_plain": "The Greek and Hebrew versions of Kings descend from two different editions of the book, so the small number differences in the temple chapter are leftovers from those different editions.",
+      "supporting_evidence": [
+        "3 Kingdoms reorders 1 Kings 7, placing the palace complex differently relative to the temple furnishings.",
+        "Qumran fragments of Kings (4QKgs) attest plural Hebrew text-forms in the Persian/Hellenistic period.",
+        "The pomegranate-row variant aligns with structural rephrasing, not numerical corruption.",
+        "LXX pluses and minuses in Solomonic material are literarily coherent, suggesting editorial intent.",
+        "No uniform numerical ratio (such as +100 or x10) governs the variants."
+      ],
+      "weaknesses": [
+        "Cannot explain every minor variant without recourse to additional scribal mechanisms.",
+        "The boundary between 'edition' and 'translation freedom' in 3 Kingdoms remains contested.",
+        "Some divergences may still be ordinary copying errors masquerading as editorial."
+      ]
+    },
+    {
+      "name": "Scribal error in numeral transmission",
+      "slug": "scribal_error",
+      "score": 0.55,
+      "confidence": 0.6,
+      "summary": "Hebrew numerals written with letters or with repeated number-words are highly susceptible to haplography, dittography, and confusion of similar consonants (e.g., shin/sin, mem/samek). The pomegranate count and the parallel divergence with 2 Chronicles 4:5 (2,000 vs. 3,000 baths) plausibly reflect such accidents in either MT or its Vorlage.",
+      "summary_plain": "Some of the number differences likely come from ordinary copying mistakes, especially since Hebrew numbers are easy to miscopy.",
+      "supporting_evidence": [
+        "2 Chr 4:5's 3,000 baths vs. 1 Kgs 7:26's 2,000 baths is a classic candidate for numeral corruption.",
+        "Pillar heights diverge between Kings (18) and Chronicles (35), suggesting numeral-letter confusion.",
+        "Numerals are statistically the most error-prone elements in scribal transmission.",
+        "Josephus's figures sometimes side with neither MT nor LXX, implying multiple corruptions."
+      ],
+      "weaknesses": [
+        "Does not account for the structural/editorial reorganization in 3 Kingdoms.",
+        "The MT/LXX of Kings actually agree on most numbers in chapter 7; errors are few.",
+        "Cannot be falsified easily and risks becoming a default explanation."
+      ]
+    },
+    {
+      "name": "LXX inflation/expansion of cultic detail",
+      "slug": "lxx_inflation",
+      "score": 0.25,
+      "confidence": 0.4,
+      "summary": "A minority position holds that the Greek tradition periodically aggrandizes temple data for liturgical or apologetic reasons. Evidence in 1 Kings 7 is thin, however, since LXX numbers here generally equal or fall below MT.",
+      "summary_plain": "Some have argued the Greek version exaggerates temple details, but in this chapter the Greek numbers are not consistently larger.",
+      "supporting_evidence": [
+        "LXX elsewhere expands cultic descriptions (e.g., Exodus tabernacle accounts).",
+        "Hellenistic-Jewish interest in temple grandeur is well attested in Josephus and Philo."
+      ],
+      "weaknesses": [
+        "In 1 Kings 7 the LXX is shorter, not longer, in key cultic sections.",
+        "The pomegranate count is lower in LXX, contradicting an inflationary thesis.",
+        "No systematic upward bias is demonstrable."
+      ]
+    },
+    {
+      "name": "Theological motivation behind variants",
+      "slug": "theological_motivation",
+      "score": 0.2,
+      "confidence": 0.35,
+      "summary": "Some scholars suspect ideological reshaping of Solomon's temple description (e.g., diminishing or enhancing pagan-influenced elements like the bronze sea). The evidence in chapter 7 is suggestive at most and lacks the clear tendentiousness seen in, say, the LXX of Jeremiah.",
+      "summary_plain": "A few scholars think the differences reflect theological agendas, but the case is weak in this chapter.",
+      "supporting_evidence": [
+        "3 Kingdoms reorganizes Solomon's reign, possibly to mute the palace's prominence over the temple.",
+        "Numerical detail surrounding the bronze sea is theologically charged in later Jewish tradition."
+      ],
+      "weaknesses": [
+        "No clear theological tendenz attaches to the specific numerical variants.",
+        "Most numbers are identical across MT and LXX, undermining a pervasive ideological motive.",
+        "Cannot be empirically distinguished from editorial reworking."
+      ]
+    }
+  ],
+  "overall_assessment": "1 Kings 7 does not exhibit the kind of systematic numerical divergence that characterizes Genesis 5 and 11; MT and LXX agree on nearly every measurement, and the Samaritan Pentateuch does not transmit Kings at all. The most significant variants arise where 3 Kingdoms reorders or abbreviates the temple-furnishings pericope, pointing to genuinely distinct Hebrew editions of Kings rather than to arithmetic recension. Scribal error best accounts for the residual local divergences, particularly when 1 Kings 7 is compared with 2 Chronicles 4. The chapter therefore illustrates that numerical variation in the Hebrew Bible is not monolithic: 'chronological' books behave differently from 'architectural' ones.",
+  "overall_plain": "Unlike the famous age-of-the-patriarchs disagreements, the temple measurements in 1 Kings 7 are remarkably stable across Hebrew and Greek manuscripts. The few differences come from the Greek version reorganizing the chapter and from ordinary copying slips, not from any grand numerical scheme.",
+  "bibcrit_assessment": {
+    "title": "Stable numbers, divergent editions of Kings",
+    "reasoning": "The near-unanimity of MT and LXX numerals in 1 Kings 7 is itself a striking datum: it shows that scribes treated architectural specifications with greater conservatism than genealogical chronologies. The variants that do exist cluster around editorial reorganization, reinforcing the model of two Hebrew editions of Kings circulating into the Hellenistic period.",
+    "plain": "The temple's measurements were copied very carefully across centuries, which is interesting because the genealogies in Genesis were not. The small differences that exist point to two slightly different editions of the book of Kings.",
+    "confidence": 0.72
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T21:21:00.493555",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v3"
+}

@@ -1,0 +1,172 @@
+{
+  "scope": "Psalms",
+  "scope_type": "book",
+  "summary": "The Psalter exhibits multiple layers of theologically motivated revision, most prominently in the LXX (eschatological and messianic sharpening per Schaper) and the Targum (anthropomorphism avoidance, halakhic actualization). The Vulgate iuxta Hebraeos and Gallican Psalter show Christological inflection at key sites (Ps 2, 22, 110), while the Peshitta titles overtly Christianize individual psalms.",
+  "summary_plain": "Ancient translators of Psalms often nudged the text toward stronger messianic, eschatological, or theologically 'safer' readings. The Greek Psalter heightens future hope; the Aramaic Targum softens God's human-like features; Christian translations amplify messianic prophecy.",
+  "revisions": [
+    {
+      "reference": "Psalm 2:7",
+      "tradition": "LXX",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "יְהוָה אָמַר אֵלַי בְּנִי אַתָּה אֲנִי הַיּוֹם יְלִדְתִּיךָ ('You are my son; today I have begotten you')",
+      "revised_reading": "Κύριος εἶπεν πρός με Υἱός μου εἶ σύ, ἐγὼ σήμερον γεγέννηκά σε — preserved literally but framed by LXX-wide messianic vocabulary (χριστός in v.2) that intensifies the royal-eschatological reading.",
+      "confidence": 0.7,
+      "evidence": "Schaper argues the Greek Psalter consistently reads royal psalms through a Hellenistic-messianic lens, with Ps 2 functioning as the programmatic head. The LXX's choice of γεγέννηκά σε (perfect) rather than an aorist sharpens the ontological filiation later exploited in NT citations (Acts 13:33; Heb 1:5).",
+      "evidence_plain": "The Greek translator kept the wording but framed Psalm 2 as an eschatological messiah-text, which is how early Jews and Christians then read it.",
+      "scholarly_citations": [
+        "Schaper, Eschatology in the Greek Psalter, pp. 72–84",
+        "Pietersma, 'Exegesis in the Septuagint Psalter'"
+      ],
+      "counter_arguments": "The Greek is a fairly literal rendering; messianic reading may be reception-driven rather than translator-driven."
+    },
+    {
+      "reference": "Psalm 16:10",
+      "tradition": "LXX",
+      "revision_type": "eschatological_sharpening",
+      "mt_reading": "לֹא־תַעֲזֹב נַפְשִׁי לִשְׁאוֹל לֹא־תִתֵּן חֲסִידְךָ לִרְאוֹת שָׁחַת ('you will not let your faithful one see the Pit/corruption')",
+      "revised_reading": "οὐδὲ δώσεις τὸν ὅσιόν σου ἰδεῖν διαφθοράν ('nor let your holy one see corruption')",
+      "confidence": 0.75,
+      "evidence": "שַׁחַת ('pit') is rendered διαφθορά ('decay/corruption'), shifting the imagery from grave-location to bodily incorruption. Schaper sees this as evidence of Pharisaic-style resurrection hope; the rendering enables the resurrection argument in Acts 2:27, 13:35.",
+      "evidence_plain": "The Hebrew 'pit' becomes Greek 'corruption,' opening a reading about bodily resurrection rather than just being saved from the grave.",
+      "scholarly_citations": [
+        "Schaper, Eschatology in the Greek Psalter, pp. 46–52",
+        "Holladay, 'Acts and the Septuagint'"
+      ],
+      "counter_arguments": "שַׁחַת can legitimately denote 'destruction/decay' (cf. Job 17:14); the rendering may be lexical, not theological."
+    },
+    {
+      "reference": "Psalm 22:16 [MT 22:17]",
+      "tradition": "LXX",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "כָּאֲרִי יָדַי וְרַגְלָי ('like a lion, my hands and my feet')",
+      "revised_reading": "ὤρυξαν χεῖράς μου καὶ πόδας ('they pierced/dug my hands and my feet')",
+      "confidence": 0.7,
+      "evidence": "LXX reads a verbal form (כארו 'they dug/pierced'), as does a Nahal Hever fragment (5/6HevPs). The Vulgate iuxta LXX has 'foderunt manus meas et pedes meos,' cemented as the Christological crucifixion proof-text. Whether the Vorlage was already verbal or the LXX revised, the result functions as messianic sharpening in transmission.",
+      "evidence_plain": "Where the Hebrew has the odd phrase 'like a lion my hands and feet,' the Greek and Latin read 'they pierced my hands and feet'—a reading that became central to Christian readings of the crucifixion.",
+      "scholarly_citations": [
+        "Kraus, Psalms 1–59, pp. 292–93",
+        "Vall, '\"They Pierced My Hands and My Feet\" (Psalm 22:17)'"
+      ],
+      "counter_arguments": "The Hevra evidence suggests the verbal reading is pre-Christian; this may be a genuine textual variant rather than theological revision."
+    },
+    {
+      "reference": "Psalm 45:6 [MT 45:7]",
+      "tradition": "Targum",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "כִּסְאֲךָ אֱלֹהִים עוֹלָם וָעֶד ('Your throne, O God, is forever')",
+      "revised_reading": "Targum: 'The throne of your glory, O Lord, endures forever and ever' — addressed to God, with the king reframed as the messianic king elsewhere in the psalm ('Your beauty, King Messiah').",
+      "confidence": 0.8,
+      "evidence": "Targum Psalms explicitly inserts מלכא משיחא ('King Messiah') at v.3, recasting the royal wedding psalm as messianic prophecy. Simultaneously, the awkward address of the king as 'God' is redirected to YHWH, avoiding theological scandal.",
+      "evidence_plain": "The Aramaic version both makes this psalm clearly about the Messiah and avoids calling the human king 'God.'",
+      "scholarly_citations": [
+        "Stec, The Targum of Psalms, pp. 95–97",
+        "Cathcart and Gordon, Targum tradition notes on Ps 45"
+      ],
+      "counter_arguments": "Messianic reading of Ps 45 is widespread (Heb 1:8); Targum may reflect inherited tradition rather than fresh revision."
+    },
+    {
+      "reference": "Psalm 110:1, 3",
+      "tradition": "LXX",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "v.3 מֵרֶחֶם מִשְׁחָר לְךָ טַל יַלְדֻתֶיךָ ('from the womb of the dawn, the dew of your youth is yours')",
+      "revised_reading": "ἐκ γαστρὸς πρὸ ἑωσφόρου ἐξεγέννησά σε ('from the womb before the morning star I begot you')",
+      "confidence": 0.85,
+      "evidence": "LXX repoints/revocalizes to produce a divine begetting of the king before creation—pre-existence language absent from MT. Combined with v.1 (κύριος τῷ κυρίῳ μου), the psalm becomes a programmatic messianic-priestly oracle, the most-cited OT text in the NT.",
+      "evidence_plain": "The Greek turns a poetic line about morning dew into 'I begot you before the morning star,' suggesting the Messiah's pre-existence.",
+      "scholarly_citations": [
+        "Schaper, Eschatology in the Greek Psalter, pp. 101–106",
+        "Hay, Glory at the Right Hand"
+      ],
+      "counter_arguments": "MT v.3 is notoriously corrupt; the LXX may reflect a different (legitimate) Vorlage rather than ideological revision."
+    },
+    {
+      "reference": "Psalm 8:5 [MT 8:6]",
+      "tradition": "LXX",
+      "revision_type": "anthropomorphism_avoidance",
+      "mt_reading": "וַתְּחַסְּרֵהוּ מְּעַט מֵאֱלֹהִים ('you made him a little lower than God/elohim')",
+      "revised_reading": "ἠλάττωσας αὐτὸν βραχύ τι παρʼ ἀγγέλους ('you made him a little lower than the angels')",
+      "confidence": 0.85,
+      "evidence": "Translating אלהים as ἀγγέλους avoids the theologically uncomfortable claim that humans are nearly divine. Targum and Peshitta agree ('angels'/'malʾakhayya'), showing a shared Second Temple convention. Hebrews 2:7 depends on this revision.",
+      "evidence_plain": "The Hebrew says humans are 'a little lower than God,' but the Greek, Aramaic, and Syriac all soften this to 'a little lower than the angels.'",
+      "scholarly_citations": [
+        "Olofsson, God Is My Rock, pp. 21–25",
+        "Fabry, TDOT 'אלהים' on translational avoidance"
+      ],
+      "counter_arguments": "אלהים can legitimately mean 'heavenly beings' (cf. Ps 82:1); the Greek may be a defensible lexical choice."
+    },
+    {
+      "reference": "Psalm 18:2 [MT 18:3]",
+      "tradition": "Targum",
+      "revision_type": "anthropomorphism_avoidance",
+      "mt_reading": "יְהוָה סַלְעִי וּמְצוּדָתִי ('YHWH is my rock and my fortress')",
+      "revised_reading": "Targum: 'The Lord is my support (תקפי) and my reliance' — metaphors of physical solidity dissolved into abstractions.",
+      "confidence": 0.7,
+      "evidence": "Targum Psalms systematically abstracts physical/material divine metaphors (rock, shield, sword) into relational/ethical ones, consistent with the broader Targumic anti-anthropomorphic program (Klein, Smolar–Aberbach).",
+      "evidence_plain": "The Targum tends to replace 'God is my rock' with abstract phrases like 'God is my strength,' avoiding picturing God as a physical object.",
+      "scholarly_citations": [
+        "Klein, Anthropomorphisms and Anthropopathisms in the Targumim",
+        "Stec, The Targum of Psalms, intro pp. 1–18"
+      ],
+      "counter_arguments": "Targum often retains 'rock' (e.g. Ps 18:32); the pattern is inconsistent and may reflect stylistic variation."
+    },
+    {
+      "reference": "Psalm 137:9",
+      "tradition": "Targum",
+      "revision_type": "softening",
+      "mt_reading": "אַשְׁרֵי שֶׁיֹּאחֵז וְנִפֵּץ אֶת־עֹלָלַיִךְ אֶל־הַסָּלַע ('Blessed is he who seizes and dashes your infants on the rock')",
+      "revised_reading": "Targum reframes the violence eschatologically and adds gloss material connecting it to the just judgment of Babylon at the eschaton; some traditions soften the agent.",
+      "confidence": 0.5,
+      "evidence": "Targum tends to redirect raw imprecation into legal/eschatological judgment idiom, distancing the pious worshipper from the act. The wider rabbinic reception likewise contextualizes the verse rather than endorsing it.",
+      "evidence_plain": "The brutal closing line of Psalm 137 is reframed in Aramaic to be about God's future judgment rather than personal vengeance.",
+      "scholarly_citations": [
+        "Stec, The Targum of Psalms, ad loc.",
+        "Smolar–Aberbach, Studies in Targum Jonathan (analogous strategies)"
+      ],
+      "counter_arguments": "Targum Psalms is generally conservative; the softening here is modest and may be expansive paraphrase, not ideological."
+    },
+    {
+      "reference": "Psalm 16:3",
+      "tradition": "Vulgate",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "לִקְדוֹשִׁים אֲשֶׁר־בָּאָרֶץ הֵמָּה ('to the holy ones who are in the land')",
+      "revised_reading": "Vulgate (Gallican): 'Sanctis qui sunt in terra eius mirificavit omnes voluntates meas in eis' — read by Augustine and the medieval tradition Christologically (the saints as members of Christ's body).",
+      "confidence": 0.45,
+      "evidence": "Jerome's Gallican rendering follows LXX faithfully, but Vulgate Psalter functioned in Christian liturgy as messianic, supported by Ps 16's broader use in Acts. Less a translation revision than a translation that locks in messianic reception.",
+      "evidence_plain": "Jerome's Latin Psalter, used in Christian worship, framed Psalm 16 as a prophecy fulfilled in Christ.",
+      "scholarly_citations": [
+        "Kraus, Jerome's Hebrew Psalter",
+        "Cameron, 'Augustine's Construction of the Inner Self'"
+      ],
+      "counter_arguments": "Jerome translates closely from his Vorlagen; Christological reading is reception, not translational revision."
+    },
+    {
+      "reference": "Psalm 1:5",
+      "tradition": "Targum",
+      "revision_type": "eschatological_sharpening",
+      "mt_reading": "עַל־כֵּן לֹא־יָקֻמוּ רְשָׁעִים בַּמִּשְׁפָּט ('therefore the wicked will not stand in the judgment')",
+      "revised_reading": "Targum: 'therefore the wicked shall not be vindicated/stand on the great day of judgment (יום דינא רבא)'",
+      "confidence": 0.8,
+      "evidence": "Targum routinely glosses משפט as 'the great day of judgment,' inserting eschatological specificity absent from the Hebrew. This reflects rabbinic apocalyptic categories projected onto the Psalter's general judgment language.",
+      "evidence_plain": "The Targum turns a general statement about judgment into a reference to the final Day of Judgment.",
+      "scholarly_citations": [
+        "Stec, The Targum of Psalms, pp. 29–30",
+        "Schaper, Eschatology in the Greek Psalter, pp. 12–14 (on parallel Greek strategy)"
+      ],
+      "counter_arguments": "This may simply make explicit what the original implies; rabbinic theology sees these as continuous, not novel."
+    }
+  ],
+  "dominant_strategy": "messianic_heightening — particularly in the LXX of royal psalms (2, 16, 22, 45, 110), where translation choices systematically nudge ambiguous Hebrew toward an eschatological-messianic key, providing the textual substrate for NT Christology.",
+  "overall_assessment": "The Greek Psalter, on Schaper's reading, was produced within Hellenistic-Jewish circles already invested in a developed messianic and resurrection eschatology, and its translation choices crystallize this hermeneutic at lexical micro-level (Ps 16:10 διαφθορά; Ps 110:3 ἐξεγέννησά σε). The Targum operates on a parallel but distinct trajectory, harmonizing the Psalms with rabbinic theology by abstracting anthropomorphisms and inserting eschatological judgment language. The Vulgate—particularly the Gallican Psalter—then locks the LXX's messianic readings into Christian liturgical memory. Across all three, the Psalter functions as the primary site where second-order theological developments retroactively reshape the canonical text.",
+  "overall_plain": "Translators of the Psalms in Greek, Aramaic, and Latin didn't just translate—they often nudged the meaning toward their own theological convictions about the Messiah, the resurrection, and God's nature. The Greek version especially shaped how Jews and Christians later read these psalms as prophecies.",
+  "bibcrit_assessment": {
+    "title": "LXX Psalter as messianic interpretive crystallization",
+    "reasoning": "The cumulative pattern suggests the Greek Psalter was not a neutral translation but the first major Jewish messianic commentary on the Psalms, encoded at the lexical level. This means much of NT Christology is reading a text that had already been theologically pre-shaped, complicating any simple appeal to 'OT prophecy fulfilled.'",
+    "plain": "The Greek Psalms used by early Christians had already been gently steered toward messianic readings before Christians ever quoted them. The 'prophecies' Jesus fulfilled were partly the product of how earlier Jewish translators had rendered the Hebrew.",
+    "confidence": 0.78
+  },
+  "discovery_ready": false,
+  "reference": "Psalms",
+  "cached_at": "2026-05-09T21:42:42.782462",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v2"
+}

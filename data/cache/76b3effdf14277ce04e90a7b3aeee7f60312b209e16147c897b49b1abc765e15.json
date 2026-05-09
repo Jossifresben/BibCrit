@@ -1,0 +1,508 @@
+{
+  "book": "Jeremiah",
+  "period_range": "late 7th century BCE – 11th century CE",
+  "archetype_description": "Jeremiah is the most striking case in the Hebrew Bible of two divergent literary editions preserved in the textual record: a shorter, earlier edition (reflected in the Old Greek and 4QJer-b,d) and a longer, expanded edition (reflected in MT and 4QJer-a,c) that is roughly one-eighth longer and orders the Oracles Against the Nations differently. The compositional core derives from the prophet's own oracles (late 7th–early 6th c. BCE) transmitted via Baruch ben Neriah, with subsequent Deuteronomistic redaction during and after the exile. Tov, Janzen, and Stipp have argued that the Greek Vorlage represents an earlier Hebrew edition, while the proto-MT represents a secondary expansion.",
+  "stemma_nodes": [
+    {
+      "id": "archetype",
+      "label": "Proto-Text (Jeremianic Oracles)",
+      "type": "archetype",
+      "date": "late 7th – early 6th c. BCE",
+      "description": "Original oracles of Jeremiah, partly dictated to Baruch (cf. Jer 36)."
+    },
+    {
+      "id": "dtr-redaction",
+      "label": "Deuteronomistic Redaction",
+      "type": "intermediate",
+      "date": "6th c. BCE",
+      "description": "Exilic Deuteronomistic editorial layer shaping the prose sermons and biographical narratives."
+    },
+    {
+      "id": "short-edition",
+      "label": "Short Hebrew Edition (Edition I)",
+      "type": "intermediate",
+      "date": "late 6th – 5th c. BCE",
+      "description": "Earlier, shorter Hebrew recension underlying the Old Greek and 4QJer-b,d."
+    },
+    {
+      "id": "long-edition",
+      "label": "Long Hebrew Edition (Edition II) / proto-MT",
+      "type": "intermediate",
+      "date": "4th–3rd c. BCE",
+      "description": "Expanded Hebrew edition with rearranged Oracles Against the Nations, ancestor of MT and 4QJer-a,c."
+    },
+    {
+      "id": "4QJer-a",
+      "label": "4QJer-a (4Q70)",
+      "type": "edition",
+      "tradition": "DSS",
+      "date": "c. 200 BCE",
+      "full_name": "4QJeremiah-a",
+      "language": "Hebrew",
+      "description": "Qumran scroll aligning with proto-MT long edition."
+    },
+    {
+      "id": "4QJer-c",
+      "label": "4QJer-c (4Q72)",
+      "type": "edition",
+      "tradition": "DSS",
+      "date": "1st c. BCE",
+      "full_name": "4QJeremiah-c",
+      "language": "Hebrew",
+      "description": "Qumran fragment aligning with proto-MT."
+    },
+    {
+      "id": "4QJer-b",
+      "label": "4QJer-b (4Q71)",
+      "type": "edition",
+      "tradition": "DSS",
+      "date": "c. 200 BCE",
+      "full_name": "4QJeremiah-b",
+      "language": "Hebrew",
+      "description": "Small Qumran fragment of Jer 9–10 in short form, agreeing with LXX Vorlage."
+    },
+    {
+      "id": "4QJer-d",
+      "label": "4QJer-d (4Q72a)",
+      "type": "edition",
+      "tradition": "DSS",
+      "date": "1st c. BCE",
+      "full_name": "4QJeremiah-d",
+      "language": "Hebrew",
+      "description": "Fragment of Jer 43 in short form, agreeing with LXX Vorlage."
+    },
+    {
+      "id": "proto-mt",
+      "label": "Proto-MT (consonantal)",
+      "type": "intermediate",
+      "date": "c. 100 BCE – 100 CE",
+      "description": "Stabilized consonantal text adopted by rabbinic Judaism."
+    },
+    {
+      "id": "mt",
+      "label": "MT",
+      "type": "tradition",
+      "tradition": "MT",
+      "date": "c. 100 CE – 1000 CE",
+      "full_name": "Masoretic Text (Tiberian)",
+      "language": "Hebrew",
+      "description": "Tiberian Masoretic vocalization and accentuation tradition for Jeremiah."
+    },
+    {
+      "id": "aleppo",
+      "label": "Aleppo Codex",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "c. 925 CE",
+      "full_name": "Aleppo Codex",
+      "language": "Hebrew",
+      "description": "Ben-Asher model codex; Jeremiah is largely preserved."
+    },
+    {
+      "id": "leningrad",
+      "label": "Leningrad Codex (B19A)",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "1008 CE",
+      "full_name": "Codex Leningradensis",
+      "language": "Hebrew",
+      "description": "Oldest complete Hebrew Bible, base text of BHS/BHQ."
+    },
+    {
+      "id": "bhs",
+      "label": "BHS",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "1977",
+      "full_name": "Biblia Hebraica Stuttgartensia",
+      "language": "Hebrew",
+      "description": "Diplomatic edition of Leningrad with critical apparatus."
+    },
+    {
+      "id": "bhq",
+      "label": "BHQ Jeremiah",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "forthcoming",
+      "full_name": "Biblia Hebraica Quinta",
+      "language": "Hebrew",
+      "description": "Fifth edition with full Masorah and revised apparatus (Jeremiah fascicle by R. D. Weis)."
+    },
+    {
+      "id": "old-greek",
+      "label": "Old Greek Jeremiah",
+      "type": "intermediate",
+      "date": "mid-2nd c. BCE",
+      "description": "Original Greek translation of the short Hebrew edition, made in Alexandria."
+    },
+    {
+      "id": "lxx",
+      "label": "LXX Jeremiah",
+      "type": "tradition",
+      "tradition": "LXX",
+      "date": "2nd c. BCE onward",
+      "full_name": "Septuagint Jeremiah",
+      "language": "Greek",
+      "description": "Greek tradition reflecting the short edition; ch. 46–51 MT correspond to LXX 25–31."
+    },
+    {
+      "id": "kaige",
+      "label": "kaige section (Jer 29–52 LXX = MT 47–51 etc.)",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "1st c. BCE – 1st c. CE",
+      "full_name": "kaige recension portion of Jeremiah",
+      "language": "Greek",
+      "description": "Tov demonstrated that Jer-β (LXX Jer 29ff.) is a kaige-style revision toward a proto-MT Hebrew."
+    },
+    {
+      "id": "hexapla",
+      "label": "Origen's Hexapla",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "c. 240 CE",
+      "full_name": "Hexaplaric recension",
+      "language": "Greek",
+      "description": "Origen's fifth column with asterisks marking pluses from MT brought into the LXX."
+    },
+    {
+      "id": "lucianic",
+      "label": "Lucianic (Antiochene) Recension",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "late 3rd – early 4th c. CE",
+      "full_name": "Lucianic recension",
+      "language": "Greek",
+      "description": "Antiochene revision preserving some pre-Hexaplaric Old Greek readings."
+    },
+    {
+      "id": "aquila",
+      "label": "Aquila",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "c. 130 CE",
+      "full_name": "Aquila's Greek translation",
+      "language": "Greek",
+      "description": "Hyper-literal translation of proto-MT Jeremiah, preserved in fragments."
+    },
+    {
+      "id": "symmachus",
+      "label": "Symmachus",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "late 2nd c. CE",
+      "full_name": "Symmachus's Greek translation",
+      "language": "Greek",
+      "description": "Idiomatic Greek revision toward proto-MT, preserved in fragments and Hexapla."
+    },
+    {
+      "id": "vaticanus",
+      "label": "Codex Vaticanus (B)",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "4th c. CE",
+      "full_name": "Codex Vaticanus",
+      "language": "Greek",
+      "description": "Major uncial witness to LXX Jeremiah, relatively free of Hexaplaric contamination."
+    },
+    {
+      "id": "sinaiticus",
+      "label": "Codex Sinaiticus (S)",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "4th c. CE",
+      "full_name": "Codex Sinaiticus",
+      "language": "Greek",
+      "description": "Major uncial witness to LXX Jeremiah."
+    },
+    {
+      "id": "alexandrinus",
+      "label": "Codex Alexandrinus (A)",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "5th c. CE",
+      "full_name": "Codex Alexandrinus",
+      "language": "Greek",
+      "description": "Uncial with Hexaplaric influence in Jeremiah."
+    },
+    {
+      "id": "gottingen-jer",
+      "label": "Göttingen Jeremiah (Ziegler)",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "1957",
+      "full_name": "Septuaginta: Vetus Testamentum Graecum XV: Ieremias",
+      "language": "Greek",
+      "description": "Joseph Ziegler's critical eclectic edition of LXX Jeremiah, Baruch, Lamentations, Epistle of Jeremiah."
+    },
+    {
+      "id": "nets-jer",
+      "label": "NETS Jeremiah",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "2007",
+      "full_name": "New English Translation of the Septuagint, Jeremiah",
+      "language": "English",
+      "description": "English translation of Ziegler's Göttingen text by A. Pietersma and M. Saunders."
+    },
+    {
+      "id": "peshitta",
+      "label": "Peshitta Jeremiah",
+      "type": "translation",
+      "tradition": "Peshitta",
+      "date": "2nd–3rd c. CE",
+      "full_name": "Syriac Peshitta",
+      "language": "Syriac",
+      "description": "Syriac translation made from a proto-MT Hebrew Vorlage with occasional LXX influence."
+    },
+    {
+      "id": "peshitta-leiden",
+      "label": "Leiden Peshitta",
+      "type": "edition",
+      "tradition": "Peshitta",
+      "date": "1980s–2000s",
+      "full_name": "The Old Testament in Syriac (Peshitta Institute, Leiden)",
+      "language": "Syriac",
+      "description": "Critical edition of Peshitta Jeremiah."
+    },
+    {
+      "id": "targum-jonathan",
+      "label": "Targum Jonathan to the Prophets",
+      "type": "translation",
+      "tradition": "Targum",
+      "date": "1st–5th c. CE",
+      "full_name": "Targum Jonathan ben Uzziel",
+      "language": "Aramaic",
+      "description": "Official rabbinic Aramaic translation of the Prophets, based on proto-MT, with interpretive expansions."
+    },
+    {
+      "id": "vulgate",
+      "label": "Vulgate Jeremiah",
+      "type": "translation",
+      "tradition": "Vulgate",
+      "date": "c. 392–393 CE",
+      "full_name": "Vulgata Hieronymi",
+      "language": "Latin",
+      "description": "Jerome's translation iuxta Hebraeos from a proto-MT Hebrew text, reflecting the long edition; ordering and verse numbering follow MT."
+    },
+    {
+      "id": "vulgate-stuttgart",
+      "label": "Stuttgart Vulgate",
+      "type": "edition",
+      "tradition": "Vulgate",
+      "date": "1969/2007",
+      "full_name": "Biblia Sacra iuxta Vulgatam Versionem",
+      "language": "Latin",
+      "description": "Weber-Gryson critical edition of the Vulgate."
+    }
+  ],
+  "stemma_edges": [
+    {
+      "from": "archetype",
+      "to": "dtr-redaction"
+    },
+    {
+      "from": "dtr-redaction",
+      "to": "short-edition"
+    },
+    {
+      "from": "short-edition",
+      "to": "long-edition"
+    },
+    {
+      "from": "short-edition",
+      "to": "4QJer-b"
+    },
+    {
+      "from": "short-edition",
+      "to": "4QJer-d"
+    },
+    {
+      "from": "short-edition",
+      "to": "old-greek"
+    },
+    {
+      "from": "long-edition",
+      "to": "4QJer-a"
+    },
+    {
+      "from": "long-edition",
+      "to": "4QJer-c"
+    },
+    {
+      "from": "long-edition",
+      "to": "proto-mt"
+    },
+    {
+      "from": "proto-mt",
+      "to": "mt"
+    },
+    {
+      "from": "mt",
+      "to": "aleppo"
+    },
+    {
+      "from": "mt",
+      "to": "leningrad"
+    },
+    {
+      "from": "leningrad",
+      "to": "bhs"
+    },
+    {
+      "from": "leningrad",
+      "to": "bhq"
+    },
+    {
+      "from": "old-greek",
+      "to": "lxx"
+    },
+    {
+      "from": "lxx",
+      "to": "kaige"
+    },
+    {
+      "from": "lxx",
+      "to": "hexapla"
+    },
+    {
+      "from": "proto-mt",
+      "to": "hexapla"
+    },
+    {
+      "from": "hexapla",
+      "to": "lucianic"
+    },
+    {
+      "from": "proto-mt",
+      "to": "aquila"
+    },
+    {
+      "from": "proto-mt",
+      "to": "symmachus"
+    },
+    {
+      "from": "lxx",
+      "to": "vaticanus"
+    },
+    {
+      "from": "lxx",
+      "to": "sinaiticus"
+    },
+    {
+      "from": "lxx",
+      "to": "alexandrinus"
+    },
+    {
+      "from": "hexapla",
+      "to": "alexandrinus"
+    },
+    {
+      "from": "vaticanus",
+      "to": "gottingen-jer"
+    },
+    {
+      "from": "sinaiticus",
+      "to": "gottingen-jer"
+    },
+    {
+      "from": "alexandrinus",
+      "to": "gottingen-jer"
+    },
+    {
+      "from": "lucianic",
+      "to": "gottingen-jer"
+    },
+    {
+      "from": "gottingen-jer",
+      "to": "nets-jer"
+    },
+    {
+      "from": "proto-mt",
+      "to": "peshitta"
+    },
+    {
+      "from": "peshitta",
+      "to": "peshitta-leiden"
+    },
+    {
+      "from": "proto-mt",
+      "to": "targum-jonathan"
+    },
+    {
+      "from": "proto-mt",
+      "to": "vulgate"
+    },
+    {
+      "from": "vulgate",
+      "to": "vulgate-stuttgart"
+    }
+  ],
+  "key_divergences": [
+    {
+      "title": "Length difference: LXX one-eighth shorter than MT",
+      "passage": "Jeremiah (whole book)",
+      "witnesses": [
+        "LXX",
+        "MT",
+        "DSS"
+      ],
+      "plain": "The Greek version of Jeremiah is roughly 13% shorter than the Hebrew, lacking thousands of words. This is not random loss but reflects two genuinely different editions of the book that circulated in antiquity.",
+      "technical": "J. G. Janzen (1973) and E. Tov demonstrated that LXX reflects an earlier, shorter Hebrew Vorlage (Edition I), while MT reflects a later expansionist edition (Edition II) characterized by titles, double-readings, and explicating pluses. 4QJer-b,d confirm a Hebrew Vorlage close to LXX."
+    },
+    {
+      "title": "Placement of Oracles Against the Nations",
+      "passage": "Jer 25 and 46–51 MT (= LXX 25–31)",
+      "witnesses": [
+        "LXX",
+        "MT"
+      ],
+      "plain": "The oracles against foreign nations stand in the middle of the LXX (after 25:13) but at the end of the MT, and the nations are listed in different orders. This shows the book was reorganized at some stage of its transmission.",
+      "technical": "LXX places OAN after Jer 25:13 in a sequence Elam-Egypt-Babylon-Philistia-Edom-Ammon-Kedar-Damascus-Moab; MT relocates them to chs. 46–51 with Egypt first and Babylon climactically last. Tov, Stipp, and Bogaert regard the MT arrangement as secondary, an editorial repositioning to give Babylon eschatological emphasis."
+    },
+    {
+      "title": "The shorter form of Jeremiah 10:6–8, 10",
+      "passage": "Jeremiah 10:1–11",
+      "witnesses": [
+        "LXX",
+        "MT",
+        "DSS"
+      ],
+      "plain": "The MT polemic against idols in Jer 10 is several verses longer than in the LXX, and 4QJer-b confirms the shorter Hebrew form. This is one of the clearest small-scale proofs that MT expanded an earlier text.",
+      "technical": "LXX and 4QJer-b (4Q71) lack vv. 6–8 and 10 and order v. 9 within v. 5; the MT pluses are doxological expansions in late biblical Hebrew style. Cross, Tov, and E. Ulrich treat 4QJer-b as decisive corroboration that the LXX Vorlage is genuinely Hebrew rather than a translator's abbreviation."
+    },
+    {
+      "title": "kaige revision in the second half of LXX Jeremiah",
+      "passage": "Jer 29–52 LXX (Jer-β)",
+      "witnesses": [
+        "LXX",
+        "MT"
+      ],
+      "plain": "The second half of Greek Jeremiah translates Hebrew differently from the first half, suggesting either two translators or a later reviser bringing the Greek into closer agreement with a Hebrew text like the MT.",
+      "technical": "H. St. J. Thackeray first noted the bisection (Jer-α, Jer-β); Tov (1976) reinterpreted Jer-β as a kaige-style revision of the Old Greek toward proto-MT, evidenced by characteristic equivalents (e.g., אנכי = ἐγώ εἰμι). This complicates use of LXX Jer 29–52 as a witness to the short edition."
+    },
+    {
+      "title": "Divergent endings: Jeremiah 52 and the historical appendix",
+      "passage": "Jeremiah 51:64 / 52:1–34",
+      "witnesses": [
+        "LXX",
+        "MT",
+        "Vulgate"
+      ],
+      "plain": "The colophon at 51:64 ('thus far the words of Jeremiah') signals the original ending, with chapter 52 being a later historical appendix borrowed from 2 Kings. Both LXX and MT preserve this appendix but with significant differences.",
+      "technical": "Jer 52 is a secondary addition paralleling 2 Kgs 24:18–25:30, and LXX lacks Jer 52:28–30 (the deportation statistics). Bogaert and Stipp argue this confirms the editorial layering of the book's conclusion across both editions."
+    }
+  ],
+  "transmission_narrative": "Jeremiah's transmission history is the textbook case of pluriformity in late Second Temple Judaism: two distinct Hebrew editions—a shorter one (Edition I) underlying the Old Greek and 4QJer-b,d, and a longer, rearranged one (Edition II) underlying MT and 4QJer-a,c—coexisted in Palestine until the proto-MT achieved hegemony around the turn of the era. The Old Greek was produced in Alexandria in the mid-2nd century BCE from Edition I, but its second half (Jer-β) was already revised toward proto-MT in a kaige-style recension before Origen further harmonized the Greek to the Hebrew in the Hexapla, with downstream effects in the Lucianic recension and in Codex Alexandrinus. Jerome's Vulgate (c. 392 CE) translated the long edition iuxta Hebraeos, fixing MT's chapter order in Western Christianity, while Targum Jonathan and the Peshitta likewise depend on proto-MT. Modern critical scholarship (Janzen, Tov, Stipp, Bogaert, Weis) has reached broad consensus that LXX Jeremiah is not a free translation but a faithful witness to an older Hebrew form, making Jeremiah the strongest exemplar of multiple literary editions within the Hebrew Bible.",
+  "transmission_plain": "The book of Jeremiah survives in two genuinely different ancient editions: a shorter, older one preserved in Greek and a couple of Dead Sea Scrolls, and a longer, rearranged one that became the Hebrew Bible used today. Both versions are real and ancient—neither is a mistake—and together they let us watch a biblical book grow and be reorganized over centuries. Modern scholars use the Hebrew Masoretic manuscripts (especially the Leningrad Codex of 1008 CE) and the Greek Septuagint side by side to recover this layered history.",
+  "bibcrit_assessment": {
+    "title": "Two ancient editions of one biblical book",
+    "plain": "Jeremiah is the clearest proof in the Hebrew Bible that scripture circulated in multiple authoritative editions before the text was standardized, and the Dead Sea Scrolls confirmed it by preserving Hebrew copies of both forms.",
+    "confidence": 0.9
+  },
+  "discovery_ready": true,
+  "reference": "Jeremiah",
+  "cached_at": "2026-05-09T21:08:34.424462",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v2"
+}

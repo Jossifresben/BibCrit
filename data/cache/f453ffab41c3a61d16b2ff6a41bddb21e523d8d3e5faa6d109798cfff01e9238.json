@@ -1,0 +1,169 @@
+{
+  "reference": "2 Chronicles 36",
+  "subject": "Reigns of the final kings of Judah and the length of exile",
+  "figures": [
+    {
+      "name": "Jehoahaz - age at accession",
+      "mt_value": 23,
+      "lxx_value": 23,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "Samaritan Pentateuch does not contain Chronicles; only MT and LXX apply throughout this chapter."
+    },
+    {
+      "name": "Jehoahaz - reign length (months)",
+      "mt_value": 3,
+      "lxx_value": 3,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Tribute - silver (talents)",
+      "mt_value": 100,
+      "lxx_value": 100,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Tribute - gold (talents)",
+      "mt_value": 1,
+      "lxx_value": 100,
+      "sp_value": 0,
+      "divergence_type": "major",
+      "note": "LXX (and 2 Kings 23:33 in some witnesses) reads 100 talents of gold; MT Chronicles reads 1 talent, likely a scribal haplography or harmonization variant."
+    },
+    {
+      "name": "Jehoiakim - age at accession",
+      "mt_value": 25,
+      "lxx_value": 25,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Jehoiakim - reign length (years)",
+      "mt_value": 11,
+      "lxx_value": 11,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Jehoiachin - age at accession",
+      "mt_value": 8,
+      "lxx_value": 8,
+      "sp_value": 0,
+      "divergence_type": "minor",
+      "note": "MT and LXX of Chronicles read 8; parallel 2 Kings 24:8 reads 18, a well-known cross-textual divergence."
+    },
+    {
+      "name": "Jehoiachin - reign length (months/days)",
+      "mt_value": 3,
+      "lxx_value": 3,
+      "sp_value": 0,
+      "divergence_type": "minor",
+      "note": "MT adds 'and ten days'; LXX largely agrees, though some witnesses simplify."
+    },
+    {
+      "name": "Zedekiah - age at accession",
+      "mt_value": 21,
+      "lxx_value": 21,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Zedekiah - reign length (years)",
+      "mt_value": 11,
+      "lxx_value": 11,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Exile / Sabbath rest of land (years)",
+      "mt_value": 70,
+      "lxx_value": 70,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "The programmatic 70-year figure (Jer 25:11-12; 29:10) is stable across MT and LXX."
+    }
+  ],
+  "systematic_analysis": {
+    "is_systematic": false,
+    "pattern": "Unlike the patriarchal chronologies of Genesis 5 and 11, 2 Chronicles 36 shows no systematic numerical divergence between MT and LXX; the Samaritan Pentateuch is irrelevant since it does not include Chronicles. The figures are stable except for isolated cases—most notably the gold tribute (1 vs. 100 talents) and the cross-book tension with 2 Kings 24:8 over Jehoiachin's age (8 vs. 18). These look like discrete scribal incidents rather than a programmed editorial scheme.",
+    "pattern_plain": "There is no big mathematical pattern here like in Genesis. The numbers in MT and LXX mostly agree, with only one or two odd discrepancies that look like simple copying mistakes."
+  },
+  "theories": [
+    {
+      "name": "Scribal Error / Haplography",
+      "slug": "scribal_error",
+      "score": 0.85,
+      "confidence": 0.82,
+      "summary": "The most striking divergence—'one talent of gold' (MT) vs. 'one hundred talents of gold' (LXX)—is best explained as accidental loss or confusion of a numeral, parallel to Jehoiachin's age (8 vs. 18 in 2 Kings 24:8). Such isolated, non-patterned arithmetic divergences are the textbook signature of transmission accidents rather than ideological revision. Finegan and most commentators treat these as classic numeric corruptions.",
+      "summary_plain": "The handful of differences look like ordinary copying mistakes, especially with numbers. One scribe likely dropped or miscopied a digit.",
+      "supporting_evidence": [
+        "The gold-tribute discrepancy (1 vs. 100) parallels the well-known 8/18 problem for Jehoiachin's age, both involving easily confused numeral forms.",
+        "Numerals written with Hebrew letters or early numeral signs are notoriously prone to haplography and dittography.",
+        "No systematic mathematical scheme links the divergences in this chapter, which argues against editorial design.",
+        "The LXX of Chronicles is generally a fairly literal translation, so its higher figure likely reflects a Hebrew Vorlage that preserved the original.",
+        "Parallel passages in 2 Kings 23-25 show similar isolated numeric variants, consistent with localized copying errors."
+      ],
+      "weaknesses": [
+        "Cannot be proven without manuscript evidence of the intermediate stage of corruption.",
+        "Some variants (e.g., Jehoiachin's age) may reflect deliberate harmonization rather than mere error.",
+        "Does not explain why certain numbers were corrupted while structurally similar ones were preserved."
+      ]
+    },
+    {
+      "name": "Independent Textual Traditions",
+      "slug": "independent_traditions",
+      "score": 0.55,
+      "confidence": 0.5,
+      "summary": "The LXX of Chronicles (Paraleipomenon) sometimes reflects a Hebrew Vorlage independent of the proto-MT, and isolated divergences may preserve genuine alternative readings rather than errors. The 100-talent gold figure aligns with 2 Kings 23:33 in some traditions, suggesting parallel transmission streams rather than a single corrupted archetype.",
+      "summary_plain": "The Greek and Hebrew texts may descend from slightly different ancient editions, each preserving real but different numbers.",
+      "supporting_evidence": [
+        "Qumran evidence shows multiple Hebrew text-forms circulated in the Second Temple period.",
+        "LXX Chronicles occasionally aligns with LXX Kings against MT Chronicles, suggesting cross-pollination of traditions.",
+        "The 70-year exile figure is stable, showing tradents protected theologically loaded numbers while allowing variation elsewhere."
+      ],
+      "weaknesses": [
+        "The number of divergences in 2 Chr 36 is too small to demonstrate a distinct recension.",
+        "Most variants are explainable on simpler grounds (scribal error).",
+        "No Qumran Chronicles manuscript preserves these specific readings to confirm an independent Vorlage."
+      ]
+    },
+    {
+      "name": "Harmonization with Kings",
+      "slug": "sp_harmonization",
+      "score": 0.35,
+      "confidence": 0.4,
+      "summary": "Some variants—particularly Jehoiachin's age and the gold tribute—may reflect attempts by scribes (in either MT or LXX traditions) to harmonize Chronicles with the parallel narrative in 2 Kings. The 'sp_harmonization' label is used loosely here since SP is not extant for Chronicles; the principle of harmonistic editing nonetheless applies to Kings/Chronicles parallels.",
+      "summary_plain": "Some scribes may have tweaked numbers in Chronicles to match the version in 2 Kings.",
+      "supporting_evidence": [
+        "LXX traditions frequently harmonize parallel narratives across Samuel-Kings-Chronicles.",
+        "The gold tribute reading of 100 in LXX matches the figure in 2 Kings 23:33.",
+        "Harmonistic tendencies are well documented in the LXX of Chronicles."
+      ],
+      "weaknesses": [
+        "Harmonization usually pulls toward agreement, but the 8/18 Jehoiachin variant remains unresolved across traditions.",
+        "SP is not a witness to Chronicles, making this category methodologically awkward.",
+        "Cannot explain why most numbers were left untouched if harmonization were the driving mechanism."
+      ]
+    }
+  ],
+  "overall_assessment": "2 Chronicles 36 is fundamentally unlike the Genesis 5/11 chronologies: there is no systematic numerical divergence pattern, no SP witness, and the MT/LXX figures largely agree. The two notable variants—the gold tribute (1 vs. 100 talents) and the closely related 2 Kings 24:8 problem (Jehoiachin aged 8 vs. 18)—are best explained as isolated scribal errors involving Hebrew numerals, possibly compounded by minor harmonistic pressure between Kings and Chronicles. This chapter therefore illustrates a different textual phenomenon than the patriarchal chronologies: the ordinary background noise of numeric transmission rather than ideologically motivated editorial schemes. It cautions against importing the systematic logic of Genesis 5/11 onto every numerical variant in the Hebrew Bible.",
+  "overall_plain": "Unlike the famous patriarch ages in Genesis, the numbers in 2 Chronicles 36 mostly match across the Hebrew and Greek versions. The few discrepancies look like ordinary copying mistakes, not a deliberate scheme.",
+  "bibcrit_assessment": {
+    "title": "Ordinary scribal noise, not systematic revision",
+    "reasoning": "The significance of 2 Chronicles 36 lies in what it does *not* show: no Genesis-like deflation/inflation pattern, no SP comparison, just a couple of isolated numeral slips. This demonstrates that the dramatic chronological divergences elsewhere in the Pentateuch are the exception, not the rule, and that most biblical numbers were transmitted with reasonable fidelity across MT and LXX streams.",
+    "plain": "Most numbers in this chapter were copied accurately across traditions. The few errors show normal scribal slips, not a systematic rewriting of biblical history.",
+    "confidence": 0.78
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T21:33:10.014055",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v3"
+}

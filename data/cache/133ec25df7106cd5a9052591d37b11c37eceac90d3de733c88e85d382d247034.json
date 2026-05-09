@@ -1,0 +1,149 @@
+{
+  "reference": "Isaiah 53:12",
+  "total_citations_found": 7,
+  "period_summary": "Citations of Isaiah 53:12 are concentrated from the mid-2nd through the 4th century, often appearing in Christological and martyrological contexts and dependent on the LXX, sometimes mediated through the NT citation in Luke 22:37.",
+  "citations": [
+    {
+      "father": "Justin Martyr",
+      "dates_ce": "c. 100–165",
+      "region": "Syria/Rome",
+      "work": "Dialogue with Trypho",
+      "chapter_section": "ch. 13 and ch. 89",
+      "cited_text": "διὰ τοῦτο αὐτὸς κληρονομήσει πολλοὺς καὶ τῶν ἰσχυρῶν μεριεῖ σκῦλα, ἀνθ' ὧν παρεδόθη εἰς θάνατον ἡ ψυχὴ αὐτοῦ, καὶ ἐν τοῖς ἀνόμοις ἐλογίσθη· καὶ αὐτὸς ἁμαρτίας πολλῶν ἀνήνεγκεν, καὶ διὰ τὰς ἀνομίας αὐτῶν παρεδόθη.",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.9,
+      "text_form_note": "Justin's Greek wording matches the LXX closely, including 'κληρονομήσει πολλούς' (rather than MT 'I will give him a portion with the many') and 'ἐν τοῖς ἀνόμοις ἐλογίσθη'.",
+      "theological_use": "Justin uses the verse extensively to prove Christ's voluntary suffering, his being numbered with transgressors at the crucifixion, and his intercessory bearing of sins.",
+      "transmission_implication": "Justin's verbatim quotation of the long Isaian song confirms a stable LXX text of Isaiah 53 in mid-2nd-century Christian use."
+    },
+    {
+      "father": "Irenaeus of Lyons",
+      "dates_ce": "c. 130–202",
+      "region": "Gaul (Asia Minor origin)",
+      "work": "Adversus Haereses",
+      "chapter_section": "IV.33.2; cf. Epideixis 68",
+      "cited_text": "He was numbered with the transgressors, and He bore the sins of many, and for their iniquities He was delivered up.",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.75,
+      "text_form_note": "Preserved chiefly in Latin and Armenian, the wording reflects LXX phrasing ('delivered up for their iniquities' = παρεδόθη), not the MT 'made intercession for the transgressors'.",
+      "theological_use": "Irenaeus marshals the verse as prophetic proof of Christ's passion and substitutionary suffering, integral to his recapitulation theology.",
+      "transmission_implication": "Indicates that the LXX form of Isaiah 53:12 had spread westward and was authoritative among Greek-speaking Christians of the late 2nd century."
+    },
+    {
+      "father": "Tertullian",
+      "dates_ce": "c. 155–220",
+      "region": "Carthage",
+      "work": "Adversus Marcionem; Adversus Judaeos",
+      "chapter_section": "Adv. Marc. III.17; Adv. Jud. 10",
+      "cited_text": "Propterea ipse hereditabit multos et fortium dividet spolia, pro eo quod tradita est in mortem anima eius, et inter iniquos deputatus est, et ipse peccata multorum tulit, et propter iniquitates eorum traditus est.",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.8,
+      "text_form_note": "Tertullian's Latin is a clear rendering of the LXX (Vetus Latina derived from Greek), with 'inter iniquos deputatus' = ἐν τοῖς ἀνόμοις ἐλογίσθη and 'traditus est' for παρεδόθη.",
+      "theological_use": "Used against Marcion to prove continuity of the Creator's Christ with prophecy, and against Jews to demonstrate that the Messiah must suffer.",
+      "transmission_implication": "Confirms an early Old Latin version of Isaiah 53 circulating in North Africa derived from the LXX, not from a Hebrew Vorlage."
+    },
+    {
+      "father": "Origen",
+      "dates_ce": "c. 185–254",
+      "region": "Alexandria/Caesarea",
+      "work": "Contra Celsum",
+      "chapter_section": "I.54–55",
+      "cited_text": "παρεδόθη εἰς θάνατον ἡ ψυχὴ αὐτοῦ καὶ ἐν τοῖς ἀνόμοις ἐλογίσθη, καὶ αὐτὸς ἁμαρτίας πολλῶν ἀνήνεγκεν καὶ διὰ τὰς ἁμαρτίας αὐτῶν παρεδόθη.",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.95,
+      "text_form_note": "Origen quotes verbatim the Old Greek text he used in his Hexapla; his discussion with Celsus presupposes the LXX form against any Jewish alternative.",
+      "theological_use": "Origen cites the entire Servant Song to demonstrate to Celsus that Jesus' humiliation and crucifixion fulfill prophecy, applying it to Christ rather than to Israel.",
+      "transmission_implication": "Origen's awareness of variant Greek versions (Aquila, Symmachus, Theodotion) in the Hexapla shows that by the 3rd century textual diversity was recognized but the LXX remained the church's standard."
+    },
+    {
+      "father": "Eusebius of Caesarea",
+      "dates_ce": "c. 260–340",
+      "region": "Caesarea",
+      "work": "Demonstratio Evangelica",
+      "chapter_section": "III.2; X.1",
+      "cited_text": "διὰ τοῦτο αὐτὸς κληρονομήσει πολλοὺς καὶ τῶν ἰσχυρῶν μεριεῖ σκῦλα, ἀνθ' ὧν παρεδόθη εἰς θάνατον ἡ ψυχὴ αὐτοῦ καὶ ἐν τοῖς ἀνόμοις ἐλογίσθη.",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.95,
+      "text_form_note": "Eusebius cites the Caesarean LXX text (the same recension to which Origen had access), with characteristic 'κληρονομήσει πολλούς' rather than MT's 'I will divide him a portion with the great'.",
+      "theological_use": "Eusebius treats Isaiah 53 as the most explicit prophecy of Christ's passion, kingship, and the gathering of the nations into his inheritance.",
+      "transmission_implication": "Demonstrates the stability of the Hexaplaric/Caesarean LXX of Isaiah in the early 4th century."
+    },
+    {
+      "father": "Cyril of Jerusalem",
+      "dates_ce": "c. 313–386",
+      "region": "Jerusalem",
+      "work": "Catechetical Lectures",
+      "chapter_section": "Cat. 13.33",
+      "cited_text": "καὶ ἐν τοῖς ἀνόμοις ἐλογίσθη, καὶ αὐτὸς ἁμαρτίας πολλῶν ἀνήνεγκεν.",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.85,
+      "text_form_note": "Selective citation but verbal agreement with LXX phrasing; shows no signs of Hebraizing recension.",
+      "theological_use": "Cyril applies it to the crucifixion between two thieves, citing Luke 22:37's appeal to this verse, to confirm Jesus as the Suffering Servant.",
+      "transmission_implication": "Reflects 4th-century catechetical use of the LXX Isaiah, mediated partly through NT quotation."
+    },
+    {
+      "father": "Jerome",
+      "dates_ce": "c. 347–420",
+      "region": "Bethlehem (Latin West)",
+      "work": "Commentariorum in Isaiam",
+      "chapter_section": "Book XIV, on Isa 53:12",
+      "cited_text": "Propterea dispertiam ei plurimos, et fortium dividet spolia, pro eo quod tradidit in mortem animam suam, et cum sceleratis reputatus est; et ipse peccata multorum tulit, et pro transgressoribus rogavit.",
+      "text_form": "mixed",
+      "text_form_confidence": 0.9,
+      "text_form_note": "Jerome's Vulgate rendering follows the Hebrew ('dispertiam ei plurimos' = MT 'I will divide him a portion with the many'; 'pro transgressoribus rogavit' = MT 'made intercession') yet his commentary discusses both LXX and Hebrew readings side by side.",
+      "theological_use": "Jerome interprets the verse Christologically while explicitly arguing the superiority of the Hebraica veritas, noting where the LXX (and the Old Latin dependent on it) diverges.",
+      "transmission_implication": "Marks the decisive turn in the Latin West toward a Hebrew-based text of Isaiah 53:12, exposing the LXX/MT divergence at the verse's final clauses."
+    }
+  ],
+  "text_form_distribution": {
+    "closer_to_mt": 0,
+    "closer_to_lxx": 6,
+    "mixed": 1,
+    "independent": 0,
+    "uncertain": 0
+  },
+  "transmission_synthesis": "The patristic citations of Isaiah 53:12 from Justin through Eusebius display remarkable uniformity in following the Old Greek/LXX text, particularly in two diagnostic clauses: 'κληρονομήσει πολλούς' (vs. MT 'I will divide him a portion with the many') and the doubled 'παρεδόθη' clause replacing MT's 'he made intercession for the transgressors.' This shows that for nearly three centuries the Greek-speaking and Latin-speaking churches transmitted a single, stable LXX form, with the Old Latin (Tertullian) functioning as a daughter version. Origen's Hexapla registers awareness of the Hebrew/MT divergence via Aquila, Symmachus, and Theodotion, but the LXX remained ecclesially authoritative. Only with Jerome does a deliberate shift to the Hebraica veritas reorient the Latin tradition toward MT, creating the mixed Latin reception that would dominate the medieval West.",
+  "transmission_synthesis_plain": "Early Christian writers from the 2nd to 4th centuries quoted Isaiah 53:12 in a form drawn from the Greek Septuagint, and their citations are strikingly consistent with one another. Only at the end of the 4th century, with Jerome, do we see a Latin scholar deliberately turn back to the Hebrew text and notice that the Greek and Hebrew differ at key points in this verse.",
+  "notable_variants": [
+    {
+      "reading": "καὶ διὰ τὰς ἁμαρτίας/ἀνομίας αὐτῶν παρεδόθη ('and for their sins/iniquities he was delivered up')",
+      "fathers_using_it": [
+        "Justin Martyr",
+        "Irenaeus",
+        "Tertullian",
+        "Origen",
+        "Eusebius"
+      ],
+      "text_form_alignment": "closer_to_lxx",
+      "significance": "This LXX reading replaces MT's 'and he interceded for the transgressors' (וְלַפֹּשְׁעִים יַפְגִּיעַ); its universal patristic adoption demonstrates that Christian readers received a more passion-centered, less intercessory ending to the Servant Song than the Hebrew preserves."
+    },
+    {
+      "reading": "κληρονομήσει πολλούς ('he shall inherit many')",
+      "fathers_using_it": [
+        "Justin Martyr",
+        "Eusebius",
+        "Tertullian (Latin: hereditabit multos)"
+      ],
+      "text_form_alignment": "closer_to_lxx",
+      "significance": "Diverges sharply from MT's 'I will apportion him with the many'; its uniform patristic use reflects an LXX Vorlage or translation choice that recasts the Servant as one who inherits the nations, lending itself to Christological universalism."
+    },
+    {
+      "reading": "pro transgressoribus rogavit ('he made intercession for the transgressors')",
+      "fathers_using_it": [
+        "Jerome"
+      ],
+      "text_form_alignment": "closer_to_mt",
+      "significance": "Jerome's Vulgate restores the MT reading missing from the LXX-based tradition, marking a textual rupture that introduces the intercessory motif into Latin Christianity and later medieval atonement theology."
+    }
+  ],
+  "bibcrit_assessment": {
+    "title": "Septuagint dominance broken only by Jerome",
+    "reasoning": "The most striking finding is the near-total uniformity of the LXX text of Isaiah 53:12 across geographically and theologically diverse fathers from Justin to Eusebius, indicating a single transmissional stream for nearly three centuries. Jerome's Vulgate then introduces a Hebraizing rupture precisely at the verse's most theologically charged clauses, demonstrating how textual choice and doctrine intertwine. The patristic record thus shows that the 'Christian' Isaiah 53:12 was substantially the LXX form, and that a key intercessory motif now standard in Christian readings entered the West only at the close of the 4th century.",
+    "plain": "For three hundred years, virtually every Christian writer cited Isaiah 53:12 in its Greek (Septuagint) form. Jerome's late-4th-century turn back to the Hebrew permanently changed how Latin Christians would read this verse.",
+    "confidence": 0.88
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T22:05:29.383250",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v3"
+}

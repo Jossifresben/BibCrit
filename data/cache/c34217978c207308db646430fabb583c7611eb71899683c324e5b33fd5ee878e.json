@@ -1,0 +1,172 @@
+{
+  "scope": "Daniel",
+  "scope_type": "book",
+  "summary": "Daniel exhibits the most dramatic textual divergence in the Hebrew Bible, with the Old Greek (OG) and Theodotion (Th) versions differing substantially from MT, particularly in chapters 4–6 and the additions (Susanna, Bel, Prayer of Azariah, Song of the Three). Theological revision strategies cluster around messianic/eschatological heightening (especially 7:13; 9:24–27), anthropomorphism avoidance regarding the Ancient of Days, and harmonization of Nebuchadnezzar's portrayal. The Vulgate, Peshitta, and Targumic traditions (Daniel lacks a classical Targum but is reflected in later Aramaic paraphrase) further sharpen messianic readings.",
+  "summary_plain": "The book of Daniel survives in very different versions across Hebrew, Greek, Latin, and Syriac, with translators frequently amplifying messianic and end-times themes. Changes also soften God's human-like features and reshape the portrayal of foreign kings to fit later theological views.",
+  "revisions": [
+    {
+      "reference": "Daniel 7:13",
+      "tradition": "LXX",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "one like a son of man came with the clouds of heaven and came to the Ancient of Days (עד עתיק יומיא מטה) and was presented before him",
+      "revised_reading": "OG (Papyrus 967): 'one like a son of man came as the Ancient of Days (ὡς παλαιὸς ἡμερῶν παρῆν), and those standing by were present to him'",
+      "confidence": 0.78,
+      "evidence": "Papyrus 967 and Codex Chisianus (88-Syh) read ὡς rather than ἕως, identifying the son of man WITH the Ancient of Days rather than approaching him. This represents either a Christological/divine messianic reading or an early high-christology Vorlage. The reading cannot be a simple scribal slip given its consistent attestation in the OG tradition.",
+      "evidence_plain": "The Old Greek of Daniel 7:13 appears to merge the 'son of man' figure with God himself, producing a strikingly elevated messianic reading absent from the Hebrew/Aramaic.",
+      "scholarly_citations": [
+        "Stuckenbruck, 'One Like a Son of Man as the Ancient of Days', ZNW 86 (1995)",
+        "Lust, 'Daniel 7:13 and the Septuagint', ETL 54 (1978)"
+      ],
+      "counter_arguments": "Some argue ὡς is an inner-Greek corruption of ἕως through itacism or haplography, not theologically motivated."
+    },
+    {
+      "reference": "Daniel 9:25-26",
+      "tradition": "Vulgate",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "until an anointed one, a prince (עד־משיח נגיד)... an anointed one shall be cut off (יכרת משיח)",
+      "revised_reading": "usque ad Christum ducem... occidetur Christus",
+      "confidence": 0.85,
+      "evidence": "Jerome capitalizes and renders משיח as 'Christus' rather than 'unctus,' producing an unambiguous Christological reading where the Hebrew is generic ('an anointed one'). Jerome's Commentary on Daniel makes the Christological identification explicit, defending it against Porphyry's Antiochene reading. The translation choice is theologically driven, paralleling his Isaiah 7:14 strategy.",
+      "evidence_plain": "Jerome translates the Hebrew word for 'anointed' as 'Christ,' turning an ambiguous prophecy into a direct prediction of Jesus.",
+      "scholarly_citations": [
+        "Jerome, Commentarii in Danielem (CCSL 75A)",
+        "Braverman, Jerome's Commentary on Daniel, CBQMS 7"
+      ],
+      "counter_arguments": "Christus is the standard Latin rendering of משיח/χριστός; Jerome may simply be transliterating conventionally."
+    },
+    {
+      "reference": "Daniel 7:9-10",
+      "tradition": "LXX",
+      "revision_type": "anthropomorphism_avoidance",
+      "mt_reading": "thrones were set up and an Ancient of Days sat (יתב); his clothing was white as snow and the hair of his head like pure wool",
+      "revised_reading": "OG softens the visual immediacy: θρόνοι ἐτέθησαν... καθήμενος, with periphrastic constructions distancing the divine seating",
+      "confidence": 0.5,
+      "evidence": "The OG attenuates some anthropomorphic immediacy through participial constructions, though not as systematically as elsewhere. Theodotion preserves more anthropomorphic detail, suggesting OG's restraint may be theologically motivated.",
+      "evidence_plain": "The Greek translator slightly softens the picture of God physically sitting on a throne, a tendency seen elsewhere in the LXX.",
+      "scholarly_citations": [
+        "Fraade, 'The Anthropomorphism Question in the LXX'",
+        "McLay, The OG and Th Versions of Daniel"
+      ],
+      "counter_arguments": "The differences may reflect Greek stylistic preference rather than theological discomfort."
+    },
+    {
+      "reference": "Daniel 4 (entire chapter)",
+      "tradition": "LXX",
+      "revision_type": "harmonization",
+      "mt_reading": "MT/Aramaic: Nebuchadnezzar's first-person confession with relatively brief account of madness and restoration",
+      "revised_reading": "OG presents a substantially different recension with expanded doxology, reordering, and intensified penitential framing of Nebuchadnezzar",
+      "confidence": 0.72,
+      "evidence": "The OG of Daniel 4 differs so substantially from MT that scholars debate whether it represents a different Hebrew Vorlage or theological rewriting. The OG amplifies Nebuchadnezzar's piety and humiliation, harmonizing his portrayal with the broader biblical theme of pagan kings acknowledging YHWH (cf. Cyrus, Pharaoh-Neco). Ulrich and Collins treat this as a deliberately reshaped recension.",
+      "evidence_plain": "The Greek version of Daniel 4 reshapes Nebuchadnezzar into a more clearly repentant figure, fitting biblical patterns of foreign kings being humbled by God.",
+      "scholarly_citations": [
+        "Collins, Daniel (Hermeneia), pp. 216-221",
+        "Ulrich, 'Double Literary Editions of Biblical Narratives', BBR"
+      ],
+      "counter_arguments": "The OG may simply translate a different Aramaic Vorlage rather than represent theological reshaping by the translator."
+    },
+    {
+      "reference": "Daniel 3 (Prayer of Azariah and Song of the Three)",
+      "tradition": "LXX",
+      "revision_type": "eschatological_sharpening",
+      "mt_reading": "MT lacks the prayer and song; narrative moves directly from being thrown into furnace to deliverance",
+      "revised_reading": "OG/Th add 68 verses including Azariah's penitential prayer and the Three Young Men's hymn invoking cosmic eschatological praise",
+      "confidence": 0.82,
+      "evidence": "The Greek additions transform a deliverance narrative into a liturgical-eschatological reflection on exile, sin, and cosmic praise. The Prayer of Azariah explicitly frames Israel's suffering in deuteronomic-eschatological terms, while the Song universalizes praise. This is not translation but theological expansion attested already at Qumran-era stage.",
+      "evidence_plain": "The Greek Bible adds a long prayer and hymn to the fiery furnace story, turning it into a theological meditation on Israel's exile and future hope.",
+      "scholarly_citations": [
+        "Collins, Daniel (Hermeneia), pp. 195-207",
+        "Kuhl, Die drei Männer im Feuer (BZAW 55)"
+      ],
+      "counter_arguments": "The additions may reflect a fuller original Semitic Vorlage rather than secondary theological expansion."
+    },
+    {
+      "reference": "Daniel 2:44",
+      "tradition": "LXX",
+      "revision_type": "eschatological_sharpening",
+      "mt_reading": "the God of heaven will set up a kingdom (מלכו) that shall never be destroyed",
+      "revised_reading": "OG: ἀναστήσει ὁ θεὸς τοῦ οὐρανοῦ βασιλείαν ἄλλην, with intensified language of eternal duration",
+      "confidence": 0.55,
+      "evidence": "The OG strengthens the contrast between earthly kingdoms and the eternal divine kingdom through lexical choices and expansion. This aligns with the broader Hellenistic-Jewish eschatological program visible in 2 Maccabees and 1 Enoch.",
+      "evidence_plain": "The Greek translator emphasizes the eternal, end-times nature of God's coming kingdom more strongly than the original Aramaic.",
+      "scholarly_citations": [
+        "Schaper, Eschatology in the Greek Psalter (methodological parallel)",
+        "Collins, Daniel (Hermeneia), pp. 170-172"
+      ],
+      "counter_arguments": "The differences are modest and may reflect translation technique rather than theological agenda."
+    },
+    {
+      "reference": "Susanna (Daniel 13 in LXX/Vulgate)",
+      "tradition": "LXX",
+      "revision_type": "proto_rabbinic",
+      "mt_reading": "Story absent from MT entirely",
+      "revised_reading": "OG/Th present a halakhic narrative on judicial procedure, witness examination (Deut 19:15-21), and Daniel's juridical wisdom",
+      "confidence": 0.7,
+      "evidence": "Susanna functions as a halakhic midrash on Deuteronomy's witness laws, demonstrating proto-rabbinic concerns about due process and the separation of witnesses (cf. m. Sanhedrin 5). Theodotion's recension intensifies the legal-exegetical dimension. The wordplay on tree names (σχῖνος/σχίσει, πρῖνος/πρίσει) points to Greek composition or significant Greek reworking.",
+      "evidence_plain": "The Susanna story, found only in Greek, reflects later Jewish legal concerns about how witnesses should be examined in court.",
+      "scholarly_citations": [
+        "Collins, Daniel (Hermeneia), pp. 426-438",
+        "Levine, 'Hellenistic Humor in Susanna'"
+      ],
+      "counter_arguments": "Susanna may derive from a Semitic original embodying older legal traditions, not specifically proto-rabbinic concerns."
+    },
+    {
+      "reference": "Bel and the Dragon (Daniel 14)",
+      "tradition": "LXX",
+      "revision_type": "softening",
+      "mt_reading": "Story absent from MT",
+      "revised_reading": "OG/Th add anti-idolatry polemic in which Daniel exposes priestly fraud and destroys the dragon",
+      "confidence": 0.65,
+      "evidence": "Bel and the Dragon transforms generic idol-polemic (Isa 44, Jer 10) into narrative form, removing theological scandal from earlier biblical accounts where idols seem to have power. The narrative explicitly demystifies pagan gods, addressing diaspora apologetic needs.",
+      "evidence_plain": "The added stories about Bel and the Dragon make fun of pagan idols and show that they have no real power, reinforcing Jewish identity in a Greek world.",
+      "scholarly_citations": [
+        "Wills, The Jew in the Court of the Foreign King",
+        "Collins, Daniel (Hermeneia), pp. 405-419"
+      ],
+      "counter_arguments": "These stories may simply be popular Jewish folklore rather than theologically motivated additions."
+    },
+    {
+      "reference": "Daniel 9:24",
+      "tradition": "Vulgate",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "to anoint a most holy (place/thing) (למשח קדש קדשים)",
+      "revised_reading": "et ungatur Sanctus sanctorum",
+      "confidence": 0.75,
+      "evidence": "Jerome renders the construct phrase as a personal title ('the Holy of Holies' as person) rather than the temple's inner sanctum, supporting Christological reading. His commentary explicitly identifies this with Christ's anointing. The Hebrew is grammatically ambiguous but more naturally refers to the sanctuary.",
+      "evidence_plain": "Jerome translates a phrase that probably means 'the holiest place' as if it referred to a holy person, strengthening the Christian reading of the prophecy.",
+      "scholarly_citations": [
+        "Jerome, Commentarii in Danielem (CCSL 75A)",
+        "Montgomery, Daniel (ICC), p. 375"
+      ],
+      "counter_arguments": "The Hebrew קדש קדשים can grammatically refer to a person, and Jerome's reading has ancient Jewish precedent."
+    },
+    {
+      "reference": "Daniel 12:2",
+      "tradition": "LXX",
+      "revision_type": "eschatological_sharpening",
+      "mt_reading": "many of those who sleep in the dust of the earth shall awake, some to everlasting life and some to shame and everlasting contempt",
+      "revised_reading": "OG intensifies the dualistic eschatology with sharpened lexical choices (αἰσχύνη... διασπορὰν αἰώνιον)",
+      "confidence": 0.6,
+      "evidence": "The OG sharpens the proto-apocalyptic dualism of resurrection, choosing terms that align with developing Hellenistic-Jewish eschatology (cf. Wisdom of Solomon, 2 Maccabees 7). The translation reflects the eschatological intensification visible across the Greek Psalter and Isaiah.",
+      "evidence_plain": "The Greek version of this resurrection passage uses stronger eschatological language, sharpening the contrast between eternal life and eternal shame.",
+      "scholarly_citations": [
+        "Schaper, Eschatology in the Greek Psalter, pp. 138-160",
+        "Collins, Daniel (Hermeneia), pp. 391-394"
+      ],
+      "counter_arguments": "The lexical choices may reflect standard Greek translational equivalents rather than theological intensification."
+    }
+  ],
+  "dominant_strategy": "Messianic/eschatological heightening dominates Daniel's textual history, particularly through the LXX additions (Prayer of Azariah, Song of the Three) and Vulgate's Christologizing renderings of 9:24-27. This reflects Daniel's status as the apocalyptic book par excellence, attracting interpretive amplification at every stage of transmission.",
+  "overall_assessment": "Daniel's textual history reveals tradents deeply invested in apocalyptic and messianic interpretation, with the OG, Theodotion, and Vulgate each amplifying the book's eschatological program in distinct ways. The OG's substantial divergences in chapters 4-6 and the additions (Susanna, Bel, Prayer of Azariah) suggest the book remained textually fluid well into the Hellenistic period, when its proto-apocalyptic theology was being actively developed. Jerome's Vulgate then channels this trajectory into explicit Christological identification, especially at the Seventy Weeks prophecy. The pattern situates Daniel as the laboratory of Second Temple and early Christian theological interpretation, where textual transmission and theological development are inseparable.",
+  "overall_plain": "Daniel was the most actively reshaped book in the Bible, with Greek and Latin translators adding stories, prayers, and interpretations that intensified its message about God's coming kingdom and end-times judgment. Jerome's Latin translation pushed these themes further by reading specific verses as direct prophecies of Christ.",
+  "bibcrit_assessment": {
+    "title": "Daniel: laboratory of apocalyptic textual development",
+    "reasoning": "Daniel uniquely demonstrates that the line between textual transmission and theological composition is permeable in the Second Temple period, with major recensions (OG vs. Th vs. MT) reflecting genuinely different theological visions rather than mere translation variants. The Vulgate's Christological sharpening at 9:24-27 represents the culmination of a centuries-long trajectory of messianic intensification rather than an innovation.",
+    "plain": "Daniel shows more than any other biblical book how translators and copyists actively shaped scripture to fit their evolving beliefs about the end times and the messiah.",
+    "confidence": 0.82
+  },
+  "discovery_ready": false,
+  "reference": "Daniel",
+  "cached_at": "2026-05-09T21:46:04.872669",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v2"
+}

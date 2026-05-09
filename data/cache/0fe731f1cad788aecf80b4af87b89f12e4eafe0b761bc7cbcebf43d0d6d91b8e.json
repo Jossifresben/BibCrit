@@ -1,0 +1,101 @@
+{
+  "book": "Jeremiah",
+  "translator_name": "Old Greek of Jeremiah (Jer-LXX, possibly two translators: Jer-a chs. 1-28, Jer-b chs. 29-52)",
+  "translator_profile": {
+    "literalness": 0.72,
+    "anthropomorphism_reduction": 0.25,
+    "messianic_heightening": 0.55,
+    "harmonization": 0.3,
+    "paraphrase_rate": 0.3
+  },
+  "dimensions": [
+    {
+      "dimension": "literalness",
+      "score": 0.72,
+      "confidence": 0.85,
+      "summary": "Jer-LXX is a generally faithful, segment-by-segment translation reflecting a shorter Hebrew Vorlage (cf. 4QJer-b/d) rather than free rendering of MT. Jer 1:5 shows tight isomorphism: בְּטֶרֶם אֶצָּרְךָ בַבֶּטֶן → πρὸ τοῦ με πλάσαι σε ἐν κοιλίᾳ, preserving infinitive constructions and word order. The famous quantitative shortness of LXX-Jer (~1/7 less material than MT) is now widely understood as Vorlage-based, not translator abridgment (Tov, Janzen).",
+      "summary_plain": "The translator stuck closely to the Hebrew text in front of him, word by word. The fact that LXX Jeremiah is shorter than the Hebrew Bible's version is because he had a shorter Hebrew text, not because he was paraphrasing.",
+      "examples": [
+        {
+          "reference": "Jeremiah 1:5",
+          "mt_text": "bᵉṭerem ʾeṣṣorḵā babbeṭen yᵉdaʿtîḵā",
+          "lxx_text": "πρὸ τοῦ με πλάσαι σε ἐν κοιλίᾳ ἐπίσταμαί σε",
+          "note": "Verbatim correspondence including the temporal infinitive construction and the suffix pronoun, characteristic of segmented literal technique."
+        }
+      ]
+    },
+    {
+      "dimension": "anthropomorphism_reduction",
+      "score": 0.25,
+      "confidence": 0.55,
+      "summary": "Jer-LXX shows only sporadic theological smoothing; divine emotions, hand, and arm are typically retained. Occasional softening occurs (e.g., rendering נחם 'repent' with metanoeō rather than avoiding it), but no systematic Targum-like reduction operates. The translator is closer to the literalist end than to the anthropomorphism-averse Pentateuch or Job-LXX.",
+      "summary_plain": "The translator did not systematically tone down descriptions of God having emotions or body parts, unlike some other Greek translators.",
+      "examples": [
+        {
+          "reference": "Jeremiah 1:5",
+          "mt_text": "yᵉdaʿtîḵā ('I knew you')",
+          "lxx_text": "ἐπίσταμαί σε ('I know you')",
+          "note": "Slight tense shift to present, possibly easing the implication of pre-natal divine cognition, though more likely aspectual."
+        }
+      ]
+    },
+    {
+      "dimension": "messianic_heightening",
+      "score": 0.6,
+      "confidence": 0.75,
+      "summary": "The rendering of צֶמַח ('Branch/Sprout') as ἀνατολή in Jer 23:5 is a striking lexical choice with strong messianic-eschatological resonance, picked up in Zech 3:8; 6:12 and ultimately Luke 1:78. Whether 'rising/dawn' or 'sprout', ἀνατολή unites botanical and astral-royal imagery beyond the strictly literal עֳמַח, suggesting deliberate semantic enrichment of a Davidic oracle. Note that 33:14-26 (containing the parallel branch oracle) is absent in LXX, so the heightening is concentrated.",
+      "summary_plain": "When translating the prophecy about a 'righteous Branch' from David, the translator chose a Greek word (anatolē, 'rising/dawn') that echoes royal and messianic imagery — a choice that later New Testament writers picked up.",
+      "examples": [
+        {
+          "reference": "Jeremiah 23:5",
+          "mt_text": "wahăqîmōtî lᵉdāwid ṣemaḥ ṣaddîq",
+          "lxx_text": "καὶ ἀναστήσω τῷ Δαυιδ ἀνατολὴν δικαίαν",
+          "note": "ἀνατολή is not the default equivalent for ṣemaḥ (which would be βλαστός/φυτόν); the choice imports dawn/rising connotations resonant with royal-messianic exegesis."
+        }
+      ]
+    },
+    {
+      "dimension": "harmonization",
+      "score": 0.3,
+      "confidence": 0.5,
+      "summary": "Jer-LXX is not strongly harmonizing; in fact its differing arrangement (OAN placed mid-book) and shorter text reflect a different Vorlage rather than translator-driven smoothing. The absence of Jer 33:14-26 in LXX means the parallel between 23:5 and 33:15 is not reinforced, which argues against harmonization tendency. Minor harmonizations exist within Jer-b but are not characteristic.",
+      "summary_plain": "The translator did not generally try to make parallel passages match each other; differences from the Hebrew tradition usually come from the source text, not editorial smoothing.",
+      "examples": [
+        {
+          "reference": "Jeremiah 33:15",
+          "mt_text": "MT has parallel branch oracle",
+          "lxx_text": "Entire pericope 33:14-26 absent in LXX",
+          "note": "The misaligned LXX text shown in the prompt at this verse reflects the displacement caused by LXX's shorter, differently arranged Vorlage — not harmonization but a structurally different edition."
+        }
+      ]
+    },
+    {
+      "dimension": "paraphrase_rate",
+      "score": 0.3,
+      "confidence": 0.75,
+      "summary": "Paraphrase is not the translator's default mode; the technique is segmentary and quantitatively literal at the clause level, even when stylistically unidiomatic Greek results. Apparent 'paraphrases' in the data are mostly quantitative differences from a shorter Vorlage. Within retained material, expansive rendering is rare; lexical variation (as with ἀνατολή) is the chief departure from strict equivalence.",
+      "summary_plain": "The translator usually rendered the Hebrew closely rather than rephrasing freely. Big differences from the Hebrew Bible are because he was working from a different (shorter) Hebrew manuscript.",
+      "examples": [
+        {
+          "reference": "Jeremiah 1:5",
+          "mt_text": "nāḇîʾ laggôyim nᵉtattîḵā",
+          "lxx_text": "προφήτην εἰς ἔθνη τέθεικά σε",
+          "note": "Direct, formal correspondence preserves Hebrew word order and verbal idiom (nātan + double accusative → τίθημι), demonstrating low paraphrase rate."
+        }
+      ]
+    }
+  ],
+  "overall_assessment": "The Old Greek of Jeremiah is a moderately literal, segmentary translation whose most famous feature — its shorter, differently arranged text — is now recognized as reflecting an alternative Hebrew edition (cf. 4QJer-b,d) rather than translator license (Tov, Janzen, Stipp). The translator stays close to his Vorlage in syntax and lexical correspondence, situating Jer-LXX between the strict literalism of Kaige-Theodotion and the freer style of Isaiah-LXX. Notable theological touches, especially ἀνατολή for ṣemaḥ in 23:5, exert outsized influence on later messianic vocabulary. For text criticism, the LXX is a primary witness to a distinct Hebrew edition of Jeremiah, not merely a translation of proto-MT.",
+  "overall_plain": "The Greek translator of Jeremiah worked carefully and fairly literally, not paraphrasing freely. The famous fact that Greek Jeremiah is much shorter than the Hebrew is because he was translating an older, shorter Hebrew version of the book — making this translation extremely valuable for reconstructing the Bible's textual history.",
+  "bibcrit_assessment": {
+    "title": "Faithful Translator of a Different Hebrew Edition",
+    "reasoning": "The decisive insight is that LXX-Jer's quantitative and structural divergence from MT is editorial-Hebrew, not translational; the translator himself is rather faithful. This shifts the scholarly question from 'how free was the translator?' to 'what edition did he have?', confirmed by the Qumran Jeremiah scrolls aligning with the LXX's shorter text.",
+    "plain": "The big differences between Greek and Hebrew Jeremiah aren't because the translator was creative — he was working from an earlier, shorter Hebrew version of the book that we now have fragments of from the Dead Sea Scrolls.",
+    "confidence": 0.85
+  },
+  "discovery_ready": false,
+  "reference": "Jeremiah",
+  "cached_at": "2026-05-09T21:01:19.330051",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v1"
+}

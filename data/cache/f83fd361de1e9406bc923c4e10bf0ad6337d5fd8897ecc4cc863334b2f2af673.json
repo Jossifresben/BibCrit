@@ -1,0 +1,139 @@
+{
+  "reference": "1 Kings 14",
+  "subject": "Reign of Rehoboam and chronological/regnal figures",
+  "figures": [
+    {
+      "name": "Rehoboam's age at accession",
+      "mt_value": 41,
+      "lxx_value": 16,
+      "sp_value": 0,
+      "divergence_type": "major",
+      "note": "LXX (3 Reigns 12:24a) gives 16, MT gives 41; SP does not contain Kings."
+    },
+    {
+      "name": "Length of Rehoboam's reign in Jerusalem",
+      "mt_value": 17,
+      "lxx_value": 12,
+      "sp_value": 0,
+      "divergence_type": "significant",
+      "note": "LXX supplement at 12:24a reads 12 years; MT and main LXX tradition at 14:21 read 17."
+    },
+    {
+      "name": "Year of Shishak's invasion (regnal year of Rehoboam)",
+      "mt_value": 5,
+      "lxx_value": 5,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Number of gold shields taken by Shishak (implicit count of Solomon's 300)",
+      "mt_value": 300,
+      "lxx_value": 300,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "Bronze replacements; numeral agrees across MT and LXX."
+    },
+    {
+      "name": "Length of Jeroboam's reign",
+      "mt_value": 22,
+      "lxx_value": 22,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "Agreement between MT and LXX at 14:20."
+    }
+  ],
+  "systematic_analysis": {
+    "is_systematic": false,
+    "pattern": "The Samaritan Pentateuch is irrelevant here since 1 Kings lies outside the Samaritan canon. The principal divergence is between MT and the LXX's alternative narrative (3 Reigns 12:24a–z), which lowers Rehoboam's accession age from 41 to 16 and his reign from 17 to 12 years. The reduction of accession age resolves the chronological problem in MT whereby Rehoboam (41) would have been born when Solomon was only ~11 years old, since Solomon reigned 40 years (1 Kgs 11:42).",
+    "pattern_plain": "The main difference is that the Greek version makes Rehoboam 16 when he became king, while the Hebrew says 41. The Samaritan Pentateuch isn't relevant because it only contains the first five books."
+  },
+  "theories": [
+    {
+      "name": "Theological/Chronological Motivation",
+      "slug": "theological_motivation",
+      "score": 0.7,
+      "confidence": 0.65,
+      "summary": "The LXX's reading of 16 in 3 Reigns 12:24a may reflect deliberate harmonization to resolve the chronological impossibility in MT, where Rehoboam at 41 would have been conceived before Solomon's reign began. Scholars including Gooding and Shenkel argue this Greek supplement represents a midrashic reworking aimed at smoothing chronology and theology. The lowered age makes Rehoboam's foolish behavior (taking counsel of young men) more plausible.",
+      "summary_plain": "The Greek number may have been changed to fix a problem: if Rehoboam was 41, his father Solomon would have been too young to have fathered him. The age of 16 also better fits the story of him listening to youthful advisors.",
+      "supporting_evidence": [
+        "MT's figure of 41 creates an impossibility given Solomon's 40-year reign and accession as a young man.",
+        "The LXX supplement at 12:24a is widely regarded as a secondary midrashic composition.",
+        "Rehoboam consulting 'young men who grew up with him' (1 Kgs 12:8) fits a 16-year-old better than a 41-year-old.",
+        "Josephus (Ant. 8.10.1) gives 41, suggesting the MT figure was already established in the first century.",
+        "Gooding's analysis of 3 Reigns shows the supplement systematically reorders and reshapes the Rehoboam material."
+      ],
+      "weaknesses": [
+        "The lowered age may itself be the original, with MT's 41 being a scribal error or theological inflation.",
+        "The 12:24a supplement is recognized as late and tendentious, weakening its witness value.",
+        "No clear theological motive (vs. chronological) can be isolated."
+      ]
+    },
+    {
+      "name": "Scribal Error",
+      "slug": "scribal_error",
+      "score": 0.55,
+      "confidence": 0.5,
+      "summary": "The divergence between 41 and 16 could result from numeral confusion in Hebrew transmission, though the specific mechanism is unclear since the numbers do not share obvious graphic similarity in either alphabetic or numerical-letter notation. Some have proposed an original reading of 21 corrupted differently in each tradition. The 17/12 variation in reign length similarly resists clean paleographic explanation.",
+      "summary_plain": "Scribes copying numbers by hand sometimes made mistakes, and one tradition or the other (or both) may have miscopied the original figure.",
+      "supporting_evidence": [
+        "Numerical variants between MT and LXX are extremely common throughout Kings.",
+        "The chronological tension in MT suggests something has gone wrong in transmission.",
+        "Parallel in 2 Chr 12:13 also gives 41, but Chronicles often follows MT-Kings tradition."
+      ],
+      "weaknesses": [
+        "No obvious paleographic mechanism produces 41↔16.",
+        "Both Hebrew traditions (MT Kings and MT Chronicles) agree on 41, suggesting it is not a simple slip.",
+        "The LXX figure appears in a recognizably secondary supplement, not in straightforward translation."
+      ]
+    },
+    {
+      "name": "Independent Traditions",
+      "slug": "independent_traditions",
+      "score": 0.5,
+      "confidence": 0.5,
+      "summary": "The 3 Reigns 12:24a–z passage represents an alternative Hebrew Vorlage or independent tradition about Jeroboam and Rehoboam circulating alongside the proto-MT version. Its different numerals may reflect a parallel oral or written tradition rather than alteration of MT. McKenzie and Trebolle have argued for the antiquity of some material in this supplement.",
+      "summary_plain": "The Greek version may preserve a separate ancient tradition about these kings, not a revision of the Hebrew we have.",
+      "supporting_evidence": [
+        "3 Reigns 12:24a–z contains material with no parallel in MT, suggesting independent source.",
+        "Qumran has shown that variant Hebrew editions of biblical books existed.",
+        "Some details in the supplement (e.g., Jeroboam's mother) preserve plausibly archaic tradition."
+      ],
+      "weaknesses": [
+        "Most scholars view the supplement as secondary midrash, not ancient tradition.",
+        "No Hebrew Vorlage of the supplement has been found at Qumran or elsewhere.",
+        "Internal contradictions within the supplement undermine its claim to antiquity."
+      ]
+    },
+    {
+      "name": "MT Inflation/LXX Original",
+      "slug": "mt_deflation",
+      "score": 0.35,
+      "confidence": 0.4,
+      "summary": "If LXX 16 is original, MT has inflated Rehoboam's age, perhaps to align with a particular chronological scheme. This is the inverse of the typical pattern in Genesis where LXX numbers are higher. However, the secondary character of 3 Reigns 12:24a makes this less likely here.",
+      "summary_plain": "It's possible the Hebrew tradition raised the number, and the Greek preserves the original lower figure.",
+      "supporting_evidence": [
+        "The lower figure of 16 resolves chronological problems with Solomon's age.",
+        "Rehoboam's behavior fits a younger man.",
+        "MT does demonstrably contain inflated or rounded regnal figures elsewhere."
+      ],
+      "weaknesses": [
+        "The LXX supplement is widely judged secondary.",
+        "2 Chronicles independently confirms 41.",
+        "No textual witness besides the supplement supports 16."
+      ]
+    }
+  ],
+  "overall_assessment": "The principal numerical divergence in 1 Kings 14 concerns Rehoboam's accession age (MT 41 vs. LXX-supplement 16) and reign length (17 vs. 12), preserved in the distinctive 3 Reigns 12:24a–z material. Most critical scholars (Gooding, Shenkel, Talshir) regard this LXX supplement as a secondary midrashic composition, but the lower age was likely chosen precisely because MT's 41 produces the chronological absurdity of Rehoboam being born before Solomon's reign. The divergence thus likely represents ancient theological/chronological correction rather than independent tradition or simple scribal error. The Samaritan Pentateuch is not a witness here, since Kings lies outside its canon.",
+  "overall_plain": "The Hebrew Bible says Rehoboam became king at 41, but a Greek version says 16. The lower number probably represents an ancient attempt to fix a problem in the Hebrew text, where 41 would mean Rehoboam was born before his father Solomon was even old enough to be a father.",
+  "bibcrit_assessment": {
+    "title": "Greek supplement corrects impossible MT chronology",
+    "reasoning": "The Rehoboam age problem is a textbook case where MT preserves a numerically problematic reading while LXX offers an alternative that resolves the difficulty—suggesting the LXX figure is a secondary correction rather than original. This illustrates that 'harder readings' in chronology are often retained in MT precisely because conservative scribes did not feel free to alter received numbers, while the freer Greek tradition could supplement and adjust. The case shows that LXX/MT numerical divergence in Kings operates by entirely different dynamics than in Genesis patriarchal ages.",
+    "plain": "The Hebrew text kept a number that creates a problem, while the Greek tradition rewrote things to make better sense. This is the opposite of what happens in Genesis, showing that different parts of the Bible were transmitted differently.",
+    "confidence": 0.7
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T21:31:16.555802",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v3"
+}

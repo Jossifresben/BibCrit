@@ -1,0 +1,141 @@
+{
+  "reference": "Genesis 1:1",
+  "total_citations_found": 7,
+  "period_summary": "Citations of Genesis 1:1 are densely concentrated from the 2nd through 5th centuries, reflecting its foundational role in cosmological, anti-Gnostic, and Trinitarian polemics. The verse was nearly always cited from the LXX form (Ἐν ἀρχῇ ἐποίησεν ὁ θεὸς τὸν οὐρανὸν καὶ τὴν γῆν) in Greek fathers and from corresponding Old Latin/Vulgate forms in Latin fathers.",
+  "citations": [
+    {
+      "father": "Theophilus of Antioch",
+      "dates_ce": "c. 120–183",
+      "region": "Antioch",
+      "work": "Ad Autolycum",
+      "chapter_section": "2.10; 2.13",
+      "cited_text": "Ἐν ἀρχῇ ἐποίησεν ὁ θεὸς τὸν οὐρανὸν καὶ τὴν γῆν",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.92,
+      "text_form_note": "Theophilus reproduces the LXX verbatim, including the article τὸν before οὐρανόν, matching the standard Alexandrian LXX text.",
+      "theological_use": "Theophilus uses Gen 1:1 to argue against the eternity of matter and to identify the 'Beginning' with the Logos through whom God created.",
+      "transmission_implication": "Confirms a stable LXX text of Gen 1:1 circulating in late 2nd-century Syria."
+    },
+    {
+      "father": "Irenaeus of Lyons",
+      "dates_ce": "c. 130–202",
+      "region": "Other (Gaul)",
+      "work": "Adversus Haereses",
+      "chapter_section": "1.18.1; 2.2.5",
+      "cited_text": "In principio fecit Deus caelum et terram",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.85,
+      "text_form_note": "The Latin translation of Irenaeus reflects an Old Latin rendering directly dependent on the LXX; the Greek fragments preserve the LXX wording.",
+      "theological_use": "Irenaeus deploys Gen 1:1 against Gnostic emanationism, insisting the one God is creator of heaven and earth, not a Demiurge.",
+      "transmission_implication": "Demonstrates that the LXX form of Gen 1:1 was the textual basis for both Greek and Latin Christian polemic in the late 2nd century."
+    },
+    {
+      "father": "Origen of Alexandria",
+      "dates_ce": "c. 185–254",
+      "region": "Alexandria/Caesarea",
+      "work": "Homiliae in Genesim; De Principiis",
+      "chapter_section": "Hom. Gen. 1.1; Princ. 1.3.3",
+      "cited_text": "Ἐν ἀρχῇ ἐποίησεν ὁ θεὸς τὸν οὐρανὸν καὶ τὴν γῆν",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.95,
+      "text_form_note": "Origen cites the standard LXX text and in his Hexaplaric work compares it with the Hebrew, noting that ἀρχή renders בְּרֵאשִׁית; he interprets ἐν ἀρχῇ as 'in Christ' (the Wisdom/Logos).",
+      "theological_use": "Origen reads 'In the beginning' Christologically, identifying the Beginning with the Son/Wisdom through whom all things were made (cf. John 1:1; Prov 8:22).",
+      "transmission_implication": "Origen's Hexaplaric awareness shows that the LXX of Gen 1:1 was textually identical to the Hebrew in substance, with no variant readings of consequence."
+    },
+    {
+      "father": "Tertullian",
+      "dates_ce": "c. 155–220",
+      "region": "Carthage",
+      "work": "Adversus Hermogenem",
+      "chapter_section": "ch. 19–20",
+      "cited_text": "In principio fecit Deus caelum et terram",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.8,
+      "text_form_note": "Tertullian's Latin reflects an Old Latin version of the LXX; he debates the meaning of 'principium' (whether temporal beginning or 'in the Son').",
+      "theological_use": "Against Hermogenes' claim of pre-existent matter, Tertullian argues from Gen 1:1 that God created heaven and earth absolutely 'in the beginning,' not from eternal matter.",
+      "transmission_implication": "Indicates a stable Old Latin version of Gen 1:1 in late 2nd-century North Africa, dependent on the LXX."
+    },
+    {
+      "father": "Basil of Caesarea",
+      "dates_ce": "c. 330–379",
+      "region": "Caesarea (Cappadocia)",
+      "work": "Hexaemeron",
+      "chapter_section": "Hom. 1.5–6",
+      "cited_text": "Ἐν ἀρχῇ ἐποίησεν ὁ θεὸς τὸν οὐρανὸν καὶ τὴν γῆν",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.97,
+      "text_form_note": "Basil quotes the LXX verbatim and explicitly discusses the meaning of each word, showing detailed familiarity with the Greek text.",
+      "theological_use": "Basil makes Gen 1:1 the foundation of his nine homilies on creation, arguing for creatio ex nihilo and a temporal beginning of the cosmos.",
+      "transmission_implication": "Confirms a fixed LXX text of Gen 1:1 in 4th-century Cappadocia, identical to the Alexandrian textual tradition."
+    },
+    {
+      "father": "Ambrose of Milan",
+      "dates_ce": "c. 339–397",
+      "region": "Other (Milan)",
+      "work": "Hexaemeron",
+      "chapter_section": "1.4.15",
+      "cited_text": "In principio fecit Deus caelum et terram",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.85,
+      "text_form_note": "Ambrose's Latin closely follows Basil's Greek and the Old Latin; 'principio' renders ἀρχῇ, confirming the LXX-based Latin tradition.",
+      "theological_use": "Ambrose uses Gen 1:1 to teach creatio ex nihilo and to refute Manichaean dualism, identifying the 'beginning' with Christ.",
+      "transmission_implication": "Demonstrates the continued dominance of the Old Latin (LXX-based) text of Gen 1:1 in the Latin West before Jerome's Vulgate."
+    },
+    {
+      "father": "Augustine of Hippo",
+      "dates_ce": "354–430",
+      "region": "Other (Hippo, North Africa)",
+      "work": "De Genesi ad Litteram; Confessiones",
+      "chapter_section": "Gen. ad litt. 1.1; Conf. 11.3–9; 12.7",
+      "cited_text": "In principio fecit Deus caelum et terram",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.9,
+      "text_form_note": "Augustine cites the Old Latin form throughout, occasionally noting variation in 'fecit' vs 'creavit'; his text depends on the LXX through Old Latin transmission.",
+      "theological_use": "Augustine reflects on 'In principio' as referring both to the Son (the Beginning) and to the temporal commencement of creation; he uses the verse to address time, eternity, and creatio ex nihilo.",
+      "transmission_implication": "Shows the stability of the Old Latin Gen 1:1 even as Jerome's Vulgate (rendering 'creavit' from Hebrew) was being introduced."
+    }
+  ],
+  "text_form_distribution": {
+    "closer_to_mt": 0,
+    "closer_to_lxx": 7,
+    "mixed": 0,
+    "independent": 0,
+    "uncertain": 0
+  },
+  "transmission_synthesis": "The patristic citations of Genesis 1:1 reveal an extraordinarily uniform textual tradition: every Greek father cites the verbatim LXX (Ἐν ἀρχῇ ἐποίησεν ὁ θεὸς τὸν οὐρανὸν καὶ τὴν γῆν), and every Latin father before Jerome cites the corresponding Old Latin rendering. There is no evidence of competing text forms, variant readings, or significant divergence between the LXX and the Hebrew at this verse, a fact confirmed by Origen's Hexaplaric work. The verse's brevity and theological centrality made textual stability practically inevitable, and its consistent citation across Antioch, Alexandria, Cappadocia, Carthage, Milan, and Hippo demonstrates a single transmission stream from the Old Greek through Christian use. The introduction of Jerome's 'creavit' (rendering Hebrew בָּרָא more precisely than 'fecit') in the late 4th century marks the only significant textual development before the 5th century.",
+  "transmission_synthesis_plain": "Early Christian writers from the 2nd to 5th centuries quote Genesis 1:1 with remarkable consistency, all using either the Greek Septuagint version or its Latin translation. There are no significant variants or competing forms—the verse 'In the beginning God made heaven and earth' was universally fixed and cited identically across the Christian world.",
+  "notable_variants": [
+    {
+      "reading": "fecit (Old Latin) vs. creavit (Vulgate)",
+      "fathers_using_it": [
+        "Tertullian",
+        "Ambrose",
+        "Augustine (fecit)",
+        "Jerome (creavit)"
+      ],
+      "text_form_alignment": "mixed",
+      "significance": "The shift from 'fecit' (rendering LXX ἐποίησεν) to 'creavit' (rendering Hebrew בָּרָא) in Jerome's Vulgate marks the moment when Latin Christianity began to recognize the distinct Hebrew lexical force of 'create from nothing,' a key development in transmission and theology."
+    },
+    {
+      "reading": "ἐν ἀρχῇ interpreted as 'in the Son/Wisdom'",
+      "fathers_using_it": [
+        "Origen",
+        "Tertullian",
+        "Ambrose",
+        "Augustine"
+      ],
+      "text_form_alignment": "closer_to_lxx",
+      "significance": "While not a textual variant, the consistent Christological reading of ἀρχή (drawing on John 1:1 and Prov 8:22) shows how the fixed LXX text was theologically appropriated, leaving textual transmission stable while interpretation diversified."
+    }
+  ],
+  "bibcrit_assessment": {
+    "title": "Genesis 1:1 transmitted with unparalleled textual stability",
+    "reasoning": "The patristic citation history of Gen 1:1 is unusually uniform: across four centuries and every major theological center, fathers cite a single LXX-based text without significant variants. This stability reflects both the verse's brevity and its catechetical, liturgical, and polemical centrality—any deviation would have been immediately noticed and corrected. The only meaningful textual development before the 5th century is Jerome's lexical refinement from 'fecit' to 'creavit,' which sharpened the doctrine of creatio ex nihilo without altering the LXX-based tradition for centuries.",
+    "plain": "Genesis 1:1 was quoted by early Christian writers with almost no variation across 400 years and many regions. This shows the verse's text was extremely stable, likely because it was so foundational and so frequently used.",
+    "confidence": 0.9
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T22:06:25.448259",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v3"
+}

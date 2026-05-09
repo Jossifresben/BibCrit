@@ -1,0 +1,156 @@
+{
+  "reference": "Psalm 2:7",
+  "total_citations_found": 8,
+  "period_summary": "Citations of Psalm 2:7 cluster heavily in the 2nd–4th centuries, driven by its christological use as a proof-text for the divine sonship of Jesus, especially in connection with the baptism narrative and the resurrection (cf. Acts 13:33, Heb 1:5, 5:5). The verse was among the most frequently cited messianic psalms in the early church.",
+  "citations": [
+    {
+      "father": "Justin Martyr",
+      "dates_ce": "c. 100–165",
+      "region": "Syria/Rome",
+      "work": "Dialogue with Trypho",
+      "chapter_section": "ch. 88, also ch. 122",
+      "cited_text": "Υἱός μου εἶ σύ, ἐγὼ σήμερον γεγέννηκά σε",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.9,
+      "text_form_note": "Justin's wording matches the LXX exactly, including σήμερον γεγέννηκά σε ('today I have begotten you'), which renders MT יְלִדְתִּיךָ in a way standard to Greek tradition.",
+      "theological_use": "Justin connects Ps 2:7 with the voice at Jesus' baptism, arguing that the Father's declaration confirms Jesus as the pre-existent Son and Messiah, not that he became Son at baptism.",
+      "transmission_implication": "Confirms that the LXX form of Ps 2:7 was the established Christian text in mid-2nd century Rome and the East."
+    },
+    {
+      "father": "Irenaeus of Lyons",
+      "dates_ce": "c. 130–202",
+      "region": "Other (Gaul)",
+      "work": "Adversus Haereses",
+      "chapter_section": "Book III.6.1; Demonstration 49",
+      "cited_text": "Filius meus es tu, ego hodie genui te",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.85,
+      "text_form_note": "The Latin (and Armenian Demonstration) reflects an Old Latin rendering of LXX, with hodie genui te corresponding to σήμερον γεγέννηκά σε rather than any MT-distinctive feature.",
+      "theological_use": "Irenaeus uses the verse to demonstrate the eternal sonship and to refute Gnostic distinctions between the Christ and Jesus, treating the Father's address as eternally valid.",
+      "transmission_implication": "Attests circulation of an Old Latin version dependent on LXX in late 2nd-century Gaul."
+    },
+    {
+      "father": "Tertullian",
+      "dates_ce": "c. 155–220",
+      "region": "Carthage",
+      "work": "Adversus Praxean; Adversus Marcionem",
+      "chapter_section": "Adv. Prax. 7; Adv. Marc. V.9",
+      "cited_text": "Filius meus es tu, ego hodie genui te",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.85,
+      "text_form_note": "Tertullian's Latin renders the LXX faithfully via Old Latin; he shows no awareness of any MT-distinctive variant.",
+      "theological_use": "Tertullian deploys the verse to articulate the eternal generation of the Son from the Father, central to his anti-modalist argument against Praxeas.",
+      "transmission_implication": "Demonstrates a stable LXX-derived text in early 3rd-century North African Latin Christianity."
+    },
+    {
+      "father": "Clement of Alexandria",
+      "dates_ce": "c. 150–215",
+      "region": "Alexandria",
+      "work": "Paedagogus",
+      "chapter_section": "Paed. I.6",
+      "cited_text": "Υἱός μου εἶ σύ, ἐγὼ σήμερον γεγέννηκά σε",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.9,
+      "text_form_note": "Clement cites the verbatim LXX form in Greek without variation.",
+      "theological_use": "Clement applies the 'today' of begetting to the believer's regeneration in baptism, transferring the christological text to the spiritual sonship of the baptized.",
+      "transmission_implication": "Confirms the LXX as the textual standard in late 2nd-century Alexandria."
+    },
+    {
+      "father": "Origen",
+      "dates_ce": "c. 185–253",
+      "region": "Alexandria/Caesarea",
+      "work": "De Principiis; Contra Celsum; Commentary on John",
+      "chapter_section": "De Princ. I.2.4; Comm. Jo. I.29",
+      "cited_text": "Υἱός μου εἶ σύ, ἐγὼ σήμερον γεγέννηκά σε",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.95,
+      "text_form_note": "Origen consistently cites the LXX text; his Hexaplaric work shows awareness of Hebrew but for this verse the Greek tradition is uniform with no significant variation between LXX, Aquila, Symmachus per surviving fragments.",
+      "theological_use": "Origen famously interprets the 'today' as the eternal now of the Father's eternal generation of the Son, foundational to his doctrine of the eternal Logos.",
+      "transmission_implication": "Origen's Hexaplaric silence on variants suggests Greek and Hebrew traditions agreed substantively at this verse."
+    },
+    {
+      "father": "Eusebius of Caesarea",
+      "dates_ce": "c. 260–340",
+      "region": "Caesarea",
+      "work": "Demonstratio Evangelica; Commentary on Psalms",
+      "chapter_section": "Dem. Ev. IV.15–16; Comm. Ps. ad loc.",
+      "cited_text": "Υἱός μου εἶ σύ, ἐγὼ σήμερον γεγέννηκά σε",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.95,
+      "text_form_note": "Eusebius cites the standard LXX text; in his commentary he discusses the Hebrew but does not record a divergent reading for this clause.",
+      "theological_use": "Eusebius uses Ps 2:7 to argue for the pre-existent divine sonship and the messianic identity of Christ over against Jewish interpretations applying it to David or Solomon.",
+      "transmission_implication": "Confirms textual stability of the LXX form into the early 4th century at Caesarea."
+    },
+    {
+      "father": "Athanasius",
+      "dates_ce": "c. 296–373",
+      "region": "Alexandria",
+      "work": "Orationes contra Arianos",
+      "chapter_section": "Or. c. Ar. II.7; IV.27",
+      "cited_text": "Υἱός μου εἶ σύ, ἐγὼ σήμερον γεγέννηκά σε",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.95,
+      "text_form_note": "Athanasius cites the LXX text verbatim as the church's received form.",
+      "theological_use": "Against the Arians, Athanasius argues 'today I have begotten you' refers not to a temporal origin of the Son but to the manifestation in the incarnation, defending eternal generation.",
+      "transmission_implication": "The verse's central role in 4th-century trinitarian controversy presupposes a textually undisputed LXX form."
+    },
+    {
+      "father": "Augustine",
+      "dates_ce": "354–430",
+      "region": "Other (Hippo)",
+      "work": "Enarrationes in Psalmos; De Trinitate",
+      "chapter_section": "Enarr. in Ps. 2.6; De Trin. XV.14",
+      "cited_text": "Filius meus es tu, ego hodie genui te",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.9,
+      "text_form_note": "Augustine cites the Old Latin/Vulgate form derived from LXX; he interprets 'hodie' as the eternal day of God's timeless present.",
+      "theological_use": "Augustine takes 'today' to signify eternity, since in God there is no past or future; the verse grounds his doctrine of the Son's eternal generation.",
+      "transmission_implication": "Latin reception remains anchored in LXX-based readings into the early 5th century."
+    }
+  ],
+  "text_form_distribution": {
+    "closer_to_mt": 0,
+    "closer_to_lxx": 8,
+    "mixed": 0,
+    "independent": 0,
+    "uncertain": 0
+  },
+  "transmission_synthesis": "The patristic witness to Psalm 2:7 is remarkably uniform: every major father from Justin to Augustine cites the LXX form 'Υἱός μου εἶ σύ, ἐγὼ σήμερον γεγέννηκά σε' (or its Old Latin equivalent), with no substantive variation. This uniformity is unsurprising since the verse was already absorbed into the New Testament (Acts 13:33; Heb 1:5; 5:5) in the LXX form, which canonized it for Christian usage. There is no patristic evidence of a competing Hebrew-based rendering, and even Origen's Hexaplaric work did not register significant divergence at this verse. The transmission history is thus one of stable LXX dominance, with theological energy directed at interpretation of σήμερον ('today') rather than at textual variants.",
+  "transmission_synthesis_plain": "Early Christian writers from the 2nd through the 5th centuries all quote Psalm 2:7 in essentially the same Greek (or Latin translation of the Greek) wording, showing that this verse was transmitted with remarkable stability. Disagreements were never about what the text said but about what 'today I have begotten you' meant theologically.",
+  "notable_variants": [
+    {
+      "reading": "ἐγὼ σήμερον γεγέννηκά σε ('today I have begotten you')",
+      "fathers_using_it": [
+        "Justin",
+        "Irenaeus",
+        "Tertullian",
+        "Clement",
+        "Origen",
+        "Eusebius",
+        "Athanasius",
+        "Augustine"
+      ],
+      "text_form_alignment": "closer_to_lxx",
+      "significance": "This LXX rendering of Hebrew יְלִדְתִּיךָ became the universal Christian form, partly because it was already embedded in the NT; its 'today' generated extensive theological reflection on eternal generation."
+    },
+    {
+      "reading": "Western/D-text variant at Luke 3:22 echoing Ps 2:7 ('today I have begotten you' at the baptism)",
+      "fathers_using_it": [
+        "Justin (Dial. 88)",
+        "possibly Clement"
+      ],
+      "text_form_alignment": "closer_to_lxx",
+      "significance": "Justin's apparent conflation of the baptismal voice with Ps 2:7 reflects the variant Lukan tradition (Codex Bezae) and shows how the psalm shaped the gospel text itself, not merely was shaped by it."
+    }
+  ],
+  "bibcrit_assessment": {
+    "title": "LXX uniformity masks fierce interpretive battles",
+    "reasoning": "The textual stability of Ps 2:7 across four centuries of patristic citation is striking precisely because the verse stood at the heart of christological controversy from adoptionism to Arianism. The fathers fought over what 'today' meant—incarnation, baptism, resurrection, eternity—but never disputed the wording, demonstrating that NT canonization of the LXX form effectively closed off textual debate while opening hermeneutical ones.",
+    "plain": "All the early Christian writers quoted Psalm 2:7 the same way, but they argued intensely about what it meant. The text was settled; the interpretation was not.",
+    "confidence": 0.9
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T22:10:34.372083",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v3"
+}

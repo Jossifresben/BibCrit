@@ -1,0 +1,159 @@
+{
+  "scope": "Job",
+  "scope_type": "book",
+  "summary": "The LXX of Job is the most theologically interventionist version of any biblical book, being roughly one-sixth shorter than the MT and showing systematic softening of Job's impious speeches, eschatological sharpening (notably the resurrection gloss at 42:17), and avoidance of anthropomorphic divine violence. The Targum of Job (and the Qumran 11QtgJob) shows proto-rabbinic interpretive moves, while the Peshitta and Vulgate display more restrained but still detectable harmonizing tendencies.",
+  "summary_plain": "Ancient translators of Job, especially the Greek translator, regularly toned down Job's harsh complaints against God, smoothed over theologically uncomfortable statements, and even added a famous line about resurrection at the end. The book's translators clearly felt freer to 'fix' the text than translators of other biblical books.",
+  "revisions": [
+    {
+      "reference": "Job 42:17",
+      "tradition": "LXX",
+      "revision_type": "eschatological_sharpening",
+      "mt_reading": "And Job died, old and full of days.",
+      "revised_reading": "And Job died, old and full of days; and it is written that he will rise again with those whom the Lord raises up (γέγραπται δὲ αὐτὸν πάλιν ἀναστήσεσθαι μεθ' ὧν ὁ κύριος ἀνίστησιν).",
+      "confidence": 0.95,
+      "evidence": "The LXX adds an entire resurrection appendix absent from MT, explicitly citing scriptural authority (γέγραπται). This reflects Hellenistic-Jewish eschatology importing resurrection theology into a book whose Hebrew form is famously agnostic on the afterlife (cf. 14:7-14). The addition also identifies Job with Jobab of Genesis 36, harmonizing genealogies.",
+      "evidence_plain": "The Greek translator added a sentence promising Job's resurrection at the end of the book, something completely absent from the Hebrew, reflecting later Jewish belief in bodily resurrection.",
+      "scholarly_citations": [
+        "Gerleman, Studies in the Septuagint I: Book of Job",
+        "Cox, 'Iob' in NETS introduction",
+        "Schaper, Eschatology in the Greek Psalter, pp. 46-49"
+      ],
+      "counter_arguments": "The addition could derive from a now-lost Aramaic source (Testament of Job tradition) rather than the translator's own theology, though the theological motivation remains."
+    },
+    {
+      "reference": "Job 13:15",
+      "tradition": "LXX",
+      "revision_type": "softening",
+      "mt_reading": "Though he slay me, yet will I trust/hope in him (or qere: I will not hope) — אם יקטלני [לא] איחל",
+      "revised_reading": "Though the Mighty One lay hand on me, since indeed he has begun, I will speak and reprove before him (ἐάν με χειρώσηται ὁ δυνάστης, ἐπεὶ καὶ ἦρκται...).",
+      "confidence": 0.7,
+      "evidence": "The LXX evades the stark MT image of God as Job's killer, replacing 'slay' with the milder 'lay hand on'. The translator rephrases Job's defiant ambiguity into a more measured forensic statement, reducing the offensiveness of Job's posture toward God.",
+      "evidence_plain": "Where the Hebrew has the shocking line 'though he kill me, I will hope in him,' the Greek softens both the violence and Job's defiance.",
+      "scholarly_citations": [
+        "Heater, A Septuagint Translation Technique in the Book of Job",
+        "Dhorme, Commentary on Job, ad loc."
+      ],
+      "counter_arguments": "The Greek may simply reflect a different Hebrew Vorlage or the translator's struggle with the qere/ketiv ambiguity rather than theological motive."
+    },
+    {
+      "reference": "Job 7:20",
+      "tradition": "LXX/MT (tiqqun sopherim)",
+      "revision_type": "anthropomorphism_avoidance",
+      "mt_reading": "Why have you made me your target, so that I am a burden to myself (עלי)?",
+      "revised_reading": "Original (per masoretic tradition of tiqqunei sopherim): 'a burden to you (עליך)'; the MT preserves the 'corrected' reading.",
+      "confidence": 0.8,
+      "evidence": "Jewish tradition (Mekhilta, Sifre, Masorah) lists Job 7:20 among the tiqqunei sopherim — scribal corrections changing 'upon you' to 'upon me' to avoid the irreverent suggestion that Job is a burden to God. The LXX (φορτίον) and the Peshitta witnesses align with the older reading in some manuscripts.",
+      "evidence_plain": "Ancient Jewish scribes admit they changed 'I am a burden to you [God]' to 'I am a burden to myself' because the original sounded disrespectful toward God.",
+      "scholarly_citations": [
+        "McCarthy, The Tiqqune Sopherim, pp. 107-110",
+        "Tov, Textual Criticism of the Hebrew Bible, 3rd ed., p. 60"
+      ],
+      "counter_arguments": "Some scholars (Barthélemy) argue the tiqqunei sopherim are exegetical traditions, not actual textual emendations, so 'upon me' may be original."
+    },
+    {
+      "reference": "Job 1:5, 1:11, 2:5, 2:9",
+      "tradition": "MT",
+      "revision_type": "softening",
+      "mt_reading": "Job's children/Job 'blessed' God (ברך) — euphemism for 'cursed'",
+      "revised_reading": "MT preserves the euphemism ברך ('bless') in place of an original קלל ('curse'); the LXX renders εὐλόγησαν but the contextual sense is universally 'curse'.",
+      "confidence": 0.9,
+      "evidence": "This is a classic case of scribal pious dysphemism: the verb 'curse' in proximity to God was replaced with its antonym 'bless'. All ancient versions show awareness of the euphemism. The Targum sometimes paraphrases (e.g., 'provoke') to clarify.",
+      "evidence_plain": "The Hebrew text says Job's wife told him to 'bless God and die,' but everyone agrees this is a polite cover-up for 'curse God' — scribes refused to write 'curse' next to God's name.",
+      "scholarly_citations": [
+        "Linafelt, 'The Undecidability of ברך in the Prologue to Job', Biblical Interpretation 4 (1996)",
+        "Clines, Job 1-20 (WBC), pp. 15-16"
+      ],
+      "counter_arguments": "Linafelt argues the ambiguity is intentional and literary rather than scribal, preserving genuine semantic ambivalence."
+    },
+    {
+      "reference": "Job 19:25-27",
+      "tradition": "Vulgate",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "I know that my redeemer/vindicator (גאלי) lives, and at the last he will stand upon the dust... and from my flesh I shall see God.",
+      "revised_reading": "Scio enim quod redemptor meus vivit, et in novissimo die de terra surrecturus sum, et rursum circumdabor pelle mea, et in carne mea videbo Deum meum ('on the last day I shall rise from the earth, and again be clothed with my skin, and in my flesh I shall see my God').",
+      "confidence": 0.85,
+      "evidence": "Jerome introduces explicit bodily resurrection language ('on the last day,' 'I shall rise,' 'clothed again with my skin') absent from the Hebrew, which is textually corrupt and ambiguous. This Christianizes the passage into a clear proof-text for resurrection and the Redeemer Christ, shaping Western interpretation for a millennium (cf. Handel's Messiah).",
+      "evidence_plain": "Jerome's Latin translates Job's cryptic Hebrew lines into a clear Christian statement about resurrection on the last day and seeing Christ the Redeemer in the flesh, going well beyond what the Hebrew actually says.",
+      "scholarly_citations": [
+        "Kaminka, 'Septuaginta und Targum zu Proverbia und Hiob'",
+        "Kedar-Kopfstein, 'The Latin Translations' in Mikra, pp. 313-314",
+        "Clines, Job 1-20, pp. 457-466"
+      ],
+      "counter_arguments": "Jerome may reflect a genuine ancient Jewish-Christian interpretive tradition rather than free invention; the Hebrew text is so corrupt that any rendering is interpretive."
+    },
+    {
+      "reference": "Job 40:19 / 40:15-24 (Behemoth)",
+      "tradition": "LXX/Targum",
+      "revision_type": "eschatological_sharpening",
+      "mt_reading": "He is the first/chief of the ways of God (ראשית דרכי אל); only his Maker can bring near his sword.",
+      "revised_reading": "LXX: 'this is the chief (ἀρχή) of what the Lord made, made to be played with by his angels'; Targum identifies Behemoth and Leviathan as eschatological creatures reserved for the messianic banquet.",
+      "confidence": 0.7,
+      "evidence": "The Targum systematically transforms Behemoth and Leviathan into eschatological figures consumed by the righteous in the world to come, paralleling 1 Enoch 60 and b.B.Bat. 74b. This reflects proto-rabbinic apocalyptic exegesis projecting cosmic creatures into the eschaton.",
+      "evidence_plain": "The Aramaic translator turned the mysterious creatures Behemoth and Leviathan into beasts that the righteous will eat at the end-time messianic feast, an idea not present in the Hebrew.",
+      "scholarly_citations": [
+        "Mangan, The Targum of Job (Aramaic Bible 15)",
+        "Whitney, Two Strange Beasts, pp. 50-75"
+      ],
+      "counter_arguments": "The Targum's expansions may post-date the LXX significantly and reflect Amoraic rather than translator-level theology."
+    },
+    {
+      "reference": "Job 9:22",
+      "tradition": "LXX/Targum",
+      "revision_type": "softening",
+      "mt_reading": "It is all one; therefore I say: he destroys both the blameless and the wicked.",
+      "revised_reading": "LXX softens to a more general 'wrath destroys the great and powerful'; Targum adds qualifications attributing destruction to demonic agency or human responsibility.",
+      "confidence": 0.65,
+      "evidence": "Job's most theologically scandalous claim — that God indiscriminately destroys righteous and wicked alike — is consistently muted in the versions. The LXX's reduction of God's role and the Targum's introduction of mediating agents reflect discomfort with the Hebrew's theodicy problem.",
+      "evidence_plain": "Job's outrageous claim that God kills good and bad people alike is softened in the Greek and Aramaic versions, which spread the blame to other agents.",
+      "scholarly_citations": [
+        "Gard, The Exegetical Method of the Greek Translator of the Book of Job",
+        "Orlinsky, 'Studies in the Septuagint of Job', HUCA 28-36"
+      ],
+      "counter_arguments": "The shorter LXX could reflect parablepsis or a shorter Hebrew Vorlage rather than deliberate softening."
+    },
+    {
+      "reference": "Job 38:7",
+      "tradition": "LXX/Targum",
+      "revision_type": "harmonization",
+      "mt_reading": "When the morning stars sang together, and all the sons of God (בני אלהים) shouted for joy.",
+      "revised_reading": "LXX: 'all my angels (ἄγγελοί μου) praised me with a loud voice'; Targum: 'all the troops of angels'.",
+      "confidence": 0.85,
+      "evidence": "The mythologically loaded 'sons of God' (divine council members) is consistently rendered 'angels' in LXX and Targum, harmonizing the text with strict monotheism and avoiding any polytheistic resonance. The same systematic substitution occurs at Job 1:6, 2:1, and Genesis 6.",
+      "evidence_plain": "Wherever the Hebrew speaks of 'sons of God' as divine beings, the Greek and Aramaic translators substitute 'angels' to keep the text safely monotheistic.",
+      "scholarly_citations": [
+        "Olofsson, God Is My Rock, pp. 88-92",
+        "Hanson, 'The Song of the Sons of God'"
+      ],
+      "counter_arguments": "By the Hellenistic period 'sons of God' may have already been a fossilized term for angels in Jewish usage, making 'angels' an accurate rather than tendentious gloss."
+    },
+    {
+      "reference": "Job 2:9 (Job's wife)",
+      "tradition": "LXX",
+      "revision_type": "softening",
+      "mt_reading": "Then his wife said to him, 'Do you still hold fast your integrity? Bless [curse] God and die.'",
+      "revised_reading": "LXX expands into a long lament about her own suffering, lost children, and homelessness before the brief 'speak some word against the Lord and die'.",
+      "confidence": 0.75,
+      "evidence": "The LXX's expansion humanizes Job's wife, providing motivation that softens her shocking instruction to curse God. This is one of the largest LXX pluses in Job and reflects sympathetic theological-narrative reframing rather than translation.",
+      "evidence_plain": "The Greek version adds a long sympathetic speech for Job's wife explaining why she's so distraught, making her famous 'curse God and die' line less shocking.",
+      "scholarly_citations": [
+        "Cox, 'Job' in NETS",
+        "Legaspi, 'Job's Wives in the Testament of Job', JBL 127 (2008)"
+      ],
+      "counter_arguments": "The expansion may derive from a Hebrew/Aramaic haggadic source (cf. Testament of Job) rather than the translator's own softening."
+    }
+  ],
+  "dominant_strategy": "Softening dominates the LXX of Job, working in concert with eschatological sharpening. The Greek translator systematically tempers Job's impious outbursts and the book's theological scandal (the indiscriminate destruction of righteous and wicked, God's apparent cruelty), while simultaneously importing Hellenistic-Jewish resurrection theology to provide a doctrinal resolution the Hebrew refuses.",
+  "overall_assessment": "The textual history of Job uniquely combines aggressive softening (the LXX is ~17% shorter, omitting Job's most offensive complaints), eschatological supplementation (resurrection at 42:17, messianic Behemoth/Leviathan), and pious euphemism (the ברך/curse substitution, the tiqqun at 7:20). The tradents — both Hebrew scribes and Greek/Aramaic translators — were clearly uncomfortable with the book's theological extremity and its agnosticism about justice and afterlife. This pattern situates Job among the most heavily redacted wisdom books and reveals an interpretive community working hard to domesticate a text whose original force confronted divine justice without resolution. Jerome's Vulgate then Christianizes Job's ambiguous redeemer-passage (19:25-27) into the most influential resurrection proof-text in Western Christianity.",
+  "overall_plain": "Job was so theologically explosive that ancient translators heavily edited it: cutting offensive passages, replacing 'curse' with 'bless,' adding a resurrection ending, and turning Job's mysterious 'redeemer' into a clear prophecy of Christ. The original Hebrew Job is far more raw and theologically unsettling than any version most readers know.",
+  "bibcrit_assessment": {
+    "title": "Job's scandal tamed by translators across centuries",
+    "reasoning": "Job is the clearest case in the Hebrew Bible where translators acted as theological editors rather than mere linguists, and the cumulative effect across LXX, Targum, and Vulgate is to convert a radically open-ended theodicy into a proto-orthodox affirmation of resurrection and divine justice. The history of Job's text is therefore inseparable from the history of how Jews and Christians could not bear to leave its questions unanswered.",
+    "plain": "The Job we usually read is significantly tamer than the original Hebrew, because every ancient translator tried to soften its disturbing portrait of God and add hopeful endings the original lacks.",
+    "confidence": 0.88
+  },
+  "discovery_ready": false,
+  "reference": "Job",
+  "cached_at": "2026-05-09T21:47:45.104266",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v2"
+}

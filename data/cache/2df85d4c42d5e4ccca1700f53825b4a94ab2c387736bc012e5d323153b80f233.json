@@ -1,0 +1,125 @@
+{
+  "reference": "Daniel 9",
+  "subject": "Seventy weeks prophecy and chronological figures",
+  "figures": [
+    {
+      "name": "Years of Jeremiah's prophecy (Dan 9:2)",
+      "mt_value": 70,
+      "lxx_value": 70,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "All Greek witnesses (OG and Theodotion) agree with MT on 70 years; SP does not contain Daniel."
+    },
+    {
+      "name": "Seventy weeks decreed (Dan 9:24)",
+      "mt_value": 70,
+      "lxx_value": 70,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "MT 'shavu'im shiv'im' matches LXX 'hebdomādes hebdomēkonta'."
+    },
+    {
+      "name": "Seven weeks (Dan 9:25, first segment)",
+      "mt_value": 7,
+      "lxx_value": 7,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "Numerical agreement; divergence is in punctuation/syntax, not value."
+    },
+    {
+      "name": "Sixty-two weeks (Dan 9:25-26)",
+      "mt_value": 62,
+      "lxx_value": 62,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "Both traditions agree on 62 weeks though they segment the sequence differently."
+    },
+    {
+      "name": "One week of covenant (Dan 9:27)",
+      "mt_value": 1,
+      "lxx_value": 1,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "Agreement across MT, OG, and Theodotion."
+    },
+    {
+      "name": "Half-week / midpoint (Dan 9:27)",
+      "mt_value": 1,
+      "lxx_value": 1,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "MT 'chatzi ha-shavua' matches LXX 'hēmisu tēs hebdomados'; the figure ½ is identical."
+    }
+  ],
+  "systematic_analysis": {
+    "is_systematic": false,
+    "pattern": "Unlike Genesis 5/11 or Exodus 12:40, Daniel 9 exhibits no numerical divergence among the extant textual traditions: the seventy years, seventy weeks, 7+62+1 segmentation, and half-week are stable across MT, Old Greek, and Theodotion. Divergences in Daniel 9 lie in syntax, vocalization (notably the maqqef/athnach in v.25 distinguishing 7 weeks from 62), and theological glossing rather than in integers. The Samaritan Pentateuch is irrelevant since it transmits only the Torah.",
+    "pattern_plain": "The numbers in Daniel 9 are remarkably stable—all major manuscript traditions agree on 70 years, 70 weeks, and the 7+62+1 breakdown. The disagreements among scholars concern how to punctuate and interpret these numbers, not what the numbers are."
+  },
+  "theories": [
+    {
+      "name": "Independent stable transmission",
+      "slug": "independent_traditions",
+      "score": 0.85,
+      "confidence": 0.88,
+      "summary": "The Old Greek, Theodotion, 4QDan manuscripts, and MT independently preserve identical numerical values in Daniel 9, indicating that the figures were fixed early and transmitted faithfully across divergent textual streams. Because Daniel's numbers carry apocalyptic-symbolic weight (Jeremiah's 70 multiplied by 7), scribes treated them as inviolable.",
+      "summary_plain": "All the ancient versions agree on the numbers in Daniel 9 because the figures were considered sacred prophecy and copied carefully.",
+      "supporting_evidence": [
+        "4QDan-a, 4QDan-b, and 4QDan-c fragments confirm MT numerical readings against any variant tradition.",
+        "Both Old Greek (highly paraphrastic in Daniel) and Theodotion preserve the same integers despite otherwise divergent translation styles.",
+        "Josephus (Ant. 10.11.7; 11.8.5) cites the same 70-week framework, attesting first-century stability.",
+        "The numbers are theologically loaded (70x7 echoing Jer 25:11-12; 29:10) and thus resistant to scribal alteration."
+      ],
+      "weaknesses": [
+        "Some Old Greek expansions in 9:24-27 show interpretive freedom, suggesting the translator could have modified numbers if motivated.",
+        "Stability in Daniel does not preclude earlier pre-textual numerical fluctuation now lost to us."
+      ]
+    },
+    {
+      "name": "Minor scribal/syntactic variation",
+      "slug": "scribal_error",
+      "score": 0.35,
+      "confidence": 0.5,
+      "summary": "While integers are stable, the Masoretic athnach in 9:25 separating 'seven weeks' from 'sixty-two weeks' versus the LXX/Theodotion's continuous reading represents a transmissional choice that affects chronological calculation. This is not a numerical error per se but a punctuational divergence with major exegetical consequences.",
+      "summary_plain": "The numbers themselves match, but where ancient scribes placed the pause in the sentence changed how the timeline is calculated.",
+      "supporting_evidence": [
+        "MT athnach divides 7+62; LXX/Vulgate/Theodotion read 7 and 62 as a continuous 69-week span.",
+        "Christian chronographers (Africanus, Eusebius) follow the LXX reading; rabbinic tradition follows MT segmentation.",
+        "Punctuation marks postdate the consonantal text, leaving room for legitimate alternative parsing."
+      ],
+      "weaknesses": [
+        "This is a syntactic, not numerical, divergence and lies outside the strict scope of textual-critical numerical variation.",
+        "No manuscript actually changes the integers."
+      ]
+    },
+    {
+      "name": "Theological motivation in segmentation",
+      "slug": "theological_motivation",
+      "score": 0.3,
+      "confidence": 0.45,
+      "summary": "The differing punctuation traditions in 9:25 may reflect theological motivations—Christian readings unifying 69 weeks to terminate at Jesus, rabbinic readings separating to terminate the first 7 at Cyrus/Zerubbabel. However, since the integers themselves never shift, this affects interpretation rather than the textual base.",
+      "summary_plain": "Different religious communities read the numbers in ways that supported their theology, but they did not change the numbers themselves.",
+      "supporting_evidence": [
+        "Patristic exegesis universally collapses 7+62 into 69 to reach a messianic terminus.",
+        "Masoretic accentuation may preserve an anti-Christian polemical reading.",
+        "Targum Jonathan and rabbinic sources align with MT segmentation."
+      ],
+      "weaknesses": [
+        "Theological motivation cannot be demonstrated to have altered any integer in Daniel 9.",
+        "The accentuation system is medieval and may simply preserve older oral tradition without polemical intent."
+      ]
+    }
+  ],
+  "overall_assessment": "Daniel 9 stands in striking contrast to Genesis 5, Genesis 11, and Exodus 12:40, where MT/LXX/SP diverge by centuries. Here, all extant witnesses—MT, Old Greek, Theodotion, and Qumran Daniel manuscripts—transmit identical integers, indicating that the seventy-weeks numerical framework was fixed before the textual traditions bifurcated. The substantive disagreements concern syntactic segmentation (7+62 vs. 69) and interpretive identification of the 'anointed one,' not the numbers themselves. This case demonstrates that numerical instability in the Hebrew Bible is not uniform: apocalyptic-prophetic numbers in Daniel were guarded with a fidelity not extended to patriarchal lifespans.",
+  "overall_plain": "Unlike the famous disagreements over patriarchal ages in Genesis, the numbers in Daniel 9 are identical in every ancient version. Scholars argue about how to punctuate and interpret them, but the integers themselves are stable across the whole manuscript tradition.",
+  "bibcrit_assessment": {
+    "title": "Stable integers, contested punctuation in Daniel",
+    "reasoning": "The most significant implication is that scribal communities discriminated between types of numbers: lifespans and genealogical totals were subject to systematic recalibration, but apocalyptic prophecy numbers were treated as inviolable revelation. This selective fidelity in transmission undermines any monolithic theory of numerical corruption and supports a genre-sensitive model of scribal practice. Daniel 9's stability is itself a control case proving that scribes could and did preserve numbers exactly when they wished to.",
+    "plain": "Ancient scribes treated different kinds of numbers differently: prophetic numbers were preserved exactly, while genealogical numbers were sometimes adjusted. Daniel 9 shows what faithful numerical transmission looks like.",
+    "confidence": 0.82
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T21:30:17.740003",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v3"
+}

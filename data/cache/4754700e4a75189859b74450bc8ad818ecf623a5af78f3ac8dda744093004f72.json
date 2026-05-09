@@ -1,0 +1,103 @@
+{
+  "passage": "Psalm 136:1-26",
+  "structure_detected": true,
+  "structure_type": "concentric",
+  "confidence_note": "Strong evidence: the psalm exhibits a clear concentric arrangement around the Exodus/Red Sea pivot, framed by liturgical calls to thanksgiving, with each line bound by the refrain 'ki le'olam hasdo'.",
+  "elements": [
+    {
+      "label": "A",
+      "verses": "136:1-3",
+      "summary": "Threefold call to give thanks to YHWH, God of gods, Lord of lords.",
+      "text_excerpt": "הוֹדוּ לַיהוָה כִּי־טוֹב",
+      "confidence": 0.95
+    },
+    {
+      "label": "B",
+      "verses": "136:4-9",
+      "summary": "God as Creator: wonders, heavens, earth, lights (sun, moon, stars).",
+      "text_excerpt": "לְעֹשֵׂה נִפְלָאוֹת גְּדֹלוֹת לְבַדּוֹ",
+      "confidence": 0.92
+    },
+    {
+      "label": "C",
+      "verses": "136:10-12",
+      "summary": "Striking Egypt and bringing Israel out with strong hand and outstretched arm.",
+      "text_excerpt": "לְמַכֵּה מִצְרַיִם בִּבְכוֹרֵיהֶם",
+      "confidence": 0.9
+    },
+    {
+      "label": "X",
+      "verses": "136:13-15",
+      "summary": "Dividing the Red Sea, leading Israel through, casting Pharaoh into the sea.",
+      "text_excerpt": "לְגֹזֵר יַם־סוּף לִגְזָרִים",
+      "confidence": 0.93
+    },
+    {
+      "label": "C'",
+      "verses": "136:16-20",
+      "summary": "Leading through wilderness and striking great kings (Sihon, Og).",
+      "text_excerpt": "לְמוֹלִיךְ עַמּוֹ בַּמִּדְבָּר",
+      "confidence": 0.9
+    },
+    {
+      "label": "B'",
+      "verses": "136:21-25",
+      "summary": "Giving the land as inheritance, remembering in low estate, giving food to all flesh — God as sustainer of creation and people.",
+      "text_excerpt": "וְנָתַן אַרְצָם לְנַחֲלָה",
+      "confidence": 0.85
+    },
+    {
+      "label": "A'",
+      "verses": "136:26",
+      "summary": "Closing call to give thanks to the God of heaven.",
+      "text_excerpt": "הוֹדוּ לְאֵל הַשָּׁמָיִם",
+      "confidence": 0.94
+    }
+  ],
+  "pivot": {
+    "label": "X",
+    "verses": "136:13-15",
+    "summary": "The dividing of the Red Sea stands at the structural and theological center, the climactic act of redemption.",
+    "theological_weight": "The Red Sea crossing is presented as the paradigmatic act of YHWH's hesed, where creation power (dividing waters, echoing Gen 1) and redemptive power converge. Placed at the center, it interprets all surrounding acts — creation, plagues, conquest, provision — as expressions of the same covenantal steadfast love."
+  },
+  "correspondences": [
+    {
+      "pair": [
+        "A",
+        "A'"
+      ],
+      "evidence": "Inclusio formed by 'hodu' (give thanks) imperatives; A invokes YHWH/Elohim/Adonai, A' invokes 'El ha-shamayim'.",
+      "confidence": 0.95
+    },
+    {
+      "pair": [
+        "B",
+        "B'"
+      ],
+      "evidence": "Creation/provision frame: B describes God making heavens, earth, and lights; B' describes God giving land and food to 'all flesh' (kol basar), echoing universal creation theme.",
+      "confidence": 0.82
+    },
+    {
+      "pair": [
+        "C",
+        "C'"
+      ],
+      "evidence": "Both units feature 'lemakkeh' (to him who struck) — striking Egyptian firstborn (C) parallels striking great/famous kings (C'); both involve deliverance from oppressors.",
+      "confidence": 0.9
+    }
+  ],
+  "overall_confidence": 0.88,
+  "methodology_citations": "Dorsey, Literary Structure of the Old Testament (1999), ch. 13 on Psalms; Auffret, 'Note sur la structure littéraire du Psaume 136'; Allen, WBC Psalms 101-150.",
+  "theological_significance": "The concentric structure places the Red Sea deliverance at the heart of Israel's confession, interpreting both creation (B) and conquest/provision (B') as acts of redemption. The recurring refrain 'ki le'olam hasdo' transforms each historical act into a witness to enduring covenant love, while the framing imperatives (hodu) make the entire psalm a liturgical inclusio of thanksgiving. Creation and redemption are thus theologically unified through hesed.",
+  "scholarly_citations": "Pierre Auffret has argued for a concentric reading of Ps 136 around the Red Sea pericope; Leslie Allen (WBC) and Frank-Lothar Hossfeld/Erich Zenger (Hermeneia) similarly note the chiastic-historical patterning bracketed by creation and provision.",
+  "bibcrit_hypothesis": {
+    "title": "Hesed as Cosmic-Redemptive Hinge at Yam Suph",
+    "reasoning": "The placement of the Red Sea at the center, flanked by creation (B) and land/food provision (B'), suggests the psalmist deliberately constructed Exodus deliverance as the hermeneutical key linking cosmogony to providence. The 'gozer' (divider) language at the pivot consciously echoes Genesis 1's separations, making the Red Sea a re-creation event. Hesed thus functions not merely as covenant loyalty but as the metaphysical principle uniting creation and redemption in a single liturgical confession.",
+    "confidence": 0.78
+  },
+  "discovery_ready": true,
+  "reference": "Psalm 136",
+  "cached_at": "2026-05-09T21:53:55.486785",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v1"
+}

@@ -1,0 +1,135 @@
+{
+  "reference": "Micah 5:2",
+  "total_citations_found": 6,
+  "period_summary": "Citations are concentrated in the 2nd–4th centuries, primarily in apologetic and polemical contexts engaging Jewish interlocutors about messianic prophecy. The reception is shaped almost entirely by Matthew 2:6, which itself diverges from both MT and LXX, producing a complex citation history where fathers oscillate between the gospel form and the prophetic source.",
+  "citations": [
+    {
+      "father": "Justin Martyr",
+      "dates_ce": "c. 100–165",
+      "region": "Syria/Rome",
+      "work": "Dialogue with Trypho",
+      "chapter_section": "ch. 78",
+      "cited_text": "And thou Bethlehem, the land of Judah, art by no means least among the leaders of Judah; for out of thee shall come forth a leader who shall feed my people.",
+      "text_form": "mixed",
+      "text_form_confidence": 0.85,
+      "text_form_note": "Justin reproduces the Matthean form ('land of Judah,' 'by no means least,' 'leaders of Judah') rather than LXX Micah ('house of Ephrathah,' 'least to be among the thousands'). This is the gospel citation imported into a prophetic argument.",
+      "theological_use": "Justin uses the prophecy to prove to Trypho that Jesus' birth in Bethlehem fulfills messianic prophecy, defending the historicity of the nativity against Jewish skepticism.",
+      "transmission_implication": "Demonstrates that by the mid-2nd century the Matthean text form had effectively replaced the LXX/MT form of Micah 5:2 in Christian apologetic memory."
+    },
+    {
+      "father": "Irenaeus of Lyons",
+      "dates_ce": "c. 130–202",
+      "region": "Gaul/Asia Minor",
+      "work": "Against Heresies",
+      "chapter_section": "3.9.2",
+      "cited_text": "And thou, Bethlehem of Judea, art not the least among the princes of Judah, for out of thee shall come a Governor, who shall rule my people Israel.",
+      "text_form": "mixed",
+      "text_form_confidence": 0.8,
+      "text_form_note": "Irenaeus follows the Matthean form ('not the least,' 'princes of Judah') rather than LXX Micah, reflecting reliance on the gospel quotation rather than independent consultation of Micah.",
+      "theological_use": "Cited as proof against gnostic/docetic christologies that Christ's birth in Bethlehem was prophetically determined, anchoring incarnation in OT prophecy.",
+      "transmission_implication": "Confirms broad western Christian dependence on the Matthean recension of Micah 5:2 by the late 2nd century."
+    },
+    {
+      "father": "Tertullian",
+      "dates_ce": "c. 155–220",
+      "region": "Carthage",
+      "work": "Against Marcion",
+      "chapter_section": "4.7; cf. Adv. Iud. 13",
+      "cited_text": "And thou, Bethlehem, house of Ephratah, art not the least among the thousands of Judah; out of thee shall come forth unto me a leader who shall rule my people Israel.",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.7,
+      "text_form_note": "Tertullian preserves 'house of Ephratah' and 'thousands of Judah,' reflecting the LXX/Hebrew Micah text rather than the Matthean reformulation, suggesting access through an Old Latin translation of Micah.",
+      "theological_use": "Tertullian uses Micah against both Marcion (to show OT-NT continuity) and against Jews (to argue the Messiah has already come, since Bethlehem is now desolate).",
+      "transmission_implication": "Indicates that an Old Latin version reflecting LXX Micah circulated in North Africa alongside the Matthean form."
+    },
+    {
+      "father": "Origen",
+      "dates_ce": "c. 185–254",
+      "region": "Alexandria/Caesarea",
+      "work": "Against Celsus",
+      "chapter_section": "1.51",
+      "cited_text": "And thou, Bethlehem, house of Ephrathah, art the least that thou shouldest be among the thousands of Judah; out of thee shall come forth to me one to be ruler in Israel.",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.9,
+      "text_form_note": "Origen explicitly cites Micah (not Matthew) and reproduces the LXX form including 'Ephrathah' and 'thousands,' though he discusses the variation with the Matthean version elsewhere.",
+      "theological_use": "Origen uses Micah against Celsus to demonstrate that Jesus' birthplace was prophetically anticipated, appealing to the consensus of Jews and Christians on the prophecy's reference.",
+      "transmission_implication": "Origen's awareness of the discrepancy between Matthew and LXX Micah shows scholarly recognition of textual divergence already in the early 3rd century."
+    },
+    {
+      "father": "Eusebius of Caesarea",
+      "dates_ce": "c. 260–339",
+      "region": "Caesarea",
+      "work": "Demonstratio Evangelica",
+      "chapter_section": "7.2",
+      "cited_text": "And thou, Bethlehem, house of Ephratha, art few in number to be among the thousands of Judah; out of thee shall come forth for me a ruler, to be a leader in Israel; and his goings forth are from the beginning, from the days of eternity.",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.9,
+      "text_form_note": "Eusebius cites the full LXX text including the second clause about pre-eternal 'goings forth,' which he leverages christologically; the wording matches Göttingen LXX Micah closely.",
+      "theological_use": "Eusebius reads 'goings forth from the days of eternity' as a proof of the eternal pre-existence of the Logos, integrating the prophecy into Nicene-era christology.",
+      "transmission_implication": "Confirms a stable LXX text of Micah 5:2 in Caesarean scholarship and exhibits the patristic exploitation of the LXX's distinctive temporal phrasing."
+    },
+    {
+      "father": "Jerome",
+      "dates_ce": "c. 347–420",
+      "region": "Bethlehem/Rome",
+      "work": "Commentary on Micah",
+      "chapter_section": "Book 2, on 5:2",
+      "cited_text": "And thou, Bethlehem Ephrathah, art little among the thousands of Judah; out of thee shall come forth unto me he that is to be ruler in Israel, and his goings forth are from the beginning, from the days of eternity.",
+      "text_form": "mixed",
+      "text_form_confidence": 0.95,
+      "text_form_note": "Jerome explicitly compares Hebrew, LXX, and Matthean forms, noting the discrepancies; his Vulgate renders from Hebrew while his commentary discusses all witnesses, making him the most textually self-conscious witness.",
+      "theological_use": "Jerome harmonizes Matthew's variation as evangelical paraphrase rather than error, and applies the eternal 'goings forth' to the divine generation of the Son.",
+      "transmission_implication": "Jerome's tri-textual awareness (Hebrew, LXX, Matthean) marks the maturation of patristic textual criticism on this verse and preserves the variants for later transmission."
+    }
+  ],
+  "text_form_distribution": {
+    "closer_to_mt": 0,
+    "closer_to_lxx": 3,
+    "mixed": 3,
+    "independent": 0,
+    "uncertain": 0
+  },
+  "transmission_synthesis": "The patristic citation history of Micah 5:2 is bifurcated by the influence of Matthew 2:6, which contains a non-LXX, non-MT paraphrase ('land of Judah,' 'by no means least,' 'rulers'). Apologetic writers (Justin, Irenaeus) typically cite the Matthean form, while exegetes engaging the prophetic book directly (Tertullian, Origen, Eusebius, Jerome) preserve the LXX form including the distinctive 'days of eternity' clause exploited christologically. By the time of Origen and especially Jerome, fathers became consciously aware of the divergence and developed harmonization strategies. The evidence supports two parallel, well-attested text streams (LXX-Micah and Matthean-Micah) circulating without contamination of the underlying LXX manuscript tradition.",
+  "transmission_synthesis_plain": "Early Christians cited Micah 5:2 in two different forms: one taken from the Gospel of Matthew (which paraphrases the verse) and another from the standard Greek Old Testament. Apologists arguing about Jesus' birthplace usually used Matthew's wording, while scholarly commentators on the book of Micah used the older Greek translation. By the time of Jerome (early 5th century), Christian scholars openly discussed the discrepancy.",
+  "notable_variants": [
+    {
+      "reading": "'and his goings forth are from the beginning, from the days of eternity'",
+      "fathers_using_it": [
+        "Eusebius",
+        "Jerome",
+        "Origen"
+      ],
+      "text_form_alignment": "closer_to_lxx",
+      "significance": "This second clause, absent from Matthew's citation, became a key proof-text for the eternal generation of the Son in Nicene and post-Nicene theology, demonstrating how LXX-specific phrasing shaped Trinitarian exegesis."
+    },
+    {
+      "reading": "'land of Judah' (γῆ Ἰούδα) instead of 'house of Ephrathah'",
+      "fathers_using_it": [
+        "Justin",
+        "Irenaeus"
+      ],
+      "text_form_alignment": "mixed",
+      "significance": "The Matthean substitution displaced the LXX reading in popular Christian memory and shows how gospel quotations could overwrite their OT sources in apologetic discourse."
+    },
+    {
+      "reading": "'by no means least' vs. LXX 'least to be / few in number'",
+      "fathers_using_it": [
+        "Justin",
+        "Irenaeus",
+        "Jerome (discusses)"
+      ],
+      "text_form_alignment": "mixed",
+      "significance": "The semantic reversal between Matthew (positive: 'by no means least') and LXX/MT (apparent negative: 'small/few') generated extensive patristic exegetical reflection, especially in Jerome, on prophetic versus evangelical sense."
+    }
+  ],
+  "bibcrit_assessment": {
+    "title": "Matthew's paraphrase competes with LXX Micah",
+    "reasoning": "The most striking finding is that patristic citation of Micah 5:2 splits cleanly along genre lines: apologetic citations follow Matthew's idiosyncratic paraphrase, while commentaries on Micah preserve the LXX text. This bifurcation shows that gospel quotations of OT texts could create parallel, competing text-forms in Christian memory without corrupting the underlying LXX manuscript transmission, a phenomenon Jerome was the first to analyze systematically.",
+    "plain": "Early Christian writers actually used two different versions of this famous Bethlehem prophecy depending on what they were writing: Matthew's looser version when arguing about Jesus, and the original Greek Old Testament version when explaining the book of Micah itself.",
+    "confidence": 0.85
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T22:08:33.548209",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v3"
+}

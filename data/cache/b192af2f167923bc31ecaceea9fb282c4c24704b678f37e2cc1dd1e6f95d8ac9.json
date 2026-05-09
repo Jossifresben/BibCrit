@@ -1,0 +1,132 @@
+{
+  "reference": "Numbers 35",
+  "subject": "Levitical cities and cities of refuge",
+  "figures": [
+    {
+      "name": "Total Levitical cities given",
+      "mt_value": 48,
+      "lxx_value": 48,
+      "sp_value": 48,
+      "divergence_type": "none",
+      "note": "All three traditions agree on the total of 48 Levitical cities (Num 35:7)."
+    },
+    {
+      "name": "Cities of refuge",
+      "mt_value": 6,
+      "lxx_value": 6,
+      "sp_value": 6,
+      "divergence_type": "none",
+      "note": "All traditions agree on six cities of refuge (Num 35:6, 13)."
+    },
+    {
+      "name": "Cities of refuge beyond the Jordan",
+      "mt_value": 3,
+      "lxx_value": 3,
+      "sp_value": 3,
+      "divergence_type": "none",
+      "note": "All witnesses agree on three cities east of the Jordan (Num 35:14)."
+    },
+    {
+      "name": "Cities of refuge in Canaan",
+      "mt_value": 3,
+      "lxx_value": 3,
+      "sp_value": 3,
+      "divergence_type": "none",
+      "note": "All witnesses agree on three cities in Canaan proper (Num 35:14)."
+    },
+    {
+      "name": "Pasture cubits around city (outer measure)",
+      "mt_value": 2000,
+      "lxx_value": 2000,
+      "sp_value": 2000,
+      "divergence_type": "none",
+      "note": "The 2,000-cubit measurement on each side (Num 35:5) is consistent across traditions."
+    },
+    {
+      "name": "Pasture cubits from wall (inner measure)",
+      "mt_value": 1000,
+      "lxx_value": 2000,
+      "sp_value": 1000,
+      "divergence_type": "significant",
+      "note": "LXX reads 2,000 cubits in v. 4 where MT and SP read 1,000, creating an internal contradiction with v. 5 in the Greek text."
+    },
+    {
+      "name": "Witnesses required for capital sentence",
+      "mt_value": 1,
+      "lxx_value": 1,
+      "sp_value": 1,
+      "divergence_type": "none",
+      "note": "All traditions agree: no person shall be put to death on the testimony of one witness (Num 35:30)."
+    }
+  ],
+  "systematic_analysis": {
+    "is_systematic": false,
+    "pattern": "Numbers 35 shows remarkable numerical stability across MT, LXX, and SP, with the sole substantive divergence being the LXX's '2,000 cubits' in v. 4 against the '1,000 cubits' of MT and SP. This is an isolated discrepancy rather than a systematic pattern, and it produces an internal mathematical contradiction within the LXX itself (vv. 4 and 5 cannot both describe coherent geometry at 2,000 cubits). No pattern of inflation, deflation, or harmonization runs through the chapter as a whole.",
+    "pattern_plain": "Almost all the numbers in Numbers 35 match across the three ancient versions. The one exception is a single measurement where the Greek translation says 2,000 cubits instead of 1,000."
+  },
+  "theories": [
+    {
+      "name": "Scribal error in LXX v. 4",
+      "slug": "scribal_error",
+      "score": 0.78,
+      "confidence": 0.78,
+      "summary": "The LXX reading of 2,000 cubits in Num 35:4 is most plausibly explained as a scribal assimilation to the 2,000-cubit figure in the immediately following verse. Such vertical harmonization between adjacent verses is a well-documented mechanism in Greek transmission, and the resulting geometric incoherence in the LXX argues against deliberate revision. MT and SP preserve the original distinction between the inner 1,000-cubit pasture radius and the outer 2,000-cubit boundary.",
+      "summary_plain": "The Greek copyist most likely accidentally repeated the '2,000' from the next verse, creating a contradiction. The Hebrew and Samaritan texts preserve the original two different measurements.",
+      "supporting_evidence": [
+        "The LXX figure produces an internal contradiction with v. 5, which scribes would not deliberately introduce.",
+        "Vertical assimilation to nearby numbers is a well-attested mechanism in LXX transmission.",
+        "MT and SP agree against LXX, indicating the Hebrew Vorlage tradition uniformly read 1,000.",
+        "The geometry of vv. 4–5 only coheres if the inner measure (1,000) differs from the outer (2,000)."
+      ],
+      "weaknesses": [
+        "Some commentators (e.g., Keil) attempted to harmonize the LXX reading as describing total diameter rather than radius.",
+        "Without Greek manuscript variation showing 1,000, the error must be posited at an early stage."
+      ]
+    },
+    {
+      "name": "Independent textual traditions",
+      "slug": "independent_traditions",
+      "score": 0.35,
+      "confidence": 0.35,
+      "summary": "The LXX may reflect a genuinely different Hebrew Vorlage that read 2,000 in v. 4, representing an alternative legal-geometric tradition about Levitical pasturelands. Qumran evidence elsewhere shows that variant numerical Vorlagen circulated in the Second Temple period.",
+      "summary_plain": "The Greek translator may have been working from a different Hebrew copy that genuinely read 2,000. Different versions of the Bible existed side by side in antiquity.",
+      "supporting_evidence": [
+        "Multiple Hebrew text-types are attested at Qumran for various Pentateuchal passages.",
+        "LXX translators generally rendered numerals faithfully from their Vorlage."
+      ],
+      "weaknesses": [
+        "No Hebrew manuscript evidence supports a 2,000 reading in v. 4.",
+        "The reading creates internal incoherence, which an independent tradition would presumably have avoided.",
+        "SP, which often preserves variant numerical traditions, agrees with MT here."
+      ]
+    },
+    {
+      "name": "Theological/legal motivation",
+      "slug": "theological_motivation",
+      "score": 0.15,
+      "confidence": 0.15,
+      "summary": "One could argue the LXX enlarged the pasture to magnify Levitical landholdings, but there is no broader pattern of pro-Levitical inflation in the Greek Pentateuch and the change is too isolated to support such a theory.",
+      "summary_plain": "Some might suggest the Greek version expanded the Levites' land on purpose, but there is little evidence for such a motive.",
+      "supporting_evidence": [
+        "LXX occasionally shows expansive tendencies in cultic legislation."
+      ],
+      "weaknesses": [
+        "No corresponding enlargements appear elsewhere in the chapter or in parallel Levitical texts.",
+        "The internal contradiction this creates undermines any deliberate ideological purpose.",
+        "A single isolated change is methodologically insufficient to posit theological motivation."
+      ]
+    }
+  ],
+  "overall_assessment": "Numbers 35 is one of the most numerically stable chapters in the Pentateuch across MT, LXX, and SP, with agreement on the 48 Levitical cities, the 6 cities of refuge, and the 3+3 geographic distribution. The lone substantive divergence is the LXX's '2,000 cubits' in v. 4, which contradicts the surrounding geometry of v. 5 and is best explained as a scribal assimilation to the adjacent number. This case stands in marked contrast to the systematic chronological divergences in Genesis 5 and 11, demonstrating that not all numerical variants reflect deep recensional differences. The chapter thus offers a useful control: where no theological or chronological stakes are involved, the three traditions transmit numbers with high fidelity.",
+  "overall_plain": "The Hebrew, Greek, and Samaritan versions of Numbers 35 almost completely agree on every number. The only real difference is one measurement where the Greek says 2,000 cubits instead of 1,000, which most scholars regard as a simple copying mistake.",
+  "bibcrit_assessment": {
+    "title": "Stable numerals expose isolated Greek copying slip",
+    "reasoning": "The near-total numerical agreement in Numbers 35 across all three traditions is itself significant: it shows that scribes faithfully transmitted numbers when no chronological or theological systems were at stake. The single LXX divergence in v. 4, producing geometric incoherence with v. 5, illustrates how even careful traditions occasionally suffer vertical assimilation between adjacent figures—a microcosm of error mechanisms that, when compounded systematically, produced the larger divergences seen in Genesis chronologies.",
+    "plain": "The fact that nearly every number matches in this chapter shows ancient scribes were usually careful with numbers. The one Greek mistake here is the kind of simple slip that, repeated many times, could explain bigger differences elsewhere in the Bible.",
+    "confidence": 0.78
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T21:35:55.904717",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v3"
+}

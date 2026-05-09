@@ -1,0 +1,172 @@
+{
+  "scope": "Genesis",
+  "scope_type": "book",
+  "summary": "Theological revision in Genesis is dominated by anthropomorphism avoidance (especially in the Targums and to a lesser degree the LXX), harmonization of chronological and ethical difficulties (notably in SP and LXX), and softening of patriarchal misconduct. The Vulgate introduces a notable messianic heightening at Gen 3:15 (ipsa conteret), while Targum Onqelos systematically inserts the Memra and Shekinah to mediate divine presence.",
+  "summary_plain": "Ancient translators of Genesis often softened descriptions of God acting like a human, smoothed over contradictions in dates and numbers, and toned down embarrassing stories about the patriarchs. The Latin Vulgate also introduced a famous Marian/messianic reading at Genesis 3:15.",
+  "revisions": [
+    {
+      "reference": "Genesis 3:15",
+      "tradition": "Vulgate",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "הוא ישופך ראש — 'he (the seed) shall bruise your head' (masculine pronoun referring to zeraʿ)",
+      "revised_reading": "ipsa conteret caput tuum — 'she shall crush your head' (feminine pronoun referring to the woman)",
+      "confidence": 0.82,
+      "evidence": "The Hebrew הוא is masculine, agreeing with זרע ('seed'), and the LXX renders αὐτός (masculine), agreeing with σπέρμα by constructio ad sensum. Jerome's ipsa is grammatically anomalous (semen is neuter in Latin) and reflects either a deliberate Mariological reading or, as Quentin and Kedar argue, a textual corruption Jerome himself may not have written; nonetheless the reading became the basis of the medieval protoevangelium and Marian iconography.",
+      "evidence_plain": "The Hebrew and Greek say 'he' (the offspring) will crush the serpent's head, but the Latin Vulgate as transmitted says 'she' — read by the Church as referring to Mary. This became the basis of the 'protoevangelium' Marian tradition.",
+      "scholarly_citations": [
+        "Kedar, 'The Latin Translations,' in Mikra, pp. 313–314",
+        "Lewis, 'The Woman's Seed (Gen 3:15),' JETS 34 (1991): 299–319"
+      ],
+      "counter_arguments": "Many manuscripts of the Vulgate read ipse, and Jerome's own commentary on Genesis presupposes a masculine reference; the ipsa may be a later scribal corruption rather than Jerome's intentional theological revision."
+    },
+    {
+      "reference": "Genesis 1:2",
+      "tradition": "Targum",
+      "revision_type": "anthropomorphism_avoidance",
+      "mt_reading": "ורוח אלהים מרחפת על פני המים — 'the Spirit/wind of God hovering over the face of the waters'",
+      "revised_reading": "Targum Onqelos: 'and a wind from before the Lord was blowing'; Targum Neofiti inserts 'a spirit of mercy from before the Lord'",
+      "confidence": 0.78,
+      "evidence": "The Targumic 'from before the Lord' (מן קדם ה׳) is a stock buffer phrase that distances God from direct contact with creation. This is part of Onqelos's systematic policy documented by Klein, removing direct predications of divine activity in physical space.",
+      "evidence_plain": "The Targums avoid saying God's Spirit literally hovered over the water, instead saying a wind came 'from before the Lord' — a polite distancing formula.",
+      "scholarly_citations": [
+        "Klein, Anthropomorphisms and Anthropopathisms in the Targumim, pp. 66–73",
+        "Chester, Divine Revelation and Divine Titles in the Pentateuchal Targumim"
+      ],
+      "counter_arguments": "רוח can legitimately mean 'wind' rather than 'spirit,' so the Targum may simply reflect a defensible philological choice rather than theological revision."
+    },
+    {
+      "reference": "Genesis 2:2",
+      "tradition": "LXX",
+      "revision_type": "harmonization",
+      "mt_reading": "ויכל אלהים ביום השביעי — 'God finished on the seventh day his work'",
+      "revised_reading": "καὶ συνετέλεσεν ὁ θεὸς ἐν τῇ ἡμέρᾳ τῇ ἕκτῃ — 'God finished on the sixth day' (also SP and Peshitta)",
+      "confidence": 0.88,
+      "evidence": "The MT creates a halakhic difficulty: God appears to work on the Sabbath. LXX, SP, and Peshitta all read 'sixth,' harmonizing with the prohibition of Sabbath labor. Rabbinic literature (Gen. Rab. 10:9) preserves awareness of the problem, indicating the MT reading is lectio difficilior and the variant traditions reflect coordinated theological correction.",
+      "evidence_plain": "The Hebrew says God 'finished' his work on the seventh day, which sounds like he worked on the Sabbath. The Greek, Samaritan, and Syriac versions all change it to 'sixth day' to fix this problem.",
+      "scholarly_citations": [
+        "Tov, Textual Criticism of the Hebrew Bible, 3rd ed., pp. 82–83",
+        "Hendel, The Text of Genesis 1–11, pp. 31–34"
+      ],
+      "counter_arguments": "The MT can be read as 'God had finished' (pluperfect), which removes the difficulty; the variant could thus be a translator's clarification rather than theological revision, though the cross-traditional agreement suggests otherwise."
+    },
+    {
+      "reference": "Genesis 5 / Genesis 11 (genealogies)",
+      "tradition": "LXX",
+      "revision_type": "harmonization",
+      "mt_reading": "Patriarchal lifespans and begetting ages following one chronological scheme",
+      "revised_reading": "Systematically altered ages (often +100 years before begetting) producing a different chronology; SP follows yet a third scheme",
+      "confidence": 0.8,
+      "evidence": "The three-way divergence (MT/SP/LXX) in antediluvian and postdiluvian chronologies is too systematic to be scribal error. Hendel and Klein argue the LXX (or its Vorlage) recalibrated to push the flood and creation into a schema compatible with Hellenistic chronography, while SP harmonized to keep all patriarchs dying before the flood.",
+      "evidence_plain": "The Hebrew, Greek, and Samaritan versions give very different ages for the patriarchs. These differences are systematic, not random, and reflect deliberate adjustments to make the chronology fit each tradition's worldview.",
+      "scholarly_citations": [
+        "Hendel, The Text of Genesis 1–11, pp. 61–80",
+        "Klein, 'Archaic Chronologies and the Textual History of the Old Testament,' HTR 67 (1974): 255–263"
+      ],
+      "counter_arguments": "Some scholars (e.g., Wevers) consider the MT itself the secondary tradition, in which case the LXX is preserving an older reading rather than revising."
+    },
+    {
+      "reference": "Genesis 6:6",
+      "tradition": "Targum",
+      "revision_type": "anthropomorphism_avoidance",
+      "mt_reading": "וינחם ה׳ כי עשה את האדם... ויתעצב אל לבו — 'And the LORD repented that he had made man, and was grieved in his heart'",
+      "revised_reading": "Targum Onqelos: 'And the Lord turned in his Memra... and said in his Memra to break their strength according to his will'",
+      "confidence": 0.9,
+      "evidence": "Onqelos eliminates both the divine repentance and the divine grief, replacing them with Memra circumlocutions and a decretal formula. This is paradigmatic of Onqelos's avoidance of attributing change of mind or emotion to God, a concern shared by later rabbinic and philosophical tradition (cf. Maimonides, Guide I.26).",
+      "evidence_plain": "The Hebrew says God regretted creating humans and felt grief — emotions that seemed unworthy of God to later interpreters. The Targum rewrites it so God doesn't change his mind or feel sad.",
+      "scholarly_citations": [
+        "Klein, Anthropomorphisms and Anthropopathisms in the Targumim, pp. 86–89",
+        "Smolar and Aberbach, Studies in Targum Jonathan to the Prophets, pp. 132–138 (parallel principle)"
+      ],
+      "counter_arguments": "The Memra usage could be primarily linguistic/literary convention rather than active theological revision, though the suppression of עצב ('grieved') is hard to explain otherwise."
+    },
+    {
+      "reference": "Genesis 18:1–2, 22",
+      "tradition": "Targum",
+      "revision_type": "anthropomorphism_avoidance",
+      "mt_reading": "וירא אליו ה׳ — 'The LORD appeared to him'; in v. 22, an early reading apparently had 'the LORD still stood before Abraham' (tiqqun sopherim)",
+      "revised_reading": "Targums render 'the Glory/Shekinah of the Lord was revealed to him'; v. 22 already 'corrected' in MT itself per the Masoretic note on tiqqunei sopherim",
+      "confidence": 0.85,
+      "evidence": "The tiqqunei sopherim list (preserved in Mekhilta and Masorah) explicitly identifies Gen 18:22 as a scribal correction reversing subject and object to avoid the impropriety of God 'standing before' Abraham. The Targumic Shekinah/Yeqara substitution is independent confirmation of the same theological discomfort with direct theophany.",
+      "evidence_plain": "The Jewish scribes themselves admit they changed Gen 18:22 because it originally said God 'stood before Abraham,' which seemed disrespectful. The Targum makes similar adjustments throughout the chapter.",
+      "scholarly_citations": [
+        "McCarthy, The Tiqqune Sopherim, pp. 70–76",
+        "Barthélemy, 'Les tiqquné sopherim,' VTSup 9 (1963): 285–304"
+      ],
+      "counter_arguments": "The historicity of the tiqqunei sopherim list is debated; some (Lieberman) view it as later rabbinic exegesis projected back rather than evidence of actual textual change."
+    },
+    {
+      "reference": "Genesis 22:14",
+      "tradition": "Targum",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "בהר ה׳ יראה — 'On the mountain of the LORD it shall be seen/provided'",
+      "revised_reading": "Targum Pseudo-Jonathan: expands the Aqedah with Isaac's voluntary self-offering, the merit of the binding (zekhut), and links Mount Moriah to the future Temple and atonement",
+      "confidence": 0.72,
+      "evidence": "Targum Ps-Jonathan and Neofiti's Aqedah expansions develop a soteriological reading of Isaac's near-sacrifice that parallels (and likely engages) early Christian atonement theology. Vermes argued for pre-Christian roots; later scholarship (Davies/Chilton) places the developed form in the post-70 polemical context.",
+      "evidence_plain": "The Targums massively expand the binding of Isaac, presenting Isaac as a willing victim whose merit atones for Israel — a theological development absent from the Hebrew text.",
+      "scholarly_citations": [
+        "Vermes, Scripture and Tradition in Judaism, pp. 193–227",
+        "Chilton and Davies, 'The Aqedah: A Revised Tradition History,' CBQ 40 (1978): 514–546"
+      ],
+      "counter_arguments": "The expansion is haggadic rather than strictly messianic, and may reflect liturgical/homiletic development without specific eschatological intent."
+    },
+    {
+      "reference": "Genesis 49:10",
+      "tradition": "Targum",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "לא יסור שבט מיהודה... עד כי יבא שילה — 'The scepter shall not depart from Judah... until Shiloh comes'",
+      "revised_reading": "Targum Onqelos: 'until the Messiah comes, to whom the kingdom belongs'; Ps-Jonathan and Neofiti similar; LXX: ἕως ἂν ἔλθῃ τὰ ἀποκείμενα αὐτῷ ('until that which is laid up for him comes')",
+      "confidence": 0.88,
+      "evidence": "The opaque שילה is universally interpreted messianically across Targumic tradition with explicit insertion of משיחא. The LXX's τὰ ἀποκείμενα reflects a different but also eschatologically-oriented reading. 4QPatrBless from Qumran confirms the messianic interpretation was already standard in Second Temple Judaism.",
+      "evidence_plain": "The mysterious word 'Shiloh' is rendered explicitly as 'the Messiah' in the Aramaic Targums, making messianic expectation explicit where the Hebrew is ambiguous.",
+      "scholarly_citations": [
+        "Posnanski, Schiloh: Ein Beitrag zur Geschichte der Messiaslehre",
+        "Collins, The Scepter and the Star, pp. 64–67"
+      ],
+      "counter_arguments": "The Hebrew may itself originally have carried royal-eschatological meaning, in which case the Targums clarify rather than revise."
+    },
+    {
+      "reference": "Genesis 9:20–27",
+      "tradition": "Targum",
+      "revision_type": "softening",
+      "mt_reading": "Noah plants a vineyard, becomes drunk, lies uncovered; Ham 'sees the nakedness of his father'",
+      "revised_reading": "Targum Ps-Jonathan and rabbinic tradition variously soften: Ham is said to have castrated or sexually violated Noah (intensifying Ham's guilt to deflect from Noah's drunkenness), or Noah's drunkenness is excused as ritual",
+      "confidence": 0.55,
+      "evidence": "The amplification of Ham's sin in haggadic tradition (b. Sanh. 70a; Gen. Rab. 36:7) functions to relocate moral culpability from the righteous Noah onto Ham/Canaan, justifying the curse. Targumic expansions follow this trajectory in places.",
+      "evidence_plain": "Later interpretation made Ham's offense much worse than just seeing his father naked, which had the effect of making Noah's drunkenness less embarrassing.",
+      "scholarly_citations": [
+        "Bassi, 'Noah's Nakedness and the Curse on Canaan,' JBL 124 (2005): 25–40",
+        "Bowker, The Targums and Rabbinic Literature, pp. 158–162"
+      ],
+      "counter_arguments": "The expansions are primarily found in midrash rather than the Targum proper; the targumic text itself is relatively restrained."
+    },
+    {
+      "reference": "Genesis 4:8",
+      "tradition": "LXX",
+      "revision_type": "harmonization",
+      "mt_reading": "ויאמר קין אל הבל אחיו ויהי בהיותם בשדה — 'And Cain said to Abel his brother. And when they were in the field...' (no reported speech)",
+      "revised_reading": "LXX, SP, Peshitta, Vulgate add: 'Let us go out into the field' (διέλθωμεν εἰς τὸ πεδίον / נלכה השדה)",
+      "confidence": 0.85,
+      "evidence": "The MT's ויאמר without content is grammatically jarring and likely reflects haplography or an early gap. The supplied speech in LXX/SP/Peshitta/Vulgate represents a coordinated harmonization to provide Cain with words, smoothing the narrative and underlining premeditation. Hendel argues this is one of the clearest cases of secondary expansion in Genesis.",
+      "evidence_plain": "The Hebrew says 'Cain said to Abel' but doesn't tell us what he said. The Greek, Samaritan, Syriac, and Latin versions all fill in 'Let us go out to the field' to fix the awkward gap.",
+      "scholarly_citations": [
+        "Hendel, The Text of Genesis 1–11, pp. 46–47",
+        "Tov, Textual Criticism of the Hebrew Bible, 3rd ed., pp. 221–222"
+      ],
+      "counter_arguments": "The expansion may simply restore a phrase lost by haplography in the MT (parablepsis on similar consonants), making it textual restoration rather than theological revision."
+    }
+  ],
+  "dominant_strategy": "Anthropomorphism avoidance, especially in the Targumic tradition, is the most pervasive revision strategy in Genesis. The systematic use of Memra, Shekinah, and Yeqara to mediate divine action and the suppression of divine emotions reflect an entrenched theological program of protecting God's transcendence.",
+  "overall_assessment": "The pattern of theological revision in Genesis reveals tradents working within distinct but converging concerns: protection of divine transcendence (Targums), harmonization of internal contradictions and chronological systems (LXX/SP), elevation of messianic and atoning readings (Targums on Gen 49:10 and 22), and rehabilitation of patriarchal reputation. The MT generally preserves the most theologically 'difficult' readings (anthropomorphism, Noah's drunkenness, Cain's silence), suggesting that the proto-MT tradition was less aggressive in theological smoothing than its rivals. Genesis thus becomes a laboratory for observing how Second Temple and early rabbinic Judaism, alongside emerging Christianity, negotiated the gap between archaic narrative and developed theology.",
+  "overall_plain": "Ancient translators of Genesis tended to soften descriptions of God acting like a human, fix apparent contradictions, and read messianic meanings into ambiguous verses. The Hebrew text we have today often preserves the rougher, older readings, while the Greek, Aramaic, and Latin versions show various efforts to make the text fit later theological expectations.",
+  "bibcrit_assessment": {
+    "title": "Genesis as Laboratory of Theological Smoothing",
+    "reasoning": "The convergent yet independent revisions across LXX, SP, Targum, and Vulgate in Genesis demonstrate that the book's archaic narrative material generated sustained theological discomfort that each tradition handled in characteristic ways. The relative conservatism of the MT in preserving difficult readings (Gen 6:6, 4:8, 9:21) suggests that proto-MT scribes valued textual stability over theological refinement — a finding that inverts older assumptions about MT as a 'corrected' text.",
+    "plain": "Genesis shows us how different ancient communities each tried to fix or soften the same difficult passages in their own way. Surprisingly, the standard Hebrew text often preserves the rawest, oldest readings.",
+    "confidence": 0.82
+  },
+  "discovery_ready": false,
+  "reference": "Genesis",
+  "cached_at": "2026-05-09T21:37:48.584989",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v2"
+}

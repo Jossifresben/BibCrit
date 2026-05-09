@@ -1,0 +1,125 @@
+{
+  "book": "Isaiah",
+  "translator_name": "Old Greek of Isaiah",
+  "translator_profile": {
+    "literalness": 0.3,
+    "anthropomorphism_reduction": 0.4,
+    "messianic_heightening": 0.7,
+    "harmonization": 0.55,
+    "paraphrase_rate": 0.7
+  },
+  "dimensions": [
+    {
+      "dimension": "literalness",
+      "score": 0.3,
+      "confidence": 0.85,
+      "summary": "LXX-Isaiah ranks among the freest translation units in the LXX, alongside Job and Proverbs. The translator regularly substitutes contextual guesses, expansions, and theological reinterpretations for word-for-word equivalence (Seeligmann, Troxel). Isa 53:4 reduces חֳלָיֵנוּ ('our sicknesses') to τὰς ἁμαρτίας ἡμῶν ('our sins'), and Isa 42:1 inserts Ιακωβ/Ισραηλ where MT has only 'my servant/chosen one.'",
+      "summary_plain": "The translator of Isaiah works loosely, often paraphrasing rather than translating word-for-word. They frequently add interpretive elements not in the Hebrew.",
+      "examples": [
+        {
+          "reference": "Isaiah 42:1",
+          "mt_text": "hēn ʿabdî ... bəḥîrî",
+          "lxx_text": "Ιακωβ ὁ παῖς μου ... Ισραηλ ὁ ἐκλεκτός μου",
+          "note": "The translator inserts 'Jacob' and 'Israel' as identifications of the servant, an interpretive expansion absent from MT and 1QIsaᵃ."
+        },
+        {
+          "reference": "Isaiah 53:4",
+          "mt_text": "ḥŏlāyēnû hûʾ nāśāʾ ûmakʾōbênû səbālām",
+          "lxx_text": "οὗτος τὰς ἁμαρτίας ἡμῶν φέρει καὶ περὶ ἡμῶν ὀδυνᾶται",
+          "note": "Replaces concrete physical terms (sicknesses, pains) with theological abstractions (sins), and softens 'bore them' to 'suffers concerning us.'"
+        }
+      ]
+    },
+    {
+      "dimension": "anthropomorphism_reduction",
+      "score": 0.4,
+      "confidence": 0.55,
+      "summary": "LXX-Isaiah shows moderate but inconsistent softening of difficult divine attributions. Most strikingly, Isa 53:4's מֻכֵּה אֱלֹהִים ('struck by God') is wholly removed, replaced with ἐν πληγῇ καὶ ἐν κακώσει—eliminating the offensive notion that God afflicted the servant. However, divine emotions (ζῆλος κυρίου in 9:6) and bodily metaphors are often retained.",
+      "summary_plain": "The translator sometimes softens troubling images of God, especially in Isaiah 53 where 'struck by God' is removed. But this is not a systematic policy.",
+      "examples": [
+        {
+          "reference": "Isaiah 53:4",
+          "mt_text": "nāgûaʿ mukkēh ʾĕlōhîm ûməʿunneh",
+          "lxx_text": "ἐν πόνῳ καὶ ἐν πληγῇ καὶ ἐν κακώσει",
+          "note": "The phrase 'struck by God' (mukkēh ʾĕlōhîm) is eliminated, removing direct divine causation of the servant's suffering."
+        }
+      ]
+    },
+    {
+      "dimension": "messianic_heightening",
+      "score": 0.7,
+      "confidence": 0.75,
+      "summary": "Following Seeligmann and Koenig, LXX-Isaiah demonstrates clear eschatological/messianic intensification, though more subtly than later targumim. The choice of παρθένος for עלמה (7:14), the rendering of Isa 9:6 emphasizing μεγάλη ἡ ἀρχὴ αὐτοῦ ... εἰς τὸν αἰῶνα χρόνον, and the doxological ὑψωθήσεται καὶ δοξασθήσεται (52:13) all point toward a heightened figure. The shift to καλέσεις (2nd sg.) in 7:14 also personalizes the address.",
+      "summary_plain": "The translator amplifies messianic and royal expectations, most famously translating 'young woman' as 'virgin' in 7:14—the very verse Matthew later cites for Jesus's birth.",
+      "examples": [
+        {
+          "reference": "Isaiah 7:14",
+          "mt_text": "hāʿalmâ hārâ wəyōledet bēn",
+          "lxx_text": "ἡ παρθένος ἐν γαστρὶ ἕξει καὶ τέξεται υἱόν",
+          "note": "Renders עלמה ('young woman') with the more specific παρθένος ('virgin'), heightening the miraculous/messianic dimension of the sign."
+        },
+        {
+          "reference": "Isaiah 52:13",
+          "mt_text": "yārûm wəniśśāʾ wəgābah məʾōd",
+          "lxx_text": "ὑψωθήσεται καὶ δοξασθήσεται σφόδρα",
+          "note": "Translates the third verb 'be exalted' with δοξασθήσεται ('be glorified'), introducing a doxological-messianic register that resonates in NT christology (cf. John 12)."
+        }
+      ]
+    },
+    {
+      "dimension": "harmonization",
+      "score": 0.55,
+      "confidence": 0.6,
+      "summary": "The Isaiah translator harmonizes within Isaiah and with broader scriptural traditions, often actualizing prophecy for contemporary diaspora readers (Seeligmann's 'Alexandrian fulfillment'). Isa 42:1's insertion of 'Jacob/Israel' aligns the Servant with explicit identifications elsewhere in DI (44:1; 49:3). Isa 11:1's collapse of גזע and שרשיו both into ῥίζα reflects parallelism-driven leveling.",
+      "summary_plain": "The translator often smooths over difficulties by aligning passages with each other and with familiar interpretations.",
+      "examples": [
+        {
+          "reference": "Isaiah 42:1",
+          "mt_text": "hēn ʿabdî ... bəḥîrî",
+          "lxx_text": "Ιακωβ ὁ παῖς μου ... Ισραηλ ὁ ἐκλεκτός μου",
+          "note": "Imports the explicit identifications from Isa 44:1-2 and 49:3 into the first Servant Song, harmonizing the ambiguous figure with the corporate identification elsewhere."
+        },
+        {
+          "reference": "Isaiah 11:1",
+          "mt_text": "min-gēzaʿ yišay ... miššārāšāyw",
+          "lxx_text": "ἐκ τῆς ῥίζης Ιεσσαι ... ἐκ τῆς ῥίζης",
+          "note": "Both 'stump' and 'roots' are leveled to ῥίζα, harmonizing the parallelism into a single image (cf. Rom 15:12 citing this form)."
+        }
+      ]
+    },
+    {
+      "dimension": "paraphrase_rate",
+      "score": 0.7,
+      "confidence": 0.85,
+      "summary": "Paraphrase is normative in LXX-Isaiah. The translator routinely adjusts syntax, substitutes lexemes by sense rather than form, and inserts contextually appropriate material. Isa 61:1 supplies καὶ τυφλοῖς ἀνάβλεψιν, which has no MT counterpart but reflects exegetical association with Isa 42:7. Troxel argues this reflects a translator more interested in communicating coherent meaning to a Greek-speaking Jewish audience than in formal equivalence.",
+      "summary_plain": "Paraphrase is the translator's default mode. They prioritize meaning and rhetorical impact over reproducing the Hebrew word-by-word.",
+      "examples": [
+        {
+          "reference": "Isaiah 61:1",
+          "mt_text": "wəlaʾăsûrîm pəqaḥ-qôaḥ",
+          "lxx_text": "καὶ τυφλοῖς ἀνάβλεψιν",
+          "note": "MT's 'opening (of the prison) to the bound' becomes 'recovery of sight to the blind'—a substantial reinterpretation drawing on Isa 42:7, famously cited in Luke 4:18."
+        },
+        {
+          "reference": "Isaiah 9:6",
+          "mt_text": "ləmarbēh hammiśrâ ûləšālôm ʾên-qēṣ",
+          "lxx_text": "μεγάλη ἡ ἀρχὴ αὐτοῦ καὶ τῆς εἰρήνης αὐτοῦ οὐκ ἔστιν ὅριον",
+          "note": "Restructures the difficult Hebrew nominal clause into smooth Greek with possessive pronouns, sacrificing form for clarity."
+        }
+      ]
+    }
+  ],
+  "overall_assessment": "LXX-Isaiah is one of the freest and most theologically engaged units in the Septuagint corpus. The translator—working in 2nd-century BCE Alexandria according to Seeligmann—operates as much as exegete and homilist as translator, contemporizing prophecy for diaspora Jewry, harmonizing across the book, and amplifying messianic and eschatological themes. For text-critical work this means LXX-Isaiah must be used cautiously as a witness to a Hebrew Vorlage; many divergences from MT are interpretive rather than textual, and retroversion is hazardous (contrast LXX-Jeremiah or the Minor Prophets, where the translator stays closer to a Hebrew base). The translator stands at the opposite pole from the Greek Pentateuch's measured literalism and the kaige tradition's isomorphism.",
+  "overall_plain": "The Greek Isaiah is a free, interpretive translation rather than a literal one. The translator behaved like a preacher as much as a translator, updating the prophecies for Greek-speaking Jews and sharpening their messianic edge—which is why the New Testament so often quotes Isaiah from this Greek version.",
+  "bibcrit_assessment": {
+    "title": "Exegete-translator forging messianic Greek prophecy",
+    "reasoning": "The decisive insight, building on Seeligmann and Troxel, is that LXX-Isaiah's freedom is not careless but purposeful: the translator reads Isaiah as a unified, contemporary, eschatologically charged book and renders it accordingly. The παρθένος of 7:14, the δοξασθήσεται of 52:13, and the ἁμαρτίας of 53:4 together show a translator already doing the kind of christological reading the New Testament authors would inherit—the LXX is itself a stage in messianic exegesis, not a neutral linguistic bridge.",
+    "plain": "Greek Isaiah is essentially the first messianic commentary on Isaiah. Many of the famous 'prophecies of Christ' quoted in the New Testament take their distinctive shape from this translator's interpretive choices.",
+    "confidence": 0.8
+  },
+  "discovery_ready": false,
+  "reference": "Isaiah",
+  "cached_at": "2026-05-09T20:59:33.549716",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v1"
+}

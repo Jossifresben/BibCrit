@@ -1,0 +1,183 @@
+{
+  "reference": "Numbers 1",
+  "subject": "Census totals of the twelve tribes at Sinai",
+  "figures": [
+    {
+      "name": "Reuben",
+      "mt_value": 46500,
+      "lxx_value": 46500,
+      "sp_value": 46500,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Simeon",
+      "mt_value": 59300,
+      "lxx_value": 59300,
+      "sp_value": 59300,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Gad",
+      "mt_value": 45650,
+      "lxx_value": 45650,
+      "sp_value": 45650,
+      "divergence_type": "none",
+      "note": "All three traditions agree exactly on this unusual non-rounded figure."
+    },
+    {
+      "name": "Judah",
+      "mt_value": 74600,
+      "lxx_value": 74600,
+      "sp_value": 74600,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Issachar",
+      "mt_value": 54400,
+      "lxx_value": 54400,
+      "sp_value": 54400,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Zebulun",
+      "mt_value": 57400,
+      "lxx_value": 57400,
+      "sp_value": 57400,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Ephraim",
+      "mt_value": 40500,
+      "lxx_value": 40500,
+      "sp_value": 40500,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Manasseh",
+      "mt_value": 32200,
+      "lxx_value": 32200,
+      "sp_value": 32200,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Benjamin",
+      "mt_value": 35400,
+      "lxx_value": 35400,
+      "sp_value": 35400,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Dan",
+      "mt_value": 62700,
+      "lxx_value": 62700,
+      "sp_value": 62700,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Asher",
+      "mt_value": 41500,
+      "lxx_value": 41500,
+      "sp_value": 41500,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Naphtali",
+      "mt_value": 53400,
+      "lxx_value": 53400,
+      "sp_value": 53400,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Total congregation",
+      "mt_value": 603550,
+      "lxx_value": 603550,
+      "sp_value": 603550,
+      "divergence_type": "none",
+      "note": "The grand total agrees across MT, LXX, and SP."
+    }
+  ],
+  "systematic_analysis": {
+    "is_systematic": false,
+    "pattern": "Unlike the patriarchal chronologies of Genesis 5 and 11 (where MT, LXX, and SP diverge by systematic 100-year shifts), the census figures of Numbers 1 are essentially uniform across all three textual traditions. Each tribal total and the grand total of 603,550 are preserved identically, with only sporadic minor variants in some LXX manuscripts (e.g., minor itacistic spellings or scribal slips in individual codices like Vaticanus vs. Alexandrinus). The arithmetic of the chapter sums correctly to the stated total in all three witnesses.",
+    "pattern_plain": "All three ancient versions of the Bible give the same numbers for the twelve tribes in Numbers 1, totaling 603,550 men. This is very different from Genesis, where the versions disagree dramatically about how old the patriarchs were."
+  },
+  "theories": [
+    {
+      "name": "Independent traditions converging on a fixed numerical core",
+      "slug": "independent_traditions",
+      "score": 0.85,
+      "confidence": 0.85,
+      "summary": "The agreement of MT, LXX, and SP on the Numbers 1 census suggests these figures were transmitted as a stable, theologically weighted block predating the textual divergence of the three streams. Unlike the genealogical chronologies, which were susceptible to ideological recalibration, the census numbers were anchored by their internal arithmetic (each tribe sums to 603,550) and by parallel use in Exodus 38:26 (the half-shekel count). Scholars such as Wevers and Tov note that LXX-Numbers is generally a faithful translation of a Hebrew Vorlage close to MT in the census lists.",
+      "summary_plain": "All three Bible versions agree here because the census numbers were locked in early and the totals had to add up correctly. Tampering with one number would break the math.",
+      "supporting_evidence": [
+        "The twelve tribal figures sum exactly to 603,550 in every tradition, creating a self-checking arithmetic that resists scribal alteration.",
+        "The same total (603,550) appears in Exodus 38:26 across all three traditions, reinforcing a fixed tradition.",
+        "LXX-Numbers in Wevers's Göttingen edition shows minimal numerical variance from MT in chapter 1.",
+        "SP, which elsewhere harmonizes freely, finds nothing to harmonize here because MT and its Vorlage already agreed.",
+        "The unusual non-round figure of 45,650 for Gad is preserved identically, suggesting a shared archaic source."
+      ],
+      "weaknesses": [
+        "Cannot fully explain why Genesis chronologies diverged so radically while Numbers censuses did not, unless one posits selective ideological editing.",
+        "Some minor LXX manuscript variants exist that are sometimes overlooked in collations.",
+        "The theory is essentially an argument from stability rather than from a positive textual mechanism."
+      ]
+    },
+    {
+      "name": "Scribal error (minimal, sporadic)",
+      "slug": "scribal_error",
+      "score": 0.35,
+      "confidence": 0.4,
+      "summary": "Where minor variants do appear in individual LXX codices for Numbers 1, they are best explained as isolated scribal slips rather than systematic recensional activity. Such variants do not affect the totals and are typically corrected by internal arithmetic.",
+      "summary_plain": "The few small differences between manuscripts here look like simple copying mistakes, not deliberate changes.",
+      "supporting_evidence": [
+        "Variants in the LXX tradition are confined to single manuscripts and do not propagate.",
+        "Hebrew numerical notation (whether spelled out or by letter-numerals) is prone to minor confusion of similar characters.",
+        "The arithmetic constraint of summing to 603,550 would expose and correct many errors."
+      ],
+      "weaknesses": [
+        "There is essentially nothing substantial to explain by error since the traditions agree.",
+        "Does not address why other biblical books (e.g., 1-2 Samuel, Chronicles) show much greater numerical divergence."
+      ]
+    },
+    {
+      "name": "Theological motivation absent in Numbers 1",
+      "slug": "theological_motivation",
+      "score": 0.2,
+      "confidence": 0.5,
+      "summary": "Unlike Genesis 5 and 11, where chronological figures could be manipulated to advance schemes of world-age or messianic timing, the Numbers 1 census carried no comparable theological leverage that would motivate one tradition to alter it. The absence of divergence is itself evidence that ideological editing was selective and targeted.",
+      "summary_plain": "No religious group had a strong reason to change these tribal numbers, so they were left alone.",
+      "supporting_evidence": [
+        "Genesis chronologies feed into millennial and messianic calculations; tribal censuses do not.",
+        "The Samaritan tradition's harmonizing tendencies focus on Pentateuchal cult and patriarchal narratives, not military census data.",
+        "Chronological systems of Josephus, Demetrius, and Eusebius rely on Genesis figures, not Numbers censuses."
+      ],
+      "weaknesses": [
+        "This is largely an argument from silence about motive.",
+        "Does not by itself explain transmission stability—agreement could have many causes."
+      ]
+    }
+  ],
+  "overall_assessment": "Numbers 1 stands as a striking counter-example to the well-known numerical divergences of Genesis 5 and 11: MT, LXX, and SP agree on every tribal census figure and on the grand total of 603,550. This convergence indicates that the census tradition was fixed early, mathematically self-checking, and lacked the theological-chronological leverage that motivated divergent recensions elsewhere. The best explanation combines the independent-traditions model (a shared, stable Vorlage predating the three streams) with the observation that no party had ideological incentive to alter these figures. The case demonstrates that numerical divergence in the Hebrew Bible is selective and content-sensitive rather than indicative of uniformly chaotic transmission.",
+  "overall_plain": "Unlike Genesis, where the three ancient Bible versions disagree wildly about ages, Numbers 1 shows them in complete agreement on the tribal census numbers. This shows that scribes only tampered with numbers when there was a strong religious or chronological reason to do so.",
+  "bibcrit_assessment": {
+    "title": "Census stability proves divergence was selective",
+    "reasoning": "The unanimous agreement of MT, LXX, and SP on the Numbers 1 census refutes any theory that biblical numerical transmission was uniformly corrupt or recensionally chaotic. Where divergence occurs (Genesis chronologies, Samuel-Kings synchronisms), it reflects targeted ideological or chronological agendas; where no such agenda existed, the figures remained remarkably stable. This selective pattern is itself the most important datum for reconstructing the transmission history of biblical numerals.",
+    "plain": "The fact that all three Bibles agree perfectly here, but disagree sharply elsewhere, shows that ancient scribes only changed numbers when they had a specific religious reason to do so.",
+    "confidence": 0.82
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T21:21:52.322065",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v3"
+}

@@ -1,0 +1,137 @@
+{
+  "reference": "2 Chronicles 13",
+  "subject": "Abijah's war against Jeroboam: army sizes and casualties",
+  "figures": [
+    {
+      "name": "Abijah's army (Judah)",
+      "mt_value": 400000,
+      "lxx_value": 400000,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "MT and LXX agree; SP irrelevant as Chronicles is not in the Samaritan Pentateuch."
+    },
+    {
+      "name": "Jeroboam's army (Israel)",
+      "mt_value": 800000,
+      "lxx_value": 800000,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "MT and LXX agree on the doubled figure for the northern kingdom."
+    },
+    {
+      "name": "Israelite casualties",
+      "mt_value": 500000,
+      "lxx_value": 500000,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "Both MT and LXX preserve the staggering 500,000 slain figure; some Vulgate manuscripts read 50,000."
+    },
+    {
+      "name": "Abijah's reign length (years)",
+      "mt_value": 3,
+      "lxx_value": 3,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "Reign length is consistent across traditions."
+    },
+    {
+      "name": "Abijah's wives",
+      "mt_value": 14,
+      "lxx_value": 14,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "No divergence between MT and LXX."
+    },
+    {
+      "name": "Abijah's sons",
+      "mt_value": 22,
+      "lxx_value": 22,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "No divergence."
+    },
+    {
+      "name": "Abijah's daughters",
+      "mt_value": 16,
+      "lxx_value": 16,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "No divergence."
+    }
+  ],
+  "systematic_analysis": {
+    "is_systematic": false,
+    "pattern": "2 Chronicles 13 displays remarkable agreement between MT and LXX (Paraleipomenon B) on all numerical data, including the famously large army and casualty figures. The Samaritan Pentateuch is not applicable here since Chronicles falls outside the Samaritan canon. Minor variants appear only in later versional traditions (e.g., some Old Latin and Vulgate witnesses reduce 500,000 to 50,000), but the primary Hebrew and Greek streams are unified.",
+    "pattern_plain": "Unlike Genesis chronologies, the numbers in 2 Chronicles 13 are essentially identical in the Hebrew and Greek Bibles. The Samaritan version doesn't include Chronicles, so it can't be compared."
+  },
+  "theories": [
+    {
+      "name": "Independent Traditions Converging",
+      "slug": "independent_traditions",
+      "score": 0.85,
+      "confidence": 0.85,
+      "summary": "The agreement of MT and LXX on all numerical figures in 2 Chronicles 13 indicates that these numbers were stable in the Hebrew Vorlage of the LXX translator and in the proto-MT tradition. Chronicles, being a later composition with less complex transmission divergence than the Pentateuch, shows minimal numerical drift. The convergence suggests a shared, well-preserved arithmetic core.",
+      "summary_plain": "The Hebrew and Greek versions agree completely on the numbers in this chapter, suggesting the figures were transmitted faithfully from a common source.",
+      "supporting_evidence": [
+        "MT and LXX agree on 400,000, 800,000, and 500,000 across the chapter.",
+        "Chronicles shows generally fewer numerical divergences than Samuel-Kings or Genesis between MT and LXX.",
+        "No Qumran fragments contradict these figures.",
+        "Josephus (Ant. 8.284) reproduces similar figures, attesting their antiquity."
+      ],
+      "weaknesses": [
+        "Some scholars regard the figures as inherently corrupt regardless of textual agreement.",
+        "Cannot be tested against SP since Chronicles is excluded from the Samaritan canon."
+      ]
+    },
+    {
+      "name": "Early Scribal Inflation/Error",
+      "slug": "scribal_error",
+      "score": 0.55,
+      "confidence": 0.6,
+      "summary": "Many scholars (e.g., Keil, Payne, Wenham) argue the enormous figures (1.2 million combatants, 500,000 slain) reflect a very early corruption—possibly confusion of the Hebrew term 'eleph' (which can mean 'thousand,' 'clan,' or 'military unit') as a literal numeral. The corruption would predate the LXX translation, explaining MT/LXX agreement. Some Latin witnesses preserving 50,000 may reflect awareness of the problem.",
+      "summary_plain": "The numbers may be inflated due to an early misunderstanding of a Hebrew word that can mean either 'thousand' or 'military unit.' The mistake happened before the Greek translation, so both versions inherit the same large figures.",
+      "supporting_evidence": [
+        "The Hebrew 'eleph' is genuinely ambiguous between 'thousand' and 'clan/unit.'",
+        "Some Old Latin and Vulgate manuscripts read 50,000 for casualties.",
+        "Total combatant figures (1.2 million) exceed plausible Iron Age demographics for the Levant.",
+        "Similar inflation patterns appear elsewhere in Chronicles' military lists."
+      ],
+      "weaknesses": [
+        "No Hebrew manuscript evidence directly supports the lower readings.",
+        "The Chronicler may have intentionally used hyperbolic numbers for theological emphasis.",
+        "The 'eleph as unit' theory is contested by Fouts and others."
+      ]
+    },
+    {
+      "name": "Theological/Rhetorical Hyperbole",
+      "slug": "theological_motivation",
+      "score": 0.5,
+      "confidence": 0.55,
+      "summary": "The Chronicler may employ deliberately large numbers as a rhetorical-theological device emphasizing Yahweh's overwhelming victory for the Davidic kingdom against apostate Israel (cf. Fouts, 'A Defense of the Hyperbolic Interpretation of Large Numbers in the OT'). The figures function symbolically rather than as census data. Both MT and LXX faithfully transmit the original hyperbole.",
+      "summary_plain": "The huge numbers may be intentional exaggeration to highlight God's victory, not meant as literal counts. Both Hebrew and Greek faithfully preserve the original rhetorical figures.",
+      "supporting_evidence": [
+        "Chronicles consistently uses elevated numerical rhetoric (cf. 2 Chr 14:9; 17:14-18).",
+        "Ancient Near Eastern royal inscriptions regularly use hyperbolic casualty figures.",
+        "The doubling pattern (400k vs 800k) suggests stylized rather than empirical numbers.",
+        "MT/LXX unity supports authorial intent rather than transmission error."
+      ],
+      "weaknesses": [
+        "Difficult to distinguish hyperbole from corruption methodologically.",
+        "The Chronicler elsewhere appears to treat numbers as historical.",
+        "Hyperbole theory does not eliminate the demographic implausibility problem."
+      ]
+    }
+  ],
+  "overall_assessment": "2 Chronicles 13 is a control case demonstrating that not all biblical numerical data exhibits the systematic MT/LXX/SP divergence seen in Genesis 5 and 11. Here MT and LXX align fully, and SP is inapplicable. The interpretive question shifts from textual transmission to original authorial intent: whether the Chronicler's enormous figures reflect early 'eleph confusion, deliberate theological hyperbole, or are to be taken at face value. The textual stability suggests any 'problem' with the numbers originates at the compositional or pre-LXX stage, not in divergent transmission streams.",
+  "overall_plain": "Unlike the famous chronological differences in Genesis, the numbers in 2 Chronicles 13 are the same in the Hebrew and Greek Bibles. The debate is therefore not about which version is right, but whether the original numbers are literal, exaggerated for effect, or based on an early misreading of an ambiguous Hebrew word.",
+  "bibcrit_assessment": {
+    "title": "Stable Transmission, Contested Interpretation",
+    "reasoning": "The MT/LXX agreement in 2 Chronicles 13 demonstrates that the systematic numerical divergence pattern of the Pentateuch is not universal across the Hebrew Bible. This shifts the critical burden from text-criticism to hermeneutics: the implausibility of 500,000 casualties cannot be solved by appeal to a 'better' textual tradition, only by reconsidering authorial intent or pre-textual corruption.",
+    "plain": "The Hebrew and Greek versions agree perfectly here, so any difficulty with the huge numbers can't be blamed on copying errors between traditions—it points to either the original author's style or a very early misunderstanding.",
+    "confidence": 0.8
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T21:27:22.456587",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v3"
+}

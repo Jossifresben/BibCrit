@@ -1,0 +1,91 @@
+{
+  "reference": "John 7:53",
+  "text_basis": {
+    "sblgnt_reading": "[[Καὶ ἐπορεύθησαν ἕκαστος εἰς τὸν οἶκον αὐτοῦ,]]",
+    "na28_alignment": "Aligns with NA28, which double-brackets the entire pericope (7:53–8:11) to indicate the editors' judgment that it is not part of the original text of John but is preserved as part of the canonical tradition.",
+    "is_disputed_locus": true,
+    "dispute_note": "John 7:53 is the opening verse of the Pericope Adulterae (7:53–8:11), one of the most famous textual problems in the New Testament. The verse is absent from the earliest and best Greek manuscripts."
+  },
+  "manuscript_families": {
+    "alexandrian": {
+      "witnesses": [
+        "P66",
+        "P75",
+        "א",
+        "B"
+      ],
+      "support": "supports_variant",
+      "note": "The earliest Alexandrian witnesses (P66, P75, Sinaiticus, Vaticanus) all omit the entire pericope, moving directly from John 7:52 to 8:12. This is the strongest evidence against the originality of 7:53."
+    },
+    "western": {
+      "witnesses": [
+        "D",
+        "it"
+      ],
+      "support": "sides_with_received",
+      "note": "Codex Bezae (D) is the earliest Greek manuscript to include the pericope, along with most Old Latin witnesses. The Western tradition is the primary early channel for this passage."
+    },
+    "byzantine": {
+      "witnesses": [
+        "Majority Text",
+        "TR"
+      ],
+      "support": "sides_with_received",
+      "note": "The Byzantine majority and the Textus Receptus include 7:53 as part of the standard text, though some Byzantine manuscripts mark the passage with asterisks or obeli indicating doubt."
+    },
+    "caesarean": {
+      "witnesses": [
+        "P45",
+        "f1",
+        "f13"
+      ],
+      "support": "split",
+      "note": "Family 1 (f¹) typically places the pericope at the end of John or omits it; family 13 (f¹³) famously relocates it to after Luke 21:38. P45 is fragmentary at this point. The instability of placement is itself strong evidence against original location here."
+    }
+  },
+  "metzger_rating": {
+    "rating": "A",
+    "justification": "Metzger and the UBS committee assign an {A} rating to the omission of the pericope from its traditional location, indicating near-certainty that John 7:53–8:11 was not part of the original Fourth Gospel. The combined weight of the earliest Greek, versional, and patristic evidence, along with the floating placement of the passage in later witnesses, makes this one of the most secure text-critical judgments in the NT."
+  },
+  "variant_register": [
+    {
+      "variant_text": "Omission of 7:53 entirely (text proceeds from 7:52 directly to 8:12)",
+      "manuscript_support": "P66, P75, א, B, L, N, T, W, X, Δ, Θ, Ψ, 0141, 0211, 22, 33, 124, 157, 209, 788, 828, 1230, 1241, 1242, 1253, 1333, 2193, syr-c,s, cop-sa,bo, arm, geo",
+      "intrinsic_probability": "high",
+      "transcriptional_probability": "high",
+      "assessment": "The omission is supported by virtually all early manuscripts across versions and is intrinsically probable since the narrative of 7:52 flows naturally into 8:12. No plausible reason exists for scribes to delete such a beloved story."
+    },
+    {
+      "variant_text": "Καὶ ἐπορεύθησαν ἕκαστος εἰς τὸν οἶκον αὐτοῦ (inclusion as part of pericope)",
+      "manuscript_support": "D, G, H, K, M, U, Γ, 28, 700, 892, 1009, 1010, 1071, 1079, 1195, 1216, 1344, 1365, 1546, 1646, 2148, 2174, Byz, Lect, it, vg, syr-pal, eth, Didymus, Ambrose, Augustine",
+      "intrinsic_probability": "low",
+      "transcriptional_probability": "medium",
+      "assessment": "The inclusion reflects an early oral tradition (likely authentic Jesus tradition) that was inserted into John at various points. Its non-Johannine vocabulary and style, plus its floating placement, indicate secondary insertion."
+    }
+  ],
+  "disputed_passage": {
+    "designation": "Pericope Adulterae (John 7:53–8:11)",
+    "manuscript_evidence_for": "Codex Bezae (D, 5th c.) is the earliest Greek witness; included in most Old Latin manuscripts, the Vulgate, and the Byzantine majority. Cited by Ambrose, Augustine, Jerome (who notes it was found 'in many Greek and Latin manuscripts'), and Didymus the Blind.",
+    "manuscript_evidence_against": "Omitted by P66, P75, א, B, A (lacuna but space insufficient), C (lacuna, space insufficient), L, N, T, W, Δ, Θ, Ψ, and the earliest versional witnesses (Old Syriac, Sahidic, Bohairic, Armenian, Georgian). No Greek Father before the 12th century (Euthymius Zigabenus) comments on the passage as part of John, and Origen, Chrysostom, Cyril, and Theodore of Mopsuestia pass directly from 7:52 to 8:12 in their commentaries.",
+    "internal_evidence": "The pericope contains numerous non-Johannine vocabulary items (e.g., ὄρθρου, παραγίνομαι, καθίσας ἐδίδασκεν, γραμματεῖς) and stylistic features more characteristic of the Synoptics, especially Luke. The passage 'floats' in the manuscript tradition, appearing after John 7:36, 7:44, 7:52, 21:25, or after Luke 21:38 (in family 13). This instability of location is decisive evidence against original Johannine authorship.",
+    "scholarly_consensus": "Near-universal scholarly consensus holds that the Pericope Adulterae was not originally part of the Gospel of John. However, many scholars (e.g., Metzger, Ehrman, Keith) regard it as preserving an authentic tradition about Jesus that circulated independently before being inserted into the Johannine text in the Western tradition.",
+    "pastoral_note": "Most modern critical translations (NRSV, NIV, ESV, NASB, CSB) include the passage but mark it with brackets, italics, or a footnote stating that 'the earliest and most reliable manuscripts do not contain John 7:53–8:11.' The KJV and NKJV print it without qualification. The passage remains liturgically and homiletically significant despite its secondary status in John."
+  },
+  "synthesis": "John 7:53 is the opening verse of the Pericope Adulterae, which the overwhelming weight of early manuscript evidence indicates was not original to John's Gospel. The verse is absent from all major Alexandrian witnesses (P66, P75, א, B) and from the earliest versions and Greek patristic commentary. Its inclusion in the Western and Byzantine traditions, combined with the passage's floating placement, confirms its status as an early but secondary insertion preserving a likely authentic Jesus tradition.",
+  "assessment": {
+    "title": "Pericope Adulterae Opening: Secondary Insertion Preserving Likely Authentic Jesus Tradition",
+    "reasoning": "John 7:53 functions as the bridge verse opening the Pericope Adulterae, and its textual status cannot be separated from that of the entire pericope (7:53–8:11). The evidence for omission is overwhelming: all major Alexandrian manuscripts, the earliest versions, and every Greek Father before the 12th century pass directly from 7:52 to 8:12. The non-Johannine vocabulary and style, combined with the passage's notorious 'floating' placement (appearing at various points in John and even after Luke 21:38 in family 13), confirms it was not part of the original Fourth Gospel. Nevertheless, the antiquity of the tradition (attested by Papias and Didymus) and its early Western reception suggest it preserves authentic Jesus material that was secondarily inserted into John, likely because of thematic links to John 8:15 ('I judge no one').",
+    "plain": "John 7:53 begins the famous story of the woman caught in adultery, which most scholars agree was not originally part of John's Gospel. The earliest and best manuscripts skip from 7:52 directly to 8:12, and the story 'floats' to different locations in later manuscripts. Most modern Bibles include the passage but note in brackets or footnotes that it is not part of the original text.",
+    "confidence": 0.97,
+    "recommended_reading": "NA28/UBS5, which double-brackets the entire pericope to indicate its secondary character while preserving its canonical reception.",
+    "open_questions": "Where did the Pericope Adulterae originate, and how did it enter the Johannine textual tradition? Is it an authentic agraphon of Jesus that circulated orally before being committed to writing, possibly in a now-lost source related to the Gospel according to the Hebrews mentioned by Eusebius?"
+  },
+  "citations": {
+    "sbl": "Bruce M. Metzger, A Textual Commentary on the Greek New Testament, 2nd ed. (Stuttgart: Deutsche Bibelgesellschaft, 1994), 187–89; Kurt Aland and Barbara Aland, The Text of the New Testament, 2nd ed. (Grand Rapids: Eerdmans, 1989), 232; Chris Keith, The Pericope Adulterae, the Gospel of John, and the Literacy of Jesus (Leiden: Brill, 2009).",
+    "bibtex": "@book{metzger1994textual, author={Metzger, Bruce M.}, title={A Textual Commentary on the Greek New Testament}, year={1994}, publisher={Deutsche Bibelgesellschaft}, edition={2}}"
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T22:01:51.697906",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v1"
+}

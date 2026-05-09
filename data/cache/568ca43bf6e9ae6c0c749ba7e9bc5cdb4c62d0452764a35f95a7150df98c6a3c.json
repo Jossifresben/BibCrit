@@ -1,0 +1,118 @@
+{
+  "reconstructed_words": [
+    {
+      "position": 1,
+      "lxx_word": "καὶ εἶπεν ὁ θεὸς πρὸς Μωυσῆν",
+      "vorlage_word": "ויאמר אלהים אל־משה",
+      "status": "agrees_mt",
+      "confidence": 0.98,
+      "mt_equivalent": "וַיֹּאמֶר אֱלֹהִים אֶל־מֹשֶׁה",
+      "dss_witness": null,
+      "reasoning": "Standard LXX rendering of the wayyiqtol speech formula. καὶ εἶπεν = ויאמר, ὁ θεός = אלהים, πρὸς + accusative regularly translates אל with verbs of speaking in the Pentateuch.",
+      "alternatives": []
+    },
+    {
+      "position": 2,
+      "lxx_word": "ἐγώ εἰμι ὁ ὤν",
+      "vorlage_word": "אהיה אשר אהיה",
+      "status": "agrees_mt",
+      "confidence": 0.7,
+      "mt_equivalent": "אֶהְיֶה אֲשֶׁר אֶהְיֶה",
+      "dss_witness": null,
+      "reasoning": "The translator interprets rather than literally renders the idem-per-idem formula. ἐγώ εἰμι ὁ ὤν ('I am the One who is') is a philosophically inflected paraphrase of אהיה אשר אהיה, treating the second אהיה participially. Wevers (Notes on Exodus, ad loc.) sees no different Vorlage but a hellenizing exegesis.",
+      "alternatives": [
+        {
+          "reading": "אני הוא ההוה",
+          "confidence": 0.05,
+          "note": "Highly unlikely retroversion; no textual support."
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "lxx_word": "καὶ εἶπεν",
+      "vorlage_word": "ויאמר",
+      "status": "agrees_mt",
+      "confidence": 0.98,
+      "mt_equivalent": "וַיֹּאמֶר",
+      "dss_witness": null,
+      "reasoning": "Routine equivalence for the wayyiqtol of אמר.",
+      "alternatives": []
+    },
+    {
+      "position": 4,
+      "lxx_word": "οὕτως ἐρεῖς",
+      "vorlage_word": "כה תאמר",
+      "status": "agrees_mt",
+      "confidence": 0.97,
+      "mt_equivalent": "כֹּה תֹאמַר",
+      "dss_witness": null,
+      "reasoning": "οὕτως consistently renders כה in the Pentateuch; future ἐρεῖς for yiqtol תאמר is standard messenger-formula equivalence.",
+      "alternatives": []
+    },
+    {
+      "position": 5,
+      "lxx_word": "τοῖς υἱοῖς Ισραηλ",
+      "vorlage_word": "לבני ישראל",
+      "status": "agrees_mt",
+      "confidence": 0.97,
+      "mt_equivalent": "לִבְנֵי יִשְׂרָאֵל",
+      "dss_witness": null,
+      "reasoning": "Dative without preposition rendering ל + construct בני ישראל is the formulaic LXX pattern throughout Exodus.",
+      "alternatives": []
+    },
+    {
+      "position": 6,
+      "lxx_word": "ὁ ὢν",
+      "vorlage_word": "אהיה",
+      "status": "agrees_mt",
+      "confidence": 0.75,
+      "mt_equivalent": "אֶהְיֶה",
+      "dss_witness": null,
+      "reasoning": "The translator renders the divine self-designation אהיה with a present participle ὁ ὤν, consistent with his earlier interpretive choice in v. 14a. There is no need to posit a different Vorlage; this is theological/philosophical translation technique (cf. Pietersma, NETS Exodus).",
+      "alternatives": [
+        {
+          "reading": "ההוה",
+          "confidence": 0.05,
+          "note": "Unattested and unlikely; LXX participle reflects exegesis of אהיה."
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "lxx_word": "ἀπέσταλκέν με",
+      "vorlage_word": "שלחני",
+      "status": "agrees_mt",
+      "confidence": 0.95,
+      "mt_equivalent": "שְׁלָחַנִי",
+      "dss_witness": null,
+      "reasoning": "ἀποστέλλω is the default equivalent for שלח (qal); the perfect ἀπέσταλκεν renders qatal with 1cs object suffix.",
+      "alternatives": []
+    },
+    {
+      "position": 8,
+      "lxx_word": "πρὸς ὑμᾶς",
+      "vorlage_word": "אליכם",
+      "status": "agrees_mt",
+      "confidence": 0.97,
+      "mt_equivalent": "אֲלֵיכֶם",
+      "dss_witness": null,
+      "reasoning": "πρός + accusative regularly renders אל + 2mp suffix after verbs of sending.",
+      "alternatives": []
+    }
+  ],
+  "summary_technical": "The Vorlage of LXX Exodus 3:14 is essentially identical to MT; no variant reading need be posited. The notable divergence — ἐγώ εἰμι ὁ ὤν / ὁ ὤν for אהיה אשר אהיה / אהיה — reflects interpretive translation technique (an ontological reading of the divine name) rather than a different Hebrew text. No DSS witness preserves this verse to adjudicate, but the consonantal reconstruction is secure.",
+  "summary_plain": "The Greek translator almost certainly had a Hebrew text identical to the Masoretic Text. The famous 'I am the One who is' is the translator's philosophical interpretation of the Hebrew 'I will be who I will be,' not evidence of a different Hebrew original.",
+  "overall_confidence": 0.9,
+  "bibcrit_assessment": {
+    "title": "Ontological Rendering of the Divine Name",
+    "reasoning": "The most consequential feature of LXX Exod 3:14 is exegetical, not text-critical: the translator construes אהיה as a participle of being (ὁ ὤν), producing the first explicit ontological reading of YHWH's self-disclosure. This is translation technique, not a lost Vorlage — there is no plausible Hebrew (e.g. ההוה) behind ὁ ὤν, and positing one would be speculation against the grain of LXX-Exodus's otherwise close adherence to a proto-MT consonantal text.",
+    "plain": "The Greek 'the One who is' is the translator's theological interpretation, not a sign that he had a different Hebrew text. This single rendering shaped centuries of Jewish and Christian thought about God's being.",
+    "confidence": 0.85
+  },
+  "discovery_ready": false,
+  "reference": "Exodus 3:14",
+  "cached_at": "2026-05-09T21:14:59.355140",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v1"
+}

@@ -1,0 +1,122 @@
+{
+  "reference": "2 Samuel 10",
+  "subject": "Military figures in David's Ammonite-Aramean war",
+  "figures": [
+    {
+      "name": "Aramean foot soldiers from Beth-rehob and Zobah hired by Ammonites",
+      "mt_value": 20000,
+      "lxx_value": 20000,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "MT and LXX agree on 20,000 foot soldiers; SP does not contain Samuel."
+    },
+    {
+      "name": "King of Maacah's men",
+      "mt_value": 1000,
+      "lxx_value": 1000,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "Agreement between MT and LXX; the parallel in 1 Chronicles 19:6-7 differs significantly."
+    },
+    {
+      "name": "Men of Tob",
+      "mt_value": 12000,
+      "lxx_value": 12000,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "MT and LXX agree at 12,000."
+    },
+    {
+      "name": "Aramean charioteers slain by David (chariots/horsemen)",
+      "mt_value": 700,
+      "lxx_value": 700,
+      "sp_value": 0,
+      "divergence_type": "significant",
+      "note": "MT/LXX read 700 chariots; the parallel 1 Chronicles 19:18 reads 7,000 chariots, a tenfold divergence often discussed alongside this verse."
+    },
+    {
+      "name": "Aramean horsemen/foot soldiers slain",
+      "mt_value": 40000,
+      "lxx_value": 40000,
+      "sp_value": 0,
+      "divergence_type": "minor",
+      "note": "MT specifies 40,000 horsemen (parashim); 1 Chronicles 19:18 reads 40,000 foot soldiers (raglim), suggesting a one-word scribal variant."
+    }
+  ],
+  "systematic_analysis": {
+    "is_systematic": false,
+    "pattern": "Within 2 Samuel 10 itself, MT and LXX exhibit substantial agreement on numerical values; the Samaritan Pentateuch is irrelevant since it contains only the Torah. The notable divergences emerge in the synoptic comparison with 1 Chronicles 19, where chariot counts shift by a factor of ten (700 vs. 7,000) and horsemen are exchanged for foot soldiers (parashim vs. raglim). No consistent inflation/deflation ratio governs these differences; they appear isolated rather than systematic.",
+    "pattern_plain": "The Greek and Hebrew versions of 2 Samuel 10 mostly match each other on the numbers. The real puzzle is that the parallel account in 1 Chronicles 19 gives very different figures, especially multiplying the chariots by ten."
+  },
+  "theories": [
+    {
+      "name": "Scribal error in number transmission",
+      "slug": "scribal_error",
+      "score": 0.78,
+      "confidence": 0.75,
+      "summary": "The 700/7,000 chariot divergence and the parashim/raglim swap between Samuel and Chronicles are classic markers of scribal corruption: numerical notation in early Hebrew used letters or strokes easily miscopied, and parashim/raglim differ by only a few graphemes. Most text critics (e.g., McCarter, Driver) treat these as transmission errors rather than ideological revisions.",
+      "summary_plain": "The differences in numbers are most likely simple copying mistakes, since ancient scribes easily confused similar-looking number signs and similar Hebrew words.",
+      "supporting_evidence": [
+        "The factor-of-ten difference (700 vs. 7,000 chariots) is a recurring symptom of scribal slip in numeric transmission across MT/LXX.",
+        "Parashim ('horsemen') and raglim ('foot soldiers') are graphically and semantically swappable in scribal contexts.",
+        "Josephus (Ant. 7.6.1) preserves yet another set of figures, indicating textual fluidity in number transmission.",
+        "LXX of 2 Samuel 10 generally tracks MT closely, supporting localized scribal variation rather than systemic editorial bias.",
+        "Comparable numeric anomalies between Samuel-Kings and Chronicles (e.g., 2 Sam 24:9 vs. 1 Chr 21:5) show a broad pattern of independent corruption."
+      ],
+      "weaknesses": [
+        "Cannot fully explain why Chronicles consistently shows higher figures in some military passages, suggesting possible tendentious revision.",
+        "Does not address whether one tradition (Samuel or Chronicles) is consistently more reliable.",
+        "Some divergences may reflect genuine alternate source documents rather than copyist mistakes."
+      ]
+    },
+    {
+      "name": "Independent textual traditions",
+      "slug": "independent_traditions",
+      "score": 0.55,
+      "confidence": 0.55,
+      "summary": "The Samuel and Chronicles accounts may derive from parallel source traditions about the Aramean war that already differed in their numerical reports before reaching the canonical compilers. This would explain why MT and LXX of Samuel agree internally but diverge from Chronicles in ways not easily reduced to a single error.",
+      "summary_plain": "The author of Chronicles may have used different historical sources than the author of Samuel, so the numbers were already different before any copying mistakes.",
+      "supporting_evidence": [
+        "Chronicles frequently draws on sources beyond Samuel-Kings (e.g., 'Book of the Kings of Israel and Judah').",
+        "Josephus's third set of figures hints at multiple circulating traditions.",
+        "The parashim/raglim difference may reflect genuinely different source descriptions of troop composition.",
+        "Qumran Samuel manuscripts (4QSam-a) sometimes side with LXX or Chronicles against MT, indicating plural early traditions."
+      ],
+      "weaknesses": [
+        "Difficult to verify lost source documents.",
+        "The factor-of-ten chariot divergence still looks more like a scribal slip than two independent reports.",
+        "Most textual critics still prefer scribal explanations for round-number divergences."
+      ]
+    },
+    {
+      "name": "Theological/ideological amplification in Chronicles",
+      "slug": "theological_motivation",
+      "score": 0.35,
+      "confidence": 0.4,
+      "summary": "The Chronicler is known to magnify Davidic victories to glorify the dynasty and the cult; the tenfold chariot increase (700→7,000) in 1 Chronicles 19:18 fits this tendency. However, this theory applies to Chronicles vs. Samuel rather than to internal MT/LXX/SP divergence in 2 Samuel 10.",
+      "summary_plain": "The author of Chronicles may have inflated the numbers to make David's victories sound more impressive.",
+      "supporting_evidence": [
+        "Chronicles regularly enlarges figures associated with Davidic and Solomonic glory.",
+        "The Chronicler's theological program emphasizes divine favor through overwhelming victory.",
+        "The 7,000 figure aligns suspiciously with symbolic 'completeness' numerology."
+      ],
+      "weaknesses": [
+        "Cannot explain divergences not tied to glorification (e.g., parashim/raglim swap).",
+        "Some Chronicles numbers are actually lower than Samuel's, undermining a uniform inflation theory.",
+        "Modern critics increasingly see Chronicles as preserving older readings in some cases."
+      ]
+    }
+  ],
+  "overall_assessment": "The numerical divergences relevant to 2 Samuel 10 are not really intra-Samuel (MT and LXX largely agree, and SP is inapplicable) but emerge in synoptic comparison with 1 Chronicles 19. The most defensible explanation combines localized scribal corruption (especially for the 700/7,000 chariot figure and the parashim/raglim variant) with the possibility that the Chronicler drew on a partially independent tradition. Theological inflation in Chronicles is plausible but insufficient as a sole explanation. The case illustrates that numerical transmission in the Deuteronomistic and Chronistic histories is fragile and multi-layered, requiring case-by-case adjudication rather than a global theory.",
+  "overall_plain": "Within 2 Samuel 10, the Hebrew and Greek versions agree on the numbers, so the real divergence is with the parallel account in 1 Chronicles 19. Most likely a mix of scribal copying errors and the Chronicler using somewhat different sources accounts for the differences.",
+  "bibcrit_assessment": {
+    "title": "Samuel-Chronicles divergence outweighs MT-LXX variation",
+    "reasoning": "The most striking finding is that 2 Samuel 10 shows minimal MT/LXX numerical divergence yet substantial disagreement with its Chronicles parallel, demonstrating that the more consequential textual fault line for biblical numbers often lies between synoptic books rather than between Hebrew and Greek witnesses. This shifts the methodological focus from versional comparison to inner-biblical synoptic criticism and underscores the fragility of numerical transmission in narrative texts.",
+    "plain": "The biggest disagreement isn't between the Hebrew and Greek Bibles here—it's between two books inside the Bible itself, Samuel and Chronicles, telling the same story with different numbers.",
+    "confidence": 0.72
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T21:25:45.277684",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v3"
+}

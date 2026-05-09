@@ -1,0 +1,125 @@
+{
+  "passage": "Ruth 1:1-22",
+  "structure_detected": true,
+  "structure_type": "concentric",
+  "confidence_note": "Strong evidence: clear inclusio (Bethlehem/famine-harvest), geographic movement frames, and a central dialogue pivot identified by multiple scholars",
+  "elements": [
+    {
+      "label": "A",
+      "verses": "1:1-2",
+      "summary": "Departure from Bethlehem to Moab because of famine; family named",
+      "text_excerpt": "וַיֵּלֶךְ אִישׁ מִבֵּית לֶחֶם יְהוּדָה לָגוּר בִּשְׂדֵי מוֹאָב",
+      "confidence": 0.9
+    },
+    {
+      "label": "B",
+      "verses": "1:3-5",
+      "summary": "Death of Elimelech and sons; Naomi left bereft of husband and children",
+      "text_excerpt": "וַתִּשָּׁאֵר הָאִשָּׁה מִשְּׁנֵי יְלָדֶיהָ וּמֵאִישָׁהּ",
+      "confidence": 0.88
+    },
+    {
+      "label": "C",
+      "verses": "1:6-7",
+      "summary": "Naomi sets out to return (שוב) from Moab toward Judah with her two daughters-in-law",
+      "text_excerpt": "וַתָּקָם הִיא וְכַלֹּתֶיהָ וַתָּשָׁב מִשְּׂדֵי מוֹאָב",
+      "confidence": 0.85
+    },
+    {
+      "label": "D",
+      "verses": "1:8-13",
+      "summary": "First dialogue: Naomi urges both daughters to return to Moab; speaks of YHWH's hand against her",
+      "text_excerpt": "שֹׁבְנָה בְנֹתַי לֵכְןָ ... כִּי־יָצְאָה בִי יַד־יְהוָה",
+      "confidence": 0.87
+    },
+    {
+      "label": "X",
+      "verses": "1:14-18",
+      "summary": "Pivotal parting: Orpah returns to her people/gods; Ruth clings (דבק) and pledges covenantal loyalty to Naomi and YHWH",
+      "text_excerpt": "וְרוּת דָּבְקָה בָּהּ ... עַמֵּךְ עַמִּי וֵאלֹהַיִךְ אֱלֹהָי",
+      "confidence": 0.92
+    },
+    {
+      "label": "D'",
+      "verses": "1:19-21",
+      "summary": "Second dialogue: Naomi addresses Bethlehem women, again invoking YHWH/Shaddai who has dealt bitterly with her",
+      "text_excerpt": "הֵמַר שַׁדַּי לִי מְאֹד ... וַיהוָה עָנָה בִי",
+      "confidence": 0.85
+    },
+    {
+      "label": "C'",
+      "verses": "1:22a",
+      "summary": "Naomi's return (שוב) from Moab accomplished, with Ruth the Moabite",
+      "text_excerpt": "וַתָּשָׁב נָעֳמִי וְרוּת הַמּוֹאֲבִיָּה כַלָּתָהּ עִמָּהּ הַשָּׁבָה מִשְּׂדֵי מוֹאָב",
+      "confidence": 0.83
+    },
+    {
+      "label": "B'",
+      "verses": "1:21b-22a",
+      "summary": "Naomi's emptiness counters earlier fullness — bereavement summarized as YHWH's affliction",
+      "text_excerpt": "אֲנִי מְלֵאָה הָלַכְתִּי וְרֵיקָם הֱשִׁיבַנִי יְהוָה",
+      "confidence": 0.7
+    },
+    {
+      "label": "A'",
+      "verses": "1:22b",
+      "summary": "Arrival in Bethlehem at the beginning of barley harvest — famine reversed",
+      "text_excerpt": "בָּאוּ בֵּית לֶחֶם בִּתְחִלַּת קְצִיר שְׂעֹרִים",
+      "confidence": 0.9
+    }
+  ],
+  "pivot": {
+    "label": "X",
+    "verses": "1:14-18",
+    "summary": "Ruth's clinging and her covenantal vow form the theological hinge of the chapter, contrasted with Orpah's return",
+    "theological_weight": "Ruth's confession ('your people shall be my people, and your God my God') transforms the narrative from a story of emptying loss into one of unexpected ḥesed and covenant inclusion. The Moabite outsider's pledge to YHWH stands as the theological key by which Naomi's bitter providence will be reversed."
+  },
+  "correspondences": [
+    {
+      "pair": [
+        "A",
+        "A'"
+      ],
+      "evidence": "Bethlehem inclusio; famine at start (1:1) reversed by barley harvest at end (1:22); root לחם implicit",
+      "confidence": 0.92
+    },
+    {
+      "pair": [
+        "B",
+        "B'"
+      ],
+      "evidence": "Naomi's bereavement (1:3-5, 'left without' שאר) echoed in her self-description as 'empty' (ריקם) brought back by YHWH",
+      "confidence": 0.75
+    },
+    {
+      "pair": [
+        "C",
+        "C'"
+      ],
+      "evidence": "Repetition of שוב מִשְּׂדֵי מוֹאָב framing the journey; departure-from-Moab motif opens and closes the travel frame",
+      "confidence": 0.88
+    },
+    {
+      "pair": [
+        "D",
+        "D'"
+      ],
+      "evidence": "Two Naomi speeches invoking YHWH/Shaddai's hand against her (יד־יהוה / הֵמַר שַׁדַּי); both lament divine affliction",
+      "confidence": 0.85
+    }
+  ],
+  "overall_confidence": 0.84,
+  "methodology_citations": "Dorsey, Literary Structure of the OT (1999), ch. 9 on Ruth, pp. 124-127; Walsh, Style and Structure (2001), pp. 13-16 on inclusio and concentric framing; Lund (1942) on chiastic centers carrying theological weight",
+  "theological_significance": "The concentric arrangement places Ruth's covenantal vow at the structural and theological center, framing the entire chapter as a reversal narrative: from famine to harvest, from emptiness to the seed of restoration. Naomi's two laments over divine affliction (D/D') bracket the pivot, so that Ruth's ḥesed answers — though Naomi cannot yet see it — the very bitterness Naomi voices. The Bethlehem-famine/Bethlehem-harvest inclusio signals that YHWH's providence, hidden in the pivot, has already begun to reverse the emptying.",
+  "scholarly_citations": "Dorsey (1999, 124-127) outlines a symmetric structure for Ruth 1 centered on the Ruth-Orpah parting; Bar-Efrat (Narrative Art in the Bible) and Trible (God and the Rhetoric of Sexuality, 166-199) similarly highlight the chiastic framing of emptiness and fullness around Ruth's vow.",
+  "bibcrit_hypothesis": {
+    "title": "Ruth's Vow as Hidden Theodicy Pivot",
+    "reasoning": "The chapter's concentric design positions Ruth's confession as the silent answer to Naomi's twin laments about Shaddai's hand, suggesting the narrator embeds theodicy in structure rather than speech. The Moabite's covenantal cleaving functions as the providential turn that Naomi denies even as she utters it, making structure itself the bearer of theological reversal.",
+    "confidence": 0.78
+  },
+  "discovery_ready": true,
+  "reference": "Ruth 1:1-22",
+  "cached_at": "2026-05-09T21:53:20.690820",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v1"
+}

@@ -1,0 +1,88 @@
+{
+  "reference": "Exodus 12:40",
+  "subject": "Duration of Israel's sojourn",
+  "figures": [
+    {
+      "name": "Sojourn of Israel",
+      "mt_value": 430,
+      "lxx_value": 430,
+      "sp_value": 430,
+      "divergence_type": "significant",
+      "note": "All three traditions give 430 years, but they disagree sharply on what territory/period the number covers."
+    }
+  ],
+  "systematic_analysis": {
+    "is_systematic": true,
+    "pattern": "All three witnesses preserve the figure 430 years, but the scope differs: MT restricts the 430 years to Israel's dwelling 'in Egypt,' while LXX reads 'in Egypt and in the land of Canaan' and SP reads 'in the land of Canaan and in the land of Egypt' (some SP MSS adding 'and their fathers'). The LXX/SP reading halves the Egyptian sojourn proper (~215 years), aligning with Paul's 430-year reckoning from Abraham's promise to Sinai in Galatians 3:17 and with the four-generation schema of Exodus 6:16–20.",
+    "pattern_plain": "All three texts say '430 years,' but the Hebrew (MT) says Israel spent that time in Egypt, while the Greek (LXX) and Samaritan versions say it covers the time in both Canaan and Egypt combined. This effectively cuts the time in Egypt itself in half."
+  },
+  "theories": [
+    {
+      "name": "LXX/SP Harmonizing Expansion",
+      "slug": "sp_harmonization",
+      "score": 0.78,
+      "confidence": 0.7,
+      "summary": "The LXX and SP plus-readings ('and in the land of Canaan') are widely regarded as harmonizing glosses that reconcile the 430-year sojourn with the four-generation genealogy of Exodus 6 (Kohath-Amram-Moses) and with Genesis 15:13–16. Such expansions are characteristic of the SP's harmonistic Vorlage and of the LXX-Exodus translator's exegetical tendencies. The shorter MT reading is the lectio difficilior.",
+      "summary_plain": "Most scholars think the longer Greek and Samaritan readings were added by scribes to fix an apparent contradiction between 430 years in Egypt and the short genealogies that only list four generations. The Hebrew preserves the older, harder reading.",
+      "supporting_evidence": [
+        "The SP is well-documented as a harmonizing recension, especially in chronological and genealogical material.",
+        "LXX-Exodus shows multiple instances of expansion to resolve internal tensions.",
+        "The four-generation genealogy of Exodus 6:16–20 (Levi-Kohath-Amram-Moses) is mathematically incompatible with 430 years of Egyptian residence, creating pressure to shorten it.",
+        "MT's shorter reading qualifies as lectio brevior and lectior difficilior simultaneously.",
+        "Rabbinic tradition (Seder Olam, Rashi) independently develops a 210-year Egyptian sojourn, showing the harmonizing instinct was widespread."
+      ],
+      "weaknesses": [
+        "Paul's use of the 430-year figure from Abraham (Gal 3:17) suggests the LXX/SP reading was already authoritative in the Second Temple period, not a late gloss.",
+        "Josephus (Ant. 2.15.2) and the Book of Jubilees independently support a sojourn reckoned from the patriarchs, suggesting a genuine ancient tradition.",
+        "The MT itself preserves tensions (Gen 15:16 'fourth generation') that imply a shorter Egyptian stay, which could indicate MT is the abbreviated text."
+      ]
+    },
+    {
+      "name": "MT Deflation / LXX-SP Originality",
+      "slug": "mt_deflation",
+      "score": 0.35,
+      "confidence": 0.45,
+      "summary": "A minority position (developed in different forms by Sexton and others on related chronologies) argues the LXX/SP reading is original and the MT was shortened, perhaps to emphasize Egyptian oppression or to round the figure. The convergence of LXX, SP, Paul, and Josephus on the longer reading constitutes broad multi-stream attestation.",
+      "summary_plain": "A minority view holds that the longer Greek/Samaritan reading is original and the Hebrew text was shortened later. Paul and Josephus seem to know this longer reading.",
+      "supporting_evidence": [
+        "LXX + SP + Pauline citation + Josephus form a broad coalition against MT.",
+        "Genesis 15:16's 'fourth generation' fits a Canaan-inclusive 430 years.",
+        "The genealogies of Exodus 6 and 1 Chronicles 6 fit a ~215-year Egyptian stay."
+      ],
+      "weaknesses": [
+        "LXX and SP frequently agree against MT precisely where harmonization is suspected.",
+        "Paul may simply be citing the LXX form known to his audience without endorsing its originality.",
+        "No clear theological or scribal motive for MT to deliberately shorten the reference."
+      ]
+    },
+    {
+      "name": "Independent Exegetical Traditions",
+      "slug": "independent_traditions",
+      "score": 0.45,
+      "confidence": 0.5,
+      "summary": "The divergence may reflect two genuinely ancient interpretive streams—one counting 430 years from the descent into Egypt (MT), another from Abraham's call or the covenant (LXX/SP/Paul/Josephus)—rather than a simple textual corruption in either direction. Both readings circulated in the Second Temple period.",
+      "summary_plain": "The two readings may both be very old, representing different ways Jews counted the 430 years—either from entering Egypt or from Abraham. Neither is necessarily a 'corruption.'",
+      "supporting_evidence": [
+        "Multiple Second Temple sources (Jubilees, Josephus, Paul, LXX, SP) attest the longer scope.",
+        "Rabbinic and Masoretic tradition consistently maintains the shorter scope.",
+        "The figure 430 is identical—only the geographic scope diverges, suggesting interpretation rather than numeric corruption."
+      ],
+      "weaknesses": [
+        "Does not explain why the SP and LXX share nearly identical expansionary wording.",
+        "Text-critical method generally prefers a single Vorlage with subsequent modification."
+      ]
+    }
+  ],
+  "overall_assessment": "The Exodus 12:40 divergence is unusual in that the number itself (430) is stable across all three traditions; the variation lies in the geographic scope of the sojourn. The dominant scholarly view treats LXX and SP as harmonizing expansions designed to reconcile the 430 years with the four-generation Levitical genealogy and with Genesis 15:16, making the MT's shorter reading text-critically preferable. However, the convergence of LXX, SP, Paul, Josephus, and Jubilees on the longer reckoning indicates that whatever the original wording, the 'from Abraham' interpretation was deeply rooted by the Second Temple period. The case illustrates how chronological tensions internal to the Pentateuch generate parallel scribal and exegetical responses across textual streams.",
+  "overall_plain": "All three Bibles agree on '430 years,' but they disagree on whether that covers only Egypt or Egypt plus Canaan. Most scholars think the Hebrew is original and the Greek and Samaritan added words to solve a chronological puzzle, but the longer reading was clearly known in Paul's day.",
+  "bibcrit_assessment": {
+    "title": "Same number, different scope: harmonization in action",
+    "reasoning": "Exodus 12:40 is a textbook case of scribal harmonization operating not on numerals themselves but on their referential scope, demonstrating that text-critical analysis of biblical chronology must attend to interpretive framing as much as digits. The unanimity on '430' alongside divergence on scope shows that ancient transmitters were deeply concerned with chronological coherence and willing to adjust prepositional phrases to achieve it. This is among the clearest examples where the New Testament (Galatians 3:17) sides with the LXX/SP against the MT.",
+    "plain": "This verse shows how ancient scribes tweaked small phrases—not the numbers themselves—to make the Bible's timeline add up. It's also a rare case where Paul in the New Testament follows the Greek Bible rather than the Hebrew.",
+    "confidence": 0.78
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T21:28:11.946222",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v3"
+}

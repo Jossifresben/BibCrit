@@ -1,0 +1,172 @@
+{
+  "reference": "1 Kings 6",
+  "subject": "Date of Temple construction and dimensions of Solomon's Temple",
+  "figures": [
+    {
+      "name": "Years from Exodus to Temple founding (1 Kings 6:1)",
+      "mt_value": 480,
+      "lxx_value": 440,
+      "sp_value": 0,
+      "divergence_type": "significant",
+      "note": "SP does not contain Kings; MT 480 vs LXX 440 represents a 40-year (one generation) difference."
+    },
+    {
+      "name": "Year of Solomon's reign when Temple begun (1 Kings 6:1)",
+      "mt_value": 4,
+      "lxx_value": 4,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "Both traditions agree on the fourth year of Solomon."
+    },
+    {
+      "name": "Temple length in cubits (1 Kings 6:2)",
+      "mt_value": 60,
+      "lxx_value": 60,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Temple width in cubits (1 Kings 6:2)",
+      "mt_value": 20,
+      "lxx_value": 20,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Temple height in cubits (1 Kings 6:2)",
+      "mt_value": 30,
+      "lxx_value": 25,
+      "sp_value": 0,
+      "divergence_type": "minor",
+      "note": "LXX (B) reads 25 cubits; MT reads 30, possibly harmonizing with the porch height in 2 Chr 3:4."
+    },
+    {
+      "name": "Porch length in cubits (1 Kings 6:3)",
+      "mt_value": 20,
+      "lxx_value": 20,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Porch depth in cubits (1 Kings 6:3)",
+      "mt_value": 10,
+      "lxx_value": 10,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Years to build the Temple (1 Kings 6:38)",
+      "mt_value": 7,
+      "lxx_value": 7,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Cherubim height in cubits (1 Kings 6:23-26)",
+      "mt_value": 10,
+      "lxx_value": 10,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": null
+    }
+  ],
+  "systematic_analysis": {
+    "is_systematic": false,
+    "pattern": "The Samaritan Pentateuch is irrelevant since 1 Kings lies outside the Samaritan canon. The principal divergence is the 480/440 figure in 6:1, where LXX's 440 equals 11 generations of 40 years versus MT's 12 generations, plus a minor architectural variant of 25/30 cubits for Temple height. There is no consistent inflation/deflation rule here; the 40-year differential appears chronologically motivated rather than systematic.",
+    "pattern_plain": "The Samaritan version doesn't include Kings, so only Hebrew and Greek can be compared. The big difference is whether 480 or 440 years passed between the Exodus and the Temple, plus a small disagreement about the Temple's height."
+  },
+  "theories": [
+    {
+      "name": "Theological/Schematic Motivation",
+      "slug": "theological_motivation",
+      "score": 0.78,
+      "confidence": 0.7,
+      "summary": "The 480/440 divergence reflects competing schematic chronologies: MT's 480 = 12 generations × 40 years (an idealized scheme spanning Exodus to Temple), while LXX's 440 = 11 generations × 40 years. Wellhausen, Noth, and more recently Hughes argue the figure is artificially constructed rather than historically derived, with each tradition adjusting to fit its broader chronological framework.",
+      "summary_plain": "The numbers look like deliberately rounded schemes based on 40-year generations rather than precise historical records, with each tradition picking a slightly different scheme.",
+      "supporting_evidence": [
+        "480 = 12 × 40, a transparently schematic figure using the symbolic generation length.",
+        "440 = 11 × 40, suggesting LXX preserves or constructs an alternative generational count.",
+        "Sum of judges' periods in Judges far exceeds 480, indicating the figure is theological not additive.",
+        "The 12-generation scheme parallels the priestly genealogy of 1 Chronicles 6.",
+        "Josephus gives yet another figure (592 in Ant. 8.61, or 612 elsewhere), showing chronological flexibility."
+      ],
+      "weaknesses": [
+        "Cannot easily explain why LXX would reduce a meaningful 12-generation scheme to 11.",
+        "Some conservative scholars (Kitchen, Young) defend 480 as a genuine historical figure.",
+        "Doesn't address the 25/30 cubit Temple height variant."
+      ]
+    },
+    {
+      "name": "LXX Inflation/Adjustment",
+      "slug": "lxx_inflation",
+      "score": 0.35,
+      "confidence": 0.45,
+      "summary": "Though typically LXX inflates chronological figures (as in Genesis 5/11), here it deflates by 40 years, which some scholars (Thiele, Galil) attribute to LXX harmonizing with an alternative reckoning of the wilderness/conquest period. The change is one generation, suggesting deliberate adjustment rather than random corruption.",
+      "summary_plain": "The Greek translators may have adjusted the number to fit their own timeline, dropping one 40-year generation.",
+      "supporting_evidence": [
+        "LXX elsewhere systematically modifies chronological figures (Genesis genealogies).",
+        "440 differs from MT by exactly one generation (40 years), suggesting intentional editing.",
+        "LXX of Kings shows numerous other chronological adjustments to regnal years."
+      ],
+      "weaknesses": [
+        "The direction (deflation) contradicts LXX's usual pattern of inflation in Genesis.",
+        "No clear theological motive for LXX to shorten this particular interval.",
+        "Could equally represent MT inflation rather than LXX deflation."
+      ]
+    },
+    {
+      "name": "Scribal Error",
+      "slug": "scribal_error",
+      "score": 0.25,
+      "confidence": 0.35,
+      "summary": "The 30/25 cubit Temple height variant could reflect simple numerical corruption, and the 480/440 difference might involve confusion of similar Hebrew letter-numerals or numerical signs in Vorlage. However, the precision of a 40-year (single generation) gap argues against random error.",
+      "summary_plain": "Some of the differences could just be copying mistakes, though the round-number gap looks too tidy for that.",
+      "supporting_evidence": [
+        "Numerical figures are notoriously prone to copyist corruption.",
+        "The 25/30 height variant has no theological significance and looks like simple error.",
+        "Hebrew numerical notation systems were susceptible to confusion."
+      ],
+      "weaknesses": [
+        "A precisely 40-year difference is unlikely to result from random scribal error.",
+        "MT 30 may be a deliberate harmonization with 2 Chr 3:4 rather than an error.",
+        "Doesn't account for the schematic character of both 480 and 440."
+      ]
+    },
+    {
+      "name": "Independent Traditions",
+      "slug": "independent_traditions",
+      "score": 0.45,
+      "confidence": 0.5,
+      "summary": "MT and LXX of Kings demonstrably descend from different Hebrew Vorlagen (cf. Shenkar, Trebolle Barrera, McKenzie), with LXX often preserving an older or alternative Hebrew text-form. The 440/480 divergence may simply reflect two genuine ancient chronological traditions rather than one corrupting the other.",
+      "summary_plain": "There may have been two different ancient Hebrew versions of Kings circulating, each with its own numbers.",
+      "supporting_evidence": [
+        "Qumran fragments and LXX of Samuel-Kings show evidence of multiple Hebrew text-types.",
+        "LXX Kings (especially the Old Greek) preserves readings demonstrably older than MT in many places.",
+        "Chronological systems in MT and LXX Kings diverge throughout the regnal data, not just here.",
+        "Josephus' independent figures suggest multiple traditions circulated."
+      ],
+      "weaknesses": [
+        "Does not adjudicate which (if either) tradition is original.",
+        "Begs the question of how the original divergence arose.",
+        "Difficult to test empirically without earlier manuscript evidence."
+      ]
+    }
+  ],
+  "overall_assessment": "The 1 Kings 6 divergences are limited (SP is inapplicable) and center on the 480/440 figure in 6:1, with a secondary 25/30 cubit Temple height variant. The most compelling explanation combines theological/schematic motivation with independent textual traditions: both 480 (12×40) and 440 (11×40) are transparently generational schemes preserved in distinct Hebrew Vorlagen underlying MT and LXX respectively. This pattern fits the broader picture of LXX Kings preserving an alternative, often older, Hebrew text-form whose chronological framework differs systematically from MT's, and it cautions against treating either figure as a simple historical datum.",
+  "overall_plain": "The Hebrew and Greek versions of 1 Kings 6 disagree mainly about how many years passed from the Exodus to Solomon's Temple (480 vs. 440). Both numbers look like neat generational schemes rather than raw historical records, and they probably come from two different ancient editions of Kings.",
+  "bibcrit_assessment": {
+    "title": "Twelve Generations or Eleven: Schematic Chronologies Diverge",
+    "reasoning": "The 480/440 split exposes how even a single celebrated chronological anchor—the foundational date of the First Temple—was transmitted in competing schematic forms differing by exactly one symbolic generation. This undermines naive historical use of either figure and demonstrates that LXX Kings rests on a Hebrew Vorlage with its own coherent chronological architecture, not mere translational drift.",
+    "plain": "Even the famous '480 years from the Exodus' wasn't transmitted uniformly—the Greek Bible has 440. This shows ancient scribes worked with stylized generational schemes, not stopwatch history.",
+    "confidence": 0.72
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T21:19:57.801529",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v3"
+}

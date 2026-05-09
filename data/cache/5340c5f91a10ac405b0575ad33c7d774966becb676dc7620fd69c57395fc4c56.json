@@ -1,0 +1,103 @@
+{
+  "passage": "Genesis 1:1-2:25",
+  "framework": "classic_documentary",
+  "scope_note": "Analysis of the two creation accounts in Genesis 1-2, traditionally divided between P and J sources at the seam in 2:4.",
+  "source_units": [
+    {
+      "verses": "1:1-2:3",
+      "source": "P",
+      "confidence": 0.97,
+      "divine_name_used": "Elohim",
+      "key_vocabulary": [
+        "bara' (create)",
+        "min (kind)",
+        "tohu wa-bohu",
+        "tselem (image)",
+        "demut (likeness)",
+        "yom (day)",
+        "ot (sign)",
+        "mo'adim (appointed times)"
+      ],
+      "theological_concerns": "Transcendent creator God who creates by divine speech; ordered cosmos structured around seven-day liturgical week culminating in Sabbath; humanity created male and female together in divine image; concern with categorization, separation, and blessing.",
+      "structural_markers": "Repetitive formulae ('And God said,' 'and it was so,' 'God saw that it was good,' 'evening and morning'); seven-day schema; precise numerical structure; toledot-style conclusion at 2:1-3.",
+      "doublet_with": "2:4b-25",
+      "summary": "Classic Priestly composition exhibiting all hallmarks of P: exclusive use of Elohim, creation-by-fiat, structured numerical/liturgical organization, and concern with Sabbath. Wellhausen identified this as the keystone of P, demonstrating P's late cultic ideology imposed on creation itself. The unit's vocabulary (bara', tselem, min) and formulaic style are uniformly recognized as Priestly."
+    },
+    {
+      "verses": "2:4a",
+      "source": "P",
+      "confidence": 0.7,
+      "divine_name_used": "none",
+      "key_vocabulary": [
+        "toledot",
+        "ha-shamayim ve-ha-aretz",
+        "be-hibbare'am"
+      ],
+      "theological_concerns": "Genealogical/structural framing typical of Priestly toledot formula.",
+      "structural_markers": "The toledot formula ('these are the generations of') is a hallmark of P's structuring of Genesis.",
+      "doublet_with": null,
+      "summary": "The phrase 'These are the generations of the heavens and the earth when they were created' is widely assigned to P as part of the toledot system. Some scholars (e.g., Cross) read it as a superscription to what follows; Friedman and most read it as a colophon closing the P creation account. A minority (older Wellhausen tradition) treats it as a redactional bridge."
+    },
+    {
+      "verses": "2:4b-25",
+      "source": "J",
+      "confidence": 0.96,
+      "divine_name_used": "YHWH Elohim",
+      "key_vocabulary": [
+        "yatsar (form)",
+        "adamah (ground)",
+        "nefesh chayyah",
+        "gan (garden)",
+        "Eden",
+        "etz ha-chayyim",
+        "etz ha-da'at"
+      ],
+      "theological_concerns": "Anthropomorphic deity who forms man from dust like a potter, plants a garden, breathes into nostrils, performs surgery on the man's side, walks in the garden; etiological interest in marriage, gender, agriculture, and human mortality.",
+      "structural_markers": "Vivid narrative style with concrete imagery; etiological asides (2:24); wordplay (ish/ishshah, adam/adamah); compound divine name YHWH Elohim likely reflects redactional harmonization with chapter 1.",
+      "doublet_with": "1:1-2:3",
+      "summary": "The second creation account is paradigmatically Yahwistic: anthropomorphic YHWH, earthy materials, narrative vividness, and etiological concerns. The compound 'YHWH Elohim' (unique in Torah outside Exodus 9:30) is generally explained as redactional softening to bridge with the P account in chapter 1. Friedman and Baden agree on J attribution; differences concern only the nature of the compound name."
+    }
+  ],
+  "doublets": [
+    {
+      "unit_1_verses": "1:1-2:3",
+      "unit_2_verses": "2:4b-25",
+      "description": "Two distinct creation accounts: a cosmic seven-day creation by divine command, and a garden-centered narrative of human formation.",
+      "significance": "This is the foundational doublet of the Documentary Hypothesis; differences in divine name, order of creation (animals before humans vs. man before animals), style, and theology are nearly impossible to reconcile as a single composition."
+    }
+  ],
+  "competing_positions": [
+    {
+      "scholar": "Friedman (2003)",
+      "attribution": "Assigns 1:1-2:3 wholly to P and 2:4b-25 wholly to J, with 2:4a as a P colophon. Notes the contradictions in order of creation as decisive evidence for two sources.",
+      "note": "The Bible with Sources Revealed, pp. 33-37"
+    },
+    {
+      "scholar": "Baden (2012)",
+      "attribution": "Concurs with the standard P/J division but emphasizes that the two accounts represent independent narrative threads, not a single composition with editorial supplements; rejects supplementary models that would make J an expansion of P.",
+      "note": "The Composition of the Pentateuch, pp. 169-172"
+    },
+    {
+      "scholar": "Wellhausen (1878)",
+      "attribution": "Originally identified Genesis 1 as belonging to the 'Grundschrift' (later P) and Genesis 2-3 as Yahwistic; used the contrast to argue for P's late, schematic, cultic character.",
+      "note": "Prolegomena, ch. 8"
+    },
+    {
+      "scholar": "Cassuto / Kikawada-Quinn",
+      "attribution": "Reject source division, reading Genesis 1-2 as a unified composition where chapter 2 zooms in on the sixth day. A minority position outside critical consensus.",
+      "note": "Cassuto, Documentary Hypothesis (1941); Kikawada-Quinn, Before Abraham Was (1985)"
+    }
+  ],
+  "framework_note": "Classic Documentary Hypothesis (Wellhausen 1878, Friedman 1987). Source attribution is analytical evidence, not definitive assignment. Scholarly debate is ongoing.",
+  "synthesis": "Genesis 1-2 contains the textbook example of the Documentary Hypothesis: a Priestly creation account (1:1-2:3) juxtaposed with a Yahwistic creation account (2:4b-25), joined by a transitional toledot formula (2:4a). The two units differ in divine name, theology, anthropology, narrative style, and order of creation, making source division virtually unanimous in critical scholarship. Debate centers only on minor questions: the function of 2:4a and the explanation of the compound divine name YHWH Elohim.",
+  "bibcrit_hypothesis": {
+    "title": "Two creations preserved, not harmonized",
+    "reasoning": "The redactor's decision to juxtapose rather than fuse the P and J accounts suggests the sources held independent canonical authority by the time of composition. The compound name 'YHWH Elohim' in chapter 2 functions as the redactor's primary harmonizing device, theologically asserting the identity of P's transcendent Elohim with J's anthropomorphic YHWH without erasing the literary seams.",
+    "confidence": 0.88
+  },
+  "discovery_ready": true,
+  "reference": "Genesis 1:1-2:25",
+  "cached_at": "2026-05-09T21:54:38.436780",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v1"
+}

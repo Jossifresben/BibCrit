@@ -1,0 +1,474 @@
+{
+  "book": "Numbers",
+  "period_range": "13th century BCE (traditional) / 6th century BCE (compositional) – 11th century CE",
+  "archetype_description": "The original text of Numbers cannot be recovered as a single Urtext; the book shows clear signs of composite Priestly and non-Priestly material assembled in the post-exilic period. By the late Second Temple era at least three distinct text-types circulated (proto-MT, the Vorlage of the LXX, and the pre-Samaritan tradition), with the pre-Samaritan form showing extensive harmonizing expansions. Numbers is one of the most textually pluriform books of the Pentateuch alongside Exodus.",
+  "stemma_nodes": [
+    {
+      "id": "archetype",
+      "label": "Proto-Text of Numbers",
+      "type": "archetype",
+      "date": "6th–5th c. BCE",
+      "description": "Hypothetical composite Priestly/non-Priestly text reaching substantial form in the early Second Temple period."
+    },
+    {
+      "id": "proto-hebrew",
+      "label": "Proto-Hebrew Numbers",
+      "type": "intermediate",
+      "date": "c. 400 BCE",
+      "description": "Consolidated Hebrew text underlying all later Pentateuchal traditions before bifurcation into local text-types."
+    },
+    {
+      "id": "pre-samaritan",
+      "label": "Pre-Samaritan / Harmonizing Text",
+      "type": "intermediate",
+      "date": "3rd–2nd c. BCE",
+      "description": "Expansionist Hebrew text-type characterized by harmonizing pluses, ancestor of SP and shared with several Qumran scrolls."
+    },
+    {
+      "id": "proto-mt",
+      "label": "Proto-MT",
+      "type": "intermediate",
+      "date": "2nd c. BCE – 1st c. CE",
+      "description": "Conservative Hebrew consonantal text-form attested at Masada and adopted as the standard rabbinic text after 70 CE."
+    },
+    {
+      "id": "proto-lxx-vorlage",
+      "label": "LXX Hebrew Vorlage",
+      "type": "intermediate",
+      "date": "3rd c. BCE",
+      "description": "Hebrew text underlying the Old Greek of Numbers, generally close to MT but with distinctive readings especially in chs. 1–4 and 26."
+    },
+    {
+      "id": "dss",
+      "label": "Qumran Numbers Scrolls",
+      "type": "tradition",
+      "tradition": "DSS",
+      "date": "2nd c. BCE – 1st c. CE",
+      "description": "Multiple fragmentary Numbers manuscripts from Qumran reflecting both proto-MT and pre-Samaritan affinities."
+    },
+    {
+      "id": "4qnumb",
+      "label": "4QNum-b (4Q27)",
+      "type": "edition",
+      "tradition": "DSS",
+      "date": "1st c. BCE",
+      "description": "Most extensive Numbers scroll from Qumran, exhibiting pre-Samaritan harmonizing expansions toward Deuteronomy."
+    },
+    {
+      "id": "4qlevnum",
+      "label": "4QLev-Num-a (4Q23)",
+      "type": "edition",
+      "tradition": "DSS",
+      "date": "c. 150 BCE",
+      "description": "Fragmentary scroll containing portions of Leviticus and Numbers, generally close to MT."
+    },
+    {
+      "id": "1qnum",
+      "label": "1QNum (1Q3)",
+      "type": "edition",
+      "tradition": "DSS",
+      "date": "1st c. BCE",
+      "description": "Small fragments of Numbers from Cave 1 with mixed textual affinities."
+    },
+    {
+      "id": "muruba-num",
+      "label": "Mur 1 (MurNum)",
+      "type": "edition",
+      "tradition": "DSS",
+      "date": "early 2nd c. CE",
+      "description": "Wadi Murabba'at fragments of Numbers virtually identical to consonantal MT."
+    },
+    {
+      "id": "sp",
+      "label": "Samaritan Pentateuch",
+      "type": "tradition",
+      "tradition": "SP",
+      "date": "2nd c. BCE (text-type); medieval mss",
+      "description": "Samaritan recension of the pre-Samaritan text with sectarian and harmonizing features, preserved in medieval Samaritan codices."
+    },
+    {
+      "id": "sp-abisha",
+      "label": "Abisha Scroll / Sadaqa edition",
+      "type": "edition",
+      "tradition": "SP",
+      "date": "medieval",
+      "description": "Principal manuscript witnesses to the Samaritan text of Numbers."
+    },
+    {
+      "id": "mt",
+      "label": "Masoretic Text",
+      "type": "tradition",
+      "tradition": "MT",
+      "date": "7th–10th c. CE",
+      "description": "Vocalized and accented Tiberian textual tradition standardizing the proto-MT consonantal base."
+    },
+    {
+      "id": "aleppo",
+      "label": "Aleppo Codex",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "c. 930 CE",
+      "description": "Ben Asher Tiberian codex, the most authoritative MT witness though Pentateuch is largely lost."
+    },
+    {
+      "id": "leningrad",
+      "label": "Leningrad Codex (B19A)",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "1008 CE",
+      "description": "Oldest complete Tanakh manuscript and base text for BHS/BHQ editions of Numbers."
+    },
+    {
+      "id": "bhs",
+      "label": "Biblia Hebraica Stuttgartensia",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "1977",
+      "description": "Diplomatic edition of Leningrad with critical apparatus."
+    },
+    {
+      "id": "bhq",
+      "label": "Biblia Hebraica Quinta",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "in progress",
+      "description": "Successor edition to BHS with full Masorah and updated textual commentary."
+    },
+    {
+      "id": "og-numbers",
+      "label": "Old Greek Numbers",
+      "type": "tradition",
+      "tradition": "LXX",
+      "date": "mid-3rd c. BCE",
+      "description": "Alexandrian Greek translation of Numbers, relatively literal but with distinctive theological renderings."
+    },
+    {
+      "id": "hexapla",
+      "label": "Origen's Hexapla",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "c. 240 CE",
+      "description": "Origen's six-column edition aligning the Greek to the Hebrew using Aristarchian signs."
+    },
+    {
+      "id": "lucianic",
+      "label": "Lucianic / Antiochene Recension",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "late 3rd c. CE",
+      "description": "Recension associated with Lucian of Antioch combining Old Greek with Hebraizing corrections."
+    },
+    {
+      "id": "aquila",
+      "label": "Aquila",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "c. 130 CE",
+      "description": "Hyper-literal Greek revision toward proto-MT, preserved fragmentarily for Numbers."
+    },
+    {
+      "id": "symmachus",
+      "label": "Symmachus",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "late 2nd c. CE",
+      "description": "Idiomatic Greek revision toward the Hebrew, fragmentary for Numbers."
+    },
+    {
+      "id": "theodotion",
+      "label": "Theodotion / kaige",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "1st c. BCE – 2nd c. CE",
+      "description": "Hebraizing revision tradition; Numbers shows limited kaige influence."
+    },
+    {
+      "id": "vaticanus",
+      "label": "Codex Vaticanus (B)",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "4th c. CE",
+      "description": "Major uncial witness to Old Greek Numbers."
+    },
+    {
+      "id": "alexandrinus",
+      "label": "Codex Alexandrinus (A)",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "5th c. CE",
+      "description": "Uncial witness with mixed Hexaplaric influence in Numbers."
+    },
+    {
+      "id": "gottingen-num",
+      "label": "Göttingen Numeri (Wevers)",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "1982",
+      "description": "Critical edition of Numbers by John William Wevers reconstructing the Old Greek."
+    },
+    {
+      "id": "nets",
+      "label": "NETS Numbers",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "2007",
+      "description": "English translation of the Göttingen Old Greek of Numbers."
+    },
+    {
+      "id": "targum-onkelos",
+      "label": "Targum Onkelos",
+      "type": "translation",
+      "tradition": "Targum",
+      "date": "2nd–5th c. CE",
+      "description": "Authoritative literal Aramaic translation of the Pentateuch closely aligned with proto-MT."
+    },
+    {
+      "id": "targum-pj",
+      "label": "Targum Pseudo-Jonathan",
+      "type": "translation",
+      "tradition": "Targum",
+      "date": "7th–8th c. CE",
+      "description": "Expansive Palestinian Aramaic Targum with extensive haggadic material."
+    },
+    {
+      "id": "targum-neofiti",
+      "label": "Targum Neofiti",
+      "type": "translation",
+      "tradition": "Targum",
+      "date": "1st millennium CE",
+      "description": "Complete Palestinian Targum to the Pentateuch with paraphrastic tendencies."
+    },
+    {
+      "id": "peshitta-num",
+      "label": "Peshitta Numbers",
+      "type": "translation",
+      "tradition": "Peshitta",
+      "date": "2nd c. CE",
+      "description": "Syriac translation made from a Hebrew Vorlage close to proto-MT with occasional Targumic and LXX influence."
+    },
+    {
+      "id": "vulgate-num",
+      "label": "Vulgate Numbers",
+      "type": "translation",
+      "tradition": "Vulgate",
+      "date": "c. 390–405 CE",
+      "description": "Jerome's translation iuxta Hebraeos from a proto-Masoretic Hebrew text, occasionally consulting Greek versions."
+    },
+    {
+      "id": "biblia-sacra-vulgata",
+      "label": "Biblia Sacra Vulgata (Weber-Gryson)",
+      "type": "edition",
+      "tradition": "Vulgate",
+      "date": "1969/2007",
+      "description": "Critical edition of Jerome's Vulgate."
+    }
+  ],
+  "stemma_edges": [
+    {
+      "from": "archetype",
+      "to": "proto-hebrew"
+    },
+    {
+      "from": "proto-hebrew",
+      "to": "proto-mt"
+    },
+    {
+      "from": "proto-hebrew",
+      "to": "pre-samaritan"
+    },
+    {
+      "from": "proto-hebrew",
+      "to": "proto-lxx-vorlage"
+    },
+    {
+      "from": "proto-mt",
+      "to": "dss"
+    },
+    {
+      "from": "pre-samaritan",
+      "to": "dss"
+    },
+    {
+      "from": "dss",
+      "to": "4qnumb"
+    },
+    {
+      "from": "dss",
+      "to": "4qlevnum"
+    },
+    {
+      "from": "dss",
+      "to": "1qnum"
+    },
+    {
+      "from": "dss",
+      "to": "muruba-num"
+    },
+    {
+      "from": "pre-samaritan",
+      "to": "sp"
+    },
+    {
+      "from": "sp",
+      "to": "sp-abisha"
+    },
+    {
+      "from": "proto-mt",
+      "to": "mt"
+    },
+    {
+      "from": "mt",
+      "to": "aleppo"
+    },
+    {
+      "from": "mt",
+      "to": "leningrad"
+    },
+    {
+      "from": "leningrad",
+      "to": "bhs"
+    },
+    {
+      "from": "leningrad",
+      "to": "bhq"
+    },
+    {
+      "from": "proto-lxx-vorlage",
+      "to": "og-numbers"
+    },
+    {
+      "from": "og-numbers",
+      "to": "hexapla"
+    },
+    {
+      "from": "og-numbers",
+      "to": "lucianic"
+    },
+    {
+      "from": "og-numbers",
+      "to": "aquila"
+    },
+    {
+      "from": "og-numbers",
+      "to": "symmachus"
+    },
+    {
+      "from": "og-numbers",
+      "to": "theodotion"
+    },
+    {
+      "from": "og-numbers",
+      "to": "vaticanus"
+    },
+    {
+      "from": "og-numbers",
+      "to": "alexandrinus"
+    },
+    {
+      "from": "hexapla",
+      "to": "alexandrinus"
+    },
+    {
+      "from": "og-numbers",
+      "to": "gottingen-num"
+    },
+    {
+      "from": "gottingen-num",
+      "to": "nets"
+    },
+    {
+      "from": "proto-mt",
+      "to": "targum-onkelos"
+    },
+    {
+      "from": "proto-mt",
+      "to": "targum-pj"
+    },
+    {
+      "from": "proto-mt",
+      "to": "targum-neofiti"
+    },
+    {
+      "from": "proto-mt",
+      "to": "peshitta-num"
+    },
+    {
+      "from": "proto-mt",
+      "to": "vulgate-num"
+    },
+    {
+      "from": "vulgate-num",
+      "to": "biblia-sacra-vulgata"
+    }
+  ],
+  "key_divergences": [
+    {
+      "title": "Harmonizing expansions in 4QNum-b and SP",
+      "passage": "Numbers 27:23 / Numbers 20–21",
+      "witnesses": [
+        "DSS",
+        "SP",
+        "MT",
+        "LXX"
+      ],
+      "plain": "4QNum-b and the Samaritan Pentateuch repeatedly insert material drawn from Deuteronomy into the narrative of Numbers, while the MT and LXX preserve a shorter text. This shows that scribes in some circles freely harmonized the Pentateuch.",
+      "technical": "4QNum-b agrees with SP against MT/LXX in adding parallel commands and speeches from Deuteronomy 1–3 into Numbers 20–21 and 27, demonstrating the existence of an expansionist pre-Samaritan text-type independent of the sectarian Samaritan layer. Analyzed extensively by Jastram (DJD XII), Tov, and Crawford."
+    },
+    {
+      "title": "Order and content of Numbers 10:34–36",
+      "passage": "Numbers 10:34–36",
+      "witnesses": [
+        "MT",
+        "LXX",
+        "DSS"
+      ],
+      "plain": "The placement of the 'Song of the Ark' and the surrounding verses differs between traditions, and the Masoretes marked the section with inverted nuns, signaling ancient awareness of textual disturbance.",
+      "technical": "MT brackets vv. 35–36 with inverted nuns; b. Shabbat 115b–116a preserves a tradition that this is a separate book. LXX preserves a different sequence, and rabbinic sources discuss the unit's displacement, suggesting an unstable transmission point recognized by both Jewish and Greek tradents (Tov; Fishbane)."
+    },
+    {
+      "title": "Census numbers in Numbers 1 and 26",
+      "passage": "Numbers 1:1–46; 26:1–51",
+      "witnesses": [
+        "MT",
+        "LXX",
+        "SP"
+      ],
+      "plain": "The tribal census totals show small but persistent numerical differences across MT, LXX, and SP, raising questions about how numerals were copied and transmitted.",
+      "technical": "Variants in tribal subtotals between MT, the Old Greek, and SP reflect both scribal corruption of numerical notation and possible deliberate adjustment to maintain summed totals; Wevers's Göttingen edition documents the Greek variation systematically."
+    },
+    {
+      "title": "Balaam pericope textual variants",
+      "passage": "Numbers 22–24",
+      "witnesses": [
+        "MT",
+        "LXX",
+        "DSS",
+        "SP"
+      ],
+      "plain": "The Balaam oracles contain numerous small but theologically loaded differences between MT and LXX, including the rendering of divine names and the famous oracle about a 'star out of Jacob.'",
+      "technical": "LXX Num 24:7 reads ἄνθρωπος instead of MT's אגג ('Agag'), and Num 24:17 receives messianic interpretation already in LXX and the Targumim; the OG Vorlage diverges from MT at multiple points, analyzed by Rösel, Dorival, and Wevers."
+    },
+    {
+      "title": "Priestly blessing and the Ketef Hinnom amulets",
+      "passage": "Numbers 6:24–26",
+      "witnesses": [
+        "MT",
+        "Ketef Hinnom amulets"
+      ],
+      "plain": "Two small silver amulets from the late 7th century BCE preserve a form of the Priestly Blessing virtually identical to the MT, providing the oldest surviving biblical text and confirming remarkable stability for this passage.",
+      "technical": "The Ketef Hinnom inscriptions (KH1, KH2), dated paleographically to the late First Temple period, attest a text of Num 6:24–26 nearly identical to the consonantal MT, suggesting early fixation of liturgical formulae long before the Qumran period (Barkay; Berlejung)."
+    }
+  ],
+  "transmission_narrative": "Numbers reached substantial form in the early Second Temple period as a composite of Priestly and non-Priestly material, after which it bifurcated into at least three identifiable text-types by the 3rd century BCE: a conservative proto-MT, an expansionist pre-Samaritan tradition (ancestor of both SP and 4QNum-b), and the Hebrew Vorlage of the Old Greek translated in Alexandria. Qumran witnesses confirm the coexistence of these traditions in late Second Temple Judaism, while the Wadi Murabba'at fragments document the triumph of proto-MT after 70 CE. The Old Greek was subsequently revised by Origen, Aquila, Symmachus, Theodotion, and the Lucianic tradition, and the Hebrew text was translated into Aramaic (Onkelos, Neofiti, Pseudo-Jonathan), Syriac (Peshitta), and Latin (Jerome's Vulgate, working iuxta Hebraeos from a proto-MT base). Modern critical scholarship represents this in BHS/BHQ for the Hebrew, Wevers's Göttingen Numeri for the Greek, and ongoing comparative editions integrating the Qumran evidence.",
+  "transmission_plain": "The book of Numbers existed in several different Hebrew forms during the Second Temple period — a shorter version close to today's Jewish Bible, a longer version with extra explanatory material that became the Samaritan Bible, and the Hebrew text translated into Greek in Alexandria. The Dead Sea Scrolls preserve fragments of all these versions side by side. After 70 CE the shorter form became standard, and it is the basis of all medieval Hebrew manuscripts and modern printed Bibles, while the Greek, Aramaic, Syriac, and Latin translations preserve glimpses of the older textual diversity.",
+  "bibcrit_assessment": {
+    "title": "Numbers shows pre-Samaritan harmonizing at Qumran",
+    "plain": "The discovery of 4QNum-b proved that the kind of harmonizing expansions long thought to be uniquely Samaritan actually circulated in mainstream Jewish circles centuries before the Samaritan schism, reshaping our understanding of how the Pentateuch was transmitted.",
+    "confidence": 0.82
+  },
+  "discovery_ready": true,
+  "reference": "Numbers",
+  "cached_at": "2026-05-09T21:14:25.000253",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v2"
+}

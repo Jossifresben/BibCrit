@@ -1,0 +1,101 @@
+{
+  "reference": "Leviticus 25",
+  "subject": "Sabbatical and Jubilee year cycles",
+  "figures": [
+    {
+      "name": "Sabbatical year cycle (Lev 25:3-4)",
+      "mt_value": 7,
+      "lxx_value": 7,
+      "sp_value": 7,
+      "divergence_type": "none",
+      "note": "All three traditions agree on the seven-year sabbatical cycle for the land."
+    },
+    {
+      "name": "Seven sabbaths of years (Lev 25:8)",
+      "mt_value": 7,
+      "lxx_value": 7,
+      "sp_value": 7,
+      "divergence_type": "none",
+      "note": "Agreement on seven cycles of seven."
+    },
+    {
+      "name": "Years totaling to Jubilee (Lev 25:8)",
+      "mt_value": 49,
+      "lxx_value": 49,
+      "sp_value": 49,
+      "divergence_type": "none",
+      "note": "All traditions compute 7×7=49 years."
+    },
+    {
+      "name": "Jubilee year proclaimed (Lev 25:10-11)",
+      "mt_value": 50,
+      "lxx_value": 50,
+      "sp_value": 50,
+      "divergence_type": "none",
+      "note": "The fiftieth year is consistently designated the Jubilee in MT, LXX, and SP."
+    },
+    {
+      "name": "Three years' yield in sixth year (Lev 25:21)",
+      "mt_value": 3,
+      "lxx_value": 3,
+      "sp_value": 3,
+      "divergence_type": "none",
+      "note": "All traditions agree on the threefold harvest promise."
+    }
+  ],
+  "systematic_analysis": {
+    "is_systematic": false,
+    "pattern": "Leviticus 25 exhibits no significant numerical divergence among MT, LXX, and SP. The sabbatical (7), jubilee cycle (7×7=49), and jubilee year (50) figures are transmitted identically across all three traditions, as is the threefold harvest of 25:21. No deflation, inflation, or harmonization pattern is detectable.",
+    "pattern_plain": "The three main biblical text traditions agree completely on the numbers in Leviticus 25. There is no chronological dispute here like the one found in Genesis 5 and 11."
+  },
+  "theories": [
+    {
+      "name": "Independent traditions preserving identical figures",
+      "slug": "independent_traditions",
+      "score": 0.9,
+      "confidence": 0.9,
+      "summary": "The numerical agreement across MT, LXX, and SP in Leviticus 25 indicates that the cultic-legal numbers (7, 49, 50) were transmitted with high fidelity in all three streams. Unlike the patriarchal chronologies of Genesis 5 and 11, where systematic divergence appears, the sabbatical/jubilee figures carry liturgical-legal weight and resisted scribal alteration.",
+      "summary_plain": "All three Bible traditions kept the same numbers in Leviticus 25 because these were sacred legal numbers used in religious practice. Such numbers were unlikely to be changed by scribes.",
+      "supporting_evidence": [
+        "Complete agreement of MT, LXX, and SP on all numerical values in the chapter.",
+        "The numbers (7, 49, 50) form a fixed liturgical-legal schema embedded in Israelite cultic practice.",
+        "Qumran fragments of Leviticus (e.g., 11QpaleoLev) corroborate the same numerical framework.",
+        "Sabbath/jubilee numerology was theologically protected, reducing scribal latitude.",
+        "No ancient witness, Jewish or Christian, records variant figures for the jubilee cycle."
+      ],
+      "weaknesses": [
+        "The argument is essentially negative: absence of divergence is not itself a positive theory of transmission.",
+        "Does not address the well-known interpretive ambiguity over whether the jubilee is the 49th or 50th year (a semantic, not numerical, dispute)."
+      ]
+    },
+    {
+      "name": "Scribal error (negligible/absent)",
+      "slug": "scribal_error",
+      "score": 0.1,
+      "confidence": 0.85,
+      "summary": "No scribal corruption of numerals is detectable in Leviticus 25 across the three traditions. The figures are short, embedded in formulaic legal prose, and lack the cumulative arithmetic structure that produces error in genealogical chronologies.",
+      "summary_plain": "Scribes did not introduce mistakes into these numbers. They are simple and important enough that copyists preserved them carefully.",
+      "supporting_evidence": [
+        "Short, repeated numerals (7, 49, 50) are easy to copy without error.",
+        "No textual variants in the Greek, Hebrew, or Samaritan manuscript traditions challenge these figures.",
+        "The numbers reinforce each other contextually (7 sabbaths × 7 years = 49, with the 50th as jubilee), providing internal checks against corruption."
+      ],
+      "weaknesses": [
+        "Cannot be tested where no variants exist.",
+        "Does not explain anything substantive about Leviticus 25 specifically, since the question of error does not arise."
+      ]
+    }
+  ],
+  "overall_assessment": "Leviticus 25 is a control case demonstrating that not every portion of the Pentateuch exhibits the systematic numerical divergence so prominent in Genesis 5 and 11. MT, LXX, and SP transmit the sabbatical and jubilee figures (7, 49, 50) in complete agreement, indicating that legal-liturgical numerology was preserved with high fidelity across all three traditions. This argues against any blanket theory of pervasive numerical corruption in any single tradition and shows that divergences elsewhere are localized, purposeful, or genre-specific rather than random. The chapter reinforces the methodological principle that text-critical theories of numerical change must explain why certain passages diverge while others remain stable.",
+  "overall_plain": "The numbers in Leviticus 25 are identical in all three major Bible traditions. This shows that scribes were careful with sacred legal numbers, and that the famous numerical disagreements elsewhere (like in Genesis) are not the result of careless or universal corruption.",
+  "bibcrit_assessment": {
+    "title": "Jubilee numbers preserved unanimously across traditions",
+    "reasoning": "The unanimity of MT, LXX, and SP on the sabbatical and jubilee figures provides a crucial baseline: numerical divergence in the Pentateuch is selective, not pervasive. This suggests that wherever divergence does appear (Genesis 5, 11; Exodus 12:40; etc.), it reflects deliberate editorial activity or genre-specific transmission dynamics, not generalized scribal carelessness. Leviticus 25 thus functions as a methodological control against sweeping theories of textual corruption.",
+    "plain": "Because all Bible traditions agree on these numbers, we know scribes could and did preserve numbers accurately. So when traditions disagree elsewhere, something specific—not general sloppiness—must explain it.",
+    "confidence": 0.88
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T21:29:24.554903",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v3"
+}

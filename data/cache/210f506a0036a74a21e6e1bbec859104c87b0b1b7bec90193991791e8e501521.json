@@ -1,0 +1,139 @@
+{
+  "reference": "Isaiah 40:3",
+  "total_citations_found": 7,
+  "period_summary": "Citations cluster heavily from the 2nd through 4th centuries, driven by the passage's NT use as a prophecy of John the Baptist. The patristic reception almost universally follows the LXX form mediated through the Synoptic Gospels.",
+  "citations": [
+    {
+      "father": "Justin Martyr",
+      "dates_ce": "c. 100–165",
+      "region": "Syria/Rome",
+      "work": "Dialogue with Trypho",
+      "chapter_section": "ch. 50; ch. 88",
+      "cited_text": "φωνὴ βοῶντος ἐν τῇ ἐρήμῳ· ἑτοιμάσατε τὰς ὁδοὺς κυρίου, εὐθείας ποιεῖτε τὰς τρίβους τοῦ θεοῦ ἡμῶν",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.9,
+      "text_form_note": "Justin reads 'ἐν τῇ ἐρήμῳ' attached to 'βοῶντος' (LXX/Synoptic) rather than to 'ἑτοιμάσατε' (MT), and reads 'τρίβους τοῦ θεοῦ ἡμῶν' with LXX rather than the Synoptic 'αὐτοῦ'.",
+      "theological_use": "Justin applies the verse to John the Baptist as the forerunner of Christ, marshaling it as proof from prophecy that Jesus is the awaited Messiah.",
+      "transmission_implication": "Confirms the LXX form of Isaiah 40:3 was authoritative in mid-2nd-century Christian apologetic, with Justin preserving the fuller LXX wording rather than the abbreviated Gospel form."
+    },
+    {
+      "father": "Irenaeus of Lyons",
+      "dates_ce": "c. 130–202",
+      "region": "Gaul/Asia Minor",
+      "work": "Against Heresies",
+      "chapter_section": "3.9.3; 3.10.3",
+      "cited_text": "Vox clamantis in deserto: parate viam Domini, rectas facite semitas Dei nostri",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.85,
+      "text_form_note": "The Latin translation preserves 'semitas Dei nostri' = LXX 'τρίβους τοῦ θεοῦ ἡμῶν', distinguishing it from the Synoptic 'αὐτοῦ/eius' reading.",
+      "theological_use": "Irenaeus uses the verse to demonstrate the unity of the Old and New Testaments—the same God who spoke through Isaiah is announced by John the Baptist regarding Christ.",
+      "transmission_implication": "Shows that Western Christianity by the late 2nd century received Isaiah 40:3 in the LXX form, not in a form harmonized to the Gospels."
+    },
+    {
+      "father": "Clement of Alexandria",
+      "dates_ce": "c. 150–215",
+      "region": "Alexandria",
+      "work": "Paedagogus",
+      "chapter_section": "1.5",
+      "cited_text": "φωνὴ βοῶντος ἐν τῇ ἐρήμῳ· ἑτοιμάσατε τὴν ὁδὸν κυρίου",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.7,
+      "text_form_note": "Clement gives an abbreviated form matching LXX/Synoptic punctuation with 'ἐν τῇ ἐρήμῳ' modifying the voice; the citation is too short to distinguish LXX from Gospel form definitively.",
+      "theological_use": "Clement applies the prophecy to John as the prepared way for the Logos-Pedagogue who instructs humanity.",
+      "transmission_implication": "Attests continuity of the LXX/Synoptic syntactical division ('voice in the wilderness') in Alexandrian usage."
+    },
+    {
+      "father": "Origen",
+      "dates_ce": "c. 185–254",
+      "region": "Alexandria/Caesarea",
+      "work": "Commentary on John",
+      "chapter_section": "6.24–33",
+      "cited_text": "φωνὴ βοῶντος ἐν τῇ ἐρήμῳ· ἑτοιμάσατε τὴν ὁδὸν κυρίου, εὐθείας ποιεῖτε τὰς τρίβους αὐτοῦ",
+      "text_form": "mixed",
+      "text_form_confidence": 0.8,
+      "text_form_note": "Origen quotes the Gospel form ('αὐτοῦ' rather than LXX 'τοῦ θεοῦ ἡμῶν') in his exegesis of John 1:23, but elsewhere in the Hexapla he carefully recorded the LXX, Aquila, Symmachus, and Theodotion readings of Isaiah 40:3 with their MT-aligning syntax.",
+      "theological_use": "Origen develops an extended allegorical reading: John is the 'voice' preparing for the 'Word', and the wilderness signifies the soul devoid of God awaiting Christ.",
+      "transmission_implication": "Origen's Hexaplaric work uniquely preserved awareness that the MT divides the syntax differently ('a voice cries: in the wilderness prepare'), revealing scholarly knowledge of competing text forms."
+    },
+    {
+      "father": "Eusebius of Caesarea",
+      "dates_ce": "c. 260–340",
+      "region": "Caesarea",
+      "work": "Commentary on Isaiah; Demonstratio Evangelica",
+      "chapter_section": "Comm. Isa. on 40:3; Dem. Ev. 9.1",
+      "cited_text": "φωνὴ βοῶντος ἐν τῇ ἐρήμῳ· ἑτοιμάσατε τὴν ὁδὸν κυρίου, εὐθείας ποιεῖτε τὰς τρίβους τοῦ θεοῦ ἡμῶν",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.95,
+      "text_form_note": "Eusebius gives the full LXX text with 'τοῦ θεοῦ ἡμῶν' and the LXX syntactical division; he had access to Origen's Hexapla in Caesarea and notes the alternative readings.",
+      "theological_use": "Eusebius makes this verse central to his demonstration that John the Baptist's ministry fulfills explicit Isaianic prophecy, and reads 'God of us' as a Christological identification.",
+      "transmission_implication": "The Caesarean text of Isaiah preserves the LXX form intact in the early 4th century, confirming the stability of the Greek tradition."
+    },
+    {
+      "father": "Cyril of Jerusalem",
+      "dates_ce": "c. 313–386",
+      "region": "Jerusalem",
+      "work": "Catechetical Lectures",
+      "chapter_section": "Cat. 3.6",
+      "cited_text": "φωνὴ βοῶντος ἐν τῇ ἐρήμῳ· ἑτοιμάσατε τὴν ὁδὸν κυρίου",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.7,
+      "text_form_note": "Partial citation matching the LXX/Synoptic shared portion; insufficient continuation to distinguish.",
+      "theological_use": "Cyril uses the verse catechetically to explain the role of John as baptizer and herald, situating baptism within the prophetic preparation for Christ.",
+      "transmission_implication": "Standard liturgical/catechetical use of the LXX form in 4th-century Jerusalem."
+    },
+    {
+      "father": "Jerome",
+      "dates_ce": "c. 347–420",
+      "region": "Bethlehem/Rome",
+      "work": "Commentary on Isaiah",
+      "chapter_section": "Book 11, on Isa 40:3",
+      "cited_text": "Vox clamantis: in deserto parate viam Domini, rectas facite in solitudine semitas Dei nostri",
+      "text_form": "closer_to_mt",
+      "text_form_confidence": 0.9,
+      "text_form_note": "Jerome's iuxta Hebraeos rendering deliberately follows the MT syntactical division (voice cries; in the wilderness prepare), against the LXX/Gospel reading; he discusses both options explicitly in his commentary.",
+      "theological_use": "Jerome reconciles the Hebrew and Greek readings, arguing both are valid—the Evangelists followed the LXX, but the Hebrew points to preparation occurring in the wilderness.",
+      "transmission_implication": "Jerome marks the first major Latin scholarly reception of the MT form, introducing awareness of the Hebrew syntactical division into Western Christianity."
+    }
+  ],
+  "text_form_distribution": {
+    "closer_to_mt": 1,
+    "closer_to_lxx": 5,
+    "mixed": 1,
+    "independent": 0,
+    "uncertain": 0
+  },
+  "transmission_synthesis": "The patristic citations of Isaiah 40:3 demonstrate the overwhelming dominance of the LXX text form in the early church through the 4th century, mediated and reinforced by its quotation in all four Gospels. The Greek fathers consistently preserve the LXX division ('a voice crying in the wilderness') and the LXX phrase 'τοῦ θεοῦ ἡμῶν', though many quote the abbreviated Synoptic form ending in 'αὐτοῦ' when expounding NT texts. Origen's Hexaplaric scholarship and Jerome's iuxta Hebraeos translation represent the first scholarly recognition that the Hebrew text divides the syntax differently. This pattern confirms that the LXX of Isaiah was textually stable in Christian transmission well before the 5th century, with critical knowledge of the Hebrew form remaining the preserve of a small scholarly elite.",
+  "transmission_synthesis_plain": "Almost every early Christian writer quoted Isaiah 40:3 in its Greek form, the way it appears in the Gospels announcing John the Baptist. Only the late scholars Origen and Jerome noticed that the Hebrew original arranged the words differently. This shows that the Greek translation, not the Hebrew, was the working Bible of the early church.",
+  "notable_variants": [
+    {
+      "reading": "τὰς τρίβους τοῦ θεοῦ ἡμῶν ('the paths of our God')",
+      "fathers_using_it": [
+        "Justin Martyr",
+        "Irenaeus",
+        "Eusebius",
+        "Jerome (noting it)"
+      ],
+      "text_form_alignment": "closer_to_lxx",
+      "significance": "This LXX reading distinguishes Isaiah quotations from Gospel quotations (which read 'αὐτοῦ'), and its presence in fathers proves they cited Isaiah directly from the LXX rather than via the Synoptics. It also carries Christological weight, since 'our God' could be read as identifying Christ with YHWH."
+    },
+    {
+      "reading": "Punctuation: 'voice crying in the wilderness' vs. 'in the wilderness prepare'",
+      "fathers_using_it": [
+        "Greek fathers (former)",
+        "Jerome (latter, following MT)"
+      ],
+      "text_form_alignment": "mixed",
+      "significance": "The differing syntactical division between LXX and MT carries major exegetical consequences—whether the wilderness is the location of the voice or the location of preparation. The patristic tradition almost uniformly adopts the LXX/NT division until Jerome reintroduces the Hebrew option."
+    }
+  ],
+  "bibcrit_assessment": {
+    "title": "Gospel-shaped LXX dominance until Jerome's Hebrew turn",
+    "reasoning": "The patristic reception of Isaiah 40:3 shows that the verse was effectively received as a Gospel proof-text in LXX dress, with text-form awareness emerging only in the scholarly margins (Origen's Hexapla, Jerome's iuxta Hebraeos). The single most significant finding is that the Hebrew syntactical division remained essentially invisible to Christian exegesis for four centuries despite Jewish-Christian contact, demonstrating how decisively the NT's LXX-mediated quotation determined Christian textual memory.",
+    "plain": "The Gospels' quotation of Isaiah 40:3 effectively 'fixed' how Christians read the verse for centuries. Only Jerome, working with Hebrew at the end of the 4th century, recovered the alternative reading found in the Hebrew Bible.",
+    "confidence": 0.85
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T22:11:34.719656",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v3"
+}

@@ -1,0 +1,30 @@
+{
+  "allusions": [
+    {
+      "ot_reference": "Deuteronomy 32:43",
+      "nt_words": "καὶ προσκυνησάτωσαν αὐτῷ πάντες ἄγγελοι θεοῦ",
+      "ot_mt_form": "MT Deut 32:43 lacks any reference to angels worshiping; reads 'Rejoice, O nations, with his people' (הרנינו גוים עמו) — significantly shorter than LXX",
+      "ot_lxx_form": "LXX Deut 32:43: καὶ προσκυνησάτωσαν αὐτῷ πάντες υἱοὶ θεοῦ ('let all the sons of God worship him'); a variant LXX/Odes 2:43 tradition reads πάντες ἄγγελοι θεοῦ",
+      "nt_alignment": "lxx",
+      "alignment_confidence": 0.9,
+      "key_word": "προσκυνησάτωσαν αὐτῷ πάντες ἄγγελοι θεοῦ",
+      "textual_implication": "The citation has no parallel in the MT of Deut 32:43, which is shorter; it depends on the longer LXX form (now confirmed by 4QDeut^q, which preserves a Hebrew Vorlage with 'bow down to him, all gods/sons of God'). Hebrews' exact wording 'ἄγγελοι θεοῦ' matches Odes 2:43 and a strand of LXX manuscripts (rather than the majority LXX 'υἱοὶ θεοῦ'), suggesting the author used a liturgical/recensional form. The author applies a verse about YHWH's vindication to the enthronement of the Son, presupposing a Greek Bible.",
+      "textual_implication_plain": "Hebrews quotes a longer Greek version of Deuteronomy 32:43 that the standard Hebrew Bible does not contain — a version where angels worship God. The Dead Sea Scrolls show this longer reading really existed in Hebrew too, so the Greek translators weren't inventing it.",
+      "scholarly_note": "Beale & Carson (Commentary, ad loc., G. Guthrie) and most commentators (Attridge, Ellingworth) identify Deut 32:43 LXX as primary, though some (Bateman) argue for Ps 97:7 LXX; the wording 'ἄγγελοι' over 'υἱοὶ' aligns Hebrews with Odes 2.",
+      "contested": true
+    }
+  ],
+  "summary_technical": "Hebrews 1:6 cites a form of Deut 32:43 available only in the LXX tradition (specifically the Odes/recensional reading with ἄγγελοι θεοῦ), with no equivalent in the MT but partial confirmation in 4QDeut^q. The citation exemplifies the author's consistent dependence on a Greek Vorlage and his christological repurposing of theophanic Yahweh-texts.",
+  "summary_plain": "Hebrews quotes a Greek version of Deuteronomy that calls angels to worship God, and applies it to Jesus — a verse missing from the standard Hebrew Bible.",
+  "bibcrit_hypothesis": {
+    "title": "Odes-form Deuteronomy 32 in Hebrews' Vorlage",
+    "reasoning": "The precise wording ἄγγελοι θεοῦ (not the majority-LXX υἱοὶ θεοῦ) suggests the author of Hebrews drew on a liturgical collection resembling Odes 2 rather than a continuous Pentateuch scroll. This fits the catena structure of Hebrews 1, where OT texts appear pre-selected for christological enthronement themes. The 4QDeut^q evidence shows the longer reading was not a Christian interpolation but reflects a genuine pre-Christian Hebrew variant preserved in Greek liturgy.",
+    "plain": "The author of Hebrews probably knew Deuteronomy 32 from a hymn-book or liturgy used in synagogue worship, not from a standard Bible scroll. That explains why his quotation matches the wording of an early Christian/Jewish hymnal more than the main Greek Bible.",
+    "confidence": 0.65
+  },
+  "discovery_ready": false,
+  "reference": "Hebrews 1:6",
+  "cached_at": "2026-05-09T21:50:13.237726",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v1"
+}

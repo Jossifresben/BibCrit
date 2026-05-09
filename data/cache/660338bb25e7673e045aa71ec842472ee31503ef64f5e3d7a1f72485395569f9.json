@@ -1,0 +1,105 @@
+{
+  "reference": "Genesis 3:22",
+  "manuscript": "Onkelos",
+  "synthesis": "Targum Onkelos renders Gen 3:22 with notable fidelity to the MT but transforms the theologically problematic phrase כְּאַחַד מִמֶּנּוּ ('like one of us') into יְחִידַי בְּעַלְמָא מִנֵּהּ ('unique in the world by himself'), thereby eliminating the apparent plurality in the Godhead and the implied comparison between Adam and divine beings. The remainder of the verse follows MT closely, preserving the divine deliberation about the tree of life while reinterpreting the dangerous theological implications of the Hebrew syntax.",
+  "rendering_fidelity": {
+    "overall": "mixed",
+    "word_analysis": [
+      {
+        "mt_word": "wayyōʾmer YHWH ʾĕlōhîm",
+        "targ_word": "waʾămar YYY ʾĕlōhîm",
+        "type": "close",
+        "note": "Standard close rendering of the divine speech formula, retaining the Tetragrammaton (in surrogate form) and Elohim."
+      },
+      {
+        "mt_word": "hēn hāʾādām",
+        "targ_word": "hāʾ ʾādām",
+        "type": "close",
+        "note": "Demonstrative particle hēn is rendered with standard Aramaic hāʾ."
+      },
+      {
+        "mt_word": "hāyāh kĕʾaḥad mimmennû",
+        "targ_word": "hăwāh yĕḥîday bĕʿālmāʾ minnēh",
+        "type": "theological",
+        "note": "Radical reinterpretation: 'was like one of us' becomes 'was unique in the world from him(self),' eliminating divine plurality."
+      },
+      {
+        "mt_word": "lādaʿat ṭôb wārāʿ",
+        "targ_word": "lĕmîdaʿ ṭāb ûbîš",
+        "type": "close",
+        "note": "Literal rendering of the infinitive construct phrase."
+      },
+      {
+        "mt_word": "wĕʿattāh pen",
+        "targ_word": "ûkĕʿan dîlmāʾ",
+        "type": "close",
+        "note": "Standard Aramaic equivalents for temporal and apprehensive particles."
+      },
+      {
+        "mt_word": "yišlaḥ yādô wĕlāqaḥ",
+        "targ_word": "yôšîṭ yĕdēh wĕyissab",
+        "type": "close",
+        "note": "Direct rendering retaining the anthropomorphic 'stretch out his hand' applied to Adam (no theological issue here since subject is human)."
+      },
+      {
+        "mt_word": "gam mēʿēṣ haḥayyîm",
+        "targ_word": "ʾap mēʾîlān ḥayyāyāʾ",
+        "type": "close",
+        "note": "Standard rendering of 'tree of life.'"
+      },
+      {
+        "mt_word": "wĕʾākal wāḥay lĕʿōlām",
+        "targ_word": "wĕyēkûl wîḥê lĕʿālām",
+        "type": "close",
+        "note": "Faithful rendering of the eating-and-living-forever clause."
+      }
+    ]
+  },
+  "theological_modifications": [
+    {
+      "type": "anthropomorphism",
+      "mt_reading": "hēn hāʾādām hāyāh kĕʾaḥad mimmennû",
+      "targ_reading": "hāʾ ʾādām hăwāh yĕḥîday bĕʿālmāʾ minnēh",
+      "explanation": "The MT phrase 'like one of us' was theologically problematic, suggesting either divine plurality or comparison between humanity and God/the divine council. Onkelos resolves this by reading 'unique in the world, [knowing good and evil] by himself,' transforming the comparative-divine statement into a statement about Adam's unique created status. This reflects the Targumic concern to eliminate any reading that could support polytheistic or binitarian interpretations, a concern echoed in b. Sanhedrin 38b regarding minim who cite this verse."
+    }
+  ],
+  "targumic_expansions": [
+    {
+      "location": "Gen 3:22a",
+      "expansion_text": "yĕḥîday bĕʿālmāʾ minnēh",
+      "midrashic_parallel": "Genesis Rabbah 21:5; b. Sanhedrin 38b (where 'one of us' is reinterpreted to refute heretics)",
+      "significance": "The expansion 'unique in the world by/from himself' replaces the comparative 'like one of us' with a statement of Adam's solitary status, paralleling rabbinic apologetic readings that deflect minim's appeals to this verse for plurality in the Godhead."
+    }
+  ],
+  "messianic_reinterpretation": {
+    "present": false,
+    "instances": []
+  },
+  "lxx_alignment": {
+    "areas_of_agreement": null,
+    "significance": "The LXX renders MT literally with ὡς εἷς ἐξ ἡμῶν, preserving the plural reference, whereas Onkelos diverges sharply. There is no shared anti-anthropomorphic tradition here; the Targum's interpretive move is distinctively rabbinic."
+  },
+  "key_divergences": [
+    {
+      "mt_word": "kĕʾaḥad mimmennû",
+      "targ_word": "yĕḥîday bĕʿālmāʾ minnēh",
+      "type": "theological",
+      "explanation": "The most significant divergence: MT's 'like one of us' is replaced by 'unique in the world by himself,' parsing אחד as referring to Adam's uniqueness rather than as a comparison with divine beings, and reading ממנו ('from him/it') rather than 'from us.'"
+    }
+  ],
+  "assessment": {
+    "title": "Onkelos Eliminates Divine Plurality at Gen 3:22 via Anti-Anthropomorphic Reparsing",
+    "reasoning": "Onkelos demonstrates its characteristic translation technique of close fidelity punctuated by targeted theological intervention. The verse is rendered word-for-word except at the single problematic phrase כְּאַחַד מִמֶּנּוּ, where the Targumist exploits the consonantal ambiguity of ממנו (which can mean 'from us' or 'from him') to read the verse as describing Adam's solitary uniqueness rather than his likeness to a divine plurality. This aligns with the rabbinic apologetic tradition (b. Sanh. 38b; Gen. Rab. 21:5) that explicitly addresses minim who cite this verse against monotheism. Following Grossfeld's analysis, this represents a paradigmatic example of Onkelos's restrained but decisive theological editing, where minimal lexical change yields maximal doctrinal correction.",
+    "plain": "When the Hebrew Bible says God remarked that Adam had become 'like one of us,' the Targum was uncomfortable with the plural 'us,' which could imply multiple gods. The translator changed it to say Adam was 'unique in the world by himself,' avoiding the theological problem.",
+    "confidence": 0.93,
+    "next_steps": "Compare with Targum Neofiti and Pseudo-Jonathan at Gen 3:22 to assess whether the anti-pluralist reading is shared across Targumic traditions, and consult b. Sanhedrin 38b for the underlying polemical context."
+  },
+  "citations": {
+    "sbl": "Bernard Grossfeld, *The Targum Onqelos to Genesis*, ArBib 6 (Wilmington, DE: Michael Glazier, 1988), 47–48; Moses Aberbach and Bernard Grossfeld, *Targum Onkelos to Genesis: A Critical Analysis Together with an English Translation of the Text* (Denver: Ktav, 1982), 39–40.",
+    "bibtex": "@book{Grossfeld1988, author = {Grossfeld, Bernard}, title = {The Targum Onqelos to Genesis}, series = {The Aramaic Bible}, volume = {6}, publisher = {Michael Glazier}, address = {Wilmington, DE}, year = {1988}}"
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T22:00:09.941127",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v1"
+}

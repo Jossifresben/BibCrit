@@ -1,0 +1,152 @@
+{
+  "reference": "Genesis 1:26",
+  "total_citations_found": 7,
+  "period_summary": "Citations of Genesis 1:26 are densely concentrated from the late 2nd through 4th centuries, driven by Trinitarian, anti-Gnostic, and anthropological controversies. The plural 'Let us make' became one of the most theologically contested verses of the Hexaemeron tradition.",
+  "citations": [
+    {
+      "father": "Justin Martyr",
+      "dates_ce": "c. 100–165",
+      "region": "Syria/Rome",
+      "work": "Dialogue with Trypho",
+      "chapter_section": "ch. 62",
+      "cited_text": "Ποιήσωμεν ἄνθρωπον κατ' εἰκόνα ἡμετέραν καὶ καθ' ὁμοίωσιν",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.9,
+      "text_form_note": "Justin reproduces the LXX verbatim including the plural 'ποιήσωμεν' and the pair κατ' εἰκόνα/καθ' ὁμοίωσιν, matching the Old Greek tradition.",
+      "theological_use": "Justin uses the plural verb to argue against Jewish interpreters that God spoke to another divine person (the pre-existent Logos/Christ), not to angels.",
+      "transmission_implication": "Confirms that by the mid-2nd century the LXX text of Gen 1:26 was the standard Christian form circulating in Rome and the East."
+    },
+    {
+      "father": "Theophilus of Antioch",
+      "dates_ce": "c. 120–183",
+      "region": "Antioch",
+      "work": "Ad Autolycum",
+      "chapter_section": "2.18",
+      "cited_text": "Ποιήσωμεν ἄνθρωπον κατ' εἰκόνα καὶ καθ' ὁμοίωσιν",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.85,
+      "text_form_note": "Follows LXX wording with the plural cohortative; Theophilus drops the possessive 'ἡμετέραν' in his loose recitation but retains the diagnostic LXX vocabulary.",
+      "theological_use": "First extant Christian author to apply the term 'Trias' here, identifying the plural as God speaking to his Logos and Sophia.",
+      "transmission_implication": "Indicates the Antiochene church received the same LXX text form as the Roman tradition."
+    },
+    {
+      "father": "Irenaeus of Lyons",
+      "dates_ce": "c. 130–202",
+      "region": "Gaul/Asia Minor",
+      "work": "Adversus Haereses",
+      "chapter_section": "4.20.1; 5.6.1",
+      "cited_text": "Faciamus hominem ad imaginem et similitudinem nostram",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.85,
+      "text_form_note": "The Latin translation of Irenaeus reflects an underlying Greek text identical to LXX; 'imaginem et similitudinem' renders εἰκόνα καὶ ὁμοίωσιν faithfully.",
+      "theological_use": "Famous distinction between 'image' (rational nature, retained after the Fall) and 'likeness' (lost and restored in Christ); the plural refers to Father with his 'two hands,' Son and Spirit.",
+      "transmission_implication": "Demonstrates uniformity of the LXX-based text across Greek East and Latin-translating West by c. 180."
+    },
+    {
+      "father": "Tertullian",
+      "dates_ce": "c. 155–220",
+      "region": "Carthage",
+      "work": "Adversus Praxean",
+      "chapter_section": "ch. 12",
+      "cited_text": "Faciamus hominem ad imaginem et similitudinem nostram",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.85,
+      "text_form_note": "Vetus Latina rendering directly dependent on the LXX Vorlage; preserves the plural verb and possessive adjective central to his argument.",
+      "theological_use": "Tertullian deploys the plural 'faciamus' as scriptural proof of plurality of persons in the Godhead against Praxeas's modalism.",
+      "transmission_implication": "Confirms that the North African Old Latin translated from a LXX exemplar agreeing with the mainstream Greek text."
+    },
+    {
+      "father": "Origen",
+      "dates_ce": "c. 185–254",
+      "region": "Alexandria/Caesarea",
+      "work": "Contra Celsum; Homiliae in Genesim",
+      "chapter_section": "Hom. Gen. 1.13; C. Cels. 4.30",
+      "cited_text": "Ποιήσωμεν ἄνθρωπον κατ' εἰκόνα ἡμετέραν καὶ καθ' ὁμοίωσιν",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.95,
+      "text_form_note": "As compiler of the Hexapla Origen knew the Hebrew and the alternative Greek versions; he consistently cites the LXX form here, though he discusses the Hebrew 'na'aseh adam.'",
+      "theological_use": "Origen distinguishes 'image' (given at creation) from 'likeness' (achieved through moral progress and assimilation to God); the plural addresses the Son.",
+      "transmission_implication": "Origen's Hexaplaric awareness shows the LXX text of Gen 1:26 was stable and corresponded closely to the Hebrew, which itself reads the plural verb."
+    },
+    {
+      "father": "Basil of Caesarea",
+      "dates_ce": "c. 330–379",
+      "region": "Cappadocia",
+      "work": "Homiliae in Hexaemeron (and De hominis structura)",
+      "chapter_section": "Hom. 9 / De hom. struct. 1.3",
+      "cited_text": "Ποιήσωμεν ἄνθρωπον κατ' εἰκόνα ἡμετέραν καὶ καθ' ὁμοίωσιν",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.9,
+      "text_form_note": "Basil cites the standard LXX wording verbatim and exegetes each term, presupposing the received Greek text without textual variation.",
+      "theological_use": "Basil reads 'Let us make' as the Father addressing the Son, refuting both Jewish (angels) and Eunomian readings; develops image/likeness as potentiality and actualization.",
+      "transmission_implication": "Shows the 4th-century Cappadocian text of Genesis 1:26 to be identical with the 2nd-century citations, attesting remarkable transmission stability."
+    },
+    {
+      "father": "Augustine",
+      "dates_ce": "354–430",
+      "region": "Hippo (North Africa)",
+      "work": "De Genesi ad litteram; De Trinitate",
+      "chapter_section": "Gen. ad litt. 3.19; De Trin. 7.6.12; 12.6",
+      "cited_text": "Faciamus hominem ad imaginem et similitudinem nostram",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.9,
+      "text_form_note": "Augustine cites the Old Latin/Vulgate form directly dependent on the LXX, retaining the plural and the doublet imago/similitudo.",
+      "theological_use": "Augustine grounds his Trinitarian psychology in the plural: the image is in the rational soul, mirroring the triune Creator; rejects the angelic-address interpretation.",
+      "transmission_implication": "By the early 5th century the Latin text is fixed and harmonized with the LXX/Vetus Latina tradition uninterruptedly traceable to the 2nd century."
+    }
+  ],
+  "text_form_distribution": {
+    "closer_to_mt": 0,
+    "closer_to_lxx": 7,
+    "mixed": 0,
+    "independent": 0,
+    "uncertain": 0
+  },
+  "transmission_synthesis": "The patristic citation record for Genesis 1:26 displays remarkable uniformity: every major witness from Justin to Augustine reproduces the LXX text 'ποιήσωμεν ἄνθρωπον κατ' εἰκόνα ἡμετέραν καὶ καθ' ὁμοίωσιν,' translated transparently into Latin as 'faciamus hominem ad imaginem et similitudinem nostram.' Because the underlying Hebrew (na'aseh adam be-tsalmenu ki-demutenu) also reads the plural cohortative, the LXX and proto-MT here essentially converge, removing any textual incentive for divergent forms. The doublet 'image and likeness' was theologically productive (Irenaeus, Origen, Basil distinguishing them) precisely because the text was stable and unambiguous across all witnesses. No evidence of competing recensions or Hexaplaric variants emerges in the citations, suggesting this verse was transmitted with exceptional fidelity in both Greek and Latin streams before the 5th century.",
+  "transmission_synthesis_plain": "Early Christian writers from the second through fifth centuries all quote Genesis 1:26 in essentially the same form — 'Let us make humanity in our image and likeness' — whether writing in Greek (Justin, Origen, Basil) or Latin (Tertullian, Augustine). This consistency shows that the verse was transmitted very carefully and that the Greek and Latin versions agreed closely with each other and with the Hebrew.",
+  "notable_variants": [
+    {
+      "reading": "Plural 'ποιήσωμεν' / 'faciamus' ('Let us make')",
+      "fathers_using_it": [
+        "Justin",
+        "Theophilus",
+        "Irenaeus",
+        "Tertullian",
+        "Origen",
+        "Basil",
+        "Augustine"
+      ],
+      "text_form_alignment": "closer_to_lxx",
+      "significance": "Universal attestation of the plural verb across all fathers and languages confirms the reading is original to both Hebrew and Greek; it became the single most important Old Testament prooftext for Trinitarian theology."
+    },
+    {
+      "reading": "Doublet 'εἰκόνα καὶ ὁμοίωσιν' / 'imaginem et similitudinem'",
+      "fathers_using_it": [
+        "Irenaeus",
+        "Origen",
+        "Basil",
+        "Augustine"
+      ],
+      "text_form_alignment": "closer_to_lxx",
+      "significance": "The retention of both nouns (rather than collapsing them) is preserved consistently in patristic citation, even though Genesis 1:27 uses only 'image'; this stability enabled the influential image/likeness distinction in patristic anthropology."
+    },
+    {
+      "reading": "Omission of possessive 'ἡμετέραν'",
+      "fathers_using_it": [
+        "Theophilus"
+      ],
+      "text_form_alignment": "closer_to_lxx",
+      "significance": "Likely a citation-from-memory abbreviation rather than a genuine textual variant; demonstrates how loose recitation patterns can imitate but not reflect manuscript divergence."
+    }
+  ],
+  "bibcrit_assessment": {
+    "title": "Uniform LXX transmission, contested Trinitarian exegesis",
+    "reasoning": "The most striking finding is the inverse relationship between textual stability and exegetical diversity: although the wording of Genesis 1:26 is transmitted identically across three centuries, four languages, and every major theological school, the fathers fight intensely over its meaning (addressee of the plural, distinction of image and likeness). This shows that doctrinal controversy in the early church could flourish without textual variation, and that the LXX text of Genesis was firmly fixed in Christian use by the mid-2nd century.",
+    "plain": "All the major early Christian writers quote Genesis 1:26 in exactly the same way, even though they argue passionately about what it means. Stable text, contested meaning.",
+    "confidence": 0.9
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T22:14:23.574541",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v3"
+}

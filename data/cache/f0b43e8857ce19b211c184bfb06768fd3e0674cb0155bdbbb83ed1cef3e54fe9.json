@@ -1,0 +1,118 @@
+{
+  "reconstructed_words": [
+    {
+      "position": 1,
+      "lxx_word": "καὶ ἔχθραν θήσω",
+      "vorlage_word": "ואיבה אשית",
+      "status": "agrees_mt",
+      "confidence": 0.95,
+      "mt_equivalent": "וְאֵיבָה אָשִׁית",
+      "dss_witness": null,
+      "reasoning": "ἔχθρα regularly renders אֵיבָה (cf. Num 35:21-22; Ezek 25:15), and τίθημι is the standard equivalent of שׁית. Word order and syntax match MT exactly.",
+      "alternatives": []
+    },
+    {
+      "position": 2,
+      "lxx_word": "ἀνὰ μέσον σου",
+      "vorlage_word": "בינך",
+      "status": "agrees_mt",
+      "confidence": 0.98,
+      "mt_equivalent": "בֵּינְךָ",
+      "dss_witness": null,
+      "reasoning": "ἀνὰ μέσον is the stereotypical LXX rendering of בֵּין, attested hundreds of times. The 2ms suffix matches MT.",
+      "alternatives": []
+    },
+    {
+      "position": 3,
+      "lxx_word": "καὶ ἀνὰ μέσον τῆς γυναικὸς",
+      "vorlage_word": "ובין האשה",
+      "status": "agrees_mt",
+      "confidence": 0.97,
+      "mt_equivalent": "וּבֵין הָאִשָּׁה",
+      "dss_witness": null,
+      "reasoning": "Standard equivalence γυνή = אִשָּׁה with definite article reflecting הָ-. Conjunction and syntax match MT.",
+      "alternatives": []
+    },
+    {
+      "position": 4,
+      "lxx_word": "καὶ ἀνὰ μέσον τοῦ σπέρματός σου",
+      "vorlage_word": "ובין זרעך",
+      "status": "agrees_mt",
+      "confidence": 0.98,
+      "mt_equivalent": "וּבֵין זַרְעֲךָ",
+      "dss_witness": null,
+      "reasoning": "σπέρμα is the standard rendering of זֶרַע throughout the Pentateuch. Suffix and conjunction match MT.",
+      "alternatives": []
+    },
+    {
+      "position": 5,
+      "lxx_word": "καὶ ἀνὰ μέσον τοῦ σπέρματος αὐτῆς",
+      "vorlage_word": "ובין זרעה",
+      "status": "agrees_mt",
+      "confidence": 0.97,
+      "mt_equivalent": "וּבֵין זַרְעָהּ",
+      "dss_witness": null,
+      "reasoning": "Direct rendering with 3fs suffix = זַרְעָהּ. Matches MT exactly.",
+      "alternatives": []
+    },
+    {
+      "position": 6,
+      "lxx_word": "αὐτός",
+      "vorlage_word": "הוא",
+      "status": "agrees_mt",
+      "confidence": 0.9,
+      "mt_equivalent": "הוּא",
+      "dss_witness": null,
+      "reasoning": "αὐτός as nominative pronoun reflects emphatic הוּא. The masculine pronoun matches MT (referring grammatically to σπέρμα/זֶרַע); LXX preserves masculine even though σπέρμα is neuter, indicating fidelity to the Hebrew masculine antecedent.",
+      "alternatives": [
+        {
+          "reading": "היא",
+          "confidence": 0.05,
+          "note": "Vulgate ipsa suggests feminine, but LXX clearly read הוא"
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "lxx_word": "σου τηρήσει κεφαλήν",
+      "vorlage_word": "ישופך ראש",
+      "status": "agrees_mt",
+      "confidence": 0.6,
+      "mt_equivalent": "יְשׁוּפְךָ רֹאשׁ",
+      "dss_witness": null,
+      "reasoning": "The rare verb שׁוּף poses a translation problem; the translator rendered both occurrences with τηρέω ('watch for, lie in wait against'), apparently associating שׁוּף with שׁאף ('pant after, lie in wait,' cf. Ps 56:2-3) or interpreting contextually. κεφαλή = רֹאשׁ is standard. The Vorlage almost certainly = MT; divergence is interpretive, not textual.",
+      "alternatives": [
+        {
+          "reading": "ישאפך",
+          "confidence": 0.15,
+          "note": "Translator may have read or associated with שׁאף, but unlikely a different Vorlage"
+        }
+      ]
+    },
+    {
+      "position": 8,
+      "lxx_word": "καὶ σὺ τηρήσεις αὐτοῦ πτέρναν",
+      "vorlage_word": "ואתה תשופנו עקב",
+      "status": "agrees_mt",
+      "confidence": 0.85,
+      "mt_equivalent": "וְאַתָּה תְּשׁוּפֶנּוּ עָקֵב",
+      "dss_witness": null,
+      "reasoning": "πτέρνα consistently renders עָקֵב (cf. Gen 25:26; 49:17). αὐτοῦ reflects the 3ms suffix on the verb. Same translation strategy with τηρέω for שׁוּף applied consistently.",
+      "alternatives": []
+    }
+  ],
+  "summary_technical": "The reconstructed Vorlage matches MT throughout with no evidence of textual variation. The notable feature is interpretive rather than text-critical: the translator rendered the rare verb שׁוּף with τηρέω ('lie in wait for') in both clauses, likely by association with שׁאף or by contextual guess, eliminating the parallelism with κεφαλή/πτέρνα that the Hebrew preserves. No DSS evidence survives for this verse to test variants.",
+  "summary_plain": "The Greek translator was working from a Hebrew text essentially identical to the Masoretic Text. The only puzzle is how he rendered a rare Hebrew verb meaning 'crush' or 'strike' as 'lie in wait for.'",
+  "overall_confidence": 0.9,
+  "bibcrit_assessment": {
+    "title": "LXX Genesis 3:15 reflects proto-MT Vorlage",
+    "reasoning": "Every retrovertible element corresponds to MT; the Greek shows no textual divergence, only interpretive ambiguity around שׁוּף. The double τηρήσει is a translator's solution to an opaque verb, not evidence of a different Hebrew reading (such as שׁאף). The famous αὐτός (vs. Vulgate ipsa) confirms a masculine Hebrew pronoun הוּא agreeing with זֶרַע, exactly as MT reads.",
+    "plain": "The Greek translator had a Hebrew text matching the traditional one. Differences in meaning come from how he handled a rare Hebrew word, not from a different source text.",
+    "confidence": 0.88
+  },
+  "discovery_ready": false,
+  "reference": "Genesis 3:15",
+  "cached_at": "2026-05-09T21:16:32.458740",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v1"
+}

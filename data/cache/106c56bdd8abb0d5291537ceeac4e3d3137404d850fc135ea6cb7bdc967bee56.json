@@ -1,0 +1,467 @@
+{
+  "book": "Genesis",
+  "period_range": "10th century BCE – 4th century CE",
+  "archetype_description": "Genesis is widely understood as a composite work integrating Priestly (P) and non-Priestly (J/E or post-Priestly) materials, redacted into substantially its present form during the Persian period (5th-4th c. BCE). No single 'Urtext' is recoverable; rather, scholars reconstruct an early post-Pentateuchal redactional archetype from which the proto-MT, proto-SP, and proto-LXX Vorlage diverged. The textual unity of Genesis is relatively high compared to other books, though the SP and LXX preserve significant systematic divergences in chronological data (esp. Gen 5 and 11).",
+  "stemma_nodes": [
+    {
+      "id": "archetype",
+      "label": "Proto-Text of Genesis",
+      "type": "archetype",
+      "date": "5th c. BCE",
+      "description": "Hypothetical post-redactional archetype combining Priestly and non-Priestly sources into a unified Genesis."
+    },
+    {
+      "id": "proto-hebrew",
+      "label": "Proto-Hebrew Genesis",
+      "type": "intermediate",
+      "date": "c. 400 BCE",
+      "description": "Stabilized Hebrew Genesis in late Persian period from which the major Second Temple text-types branch."
+    },
+    {
+      "id": "proto-mt",
+      "label": "Proto-Masoretic Genesis",
+      "type": "intermediate",
+      "date": "c. 200 BCE – 100 CE",
+      "description": "Conservative Hebrew text-type that became dominant after 70 CE, ancestor of the rabbinic consonantal text."
+    },
+    {
+      "id": "proto-sp",
+      "label": "Pre-Samaritan Vorlage",
+      "type": "intermediate",
+      "date": "c. 200–100 BCE",
+      "description": "Harmonistic, expansionist Hebrew text-type attested at Qumran (e.g., 4QpaleoExod-m) underlying the Samaritan Pentateuch."
+    },
+    {
+      "id": "proto-lxx-vorlage",
+      "label": "LXX Hebrew Vorlage",
+      "type": "intermediate",
+      "date": "c. 300 BCE",
+      "description": "Hebrew text-form, sometimes shorter or variant from MT, used by the Alexandrian translators of Genesis."
+    },
+    {
+      "id": "dss-genesis",
+      "label": "Qumran Genesis Scrolls",
+      "type": "tradition",
+      "tradition": "DSS",
+      "date": "2nd c. BCE – 1st c. CE",
+      "description": "Fragmentary Genesis manuscripts including 4QGen-a through 4QGen-k, 1QGen, 2QGen, 4QpaleoGen-m, 8QGen, mostly aligning with proto-MT."
+    },
+    {
+      "id": "mt",
+      "label": "Masoretic Text",
+      "type": "tradition",
+      "tradition": "MT",
+      "date": "c. 100–900 CE",
+      "full_name": "Tiberian Masoretic Text",
+      "language": "Hebrew",
+      "description": "Consonantal text fixed by Tannaitic period, vocalized and accented by the Tiberian Masoretes (esp. ben Asher school)."
+    },
+    {
+      "id": "aleppo",
+      "label": "Aleppo Codex",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "c. 930 CE",
+      "language": "Hebrew",
+      "description": "Premier ben Asher codex; Genesis is largely preserved despite the 1947 damage."
+    },
+    {
+      "id": "leningrad",
+      "label": "Leningrad Codex (B19A)",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "1008 CE",
+      "language": "Hebrew",
+      "description": "Oldest complete Tiberian Masoretic codex of the Hebrew Bible, base text of BHS and BHQ."
+    },
+    {
+      "id": "bhs",
+      "label": "Biblia Hebraica Stuttgartensia",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "1977",
+      "language": "Hebrew",
+      "description": "Diplomatic edition of Leningradensis with critical apparatus."
+    },
+    {
+      "id": "bhq",
+      "label": "Biblia Hebraica Quinta (Genesis)",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "in progress",
+      "language": "Hebrew",
+      "description": "Successor to BHS providing fuller Masorah and revised apparatus; Genesis fascicle forthcoming."
+    },
+    {
+      "id": "sp",
+      "label": "Samaritan Pentateuch",
+      "type": "tradition",
+      "tradition": "SP",
+      "date": "c. 100 BCE crystallization",
+      "language": "Hebrew (Samaritan script)",
+      "description": "Pentateuchal text-tradition of the Samaritan community with characteristic harmonizations and expanded chronology."
+    },
+    {
+      "id": "sp-von-gall",
+      "label": "von Gall / Tal-Florentin edition",
+      "type": "edition",
+      "tradition": "SP",
+      "date": "1918 / 2010",
+      "language": "Hebrew",
+      "description": "Critical editions of the Samaritan Pentateuch."
+    },
+    {
+      "id": "old-greek",
+      "label": "Old Greek Genesis",
+      "type": "intermediate",
+      "date": "c. 280–250 BCE",
+      "description": "Original Alexandrian translation of Genesis, the earliest book of the LXX, generally a careful and literal rendering."
+    },
+    {
+      "id": "lxx",
+      "label": "Septuagint Genesis",
+      "type": "tradition",
+      "tradition": "LXX",
+      "date": "3rd c. BCE onward",
+      "language": "Greek",
+      "description": "Greek textual tradition of Genesis preserved in uncials Vaticanus, Alexandrinus, and Sinaiticus (partial)."
+    },
+    {
+      "id": "hexapla",
+      "label": "Origen's Hexapla",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "c. 240 CE",
+      "language": "Greek",
+      "description": "Origen's six-column synopsis with asterisked/obelized fifth column producing a recension aligning LXX to Hebrew."
+    },
+    {
+      "id": "lucianic",
+      "label": "Lucianic / Antiochene recension",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "c. 300 CE",
+      "language": "Greek",
+      "description": "Antiochene revision of the LXX, less prominent in Genesis than in Samuel-Kings but reflected in some minuscules."
+    },
+    {
+      "id": "aquila",
+      "label": "Aquila",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "c. 130 CE",
+      "language": "Greek",
+      "description": "Hyper-literal Jewish revision toward the proto-MT, preserved fragmentarily."
+    },
+    {
+      "id": "symmachus",
+      "label": "Symmachus",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "late 2nd c. CE",
+      "language": "Greek",
+      "description": "Idiomatic Greek revision aligned to the Hebrew text."
+    },
+    {
+      "id": "vaticanus",
+      "label": "Codex Vaticanus (B)",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "4th c. CE",
+      "language": "Greek",
+      "description": "Major uncial witness to LXX Genesis."
+    },
+    {
+      "id": "alexandrinus",
+      "label": "Codex Alexandrinus (A)",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "5th c. CE",
+      "language": "Greek",
+      "description": "Uncial witness preserving full LXX Genesis with hexaplaric influence."
+    },
+    {
+      "id": "gottingen-gen",
+      "label": "Göttingen LXX Genesis (Wevers)",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "1974",
+      "language": "Greek",
+      "description": "John W. Wevers's critical eclectic edition of LXX Genesis."
+    },
+    {
+      "id": "nets",
+      "label": "NETS Genesis",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "2007",
+      "language": "English",
+      "description": "New English Translation of the Septuagint, based on Wevers's Göttingen edition."
+    },
+    {
+      "id": "peshitta",
+      "label": "Peshitta Genesis",
+      "type": "translation",
+      "tradition": "Peshitta",
+      "date": "2nd c. CE",
+      "language": "Syriac",
+      "description": "Syriac translation made directly from a Hebrew Vorlage close to proto-MT, with possible Targumic and LXX influence."
+    },
+    {
+      "id": "leiden-peshitta",
+      "label": "Leiden Peshitta edition",
+      "type": "edition",
+      "tradition": "Peshitta",
+      "date": "1977–",
+      "language": "Syriac",
+      "description": "Critical edition based on Codex Ambrosianus and other West Syrian witnesses."
+    },
+    {
+      "id": "targum-onkelos",
+      "label": "Targum Onkelos",
+      "type": "translation",
+      "tradition": "Targum",
+      "date": "1st–3rd c. CE",
+      "language": "Aramaic",
+      "description": "Authoritative, relatively literal Babylonian Targum of the Pentateuch."
+    },
+    {
+      "id": "targum-ps-jonathan",
+      "label": "Targum Pseudo-Jonathan",
+      "type": "translation",
+      "tradition": "Targum",
+      "date": "7th–8th c. CE (final form)",
+      "language": "Aramaic",
+      "description": "Highly expansive Palestinian Targum incorporating extensive aggadic material."
+    },
+    {
+      "id": "targum-neofiti",
+      "label": "Targum Neofiti",
+      "type": "translation",
+      "tradition": "Targum",
+      "date": "1st–4th c. CE",
+      "language": "Aramaic",
+      "description": "Complete Palestinian Targum of the Pentateuch (Vatican MS Neofiti 1)."
+    },
+    {
+      "id": "vulgate",
+      "label": "Vulgate Genesis",
+      "type": "translation",
+      "tradition": "Vulgate",
+      "date": "c. 390–405 CE",
+      "language": "Latin",
+      "description": "Jerome's translation iuxta Hebraeos, made directly from a proto-MT Hebrew text with consultation of the Hexapla."
+    },
+    {
+      "id": "weber-gryson",
+      "label": "Weber-Gryson Vulgate",
+      "type": "edition",
+      "tradition": "Vulgate",
+      "date": "1969/2007",
+      "language": "Latin",
+      "description": "Critical Stuttgart edition of the Vulgate."
+    }
+  ],
+  "stemma_edges": [
+    {
+      "from": "archetype",
+      "to": "proto-hebrew"
+    },
+    {
+      "from": "proto-hebrew",
+      "to": "proto-mt"
+    },
+    {
+      "from": "proto-hebrew",
+      "to": "proto-sp"
+    },
+    {
+      "from": "proto-hebrew",
+      "to": "proto-lxx-vorlage"
+    },
+    {
+      "from": "proto-hebrew",
+      "to": "dss-genesis"
+    },
+    {
+      "from": "proto-mt",
+      "to": "dss-genesis"
+    },
+    {
+      "from": "proto-mt",
+      "to": "mt"
+    },
+    {
+      "from": "mt",
+      "to": "aleppo"
+    },
+    {
+      "from": "mt",
+      "to": "leningrad"
+    },
+    {
+      "from": "leningrad",
+      "to": "bhs"
+    },
+    {
+      "from": "leningrad",
+      "to": "bhq"
+    },
+    {
+      "from": "proto-sp",
+      "to": "sp"
+    },
+    {
+      "from": "sp",
+      "to": "sp-von-gall"
+    },
+    {
+      "from": "proto-lxx-vorlage",
+      "to": "old-greek"
+    },
+    {
+      "from": "old-greek",
+      "to": "lxx"
+    },
+    {
+      "from": "lxx",
+      "to": "hexapla"
+    },
+    {
+      "from": "lxx",
+      "to": "lucianic"
+    },
+    {
+      "from": "lxx",
+      "to": "aquila"
+    },
+    {
+      "from": "lxx",
+      "to": "symmachus"
+    },
+    {
+      "from": "lxx",
+      "to": "vaticanus"
+    },
+    {
+      "from": "hexapla",
+      "to": "alexandrinus"
+    },
+    {
+      "from": "lxx",
+      "to": "gottingen-gen"
+    },
+    {
+      "from": "hexapla",
+      "to": "gottingen-gen"
+    },
+    {
+      "from": "gottingen-gen",
+      "to": "nets"
+    },
+    {
+      "from": "proto-mt",
+      "to": "peshitta"
+    },
+    {
+      "from": "peshitta",
+      "to": "leiden-peshitta"
+    },
+    {
+      "from": "proto-mt",
+      "to": "targum-onkelos"
+    },
+    {
+      "from": "proto-mt",
+      "to": "targum-ps-jonathan"
+    },
+    {
+      "from": "proto-mt",
+      "to": "targum-neofiti"
+    },
+    {
+      "from": "mt",
+      "to": "vulgate"
+    },
+    {
+      "from": "hexapla",
+      "to": "vulgate"
+    },
+    {
+      "from": "vulgate",
+      "to": "weber-gryson"
+    }
+  ],
+  "key_divergences": [
+    {
+      "title": "Antediluvian chronology in Genesis 5",
+      "passage": "Genesis 5:1-32",
+      "witnesses": [
+        "MT",
+        "LXX",
+        "SP"
+      ],
+      "plain": "The three traditions give different ages for the patriarchs before the Flood, producing different total timelines from creation. This affects how ancient Jews and Christians calculated world history.",
+      "technical": "MT, LXX, and SP preserve systematically divergent figures for begetting ages and lifespans (e.g., Methuselah, Jared, Lamech), yielding chronologies differing by hundreds of years. Hendel (1998) and Klein argue the LXX and SP independently inflated/adjusted MT figures on theological-chronological grounds, though Ronald Hendel and others have argued specific cases for LXX priority."
+    },
+    {
+      "title": "Postdiluvian chronology in Genesis 11",
+      "passage": "Genesis 11:10-26",
+      "witnesses": [
+        "MT",
+        "LXX",
+        "SP"
+      ],
+      "plain": "Like Genesis 5, the genealogy from Shem to Abraham differs significantly across the three witnesses. The LXX adds an extra generation (Kainan) absent in MT.",
+      "technical": "LXX inserts a second Kainan between Arpachshad and Shelah (Gen 11:13 LXX), reflected in Luke 3:36, absent from MT, SP, and most likely a secondary harmonization. Hendel (1998) treats the chronological systems as independently revised; Tov regards MT as closest to the original here."
+    },
+    {
+      "title": "Length of Israelite sojourn",
+      "passage": "Genesis 15:13 (with Exod 12:40)",
+      "witnesses": [
+        "MT",
+        "LXX",
+        "SP"
+      ],
+      "plain": "How long Israel was in Egypt, and where they sojourned, differs across witnesses, affecting biblical chronology of the Exodus.",
+      "technical": "LXX and SP at Exod 12:40 expand 'in Egypt' to 'in Egypt and in Canaan,' harmonizing with Gen 15:13's 400 years; MT preserves the shorter, more difficult reading. Generally regarded as a secondary harmonistic plus in LXX/SP per Tov and Wevers."
+    },
+    {
+      "title": "Cain and Abel narrative variants",
+      "passage": "Genesis 4:8",
+      "witnesses": [
+        "MT",
+        "SP",
+        "LXX",
+        "Peshitta",
+        "Vulgate"
+      ],
+      "plain": "MT abruptly says 'Cain said to Abel his brother' without recording what he said, while other witnesses supply 'Let us go out to the field.'",
+      "technical": "MT's וַיֹּאמֶר קַיִן אֶל־הֶבֶל אָחִיו has no direct object; SP, LXX (διέλθωμεν εἰς τὸ πεδίον), Peshitta, and Vulgate add 'let us go to the field.' Most editors (Wevers, Hendel) judge the plus original and lost in MT by parablepsis or judge it a secondary filling-in; debate continues."
+    },
+    {
+      "title": "Sons of God in Genesis 6",
+      "passage": "Genesis 6:1-4",
+      "witnesses": [
+        "MT",
+        "LXX",
+        "DSS",
+        "Targum"
+      ],
+      "plain": "The phrase 'sons of God' (bene ha-elohim) is rendered differently across traditions, reflecting early interpretive disputes about whether these were angels, divine beings, or human nobles.",
+      "technical": "LXX manuscripts vary between ἄγγελοι τοῦ θεοῦ and υἱοὶ τοῦ θεοῦ; Targumim render 'sons of the nobles' (de-rabrebayya), reflecting a Jewish demythologizing trajectory. Wevers's Göttingen apparatus documents the Greek variation; the divergence illustrates theological pressure on transmission."
+    }
+  ],
+  "transmission_narrative": "Genesis, redacted into substantially its present form by the late Persian period, circulated in plural Hebrew text-forms during the Second Temple era, as evidenced by the Qumran Genesis fragments which mostly align with the proto-MT but with some agreements with SP and LXX readings. The Old Greek translation (mid-3rd c. BCE), the earliest book of the LXX, was produced in Alexandria from a Hebrew Vorlage occasionally diverging from MT, most consequentially in the patriarchal chronologies of Genesis 5 and 11. After the standardization of the proto-MT in the 1st-2nd centuries CE, the Tiberian Masoretes (esp. the ben Asher family) produced the vocalized text preserved in the Aleppo and Leningrad codices, while the LXX continued to develop through Origen's Hexapla and the Jewish revisions of Aquila, Symmachus, and Theodotion. Modern critical scholarship—through Wevers's Göttingen Genesis, BHS/BHQ, Hendel's eclectic Oxford Hebrew Bible Genesis, and ongoing DSS publication—now treats Genesis as a relatively stable text with localized but historically significant variation.",
+  "transmission_plain": "Genesis was compiled from older sources by Jewish scribes around 2,500 years ago and copied in slightly different versions over the next several centuries, as we can see from the Dead Sea Scrolls. Greek translators in Egypt, Samaritan scribes, and rabbinic copyists each preserved a distinct form of the text, and the medieval Hebrew Bibles we use today come from a careful Jewish copying tradition that was finalized about 1,000 years ago. Modern scholars compare all these witnesses to reconstruct the most likely original wording.",
+  "bibcrit_assessment": {
+    "title": "Three rival chronologies, one shared archetype",
+    "plain": "The most striking fact about Genesis transmission is that the Hebrew, Greek, and Samaritan versions give systematically different ages for the patriarchs before and after the Flood—evidence that scribes deliberately reshaped the chronology of world history within an otherwise stable text.",
+    "confidence": 0.82
+  },
+  "discovery_ready": true,
+  "reference": "Genesis",
+  "cached_at": "2026-05-09T21:06:59.107613",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v2"
+}

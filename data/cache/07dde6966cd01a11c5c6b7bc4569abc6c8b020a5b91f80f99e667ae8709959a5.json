@@ -1,0 +1,150 @@
+{
+  "reference": "Zechariah 12:10",
+  "total_citations_found": 7,
+  "period_summary": "Citations cluster in the 2nd–4th centuries, driven almost entirely by christological apologetics linking the 'pierced one' to the crucified Christ, mediated through John 19:37 and Revelation 1:7.",
+  "citations": [
+    {
+      "father": "Justin Martyr",
+      "dates_ce": "c. 100–165",
+      "region": "Syria/Rome",
+      "work": "Dialogue with Trypho",
+      "chapter_section": "Dial. 14.8; 32.2; 64.7; 118.1; cf. 1 Apol. 52",
+      "cited_text": "καὶ ὄψεται ὁ λαὸς ὑμῶν καὶ γνωρίσει εἰς ὃν ἐξεκέντησαν",
+      "text_form": "closer_to_mt",
+      "text_form_confidence": 0.85,
+      "text_form_note": "Justin reads ἐξεκέντησαν ('they pierced'), agreeing with Hebrew דָּקָרוּ against the standard LXX κατωρχήσαντο ('they mocked/danced upon'). This matches a revised Greek tradition (later associated with Theodotion/Aquila) closer to the proto-MT.",
+      "theological_use": "Justin uses the verse repeatedly as a prophecy of Christ's crucifixion and his future visible return, when the Jews who pierced him will recognize him.",
+      "transmission_implication": "Justin's text indicates that by the mid-2nd century a Hebraizing Greek revision of Zechariah, distinct from the Old Greek, was in Christian circulation."
+    },
+    {
+      "father": "Irenaeus of Lyons",
+      "dates_ce": "c. 130–202",
+      "region": "Gaul/Asia Minor",
+      "work": "Adversus Haereses",
+      "chapter_section": "Haer. 4.33.11",
+      "cited_text": "videbunt in quem compunxerunt / transfixerunt",
+      "text_form": "closer_to_mt",
+      "text_form_confidence": 0.7,
+      "text_form_note": "The Latin 'in quem compunxerunt/transfixerunt' renders ἐξεκέντησαν, the Hebraizing reading, not the LXX κατωρχήσαντο. Irenaeus links it to John 19:37.",
+      "theological_use": "Cited as proof that the prophets foretold Christ's passion and second advent in glory, against gnostic separation of Jesus and Christ.",
+      "transmission_implication": "Confirms that the 'pierced' reading was the standard Christian form in the West by the late 2nd century, likely via Johannine mediation."
+    },
+    {
+      "father": "Tertullian",
+      "dates_ce": "c. 155–220",
+      "region": "Carthage",
+      "work": "Adversus Marcionem; Adversus Iudaeos",
+      "chapter_section": "Adv. Marc. 3.7.7; 4.42.7; Adv. Iud. 14.7",
+      "cited_text": "videbunt in quem pupugerunt / et plangent super eum planctum",
+      "text_form": "closer_to_mt",
+      "text_form_confidence": 0.75,
+      "text_form_note": "Tertullian's 'pupugerunt' (pierced) reflects the Hebraizing Greek tradition, not LXX κατωρχήσαντο. He combines Zech 12:10 with 12:12 (mourning by tribes) as in the Hebrew.",
+      "theological_use": "Used to distinguish Christ's two advents: humble crucifixion (first) and glorious return when Israel will mourn its rejection (second).",
+      "transmission_implication": "Demonstrates that the Old Latin tradition received the 'pierced' reading rather than translating from Old Greek."
+    },
+    {
+      "father": "Cyprian of Carthage",
+      "dates_ce": "c. 200–258",
+      "region": "Carthage",
+      "work": "Ad Quirinum (Testimonia)",
+      "chapter_section": "Test. 2.20",
+      "cited_text": "videbunt in quem transfixerunt",
+      "text_form": "closer_to_mt",
+      "text_form_confidence": 0.8,
+      "text_form_note": "Cyprian's testimonia preserve the 'transfixerunt' reading, matching the Hebrew dāqārû and confirming the established Latin form.",
+      "theological_use": "Listed among prophetic testimonies that Christ would suffer and that the Jews would not recognize him until his return.",
+      "transmission_implication": "Shows the verse had become a fixed item in Christian testimonia collections by the mid-3rd century."
+    },
+    {
+      "father": "Origen of Alexandria",
+      "dates_ce": "c. 185–254",
+      "region": "Alexandria/Caesarea",
+      "work": "Contra Celsum; Commentary on John",
+      "chapter_section": "Cels. 2.36; Comm. Jo. 10.20",
+      "cited_text": "ὄψονται εἰς ὃν ἐξεκέντησαν",
+      "text_form": "mixed",
+      "text_form_confidence": 0.7,
+      "text_form_note": "Origen knows both readings. In the Hexapla he documents LXX κατωρχήσαντο alongside Aquila/Theodotion/Symmachus' ἐξεκέντησαν, and cites the latter as the christologically apt form.",
+      "theological_use": "Defends the prophecy against Celsus' charge of fabrication, treating it as fulfilled at the crucifixion (per John 19:37).",
+      "transmission_implication": "Origen's hexaplaric work explicitly attests the divergence between Old Greek and the Jewish revisers, identifying ἐξεκέντησαν as the 'three' translators' rendering."
+    },
+    {
+      "father": "Eusebius of Caesarea",
+      "dates_ce": "c. 260–340",
+      "region": "Caesarea",
+      "work": "Demonstratio Evangelica",
+      "chapter_section": "Dem. ev. 10.8",
+      "cited_text": "ἐπιβλέψονται πρός με ἀνθ' ὧν κατωρχήσαντο, καί... εἰς ὃν ἐξεκέντησαν",
+      "text_form": "mixed",
+      "text_form_confidence": 0.75,
+      "text_form_note": "Eusebius cites the LXX κατωρχήσαντο but glosses or supplements with ἐξεκέντησαν from the revisers, showing awareness of both forms within the post-Hexaplaric Caesarean text.",
+      "theological_use": "Marshals the verse as a passion prophecy and as evidence of Israel's eventual recognition of the crucified Messiah.",
+      "transmission_implication": "Reflects the contaminated Caesarean LXX text where hexaplaric readings have begun to displace or supplement Old Greek."
+    },
+    {
+      "father": "Jerome",
+      "dates_ce": "c. 347–420",
+      "region": "Bethlehem",
+      "work": "Commentariorum in Zachariam",
+      "chapter_section": "Comm. Zach. 3 (on 12:10)",
+      "cited_text": "aspicient ad me quem confixerunt, et plangent eum planctu quasi super unigenitum",
+      "text_form": "closer_to_mt",
+      "text_form_confidence": 0.95,
+      "text_form_note": "Jerome translates directly from Hebrew (dāqārû = 'confixerunt') and explicitly criticizes the LXX κατωρχήσαντο as an error arising from confusion of דקרו with רקדו.",
+      "theological_use": "Reads the passage as a prophecy of the crucifixion and of Israel's eschatological repentance; defends Johannine citation against Jewish objections.",
+      "transmission_implication": "Jerome provides the earliest explicit philological diagnosis of the LXX/MT divergence at this verse, attributing it to a graphic confusion in the Hebrew Vorlage or scribal error in Greek."
+    }
+  ],
+  "text_form_distribution": {
+    "closer_to_mt": 5,
+    "closer_to_lxx": 0,
+    "mixed": 2,
+    "independent": 0,
+    "uncertain": 0
+  },
+  "transmission_synthesis": "The patristic evidence for Zech 12:10 is remarkably uniform in preferring the Hebraizing reading ἐξεκέντησαν / 'transfixerunt' ('whom they pierced') over the Old Greek κατωρχήσαντο ('they mocked'). This preference is mediated through John 19:37 and Revelation 1:7, both of which already attest the revised Greek form, and was fixed in Christian usage from Justin onward. Origen's hexaplaric work and Jerome's commentary make explicit what the citations imply: the Christian 'LXX' of Zechariah at this verse had been silently corrected to the Hebrew via the kaige/Theodotionic tradition. The data suggest that a non-Septuagintal Greek text of the Twelve Prophets, attested also at Naḥal Ḥever, was already in Christian hands by the late 1st century and effectively replaced the Old Greek for this verse in patristic memory.",
+  "transmission_synthesis_plain": "Early Christian writers almost unanimously quoted Zechariah 12:10 with the words 'whom they pierced,' matching the Hebrew Bible and the Gospel of John, rather than the older Greek translation that read 'they mocked.' This shows that Christians early on adopted a corrected Greek version of this verse — the form that fit the crucifixion — and that this 'pierced' reading became the standard form in both Greek and Latin churches.",
+  "notable_variants": [
+    {
+      "reading": "ἐξεκέντησαν / transfixerunt / confixerunt ('they pierced')",
+      "fathers_using_it": [
+        "Justin Martyr",
+        "Irenaeus",
+        "Tertullian",
+        "Cyprian",
+        "Origen",
+        "Jerome"
+      ],
+      "text_form_alignment": "closer_to_mt",
+      "significance": "Reflects the Theodotionic/kaige revision aligning Greek with Hebrew dāqārû; its universal Christian adoption shows that John 19:37 effectively canonized this reading for the church."
+    },
+    {
+      "reading": "κατωρχήσαντο ('they mocked/danced upon')",
+      "fathers_using_it": [
+        "Origen (in Hexapla)",
+        "Eusebius (alongside the revisers)"
+      ],
+      "text_form_alignment": "closer_to_lxx",
+      "significance": "The Old Greek form, likely arising from reading רקדו for דקרו; its near-total absence from Christian citation despite being the original LXX shows how thoroughly Christian copyists revised the verse toward the Hebrew."
+    },
+    {
+      "reading": "πρός με ('upon me') vs. πρὸς αὐτόν ('upon him')",
+      "fathers_using_it": [
+        "Justin (πρός με)",
+        "John 19:37 tradition (αὐτόν)"
+      ],
+      "text_form_alignment": "mixed",
+      "significance": "The first-person 'me' (matching MT אֵלַי) vs. the third-person reading reflects an old textual tension already visible in pre-Christian Hebrew transmission and inherited differently by Johannine and patristic streams."
+    }
+  ],
+  "bibcrit_assessment": {
+    "title": "Johannine 'Pierced' Reading Overrides Old Greek",
+    "reasoning": "The single most significant finding is that no orthodox Father before Jerome cites the original LXX κατωρχήσαντο at Zech 12:10; the church effectively replaced the Old Greek with a Hebraizing revision because it alone supported the crucifixion typology of John 19:37. This makes Zech 12:10 a paradigm case of how New Testament citation determined the textual shape of an Old Testament verse in Christian transmission, a phenomenon Hengel identified as central to the formation of the Christian Septuagint.",
+    "plain": "Christian writers chose the Hebrew-based reading 'pierced' over the older Greek 'mocked' because it matched the Gospel account of Jesus' crucifixion. The New Testament essentially decided which version of this Old Testament verse the church would copy and quote.",
+    "confidence": 0.88
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T22:09:37.334879",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v3"
+}

@@ -1,0 +1,189 @@
+{
+  "reference": "Numbers 26",
+  "subject": "Second wilderness census of the twelve tribes",
+  "figures": [
+    {
+      "name": "Reuben",
+      "mt_value": 43730,
+      "lxx_value": 43730,
+      "sp_value": 43730,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Simeon",
+      "mt_value": 22200,
+      "lxx_value": 22200,
+      "sp_value": 22200,
+      "divergence_type": "none",
+      "note": "All three traditions agree on the dramatically reduced Simeonite total (down from 59,300 in Num 1)."
+    },
+    {
+      "name": "Gad",
+      "mt_value": 40500,
+      "lxx_value": 40500,
+      "sp_value": 40500,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Judah",
+      "mt_value": 76500,
+      "lxx_value": 76500,
+      "sp_value": 76500,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Issachar",
+      "mt_value": 64300,
+      "lxx_value": 64300,
+      "sp_value": 64300,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Zebulun",
+      "mt_value": 60500,
+      "lxx_value": 60500,
+      "sp_value": 60500,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Manasseh",
+      "mt_value": 52700,
+      "lxx_value": 52700,
+      "sp_value": 52700,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Ephraim",
+      "mt_value": 32500,
+      "lxx_value": 32500,
+      "sp_value": 32500,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Benjamin",
+      "mt_value": 45600,
+      "lxx_value": 35500,
+      "sp_value": 45600,
+      "divergence_type": "significant",
+      "note": "LXX reads 35,500, a difference of 10,100, likely a transcriptional error involving the tens-of-thousands digit."
+    },
+    {
+      "name": "Dan",
+      "mt_value": 64400,
+      "lxx_value": 64400,
+      "sp_value": 64400,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Asher",
+      "mt_value": 53400,
+      "lxx_value": 53400,
+      "sp_value": 53400,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Naphtali",
+      "mt_value": 45400,
+      "lxx_value": 45400,
+      "sp_value": 45400,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Total Israel",
+      "mt_value": 601730,
+      "lxx_value": 601730,
+      "sp_value": 601730,
+      "divergence_type": "none",
+      "note": "All three traditions preserve the same grand total despite LXX's lower Benjamin figure, suggesting the total was transmitted as a fixed sum independent of the components."
+    },
+    {
+      "name": "Levites (one month and upward)",
+      "mt_value": 23000,
+      "lxx_value": 23000,
+      "sp_value": 23000,
+      "divergence_type": "none",
+      "note": null
+    }
+  ],
+  "systematic_analysis": {
+    "is_systematic": false,
+    "pattern": "Unlike the patriarchal chronologies of Genesis 5 and 11, Numbers 26 shows almost complete agreement across MT, LXX, and SP. The single notable divergence is LXX's figure for Benjamin (35,500 vs. 45,600), which does not fit any systematic inflation/deflation scheme since the LXX total still equals 601,730 — mathematically inconsistent with its own component sum.",
+    "pattern_plain": "The three textual traditions agree on virtually every census number in Numbers 26. The only real disagreement is the Greek version's count for Benjamin, and even there the overall total still matches the Hebrew."
+  },
+  "theories": [
+    {
+      "name": "Isolated scribal error in LXX Benjamin",
+      "slug": "scribal_error",
+      "score": 0.85,
+      "confidence": 0.82,
+      "summary": "The LXX deviation at Benjamin (35,500 vs. MT/SP 45,600) is best explained as a transcriptional slip in the Greek transmission, since the LXX's own grand total of 601,730 contradicts its component sum (which would yield 591,630). The error likely involved confusion of tens-of-thousands numerals in an early Greek exemplar, while the total was preserved untouched.",
+      "summary_plain": "The Greek version's lower number for Benjamin is almost certainly a copying mistake, because adding up the Greek tribe-by-tribe numbers no longer matches the Greek total. The Hebrew and Samaritan agree against it.",
+      "supporting_evidence": [
+        "LXX's component sum (591,630) fails to match its own preserved total (601,730), a clear sign of internal corruption.",
+        "MT and SP agree at 45,600, providing two independent witnesses against the LXX figure.",
+        "The discrepancy of exactly 10,100 suggests a digit-level error in a single position rather than systematic revision.",
+        "No theological or ideological motive is apparent for selectively reducing Benjamin alone.",
+        "Other LXX numerical errors of this type (digit confusion in myriads) are well documented in Samuel-Kings."
+      ],
+      "weaknesses": [
+        "The exact mechanism (which Greek numeral or Hebrew digit was misread) cannot be reconstructed with certainty.",
+        "Some manuscripts of the LXX may preserve variant readings that complicate a single-error hypothesis."
+      ]
+    },
+    {
+      "name": "Independent Vorlage for LXX Numbers",
+      "slug": "independent_traditions",
+      "score": 0.25,
+      "confidence": 0.3,
+      "summary": "It is conceivable that the LXX translator worked from a Hebrew Vorlage with a genuine variant for Benjamin, reflecting an alternative census tradition. However, the internal arithmetic inconsistency in LXX itself undermines this and points instead to corruption rather than a coherent alternative tradition.",
+      "summary_plain": "The Greek translator may have used a slightly different Hebrew copy, but this is unlikely because the Greek text doesn't add up internally.",
+      "supporting_evidence": [
+        "LXX Numbers does occasionally reflect a Vorlage differing from MT in small details.",
+        "Variant census traditions are attested elsewhere (cf. 2 Sam 24 vs. 1 Chr 21)."
+      ],
+      "weaknesses": [
+        "The LXX total contradicts its own components, which no genuine independent tradition would tolerate.",
+        "MT and SP — two normally divergent witnesses — agree, strongly suggesting the original reading.",
+        "No external evidence (Qumran, Josephus) supports a 35,500 Benjamin tradition."
+      ]
+    },
+    {
+      "name": "Theological motivation against Benjamin",
+      "slug": "theological_motivation",
+      "score": 0.08,
+      "confidence": 0.15,
+      "summary": "One could speculate that a scribe reduced Benjamin's count for ideological reasons, perhaps reflecting later Judah-Benjamin tensions or post-exilic polemics. This theory has very little to commend it given the absence of any parallel tendentious changes elsewhere in LXX Numbers 26.",
+      "summary_plain": "Some might argue the Greek scribe deliberately lowered Benjamin's number for religious or political reasons, but there's no real evidence for this.",
+      "supporting_evidence": [
+        "Benjamin's status fluctuates in later biblical narrative (Judges 19–21; Saul vs. David)."
+      ],
+      "weaknesses": [
+        "No coherent ideological program is visible — only one tribe is altered.",
+        "The unchanged grand total would defeat any polemical purpose.",
+        "No patristic or Jewish source connects this variant to theological dispute."
+      ]
+    }
+  ],
+  "overall_assessment": "Numbers 26 stands in striking contrast to Genesis 5 and 11: the three major textual traditions agree on essentially every figure, including the highly significant collapse of Simeon from 59,300 to 22,200. The lone meaningful divergence — LXX's 35,500 for Benjamin against MT/SP 45,600 — is almost certainly a transcriptional error in Greek transmission, as proven by the arithmetic inconsistency between the LXX components and its preserved total of 601,730. This convergence demonstrates that the systematic chronological divergences of the primeval and patriarchal narratives are not a general feature of Pentateuchal numerical transmission but are localized to specific genealogical schemata. Numbers 26 thus serves as an important control case: where no theological-chronological scheme is at stake, the three traditions transmit numbers with remarkable fidelity.",
+  "overall_plain": "Unlike the famous disagreements about how long the patriarchs lived, the census numbers in Numbers 26 are almost identical in the Hebrew, Greek, and Samaritan versions. The one exception — a lower number for Benjamin in the Greek — is just a copying mistake, since the Greek's own total doesn't match its tribe-by-tribe figures. This shows that scribes generally copied numbers carefully when no big theological scheme was involved.",
+  "bibcrit_assessment": {
+    "title": "Census numbers transmitted with remarkable fidelity",
+    "reasoning": "The near-total agreement of MT, LXX, and SP in Numbers 26 is methodologically crucial: it shows that the systematic numerical divergences in Genesis 5 and 11 cannot be attributed to general scribal carelessness or routine corruption, since scribes evidently could and did transmit large numerical lists accurately. This strengthens the case that the Genesis chronological divergences reflect deliberate editorial schemes rather than accidental drift. The single LXX error at Benjamin, exposed by its own arithmetic, ironically confirms how rare such corruption was here.",
+    "plain": "The fact that the three Bible traditions agree so closely on the census numbers proves that scribes could copy long number-lists reliably. This makes the big disagreements in Genesis look more like deliberate edits than copying mistakes.",
+    "confidence": 0.78
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T21:22:42.880369",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v3"
+}

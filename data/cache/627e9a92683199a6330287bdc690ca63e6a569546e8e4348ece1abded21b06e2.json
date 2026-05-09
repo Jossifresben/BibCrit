@@ -1,0 +1,118 @@
+{
+  "reference": "Psalm 82:1",
+  "synthesis": "Psalm 82:1 depicts God presiding over a divine council ('adat El) and judging among the elohim, a scene that profoundly shaped Second Temple angelology and theodicy. The verse became a key prooftext for traditions about heavenly beings—angels, watchers, or 'sons of God'—who exercise delegated authority and are subject to divine judgment, particularly in apocalyptic literature where rebellious heavenly powers face condemnation.",
+  "allusions": [
+    {
+      "stl_work": "1_enoch",
+      "stl_passage": "1 En 14:18-23",
+      "stl_content": "Enoch's throne vision describes God seated in the heavenly court surrounded by myriads of holy ones who stand before him, a scene of divine judgment in the celestial assembly.",
+      "allusion_type": "echo",
+      "directionality": "canonical_to_stl",
+      "confidence": 0.72,
+      "canonical_element": "God standing/presiding in the divine assembly ('adat El)",
+      "scholarly_note": "Nickelsburg (1 Enoch 1, 2001, pp. 261-265) identifies the throne-room vision as drawing on classical divine council traditions including Ps 82, 1 Kgs 22:19, and Isa 6, where God presides in judgment over heavenly beings. The Book of Watchers radically transforms the council motif by making the heavenly beings subordinate worshipers rather than peer deities.",
+      "relevance_to_dss": "4QEn-c (4Q204) preserves this throne vision and shaped the Songs of the Sabbath Sacrifice (4Q400-407), which describe the heavenly elohim in the divine council.",
+      "relevance_to_nt": "Revelation 4-5 inherits this throne-council imagery via the Enochic mediation of Ps 82."
+    },
+    {
+      "stl_work": "1_enoch",
+      "stl_passage": "1 En 1:9",
+      "stl_content": "The Lord comes with myriads of his holy ones to execute judgment upon all and to convict all flesh, evoking divine judgment in the heavenly assembly.",
+      "allusion_type": "echo",
+      "directionality": "canonical_to_stl",
+      "confidence": 0.65,
+      "canonical_element": "God arising/standing to judge (yishpot)",
+      "scholarly_note": "Nickelsburg (1 Enoch 1, 2001, pp. 142-149) traces the theophanic judgment formula to Deut 33:2 but notes its convergence with Ps 82's image of God rising to judge. The 'holy ones' parallel the 'adat El, while the judgment motif corresponds to elohim yishpot.",
+      "relevance_to_dss": "4QEn-a (4Q201) 1 i preserves this passage, foundational to Qumran's eschatological judgment theology.",
+      "relevance_to_nt": "Jude 14-15 cites 1 En 1:9 directly, transmitting the divine-council judgment motif into early Christian eschatology."
+    },
+    {
+      "stl_work": "1_enoch",
+      "stl_passage": "1 En 90:20-25",
+      "stl_content": "In the Animal Apocalypse, the Lord of the Sheep sits on a throne and judges the fallen stars (watchers) and the seventy shepherds (angelic rulers of nations), condemning them to the fiery abyss.",
+      "allusion_type": "allusion",
+      "directionality": "canonical_to_stl",
+      "confidence": 0.78,
+      "canonical_element": "Divine judgment of elohim/heavenly beings within the assembly",
+      "scholarly_note": "Nickelsburg (1 Enoch 1, 2001, pp. 402-404) emphasizes that the seventy shepherds are angelic patrons of nations who fail in their charges—a tradition rooted in Deut 32:8-9 LXX and Ps 82, where elohim are condemned for unjust governance. The judgment scene replicates the Psalm's structure of God presiding over and condemning subordinate divine beings.",
+      "relevance_to_dss": "4QEn-e preserves portions of the Animal Apocalypse; the 'angels of the nations' tradition appears in 1QM and the Songs of the Sabbath Sacrifice.",
+      "relevance_to_nt": "The motif of angelic 'principalities and powers' subject to judgment (1 Cor 2:6-8; Col 2:15) draws on this tradition."
+    },
+    {
+      "stl_work": "1_enoch",
+      "stl_passage": "1 En 60:1-6",
+      "stl_content": "In the Similitudes, the Head of Days sits on the throne of his glory while angels and the righteous stand around him, and judgment is pronounced.",
+      "allusion_type": "echo",
+      "directionality": "canonical_to_stl",
+      "confidence": 0.6,
+      "canonical_element": "God presiding over the heavenly assembly in judgment",
+      "scholarly_note": "Nickelsburg and VanderKam (1 Enoch 2, 2012, pp. 232-237) note that the Similitudes' throne scenes synthesize Dan 7, Ps 82, and Ezek 1 traditions of divine council judgment. The standing assembly of angels reflects 'adat El reconfigured around the Chosen One.",
+      "relevance_to_dss": null,
+      "relevance_to_nt": "Foundational for the Son of Man's eschatological judgment scenes (Matt 25:31)."
+    },
+    {
+      "stl_work": "sirach",
+      "stl_passage": "Sir 17:17",
+      "stl_content": "For every nation he appointed a ruler, but Israel is the Lord's own portion—reflecting the tradition of angelic patrons over the nations under God's supreme authority.",
+      "allusion_type": "echo",
+      "directionality": "shared_tradition",
+      "confidence": 0.55,
+      "canonical_element": "Elohim as appointed rulers/judges over peoples within God's assembly",
+      "scholarly_note": "Collins (Apocalyptic Imagination, 1998, pp. 36-38) connects this verse to the broader Deut 32:8-9 / Ps 82 tradition of national angelic patrons, which Ben Sira affirms while subordinating them to YHWH. The shared tradition assumes a divine council where elohim govern nations under God's judgment.",
+      "relevance_to_dss": "4QDeut-j preserves the 'sons of God' reading at Deut 32:8, the textual basis for this divine council tradition.",
+      "relevance_to_nt": "Acts 17:26 and Paul's discussion of angelic powers presuppose this Sirach/Psalm 82 framework."
+    },
+    {
+      "stl_work": "4_ezra",
+      "stl_passage": "4 Ezra 7:33-44",
+      "stl_content": "The Most High will be revealed on the seat of judgment, and compassion will pass away while judgment alone will remain over all nations.",
+      "allusion_type": "echo",
+      "directionality": "canonical_to_stl",
+      "confidence": 0.5,
+      "canonical_element": "God standing/seated to execute universal judgment",
+      "scholarly_note": "Collins (Apocalyptic Imagination, 1998, pp. 197-204) observes that 4 Ezra's eschatological judgment scene reformulates the divine council judgment of Ps 82 in apocalyptic terms, where God alone judges all nations and their heavenly representatives. The forensic setting echoes the Psalm's courtroom imagery.",
+      "relevance_to_dss": null,
+      "relevance_to_nt": "Parallel to the great white throne judgment in Rev 20:11-15."
+    }
+  ],
+  "works_covered": {
+    "1_enoch": {
+      "present": true,
+      "passage_count": 4
+    },
+    "jubilees": {
+      "present": false,
+      "passage_count": 0
+    },
+    "sirach": {
+      "present": true,
+      "passage_count": 1
+    },
+    "4_ezra": {
+      "present": true,
+      "passage_count": 1
+    },
+    "tobit": {
+      "present": false,
+      "passage_count": 0
+    }
+  },
+  "dss_significance": "Psalm 82's divine council theology profoundly shaped Qumran angelology, particularly in the Songs of the Sabbath Sacrifice (4Q400-407), which describe the heavenly elohim worshiping in the celestial sanctuary. 11Q13 (Melchizedek) explicitly cites Ps 82:1-2, identifying Melchizedek as the elohim who executes judgment in the heavenly assembly—the most consequential Second Temple interpretation of this verse. The 'adat El imagery also informs the dualistic angelology of 1QM and 1QS.",
+  "nt_significance": "Jesus cites Ps 82:6 in John 10:34-36 to defend his divine sonship, presupposing the divine council interpretation transmitted through Second Temple tradition. The motif of God judging heavenly powers undergirds NT teachings about the judgment of angels (1 Cor 6:3; 2 Pet 2:4; Jude 6) and the subjection of principalities (Eph 1:21; Col 2:15). Revelation's throne-room scenes (Rev 4-5; 20) inherit the Psalm's divine assembly imagery via Enochic mediation.",
+  "directionality_summary": "The dominant direction is canonical-to-STL: Second Temple authors, particularly the Enochic tradition, drew on Ps 82's divine council imagery to construct elaborate angelologies and judgment scenes. Some traditions (Sir 17:17) reflect a shared Deuteronomic-Psalmic substratum about angelic governance of nations rather than direct dependence.",
+  "assessment": {
+    "title": "Psalm 82's Divine Council as Foundation for Enochic Angelology and Eschatological Judgment",
+    "reasoning": "Psalm 82:1 supplied Second Temple Judaism with its most evocative image of God presiding in judgment over subordinate heavenly beings, an image that the Enochic tradition exploited extensively to develop its theology of fallen watchers, angelic patrons of nations, and eschatological judgment. The clearest dependencies appear in 1 Enoch's throne-room visions (chs. 14, 60, 90), where the Psalm's 'adat El is reconfigured as a hierarchical heavenly court. Sirach 17:17 reflects the closely related Deut 32:8-9 / Ps 82 tradition of national angelic governance. While Ps 82 is rarely cited verbatim in these works (the major exception being 11QMelchizedek among the DSS), its conceptual footprint is pervasive and foundational. The Hays criteria of thematic coherence and recurrence are strongly met across the Enochic corpus.",
+    "plain": "Psalm 82 pictures God in a heavenly courtroom judging lesser divine beings. Jewish writers between 200 BCE and 100 CE—especially in 1 Enoch—built elaborate visions of heavenly courts and angelic judgment on this foundation, and these traditions deeply shaped the New Testament's view of angels, judgment, and Christ's authority.",
+    "confidence": 0.78,
+    "next_steps": "Compare 11QMelchizedek's explicit citation of Ps 82:1-2 with the Enochic throne visions to map the trajectory of divine council interpretation; examine the Songs of the Sabbath Sacrifice for liturgical reception of 'adat El theology."
+  },
+  "citations": {
+    "sbl": "George W. E. Nickelsburg, 1 Enoch 1: A Commentary on the Book of 1 Enoch, Chapters 1–36; 81–108, Hermeneia (Minneapolis: Fortress, 2001), 261-265, 402-404.",
+    "bibtex": "@book{nickelsburg2001, author={Nickelsburg, George W. E.}, title={1 Enoch 1: A Commentary on the Book of 1 Enoch, Chapters 1–36; 81–108}, series={Hermeneia}, publisher={Fortress Press}, address={Minneapolis}, year={2001}}"
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T22:19:30.534515",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v1"
+}

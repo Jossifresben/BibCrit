@@ -1,0 +1,30 @@
+{
+  "allusions": [
+    {
+      "ot_reference": "Isaiah 11:10",
+      "nt_words": "ἔσται ἡ ῥίζα τοῦ Ἰεσσαί καὶ ὁ ἀνιστάμενος ἄρχειν ἐθνῶν, ἐπ' αὐτῷ ἔθνη ἐλπιοῦσιν",
+      "ot_mt_form": "MT: 'And it shall be in that day, the root of Jesse who stands as a banner (נֵס) for the peoples — to him the nations shall seek (יִדְרֹשׁוּ), and his resting place shall be glory.'",
+      "ot_lxx_form": "LXX: καὶ ἔσται ἐν τῇ ἡμέρᾳ ἐκείνῃ ἡ ῥίζα τοῦ Ιεσσαι καὶ ὁ ἀνιστάμενος ἄρχειν ἐθνῶν, ἐπ' αὐτῷ ἔθνη ἐλπιοῦσιν",
+      "nt_alignment": "lxx",
+      "alignment_confidence": 0.98,
+      "key_word": "ὁ ἀνιστάμενος ἄρχειν ἐθνῶν ... ἐλπιοῦσιν",
+      "textual_implication": "Paul's citation matches the LXX verbatim except for the omission of the temporal opening 'ἐν τῇ ἡμέρᾳ ἐκείνῃ.' The LXX diverges sharply from the MT: where MT reads 'standing as a banner (נֵס) for peoples,' LXX reads 'rising to rule the nations' (ὁ ἀνιστάμενος ἄρχειν ἐθνῶν), and where MT has 'seek' (דרשׁ), LXX has 'hope' (ἐλπίζω). Both LXX divergences are essential to Paul's argument: 'rising' evokes resurrection, and 'hope' frames the entire epistolary climax (Rom 15:13).",
+      "textual_implication_plain": "Paul quotes the Greek Old Testament word-for-word here, and that Greek version differs significantly from the Hebrew. The Greek's words about 'rising' and 'hoping' fit Paul's themes of resurrection and Gentile hope perfectly — the Hebrew text wouldn't have served his point as well.",
+      "scholarly_note": "Seifrid (in Beale/Carson, 692–93) and Wagner (Heralds of the Good News, 320–29) note Paul's dependence on LXX is decisive here, since the MT lacks both the verb 'rule' and 'hope' that anchor Paul's argument; Hays (Echoes, 71) sees this as climactic in Paul's catena.",
+      "contested": false
+    }
+  ],
+  "summary_technical": "Romans 15:12 is a verbatim LXX citation of Isaiah 11:10 (minus the introductory temporal phrase), forming the climax of Paul's fourfold catena (Rom 15:9–12) demonstrating Gentile inclusion in messianic hope. The citation depends entirely on LXX divergences from MT for its rhetorical force.",
+  "summary_plain": "Paul quotes Isaiah 11:10 in its Greek form because that version specifically mentions Gentiles 'hoping' in the Messiah, which is exactly the point he wants to make.",
+  "bibcrit_hypothesis": {
+    "title": "LXX-Dependent Climax of Gentile Hope Catena",
+    "reasoning": "Paul's selection of Isaiah 11:10 as the capstone of his Romans 15:9–12 catena is textually contingent: only the LXX form supplies both 'ruling the nations' (messianic kingship over Gentiles) and 'the nations will hope' (preparing the benediction in 15:13, 'the God of hope'). Had Paul been working from the Hebrew, the verse would have offered neither verbal hook. This suggests the catena was composed with LXX vocabulary as a structuring principle, not merely as a translation convenience.",
+    "plain": "Paul's whole argument that Gentiles are included in God's promises depends on quoting the Greek Bible, because the Greek translation contains the word 'hope' that ties his entire chapter together. The Hebrew original wouldn't have given him that word.",
+    "confidence": 0.9
+  },
+  "discovery_ready": false,
+  "reference": "Romans 15:12",
+  "cached_at": "2026-05-09T21:50:37.080102",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v1"
+}

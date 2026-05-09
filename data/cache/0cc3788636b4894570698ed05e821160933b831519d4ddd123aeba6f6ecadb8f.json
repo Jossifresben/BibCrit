@@ -1,0 +1,91 @@
+{
+  "reference": "Exodus 3:14",
+  "manuscript": "Onkelos",
+  "synthesis": "Targum Onkelos renders Exodus 3:14 with remarkable literalness, preserving the enigmatic divine self-disclosure 'ehyeh asher ehyeh' in its original Hebrew form rather than translating it into Aramaic. The only notable substitution is the rendering of אֱלֹהִים as the Tetragrammaton יְיָ, while the rest of the verse follows MT word order and syntax closely. Onkelos here resists the philosophical expansion found in LXX (ὁ ὤν) and the homiletical paraphrase characteristic of the Palestinian Targumim.",
+  "rendering_fidelity": {
+    "overall": "close",
+    "word_analysis": [
+      {
+        "mt_word": "wayyomer Elohim",
+        "targ_word": "wa'amar YYY",
+        "type": "substitution",
+        "note": "Onkelos replaces the generic divine name Elohim with the Tetragrammaton (abbreviated יְיָ), a common Onkelos practice in theophanic contexts."
+      },
+      {
+        "mt_word": "el-Mosheh",
+        "targ_word": "le-Mosheh",
+        "type": "close",
+        "note": "Standard Aramaic prepositional shift from אֶל to ל with no semantic change."
+      },
+      {
+        "mt_word": "ehyeh asher ehyeh",
+        "targ_word": "ehyeh asher ehyeh",
+        "type": "close",
+        "note": "Onkelos preserves the Hebrew formula untranslated, treating the divine name as a sacred quotation that cannot be paraphrased."
+      },
+      {
+        "mt_word": "koh tomar",
+        "targ_word": "kidnan teimar",
+        "type": "close",
+        "note": "Standard Aramaic equivalent for Hebrew כֹּה ('thus'); regular lexical correspondence."
+      },
+      {
+        "mt_word": "livnei Yisrael",
+        "targ_word": "livnei Yisrael",
+        "type": "close",
+        "note": "Identical form in Hebrew and Aramaic."
+      },
+      {
+        "mt_word": "ehyeh shelahani",
+        "targ_word": "ehyeh shalḥani",
+        "type": "close",
+        "note": "The divine name ehyeh is again preserved in Hebrew form; the verb is rendered in standard Aramaic morphology."
+      },
+      {
+        "mt_word": "aleikhem",
+        "targ_word": "lewatkhon",
+        "type": "close",
+        "note": "Standard Aramaic equivalent (לְוָת) for Hebrew אֶל with pronominal suffix."
+      }
+    ]
+  },
+  "theological_modifications": [],
+  "targumic_expansions": [],
+  "messianic_reinterpretation": {
+    "present": false,
+    "instances": []
+  },
+  "lxx_alignment": {
+    "areas_of_agreement": null,
+    "significance": "Onkelos diverges sharply from LXX here: where LXX renders the formula philosophically as ἐγώ εἰμι ὁ ὤν ('I am the One who is'), Onkelos preserves the Hebrew ehyeh asher ehyeh untranslated, refusing both ontological interpretation and Aramaic paraphrase."
+  },
+  "key_divergences": [
+    {
+      "mt_word": "Elohim",
+      "targ_word": "YYY (Tetragrammaton)",
+      "type": "substitution",
+      "explanation": "Onkelos regularly replaces Elohim with the Tetragrammaton in narrative contexts where God speaks directly, harmonizing the name with the immediate Sinai/Exodus theophanic tradition (cf. Exod 3:15)."
+    },
+    {
+      "mt_word": "ehyeh asher ehyeh",
+      "targ_word": "ehyeh asher ehyeh (untranslated)",
+      "type": "close",
+      "explanation": "By leaving the divine self-naming in Hebrew, Onkelos treats the formula as an inviolable nomen sacrum, paralleling later rabbinic reverence for the ineffable name and contrasting with Pseudo-Jonathan's expansive 'I am he who was, who is, and who will be.'"
+    }
+  ],
+  "assessment": {
+    "title": "Onkelos's Conservative Preservation of the Divine Name Formula in Exodus 3:14",
+    "reasoning": "Targum Onkelos exemplifies its characteristic restraint by leaving the cryptic ehyeh asher ehyeh formula in untranslated Hebrew, refusing the metaphysical expansion of LXX (ὁ ὤν) and the temporal-eschatological paraphrase of Targum Pseudo-Jonathan ('who was, is, and will be'). The only substantive modification is the substitution of the Tetragrammaton for Elohim, a routine Onkelos practice reflecting the targumist's harmonizing instinct. Notably absent are the Memra circumlocution and any anthropomorphic softening, suggesting that for Onkelos, the verbal self-revelation 'I will be' did not require the buffering hypostasis common in other divine speech contexts. This conservative approach aligns with Onkelos's broader translation technique as documented by Samely and Grossfeld: literalism punctuated by targeted theological adjustments rather than wholesale paraphrase. The verse thus stands as a test case for Onkelos's reverential minimalism toward the divine name.",
+    "plain": "The Aramaic translation here stays remarkably close to the Hebrew, even leaving the mysterious phrase 'I am that I am' in its original Hebrew form rather than translating it. The only real change is using God's personal name (the Tetragrammaton) in place of the generic word 'God.' This shows Onkelos's typical caution when handling sacred divine names.",
+    "confidence": 0.93,
+    "next_steps": "Compare with Targum Pseudo-Jonathan and the Fragmentary Targums on Exod 3:14 to map the spectrum of Targumic responses to the divine name formula; consult b. Berakhot 9b and Exodus Rabbah 3:6 for rabbinic exegetical context."
+  },
+  "citations": {
+    "sbl": "Bernard Grossfeld, The Targum Onqelos to Exodus: Translated, with Apparatus and Notes, ArBib 7 (Wilmington, DE: Michael Glazier, 1988), 9–10; cf. Alexander Samely, The Interpretation of Speech in the Pentateuch Targums (Tübingen: Mohr Siebeck, 1992), 157–62.",
+    "bibtex": "@book{Grossfeld1988Exodus, author = {Grossfeld, Bernard}, title = {The Targum Onqelos to Exodus: Translated, with Apparatus and Notes}, series = {The Aramaic Bible}, volume = {7}, publisher = {Michael Glazier}, address = {Wilmington, DE}, year = {1988}}"
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T21:59:22.856137",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v1"
+}

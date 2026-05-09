@@ -1,0 +1,131 @@
+{
+  "book": "Psalms",
+  "translator_name": "Old Greek Psalter",
+  "translator_profile": {
+    "literalness": 0.82,
+    "anthropomorphism_reduction": 0.15,
+    "messianic_heightening": 0.55,
+    "harmonization": 0.3,
+    "paraphrase_rate": 0.2
+  },
+  "dimensions": [
+    {
+      "dimension": "literalness",
+      "score": 0.82,
+      "confidence": 0.85,
+      "summary": "The OG Psalter is highly isomorphic, following Hebrew word order and segmenting clauses with near one-to-one correspondence, as classed by Tov among the more literal units. Ps 2:7 and 110:1 reproduce Hebrew syntax closely (κάθου ἐκ δεξιῶν μου ἕως ἂν θῶ...), and ὑποπόδιον τῶν ποδῶν σου preserves the construct chain. The translator does, however, occasionally interpret rare lexemes (e.g. אַיֶּלֶת as ἀντίλημψις in 22:1).",
+      "summary_plain": "The Greek Psalms translator stuck very close to the Hebrew, matching it word for word most of the time. Where he departs, it is usually because he didn't understand a rare word.",
+      "examples": [
+        {
+          "reference": "Psalm 110:1",
+          "mt_text": "shev limini ad ashit oyveka hadom leragleka",
+          "lxx_text": "κάθου ἐκ δεξιῶν μου ἕως ἂν θῶ τοὺς ἐχθρούς σου ὑποπόδιον τῶν ποδῶν σου",
+          "note": "Word-order, syntax, and constituent structure mirror the Hebrew with quantitative equivalence."
+        },
+        {
+          "reference": "Psalm 22:17",
+          "mt_text": "ki sevavuni kelavim",
+          "lxx_text": "ὅτι ἐκύκλωσάν με κύνες",
+          "note": "Conjunction, verb, suffix, and noun all rendered in strict order."
+        }
+      ]
+    },
+    {
+      "dimension": "anthropomorphism_reduction",
+      "score": 0.15,
+      "confidence": 0.7,
+      "summary": "Unlike the Pentateuch translators or Targumic tradents, the Psalter shows little systematic softening of divine anthropomorphisms. Ps 110:1 retains 'my right hand' and 'footstool of your feet'; Ps 2:7 retains 'I have begotten you'. Reductions are sporadic and lexical rather than programmatic.",
+      "summary_plain": "The translator was comfortable keeping vivid bodily images of God, like God's right hand or footstool. He didn't try to make these expressions more abstract.",
+      "examples": [
+        {
+          "reference": "Psalm 110:1",
+          "mt_text": "limini ... hadom leragleka",
+          "lxx_text": "ἐκ δεξιῶν μου ... ὑποπόδιον τῶν ποδῶν σου",
+          "note": "Concrete divine body-language preserved without circumlocution."
+        },
+        {
+          "reference": "Psalm 2:7",
+          "mt_text": "ani hayom yelidtika",
+          "lxx_text": "ἐγὼ σήμερον γεγέννηκά σε",
+          "note": "Bold divine begetting language retained literally."
+        }
+      ]
+    },
+    {
+      "dimension": "messianic_heightening",
+      "score": 0.55,
+      "confidence": 0.6,
+      "summary": "Schaper and others have argued for measurable eschatological/messianic intensification in the OG Psalter, though the evidence is uneven. Ps 110:1's articular κύριος... κυρίῳ μου lends itself to christological reading, and Ps 45:7's ὁ θρόνος σου ὁ θεός is fully retained as vocative. Heightening is more by lexical choice and Tendenz than by added content.",
+      "summary_plain": "The Greek Psalter sometimes nudges royal and Davidic passages in a more messianic direction, though usually subtly rather than by rewriting.",
+      "examples": [
+        {
+          "reference": "Psalm 22:1",
+          "mt_text": "lamnatzeach al ayyelet hashachar",
+          "lxx_text": "εἰς τὸ τέλος ὑπὲρ τῆς ἀντιλήμψεως τῆς ἑωθινῆς",
+          "note": "εἰς τὸ τέλος ('for the end') for לַמְנַצֵּחַ invites eschatological reading throughout the Psalter."
+        },
+        {
+          "reference": "Psalm 2:7",
+          "mt_text": "beni atta ani hayom yelidtika",
+          "lxx_text": "υἱός μου εἶ σύ ἐγὼ σήμερον γεγέννηκά σε",
+          "note": "Literal but theologically charged rendering became foundational for NT christology."
+        }
+      ]
+    },
+    {
+      "dimension": "harmonization",
+      "score": 0.3,
+      "confidence": 0.5,
+      "summary": "Some intra-Psalter and inter-textual harmonization occurs (especially across doublet psalms 14//53, 18//2 Sam 22), but it is not a dominant feature. The translator preserves obscurities (e.g. ὤρυξαν at 22:17 reflects a different Vorlage כָּארוּ rather than harmonizing). Standardized superscription formulae (εἰς τὸ τέλος, τῷ Δαυιδ) constitute the most visible harmonizing layer.",
+      "summary_plain": "The translator occasionally smoothed parallel passages or used standard formulas in headings, but mostly left rough or puzzling spots alone.",
+      "examples": [
+        {
+          "reference": "Psalm 22:17",
+          "mt_text": "ka'ari yaday weraglay",
+          "lxx_text": "ὤρυξαν χεῖράς μου καὶ πόδας",
+          "note": "Reflects a Vorlage כארו rather than harmonization to MT; preserved without smoothing."
+        },
+        {
+          "reference": "Psalm 22:1",
+          "mt_text": "lamnatzeach",
+          "lxx_text": "εἰς τὸ τέλος",
+          "note": "Standard equivalence applied across the Psalter, a form of internal harmonization."
+        }
+      ]
+    },
+    {
+      "dimension": "paraphrase_rate",
+      "score": 0.2,
+      "confidence": 0.8,
+      "summary": "Free paraphrase is rare; most apparent freedoms are conventional equivalences for difficult Hebrew terms (ἀντίλημψις for אַיֶּלֶת, εἰς τὸ τέλος for לַמְנַצֵּחַ). Quantitative correspondence is the norm, with minimal expansion or contraction.",
+      "summary_plain": "The translator almost never rewrote freely; he stayed close to the Hebrew structure throughout.",
+      "examples": [
+        {
+          "reference": "Psalm 22:1",
+          "mt_text": "al ayyelet hashachar",
+          "lxx_text": "ὑπὲρ τῆς ἀντιλήμψεως τῆς ἑωθινῆς",
+          "note": "Interpretive guess at obscure Hebrew, but structurally still word-by-word."
+        },
+        {
+          "reference": "Psalm 45:7",
+          "mt_text": "shevet mishor shevet malkhutekha",
+          "lxx_text": "ῥάβδος εὐθύτητος ἡ ῥάβδος τῆς βασιλείας σου",
+          "note": "Construct chains and parallelism preserved without rewriting."
+        }
+      ]
+    }
+  ],
+  "overall_assessment": "The OG Psalter belongs to the more literal end of the LXX spectrum, comparable to Ezekiel α and the non-kaige sections of Samuel-Kings, with strong quantitative and serial fidelity to the Hebrew. Its freedoms are largely lexical—formulaic renderings of obscure technical terms in superscriptions and difficult vocabulary—rather than syntactic or expansionist. The translator preserves anthropomorphisms and theological boldness (Ps 2:7; 45:7; 110:1) without softening, while exhibiting a moderate eschatological coloring (εἰς τὸ τέλος) that later proved decisive for early Christian reception. For text-critical purposes, the Psalter is a relatively reliable witness to its Vorlage, with divergences (e.g. Ps 22:17 ὤρυξαν) likely reflecting a different Hebrew reading rather than translator license.",
+  "overall_plain": "The Greek translator of Psalms worked carefully and literally, sticking close to the Hebrew word by word. He occasionally chose Greek words that gave the Psalms an end-times or messianic feel, but he did not rewrite the text or tone down strong images of God. This makes the Greek Psalms a useful witness to what the Hebrew text looked like in antiquity.",
+  "bibcrit_assessment": {
+    "title": "Literal Psalter with Quiet Eschatological Coloring",
+    "reasoning": "The most striking feature of the OG Psalter is the tension between its rigorous formal literalism and its consistent lexical choices that subtly orient the book toward an eschatological/messianic horizon (εἰς τὸ τέλος, articular κύριος in 110:1, retained ὁ θεός vocative in 45:7). This combination—wooden form plus theologically loaded word-selection—made the Greek Psalter uniquely suited as a quarry for early Christian christology while remaining textually conservative. It demonstrates that 'literalness' and 'theological Tendenz' are not mutually exclusive categories.",
+    "plain": "The translator was very faithful to the Hebrew but chose certain Greek words that gently pointed toward future hope and a messianic king. That mix is exactly why this book became so important for the New Testament writers.",
+    "confidence": 0.75
+  },
+  "discovery_ready": false,
+  "reference": "Psalms",
+  "cached_at": "2026-05-09T21:00:25.215683",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v1"
+}

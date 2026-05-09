@@ -1,0 +1,116 @@
+{
+  "reference": "Genesis 22:8",
+  "manuscript": "Onkelos",
+  "synthesis": "Targum Onkelos renders Gen 22:8 with characteristic literalness, preserving Abraham's reassuring response to Isaac while introducing two subtle theological adjustments: the substitution of 'before the Lord' (קֳדָם יְיָ) for the direct subject 'God' and the rendering of 'will see/provide' (יִרְאֶה) by 'will reveal' (גְּלֵי). These shifts soften the anthropomorphic visual language of MT and reframe divine providence as revelation, consistent with Onkelos's broader translational policy.",
+  "rendering_fidelity": {
+    "overall": "close",
+    "word_analysis": [
+      {
+        "mt_word": "wayyōʾmer",
+        "targ_word": "waʾămar",
+        "type": "close",
+        "note": "Standard Aramaic equivalent of the Hebrew narrative wayyiqtol of speech."
+      },
+      {
+        "mt_word": "ʾabrāhām",
+        "targ_word": "ʾabrāhām",
+        "type": "close",
+        "note": "Proper name retained without modification."
+      },
+      {
+        "mt_word": "ʾĕlōhîm",
+        "targ_word": "qŏdām YYY",
+        "type": "theological",
+        "note": "MT 'God' as grammatical subject is reframed prepositionally as 'before the Lord,' avoiding direct predication of seeing to the deity."
+      },
+      {
+        "mt_word": "yirʾeh",
+        "targ_word": "gəlê",
+        "type": "theological",
+        "note": "Hebrew 'will see/provide' is rendered 'is revealed,' transforming an anthropomorphic verb of perception into the technical Targumic idiom of divine revelation/foreknowledge."
+      },
+      {
+        "mt_word": "lô",
+        "targ_word": "lêh",
+        "type": "close",
+        "note": "Direct correspondence of the dative pronoun."
+      },
+      {
+        "mt_word": "haśśeh",
+        "targ_word": "ʾimrāʾ",
+        "type": "close",
+        "note": "Standard Aramaic lexical equivalent for 'lamb.'"
+      },
+      {
+        "mt_word": "ləʿōlāh",
+        "targ_word": "laʿălātāʾ",
+        "type": "close",
+        "note": "Cognate rendering of the burnt-offering term."
+      },
+      {
+        "mt_word": "bənî",
+        "targ_word": "bərî",
+        "type": "close",
+        "note": "Direct cognate vocative form."
+      },
+      {
+        "mt_word": "wayyēləkû",
+        "targ_word": "waʾăzālû",
+        "type": "close",
+        "note": "Standard Aramaic verb of motion replacing Hebrew root hlk."
+      },
+      {
+        "mt_word": "šənêhem",
+        "targ_word": "tarwêhôn",
+        "type": "close",
+        "note": "Idiomatic Aramaic dual-pronominal construction equivalent to 'the two of them.'"
+      },
+      {
+        "mt_word": "yaḥdāw",
+        "targ_word": "kaḥădāʾ",
+        "type": "close",
+        "note": "Cognate adverb 'together.'"
+      }
+    ]
+  },
+  "theological_modifications": [
+    {
+      "type": "anthropomorphism",
+      "mt_reading": "ʾĕlōhîm yirʾeh-lô",
+      "targ_reading": "qŏdām YYY gəlê lêh",
+      "explanation": "Onkelos systematically avoids predicating sense-perception verbs directly of God. By recasting 'God will see/provide' as 'before the Lord it is revealed,' the targumist removes both the anthropomorphic verb of seeing and the direct grammatical subject 'God,' substituting the buffer 'before' (qŏdām) and the passive-stative 'is revealed' (gəlê). This double adjustment exemplifies the fixed translational conventions Samely identifies as Onkelos's reverential surface-grammar."
+    }
+  ],
+  "targumic_expansions": [],
+  "messianic_reinterpretation": {
+    "present": false,
+    "instances": []
+  },
+  "lxx_alignment": {
+    "areas_of_agreement": null,
+    "significance": "LXX preserves the active anthropomorphism (ὁ θεὸς ὄψεται ἑαυτῷ) and shows none of Onkelos's reverential restructuring; the two versions diverge in theological technique despite sharing literal fidelity to MT word order."
+  },
+  "key_divergences": [
+    {
+      "mt_word": "ʾĕlōhîm yirʾeh",
+      "targ_word": "qŏdām YYY gəlê",
+      "type": "theological",
+      "explanation": "The MT's direct attribution of seeing to God is dismantled by the prepositional buffer qŏdām and the lexical shift from 'see' to 'reveal,' reflecting Onkelos's anti-anthropomorphic policy rather than a different Vorlage."
+    }
+  ],
+  "assessment": {
+    "title": "Onkelos's Reverential Reframing of Divine Sight in the Aqedah Climax",
+    "reasoning": "The verse exemplifies Onkelos's tightly literal yet theologically calibrated technique: the targumist preserves MT syntax and lexical correspondences almost word-for-word while neutralizing two sensitive elements—the bare divine subject and the verb of perception. Replacing yirʾeh with gəlê converts providence-as-sight into providence-as-revelation, a recurring Onkelos equivalence (cf. Gen 18:21; 29:32). The qŏdām formula functions as a syntactic buffer rather than a hypostatic substitution, distinguishing Onkelos from Palestinian Targumim that here introduce more elaborate Aqedah midrash. Notably, Onkelos forgoes the homiletical expansion found in Pseudo-Jonathan and Neofiti at this verse, where Abraham's words become a prophetic declaration of substitutionary atonement.",
+    "plain": "Onkelos translates this verse very literally but adjusts two phrases to protect God's transcendence: instead of 'God will see,' it says 'before the Lord it is revealed,' and instead of naming God as the direct subject, it uses the respectful phrase 'before the Lord.' Otherwise the translation matches the Hebrew word for word.",
+    "confidence": 0.92,
+    "next_steps": "Compare with Targum Pseudo-Jonathan and Neofiti at Gen 22:8 to assess how Palestinian Targumim expand the Aqedah dialogue messianically; consult Grossfeld's Onkelos commentary on the gəlê/yirʾeh equivalence pattern across Genesis."
+  },
+  "citations": {
+    "sbl": "Bernard Grossfeld, *The Targum Onqelos to Genesis*, ArBib 6 (Wilmington, DE: Michael Glazier, 1988), 84–86; cf. Alexander Samely, *The Interpretation of Speech in the Pentateuch Targums* (Tübingen: Mohr Siebeck, 1992), 157–62.",
+    "bibtex": "@book{Grossfeld1988, author = {Grossfeld, Bernard}, title = {The Targum Onqelos to Genesis: Translated, with a Critical Introduction, Apparatus, and Notes}, series = {The Aramaic Bible}, volume = {6}, publisher = {Michael Glazier}, address = {Wilmington, DE}, year = {1988}}"
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T21:57:52.457134",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v1"
+}

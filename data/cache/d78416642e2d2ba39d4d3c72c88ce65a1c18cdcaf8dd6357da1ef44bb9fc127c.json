@@ -1,0 +1,81 @@
+{
+  "passage": "Genesis 6:1-8",
+  "framework": "classic_documentary",
+  "scope_note": "Source-critical analysis of the Sons of God / Nephilim pericope and its transition to the Flood narrative.",
+  "source_units": [
+    {
+      "verses": "6:1-4",
+      "source": "J",
+      "confidence": 0.78,
+      "divine_name_used": "YHWH",
+      "key_vocabulary": [
+        "bnei ha-elohim",
+        "nephilim",
+        "gibborim",
+        "ruchi"
+      ],
+      "theological_concerns": "Boundary between divine and human realms; YHWH limits human lifespan; mythological etiology for ancient heroes",
+      "structural_markers": "Anthropomorphic deity who 'sees' and 'says'; vivid mythological narrative typical of J; use of YHWH in v. 3",
+      "doublet_with": null,
+      "summary": "The use of YHWH (v. 3), the anthropomorphic and vividly mythological character of the narrative, and the etiological interest in the Nephilim/gibborim point to J. The reference to 'sons of the Elohim' uses Elohim generically rather than as a divine name marker, consistent with J's usage in mythological contexts."
+    },
+    {
+      "verses": "6:5-8",
+      "source": "J",
+      "confidence": 0.92,
+      "divine_name_used": "YHWH",
+      "key_vocabulary": [
+        "wayyar YHWH",
+        "wayyinnachem",
+        "wayyit'atzev",
+        "chen b'einei YHWH"
+      ],
+      "theological_concerns": "Divine regret and grief; human wickedness of the heart; introduction to Flood; Noah's favor with YHWH",
+      "structural_markers": "YHWH used four times; deeply anthropopathic God who 'regrets' and is 'grieved to His heart'; sets up J's Flood account (contrast P's parallel in 6:9-22)",
+      "doublet_with": "6:9-13 (P)",
+      "summary": "This unit is almost universally assigned to J on the basis of the divine name YHWH, the strongly anthropopathic theology (divine regret), and its function as J's prologue to the Flood. It pairs with the P prologue in 6:9-13, forming one of the clearest doublets in Genesis."
+    }
+  ],
+  "doublets": [
+    {
+      "unit_1_verses": "6:5-8",
+      "unit_2_verses": "6:9-13",
+      "description": "Two introductions to the Flood: J describes YHWH's grief over human wickedness of heart and Noah finding favor; P describes the earth's corruption and Noah's righteousness in toledot form",
+      "significance": "Demonstrates the splicing of J and P Flood prologues, with distinct vocabulary (chamas/shichet in P vs. ra'/nicham in J) and divergent theological framings."
+    }
+  ],
+  "competing_positions": [
+    {
+      "scholar": "Friedman (2003)",
+      "attribution": "Assigns all of 6:1-8 to J, treating the Nephilim passage and Flood prologue as a continuous J composition leading into the J Flood narrative.",
+      "note": "The Bible with Sources Revealed, pp. 38-39"
+    },
+    {
+      "scholar": "Baden (2012)",
+      "attribution": "Treats 6:1-8 as J, noting the unit functions as J's narrative motivation for the Flood, parallel to P's independent justification in 6:9ff.",
+      "note": "The Composition of the Pentateuch, ch. 5"
+    },
+    {
+      "scholar": "Westermann / Gunkel",
+      "attribution": "View 6:1-4 as a fragment of older mythological tradition incorporated by J, possibly with later editorial expansion in v. 3 ('My spirit shall not abide').",
+      "note": "Westermann, Genesis 1-11 commentary"
+    },
+    {
+      "scholar": "Van Seters",
+      "attribution": "Considers 6:1-4 a late addition, possibly post-J, due to its mythological character and loose connection to surrounding narrative.",
+      "note": "Prologue to History, 1992"
+    }
+  ],
+  "framework_note": "Classic Documentary Hypothesis (Wellhausen 1878, Friedman 1987). Source attribution is analytical evidence, not definitive assignment. Scholarly debate is ongoing.",
+  "synthesis": "Genesis 6:1-8 is widely assigned to J based on the consistent use of YHWH, the anthropomorphic and anthropopathic portrayal of God, and its function as J's prologue to the Flood narrative. The unit contrasts sharply with the immediately following P prologue (6:9-13), making this one of the clearest examples of source juxtaposition in Genesis. Some scholars (Westermann, Van Seters) see 6:1-4 as a distinct mythological fragment, but most documentarians integrate it into J.",
+  "bibcrit_hypothesis": {
+    "title": "J's mythic prologue framing the Flood",
+    "reasoning": "Genesis 6:1-8 functions as a unified J composition that moves from cosmic transgression (divine-human boundary violation) to anthropological corruption (evil inclination of the heart), establishing the moral logic for YHWH's decision to flood the earth. The pairing with P's 6:9-13 reveals two distinct theologies of evil—J's relational/emotional and P's structural/cultic (chamas, corruption)—preserved by the redactor side-by-side.",
+    "confidence": 0.8
+  },
+  "discovery_ready": false,
+  "reference": "Genesis 6:1-8",
+  "cached_at": "2026-05-09T21:55:10.024265",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v1"
+}

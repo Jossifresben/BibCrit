@@ -1,0 +1,172 @@
+{
+  "scope": "Deuteronomy",
+  "scope_type": "book",
+  "summary": "Deuteronomy's textual history shows systematic theological revision across traditions: the LXX and SP harmonize cultic and historical tensions, the Targums (Onqelos and Pseudo-Jonathan) systematically remove anthropomorphisms and introduce eschatological readings, and the Vulgate occasionally sharpens messianic referents. Notable loci include Deut 32 (Song of Moses), the Decalogue (chs. 5/Exod 20), and the centralization formula in ch. 12.",
+  "summary_plain": "Different ancient versions of Deuteronomy made theological changes: making God less human-like, smoothing contradictions with Exodus, and adding hints about a future messiah or end-times. The Greek and Aramaic versions show this most clearly.",
+  "revisions": [
+    {
+      "reference": "Deuteronomy 32:8",
+      "tradition": "LXX",
+      "revision_type": "harmonization",
+      "mt_reading": "He fixed the boundaries of the peoples according to the number of the sons of Israel (bene yisrael)",
+      "revised_reading": "κατὰ ἀριθμὸν ἀγγέλων θεοῦ — according to the number of the angels of God (4QDeutj reads bene elohim)",
+      "confidence": 0.9,
+      "evidence": "4QDeutj preserves 'sons of God/El,' suggesting MT's 'sons of Israel' is a proto-rabbinic correction to avoid polytheistic implications of a divine council. LXX 'angels of God' represents an intermediate harmonization that retains the divine beings but subordinates them as angels, avoiding both polytheism and the MT's anachronism.",
+      "evidence_plain": "The original text said God divided nations according to the number of divine beings, but the Hebrew was changed to 'sons of Israel' to avoid suggesting other gods, while Greek made them 'angels.'",
+      "scholarly_citations": [
+        "Tov, Textual Criticism of the Hebrew Bible, pp. 269-270",
+        "Heiser, 'Deuteronomy 32:8 and the Sons of God,' BibSac 158"
+      ],
+      "counter_arguments": "Some argue MT preserves an independent tradition rather than a deliberate revision, and the 4Q reading could itself be secondary."
+    },
+    {
+      "reference": "Deuteronomy 32:43",
+      "tradition": "LXX",
+      "revision_type": "harmonization",
+      "mt_reading": "Rejoice, O nations, with his people (shorter form, no mention of divine beings worshipping)",
+      "revised_reading": "Rejoice, O heavens, with him, and let all the sons of God worship him... (longer form preserved at 4QDeutq)",
+      "confidence": 0.85,
+      "evidence": "MT appears to have shortened the verse to remove references to 'sons of God' worshipping YHWH, paralleling the 32:8 revision. 4QDeutq supports the LXX's longer form, indicating MT's monotheistic streamlining. Hebrews 1:6 cites the LXX form.",
+      "evidence_plain": "The Hebrew text was shortened to remove mention of divine beings worshipping God, but Dead Sea Scrolls confirm the longer Greek version is original.",
+      "scholarly_citations": [
+        "Skehan, 'A Fragment of the Song of Moses,' BASOR 136",
+        "McCarthy, BHQ Deuteronomy"
+      ],
+      "counter_arguments": "The longer form could be a secondary expansion in the Qumran/LXX tradition rather than MT being a contraction."
+    },
+    {
+      "reference": "Deuteronomy 5:6-21 (Decalogue)",
+      "tradition": "SP",
+      "revision_type": "harmonization",
+      "mt_reading": "Sabbath commandment grounded in creation (Exod 20) vs. exodus (Deut 5) — divergent rationales",
+      "revised_reading": "SP harmonizes Exodus and Deuteronomy Decalogues, and adds the Gerizim commandment as the tenth",
+      "confidence": 0.9,
+      "evidence": "SP systematically conforms Exod 20 and Deut 5 to each other and inserts the Mount Gerizim altar command as a tenth commandment, reflecting Samaritan sectarian theology. This is a clear case of harmonization combined with sectarian theological revision.",
+      "evidence_plain": "The Samaritan version smooths over differences between the two versions of the Ten Commandments and adds a commandment about Mount Gerizim to support Samaritan worship.",
+      "scholarly_citations": [
+        "Tov, Textual Criticism, pp. 87-89",
+        "Pummer, The Samaritans, pp. 218-220"
+      ],
+      "counter_arguments": "Some scholars argue SP preserves a pre-sectarian harmonistic text-type with the Gerizim commandment as the only sectarian addition."
+    },
+    {
+      "reference": "Deuteronomy 4:12",
+      "tradition": "Targum",
+      "revision_type": "anthropomorphism_avoidance",
+      "mt_reading": "You heard the sound of words but saw no form (temunah)",
+      "revised_reading": "Targum Onqelos: 'you saw no likeness' with emphasis on the absolute incorporeality, often expanding to deny any visible form whatsoever",
+      "confidence": 0.75,
+      "evidence": "Onqelos consistently amplifies the anti-anthropomorphic thrust already present in Deut 4, removing any ambiguity that might suggest God could be seen. Where MT permits some theophanic ambiguity, Onqelos uses memra and ye qara (glory) circumlocutions.",
+      "evidence_plain": "The Aramaic translation made extra sure readers wouldn't think God has any visible form by adding clarifications.",
+      "scholarly_citations": [
+        "Klein, Anthropomorphisms and Anthropopathisms in the Targumim",
+        "Chester, Divine Revelation and Divine Titles"
+      ],
+      "counter_arguments": "Targumic expansions may reflect general translation style rather than targeted theological revision."
+    },
+    {
+      "reference": "Deuteronomy 32:39",
+      "tradition": "Targum",
+      "revision_type": "eschatological_sharpening",
+      "mt_reading": "I kill and I make alive; I wound and I heal",
+      "revised_reading": "Targum Pseudo-Jonathan: 'I am he who causes the living to die in this world and brings the dead to life in the world to come'",
+      "confidence": 0.85,
+      "evidence": "TgPsJ explicitly converts an ambiguous statement about divine sovereignty over life and death into a doctrine of resurrection in the olam ha-ba. This reflects rabbinic concern to ground resurrection in Torah (cf. b. Sanh. 91b).",
+      "evidence_plain": "The Aramaic version turned a general statement about God's power over life and death into a specific teaching about resurrection in the world to come.",
+      "scholarly_citations": [
+        "Levey, The Messiah: An Aramaic Interpretation",
+        "Hayward, Targums and the Transmission of Scripture"
+      ],
+      "counter_arguments": "Could reflect mainstream targumic expansion style without specific anti-Sadducean polemic."
+    },
+    {
+      "reference": "Deuteronomy 18:15",
+      "tradition": "Targum",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "A prophet like me from among you, from your brothers, YHWH your God will raise up for you",
+      "revised_reading": "TgPsJ amplifies the prophet figure with eschatological coloring; later targumic tradition links this figure to the eschatological prophet/messianic forerunner",
+      "confidence": 0.55,
+      "evidence": "While MT's referent is debated (singular prophet vs. prophetic succession), targumic and Qumran (4Q175) traditions read messianically. The Vulgate's prophetam... suscitabit retains ambiguity but Christian reception (Acts 3:22) crystallized messianic reading.",
+      "evidence_plain": "The promise of a future prophet 'like Moses' was increasingly read as predicting the Messiah in later Jewish and Christian traditions.",
+      "scholarly_citations": [
+        "Allison, The New Moses",
+        "Levey, The Messiah, pp. 33-35"
+      ],
+      "counter_arguments": "MT itself may already intend an eschatological prophet, so later readings extend rather than revise the original sense."
+    },
+    {
+      "reference": "Deuteronomy 21:23",
+      "tradition": "LXX",
+      "revision_type": "softening",
+      "mt_reading": "For a hanged man is a curse of God (qilelat elohim)",
+      "revised_reading": "ὅτι κεκατηραμένος ὑπὸ θεοῦ πᾶς κρεμάμενος — cursed by God is everyone who hangs",
+      "confidence": 0.6,
+      "evidence": "LXX construes the genitive as passive ('cursed by God') rather than the more theologically awkward 'curse of God,' which could imply God himself is reviled. Targum Onqelos similarly paraphrases. Paul's citation in Gal 3:13 follows the LXX, with major theological consequences.",
+      "evidence_plain": "The Greek translation slightly changed 'curse of God' to 'cursed by God' to avoid suggesting God himself could be cursed or shamed.",
+      "scholarly_citations": [
+        "Wevers, Notes on the Greek Text of Deuteronomy, p. 348",
+        "Bernstein, 'Ki Qilelat Elohim Talui,' JQR 74"
+      ],
+      "counter_arguments": "Both readings are grammatically possible in Hebrew; the LXX may simply choose the more natural sense."
+    },
+    {
+      "reference": "Deuteronomy 12:5",
+      "tradition": "SP",
+      "revision_type": "harmonization",
+      "mt_reading": "the place which YHWH your God will choose (yibchar — future/imperfect)",
+      "revised_reading": "SP: bachar — 'has chosen' (perfect), indicating Mount Gerizim already chosen",
+      "confidence": 0.9,
+      "evidence": "SP systematically alters the verb form throughout Deuteronomy 12, 14, 16 from imperfect to perfect to support the claim that Gerizim was the divinely chosen site from the patriarchal period. This is sectarian theological revision par excellence.",
+      "evidence_plain": "The Samaritan version changes 'will choose' to 'has chosen' to argue that God already picked Mount Gerizim, not Jerusalem, as the holy place.",
+      "scholarly_citations": [
+        "Schorch, 'The Construction of Samari(t)an Identity,' in Samaritans: Past and Present",
+        "Tov, Textual Criticism, pp. 88-89"
+      ],
+      "counter_arguments": "Some argue SP's reading may preserve an older form, with MT's imperfect being the Judahite revision favoring Jerusalem."
+    },
+    {
+      "reference": "Deuteronomy 33:2",
+      "tradition": "LXX",
+      "revision_type": "anthropomorphism_avoidance",
+      "mt_reading": "YHWH came from Sinai... at his right hand a fiery law (eshdat) for them",
+      "revised_reading": "LXX: ἐκ δεξιῶν αὐτοῦ ἄγγελοι μετ' αὐτοῦ — at his right hand angels with him",
+      "confidence": 0.65,
+      "evidence": "LXX replaces the obscure 'fiery law' with 'angels,' partly avoiding direct divine fire imagery and partly reflecting the developing tradition of angelic mediation at Sinai (cf. Acts 7:53, Gal 3:19, Heb 2:2). This intermediates the theophany.",
+      "evidence_plain": "The Greek replaced a difficult phrase about 'fiery law' with 'angels,' reflecting the growing belief that angels delivered the Law rather than God directly.",
+      "scholarly_citations": [
+        "Wevers, Notes on the Greek Text of Deuteronomy, pp. 538-539",
+        "Najman, 'Angels at Sinai,' DSD 7"
+      ],
+      "counter_arguments": "MT eshdat is genuinely obscure and LXX may simply offer a contextual guess rather than theological revision."
+    },
+    {
+      "reference": "Deuteronomy 30:4",
+      "tradition": "Targum",
+      "revision_type": "eschatological_sharpening",
+      "mt_reading": "If your outcasts are at the ends of the heavens, from there YHWH your God will gather you",
+      "revised_reading": "TgPsJ expands with explicit reference to Elijah the high priest gathering exiles and the Messiah-King leading them back",
+      "confidence": 0.8,
+      "evidence": "The Targum converts the general restoration promise into a specific eschatological scenario involving named messianic agents. This reflects developed rabbinic eschatology grafted onto the Deuteronomic restoration theology.",
+      "evidence_plain": "The Aramaic version added details about Elijah and the Messiah leading exiles home, turning a general promise into a specific end-times scenario.",
+      "scholarly_citations": [
+        "Levey, The Messiah, pp. 35-37",
+        "Maher, Targum Pseudo-Jonathan: Deuteronomy"
+      ],
+      "counter_arguments": "TgPsJ is generally expansive; this may be exegetical elaboration rather than theological revision per se."
+    }
+  ],
+  "dominant_strategy": "Harmonization is the most prominent strategy, evident in MT's leveling of polytheistic residues in ch. 32, SP's systematic conformation of Decalogue and centralization formulae, and LXX's smoothing of theophanic and legal tensions. This reflects Deuteronomy's status as a contested text central to competing claims about cult, Torah, and divine identity.",
+  "overall_assessment": "The textual history of Deuteronomy reveals tradents working under intense theological pressure: MT scribes shielded emerging monotheism from polytheistic residues (32:8, 32:43), SP redactors weaponized the centralization formula for Gerizim, LXX translators mediated theophany through angels, and Targumists installed full-blown rabbinic eschatology. Deuteronomy thus functions as a touchstone for sectarian and theological identity in Second Temple and rabbinic Judaism. The 4QDeut manuscripts have been particularly revolutionary, demonstrating that MT itself underwent theological revision — Deuteronomy is not a stable Vorlage from which others diverged but a battleground.",
+  "overall_plain": "Deuteronomy was so important for defining Jewish identity, worship, and beliefs about God that nearly every ancient version made theological changes to it. The Dead Sea Scrolls have shown that even the Hebrew text we use today was edited to remove uncomfortable hints of older polytheistic beliefs.",
+  "bibcrit_assessment": {
+    "title": "MT Itself Edited Deuteronomy 32's Divine Council",
+    "reasoning": "The 4QDeutj/q evidence at Deut 32:8 and 32:43 demonstrates that the Masoretic tradition itself participated in theological revision, not merely the versions. This overturns the older assumption that MT is the conservative baseline against which LXX and Targums deviate, and shows that anti-polytheistic redaction operated within the Hebrew tradition itself before the versions diverged.",
+    "plain": "The most important finding is that even the standard Hebrew Bible was edited to remove old references to other divine beings — it's not just the Greek and Aramaic translations that changed things.",
+    "confidence": 0.85
+  },
+  "discovery_ready": false,
+  "reference": "Deuteronomy",
+  "cached_at": "2026-05-09T21:40:56.854851",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v2"
+}

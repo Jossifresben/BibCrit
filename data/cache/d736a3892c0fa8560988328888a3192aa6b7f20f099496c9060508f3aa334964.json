@@ -1,0 +1,142 @@
+{
+  "reference": "Daniel 7:13",
+  "synthesis": "Daniel 7:13's vision of 'one like a son of man' coming with the clouds of heaven to the Ancient of Days became the most generative apocalyptic image in Second Temple Judaism. It catalyzed the development of a transcendent, pre-existent eschatological judge figure, most fully realized in the Parables of Enoch (1 En 37–71) and 4 Ezra 13, and stands behind the Synoptic Son of Man Christology.",
+  "allusions": [
+    {
+      "stl_work": "1_enoch",
+      "stl_passage": "1 En 46:1-4",
+      "stl_content": "Enoch sees the Head of Days (white head, wool-like hair) and with him 'another, whose face had the appearance of a man,' identified as the Son of Man who has righteousness and reveals hidden things.",
+      "allusion_type": "allusion",
+      "directionality": "canonical_to_stl",
+      "confidence": 0.97,
+      "canonical_element": "כְּבַר אֱנָשׁ ('one like a son of man') alongside the Ancient of Days (עַתִּיק יוֹמַיָּא)",
+      "scholarly_note": "Nickelsburg (1 Enoch 1: Hermeneia, 2001, 153) and Nickelsburg/VanderKam (1 Enoch 2, 2012, 153–154) identify 1 En 46 as a deliberate exegetical expansion of Daniel 7:9–14, importing both the white-haired ancient figure and the human-like one. Collins (Apocalyptic Imagination, 1998, 187–191) treats this as the foundational interpretive trajectory transforming Daniel's symbolic figure into a discrete heavenly individual.",
+      "relevance_to_dss": "No fragments of the Parables have been found at Qumran, though the rest of 1 Enoch is well attested (4Q201–212), raising debated questions about the Parables' date and provenance.",
+      "relevance_to_nt": "This Enochic reading of Daniel 7 is widely seen as the conceptual matrix for the Synoptic Son of Man sayings, especially Mark 14:62 and Matt 25:31."
+    },
+    {
+      "stl_work": "1_enoch",
+      "stl_passage": "1 En 48:2-7",
+      "stl_content": "The Son of Man is named in the presence of the Lord of Spirits before creation, hidden from eternity, and revealed to the elect; he becomes a staff for the righteous and the light of the nations.",
+      "allusion_type": "allusion",
+      "directionality": "canonical_to_stl",
+      "confidence": 0.93,
+      "canonical_element": "The 'son of man' figure presented before the heavenly throne",
+      "scholarly_note": "Nickelsburg-VanderKam (1 Enoch 2, 2012, 166–171) argue that 1 En 48 fuses Daniel 7:13–14 with Isaiah 42 and 49 to construct a pre-existent, named messianic figure. Collins (Apocalyptic Imagination, 1998, 189) emphasizes that the Parables interpret Daniel's 'one like a son of man' as a specific individual rather than a corporate symbol.",
+      "relevance_to_dss": null,
+      "relevance_to_nt": "The notion of pre-existence and being a 'light to the nations' parallels Johannine Logos Christology (John 1:1–14) and the Pauline pre-existent Christ."
+    },
+    {
+      "stl_work": "1_enoch",
+      "stl_passage": "1 En 62:5-9",
+      "stl_content": "The kings and mighty of the earth see the Son of Man sitting on the throne of glory; they fall on their faces and worship him, terrified, while the righteous and elect are saved.",
+      "allusion_type": "allusion",
+      "directionality": "canonical_to_stl",
+      "confidence": 0.95,
+      "canonical_element": "The bestowal of dominion and judgment authority on the 'son of man' (extending Dan 7:13–14)",
+      "scholarly_note": "Nickelsburg-VanderKam (1 Enoch 2, 2012, 257–263) identify this as the climactic Danielic reuse in the Parables, where the Son of Man's enthronement realizes the dominion granted in Daniel 7:14. Collins (Apocalyptic Imagination, 1998, 191) sees here the decisive shift to a judicial messianic figure.",
+      "relevance_to_dss": null,
+      "relevance_to_nt": "Closely paralleled by Matt 25:31–46, where the Son of Man sits on his throne of glory to judge the nations."
+    },
+    {
+      "stl_work": "1_enoch",
+      "stl_passage": "1 En 69:26-29",
+      "stl_content": "Joy is given to the elect because the name of the Son of Man has been revealed; he sits on the throne of his glory, judges, and causes sinners to perish.",
+      "allusion_type": "allusion",
+      "directionality": "canonical_to_stl",
+      "confidence": 0.9,
+      "canonical_element": "Enthronement and authority of the 'son of man'",
+      "scholarly_note": "Knibb (Ethiopic Book of Enoch, 1978, 2:165) notes the concluding doxological force of this passage as the Parables' summation of Son of Man theology drawn from Daniel 7. Nickelsburg-VanderKam (1 Enoch 2, 2012, 311) note its function as the climactic enthronement scene closing the third parable.",
+      "relevance_to_dss": null,
+      "relevance_to_nt": "Forms the background to NT depictions of the exalted Son of Man's eschatological judicial role (Acts 7:56; Rev 1:13)."
+    },
+    {
+      "stl_work": "1_enoch",
+      "stl_passage": "1 En 71:14",
+      "stl_content": "The angel addresses Enoch: 'You are the Son of Man who was born for righteousness,' identifying the patriarch with the heavenly Son of Man figure.",
+      "allusion_type": "allusion",
+      "directionality": "canonical_to_stl",
+      "confidence": 0.88,
+      "canonical_element": "The identity and exaltation of the 'son of man' figure",
+      "scholarly_note": "Nickelsburg-VanderKam (1 Enoch 2, 2012, 321–328) discuss the controversial identification of Enoch as the Son of Man, with Knibb (1978, 2:166–167) noting the Ethiopic ambiguity. Collins (Apocalyptic Imagination, 1998, 192) treats this as a final exegetical move identifying the Danielic figure with a glorified human exemplar.",
+      "relevance_to_dss": null,
+      "relevance_to_nt": "Provides important comparative material for Jesus' self-identification as Son of Man, suggesting that human-figure-to-heavenly-figure identification was not unique to Christology."
+    },
+    {
+      "stl_work": "4_ezra",
+      "stl_passage": "4 Ezra 13:1-3",
+      "stl_content": "Ezra sees in a night vision a great wind stirring up the sea, and 'something like the figure of a man' came up out of the heart of the sea and flew with the clouds of heaven.",
+      "allusion_type": "allusion",
+      "directionality": "canonical_to_stl",
+      "confidence": 0.98,
+      "canonical_element": "חָזֵה הֲוֵית בְּחֶזְוֵי לֵילְיָא ... עִם־עֲנָנֵי שְׁמַיָּא כְּבַר אֱנָשׁ ('I saw in night visions ... with the clouds of heaven one like a son of man')",
+      "scholarly_note": "Collins (Apocalyptic Imagination, 1998, 207–212) and Stone (4 Ezra: Hermeneia, 1990, 381–390) regard 4 Ezra 13 as the most explicit early Jewish interpretation of Daniel 7:13, retaining the night vision, the clouds, and the human figure. The 'man from the sea' is identified as God's pre-existent Messiah who destroys the assembled nations with the breath of his mouth.",
+      "relevance_to_dss": null,
+      "relevance_to_nt": "4 Ezra 13 provides a near-contemporary parallel to NT Son of Man Christology, particularly the eschatological judge motif in Mark 13:26 and Rev 19:11–15."
+    },
+    {
+      "stl_work": "4_ezra",
+      "stl_passage": "4 Ezra 13:25-26, 32",
+      "stl_content": "The interpretation: the man from the sea is 'he whom the Most High has been keeping for many ages, who will himself deliver his creation' — God's Son who will be revealed.",
+      "allusion_type": "allusion",
+      "directionality": "canonical_to_stl",
+      "confidence": 0.94,
+      "canonical_element": "The presentation of the 'son of man' before the Ancient of Days who confers dominion",
+      "scholarly_note": "Collins (Apocalyptic Imagination, 1998, 209–210) emphasizes that 4 Ezra interprets Daniel's son of man as a pre-existent, hidden Messiah, paralleling the Parables of Enoch. Stone (1990, 211–213) sees this as the climactic messianic interpretation of Daniel 7 in late first-century Judaism.",
+      "relevance_to_dss": null,
+      "relevance_to_nt": "The pre-existent, hidden Messiah motif resonates with Pauline and Johannine Christology (Col 1:15–17; John 1:1)."
+    },
+    {
+      "stl_work": "1_enoch",
+      "stl_passage": "1 En 47:3",
+      "stl_content": "The Head of Days sits on the throne of his glory, and the books of the living are opened before him as the heavenly court convenes.",
+      "allusion_type": "allusion",
+      "directionality": "canonical_to_stl",
+      "confidence": 0.92,
+      "canonical_element": "עַתִּיק יוֹמַיָּא ('Ancient of Days') seated on the throne",
+      "scholarly_note": "Nickelsburg-VanderKam (1 Enoch 2, 2012, 161–164) note the deliberate replication of Daniel 7:9–10's throne scene as the necessary precondition for the Son of Man's appearance in 1 En 46. Collins (Apocalyptic Imagination, 1998, 188) underscores the careful Danielic exegesis at work in the Parables' framing of the judgment.",
+      "relevance_to_dss": null,
+      "relevance_to_nt": "Background for Rev 4–5, which combines the throne vision with the enthronement of the Lamb."
+    }
+  ],
+  "works_covered": {
+    "1_enoch": {
+      "present": true,
+      "passage_count": 6
+    },
+    "jubilees": {
+      "present": false,
+      "passage_count": 0
+    },
+    "sirach": {
+      "present": false,
+      "passage_count": 0
+    },
+    "4_ezra": {
+      "present": true,
+      "passage_count": 2
+    },
+    "tobit": {
+      "present": false,
+      "passage_count": 0
+    }
+  },
+  "dss_significance": "While the Parables of Enoch are absent from Qumran, the broader Danielic apocalyptic worldview is well represented (e.g., 4QDan, 11QMelchizedek's exalted heavenly judge, 4Q246's 'Son of God' text). The absence of Parables fragments has fueled debate about whether the Son of Man tradition developed independently in non-Qumranic circles or whether the Parables postdate the sectarian collection.",
+  "nt_significance": "Daniel 7:13, mediated through the interpretive trajectories visible in 1 Enoch and 4 Ezra, is the single most important OT text for NT Son of Man Christology. Mark 14:62 conflates Dan 7:13 with Ps 110:1, and Matt 25:31 reflects the Enochic enthronement of the Son of Man as judge. Revelation 1:7, 13–14 fuses the Ancient of Days and Son of Man imagery into a single Christological vision.",
+  "directionality_summary": "All identified allusions move from Daniel 7:13 outward: both the Parables of Enoch and 4 Ezra 13 self-consciously interpret and expand Daniel's vision, transforming the symbolic 'one like a son of man' into a discrete pre-existent messianic judge. The directionality is overwhelmingly canonical_to_stl, with Daniel functioning as the generative scriptural source.",
+  "assessment": {
+    "title": "Daniel 7:13 as Generative Source for Second Temple Son of Man Messianism",
+    "reasoning": "Daniel 7:13 is the single most influential apocalyptic text in Second Temple Judaism for messianic speculation about a transcendent, pre-existent heavenly figure. The Parables of Enoch (1 En 37–71) and 4 Ezra 13 represent two independent but convergent interpretive trajectories that read Daniel's 'one like a son of man' as a discrete eschatological individual—a pre-existent, hidden Messiah enthroned as judge. The convergence between these two late first-century texts, neither dependent on the other, demonstrates the breadth of this interpretive tradition. Together they form the indispensable Jewish background for NT Son of Man Christology, particularly its judicial and enthronement dimensions.",
+    "plain": "Daniel 7's vision of a heavenly 'son of man' became the seedbed for Jewish ideas about a coming Messiah. Both 1 Enoch and 4 Ezra develop this figure into a pre-existent, glorified judge—the same conceptual world Jesus and the Gospel writers drew upon when speaking of the 'Son of Man.'",
+    "confidence": 0.96,
+    "next_steps": "Compare the Aramaic of Dan 7:13 with the Ge'ez of 1 En 46–48 and the Latin/Syriac of 4 Ezra 13 to assess specific verbal echoes. Consult Boccaccini's Enoch and the Messiah Son of Man (2007) for the Parables' relationship to Christology."
+  },
+  "citations": {
+    "sbl": "George W. E. Nickelsburg and James C. VanderKam, 1 Enoch 2: A Commentary on the Book of 1 Enoch, Chapters 37–82, Hermeneia (Minneapolis: Fortress, 2012), 153–171, 257–263; John J. Collins, The Apocalyptic Imagination: An Introduction to Jewish Apocalyptic Literature, 2nd ed. (Grand Rapids: Eerdmans, 1998), 187–212.",
+    "bibtex": "@book{NickelsburgVanderKam2012, author = {Nickelsburg, George W. E. and VanderKam, James C.}, title = {1 Enoch 2: A Commentary on the Book of 1 Enoch, Chapters 37--82}, series = {Hermeneia}, publisher = {Fortress Press}, address = {Minneapolis}, year = {2012}}"
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T22:17:08.545577",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v1"
+}

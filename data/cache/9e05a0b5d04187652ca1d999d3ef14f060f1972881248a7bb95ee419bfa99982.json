@@ -1,0 +1,103 @@
+{
+  "passage": "Genesis 1:1-31",
+  "structure_detected": true,
+  "structure_type": "parallel",
+  "confidence_note": "Very strong evidence: the six-day creation account exhibits one of the most widely recognized parallel panel structures in the Hebrew Bible, with Days 1-3 (forming/separating realms) corresponding to Days 4-6 (filling those realms).",
+  "elements": [
+    {
+      "label": "A",
+      "verses": "1:1-2",
+      "summary": "Introduction: formless and empty earth, darkness, divine spirit hovering over waters",
+      "text_excerpt": "תֹהוּ וָבֹהוּ (tohu wa-bohu) — 'formless and empty'",
+      "confidence": 0.95
+    },
+    {
+      "label": "B (Day 1)",
+      "verses": "1:3-5",
+      "summary": "Separation of light from darkness; day and night established",
+      "text_excerpt": "וַיַּבְדֵּל אֱלֹהִים בֵּין הָאוֹר וּבֵין הַחֹשֶׁךְ",
+      "confidence": 0.95
+    },
+    {
+      "label": "C (Day 2)",
+      "verses": "1:6-8",
+      "summary": "Separation of waters above and below by the firmament; sky created",
+      "text_excerpt": "וַיַּבְדֵּל בֵּין הַמַּיִם אֲשֶׁר מִתַּחַת לָרָקִיעַ",
+      "confidence": 0.95
+    },
+    {
+      "label": "D (Day 3)",
+      "verses": "1:9-13",
+      "summary": "Separation of dry land from sea; vegetation produced",
+      "text_excerpt": "יִקָּווּ הַמַּיִם... וְתֵרָאֶה הַיַּבָּשָׁה",
+      "confidence": 0.95
+    },
+    {
+      "label": "B' (Day 4)",
+      "verses": "1:14-19",
+      "summary": "Sun, moon, and stars created to govern day and night — filling the domain of Day 1",
+      "text_excerpt": "לְהַבְדִּיל בֵּין הַיּוֹם וּבֵין הַלָּיְלָה",
+      "confidence": 0.97
+    },
+    {
+      "label": "C' (Day 5)",
+      "verses": "1:20-23",
+      "summary": "Birds and sea creatures created to fill the sky and waters of Day 2",
+      "text_excerpt": "יִשְׁרְצוּ הַמַּיִם... וְעוֹף יְעוֹפֵף עַל־הָאָרֶץ",
+      "confidence": 0.97
+    },
+    {
+      "label": "D' (Day 6)",
+      "verses": "1:24-31",
+      "summary": "Land animals and humanity created to fill the dry land of Day 3; humanity given vegetation as food",
+      "text_excerpt": "תּוֹצֵא הָאָרֶץ נֶפֶשׁ חַיָּה... נַעֲשֶׂה אָדָם בְּצַלְמֵנוּ",
+      "confidence": 0.97
+    }
+  ],
+  "pivot": {
+    "label": "Climax (Day 6)",
+    "verses": "1:26-28",
+    "summary": "The creation of humanity in God's image is the climactic culmination rather than a central pivot, as this is a parallel panel structure rather than concentric.",
+    "theological_weight": "The creation of humanity bearing the divine image (צֶלֶם אֱלֹהִים) functions as the telos of the entire creation week, the only act preceded by divine deliberation ('Let us make'). The parallel structure of forming-then-filling reaches its apex in the creature who both fills the earth and rules over it as God's vice-regent."
+  },
+  "correspondences": [
+    {
+      "pair": [
+        "B (Day 1)",
+        "B' (Day 4)"
+      ],
+      "evidence": "Both concern light/darkness and day/night; Day 1 separates them, Day 4 creates luminaries to govern them. Shared root בדל (separate) and lexemes יוֹם, לַיְלָה, אוֹר, חֹשֶׁךְ.",
+      "confidence": 0.97
+    },
+    {
+      "pair": [
+        "C (Day 2)",
+        "C' (Day 5)"
+      ],
+      "evidence": "Day 2 creates the domains of sky and sea by separating waters; Day 5 fills these exact domains with birds (עוֹף) and sea creatures (תַּנִּינִם, שֶׁרֶץ הַמַּיִם).",
+      "confidence": 0.96
+    },
+    {
+      "pair": [
+        "D (Day 3)",
+        "D' (Day 6)"
+      ],
+      "evidence": "Day 3 produces dry land and vegetation; Day 6 fills the land with animals and humans, who are given the Day 3 vegetation as food (1:29-30). Shared roots: אֶרֶץ, יָצָא, זֶרַע.",
+      "confidence": 0.97
+    }
+  ],
+  "overall_confidence": 0.96,
+  "methodology_citations": "Dorsey, Literary Structure of the Old Testament (1999), pp. 48-49; Cassuto, Commentary on Genesis (1961), I:17; Wenham, Genesis 1-15 (WBC, 1987), pp. 6-7",
+  "theological_significance": "The two-panel structure (Days 1-3 forming domains; Days 4-6 filling them) demonstrates that creation is a movement from תֹהוּ וָבֹהוּ ('formless and empty') to a fully ordered and populated cosmos — directly answering the twofold problem of 1:2. The structure reveals creation as an act of divine ordering against chaos, with humanity as the climactic image-bearing ruler. The parallel symmetry itself testifies to creation's intelligibility and order as expressions of divine wisdom.",
+  "scholarly_citations": "Umberto Cassuto (1944) and later Gerhard von Rad (1961) recognized the forming/filling parallel; Henri Blocher (In the Beginning, 1984) and Gordon Wenham (WBC Genesis, 1987) developed it further. Mark Smith (The Priestly Vision of Genesis 1, 2010) explores its priestly theological function.",
+  "bibcrit_hypothesis": {
+    "title": "Forming-Filling as Anti-Chaos Liturgy",
+    "reasoning": "The parallel panels are not merely literary ornament but liturgical theology: each 'forming' day directly remediates one aspect of תֹהוּ (formlessness) while each 'filling' day remediates בֹהוּ (emptiness). This suggests the Priestly author composed Genesis 1 as a hymnic counter-cosmogony to Mesopotamian chaoskampf, where order emerges not through divine combat but through speech and structural symmetry — the very form of the text enacts the orderliness it proclaims.",
+    "confidence": 0.85
+  },
+  "discovery_ready": true,
+  "reference": "Genesis 1:1-31",
+  "cached_at": "2026-05-09T21:52:34.510104",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v1"
+}

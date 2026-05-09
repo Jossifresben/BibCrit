@@ -1,0 +1,430 @@
+{
+  "book": "Daniel",
+  "period_range": "6th century BCE – 5th century CE",
+  "archetype_description": "Daniel reached its present form by the mid-2nd century BCE (c. 165 BCE), with the Aramaic court tales (chs. 2–6) likely circulating earlier in the Persian/early Hellenistic period and the Hebrew apocalyptic visions (chs. 7–12) composed during the Antiochene crisis. The book is bilingual (Hebrew 1:1–2:4a; 8–12; Aramaic 2:4b–7:28), and the Greek tradition preserves substantial 'Additions' (Prayer of Azariah, Song of the Three, Susanna, Bel and the Dragon) absent from the Hebrew/Aramaic, making Daniel one of the most textually divergent books of the Hebrew Bible.",
+  "stemma_nodes": [
+    {
+      "id": "archetype",
+      "label": "Proto-Daniel",
+      "type": "archetype",
+      "date": "c. 165 BCE",
+      "description": "Hypothetical final compositional form combining Aramaic court tales and Hebrew apocalyptic visions."
+    },
+    {
+      "id": "aramaic-tales",
+      "label": "Aramaic Court Tales",
+      "type": "intermediate",
+      "date": "Persian – early Hellenistic",
+      "description": "Independent cycle of Aramaic narratives (chs. 2–6) circulating before incorporation."
+    },
+    {
+      "id": "hebrew-visions",
+      "label": "Hebrew Apocalyptic Visions",
+      "type": "intermediate",
+      "date": "c. 167–164 BCE",
+      "description": "Maccabean-era Hebrew apocalypses (chs. 7–12) composed during the Antiochene persecution."
+    },
+    {
+      "id": "proto-mt",
+      "label": "Proto-MT Daniel",
+      "type": "intermediate",
+      "date": "2nd–1st c. BCE",
+      "description": "Hebrew/Aramaic consonantal text underlying the Masoretic tradition, lacking the Greek Additions."
+    },
+    {
+      "id": "dss-1qda",
+      "label": "1QDan-a, 1QDan-b",
+      "type": "edition",
+      "tradition": "DSS",
+      "date": "1st c. BCE",
+      "description": "Qumran Cave 1 fragments of Daniel, broadly aligned with proto-MT."
+    },
+    {
+      "id": "dss-4qda",
+      "label": "4QDan-a, 4QDan-b, 4QDan-c, 4QDan-d, 4QDan-e",
+      "type": "edition",
+      "tradition": "DSS",
+      "date": "Late 2nd c. BCE – 1st c. CE",
+      "description": "Five Cave 4 manuscripts; 4QDan-c is among the oldest, dated c. 125 BCE, very close in time to composition."
+    },
+    {
+      "id": "dss-6qpapdan",
+      "label": "6QpapDan",
+      "type": "edition",
+      "tradition": "DSS",
+      "date": "1st c. CE",
+      "description": "Cave 6 papyrus fragments of Daniel."
+    },
+    {
+      "id": "mt",
+      "label": "Masoretic Text",
+      "type": "tradition",
+      "tradition": "MT",
+      "date": "c. 100 CE consonantal; vocalized 7th–10th c. CE",
+      "full_name": "Masoretic Text of Daniel",
+      "language": "Hebrew/Aramaic",
+      "description": "Stabilized rabbinic consonantal text later vocalized by the Tiberian Masoretes."
+    },
+    {
+      "id": "aleppo",
+      "label": "Aleppo Codex",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "c. 930 CE",
+      "description": "Ben-Asher Tiberian model codex; Daniel is preserved in the surviving portion."
+    },
+    {
+      "id": "leningrad",
+      "label": "Leningrad Codex (B19A)",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "1008/1009 CE",
+      "description": "Oldest complete Masoretic Bible; base text for BHS and BHQ."
+    },
+    {
+      "id": "bhs",
+      "label": "BHS",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "1977",
+      "description": "Biblia Hebraica Stuttgartensia diplomatic edition of Leningrad."
+    },
+    {
+      "id": "bhq",
+      "label": "BHQ",
+      "type": "edition",
+      "tradition": "MT",
+      "date": "in progress",
+      "description": "Biblia Hebraica Quinta; Daniel fascicle forthcoming."
+    },
+    {
+      "id": "og-daniel",
+      "label": "Old Greek Daniel",
+      "type": "intermediate",
+      "date": "late 2nd c. BCE",
+      "description": "Original Septuagint translation, preserving a substantially different text-form especially in chs. 4–6 and including the Additions."
+    },
+    {
+      "id": "og-tradition",
+      "label": "Old Greek Tradition",
+      "type": "tradition",
+      "tradition": "LXX",
+      "date": "2nd c. BCE – 4th c. CE",
+      "language": "Greek",
+      "description": "OG Daniel survived in only three witnesses due to early displacement by Theodotion."
+    },
+    {
+      "id": "papyrus-967",
+      "label": "Papyrus 967",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "early 3rd c. CE",
+      "description": "Pre-Hexaplaric OG witness preserving the original chapter order (1–4, 7–8, 5–6, 9–12) and Susanna at the end."
+    },
+    {
+      "id": "ms-88",
+      "label": "MS 88 (Chigi)",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "9th–11th c. CE",
+      "description": "Minuscule preserving Hexaplaric OG Daniel with Origenian signs."
+    },
+    {
+      "id": "syh-daniel",
+      "label": "Syrohexapla (Daniel)",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "616 CE",
+      "description": "Paul of Tella's Syriac translation of column five of the Hexapla; key witness to OG Daniel."
+    },
+    {
+      "id": "hexapla",
+      "label": "Origen's Hexapla",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "c. 240 CE",
+      "description": "Origen's six-column synopsis; the fifth column is the source of Hexaplaric OG Daniel."
+    },
+    {
+      "id": "theodotion",
+      "label": "Theodotion-Daniel (θ')",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "1st c. BCE – 2nd c. CE",
+      "description": "'Theodotionic' Daniel, actually a kaige-type revision pre-dating the historical Theodotion (so-called 'proto-Theodotion'); displaced the OG in church usage already by the time of the NT."
+    },
+    {
+      "id": "aquila",
+      "label": "Aquila",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "c. 130 CE",
+      "description": "Hyperliteral revision toward proto-MT, fragmentary for Daniel."
+    },
+    {
+      "id": "symmachus",
+      "label": "Symmachus",
+      "type": "recension",
+      "tradition": "LXX",
+      "date": "late 2nd c. CE",
+      "description": "Idiomatic Greek revision toward proto-MT, fragmentary for Daniel."
+    },
+    {
+      "id": "lxx-mss",
+      "label": "Theodotion MS Tradition (B, A, Q)",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "4th–5th c. CE",
+      "description": "Vaticanus, Alexandrinus, and Marchalianus transmit Theodotion-Daniel as the standard Greek text."
+    },
+    {
+      "id": "gottingen-daniel",
+      "label": "Göttingen Daniel (Ziegler/Munnich)",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "1954; rev. 1999",
+      "description": "Critical edition presenting OG and Theodotion in parallel."
+    },
+    {
+      "id": "nets",
+      "label": "NETS Daniel",
+      "type": "edition",
+      "tradition": "LXX",
+      "date": "2007",
+      "description": "New English Translation of the Septuagint, translating both OG and Theodotion."
+    },
+    {
+      "id": "peshitta",
+      "label": "Peshitta Daniel",
+      "type": "translation",
+      "tradition": "Peshitta",
+      "date": "2nd–3rd c. CE",
+      "language": "Syriac",
+      "description": "Syriac translation made from a Hebrew/Aramaic Vorlage close to proto-MT, with some influence from Jewish exegetical traditions."
+    },
+    {
+      "id": "leiden-peshitta",
+      "label": "Leiden Peshitta (Daniel)",
+      "type": "edition",
+      "tradition": "Peshitta",
+      "date": "1980",
+      "description": "Critical edition based on Codex Ambrosianus (7a1)."
+    },
+    {
+      "id": "vulgate",
+      "label": "Vulgate Daniel",
+      "type": "translation",
+      "tradition": "Vulgate",
+      "date": "c. 392–405 CE",
+      "language": "Latin",
+      "description": "Jerome translated Daniel from the Hebrew/Aramaic veritas, but supplied the Additions from Theodotion (not from the OG), explicitly marking them with obeli."
+    },
+    {
+      "id": "stuttgart-vulgate",
+      "label": "Stuttgart Vulgate",
+      "type": "edition",
+      "tradition": "Vulgate",
+      "date": "1969/2007",
+      "description": "Weber-Gryson critical edition."
+    }
+  ],
+  "stemma_edges": [
+    {
+      "from": "archetype",
+      "to": "aramaic-tales"
+    },
+    {
+      "from": "archetype",
+      "to": "hebrew-visions"
+    },
+    {
+      "from": "aramaic-tales",
+      "to": "proto-mt"
+    },
+    {
+      "from": "hebrew-visions",
+      "to": "proto-mt"
+    },
+    {
+      "from": "aramaic-tales",
+      "to": "og-daniel"
+    },
+    {
+      "from": "hebrew-visions",
+      "to": "og-daniel"
+    },
+    {
+      "from": "proto-mt",
+      "to": "dss-1qda"
+    },
+    {
+      "from": "proto-mt",
+      "to": "dss-4qda"
+    },
+    {
+      "from": "proto-mt",
+      "to": "dss-6qpapdan"
+    },
+    {
+      "from": "proto-mt",
+      "to": "mt"
+    },
+    {
+      "from": "mt",
+      "to": "aleppo"
+    },
+    {
+      "from": "mt",
+      "to": "leningrad"
+    },
+    {
+      "from": "leningrad",
+      "to": "bhs"
+    },
+    {
+      "from": "leningrad",
+      "to": "bhq"
+    },
+    {
+      "from": "og-daniel",
+      "to": "og-tradition"
+    },
+    {
+      "from": "og-tradition",
+      "to": "papyrus-967"
+    },
+    {
+      "from": "og-tradition",
+      "to": "hexapla"
+    },
+    {
+      "from": "hexapla",
+      "to": "ms-88"
+    },
+    {
+      "from": "hexapla",
+      "to": "syh-daniel"
+    },
+    {
+      "from": "proto-mt",
+      "to": "theodotion"
+    },
+    {
+      "from": "og-tradition",
+      "to": "theodotion"
+    },
+    {
+      "from": "proto-mt",
+      "to": "aquila"
+    },
+    {
+      "from": "proto-mt",
+      "to": "symmachus"
+    },
+    {
+      "from": "theodotion",
+      "to": "lxx-mss"
+    },
+    {
+      "from": "og-tradition",
+      "to": "gottingen-daniel"
+    },
+    {
+      "from": "theodotion",
+      "to": "gottingen-daniel"
+    },
+    {
+      "from": "gottingen-daniel",
+      "to": "nets"
+    },
+    {
+      "from": "proto-mt",
+      "to": "peshitta"
+    },
+    {
+      "from": "peshitta",
+      "to": "leiden-peshitta"
+    },
+    {
+      "from": "proto-mt",
+      "to": "vulgate"
+    },
+    {
+      "from": "theodotion",
+      "to": "vulgate"
+    },
+    {
+      "from": "vulgate",
+      "to": "stuttgart-vulgate"
+    }
+  ],
+  "key_divergences": [
+    {
+      "title": "The Greek Additions to Daniel",
+      "passage": "Daniel 3:24–90; Daniel 13 (Susanna); Daniel 14 (Bel and the Dragon)",
+      "witnesses": [
+        "OG",
+        "Theodotion",
+        "MT",
+        "Vulgate",
+        "Peshitta"
+      ],
+      "plain": "The Greek Bible contains three large stories and prayers found nowhere in the Hebrew/Aramaic Daniel. Whether these were translated from a lost Semitic original or composed in Greek remains debated, and they shape the canon of Daniel differently for Jews, Catholics, Orthodox, and Protestants.",
+      "technical": "The Prayer of Azariah/Song of the Three, Susanna, and Bel and the Dragon are present in both OG and Theodotion but absent from MT and the Qumran Daniel scrolls. Carey Moore, John Collins, and R. Timothy McLay argue for Semitic Vorlagen for at least Susanna and Bel; Jerome accepted them only sub obelo, translating from Theodotion rather than OG."
+    },
+    {
+      "title": "Divergent OG text in chapters 4–6",
+      "passage": "Daniel 4–6",
+      "witnesses": [
+        "OG (Papyrus 967)",
+        "Theodotion",
+        "MT"
+      ],
+      "plain": "In the stories of Nebuchadnezzar's madness, Belshazzar's feast, and Daniel in the lions' den, the Old Greek tells a noticeably different story from the Hebrew/Aramaic, with different wording, additions, and even a different sequence of events. This suggests these chapters circulated in two literary editions.",
+      "technical": "OG Daniel 4–6 diverges so substantially from MT that scholars (Albertz, Ulrich, McLay, Munnich) regard it as reflecting a variant Hebrew/Aramaic Vorlage or an alternative literary edition rather than a free translation. Papyrus 967's order (1–4, 7–8, 5–6, 9–12) preserves a pre-Hexaplaric arrangement that Olivier Munnich argues is original to OG."
+    },
+    {
+      "title": "Displacement of OG by Theodotion",
+      "passage": "Entire book",
+      "witnesses": [
+        "OG",
+        "Theodotion"
+      ],
+      "plain": "Very early on, Christians abandoned the original Greek translation of Daniel in favor of a revised version called Theodotion, so completely that the Old Greek survives in only three manuscripts. This is unique among Old Testament books.",
+      "technical": "Already the New Testament (e.g., quotations in Hebrews, Revelation) reflects 'Theodotionic' readings, indicating that this kaige-type revision pre-dates the historical Theodotion (Barthélemy's 'proto-Theodotion'). Jerome remarks that the church reads Daniel iuxta Theodotionem, not iuxta LXX; OG survives only in MS 88, the Syrohexapla, and Papyrus 967."
+    },
+    {
+      "title": "4QDan-c and the date of composition",
+      "passage": "Daniel 7–8 fragments",
+      "witnesses": [
+        "DSS",
+        "MT"
+      ],
+      "plain": "One Qumran scroll of Daniel was copied only a few decades after the book's apocalyptic visions are thought to have been written, providing remarkably close witness to the original.",
+      "technical": "4QDan-c (4Q114), paleographically dated by Cross to c. 125 BCE, contains portions of Daniel 10–11 and stands extremely close in time to the Maccabean composition of the visions. Eugene Ulrich's editions in DJD XVI demonstrate the Qumran Daniel manuscripts overall align with proto-MT, including the Hebrew–Aramaic–Hebrew language switches."
+    },
+    {
+      "title": "The 'Son of Man' in Daniel 7:13",
+      "passage": "Daniel 7:13",
+      "witnesses": [
+        "MT",
+        "OG",
+        "Theodotion"
+      ],
+      "plain": "A famous verse where 'one like a son of man' approaches the Ancient of Days reads differently in the Old Greek, where the figure may be identified with the Ancient of Days rather than presented to him.",
+      "technical": "OG reads ὡς παλαιὸς ἡμερῶν παρῆν ('came as the Ancient of Days') in some witnesses (Papyrus 967, MS 88), while MT and Theodotion read 'came to the Ancient of Days' (עד עתיק יומיא). Lust, Stuckenbruck, and Bogaert have debated whether OG reflects an early christological/identificatory reading or a textual corruption (ως for εως)."
+    }
+  ],
+  "transmission_narrative": "Daniel reached its bilingual final form during the Antiochene crisis (c. 165 BCE), combining older Aramaic court tales with newly composed Hebrew apocalypses, and was almost immediately translated into Greek. The Old Greek translation, however, presented such a divergent text—especially in chapters 4–6—and was so quickly displaced by the kaige-type 'Theodotionic' revision that OG Daniel survives in only three witnesses (Papyrus 967, MS 88, Syrohexapla), an outcome unique in the Septuagint corpus. The Hebrew/Aramaic tradition stabilized as proto-MT (confirmed by the eight Qumran Daniel manuscripts), passed through the Tiberian Masoretes to the Aleppo and Leningrad codices, and underlies Jerome's Vulgate, while the Greek Additions—Prayer of Azariah, Susanna, Bel and the Dragon—entered the Latin and Syriac traditions through Theodotion, generating enduring canonical disputes. Current scholarship (Ulrich, Collins, Munnich, McLay) increasingly treats OG and MT-Daniel as two parallel literary editions rather than a translation and its Vorlage.",
+  "transmission_plain": "Daniel was finished around 165 BCE, and within a few decades was translated into Greek—but the Greek version told several stories so differently from the Hebrew that early Christians swapped it out for a revised edition called Theodotion, which is the form in most Greek and Latin Bibles today. Meanwhile the Hebrew and Aramaic text was carefully preserved by Jewish scribes, with copies from the Dead Sea Scrolls confirming the wording used a thousand years later by the medieval Masoretes. The famous extra stories—Susanna, Bel and the Dragon, the Song of the Three Young Men—come from the Greek branch and are why Catholic and Orthodox Bibles of Daniel are longer than Jewish and Protestant ones.",
+  "bibcrit_assessment": {
+    "title": "Two parallel editions, and a vanished Old Greek",
+    "plain": "Daniel is the clearest Old Testament case where the Hebrew and Greek traditions look like two different editions of the book, and where the original Greek translation was so thoroughly replaced by a revision that it nearly disappeared from history.",
+    "confidence": 0.82
+  },
+  "discovery_ready": true,
+  "reference": "Daniel",
+  "cached_at": "2026-05-09T21:11:35.535220",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v2"
+}

@@ -1,0 +1,202 @@
+{
+  "reference": "Ezra 2",
+  "subject": "Census of returnees from Babylonian exile under Zerubbabel",
+  "figures": [
+    {
+      "name": "Sons of Parosh",
+      "mt_value": 2172,
+      "lxx_value": 2172,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "Agreement between MT and LXX (1 Esdras 5:9 reads 2172); SP not applicable as Ezra is outside the Pentateuch."
+    },
+    {
+      "name": "Sons of Shephatiah",
+      "mt_value": 372,
+      "lxx_value": 372,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "1 Esdras 5:9 agrees."
+    },
+    {
+      "name": "Sons of Arah",
+      "mt_value": 775,
+      "lxx_value": 775,
+      "sp_value": 0,
+      "divergence_type": "significant",
+      "note": "Nehemiah 7:10 reads 652; 1 Esdras 5:10 reads 756."
+    },
+    {
+      "name": "Sons of Pahath-Moab",
+      "mt_value": 2812,
+      "lxx_value": 2812,
+      "sp_value": 0,
+      "divergence_type": "minor",
+      "note": "Nehemiah 7:11 reads 2818; 1 Esdras 5:11 reads 2812."
+    },
+    {
+      "name": "Sons of Elam",
+      "mt_value": 1254,
+      "lxx_value": 1254,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "Parallel sources agree."
+    },
+    {
+      "name": "Sons of Zattu",
+      "mt_value": 945,
+      "lxx_value": 945,
+      "sp_value": 0,
+      "divergence_type": "significant",
+      "note": "Nehemiah 7:13 reads 845; 1 Esdras 5:12 reads 905."
+    },
+    {
+      "name": "Sons of Zaccai",
+      "mt_value": 760,
+      "lxx_value": 760,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Sons of Bani/Binnui",
+      "mt_value": 642,
+      "lxx_value": 642,
+      "sp_value": 0,
+      "divergence_type": "significant",
+      "note": "Nehemiah 7:15 reads 648 (Binnui); 1 Esdras 5:12 reads 648."
+    },
+    {
+      "name": "Sons of Bebai",
+      "mt_value": 623,
+      "lxx_value": 623,
+      "sp_value": 0,
+      "divergence_type": "minor",
+      "note": "Nehemiah 7:16 reads 628."
+    },
+    {
+      "name": "Sons of Azgad",
+      "mt_value": 1222,
+      "lxx_value": 1222,
+      "sp_value": 0,
+      "divergence_type": "major",
+      "note": "Nehemiah 7:17 reads 2322; 1 Esdras 5:13 reads 3222."
+    },
+    {
+      "name": "Sons of Adonikam",
+      "mt_value": 666,
+      "lxx_value": 666,
+      "sp_value": 0,
+      "divergence_type": "minor",
+      "note": "Nehemiah 7:18 reads 667."
+    },
+    {
+      "name": "Sons of Bigvai",
+      "mt_value": 2056,
+      "lxx_value": 2056,
+      "sp_value": 0,
+      "divergence_type": "minor",
+      "note": "Nehemiah 7:19 reads 2067."
+    },
+    {
+      "name": "Total assembly (Ezra 2:64)",
+      "mt_value": 42360,
+      "lxx_value": 42360,
+      "sp_value": 0,
+      "divergence_type": "major",
+      "note": "Stated total agrees in MT/LXX/Nehemiah/1 Esdras, but the sum of individual entries in Ezra is 29,818 — a discrepancy of over 12,000."
+    },
+    {
+      "name": "Menservants and maidservants",
+      "mt_value": 7337,
+      "lxx_value": 7337,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": null
+    },
+    {
+      "name": "Singers (male and female)",
+      "mt_value": 200,
+      "lxx_value": 200,
+      "sp_value": 0,
+      "divergence_type": "minor",
+      "note": "Nehemiah 7:67 reads 245; 1 Esdras 5:42 reads 245."
+    }
+  ],
+  "systematic_analysis": {
+    "is_systematic": false,
+    "pattern": "The divergences are not between MT and LXX of Ezra (which align closely) but between three Hebrew/Greek witnesses to the same census: Ezra 2 (MT/LXX), Nehemiah 7 (MT/LXX), and 1 Esdras 5 (LXX). No single arithmetic rule (such as a fixed addition or 100-year shift) explains the variants; instead, individual figures fluctuate independently, and the stated grand total of 42,360 does not match the sum of any of the three lists.",
+    "pattern_plain": "Unlike the patriarchal ages in Genesis, Ezra's numbers don't follow a tidy mathematical pattern across versions. The differences look like random copying mistakes scattered through three parallel lists, and none of the lists actually adds up to the grand total it reports."
+  },
+  "theories": [
+    {
+      "name": "Scribal error in numerical transmission",
+      "slug": "scribal_error",
+      "score": 0.85,
+      "confidence": 0.85,
+      "summary": "The dominant explanation, defended by scholars from Keil and Bertheau to Williamson and Blenkinsopp, is that the divergences arose through ordinary copying errors in numbers — confusion of similar Hebrew letter-numerals, misreading of numerical word-forms, and accidental omission/addition of decades and hundreds. The non-systematic, scattered nature of the variants (some MT figures higher, some lower than Nehemiah/1 Esdras) fits this random-error profile precisely.",
+      "summary_plain": "Most scholars think scribes simply made mistakes when copying long lists of numbers, which is why the same census appears with different totals in Ezra, Nehemiah, and 1 Esdras. Numbers were especially easy to miscopy in ancient manuscripts.",
+      "supporting_evidence": [
+        "The variants are bidirectional: sometimes Ezra is higher, sometimes Nehemiah, sometimes 1 Esdras, with no consistent direction of change.",
+        "Many differences involve round numbers (hundreds, decades) consistent with confusion of numerical notation.",
+        "The summed details do not match the stated total in any version, suggesting accumulated transmission corruption.",
+        "Hebrew letter-numerals (where used) and spelled-out numbers are notoriously prone to graphic confusion (e.g. similar consonants, dittography of digits).",
+        "Klein, Allrik, and others have catalogued plausible mechanical mechanisms for each major variant."
+      ],
+      "weaknesses": [
+        "Cannot fully explain the very large gap (~12,500) between detailed sum and stated total, which may indicate deliberate omission of some groups.",
+        "Some variants (e.g. Azgad 1222/2322/3222) are too large to be explained by simple letter confusion alone.",
+        "Does not address why three independent recensions preserve such different forms of the same list."
+      ]
+    },
+    {
+      "name": "Independent recensional traditions",
+      "slug": "independent_traditions",
+      "score": 0.65,
+      "confidence": 0.6,
+      "summary": "Scholars including H.G.M. Williamson and Dieter Böhler have argued that Ezra 2, Nehemiah 7, and 1 Esdras 5 represent three parallel recensions of an originally common census document, each transmitted through partly independent channels. The divergences thus reflect not just copying errors within one stream but separate textual histories drifting apart.",
+      "summary_plain": "The same census list ended up in three different biblical books, and each copy was passed down separately. Over centuries, each version picked up its own variations.",
+      "supporting_evidence": [
+        "The list appears in three distinct compositional contexts (Ezra–Nehemiah and 1 Esdras), each with its own textual history.",
+        "1 Esdras frequently sides with Nehemiah 7 against Ezra 2, suggesting non-linear transmission.",
+        "Patterns of agreement/disagreement do not fit a simple stemma of dependence.",
+        "The Greek translators of Ezra (LXX Esdras B) appear to have rendered an essentially MT-like Vorlage, indicating early stabilization within each stream."
+      ],
+      "weaknesses": [
+        "Does not by itself explain the specific mechanisms producing the variants.",
+        "Some scholars (e.g. Japhet) argue for direct literary dependence rather than independent transmission.",
+        "Risks circularity: 'independent traditions' can become a label rather than an explanation."
+      ]
+    },
+    {
+      "name": "Theological/symbolic motivation",
+      "slug": "theological_motivation",
+      "score": 0.2,
+      "confidence": 0.3,
+      "summary": "A minority view suggests some figures (notably the total 42,360, possibly evoking a symbolic 'all Israel' figure, and the Adonikam total 666) were shaped by theological symbolism. However, most scholars regard such readings as ad hoc and find no consistent symbolic schema across the list.",
+      "summary_plain": "A few scholars wonder if some numbers carry symbolic meaning, but most find no clear theological pattern in this census.",
+      "supporting_evidence": [
+        "The grand total 42,360 is suspiciously stable across all three versions despite the details varying.",
+        "666 (Adonikam) has invited symbolic speculation.",
+        "Census totals in Scripture are sometimes shaped for rhetorical effect (cf. Numbers)."
+      ],
+      "weaknesses": [
+        "No coherent symbolic system explains the bulk of the variants.",
+        "Most individual figures lack any plausible theological significance.",
+        "The variants appear far more consistent with mechanical than ideological causes."
+      ]
+    }
+  ],
+  "overall_assessment": "The Ezra 2 divergences are best explained by a combination of scribal error operating within partly independent recensional traditions of a single underlying census document. Unlike the Genesis 5/11 chronologies, there is no systematic mathematical pattern distinguishing MT, LXX, and (inapplicable) SP; instead, MT-Ezra and LXX-Ezra agree closely against the parallel witnesses in Nehemiah 7 and 1 Esdras 5. The persistent mismatch between the detailed sum (~29,818) and the stated total (42,360) across all witnesses indicates that the corruption is ancient and pre-dates the divergence of the streams. This case illustrates how numerical data in long lists is among the least stable material in the biblical text, regardless of the scribal community.",
+  "overall_plain": "The differences in Ezra 2's census numbers are mostly ordinary copying mistakes spread across three parallel versions of the same list (in Ezra, Nehemiah, and 1 Esdras). Even the grand total doesn't match the sum of the parts in any version, showing the errors are very old. Unlike the patriarchal ages, there's no neat mathematical pattern here.",
+  "bibcrit_assessment": {
+    "title": "Ancient census, three lists, none add up",
+    "reasoning": "The most striking finding is that all three witnesses preserve the same grand total (42,360) while disagreeing on the components — and none of the three component lists actually sums to that total. This suggests the total was fixed in the tradition very early while the underlying detail figures continued to drift, a pattern that exposes the limits of purely 'recensional' models and underscores how numerical lists were treated as semi-independent data subject to mechanical corruption.",
+    "plain": "All three versions of this census report the same final total, but none of them actually adds up to it. That tells us scribes locked in the headline number long before the detailed numbers stopped drifting.",
+    "confidence": 0.78
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T21:34:08.662772",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v3"
+}

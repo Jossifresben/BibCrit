@@ -1,0 +1,68 @@
+{
+  "reference": "Genesis 15:13",
+  "subject": "Duration of Israel's sojourn/affliction prophesied to Abraham",
+  "figures": [
+    {
+      "name": "Years of sojourn and affliction",
+      "mt_value": 400,
+      "lxx_value": 400,
+      "sp_value": 400,
+      "divergence_type": "none",
+      "note": "All three traditions agree on 400 years in Genesis 15:13 itself; divergence appears in the related passage Exodus 12:40."
+    }
+  ],
+  "systematic_analysis": {
+    "is_systematic": false,
+    "pattern": "Genesis 15:13 itself shows no numerical divergence: MT, LXX, and SP all read 400 years. The text-critical problem arises in the corresponding fulfillment notice at Exodus 12:40, where MT reads 430 years 'in Egypt,' LXX reads 430 years 'in Egypt and in Canaan,' and SP reads 430 years 'in the land of Canaan and in the land of Egypt.' The 400/430 relationship between Genesis 15:13 and Exodus 12:40 is internally consistent across all witnesses, with the 30-year difference often understood as the interval before affliction began.",
+    "pattern_plain": "All three ancient versions of Genesis 15:13 say the same thing: 400 years. The disagreement only emerges in the related verse Exodus 12:40, where the Greek and Samaritan texts include Canaan in the 430-year total but the Hebrew limits it to Egypt."
+  },
+  "theories": [
+    {
+      "name": "Independent Traditions",
+      "slug": "independent_traditions",
+      "score": 0.85,
+      "confidence": 0.8,
+      "summary": "Since Genesis 15:13 shows uniform agreement at 400 years, no divergence theory is required for this verse itself. The number reflects a stable, pre-textual prophetic tradition transmitted faithfully across all three streams.",
+      "summary_plain": "All three Bibles agree on 400 years here, so there is no real disagreement to explain. The number was preserved reliably in every tradition.",
+      "supporting_evidence": [
+        "MT, LXX (Codex Alexandrinus, Vaticanus), and SP all read tetrakosia/arba meʾot ('400 years').",
+        "Acts 7:6 and Josephus (Ant. 2.9.1) both cite 400 years, confirming the stability of the tradition.",
+        "No Qumran fragment of Genesis 15:13 attests a variant figure.",
+        "The round number 400 appears to function as a fixed prophetic datum independent of the 430-year sojourn calculation."
+      ],
+      "weaknesses": [
+        "Does not address the related Exodus 12:40 divergence that is theologically linked to this verse.",
+        "Cannot rule out that the uniformity reflects early harmonization rather than original stability."
+      ]
+    },
+    {
+      "name": "LXX/SP Harmonization at Exodus 12:40",
+      "slug": "sp_harmonization",
+      "score": 0.6,
+      "confidence": 0.6,
+      "summary": "While Gen 15:13 is uniform, the LXX and SP expansions at Exodus 12:40 ('in Egypt and Canaan') likely represent harmonizing glosses to reconcile the 430-year sojourn with Paul's chronology in Galatians 3:17 and the genealogical compression of Levi-Kohath-Amram-Moses. The MT's shorter 'in Egypt' is the lectio difficilior.",
+      "summary_plain": "The Greek and Samaritan versions probably added 'and Canaan' to Exodus 12:40 to make the math work with the short genealogies. The Hebrew text is harder and likely older.",
+      "supporting_evidence": [
+        "MT Exodus 12:40 'in Egypt' is the more difficult reading and creates genealogical tension.",
+        "LXX and SP agreement against MT often reflects shared harmonizing tendencies in the Pentateuch.",
+        "Paul (Gal 3:17) and rabbinic tradition (Seder Olam) presuppose the Canaan-inclusive reckoning, suggesting Second Temple harmonization."
+      ],
+      "weaknesses": [
+        "Strictly applies to Exodus 12:40, not Genesis 15:13 itself.",
+        "MT could equally represent a deliberate shortening to emphasize Egyptian oppression."
+      ]
+    }
+  ],
+  "overall_assessment": "Genesis 15:13 is textually stable across MT, LXX, and SP at 400 years and does not itself exhibit the kind of systematic numerical divergence seen in the Genesis 5 and 11 chronologies. The interpretive crux lies in its relationship to Exodus 12:40 (430 years), where the versions diverge over whether the period includes the patriarchal sojourn in Canaan or only the Egyptian bondage. Scholars including Finegan and Sexton treat the 400/430 differential as an internal harmonization issue across the canon rather than a versional corruption of Genesis 15:13. The verse therefore illustrates that not every chronological number in the Pentateuch was subject to the deflation/inflation pressures that affected the patriarchal age lists.",
+  "overall_plain": "Genesis 15:13's 400 years is identical in the Hebrew, Greek, and Samaritan Bibles. The real puzzle is how this 400 relates to the 430 years in Exodus, not any disagreement between the manuscripts of this verse.",
+  "bibcrit_assessment": {
+    "title": "Uniform 400 Years; Divergence Lies Elsewhere",
+    "reasoning": "The textual unanimity of Genesis 15:13 is itself significant evidence: it shows that prophetic round numbers embedded in narrative speech were transmitted more conservatively than genealogical sums. The chronological controversy traditionally attached to this verse is in fact a controversy about Exodus 12:40 and Galatians 3:17, not about Genesis 15:13's manuscript transmission.",
+    "plain": "This verse is the same in every ancient version, which tells us scribes treated prophetic speeches more carefully than genealogy lists. The famous chronological debate really belongs to Exodus, not here.",
+    "confidence": 0.82
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T21:28:47.187594",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v3"
+}

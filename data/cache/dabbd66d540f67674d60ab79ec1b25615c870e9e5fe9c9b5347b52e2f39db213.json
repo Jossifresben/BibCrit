@@ -1,0 +1,149 @@
+{
+  "reference": "Isaiah 7:14",
+  "total_citations_found": 7,
+  "period_summary": "Citations cluster heavily in the 2nd–4th centuries, driven by Christological controversy with Jews and pagans over the rendering 'virgin' (παρθένος) versus 'young woman' (νεᾶνις). The concentration reflects Isaiah 7:14's centrality to early Christian apologetics and Matthean fulfillment exegesis.",
+  "citations": [
+    {
+      "father": "Justin Martyr",
+      "dates_ce": "c. 100–165",
+      "region": "Syria/Rome",
+      "work": "Dialogue with Trypho",
+      "chapter_section": "ch. 43, 66–67, 71, 84",
+      "cited_text": "ἰδοὺ ἡ παρθένος ἐν γαστρὶ ἕξει καὶ τέξεται υἱόν, καὶ καλέσουσι τὸ ὄνομα αὐτοῦ Ἐμμανουήλ",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.92,
+      "text_form_note": "Justin uses παρθένος and the future ἕξει/τέξεται, matching LXX against MT's הָעַלְמָה ('young woman'). He explicitly disputes Trypho's Jewish use of νεᾶνις (the rendering later adopted by Aquila, Symmachus, Theodotion).",
+      "theological_use": "Justin makes Isaiah 7:14 the centerpiece of his Christological argument that Jesus' virgin birth was prophesied; he attacks Jewish translators for substituting νεᾶνις to evade the prophecy.",
+      "transmission_implication": "Confirms that by the mid-2nd century the LXX reading παρθένος was already contested between Christians and Jews, with rival Greek revisions emerging."
+    },
+    {
+      "father": "Irenaeus of Lyons",
+      "dates_ce": "c. 130–202",
+      "region": "Gaul/Asia Minor",
+      "work": "Adversus Haereses",
+      "chapter_section": "3.21.1–4",
+      "cited_text": "Ecce virgo in utero concipiet et pariet filium, et vocabitis nomen eius Emmanuel",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.9,
+      "text_form_note": "The Latin virgo presupposes Greek παρθένος. Irenaeus explicitly attacks Theodotion and Aquila for rendering ἰδοὺ ἡ νεᾶνις, defending the older LXX reading transmitted before Christ.",
+      "theological_use": "Irenaeus argues the LXX's antiquity guarantees παρθένος is the authentic reading and that the virgin birth fulfills prophecy against Ebionite and Gnostic denials.",
+      "transmission_implication": "Provides the earliest explicit testimony to a fixed pre-Christian Greek text reading παρθένος, polemically defended against Jewish recensional activity."
+    },
+    {
+      "father": "Tertullian",
+      "dates_ce": "c. 155–220",
+      "region": "Carthage",
+      "work": "Adversus Judaeos / Adversus Marcionem",
+      "chapter_section": "Adv. Jud. 9; Adv. Marc. 3.13",
+      "cited_text": "Ecce virgo concipiet in utero et pariet filium, et vocabunt nomen eius Emmanuel",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.88,
+      "text_form_note": "Old Latin rendering of LXX with virgo (= παρθένος). Tertullian engages directly with Jewish counter-claims that the Hebrew means simply 'young woman.'",
+      "theological_use": "Used to prove Christ's miraculous birth and to refute both Jewish and Marcionite Christology by anchoring the incarnation in Hebrew prophecy.",
+      "transmission_implication": "Shows the Vetus Latina form circulating in North Africa was a direct translation of LXX with παρθένος, predating Jerome's revisions."
+    },
+    {
+      "father": "Origen",
+      "dates_ce": "c. 184–253",
+      "region": "Alexandria/Caesarea",
+      "work": "Contra Celsum",
+      "chapter_section": "1.34–35",
+      "cited_text": "ἰδοὺ ἡ παρθένος ἐν γαστρὶ ἕξει καὶ τέξεται υἱόν",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.95,
+      "text_form_note": "Origen cites the LXX form and, with his Hexaplaric expertise, explicitly compares it with Aquila, Symmachus, and Theodotion who read νεᾶνις. He defends παρθένος as the authentic LXX rendering of עַלְמָה.",
+      "theological_use": "Refutes Celsus's mockery of the virgin birth by appealing to the prophetic text and arguing philologically that עַלְמָה denotes a virgin.",
+      "transmission_implication": "Hexaplaric data confirm a stable LXX reading παρθένος against three independent Jewish revisions reading νεᾶνις—evidence of recensional divergence by the 2nd century."
+    },
+    {
+      "father": "Eusebius of Caesarea",
+      "dates_ce": "c. 263–339",
+      "region": "Caesarea",
+      "work": "Demonstratio Evangelica",
+      "chapter_section": "7.1",
+      "cited_text": "ἰδοὺ ἡ παρθένος ἐν γαστρὶ λήψεται καὶ τέξεται υἱόν, καὶ καλέσεις τὸ ὄνομα αὐτοῦ Ἐμμανουήλ",
+      "text_form": "mixed",
+      "text_form_confidence": 0.6,
+      "text_form_note": "Retains LXX παρθένος but shows λήψεται (variant) and singular καλέσεις, the latter agreeing with MT's וְקָרָאת against LXX's plural καλέσουσιν. Suggests Hexaplaric contamination.",
+      "theological_use": "Marshals the verse as one of the chief messianic prophecies, harmonized with Matthew 1:23.",
+      "transmission_implication": "Reflects 4th-century Caesarean texts where LXX manuscripts were being adjusted toward Hebrew/Hexaplaric readings."
+    },
+    {
+      "father": "Cyril of Jerusalem",
+      "dates_ce": "c. 313–386",
+      "region": "Jerusalem",
+      "work": "Catechetical Lectures",
+      "chapter_section": "12.21",
+      "cited_text": "ἰδοὺ ἡ παρθένος ἐν γαστρὶ ἕξει καὶ τέξεται υἱόν, καὶ καλέσουσι τὸ ὄνομα αὐτοῦ Ἐμμανουήλ",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.9,
+      "text_form_note": "Standard LXX form with παρθένος and plural καλέσουσι. Cyril explicitly defends παρθένος against the Jewish reading νεᾶνις.",
+      "theological_use": "Used catechetically to instruct baptismal candidates in the prophetic basis of the incarnation.",
+      "transmission_implication": "Demonstrates the persistence of the unrevised LXX reading in 4th-century Palestinian liturgical/catechetical use."
+    },
+    {
+      "father": "Jerome",
+      "dates_ce": "c. 347–420",
+      "region": "Bethlehem",
+      "work": "Commentariorum in Isaiam",
+      "chapter_section": "3.7.14",
+      "cited_text": "Ecce virgo concipiet et pariet filium et vocabitur nomen eius Emmanuel",
+      "text_form": "mixed",
+      "text_form_confidence": 0.85,
+      "text_form_note": "Jerome's Vulgate retains virgo (defending παρθένος as semantically valid for עַלְמָה) but follows Hebrew syntax with singular vocabitur (cf. MT וְקָרָאת). He extensively discusses Aquila/Symmachus/Theodotion's νεᾶνις.",
+      "theological_use": "Defends the Christian reading philologically while engaging Jewish exegesis, arguing עַלְמָה denotes a hidden/secluded virgin.",
+      "transmission_implication": "Marks the textual watershed where Latin tradition consciously balances Hebraica veritas with the entrenched LXX/Christian παρθένος reading."
+    }
+  ],
+  "text_form_distribution": {
+    "closer_to_mt": 0,
+    "closer_to_lxx": 5,
+    "mixed": 2,
+    "independent": 0,
+    "uncertain": 0
+  },
+  "transmission_synthesis": "The patristic record overwhelmingly attests the LXX form ἰδοὺ ἡ παρθένος ἐν γαστρὶ ἕξει from the 2nd through 5th centuries, with no Father supporting νεᾶνις as authentic. Already in Justin and Irenaeus, the reading is polemically defended against Jewish recensional alternatives (later codified in Aquila, Symmachus, Theodotion), demonstrating that two competing Greek text-forms circulated by c. 150 CE. By the 4th century (Eusebius, Jerome), Hexaplaric scholarship introduces partial Hebraizing adjustments—e.g., singular καλέσεις/vocabitur for plural καλέσουσιν—producing a 'mixed' text in scholarly circles even as παρθένος remained inviolate in Christian usage. The transmission history thus reveals a stable Christian LXX core surrounded by recensional pressure from both Jewish revisers and Origenian Hebrew comparison.",
+  "transmission_synthesis_plain": "Early Christian writers from the 2nd century onward almost unanimously cited the Greek 'a virgin shall conceive,' defending it against Jewish translations that said 'a young woman.' This single word became one of the most fiercely contested in the entire Bible, shaping how Christians read Isaiah for centuries.",
+  "notable_variants": [
+    {
+      "reading": "παρθένος ('virgin') vs. νεᾶνις ('young woman')",
+      "fathers_using_it": [
+        "Justin Martyr",
+        "Irenaeus",
+        "Tertullian",
+        "Origen",
+        "Cyril of Jerusalem",
+        "Jerome"
+      ],
+      "text_form_alignment": "closer_to_lxx",
+      "significance": "The most theologically charged textual variant in the OT; patristic unanimity on παρθένος preserves the pre-Christian LXX reading against the Jewish revisions of Aquila, Symmachus, and Theodotion."
+    },
+    {
+      "reading": "καλέσουσιν (plural) vs. καλέσεις/vocabitur (singular)",
+      "fathers_using_it": [
+        "Eusebius",
+        "Jerome"
+      ],
+      "text_form_alignment": "mixed",
+      "significance": "The shift to a singular verb reflects Hexaplaric correction toward MT וְקָרָאת and reveals 4th-century scholarly Hebraizing of the LXX."
+    },
+    {
+      "reading": "ἕξει vs. λήψεται ('shall have' vs. 'shall receive/conceive')",
+      "fathers_using_it": [
+        "Eusebius"
+      ],
+      "text_form_alignment": "mixed",
+      "significance": "Indicates internal Greek manuscript variation in the verb of conception, possibly influenced by Matthean citation tradition (Matt 1:23 reads ἕξει)."
+    }
+  ],
+  "bibcrit_assessment": {
+    "title": "Παρθένος as fault line of Greek Bible transmission",
+    "reasoning": "Isaiah 7:14's patristic history offers an unparalleled case study in how theological controversy stabilized one Greek reading while spawning rival Jewish revisions. The Fathers' consistent παρθένος, paired with their explicit awareness of νεᾶνις in Aquila/Symmachus/Theodotion, proves that recensional bifurcation of the Greek OT had already occurred by the early 2nd century—well before Origen's Hexapla formalized the comparison.",
+    "plain": "Isaiah 7:14 shows us, more clearly than almost any other verse, how early Christians and Jews ended up using different Greek Bibles. The disagreement over 'virgin' versus 'young woman' is documented from the 100s CE onward and shaped the entire later transmission of the Old Testament in Greek and Latin.",
+    "confidence": 0.9
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T22:04:19.801587",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v3"
+}

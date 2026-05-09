@@ -1,0 +1,122 @@
+{
+  "reference": "Isaiah 53:5",
+  "manuscript": "Jonathan",
+  "synthesis": "Targum Jonathan radically reinterprets Isaiah 53:5 by transferring the suffering of the Servant onto the Temple and the people of Israel, while attributing constructive messianic activity to the Servant himself. The Messiah does not suffer; rather, he rebuilds the sanctuary that was profaned because of Israel's sins, and through his teaching brings peace and forgiveness. This represents one of the most striking theological inversions in the entire Targumic corpus.",
+  "rendering_fidelity": {
+    "overall": "expansion",
+    "word_analysis": [
+      {
+        "mt_word": "wəhûʾ məḥōlāl",
+        "targ_word": "wəhûʾ yibnê bêt maqdəšāʾ dəʾittəḥal",
+        "type": "theological",
+        "note": "MT 'he was wounded' becomes 'he will rebuild the sanctuary which was profaned'—reading mḥll as 'profaned' rather than 'pierced' and shifting the subject."
+      },
+      {
+        "mt_word": "mippəšāʿênû",
+        "targ_word": "bəḥôbānāʾ",
+        "type": "close",
+        "note": "'Because of our sins/transgressions' rendered fairly directly, though attached now to the Temple's profanation rather than the Servant's wounding."
+      },
+      {
+        "mt_word": "məduppāʾ mēʿăwōnōtênû",
+        "targ_word": "ʾitməsar baʿăwāyātānāʾ",
+        "type": "theological",
+        "note": "'Crushed for our iniquities' becomes 'was handed over (i.e., the Temple) for our iniquities'—removing physical suffering from the Servant."
+      },
+      {
+        "mt_word": "mûsar šəlômēnû ʿālāyw",
+        "targ_word": "ûbəʾûlpənēh šəlāmāʾ yisgê ʿălānāʾ",
+        "type": "theological",
+        "note": "'The chastisement of our peace was upon him' becomes 'by his teaching peace will increase upon us'—mûsar reread as instruction rather than chastisement."
+      },
+      {
+        "mt_word": "ûbaḥăburātô nirpāʾ-lānû",
+        "targ_word": "wəkad nāṣêt ləpitgāmôhî ḥôbānāʾ yištabbəqûn lānāʾ",
+        "type": "theological",
+        "note": "'By his stripes we are healed' becomes 'when we attend to his words our sins will be forgiven us'—replacing vicarious atonement with pedagogical mediation."
+      }
+    ]
+  },
+  "theological_modifications": [
+    {
+      "type": "eschatological",
+      "mt_reading": "wəhûʾ məḥōlāl mippəšāʿênû",
+      "targ_reading": "wəhûʾ yibnê bêt maqdəšāʾ dəʾittəḥal bəḥôbānāʾ",
+      "explanation": "The Targumist transforms the suffering Servant into the messianic builder of the Temple, applying mḥll in its sense of 'profaned' to the sanctuary rather than 'pierced' to the Servant. This reflects the broader Targumic strategy in Isa 52:13–53:12 of systematically transferring suffering onto Israel, the nations, or the Temple while reserving glorious activity for the Messiah."
+    },
+    {
+      "type": "eschatological",
+      "mt_reading": "mûsar šəlômēnû ʿālāyw ûbaḥăburātô nirpāʾ-lānû",
+      "targ_reading": "ûbəʾûlpənēh šəlāmāʾ yisgê ʿălānāʾ wəkad nāṣêt ləpitgāmôhî ḥôbānāʾ yištabbəqûn lānāʾ",
+      "explanation": "Healing through suffering is replaced by forgiveness through obedience to messianic Torah-teaching. The Messiah functions as teacher and intercessor, not as vicarious victim, reflecting rabbinic resistance to a suffering-and-atoning messianology that may have developed partly in response to Christian exegesis."
+    }
+  ],
+  "targumic_expansions": [
+    {
+      "location": "Isa 53:5a",
+      "expansion_text": "yibnê bêt maqdəšāʾ",
+      "midrashic_parallel": "b. Sukkah 41a; b. Sanhedrin 98a (Messiah associated with rebuilding Temple); cf. Tg. Zech 6:12",
+      "significance": "The insertion of Temple-rebuilding aligns this verse with widespread rabbinic expectation that the Messiah would restore the sanctuary, anchoring the Servant Song in mainstream messianic eschatology."
+    },
+    {
+      "location": "Isa 53:5b",
+      "expansion_text": "kad nāṣêt ləpitgāmôhî",
+      "midrashic_parallel": null,
+      "significance": "Conditional 'when we attend to his words' introduces human responsiveness as the mechanism of forgiveness, replacing the unilateral vicarious suffering of the MT."
+    }
+  ],
+  "messianic_reinterpretation": {
+    "present": true,
+    "instances": [
+      {
+        "mt_reading": "wəhûʾ məḥōlāl mippəšāʿênû",
+        "targ_reading": "wəhûʾ yibnê bêt maqdəšāʾ",
+        "scholarly_note": "Continues the messianic identification established at Tg. Isa 52:13 ('Behold my servant the Messiah will prosper'), but inverts the suffering motif into constructive eschatological activity."
+      },
+      {
+        "mt_reading": "ûbaḥăburātô nirpāʾ-lānû",
+        "targ_reading": "wəkad nāṣêt ləpitgāmôhî ḥôbānāʾ yištabbəqûn lānāʾ",
+        "scholarly_note": "Atonement is reconceived as pedagogical: the Messiah's instruction, when heeded, mediates divine forgiveness, paralleling the Mosaic-prophetic teacher typology."
+      }
+    ]
+  },
+  "lxx_alignment": {
+    "areas_of_agreement": null,
+    "significance": "The LXX renders Isa 53:5 closely to MT, preserving the suffering and vicarious healing motifs (ἐτραυματίσθη, μώλωπι αὐτοῦ ἡμεῖς ἰάθημεν). Targum Jonathan stands in sharp isolation against both MT and LXX, suggesting its divergence is theologically rather than text-critically motivated."
+  },
+  "key_divergences": [
+    {
+      "mt_word": "məḥōlāl",
+      "targ_word": "yibnê bêt maqdəšāʾ dəʾittəḥal",
+      "type": "theological",
+      "explanation": "Exploits the polysemy of ḥll ('pierce'/'profane') to redirect suffering from the Servant to the Temple, a hallmark Targumic technique of associative re-rooting."
+    },
+    {
+      "mt_word": "məduppāʾ",
+      "targ_word": "ʾitməsar",
+      "type": "substitution",
+      "explanation": "'Crushed' becomes 'handed over,' eliminating the violent physical imagery and matching the Temple-as-subject reading."
+    },
+    {
+      "mt_word": "ûbaḥăburātô",
+      "targ_word": "wəkad nāṣêt ləpitgāmôhî",
+      "type": "theological",
+      "explanation": "'By his bruise/stripe' is replaced by obedience to his words, eliminating any notion of healing through the Servant's wounds."
+    }
+  ],
+  "assessment": {
+    "title": "Systematic Inversion of Suffering Servant into Triumphant Messianic Teacher and Temple-Builder",
+    "reasoning": "Targum Jonathan to Isa 53:5 exemplifies what Samely calls 'co-textual' and 'associative' reformulation, exploiting Hebrew polysemy (especially mḥll = 'pierce/profane' and mûsar = 'chastisement/instruction') to redistribute the Servant Song's predicates among Messiah, Temple, and Israel. The rendering preserves Servant = Messiah (established at 52:13) but systematically deflects every suffering motif away from him, transferring affliction onto the Temple and sins onto the people while reserving constructive verbs (build, teach, intercede) for the Messiah. This bifurcation, documented thoroughly by Chilton and reinforced by Smelik, likely reflects both pre-existing rabbinic messianology emphasizing the messianic king as Temple-restorer and possible polemical positioning against a vicariously suffering messianology. The result is a coherent theological portrait that nonetheless requires substantial expansive interpolation, placing this verse among the most aggressive paraphrases in Targum Jonathan.",
+    "plain": "The Aramaic translator completely rewrites this famous verse so that the Messiah is no longer wounded or crushed for our sins. Instead, the Messiah rebuilds the Temple that was destroyed because of our sins and teaches us so that our sins can be forgiven when we listen to him.",
+    "confidence": 0.95,
+    "next_steps": "Compare with Tg. Isa 52:13–53:12 as a whole using Chilton's Glory of Israel; examine medieval Jewish-Christian polemical use of this Targum (e.g., Raymond Martini, Pugio Fidei) to assess reception history."
+  },
+  "citations": {
+    "sbl": "Bruce D. Chilton, The Glory of Israel: The Theology and Provenience of the Isaiah Targum, JSOTSup 23 (Sheffield: JSOT Press, 1983), 86–96; cf. Willem F. Smelik, The Targum of Judges, OtSt 36 (Leiden: Brill, 1995), 1–24, on Targumic transformation technique.",
+    "bibtex": "@book{Chilton1983Glory, author = {Chilton, Bruce D.}, title = {The Glory of Israel: The Theology and Provenience of the Isaiah Targum}, series = {Journal for the Study of the Old Testament Supplement Series}, number = {23}, publisher = {JSOT Press}, address = {Sheffield}, year = {1983}}"
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T21:58:47.345254",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v1"
+}

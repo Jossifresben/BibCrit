@@ -1,0 +1,202 @@
+{
+  "passage": "Genesis 37:1-36",
+  "framework": "classic_documentary",
+  "scope_note": "Genesis 37 is a classic test case for the Documentary Hypothesis, exhibiting doublets and contradictions that source critics attribute to interwoven J and E strands with a brief P framing.",
+  "source_units": [
+    {
+      "verses": "37:1-2a",
+      "source": "P",
+      "confidence": 0.85,
+      "divine_name_used": "none",
+      "key_vocabulary": [
+        "toledot",
+        "magurei aviv",
+        "land of Canaan"
+      ],
+      "theological_concerns": "genealogical framing of patriarchal generations",
+      "structural_markers": "the formula 'These are the generations of (eleh toledot)' is a hallmark P superscription; reference to 'land of his father's sojournings' echoes P's language in Gen 17:8, 28:4",
+      "doublet_with": null,
+      "summary": "The toledot formula and the geographic notice are characteristic Priestly framing devices used to structure Genesis. Friedman and most critics assign this opening to P as the editorial seam introducing the Joseph cycle."
+    },
+    {
+      "verses": "37:2b-4",
+      "source": "J",
+      "confidence": 0.55,
+      "divine_name_used": "none",
+      "key_vocabulary": [
+        "ketonet passim",
+        "Israel",
+        "loved",
+        "evil report"
+      ],
+      "theological_concerns": "favoritism within the family; Judah-line narrative setup",
+      "structural_markers": "use of 'Israel' for Jacob is often associated with J; the 'coat of many colors' (ketonet passim) anchors the J version of the plot",
+      "doublet_with": "37:5-11",
+      "summary": "The narrative of Jacob's favoritism and the special tunic is typically assigned to J because it uses 'Israel' and grounds the brothers' hatred in a tangible token rather than in dreams. Some critics (e.g., Noth) split vv. 3-4 between sources, but Friedman keeps it largely J."
+    },
+    {
+      "verses": "37:5-11",
+      "source": "E",
+      "confidence": 0.75,
+      "divine_name_used": "none (Elohim implied)",
+      "key_vocabulary": [
+        "dream (chalom)",
+        "sheaves",
+        "sun, moon, eleven stars",
+        "Jacob"
+      ],
+      "theological_concerns": "dreams as divine communication, characteristic of E",
+      "structural_markers": "double dream sequence; use of 'Jacob' (v. 11) rather than 'Israel'; dreams are E's signature mode of revelation (cf. Gen 20, 28, 31)",
+      "doublet_with": "37:2b-4",
+      "summary": "The two dreams are paradigmatic E material: revelation comes indirectly via dreams rather than direct divine speech. This unit provides an alternative cause for the brothers' hatred, parallel to but distinct from the tunic motif."
+    },
+    {
+      "verses": "37:12-17",
+      "source": "J",
+      "confidence": 0.6,
+      "divine_name_used": "none",
+      "key_vocabulary": [
+        "Israel",
+        "Shechem",
+        "Hebron",
+        "Dothan"
+      ],
+      "theological_concerns": "narrative bridge to the brothers' plot",
+      "structural_markers": "consistent use of 'Israel'; vivid, anthropomorphic narrative style typical of J",
+      "doublet_with": null,
+      "summary": "The travel narrative leading Joseph to his brothers is generally read as J because of the name 'Israel' and the lively dialogue style. It sets up the J version of the kidnapping by Ishmaelites."
+    },
+    {
+      "verses": "37:18-24",
+      "source": "J+E (interwoven)",
+      "confidence": 0.7,
+      "divine_name_used": "none",
+      "key_vocabulary": [
+        "Reuben",
+        "Judah",
+        "pit (bor)",
+        "kill"
+      ],
+      "theological_concerns": "competing rescue traditions",
+      "structural_markers": "Reuben (v. 21-22, 29) intervenes in E's version (northern, Reubenite hero); Judah (v. 26-27) intervenes in J's version (Judahite hero); the pit motif belongs to E",
+      "doublet_with": "37:25-28",
+      "summary": "Critics see two rescue plots interwoven: in E, Reuben saves Joseph by suggesting the pit, intending to return him; in J, Judah proposes selling him. The current text awkwardly combines both, producing the famous tension of who actually pulled Joseph out."
+    },
+    {
+      "verses": "37:25-28",
+      "source": "J+E (interwoven)",
+      "confidence": 0.8,
+      "divine_name_used": "none",
+      "key_vocabulary": [
+        "Ishmaelites",
+        "Midianites",
+        "Judah",
+        "twenty pieces of silver"
+      ],
+      "theological_concerns": "the sale/abduction of Joseph",
+      "structural_markers": "Ishmaelites (J) and Midianites (E) are alternated; in J Judah's brothers sell Joseph to Ishmaelites; in E Midianites draw him from the pit without the brothers' knowledge",
+      "doublet_with": "37:18-24",
+      "summary": "This is the most famous doublet in Genesis 37: two distinct accounts of how Joseph reached Egypt. J has the brothers sell him to Ishmaelites at Judah's suggestion; E has Midianite traders steal him from the pit. The redactor combined them, creating the present ambiguity."
+    },
+    {
+      "verses": "37:29-30",
+      "source": "E",
+      "confidence": 0.8,
+      "divine_name_used": "none",
+      "key_vocabulary": [
+        "Reuben",
+        "rent his clothes",
+        "the boy (hayyeled)"
+      ],
+      "theological_concerns": "Reuben's failed rescue",
+      "structural_markers": "Reuben returns to the empty pit, presupposing he did not know of any sale; this fits E's plot where Midianites secretly took Joseph",
+      "doublet_with": null,
+      "summary": "Reuben's grief at the empty pit only makes sense in E's version where he intended to rescue Joseph. This confirms the source split, since in J's account (with Judah's sale) Reuben's surprise would be incoherent."
+    },
+    {
+      "verses": "37:31-35",
+      "source": "J",
+      "confidence": 0.65,
+      "divine_name_used": "none",
+      "key_vocabulary": [
+        "coat",
+        "blood",
+        "Jacob/Israel",
+        "Sheol"
+      ],
+      "theological_concerns": "the deception of Jacob; mourning",
+      "structural_markers": "the bloodied tunic ties back to the J ketonet passim of vv. 3-4; mention of 'Sheol' is consistent with J's vocabulary",
+      "doublet_with": null,
+      "summary": "The deception of Jacob via the bloody coat presupposes the J tunic from vv. 3-4 and is generally assigned to J. The emotional, anthropopathic mourning style is also typical of J."
+    },
+    {
+      "verses": "37:36",
+      "source": "E",
+      "confidence": 0.75,
+      "divine_name_used": "none",
+      "key_vocabulary": [
+        "Midianites",
+        "Potiphar",
+        "Egypt"
+      ],
+      "theological_concerns": "transition to Egypt narrative",
+      "structural_markers": "'Midianites' (Medanim) here vs. 'Ishmaelites' in 39:1 confirms two sources; this verse continues E's thread",
+      "doublet_with": "Gen 39:1",
+      "summary": "The verse names Midianites as the agents who sold Joseph in Egypt, contradicting Gen 39:1 (Ishmaelites). This is one of the clearest pieces of evidence for two parallel source strands."
+    }
+  ],
+  "doublets": [
+    {
+      "unit_1_verses": "37:2b-4",
+      "unit_2_verses": "37:5-11",
+      "description": "Two distinct causes for the brothers' hatred: the favored tunic (J) and the dreams (E)",
+      "significance": "Demonstrates parallel etiologies for the same narrative tension, a classic marker of source duplication."
+    },
+    {
+      "unit_1_verses": "37:21-22 (Reuben)",
+      "unit_2_verses": "37:26-27 (Judah)",
+      "description": "Two different brothers intervene to save Joseph",
+      "significance": "Reflects northern (E, Reuben) vs. southern (J, Judah) tribal interests in shaping the tradition."
+    },
+    {
+      "unit_1_verses": "37:25-28 (Ishmaelites)",
+      "unit_2_verses": "37:28b, 36 (Midianites)",
+      "description": "Two different groups bring Joseph to Egypt",
+      "significance": "The most famous Pentateuchal doublet, often cited as definitive evidence for the Documentary Hypothesis."
+    }
+  ],
+  "competing_positions": [
+    {
+      "scholar": "Friedman (2003)",
+      "attribution": "Friedman assigns vv. 1-2a to P, vv. 3-4, 12-17, 23, 25-27, 28b (Ishmaelites), 31-35 to J, and vv. 5-11, 18-22, 24, 28a (Midianites), 29-30, 36 to E.",
+      "note": "The Bible with Sources Revealed (2003), pp. 92-95"
+    },
+    {
+      "scholar": "Baden (2012)",
+      "attribution": "Baden affirms the J/E division based on Reuben/Judah and Ishmaelite/Midianite contradictions but emphasizes that each source must be read as a coherent independent narrative; he resists the notion of a 'Reuben source' separate from E.",
+      "note": "The Composition of the Pentateuch (2012), ch. 2-3"
+    },
+    {
+      "scholar": "Westermann (1986)",
+      "attribution": "Westermann questions strict source division here, suggesting much of the Joseph novella is a unified composition with later supplementation rather than two parallel strands.",
+      "note": "Genesis 37-50 commentary, BKAT"
+    },
+    {
+      "scholar": "Van Seters (1992)",
+      "attribution": "Van Seters proposes a late J author working with received traditions; the Reuben material is a post-J supplement rather than evidence for E.",
+      "note": "Prologue to History (1992)"
+    }
+  ],
+  "framework_note": "Classic Documentary Hypothesis (Wellhausen 1878, Friedman 1987). Source attribution is analytical evidence, not definitive assignment. Scholarly debate is ongoing.",
+  "synthesis": "Genesis 37 is among the strongest chapters for demonstrating the Documentary Hypothesis, with two parallel rescue traditions (Reuben/Judah) and two parallel caravan traditions (Midianite/Ishmaelite) interwoven by a redactor. The chapter combines a P toledot frame (vv. 1-2a) with extensive interleaving of J (Judah, Ishmaelites, tunic) and E (Reuben, Midianites, dreams, pit). Even scholars skeptical of classical source division concede that some compositional duality lies behind the text.",
+  "bibcrit_hypothesis": {
+    "title": "Two rescue plots betray editorial seam",
+    "reasoning": "The narrative incoherence around who rescues Joseph and who transports him to Egypt is best explained as two originally independent narratives—J's Judah-Ishmaelite version and E's Reuben-Midianite version—conflated by a redactor unwilling to discard either. The bloody tunic (tied to J's ketonet passim) and the empty pit (tied to E's hiding scheme) each function only within their respective source, confirming the split.",
+    "confidence": 0.8
+  },
+  "discovery_ready": true,
+  "reference": "Genesis 37",
+  "cached_at": "2026-05-09T21:57:11.363682",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v1"
+}

@@ -1,0 +1,200 @@
+{
+  "reference": "Nehemiah 7",
+  "subject": "Census of returnees from Babylonian exile (parallel to Ezra 2)",
+  "figures": [
+    {
+      "name": "Sons of Parosh",
+      "mt_value": 2172,
+      "lxx_value": 2172,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "Agrees with Ezra 2:3; SP does not contain Nehemiah."
+    },
+    {
+      "name": "Sons of Shephatiah",
+      "mt_value": 372,
+      "lxx_value": 372,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "Agrees with Ezra 2:4."
+    },
+    {
+      "name": "Sons of Arah",
+      "mt_value": 652,
+      "lxx_value": 652,
+      "sp_value": 0,
+      "divergence_type": "minor",
+      "note": "Ezra 2:5 reads 775; internal MT/LXX-Ezra vs Nehemiah divergence, not a versional one."
+    },
+    {
+      "name": "Sons of Pahath-Moab",
+      "mt_value": 2818,
+      "lxx_value": 2818,
+      "sp_value": 0,
+      "divergence_type": "minor",
+      "note": "Ezra 2:6 reads 2812; six-unit divergence within MT tradition."
+    },
+    {
+      "name": "Sons of Zattu",
+      "mt_value": 845,
+      "lxx_value": 845,
+      "sp_value": 0,
+      "divergence_type": "minor",
+      "note": "Ezra 2:8 reads 945; 100-unit divergence between parallel lists."
+    },
+    {
+      "name": "Sons of Bani/Binnui",
+      "mt_value": 648,
+      "lxx_value": 648,
+      "sp_value": 0,
+      "divergence_type": "significant",
+      "note": "Ezra 2:10 reads 642 (Bani); Nehemiah uses Binnui with different total."
+    },
+    {
+      "name": "Sons of Azgad",
+      "mt_value": 2322,
+      "lxx_value": 2322,
+      "sp_value": 0,
+      "divergence_type": "significant",
+      "note": "Ezra 2:12 reads 1222; 1100-unit divergence is among the largest."
+    },
+    {
+      "name": "Sons of Adin",
+      "mt_value": 655,
+      "lxx_value": 655,
+      "sp_value": 0,
+      "divergence_type": "significant",
+      "note": "Ezra 2:15 reads 454; 201-unit divergence."
+    },
+    {
+      "name": "Sons of Hashum",
+      "mt_value": 328,
+      "lxx_value": 328,
+      "sp_value": 0,
+      "divergence_type": "minor",
+      "note": "Ezra 2:19 reads 223."
+    },
+    {
+      "name": "Sons of Bezai",
+      "mt_value": 324,
+      "lxx_value": 324,
+      "sp_value": 0,
+      "divergence_type": "minor",
+      "note": "Ezra 2:17 reads 323."
+    },
+    {
+      "name": "Total assembly",
+      "mt_value": 42360,
+      "lxx_value": 42360,
+      "sp_value": 0,
+      "divergence_type": "major",
+      "note": "Sum of individual entries falls roughly 11,000 short of stated total in all witnesses."
+    },
+    {
+      "name": "Singing men and women",
+      "mt_value": 245,
+      "lxx_value": 245,
+      "sp_value": 0,
+      "divergence_type": "minor",
+      "note": "Ezra 2:65 reads 200; 45-unit divergence."
+    },
+    {
+      "name": "Horses",
+      "mt_value": 736,
+      "lxx_value": 736,
+      "sp_value": 0,
+      "divergence_type": "none",
+      "note": "Agrees with Ezra 2:66 across MT and LXX."
+    }
+  ],
+  "systematic_analysis": {
+    "is_systematic": false,
+    "pattern": "Unlike the patriarchal chronologies of Genesis 5 and 11, the Nehemiah 7 census shows almost no MT/LXX divergence — the LXX (2 Esdras 17) generally follows the Hebrew numbers closely. The salient divergences instead occur internally between the MT/LXX of Nehemiah 7 and the parallel list in Ezra 2, with no consistent additive or multiplicative rule. The Samaritan Pentateuch is irrelevant since Nehemiah lies outside its canon.",
+    "pattern_plain": "The numbers in Nehemiah 7 do not differ much between the Hebrew and Greek versions; the real puzzle is that Nehemiah 7 and Ezra 2 give different counts for many of the same families. There is no neat formula explaining the differences."
+  },
+  "theories": [
+    {
+      "name": "Scribal Error in Numerical Transmission",
+      "slug": "scribal_error",
+      "score": 0.85,
+      "confidence": 0.8,
+      "summary": "The Ezra 2 / Nehemiah 7 divergences are most plausibly explained by accumulated copying errors in numerals during transmission of two parallel recensions of the same underlying register. Hebrew numerical notation (whether spelled out or via letter-numerals) is highly susceptible to confusion of similar consonants and to haplography of compound numbers. The fact that the stated total (42,360) matches in both lists while component figures diverge confirms that errors arose in the components, not the summary.",
+      "summary_plain": "The differences look like ordinary copying mistakes that accumulated as scribes recopied long lists of numbers over centuries. The matching grand total but differing line items is exactly what we would expect from such errors.",
+      "supporting_evidence": [
+        "MT and LXX of Nehemiah 7 agree almost perfectly, indicating the divergences predate the Greek translation and lie in the Hebrew Vorlage of Ezra vs Nehemiah.",
+        "Both lists share the identical grand total of 42,360 despite component sums that fall ~11,000 short, suggesting the total is original and components corrupted.",
+        "Many divergences are in round increments (100, 200, 1100), consistent with confusion of numeral letters or hundreds-place errors.",
+        "Parallel ancient Near Eastern administrative lists show similar drift in numerical details across recensions.",
+        "Keil, Allrik, and Klein have demonstrated specific paleographic mechanisms (e.g., confusion of ב/כ, ד/ר) that could produce many of the observed differences."
+      ],
+      "weaknesses": [
+        "Random scribal error cannot easily explain why both component sums are short of the same total in both lists.",
+        "Some divergences (e.g., 1222 vs 2322 for Azgad) are too large to result from simple letter confusion.",
+        "The theory does not account for the possibility that Ezra and Nehemiah drew on two different official documents."
+      ]
+    },
+    {
+      "name": "Independent Source Traditions",
+      "slug": "independent_traditions",
+      "score": 0.7,
+      "confidence": 0.65,
+      "summary": "Ezra 2 and Nehemiah 7 may preserve two genuinely distinct registers — one taken at the initial return under Cyrus, the other a later updated census used by Nehemiah — both rooted in authentic archival material. Williamson and Blenkinsopp have argued that the differences reflect real demographic change between the lists' compilation dates, not corruption. The MT/LXX agreement in Nehemiah 7 then reflects faithful transmission of one of the two genuine documents.",
+      "summary_plain": "Maybe the two lists were taken at different times from real archives, so the small differences reflect actual changes in the population rather than mistakes. Each book preserved its own authentic source.",
+      "supporting_evidence": [
+        "Nehemiah 7:5 explicitly states he 'found a register' of the original returnees, implying use of an archival source.",
+        "Some name forms differ (Bani/Binnui, Hariph/Jorah), suggesting genuine textual independence rather than mere copying drift.",
+        "Stable elements (priests, Levites, total figure) coexist with variable lay-family numbers, fitting demographic flux.",
+        "The ancient Near East attests to multiple recensions of the same census being preserved in administrative archives."
+      ],
+      "weaknesses": [
+        "If two genuine censuses, one would expect divergent grand totals as well, but both report 42,360.",
+        "Many divergences look like numerical corruption rather than coherent demographic shifts.",
+        "Does not explain why sums of components fail to match the totals in either list."
+      ]
+    },
+    {
+      "name": "Theological or Ideological Motivation",
+      "slug": "theological_motivation",
+      "score": 0.15,
+      "confidence": 0.3,
+      "summary": "Some have proposed deliberate adjustment of numbers to reflect theological emphases (e.g., idealizing the restored community). However, no coherent ideological pattern emerges from the Ezra/Nehemiah divergences, and the changes appear too random and small-scale to support a tendentious motive.",
+      "summary_plain": "It is unlikely the changes were made on purpose for religious reasons, since no clear theological pattern shows up.",
+      "supporting_evidence": [
+        "Round totals like 42,360 may have symbolic resonance.",
+        "Post-exilic literature elsewhere shows interest in idealized community numbers."
+      ],
+      "weaknesses": [
+        "No discernible theological gradient (inflation/deflation) across the divergences.",
+        "Most differences are in obscure family counts unlikely to carry ideological weight.",
+        "Both MT and LXX preserve the same 'errors,' arguing against late tendentious revision."
+      ]
+    },
+    {
+      "name": "LXX Inflation",
+      "slug": "lxx_inflation",
+      "score": 0.05,
+      "confidence": 0.2,
+      "summary": "Unlike Genesis 5 and 11, the LXX of Nehemiah 7 (2 Esdras 17) shows no systematic inflation relative to MT; the Greek largely tracks the Hebrew. This theory is essentially inapplicable here.",
+      "summary_plain": "The Greek version of Nehemiah does not exaggerate the numbers, so this theory does not fit this passage.",
+      "supporting_evidence": [
+        "LXX patriarchal inflation is well-attested in Genesis but does not extend to Nehemiah."
+      ],
+      "weaknesses": [
+        "MT and LXX of Nehemiah 7 are in near-total agreement on numerals.",
+        "There is no evidence of systematic LXX expansion in this text."
+      ]
+    }
+  ],
+  "overall_assessment": "The numerical situation in Nehemiah 7 is fundamentally different from the patriarchal chronologies: there is essentially no MT/LXX divergence, and the SP is irrelevant. The genuine problem is the internal Hebrew divergence between Ezra 2 and Nehemiah 7, plus the failure of itemized sums to match the stated total of 42,360. The best explanation is a combination of scribal error in numerical transmission (Allrik, Klein) operating on what may originally have been two related but distinct archival recensions of the post-exilic register. This case illustrates that not all biblical numerical divergences fit a single text-critical model — the patriarchal LXX-vs-MT pattern does not generalize.",
+  "overall_plain": "Nehemiah 7's number problems are not really between Hebrew and Greek versions but between Nehemiah 7 and the parallel list in Ezra 2. The most likely cause is centuries of small copying errors, possibly compounded by the use of two slightly different original archives. It shows that biblical number puzzles do not all have the same solution.",
+  "bibcrit_assessment": {
+    "title": "Internal Hebrew divergence, not versional",
+    "reasoning": "The most striking finding is that Nehemiah 7 inverts the usual text-critical question: the MT, LXX agree closely, yet the Hebrew text contradicts itself across Ezra 2 and Nehemiah 7. This demonstrates that intra-Masoretic transmission of numerals was already unstable before the Greek translators worked, and that the LXX often faithfully preserved a Hebrew Vorlage rather than introducing change.",
+    "plain": "The surprising thing is that the Hebrew Bible disagrees with itself here, while the Greek translation faithfully follows the Hebrew. Number errors crept in long before the Greek version was made.",
+    "confidence": 0.78
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T21:35:11.144851",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v3"
+}

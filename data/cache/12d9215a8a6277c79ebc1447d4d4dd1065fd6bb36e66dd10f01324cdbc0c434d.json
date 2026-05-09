@@ -1,0 +1,171 @@
+{
+  "scope": "Isaiah",
+  "scope_type": "book",
+  "summary": "Isaiah's textual traditions exhibit pervasive theological revision, particularly in the LXX (messianic heightening, eschatological sharpening) and the Targum Jonathan (anthropomorphism avoidance, messianic explicitation). Jerome's Vulgate sharpens Christological readings (notably 7:14), while the Targum systematically inserts 'Memra' and 'Shekinah' to mediate divine presence.",
+  "summary_plain": "Ancient translators of Isaiah often adjusted the text to express their theology — making messianic prophecies clearer, softening descriptions of God's body and emotions, and intensifying expectations of a future age. The Greek, Aramaic, and Latin versions each show distinctive theological fingerprints.",
+  "revisions": [
+    {
+      "reference": "Isaiah 7:14",
+      "tradition": "LXX",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "הָעַלְמָה הָרָה (the young woman is/will be pregnant)",
+      "revised_reading": "ἡ παρθένος ἐν γαστρὶ ἕξει (the virgin will conceive)",
+      "confidence": 0.85,
+      "evidence": "The LXX renders 'almah with parthenos rather than the more semantically neutral neanis (used by Aquila, Symmachus, Theodotion). The choice of parthenos plus the future tense ἕξει (vs. MT's present-stative participle) projects the sign into the future and specifies virginity, suggesting messianic-eschatological recasting of a contemporary Ahaz-era oracle.",
+      "evidence_plain": "The Greek translator chose 'virgin' instead of 'young woman' and made the conception future, turning a sign for King Ahaz into a prediction of a miraculous future birth.",
+      "scholarly_citations": [
+        "Rösel, 'Die Jungfrauengeburt des endzeitlichen Immanuel', JBTh 6",
+        "van der Kooij, The Oracle of Tyre, pp. 41–45"
+      ],
+      "counter_arguments": "Parthenos in Hellenistic Greek can occasionally denote a young woman without strict virginity (cf. Gen 34:3 LXX of Dinah after rape), so the lexical choice may not be deliberately doctrinal."
+    },
+    {
+      "reference": "Isaiah 7:14",
+      "tradition": "Vulgate",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "הָעַלְמָה (the young woman)",
+      "revised_reading": "ecce virgo concipiet et pariet filium",
+      "confidence": 0.9,
+      "evidence": "Jerome explicitly defends virgo over the alternative adulescentula in his commentary on Isaiah and Adversus Iovinianum, citing Matt 1:23. Despite his Hebraica veritas program, here Jerome aligns with LXX/NT against the plain Hebrew sense, demonstrating Christological motivation.",
+      "evidence_plain": "Jerome translated 'almah as 'virgin' even though he knew the Hebrew word was broader, because the New Testament had cited this verse as a prophecy of Jesus' virgin birth.",
+      "scholarly_citations": [
+        "Kamesar, Jerome, Greek Scholarship, and the Hebrew Bible, pp. 68–72",
+        "Hayward, 'Saint Jerome and the Aramaic Targumim', JSS 32"
+      ],
+      "counter_arguments": "Jerome may simply be following established Latin liturgical usage rather than making an independent theological revision."
+    },
+    {
+      "reference": "Isaiah 9:5–6 (Eng 9:6–7)",
+      "tradition": "Targum",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "וַיִּקְרָא שְׁמוֹ פֶּלֶא יוֹעֵץ אֵל גִּבּוֹר אֲבִי־עַד שַׂר־שָׁלוֹם",
+      "revised_reading": "Targum redirects the divine epithets: 'his name was called from before the wonderful counsellor, the mighty God... Messiah, in whose days peace shall increase upon us'",
+      "confidence": 0.85,
+      "evidence": "Targum Jonathan grammatically reroutes the lofty titles so they describe God naming the child rather than being predicates of the child, while explicitly inserting 'Messiah' (משיחא). This double move both avoids attributing 'Mighty God' to a human figure and makes the messianic identification explicit.",
+      "evidence_plain": "The Aramaic translation rearranges the verse so that the grand titles like 'Mighty God' apply to God, not the child, and adds the word 'Messiah' to make the messianic meaning unmistakable.",
+      "scholarly_citations": [
+        "Chilton, The Isaiah Targum, pp. 19–20",
+        "Levey, The Messiah: An Aramaic Interpretation, pp. 45–47"
+      ],
+      "counter_arguments": "The Targum's grammatical reading is defensible on Hebrew syntax alone, and 'Messiah' insertions are a pervasive Targumic convention rather than a sharp theological intervention."
+    },
+    {
+      "reference": "Isaiah 11:1–4",
+      "tradition": "Targum",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "וְיָצָא חֹטֶר מִגֵּזַע יִשָׁי (a shoot from the stump of Jesse)",
+      "revised_reading": "וְיִפּוֹק מַלְכָּא מִבְּנוֹהִי דְיִשַׁי וּמְשִׁיחָא מִבְּנֵי בְנוֹהִי יִתְרַבֵּי (a king shall come forth from the sons of Jesse, and the Messiah shall be anointed from his children's children)",
+      "confidence": 0.9,
+      "evidence": "Targum Jonathan explicitly introduces 'Messiah' (משיחא) where MT has only botanical imagery, and personalizes 'spirit of YHWH' as resting upon him. This reflects programmatic Targumic messianism, not lexical necessity.",
+      "evidence_plain": "Where the Hebrew uses tree imagery for a coming ruler, the Aramaic version directly inserts the word 'Messiah'.",
+      "scholarly_citations": [
+        "Chilton, The Glory of Israel, pp. 86–96",
+        "Levey, The Messiah, pp. 49–52"
+      ],
+      "counter_arguments": "The Targumic insertion makes explicit what the Hebrew already implies in context, so it could be paraphrastic rather than revisionary."
+    },
+    {
+      "reference": "Isaiah 6:1",
+      "tradition": "Targum",
+      "revision_type": "anthropomorphism_avoidance",
+      "mt_reading": "וָאֶרְאֶה אֶת־אֲדֹנָי יֹשֵׁב עַל־כִּסֵּא (I saw the Lord sitting on a throne)",
+      "revised_reading": "חזיתי ית יקרא דה' שרי על כורסיה (I saw the glory of the Lord resting upon his throne)",
+      "confidence": 0.95,
+      "evidence": "Targum Jonathan systematically substitutes 'glory' (yeqara) for direct vision of God, consistent with the Targumic buffer terms (Memra, Shekinah, Yeqara). This reflects the rabbinic axiom that no one can see God and live (Exod 33:20).",
+      "evidence_plain": "The Aramaic version says Isaiah saw God's 'glory', not God himself, to avoid suggesting that a human directly saw God.",
+      "scholarly_citations": [
+        "Chilton, The Isaiah Targum, pp. 14–15",
+        "Smolar & Aberbach, Studies in Targum Jonathan, pp. 129–139"
+      ],
+      "counter_arguments": "This is a near-mechanical Targumic convention rather than a fresh exegetical decision at this verse."
+    },
+    {
+      "reference": "Isaiah 6:5",
+      "tradition": "LXX",
+      "revision_type": "anthropomorphism_avoidance",
+      "mt_reading": "כִּי אֶת־הַמֶּלֶךְ ה' צְבָאוֹת רָאוּ עֵינָי (my eyes have seen the King, YHWH of hosts)",
+      "revised_reading": "τὸν βασιλέα κύριον σαβαωθ εἶδον τοῖς ὀφθαλμοῖς μου",
+      "confidence": 0.4,
+      "evidence": "The LXX retains the seeing here but elsewhere mutes anthropomorphic vision; the issue is more visible in the consistent LXX Isaiah pattern of softening corporeal imagery (cf. 6:1 LXX 'plērēs ho oikos tēs doxēs autou').",
+      "evidence_plain": "The Greek version often sidesteps phrases that suggest God has a body, though here the change is subtle.",
+      "scholarly_citations": [
+        "Seeligmann, The Septuagint Version of Isaiah, pp. 99–101"
+      ],
+      "counter_arguments": "The LXX here is fairly literal; the anthropomorphism reduction is not strong at this verse."
+    },
+    {
+      "reference": "Isaiah 19:25",
+      "tradition": "Targum",
+      "revision_type": "softening",
+      "mt_reading": "בָּרוּךְ עַמִּי מִצְרַיִם וּמַעֲשֵׂה יָדַי אַשּׁוּר וְנַחֲלָתִי יִשְׂרָאֵל (Blessed be Egypt my people, and Assyria the work of my hands, and Israel my inheritance)",
+      "revised_reading": "Targum: 'Blessed be my people whom I brought forth from Egypt; because they sinned before me I exiled them to Assyria, but when they repent they shall be called my people and my inheritance, Israel'",
+      "confidence": 0.9,
+      "evidence": "Targum Jonathan radically rewrites a verse that grants Egypt and Assyria the covenant epithets 'my people' and 'work of my hands.' The rewriting transfers all positive epithets to Israel alone, neutralizing the universalist scandal of MT.",
+      "evidence_plain": "The Hebrew shockingly calls Egypt 'my people' and Assyria 'work of my hands' alongside Israel; the Aramaic rewrites the verse so only Israel receives these titles.",
+      "scholarly_citations": [
+        "Chilton, The Isaiah Targum, pp. 39–40",
+        "van der Kooij, Die alten Textzeugen des Jesajabuches, pp. 169–172"
+      ],
+      "counter_arguments": "The Targum may be reading the Hebrew through a particular syntactic lens that genuinely allows the restrictive interpretation."
+    },
+    {
+      "reference": "Isaiah 26:19",
+      "tradition": "LXX",
+      "revision_type": "eschatological_sharpening",
+      "mt_reading": "יִחְיוּ מֵתֶיךָ נְבֵלָתִי יְקוּמוּן (your dead shall live, my corpse(s) shall arise)",
+      "revised_reading": "ἀναστήσονται οἱ νεκροί, καὶ ἐγερθήσονται οἱ ἐν τοῖς μνημείοις (the dead shall rise, and those in the tombs shall be raised)",
+      "confidence": 0.75,
+      "evidence": "The LXX universalizes and concretizes resurrection language, replacing the difficult 'my corpse' with a generalized 'those in the tombs,' aligning the verse with developing Second Temple resurrection doctrine. This anticipates the language of John 5:28.",
+      "evidence_plain": "The Greek translator turned a difficult Hebrew phrase into a clear statement that all the dead in their graves will be raised, reflecting later Jewish belief in resurrection.",
+      "scholarly_citations": [
+        "Schaper, Eschatology in the Greek Psalter, pp. 38–45",
+        "Seeligmann, The Septuagint Version of Isaiah, pp. 113–116"
+      ],
+      "counter_arguments": "The translator may have struggled with the rare Hebrew idiom and produced a plausible contextual rendering without doctrinal motive."
+    },
+    {
+      "reference": "Isaiah 53:10",
+      "tradition": "Targum",
+      "revision_type": "messianic_heightening",
+      "mt_reading": "וַה' חָפֵץ דַּכְּאוֹ הֶחֱלִי (YHWH was pleased to crush him, he made him sick)",
+      "revised_reading": "Targum: 'It was the Lord's pleasure to refine and purify the remnant of his people... they shall look upon the kingdom of their Messiah'",
+      "confidence": 0.9,
+      "evidence": "Targum Jonathan identifies the Servant as Messiah (53:10 'my servant the Messiah') but systematically reassigns all suffering and humiliation to Israel, the nations, or the wicked, while keeping triumph for the Messiah. This is theologically motivated reversal of the MT's suffering-Servant Christology.",
+      "evidence_plain": "The Aramaic version names the Servant as the Messiah but moves all the suffering descriptions onto other characters, keeping only the glorious parts for him — likely a response to Christian readings.",
+      "scholarly_citations": [
+        "Chilton, The Isaiah Targum, pp. 102–105",
+        "Jeremias, 'παῖς θεοῦ', TDNT V, pp. 689–698",
+        "Ådna, 'The Servant of Isaiah 53 as Triumphant and Interceding Messiah'"
+      ],
+      "counter_arguments": "The Targum's messianic identification of the Servant predates Christian-Jewish polemic and may simply reflect older Jewish exegetical traditions."
+    },
+    {
+      "reference": "Isaiah 52:14",
+      "tradition": "1QIsaᵃ / LXX vs MT",
+      "revision_type": "harmonization",
+      "mt_reading": "מִשְׁחַת מֵאִישׁ מַרְאֵהוּ (his appearance was marred beyond human likeness)",
+      "revised_reading": "LXX: ἀδοξήσει ἀπὸ ἀνθρώπων τὸ εἶδός σου (your form shall be inglorious from men)",
+      "confidence": 0.5,
+      "evidence": "The LXX softens the disfigurement language and shifts to second person, partially smoothing the Servant's degradation. Though slighter than the Targum's full reversal, it nudges the text away from radical humiliation imagery.",
+      "evidence_plain": "The Greek version tones down how disfigured the Servant looked, making the description less shocking.",
+      "scholarly_citations": [
+        "Ekblad, Isaiah's Servant Poems According to the Septuagint, pp. 200–210"
+      ],
+      "counter_arguments": "The variant may reflect a different Hebrew Vorlage rather than theological softening."
+    }
+  ],
+  "dominant_strategy": "messianic_heightening — across LXX (7:14; 9:6), Targum Jonathan (9:6; 11:1; 53), and Vulgate (7:14), the most consistent and theologically loaded revisions explicitate or reorient messianic identification, often in dialogue with rival communities (Christian or proto-rabbinic).",
+  "overall_assessment": "Isaiah's textual history is a laboratory of theological revision: LXX Isaiah (likely Alexandrian, 2nd c. BCE) advances messianic and eschatological readings under apocalyptic pressure; Targum Jonathan deploys a comprehensive program of buffering anthropomorphism (Memra/Yeqara/Shekinah) and explicating messianism while neutralizing universalist scandals (19:25) and Christian-amenable suffering imagery (53); Jerome's Vulgate inscribes Christological reading into the Latin tradition at flashpoint verses. The cumulative pattern shows tradents reading Isaiah as a living oracle whose meaning had to be secured against both philosophical embarrassment (corporeal God) and rival eschatologies. This positions Isaiah at the heart of Second Temple and late-antique hermeneutical contestation.",
+  "overall_plain": "Ancient translators of Isaiah weren't neutral — they reshaped the book according to their theology. Greek translators emphasized future hope and the Messiah, Aramaic translators carefully protected God from being too human and clarified messianic passages, and Jerome's Latin made certain verses unmistakably Christian.",
+  "bibcrit_assessment": {
+    "title": "Isaiah as Battleground of Messianic Translation",
+    "reasoning": "The convergence of LXX, Targum, and Vulgate revisions on the same handful of verses (7:14; 9:6; 11:1; 52–53) reveals that these passages had become the textual front lines of competing messianisms before the rise of Christianity intensified the conflict. The Targum's reversal of suffering in Isaiah 53 — keeping the messianic identification while transferring suffering elsewhere — is the clearest evidence that anti-Christian polemic shaped late-antique Jewish translation, even as the messianic reading itself preserves a pre-Christian Jewish substrate.",
+    "plain": "The same verses that Christians and Jews argued about are exactly the ones where ancient translators changed the wording most aggressively. Isaiah's translation history is a window into the religious controversies of antiquity.",
+    "confidence": 0.82
+  },
+  "discovery_ready": false,
+  "reference": "Isaiah",
+  "cached_at": "2026-05-09T21:44:32.340007",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v2"
+}

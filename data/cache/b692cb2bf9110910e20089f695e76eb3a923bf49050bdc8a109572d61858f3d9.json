@@ -1,0 +1,193 @@
+{
+  "passage": "Exodus 19:1-20:21",
+  "framework": "classic_documentary",
+  "scope_note": "Analysis of the Sinai theophany pericope, one of the most source-critically complex units in the Pentateuch, where J, E, and P strands appear tightly interwoven.",
+  "source_units": [
+    {
+      "verses": "19:1-2a",
+      "source": "P",
+      "confidence": 0.85,
+      "divine_name_used": "none (narrative)",
+      "key_vocabulary": [
+        "third month",
+        "same day",
+        "wilderness of Sinai"
+      ],
+      "theological_concerns": "precise chronological dating, itinerary notation",
+      "structural_markers": "P's characteristic dating formula and itinerary style paralleling Numbers 33",
+      "doublet_with": "19:2b",
+      "summary": "The precise date formula ('on this day') and itinerary notice are hallmarks of P's chronological framework. Friedman and Baden agree this verse is P, distinguishing it from the J/E narrative that follows."
+    },
+    {
+      "verses": "19:2b-9",
+      "source": "E",
+      "confidence": 0.6,
+      "divine_name_used": "Elohim / YHWH (mixed)",
+      "key_vocabulary": [
+        "Moses went up to God",
+        "house of Jacob",
+        "kingdom of priests",
+        "holy nation",
+        "thick cloud"
+      ],
+      "theological_concerns": "covenant proposal, Israel as treasured possession, mediated revelation through Moses",
+      "structural_markers": "Moses ascending to 'ha-Elohim'; covenantal proposal with conditional 'if you obey'",
+      "doublet_with": null,
+      "summary": "Moses ascending to 'God' (ha-Elohim) and the covenant-proposal speech reflect E's theology of mediated revelation and conditional covenant. Some scholars (Nicholson) see this as a later Deuteronomistic insertion given vocabulary parallels with Deuteronomy."
+    },
+    {
+      "verses": "19:10-15",
+      "source": "J",
+      "confidence": 0.65,
+      "divine_name_used": "YHWH",
+      "key_vocabulary": [
+        "consecrate",
+        "wash garments",
+        "third day",
+        "YHWH will come down",
+        "Mount Sinai"
+      ],
+      "theological_concerns": "ritual purity preparation, YHWH descending bodily onto the mountain, boundary maintenance",
+      "structural_markers": "anthropomorphic descent of YHWH; preparation rituals; Mount Sinai (J's preferred name vs E's Horeb)",
+      "doublet_with": "19:16-17",
+      "summary": "YHWH's bodily descent onto Sinai and the preparatory rituals reflect J's anthropomorphic theology and use of 'Sinai.' The duplicate preparation/warning material in vv. 20-25 suggests interweaving of J and E."
+    },
+    {
+      "verses": "19:16-17",
+      "source": "E",
+      "confidence": 0.55,
+      "divine_name_used": "Elohim",
+      "key_vocabulary": [
+        "thunders",
+        "lightnings",
+        "thick cloud",
+        "trumpet",
+        "to meet God"
+      ],
+      "theological_concerns": "theophany through storm phenomena, fear-inducing distance",
+      "structural_markers": "use of Elohim; storm-theophany imagery; people brought to meet 'ha-Elohim'",
+      "doublet_with": "19:18",
+      "summary": "Storm theophany with trumpet blast and the term ha-Elohim mark this as E. The doubling of theophanic descriptions in vv. 16-17 (storm/cloud) and v. 18 (fire/smoke/quaking) is a classic indicator of source combination."
+    },
+    {
+      "verses": "19:18-19",
+      "source": "J",
+      "confidence": 0.7,
+      "divine_name_used": "YHWH",
+      "key_vocabulary": [
+        "smoke",
+        "fire",
+        "kiln",
+        "Mount Sinai quaked"
+      ],
+      "theological_concerns": "volcanic/fiery theophany, YHWH descending in fire",
+      "structural_markers": "YHWH descended in fire (anthropomorphic); Sinai quakes",
+      "doublet_with": "19:16-17",
+      "summary": "The fire/smoke/quaking imagery and explicit descent of YHWH characterize J's theophany. This forms a clear doublet with the E storm-theophany of vv. 16-17."
+    },
+    {
+      "verses": "19:20-25",
+      "source": "J",
+      "confidence": 0.7,
+      "divine_name_used": "YHWH",
+      "key_vocabulary": [
+        "YHWH came down",
+        "top of the mountain",
+        "break through",
+        "priests",
+        "consecrate"
+      ],
+      "theological_concerns": "boundary protection, YHWH's dangerous holiness, repeated warnings",
+      "structural_markers": "renewed warnings duplicating vv. 12-13; YHWH's bodily descent to mountain top",
+      "doublet_with": "19:10-15",
+      "summary": "This passage repeats the warnings already given in vv. 10-15, suggesting J material that was separated by E insertions. The mention of 'priests' before Aaronide consecration is theologically problematic for P and points to non-P origin."
+    },
+    {
+      "verses": "20:1-17",
+      "source": "E (with redactional expansion)",
+      "confidence": 0.6,
+      "divine_name_used": "YHWH (your God / Elohim)",
+      "key_vocabulary": [
+        "Decalogue",
+        "out of the land of Egypt",
+        "house of bondage",
+        "remember the sabbath"
+      ],
+      "theological_concerns": "covenantal stipulations, monolatry, ethical commands",
+      "structural_markers": "apodictic law form; first-person divine speech; Sabbath rationale (creation in Exodus version vs. Exodus deliverance in Deut version)",
+      "doublet_with": "Deuteronomy 5:6-21",
+      "summary": "The Decalogue is traditionally attributed to E by Wellhausen and Friedman, though Baden and others argue for independent or composite origin. The Sabbath rationale appealing to creation (vv. 8-11) shows P-like reasoning and may be a P expansion of an earlier E core."
+    },
+    {
+      "verses": "20:18-21",
+      "source": "E",
+      "confidence": 0.7,
+      "divine_name_used": "Elohim",
+      "key_vocabulary": [
+        "thunderings",
+        "lightnings",
+        "trumpet",
+        "Moses as mediator",
+        "fear of God"
+      ],
+      "theological_concerns": "fear of God, Moses as covenant mediator, distance from theophany",
+      "structural_markers": "resumes the storm-theophany imagery of 19:16-17; classic E theme of 'fear of God' and mediated revelation",
+      "doublet_with": "19:16-17",
+      "summary": "These verses pick up E's narrative thread from 19:17, with the people standing afar off and Moses approaching the 'thick darkness where God was.' The 'fear of God' (yir'at elohim) is a signature E theme."
+    }
+  ],
+  "doublets": [
+    {
+      "unit_1_verses": "19:10-15",
+      "unit_2_verses": "19:20-25",
+      "description": "Two sets of warnings to the people not to touch or ascend the mountain",
+      "significance": "The redundancy strongly suggests two parallel source accounts (likely both J) interrupted by E theophany material."
+    },
+    {
+      "unit_1_verses": "19:16-17",
+      "unit_2_verses": "19:18-19",
+      "description": "Two distinct theophany descriptions—storm/cloud/trumpet vs. fire/smoke/quaking",
+      "significance": "The classic J (volcanic/fire) and E (storm/cloud) theophany traditions appear juxtaposed, providing one of the strongest cases for source distinction in the Pentateuch."
+    },
+    {
+      "unit_1_verses": "Exodus 20:1-17",
+      "unit_2_verses": "Deuteronomy 5:6-21",
+      "description": "Two versions of the Decalogue with differing Sabbath rationales",
+      "significance": "Confirms Decalogue's existence in pre-Deuteronomic tradition; Exodus version's creation rationale suggests P redaction of E material."
+    }
+  ],
+  "competing_positions": [
+    {
+      "scholar": "Friedman (2003)",
+      "attribution": "Assigns 19:1, 2a to P; 19:2b-9 to E; 19:10-16a to J; 19:16b-17, 19 to E; 19:18, 20-25 to J; 20:1-17 to E (Decalogue); 20:18-21 to E.",
+      "note": "The Bible with Sources Revealed, pp. 152-156"
+    },
+    {
+      "scholar": "Baden (2012)",
+      "attribution": "Maintains classical separation but emphasizes E as a complete narrative source containing the Decalogue and covenant; resists treating P as merely supplementary, viewing all four as independent compositions later compiled.",
+      "note": "The Composition of the Pentateuch, ch. 4-5"
+    },
+    {
+      "scholar": "Wellhausen (1878)",
+      "attribution": "Identified the doubled theophany and warnings as proof of JE combination; viewed the Decalogue as relatively late insertion into the JE narrative framework.",
+      "note": "Prolegomena to the History of Israel"
+    },
+    {
+      "scholar": "Nicholson (1973, 1986)",
+      "attribution": "Argues 19:3-8 is a Deuteronomistic insertion rather than E, given covenantal vocabulary parallels with Deuteronomy.",
+      "note": "Exodus and Sinai in History and Tradition"
+    }
+  ],
+  "framework_note": "Classic Documentary Hypothesis (Wellhausen 1878, Friedman 1987). Source attribution is analytical evidence, not definitive assignment. Scholarly debate is ongoing.",
+  "synthesis": "Exodus 19-20 represents one of the most heavily interwoven source-critical passages in the Torah, with J's fire/volcanic theophany and bodily descent of YHWH on Sinai juxtaposed with E's storm theophany, mediated revelation, and 'fear of God' theology. P contributes the framing chronological notice (19:1-2a) and likely the creation-based Sabbath rationale (20:8-11). The Decalogue, traditionally assigned to E, may preserve an ancient covenantal core but shows signs of P expansion and redactional shaping.",
+  "bibcrit_hypothesis": {
+    "title": "Sinai's Doubled Theophany Reveals JE Stratification",
+    "reasoning": "The juxtaposition of fire/smoke/quaking (J) with thunder/cloud/trumpet (E) within a few verses, combined with two complete sets of mountain-boundary warnings and two distinct modes of revelation (direct descent vs. mediated through Moses), provides among the strongest internal evidence for source plurality in the Pentateuch. The Decalogue's placement and its variant Sabbath rationale (creation here, exodus in Deuteronomy 5) further suggests that even the legal core was subject to ongoing redactional reframing within the priestly tradition.",
+    "confidence": 0.75
+  },
+  "discovery_ready": false,
+  "reference": "Exodus 19:1-20:21",
+  "cached_at": "2026-05-09T21:56:11.198013",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v1"
+}

@@ -1,0 +1,43 @@
+{
+  "allusions": [
+    {
+      "ot_reference": "Amos 9:11-12",
+      "nt_words": "ὅπως ἄν ἐκζητήσωσιν οἱ κατάλοιποι τῶν ἀνθρώπων τόν κύριον καί πάντα τά ἔθνη ἐπί οὕς ἐπικέκληται τό ὄνομα μου ἐπί αὐτούς",
+      "ot_mt_form": "לְמַעַן יִירְשׁוּ אֶת־שְׁאֵרִית אֱדוֹם וְכָל־הַגּוֹיִם אֲשֶׁר־נִקְרָא שְׁמִי עֲלֵיהֶם — 'that they may possess the remnant of Edom and all the nations called by my name'",
+      "ot_lxx_form": "ὅπως ἐκζητήσωσιν οἱ κατάλοιποι τῶν ἀνθρώπων καὶ πάντα τὰ ἔθνη ἐφ᾽ οὓς ἐπικέκληται τὸ ὄνομά μου ἐπ᾽ αὐτούς — 'that the remnant of men may seek (me) and all the nations upon whom my name is called'",
+      "nt_alignment": "lxx",
+      "alignment_confidence": 0.98,
+      "key_word": "ἐκζητήσωσιν οἱ κατάλοιποι τῶν ἀνθρώπων",
+      "textual_implication": "James's citation depends decisively on the LXX, which reads יִדְרְשׁוּ ('seek') for MT יִירְשׁוּ ('possess') and אָדָם ('mankind') for MT אֱדוֹם ('Edom')—two consonantally similar Hebrew terms. The LXX's universalizing reading ('remnant of men/all the nations seeking the Lord') is essential to James's argument that Gentile inclusion fulfills prophecy; the MT's nationalistic reading ('possess Edom') would not support the apostolic decree. The addition of τὸν κύριον as object of ἐκζητήσωσιν appears to be Luke's clarifying gloss.",
+      "textual_implication_plain": "James quotes the Greek Old Testament, which differs from the Hebrew at two key points—reading 'seek the Lord' instead of 'possess Edom' and 'humanity' instead of 'Edom.' Only the Greek version supports his point that Gentiles will turn to God.",
+      "scholarly_note": "Beale & Carson (Commentary, ad loc., Bock) treat this as a textbook case of LXX dependence; Richard Bauckham has argued for an underlying Hebrew Vorlage close to the LXX (cf. 4QFlor), suggesting the issue is text-form rather than translation choice.",
+      "contested": true
+    },
+    {
+      "ot_reference": "Isaiah 45:21",
+      "nt_words": "λέγει κύριος ποιῶν ταῦτα",
+      "ot_mt_form": "מִי הִשְׁמִיעַ זֹאת מִקֶּדֶם — declarative formula about the Lord making known these things from old",
+      "ot_lxx_form": "Isa 45:21 LXX contains τίς ἀνήγγειλεν ταῦτα ἀπ᾽ ἀρχῆς; the phrase γνωστὰ ἀπ᾽ αἰῶνος echoes here",
+      "nt_alignment": "conflation",
+      "alignment_confidence": 0.7,
+      "key_word": "ποιῶν ταῦτα / γνωστὰ ἀπ᾽ αἰῶνος (v.18)",
+      "textual_implication": "The closing formula in Acts 15:17b–18 ('says the Lord who does these things, known from of old') extends beyond Amos and appears to fuse Amos 9:12 LXX with Isaiah 45:21 LXX language. This conflation is characteristic of Jewish exegetical practice (gezerah shavah linking texts on God's prior declaration of redemptive plans) and reinforces the prophetic-fulfillment argument.",
+      "textual_implication_plain": "The end of the quotation seems to mix Amos with phrasing from Isaiah, a common Jewish technique of stitching prophetic texts together to strengthen an argument.",
+      "scholarly_note": "Beale & Carson (Bock) note the conflation with Isaiah 45:21; Hays's criterion of 'recurrence' supports reading this as a deliberate prophetic-fulfillment cluster.",
+      "contested": true
+    }
+  ],
+  "summary_technical": "James's speech as reported by Luke depends fundamentally on the LXX form of Amos 9:11-12, whose universalizing reading alone supports the argument for Gentile inclusion, with a likely conflation drawn from Isaiah 45:21 in the closing formula. The citation exemplifies Hellenistic-Jewish midrashic technique transposed into early Christian apologetic.",
+  "summary_plain": "James quotes the Greek Old Testament version of Amos because only it (not the Hebrew) clearly predicts Gentiles seeking God, and he blends in a phrase from Isaiah for emphasis.",
+  "bibcrit_hypothesis": {
+    "title": "Lukan LXX-Mediated Halakhic Exegesis",
+    "reasoning": "The decisive theological pivot of the Jerusalem Council rests on a Greek text-form that diverges from the MT at the crucial consonantal points (דרש/ירש, אדם/אדום). Whether the historical James used a proto-LXX Hebrew Vorlage (Bauckham, citing 4QFlor parallels) or whether Luke retrojected a LXX-based argument onto a Hebrew-speaking James, the rhetorical force is unmistakably Septuagintal. This suggests Luke's redaction shapes an authentic memory of scriptural debate into a form persuasive to his Greek-speaking readership.",
+    "plain": "The Council's decision to welcome Gentiles is argued from the Greek Bible, raising the question whether James actually used a Hebrew text close to the Greek or whether Luke recast the speech for Greek readers.",
+    "confidence": 0.78
+  },
+  "discovery_ready": false,
+  "reference": "Acts 15:17",
+  "cached_at": "2026-05-09T21:51:13.435453",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v1"
+}

@@ -1,0 +1,103 @@
+{
+  "passage": "Amos 5:1-17",
+  "structure_detected": true,
+  "structure_type": "concentric",
+  "confidence_note": "Very strong — this is one of the most widely recognized chiasms in the prophetic corpus, identified by de Waard (1977) and confirmed by subsequent scholarship.",
+  "elements": [
+    {
+      "label": "A",
+      "verses": "5:1-3",
+      "summary": "Lament/dirge over fallen Israel; the nation is decimated.",
+      "text_excerpt": "נָפְלָה לֹא־תוֹסִיף קוּם בְּתוּלַת יִשְׂרָאֵל ('Fallen, no more to rise, virgin Israel')",
+      "confidence": 0.95
+    },
+    {
+      "label": "B",
+      "verses": "5:4-6",
+      "summary": "Exhortation to seek YHWH and live; do not seek Bethel/Gilgal/Beersheba.",
+      "text_excerpt": "דִּרְשׁוּנִי וִחְיוּ ('Seek me and live')",
+      "confidence": 0.95
+    },
+    {
+      "label": "C",
+      "verses": "5:7",
+      "summary": "Indictment: those who turn justice (mishpat) to wormwood and cast righteousness (tsedaqah) to the ground.",
+      "text_excerpt": "הַהֹפְכִים לְלַעֲנָה מִשְׁפָּט וּצְדָקָה לָאָרֶץ הִנִּיחוּ",
+      "confidence": 0.92
+    },
+    {
+      "label": "D",
+      "verses": "5:8-9",
+      "summary": "Hymnic doxology: YHWH as creator who makes Pleiades and Orion, who turns darkness to morning.",
+      "text_excerpt": "עֹשֵׂה כִימָה וּכְסִיל ... יְהוָה שְׁמוֹ",
+      "confidence": 0.9
+    },
+    {
+      "label": "C'",
+      "verses": "5:10-13",
+      "summary": "Indictment: those who hate the reprover in the gate, trample the poor, oppress the righteous (tsaddiq).",
+      "text_excerpt": "שָׂנְאוּ בַשַּׁעַר מוֹכִיחַ ... צֹרְרֵי צַדִּיק",
+      "confidence": 0.92
+    },
+    {
+      "label": "B'",
+      "verses": "5:14-15",
+      "summary": "Exhortation to seek good and not evil, that you may live; establish justice in the gate.",
+      "text_excerpt": "דִּרְשׁוּ־טוֹב וְאַל־רָע לְמַעַן תִּחְיוּ",
+      "confidence": 0.95
+    },
+    {
+      "label": "A'",
+      "verses": "5:16-17",
+      "summary": "Lament/wailing in all the streets and vineyards as YHWH passes through.",
+      "text_excerpt": "בְּכָל־רְחֹבוֹת מִסְפֵּד ... כִּי־אֶעֱבֹר בְּקִרְבְּךָ",
+      "confidence": 0.95
+    }
+  ],
+  "pivot": {
+    "label": "D",
+    "verses": "5:8-9",
+    "summary": "The hymnic fragment proclaiming YHWH as cosmic creator and judge stands as the structural center.",
+    "theological_weight": "The doxology grounds Amos's call for justice in the very identity of YHWH as creator who turns darkness to morning and morning to night — the same God who can reverse Israel's fortunes. By placing the divine name 'YHWH is his name' at the literal center, Amos asserts that social justice is not a peripheral ethical demand but flows from the cosmic order established by the Creator himself."
+  },
+  "correspondences": [
+    {
+      "pair": [
+        "A",
+        "A'"
+      ],
+      "evidence": "Both frame the unit with funeral lament (qinah/misped); 'fallen' (nafal) in 5:2 echoes in 'wailing' in streets; vocabulary of mourning saturates both.",
+      "confidence": 0.95
+    },
+    {
+      "pair": [
+        "B",
+        "B'"
+      ],
+      "evidence": "Imperative דרשׁ ('seek') + וחיו/תחיו ('and live') in both; explicit antithesis of seeking shrines vs. seeking good; both promise life.",
+      "confidence": 0.97
+    },
+    {
+      "pair": [
+        "C",
+        "C'"
+      ],
+      "evidence": "Both indict perversion of mishpat and tsedaqah; 'in the gate' (בשער) appears in C' echoing the judicial sphere; turning justice to wormwood (5:7) parallels turning judgment to wormwood (5:10-12).",
+      "confidence": 0.93
+    }
+  ],
+  "overall_confidence": 0.94,
+  "methodology_citations": "Dorsey, The Literary Structure of the Old Testament (1999), pp. 277-286; de Waard, 'The Chiastic Structure of Amos V 1-17,' VT 27 (1977): 170-177; Lund, Chiasmus in the New Testament (1942), introductory principles on inverted parallelism.",
+  "theological_significance": "The chiastic architecture transforms Amos 5:1-17 from a loose collection of oracles into a tightly unified theological argument: lament frames the unit, exhortations to seek YHWH form the next ring, indictments of injustice flank the center, and the cosmic doxology anchors the whole. The structure asserts that Israel's social corruption has cosmic consequences because YHWH the creator is also YHWH the judge. The movement from lament to exhortation to indictment and back outward shows that genuine repentance — seeking YHWH as justice — is the only escape from the funeral dirge that frames Israel's existence.",
+  "scholarly_citations": "Jan de Waard's 1977 VT article first formally proposed this chiasm; it was adopted and refined by Dorsey (1999), Shalom Paul (Hermeneia Amos commentary, 1991), and Tremper Longman III. Wendland and Carroll R. have further confirmed its concentric design.",
+  "bibcrit_hypothesis": {
+    "title": "Cosmic Doxology Anchors Prophetic Justice Demand",
+    "reasoning": "By placing the creation-hymn (5:8-9) at the chiastic center rather than at the rhetorical climax, Amos subverts expectations: the demand for justice is not derived from covenant history but from creation theology. This suggests Amos's redactor (or the prophet himself) is making a universalizing move — YHWH's claim on Israel's gates rests on his claim on the Pleiades. The structure thus links eighth-century social ethics to wisdom/creation theology earlier than usually acknowledged.",
+    "confidence": 0.78
+  },
+  "discovery_ready": true,
+  "reference": "Amos 5:1-17",
+  "cached_at": "2026-05-09T21:51:54.973595",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v1"
+}

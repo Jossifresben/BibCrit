@@ -1,0 +1,82 @@
+{
+  "reference": "1 John 5:7",
+  "text_basis": {
+    "sblgnt_reading": "ὅτι τρεῖς εἰσιν οἱ μαρτυροῦντες",
+    "na28_alignment": "SBLGNT aligns with NA28/UBS5; all modern critical editions reject the Comma Johanneum (the Trinitarian formula 'in heaven, the Father, the Word, and the Holy Spirit, and these three are one').",
+    "is_disputed_locus": true,
+    "dispute_note": "This is the locus of the Comma Johanneum, the most famous interpolation in the New Testament textual tradition."
+  },
+  "manuscript_families": {
+    "alexandrian": {
+      "witnesses": [
+        "א",
+        "A",
+        "B"
+      ],
+      "support": "sides_with_received",
+      "note": "All Alexandrian witnesses (Sinaiticus, Alexandrinus, Vaticanus) lack the Comma entirely, supporting the shorter reading printed in SBLGNT/NA28."
+    },
+    "western": {
+      "witnesses": [
+        "Old Latin",
+        "Vulgate (later mss)"
+      ],
+      "support": "split",
+      "note": "Greek Western witnesses lack the Comma, but it appears in some Old Latin manuscripts and later Vulgate copies, likely originating as a Latin marginal gloss reflecting Trinitarian exegesis of vv. 7-8."
+    },
+    "byzantine": {
+      "witnesses": [
+        "Majority Text",
+        "TR"
+      ],
+      "support": "split",
+      "note": "The vast majority of Byzantine Greek manuscripts omit the Comma; it appears in only a handful of very late Greek mss (61, 629, 918, 2318, etc.), most of which appear to be back-translated from Latin. Erasmus included it in later editions of his Greek NT under pressure, creating the TR reading."
+    },
+    "caesarean": {
+      "witnesses": [
+        "f1",
+        "f13"
+      ],
+      "support": "sides_with_received",
+      "note": "Caesarean witnesses do not contain the Comma Johanneum."
+    }
+  },
+  "metzger_rating": {
+    "rating": "A",
+    "justification": "Metzger and the UBS committee assigned an {A} rating for the omission of the Comma, indicating virtual certainty. The external evidence against the Comma is overwhelming: it is absent from every Greek manuscript before the 14th century, from all early versions (Syriac, Coptic, Armenian, Ethiopic, Georgian), and from the citations of all Greek Fathers, including those engaged in Trinitarian controversies who would have eagerly cited it."
+  },
+  "variant_register": [
+    {
+      "variant_text": "ἐν τῷ οὐρανῷ, ὁ πατήρ, ὁ λόγος, καὶ τὸ ἅγιον πνεῦμα· καὶ οὗτοι οἱ τρεῖς ἕν εἰσι. καὶ τρεῖς εἰσιν οἱ μαρτυροῦντες ἐν τῇ γῇ (Comma Johanneum)",
+      "manuscript_support": "Late Greek mss: 61 (16th c.), 629 (14th c.), 918, 2318, 2473; margins of 88, 221, 429, 636. Latin: some Old Latin mss and Vulgate from c. 800 onward (Codex Fuldensis lacks it).",
+      "intrinsic_probability": "low",
+      "transcriptional_probability": "high",
+      "assessment": "The Comma almost certainly originated as a Latin theological gloss in North Africa or Spain (4th-5th c.), possibly traceable to Priscillian, that was eventually incorporated into the Vulgate text. Its insertion creates an awkward grammatical disruption and reflects developed Trinitarian theology foreign to Johannine vocabulary."
+    }
+  ],
+  "disputed_passage": {
+    "designation": "Comma Johanneum",
+    "manuscript_evidence_for": "Only 8-10 late Greek manuscripts (none before the 10th century, most from the 14th-16th c.); appears in later Vulgate tradition; cited by some Latin Fathers (possibly Priscillian, c. 380; Council of Carthage 484); inserted by Erasmus in his 3rd edition (1522) under ecclesiastical pressure.",
+    "manuscript_evidence_against": "All Greek mss before the 14th century, including א, A, B, Ψ, 33, 81, 322, 323, 436, 945, 1067, 1175, 1241, 1243, 1505, 1739, 1846, 1881, 2138, 2298, 2344, 2464, Byz; all early versions (Syriac Peshitta and Harklean, Coptic Sahidic and Bohairic, Armenian, Ethiopic, Georgian, Slavonic, early Vulgate including Codex Fuldensis and Amiatinus); all Greek Fathers; Tertullian, Cyprian, Augustine do not cite it in form found in TR.",
+    "internal_evidence": "The Comma uses non-Johannine vocabulary and theological formulation; it disrupts the syntactical flow of vv. 6-8 which concerns the threefold earthly witness (Spirit, water, blood); its absence in Trinitarian patristic debates against Arians is inexplicable if original.",
+    "scholarly_consensus": "Universal scholarly consensus across confessional lines holds the Comma to be a later interpolation. No critical edition of the Greek New Testament since Tischendorf has printed it as original.",
+    "pastoral_note": "Modern translations (NIV, ESV, NRSV, NASB, CSB, NET) omit the Comma, sometimes with a footnote. The KJV and NKJV retain it in the main text following the TR. Roman Catholic translations since the Nova Vulgata (1979) also omit it."
+  },
+  "synthesis": "Apart from the Comma Johanneum, the text of 1 John 5:7 as printed in SBLGNT is textually stable and uncontested. The dispute concerns not the wording of the authentic verse but the spurious Trinitarian addition that crept from Latin tradition into the Textus Receptus via Erasmus. The shorter reading enjoys virtually unanimous early manuscript support across all text-types and versions.",
+  "assessment": {
+    "title": "Comma Johanneum: Textually Spurious Latin Interpolation Universally Rejected by Critical Scholarship",
+    "reasoning": "The text-critical case against the Comma Johanneum is among the strongest in the entire New Testament: no Greek manuscript before the 14th century contains it, no early version preserves it, and no Greek Father cites it even amid heated Trinitarian controversies where it would have been decisive. The Comma originated as a Latin theological reflection on the threefold witness of v. 8, gradually migrating from gloss to text in Western Latin tradition before being inserted into Erasmus's Greek edition under polemical pressure. Metzger's {A} rating reflects the unanimity of the evidence. The doctrine of the Trinity does not depend on this verse, which Reformation-era Trinitarians like Calvin already viewed with suspicion. The authentic text of 1 John 5:7 simply introduces the threefold earthly witness completed in v. 8.",
+    "plain": "The famous 'three that bear witness in heaven' phrase found in older translations like the KJV is not part of what John originally wrote. It was added centuries later from a Latin tradition and made its way into printed Greek Bibles through a publishing controversy in the 1500s; nearly all modern translations correctly omit it.",
+    "confidence": 0.99,
+    "recommended_reading": "NA28/UBS5/SBLGNT — all print the shorter, authentic reading without the Comma.",
+    "open_questions": "The precise origin of the Comma (Priscillianist circles? North African Latin liturgy?) remains debated, as does the exact pathway of its incorporation into the Vulgate textual stream during the early medieval period."
+  },
+  "citations": {
+    "sbl": "Bruce M. Metzger, A Textual Commentary on the Greek New Testament, 2nd ed. (Stuttgart: Deutsche Bibelgesellschaft, 1994), 647-49; Kurt Aland and Barbara Aland, The Text of the New Testament, 2nd ed. (Grand Rapids: Eerdmans, 1989), 6-7.",
+    "bibtex": "@book{metzger1994textual, author={Metzger, Bruce M.}, title={A Textual Commentary on the Greek New Testament}, year={1994}, publisher={Deutsche Bibelgesellschaft}}"
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T22:02:37.600354",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v1"
+}

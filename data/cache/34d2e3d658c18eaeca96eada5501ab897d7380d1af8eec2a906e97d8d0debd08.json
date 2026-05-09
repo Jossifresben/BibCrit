@@ -1,0 +1,87 @@
+{
+  "reference": "Matthew 1:16",
+  "text_basis": {
+    "sblgnt_reading": "Ἰακὼβ δὲ ἐγέννησεν τὸν Ἰωσὴφ τὸν ἄνδρα Μαρίας, ἐξ ἧς ἐγεννήθη Ἰησοῦς ὁ λεγόμενος χριστός",
+    "na28_alignment": "SBLGNT aligns with NA28/UBS5 in reading the passive ἐγεννήθη with Ἰωσήφ as 'the husband of Mary, from whom Jesus was born.'",
+    "is_disputed_locus": true,
+    "dispute_note": "A well-known text-critical problem at the climax of Matthew's genealogy, where variant readings in some witnesses (notably Sinaitic Syriac) appear to alter the description of Jesus' birth from Joseph and Mary."
+  },
+  "manuscript_families": {
+    "alexandrian": {
+      "witnesses": [
+        "א",
+        "B",
+        "C",
+        "L",
+        "W"
+      ],
+      "support": "sides_with_received",
+      "note": "The major Alexandrian uncials uniformly support the received reading 'τὸν ἄνδρα Μαρίας ἐξ ἧς ἐγεννήθη Ἰησοῦς,' affirming the virginal conception language by use of the passive verb."
+    },
+    "western": {
+      "witnesses": [
+        "D",
+        "Old Latin",
+        "sy^s"
+      ],
+      "support": "split",
+      "note": "Codex Bezae and most Old Latin witnesses support the received text, but the Sinaitic Syriac (sy^s) reads 'Joseph, to whom was betrothed Mary the virgin, begat Jesus,' which has provoked extensive debate though it likely reflects translational paraphrase rather than a different Greek Vorlage."
+    },
+    "byzantine": {
+      "witnesses": [
+        "Majority Text",
+        "TR",
+        "f^1"
+      ],
+      "support": "sides_with_received",
+      "note": "The Byzantine tradition uniformly supports the received reading, though some witnesses (Θ, f^13) preserve a secondary variant: 'Joseph, to whom being betrothed the virgin Mary bore Jesus.'"
+    },
+    "caesarean": {
+      "witnesses": [
+        "Θ",
+        "f^1",
+        "f^13"
+      ],
+      "support": "split",
+      "note": "Family 1 supports the received text, while family 13 and Θ attest the expanded reading mentioning Mary's virginity and betrothal, likely a harmonization with Matthew 1:18-25 and Luke 1:27."
+    }
+  },
+  "metzger_rating": {
+    "rating": "A",
+    "justification": "Despite the curious Sinaitic Syriac reading, the Greek manuscript evidence is overwhelmingly unified in support of the received text. The UBS committee assigned high confidence because all major Greek witnesses across families agree, and the variants represent later harmonizing expansions or translational adjustments rather than competing early traditions."
+  },
+  "variant_register": [
+    {
+      "variant_text": "Ἰωσὴφ ᾧ μνηστευθεῖσα παρθένος Μαριὰμ ἐγέννησεν Ἰησοῦν τὸν λεγόμενον χριστόν ('Joseph, to whom being betrothed the virgin Mary bore Jesus who is called Christ')",
+      "manuscript_support": "Θ, f^13, several Old Latin manuscripts, some Caesarean witnesses",
+      "intrinsic_probability": "low",
+      "transcriptional_probability": "high",
+      "assessment": "This expansion harmonizes the genealogy's terminus with Matthew 1:18-25 by explicitly mentioning Mary's virginity and betrothal; its secondary nature is evident from its absence in the earliest witnesses."
+    },
+    {
+      "variant_text": "Ἰωσὴφ ᾧ ἐμνηστεύθη Μαριὰμ παρθένος ἐγέννησεν Ἰησοῦν τὸν λεγόμενον χριστόν ('Joseph, to whom Mary the virgin was betrothed, begat Jesus who is called Christ')",
+      "manuscript_support": "Sinaitic Syriac (sy^s)",
+      "intrinsic_probability": "low",
+      "transcriptional_probability": "low",
+      "assessment": "This singular reading appears to make Joseph the biological father of Jesus, but most scholars (e.g., Burkitt, Metzger) regard it as a translational artifact maintaining the genealogical pattern rather than a denial of the virgin birth, since the same manuscript later affirms Mary's virginity in 1:18-25."
+    }
+  ],
+  "disputed_passage": null,
+  "synthesis": "The Greek textual tradition for Matthew 1:16 is remarkably stable, with all major manuscript families and uncials supporting the received reading. The famous Sinaitic Syriac variant has generated disproportionate scholarly attention but represents a translational anomaly rather than evidence of an alternative early Greek text. Secondary harmonizing expansions in some Caesarean witnesses confirm rather than challenge the originality of the SBLGNT reading.",
+  "assessment": {
+    "title": "Stable Greek Tradition Despite Notorious Sinaitic Syriac Variant at Genealogy's Climax",
+    "reasoning": "Matthew 1:16 occupies a critical theological position as the genealogy's climax, deliberately breaking the pattern of 'X begat Y' to use the passive ἐγεννήθη with Mary as the source, thereby preserving the virgin birth implication. The Greek manuscript evidence is virtually unanimous across Alexandrian, Western, and Byzantine families, yielding a Metzger A rating. The variant readings in Θ, f^13, and especially the Sinaitic Syriac have generated significant scholarly literature, but careful analysis (Burkitt, Metzger, Davies-Allison) demonstrates these are secondary developments—either harmonizations with the surrounding birth narrative or translational adjustments that paradoxically still affirm Mary's virginity in their immediate context. The deliberate grammatical shift from active to passive verb is itself a powerful internal argument for the received reading's originality, as it represents the kind of theologically sensitive construction unlikely to arise by scribal accident.",
+    "plain": "The wording of Matthew 1:16 is firmly established in nearly all Greek manuscripts. While one Syriac translation has a curious phrasing that has puzzled scholars, the overwhelming evidence supports the standard reading that highlights Jesus' birth from Mary rather than from Joseph.",
+    "confidence": 0.95,
+    "recommended_reading": "NA28/UBS5/SBLGNT all converge on the same reading and are equally reliable for this verse.",
+    "open_questions": "What exactly motivated the Sinaitic Syriac translator's distinctive rendering, and does it preserve any pre-canonical Jewish-Christian tradition? How should the secondary expansions in Θ and f^13 be situated within the development of the Caesarean text-type?"
+  },
+  "citations": {
+    "sbl": "Bruce M. Metzger, *A Textual Commentary on the Greek New Testament*, 2nd ed. (Stuttgart: Deutsche Bibelgesellschaft, 1994), 2-6; F. C. Burkitt, *Evangelion da-Mepharreshe* (Cambridge: Cambridge University Press, 1904), 2:259-65; W. D. Davies and Dale C. Allison, *The Gospel According to Saint Matthew*, ICC (Edinburgh: T&T Clark, 1988), 1:183-85.",
+    "bibtex": "@book{metzger1994textual, author={Metzger, Bruce M.}, title={A Textual Commentary on the Greek New Testament}, year={1994}, edition={2nd}, publisher={Deutsche Bibelgesellschaft}, address={Stuttgart}}"
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T22:03:16.438658",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v1"
+}

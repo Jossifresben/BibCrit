@@ -1,0 +1,136 @@
+{
+  "reference": "Deuteronomy 6:4",
+  "total_citations_found": 7,
+  "period_summary": "Citations of the Shema cluster heavily in the 2nd–4th centuries, especially in anti-Marcionite, anti-Gnostic, and Trinitarian polemics. The passage was central to Christian arguments for monotheism and was therefore frequently quoted, almost universally in its LXX form.",
+  "citations": [
+    {
+      "father": "Justin Martyr",
+      "dates_ce": "c. 100–165",
+      "region": "Syria/Rome",
+      "work": "Dialogue with Trypho",
+      "chapter_section": "Dial. 126",
+      "cited_text": "ἄκουε, Ἰσραήλ· κύριος ὁ θεός σου κύριος εἷς ἐστιν",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.85,
+      "text_form_note": "Justin uses κύριος twice with the LXX construction 'κύριος εἷς ἐστιν', matching LXX Deut 6:4 against any direct Hebrew rendering.",
+      "theological_use": "Justin invokes the Shema in dialogue with a Jew to affirm shared monotheism while arguing that the Logos does not compromise divine unity.",
+      "transmission_implication": "Confirms that by mid-2nd century the LXX form of the Shema was the standard Christian text in dialogue with Jews."
+    },
+    {
+      "father": "Irenaeus of Lyons",
+      "dates_ce": "c. 130–202",
+      "region": "Gaul/Asia Minor",
+      "work": "Against Heresies",
+      "chapter_section": "Adv. Haer. 3.6.5; 4.2.2",
+      "cited_text": "Audi, Israel: Dominus Deus tuus Dominus unus est",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.8,
+      "text_form_note": "The Latin translation of Irenaeus reflects an Old Latin rendering of the LXX (Dominus...Dominus unus est), preserving the double κύριος characteristic of the Greek.",
+      "theological_use": "Irenaeus deploys the Shema against Marcion and the Gnostics to show that the Father proclaimed by the prophets is the same one God revealed by Christ.",
+      "transmission_implication": "Shows the LXX-based Old Latin Shema was already established in 2nd-century Western Christian usage."
+    },
+    {
+      "father": "Clement of Alexandria",
+      "dates_ce": "c. 150–215",
+      "region": "Alexandria",
+      "work": "Paedagogus / Stromateis",
+      "chapter_section": "Paed. 1.8; Strom. 5.14",
+      "cited_text": "ἄκουε, Ἰσραήλ· κύριος ὁ θεός σου κύριος εἷς ἐστιν",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.85,
+      "text_form_note": "Clement quotes verbatim the LXX form, including the predicative 'κύριος εἷς ἐστιν' construction.",
+      "theological_use": "Clement uses the Shema to demonstrate that Greek philosophy's intuition of divine unity is fulfilled in the biblical revelation of one God.",
+      "transmission_implication": "Attests the stability of the LXX Shema in Alexandrian biblical text by c. 200 CE."
+    },
+    {
+      "father": "Tertullian",
+      "dates_ce": "c. 155–220",
+      "region": "Carthage",
+      "work": "Adversus Praxean",
+      "chapter_section": "Adv. Prax. 18.2-3",
+      "cited_text": "Audi, Israel, Dominus Deus tuus unus est",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.7,
+      "text_form_note": "Tertullian's Latin reflects an Old Latin tradition based on LXX, though he occasionally compresses 'Dominus...Dominus unus est' to a single 'Dominus'.",
+      "theological_use": "Tertullian wields the Shema against Praxeas to argue that divine unity is not numerical singularity but allows for the economy of Father, Son, and Spirit.",
+      "transmission_implication": "Reveals slight Latin paraphrastic compression of the LXX Shema in North African Christian use."
+    },
+    {
+      "father": "Origen",
+      "dates_ce": "c. 185–254",
+      "region": "Alexandria/Caesarea",
+      "work": "Commentary on John; Contra Celsum",
+      "chapter_section": "Comm. Jo. 2.2; C. Cels. 1.23",
+      "cited_text": "ἄκουε Ἰσραήλ, κύριος ὁ θεὸς ἡμῶν κύριος εἷς ἐστιν",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.9,
+      "text_form_note": "Origen cites the LXX form precisely, sometimes with ἡμῶν and sometimes σου, both of which are LXX-attested variants reflecting Hexaplaric awareness.",
+      "theological_use": "Origen uses the Shema to underpin Christian monotheism and to discuss how the Logos is included within the unity of the one God.",
+      "transmission_implication": "His Hexaplaric work shows awareness of LXX variants but no significant deviation from LXX in citation."
+    },
+    {
+      "father": "Eusebius of Caesarea",
+      "dates_ce": "c. 263–339",
+      "region": "Caesarea",
+      "work": "Demonstratio Evangelica",
+      "chapter_section": "Dem. Ev. 5.7",
+      "cited_text": "ἄκουε Ἰσραήλ· κύριος ὁ θεός σου κύριος εἷς ἐστιν",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.9,
+      "text_form_note": "Eusebius quotes exactly the LXX text as preserved in the Caesarean library's biblical manuscripts.",
+      "theological_use": "Eusebius uses the Shema to harmonize OT monotheism with the doctrine of the Logos as a second hypostasis.",
+      "transmission_implication": "Confirms LXX stability into the 4th-century Caesarean tradition stemming from Origen's library."
+    },
+    {
+      "father": "Augustine of Hippo",
+      "dates_ce": "354–430",
+      "region": "North Africa",
+      "work": "Quaestiones in Heptateuchum; De Trinitate",
+      "chapter_section": "Quaest. Hept. 5; De Trin. 1.6",
+      "cited_text": "Audi, Israel: Dominus Deus tuus Dominus unus est",
+      "text_form": "closer_to_lxx",
+      "text_form_confidence": 0.8,
+      "text_form_note": "Augustine's Latin preserves the doubled 'Dominus' reflecting the LXX/Old Latin tradition rather than a Hebraizing single rendering.",
+      "theological_use": "Augustine reads the Shema as foundational for Trinitarian doctrine: the unity of God is compatible with the plurality of persons.",
+      "transmission_implication": "Demonstrates the LXX-derived Old Latin Shema's continuity into the early 5th-century Western tradition prior to Vulgate dominance."
+    }
+  ],
+  "text_form_distribution": {
+    "closer_to_mt": 0,
+    "closer_to_lxx": 7,
+    "mixed": 0,
+    "independent": 0,
+    "uncertain": 0
+  },
+  "transmission_synthesis": "The patristic citation record of Deuteronomy 6:4 is overwhelmingly LXX-based, both in Greek and in derivative Old Latin renderings. From Justin to Augustine, fathers consistently transmit the form 'κύριος ὁ θεός σου/ἡμῶν κύριος εἷς ἐστιν' with its characteristic doubled κύριος, an LXX feature reflecting the Hebrew YHWH...YHWH but with a syntactic articulation distinct from MT-style Hebrew renderings. There is no patristic witness up to the 5th century that demonstrably reflects a proto-MT or independent Hebraizing reading of this verse. This uniformity points to the early canonization of the LXX Shema as the Christian textual standard, with minor variation limited to pronoun choice (σου/ἡμῶν) inherited from within the Greek tradition itself.",
+  "transmission_synthesis_plain": "Early Christian writers from the 2nd to 5th centuries quote the Shema in remarkably similar wording, all based on the Greek Septuagint translation. This shows that the verse was transmitted very stably in the early church, with Greek-speaking and Latin-speaking fathers alike using essentially the same form.",
+  "notable_variants": [
+    {
+      "reading": "κύριος ὁ θεὸς ἡμῶν vs. κύριος ὁ θεός σου",
+      "fathers_using_it": [
+        "Origen",
+        "Justin Martyr"
+      ],
+      "text_form_alignment": "closer_to_lxx",
+      "significance": "Both pronouns are attested within the LXX manuscript tradition; the alternation in patristic citations reflects internal LXX variation rather than Hebraizing influence, and may also reflect liturgical adaptation."
+    },
+    {
+      "reading": "Latin compression to a single 'Dominus' (Dominus Deus tuus unus est)",
+      "fathers_using_it": [
+        "Tertullian"
+      ],
+      "text_form_alignment": "closer_to_lxx",
+      "significance": "Shows occasional paraphrastic shortening in Latin polemical contexts, but does not represent a distinct text form—merely a citation looseness in Tertullian's Trinitarian argumentation."
+    }
+  ],
+  "bibcrit_assessment": {
+    "title": "Uniform LXX Shema across patristic tradition",
+    "reasoning": "The single most significant finding is the absence of any patristic Hebraizing or proto-MT witness to Deut 6:4 before the 5th century: every father examined transmits the LXX form, including its doubled κύριος. This implies that the Christian textual tradition for the foundational monotheistic verse was effectively monolithic, and that controversy over divine unity (against Marcion, Praxeas, and later in Trinitarian debate) was conducted on a shared, stable Greek/Old Latin textual basis.",
+    "plain": "Every early Christian writer we examined quotes the Shema using essentially the same Greek-based wording. This consistency shows the verse was a stable, central text for early Christian beliefs about one God.",
+    "confidence": 0.85
+  },
+  "discovery_ready": false,
+  "cached_at": "2026-05-09T22:12:24.180425",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v3"
+}

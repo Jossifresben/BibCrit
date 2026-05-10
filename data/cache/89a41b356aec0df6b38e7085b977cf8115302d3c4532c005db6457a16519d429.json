@@ -110,5 +110,60 @@
   "discovery_ready": false,
   "cached_at": "2026-05-09T08:56:03.950507",
   "model_version": "claude-opus-4-7",
-  "prompt_version": "v7"
+  "prompt_version": "v7",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "Core text-critical claims are largely sound and reflect mainstream scholarship, but several specifics about the Nahal Hever scroll, the Peshitta Vorlage, and Jerome's iuxta Hebraeos require correction or qualification.",
+    "flagged_claims": [
+      {
+        "claim": "Nahal Hever Psalms Scroll (5/6Hev–Se4 Ps)",
+        "risk": "HIGH",
+        "reason": "The siglum is confused. The fragment containing Ps 22:17 is properly designated 5/6HevPs or, more accurately, XHev/Se 4 (Se'elim, not Hever proper); the conflated siglum '5/6Hev–Se4 Ps' is non-standard and potentially misleading."
+      },
+      {
+        "claim": "כי סבבוני כלבים עדת מרעים הקיפו ידי ורגלי",
+        "risk": "HIGH",
+        "reason": "This reconstructed Hebrew text is presented as the actual scroll reading, but the fragment is damaged and the disputed word is partially reconstructed. Notably, the quoted text omits the very word כארו that the analysis is built around — an internal inconsistency suggesting the 'dss_text' field is not an accurate transcription."
+      },
+      {
+        "claim": "published by Flint and others",
+        "risk": "MEDIUM",
+        "reason": "The XHev/Se Psalms fragment was published by Peter Flint and also discussed by Charlesworth; attributing it generically to 'Flint and others' is loose, and the editio princeps context (DJD XXXVIII, by Charlesworth et al.) should be checked."
+      },
+      {
+        "claim": "The Syriac independently confirms an ancient Hebrew Vorlage with a verbal root (likely כרה or כור)",
+        "risk": "MEDIUM",
+        "reason": "Whether the Peshitta Psalms translator worked from a Hebrew Vorlage independent of the LXX, or was influenced by the LXX, is debated; claiming 'independent Semitic confirmation' overstates current scholarly consensus."
+      },
+      {
+        "claim": "his later iuxta Hebraeos version reads 'vinxerunt' ('they bound')",
+        "risk": "HIGH",
+        "reason": "Jerome's iuxta Hebraeos at Ps 22:17 actually reads 'vinxerunt manus meas et pedes meos' in some editions but 'fixerunt' or other variants in others; the manuscript tradition of Jerome's Hebrew Psalter is complex, and the gloss 'they bound' with the firm claim he 'wrestled with the Hebrew' is presented with more certainty than warranted."
+      },
+      {
+        "claim": "MT's כָּאֲרִי is a secondary development, likely from waw/yod confusion",
+        "risk": "MEDIUM",
+        "reason": "While waw/yod confusion is a common explanation, some scholars (e.g., Strawn) defend the lectio difficilior of MT or propose other etymologies (e.g., a verbal root meaning 'to bind' or 'to be foul'); presenting the secondary status of MT as established fact overstates the case."
+      },
+      {
+        "claim": "This destroys the older claim that 'they pierced' was a Christian theological alteration",
+        "risk": "MEDIUM",
+        "reason": "Rhetorically overstated. The DSS evidence weakens but does not 'destroy' all forms of that argument; some scholars still question whether the Hever reading is itself a verbal form or a defective spelling of the lion noun."
+      }
+    ],
+    "safe_claims": [
+      "LXX Ps 21:17 reads ὤρυξαν ('they dug/pierced')",
+      "MT Ps 22:17 reads כָּאֲרִי",
+      "Peshitta reads ܒܙܥܘ ('they pierced')",
+      "The Gallican Psalter reads 'foderunt manus meas et pedes meos'",
+      "The Gallican Psalter was revised from the LXX",
+      "11QPs-a (11Q5) does not preserve Psalm 22",
+      "4QPs-f (4Q88) does not preserve Psalm 22",
+      "Peshitta lacks an equivalent of LXX πολλοί at this verse",
+      "Psalm 22:17c is a major text-critical crux"
+    ],
+    "recommendation": "PUBLISH_WITH_CAVEAT",
+    "validated_at": "2026-05-10T00:09:29.206054+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

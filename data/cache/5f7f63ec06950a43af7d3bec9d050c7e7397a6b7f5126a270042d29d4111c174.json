@@ -136,5 +136,52 @@
   "discovery_ready": false,
   "cached_at": "2026-05-09T08:55:08.629037",
   "model_version": "claude-opus-4-7",
-  "prompt_version": "v7"
+  "prompt_version": "v7",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The core text-critical claim about 'light' in Isaiah 53:11 is well-established, but specific manuscript attributions (especially 1QIsaᵇ and 4QIsaᵈ) and the Peshitta/Vulgate text quotations need verification.",
+    "flagged_claims": [
+      {
+        "claim": "1QIsaᵇ ... here sides with 1QIsaᵃ and LXX in including אור",
+        "risk": "HIGH",
+        "reason": "1QIsaᵇ (Hebrew University Scroll) is fragmentary and its preservation of Isaiah 53:11 with the word אור is disputed in scholarship. Some editions reconstruct it but the manuscript is damaged at this point. The confident quotation 'מעמל נפשו יראה אור ישבע בדעתו' may overstate what is actually legible."
+      },
+      {
+        "claim": "4QIsaᵈ preserves the reading 'he shall see light'",
+        "risk": "HIGH",
+        "reason": "The Qumran witness for Isaiah 53:11 with אור is typically cited as 4QIsaᵇ (4Q56) or 4QIsaᵈ depending on source; verification needed. Standard reference works (e.g., Ulrich, DJD) should be consulted to confirm which Cave 4 Isaiah scroll preserves this reading and whether it is legible at this point."
+      },
+      {
+        "claim": "confirmed independently by 1QIsaᵇ and 4QIsaᵈ",
+        "risk": "MEDIUM",
+        "reason": "The standard scholarly consensus credits 1QIsaᵃ and one Cave 4 fragment plus LXX; describing this as 'triple Hebrew attestation' that makes the case 'essentially conclusive' may overstate the manuscript evidence."
+      },
+      {
+        "claim": "Peshitta text quoted in full Syriac",
+        "risk": "MEDIUM",
+        "reason": "The specific Syriac wording should be verified against the Leiden Peshitta edition; AI-generated Syriac quotations are prone to errors in vocalization and word forms."
+      },
+      {
+        "claim": "MT suffered haplography or deliberate omission",
+        "risk": "MEDIUM",
+        "reason": "Haplography is hard to demonstrate here since there is no obvious triggering similarity between יראה and a following word; the mechanism is speculative and 'deliberate omission' is an unsupported motive claim."
+      },
+      {
+        "claim": "NRSV, NIV ... now generally adopt 'he shall see light'",
+        "risk": "MEDIUM",
+        "reason": "NRSV does adopt 'he shall see light,' but NIV (2011) retains 'he will see' without 'light' in the main text, relegating the variant to a footnote. This claim is partially incorrect."
+      }
+    ],
+    "safe_claims": [
+      "1QIsaᵃ reads יראה אור with the word 'light' present",
+      "MT lacks אור at this point while LXX has φῶς",
+      "The Peshitta and Vulgate align with MT in lacking 'light'",
+      "1QIsaᵃ characteristically uses plene (fuller) orthography",
+      "The Peshitta restructures the difficult Hebrew clause around צדיק/עבדי",
+      "Jerome's Vulgate reflects a proto-MT Hebrew Vorlage"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-10T00:09:29.204855+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

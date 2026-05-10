@@ -99,5 +99,48 @@
   "discovery_ready": false,
   "cached_at": "2026-05-09T08:54:08.869854",
   "model_version": "claude-opus-4-7",
-  "prompt_version": "v7"
+  "prompt_version": "v7",
+  "_validation": {
+    "reliability": "MEDIUM",
+    "confidence_note": "The core text-critical claim is well-established and accurate, but the specific reading attributed to 4QDeut-j is incorrect in a key detail and the Qumran siglum nomenclature is mishandled.",
+    "flagged_claims": [
+      {
+        "claim": "dss_text: ...למספר בני אלוהים",
+        "risk": "HIGH",
+        "reason": "The actual 4QDeut-j reading at this point is בני אלוהים reconstructed, but most scholarly editions (Skehan, Ulrich, DJD XIV) read בני אלהים or the fragmentary בני אל[ ]. The fragment is widely cited as reading בני אלוהים but the precise orthography 'אלוהים' (plene with vav) is questionable; many editors print בני אלהים. Also, the relevant fragment for v. 8 is typically associated with 4QDeut^j (4Q37), but some scholars attribute the key reading to 4QDeut^q. The analysis should clarify which fragment actually preserves the phrase."
+      },
+      {
+        "claim": "4QDeut-q preserves portions of Deuteronomy 32 (Song of Moses) but the extant fragments do not cover v. 8",
+        "risk": "HIGH",
+        "reason": "This is factually incorrect. 4QDeut-q (4Q44) is precisely the manuscript most often cited as preserving the variant at Deut 32:8 (or 32:43); some scholarship attributes the בני אלהים reading to 4QDeut-q rather than 4QDeut-j. The analysis has the witnesses possibly reversed or has misidentified which scroll contains the verse."
+      },
+      {
+        "claim": "LXX 'angels of God' reflects the same Hebrew Vorlage as 4QDeut-j with interpretive softening",
+        "risk": "MEDIUM",
+        "reason": "Overstated. The oldest LXX witnesses (e.g., Papyrus Fouad 848, some manuscripts) read υἱῶν θεοῦ ('sons of God'), not ἀγγέλων θεοῦ. ἀγγέλων θεοῦ is itself a secondary Greek revision. The analysis conflates the LXX textual layers."
+      },
+      {
+        "claim": "Jerome follows the hebraica veritas (proto-MT) reading 'sons of Israel,' rejecting the LXX's 'angels of God' that was current in the Old Latin",
+        "risk": "MEDIUM",
+        "reason": "Plausible but the specific claim about Old Latin reading at this verse and Jerome's deliberate rejection of it requires citation; presented as fact without source."
+      },
+      {
+        "claim": "likely motivated by emerging strict monotheism",
+        "risk": "MEDIUM",
+        "reason": "This is a common scholarly hypothesis (cf. Tov, Heiser) but is presented as established fact rather than interpretation; the motive for the revision is inferred, not documented."
+      }
+    ],
+    "safe_claims": [
+      "MT reads בְּנֵי יִשְׂרָאֵל at Deut 32:8",
+      "LXX traditions read variations of 'angels/sons of God' at this point",
+      "SP agrees with MT in reading 'sons of Israel'",
+      "Peshitta reads ܒܢ̈ܝ ܐܝܣܪܝܠ ('sons of Israel')",
+      "Vulgate reads 'filiorum Israël'",
+      "Deut 32:8 is a well-known and widely-discussed text-critical case",
+      "Qumran evidence is generally taken to support the antiquity of a 'sons of God/Elohim' Hebrew reading"
+    ],
+    "recommendation": "NEEDS_EXPERT_REVIEW",
+    "validated_at": "2026-05-10T00:09:29.207113+00:00",
+    "validated_by": "claude-opus-4-7"
+  }
 }

@@ -26,6 +26,9 @@ _init_lock = threading.Lock()
 def create_app() -> Flask:
     app = Flask(__name__)
 
+    from flask_compress import Compress
+    Compress(app)
+
     from blueprints.textual import textual_bp
     from blueprints.critical import critical_bp
     from blueprints.research import research_bp

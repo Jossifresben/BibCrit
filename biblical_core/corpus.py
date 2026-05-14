@@ -16,9 +16,12 @@ from collections import OrderedDict
 from dataclasses import dataclass
 
 # Maximum number of book-CSV files kept in memory simultaneously.
-# Each file is roughly 1–3 MB of Python objects; 50 files ≈ 50–150 MB,
-# leaving ample headroom on a 512 MB Render instance.
-_LRU_CAP = 50
+# Measured: a large book like Isaiah loads ~30 MB of Python objects
+# (VerseWord dicts × 20k–27k rows). Baseline process is ~195 MB on the
+# 512 MB Render starter plan, leaving ~267 MB for corpus.
+# 6 slots × 30 MB worst-case = 180 MB → total ≤ 375 MB (73 % of limit).
+# A DSS analysis needs 6 traditions for one book, which fits exactly.
+_LRU_CAP = 6
 
 
 @dataclass(slots=True)

@@ -15,4 +15,4 @@ services:
         sync: false
       # Monthly Claude spend cap in USD
       - key: BIBCRIT_API_CAP_USD
-        value: "10.0"
+        value: "20.0"

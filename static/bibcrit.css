@@ -2282,6 +2282,11 @@ body[data-persona="student"] .tool-header { border-top-color: #059669; }
 @media (max-width: 600px) {
   .chiasm-row    { padding-left: 0 !important; }
   .source-legend { font-size: 0.8em; }
+  .chiasm-corr-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
   .chiasm-corr-table th, .chiasm-corr-table td { padding: 5px 6px; }
 }
 
@@ -2761,3 +2766,48 @@ body[data-persona="student"] .tool-header { border-top-color: #059669; }
 }
 .stl-skel-card .stl-card-head { display: flex; align-items: center; gap: 0; }
 .stl-skel-card .dss-skel-row  { margin-bottom: 0; }
+
+/* ── Mobile table responsiveness (≤ 600 px) ───────────────────────────────── */
+@media (max-width: 600px) {
+
+  /* DSS divergence table ─────────────────────────────────────────────────── */
+  /* Make table a scrollable block so it doesn't overflow the card on narrow screens */
+  .dss-div-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    font-size: 0.74rem;
+  }
+  .dss-div-table th,
+  .dss-div-table td { padding: 4px 5px; }
+  /* Hide the sequential '#' column — wastes horizontal space on mobile */
+  .dss-div-table thead tr th:first-child,
+  .dss-div-table tbody tr td:first-child { display: none; }
+
+  /* Scribal dimension examples table ──────────────────────────────────────── */
+  .dim-examples-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    font-size: 12px;
+  }
+  .dim-examples-table th,
+  .dim-examples-table td { padding: 5px 7px; }
+
+  /* Targum / NT variant table ─────────────────────────────────────────────── */
+  /* Allow Hebrew / Aramaic cells to wrap instead of being crushed at 14% */
+  .var-table { font-size: 0.82rem; }
+  .var-table th,
+  .var-table td { padding: 0.4rem 0.5rem; }
+  .var-table td:nth-child(1),
+  .var-table td:nth-child(2) {
+    white-space: normal;
+    min-width: 60px;
+  }
+
+  /* Numerical figures table ───────────────────────────────────────────────── */
+  .num-table { font-size: 0.82rem; }
+  .num-table th,
+  .num-table td { padding: 6px 8px; }
+
+}

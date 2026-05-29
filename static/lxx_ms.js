@@ -212,7 +212,10 @@
     var a = data || {};
     var html = '';
     if (a.synthesis) html += '<p class="bc-plain">' + esc(a.synthesis) + '</p>';
-    if (a.verify_against) html += '<p><strong>Verify against:</strong> ' + esc(a.verify_against) + '</p>';
+    if (a.verify_against) {
+      var va = Array.isArray(a.verify_against) ? a.verify_against.join('; ') : a.verify_against;
+      html += '<p><strong>Verify against:</strong> ' + esc(va) + '</p>';
+    }
     html += _confBar(a.overall_confidence);
     // Credibility: model + cached-date attribution
     var attr = 'Performed by ' + esc(_friendlyModel(_partialData.model_version));

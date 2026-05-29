@@ -1103,6 +1103,14 @@ def api_votes():
 
 # ── Generic export API ─────────────────────────────────────────────────────
 
+# Tools whose URL route differs from their internal tool name.
+_TOOL_ROUTE_OVERRIDES = {
+    'nt_text':         'nt-text',
+    'nt_ot':           'nt-ot',
+    'lxx_ms_variants': 'lxx-witnesses',
+}
+
+
 @textual_bp.route('/api/export/sbl')
 def export_generic_sbl():
     """Generic SBL footnote export for any tool."""
@@ -1113,10 +1121,11 @@ def export_generic_sbl():
     if state.pipeline is None:
         return jsonify({'error': 'Pipeline not initialized'}), 503
 
+    route = _TOOL_ROUTE_OVERRIDES.get(tool, tool)
     year = '2026'
     footnote = (
         f'BibCrit, s.v. "{ref}" ({tool} analysis), '
-        f'accessed {year}, https://bibcrit.app/{tool}?ref={ref.replace(" ", "+")}, '
+        f'accessed {year}, https://bibcrit.app/{route}?ref={ref.replace(" ", "+")}, '
         f'powered by Anthropic Claude. '
         f'Jossi Fresco Benaim, ORCID: 0009-0000-2026-0836. '
         f'DOI: https://doi.org/10.5281/zenodo.19358424.'
@@ -1159,6 +1168,7 @@ def export_generic_bibtex():
         except Exception:
             pass
 
+    route = _TOOL_ROUTE_OVERRIDES.get(tool, tool)
     import re as _re
     key = _re.sub(r'[^a-zA-Z0-9]', '', ref) + tool.capitalize() + '2026'
     bibtex = (
@@ -1167,7 +1177,7 @@ def export_generic_bibtex():
         f'  orcid        = {{ORCID: 0009-0000-2026-0836}},\n'
         f'  title        = {{{{BibCrit {tool.title()} analysis of {ref}}}}},\n'
         f'  year         = {{2026}},\n'
-        f'  howpublished = {{\\url{{https://bibcrit.app/{tool}?ref={ref.replace(" ", "+")}}}}},\n'
+        f'  howpublished = {{\\url{{https://bibcrit.app/{route}?ref={ref.replace(" ", "+")}}}}},\n'
         f'  doi          = {{10.5281/zenodo.19358424}},\n'
         f'  note         = {{Powered by {model_version}}},\n'
         f'}}'

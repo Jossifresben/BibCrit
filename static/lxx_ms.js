@@ -260,7 +260,31 @@
   }
 
   function _wireExport(data) {
-    var btnShare = document.getElementById('btn-share');
+    var btnSbl    = document.getElementById('btn-sbl');
+    var btnBibtex = document.getElementById('btn-bibtex');
+    var btnShare  = document.getElementById('btn-share');
+
+    if (btnSbl) {
+      btnSbl.onclick = function () {
+        fetch('/api/export/sbl?tool=lxx_ms_variants&ref=' + encodeURIComponent(_currentRef))
+          .then(function (r) { return r.json(); })
+          .then(function (d) {
+            var text = (d.footnotes || [d.footnote]).join('\n\n');
+            navigator.clipboard.writeText(text).catch(function () {});
+            showToast(window.t ? window.t('toast_sbl_copied_short', 'SBL footnote copied!') : 'SBL footnote copied!');
+          }).catch(function () {});
+      };
+    }
+    if (btnBibtex) {
+      btnBibtex.onclick = function () {
+        fetch('/api/export/bibtex?tool=lxx_ms_variants&ref=' + encodeURIComponent(_currentRef))
+          .then(function (r) { return r.json(); })
+          .then(function (d) {
+            navigator.clipboard.writeText(d.bibtex || '').catch(function () {});
+            showToast(window.t ? window.t('toast_bibtex_copied_short', 'BibTeX copied!') : 'BibTeX copied!');
+          }).catch(function () {});
+      };
+    }
     if (btnShare) {
       btnShare.onclick = function () {
         var url = window.location.origin + '/lxx-witnesses?ref=' + encodeURIComponent(_currentRef);

@@ -16,7 +16,7 @@ _OPENAPI_SPEC = {
         "version": "1.0.0",
         "description": (
             "BibCrit is an open-source AI-assisted toolkit for biblical textual criticism. "
-            "This API provides access to thirteen AI analysis tools (MT/LXX divergence, "
+            "This API provides access to fifteen AI analysis tools (MT/LXX divergence, "
             "back-translation, DSS witness comparison, scribal tendency profiling, and more), "
             "a structured corpus browser over eight manuscript traditions, and an open cache "
             "of all previously generated analyses.\n\n"

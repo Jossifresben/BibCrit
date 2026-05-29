@@ -1,11 +1,11 @@
 ![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue?logo=python&logoColor=white)
 ![Flask](https://img.shields.io/badge/flask-3.0%2B-lightgrey?logo=flask)
-![Claude](https://img.shields.io/badge/powered%20by-Claude%20Sonnet%204.6-blueviolet?logo=anthropic)
+![Claude](https://img.shields.io/badge/powered%20by-Claude%20Opus%204.7-blueviolet?logo=anthropic)
 ![License](https://img.shields.io/badge/license-Apache%202.0-green)
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0000--2026--0836-a6ce39)](https://orcid.org/0009-0000-2026-0836)
 [![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.19358424.svg)](https://doi.org/10.5281/zenodo.19358424)
 
-# BibCrit v3.2
+# BibCrit v3.3
 
 Free, open-access web tool for biblical textual criticism at [bibcrit.com](https://bibcrit.com). Compare MT, LXX, and Dead Sea Scrolls; reconstruct Hebrew Vorlagen; profile scribal tendencies; detect theological revisions; track patristic citations; model numerical discrepancies; detect literary structures (chiasm, inclusios, parallel panels); identify documentary source layers (J/E/D/P); and visualize manuscript genealogies — all in a browser, in English and Spanish.
 
@@ -50,6 +50,7 @@ Free, open-access web tool for biblical textual criticism at [bibcrit.com](https
 | 12 | **Targum Comparator** | `/targum` | Compares Targum Onkelos (Torah) and Targum Jonathan (Prophets) against MT and LXX; analyzes Memra substitutions, anthropomorphism avoidance, targumic expansions, and messianic reinterpretation. Prompt: `targum_v1`. |
 | 13 | **NT Textual Tradition Analyzer** | `/nt-text` | Manuscript family support (Alexandrian, Western, Byzantine, Caesarean), Metzger A/B/C/D confidence ratings, variant register, and extended analysis for all major disputed passages. Prompt: `nt_text_v1`. |
 | 14 | **Second Temple Literature Bridge** | `/stl` | Maps allusions and parallels between canonical Scripture and five Second Temple works (1 Enoch, Jubilees, Sirach, 4 Ezra, Tobit). Classifies each connection by type, directionality, and confidence using Nickelsburg / VanderKam / Collins / Knibb / Hays methodology. Pure AI tool — no external corpus required. Prompt: `stl_v1`. |
+| 15 | **LXX Manuscript Witnesses** | `/lxx-witnesses` | Analyzes significant divergences among the great Septuagint uncials — Vaticanus (B), Sinaiticus (א), Alexandrinus (A) — for any passage. Describes attested variants from the critical apparatus (Rahlfs-Hanhart, Göttingen, Brooke-McLean) with per-finding confidence and lacuna flags; never presents fabricated diplomatic text. Prompt: `lxx_ms_variants_v1`. |
 
 ---
 
@@ -75,7 +76,7 @@ Free, open-access web tool for biblical textual criticism at [bibcrit.com](https
 | Layer | Technology |
 |---|---|
 | Web framework | [Flask](https://flask.palletsprojects.com/) 3.0+ |
-| AI analysis | [Anthropic Python SDK](https://github.com/anthropics/anthropic-sdk-python) 0.30+ · model: `claude-sonnet-4-6` |
+| AI analysis | [Anthropic Python SDK](https://github.com/anthropics/anthropic-sdk-python) 0.30+ · model: `claude-opus-4-7` |
 | Visualization | [D3.js](https://d3js.org/) v7 (radar charts, bar charts) |
 | Persistence | [Supabase](https://supabase.com/) (PostgreSQL) + disk JSON fallback |
 | Production server | Gunicorn (1 worker, 2 threads) |
@@ -275,6 +276,7 @@ python scripts/precache_es.py
 | GET | `/targum` | Targum Comparator |
 | GET | `/nt-text` | NT Textual Tradition Analyzer |
 | GET | `/stl` | Second Temple Literature Bridge |
+| GET | `/lxx-witnesses` | LXX Manuscript Witnesses |
 | GET | `/discovery` | Discovery — plain-language findings |
 | GET | `/guide` | User guide |
 | GET | `/health` | Health check (`{"status": "ok"}`) |

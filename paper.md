@@ -22,7 +22,7 @@ bibliography: paper.bib
 
 # Summary
 
-BibCrit is an open-source, browser-based toolkit for biblical textual criticism that integrates large language model (LLM) analysis with structured corpus data. It provides fourteen analytical tools covering the principal methods of the discipline: divergence analysis between the Masoretic Text (MT) and the Septuagint (LXX), Hebrew Vorlage reconstruction via back-translation, scribal tendency profiling, numerical discrepancy modelling, Dead Sea Scrolls witness comparison, theological revision detection, patristic citation tracking, manuscript genealogy visualization, NT use of OT citation-form determination, chiastic and literary structure detection, documentary source criticism (J/E/D/P), and Second Temple Literature intertextual mapping. Each tool streams AI-generated analysis in real time via Server-Sent Events (SSE), producing structured scholarly output that includes competing hypotheses, confidence scores, and exportable citations in five academic formats (BibTeX, Chicago, MLA, APA, and SBL) via a tabbed citation modal.
+BibCrit is an open-source, browser-based toolkit for biblical textual criticism that integrates large language model (LLM) analysis with structured corpus data. It provides fifteen analytical tools covering the principal methods of the discipline: divergence analysis between the Masoretic Text (MT) and the Septuagint (LXX), Hebrew Vorlage reconstruction via back-translation, scribal tendency profiling, numerical discrepancy modelling, Dead Sea Scrolls witness comparison, theological revision detection, patristic citation tracking, manuscript genealogy visualization, NT use of OT citation-form determination, chiastic and literary structure detection, documentary source criticism (J/E/D/P), Targum rendering analysis, NT textual tradition attestation, Second Temple Literature intertextual mapping, and inter-codex divergence among the great Septuagint uncials (Vaticanus, Sinaiticus, Alexandrinus). Each tool streams AI-generated analysis in real time via Server-Sent Events (SSE), producing structured scholarly output that includes competing hypotheses, confidence scores, and exportable citations in five academic formats (BibTeX, Chicago, MLA, APA, and SBL) via a tabbed citation modal.
 
 The application is built on Flask, uses the Anthropic Claude API for analysis, and supports full bilingual operation in English and Spanish. Analysis results are cached in Supabase (with a local JSON fallback), making repeated queries instantaneous and enabling an open data API over the accumulated corpus.
 
@@ -54,9 +54,9 @@ BibCrit follows a three-layer architecture:
 
 **Presentation layer.** Each analytical endpoint is implemented as a Flask Server-Sent Events (SSE) stream. The front end renders structured JSON responses progressively — each section (synthesis, assessment, key divergences, transmission history) appearing as it arrives. All UI strings are defined in `data/i18n.json` with English and Spanish translations; AI-generated analysis for the Spanish locale is translated server-side and cached separately in `analysis_cache_es`.
 
-**API discoverability.** A machine-readable OpenAPI 3.0 specification is served at `/api/v1/openapi.json`, documenting all fourteen analysis stream endpoints alongside corpus browser, cache query, export, and vote routes. An interactive Swagger UI at `/api/docs` enables browser-based exploration and trial of every endpoint without client tooling.
+**API discoverability.** A machine-readable OpenAPI 3.0 specification is served at `/api/v1/openapi.json`, documenting all fifteen analysis stream endpoints alongside corpus browser, cache query, export, and vote routes. An interactive Swagger UI at `/api/docs` enables browser-based exploration and trial of every endpoint without client tooling.
 
-The fourteen analytical tools, their scholarly methods, and active prompt versions are summarised in Table 1.
+The fifteen analytical tools, their scholarly methods, and active prompt versions are summarised in Table 1.
 
 | Tool | Scholarly Method | Prompt |
 |---|---|---|
@@ -74,6 +74,7 @@ The fourteen analytical tools, their scholarly methods, and active prompt versio
 | Targum Comparator | Targumic rendering analysis: Memra, anthropomorphism avoidance, messianic reinterpretation, targumic expansions [@samely1992; @smelik1995] | v1 |
 | NT Textual Tradition Analyzer | Manuscript family attestation (Alexandrian, Western, Byzantine, Caesarean), Metzger A/B/C/D confidence ratings, variant register [@metzger1994] | v1 |
 | Second Temple Literature Bridge | Intertextual allusion mapping across 1 Enoch, Jubilees, Sirach, 4 Ezra, Tobit: allusion type, directionality, confidence [@nickelsburg2001; @vanderkam2001; @collins1998; @hays1989] | v1 |
+| LXX Manuscript Witnesses | Inter-codex divergence among the great Septuagint uncials (Vaticanus B, Sinaiticus, Alexandrinus A) from the critical apparatus, with per-finding confidence and lacuna flags | v1 |
 
 Table: BibCrit analytical tools with scholarly grounding and current prompt versions.
 
@@ -81,13 +82,13 @@ Table: BibCrit analytical tools with scholarly grounding and current prompt vers
 
 BibCrit lowers the barrier to entry for several research activities that previously required specialist software and deep palaeographic training. A graduate student can now obtain a structured comparison of MT and LXX readings for a contested passage in seconds, with competing scholarly explanations ranked by confidence — work that previously required consulting Tov's apparatus [@tov2012] alongside the Göttingen critical edition. The scribal tendency profiler makes it possible to compare the translation styles of different LXX books quantitatively without writing custom corpus queries. The patristic citation tracker surfaces text-form evidence from the Church Fathers that is otherwise scattered across the Migne Patrologia and specialist monographs.
 
-The accumulated analysis cache — covering featured passages across all fourteen tools in both English and Spanish — constitutes an open dataset that can be harvested for downstream computational studies. The cache API (`/api/{tool}/stream?ref=...&lang=en`) is openly accessible, enabling integration into research pipelines without direct interaction with the web interface.
+The accumulated analysis cache — covering featured passages across all fifteen tools in both English and Spanish — constitutes an open dataset that can be harvested for downstream computational studies. The cache API (`/api/{tool}/stream?ref=...&lang=en`) is openly accessible, enabling integration into research pipelines without direct interaction with the web interface.
 
 Bilingual operation (English and Spanish) makes the tool accessible to the significant body of biblical scholarship published in Spanish, particularly in Latin American and Iberian academic contexts.
 
 # AI Usage Disclosure
 
-BibCrit uses the Anthropic Claude API (`claude-sonnet-4-6`) to generate analytical content for each of its fourteen tools. The AI is not used for corpus ingestion, cache management, or any deterministic processing steps. All AI-generated analysis is clearly attributed as such in the user interface, and users are informed that results should be verified against primary sources.
+BibCrit uses the Anthropic Claude API (`claude-opus-4-7`) to generate analytical content for each of its fifteen tools. The AI is not used for corpus ingestion, cache management, or any deterministic processing steps. All AI-generated analysis is clearly attributed as such in the user interface, and users are informed that results should be verified against primary sources.
 
 The prompt templates in `data/prompts/` are scholarly-grounded, specifying the methodological frameworks of Tov, Metzger, Hengel, and the Göttingen LXX critical apparatus explicitly. Output schemas are versioned and pinned to specific model versions to ensure reproducibility. A monthly budget cap prevents the tool from making unbounded API calls during public access.
 

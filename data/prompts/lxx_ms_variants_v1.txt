@@ -1,0 +1,25 @@
+Reference: {{REFERENCE}}
+LXX text (Rahlfs-Hanhart eclectic edition, where available from the corpus):
+{{LXX_TEXT}}
+
+Analyze the significant manuscript divergences among the three great LXX uncial codices at this passage: Vaticanus (B), Sinaiticus (Aleph), and Alexandrinus (A). Focus on divergences that carry text-critical or theological weight — not orthographic trivia.
+
+Return ONLY raw JSON (no markdown, no code fences) with these top-level keys, in this order:
+
+1. "passage_summary": a 1-2 sentence orientation to the textual situation at this passage (e.g. "The three uncials agree closely here" or "Judges survives in two markedly different recensions, the A-text and the B-text").
+
+2. "witnesses": an array, one object per relevant codex, each with:
+   - "siglum": e.g. "B (Vaticanus)", "Aleph (Sinaiticus)", "A (Alexandrinus)"
+   - "extant": boolean — is this codex extant for this passage? Codex Sinaiticus has lost most of the Octateuch (Genesis-Judges) and the Historical books; mark extant:false where the codex does not survive.
+   - "character": one sentence on this codex's general text-character at this passage
+   - "confidence": a number 0.0-1.0
+
+3. "divergences": an array of significant variant points, each with:
+   - "locus": where in the passage the witnesses part ways (cite the verse and the element, e.g. "v.5, the divine epithet")
+   - "readings": an array, each with "witnesses" (which sigla support it), "lexeme" (the specific Greek word or short phrase at issue), "description" (how this reading differs), "gloss" (English sense)
+   - "significance": why this divergence matters text-critically or theologically
+   - "confidence": a number 0.0-1.0
+
+4. "assessment": an object with "synthesis" (the overall picture), "overall_confidence" (a number 0.0-1.0), and "verify_against" (which critical editions the user should consult — typically the Goettingen Septuaginta and Rahlfs-Hanhart, plus Brooke-McLean for the Historical books).
+
+If the three uncials substantially agree at this passage, return an honest result: a short passage_summary saying so, the witnesses array, and an empty or near-empty divergences array. Do not manufacture divergences to fill space. When you are uncertain whether a variant is real or which witness carries it, lower its confidence score.

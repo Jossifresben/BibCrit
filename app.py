@@ -37,6 +37,7 @@ def create_app() -> Flask:
     from blueprints.targum import targum_bp
     from blueprints.nt_text import nt_text_bp
     from blueprints.stl import stl_bp
+    from blueprints.lxx_ms import lxx_ms_bp
     from blueprints.admin import admin_bp
 
     app.register_blueprint(textual_bp)
@@ -47,6 +48,7 @@ def create_app() -> Flask:
     app.register_blueprint(targum_bp)
     app.register_blueprint(nt_text_bp)
     app.register_blueprint(stl_bp)
+    app.register_blueprint(lxx_ms_bp)
     app.register_blueprint(admin_bp)
 
     return app

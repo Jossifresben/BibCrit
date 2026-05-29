@@ -1,0 +1,34 @@
+{
+  "passage_summary": "Genesis 1:1 is textually stable across the extant Greek uncial tradition; the three great codices show no substantive divergence at this verse.",
+  "witnesses": [
+    {
+      "siglum": "B (Vaticanus)",
+      "extant": true,
+      "character": "Vaticanus preserves the standard Old Greek text of Genesis 1:1 without notable variation.",
+      "confidence": 0.95
+    },
+    {
+      "siglum": "Aleph (Sinaiticus)",
+      "extant": false,
+      "character": "Sinaiticus has lost almost all of Genesis; the opening chapters are not preserved in this codex.",
+      "confidence": 0.95
+    },
+    {
+      "siglum": "A (Alexandrinus)",
+      "extant": true,
+      "character": "Alexandrinus agrees with Vaticanus in the wording of Genesis 1:1, reflecting the common Old Greek tradition.",
+      "confidence": 0.9
+    }
+  ],
+  "divergences": [],
+  "assessment": {
+    "synthesis": "At Genesis 1:1 the two extant uncials (B and A) substantially agree with the Rahlfs-Hanhart eclectic text, and Sinaiticus is not available as a witness. There are no text-critically or theologically significant divergences to report at this verse.",
+    "overall_confidence": 0.9,
+    "verify_against": "Wevers, Septuaginta: Vetus Testamentum Graecum I: Genesis (Goettingen, 1974); Rahlfs-Hanhart; Brooke-McLean Cambridge Larger Septuagint for the Genesis apparatus."
+  },
+  "discovery_ready": false,
+  "reference": "Genesis 1:1",
+  "cached_at": "2026-05-29T13:00:59.138365",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v1"
+}

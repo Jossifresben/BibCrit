@@ -28,6 +28,7 @@ SOURCE_MODEL      = 'claude-opus-4-7'
 TARGUM_MODEL      = 'claude-opus-4-7'
 NT_TEXT_MODEL     = 'claude-opus-4-7'
 STL_MODEL         = 'claude-opus-4-7'
+LXX_MS_MODEL      = 'claude-opus-4-7'
 
 _SONNET_COST_IN  = 5.0  / 1_000_000   # $5 per MTok input (claude-opus-4-7)
 _SONNET_COST_OUT = 25.0 / 1_000_000   # $25 per MTok output (claude-opus-4-7)
@@ -163,6 +164,27 @@ _NT_TEXT_SYSTEM = (
     "You are a specialist in New Testament textual criticism with deep expertise in "
     "manuscript families (Alexandrian, Western, Byzantine, Caesarean), the Metzger "
     "Textual Commentary methodology, and the SBLGNT/NA28/UBS5 critical apparatus. "
+    "CRITICAL: Return ONLY raw JSON. No markdown, no code fences, no backticks, "
+    "no prose before or after. The response must start with { and end with }."
+)
+
+_LXX_MS_SYSTEM = (
+    "You are a Septuagint textual critic analyzing manuscript divergences among the "
+    "great LXX uncial codices: Vaticanus (B), Sinaiticus (Aleph), and Alexandrinus (A). "
+    "You describe ATTESTED variants from the standard critical apparatus — Rahlfs-Hanhart, "
+    "the Goettingen Septuaginta, Swete's apparatus, and Brooke-McLean. "
+    "CRITICAL CONSTRAINTS, which override any instinct to be comprehensive: "
+    "(1) You are NOT transcribing the diplomatic text of any manuscript. When you cite a "
+    "variant, name the specific lexeme or short phrase at issue and describe how it differs. "
+    "NEVER present a full reconstructed verse as if it were a codex's exact wording. "
+    "(2) Codex Sinaiticus has extensive Old Testament lacunae (most of the Octateuch and "
+    "Historical books are lost). If a witness is not extant for the passage, mark extant:false "
+    "and do not invent readings for it. "
+    "(3) When you are uncertain whether a variant is real, or which witness carries it, lower "
+    "the confidence score and say so. Reporting three well-attested divergences is far better "
+    "than manufacturing eight plausible ones. "
+    "(4) For passages where the uncials substantially agree, say so honestly and return few or "
+    "no divergences. "
     "CRITICAL: Return ONLY raw JSON. No markdown, no code fences, no backticks, "
     "no prose before or after. The response must start with { and end with }."
 )
@@ -2037,6 +2059,81 @@ class ClaudePipeline:
             self.save_cache(reference, tool, prompt_version, model, data)
         return data
 
+    def analyze_lxx_ms(self, reference: str, lxx_text: str = '') -> dict:
+        """Return LXX manuscript-variant analysis for a passage.
+
+        Describes attested divergences among the great uncials (B, Aleph, A)
+        from the critical apparatus — NOT a diplomatic transcription.
+        Returns dict with 'passage_summary', 'witnesses', 'divergences', 'assessment'.
+        On error: returns a populated empty-shape dict.
+        """
+        model          = LXX_MS_MODEL
+        prompt_version = 'v1'
+        tool           = 'lxx_ms_variants'
+
+        cached = self.get_cached(reference, tool, prompt_version, model)
+        if cached:
+            return cached
+
+        _empty = {
+            'reference': reference, 'passage_summary': '', 'witnesses': [],
+            'divergences': [],
+            'assessment': {'synthesis': '', 'overall_confidence': 0.0, 'verify_against': ''},
+        }
+
+        if not self._client:
+            return {**_empty, 'error': 'No API key configured. Set ANTHROPIC_API_KEY environment variable.'}
+
+        budget = self.get_budget()
+        if budget['spend_usd'] >= self._cap_usd:
+            return {**_empty, 'error': (
+                f"Monthly analysis budget of ${self._cap_usd:.2f} reached. "
+                "Please try again next month or donate to increase the cap."
+            )}
+
+        template = self.load_prompt('lxx_ms_variants', prompt_version)
+        user_content = (
+            template
+            .replace('{{REFERENCE}}', reference)
+            .replace('{{LXX_TEXT}}',  lxx_text)
+        ) if template else (
+            f'Reference: {reference}\nLXX: {lxx_text or "(not available)"}\n'
+            'Analyze LXX manuscript divergences among B, Aleph, A. Return JSON with '
+            'passage_summary, witnesses, divergences, assessment.'
+        )
+
+        response = self._client.messages.create(
+            model=model,
+            max_tokens=8192,
+            system=_LXX_MS_SYSTEM,
+            messages=[
+                {'role': 'user', 'content': user_content},
+            ],
+        )
+
+        cost = (response.usage.input_tokens  * _SONNET_COST_IN +
+                response.usage.output_tokens * _SONNET_COST_OUT)
+        self.record_spend(cost)
+
+        raw  = response.content[0].text
+        data = _parse_json_response(raw)
+
+        # Retry once if JSON parsing failed; never persist a parse error to cache.
+        if 'parse_error' in data:
+            resp2 = self._client.messages.create(
+                model=model, max_tokens=8192, system=_LXX_MS_SYSTEM,
+                messages=[{'role': 'user', 'content': user_content}],
+            )
+            self.record_spend(resp2.usage.input_tokens * _SONNET_COST_IN +
+                              resp2.usage.output_tokens * _SONNET_COST_OUT)
+            data2 = _parse_json_response(resp2.content[0].text)
+            if 'parse_error' not in data2:
+                data = data2
+
+        if 'parse_error' not in data:
+            self.save_cache(reference, tool, prompt_version, model, data)
+        return data
+
     def analyze_stl(self, reference: str, mt_text: str = '',
                     lxx_text: str = '') -> dict:
         """Return Second Temple Literature bridge analysis for a biblical passage.
@@ -2234,6 +2331,73 @@ class ClaudePipeline:
         try:
             for key, value in self._call_streaming(
                 system=_NT_TEXT_SYSTEM,
+                user_content=user_content,
+                model=model,
+                max_tokens=8192,
+            ):
+                if key is None:
+                    in_tok, out_tok, full_text = value
+                else:
+                    sections[key] = value
+                    yield key, value
+        except Exception as exc:
+            yield None, {'error': str(exc)}
+            return
+        finally:
+            self.record_spend(in_tok * _SONNET_COST_IN + out_tok * _SONNET_COST_OUT)
+
+        data = _parse_json_response(full_text)
+        if 'parse_error' not in data:
+            self.save_cache(reference, tool, prompt_version, model, data)
+            yield None, data
+        else:
+            yield None, (sections if sections else data)
+
+    def stream_lxx_ms(self, reference: str, lxx_text: str = ''):
+        """Streaming version of analyze_lxx_ms().
+
+        Yields (key, value) pairs as each JSON section completes,
+        followed by a final epilogue: ``(None, final_result_dict)``.
+        No JSON parse retry — if parse fails, result is not cached.
+        """
+        model          = LXX_MS_MODEL
+        prompt_version = 'v1'
+        tool           = 'lxx_ms_variants'
+
+        cached = self.get_cached(reference, tool, prompt_version, model)
+        if cached:
+            for key, value in cached.items():
+                yield key, value
+                time.sleep(0.04)
+            yield None, cached
+            return
+
+        if not self._client:
+            yield None, {'error': 'No API key configured.'}
+            return
+
+        budget = self.get_budget()
+        if budget['spend_usd'] >= self._cap_usd:
+            yield None, {'error': 'Monthly budget reached.'}
+            return
+
+        template = self.load_prompt('lxx_ms_variants', prompt_version)
+        user_content = (
+            template
+            .replace('{{REFERENCE}}', reference)
+            .replace('{{LXX_TEXT}}',  lxx_text)
+        ) if template else (
+            f'Reference: {reference}\nLXX: {lxx_text or "(not available)"}\n'
+            'Analyze LXX manuscript divergences among B, Aleph, A. Return JSON with '
+            'passage_summary, witnesses, divergences, assessment.'
+        )
+
+        sections: dict = {}
+        in_tok = out_tok = 0
+        full_text = '{'   # safe default if _call_streaming drops its terminal yield
+        try:
+            for key, value in self._call_streaming(
+                system=_LXX_MS_SYSTEM,
                 user_content=user_content,
                 model=model,
                 max_tokens=8192,

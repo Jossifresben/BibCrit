@@ -1,0 +1,78 @@
+{
+  "passage_summary": "Judges survives in two notably distinct Greek recensions, conventionally the A-text (Alexandrinus and allies) and the B-text (Vaticanus and allies); Rahlfs prints both in parallel for much of Judges. At 5:1 the divergences are minor, chiefly orthographic in the proper names, but the A/B split is real.",
+  "witnesses": [
+    {
+      "siglum": "B (Vaticanus)",
+      "extant": true,
+      "character": "Representative of the B-text of Judges, often associated with a kaige-type revision.",
+      "confidence": 0.9
+    },
+    {
+      "siglum": "Aleph (Sinaiticus)",
+      "extant": false,
+      "character": "Sinaiticus is lacunose for most of the Octateuch including Judges; it does not survive here.",
+      "confidence": 0.95
+    },
+    {
+      "siglum": "A (Alexandrinus)",
+      "extant": true,
+      "character": "Representative of the A-text of Judges, generally closer to the Hexaplaric/Origenic tradition.",
+      "confidence": 0.9
+    }
+  ],
+  "divergences": [
+    {
+      "locus": "v.1, patronymic of Barak",
+      "readings": [
+        {
+          "witnesses": [
+            "A (Alexandrinus)"
+          ],
+          "lexeme": "Αβινεεμ",
+          "description": "A-text form of the patronymic, closer to MT Abinoam.",
+          "gloss": "son of Abinoam"
+        },
+        {
+          "witnesses": [
+            "B (Vaticanus)"
+          ],
+          "lexeme": "Αβεινεεμ",
+          "description": "B-text spelling with iota, an orthographic variant of the same name.",
+          "gloss": "son of Abinoam"
+        }
+      ],
+      "significance": "Purely orthographic; reflects the divergent transliteration habits of the A- and B-traditions rather than a substantive variant.",
+      "confidence": 0.5
+    },
+    {
+      "locus": "v.1, name of Deborah",
+      "readings": [
+        {
+          "witnesses": [
+            "A (Alexandrinus)",
+            "B (Vaticanus)"
+          ],
+          "lexeme": "Δεββωρα",
+          "description": "Both uncials agree on the standard transliteration; minor spelling differences (single vs. double consonant) are reported in some witnesses but not weighty.",
+          "gloss": "Deborah"
+        }
+      ],
+      "significance": "No substantive divergence; noted only because Brooke-McLean records minor orthographic variation in the minuscule tradition.",
+      "confidence": 0.4
+    }
+  ],
+  "assessment": {
+    "synthesis": "Judges 5:1 is a place where the A/B recensional split of Judges is visible only at the level of name-spelling. The content of the verse — Deborah and Barak singing on that day — is uniform across the extant uncials. Sinaiticus is not available as a witness here.",
+    "overall_confidence": 0.8,
+    "verify_against": [
+      "Rahlfs-Hanhart (which prints A and B texts of Judges in parallel)",
+      "Brooke-McLean, The Old Testament in Greek, vol. I part 4 (Joshua, Judges, Ruth)",
+      "Goettingen Septuaginta (Judges, ed. Fernández Marcos, 2011)"
+    ]
+  },
+  "discovery_ready": false,
+  "reference": "Judges 5:1",
+  "cached_at": "2026-05-29T13:00:23.057864",
+  "model_version": "claude-opus-4-7",
+  "prompt_version": "v1"
+}

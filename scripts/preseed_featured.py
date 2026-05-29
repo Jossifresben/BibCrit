@@ -31,6 +31,7 @@ BASE = "http://localhost:5001"
 ENDPOINT_OVERRIDES = {
     "nt_ot": "nt-ot",
     "nt_text": "nt-text",
+    "lxx_ms_variants": "lxx-ms",
 }
 
 # ── Query-parameter map (tool name → param name, default "ref") ──────────────
@@ -154,6 +155,14 @@ PASSAGES: list[tuple[str, str]] = [
     ("nt_text", "John 7:53"),
     ("nt_text", "1 John 5:7"),
     ("nt_text", "Matthew 1:16"),
+
+    # ── LXX MANUSCRIPT WITNESSES (B / Aleph / A divergences) ──────────────────
+    ("lxx_ms_variants", "Judges 5:1"),
+    ("lxx_ms_variants", "Daniel 4:1"),
+    ("lxx_ms_variants", "Tobit 1:1"),
+    ("lxx_ms_variants", "Isaiah 7:14"),
+    ("lxx_ms_variants", "Genesis 1:1"),
+    ("lxx_ms_variants", "1 Samuel 17:12"),
 
     # ── PATRISTIC (all 12 featured passages; Psalm 22:1 → 110:1) ─────────────
     ("patristic",       "Psalm 110:1"),

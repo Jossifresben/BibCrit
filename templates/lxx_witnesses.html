@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+{% block title %}{{ _t('lxx_ms_page_title') }}{% endblock %}
+{% block meta_description %}Where the great Septuagint uncials — Vaticanus (B), Sinaiticus, and Alexandrinus (A) — diverge at a passage, and why it matters. Apparatus-grounded analysis with confidence scores.{% endblock %}
+{% block og_title %}LXX Manuscript Witnesses — BibCrit{% endblock %}
+{% block og_description %}Significant divergences among the great LXX uncials for any passage, with confidence scores and lacuna flags.{% endblock %}
+
+{% block content %}
+
+<div class="tool-header">
+  <h1 class="tool-title">{{ _t('lxx_ms_tool_title') }}</h1>
+  <p class="tool-subtitle">{{ _t('lxx_ms_tool_subtitle') }}</p>
+</div>
+
+<!-- Training-knowledge disclaimer (apparatus, not diplomatic text) -->
+<div class="bt-info-banner" style="margin-bottom:1rem;">
+  <div class="bt-info-inner">
+    <span class="material-symbols-outlined" style="font-size:16px;flex-shrink:0;margin-top:1px;">info</span>
+    <span class="bt-info-text">{{ _t('lxx_ms_corpus_notice') }}</span>
+  </div>
+</div>
+
+<!-- Passage Selector Bar -->
+<div class="passage-bar">
+  <div class="passage-bar-row passage-bar-main">
+    <span class="passage-label">{{ _t('passage_label') }}:</span>
+    <div class="passage-bar-selectors">
+      <select id="sel-book" class="passage-select" aria-label="{{ _t('book_label') }}">
+        <option value="">{{ _t('passage_book_placeholder') }}</option>
+      </select>
+      <select id="sel-chapter" class="passage-select" aria-label="Chapter" disabled>
+        <option value="">{{ _t('passage_ch') }}</option>
+      </select>
+      <select id="sel-verse" class="passage-select" aria-label="Verse" disabled>
+        <option value="">{{ _t('passage_vs') }}</option>
+      </select>
+    </div>
+    <span class="passage-or">{{ _t('passage_or') }}</span>
+    <input type="text" id="ref-input" class="passage-input"
+           placeholder="Judges 5:1" value="{{ reference }}"
+           aria-label="Type a reference">
+    <div class="passage-bar-actions">
+      <button id="btn-analyze" class="btn-primary">{{ _t('lxx_ms_analyze_btn') }}</button>
+    </div>
+  </div>
+</div>
+
+<!-- Empty / Welcome State -->
+<div id="empty-state" class="empty-state">
+  <div class="empty-inner">
+    <p class="featured-label">{{ _t('featured_label') }}</p>
+    <div class="featured-passages">
+      <a href="#" class="featured-ref" data-ref="Judges 5:1">{{ _t('feat_lxx_judges51') | safe }}</a>
+      <a href="#" class="featured-ref" data-ref="Daniel 4:1">{{ _t('feat_lxx_daniel41') | safe }}</a>
+      <a href="#" class="featured-ref" data-ref="Tobit 1:1">{{ _t('feat_lxx_tobit11') | safe }}</a>
+      <a href="#" class="featured-ref" data-ref="Isaiah 7:14">{{ _t('feat_lxx_isaiah714') | safe }}</a>
+      <a href="#" class="featured-ref" data-ref="Genesis 1:1">{{ _t('feat_lxx_genesis11') | safe }}</a>
+    </div>
+  </div>
+</div>
+
+<!-- Loading State -->
+<div id="loading-state" class="loading-state" style="display:none;" aria-live="polite">
+  <div class="loading-spinner"></div>
+  <p id="loading-step" class="loading-step-msg">{{ _t('loading_preparing') }}</p>
+  <p id="loading-timer" class="loading-timer"></p>
+</div>
+
+<!-- Passage heading -->
+<div id="passage-heading" class="passage-heading" style="display:none;"></div>
+
+<!-- Results area -->
+<div id="lxx-ms-results" style="display:none;">
+
+  <!-- LXX (Rahlfs) text display -->
+  <div id="lxx-text-display" class="num-section" style="display:none;">
+    <div class="num-section-label">LXX — Rahlfs-Hanhart</div>
+    <div id="lxx-text-body" class="gnt-text-body"></div>
+  </div>
+
+  <!-- Passage summary -->
+  <div id="lxx-summary-section" class="num-section" style="display:none;">
+    <div class="num-section-label">{{ _t('lxx_ms_summary_label') }}</div>
+    <div id="lxx-summary-body"></div>
+  </div>
+
+  <!-- Codex witnesses -->
+  <div id="lxx-witnesses-section" class="num-section" style="display:none;">
+    <div class="num-section-label">{{ _t('lxx_ms_witnesses_label') }}</div>
+    <div id="lxx-witnesses-body"></div>
+  </div>
+
+  <!-- Significant divergences -->
+  <div id="lxx-divergences-section" class="num-section" style="display:none;">
+    <div class="num-section-label">{{ _t('lxx_ms_divergences_label') }}</div>
+    <div id="lxx-divergences-body"></div>
+  </div>
+
+  <!-- BibCrit Assessment -->
+  <div id="lxx-assessment-section" style="display:none;">
+    <div class="num-section-label" style="margin-top:1.5rem;">{{ _t('section_bibcrit_assessment') }}</div>
+    <div id="lxx-assessment-body"></div>
+  </div>
+
+  <!-- Export row -->
+  <div class="export-row" id="export-row" style="display:none;">
+    <button class="btn-export" id="btn-sbl" title="Copy SBL footnote">📋 SBL Footnote</button>
+    <button class="btn-export" id="btn-bibtex" title="Copy BibTeX">📋 BibTeX</button>
+    <button class="btn-export btn-share" id="btn-share" title="Share">
+      <span class="material-symbols-outlined" style="font-size:14px;vertical-align:-2px">qr_code_2</span> Share
+    </button>
+  </div>
+</div>
+
+<!-- Toast -->
+<div id="toast" class="toast" style="display:none;" role="status"></div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>window.TOOL_MAX_VERSES = 30;</script>
+<script src="{{ url_for('static', filename='lxx_ms.js') }}"></script>
+{% if reference %}
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.lxxMs) window.lxxMs.analyze('{{ reference | e }}');
+  });
+</script>
+{% endif %}
+{% endblock %}

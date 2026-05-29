@@ -146,6 +146,7 @@ def sitemap_xml():
         ('/source', '0.9', 'weekly'),
         ('/targum', '0.9', 'weekly'),
         ('/nt-text', '0.9', 'weekly'),
+        ('/lxx-witnesses', '0.9', 'weekly'),
         ('/stl', '0.9', 'weekly'),
         ('/discovery', '0.8', 'monthly'),
         ('/guide', '0.7', 'monthly'),
@@ -171,7 +172,7 @@ def llms_txt():
     from flask import Response
     content = """# BibCrit
 
-> AI-powered toolkit for biblical textual criticism. Fourteen specialized scholarly tools for analyzing divergences between the Masoretic Text (MT) and the Septuagint (LXX), profiling scribal tendencies, comparing Dead Sea Scrolls witnesses, reconstructing Hebrew Vorlagen, comparing Targum Onkelos/Jonathan against MT and LXX, analyzing NT textual traditions and variant registers, tracing patristic citations, modeling numerical discrepancies, detecting theological revisions, visualizing manuscript genealogies, detecting chiastic literary structures, performing source criticism (J/E/D/P), and mapping intertextual connections with Second Temple literature.
+> AI-powered toolkit for biblical textual criticism. Fifteen specialized scholarly tools for analyzing divergences between the Masoretic Text (MT) and the Septuagint (LXX), profiling scribal tendencies, comparing Dead Sea Scrolls witnesses, reconstructing Hebrew Vorlagen, comparing Targum Onkelos/Jonathan against MT and LXX, analyzing NT textual traditions and variant registers, comparing the great LXX uncial codices (Vaticanus, Sinaiticus, Alexandrinus), tracing patristic citations, modeling numerical discrepancies, detecting theological revisions, visualizing manuscript genealogies, detecting chiastic literary structures, performing source criticism (J/E/D/P), and mapping intertextual connections with Second Temple literature.
 
 BibCrit streams AI analysis (powered by Anthropic Claude) directly in the browser. Frequently analyzed passages are cached and load instantly. All tools are free and openly accessible.
 
@@ -189,6 +190,7 @@ BibCrit streams AI analysis (powered by Anthropic Claude) directly in the browse
 - Source Criticism Tool (J/E/D/P): https://bibcrit.app/source
 - Targum Comparator (Onkelos/Jonathan): https://bibcrit.app/targum
 - NT Textual Tradition Analyzer: https://bibcrit.app/nt-text
+- LXX Manuscript Witnesses: https://bibcrit.app/lxx-witnesses
 - Second Temple Literature Bridge: https://bibcrit.app/stl
 
 ## Languages

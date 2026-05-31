@@ -1146,19 +1146,46 @@ def export_generic_bibtex():
     if state.pipeline:
         try:
             from biblical_core import claude_pipeline as _cp
+            # Per-tool model + prompt_version, used to rebuild the cache key so we
+            # can read back the stored model_version for the citation note.
+            # MUST stay in sync with each tool's analyze/stream prompt_version and
+            # *_MODEL constant — otherwise get_cached misses and the note falls
+            # back to the generic "Claude". The textual.py prompt constants are
+            # referenced directly; cross-blueprint versions are mirrored as
+            # literals (see blueprints/critical.py, literary.py, nt_text.py, etc.).
             _model_map = {
+                'divergence':      _cp.DIVERGENCE_MODEL,
                 'backtranslation': getattr(_cp, 'BACKTRANSLATION_MODEL', _cp.DIVERGENCE_MODEL),
-                'dss':             _cp.DSS_MODEL,
-                'genealogy':       _cp.GENEALOGY_MODEL,
                 'scribal':         getattr(_cp, 'SCRIBAL_MODEL',     _cp.DIVERGENCE_MODEL),
+                'numerical':       getattr(_cp, 'NUMERICAL_MODEL',   _cp.DIVERGENCE_MODEL),
+                'dss':             _cp.DSS_MODEL,
                 'theological':     getattr(_cp, 'THEOLOGICAL_MODEL', _cp.DIVERGENCE_MODEL),
                 'patristic':       getattr(_cp, 'PATRISTIC_MODEL',   _cp.DIVERGENCE_MODEL),
-                'numerical':       getattr(_cp, 'NUMERICAL_MODEL',   _cp.DIVERGENCE_MODEL),
+                'genealogy':       _cp.GENEALOGY_MODEL,
+                'nt_ot':           getattr(_cp, 'NT_OT_MODEL',       _cp.DIVERGENCE_MODEL),
+                'chiasm':          getattr(_cp, 'CHIASM_MODEL',      _cp.DIVERGENCE_MODEL),
+                'source':          getattr(_cp, 'SOURCE_MODEL',      _cp.DIVERGENCE_MODEL),
+                'targum':          getattr(_cp, 'TARGUM_MODEL',      _cp.DIVERGENCE_MODEL),
+                'nt_text':         getattr(_cp, 'NT_TEXT_MODEL',     _cp.DIVERGENCE_MODEL),
+                'stl':             getattr(_cp, 'STL_MODEL',         _cp.DIVERGENCE_MODEL),
+                'lxx_ms_variants': getattr(_cp, 'LXX_MS_MODEL',      _cp.DIVERGENCE_MODEL),
             }
             _pv_map = {
-                'backtranslation': _BACKTRANSLATION_PROMPT,
-                'dss':             _DSS_PROMPT,
-                'genealogy':       _GENEALOGY_PROMPT,
+                'divergence':      _DIVERGENCE_PROMPT,       # textual.py
+                'backtranslation': _BACKTRANSLATION_PROMPT,  # textual.py
+                'dss':             _DSS_PROMPT,              # textual.py
+                'genealogy':       _GENEALOGY_PROMPT,        # textual.py
+                'nt_ot':           _NT_OT_PROMPT,            # textual.py
+                'scribal':         'v1',                     # critical.py:_SCRIBAL_PROMPT
+                'numerical':       'v3',                     # critical.py:_NUMERICAL_PROMPT
+                'theological':     'v2',                     # critical.py:_THEOLOGICAL_PROMPT
+                'patristic':       'v3',                     # critical.py:_PATRISTIC_PROMPT
+                'chiasm':          'v1',                     # literary.py:_CHIASM_PROMPT
+                'source':          'v1',                     # literary.py:_SOURCE_PROMPT
+                'targum':          'v1',                     # targum.py:_TARGUM_PROMPT
+                'nt_text':         'v1',                     # nt_text.py:_NT_TEXT_PROMPT
+                'stl':             'v1',                     # stl.py:_STL_PROMPT
+                'lxx_ms_variants': 'v1',                     # lxx_ms.py:_LXX_MS_PROMPT
             }
             _model  = _model_map.get(tool, _cp.DIVERGENCE_MODEL)
             _pv     = _pv_map.get(tool, 'v1')

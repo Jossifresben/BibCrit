@@ -15,3 +15,20 @@ data/corpora/lxx_stepbible/full_*.csv
 video/node_modules/
 video/out/
 .worktrees/
+
+# Local agent tooling (impeccable / superpowers design skills) — not part of BibCrit
+.agents/
+.impeccable.md
+skills-lock.json
+
+# Internal planning / working docs (kept local, not for the public repo)
+EXPANSION_PLAN.md
+council-report-*.html
+council-transcript-*.md
+docs/superpowers/plans/
+
+# Local preview / wireframe scratch + video assets
+og-preview.html
+static/wireframe-persona.html
+video/package-lock.json
+video/public/

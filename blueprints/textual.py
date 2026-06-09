@@ -36,7 +36,7 @@ textual_bp = Blueprint('textual', __name__)
 # A mismatch causes cache-key divergence and cache misses on every request.
 _DIVERGENCE_PROMPT     = 'v2'
 _BACKTRANSLATION_PROMPT = 'v1'
-_DSS_PROMPT            = 'v7'
+_DSS_PROMPT            = 'v9'
 _GENEALOGY_PROMPT      = 'v2'
 _NT_OT_PROMPT          = 'v1'   # keep in sync with analyze_nt_ot() prompt_version in claude_pipeline.py
 
@@ -496,7 +496,8 @@ def api_dss_stream():
             vul_words  = corpus.get_verse_words(reference, 'VUL')
             mt_text   = ' '.join(w.word_text for w in mt_words)   if mt_words   else ''
             lxx_text  = ' '.join(w.word_text for w in lxx_words)  if lxx_words  else ''
-            dss_text  = ' '.join(w.word_text for w in dss_words)  if dss_words  else ''
+            _dss_sigla = '/'.join(sorted({w.manuscript for w in dss_words})) if dss_words else ''
+            dss_text  = (f'({_dss_sigla}) ' + ' '.join(w.word_text for w in dss_words)) if dss_words else ''
             sp_text   = ' '.join(w.word_text for w in sp_words)   if sp_words   else ''
             pesh_text = ' '.join(w.word_text for w in pesh_words) if pesh_words else ''
             vul_text  = ' '.join(w.word_text for w in vul_words)  if vul_words  else ''

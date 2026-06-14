@@ -61,7 +61,7 @@ textual_bp = Blueprint('textual', __name__)
 # A mismatch causes cache-key divergence and cache misses on every request.
 _DIVERGENCE_PROMPT     = 'v2'
 _BACKTRANSLATION_PROMPT = 'v1'
-_DSS_PROMPT            = 'v9'
+_DSS_PROMPT            = 'v10'  # keep in sync with analyze_dss()/stream_dss() in claude_pipeline.py
 _GENEALOGY_PROMPT      = 'v3'   # keep in sync with analyze_genealogy()/stream_genealogy() in claude_pipeline.py
 _NT_OT_PROMPT          = 'v1'   # keep in sync with analyze_nt_ot() prompt_version in claude_pipeline.py
 

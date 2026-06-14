@@ -3,6 +3,7 @@
 import json
 import os
 import time
+import unicodedata
 import threading
 from queue import Queue, Empty
 import requests as _requests
@@ -27,6 +28,30 @@ def _check_ref_length(reference: str, tool: str) -> str | None:
             f'Please limit to {max_v} verses or fewer for this tool.'
         )
 
+
+# ── DSS witness provenance ────────────────────────────────────────────────
+# Distinguish manuscript cards whose text came from the project corpus from
+# those whose siglum/reading the model supplied from its own training (i.e.
+# scrolls not held in the corpus). Backend-authoritative: provenance is keyed
+# to what the corpus actually provided for the verse, not to the model's claim.
+def _norm_siglum(s: str) -> str:
+    """Normalize a manuscript siglum for matching (fold superscripts, drop
+    punctuation/case): '1QIsaᵃ', '1QIsa-a', '1QIsaa' → '1qisaa'."""
+    s = unicodedata.normalize('NFKD', s or '')
+    return ''.join(ch for ch in s.lower() if ch.isalnum())
+
+
+def _tag_dss_provenance(cards, corpus_sigla_norm):
+    """Mark each DSS card 'corpus' (text supplied from the corpus for this verse)
+    or 'model' (siglum returned from the model's training, not a corpus witness)."""
+    if not isinstance(cards, list):
+        return cards
+    for c in cards:
+        if isinstance(c, dict):
+            c['source'] = 'corpus' if _norm_siglum(c.get('siglum', '')) in corpus_sigla_norm else 'model'
+    return cards
+
+
 _votes_lock = threading.Lock()
 
 textual_bp = Blueprint('textual', __name__)
@@ -37,7 +62,7 @@ textual_bp = Blueprint('textual', __name__)
 _DIVERGENCE_PROMPT     = 'v2'
 _BACKTRANSLATION_PROMPT = 'v1'
 _DSS_PROMPT            = 'v9'
-_GENEALOGY_PROMPT      = 'v2'
+_GENEALOGY_PROMPT      = 'v3'   # keep in sync with analyze_genealogy()/stream_genealogy() in claude_pipeline.py
 _NT_OT_PROMPT          = 'v1'   # keep in sync with analyze_nt_ot() prompt_version in claude_pipeline.py
 
 _STEPS = {
@@ -487,6 +512,7 @@ def api_dss_stream():
         sp_text   = ''
         pesh_text = ''
         vul_text  = ''
+        corpus_dss_sigla: set[str] = set()
         if corpus is not None:
             mt_words   = corpus.get_verse_words(reference, 'MT')
             lxx_words  = corpus.get_verse_words(reference, 'LXX')
@@ -498,6 +524,7 @@ def api_dss_stream():
             lxx_text  = ' '.join(w.word_text for w in lxx_words)  if lxx_words  else ''
             _dss_sigla = '/'.join(sorted({w.manuscript for w in dss_words})) if dss_words else ''
             dss_text  = (f'({_dss_sigla}) ' + ' '.join(w.word_text for w in dss_words)) if dss_words else ''
+            corpus_dss_sigla = {_norm_siglum(w.manuscript) for w in dss_words}
             sp_text   = ' '.join(w.word_text for w in sp_words)   if sp_words   else ''
             pesh_text = ' '.join(w.word_text for w in pesh_words) if pesh_words else ''
             vul_text  = ' '.join(w.word_text for w in vul_words)  if vul_words  else ''
@@ -524,6 +551,8 @@ def api_dss_stream():
             yield event('step', msg=_step(lang, 'found_cache'))
             for _key, _val in cached.items():
                 if _key not in CACHE_META_KEYS:
+                    if _key == 'dss_manuscripts':
+                        _tag_dss_provenance(_val, corpus_dss_sigla)
                     yield event('section', key=_key, data=_val)
                     time.sleep(0.04)
             result = cached
@@ -573,6 +602,7 @@ def api_dss_stream():
             return
 
         result['reference'] = reference
+        _tag_dss_provenance(result.get('dss_manuscripts'), corpus_dss_sigla)
         # Inject live corpus texts so the client can display the verse
         # (not stored in cache — always pulled fresh from the corpus files)
         result['_corpus'] = {

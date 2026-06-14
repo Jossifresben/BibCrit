@@ -1,4 +1,4 @@
-/* BibCrit — Manuscript Transmission Genealogy */
+/* BibCrit — Manuscript Transmission */
 
 (function () {
   'use strict';

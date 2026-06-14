@@ -6,7 +6,7 @@
     <title>{% block title %}BibCrit — Biblical Textual Criticism{% endblock %}</title>
 
     {# ── SEO meta ── #}
-    <meta name="description" content="{% block meta_description %}BibCrit offers AI-powered tools for biblical textual criticism: MT/LXX divergence analysis, scribal tendency profiling, Dead Sea Scrolls comparison, back-translation, patristic citations, numerical discrepancy modeling, theological revision detection, and manuscript genealogy.{% endblock %}">
+    <meta name="description" content="{% block meta_description %}BibCrit offers AI-powered tools for biblical textual criticism: MT/LXX divergence analysis, scribal tendency profiling, Dead Sea Scrolls comparison, back-translation, patristic citations, numerical discrepancy modeling, theological revision detection, and manuscript transmission.{% endblock %}">
     <meta name="author" content="Jossi Fresco Benaim">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://bibcrit.app{{ request.path }}{% if lang != 'en' %}?lang={{ lang }}{% endif %}">
@@ -29,7 +29,7 @@
     {# ── Twitter / X Card ── #}
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="{% block twitter_title %}BibCrit — Biblical Textual Criticism{% endblock %}">
-    <meta name="twitter:description" content="{% block twitter_description %}AI-powered biblical textual criticism: MT/LXX divergences, scribal tendencies, DSS comparison, patristic citations, manuscript genealogy.{% endblock %}">
+    <meta name="twitter:description" content="{% block twitter_description %}AI-powered biblical textual criticism: MT/LXX divergences, scribal tendencies, DSS comparison, patristic citations, manuscript transmission.{% endblock %}">
     <meta name="twitter:image" content="https://bibcrit.app/static/og-image.png">
 
     {# ── Schema.org JSON-LD ── #}
@@ -40,7 +40,7 @@
       "@type": "WebApplication",
       "name": "BibCrit",
       "url": "https://bibcrit.app",
-      "description": "AI-powered toolkit for biblical textual criticism — MT/LXX divergence analysis, scribal tendency profiling, Dead Sea Scrolls comparison, patristic citation tracking, and manuscript genealogy.",
+      "description": "AI-powered toolkit for biblical textual criticism — MT/LXX divergence analysis, scribal tendency profiling, Dead Sea Scrolls comparison, patristic citation tracking, and manuscript transmission.",
       "applicationCategory": "EducationalApplication",
       "operatingSystem": "Web",
       "inLanguage": ["en", "es"],

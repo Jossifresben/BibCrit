@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block title %}{{ _t('genealogy_page_title') }}{% endblock %}
-{% block meta_description %}Visualize the full transmission history of any biblical book across manuscript families — Masoretic Text, Septuagint, Dead Sea Scrolls, Samaritan Pentateuch, Peshitta, Targum, and Vulgate — rendered as an interactive stemma.{% endblock %}
-{% block og_title %}Manuscript Genealogy — BibCrit{% endblock %}
-{% block og_description %}Visualize biblical manuscript transmission history across MT, LXX, DSS, SP, Peshitta, Targum, and Vulgate as an interactive stemma.{% endblock %}
-{% block twitter_title %}Manuscript Genealogy — BibCrit{% endblock %}
-{% block twitter_description %}Trace the transmission history of biblical books across all major manuscript families with an interactive stemma.{% endblock %}
+{% block meta_description %}See how the text of any biblical book was transmitted across the major traditions — Masoretic Text, Septuagint, Dead Sea Scrolls, Samaritan Pentateuch, Peshitta, Targum, and Vulgate — as a schematic overview from proto-text to the modern critical editions.{% endblock %}
+{% block og_title %}Manuscript Transmission — BibCrit{% endblock %}
+{% block og_description %}See how the biblical text was transmitted across MT, LXX, DSS, SP, Peshitta, Targum, and Vulgate — a schematic overview from proto-text to the modern critical editions.{% endblock %}
+{% block twitter_title %}Manuscript Transmission — BibCrit{% endblock %}
+{% block twitter_description %}Trace how biblical books were transmitted across all the major textual traditions — a schematic transmission overview.{% endblock %}
 
 {% block content %}
 
@@ -16,9 +16,9 @@
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     if (window.BibCritPersona) BibCritPersona.setToolSubtitle('genealogy', {
-      scholar: 'Full stemmatic visualization from proto-text to modern critical editions across all major manuscript traditions.',
-      phd:     'Get a stemmatic overview for your book\u2019s transmission \u2014 use the diagram in your manuscript history chapter.',
-      student: 'The Bible wasn\u2019t printed \u2014 it was hand-copied for over a thousand years, branching into distinct manuscript families across different regions and languages: Hebrew, Greek, Aramaic, Latin, Syriac, and more. Each tradition made its own choices and accumulated its own changes. Select a book to see its full transmission history mapped as an interactive family tree, from the earliest manuscripts to the modern critical editions your Bible is translated from.'
+      scholar: 'A schematic transmission overview from proto-text to the modern critical editions across the major textual traditions — an orientation diagram, not a reconstructed stemma.',
+      phd:     'Get a transmission overview for your book \u2014 a schematic of how the traditions relate, useful in a manuscript-history chapter (it is an orientation diagram, not a stemma reconstructed from collation).',
+      student: 'The Bible wasn\u2019t printed \u2014 it was hand-copied for over a thousand years, branching into distinct manuscript families across different regions and languages: Hebrew, Greek, Aramaic, Latin, Syriac, and more. Each tradition made its own choices and accumulated its own changes. Select a book to see its full transmission history mapped as an interactive diagram, from the earliest manuscripts to the modern critical editions your Bible is translated from.'
     });
   });
 </script>

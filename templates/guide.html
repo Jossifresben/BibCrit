@@ -459,7 +459,7 @@
     {# ── Hero ── #}
     <div class="guide-hero">
         <h1>How to Use BibCrit</h1>
-        <p>BibCrit is a Claude-powered biblical textual criticism toolkit. Each tool streams AI analysis directly in your browser, letting you explore divergences between the Masoretic Text (MT) and the Septuagint (LXX), profile scribal tendencies, model numerical discrepancies, reconstruct plausible Hebrew Vorlagen, compare Dead Sea Scrolls witnesses, trace patristic citations, detect theological revisions, visualize manuscript genealogies, compare Targum Onkelos and Jonathan renderings, analyze NT textual traditions and variant registers, map chiastic structures, and analyze source layers — all without installing any software.</p>
+        <p>BibCrit is a Claude-powered biblical textual criticism toolkit. Each tool streams AI analysis directly in your browser, letting you explore divergences between the Masoretic Text (MT) and the Septuagint (LXX), profile scribal tendencies, model numerical discrepancies, reconstruct plausible Hebrew Vorlagen, compare Dead Sea Scrolls witnesses, trace patristic citations, detect theological revisions, visualize manuscript transmission, compare Targum Onkelos and Jonathan renderings, analyze NT textual traditions and variant registers, map chiastic structures, and analyze source layers — all without installing any software.</p>
     </div>
 
     {# ── Stats bar ── #}
@@ -540,8 +540,8 @@
         </div>
 
         <div class="feature-card">
-            <h4><span class="material-symbols-outlined" style="font-size:1.1em;vertical-align:-3px;margin-right:4px">account_tree</span>Manuscript Genealogy</h4>
-            <p>Visualize the full transmission stemma of a biblical book — from proto-text through manuscript families (MT, LXX, DSS, SP, Peshitta, Targum, Vulgate) to modern critical editions. Understand the genealogical relationships between traditions and where each branch diverges from the others.</p>
+            <h4><span class="material-symbols-outlined" style="font-size:1.1em;vertical-align:-3px;margin-right:4px">account_tree</span>Manuscript Transmission</h4>
+            <p>See how a biblical book's text was transmitted — from proto-text through the major traditions (MT, LXX, DSS, SP, Peshitta, Targum, Vulgate) to modern critical editions. A schematic overview of how the traditions relate and where they diverge — an orientation diagram, not a stemma reconstructed from collation.</p>
             <a href="/genealogy?book=Isaiah&lang={{ lang }}" class="feature-example-link">Try Isaiah →</a>
         </div>
 
@@ -764,7 +764,7 @@ GET /api/cache?discovery_ready=true&amp;limit=50&amp;offset=0</pre>
         </li>
         <li>
             <strong>scrollmapper/bible_databases — Clementine Vulgate</strong><br>
-            Provides Jerome's Latin Vulgate (Clementine edition, 1592) across the full Protestant canon — 66 books, 569,588 Latin word tokens. Used by the DSS Bridge, Manuscript Genealogy, and Theological Revision Detector to add a 4th-century Latin witness to each analysis.
+            Provides Jerome's Latin Vulgate (Clementine edition, 1592) across the full Protestant canon — 66 books, 569,588 Latin word tokens. Used by the DSS Bridge, Manuscript Transmission, and Theological Revision Detector to add a 4th-century Latin witness to each analysis.
             <br><a href="https://github.com/scrollmapper/bible_databases" target="_blank" rel="noopener" class="feature-example-link">scrollmapper/bible_databases on GitHub →</a>
         </li>
         <li>

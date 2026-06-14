@@ -362,7 +362,9 @@
       var manuscripts = (rawMs || []).slice().sort(function (a, b) {
         var aE = (a.verse_present && a.alignment !== 'absent') ? 0 : 1;
         var bE = (b.verse_present && b.alignment !== 'absent') ? 0 : 1;
-        return aE - bE;
+        if (aE !== bE) return aE - bE;
+        // Corpus witnesses before model-supplied ones
+        return ((a.source === 'model') ? 1 : 0) - ((b.source === 'model') ? 1 : 0);
       });
       if (msList) {
         msList.innerHTML = '';
@@ -413,7 +415,9 @@
     var manuscripts = (data.dss_manuscripts || []).slice().sort(function (a, b) {
       var aExtant = (a.verse_present && a.alignment !== 'absent') ? 0 : 1;
       var bExtant = (b.verse_present && b.alignment !== 'absent') ? 0 : 1;
-      return aExtant - bExtant;
+      if (aExtant !== bExtant) return aExtant - bExtant;
+      // Corpus witnesses before model-supplied ones
+      return ((a.source === 'model') ? 1 : 0) - ((b.source === 'model') ? 1 : 0);
     });
 
     manuscripts.forEach(function (ms, idx) {
@@ -619,6 +623,9 @@
     header.innerHTML =
       '<span class="dss-ms-siglum">' + _esc(ms.siglum || '') + '</span>' +
       '<span class="dss-ms-fullname">' + _esc(ms.full_name || '') + '</span>' +
+      (ms.source === 'model'
+        ? '<span class="dss-ms-source-badge" title="' + _esc(window.t('dss_model_supplied_tip', 'Supplied from the model’s training, not the project corpus. Not a corpus witness — verify against the critical editions before use.')) + '" style="margin-left:6px;padding:1px 7px;border:1px solid #c47f17;border-radius:10px;background:#fdf3e3;color:#8a5a00;font-size:0.72rem;font-weight:600;white-space:nowrap;vertical-align:middle">' + _esc(window.t('dss_model_supplied_badge', 'model-supplied · verify')) + '</span>'
+        : '') +
       _alignmentBadge(alignment) +
       (present && conf ? '<span class="conf-badge ' + confCls + '" style="margin-left:4px">' + pct + '%</span>' : '') +
       '<span class="dss-ms-toggle">' + (idx === 0 ? '▲' : '▼') + '</span>';
@@ -630,6 +637,10 @@
       body.innerHTML = '<p class="dss-absent-note">' + window.t('dss_absent_note', 'This passage is not extant in {siglum}.').replace('{siglum}', _esc(ms.siglum || 'this manuscript')) + '</p>';
     } else {
       var inner = '';
+      if (ms.source === 'model') {
+        inner += '<p class="dss-model-note" style="margin:0 0 0.6rem;padding:8px 10px;border-left:3px solid #c47f17;background:#fdf3e3;color:#6b4a00;font-size:0.8rem;border-radius:4px">' +
+          _esc(window.t('dss_model_supplied_note', 'This reading is supplied from the language model’s training, not from the project corpus, and is not a corpus witness. Treat it as a hypothesis to verify against the critical editions before use.')) + '</p>';
+      }
       if (ms.dss_text) {
         inner += '<div class="dss-ms-text">' + _esc(ms.dss_text) + '</div>';
       }

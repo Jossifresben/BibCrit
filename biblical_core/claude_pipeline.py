@@ -134,7 +134,7 @@ _PATRISTIC_SYSTEM = (
 )
 
 _GENEALOGY_SYSTEM = (
-    "You are a specialist in the manuscript transmission and stemmatic history of the "
+    "You are a specialist in the manuscript transmission history of the "
     "Hebrew Bible / Old Testament, with deep expertise in the Masoretic Text, the "
     "Septuagint and its recensions, the Dead Sea Scrolls, and the ancient versions "
     "(Peshitta, Targum, Vulgate). You apply the methodology of Tov, Barthélemy, "
@@ -1686,7 +1686,7 @@ class ClaudePipeline:
         On error: returns {'error': ..., 'stemma_nodes': [], 'stemma_edges': [], ...}.
         """
         model          = GENEALOGY_MODEL
-        prompt_version = 'v2'
+        prompt_version = 'v3'
         tool           = 'genealogy'
 
         cached = self.get_cached(book, tool, prompt_version, model)
@@ -1751,7 +1751,7 @@ class ClaudePipeline:
         followed by a final epilogue: ``(None, final_result_dict)``.
         """
         model          = GENEALOGY_MODEL
-        prompt_version = 'v2'
+        prompt_version = 'v3'
         tool           = 'genealogy'
 
         cached = self.get_cached(book, tool, prompt_version, model)

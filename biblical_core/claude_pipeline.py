@@ -1163,7 +1163,7 @@ class ClaudePipeline:
         On error: returns {'error': ..., 'dss_manuscripts': [], ...}.
         """
         model          = DSS_MODEL
-        prompt_version = 'v10'
+        prompt_version = 'v11'
         tool           = 'dss'
 
         cached = self.get_cached(reference, tool, prompt_version, model)
@@ -1281,7 +1281,7 @@ class ClaudePipeline:
         followed by a final epilogue: ``(None, final_result_dict)``.
         """
         model          = DSS_MODEL
-        prompt_version = 'v10'
+        prompt_version = 'v11'
         tool           = 'dss'
 
         cached = self.get_cached(reference, tool, prompt_version, model)

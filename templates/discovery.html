@@ -1,41 +1,43 @@
 {% extends "base.html" %}
-{% block title %}Discovery — BibCrit{% endblock %}
+{% block title %}{{ _t('discovery_page_title') }}{% endblock %}
+
+{% macro typebadge(ty) %}{% set lbl = _t('disc_type_' ~ ty) %}{{ lbl if (lbl and lbl != ('disc_type_' ~ ty)) else (ty | replace('_', ' ') | title) }}{% endmacro %}
 
 {% block content %}
 
 <!-- Hero -->
 <div class="disc-hero">
   <div class="disc-hero-inner">
-    <div class="disc-hero-label">✦ Discovery</div>
-    <h1 class="disc-hero-title" id="disc-hero-title">Findings from the Text</h1>
+    <div class="disc-hero-label">✦ {{ _t('disc_hero_label') }}</div>
+    <h1 class="disc-hero-title" id="disc-hero-title">{{ _t('disc_hero_title') }}</h1>
     <p class="disc-hero-sub" id="disc-hero-sub">
-      The most fascinating discoveries in biblical manuscript scholarship.
+      {{ _t('disc_hero_sub') }}
     </p>
     {% if stats.passages %}
     <div class="disc-stats-bar">
       <div class="disc-stat">
         <span class="disc-stat-n">{{ stats.books }}</span>
-        <span class="disc-stat-label">books of scripture</span>
+        <span class="disc-stat-label">{{ _t('disc_stat_books') }}</span>
       </div>
       <div class="disc-stat-sep"></div>
       <div class="disc-stat">
         <span class="disc-stat-n">{{ stats.traditions }}</span>
-        <span class="disc-stat-label">manuscript traditions</span>
+        <span class="disc-stat-label">{{ _t('disc_stat_traditions') }}</span>
       </div>
       <div class="disc-stat-sep"></div>
       <div class="disc-stat">
         <span class="disc-stat-n">{{ stats.passages }}</span>
-        <span class="disc-stat-label">passages analyzed</span>
+        <span class="disc-stat-label">{{ _t('disc_stat_passages') }}</span>
       </div>
       <div class="disc-stat-sep"></div>
       <div class="disc-stat">
         <span class="disc-stat-n">{{ stats.theories }}</span>
-        <span class="disc-stat-label">competing theories examined</span>
+        <span class="disc-stat-label">{{ _t('disc_stat_theories') }}</span>
       </div>
       <div class="disc-stat-sep"></div>
       <div class="disc-stat">
         <span class="disc-stat-n">{{ total }}</span>
-        <span class="disc-stat-label">findings surfaced</span>
+        <span class="disc-stat-label">{{ _t('disc_stat_findings') }}</span>
       </div>
     </div>
     {% endif %}
@@ -49,9 +51,9 @@
 <div class="disc-featured-wrap">
   <div class="disc-featured">
     <div class="disc-featured-eyebrow">
-      <span class="disc-feat-label">Featured Finding</span>
+      <span class="disc-feat-label">{{ _t('disc_featured_label') }}</span>
       <span class="disc-type-badge disc-type-{{ featured.card_type or featured.divergence_type }}">
-        {{ (featured.card_type or featured.divergence_type) | replace('_', ' ') | title }}
+        {{ typebadge(featured.card_type or featured.divergence_type) }}
       </span>
     </div>
     <div class="disc-feat-ref">{{ featured.reference }}</div>
@@ -69,21 +71,21 @@
     <p class="disc-feat-summary">{{ featured.summary_plain }}</p>
     {% endif %}
     <a href="{{ featured.link or ('/divergence?ref=' ~ featured.reference | urlencode) }}" class="disc-feat-link">
-      See full scholarly analysis →
+      {{ _t('disc_feat_link') }}
     </a>
   </div>
 </div>
 
 <!-- Cards grid (remaining findings) -->
 {% if cards | length > 1 %}
-<div class="disc-section-label">More Findings</div>
+<div class="disc-section-label">{{ _t('disc_more_findings') }}</div>
 <div class="disc-grid" id="disc-grid">
   {% for card in cards[1:] %}
   <div class="disc-card" data-card-type="{{ card.card_type or card.divergence_type }}">
     <div class="disc-card-head">
       <span class="disc-card-ref">{{ card.reference }}</span>
       <span class="disc-type-badge disc-type-{{ card.card_type or card.divergence_type }}">
-        {{ (card.card_type or card.divergence_type) | replace('_', ' ') | title }}
+        {{ typebadge(card.card_type or card.divergence_type) }}
       </span>
     </div>
     {% if card.mt_word and card.lxx_word %}
@@ -97,7 +99,7 @@
     {% endif %}
     <p class="disc-card-plain">{{ card.analysis_plain }}</p>
     <a href="{{ card.link or ('/divergence?ref=' ~ card.reference | urlencode) }}" class="disc-card-link">
-      Explore →
+      {{ _t('disc_explore') }}
     </a>
   </div>
   {% endfor %}
@@ -107,10 +109,10 @@
 <div class="disc-load-more-wrap" id="load-more-wrap">
   <button class="disc-load-more" id="btn-load-more"
           data-offset="12" data-total="{{ total }}">
-    Load more findings
+    {{ _t('disc_load_more') }}
   </button>
   <span class="disc-load-count" id="load-count">
-    Showing 12 of {{ total }}
+    {{ _t('disc_showing') | replace('{shown}', '12') | replace('{total}', total | string) }}
   </span>
 </div>
 {% endif %}
@@ -121,11 +123,10 @@
 <!-- Empty state -->
 <div class="disc-empty">
   <div class="disc-empty-icon">📜</div>
-  <h2>Content coming soon</h2>
-  <p>Discovery cards appear automatically as passages are analyzed.
-     Try the Divergence Analyzer to generate the first finding.</p>
-  <a href="/divergence?ref=Isaiah+7:14" class="btn-primary" style="display:inline-block;text-decoration:none;padding:8px 20px;">
-    Analyze Isaiah 7:14 →
+  <h2>{{ _t('disc_empty_title') }}</h2>
+  <p>{{ _t('disc_empty_body') }}</p>
+  <a href="/divergence?ref=Isaiah+7:14&lang={{ lang }}" class="btn-primary" style="display:inline-block;text-decoration:none;padding:8px 20px;">
+    {{ _t('disc_empty_cta') }}
   </a>
 </div>
 
@@ -133,14 +134,9 @@
 
 <!-- How it works -->
 <div class="disc-about">
-  <h3>How Discovery works</h3>
-  <p>
-    Every time a scholar runs the Divergence Analyzer, BibCrit generates both a technical
-    scholarly analysis <em>and</em> a plain-language version.
-    The most illuminating findings surface here,
-    making centuries of manuscript scholarship accessible to everyone.
-  </p>
-  <a href="/divergence" class="disc-about-link">Try the Divergence Analyzer →</a>
+  <h3>{{ _t('disc_about_title') }}</h3>
+  <p>{{ _t('disc_about_body') }}</p>
+  <a href="/divergence?lang={{ lang }}" class="disc-about-link">{{ _t('disc_about_link') }}</a>
 </div>
 
 {% endblock %}
@@ -149,19 +145,14 @@
 <script>
 (function () {
   // ── Persona-aware hero text + card reordering ───────────────────────────
+  var t = window.t || function(k, fb){ return fb || k; };
   var HERO = {
-    scholar: {
-      title: 'Research-Grade Textual Findings',
-      sub:   'Sorted by scholarly significance — different Vorlagen, theological tendencies, and harmonization patterns across the manuscript traditions.'
-    },
-    phd: {
-      title: 'Dissertation-Ready Textual Evidence',
-      sub:   'Findings most relevant for thesis argumentation — theological revision patterns, cross-tradition divergences, and citable analyses.'
-    },
-    student: {
-      title: 'Discoveries from the Ancient Manuscripts',
-      sub:   'The most fascinating finds from 3,000 years of Bible manuscripts.'
-    }
+    scholar: { title: t('disc_hero_scholar_title', 'Research-Grade Textual Findings'),
+               sub:   t('disc_hero_scholar_sub', '') },
+    phd:     { title: t('disc_hero_phd_title', 'Dissertation-Ready Textual Evidence'),
+               sub:   t('disc_hero_phd_sub', '') },
+    student: { title: t('disc_hero_student_title', 'Discoveries from the Ancient Manuscripts'),
+               sub:   t('disc_hero_student_sub', '') }
   };
 
   // Type priority by persona (first = most prominent)
@@ -176,8 +167,8 @@
   if (persona && HERO[persona]) {
     var titleEl = document.getElementById('disc-hero-title');
     var subEl   = document.getElementById('disc-hero-sub');
-    if (titleEl) titleEl.textContent = HERO[persona].title;
-    if (subEl)   subEl.textContent   = HERO[persona].sub;
+    if (titleEl && HERO[persona].title) titleEl.textContent = HERO[persona].title;
+    if (subEl   && HERO[persona].sub)   subEl.textContent   = HERO[persona].sub;
   }
 
   function reorderGrid() {
@@ -204,11 +195,14 @@
   var btn = document.getElementById('btn-load-more');
   if (!btn) return;
 
+  var t     = window.t || function(k, fb){ return fb || k; };
   var grid  = document.getElementById('disc-grid');
   var count = document.getElementById('load-count');
+  var lang  = (window.bibcritLang || document.documentElement.lang || 'en');
 
   function typeLabel(type) {
-    return (type || '').replace(/_/g, ' ').replace(/\b\w/g, function(c){ return c.toUpperCase(); });
+    var fb = (type || '').replace(/_/g, ' ').replace(/\b\w/g, function(c){ return c.toUpperCase(); });
+    return t('disc_type_' + (type || ''), fb);
   }
 
   function wordBase(w) {
@@ -241,24 +235,24 @@
       '<div class="disc-card-head">' +
         '<span class="disc-card-ref">' + _esc(card.reference) + '</span>' +
         '<span class="disc-type-badge disc-type-' + _esc(card.card_type || card.divergence_type) + '">' +
-          typeLabel(card.card_type || card.divergence_type) +
+          _esc(typeLabel(card.card_type || card.divergence_type)) +
         '</span>' +
       '</div>' +
       wordsHtml +
       '<p class="disc-card-plain">' + _esc(card.analysis_plain) + '</p>' +
-      '<a href="' + _esc(link) + '" class="disc-card-link">Explore →</a>';
+      '<a href="' + _esc(link) + '" class="disc-card-link">' + _esc(t('disc_explore', 'Explore →')) + '</a>';
     return el;
   }
 
   btn.addEventListener('click', function () {
     var offset = parseInt(btn.dataset.offset, 10);
     var total  = parseInt(btn.dataset.total,  10);
-    btn.textContent = 'Loading…';
+    btn.textContent = t('disc_loading', 'Loading…');
     btn.disabled = true;
 
     var personaParam = (typeof localStorage !== 'undefined' && localStorage.getItem('bibcrit_persona'))
       ? '&persona=' + encodeURIComponent(localStorage.getItem('bibcrit_persona')) : '';
-    fetch('/api/discovery/cards?offset=' + offset + '&limit=12' + personaParam)
+    fetch('/api/discovery/cards?offset=' + offset + '&limit=12&lang=' + encodeURIComponent(lang) + personaParam)
       .then(function(r){ return r.json(); })
       .then(function(data) {
         (data.cards || []).forEach(function(card) {
@@ -269,16 +263,17 @@
         btn.dataset.offset = newOffset;
 
         if (data.has_more) {
-          btn.textContent = 'Load more findings';
+          btn.textContent = t('disc_load_more', 'Load more findings');
           btn.disabled = false;
-          if (count) count.textContent = 'Showing ' + newOffset + ' of ' + total;
+          if (count) count.textContent = t('disc_showing', 'Showing {shown} of {total}')
+                                            .replace('{shown}', newOffset).replace('{total}', total);
         } else {
           var wrap = document.getElementById('load-more-wrap');
           if (wrap) wrap.style.display = 'none';
         }
       })
       .catch(function() {
-        btn.textContent = 'Load more findings';
+        btn.textContent = t('disc_load_more', 'Load more findings');
         btn.disabled = false;
       });
   });

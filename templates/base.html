@@ -133,7 +133,7 @@
 
                 <div class="nav-dropdown">
                     <button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">
-                        Literary<span class="drop-arrow">▾</span>
+                        {{ _t('nav_literary') }}<span class="drop-arrow">▾</span>
                     </button>
                     <div class="nav-drop-menu">
                         <a href="/chiasm?lang={{ lang }}">{{ _t('nav_chiasm') }}</a>
@@ -154,24 +154,24 @@
                     <!-- Persona Pill -->
                     <div class="persona-pill-wrap" id="persona-pill-wrap">
                         <button class="persona-pill" id="persona-pill" style="display:none" aria-label="Switch persona">
-                            <span id="persona-pill-label">Scholar ▾</span>
+                            <span id="persona-pill-label">{{ _t('persona_scholar') }} ▾</span>
                         </button>
                         <div class="persona-pill-dropdown" id="persona-pill-dropdown">
                             <button class="ppd-item" data-switch-persona="scholar">
-                                <span class="ppd-dot" style="background:#2563eb"></span> Scholar / Faculty
+                                <span class="ppd-dot" style="background:#2563eb"></span> {{ _t('persona_scholar_full') }}
                             </button>
                             <button class="ppd-item" data-switch-persona="phd">
-                                <span class="ppd-dot" style="background:#6b5cdb"></span> PhD Candidate
+                                <span class="ppd-dot" style="background:#6b5cdb"></span> {{ _t('persona_phd_full') }}
                             </button>
                             <button class="ppd-item" data-switch-persona="student">
-                                <span class="ppd-dot" style="background:#059669"></span> Student / Learner
+                                <span class="ppd-dot" style="background:#059669"></span> {{ _t('persona_student_full') }}
                             </button>
                             <hr class="ppd-sep">
                             <button class="ppd-item ppd-change" id="ppd-change-view">
-                                <span class="material-symbols-outlined" style="font-size:15px;">swap_horiz</span> Change view
+                                <span class="material-symbols-outlined" style="font-size:15px;">swap_horiz</span> {{ _t('persona_change_view') }}
                             </button>
                             <button class="ppd-item ppd-all" data-switch-persona="all">
-                                <span class="material-symbols-outlined" style="font-size:15px;">grid_view</span> Show all tools
+                                <span class="material-symbols-outlined" style="font-size:15px;">grid_view</span> {{ _t('persona_show_all') }}
                             </button>
                         </div>
                     </div>

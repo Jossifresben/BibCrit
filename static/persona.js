@@ -134,12 +134,12 @@
 
     if (persona && PERSONAS[persona]) {
       pill.style.background = PERSONAS[persona].color;
-      if (label) label.textContent = PERSONAS[persona].label + ' \u25be';
+      if (label) label.textContent = ((window.t && window.t('persona_' + persona, PERSONAS[persona].label)) || PERSONAS[persona].label) + ' \u25be';
       pill.style.display = 'flex';
     } else if (isHome) {
       // On home page with no persona: show a neutral "Choose view" pill
       pill.style.background = 'var(--muted, #6b7280)';
-      if (label) label.textContent = 'Choose view \u25be';
+      if (label) label.textContent = ((window.t && window.t('persona_choose', 'Choose view')) || 'Choose view') + ' \u25be';
       pill.style.display = 'flex';
     } else {
       pill.style.display = 'none';

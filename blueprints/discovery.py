@@ -19,10 +19,10 @@ discovery_bp = Blueprint('discovery', __name__)
 @discovery_bp.route('/discovery')
 def discovery():
     lang  = request.args.get('lang', 'en')
-    all_cards  = _load_all_cards()
+    all_cards  = _load_all_cards(lang)
     total      = len(all_cards)
     has_more   = total > 12
-    cards      = _load_discovery_cards(limit=12)
+    cards      = _load_discovery_cards(limit=12, lang=lang)
     stats      = _load_stats()
     return render_template('discovery.html', lang=lang, t=state.t,
                            cards=cards, has_more=has_more, total=total,
@@ -42,8 +42,9 @@ def api_discovery_cards():
 
     limit   = min(limit, 50)   # cap per request
     persona = request.args.get('persona', '').strip().lower()
+    lang    = request.args.get('lang', 'en')
 
-    all_cards = _load_all_cards()
+    all_cards = _load_all_cards(lang)
     if persona in _PERSONA_TYPE_ORDER:
         order = _PERSONA_TYPE_ORDER[persona]
         all_cards = sorted(all_cards, key=lambda c: _type_rank(c, order))
@@ -193,7 +194,7 @@ def admin_flag():
 
 # ── Helpers ────────────────────────────────────────────────────────────────
 
-def _load_all_cards() -> list:
+def _load_all_cards(lang: str = 'en') -> list:
     """Return ALL discovery cards (no limit) for pagination.
 
     Priority: discovery_ready=True entries first.
@@ -202,7 +203,7 @@ def _load_all_cards() -> list:
     if not state.pipeline:
         return []
 
-    curated = state.pipeline.get_discovery_cards(min_confidence=0.6, limit=9999)
+    curated = state.pipeline.get_discovery_cards(min_confidence=0.6, limit=9999, lang=lang)
 
     if len(curated) >= 3:
         return curated
@@ -225,7 +226,7 @@ def _type_rank(card, order):
     except ValueError:
         return 999
 
-def _load_discovery_cards(limit: int = 12) -> list:
+def _load_discovery_cards(limit: int = 12, lang: str = 'en') -> list:
     """Return first `limit` cards for the initial page render.
 
     Featured card (index 0) is chosen from the most interesting divergence types:
@@ -234,7 +235,7 @@ def _load_discovery_cards(limit: int = 12) -> list:
     none of those types are in the pool.
     The remaining cards are shuffled for variety.
     """
-    all_cards = _load_all_cards()
+    all_cards = _load_all_cards(lang)
     if not all_cards:
         return []
 

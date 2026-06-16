@@ -568,20 +568,42 @@ class ClaudePipeline:
 
     # ── Discovery cards ────────────────────────────────────────────────────
 
-    def get_discovery_cards(self, min_confidence: float = 0.6, limit: int = 12) -> list:
-        """Return high-confidence discovery-ready divergence records."""
+    def get_discovery_cards(self, min_confidence: float = 0.6, limit: int = 12, lang: str = 'en') -> list:
+        """Return high-confidence discovery-ready divergence records.
+
+        When lang == 'es', the translated payload (analysis_cache_es) is used per
+        finding where available, so the card text renders in Spanish.
+        """
         cards = []
 
         if self._supabase:
             try:
                 result = (
                     self._supabase.table('analysis_cache')
-                    .select('reference, tool, data')
+                    .select('reference, tool, data, cache_key')
                     .eq('discovery_ready', True)
                     .execute()
                 )
-                for row in result.data:
-                    cards.extend(_extract_cards(row['reference'], row['data'], min_confidence,
+                rows = result.data or []
+                # Spanish: swap in the translated payload where available, matched by
+                # (reference, tool). Version-independent on purpose — a finding's prompt
+                # version may have moved past the version its translation was made for,
+                # and the plain-language card text is stable enough across versions.
+                es_by_ref: dict = {}
+                if lang == 'es' and rows:
+                    refs = sorted({r['reference'] for r in rows if r.get('reference')})
+                    for i in range(0, len(refs), 80):
+                        try:
+                            esr = (self._supabase.table('analysis_cache_es')
+                                   .select('reference, tool, data')
+                                   .in_('reference', refs[i:i + 80]).execute())
+                            for er in (esr.data or []):
+                                es_by_ref[(er.get('reference'), er.get('tool'))] = er['data']
+                        except Exception:
+                            pass
+                for row in rows:
+                    data = es_by_ref.get((row.get('reference'), row.get('tool'))) or row['data']
+                    cards.extend(_extract_cards(row['reference'], data, min_confidence,
                                                 tool=row.get('tool', 'divergence')))
                 return sorted(cards, key=lambda c: c['confidence'], reverse=True)[:limit]
             except Exception:

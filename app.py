@@ -129,9 +129,25 @@ Sitemap: https://bibcrit.app/sitemap.xml
     return Response(content, mimetype='text/plain')
 
 
+def _sitemap_lastmod() -> str:
+    """Most recent templates/ change date (YYYY-MM-DD) for <lastmod>. A stable,
+    honest signal that updates on each deploy (Render resets mtimes at checkout),
+    so Google trusts it. Falls back to a fixed date if the walk fails."""
+    import os
+    from datetime import datetime, timezone
+    try:
+        tdir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
+        newest = max(os.path.getmtime(os.path.join(r, f))
+                     for r, _, fs in os.walk(tdir) for f in fs)
+        return datetime.fromtimestamp(newest, timezone.utc).strftime('%Y-%m-%d')
+    except Exception:
+        return '2026-06-22'
+
+
 @app.route('/sitemap.xml')
 def sitemap_xml():
     from flask import Response
+    # (path, priority, changefreq) — keep in sync with the public page routes
     pages = [
         ('/', '1.0', 'weekly'),
         ('/divergence', '0.9', 'weekly'),
@@ -146,15 +162,19 @@ def sitemap_xml():
         ('/source', '0.9', 'weekly'),
         ('/targum', '0.9', 'weekly'),
         ('/nt-text', '0.9', 'weekly'),
+        ('/nt-ot', '0.9', 'weekly'),
         ('/lxx-witnesses', '0.9', 'weekly'),
         ('/stl', '0.9', 'weekly'),
         ('/discovery', '0.8', 'monthly'),
         ('/guide', '0.7', 'monthly'),
+        ('/paper', '0.6', 'monthly'),
     ]
+    lastmod = _sitemap_lastmod()
     urls = ''
     for path, priority, freq in pages:
         urls += f"""  <url>
     <loc>https://bibcrit.app{path}</loc>
+    <lastmod>{lastmod}</lastmod>
     <changefreq>{freq}</changefreq>
     <priority>{priority}</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://bibcrit.app{path}"/>

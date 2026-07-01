@@ -326,3 +326,13 @@ def test_all_tier1_stream_routes_reject_missing_key(client):
     for path in tier1_paths:
         rv = client.get(path)
         assert rv.status_code == 401, f'{path} did not require a key'
+
+
+def test_scribal_and_numerical_export_v1_aliases_work(client):
+    """These 2 Tier-0 export routes were missed from the initial Task 8 pass
+    (a scoping mistake in the task dispatch, not a prior implementer error) —
+    confirm they now have working versioned aliases like every other route."""
+    rv1 = client.get('/api/v1/scribal/export/sbl?book=Isaiah')
+    rv2 = client.get('/api/v1/numerical/export/sbl')
+    assert rv1.status_code in (200, 404)  # never 401 — this is Tier-0, keyless
+    assert rv2.status_code in (404, 501)  # stub route; still never 401

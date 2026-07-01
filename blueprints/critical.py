@@ -663,6 +663,7 @@ critical_bp.add_url_rule('/api/v1/patristic/stream', view_func=api_patristic_str
 # ── Export API ─────────────────────────────────────────────────────────────
 
 @critical_bp.route('/api/scribal/export/sbl')
+@limiter.limit('60/minute;1000/day')
 def export_scribal_sbl():
     """Return SBL-style footnotes for each dimension's examples."""
     book = request.args.get('book', '').strip()
@@ -690,12 +691,15 @@ def export_scribal_sbl():
         footnotes.append(fn.strip())
 
     return jsonify({'book': book, 'footnotes': footnotes})
+critical_bp.add_url_rule('/api/v1/scribal/export/sbl', view_func=export_scribal_sbl)
 
 
 @critical_bp.route('/api/numerical/export/sbl')
+@limiter.limit('60/minute;1000/day')
 def export_numerical_sbl():
     """Stub — numerical export not yet implemented."""
     return jsonify({'error': 'Numerical SBL export not yet implemented'}), 501
+critical_bp.add_url_rule('/api/v1/numerical/export/sbl', view_func=export_numerical_sbl)
 
 
 # ── Helpers ────────────────────────────────────────────────────────────────

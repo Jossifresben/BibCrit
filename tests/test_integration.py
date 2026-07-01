@@ -222,3 +222,11 @@ def test_cors_header_present_on_tier0_read(client):
 def test_cors_header_absent_on_vote_post(client):
     rv = client.post('/api/vote', json={'reference': 'Test 1:1', 'tool': 'divergence', 'value': 1})
     assert 'Access-Control-Allow-Origin' not in rv.headers
+
+
+def test_cors_header_present_on_scribal_and_numerical_export(client):
+    """Regression guard: these two Tier-0 export routes were initially missing
+    from the CORS allow-list (caught in code review)."""
+    for path in ('/api/scribal/export/sbl', '/api/numerical/export/sbl'):
+        rv = client.get(path)
+        assert rv.headers.get('Access-Control-Allow-Origin') == '*', path

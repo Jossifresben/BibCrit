@@ -260,13 +260,20 @@ _CORS_ALLOWED_PREFIXES = (
     '/api/v1/books', '/api/v1/chapters', '/api/v1/verses',
     '/api/v1/cache', '/api/v1/discovery/cards',
     '/api/v1/export', '/api/v1/divergence/export',
+    '/api/v1/scribal/export', '/api/v1/numerical/export',
     '/api/v1/votes', '/api/v1/hypothesis/votes', '/api/v1/budget',
     '/api/v1/openapi.json',
     # bare (deprecated) aliases get the same CORS posture as their v1 form
     '/api/books', '/api/chapters', '/api/verses',
     '/api/cache', '/api/discovery/cards',
     '/api/export', '/api/divergence/export',
+    '/api/scribal/export', '/api/numerical/export',
     '/api/votes', '/api/hypothesis/votes', '/api/budget',
+    # NOTE: the bare, non-stream /api/divergence route is intentionally NOT
+    # here yet — Task 6 of the Open API v1 plan reads that route to classify
+    # it Tier-0 vs Tier-1 (it hasn't been confirmed at the time this list was
+    # written). If Task 6 classifies it Tier-0, add '/api/v1/divergence' and
+    # '/api/divergence' here too.
 )
 
 

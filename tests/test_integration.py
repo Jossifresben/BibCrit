@@ -230,3 +230,25 @@ def test_cors_header_present_on_scribal_and_numerical_export(client):
     for path in ('/api/scribal/export/sbl', '/api/numerical/export/sbl'):
         rv = client.get(path)
         assert rv.headers.get('Access-Control-Allow-Origin') == '*', path
+
+
+def test_openapi_spec_has_v1_and_deprecated_bare_paths(client):
+    rv = client.get('/api/v1/openapi.json')
+    spec = json.loads(rv.data)
+    assert '/api/v1/cache' in spec['paths']
+    assert spec['paths']['/api/cache']['get'].get('deprecated') is True
+    assert spec['paths']['/api/v1/divergence/stream']['get'].get('deprecated') is not True
+
+
+def test_openapi_spec_marks_analysis_paths_as_requiring_api_key(client):
+    rv = client.get('/api/v1/openapi.json')
+    spec = json.loads(rv.data)
+    stream_entry = spec['paths']['/api/v1/divergence/stream']['get']
+    assert stream_entry['security'] == [{'ApiKeyAuth': []}]
+    cache_entry = spec['paths']['/api/v1/cache']['get']
+    assert 'security' not in cache_entry
+
+
+def test_openapi_spec_version_bumped():
+    from blueprints.research import _OPENAPI_SPEC
+    assert _OPENAPI_SPEC['info']['version'] == '1.1.0'

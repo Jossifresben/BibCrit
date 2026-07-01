@@ -68,6 +68,23 @@ _OPENAPI_SPEC = {
                 },
             }
         },
+        "/api/divergence": {
+            "get": {
+                "tags": ["Analysis"],
+                "summary": "MT/LXX Divergence Analyzer (non-streaming)",
+                "description": "Same analysis as the SSE stream endpoint, returned as a single JSON response instead of Server-Sent Events. Checks cache first; on a miss it calls the Claude API synchronously, so cold requests take 30–90 s. Based on Tov (2012) methodology.",
+                "operationId": "getDivergence",
+                "parameters": [
+                    {"name": "ref", "in": "query", "required": True, "schema": {"type": "string"}, "description": "Verse reference (e.g. `Isaiah 7:14`, `Genesis 3:15`)"},
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Divergence analysis result, with corpus words merged in.",
+                        "content": {"application/json": {"schema": {"$ref": "#/components/schemas/AnalysisResult"}}},
+                    }
+                },
+            }
+        },
         "/api/backtranslation/stream": {
             "get": {
                 "tags": ["Analysis"],
@@ -362,7 +379,6 @@ _OPENAPI_SPEC = {
                 "tags": ["Export"],
                 "summary": "BibTeX (Divergence)",
                 "operationId": "exportDivergenceBibtex",
-                "tags_": ["Export"],
                 "parameters": [{"name": "ref", "in": "query", "required": True, "schema": {"type": "string"}}],
                 "responses": {"200": {"description": "BibTeX entry", "content": {"application/json": {"schema": {"$ref": "#/components/schemas/BibtexResponse"}}}}},
             }
@@ -383,6 +399,26 @@ _OPENAPI_SPEC = {
                 "operationId": "exportDivergenceTei",
                 "parameters": [{"name": "ref", "in": "query", "required": True, "schema": {"type": "string"}}],
                 "responses": {"200": {"description": "TEI XML snippet", "content": {"application/json": {"schema": {"type": "object", "properties": {"tei": {"type": "string"}}}}}}},
+            }
+        },
+        "/api/scribal/export/sbl": {
+            "get": {
+                "tags": ["Export"],
+                "summary": "SBL footnote (Scribal)",
+                "description": "Structured SBL citation for a scribal tendency profile result.",
+                "operationId": "exportScribalSbl",
+                "parameters": [{"name": "book", "in": "query", "required": True, "schema": {"type": "string"}}],
+                "responses": {"200": {"description": "SBL footnote", "content": {"application/json": {"schema": {"$ref": "#/components/schemas/SblResponse"}}}}},
+            }
+        },
+        "/api/numerical/export/sbl": {
+            "get": {
+                "tags": ["Export"],
+                "summary": "SBL footnote (Numerical)",
+                "description": "Structured SBL citation for a numerical discrepancy analysis result.",
+                "operationId": "exportNumericalSbl",
+                "parameters": [{"name": "ref", "in": "query", "required": True, "schema": {"type": "string"}}],
+                "responses": {"200": {"description": "SBL footnote", "content": {"application/json": {"schema": {"$ref": "#/components/schemas/SblResponse"}}}}},
             }
         },
         # ── Votes ────────────────────────────────────────────────────────────
@@ -466,6 +502,14 @@ _OPENAPI_SPEC = {
         },
     },
     "components": {
+        "securitySchemes": {
+            "ApiKeyAuth": {
+                "type": "apiKey",
+                "in": "header",
+                "name": "X-API-Key",
+                "description": "Required only on Analysis-tagged endpoints. Get one for free: POST /api/v1/keys.",
+            },
+        },
         "schemas": {
             "SSEStream": {
                 "type": "string",
@@ -581,6 +625,51 @@ _OPENAPI_SPEC = {
         }
     },
 }
+
+
+def _add_v1_aliases(paths: dict) -> dict:
+    """For every existing bare '/api/...' path, add a '/api/v1/...' primary
+    entry and keep the bare one as a deprecated alias (same view function,
+    registered twice in Flask — see Tasks 7/8/9 of the Open API v1 plan).
+    '/health' and any path already under '/api/v1/' are left untouched."""
+    result = {}
+    for path, methods in paths.items():
+        if path == '/health' or path.startswith('/api/v1/'):
+            result[path] = methods
+            continue
+        versioned_path = path.replace('/api/', '/api/v1/', 1)
+        result[versioned_path] = methods
+        deprecated_methods = {}
+        for verb, spec in methods.items():
+            deprecated_spec = dict(spec)
+            deprecated_spec['deprecated'] = True
+            deprecated_spec['description'] = spec.get('description', '') + (
+                f'\n\n**Deprecated** — use `{versioned_path}` instead. '
+                'This alias is kept for compatibility and is not scheduled for removal.'
+            )
+            # OpenAPI 3.0 requires operationId to be unique across the whole
+            # document. The versioned path keeps the canonical id; this bare
+            # alias documents the same Flask view function under a distinct id.
+            if 'operationId' in spec:
+                deprecated_spec['operationId'] = spec['operationId'] + 'Legacy'
+            deprecated_methods[verb] = deprecated_spec
+        result[path] = deprecated_methods
+    return result
+
+
+def _annotate_security(paths: dict) -> dict:
+    """Any path tagged 'Analysis' requires ApiKeyAuth (Tier 1 — it can trigger
+    a real Claude API call on a cache miss). Everything else stays keyless
+    (Tier 0). Mirrors the tiering in the Open API v1 design doc."""
+    for methods in paths.values():
+        for spec in methods.values():
+            if 'Analysis' in spec.get('tags', []):
+                spec['security'] = [{'ApiKeyAuth': []}]
+    return paths
+
+
+_OPENAPI_SPEC['paths'] = _annotate_security(_add_v1_aliases(_OPENAPI_SPEC['paths']))
+_OPENAPI_SPEC['info']['version'] = '1.1.0'
 
 research_bp = Blueprint('research', __name__)
 

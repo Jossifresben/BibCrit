@@ -45,6 +45,19 @@ def client(tmp_path, monkeypatch):
         yield c
 
 
+@pytest.fixture
+def authed_client(client, monkeypatch):
+    """Same as `client`, but Tier-1 (@require_api_key) routes are reachable —
+    patches validate_api_key() to always succeed, so tests can exercise a
+    Tier-1 route's body without a real Supabase-backed key. Use this instead
+    of hand-rolling `monkeypatch.setattr('biblical_core.api_auth.validate_api_key', ...)`
+    in each new test (that repeated pattern was flagged in Task 7's code
+    review as something to solve once, before Tasks 8-9 copy it 12+ more
+    times across other blueprints' Tier-1 routes)."""
+    monkeypatch.setattr('biblical_core.api_auth.validate_api_key', lambda raw_key: True)
+    return client
+
+
 def test_health_route(client):
     rv = client.get('/health')
     assert rv.status_code == 200
@@ -81,19 +94,18 @@ def test_api_verses_for_isaiah_7(client):
     assert 14 in data['verses']
 
 
-def test_api_divergence_missing_ref_returns_400(client, monkeypatch):
-    """/api/divergence is Tier-1 (require_api_key); supply a valid key so the
-    request reaches the view body where the missing-ref check lives."""
-    monkeypatch.setattr('biblical_core.api_auth.validate_api_key', lambda k: True)
-    rv = client.get('/api/divergence', headers={'X-API-Key': 'bibcrit_live_test'})
+def test_api_divergence_missing_ref_returns_400(authed_client):
+    """/api/divergence is Tier-1 (require_api_key); authed_client bypasses the
+    key check so the request reaches the view body where the missing-ref
+    check lives."""
+    rv = authed_client.get('/api/divergence')
     assert rv.status_code == 400
     data = json.loads(rv.data)
     assert 'error' in data
 
 
-def test_api_divergence_unknown_ref_returns_404(client, monkeypatch):
-    monkeypatch.setattr('biblical_core.api_auth.validate_api_key', lambda k: True)
-    rv = client.get('/api/divergence?ref=Obadiah+99:99', headers={'X-API-Key': 'bibcrit_live_test'})
+def test_api_divergence_unknown_ref_returns_404(authed_client):
+    rv = authed_client.get('/api/divergence?ref=Obadiah+99:99')
     assert rv.status_code == 404
 
 
@@ -106,12 +118,10 @@ def test_api_divergence_no_api_key_returns_401(client):
     assert data['error'] == 'unauthorized'
 
 
-def test_api_divergence_serves_cached_result(client, tmp_path, monkeypatch):
+def test_api_divergence_serves_cached_result(authed_client, tmp_path):
     """If a valid cache entry exists, /api/divergence returns it without calling Claude."""
     import hashlib
     from biblical_core.claude_pipeline import DIVERGENCE_MODEL
-
-    monkeypatch.setattr('biblical_core.api_auth.validate_api_key', lambda k: True)
 
     reference = 'Isaiah 7:14'
     cache_payload = {
@@ -132,7 +142,7 @@ def test_api_divergence_serves_cached_result(client, tmp_path, monkeypatch):
     cache_path = tmp_path / 'cache' / f'{key}.json'
     cache_path.write_text(json.dumps(cache_payload), encoding='utf-8')
 
-    rv = client.get('/api/divergence?ref=Isaiah+7:14', headers={'X-API-Key': 'bibcrit_live_test'})
+    rv = authed_client.get('/api/divergence?ref=Isaiah+7:14')
     assert rv.status_code == 200
     data = json.loads(rv.data)
     assert data.get('divergences', [{}])[0].get('mt_word') == 'הָעַלְמָה'

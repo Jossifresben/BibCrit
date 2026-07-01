@@ -6,6 +6,7 @@ the table has RLS enabled with zero policies (default-deny). See
 docs/superpowers/specs/2026-07-01-open-api-v1-design.md for the full design.
 """
 import hashlib
+import logging
 import secrets
 from datetime import datetime
 from functools import wraps
@@ -13,6 +14,8 @@ from functools import wraps
 from flask import jsonify, request
 
 import state
+
+logger = logging.getLogger(__name__)
 
 KEY_PREFIX = 'bibcrit_live_'
 
@@ -54,6 +57,7 @@ def validate_api_key(raw_key: str) -> bool:
         }).eq('id', row['id']).execute()
         return True
     except Exception:
+        logger.exception('validate_api_key failed unexpectedly')
         return False
 
 

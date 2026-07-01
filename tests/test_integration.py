@@ -212,3 +212,13 @@ def test_key_prefix_is_distinguishing_not_just_the_fixed_prefix(client, monkeypa
 
     assert len(prefix1) > len(KEY_PREFIX)  # actually extends past the fixed prefix
     assert prefix1 != prefix2  # two different keys produce two different prefixes
+
+
+def test_cors_header_present_on_tier0_read(client):
+    rv = client.get('/api/cache')
+    assert rv.headers.get('Access-Control-Allow-Origin') == '*'
+
+
+def test_cors_header_absent_on_vote_post(client):
+    rv = client.post('/api/vote', json={'reference': 'Test 1:1', 'tool': 'divergence', 'value': 1})
+    assert 'Access-Control-Allow-Origin' not in rv.headers

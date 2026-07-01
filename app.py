@@ -256,6 +256,32 @@ def inject_globals():
     return dict(_t=_t, lang=lang, i18n_lang=i18n_lang)
 
 
+_CORS_ALLOWED_PREFIXES = (
+    '/api/v1/books', '/api/v1/chapters', '/api/v1/verses',
+    '/api/v1/cache', '/api/v1/discovery/cards',
+    '/api/v1/export', '/api/v1/divergence/export',
+    '/api/v1/votes', '/api/v1/hypothesis/votes', '/api/v1/budget',
+    '/api/v1/openapi.json',
+    # bare (deprecated) aliases get the same CORS posture as their v1 form
+    '/api/books', '/api/chapters', '/api/verses',
+    '/api/cache', '/api/discovery/cards',
+    '/api/export', '/api/divergence/export',
+    '/api/votes', '/api/hypothesis/votes', '/api/budget',
+)
+
+
+@app.after_request
+def add_cors_for_open_reads(response):
+    """CORS only for keyless, read-only, GET endpoints — lets a seminary or
+    journal's client-side JS fetch cached results directly. Deliberately NOT
+    applied to POST/vote routes or the API-key-gated analysis streams — see
+    docs/superpowers/specs/2026-07-01-open-api-v1-design.md §4 CORS."""
+    from flask import request
+    if request.method == 'GET' and request.path.startswith(_CORS_ALLOWED_PREFIXES):
+        response.headers['Access-Control-Allow-Origin'] = '*'
+    return response
+
+
 @app.errorhandler(429)
 def rate_limit_exceeded(e):
     from flask import jsonify

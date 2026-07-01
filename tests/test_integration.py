@@ -162,3 +162,36 @@ def test_app_starts_with_limiter_installed(client):
     for _ in range(5):
         rv = client.get('/health')
         assert rv.status_code == 200
+
+
+def test_issue_api_key_requires_name_and_email(client):
+    rv = client.post('/api/v1/keys', json={})
+    assert rv.status_code == 400
+
+
+def test_issue_api_key_returns_key_once(client, monkeypatch):
+    from unittest.mock import MagicMock
+    import state
+    fake_supabase = MagicMock()
+    monkeypatch.setattr(state.pipeline, '_supabase', fake_supabase)
+
+    rv = client.post('/api/v1/keys', json={'name': 'Test User', 'email': 't@example.com'})
+    assert rv.status_code == 201
+    data = json.loads(rv.data)
+    assert data['api_key'].startswith('bibcrit_live_')
+
+
+def test_issued_key_is_hashed_not_stored_raw(client, monkeypatch):
+    from unittest.mock import MagicMock
+    import state
+    from biblical_core.api_auth import hash_api_key
+    fake_supabase = MagicMock()
+    monkeypatch.setattr(state.pipeline, '_supabase', fake_supabase)
+
+    rv = client.post('/api/v1/keys', json={'name': 'Test User 2', 'email': 't2@example.com'})
+    raw_key = json.loads(rv.data)['api_key']
+
+    insert_call = fake_supabase.table.return_value.insert.call_args
+    inserted_row = insert_call[0][0]
+    assert inserted_row['key_hash'] == hash_api_key(raw_key)
+    assert inserted_row['key_hash'] != raw_key

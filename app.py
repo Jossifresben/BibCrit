@@ -43,6 +43,7 @@ def create_app() -> Flask:
     from blueprints.stl import stl_bp
     from blueprints.lxx_ms import lxx_ms_bp
     from blueprints.admin import admin_bp
+    from blueprints.api_v1 import api_v1_bp
 
     app.register_blueprint(textual_bp)
     app.register_blueprint(critical_bp)
@@ -54,6 +55,7 @@ def create_app() -> Flask:
     app.register_blueprint(stl_bp)
     app.register_blueprint(lxx_ms_bp)
     app.register_blueprint(admin_bp)
+    app.register_blueprint(api_v1_bp)
 
     return app
 

@@ -10,6 +10,7 @@ import os
 import random
 from flask import Blueprint, render_template, request, jsonify, url_for
 import state
+from biblical_core.rate_limit import limiter
 
 discovery_bp = Blueprint('discovery', __name__)
 
@@ -32,6 +33,7 @@ def discovery():
 # ── Cards API (paginated) ──────────────────────────────────────────────────
 
 @discovery_bp.route('/api/discovery/cards')
+@limiter.limit('60/minute;1000/day')
 def api_discovery_cards():
     """Return a page of discovery cards as JSON for infinite-scroll / load-more."""
     try:
@@ -63,10 +65,13 @@ def api_discovery_cards():
         'has_more': has_more,
     })
 
+discovery_bp.add_url_rule('/api/v1/discovery/cards', view_func=api_discovery_cards)
+
 
 # ── Public Open-Data API ───────────────────────────────────────────────────
 
 @discovery_bp.route('/api/cache')
+@limiter.limit('60/minute;1000/day')
 def api_cache():
     """Public read-only endpoint for BibCrit's open analysis corpus.
 
@@ -160,6 +165,8 @@ def api_cache():
         'license':  'Apache 2.0 — https://github.com/Jossifresben/bibcrit',
         'citation': 'Fresco Benaim, J. (2026). BibCrit: AI-assisted biblical textual criticism. ORCID:0009-0000-2026-0836',
     })
+
+discovery_bp.add_url_rule('/api/v1/cache', view_func=api_cache)
 
 
 # ── Admin API ──────────────────────────────────────────────────────────────

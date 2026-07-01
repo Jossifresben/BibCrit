@@ -336,3 +336,18 @@ def test_scribal_and_numerical_export_v1_aliases_work(client):
     rv2 = client.get('/api/v1/numerical/export/sbl')
     assert rv1.status_code in (200, 404)  # never 401 — this is Tier-0, keyless
     assert rv2.status_code in (404, 501)  # stub route; still never 401
+
+
+# ── blueprints/discovery.py: /api/v1 rollout (2 Tier-0 routes) ─────────────
+
+def test_discovery_v1_aliases_work(client):
+    rv_v1_cache = client.get('/api/v1/cache')
+    rv_v1_cards = client.get('/api/v1/discovery/cards')
+    assert rv_v1_cache.status_code == 200
+    assert rv_v1_cards.status_code == 200
+
+
+def test_admin_flag_route_untouched(client):
+    """Confirm the admin route was NOT given a v1 alias — out of scope."""
+    rv = client.get('/api/v1/admin/discovery/flag')
+    assert rv.status_code == 404

@@ -12,6 +12,8 @@ from biblical_core.claude_pipeline import (
     DIVERGENCE_MODEL, DSS_MODEL, GENEALOGY_MODEL, NT_OT_MODEL, CACHE_META_KEYS,
 )
 from biblical_core.ref_utils import estimate_verse_count, TOOL_VERSE_LIMITS
+from biblical_core.api_auth import require_api_key
+from biblical_core.rate_limit import limiter, api_key_or_ip
 import state
 
 
@@ -153,6 +155,8 @@ def nt_ot():
 # ── Analysis API ───────────────────────────────────────────────────────────
 
 @textual_bp.route('/api/divergence')
+@limiter.limit('20/hour', key_func=api_key_or_ip)
+@require_api_key
 def api_divergence():
     """Run (or return cached) MT/LXX divergence analysis for a reference."""
     reference = request.args.get('ref', '').strip()
@@ -182,11 +186,14 @@ def api_divergence():
     result['reference'] = reference
 
     return jsonify(result)
+textual_bp.add_url_rule('/api/v1/divergence', view_func=api_divergence)
 
 
 # ── SSE streaming analysis ────────────────────────────────────────────────
 
 @textual_bp.route('/api/divergence/stream')
+@limiter.limit('20/hour', key_func=api_key_or_ip)
+@require_api_key
 def api_divergence_stream():
     """SSE endpoint: streams step-by-step progress then final result."""
     reference = request.args.get('ref', '').strip()
@@ -328,11 +335,14 @@ def api_divergence_stream():
             'X-Accel-Buffering': 'no',   # disable nginx buffering on Render
         },
     )
+textual_bp.add_url_rule('/api/v1/divergence/stream', view_func=api_divergence_stream)
 
 
 # ── Back-translation SSE stream ───────────────────────────────────────────
 
 @textual_bp.route('/api/backtranslation/stream')
+@limiter.limit('20/hour', key_func=api_key_or_ip)
+@require_api_key
 def api_backtranslation_stream():
     """SSE endpoint: streams Vorlage reconstruction progress then final result."""
     reference = request.args.get('ref', '').strip()
@@ -474,11 +484,14 @@ def api_backtranslation_stream():
             'X-Accel-Buffering': 'no',
         },
     )
+textual_bp.add_url_rule('/api/v1/backtranslation/stream', view_func=api_backtranslation_stream)
 
 
 # ── DSS Bridge SSE stream ─────────────────────────────────────────────────
 
 @textual_bp.route('/api/dss/stream')
+@limiter.limit('20/hour', key_func=api_key_or_ip)
+@require_api_key
 def api_dss_stream():
     """SSE endpoint: streams DSS bridge analysis progress then final result."""
     reference = request.args.get('ref', '').strip()
@@ -634,11 +647,14 @@ def api_dss_stream():
             'X-Accel-Buffering': 'no',
         },
     )
+textual_bp.add_url_rule('/api/v1/dss/stream', view_func=api_dss_stream)
 
 
 # ── Genealogy SSE stream ──────────────────────────────────────────────────
 
 @textual_bp.route('/api/genealogy/stream')
+@limiter.limit('20/hour', key_func=api_key_or_ip)
+@require_api_key
 def api_genealogy_stream():
     """SSE endpoint: streams manuscript genealogy analysis progress then final result."""
     book = request.args.get('book', '').strip()
@@ -757,20 +773,24 @@ def api_genealogy_stream():
             'X-Accel-Buffering': 'no',
         },
     )
+textual_bp.add_url_rule('/api/v1/genealogy/stream', view_func=api_genealogy_stream)
 
 
 # ── Corpus browser API ─────────────────────────────────────────────────────
 
 @textual_bp.route('/api/books')
+@limiter.limit('60/minute;1000/day')
 def api_books():
     tradition = request.args.get('tradition', 'MT')
     if state.corpus is None:
         return jsonify({'books': []})
     books = state.corpus.get_books(tradition)
     return jsonify({'books': books})
+textual_bp.add_url_rule('/api/v1/books', view_func=api_books)
 
 
 @textual_bp.route('/api/chapters')
+@limiter.limit('60/minute;1000/day')
 def api_chapters():
     book      = request.args.get('book', '')
     tradition = request.args.get('tradition', 'MT')
@@ -780,9 +800,11 @@ def api_chapters():
         return jsonify({'chapters': []})
     chapters = state.corpus.get_chapters(book, tradition)
     return jsonify({'chapters': chapters})
+textual_bp.add_url_rule('/api/v1/chapters', view_func=api_chapters)
 
 
 @textual_bp.route('/api/verses')
+@limiter.limit('60/minute;1000/day')
 def api_verses():
     book      = request.args.get('book', '')
     tradition = request.args.get('tradition', 'MT')
@@ -796,11 +818,13 @@ def api_verses():
         return jsonify({'verses': []})
     verses = state.corpus.get_verses(book, chapter, tradition)
     return jsonify({'verses': verses})
+textual_bp.add_url_rule('/api/v1/verses', view_func=api_verses)
 
 
 # ── Budget API ─────────────────────────────────────────────────────────────
 
 @textual_bp.route('/api/budget')
+@limiter.limit('60/minute;1000/day')
 def api_budget():
     if state.pipeline is None:
         return jsonify({'spend_usd': 0.0, 'cap_usd': 10.0, 'pct': 0.0,
@@ -810,11 +834,13 @@ def api_budget():
     pct = round((budget['spend_usd'] / cap) * 100, 1)
     budget['pct'] = pct
     return jsonify(budget)
+textual_bp.add_url_rule('/api/v1/budget', view_func=api_budget)
 
 
 # ── Export API ─────────────────────────────────────────────────────────────
 
 @textual_bp.route('/api/divergence/export/sbl')
+@limiter.limit('60/minute;1000/day')
 def export_sbl():
     reference = request.args.get('ref', '').strip()
     if not reference:
@@ -831,9 +857,11 @@ def export_sbl():
     records   = parse_claude_response(data, reference)
     footnotes = [format_sbl_footnote(r) for r in records]
     return jsonify({'reference': reference, 'footnotes': footnotes})
+textual_bp.add_url_rule('/api/v1/divergence/export/sbl', view_func=export_sbl)
 
 
 @textual_bp.route('/api/divergence/export/bibtex')
+@limiter.limit('60/minute;1000/day')
 def export_bibtex():
     reference = request.args.get('ref', '').strip()
     if not reference:
@@ -850,9 +878,11 @@ def export_bibtex():
     records = parse_claude_response(data, reference)
     bibtex  = '\n\n'.join(format_bibtex(r, model_version) for r in records)
     return jsonify({'reference': reference, 'bibtex': bibtex})
+textual_bp.add_url_rule('/api/v1/divergence/export/bibtex', view_func=export_bibtex)
 
 
 @textual_bp.route('/api/divergence/export/ris')
+@limiter.limit('60/minute;1000/day')
 def export_ris():
     reference = request.args.get('ref', '').strip()
     if not reference:
@@ -869,9 +899,11 @@ def export_ris():
     records = parse_claude_response(data, reference)
     ris = '\r\n\r\n'.join(format_ris(r, model_version) for r in records)
     return jsonify({'reference': reference, 'ris': ris})
+textual_bp.add_url_rule('/api/v1/divergence/export/ris', view_func=export_ris)
 
 
 @textual_bp.route('/api/divergence/export/tei')
+@limiter.limit('60/minute;1000/day')
 def export_tei():
     reference = request.args.get('ref', '').strip()
     if not reference:
@@ -888,6 +920,7 @@ def export_tei():
     records = parse_claude_response(data, reference)
     tei = format_tei(records, reference, model_version, data.get('cached_at', ''))
     return jsonify({'reference': reference, 'tei': tei})
+textual_bp.add_url_rule('/api/v1/divergence/export/tei', view_func=export_tei)
 
 
 # ── NT Use of OT SSE stream ───────────────────────────────────────────────
@@ -921,6 +954,8 @@ def _is_ot_ref(ref: str) -> bool:
 
 
 @textual_bp.route('/api/nt-ot/stream')
+@limiter.limit('20/hour', key_func=api_key_or_ip)
+@require_api_key
 def api_nt_ot_stream():
     """SSE endpoint: streams NT use of OT analysis progress then final result."""
     reference = request.args.get('ref', '').strip()
@@ -1074,11 +1109,13 @@ def api_nt_ot_stream():
             'X-Accel-Buffering': 'no',
         },
     )
+textual_bp.add_url_rule('/api/v1/nt-ot/stream', view_func=api_nt_ot_stream)
 
 
 # ── Result quality vote API ────────────────────────────────────────────────
 
 @textual_bp.route('/api/vote', methods=['POST'])
+@limiter.limit('20/hour')
 def api_vote():
     """Record a quality vote (upvote=1, downvote=-1, remove=0) for a tool result."""
     try:
@@ -1106,11 +1143,13 @@ def api_vote():
         return jsonify({'ok': True})
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+textual_bp.add_url_rule('/api/v1/vote', view_func=api_vote, methods=['POST'])
 
 
 # ── Result quality votes GET ──────────────────────────────────────────────
 
 @textual_bp.route('/api/votes')
+@limiter.limit('60/minute;1000/day')
 def api_votes():
     """Return aggregate vote counts for a tool+reference pair."""
     ref  = request.args.get('ref',  '').strip()[:200]
@@ -1130,6 +1169,7 @@ def api_votes():
     upvotes   = max(0, val) if val > 0 else votes.get(key_up, 0)
     downvotes = max(0, -val) if val < 0 else votes.get(key_down, 0)
     return jsonify({'tool': tool, 'reference': ref, 'upvotes': upvotes, 'downvotes': downvotes})
+textual_bp.add_url_rule('/api/v1/votes', view_func=api_votes)
 
 
 # ── Generic export API ─────────────────────────────────────────────────────
@@ -1143,6 +1183,7 @@ _TOOL_ROUTE_OVERRIDES = {
 
 
 @textual_bp.route('/api/export/sbl')
+@limiter.limit('60/minute;1000/day')
 def export_generic_sbl():
     """Generic SBL footnote export for any tool."""
     ref  = request.args.get('ref', '').strip() or request.args.get('book', '').strip()
@@ -1162,9 +1203,11 @@ def export_generic_sbl():
         f'DOI: https://doi.org/10.5281/zenodo.19358424.'
     )
     return jsonify({'reference': ref, 'tool': tool, 'footnote': footnote, 'footnotes': [footnote]})
+textual_bp.add_url_rule('/api/v1/export/sbl', view_func=export_generic_sbl)
 
 
 @textual_bp.route('/api/export/bibtex')
+@limiter.limit('60/minute;1000/day')
 def export_generic_bibtex():
     """Generic BibTeX export for any tool."""
     ref  = request.args.get('ref', '').strip() or request.args.get('book', '').strip()
@@ -1241,11 +1284,13 @@ def export_generic_bibtex():
         f'}}'
     )
     return jsonify({'reference': ref, 'tool': tool, 'bibtex': bibtex})
+textual_bp.add_url_rule('/api/v1/export/bibtex', view_func=export_generic_bibtex)
 
 
 # ── Hypothesis voting API ──────────────────────────────────────────────────
 
 @textual_bp.route('/api/hypothesis/votes')
+@limiter.limit('60/minute;1000/day')
 def hypothesis_votes():
     """Return upvote/downvote counts for a reference."""
     ref = request.args.get('ref', '').strip()
@@ -1253,9 +1298,11 @@ def hypothesis_votes():
         return jsonify({'error': 'ref required'}), 400
     counts = _get_votes(ref)
     return jsonify(counts)
+textual_bp.add_url_rule('/api/v1/hypothesis/votes', view_func=hypothesis_votes)
 
 
 @textual_bp.route('/api/hypothesis/vote', methods=['POST'])
+@limiter.limit('20/hour')
 def hypothesis_vote():
     """Cast or retract a vote. direction=up|down, action=cast|retract."""
     ref       = request.args.get('ref', '').strip()
@@ -1268,6 +1315,7 @@ def hypothesis_vote():
     delta = 1 if action == 'cast' else -1
     counts = _record_vote(ref, direction, delta)
     return jsonify(counts)
+textual_bp.add_url_rule('/api/v1/hypothesis/vote', view_func=hypothesis_vote, methods=['POST'])
 
 
 def _votes_path() -> str:

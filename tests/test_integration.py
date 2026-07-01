@@ -81,30 +81,37 @@ def test_api_verses_for_isaiah_7(client):
     assert 14 in data['verses']
 
 
-def test_api_divergence_missing_ref_returns_400(client):
-    rv = client.get('/api/divergence')
+def test_api_divergence_missing_ref_returns_400(client, monkeypatch):
+    """/api/divergence is Tier-1 (require_api_key); supply a valid key so the
+    request reaches the view body where the missing-ref check lives."""
+    monkeypatch.setattr('biblical_core.api_auth.validate_api_key', lambda k: True)
+    rv = client.get('/api/divergence', headers={'X-API-Key': 'bibcrit_live_test'})
     assert rv.status_code == 400
     data = json.loads(rv.data)
     assert 'error' in data
 
 
-def test_api_divergence_unknown_ref_returns_404(client):
-    rv = client.get('/api/divergence?ref=Obadiah+99:99')
+def test_api_divergence_unknown_ref_returns_404(client, monkeypatch):
+    monkeypatch.setattr('biblical_core.api_auth.validate_api_key', lambda k: True)
+    rv = client.get('/api/divergence?ref=Obadiah+99:99', headers={'X-API-Key': 'bibcrit_live_test'})
     assert rv.status_code == 404
 
 
-def test_api_divergence_no_api_key_returns_error_in_body(client):
+def test_api_divergence_no_api_key_returns_401(client):
+    """/api/divergence is Tier-1 (calls Claude on a cache miss) — a missing
+    X-API-Key must be rejected with 401, same as its /stream sibling."""
     rv = client.get('/api/divergence?ref=Isaiah+7:14')
-    assert rv.status_code == 200
+    assert rv.status_code == 401
     data = json.loads(rv.data)
-    # Without API key returns error dict (200 status, error field)
-    assert 'error' in data or 'divergences' in data
+    assert data['error'] == 'unauthorized'
 
 
-def test_api_divergence_serves_cached_result(client, tmp_path):
+def test_api_divergence_serves_cached_result(client, tmp_path, monkeypatch):
     """If a valid cache entry exists, /api/divergence returns it without calling Claude."""
     import hashlib
     from biblical_core.claude_pipeline import DIVERGENCE_MODEL
+
+    monkeypatch.setattr('biblical_core.api_auth.validate_api_key', lambda k: True)
 
     reference = 'Isaiah 7:14'
     cache_payload = {
@@ -125,7 +132,7 @@ def test_api_divergence_serves_cached_result(client, tmp_path):
     cache_path = tmp_path / 'cache' / f'{key}.json'
     cache_path.write_text(json.dumps(cache_payload), encoding='utf-8')
 
-    rv = client.get('/api/divergence?ref=Isaiah+7:14')
+    rv = client.get('/api/divergence?ref=Isaiah+7:14', headers={'X-API-Key': 'bibcrit_live_test'})
     assert rv.status_code == 200
     data = json.loads(rv.data)
     assert data.get('divergences', [{}])[0].get('mt_word') == 'הָעַלְמָה'
@@ -265,3 +272,34 @@ def test_openapi_versioned_and_deprecated_entries_share_no_mutable_state(client)
     assert versioned is not deprecated
     assert versioned['tags'] is not deprecated['tags']
     assert versioned['tags'] == deprecated['tags']  # same content, different objects
+
+
+# ── blueprints/textual.py: /api/v1 rollout (versioning, rate limits, auth) ──
+
+def test_v1_alias_matches_bare_route_for_tier0(client):
+    rv_bare = client.get('/api/books?tradition=MT')
+    rv_v1 = client.get('/api/v1/books?tradition=MT')
+    assert rv_bare.status_code == rv_v1.status_code == 200
+    assert rv_bare.data == rv_v1.data
+
+
+def test_tier1_stream_route_rejects_missing_api_key(client):
+    rv = client.get('/api/v1/divergence/stream?ref=Genesis+1:1')
+    assert rv.status_code == 401
+    data = json.loads(rv.data)
+    assert data['error'] == 'unauthorized'
+
+
+def test_tier1_stream_route_rejects_bare_alias_too(client):
+    """The bare form must enforce the same key requirement — versioning is
+    just a URL alias, not a security boundary."""
+    rv = client.get('/api/divergence/stream?ref=Genesis+1:1')
+    assert rv.status_code == 401
+
+
+def test_vote_post_rate_limited_at_20_per_hour(client):
+    """20/hour on vote writes vs 60/minute;1000/day on reads — confirm the
+    tighter limiter actually trips by exceeding it for real."""
+    payload = {'reference': 'RateLimitTest 1:1', 'tool': 'divergence', 'value': 1}
+    responses = [client.post('/api/vote', json=payload) for _ in range(21)]
+    assert any(r.status_code == 429 for r in responses)

@@ -7,6 +7,8 @@ from queue import Queue, Empty
 from flask import Blueprint, render_template, request, Response, stream_with_context
 from biblical_core.claude_pipeline import CHIASM_MODEL, SOURCE_MODEL, CACHE_META_KEYS
 from biblical_core.ref_utils import estimate_verse_count, TOOL_VERSE_LIMITS
+from biblical_core.api_auth import require_api_key
+from biblical_core.rate_limit import limiter, api_key_or_ip
 import state
 
 
@@ -84,6 +86,8 @@ def source():
 # ── SSE streaming endpoints ────────────────────────────────────────────────
 
 @literary_bp.route('/api/chiasm/stream')
+@limiter.limit('20/hour', key_func=api_key_or_ip)
+@require_api_key
 def api_chiasm_stream():
     """SSE endpoint: streams chiasm detection progress then final result."""
     reference = request.args.get('ref', '').strip()
@@ -205,9 +209,12 @@ def api_chiasm_stream():
             'X-Accel-Buffering': 'no',
         },
     )
+literary_bp.add_url_rule('/api/v1/chiasm/stream', view_func=api_chiasm_stream)
 
 
 @literary_bp.route('/api/source/stream')
+@limiter.limit('20/hour', key_func=api_key_or_ip)
+@require_api_key
 def api_source_stream():
     """SSE endpoint: streams source criticism analysis progress then final result."""
     reference = request.args.get('ref', '').strip()
@@ -329,3 +336,4 @@ def api_source_stream():
             'X-Accel-Buffering': 'no',
         },
     )
+literary_bp.add_url_rule('/api/v1/source/stream', view_func=api_source_stream)

@@ -156,7 +156,19 @@ def test_stl_page_returns_200(client):
     assert b'stl' in resp.data.lower() or b'second temple' in resp.data.lower()
 
 
-def test_stl_stream_missing_ref_returns_error_event(client):
-    resp = client.get('/api/stl/stream')
+def test_stl_stream_missing_ref_returns_error_event(client, monkeypatch):
+    """/api/stl/stream is Tier-1 (require_api_key) as of Task 8; supply a
+    monkeypatched valid key so the request reaches the view body where the
+    missing-ref check lives (same pattern as textual.py's divergence tests)."""
+    monkeypatch.setattr('biblical_core.api_auth.validate_api_key', lambda raw_key: True)
+    resp = client.get('/api/stl/stream', headers={'X-API-Key': 'bibcrit_live_test'})
     assert resp.status_code == 200
     assert b'error' in resp.data
+
+
+def test_stl_stream_no_api_key_returns_401(client):
+    """A missing X-API-Key must be rejected with 401 — Tier-1 routes call
+    Claude on a cache miss, so they're key-gated same as their /stream siblings
+    in blueprints/textual.py."""
+    resp = client.get('/api/stl/stream?ref=Psalm+82:1')
+    assert resp.status_code == 401

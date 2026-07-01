@@ -313,3 +313,16 @@ def test_vote_post_rate_limited_at_20_per_hour(client):
     payload = {'reference': 'RateLimitTest 1:1', 'tool': 'divergence', 'value': 1}
     responses = [client.post('/api/vote', json=payload) for _ in range(21)]
     assert any(r.status_code == 429 for r in responses)
+
+
+def test_all_tier1_stream_routes_reject_missing_key(client):
+    tier1_paths = [
+        '/api/v1/scribal/stream', '/api/v1/numerical/stream',
+        '/api/v1/theological/stream', '/api/v1/patristic/stream',
+        '/api/v1/targum/stream', '/api/v1/nt-text/stream',
+        '/api/v1/stl/stream', '/api/v1/chiasm/stream',
+        '/api/v1/source/stream', '/api/v1/lxx-ms/stream',
+    ]
+    for path in tier1_paths:
+        rv = client.get(path)
+        assert rv.status_code == 401, f'{path} did not require a key'

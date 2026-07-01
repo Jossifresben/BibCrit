@@ -13,6 +13,8 @@ from biblical_core.claude_pipeline import (
     CACHE_META_KEYS
 )
 from biblical_core.ref_utils import estimate_verse_count, TOOL_VERSE_LIMITS
+from biblical_core.api_auth import require_api_key
+from biblical_core.rate_limit import limiter, api_key_or_ip
 import state
 
 
@@ -111,6 +113,8 @@ def patristic():
 # ── SSE streams ────────────────────────────────────────────────────────────
 
 @critical_bp.route('/api/scribal/stream')
+@limiter.limit('20/hour', key_func=api_key_or_ip)
+@require_api_key
 def api_scribal_stream():
     """SSE endpoint: streams scribal tendency profiling progress then final result."""
     book = request.args.get('book', '').strip()
@@ -226,9 +230,12 @@ def api_scribal_stream():
             'X-Accel-Buffering': 'no',
         },
     )
+critical_bp.add_url_rule('/api/v1/scribal/stream', view_func=api_scribal_stream)
 
 
 @critical_bp.route('/api/numerical/stream')
+@limiter.limit('20/hour', key_func=api_key_or_ip)
+@require_api_key
 def api_numerical_stream():
     """SSE endpoint: streams numerical discrepancy analysis progress then final result."""
     reference = request.args.get('ref', '').strip()
@@ -361,11 +368,14 @@ def api_numerical_stream():
             'X-Accel-Buffering': 'no',
         },
     )
+critical_bp.add_url_rule('/api/v1/numerical/stream', view_func=api_numerical_stream)
 
 
 # ── Theological SSE stream ─────────────────────────────────────────────────
 
 @critical_bp.route('/api/theological/stream')
+@limiter.limit('20/hour', key_func=api_key_or_ip)
+@require_api_key
 def api_theological_stream():
     """SSE endpoint: streams theological revision analysis progress then final result."""
     reference = request.args.get('ref', '').strip()
@@ -498,11 +508,14 @@ def api_theological_stream():
             'X-Accel-Buffering': 'no',
         },
     )
+critical_bp.add_url_rule('/api/v1/theological/stream', view_func=api_theological_stream)
 
 
 # ── Patristic SSE stream ────────────────────────────────────────────────────
 
 @critical_bp.route('/api/patristic/stream')
+@limiter.limit('20/hour', key_func=api_key_or_ip)
+@require_api_key
 def api_patristic_stream():
     """SSE endpoint: streams patristic citation analysis progress then final result."""
     reference = request.args.get('ref', '').strip()
@@ -644,6 +657,7 @@ def api_patristic_stream():
             'X-Accel-Buffering': 'no',
         },
     )
+critical_bp.add_url_rule('/api/v1/patristic/stream', view_func=api_patristic_stream)
 
 
 # ── Export API ─────────────────────────────────────────────────────────────

@@ -7,6 +7,8 @@ from queue import Queue, Empty
 from flask import Blueprint, render_template, request, Response, stream_with_context
 from biblical_core.claude_pipeline import NT_TEXT_MODEL, CACHE_META_KEYS
 from biblical_core.ref_utils import estimate_verse_count, TOOL_VERSE_LIMITS
+from biblical_core.api_auth import require_api_key
+from biblical_core.rate_limit import limiter, api_key_or_ip
 import state
 
 
@@ -64,6 +66,8 @@ def nt_text():
 # ── SSE stream ──────────────────────────────────────────────────────────────
 
 @nt_text_bp.route('/api/nt-text/stream')
+@limiter.limit('20/hour', key_func=api_key_or_ip)
+@require_api_key
 def api_nt_text_stream():
     reference = request.args.get('ref', '').strip()
     lang      = request.args.get('lang', 'en')
@@ -198,3 +202,4 @@ def api_nt_text_stream():
         mimetype='text/event-stream',
         headers={'Cache-Control': 'no-cache', 'X-Accel-Buffering': 'no'},
     )
+nt_text_bp.add_url_rule('/api/v1/nt-text/stream', view_func=api_nt_text_stream)

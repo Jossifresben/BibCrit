@@ -7,6 +7,8 @@ from queue import Queue, Empty
 from flask import Blueprint, render_template, request, Response, stream_with_context
 from biblical_core.claude_pipeline import LXX_MS_MODEL, CACHE_META_KEYS
 from biblical_core.ref_utils import estimate_verse_count, TOOL_VERSE_LIMITS
+from biblical_core.api_auth import require_api_key
+from biblical_core.rate_limit import limiter, api_key_or_ip
 import state
 
 
@@ -64,6 +66,8 @@ def lxx_witnesses():
 # ── SSE stream ──────────────────────────────────────────────────────────────
 
 @lxx_ms_bp.route('/api/lxx-ms/stream')
+@limiter.limit('20/hour', key_func=api_key_or_ip)
+@require_api_key
 def api_lxx_ms_stream():
     reference = request.args.get('ref', '').strip()
     lang      = request.args.get('lang', 'en')
@@ -194,3 +198,4 @@ def api_lxx_ms_stream():
         mimetype='text/event-stream',
         headers={'Cache-Control': 'no-cache', 'X-Accel-Buffering': 'no'},
     )
+lxx_ms_bp.add_url_rule('/api/v1/lxx-ms/stream', view_func=api_lxx_ms_stream)

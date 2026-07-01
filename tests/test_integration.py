@@ -252,3 +252,16 @@ def test_openapi_spec_marks_analysis_paths_as_requiring_api_key(client):
 def test_openapi_spec_version_bumped():
     from blueprints.research import _OPENAPI_SPEC
     assert _OPENAPI_SPEC['info']['version'] == '1.1.0'
+
+
+def test_openapi_versioned_and_deprecated_entries_share_no_mutable_state(client):
+    """Regression guard (found in code review): the versioned and deprecated-
+    alias spec entries must be fully independent objects, including nested
+    lists like 'tags' — otherwise a future transform mutating one in place
+    would silently corrupt the other."""
+    from blueprints.research import _OPENAPI_SPEC
+    versioned = _OPENAPI_SPEC['paths']['/api/v1/cache']['get']
+    deprecated = _OPENAPI_SPEC['paths']['/api/cache']['get']
+    assert versioned is not deprecated
+    assert versioned['tags'] is not deprecated['tags']
+    assert versioned['tags'] == deprecated['tags']  # same content, different objects

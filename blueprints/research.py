@@ -1,5 +1,6 @@
 """Research blueprint — concordance, hapax, collocations."""
 
+import copy
 import os
 import re
 import markdown as _md
@@ -638,10 +639,15 @@ def _add_v1_aliases(paths: dict) -> dict:
             result[path] = methods
             continue
         versioned_path = path.replace('/api/', '/api/v1/', 1)
-        result[versioned_path] = methods
+        # Deep-copy for both branches: the versioned and deprecated-alias
+        # entries must never share nested mutable state (e.g. a 'tags' list),
+        # or a future transform mutating one in place (spec['tags'].append(...))
+        # would silently corrupt the other. Cheap here — applied once at
+        # module import to a spec of this size.
+        result[versioned_path] = copy.deepcopy(methods)
         deprecated_methods = {}
         for verb, spec in methods.items():
-            deprecated_spec = dict(spec)
+            deprecated_spec = copy.deepcopy(spec)
             deprecated_spec['deprecated'] = True
             deprecated_spec['description'] = spec.get('description', '') + (
                 f'\n\n**Deprecated** — use `{versioned_path}` instead. '

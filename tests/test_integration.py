@@ -154,3 +154,11 @@ def test_export_sbl_no_cache_returns_404(client):
 def test_export_bibtex_no_cache_returns_404(client):
     rv = client.get('/api/divergence/export/bibtex?ref=Isaiah+7:14')
     assert rv.status_code == 404
+
+
+def test_app_starts_with_limiter_installed(client):
+    """Smoke test: Limiter.init_app() didn't break normal routing, and
+    /health stays completely unthrottled."""
+    for _ in range(5):
+        rv = client.get('/health')
+        assert rv.status_code == 200

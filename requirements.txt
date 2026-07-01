@@ -4,5 +4,6 @@ requests>=2.31
 anthropic>=0.30
 gunicorn>=21.0
 supabase>=2.0
+flask-limiter>=3.5
 python-dotenv>=1.0
 markdown>=3.5

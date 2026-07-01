@@ -14,6 +14,8 @@ except ImportError:
 
 from flask import Flask
 
+from biblical_core.rate_limit import limiter
+
 logger = logging.getLogger(__name__)
 
 BASE_DIR = os.path.dirname(__file__)
@@ -28,6 +30,8 @@ def create_app() -> Flask:
 
     from flask_compress import Compress
     Compress(app)
+
+    limiter.init_app(app)
 
     from blueprints.textual import textual_bp
     from blueprints.critical import critical_bp
@@ -248,6 +252,15 @@ def inject_globals():
 
     i18n_lang = state.i18n.get(lang, state.i18n.get('en', {})) if state.i18n else {}
     return dict(_t=_t, lang=lang, i18n_lang=i18n_lang)
+
+
+@app.errorhandler(429)
+def rate_limit_exceeded(e):
+    from flask import jsonify
+    return jsonify({
+        'error': 'rate_limit_exceeded',
+        'message': str(e.description),
+    }), 429
 
 
 if __name__ == '__main__':

@@ -195,3 +195,20 @@ def test_issued_key_is_hashed_not_stored_raw(client, monkeypatch):
     inserted_row = insert_call[0][0]
     assert inserted_row['key_hash'] == hash_api_key(raw_key)
     assert inserted_row['key_hash'] != raw_key
+
+
+def test_key_prefix_is_distinguishing_not_just_the_fixed_prefix(client, monkeypatch):
+    from unittest.mock import MagicMock
+    import state
+    from biblical_core.api_auth import KEY_PREFIX
+    fake_supabase = MagicMock()
+    monkeypatch.setattr(state.pipeline, '_supabase', fake_supabase)
+
+    rv1 = client.post('/api/v1/keys', json={'name': 'A', 'email': 'a@example.com'})
+    prefix1 = fake_supabase.table.return_value.insert.call_args[0][0]['key_prefix']
+
+    rv2 = client.post('/api/v1/keys', json={'name': 'B', 'email': 'b@example.com'})
+    prefix2 = fake_supabase.table.return_value.insert.call_args[0][0]['key_prefix']
+
+    assert len(prefix1) > len(KEY_PREFIX)  # actually extends past the fixed prefix
+    assert prefix1 != prefix2  # two different keys produce two different prefixes

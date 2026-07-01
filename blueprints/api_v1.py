@@ -4,13 +4,16 @@ See docs/superpowers/specs/2026-07-01-open-api-v1-design.md for the full
 design: keys are only required on the Claude-calling analysis-stream
 endpoints, never on the free/cached reads.
 """
+import logging
 from datetime import datetime
 
 from flask import Blueprint, jsonify, request
 
 import state
-from biblical_core.api_auth import generate_api_key, hash_api_key
+from biblical_core.api_auth import KEY_PREFIX, generate_api_key, hash_api_key
 from biblical_core.rate_limit import limiter
+
+logger = logging.getLogger(__name__)
 
 api_v1_bp = Blueprint('api_v1', __name__)
 
@@ -36,7 +39,7 @@ def issue_api_key():
     try:
         state.pipeline._supabase.table('api_keys').insert({
             'key_hash':       hash_api_key(raw_key),
-            'key_prefix':     raw_key[:12],
+            'key_prefix':     raw_key[:len(KEY_PREFIX) + 4],
             'owner_name':     name,
             'owner_email':    email,
             'created_at':     datetime.utcnow().isoformat(),
@@ -44,6 +47,7 @@ def issue_api_key():
             'requests_total': 0,
         }).execute()
     except Exception:
+        logger.exception('issue_api_key insert failed')
         return jsonify({'error': 'Could not create key, try again'}), 503
 
     return jsonify({

@@ -351,3 +351,42 @@ def test_admin_flag_route_untouched(client):
     """Confirm the admin route was NOT given a v1 alias — out of scope."""
     rv = client.get('/api/v1/admin/discovery/flag')
     assert rv.status_code == 404
+
+
+# ── Design doc "Testing" section: gaps flagged by the final whole-branch
+# review (rate-limit enforcement/isolation, OpenAPI validity gate) ─────────
+
+def test_openapi_spec_validates_as_openapi_3_0(client):
+    pytest.importorskip('openapi_spec_validator')
+    from openapi_spec_validator import validate
+    spec = client.get('/api/v1/openapi.json').get_json()
+    validate(spec)  # raises on any schema violation
+
+
+def test_tier0_read_rate_limited_at_60_per_minute(client):
+    """60/minute;1000/day on Tier-0 reads — confirm the limiter actually
+    trips by exceeding it for real."""
+    responses = [client.get('/api/books?tradition=MT') for _ in range(61)]
+    assert any(r.status_code == 429 for r in responses)
+
+
+def test_tier1_per_key_rate_limit_isolated_between_keys(authed_client):
+    """20/hour per key on Tier-1 routes — confirm one key's overuse doesn't
+    burn another key's quota (the design doc's core Tier-1 fairness claim).
+    Uses the bare (non-stream) /api/v1/divergence — same Tier-1 rate limit as
+    its /stream sibling, but a plain JSON response, avoiding SSE-generator
+    cleanup issues when driving 20+ rapid requests through a test client."""
+    key_a_responses = [
+        authed_client.get('/api/v1/divergence?ref=Genesis+1:1',
+                          headers={'X-API-Key': 'bibcrit_live_test_key_a'})
+        for _ in range(21)
+    ]
+    assert any(r.status_code == 429 for r in key_a_responses), \
+        "key A should have tripped its own 20/hour limit"
+
+    # A different key must be unaffected by key A's usage.
+    key_b_response = authed_client.get(
+        '/api/v1/divergence?ref=Genesis+1:1',
+        headers={'X-API-Key': 'bibcrit_live_test_key_b'})
+    assert key_b_response.status_code != 429, \
+        "key B's quota must be isolated from key A's"

@@ -269,11 +269,10 @@ _CORS_ALLOWED_PREFIXES = (
     '/api/export', '/api/divergence/export',
     '/api/scribal/export', '/api/numerical/export',
     '/api/votes', '/api/hypothesis/votes', '/api/budget',
-    # NOTE: the bare, non-stream /api/divergence route is intentionally NOT
-    # here yet — Task 6 of the Open API v1 plan reads that route to classify
-    # it Tier-0 vs Tier-1 (it hasn't been confirmed at the time this list was
-    # written). If Task 6 classifies it Tier-0, add '/api/v1/divergence' and
-    # '/api/divergence' here too.
+    # NOTE: the bare, non-stream /api/divergence route is intentionally absent
+    # — it's Tier-1 (it calls Claude on a cache miss, same as its /stream
+    # sibling), so it correctly gets no CORS, same as every other Analysis-
+    # tagged route.
 )
 
 

@@ -242,6 +242,32 @@ _OPENAPI_SPEC = {
                 "responses": {"200": {"description": "SSE stream", "content": {"text/event-stream": {"schema": {"$ref": "#/components/schemas/SSEStream"}}}}},
             }
         },
+        "/api/stl/stream": {
+            "get": {
+                "tags": ["Analysis"],
+                "summary": "Second Temple Literature Bridge",
+                "description": "Identifies allusions and citations of a canonical passage in Second Temple literature (1 Enoch, Jubilees, Sirach, and related corpora), with directionality assessment. Based on Nickelsburg (2001), VanderKam (2010).",
+                "operationId": "streamStl",
+                "parameters": [
+                    {"name": "ref", "in": "query", "required": True, "schema": {"type": "string"}, "description": "Verse reference (e.g. `Genesis 6:1-4`)"},
+                    {"name": "lang", "in": "query", "schema": {"type": "string", "enum": ["en", "es"], "default": "en"}},
+                ],
+                "responses": {"200": {"description": "SSE stream", "content": {"text/event-stream": {"schema": {"$ref": "#/components/schemas/SSEStream"}}}}},
+            }
+        },
+        "/api/lxx-ms/stream": {
+            "get": {
+                "tags": ["Analysis"],
+                "summary": "LXX Manuscript Witnesses",
+                "description": "Compares the great Septuagint uncial codices (Vaticanus, Sinaiticus, Alexandrinus) for a passage, surfacing manuscript-level divergences.",
+                "operationId": "streamLxxMs",
+                "parameters": [
+                    {"name": "ref", "in": "query", "required": True, "schema": {"type": "string"}, "description": "Verse reference (e.g. `Isaiah 53:11`)"},
+                    {"name": "lang", "in": "query", "schema": {"type": "string", "enum": ["en", "es"], "default": "en"}},
+                ],
+                "responses": {"200": {"description": "SSE stream", "content": {"text/event-stream": {"schema": {"$ref": "#/components/schemas/SSEStream"}}}}},
+            }
+        },
         # ── Corpus browser ───────────────────────────────────────────────────
         "/api/books": {
             "get": {

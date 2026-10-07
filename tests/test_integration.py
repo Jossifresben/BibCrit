@@ -424,9 +424,19 @@ def test_tt_empty_state_and_featured_links(tt_client):
     assert 'id="tt-how"' in html and 'id="tt-findings"' in html
 
 
-def test_tt_findings_for_jrd(tt_client):
+def test_tt_findings_for_jrd(tt_client, monkeypatch):
+    import json
+    import state as state_module
+    import translation_technique.tables as tables
+    root = os.path.dirname(os.path.dirname(__file__))
+    monkeypatch.setattr(state_module, 'i18n', json.load(open(os.path.join(root, 'data', 'i18n.json'), encoding='utf-8')))
+    monkeypatch.setattr(tables, 'MIN_SUMMARY_N', 3)   # the fixture has only 3 aligned JRD[ occurrences
     d = tt_client.get('/api/tt/table?lex=JRD[&books=deuteronomy').get_json()
-    assert d['summary']['n'] >= 0 and isinstance(d['findings'], list) and d['findings']
+    assert not d['summary']['too_few']
+    assert 'ܟܒܫ' in d['findings'][0] and 'accounts for' in d['findings'][0]
+    assert len(d['findings']) == 5
+    html = tt_client.get('/translation-technique').data.decode()
+    assert 'id="tt-findings"' in html and 'Computed from the table above; not an interpretation.' in html
 
 
 def test_tt_lexeme_search_hebrew_and_bare_lex(tt_client):
@@ -438,7 +448,7 @@ def test_tt_verse_badges_render(tt_client):
     r = tt_client.get('/translation-technique/verse/Deuteronomy 24:13')
     html = r.data.decode()
     assert r.status_code == 200          # MT text may be absent in the fixture corpus
-    assert 'tradition-badge' in html and 'tt_verse_pesh' in html or 'Peshitta' in html
+    assert 'tradition-badge' in html and ('tt_verse_pesh' in html or 'Peshitta' in html)
 
 
 def test_tt_query_params_become_data_attributes(tt_client):
@@ -466,7 +476,11 @@ def test_tt_witness_links_null_row_by_lex(tt_client):
 
 def test_tt_facet_options_use_ids_as_values(tt_client):
     html = tt_client.get('/translation-technique').data.decode()
-    assert '<option value="vs" title="tt_facet_vs_help"' in html or 'value="vs"' in html
+    import re
+    vals = re.findall(r'<select id="tt-facet".*?</select>', html, re.S)[0]
+    values = re.findall(r'<option value="([^"]*)"', vals)
+    assert values[0] == '' and 'vs' in values and 'obj_function' in values and 'animacy' in values
+    assert re.search(r'<option value="animacy"[^>]*disabled', vals)
 
 
 def test_tt_value_labels_and_no_bare_facet_ids(tt_client):

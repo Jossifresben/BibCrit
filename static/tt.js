@@ -23,13 +23,16 @@
   how.addEventListener('toggle', () => { try { localStorage.setItem('tt_how', how.open ? 'open' : 'closed'); } catch (e) {} });
   $('tt-copy').addEventListener('click', async () => {
     const url = location.href, b = $('tt-copy');
-    try { await navigator.clipboard.writeText(url); }
+    let ok = false;
+    try { await navigator.clipboard.writeText(url); ok = true; }
     catch (e) {
-      const ta = document.createElement('textarea'); ta.value = url; document.body.appendChild(ta); ta.select();
-      try { document.execCommand('copy'); } catch (e2) { console.warn('tt: copy failed', e2); }
+      const ta = document.createElement('input'); ta.value = url; ta.readOnly = true;
+      ta.style.cssText = 'position:fixed;left:-9999px;opacity:0';
+      document.body.appendChild(ta); ta.select();
+      try { ok = document.execCommand('copy'); } catch (e2) { console.warn('tt: copy failed', e2); }
       ta.remove();
     }
-    b.textContent = I.copied; setTimeout(() => { b.textContent = I.copy_link; }, 1500);
+    if (ok) { b.textContent = I.copied; setTimeout(() => { b.textContent = I.copy_link; }, 1500); }
   });
   const lang = app.dataset.lang || 'en';
   const OCC_LIMIT = 200;
@@ -132,12 +135,17 @@
   }
 
   function showMsg(on) { $('tt-msg').textContent = I.no_match || ''; $('tt-msg').hidden = !on; }
+  function clearUrlLex() {
+    try { const u = new URLSearchParams(location.search); u.delete('lex'); const q = u.toString(); history.replaceState(null, '', q ? '?' + q : location.pathname); } catch (e) {}
+  }
   function reset() {
+    clearUrlLex();
     ['tt-dist', 'tt-xtab', 'tt-occ'].forEach(id => { $(id).hidden = true; });
     showMsg(false);
     $('tt-empty').hidden = false;
   }
   function noMatch() {
+    clearUrlLex();
     ['tt-dist', 'tt-xtab', 'tt-occ'].forEach(id => { $(id).hidden = true; });
     $('tt-empty').hidden = true;
     showMsg(true);
@@ -146,7 +154,7 @@
   async function run() {
     const raw = $('tt-lex').value.trim();
     const my = ++seq;
-    if (!raw) { reset(); return; }
+    if (!raw || !books()) { reset(); return; }
     let lex = raw;
     if (!isLex(raw)) {
       lex = await resolve(raw);
@@ -221,7 +229,8 @@
     if (x.unreliable) { el.textContent = I.unreliable; return; }
     const v = Number(x.cramers_v);
     const gloss = v < 0.1 ? I.assoc_negligible : v < 0.3 ? I.assoc_weak : v < 0.5 ? I.assoc_moderate : I.assoc_strong;
-    const p = x.p < 0.001 ? '< 0.001' : '= ' + x.p.toFixed(3);
+    const pt = x.p_text || (x.p < 0.001 ? '< 0.001' : x.p.toFixed(3));
+    const p = pt.startsWith('<') ? pt : '= ' + pt;
     el.textContent = `χ² = ${x.stat}, df = ${x.dof}, p ${p} · Cramér's V = ${v.toFixed(2)} (${gloss})`;
   }
 

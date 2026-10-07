@@ -98,30 +98,43 @@ def model_share(rows: list[dict]) -> float:
 
 
 def apply_witness(rows: list[dict], substitutions: dict) -> list[dict]:
-    # A substitution carrying heb_lex links that verse's null Hebrew row to the substituted Syriac token and
-    # removes the Syriac-only null row for that position.
-    links = {(ref, sub['heb_lex']): (pos, sub) for (ref, pos), sub in substitutions.items()
-             if sub.get('heb_lex') and sub['lemma'] is not None}
-    drop = {(ref, pos) for (ref, pos), sub in substitutions.items() if sub.get('heb_lex') and sub['lemma'] is not None}
-    linked, out = set(), []
+    # A substitution carrying heb_lex links that verse's null Hebrew row for that lex to the substituted Syriac
+    # token and removes the Syriac-only null row at that position. Only substitutions that actually find such a
+    # null Hebrew row (and whose Syriac-only row exists) take this path; every other one falls back to plain
+    # lemma substitution on the row at that position, so a Syriac token is never lost.
+    def _is_null_heb(r, ref, lex):
+        return r['ref'] == ref and r.get('heb_node') is not None and r['kind'] == 'null' and r.get('heb_lex') == lex
+
+    def _is_syr_only(r, ref, pos):
+        return r['ref'] == ref and r.get('heb_node') is None and r.get('syr_position') == pos
+
+    linked = {}      # (ref, heb_lex) -> (pos, sub)
+    for (ref, pos), sub in substitutions.items():
+        lex = sub.get('heb_lex')
+        if lex and sub['lemma'] is not None and (ref, lex) not in linked \
+                and any(_is_null_heb(r, ref, lex) for r in rows) and any(_is_syr_only(r, ref, pos) for r in rows):
+            linked[(ref, lex)] = (pos, sub)
+    drop = {(ref, pos) for (ref, _), (pos, _s) in linked.items()}
+    done, out = set(), []
     for r in rows:
         if r.get('heb_node') is None and (r['ref'], r.get('syr_position')) in drop:
             continue
-        lk = links.get((r['ref'], r.get('heb_lex')))
-        if lk and r.get('heb_node') is not None and r['kind'] == 'null' and (r['ref'], r['heb_lex']) not in linked:
+        lk = linked.get((r['ref'], r.get('heb_lex')))
+        if lk and _is_null_heb(r, r['ref'], r['heb_lex']) and (r['ref'], r['heb_lex']) not in done:
             pos, sub = lk
-            linked.add((r['ref'], r['heb_lex']))
+            done.add((r['ref'], r['heb_lex']))
             r = copy.copy(r)
             r.update({'kind': 'one-one', 'syr_position': pos, 'syr_lemma': sub['lemma'], 'source': 'witness',
                       'syr_source': 'witness', 'prob': 1.0})
             out.append(r)
             continue
         key = (r['ref'], r.get('syr_position'))
-        if key in substitutions and not substitutions[key].get('heb_lex'):
+        sub = substitutions.get(key)
+        if sub is not None and not ((key in drop)):
             r = copy.copy(r)
-            r['syr_lemma'] = substitutions[key]['lemma']
+            r['syr_lemma'] = sub['lemma']
             r['syr_source'] = 'witness'
-            if substitutions[key]['lemma'] is None:
+            if sub['lemma'] is None:
                 r['kind'] = 'null'
         out.append(r)
     return out
@@ -133,6 +146,11 @@ def occurrences(rows: list[dict], heb_lex: str, books) -> list[dict]:
 
 
 MIN_SUMMARY_N = 5
+
+
+def p_text(p: float) -> str:
+    """One p-value format for the findings and the client line: '< 0.001' or three decimals."""
+    return '< 0.001' if p < 0.001 else f'{p:.3f}'
 
 
 def summary(rows: list[dict], heb_lex: str, books) -> dict:

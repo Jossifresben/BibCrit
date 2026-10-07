@@ -120,7 +120,7 @@ def test_summary_facts_hand_computed():
     assert sm['dominant']['share'] == pytest.approx(6 / 9)
     assert sm['distinct'] == 3 and sm['singletons'] == 1
     assert sm['model_share'] == pytest.approx(0.0)
-    assert sm['facet'] is None or sm['facet']['v'] <= 1.0   # counts this small are flagged unreliable
+    assert sm['facet'] is None   # every facet is unreliable at n = 9
 
 
 def test_summary_picks_reliable_facet_with_largest_v():
@@ -165,3 +165,25 @@ def test_load_witnesses_accepts_heb_lex(tmp_path):
     p.write_text('{"ref": "Deuteronomy 1:1", "position": 4, "sigla": "s", "heb_lex": ">X/", "form": "f", "lemma": "l", "keyed_from": "k"}\n')
     assert load_witnesses(str(p))[0]['heb_lex'] == '>X/'
     assert substitutions_for(load_witnesses(str(p)), 's')[('Deuteronomy 1:1', 4)]['heb_lex'] == '>X/'
+
+
+def test_p_text_format():
+    from translation_technique.tables import p_text
+    assert p_text(8.34e-5) == '< 0.001' and p_text(0.0421) == '0.042' and p_text(0.001) == '0.001'
+
+
+def test_apply_witness_heb_lex_without_null_hebrew_row_falls_back():
+    rows = [r for r in _witness_rows() if r['heb_lex'] != '>X/']
+    out = apply_witness(rows, _sub('>X/'))
+    r = next(x for x in out if x['heb_node'] is None)
+    assert r['syr_position'] == 4 and r['syr_lemma'] == 'ܐܚܐ' and r['syr_source'] == 'witness'
+
+
+def test_apply_witness_heb_lex_position_already_linked_substitutes_lemma():
+    linked = _row('Deuteronomy 1:1', 'JRD[', 'ܢܚܬ', pos=4)
+    null = _row('Deuteronomy 1:1', '>X/', None, kind='null', pos=None)
+    null['heb_node'] = 50
+    out = apply_witness([linked, null], _sub('>X/'))
+    l = next(x for x in out if x['heb_lex'] == 'JRD[')
+    assert l['syr_lemma'] == 'ܐܚܐ' and l['syr_source'] == 'witness'
+    assert next(x for x in out if x['heb_lex'] == '>X/')['kind'] == 'null'

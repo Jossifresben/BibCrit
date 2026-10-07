@@ -18,7 +18,7 @@ from biblical_core.rate_limit import limiter
 from translation_technique.lemmas import read_jsonl, write_jsonl
 from translation_technique.labels import facet_value_label
 from translation_technique.tables import (
-    FACETS, apply_witness, crosstab, distribution, model_share, occurrences, summary,
+    FACETS, apply_witness, crosstab, distribution, model_share, occurrences, p_text, summary,
 )
 
 tt_bp = Blueprint('translation_technique', __name__)
@@ -52,6 +52,7 @@ def _rows_for(store, books, witness):
 def _xtab(rows, lex, facet, books):
     x = crosstab(rows, lex, facet, books)
     x['value_labels'] = {v: facet_value_label(facet, v) for v in x['values']}
+    x['p_text'] = p_text(x['p'])
     return x
 
 
@@ -67,12 +68,12 @@ def _findings(sm: dict, lang: str) -> list[str]:
     d = sm['dominant']
     lines = [
         t('tt_find_dominant', lemma=d['lemma'], pct=f"{100 * d['share']:.1f}%", n=sm['n']),
-        t('tt_find_spread', k=sm['distinct'], k_minor=sm['singletons']),
+        t('tt_find_spread_one' if sm['singletons'] == 1 else 'tt_find_spread', k=sm['distinct'], k_minor=sm['singletons']),
         t('tt_find_null', null=sm['null_count']),
         t('tt_find_model', pct=f"{100 * sm['model_share']:.1f}%"),
     ]
     f = sm['facet']
-    lines.append(t('tt_find_facet', facet=state.t('tt_facet_' + f['facet'], lang), v=f"{f['v']:.2f}", p=f"{f['p']:.3g}") if f
+    lines.append(t('tt_find_facet', facet=state.t('tt_facet_' + f['facet'], lang), v=f"{f['v']:.2f}", p=p_text(f['p'])) if f
                  else t('tt_find_facet_unreliable'))
     return lines
 

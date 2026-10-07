@@ -100,13 +100,23 @@ def test_align_corpus_rows_and_disambiguation():
     assert 0 < dis[('Toy 1:1', 3)][2] <= 1
 
 
-def test_align_corpus_emits_null_rows_for_unlinked_tokens():
+def test_rows_for_verse_null_and_kinds():
+    from translation_technique.align import _rows_for_verse
+    from collections import defaultdict
     par = _toy_parallel()
-    par[0]['syr'].append({'position': 4, 'form': 'z', 'lemma': 'z', 'source': 'rule',
-                          'candidates': [{'lemma': 'z', 'pos': None, 'kaylo': None}], 'units': ['z']})
-    rows, _ = align_corpus(par, iterations=3)
-    nulls = [r for r in rows if r['ref'] == 'Toy 1:1' and r['kind'] == 'null']
-    assert any(r['syr_lemma'] == 'z' and r['heb_node'] is None for r in nulls)
+    p = par[0]
+    p['syr'].append({'position': 4, 'form': 'z', 'lemma': 'z', 'source': 'rule',
+                     'candidates': [{'lemma': 'z', 'pos': None, 'kaylo': None}], 'units': ['z']})
+    t = defaultdict(lambda: defaultdict(lambda: 1e-6))
+    rows, _ = _rows_for_verse(p, [(0, 0, 0.9), (1, 1, 0.9), (2, 2, 0.9)], t)
+    nulls = [r for r in rows if r['kind'] == 'null']
+    assert len(nulls) == 1 and nulls[0]['syr_lemma'] == 'z' and nulls[0]['heb_node'] is None
+    assert not any(r['kind'] == 'null' and r['heb_lex'] in ('A', 'B', 'C') for r in rows)
+    rows2, _ = _rows_for_verse(p, [(0, 0, 0.9), (0, 1, 0.6)], t)
+    linked = [r for r in rows2 if r['kind'] != 'null']
+    assert [r['kind'] for r in linked] == ['one-many', 'one-many']
+    rows3, _ = _rows_for_verse(p, [(0, 0, 0.9), (1, 0, 0.6)], t)
+    assert [r['kind'] for r in rows3 if r['kind'] != 'null'] == ['many-one', 'many-one']
 
 
 def test_pending_links_threshold():

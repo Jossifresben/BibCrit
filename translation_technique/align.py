@@ -196,7 +196,7 @@ def symmetrize(fwd: list[list[tuple[int, int, float]]],
                 if any((h + dh, s + ds) in accepted for dh in (-1, 0, 1) for ds in (-1, 0, 1)):
                     linked_h = any(hh == h for hh, _ in accepted)
                     linked_s = any(ss == s for _, ss in accepted)
-                    if not linked_h and not linked_s:
+                    if not (linked_h and linked_s):
                         accepted[(h, s)] = p
                         grown = True
         out.append(sorted((h, s, p) for (h, s), p in accepted.items()))
@@ -213,6 +213,43 @@ def _kind(h: int, s: int, links) -> str:
     return 'one-one'
 
 
+def _rows_for_verse(p: dict, links: list, t_hs) -> tuple[list[dict], dict]:
+    rows, dis = [], {}
+    linked_h, linked_s = set(), set()
+    for h, s, prob in links:
+        hw, sw = p['heb'][h], p['syr'][s]
+        lemma, pos = sw['lemma'], None
+        if lemma is None and sw['candidates']:
+            # choose the candidate the Hebrew lex supports most
+            best = max(sw['candidates'], key=lambda c: t_hs[unit_key(c)][hw['lex']])
+            z = sum(t_hs[unit_key(c)][hw['lex']] for c in sw['candidates'])
+            post = t_hs[unit_key(best)][hw['lex']] / z if z else 1.0 / len(sw['candidates'])
+            lemma, pos = best['lemma'], best['pos']
+            dis[(p['ref'], sw['position'])] = (lemma, pos, round(post, 4))
+        elif lemma is not None and '|' in lemma:
+            lemma = lemma.split('|')[0]
+        rows.append({
+            'ref': p['ref'], 'heb_node': hw['node'], 'heb_lex': hw['lex'], 'heb_word': hw['word'],
+            'heb_gloss': hw['gloss'], 'heb_feats': hw['feats'],
+            'syr_position': sw['position'], 'syr_lemma': lemma, 'syr_source': sw['source'],
+            'prob': round(prob, 4), 'kind': _kind(h, s, links), 'source': 'ibm1',
+        })
+        linked_h.add(h); linked_s.add(s)
+    for h, hw in enumerate(p['heb']):
+        if h not in linked_h:
+            rows.append({'ref': p['ref'], 'heb_node': hw['node'], 'heb_lex': hw['lex'], 'heb_word': hw['word'],
+                         'heb_gloss': hw['gloss'], 'heb_feats': hw['feats'], 'syr_position': None,
+                         'syr_lemma': None, 'syr_source': None, 'prob': 0.0, 'kind': 'null', 'source': 'ibm1'})
+    for s, sw in enumerate(p['syr']):
+        if s not in linked_s:
+            lemma = sw['lemma'].split('|')[0] if sw['lemma'] else (sw['candidates'][0]['lemma'] if sw['candidates'] else sw['form'])
+            rows.append({'ref': p['ref'], 'heb_node': None, 'heb_lex': None, 'heb_word': None, 'heb_gloss': None,
+                         'heb_feats': None, 'syr_position': sw['position'], 'syr_lemma': lemma,
+                         'syr_source': sw['source'], 'prob': 0.0, 'kind': 'null', 'source': 'ibm1'})
+
+    return rows, dis
+
+
 def align_corpus(parallel: list[dict], iterations: int = 5, diag_lambda: float = 4.0) -> tuple[list[dict], dict]:
     heb_pairs = [([[h['lex']] for h in p['heb']], [s['units'] for s in p['syr']]) for p in parallel]
     t_hs = train_ibm1(heb_pairs, iterations, diag_lambda)               # P(syr | heb)
@@ -224,37 +261,9 @@ def align_corpus(parallel: list[dict], iterations: int = 5, diag_lambda: float =
     sym = symmetrize(fwd, bwd)
     rows, dis = [], {}
     for p, links in zip(parallel, sym):
-        linked_h, linked_s = set(), set()
-        for h, s, prob in links:
-            hw, sw = p['heb'][h], p['syr'][s]
-            lemma, pos = sw['lemma'], None
-            if lemma is None and sw['candidates']:
-                # choose the candidate the Hebrew lex supports most
-                best = max(sw['candidates'], key=lambda c: t_hs[unit_key(c)][hw['lex']])
-                z = sum(t_hs[unit_key(c)][hw['lex']] for c in sw['candidates'])
-                post = t_hs[unit_key(best)][hw['lex']] / z if z else 1.0 / len(sw['candidates'])
-                lemma, pos = best['lemma'], best['pos']
-                dis[(p['ref'], sw['position'])] = (lemma, pos, round(post, 4))
-            elif lemma is not None and '|' in lemma:
-                lemma = lemma.split('|')[0]
-            rows.append({
-                'ref': p['ref'], 'heb_node': hw['node'], 'heb_lex': hw['lex'], 'heb_word': hw['word'],
-                'heb_gloss': hw['gloss'], 'heb_feats': hw['feats'],
-                'syr_position': sw['position'], 'syr_lemma': lemma, 'syr_source': sw['source'],
-                'prob': round(prob, 4), 'kind': _kind(h, s, links), 'source': 'ibm1',
-            })
-            linked_h.add(h); linked_s.add(s)
-        for h, hw in enumerate(p['heb']):
-            if h not in linked_h:
-                rows.append({'ref': p['ref'], 'heb_node': hw['node'], 'heb_lex': hw['lex'], 'heb_word': hw['word'],
-                             'heb_gloss': hw['gloss'], 'heb_feats': hw['feats'], 'syr_position': None,
-                             'syr_lemma': None, 'syr_source': None, 'prob': 0.0, 'kind': 'null', 'source': 'ibm1'})
-        for s, sw in enumerate(p['syr']):
-            if s not in linked_s:
-                lemma = sw['lemma'].split('|')[0] if sw['lemma'] else (sw['candidates'][0]['lemma'] if sw['candidates'] else sw['form'])
-                rows.append({'ref': p['ref'], 'heb_node': None, 'heb_lex': None, 'heb_word': None, 'heb_gloss': None,
-                             'heb_feats': None, 'syr_position': sw['position'], 'syr_lemma': lemma,
-                             'syr_source': sw['source'], 'prob': 0.0, 'kind': 'null', 'source': 'ibm1'})
+        r, d = _rows_for_verse(p, links, t_hs)
+        rows.extend(r)
+        dis.update(d)
     return rows, dis
 
 

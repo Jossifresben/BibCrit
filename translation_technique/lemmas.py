@@ -70,3 +70,133 @@ def strip_affixes(norm: str) -> list[tuple[str, str]]:
                 if cand not in out:
                     out.append(cand)
     return out
+
+
+SEDRA_URL = 'https://sedra.bethmardutho.org/api/word/{}'
+
+
+def sedra_fetch(norm: str) -> Optional[list[dict]]:
+    """Live SEDRA IV lookup. Returns candidate list or None on miss."""
+    import requests
+    r = requests.get(SEDRA_URL.format(norm), timeout=15)
+    if r.status_code != 200:
+        return None
+    try:
+        data = r.json()
+    except ValueError:
+        return None
+    if not isinstance(data, list) or not data:
+        return None
+    return [{'lemma': e.get('stem'), 'pos': e.get('category') or None, 'kaylo': e.get('kaylo') or None}
+            for e in data if e.get('stem')] or None
+
+
+class SedraCache:
+    """JSON cache of SEDRA lookups keyed by normalized form. None = miss."""
+
+    def __init__(self, path: str, fetcher: Optional[Callable[[str], Optional[list[dict]]]] = None,
+                 delay: float = 0.3) -> None:
+        self.path = path
+        self.fetcher = fetcher
+        self.delay = delay
+        self._data: dict = {}
+        self._dirty = False
+        if os.path.exists(path):
+            with open(path, encoding='utf-8') as fh:
+                self._data = json.load(fh)
+
+    def get(self, norm: str) -> Optional[list[dict]]:
+        if norm in self._data:
+            return self._data[norm]
+        if self.fetcher is None:
+            raise KeyError(norm)
+        result = self.fetcher(norm)
+        self._data[norm] = result
+        self._dirty = True
+        if self.delay:
+            time.sleep(self.delay)
+        return result
+
+    def save(self) -> None:
+        os.makedirs(os.path.dirname(self.path) or '.', exist_ok=True)
+        with open(self.path, 'w', encoding='utf-8') as fh:
+            json.dump(self._data, fh, ensure_ascii=False, indent=0, sort_keys=True)
+        self._dirty = False
+
+    def stats(self) -> dict:
+        hits = sum(1 for v in self._data.values() if v)
+        return {'hits': hits, 'misses': len(self._data) - hits}
+
+
+def _dedupe(cands: list[dict]) -> list[dict]:
+    seen, out = set(), []
+    for c in cands:
+        key = (c['lemma'], c['pos'], c.get('kaylo'))
+        if key not in seen:
+            seen.add(key)
+            out.append({'lemma': c['lemma'], 'pos': c['pos'], 'kaylo': c.get('kaylo')})
+    return out
+
+
+def _resolve(norm: str, cache: SedraCache) -> tuple[str, Optional[str], list[dict]]:
+    """Return (source, rule_id, candidates)."""
+    cands = cache.get(norm)
+    if cands:
+        return 'sedra', None, _dedupe(cands)
+    for rule_id, stripped in strip_affixes(norm):
+        cands = cache.get(stripped)
+        if cands:
+            return 'rule', rule_id, _dedupe(cands)
+    return 'unresolved', None, []
+
+
+def build_lemma_rows(tokens: list[dict], cache: SedraCache) -> list[dict]:
+    rows = []
+    for t in tokens:
+        form = t['word_text']
+        norm = normalize_form(form)
+        source, rule_id, cands = _resolve(norm, cache)
+        lemma = pos = None
+        confidence = 0.0
+        if len(cands) == 1:
+            lemma, pos, confidence = cands[0]['lemma'], cands[0]['pos'], 1.0
+        rows.append({
+            'ref': t['reference'],
+            'position': int(t['position']),
+            'form': form,
+            'norm': norm,
+            'lemma': lemma,
+            'pos': pos,
+            'source': source,
+            'rule': rule_id,
+            'candidates': cands,
+            'confidence': confidence,
+        })
+    return rows
+
+
+def coverage(rows: list[dict]) -> dict:
+    n = len(rows)
+    by_tok = Counter(r['source'] for r in rows)
+    types: dict[str, str] = {}
+    for r in rows:
+        types.setdefault(r['norm'], r['source'])
+    by_typ = Counter(types.values())
+    return {
+        'tokens': n,
+        'types': len(types),
+        'by_source_tokens': {k: v / n for k, v in sorted(by_tok.items())} if n else {},
+        'by_source_types': {k: v / len(types) for k, v in sorted(by_typ.items())} if types else {},
+    }
+
+
+def write_jsonl(path: str, rows: list[dict]) -> None:
+    os.makedirs(os.path.dirname(path) or '.', exist_ok=True)
+    with open(path, 'w', encoding='utf-8') as fh:
+        for r in rows:
+            fh.write(json.dumps(r, ensure_ascii=False) + '\n')
+
+
+def read_jsonl(path: str) -> list[dict]:
+    with open(path, encoding='utf-8') as fh:
+        return [json.loads(line) for line in fh if line.strip()]

@@ -1,0 +1,14 @@
+{
+  "ܡܪܝܐ": [{"syriac": "ܡܪܝܐ", "stem": "ܡܪܝܐ", "category": "noun", "glosses": {"eng": ["lord"]}}],
+  "ܡܢ": [{"syriac": "ܡܢ", "stem": "ܡܢ", "category": "particle", "glosses": {"eng": ["from"]}},
+         {"syriac": "ܡܢ", "stem": "ܡܢ", "category": "pronoun", "glosses": {"eng": ["who"]}}],
+  "ܥܠ": [{"syriac": "ܥܠ", "stem": "ܥܠ", "category": "verb", "kaylo": "peal", "glosses": {"eng": ["enter"]}},
+         {"syriac": "ܥܠ", "stem": "ܥܠ", "category": "preposition", "glosses": {"eng": ["upon"]}}],
+  "ܫܡܫܐ": [{"syriac": "ܫܡܫܐ", "stem": "ܫܡܫܐ", "category": "noun", "glosses": {"eng": ["sun"]}}],
+  "ܕܫܡܫܐ": null,
+  "ܥܝܢܗ": null,
+  "ܥܝܢ": [{"syriac": "ܥܝܢ", "stem": "ܥܝܢܐ", "category": "noun", "glosses": {"eng": ["eye"]}}],
+  "ܘܬܡܚܐ": null,
+  "ܬܡܚܐ": null,
+  "ܡܚܐ": null
+}

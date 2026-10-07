@@ -18,7 +18,7 @@ from biblical_core.rate_limit import limiter
 from translation_technique.lemmas import read_jsonl, write_jsonl
 from translation_technique.labels import facet_value_label
 from translation_technique.tables import (
-    FACETS, apply_witness, crosstab, distribution, model_share, occurrences, p_text, summary,
+    FACETS, apply_witness, crosstab, distribution, model_share, occurrences, p_text, spread, summary,
 )
 
 tt_bp = Blueprint('translation_technique', __name__)
@@ -170,6 +170,22 @@ def tt_table():
         'findings': _findings(sm, _lang()),
         'manifest_hash': store.manifest.get('hash'), 'version': store.version,
     })
+
+
+@tt_bp.route('/api/tt/spread')
+@limiter.limit('60/minute;1000/day')
+def tt_spread():
+    store = _store()
+    sp = request.args.get('sp', '').strip()
+    if sp not in ('subs', 'verb', 'prep'):
+        return jsonify({'error': 'sp must be subs, verb or prep'}), 400
+    try:
+        min_occ = max(1, min(int(request.args.get('min_occ', '1')), 1000))
+    except ValueError:
+        return jsonify({'error': 'min_occ must be an integer'}), 400
+    witness = request.args.get('witness', '').strip() or None
+    books = _books_arg()
+    return jsonify(spread(_rows_for(store, books, witness), books, sp, min_occ))
 
 
 @tt_bp.route('/api/tt/occurrences.csv')

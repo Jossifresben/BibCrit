@@ -93,6 +93,28 @@ def crosstab(rows: list[dict], heb_lex: str, facet_id: str, books) -> dict:
             'cramers_v': cramers_v(matrix, cs['stat']) if matrix else 0.0, 'unreliable': cs['unreliable']}
 
 
+def spread(rows: list[dict], books, sp: str, min_occ: int = 1) -> dict:
+    """Corpus-level consistency: for each Hebrew lexeme of part of speech `sp`, the number of distinct Syriac
+    lemmas it is rendered with, then a histogram over lexemes."""
+    bset = set(books) if books is not None else None
+    sel = [r for r in rows if r['kind'] != 'null' and (r.get('heb_feats') or {}).get('sp') == sp
+           and (bset is None or book_stem(r['ref']) in bset)]
+    by_lex = defaultdict(list)
+    for r in sel:
+        by_lex[r['heb_lex']].append(r)
+    kept = {lex: rs for lex, rs in by_lex.items() if len(rs) >= min_occ}
+    ks = {lex: len({r['syr_lemma'] for r in rs}) for lex, rs in kept.items()}
+    hist = Counter(ks.values())
+    counted = [r for rs in kept.values() for r in rs]
+    examples = {}
+    for k in sorted(hist):
+        lexes = sorted((lex for lex, kk in ks.items() if kk == k), key=lambda x: (-len(kept[x]), x))
+        examples[k] = lexes[:3]
+    return {'sp': sp, 'min_occ': min_occ, 'lexemes': len(kept),
+            'histogram': [{'k': k, 'n': hist[k]} for k in sorted(hist)], 'max_k': max(hist, default=0),
+            'model_share': model_share(counted), 'examples': examples}
+
+
 def model_share(rows: list[dict]) -> float:
     return sum(1 for r in rows if _is_model(r)) / len(rows) if rows else 0.0
 

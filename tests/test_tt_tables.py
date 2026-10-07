@@ -187,3 +187,53 @@ def test_apply_witness_heb_lex_position_already_linked_substitutes_lemma():
     l = next(x for x in out if x['heb_lex'] == 'JRD[')
     assert l['syr_lemma'] == 'ܐܚܐ' and l['syr_source'] == 'witness'
     assert next(x for x in out if x['heb_lex'] == '>X/')['kind'] == 'null'
+
+
+# ── spread (lexical-consistency histogram) ──
+def _srow(lex, lemma, sp='subs', ref='Deuteronomy 1:1', pos=1, **kw):
+    r = _row(ref, lex, lemma, pos=pos, **kw)
+    r['heb_feats'] = dict(r['heb_feats'], sp=sp)
+    return r
+
+
+def _spread_rows():
+    return [
+        _srow('A/', 'x'), _srow('A/', 'x', pos=2),                       # 1 rendering, 2 rows
+        _srow('B/', 'y'),                                                # 1 rendering, 1 row
+        _srow('C/', 'p'), _srow('C/', 'q', pos=2), _srow('C/', 'r', pos=3, syr_source='model'),  # 3 renderings
+        _srow('C/', None, pos=4, kind='null'),                           # ignored
+        _srow('V[', 'v', sp='verb'),                                     # excluded from subs
+        _srow('G/', 'g', ref='Genesis 1:1'),                             # other book
+    ]
+
+
+def test_spread_histogram_and_examples():
+    from translation_technique.tables import spread
+    s = spread(_spread_rows(), ['deuteronomy'], 'subs')
+    assert s['sp'] == 'subs' and s['min_occ'] == 1 and s['lexemes'] == 3
+    assert s['histogram'] == [{'k': 1, 'n': 2}, {'k': 3, 'n': 1}]
+    assert s['max_k'] == 3
+    assert s['examples'] == {1: ['A/', 'B/'], 3: ['C/']}       # highest occurrence count first
+
+
+def test_spread_min_occ_filter():
+    from translation_technique.tables import spread
+    s = spread(_spread_rows(), ['deuteronomy'], 'subs', min_occ=2)
+    assert s['lexemes'] == 2 and s['histogram'] == [{'k': 1, 'n': 1}, {'k': 3, 'n': 1}]
+
+
+def test_spread_model_share_and_verb_excluded():
+    from translation_technique.tables import spread
+    s = spread(_spread_rows(), ['deuteronomy'], 'subs')
+    assert s['model_share'] == pytest.approx(1 / 6)             # 6 counted link rows, 1 model
+    v = spread(_spread_rows(), ['deuteronomy'], 'verb')
+    assert v['lexemes'] == 1 and v['histogram'] == [{'k': 1, 'n': 1}]
+    assert spread(_spread_rows(), ['deuteronomy'], 'prep') == {
+        'sp': 'prep', 'min_occ': 1, 'lexemes': 0, 'histogram': [], 'max_k': 0, 'model_share': 0.0, 'examples': {}}
+
+
+def test_spread_examples_capped_at_three():
+    from translation_technique.tables import spread
+    rows = [_srow(f'L{i}/', 'x', pos=1 + j) for i in range(5) for j in range(i + 1)]
+    s = spread(rows, None, 'subs')
+    assert s['examples'][1] == ['L4/', 'L3/', 'L2/']

@@ -4,7 +4,7 @@
   const I = window.TT_I18N || {};
   const $ = id => document.getElementById(id);
 
-  document.addEventListener('DOMContentLoaded', () => { loadMeta(); if ($('tt-lex').value.trim()) setTimeout(() => schedule(), 0); });
+  document.addEventListener('DOMContentLoaded', () => { loadMeta(); loadSpread(); if ($('tt-lex').value.trim()) setTimeout(() => schedule(), 0); });
 
   const how = $('tt-how');
   try { if (localStorage.getItem('tt_how') === 'closed') how.open = false; } catch (e) {}
@@ -49,7 +49,7 @@
     else setChip(c, !c.classList.contains('active'));
     syncAllChip();
     known = new Set();
-    schedule();
+    schedule(); loadSpread();
   });
   syncAllChip();
 
@@ -60,6 +60,44 @@
     Object.entries(extra || {}).forEach(([k, v]) => p.set(k, v));
     return p.toString();
   }
+
+
+  // ── corpus-level consistency histograms ──
+  const SPREAD_SP = ['subs', 'verb', 'prep'];
+  let spreadSeq = 0;
+  function spreadQs(sp) {
+    const p = new URLSearchParams({ sp, books: books(), min_occ: $('tt-minocc').value });
+    if ($('tt-witness').value) p.set('witness', $('tt-witness').value);
+    return p.toString();
+  }
+  function paintSpread(sp, s) {
+    const max = Math.max(1, ...s.histogram.map(b => b.n));
+    $('tt-spread-' + sp).innerHTML = s.histogram.map(b => {
+      const ex = (s.examples[b.k] || []);
+      const tip = `${b.k}: ${b.n}` + (ex.length ? ` (${ex.join(', ')})` : '');
+      return `<button type="button" class="tt-hbar-col" data-lex="${esc(ex[0] || '')}" title="${esc(tip)}">
+        <span class="tt-hbar-n">${esc(b.n)}</span>
+        <span class="tt-hbar-track"><span class="tt-hbar" style="height:${(100 * b.n / max).toFixed(1)}%"></span></span>
+        <span class="tt-hbar-k">${esc(b.k)}</span></button>`;
+    }).join('');
+    $('tt-spread-' + sp + '-foot').textContent = tpl(I.spread_footer, { lexemes: s.lexemes, share: fmtPct(s.model_share) });
+  }
+  async function loadSpread() {
+    const my = ++spreadSeq;
+    if (!books()) { SPREAD_SP.forEach(sp => paintSpread(sp, { histogram: [], examples: {}, lexemes: 0, model_share: 0 })); return; }
+    await Promise.all(SPREAD_SP.map(async sp => {
+      try {
+        const s = await getJSON('/api/tt/spread?' + spreadQs(sp));
+        if (my === spreadSeq) paintSpread(sp, s);
+      } catch (e) { console.warn('tt: spread failed', e); }
+    }));
+  }
+  $('tt-spread').addEventListener('click', (ev) => {
+    const b = ev.target.closest('.tt-hbar-col'); if (!b || !b.dataset.lex) return;
+    known.add(b.dataset.lex);
+    $('tt-lex').value = b.dataset.lex;
+    schedule();
+  });
 
   // ── meta / methodology ──
   async function loadMeta() {
@@ -108,6 +146,8 @@
   $('tt-lex').addEventListener('keydown', (ev) => { if (ev.key === 'Enter') { ev.preventDefault(); schedule(); } });
   $('tt-lex').addEventListener('change', schedule);
   ['tt-facet', 'tt-witness'].forEach(id => $(id).addEventListener('change', schedule));
+  $('tt-witness').addEventListener('change', loadSpread);
+  $('tt-minocc').addEventListener('change', loadSpread);
   document.querySelectorAll('.featured-ref[data-lex]').forEach(a => a.addEventListener('click', (ev) => {
     ev.preventDefault(); $('tt-lex').value = a.dataset.lex; schedule();
   }));
@@ -201,6 +241,31 @@
     wn.textContent = (d.witness_notes || []).map(n => `${n.sigla} ${n.ref} #${n.position}: ${n.note} [${n.keyed_from}]`).join(' · ');
   }
 
+  let xView = 'table';
+  try { if (localStorage.getItem('tt_xtab_view') === 'bars') xView = 'bars'; } catch (e) {}
+  function setXView(v, persist) {
+    xView = v;
+    if (persist) { try { localStorage.setItem('tt_xtab_view', v); } catch (e) {} }
+    document.querySelectorAll('#tt-xtab [data-view]').forEach(b => b.setAttribute('aria-pressed', b.dataset.view === v));
+    document.querySelectorAll('#tt-xtab [data-view]').forEach(b => b.classList.toggle('active', b.dataset.view === v));
+    $('tt-xtab-table').hidden = v !== 'table';
+    $('tt-xtab-bars').hidden = v !== 'bars';
+  }
+  document.querySelectorAll('#tt-xtab [data-view]').forEach(b => b.addEventListener('click', () => setXView(b.dataset.view, true)));
+  function renderXbars(x, rowTot) {
+    const seg = j => `var(--tt-seg-${(j % 12) + 1})`;
+    const legend = x.values.map((v, j) => {
+      const lb = (x.value_labels || {})[v];
+      return `<span class="tt-leg-item"><span class="tt-leg-sw" style="background:${seg(j)}"></span>${esc(v)}${lb && lb !== v ? ` <small class="tt-vlabel">${esc(lb)}</small>` : ''}</span>`;
+    }).join('');
+    const rows = x.lemmas.map((l, i) => {
+      const tot = rowTot[i];
+      const segs = x.matrix[i].map((c, j) => c ? `<span class="tt-xseg" style="width:${(100 * c / tot).toFixed(2)}%;background:${seg(j)}" title="${esc(`${x.values[j]}: ${c} (${(100 * c / tot).toFixed(1)}%)`)}"></span>` : '').join('');
+      return `<div class="tt-xbar-row"><span class="tt-bar-label tt-syriac" dir="rtl" lang="syr">${esc(l)}</span><span class="tt-xbar">${segs}</span><span class="tt-bar-count">${esc(tot)}</span></div>`;
+    }).join('');
+    $('tt-xtab-bars').innerHTML = `<div class="tt-legend">${legend}</div>${rows}`;
+  }
+
   function renderXtab(d) {
     const x = d.crosstab;
     $('tt-xtab').hidden = !x;
@@ -213,6 +278,7 @@
     $('tt-xtab-table').innerHTML = `<table class="tt-table tt-zebra"><thead><tr><th></th>${x.values.map(v => { const lb = (x.value_labels || {})[v]; return `<th class="tt-num"${lb ? ` title="${esc(lb)}"` : ''}>${esc(v)}${lb && lb !== v ? `<br><small class="tt-vlabel">${esc(lb)}</small>` : ''}</th>`; }).join('')}<th class="tt-num">Σ</th></tr></thead>
       <tbody>${x.lemmas.map((l, i) => `<tr><th class="tt-syriac" dir="rtl" lang="syr">${esc(l)}</th>${x.matrix[i].map(c => `<td class="tt-num">${esc(c)}</td>`).join('')}<td class="tt-num tt-total">${rowTot[i]}</td></tr>`).join('')}
       <tr class="tt-total-row"><th>Σ</th>${colTot.map(c => `<td class="tt-num tt-total">${c}</td>`).join('')}<td class="tt-num tt-total">${grand}</td></tr></tbody></table>`;
+    renderXbars(x, rowTot); setXView(xView, false);
     const el = $('tt-xtab-stats');
     if (x.unreliable) { el.textContent = I.unreliable; return; }
     const v = Number(x.cramers_v);

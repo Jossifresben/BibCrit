@@ -584,7 +584,8 @@ TT_KEYS = ['tt_gold_title', 'tt_gold_save', 'tt_gold_back', 'tt_gold_none', 'tt_
            'tt_show_all', 'tt_all_books', 'tt_find_h', 'tt_find_caption', 'tt_find_dominant', 'tt_find_spread',
            'tt_find_null', 'tt_find_model', 'tt_find_facet', 'tt_find_facet_unreliable', 'tt_find_none',
            'tt_method_h', 'tt_method_p1', 'tt_method_p2', 'tt_method_p3', 'tt_method_p4', 'tt_method_p5',
-           'tt_verse_mt', 'tt_verse_pesh', 'tt_sort_hint', 'tt_copy_link', 'tt_copied', 'tt_method_t1', 'tt_method_t2', 'tt_method_t3', 'tt_method_t4', 'tt_method_t5', 'tt_assoc_negligible', 'tt_assoc_weak', 'tt_assoc_moderate', 'tt_assoc_strong', 'tt_facet_vs', 'tt_facet_vs_help', 'tt_facet_vt', 'tt_facet_vt_help', 'tt_facet_clause_typ', 'tt_facet_clause_typ_help', 'tt_facet_obj_function', 'tt_facet_obj_function_help', 'tt_facet_next_prep', 'tt_facet_next_prep_help', 'tt_facet_book', 'tt_facet_book_help', 'tt_facet_animacy', 'tt_facet_animacy_help']
+           'tt_verse_mt', 'tt_verse_pesh', 'tt_sort_hint', 'tt_copy_link', 'tt_copied', 'tt_method_t1', 'tt_method_t2', 'tt_method_t3', 'tt_method_t4', 'tt_method_t5', 'tt_assoc_negligible', 'tt_assoc_weak', 'tt_assoc_moderate', 'tt_assoc_strong', 'tt_facet_vs', 'tt_facet_vs_help', 'tt_facet_vt', 'tt_facet_vt_help', 'tt_facet_clause_typ', 'tt_facet_clause_typ_help', 'tt_facet_obj_function', 'tt_facet_obj_function_help', 'tt_facet_next_prep', 'tt_facet_next_prep_help', 'tt_facet_book', 'tt_facet_book_help', 'tt_facet_animacy', 'tt_facet_animacy_help',
+           'tt_spread_h2', 'tt_spread_lede', 'tt_spread_subs', 'tt_spread_verb', 'tt_spread_prep', 'tt_spread_x', 'tt_spread_y', 'tt_spread_footer', 'tt_spread_minocc', 'tt_xtab_view_table', 'tt_xtab_view_bars']
 
 
 def test_tt_i18n_keys_present_in_both_languages():
@@ -680,3 +681,20 @@ def test_tt_findings_p_clause_has_no_equals_before_less_than(tt_client, monkeypa
         sm['facet'] = {'facet': 'vt', 'v': 0.4, 'p': p}
         out = ' '.join(_findings(sm, 'en'))
         assert want in out and 'p = <' not in out
+
+
+def test_tt_spread_endpoint(tt_client):
+    d = tt_client.get('/api/tt/spread?books=deuteronomy&sp=verb').get_json()
+    assert d['sp'] == 'verb' and d['lexemes'] > 0 and d['histogram']
+    assert sum(b['n'] for b in d['histogram']) == d['lexemes']
+    assert tt_client.get('/api/tt/spread?books=deuteronomy&sp=subs').get_json()['histogram'] == []
+    assert tt_client.get('/api/tt/spread?sp=noun').status_code == 400
+    assert tt_client.get('/api/tt/spread?sp=verb&min_occ=x').status_code == 400
+
+
+def test_tt_spread_card_markup(tt_client):
+    html = tt_client.get('/translation-technique').get_data(as_text=True)
+    assert 'id="tt-spread"' in html
+    for sp in ('subs', 'verb', 'prep'):
+        assert f'id="tt-spread-{sp}"' in html
+    assert html.index('id="tt-spread"') < html.index('id="tt-lex"')

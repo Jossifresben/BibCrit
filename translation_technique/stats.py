@@ -44,18 +44,30 @@ def chi2_sf(x: float, k: int) -> float:
     return _gammainc_upper_reg(k / 2.0, x / 2.0)
 
 
-def chi_square(matrix: list[list[int]]) -> dict:
+def _clean(matrix: list[list[int]]) -> list[list[int]]:
+    """Drop all-zero rows, then all-zero columns."""
     rows = [r for r in matrix if sum(r) > 0]
     if not rows:
-        return {'stat': 0.0, 'dof': 0, 'p': 1.0, 'unreliable': True}
+        return []
     ncol = len(rows[0])
     col_tot = [sum(r[j] for r in rows) for j in range(ncol)]
     keep = [j for j in range(ncol) if col_tot[j] > 0]
-    rows = [[r[j] for j in keep] for r in rows]
-    col_tot = [col_tot[j] for j in keep]
-    n = sum(col_tot)
-    if len(rows) < 2 or len(keep) < 2 or n == 0:
+    return [[r[j] for j in keep] for r in rows]
+
+
+def chi_square(matrix: list[list[int]]) -> dict:
+    rows = _clean(matrix)
+    if not rows or len(rows) < 2:
         return {'stat': 0.0, 'dof': 0, 'p': 1.0, 'unreliable': True}
+    if len(rows[0]) < 2:
+        return {'stat': 0.0, 'dof': 0, 'p': 1.0, 'unreliable': True}
+
+    ncol = len(rows[0])
+    col_tot = [sum(r[j] for r in rows) for j in range(ncol)]
+    n = sum(col_tot)
+    if n == 0:
+        return {'stat': 0.0, 'dof': 0, 'p': 1.0, 'unreliable': True}
+
     stat, unreliable = 0.0, False
     for r in rows:
         rt = sum(r)
@@ -64,13 +76,19 @@ def chi_square(matrix: list[list[int]]) -> dict:
             if exp < 5:
                 unreliable = True
             stat += (obs - exp) ** 2 / exp
-    dof = (len(rows) - 1) * (len(keep) - 1)
+    dof = (len(rows) - 1) * (ncol - 1)
     return {'stat': round(stat, 4), 'dof': dof, 'p': chi2_sf(stat, dof), 'unreliable': unreliable}
 
 
 def cramers_v(matrix: list[list[int]], stat: float) -> float:
-    n = sum(sum(r) for r in matrix)
-    k = min(len(matrix), len(matrix[0]) if matrix else 0)
-    if n == 0 or k < 2:
+    rows = _clean(matrix)
+    if not rows or len(rows) < 2:
         return 0.0
+    ncol = len(rows[0]) if rows else 0
+    if ncol < 2:
+        return 0.0
+    n = sum(sum(r) for r in rows)
+    if n == 0:
+        return 0.0
+    k = min(len(rows), ncol)
     return round(math.sqrt(stat / (n * (k - 1))), 4)

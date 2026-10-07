@@ -22,6 +22,7 @@ def load_witnesses(path: str) -> list[dict]:
                 raise ValueError(f'{path}:{n} missing {missing}')
             r.setdefault('lemma', None)
             r.setdefault('note', '')
+            r.setdefault('heb_lex', None)   # optional: links the substituted token to this lexeme's null row
             rows.append(r)
     return rows
 
@@ -32,5 +33,5 @@ def sigla(witness_rows: list[dict]) -> list[str]:
 
 def substitutions_for(witness_rows: list[dict], sig: str) -> dict:
     return {(r['ref'], int(r['position'])): {'lemma': r['lemma'], 'form': r['form'], 'note': r['note'],
-                                             'keyed_from': r['keyed_from']}
+                                             'keyed_from': r['keyed_from'], 'heb_lex': r.get('heb_lex')}
             for r in witness_rows if r['sigla'] == sig}

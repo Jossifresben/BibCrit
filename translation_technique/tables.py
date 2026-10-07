@@ -98,10 +98,26 @@ def model_share(rows: list[dict]) -> float:
 
 
 def apply_witness(rows: list[dict], substitutions: dict) -> list[dict]:
-    out = []
+    # A substitution carrying heb_lex links that verse's null Hebrew row to the substituted Syriac token and
+    # removes the Syriac-only null row for that position.
+    links = {(ref, sub['heb_lex']): (pos, sub) for (ref, pos), sub in substitutions.items()
+             if sub.get('heb_lex') and sub['lemma'] is not None}
+    drop = {(ref, pos) for (ref, pos), sub in substitutions.items() if sub.get('heb_lex') and sub['lemma'] is not None}
+    linked, out = set(), []
     for r in rows:
+        if r.get('heb_node') is None and (r['ref'], r.get('syr_position')) in drop:
+            continue
+        lk = links.get((r['ref'], r.get('heb_lex')))
+        if lk and r.get('heb_node') is not None and r['kind'] == 'null' and (r['ref'], r['heb_lex']) not in linked:
+            pos, sub = lk
+            linked.add((r['ref'], r['heb_lex']))
+            r = copy.copy(r)
+            r.update({'kind': 'one-one', 'syr_position': pos, 'syr_lemma': sub['lemma'], 'source': 'witness',
+                      'syr_source': 'witness', 'prob': 1.0})
+            out.append(r)
+            continue
         key = (r['ref'], r.get('syr_position'))
-        if key in substitutions:
+        if key in substitutions and not substitutions[key].get('heb_lex'):
             r = copy.copy(r)
             r['syr_lemma'] = substitutions[key]['lemma']
             r['syr_source'] = 'witness'

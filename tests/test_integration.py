@@ -455,6 +455,15 @@ def test_tt_invalid_query_params_dropped(tt_client):
     assert 'data-facet=""' in html
 
 
+def test_tt_witness_links_null_row_by_lex(tt_client):
+    base = tt_client.get('/api/tt/table?lex=>X/&books=deuteronomy').get_json()
+    assert base['occurrences'] == [] and base['distribution']['null_count'] == 1
+    d = tt_client.get('/api/tt/table?lex=>X/&books=deuteronomy&witness=9a1').get_json()
+    o = d['occurrences'][0]
+    assert o['source'] == 'witness' and o['syr_source'] == 'witness' and o['prob'] == 1.0 and o['syr_position'] == 4
+    assert o['syr_lemma'] == 'ܐܚܐ'
+
+
 def test_tt_page_spanish(tt_client):
     assert tt_client.get('/translation-technique?lang=es').status_code == 200
 
@@ -540,7 +549,7 @@ TT_KEYS = ['tt_gold_title', 'tt_gold_save', 'tt_gold_back', 'tt_gold_none', 'tt_
            'tt_show_all', 'tt_all_books', 'tt_find_h', 'tt_find_caption', 'tt_find_dominant', 'tt_find_spread',
            'tt_find_null', 'tt_find_model', 'tt_find_facet', 'tt_find_facet_unreliable', 'tt_find_none',
            'tt_method_h', 'tt_method_p1', 'tt_method_p2', 'tt_method_p3', 'tt_method_p4', 'tt_method_p5',
-           'tt_verse_mt', 'tt_verse_pesh', 'tt_sort_hint', 'tt_copy_link', 'tt_copied']
+           'tt_verse_mt', 'tt_verse_pesh', 'tt_sort_hint', 'tt_copy_link', 'tt_copied', 'tt_assoc_negligible', 'tt_assoc_weak', 'tt_assoc_moderate', 'tt_assoc_strong']
 
 
 def test_tt_i18n_keys_present_in_both_languages():

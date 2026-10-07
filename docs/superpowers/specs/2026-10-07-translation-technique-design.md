@@ -122,6 +122,8 @@ position    int
 sigla       "9a1"
 form        alternative surface form
 lemma       lemma of the alternative (looked up by Stage A rules on demand; may be null)
+heb_lex     optional BHSA lex; when set, the verse's null Hebrew row for that lex becomes a one-one link
+            (source and syr_source witness, prob 1.0) and the Syriac-only null row at position is dropped
 note        free text
 keyed_from  required free text, e.g. "dissertation slide, 2026-10-07"
 ```

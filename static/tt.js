@@ -215,9 +215,12 @@
     $('tt-xtab-table').innerHTML = `<table class="tt-table tt-zebra"><thead><tr><th></th>${x.values.map(v => `<th class="tt-num">${esc(v)}</th>`).join('')}<th class="tt-num">Σ</th></tr></thead>
       <tbody>${x.lemmas.map((l, i) => `<tr><th class="tt-syriac" dir="rtl" lang="syr">${esc(l)}</th>${x.matrix[i].map(c => `<td class="tt-num">${esc(c)}</td>`).join('')}<td class="tt-num tt-total">${rowTot[i]}</td></tr>`).join('')}
       <tr class="tt-total-row"><th>Σ</th>${colTot.map(c => `<td class="tt-num tt-total">${c}</td>`).join('')}<td class="tt-num tt-total">${grand}</td></tr></tbody></table>`;
-    const line = `χ² = ${esc(x.stat)}, df = ${esc(x.dof)}, p = ${esc(x.p.toExponential(2))}, V = ${esc(x.cramers_v)}`;
-    $('tt-xtab-stats').innerHTML = x.unreliable
-      ? `<span class="confidence-badge confidence-low">${line} — ${esc(I.unreliable)}</span>` : line;
+    const el = $('tt-xtab-stats');
+    if (x.unreliable) { el.textContent = I.unreliable; return; }
+    const v = Number(x.cramers_v);
+    const gloss = v < 0.1 ? I.assoc_negligible : v < 0.3 ? I.assoc_weak : v < 0.5 ? I.assoc_moderate : I.assoc_strong;
+    const p = x.p < 0.001 ? '< 0.001' : '= ' + x.p.toFixed(3);
+    el.textContent = `χ² = ${x.stat}, df = ${x.dof}, p ${p} · Cramér's V = ${v.toFixed(2)} (${gloss})`;
   }
 
   function probClass(p) { return p >= 0.8 ? 'confidence-high' : p >= 0.5 ? 'confidence-medium' : 'confidence-low'; }

@@ -22,7 +22,7 @@ def test_manifest_version_books(store):
 
 def test_rows_filtered_and_cached(store):
     rows = store.rows(['deuteronomy'])
-    assert len(rows) == 6
+    assert len(rows) == 8
     assert store.rows(['deuteronomy']) is rows
     assert store.rows(['genesis']) == []
     assert store.rows([]) == []

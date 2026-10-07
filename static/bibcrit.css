@@ -2844,7 +2844,6 @@ body[data-persona="student"] .tool-header { border-top-color: #059669; }
 .tt-bar-count { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .tt-bar-count .confidence-badge { margin-left: 6px; font-size: 10px; }
 .tt-note { font-size: .85rem; color: var(--muted); margin: .6rem 0 0; }
-.tt-note .confidence-badge { text-transform: none; letter-spacing: 0; white-space: normal; }
 .tt-findings { margin-top: 1rem; padding-top: .8rem; border-top: 1px solid var(--border); }
 .tt-findings .result-section-title { margin-bottom: 6px; }
 .tt-findings-list { margin: 0 0 0 1.1rem; padding: 0; font-size: .92rem; line-height: 1.6; }
@@ -2855,7 +2854,7 @@ body[data-persona="student"] .tool-header { border-top-color: #059669; }
 .tt-show-all { margin-top: 10px; }
 .tt-table { width: 100%; border-collapse: collapse; font-size: .9rem; }
 .tt-table th, .tt-table td { padding: 6px 10px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: middle; }
-.tt-table thead th { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.tt-table thead th { font-size: .8rem; text-transform: none; letter-spacing: 0; font-weight: 600; color: var(--muted); }
 .tt-table td[dir="rtl"], .tt-table th[dir="rtl"] { text-align: right; }
 .tt-table th.tt-sortable { cursor: pointer; user-select: none; white-space: nowrap; }
 .tt-table th.tt-sortable:hover { color: var(--accent); }

@@ -131,3 +131,37 @@ def test_summary_picks_reliable_facet_with_largest_v():
         rows.append(_row(f'Deuteronomy 2:{i + 1}', 'Y[', 'ܒ', vs='hif'))
     sm = summary(rows, 'Y[', None)
     assert sm['facet']['facet'] == 'vs' and sm['facet']['v'] == pytest.approx(1.0)
+
+
+def _sub(lex=None, lemma='ܐܚܐ'):
+    return {('Deuteronomy 1:1', 4): {'lemma': lemma, 'form': 'x', 'note': '', 'keyed_from': 't', 'heb_lex': lex}}
+
+
+def _witness_rows():
+    null = _row('Deuteronomy 1:1', '>X/', None, kind='null', pos=None)
+    null['heb_node'] = 50
+    syr_only = _row('Deuteronomy 1:1', None, 'ܒܒܒ', kind='null', pos=4)
+    syr_only['heb_node'] = None
+    syr_only['heb_lex'] = None
+    return [_row('Deuteronomy 1:1', 'JRD[', 'ܢܚܬ'), null, syr_only]
+
+
+def test_apply_witness_heb_lex_links_null_and_drops_syriac_only():
+    out = apply_witness(_witness_rows(), _sub('>X/'))
+    assert len(out) == 2
+    r = next(x for x in out if x['heb_lex'] == '>X/')
+    assert (r['kind'], r['source'], r['syr_source'], r['prob'], r['syr_position'], r['syr_lemma']) == \
+        ('one-one', 'witness', 'witness', 1.0, 4, 'ܐܚܐ')
+    assert not any(x['heb_node'] is None for x in out)
+
+
+def test_apply_witness_without_heb_lex_keeps_old_behaviour():
+    out = apply_witness(_witness_rows(), _sub(None))
+    assert len(out) == 3 and next(x for x in out if x['heb_lex'] == '>X/')['kind'] == 'null'
+
+
+def test_load_witnesses_accepts_heb_lex(tmp_path):
+    p = tmp_path / 'w.jsonl'
+    p.write_text('{"ref": "Deuteronomy 1:1", "position": 4, "sigla": "s", "heb_lex": ">X/", "form": "f", "lemma": "l", "keyed_from": "k"}\n')
+    assert load_witnesses(str(p))[0]['heb_lex'] == '>X/'
+    assert substitutions_for(load_witnesses(str(p)), 's')[('Deuteronomy 1:1', 4)]['heb_lex'] == '>X/'

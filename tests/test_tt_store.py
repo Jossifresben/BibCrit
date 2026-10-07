@@ -23,8 +23,9 @@ def test_manifest_version_books(store):
 def test_rows_filtered_and_cached(store):
     rows = store.rows(['deuteronomy'])
     assert len(rows) == 6
-    assert store.rows(None) is not None
+    assert store.rows(['deuteronomy']) is rows
     assert store.rows(['genesis']) == []
+    assert store.rows([]) == []
 
 
 def test_lexemes_search(store):
@@ -33,6 +34,7 @@ def test_lexemes_search(store):
     assert [o['lex'] for o in store.lexemes('come', None)] == ['BW>[']
     assert [o['lex'] for o in store.lexemes('ירד', ['deuteronomy'])] == ['JRD[']
     assert store.lexemes('zzz', None) == []
+    assert store.lexemes('jrd', []) == []
 
 
 def test_verse_rows(store):
@@ -49,3 +51,17 @@ def test_witnesses(store):
 def test_coverage_and_eval(store):
     assert store.coverage['deuteronomy']['tokens'] == 10
     assert store.eval is None
+
+
+def test_manifest_dynamic_loading(tmp_path):
+    """Manifest not cached when missing; detects file added after process start."""
+    s = TTStore(str(tmp_path))
+    assert s.manifest == {}
+    # Write manifest after reading empty
+    import json
+    align_dir = tmp_path / 'align'
+    align_dir.mkdir()
+    manifest_file = align_dir / 'manifest.json'
+    manifest_file.write_text(json.dumps({'version': '1.0.0', 'books': ['genesis']}))
+    # Read again; should get populated manifest
+    assert s.manifest == {'version': '1.0.0', 'books': ['genesis']}

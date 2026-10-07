@@ -61,8 +61,10 @@ def prefetch(tokens: list[dict], cache: SedraCache, workers: int) -> int:
     return unfetched
 
 
-def build_book(stem: str, cache: SedraCache, workers: int = 1):
-    path = os.path.join(CORPUS_DIR, f'{stem}.csv')
+def build_book(stem: str, cache: SedraCache, workers: int = 1, save: bool = True,
+               corpus_dir: str = CORPUS_DIR, tt_dir: str = TT_DIR):
+    """Build one book. Returns coverage dict, or None if forms were left unfetched."""
+    path = os.path.join(corpus_dir, f'{stem}.csv')
     with open(path, encoding='utf-8') as fh:
         tokens = list(csv.DictReader(fh))
     if workers > 1:
@@ -71,7 +73,7 @@ def build_book(stem: str, cache: SedraCache, workers: int = 1):
             print(f'{stem}: unfetched: {unfetched} (outputs not written; rerun to resume)')
             return None
     rows = build_lemma_rows(tokens, cache)
-    out_dir = os.path.join(TT_DIR, 'lemmas')
+    out_dir = os.path.join(tt_dir, 'lemmas')
     write_jsonl(os.path.join(out_dir, f'{stem}.jsonl'), rows)
     unresolved = sorted({r['norm'] for r in rows if r['source'] == 'unresolved'})
     with open(os.path.join(out_dir, f'unresolved.{stem}.json'), 'w', encoding='utf-8') as fh:
@@ -82,7 +84,8 @@ def build_book(stem: str, cache: SedraCache, workers: int = 1):
     merged[stem] = cov
     with open(cov_path, 'w', encoding='utf-8') as fh:
         json.dump(merged, fh, ensure_ascii=False, indent=1, sort_keys=True)
-    cache.save()
+    if save:
+        cache.save()
     return cov
 
 
@@ -90,26 +93,31 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument('--book', help='book stem, e.g. deuteronomy')
     ap.add_argument('--all', action='store_true')
-    ap.add_argument('--offline', action='store_true')
+    ap.add_argument('--offline', action='store_true',
+                    help='never call SEDRA and never write the cache; unknown forms stay unresolved')
     ap.add_argument('--workers', type=int, default=1, help='parallel SEDRA prefetch threads')
     args = ap.parse_args()
     if not (args.book or args.all):
         ap.error('give --book <stem> or --all')
-    fetcher = None if args.offline else sedra_fetch
-    cache = SedraCache(CACHE_PATH, fetcher=fetcher)
-    if args.offline:
-        # unknown forms must not raise; wrap get() to return None
-        cache.fetcher = lambda norm: None
-        cache.delay = 0
+    save = not args.offline
+    cache = SedraCache(CACHE_PATH, fetcher=None if args.offline else sedra_fetch)
     stems = [args.book] if args.book else sorted(
         f[:-4] for f in os.listdir(CORPUS_DIR) if f.endswith('.csv'))
-    for stem in stems:
-        cov = build_book(stem, cache, 1 if args.offline else args.workers)
-        if cov is None:
-            continue
-        print(f"{stem}: tokens={cov['tokens']} types={cov['types']} "
-              f"by_source_tokens={ {k: round(v, 3) for k, v in cov['by_source_tokens'].items()} }")
+    skipped = 0
+    try:
+        for stem in stems:
+            cov = build_book(stem, cache, 1 if args.offline else args.workers, save=save)
+            if cov is None:
+                skipped += 1
+                continue
+            print(f"{stem}: tokens={cov['tokens']} types={cov['types']} "
+                  f"by_source_tokens={ {k: round(v, 3) for k, v in cov['by_source_tokens'].items()} }")
+    finally:
+        if save:
+            cache.save()
     print('sedra cache:', cache.stats())
+    if skipped:
+        sys.exit(1)
 
 
 if __name__ == '__main__':

@@ -173,13 +173,21 @@ def _dedupe(cands: list[dict]) -> list[dict]:
     return out
 
 
+def _lookup(cache: SedraCache, norm: str) -> Optional[list[dict]]:
+    """cache.get, treating an unknown form with no fetcher (offline) as a miss."""
+    try:
+        return cache.get(norm)
+    except KeyError:
+        return None
+
+
 def _resolve(norm: str, cache: SedraCache) -> tuple[str, Optional[str], list[dict]]:
     """Return (source, rule_id, candidates)."""
-    cands = cache.get(norm)
+    cands = _lookup(cache, norm)
     if cands:
         return 'sedra', None, _dedupe(cands)
     for rule_id, stripped in strip_affixes(norm):
-        cands = cache.get(stripped)
+        cands = _lookup(cache, stripped)
         if cands:
             return 'rule', rule_id, _dedupe(cands)
     return 'unresolved', None, []

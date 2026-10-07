@@ -180,7 +180,6 @@ def sitemap_xml():
         ('/nt-ot', '0.9', 'weekly'),
         ('/lxx-witnesses', '0.9', 'weekly'),
         ('/stl', '0.9', 'weekly'),
-        ('/translation-technique', '0.8', 'monthly'),
         ('/discovery', '0.8', 'monthly'),
         ('/guide', '0.7', 'monthly'),
         ('/paper', '0.6', 'monthly'),

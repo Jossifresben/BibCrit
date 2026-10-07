@@ -4,6 +4,7 @@
 These tests use the Flask test client and do NOT call the real Claude API.
 They verify route wiring, error handling, and cache behavior.
 """
+import re
 import json
 import os
 import shutil
@@ -406,13 +407,13 @@ def tt_client(client, tmp_path, monkeypatch):
     return client
 
 
-def test_tt_page_renders_gate_and_app(tt_client):
+def test_tt_page_renders_app_unlisted_noindex(tt_client):
     r = tt_client.get('/translation-technique')
     assert r.status_code == 200
     html = r.data.decode()
-    assert 'id="tt-gate"' in html and 'id="tt-app"' in html
-    assert '7062b83b59f40eec7869d77246c095a2f019123acd53e2d83d99433631bb02b6' in html
-    assert 'Logan' not in html
+    assert re.search(r'id="tt-app"(?![^>]*\bhidden\b)', html)
+    assert 'tt-gate' not in html
+    assert '<meta name="robots" content="noindex, nofollow">' in html
 
 
 def test_tt_empty_state_and_featured_links(tt_client):
@@ -551,8 +552,11 @@ def test_tt_unavailable_without_data(client, tmp_path, monkeypatch):
     assert client.get('/translation-technique').status_code == 200
 
 
-def test_tt_sitemap_entry(client):
-    assert '/translation-technique' in client.get('/sitemap.xml').data.decode()
+def test_tt_page_is_unlisted(client):
+    assert '/translation-technique' not in client.get('/sitemap.xml').data.decode()
+    assert '/translation-technique' not in client.get('/').data.decode()
+    assert '/translation-technique' not in client.get('/guide').data.decode()
+    assert '/translation-technique' not in client.get('/guide?lang=es').data.decode()
 
 
 def test_tt_lang_is_whitelisted(tt_client):
@@ -566,12 +570,12 @@ def test_tt_csv_hebrew_lex_ascii_filename(tt_client):
     r.headers['Content-Disposition'].encode('ascii')
 
 
-TT_KEYS = ['tt_gold_title', 'tt_gold_save', 'tt_gold_back', 'tt_gold_none', 'tt_page_title', 'tt_h1', 'tt_lede', 'tt_gate_prompt', 'tt_gate_button', 'tt_gate_wrong', 'tt_lexeme_label',
+TT_KEYS = ['tt_gold_title', 'tt_gold_save', 'tt_gold_back', 'tt_gold_none', 'tt_page_title', 'tt_h1', 'tt_lede', 'tt_lexeme_label',
            'tt_lexeme_placeholder', 'tt_books_label', 'tt_facet_label', 'tt_facet_none', 'tt_witness_label',
            'tt_witness_main', 'tt_distribution_h2', 'tt_crosstab_h2', 'tt_occurrences_h2', 'tt_export_csv',
            'tt_model_share', 'tt_null_count', 'tt_unreliable', 'tt_methodology_h2', 'tt_coverage', 'tt_manifest',
            'tt_eval', 'tt_unevaluated', 'tt_facet_unavailable', 'tt_col_ref', 'tt_col_hebrew', 'tt_col_syriac',
-           'tt_col_prob', 'tt_col_source', 'tt_verse_h1', 'tt_back', 'nav_tt', 'guide_tt_title', 'guide_tt_body',
+           'tt_col_prob', 'tt_col_source', 'tt_verse_h1', 'tt_back',
            'tt_unaligned_syriac', 'tt_model_word', 'tt_col_lex', 'tt_manifest_label', 'tt_no_match', 'tt_banner', 'tt_empty',
            'tt_show_all', 'tt_all_books', 'tt_find_h', 'tt_find_caption', 'tt_find_dominant', 'tt_find_spread',
            'tt_find_null', 'tt_find_model', 'tt_find_facet', 'tt_find_facet_unreliable', 'tt_find_none',
@@ -592,11 +596,6 @@ def test_tt_i18n_keys_present_in_both_languages():
         assert '{coverage}' in data[lang]['tt_coverage']
         assert '{hash}' in data[lang]['tt_manifest'] and '{version}' in data[lang]['tt_manifest']
         assert all(p in data[lang]['tt_eval'] for p in ('{precision}', '{recall}', '{agreement}', '{n}'))
-
-
-def test_tt_links_in_nav_and_guide(client):
-    assert '/translation-technique' in client.get('/guide').data.decode()
-    assert '/translation-technique' in client.get('/guide?lang=es').data.decode()
 
 
 def test_tt_gold_routes_hidden_without_env(tt_client, monkeypatch):
@@ -664,3 +663,16 @@ def test_tt_gold_post_replaces_jossi_keeps_model(tt_client, tmp_path, monkeypatc
 def test_tt_gold_post_hidden_without_env(tt_client, monkeypatch):
     monkeypatch.delenv('TT_GOLD_EDIT', raising=False)
     assert tt_client.post('/translation-technique/gold/Deuteronomy 24:13', data={'node_3': '1'}).status_code == 404
+
+
+def test_tt_findings_p_clause_has_no_equals_before_less_than(tt_client, monkeypatch):
+    import state as state_module
+    from blueprints.translation_technique import _findings
+    with open(os.path.join(os.path.dirname(__file__), '..', 'data', 'i18n.json'), encoding='utf-8') as fh:
+        monkeypatch.setattr(state_module, 'i18n', json.load(fh))
+    sm = {'too_few': False, 'dominant': {'lemma': 'x', 'share': 0.5}, 'n': 10, 'singletons': 2, 'distinct': 3,
+          'null_count': 1, 'model_share': 0.0}
+    for p, want in ((0.0001, 'p < 0.001'), (0.0421, 'p = 0.042')):
+        sm['facet'] = {'facet': 'vt', 'v': 0.4, 'p': p}
+        out = ' '.join(_findings(sm, 'en'))
+        assert want in out and 'p = <' not in out

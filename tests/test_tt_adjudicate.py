@@ -2,7 +2,7 @@
 import json
 from translation_technique.adjudicate import (
     lemma_prompt, parse_lemma_response, link_prompt, parse_link_response,
-    merge_lemma_annotations, merge_link_annotations,
+    merge_lemma_annotations, merge_link_annotations, recompute_kinds, restore_orphans,
 )
 
 
@@ -62,7 +62,7 @@ def test_merge_link_annotations_replaces_ibm1_row():
     lookup = {('r', 1): ('ܢܚܬ', 'sedra'), ('r', 2): ('ܡܢ', 'sedra')}
     n = merge_link_annotations(rows, [{'ref': 'r', 'heb_node': 7, 'syr_position': 1}], lookup)
     assert n == 1
-    assert rows[0]['syr_position'] == 1 and rows[0]['syr_lemma'] == 'ܢܚܬ' and rows[0]['source'] == 'model' and rows[0]['prob'] == 1.0
+    assert rows[0]['syr_position'] == 1 and rows[0]['syr_lemma'] == 'ܢܚܬ' and rows[0]['source'] == 'model' and rows[0]['prob'] is None
     rows[0]['source'] = 'ibm1'  # model rows are never re-touched; reset to exercise the null branch
     n = merge_link_annotations(rows, [{'ref': 'r', 'heb_node': 7, 'syr_position': None}], lookup)
     assert rows[0]['kind'] == 'null' and rows[0]['syr_lemma'] is None and rows[0]['source'] == 'model'
@@ -191,3 +191,57 @@ def test_run_links_respects_max_batches_and_summary(tmp_path, monkeypatch, capsy
     mod.main()
     assert Fake.calls == 2
     assert 'model=fake batches=2 accepted=0' in capsys.readouterr().out
+
+
+def _link(node, pos, **kw):
+    d = {'ref': 'r', 'heb_node': node, 'heb_lex': 'L', 'heb_word': 'w', 'heb_gloss': 'g', 'heb_feats': {},
+         'syr_position': pos, 'syr_lemma': f'l{pos}', 'syr_source': 'sedra', 'prob': 0.2, 'kind': 'one-one', 'source': 'ibm1'}
+    d.update(kw)
+    return d
+
+
+def test_repoint_keeps_old_syriac_position_as_null_row():
+    rows = [_link(1, 2), _link(2, 3)]
+    lookup = {('r', 1): ('l1', 'sedra'), ('r', 2): ('l2', 'sedra'), ('r', 3): ('l3', 'rule')}
+    merge_link_annotations(rows, [{'ref': 'r', 'heb_node': 1, 'syr_position': 1}], lookup)
+    assert {r['syr_position'] for r in rows} == {1, 2, 3}
+    orphan = [r for r in rows if r['heb_node'] is None]
+    assert len(orphan) == 1 and orphan[0]['syr_position'] == 2 and orphan[0]['kind'] == 'null'
+    assert orphan[0]['source'] == 'ibm1' and orphan[0]['syr_lemma'] == 'l2'
+    assert restore_orphans(rows, lookup, {'r': {1, 2, 3}}) == 0  # idempotent
+
+
+def test_recompute_kinds_shared_syriac_token_is_many_one():
+    rows = [_link(1, 5), _link(2, 5), _link(3, 6), _link(3, 7), _link(4, None, kind='null')]
+    recompute_kinds(rows)
+    assert [r['kind'] for r in rows] == ['many-one', 'many-one', 'one-many', 'one-many', 'null']
+
+
+def test_merge_onto_shared_token_marks_both_many_one():
+    rows = [_link(1, 5), _link(2, 6)]
+    lookup = {('r', 5): ('l5', 'sedra'), ('r', 6): ('l6', 'sedra')}
+    merge_link_annotations(rows, [{'ref': 'r', 'heb_node': 2, 'syr_position': 5}], lookup)
+    linked = [r for r in rows if r['heb_node'] is not None]
+    assert [r['kind'] for r in linked] == ['many-one', 'many-one']
+
+
+def test_run_lemmas_refreshes_coverage_and_unresolved(tmp_path, monkeypatch):
+    from translation_technique.lemmas import write_jsonl
+    mod = _load_script()
+    (tmp_path / 'lemmas').mkdir()
+    mk = lambda i, src, norm: {'ref': 'Deuteronomy 1:1', 'position': i, 'form': norm, 'norm': norm, 'lemma': norm if src != 'unresolved' else None,
+                               'pos': None, 'source': src, 'confidence': 1.0}
+    write_jsonl(str(tmp_path / 'lemmas' / 'deuteronomy.jsonl'), [mk(1, 'sedra', 'ܐܒܐ'), mk(2, 'unresolved', 'ܐܒܓ'), mk(3, 'unresolved', 'ܐܒܕ')])
+    (tmp_path / 'lemmas' / 'coverage.json').write_text(json.dumps({'amos': {'tokens': 5}}))
+    monkeypatch.setattr(mod, 'TT_DIR', str(tmp_path))
+    monkeypatch.setattr(mod, '_verse_texts', lambda stem: {})
+
+    class Fake:
+        def complete(self, prompt):
+            return json.dumps([{'norm': 'ܐܒܓ', 'lemma': 'ܐܒܓ', 'pos': 'noun', 'confidence': 0.9}]), 'end_turn'
+
+    mod.run_lemmas('deuteronomy', Fake(), False)
+    cov = json.loads((tmp_path / 'lemmas' / 'coverage.json').read_text())
+    assert cov['amos'] == {'tokens': 5}
+    assert abs(cov['deuteronomy']['by_source_tokens']['model'] - 1 / 3) < 1e-9
+    assert json.loads((tmp_path / 'lemmas' / 'unresolved.deuteronomy.json').read_text()) == ['ܐܒܕ']

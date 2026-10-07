@@ -124,9 +124,52 @@ def merge_lemma_annotations(rows: list[dict], accepted: list[dict]) -> int:
     return n
 
 
+def recompute_kinds(rows: list[dict]) -> None:
+    """Set one-one / one-many / many-one on every linked row (syr_position and heb_node both set),
+    counting links per heb_node and per syr_position within each verse. Same convention as align._kind."""
+    by_ref: dict = {}
+    for r in rows:
+        if r['heb_node'] is not None and r['syr_position'] is not None:
+            by_ref.setdefault(r['ref'], []).append(r)
+    for links in by_ref.values():
+        per_h: dict = {}
+        per_s: dict = {}
+        for r in links:
+            per_h[r['heb_node']] = per_h.get(r['heb_node'], 0) + 1
+            per_s[r['syr_position']] = per_s.get(r['syr_position'], 0) + 1
+        for r in links:
+            r['kind'] = ('one-many' if per_h[r['heb_node']] > 1
+                         else 'many-one' if per_s[r['syr_position']] > 1 else 'one-one')
+
+
+def restore_orphans(rows: list[dict], lemma_lookup: dict, positions_by_ref: dict) -> int:
+    """Add a null row (heb_node None, source ibm1) for every Syriac position of the given verses that no
+    row references any more. Rows stay grouped by verse. Returns the number of rows added."""
+    seen: dict = {}
+    for r in rows:
+        if r['syr_position'] is not None:
+            seen.setdefault(r['ref'], set()).add(r['syr_position'])
+    added = []
+    for ref, positions in positions_by_ref.items():
+        for pos in sorted(positions - seen.get(ref, set())):
+            lemma, src = lemma_lookup.get((ref, pos), (None, None))
+            added.append({'ref': ref, 'heb_node': None, 'heb_lex': None, 'heb_word': None, 'heb_gloss': None,
+                          'heb_feats': None, 'syr_position': pos, 'syr_lemma': lemma, 'syr_source': src,
+                          'prob': 0.0, 'kind': 'null', 'source': 'ibm1'})
+    if added:
+        rows.extend(added)
+        order: dict = {}
+        for r in rows:
+            order.setdefault(r['ref'], len(order))
+        rows.sort(key=lambda r: order[r['ref']])  # stable: keeps in-verse order, orphans last in their verse
+    return len(added)
+
+
 def merge_link_annotations(rows: list[dict], accepted: list[dict], lemma_lookup: dict) -> int:
     """Per accepted (ref, heb_node): replace the first ibm1 row, drop other ibm1 rows for the key.
-    Model rows are never touched. Returns the number of keys merged."""
+    Model rows are never touched. Model links carry prob None (no probability). Afterwards, per touched
+    verse: Syriac tokens left unreferenced get a null row back and kinds are recomputed.
+    Returns the number of keys merged."""
     by_key = {(a['ref'], a['heb_node']): a for a in accepted}
     done: set = set()
     drop: list[int] = []
@@ -144,7 +187,15 @@ def merge_link_annotations(rows: list[dict], accepted: list[dict], lemma_lookup:
             r.update(syr_position=None, syr_lemma=None, syr_source=None, prob=0.0, kind='null')
         else:
             lemma, src = lemma_lookup.get((r['ref'], pos), (None, None))
-            r.update(syr_position=pos, syr_lemma=lemma, syr_source=src, prob=1.0, kind='one-one')
+            r.update(syr_position=pos, syr_lemma=lemma, syr_source=src, prob=None, kind='one-one')
     for idx in reversed(drop):
         del rows[idx]
+    touched = {k[0] for k in done}
+    if touched:
+        positions: dict = {}
+        for (ref, pos) in lemma_lookup:
+            if ref in touched:
+                positions.setdefault(ref, set()).add(pos)
+        restore_orphans(rows, lemma_lookup, positions)
+        recompute_kinds([r for r in rows if r['ref'] in touched])
     return len(done)

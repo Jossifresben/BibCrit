@@ -1,22 +1,10 @@
 // static/tt.js — translation technique page. No model calls; fetches computed tables.
 (function () {
-  const gate = document.getElementById('tt-gate');
   const app = document.getElementById('tt-app');
   const I = window.TT_I18N || {};
   const $ = id => document.getElementById(id);
 
-  async function sha256(text) {
-    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
-    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
-  }
-  function open() { gate.hidden = true; app.hidden = false; loadMeta(); if ($('tt-lex').value.trim()) setTimeout(() => schedule(), 0); }
-  try { if (sessionStorage.getItem('tt_ok') === '1') open(); } catch (e) {}
-  $('tt-gate-form').addEventListener('submit', async (ev) => {
-    ev.preventDefault();
-    const ok = (await sha256($('tt-gate-pw').value)) === gate.dataset.hash;
-    if (ok) { try { sessionStorage.setItem('tt_ok', '1'); } catch (e) {} open(); }
-    else $('tt-gate-msg').hidden = false;
-  });
+  document.addEventListener('DOMContentLoaded', () => { loadMeta(); if ($('tt-lex').value.trim()) setTimeout(() => schedule(), 0); });
 
   const how = $('tt-how');
   try { if (localStorage.getItem('tt_how') === 'closed') how.open = false; } catch (e) {}

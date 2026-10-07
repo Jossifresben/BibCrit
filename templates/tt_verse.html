@@ -24,7 +24,7 @@
           <td class="tt-hebrew" dir="rtl" lang="he">{{ r.heb_word }}</td>
           <td>{{ r.heb_lex }} <small>{{ r.heb_gloss }}</small></td>
           <td class="tt-syriac" dir="rtl" lang="syr">{{ r.syr_lemma or '—' }}{% if r.syr_position %} <small>#{{ r.syr_position }}</small>{% endif %}</td>
-          <td>{% if r.prob is not none %}<span class="confidence-badge {{ 'confidence-high' if r.prob >= 0.8 else ('confidence-medium' if r.prob >= 0.5 else 'confidence-low') }}">{{ r.prob }}</span>{% endif %}</td>
+          <td>{% if r.prob is not none %}<span class="confidence-badge {{ 'confidence-high' if r.prob >= 0.8 else ('confidence-medium' if r.prob >= 0.5 else 'confidence-low') }}">{{ r.prob }}</span>{% elif r.syr_position %}—{% endif %}</td>
           <td>{% if r.source %}<span class="tradition-badge tt-src">{{ r.source }}</span>{% endif %}{% if r.syr_source %} <span class="tradition-badge tt-src tt-src-lemma">{{ r.syr_source }}</span>{% endif %}</td>
         </tr>
       {% endfor %}

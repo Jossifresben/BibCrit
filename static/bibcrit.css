@@ -2814,10 +2814,6 @@ body[data-persona="student"] .tool-header { border-top-color: #059669; }
 }
 
 /* translation technique — only what the shared classes do not cover */
-.tt-gate { max-width: 420px; margin: 3rem auto; }
-.tt-gate-form { display: flex; flex-direction: column; gap: .75rem; }
-.tt-gate-prompt { margin: 0; line-height: 1.6; }
-.tt-gate-msg { color: var(--conf-low-fg); margin: 0; font-size: .9rem; }
 .tt-full { width: 100%; }
 .tt-controls { align-items: flex-end; row-gap: 12px; column-gap: 16px; }
 .tt-field { display: flex; flex-direction: column; gap: 4px; min-width: 0; }

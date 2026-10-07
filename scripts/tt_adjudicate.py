@@ -23,7 +23,7 @@ from translation_technique.adjudicate import (  # noqa: E402
     parse_lemma_response, parse_link_response,
 )
 from translation_technique.align import book_stem, manifest_hash  # noqa: E402
-from translation_technique.lemmas import read_jsonl, write_jsonl  # noqa: E402
+from translation_technique.lemmas import coverage, read_jsonl, write_jsonl  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TT_DIR = os.path.join(ROOT, 'data', 'tt')
@@ -44,6 +44,22 @@ def _verse_texts(stem: str) -> dict:
         for r in csv.DictReader(fh):
             out[r['reference']].append(r['word_text'])
     return {k: ' '.join(v) for k, v in out.items()}
+
+
+def refresh_coverage(stem: str, rows: list, tt_dir: str = None) -> dict:
+    """Recompute coverage from the lemma rows, merge it into coverage.json under the book stem, and rewrite
+    unresolved.<stem>.json with the forms still unresolved."""
+    out_dir = os.path.join(tt_dir or TT_DIR, 'lemmas')
+    cov = coverage(rows)
+    cov_path = os.path.join(out_dir, 'coverage.json')
+    merged = json.load(open(cov_path, encoding='utf-8')) if os.path.exists(cov_path) else {}
+    merged[stem] = cov
+    with open(cov_path, 'w', encoding='utf-8') as fh:
+        json.dump(merged, fh, ensure_ascii=False, indent=1, sort_keys=True)
+    unresolved = sorted({r['norm'] for r in rows if r['source'] == 'unresolved'})
+    with open(os.path.join(out_dir, f'unresolved.{stem}.json'), 'w', encoding='utf-8') as fh:
+        json.dump(unresolved, fh, ensure_ascii=False, indent=0)
+    return cov
 
 
 def run_lemmas(stem: str, client, dry: bool, max_batches=None) -> dict:
@@ -70,6 +86,8 @@ def run_lemmas(stem: str, client, dry: bool, max_batches=None) -> dict:
         stats['batches'] += 1
         stats['accepted'] += len(accepted)
         print(f'{label}: accepted {len(accepted)}/{len(batch)}')
+    if not dry and stats['batches']:
+        refresh_coverage(stem, rows)
     print(f'{stem}: {total} tokens annotated by model')
     return stats
 

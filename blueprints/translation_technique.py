@@ -23,7 +23,6 @@ from translation_technique.tables import (
 
 tt_bp = Blueprint('translation_technique', __name__)
 
-GATE_HASH = '7062b83b59f40eec7869d77246c095a2f019123acd53e2d83d99433631bb02b6'
 
 
 def _store():
@@ -73,7 +72,9 @@ def _findings(sm: dict, lang: str) -> list[str]:
         t('tt_find_model', pct=f"{100 * sm['model_share']:.1f}%"),
     ]
     f = sm['facet']
-    lines.append(t('tt_find_facet', facet=state.t('tt_facet_' + f['facet'], lang), v=f"{f['v']:.2f}", p=p_text(f['p'])) if f
+    pt = p_text(f['p']) if f else ''
+    p_clause = f'p {pt}' if pt.startswith('<') else f'p = {pt}'
+    lines.append(t('tt_find_facet', facet=state.t('tt_facet_' + f['facet'], lang), v=f"{f['v']:.2f}", p_clause=p_clause) if f
                  else t('tt_find_facet_unreliable'))
     return lines
 
@@ -93,7 +94,7 @@ def tt_page():
     witness = request.args.get('witness', '').strip()
     if witness not in sigla_known:
         witness = ''
-    return render_template('translation_technique.html', lang=lang, gate_hash=GATE_HASH,
+    return render_template('translation_technique.html', lang=lang,
                            available=store.available, books=store.books, facets=FACETS,
                            sigla=sigla_known, q_lex=lex,
                            q_books=sel_books or (['deuteronomy'] if 'deuteronomy' in store.books else store.books),
@@ -263,7 +264,7 @@ def tt_gold_edit(ref: str):
              if g['ref'] == ref and g['reader'] == 'jossi'}
     view = []
     for n, r in nodes.items():
-        hints = [f"#{x['syr_position']} {x['syr_lemma']} {x['prob']:.2f}" for x in rows
+        hints = [f"#{x['syr_position']} {x['syr_lemma']} {'' if x['prob'] is None else format(x['prob'], '.2f')}" for x in rows
                  if x['heb_node'] == n and x['syr_position'] is not None]
         view.append({'heb_node': n, 'heb_word': r['heb_word'], 'heb_lex': r['heb_lex'], 'heb_gloss': r['heb_gloss'],
                      'selected': saved.get(n), 'hint': '; '.join(hints)})

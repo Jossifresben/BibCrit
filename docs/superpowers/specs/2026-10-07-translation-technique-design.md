@@ -19,7 +19,7 @@ Triggering case: a dissertation on lexical consistency in P-Deuteronomy (בוא,
 - **Everything versioned.** `data/tt/VERSION`, a run manifest per build, and the manifest hash printed with every table and export.
 - **Bilingual EN/ES** page and i18n keys, as for every BibCrit page.
 - **Apparatus data is not shipped from the edition.** The Leiden apparatus is Brill copyright. The witness layer ships with a schema and a hand-keyed sample marked by its origin.
-- **Gate.** The page is behind a client-side password check (obfuscation, not security), per the owner's instruction. JSON endpoints are not gated.
+- **Unlisted page.** No nav, Guide or sitemap link; `noindex`. Reachable by URL. JSON endpoints are not gated.
 
 ## 3. What exists and what is missing (surveyed 2026-10-07)
 
@@ -55,8 +55,8 @@ Offline scripts in `scripts/`:
 Web layer:
 
 - `blueprints/translation_technique.py` — page route and two JSON endpoints.
-- `templates/translation_technique.html`, `templates/tt_gate.html`.
-- i18n keys in `data/i18n.json`; sitemap entry in `app.py`; Guide link under "Other Tools"; entry on `/tools`.
+- `templates/translation_technique.html`.
+- i18n keys in `data/i18n.json`; no sitemap, nav or Guide entry (unlisted).
 
 Data directory `data/tt/`, committed:
 
@@ -183,7 +183,7 @@ Pure functions over a list of joined rows (`alignment row` + the Hebrew features
 
 Route `GET /translation-technique` (`?lang=es` for Spanish). Blueprint `translation_technique_bp`.
 
-Gate: `tt_gate.html` renders a password field. JS computes SHA-256 of the input with `crypto.subtle.digest` and compares it to a constant hash in the template; on match it sets `sessionStorage.tt_ok = "1"` and reveals the page content (rendered in the same response, hidden). The hash constant is the only thing in the repo. This is obfuscation; the owner has chosen it knowingly.
+Unlisted page: no nav, Guide or sitemap link; `noindex, nofollow` meta. The page content renders visible; there is no gate.
 
 Page content:
 
@@ -215,7 +215,7 @@ Both are rate-limited like the other read endpoints in `blueprints/api_v1.py` an
 - `tests/test_tt_lemmas.py`: normalization on forms with seyame/dots; affix rules on a fixed list; cache behaviour with a fixture `tests/fixtures/sedra_sample.json` (no network, the API client is injected).
 - `tests/test_tt_align.py`: ten-verse toy corpus with hand gold; asserts symmetrized links and candidate disambiguation.
 - `tests/test_tt_tables.py`: synthetic joined rows where distribution, cross-tab and chi-square are known by hand; `unreliable` flag; witness substitution; model share.
-- `tests/test_integration.py`: route renders, gate template present, both endpoints, i18n keys EN/ES, sitemap entry.
+- `tests/test_integration.py`: route renders (visible, noindex), both endpoints, i18n keys EN/ES, absent from sitemap/nav/Guide.
 - `tests/test_tt_dissertation_check.py`: compares our Deuteronomy counts for JRD, בוא, נתן with §1, prints the diff, skips if `data/tt/align/deuteronomy.jsonl` is absent.
 
 ## 12. Out of scope for version one

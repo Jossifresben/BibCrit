@@ -1,16 +1,17 @@
 # Translation Technique workbench — how the numbers are made
 
-Route `/translation-technique` (private preview, phrase-gated). Data in `data/tt/`, versioned by `data/tt/VERSION`.
+Route `/translation-technique` (unlisted: not linked from the site, `noindex`; reachable by URL). Data in `data/tt/`, versioned by `data/tt/VERSION`.
 
 ## Pipeline
 1. **Lemma layer** (`scripts/tt_build_lemmas.py`): each Peshitta OT token → normalized form → SEDRA IV lookup (cached in `data/tt/sedra_cache.json`) → affix rules on a miss → model proposal on a second miss. Source tag per token: `sedra | rule | model | unresolved`. Coverage per book in `data/tt/lemmas/coverage.json`.
-2. **Alignment** (`scripts/tt_align.py`): IBM Model 1 both directions with a diagonal prior over all shared MT–Peshitta verses, symmetrized (intersection + grow-diag). Ambiguous SEDRA analyses are chosen by the alignment. Links under the threshold are listed in `pending.json` for model adjudication (`scripts/tt_adjudicate.py links`), each tagged `source: model`. `manifest.json` records versions, threshold, model id, link counts and a SHA-256 of the alignment files; the page prints that hash.
+2. **Alignment** (`scripts/tt_align.py`): IBM Model 1 both directions with a diagonal prior over the verses of the books listed in `manifest.json` (currently Deuteronomy), symmetrized (intersection + grow-diag). Ambiguous SEDRA analyses are chosen by the alignment. Links under the threshold are listed in `pending.json` for model adjudication (`scripts/tt_adjudicate.py links`), each tagged `source: model`. `manifest.json` records versions, threshold, model id, link counts and a SHA-256 of the alignment files; the page prints that hash.
 3. **Tables** (`translation_technique/tables.py`): distribution, cross-tabulation by BHSA features (`vs, vt, clause_typ, obj_function, next_prep, book`), chi-square with a reliability flag, Cramér's V, model share. No model at query time.
 4. **Witnesses** (`data/tt/witnesses/`): hand-keyed alternative readings with sigla and a required `keyed_from`. Tables can be rerun per witness. An optional `heb_lex` links a witness token to the otherwise unaligned Hebrew word it renders. No readings are taken from the Leiden edition.
 5. **Evaluation** (`scripts/tt_eval_gold.py`): 200-verse Deuteronomy sample, two readers (owner, model), aligner precision/recall on the agreed subset. Printed on the page; "unevaluated" until it exists.
 
 ## Rebuilding
 `tt_build_lemmas.py --all` (offline after the first run) → `tt_align.py` → optional `tt_adjudicate.py` → `tt_eval_gold.py eval`. Bump `data/tt/VERSION` on any change to rules, threshold or corpus.
+Rebuild order: `tt_build_lemmas.py` → `tt_adjudicate.py lemmas` (refreshes `coverage.json` and `unresolved.<book>.json`) → `tt_align.py` → `tt_adjudicate.py links` → `tt_eval_gold.py eval`. Running `tt_align.py --books <subset>` merges into `manifest.json`, `lexemes.json` and `pending.json`: only the named books are replaced. `tt_align.py` refuses to overwrite an `align/<book>.jsonl` that holds `source: model` rows (paid adjudications) and prints how many would be lost; `--force` overrides it deliberately, after which lemmas and links must be adjudicated again. `scripts/tt_repair_align.py <book>` repairs an adjudicated file offline (orphaned Syriac tokens, link kinds, null `prob` on model links) and refreshes the manifest.
 `tt_adjudicate.py` accepts `--max-batches N` (stop after N batches, any mode) and prints `model=<id> batches=<n> accepted=<k>` at the end of every run.
 
 ## Scope of the model adjudication

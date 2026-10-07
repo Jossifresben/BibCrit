@@ -4,10 +4,10 @@
 {% block og_title %}{% if lang == 'es' %}Técnica de traducción — BibCrit{% else %}Translation Technique — BibCrit{% endif %}{% endblock %}
 {% block og_description %}{% if lang == 'es' %}Qué lexemas siríacos traducen un lexema hebreo en la Peshitta, y por qué.{% else %}Which Syriac lexemes render a Hebrew lexeme in the Peshitta, and why.{% endif %}{% endblock %}
 
-{% block content %}
-{% include "tt_gate.html" %}
+{% block head %}<meta name="robots" content="noindex, nofollow">{% endblock %}
 
-<div id="tt-app" hidden data-books="{{ books|join(',') }}" data-lang="{{ lang }}" data-lex="{{ q_lex }}" data-sel-books="{{ q_books|join(',') }}" data-facet="{{ q_facet }}" data-witness="{{ q_witness }}">
+{% block content %}
+<div id="tt-app" data-books="{{ books|join(',') }}" data-lang="{{ lang }}" data-lex="{{ q_lex }}" data-sel-books="{{ q_books|join(',') }}" data-facet="{{ q_facet }}" data-witness="{{ q_witness }}">
   <div class="tool-header">
     <h1 class="tool-title">{{ _t('tt_h1') }}</h1>
     <p class="tool-subtitle">{{ _t('tt_lede') }}</p>

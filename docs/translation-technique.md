@@ -1,4 +1,4 @@
-# Translation Technique workbench — how the numbers are made
+# Peshitta Correspondences (route `/translation-technique`) — how the numbers are made
 
 Route `/translation-technique` (unlisted: not linked from the site, `noindex`; reachable by URL). Data in `data/tt/`, versioned by `data/tt/VERSION`.
 

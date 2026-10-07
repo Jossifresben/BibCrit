@@ -657,11 +657,16 @@
     "tt_find_facet_unreliable": "No facet association can be tested reliably at this sample size.",
     "tt_find_none": "Too few occurrences to summarise.",
     "tt_method_h": "How this works",
-    "tt_method_p1": "Lemma layer. Each Syriac token gets a lemma from SEDRA IV; where SEDRA has no entry, affix-stripping rules apply; only what both fail on is proposed by a model. Every token carries a tag naming which of the three produced its lemma.",
-    "tt_method_p2": "Alignment. IBM Model 1 is trained in both directions with a position prior and the two are symmetrized. Links of low confidence are adjudicated by the model and tagged as such, so they can be counted separately.",
-    "tt_method_p3": "Counts. Every number on this page is computed by code over the joined Hebrew–Syriac table. The model never tabulates; it only proposes lemmas and adjudicates uncertain links, and those are marked.",
-    "tt_method_p4": "Facets. A facet is a grammatical feature of the Hebrew occurrence taken from BHSA (stem, tense, clause type and so on). Association is tested with chi-square and summarised by Cramér’s V (0 = none, 1 = complete); with too few occurrences per cell the test is not reported.",
-    "tt_method_p5": "Witnesses and evaluation. Alternative manuscript readings are keyed by hand with their provenance. The aligner is measured against a human-aligned gold sample, and those figures appear in the footer below."
+    "tt_method_t1": "Lemma layer",
+    "tt_method_p1": "Each Syriac token gets a lemma from SEDRA IV; where SEDRA has no entry, affix-stripping rules apply; only what both fail on is proposed by a model. Every token carries a tag naming which of the three produced its lemma.",
+    "tt_method_t2": "Alignment",
+    "tt_method_p2": "IBM Model 1 is trained in both directions with a position prior and the two are symmetrized. Links of low confidence are adjudicated by the model and tagged as such, so they can be counted separately.",
+    "tt_method_t3": "Counts",
+    "tt_method_p3": "Every number on this page is computed by code over the joined Hebrew–Syriac table. The model never tabulates; it only proposes lemmas and adjudicates uncertain links, and those are marked.",
+    "tt_method_t4": "Facets",
+    "tt_method_p4": "A facet is a grammatical feature of the Hebrew occurrence taken from BHSA (stem, tense, clause type and so on). Association is tested with chi-square and summarised by Cramér’s V (0 = none, 1 = complete); with too few occurrences per cell the test is not reported.",
+    "tt_method_t5": "Witnesses and evaluation",
+    "tt_method_p5": "Alternative manuscript readings are keyed by hand with their provenance. The aligner is measured against a human-aligned gold sample, and those figures appear in the footer below."
   },
   "es": {
     "app_name": "BibCrit",
@@ -1307,10 +1312,15 @@
     "tt_find_facet_unreliable": "Con este tamaño de muestra no se puede comprobar de forma fiable ninguna asociación con un factor.",
     "tt_find_none": "Demasiado pocas ocurrencias para resumir.",
     "tt_method_h": "Cómo funciona",
-    "tt_method_p1": "Capa de lemas. Cada token siríaco recibe su lema de SEDRA IV; si SEDRA no lo tiene, se aplican reglas de afijos; solo lo que ambos no resuelven lo propone un modelo. Cada token lleva una etiqueta que indica cuál de los tres produjo su lema.",
-    "tt_method_p2": "Alineación. Se entrena IBM Model 1 en ambas direcciones con un a priori de posición y se simetrizan. Los enlaces de baja confianza los adjudica el modelo y quedan etiquetados, de modo que pueden contarse aparte.",
-    "tt_method_p3": "Recuentos. Cada cifra de esta página la calcula el código sobre la tabla hebreo–siríaco unida. El modelo nunca tabula; solo propone lemas y adjudica enlaces dudosos, y estos quedan marcados.",
-    "tt_method_p4": "Factores. Un factor es un rasgo gramatical de la ocurrencia hebrea tomado de BHSA (tema verbal, tiempo, tipo de oración, etc.). La asociación se contrasta con chi cuadrado y se resume con la V de Cramér (0 = ninguna, 1 = completa); con muy pocas ocurrencias por celda no se informa la prueba.",
-    "tt_method_p5": "Testigos y evaluación. Las lecturas alternativas de manuscritos se introducen a mano con su procedencia. El alineador se mide contra una muestra de referencia alineada por una persona; esas cifras figuran en el pie."
+    "tt_method_t1": "Capa de lemas",
+    "tt_method_p1": "Cada token siríaco recibe su lema de SEDRA IV; si SEDRA no lo tiene, se aplican reglas de afijos; solo lo que ambos no resuelven lo propone un modelo. Cada token lleva una etiqueta que indica cuál de los tres produjo su lema.",
+    "tt_method_t2": "Alineación",
+    "tt_method_p2": "Se entrena IBM Model 1 en ambas direcciones con un a priori de posición y se simetrizan. Los enlaces de baja confianza los adjudica el modelo y quedan etiquetados, de modo que pueden contarse aparte.",
+    "tt_method_t3": "Recuentos",
+    "tt_method_p3": "Cada cifra de esta página la calcula el código sobre la tabla hebreo–siríaco unida. El modelo nunca tabula; solo propone lemas y adjudica enlaces dudosos, y estos quedan marcados.",
+    "tt_method_t4": "Facetas",
+    "tt_method_p4": "Un factor es un rasgo gramatical de la ocurrencia hebrea tomado de BHSA (tema verbal, tiempo, tipo de oración, etc.). La asociación se contrasta con chi cuadrado y se resume con la V de Cramér (0 = ninguna, 1 = completa); con muy pocas ocurrencias por celda no se informa la prueba.",
+    "tt_method_t5": "Testigos y evaluación",
+    "tt_method_p5": "Las lecturas alternativas de manuscritos se introducen a mano con su procedencia. El alineador se mide contra una muestra de referencia alineada por una persona; esas cifras figuran en el pie."
   }
 }

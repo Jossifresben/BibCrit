@@ -598,7 +598,7 @@ def test_tt_i18n_keys_present_in_both_languages():
         assert '{share}' in data[lang]['tt_model_share']
         assert '{n}' in data[lang]['tt_null_count'] and '{total}' in data[lang]['tt_null_count']
         assert '{coverage}' in data[lang]['tt_coverage']
-        assert '{hash}' in data[lang]['tt_manifest'] and '{version}' in data[lang]['tt_manifest']
+        assert all(p in data[lang]['tt_manifest'] for p in ('{hash}', '{version}', '{model}', '{model_links}'))
         assert all(p in data[lang]['tt_eval'] for p in ('{precision}', '{recall}', '{agreement}', '{n}'))
 
 

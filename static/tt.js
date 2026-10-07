@@ -70,7 +70,7 @@
         `${bookName(b)}: ${Object.entries(c.by_source_tokens).map(([s, v]) => `${s} ${fmtPct(v)}`).join(', ')}`).join(' · ');
       $('tt-coverage').textContent = tpl(I.coverage, { coverage: cov });
       const mf = m.manifest || {};
-      $('tt-manifest').innerHTML = esc(tpl(I.manifest, { version: m.version, hash: '\u0001', built: mf.built_at || '', model_links: mf.model_links || 0 }))
+      $('tt-manifest').innerHTML = esc(tpl(I.manifest, { version: m.version, hash: '\u0001', built: mf.built_at || '', model_links: mf.model_links || 0, model: mf.model_id || '—' }))
         .replace('\u0001', `<code>${esc(mf.hash || '')}</code>`);
       $('tt-eval').textContent = m.eval
         ? tpl(I.eval, { precision: fmtPct(m.eval.precision), recall: fmtPct(m.eval.recall), agreement: fmtPct(m.eval.agreement), n: m.eval.verses })

@@ -1,6 +1,6 @@
 {
  "version": "0.1.0",
- "built_at": "2026-10-07T18:08:32+00:00",
+ "built_at": "2026-10-07T18:57:17+00:00",
  "corpus_versions": {
   "bhsa": "2021",
   "pesh_etcbc": "ETCBC/peshitta tf 0.2",
@@ -11,9 +11,9 @@
  "books": [
   "deuteronomy"
  ],
- "model_id": null,
- "model_links": 0,
- "total_links": 13039,
- "pending_links": 786,
- "hash": "effe78349948f11ee59fcf1a908c29b75d3b8d3005941e24c5ee6038e8cc9370"
+ "model_id": "claude-opus-5-5",
+ "model_links": 730,
+ "total_links": 13128,
+ "pending_links": 747,
+ "hash": "e47e1225aba02706d72cb993e76107b07ef84a2b4f9676290ff9b12072783987"
 }

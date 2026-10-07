@@ -30,7 +30,7 @@ class AnthropicAnnotator:
         self._client = anthropic.Anthropic()
 
     def complete(self, prompt: str) -> tuple[str, str]:
-        msg = self._client.messages.create(model=self.model_id, max_tokens=4096,
+        msg = self._client.messages.create(model=self.model_id, max_tokens=16000,
                                            messages=[{'role': 'user', 'content': prompt}])
         text = ''.join(b.text for b in msg.content if getattr(b, 'type', '') == 'text')
         return text, msg.stop_reason or ''

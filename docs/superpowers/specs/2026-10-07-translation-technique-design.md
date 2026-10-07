@@ -1,7 +1,7 @@
 # Translation Technique Workbench — Design
 
 **Date:** 2026-10-07
-**Status:** approved in brainstorm, awaiting written-spec review
+**Status:** implemented on branch feature/translation-technique; see docs/translation-technique.md
 **Scope:** Hebrew–Syriac lexical correspondence for the Peshitta Old Testament, Deuteronomy exposed first, inside BibCrit.
 
 ## 1. Purpose

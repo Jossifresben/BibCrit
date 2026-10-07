@@ -490,7 +490,7 @@ def test_tt_csv_hebrew_lex_ascii_filename(tt_client):
     r.headers['Content-Disposition'].encode('ascii')
 
 
-TT_KEYS = ['tt_page_title', 'tt_h1', 'tt_lede', 'tt_gate_prompt', 'tt_gate_button', 'tt_gate_wrong', 'tt_lexeme_label',
+TT_KEYS = ['tt_gold_title', 'tt_gold_save', 'tt_gold_back', 'tt_gold_none', 'tt_page_title', 'tt_h1', 'tt_lede', 'tt_gate_prompt', 'tt_gate_button', 'tt_gate_wrong', 'tt_lexeme_label',
            'tt_lexeme_placeholder', 'tt_books_label', 'tt_facet_label', 'tt_facet_none', 'tt_witness_label',
            'tt_witness_main', 'tt_distribution_h2', 'tt_crosstab_h2', 'tt_occurrences_h2', 'tt_export_csv',
            'tt_model_share', 'tt_null_count', 'tt_unreliable', 'tt_methodology_h2', 'tt_coverage', 'tt_manifest',
@@ -538,3 +538,49 @@ def test_tt_gold_form_and_post(tt_client, tmp_path, monkeypatch):
     rows = [json.loads(l) for l in lines]
     assert {(x['heb_node'], x['syr_position']) for x in rows} == {(3, 1), (4, None), (5, 2)}
     assert all(x['reader'] == 'jossi' for x in rows)
+
+
+def _gold_setup(tt_client, tmp_path, monkeypatch):
+    monkeypatch.setenv('TT_GOLD_EDIT', '1')
+    (tmp_path / 'tt' / 'gold').mkdir(exist_ok=True)
+    (tmp_path / 'tt' / 'gold' / 'sample_refs.json').write_text('["Deuteronomy 24:13"]', encoding='utf-8')
+    return tmp_path / 'tt' / 'gold' / 'deuteronomy_sample.jsonl'
+
+
+def test_tt_gold_no_anchoring_and_dedupe(tt_client, tmp_path, monkeypatch):
+    import re
+    gpath = _gold_setup(tt_client, tmp_path, monkeypatch)
+    html = tt_client.get('/translation-technique/gold/Deuteronomy 24:13').data.decode()
+    assert len(re.findall(r'<select name="node_', html)) == 3
+    assert 'selected' not in html
+    assert 'aligner: #1' in html
+    tt_client.post('/translation-technique/gold/Deuteronomy 24:13', data={'node_3': '2', 'node_4': '', 'node_5': '1'})
+    html = tt_client.get('/translation-technique/gold/Deuteronomy 24:13').data.decode()
+    assert html.count('selected') == 2
+
+
+def test_tt_gold_post_validation_writes_nothing(tt_client, tmp_path, monkeypatch):
+    gpath = _gold_setup(tt_client, tmp_path, monkeypatch)
+    url = '/translation-technique/gold/Deuteronomy 24:13'
+    assert tt_client.post(url, data={'node_3': 'abc'}).status_code == 400
+    assert tt_client.post(url, data={'node_3': '99'}).status_code == 400
+    assert tt_client.post(url, data={'node_3': '-1'}).status_code == 400
+    assert not gpath.exists()
+
+
+def test_tt_gold_post_replaces_jossi_keeps_model(tt_client, tmp_path, monkeypatch):
+    gpath = _gold_setup(tt_client, tmp_path, monkeypatch)
+    model = {'ref': 'Deuteronomy 24:13', 'heb_node': 3, 'syr_position': 1, 'reader': 'model', 'agreed': None}
+    gpath.write_text(json.dumps(model) + '\n', encoding='utf-8')
+    url = '/translation-technique/gold/Deuteronomy 24:13'
+    tt_client.post(url, data={'node_3': '1'})
+    tt_client.post(url, data={'node_3': '2', 'node_5': '1'})
+    rows = [json.loads(l) for l in gpath.read_text(encoding='utf-8').strip().split('\n')]
+    assert sum(r['reader'] == 'model' for r in rows) == 1
+    j = [r for r in rows if r['reader'] == 'jossi']
+    assert len(j) == 3 and {(r['heb_node'], r['syr_position']) for r in j} == {(3, 2), (4, None), (5, 1)}
+
+
+def test_tt_gold_post_hidden_without_env(tt_client, monkeypatch):
+    monkeypatch.delenv('TT_GOLD_EDIT', raising=False)
+    assert tt_client.post('/translation-technique/gold/Deuteronomy 24:13', data={'node_3': '1'}).status_code == 404

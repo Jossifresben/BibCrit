@@ -169,7 +169,10 @@ def tt_gold_index():
         abort(404)
     store = _store()
     sample_path, gold_path = _gold_paths(store)
-    refs = json.load(open(sample_path, encoding='utf-8')) if os.path.exists(sample_path) else []
+    refs = []
+    if os.path.exists(sample_path):
+        with open(sample_path, encoding='utf-8') as f:
+            refs = json.load(f)
     done = {r['ref'] for r in read_jsonl(gold_path) if r['reader'] == 'jossi'} if os.path.exists(gold_path) else set()
     return render_template('tt_gold.html', refs=refs, done=done, ref=None, rows=None, lang=_lang())
 
@@ -181,26 +184,45 @@ def tt_gold_edit(ref: str):
     store = _store()
     sample_path, gold_path = _gold_paths(store)
     rows = store.verse_rows(ref)
-    heb = sorted((r for r in rows if r['heb_node'] is not None), key=lambda r: r['heb_node'])
-    if not heb:
+    nodes = {}
+    for r in sorted((r for r in rows if r['heb_node'] is not None), key=lambda r: r['heb_node']):
+        nodes.setdefault(r['heb_node'], r)
+    if not nodes:
         abort(404)
     syr = sorted({(r['syr_position'], r['syr_lemma']) for r in rows if r['syr_position'] is not None})
+    valid = {p for p, _ in syr}
     if request.method == 'POST':
+        chosen = {}
+        for n in nodes:
+            raw = request.form.get(f'node_{n}', '').strip()
+            if not raw:
+                chosen[n] = None
+            elif raw.isascii() and raw.isdigit() and int(raw) in valid:
+                chosen[n] = int(raw)
+            else:
+                abort(400)
         new = []
-        for r in {x['heb_node']: x for x in heb}.values():
-            raw = request.form.get(f"node_{r['heb_node']}", '')
-            pos = int(raw) if raw.strip() else None
+        for n, r in nodes.items():
+            pos = chosen[n]
             lemma = next((l for p, l in syr if p == pos), None) if pos else None
-            new.append({'ref': ref, 'heb_node': r['heb_node'], 'heb_lex': r['heb_lex'], 'heb_word': r['heb_word'],
+            new.append({'ref': ref, 'heb_node': n, 'heb_lex': r['heb_lex'], 'heb_word': r['heb_word'],
                         'heb_gloss': r['heb_gloss'], 'heb_feats': None, 'syr_position': pos, 'syr_lemma': lemma,
                         'syr_source': None, 'kind': 'one-one' if pos else 'null', 'reader': 'jossi', 'agreed': None})
         existing = [g for g in (read_jsonl(gold_path) if os.path.exists(gold_path) else [])
                     if not (g['ref'] == ref and g['reader'] == 'jossi')]
         write_jsonl(gold_path, existing + new)
         return redirect('/translation-technique/gold')
+    saved = {g['heb_node']: g['syr_position'] for g in (read_jsonl(gold_path) if os.path.exists(gold_path) else [])
+             if g['ref'] == ref and g['reader'] == 'jossi'}
+    view = []
+    for n, r in nodes.items():
+        hints = [f"#{x['syr_position']} {x['syr_lemma']} {x['prob']:.2f}" for x in rows
+                 if x['heb_node'] == n and x['syr_position'] is not None]
+        view.append({'heb_node': n, 'heb_word': r['heb_word'], 'heb_lex': r['heb_lex'], 'heb_gloss': r['heb_gloss'],
+                     'selected': saved.get(n), 'hint': '; '.join(hints)})
     try:
         syr_text = state.corpus.get_verse_text(ref, 'PESH') if state.corpus is not None else ''
     except Exception:
         syr_text = ''
-    return render_template('tt_gold.html', refs=None, done=None, ref=ref, rows=heb, syr=syr, syr_text=syr_text,
+    return render_template('tt_gold.html', refs=None, done=None, ref=ref, rows=view, syr=syr, syr_text=syr_text,
                            lang=_lang())

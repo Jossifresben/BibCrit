@@ -35,3 +35,37 @@ def test_precision_recall_against_agreed_subset():
     pr = precision_recall(pred, gold)
     assert pr['n_gold'] == 2 and pr['n_pred'] == 2
     assert pr['precision'] == 0.5 and pr['recall'] == 0.5
+
+
+def test_select_sample_uneven_chapters_exact_n():
+    refs = [f'Deuteronomy {c}:{v}' for c in range(1, 35) for v in range(1, (4 if c == 34 else 30))]
+    s = select_sample(refs, 200, 7)
+    assert len(s) == 200 and len(set(s)) == 200
+
+
+def _run_eval(tt_dir, capsys):
+    import importlib.util, os
+    path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'scripts', 'tt_eval_gold.py')
+    spec = importlib.util.spec_from_file_location('tt_eval_gold', path)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    rc = mod.main(['eval'], tt_dir=str(tt_dir))
+    return rc, capsys.readouterr()
+
+
+def test_eval_missing_gold_file_fails_clearly(tmp_path, capsys):
+    (tmp_path / 'align').mkdir()
+    rc, out = _run_eval(tmp_path, capsys)
+    assert rc != 0 and 'gold file missing' in out.err
+
+
+def test_eval_warns_without_model_rows(tmp_path, capsys):
+    import json, shutil, os
+    fx = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'fixtures', 'tt', 'align')
+    shutil.copytree(fx, tmp_path / 'align')
+    (tmp_path / 'gold').mkdir()
+    (tmp_path / 'gold' / 'deuteronomy_sample.jsonl').write_text(
+        json.dumps(_g('Deuteronomy 24:13', 3, 1, 'jossi')) + '\n', encoding='utf-8')
+    rc, out = _run_eval(tmp_path, capsys)
+    assert rc == 0 and 'no reader "model" rows' in out.err
+    assert (tmp_path / 'gold' / 'eval.json').exists()

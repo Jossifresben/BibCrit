@@ -13,29 +13,41 @@ from translation_technique.gold import agreement, mark_agreed, precision_recall,
 from translation_technique.lemmas import read_jsonl, write_jsonl  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TT = os.path.join(ROOT, 'data', 'tt')
-GOLD = os.path.join(TT, 'gold')
 
 
-def main() -> None:
-    mode = sys.argv[1] if len(sys.argv) > 1 else 'eval'
-    os.makedirs(GOLD, exist_ok=True)
+def main(argv=None, tt_dir=None) -> int:
+    argv = sys.argv[1:] if argv is None else argv
+    tt = tt_dir or os.environ.get('TT_DIR') or os.path.join(ROOT, 'data', 'tt')
+    gold_dir = os.path.join(tt, 'gold')
+    mode = argv[0] if argv else 'eval'
+    os.makedirs(gold_dir, exist_ok=True)
     if mode == 'sample':
-        refs = sorted({r['ref'] for r in read_jsonl(os.path.join(TT, 'align', 'deuteronomy.jsonl'))})
+        refs = sorted({r['ref'] for r in read_jsonl(os.path.join(tt, 'align', 'deuteronomy.jsonl'))})
         sample = select_sample(refs, 200, 7)
-        json.dump(sample, open(os.path.join(GOLD, 'sample_refs.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
+        with open(os.path.join(gold_dir, 'sample_refs.json'), 'w', encoding='utf-8') as f:
+            json.dump(sample, f, ensure_ascii=False, indent=0)
         print(f'wrote {len(sample)} refs')
-        return
-    gpath = os.path.join(GOLD, 'deuteronomy_sample.jsonl')
+        return 0
+    gpath = os.path.join(gold_dir, 'deuteronomy_sample.jsonl')
+    if not os.path.exists(gpath):
+        print(f'error: gold file missing: {gpath} (annotate refs in the gold editor first)', file=sys.stderr)
+        return 1
     gold = mark_agreed(read_jsonl(gpath))
+    if not any(r['reader'] == 'model' for r in gold):
+        print('warning: no reader "model" rows in the gold file; agreement and precision/recall are 0.0 '
+              '(run tt_adjudicate.py gold first)', file=sys.stderr)
     write_jsonl(gpath, gold)
-    align = read_jsonl(os.path.join(TT, 'align', 'deuteronomy.jsonl'))
+    align = read_jsonl(os.path.join(tt, 'align', 'deuteronomy.jsonl'))
     a = agreement(gold)
     pr = precision_recall(align, gold)
-    out = {**a, **pr, 'manifest_hash': json.load(open(os.path.join(TT, 'align', 'manifest.json')))['hash']}
-    json.dump(out, open(os.path.join(GOLD, 'eval.json'), 'w', encoding='utf-8'), indent=1)
+    with open(os.path.join(tt, 'align', 'manifest.json'), encoding='utf-8') as f:
+        manifest_hash = json.load(f)['hash']
+    out = {**a, **pr, 'manifest_hash': manifest_hash}
+    with open(os.path.join(gold_dir, 'eval.json'), 'w', encoding='utf-8') as f:
+        json.dump(out, f, indent=1)
     print(json.dumps(out, indent=1))
+    return 0
 
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main())

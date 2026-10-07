@@ -19,7 +19,9 @@ def select_sample(refs: list[str], n: int = 200, seed: int = 7) -> list[str]:
     pools = {c: rng.sample(v, len(v)) for c, v in by_ch.items()}
     chosen: list[str] = []
     while len(chosen) < n and any(pools.values()):
-        for c in sorted(pools):
+        order = sorted(pools)
+        rng.shuffle(order)
+        for c in order:
             if pools[c] and len(chosen) < n:
                 chosen.append(pools[c].pop())
     return sorted(chosen, key=_cv)

@@ -94,10 +94,10 @@ def crosstab(rows: list[dict], heb_lex: str, facet_id: str, books) -> dict:
 
 
 def spread(rows: list[dict], books, sp: str, min_occ: int = 1) -> dict:
-    """Corpus-level consistency: for each Hebrew lexeme of part of speech `sp`, the number of distinct Syriac
+    """Corpus-level consistency (min_occ counts link rows with a Syriac lemma): for each Hebrew lexeme of part of speech `sp`, the number of distinct Syriac
     lemmas it is rendered with, then a histogram over lexemes."""
     bset = set(books) if books is not None else None
-    sel = [r for r in rows if r['kind'] != 'null' and (r.get('heb_feats') or {}).get('sp') == sp
+    sel = [r for r in rows if r['kind'] != 'null' and r.get('syr_lemma') is not None and (r.get('heb_feats') or {}).get('sp') == sp
            and (bset is None or book_stem(r['ref']) in bset)]
     by_lex = defaultdict(list)
     for r in sel:

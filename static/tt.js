@@ -82,7 +82,15 @@
     }).join('');
     $('tt-spread-' + sp + '-foot').textContent = tpl(I.spread_footer, { lexemes: s.lexemes, share: fmtPct(s.model_share) });
   }
+  let spreadStale = true;
+  try { if (localStorage.getItem('tt_spread_open') === '1') $('tt-spread').open = true; } catch (e) {}
+  $('tt-spread').addEventListener('toggle', () => {
+    try { localStorage.setItem('tt_spread_open', $('tt-spread').open ? '1' : '0'); } catch (e) {}
+    if ($('tt-spread').open && spreadStale) loadSpread();
+  });
   async function loadSpread() {
+    if (!$('tt-spread').open) { spreadStale = true; return; }
+    spreadStale = false;
     const my = ++spreadSeq;
     if (!books()) { SPREAD_SP.forEach(sp => paintSpread(sp, { histogram: [], examples: {}, lexemes: 0, model_share: 0 })); return; }
     await Promise.all(SPREAD_SP.map(async sp => {

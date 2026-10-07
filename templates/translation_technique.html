@@ -27,11 +27,11 @@
     <p class="tt-para"><strong>{{ _t('tt_method_t5') }}.</strong> {{ _t('tt_method_p5') }}</p>
   </details>
 
-  <section id="tt-spread" class="result-card tt-spread">
+  <details id="tt-spread" class="result-card tt-spread">
+    <summary class="result-section-title">{{ _t('tt_spread_h2') }}</summary>
     <div class="tt-card-head">
-      <h2 class="result-section-title">{{ _t('tt_spread_h2') }}</h2>
       <label class="tt-minocc">
-        <select id="tt-minocc" class="passage-select" aria-label="{{ _t('tt_spread_minocc')|replace('{n}', '') }}">
+        <select id="tt-minocc" class="passage-select" aria-label="{{ _t('tt_spread_minocc_label') }}">
           {% for n in (1, 2, 5, 10) %}<option value="{{ n }}">{{ _t('tt_spread_minocc')|replace('{n}', n|string) }}</option>{% endfor %}
         </select></label>
     </div>
@@ -47,7 +47,7 @@
       </figure>
       {% endfor %}
     </div>
-  </section>
+  </details>
 
   <div class="passage-bar">
     <div class="passage-bar-row passage-bar-main tt-controls">

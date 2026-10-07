@@ -27,8 +27,8 @@ def _rows():
 def test_distribution_counts_and_model_share():
     d = distribution(_rows(), 'JRD[', ['deuteronomy'])
     assert d['total'] == 5 and d['null_count'] == 1
-    assert d['items'][0] == {'syr_lemma': 'ܢܚܬ', 'count': 2, 'model_share': 0.0}
-    assert d['items'][1] == {'syr_lemma': 'ܟܒܫ', 'count': 2, 'model_share': 0.5}
+    assert d['items'][0] == {'syr_lemma': 'ܢܚܬ', 'count': 2, 'model_share': pytest.approx(0.0)}
+    assert d['items'][1] == {'syr_lemma': 'ܟܒܫ', 'count': 2, 'model_share': pytest.approx(0.5)}
     assert d['model_share_total'] == pytest.approx(0.25)
 
 
@@ -93,3 +93,13 @@ def test_witness_file_rejects_missing_keyed_from(tmp_path):
     p.write_text('{"ref":"Deuteronomy 22:4","position":5,"sigla":"9a1","form":"x","lemma":"y","note":""}\n', encoding='utf-8')
     with pytest.raises(ValueError):
         load_witnesses(str(p))
+
+
+def test_apply_witness_none_lemma_becomes_null_row():
+    rows = apply_witness(_rows(), {('Deuteronomy 1:1', 1): {'lemma': None, 'form': 'x', 'note': '', 'keyed_from': 't'}})
+    r = next(x for x in rows if x['ref'] == 'Deuteronomy 1:1')
+    assert r['syr_lemma'] is None and r['kind'] == 'null' and r['syr_source'] == 'witness'
+
+
+def test_empty_books_selects_nothing():
+    assert distribution(_rows(), 'JRD[', [])['total'] == 0

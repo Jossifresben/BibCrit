@@ -49,7 +49,7 @@ def facet_value(row: dict, facet_id: str) -> str:
 
 
 def _select(rows, heb_lex, books):
-    bset = set(books) if books else None
+    bset = set(books) if books is not None else None
     return [r for r in rows if r['heb_lex'] == heb_lex and (bset is None or book_stem(r['ref']) in bset)]
 
 
@@ -65,11 +65,11 @@ def distribution(rows: list[dict], heb_lex: str, books) -> dict:
         counts[r['syr_lemma']] += 1
         if _is_model(r):
             model[r['syr_lemma']] += 1
-    items = [{'syr_lemma': k, 'count': c, 'model_share': round(model[k] / c, 4)}
+    items = [{'syr_lemma': k, 'count': c, 'model_share': model[k] / c}
              for k, c in counts.most_common()]
     return {
         'lex': heb_lex, 'total': len(sel), 'null_count': len(sel) - len(linked), 'items': items,
-        'model_share_total': round(sum(model.values()) / len(linked), 4) if linked else 0.0,
+        'model_share_total': sum(model.values()) / len(linked) if linked else 0.0,
     }
 
 
@@ -105,6 +105,8 @@ def apply_witness(rows: list[dict], substitutions: dict) -> list[dict]:
             r = copy.copy(r)
             r['syr_lemma'] = substitutions[key]['lemma']
             r['syr_source'] = 'witness'
+            if substitutions[key]['lemma'] is None:
+                r['kind'] = 'null'
         out.append(r)
     return out
 

@@ -8,11 +8,19 @@ from typing import Protocol
 
 SEDRA_POS = {'verb', 'noun', 'adjective', 'pronoun', 'particle', 'preposition', 'adverb', 'numeral',
              'conjunction', 'interjection', 'proper noun', 'adjective of place'}
-_SYRIAC = re.compile(r'^[ܐ-ܯ]+$')
+_SYRIAC = re.compile(r'[ܐ-ܯ]+')
+
+
+def _is_int(v) -> bool:
+    return isinstance(v, int) and not isinstance(v, bool)
+
+
+def _is_num(v) -> bool:
+    return isinstance(v, (int, float)) and not isinstance(v, bool)
 
 
 class AnnotatorClient(Protocol):
-    def complete(self, prompt: str) -> str: ...
+    def complete(self, prompt: str) -> tuple[str, str]: ...  # (text, stop_reason)
 
 
 class AnthropicAnnotator:
@@ -21,10 +29,11 @@ class AnthropicAnnotator:
         self.model_id = model_id
         self._client = anthropic.Anthropic()
 
-    def complete(self, prompt: str) -> str:
+    def complete(self, prompt: str) -> tuple[str, str]:
         msg = self._client.messages.create(model=self.model_id, max_tokens=4096,
                                            messages=[{'role': 'user', 'content': prompt}])
-        return ''.join(b.text for b in msg.content if getattr(b, 'type', '') == 'text')
+        text = ''.join(b.text for b in msg.content if getattr(b, 'type', '') == 'text')
+        return text, msg.stop_reason or ''
 
 
 def _extract_json(text: str):
@@ -61,9 +70,9 @@ def parse_lemma_response(text: str, batch: list[dict]) -> list[dict]:
         if not isinstance(it, dict):
             continue
         norm, lemma, pos, conf = it.get('norm'), it.get('lemma'), it.get('pos'), it.get('confidence')
-        if norm not in allowed or not isinstance(lemma, str) or not _SYRIAC.match(lemma):
+        if not isinstance(norm, str) or norm not in allowed or not isinstance(lemma, str) or not _SYRIAC.fullmatch(lemma):
             continue
-        if pos not in SEDRA_POS or not isinstance(conf, (int, float)) or not 0 <= conf <= 1:
+        if not isinstance(pos, str) or pos not in SEDRA_POS or not _is_num(conf) or not 0 <= conf <= 1:
             continue
         out.append({'norm': norm, 'lemma': lemma, 'pos': pos, 'confidence': float(conf)})
     return out
@@ -92,11 +101,13 @@ def parse_link_response(text: str, batch: list[dict]) -> list[dict]:
     for it in data:
         if not isinstance(it, dict):
             continue
-        key = (it.get('ref'), it.get('heb_node'))
+        ref, node, pos = it.get('ref'), it.get('heb_node'), it.get('syr_position')
+        if not isinstance(ref, str) or not _is_int(node):
+            continue
+        key = (ref, node)
         if key not in valid:
             continue
-        pos = it.get('syr_position')
-        if pos is not None and pos not in valid[key]:
+        if pos is not None and not (_is_int(pos) and pos in valid[key]):
             continue
         out.append({'ref': key[0], 'heb_node': key[1], 'syr_position': pos})
     return out
@@ -114,12 +125,19 @@ def merge_lemma_annotations(rows: list[dict], accepted: list[dict]) -> int:
 
 
 def merge_link_annotations(rows: list[dict], accepted: list[dict], lemma_lookup: dict) -> int:
+    """Per accepted (ref, heb_node): replace the first ibm1 row, drop other ibm1 rows for the key.
+    Model rows are never touched. Returns the number of keys merged."""
     by_key = {(a['ref'], a['heb_node']): a for a in accepted}
-    n = 0
-    for r in rows:
+    done: set = set()
+    drop: list[int] = []
+    for idx, r in enumerate(rows):
         key = (r['ref'], r['heb_node'])
-        if r['heb_node'] is None or key not in by_key:
+        if r['heb_node'] is None or key not in by_key or r['source'] != 'ibm1':
             continue
+        if key in done:
+            drop.append(idx)
+            continue
+        done.add(key)
         pos = by_key[key]['syr_position']
         r['source'] = 'model'
         if pos is None:
@@ -127,5 +145,6 @@ def merge_link_annotations(rows: list[dict], accepted: list[dict], lemma_lookup:
         else:
             lemma, src = lemma_lookup.get((r['ref'], pos), (None, None))
             r.update(syr_position=pos, syr_lemma=lemma, syr_source=src, prob=1.0, kind='one-one')
-        n += 1
-    return n
+    for idx in reversed(drop):
+        del rows[idx]
+    return len(done)

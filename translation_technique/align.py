@@ -6,7 +6,9 @@ process never pays for it.
 """
 from __future__ import annotations
 
+import hashlib
 import math
+import os
 import re
 from collections import defaultdict
 from typing import Optional
@@ -306,3 +308,12 @@ def align_corpus(parallel: list[dict], iterations: int = 5, diag_lambda: float =
 
 def pending_links(rows: list[dict], threshold: float) -> list[dict]:
     return [r for r in rows if r['kind'] != 'null' and r['prob'] < threshold]
+
+
+def manifest_hash(align_dir: str, books: list[str]) -> str:
+    """SHA-256 over <align_dir>/<stem>.jsonl for sorted(books)."""
+    h = hashlib.sha256()
+    for stem in sorted(books):
+        with open(os.path.join(align_dir, f'{stem}.jsonl'), 'rb') as fh:
+            h.update(fh.read())
+    return h.hexdigest()

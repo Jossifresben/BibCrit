@@ -11,7 +11,6 @@ Writes data/tt/align/<book>.jsonl, data/tt/align/pending.json,
 and updates lemma/pos/confidence of disambiguated tokens in data/tt/lemmas/<book>.jsonl.
 """
 import argparse
-import hashlib
 import json
 import os
 import sys
@@ -20,6 +19,7 @@ from datetime import datetime, timezone
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from translation_technique.align import (  # noqa: E402
+    manifest_hash,
     align_corpus, apply_disambiguations, book_stem, build_parallel, hebrew_tokens, pending_links)
 from translation_technique.lemmas import read_jsonl, write_jsonl  # noqa: E402
 
@@ -60,12 +60,9 @@ def main() -> None:
     by_book = defaultdict(list)
     for r in rows:
         by_book[book_stem(r['ref'])].append(r)
-    h = hashlib.sha256()
     for stem in sorted(by_book):
-        path = os.path.join(out_dir, f'{stem}.jsonl')
-        write_jsonl(path, by_book[stem])
-        with open(path, 'rb') as fh:
-            h.update(fh.read())
+        write_jsonl(os.path.join(out_dir, f'{stem}.jsonl'), by_book[stem])
+    digest = manifest_hash(out_dir, list(by_book))
 
     pend = pending_links(rows, args.threshold)
     with open(os.path.join(out_dir, 'pending.json'), 'w', encoding='utf-8') as fh:
@@ -88,10 +85,11 @@ def main() -> None:
         'corpus_versions': {'bhsa': '2021', 'pesh_etcbc': 'ETCBC/peshitta tf 0.2', 'lemmas': version},
         'iterations': args.iterations, 'threshold': args.threshold, 'books': sorted(by_book),
         'model_id': None, 'model_links': 0, 'total_links': sum(1 for r in rows if r['kind'] != 'null'),
-        'pending_links': len(pend), 'hash': h.hexdigest(),
+        'pending_links': len(pend), 'hash': digest,
     }
     with open(os.path.join(out_dir, 'manifest.json'), 'w', encoding='utf-8') as fh:
         json.dump(manifest, fh, indent=1)
+        fh.write('\n')
     print(json.dumps({k: manifest[k] for k in ('total_links', 'pending_links', 'hash')}))
 
 

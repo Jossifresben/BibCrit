@@ -63,5 +63,43 @@ def test_merge_link_annotations_replaces_ibm1_row():
     n = merge_link_annotations(rows, [{'ref': 'r', 'heb_node': 7, 'syr_position': 1}], lookup)
     assert n == 1
     assert rows[0]['syr_position'] == 1 and rows[0]['syr_lemma'] == 'ܢܚܬ' and rows[0]['source'] == 'model' and rows[0]['prob'] == 1.0
+    rows[0]['source'] = 'ibm1'  # model rows are never re-touched; reset to exercise the null branch
     n = merge_link_annotations(rows, [{'ref': 'r', 'heb_node': 7, 'syr_position': None}], lookup)
     assert rows[0]['kind'] == 'null' and rows[0]['syr_lemma'] is None and rows[0]['source'] == 'model'
+
+
+def test_merge_link_annotations_collapses_duplicates_and_spares_model_rows():
+    base = {'ref': 'r', 'heb_node': 7, 'heb_lex': 'L', 'heb_word': 'w', 'heb_gloss': 'g', 'heb_feats': {},
+            'syr_lemma': 'ܡܢ', 'syr_source': 'sedra', 'prob': 0.1, 'kind': 'one-many', 'source': 'ibm1'}
+    rows = [dict(base, syr_position=2), dict(base, syr_position=3)]
+    lookup = {('r', 1): ('ܢܚܬ', 'sedra')}
+    n = merge_link_annotations(rows, [{'ref': 'r', 'heb_node': 7, 'syr_position': 1}], lookup)
+    assert n == 1 and len(rows) == 1 and rows[0]['syr_position'] == 1 and rows[0]['source'] == 'model'
+    keep = [dict(base, syr_position=2, source='model')]
+    assert merge_link_annotations(keep, [{'ref': 'r', 'heb_node': 7, 'syr_position': 1}], lookup) == 0
+    assert keep[0]['syr_position'] == 2
+
+
+def test_parsers_reject_wrong_types_without_raising():
+    batch = [{'ref': 'r', 'heb_node': 7, 'heb_word': 'w', 'heb_lex': 'L', 'heb_gloss': 'g',
+              'syr_tokens': [{'position': 1, 'form': 'ܐ'}]}]
+    for bad in (True, 1.0, [1], '1'):
+        assert parse_link_response(json.dumps([{'ref': 'r', 'heb_node': 7, 'syr_position': bad}]), batch) == []
+    for bad in ([7], '7', True, 7.0):
+        assert parse_link_response(json.dumps([{'ref': 'r', 'heb_node': bad, 'syr_position': 1}]), batch) == []
+    lb = [{'norm': 'ܐܐ', 'ref': 'r', 'verse_text': ''}]
+    for it in ({'norm': 'ܐܐ', 'lemma': 'ܐܐ\n', 'pos': 'verb', 'confidence': 0.5},
+               {'norm': 'ܐܐ', 'lemma': 'ܐܐ', 'pos': 'verb', 'confidence': True},
+               {'norm': ['ܐܐ'], 'lemma': 'ܐܐ', 'pos': 'verb', 'confidence': 0.5},
+               {'norm': 'ܐܐ', 'lemma': 'ܐܐ', 'pos': ['verb'], 'confidence': 0.5}):
+        assert parse_lemma_response(json.dumps([it]), lb) == []
+
+
+def test_manifest_hash_order_independent_and_sensitive(tmp_path):
+    from translation_technique.align import manifest_hash
+    (tmp_path / 'a.jsonl').write_text('1\n')
+    (tmp_path / 'b.jsonl').write_text('2\n')
+    h = manifest_hash(str(tmp_path), ['a', 'b'])
+    assert h == manifest_hash(str(tmp_path), ['b', 'a'])
+    (tmp_path / 'b.jsonl').write_text('3\n')
+    assert manifest_hash(str(tmp_path), ['a', 'b']) != h

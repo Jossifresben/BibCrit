@@ -2811,3 +2811,18 @@ body[data-persona="student"] .tool-header { border-top-color: #059669; }
   .num-table td { padding: 6px 8px; }
 
 }
+
+/* translation technique */
+.tt-gate { max-width: 420px; margin: 3rem auto; }
+.tt-gate-form { display: flex; flex-direction: column; gap: .6rem; }
+.tt-gate-msg { color: #9e2b25; }
+.tt-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0 2rem; }
+.tt-controls label { display: flex; flex-direction: column; gap: .3rem; font-size: .9rem; }
+.tt-bars { display: flex; flex-direction: column; gap: .35rem; }
+.tt-bar-row { display: grid; grid-template-columns: 8rem 1fr 6rem; align-items: center; gap: .6rem; }
+.tt-bar { display: block; height: 1.1rem; background: #1b2a41; border-radius: 2px; }
+.tt-bar-label { font-size: 1.2rem; }
+.tt-note { font-size: .85rem; color: #4a5568; }
+.tt-table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+.tt-table th, .tt-table td { padding: .35rem .5rem; border-bottom: 1px solid #e2e8f0; text-align: left; }
+.tt-syriac { font-size: 1.4rem; }

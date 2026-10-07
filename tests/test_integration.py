@@ -390,3 +390,90 @@ def test_tier1_per_key_rate_limit_isolated_between_keys(authed_client):
         headers={'X-API-Key': 'bibcrit_live_test_key_b'})
     assert key_b_response.status_code != 429, \
         "key B's quota must be isolated from key A's"
+
+
+# ── Translation technique ────────────────────────────────────────────────────
+
+@pytest.fixture
+def tt_client(client, tmp_path):
+    import shutil
+    import state as state_module
+    from translation_technique.store import TTStore
+    src = os.path.join(os.path.dirname(__file__), 'fixtures', 'tt')
+    dst = tmp_path / 'tt'
+    if not dst.exists():
+        shutil.copytree(src, dst)
+    state_module.tt = TTStore(str(dst))
+    return client
+
+
+def test_tt_page_renders_gate_and_app(tt_client):
+    r = tt_client.get('/translation-technique')
+    assert r.status_code == 200
+    html = r.data.decode()
+    assert 'id="tt-gate"' in html and 'id="tt-app"' in html
+    assert '7062b83b59f40eec7869d77246c095a2f019123acd53e2d83d99433631bb02b6' in html
+    assert 'Logan' not in html
+
+
+def test_tt_page_spanish(tt_client):
+    assert tt_client.get('/translation-technique?lang=es').status_code == 200
+
+
+def test_tt_meta(tt_client):
+    d = tt_client.get('/api/tt/meta').get_json()
+    assert d['available'] is True and d['manifest']['hash'] == 'deadbeef'
+    assert d['books'] == ['deuteronomy'] and d['sigla'] == ['9a1']
+    assert d['facets']['animacy']['available'] is False
+    assert d['coverage']['deuteronomy']['tokens'] == 10 and d['eval'] is None
+
+
+def test_tt_lexemes(tt_client):
+    d = tt_client.get('/api/tt/lexemes?q=jrd').get_json()
+    assert d[0]['lex'] == 'JRD[' and d[0]['count'] == 4
+
+
+def test_tt_table_distribution_and_crosstab(tt_client):
+    d = tt_client.get('/api/tt/table?lex=JRD[&books=deuteronomy').get_json()
+    assert d['distribution']['total'] == 4 and d['distribution']['null_count'] == 1
+    assert d['distribution']['items'][0]['syr_lemma'] == 'ܟܒܫ'
+    assert d['crosstab'] is None and d['manifest_hash'] == 'deadbeef'
+    d = tt_client.get('/api/tt/table?lex=JRD[&facet=vs').get_json()
+    assert d['crosstab']['matrix'] == [[2, 0], [0, 1]] and d['crosstab']['unreliable'] is True
+
+
+def test_tt_table_witness(tt_client):
+    d = tt_client.get('/api/tt/table?lex=JRD[&witness=9a1').get_json()
+    assert any(i['syr_lemma'] == 'ܐܚܐ' for i in d['distribution']['items'])
+    assert d['witness_notes'][0]['keyed_from'] == 'test fixture'
+
+
+def test_tt_table_bad_facet_and_missing_lex(tt_client):
+    assert tt_client.get('/api/tt/table?lex=JRD[&facet=animacy').status_code == 400
+    assert tt_client.get('/api/tt/table').status_code == 400
+
+
+def test_tt_csv_export(tt_client):
+    r = tt_client.get('/api/tt/occurrences.csv?lex=JRD[')
+    assert r.status_code == 200 and r.mimetype == 'text/csv'
+    body = r.data.decode()
+    assert body.startswith('# BibCrit translation technique export; version=0.0.0-test; manifest=deadbeef')
+    assert 'Deuteronomy 22:4' in body and body.count('\n') >= 4
+
+
+def test_tt_verse_view(tt_client):
+    r = tt_client.get('/translation-technique/verse/Deuteronomy 24:13')
+    assert r.status_code == 200 and 'ܟܒܫ' in r.data.decode()
+    assert tt_client.get('/translation-technique/verse/Deuteronomy 1:1').status_code == 404
+
+
+def test_tt_unavailable_without_data(client, tmp_path):
+    import state as state_module
+    from translation_technique.store import TTStore
+    state_module.tt = TTStore(str(tmp_path / 'nope'))
+    assert client.get('/api/tt/meta').get_json()['available'] is False
+    assert client.get('/translation-technique').status_code == 200
+
+
+def test_tt_sitemap_entry(client):
+    assert '/translation-technique' in client.get('/sitemap.xml').data.decode()

@@ -14,6 +14,7 @@ if TYPE_CHECKING:
 corpus: 'BiblicalCorpus | None' = None
 pipeline: 'ClaudePipeline | None' = None
 i18n: dict = {}
+tt = None  # translation_technique.store.TTStore, set by app._init()
 
 
 class TranslationProxy:

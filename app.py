@@ -44,6 +44,7 @@ def create_app() -> Flask:
     from blueprints.lxx_ms import lxx_ms_bp
     from blueprints.admin import admin_bp
     from blueprints.api_v1 import api_v1_bp
+    from blueprints.translation_technique import tt_bp
 
     app.register_blueprint(textual_bp)
     app.register_blueprint(critical_bp)
@@ -56,6 +57,7 @@ def create_app() -> Flask:
     app.register_blueprint(lxx_ms_bp)
     app.register_blueprint(admin_bp)
     app.register_blueprint(api_v1_bp)
+    app.register_blueprint(tt_bp)
 
     return app
 
@@ -87,6 +89,13 @@ def _init() -> None:
             state.corpus.load_all()
         except Exception:
             logger.exception('BiblicalCorpus init failed — corpus unavailable until fixed')
+
+        # Translation-technique data (graceful if not built)
+        try:
+            from translation_technique.store import TTStore
+            state.tt = TTStore(os.path.join(DATA_DIR, 'tt'))
+        except Exception:
+            logger.exception('TTStore init failed')
 
         # Load Claude pipeline (graceful if no API key)
         try:
@@ -171,6 +180,7 @@ def sitemap_xml():
         ('/nt-ot', '0.9', 'weekly'),
         ('/lxx-witnesses', '0.9', 'weekly'),
         ('/stl', '0.9', 'weekly'),
+        ('/translation-technique', '0.8', 'monthly'),
         ('/discovery', '0.8', 'monthly'),
         ('/guide', '0.7', 'monthly'),
         ('/paper', '0.6', 'monthly'),

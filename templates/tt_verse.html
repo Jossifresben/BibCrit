@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}{{ _t('tt_verse_h1') }} {{ ref }}{% endblock %}
+{% block content %}
+<div class="tool-header">
+  <h1 class="tool-title">{{ _t('tt_verse_h1') }} {{ ref }}</h1>
+  <p class="tool-subtitle"><a href="/translation-technique?lang={{ lang }}">{{ _t('tt_back') }}</a></p>
+</div>
+<p class="tt-syriac" dir="rtl" lang="syr">{{ syr_text }}</p>
+<table class="tt-table">
+  <thead><tr><th>{{ _t('tt_col_hebrew') }}</th><th>lex</th><th>{{ _t('tt_col_syriac') }}</th><th>{{ _t('tt_col_prob') }}</th><th>{{ _t('tt_col_source') }}</th></tr></thead>
+  <tbody>
+  {% for r in rows %}
+    <tr>
+      <td dir="rtl" lang="he">{{ r.heb_word }}</td>
+      <td>{{ r.heb_lex }} <small>{{ r.heb_gloss }}</small></td>
+      <td dir="rtl" lang="syr">{{ r.syr_lemma or '—' }}{% if r.syr_position %} <small>#{{ r.syr_position }}</small>{% endif %}</td>
+      <td>{{ r.prob }}</td>
+      <td>{{ r.source }}{% if r.syr_source %} / {{ r.syr_source }}{% endif %}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+<p class="tt-note">manifest {{ manifest.hash }}</p>
+{% endblock %}

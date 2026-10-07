@@ -145,3 +145,37 @@ def test_jsonl_roundtrip(tmp_path):
     p = str(tmp_path / 'x.jsonl')
     write_jsonl(p, [{'a': 1}, {'b': 'ܥ'}])
     assert read_jsonl(p) == [{'a': 1}, {'b': 'ܥ'}]
+
+
+from translation_technique.lemmas import SedraUnavailable
+
+
+def test_unavailable_propagates_and_is_not_cached(tmp_path):
+    def boom(norm):
+        raise SedraUnavailable('down')
+    cache = SedraCache(str(tmp_path / 'c.json'), fetcher=boom, delay=0)
+    with pytest.raises(SedraUnavailable):
+        cache.get('ܡܪܝܐ')
+    assert not cache.has('ܡܪܝܐ')
+    assert cache.stats() == {'hits': 0, 'misses': 0}
+
+
+def test_none_from_fetcher_is_a_cached_miss(tmp_path):
+    calls = []
+
+    def miss(norm):
+        calls.append(norm)
+        return None
+    cache = SedraCache(str(tmp_path / 'c.json'), fetcher=miss, delay=0)
+    assert cache.get('ܡܚܐ') is None and cache.get('ܡܚܐ') is None
+    assert calls == ['ܡܚܐ'] and cache.has('ܡܚܐ')
+
+
+def test_autosave_writes_file_after_n_fetches(tmp_path):
+    p = tmp_path / 'c.json'
+    cache = SedraCache(str(p), fetcher=_fake_fetcher(), delay=0, autosave_every=2)
+    cache.get('ܡܪܝܐ')
+    assert not p.exists()
+    cache.get('ܫܡܫܐ')
+    assert p.exists()
+    assert set(json.load(open(p, encoding='utf-8'))) == {'ܡܪܝܐ', 'ܫܡܫܐ'}

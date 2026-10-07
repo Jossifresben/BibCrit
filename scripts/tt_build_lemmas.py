@@ -16,10 +16,13 @@ import csv
 import json
 import os
 import sys
+import time
+from concurrent.futures import ThreadPoolExecutor
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from translation_technique.lemmas import (  # noqa: E402
-    SedraCache, build_lemma_rows, coverage, sedra_fetch, write_jsonl,
+    SedraCache, SedraUnavailable, build_lemma_rows, coverage, normalize_form,
+    sedra_fetch, strip_affixes, write_jsonl,
 )
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -28,10 +31,45 @@ TT_DIR = os.path.join(ROOT, 'data', 'tt')
 CACHE_PATH = os.path.join(TT_DIR, 'sedra_cache.json')
 
 
-def build_book(stem: str, cache: SedraCache) -> dict:
+def _fetch_with_retry(cache: SedraCache, form: str, retries: int = 3, wait: float = 5.0) -> bool:
+    for attempt in range(retries):
+        try:
+            cache.get(form)
+            return True
+        except SedraUnavailable:
+            if attempt < retries - 1:
+                time.sleep(wait)
+    return False
+
+
+def prefetch(tokens: list[dict], cache: SedraCache, workers: int) -> int:
+    """Warm the cache in parallel; return the number of forms left unfetched."""
+    unfetched = 0
+    norms = sorted({normalize_form(t['word_text']) for t in tokens})
+    with ThreadPoolExecutor(workers) as ex:
+        ok = list(ex.map(lambda w: _fetch_with_retry(cache, w), norms))
+        unfetched += ok.count(False)
+        # affix-stripped candidates only for forms that are SEDRA misses
+        need = set()
+        for n, good in zip(norms, ok):
+            if good and not cache.get(n):
+                need.update(t for _, t in strip_affixes(n))
+        need = sorted(need)
+        ok2 = list(ex.map(lambda w: _fetch_with_retry(cache, w), need))
+        unfetched += ok2.count(False)
+    cache.save()
+    return unfetched
+
+
+def build_book(stem: str, cache: SedraCache, workers: int = 1):
     path = os.path.join(CORPUS_DIR, f'{stem}.csv')
     with open(path, encoding='utf-8') as fh:
         tokens = list(csv.DictReader(fh))
+    if workers > 1:
+        unfetched = prefetch(tokens, cache, workers)
+        if unfetched:
+            print(f'{stem}: unfetched: {unfetched} (outputs not written; rerun to resume)')
+            return None
     rows = build_lemma_rows(tokens, cache)
     out_dir = os.path.join(TT_DIR, 'lemmas')
     write_jsonl(os.path.join(out_dir, f'{stem}.jsonl'), rows)
@@ -53,6 +91,7 @@ def main() -> None:
     ap.add_argument('--book', help='book stem, e.g. deuteronomy')
     ap.add_argument('--all', action='store_true')
     ap.add_argument('--offline', action='store_true')
+    ap.add_argument('--workers', type=int, default=1, help='parallel SEDRA prefetch threads')
     args = ap.parse_args()
     if not (args.book or args.all):
         ap.error('give --book <stem> or --all')
@@ -65,7 +104,9 @@ def main() -> None:
     stems = [args.book] if args.book else sorted(
         f[:-4] for f in os.listdir(CORPUS_DIR) if f.endswith('.csv'))
     for stem in stems:
-        cov = build_book(stem, cache)
+        cov = build_book(stem, cache, 1 if args.offline else args.workers)
+        if cov is None:
+            continue
         print(f"{stem}: tokens={cov['tokens']} types={cov['types']} "
               f"by_source_tokens={ {k: round(v, 3) for k, v in cov['by_source_tokens'].items()} }")
     print('sedra cache:', cache.stats())

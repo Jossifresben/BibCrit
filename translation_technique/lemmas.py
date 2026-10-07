@@ -6,6 +6,7 @@ from __future__ import annotations
 
 import json
 import os
+import threading
 import time
 from collections import Counter
 from typing import Callable, Optional
@@ -75,12 +76,22 @@ def strip_affixes(norm: str) -> list[tuple[str, str]]:
 SEDRA_URL = 'https://sedra.bethmardutho.org/api/word/{}'
 
 
+class SedraUnavailable(Exception):
+    """SEDRA could not answer (network error or non-404 failure). Never cached."""
+
+
 def sedra_fetch(norm: str) -> Optional[list[dict]]:
-    """Live SEDRA IV lookup. Returns candidate list or None on miss."""
+    """Live SEDRA IV lookup. Returns candidate list, None on a true miss
+    (HTTP 404 or empty/invalid list); raises SedraUnavailable otherwise."""
     import requests
-    r = requests.get(SEDRA_URL.format(norm), timeout=15)
-    if r.status_code != 200:
+    try:
+        r = requests.get(SEDRA_URL.format(norm), timeout=15)
+    except requests.RequestException as exc:
+        raise SedraUnavailable(str(exc)) from exc
+    if r.status_code == 404:
         return None
+    if r.status_code != 200:
+        raise SedraUnavailable(f'HTTP {r.status_code} for {norm}')
     try:
         data = r.json()
     except ValueError:
@@ -92,40 +103,64 @@ def sedra_fetch(norm: str) -> Optional[list[dict]]:
 
 
 class SedraCache:
-    """JSON cache of SEDRA lookups keyed by normalized form. None = miss."""
+    """JSON cache of SEDRA lookups keyed by normalized form. None = miss.
+
+    Thread-safe: a lock guards the dict and the save; the fetch itself runs
+    outside the lock so workers can fetch in parallel.
+    """
 
     def __init__(self, path: str, fetcher: Optional[Callable[[str], Optional[list[dict]]]] = None,
-                 delay: float = 0.3) -> None:
+                 delay: float = 0.3, autosave_every: int = 200) -> None:
         self.path = path
         self.fetcher = fetcher
         self.delay = delay
+        self.autosave_every = autosave_every
         self._data: dict = {}
         self._dirty = False
+        self._since_save = 0
+        self._lock = threading.Lock()
         if os.path.exists(path):
             with open(path, encoding='utf-8') as fh:
                 self._data = json.load(fh)
 
+    def has(self, norm: str) -> bool:
+        with self._lock:
+            return norm in self._data
+
     def get(self, norm: str) -> Optional[list[dict]]:
-        if norm in self._data:
-            return self._data[norm]
+        with self._lock:
+            if norm in self._data:
+                return self._data[norm]
         if self.fetcher is None:
             raise KeyError(norm)
-        result = self.fetcher(norm)
-        self._data[norm] = result
-        self._dirty = True
+        result = self.fetcher(norm)  # SedraUnavailable propagates; nothing stored
+        with self._lock:
+            self._data[norm] = result
+            self._dirty = True
+            self._since_save += 1
+            if self.autosave_every and self._since_save >= self.autosave_every:
+                self._save_locked()
         if self.delay:
             time.sleep(self.delay)
         return result
 
-    def save(self) -> None:
+    def _save_locked(self) -> None:
         os.makedirs(os.path.dirname(self.path) or '.', exist_ok=True)
-        with open(self.path, 'w', encoding='utf-8') as fh:
+        tmp = self.path + '.tmp'
+        with open(tmp, 'w', encoding='utf-8') as fh:
             json.dump(self._data, fh, ensure_ascii=False, indent=0, sort_keys=True)
+        os.replace(tmp, self.path)
         self._dirty = False
+        self._since_save = 0
+
+    def save(self) -> None:
+        with self._lock:
+            self._save_locked()
 
     def stats(self) -> dict:
-        hits = sum(1 for v in self._data.values() if v)
-        return {'hits': hits, 'misses': len(self._data) - hits}
+        with self._lock:
+            hits = sum(1 for v in self._data.values() if v)
+            return {'hits': hits, 'misses': len(self._data) - hits}
 
 
 def _dedupe(cands: list[dict]) -> list[dict]:

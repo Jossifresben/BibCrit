@@ -46,7 +46,7 @@
         <select id="tt-facet" class="passage-select">
           <option value="">{{ _t('tt_facet_none') }}</option>
           {% for fid, f in facets.items() %}
-          <option value="{{ fid }}" {% if not f.available %}disabled{% endif %}{% if fid == q_facet %} selected{% endif %}>{{ fid }}{% if not f.available %} — {{ _t('tt_facet_unavailable') }}{% endif %}</option>
+          <option value="{{ fid }}" title="{{ _t('tt_facet_' ~ fid ~ '_help') }}" {% if not f.available %}disabled{% endif %}{% if fid == q_facet %} selected{% endif %}>{{ _t('tt_facet_' ~ fid) }}{% if not f.available %} — {{ _t('tt_facet_unavailable') }}{% endif %}</option>
           {% endfor %}
         </select>
       </div>

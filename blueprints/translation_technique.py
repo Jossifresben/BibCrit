@@ -65,7 +65,7 @@ def _findings(sm: dict, lang: str) -> list[str]:
         t('tt_find_model', pct=f"{100 * sm['model_share']:.1f}%"),
     ]
     f = sm['facet']
-    lines.append(t('tt_find_facet', facet=f['facet'], v=f"{f['v']:.2f}", p=f"{f['p']:.3g}") if f
+    lines.append(t('tt_find_facet', facet=state.t('tt_facet_' + f['facet'], lang), v=f"{f['v']:.2f}", p=f"{f['p']:.3g}") if f
                  else t('tt_find_facet_unreliable'))
     return lines
 

@@ -464,6 +464,11 @@ def test_tt_witness_links_null_row_by_lex(tt_client):
     assert o['syr_lemma'] == 'ܐܚܐ'
 
 
+def test_tt_facet_options_use_ids_as_values(tt_client):
+    html = tt_client.get('/translation-technique').data.decode()
+    assert '<option value="vs" title="tt_facet_vs_help"' in html or 'value="vs"' in html
+
+
 def test_tt_page_spanish(tt_client):
     assert tt_client.get('/translation-technique?lang=es').status_code == 200
 
@@ -549,7 +554,7 @@ TT_KEYS = ['tt_gold_title', 'tt_gold_save', 'tt_gold_back', 'tt_gold_none', 'tt_
            'tt_show_all', 'tt_all_books', 'tt_find_h', 'tt_find_caption', 'tt_find_dominant', 'tt_find_spread',
            'tt_find_null', 'tt_find_model', 'tt_find_facet', 'tt_find_facet_unreliable', 'tt_find_none',
            'tt_method_h', 'tt_method_p1', 'tt_method_p2', 'tt_method_p3', 'tt_method_p4', 'tt_method_p5',
-           'tt_verse_mt', 'tt_verse_pesh', 'tt_sort_hint', 'tt_copy_link', 'tt_copied', 'tt_assoc_negligible', 'tt_assoc_weak', 'tt_assoc_moderate', 'tt_assoc_strong']
+           'tt_verse_mt', 'tt_verse_pesh', 'tt_sort_hint', 'tt_copy_link', 'tt_copied', 'tt_assoc_negligible', 'tt_assoc_weak', 'tt_assoc_moderate', 'tt_assoc_strong', 'tt_facet_vs', 'tt_facet_vs_help', 'tt_facet_vt', 'tt_facet_vt_help', 'tt_facet_clause_typ', 'tt_facet_clause_typ_help', 'tt_facet_obj_function', 'tt_facet_obj_function_help', 'tt_facet_next_prep', 'tt_facet_next_prep_help', 'tt_facet_book', 'tt_facet_book_help', 'tt_facet_animacy', 'tt_facet_animacy_help']
 
 
 def test_tt_i18n_keys_present_in_both_languages():

@@ -46,7 +46,7 @@ def _verse_texts(stem: str) -> dict:
     return {k: ' '.join(v) for k, v in out.items()}
 
 
-def run_lemmas(stem: str, client, dry: bool) -> None:
+def run_lemmas(stem: str, client, dry: bool, max_batches=None) -> dict:
     path = os.path.join(TT_DIR, 'lemmas', f'{stem}.jsonl')
     rows = read_jsonl(path)
     texts = _verse_texts(stem)
@@ -55,25 +55,31 @@ def run_lemmas(stem: str, client, dry: bool) -> None:
         if r['source'] == 'unresolved' and r['norm'] not in seen:
             seen.add(r['norm'])
             batch_items.append({'norm': r['norm'], 'ref': r['ref'], 'verse_text': texts.get(r['ref'], '')})
-    total = 0
+    total, stats = 0, {'batches': 0, 'accepted': 0}
     for i in range(0, len(batch_items), LEMMA_BATCH):
+        if max_batches is not None and stats['batches'] >= max_batches:
+            break
         batch = batch_items[i:i + LEMMA_BATCH]
         prompt = lemma_prompt(batch)
         if dry:
-            print(prompt[:1500]); return
+            print(prompt[:1500]); return stats
         label = f'lemma batch {i // LEMMA_BATCH + 1}'
         accepted = parse_lemma_response(_complete(client, prompt, label), batch)
         total += merge_lemma_annotations(rows, accepted)
         write_jsonl(path, rows)  # checkpoint
+        stats['batches'] += 1
+        stats['accepted'] += len(accepted)
         print(f'{label}: accepted {len(accepted)}/{len(batch)}')
     print(f'{stem}: {total} tokens annotated by model')
+    return stats
 
 
-def run_links(client, dry: bool) -> None:
+def run_links(client, dry: bool, max_batches=None) -> dict:
     with open(os.path.join(TT_DIR, 'align', 'pending.json'), encoding='utf-8') as fh:
         pend = json.load(fh)
+    stats = {'batches': 0, 'accepted': 0}
     if not pend:
-        print('no pending links'); return
+        print('no pending links'); return stats
     by_book = defaultdict(list)
     for p in pend:
         by_book[book_stem(p['ref'])].append(p)
@@ -90,18 +96,24 @@ def run_links(client, dry: bool) -> None:
         rows = read_jsonl(apath)
         total = 0
         for i in range(0, len(batch_items), BATCH):
+            if max_batches is not None and stats['batches'] >= max_batches:
+                break
             batch = batch_items[i:i + BATCH]
             prompt = link_prompt(batch)
             if dry:
-                print(prompt[:1500]); return
+                print(prompt[:1500]); return stats
             label = f'{stem} link batch {i // BATCH + 1}'
             accepted = parse_link_response(_complete(client, prompt, label), batch)
             total += merge_link_annotations(rows, accepted, lookup)
             write_jsonl(apath, rows)  # checkpoint
             _write_pending(pend, stem, rows)
+            stats['batches'] += 1
+            stats['accepted'] += len(accepted)
             print(f'{label}: accepted {len(accepted)}/{len(batch)}')
         print(f'{stem}: {total} links adjudicated by model')
-    _update_manifest(client.model_id)
+    if not dry:
+        _update_manifest(client.model_id)
+    return stats
 
 
 def _write_pending(pend: list, stem: str, rows: list) -> None:
@@ -124,7 +136,7 @@ def _update_manifest(model_id: str) -> None:
         fh.write('\n')
 
 
-def run_gold(sample_path: str, stem: str, client, dry: bool) -> None:
+def run_gold(sample_path: str, stem: str, client, dry: bool, max_batches=None) -> dict:
     """Model as second reader: align the sample verses, write reader="model" rows."""
     with open(sample_path, encoding='utf-8') as fh:
         refs = json.load(fh)
@@ -141,12 +153,15 @@ def run_gold(sample_path: str, stem: str, client, dry: bool) -> None:
     items = [{'ref': ref, 'heb_node': r['heb_node'], 'heb_word': r['heb_word'], 'heb_lex': r['heb_lex'],
               'heb_gloss': r['heb_gloss'], 'syr_tokens': toks[ref]}
              for ref in refs for r in {x['heb_node']: x for x in heb[ref]}.values()]
-    out = []
+    out, stats = [], {'batches': 0, 'accepted': 0}
     for i in range(0, len(items), BATCH):
+        if max_batches is not None and stats['batches'] >= max_batches:
+            break
         batch = items[i:i + BATCH]
         prompt = link_prompt(batch)
         if dry:
-            print(prompt[:1500]); return
+            print(prompt[:1500]); return stats
+        stats['batches'] += 1
         for a in parse_link_response(_complete(client, prompt, f'gold batch {i // BATCH + 1}'), batch):
             src = next(b for b in batch if b['heb_node'] == a['heb_node'])
             lemma = lookup.get((a['ref'], a['syr_position']), (None, None))[0] if a['syr_position'] is not None else None
@@ -154,10 +169,12 @@ def run_gold(sample_path: str, stem: str, client, dry: bool) -> None:
                         'heb_gloss': src['heb_gloss'], 'heb_feats': None, 'syr_position': a['syr_position'],
                         'syr_lemma': lemma, 'syr_source': None, 'kind': 'one-one' if a['syr_position'] is not None else 'null',
                         'reader': 'model', 'agreed': None})
+            stats['accepted'] += 1
     gpath = os.path.join(TT_DIR, 'gold', f'{stem}_sample.jsonl')
     existing = [r for r in (read_jsonl(gpath) if os.path.exists(gpath) else []) if r['reader'] != 'model']
     write_jsonl(gpath, existing + out)
     print(f'gold: wrote {len(out)} model-reader rows')
+    return stats
 
 
 def main() -> None:
@@ -168,14 +185,17 @@ def main() -> None:
     ap.add_argument('--model', default='claude-opus-5-5')
     ap.add_argument('--sample', default=os.path.join(TT_DIR, 'gold', 'sample_refs.json'))
     ap.add_argument('--dry-run', action='store_true')
+    ap.add_argument('--max-batches', type=int, default=None, help='stop after N batches (any mode)')
     args = ap.parse_args()
     client = None if args.dry_run else AnthropicAnnotator(args.model)
     if args.mode == 'lemmas':
-        run_lemmas(args.book, client, args.dry_run)
+        stats = run_lemmas(args.book, client, args.dry_run, args.max_batches)
     elif args.mode == 'links':
-        run_links(client, args.dry_run)
+        stats = run_links(client, args.dry_run, args.max_batches)
     else:
-        run_gold(args.sample, args.book, client, args.dry_run)
+        stats = run_gold(args.sample, args.book, client, args.dry_run, args.max_batches)
+    if not args.dry_run:
+        print(f"model={args.model} batches={stats['batches']} accepted={stats['accepted']}")
 
 
 if __name__ == '__main__':

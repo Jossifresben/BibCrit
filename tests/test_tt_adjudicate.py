@@ -103,3 +103,32 @@ def test_manifest_hash_order_independent_and_sensitive(tmp_path):
     assert h == manifest_hash(str(tmp_path), ['b', 'a'])
     (tmp_path / 'b.jsonl').write_text('3\n')
     assert manifest_hash(str(tmp_path), ['a', 'b']) != h
+
+
+def test_run_lemmas_respects_max_batches(tmp_path, monkeypatch):
+    import importlib.util, os
+    spec = importlib.util.spec_from_file_location(
+        'tt_adjudicate', os.path.join(os.path.dirname(os.path.dirname(__file__)), 'scripts', 'tt_adjudicate.py'))
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    from translation_technique.lemmas import write_jsonl
+    (tmp_path / 'lemmas').mkdir()
+    rows = [{'ref': 'r', 'position': i, 'form': f'f{i}', 'norm': f'ܐ{"ܒ" * i}', 'lemma': None, 'pos': None,
+             'source': 'unresolved', 'rule': None, 'candidates': [], 'confidence': 0.0} for i in range(1, 8)]
+    write_jsonl(str(tmp_path / 'lemmas' / 'x.jsonl'), rows)
+    monkeypatch.setattr(mod, 'TT_DIR', str(tmp_path))
+    monkeypatch.setattr(mod, 'LEMMA_BATCH', 2)
+    monkeypatch.setattr(mod, '_verse_texts', lambda stem: {})
+
+    class Fake:
+        model_id = 'fake'
+        calls = 0
+
+        def complete(self, prompt):
+            Fake.calls += 1
+            return '[]', 'end_turn'
+
+    stats = mod.run_lemmas('x', Fake(), False, max_batches=2)
+    assert Fake.calls == 2 and stats == {'batches': 2, 'accepted': 0}
+    Fake.calls = 0
+    assert mod.run_lemmas('x', Fake(), False)['batches'] == 4

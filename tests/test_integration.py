@@ -415,6 +415,32 @@ def test_tt_page_renders_gate_and_app(tt_client):
     assert 'Logan' not in html
 
 
+def test_tt_empty_state_and_featured_links(tt_client):
+    html = tt_client.get('/translation-technique').data.decode()
+    assert 'id="tt-empty"' in html
+    for lex in ('JRD[', 'BW&gt;[', 'NTN[', 'XRM['):
+        assert f'data-lex="{lex}"' in html
+    assert 'data-sort="prob"' in html and 'aria-sort="ascending"' in html
+    assert 'id="tt-how"' in html and 'id="tt-findings"' in html
+
+
+def test_tt_findings_for_jrd(tt_client):
+    d = tt_client.get('/api/tt/table?lex=JRD[&books=deuteronomy').get_json()
+    assert d['summary']['n'] >= 0 and isinstance(d['findings'], list) and d['findings']
+
+
+def test_tt_lexeme_search_hebrew_and_bare_lex(tt_client):
+    assert tt_client.get('/api/tt/lexemes?q=JRD').get_json()[0]['lex'] == 'JRD['
+    assert tt_client.get('/api/tt/lexemes?q=%D7%99%D7%A8%D7%93').get_json()[0]['lex'] == 'JRD['
+
+
+def test_tt_verse_badges_render(tt_client):
+    r = tt_client.get('/translation-technique/verse/Deuteronomy 24:13')
+    html = r.data.decode()
+    assert r.status_code == 200          # MT text may be absent in the fixture corpus
+    assert 'tradition-badge' in html and 'tt_verse_pesh' in html or 'Peshitta' in html
+
+
 def test_tt_page_spanish(tt_client):
     assert tt_client.get('/translation-technique?lang=es').status_code == 200
 
@@ -496,7 +522,11 @@ TT_KEYS = ['tt_gold_title', 'tt_gold_save', 'tt_gold_back', 'tt_gold_none', 'tt_
            'tt_model_share', 'tt_null_count', 'tt_unreliable', 'tt_methodology_h2', 'tt_coverage', 'tt_manifest',
            'tt_eval', 'tt_unevaluated', 'tt_facet_unavailable', 'tt_col_ref', 'tt_col_hebrew', 'tt_col_syriac',
            'tt_col_prob', 'tt_col_source', 'tt_verse_h1', 'tt_back', 'nav_tt', 'guide_tt_title', 'guide_tt_body',
-           'tt_unaligned_syriac', 'tt_model_word', 'tt_col_lex', 'tt_manifest_label']
+           'tt_unaligned_syriac', 'tt_model_word', 'tt_col_lex', 'tt_manifest_label', 'tt_no_match', 'tt_banner', 'tt_empty',
+           'tt_show_all', 'tt_all_books', 'tt_find_h', 'tt_find_caption', 'tt_find_dominant', 'tt_find_spread',
+           'tt_find_null', 'tt_find_model', 'tt_find_facet', 'tt_find_facet_unreliable', 'tt_find_none',
+           'tt_method_h', 'tt_method_p1', 'tt_method_p2', 'tt_method_p3', 'tt_method_p4', 'tt_method_p5',
+           'tt_verse_mt', 'tt_verse_pesh', 'tt_sort_hint']
 
 
 def test_tt_i18n_keys_present_in_both_languages():

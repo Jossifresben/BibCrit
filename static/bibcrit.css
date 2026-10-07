@@ -29,6 +29,7 @@
 
   /* Scripture fonts */
   --font-hebrew: 'Noto Sans Hebrew', 'SBL Hebrew', serif;
+  --font-syriac: 'Noto Sans Syriac', 'Estrangelo Edessa', 'East Syriac Adiabene', serif;
   --font-greek: 'Noto Serif', 'SBL Greek', serif;
 
   /* Spacing scale (4pt base) */
@@ -2812,17 +2813,67 @@ body[data-persona="student"] .tool-header { border-top-color: #059669; }
 
 }
 
-/* translation technique */
+/* translation technique — only what the shared classes do not cover */
 .tt-gate { max-width: 420px; margin: 3rem auto; }
-.tt-gate-form { display: flex; flex-direction: column; gap: .6rem; }
-.tt-gate-msg { color: #9e2b25; }
-.tt-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0 2rem; }
-.tt-controls label { display: flex; flex-direction: column; gap: .3rem; font-size: .9rem; }
-.tt-bars { display: flex; flex-direction: column; gap: .35rem; }
-.tt-bar-row { display: grid; grid-template-columns: 8rem 1fr 6rem; align-items: center; gap: .6rem; }
-.tt-bar { display: block; height: 1.1rem; background: #1b2a41; border-radius: 2px; }
-.tt-bar-label { font-size: 1.2rem; }
-.tt-note { font-size: .85rem; color: #4a5568; }
+.tt-gate-form { display: flex; flex-direction: column; gap: .75rem; }
+.tt-gate-prompt { margin: 0; line-height: 1.6; }
+.tt-gate-msg { color: var(--conf-low-fg); margin: 0; font-size: .9rem; }
+.tt-full { width: 100%; }
+.tt-controls { align-items: flex-end; row-gap: 12px; column-gap: 16px; }
+.tt-field { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.tt-field-lex { flex: 2 1 280px; }
+.tt-field .passage-select { min-width: 150px; max-width: 100%; }
+.tt-chips { display: flex; flex-wrap: wrap; gap: 6px; min-height: 36px; align-items: center; }
+.tt-body { max-width: 1200px; margin: 0 auto; padding: 1rem 1.5rem 0; min-width: 0; }
+.tt-body .empty-state { padding: 0; }
+.tt-msg { color: var(--conf-low-fg); background: var(--conf-low-bg); border-radius: 6px; padding: 8px 12px; font-size: .9rem; }
+.tt-how { max-width: 1200px; margin: 0 auto 1rem; }
+.tt-how summary { cursor: pointer; margin: 0; }
+.tt-how[open] summary { margin-bottom: 12px; }
+.tt-para { margin: 0 0 .6rem; line-height: 1.6; font-size: .92rem; overflow-wrap: anywhere; }
+.tt-lex-title { text-transform: none; letter-spacing: 0; font-size: 1.05rem; color: var(--fg); margin-left: .4rem; }
+.tt-lex-word { font-family: var(--font-hebrew); font-size: 1.3rem; line-height: 1.8; }
+.tt-lex-id { color: var(--muted); font-size: .8rem; margin: 0 .3rem; }
+.tt-lex-gloss { color: var(--muted); font-weight: 400; }
+.tt-bars { display: flex; flex-direction: column; gap: 6px; }
+.tt-bar-row { display: grid; grid-template-columns: minmax(4rem, 8rem) 1fr minmax(5rem, auto); align-items: center; gap: 10px; }
+.tt-bar-track { display: block; min-width: 0; }
+.tt-bar { display: block; height: 1.1rem; background: var(--accent); border-radius: 3px; min-width: 2px; }
+.tt-syriac { font-family: var(--font-syriac); font-size: 1.3rem; line-height: 1.8; }
+.tt-bar-label { font-size: 1.5rem; }
+.tt-bar-count { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tt-bar-count .confidence-badge { margin-left: 6px; font-size: 10px; }
+.tt-note { font-size: .85rem; color: var(--muted); margin: .6rem 0 0; }
+.tt-note .confidence-badge { text-transform: none; letter-spacing: 0; white-space: normal; }
+.tt-findings { margin-top: 1rem; padding-top: .8rem; border-top: 1px solid var(--border); }
+.tt-findings .result-section-title { margin-bottom: 6px; }
+.tt-findings-list { margin: 0 0 0 1.1rem; padding: 0; font-size: .92rem; line-height: 1.6; }
+.tt-scroll { overflow-x: auto; max-width: 100%; }
+.tt-card-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.tt-card-head .btn-export { text-decoration: none; }
+.tt-show-all { margin-top: 10px; }
 .tt-table { width: 100%; border-collapse: collapse; font-size: .9rem; }
-.tt-table th, .tt-table td { padding: .35rem .5rem; border-bottom: 1px solid #e2e8f0; text-align: left; }
-.tt-syriac { font-size: 1.4rem; }
+.tt-table th, .tt-table td { padding: 6px 10px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: middle; }
+.tt-table thead th { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.tt-table td[dir="rtl"], .tt-table th[dir="rtl"] { text-align: right; }
+.tt-table th.tt-sortable { cursor: pointer; user-select: none; white-space: nowrap; }
+.tt-table th.tt-sortable:hover { color: var(--accent); }
+.tt-sort-hint { font-size: .8rem; color: var(--muted); margin: 0 0 .5rem; }
+.tt-zebra tbody tr:nth-child(even) { background: color-mix(in srgb, var(--fg) 5%, transparent); }
+.tt-chips .theo-filter-chip.active { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.tt-num { text-align: right !important; font-variant-numeric: tabular-nums; }
+.tt-total, .tt-total-row th { font-weight: 700; }
+.tt-hebrew { font-family: var(--font-hebrew); font-size: 1.3rem; line-height: 1.8; }
+.tt-src { font-size: 10px; padding: 1px 8px; background: var(--accent); }
+.tt-src-lemma { background: var(--peshitta-color); }
+.tt-verse-text { font-family: var(--font-syriac); font-size: 1.7rem; line-height: 2.1; margin: 0 0 .8rem; }
+.tt-verse-he { font-family: var(--font-hebrew); }
+.tt-actions { margin-top: 12px; display: flex; gap: 10px; align-items: center; }
+.tt-gold-list { margin-left: 1.2rem; line-height: 1.9; }
+.tt-hint { color: var(--muted); }
+@media (max-width: 600px) {
+  .tt-body { padding: 1rem; }
+  .tt-field { flex: 1 1 100%; }
+  .tt-field .passage-select { width: 100%; }
+  .tt-bar-row { grid-template-columns: 4rem 1fr auto; gap: 6px; }
+}

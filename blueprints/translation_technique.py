@@ -17,7 +17,7 @@ import state
 from biblical_core.rate_limit import limiter
 from translation_technique.lemmas import read_jsonl, write_jsonl
 from translation_technique.tables import (
-    FACETS, apply_witness, crosstab, distribution, model_share, occurrences,
+    FACETS, apply_witness, crosstab, distribution, model_share, occurrences, summary,
 )
 
 tt_bp = Blueprint('translation_technique', __name__)
@@ -48,6 +48,28 @@ def _rows_for(store, books, witness):
     return rows
 
 
+def _findings(sm: dict, lang: str) -> list[str]:
+    """Phrase the summary() facts through the i18n templates (no model, no causal wording)."""
+    def t(key, **kw):
+        out = state.t(key, lang)
+        for k, v in kw.items():
+            out = out.replace('{' + k + '}', str(v))
+        return out
+    if sm['too_few']:
+        return [t('tt_find_none')]
+    d = sm['dominant']
+    lines = [
+        t('tt_find_dominant', lemma=d['lemma'], pct=f"{100 * d['share']:.1f}%", n=sm['n']),
+        t('tt_find_spread', k=sm['distinct'], k_minor=sm['singletons']),
+        t('tt_find_null', null=sm['null_count']),
+        t('tt_find_model', pct=f"{100 * sm['model_share']:.1f}%"),
+    ]
+    f = sm['facet']
+    lines.append(t('tt_find_facet', facet=f['facet'], v=f"{f['v']:.2f}", p=f"{f['p']:.3g}") if f
+                 else t('tt_find_facet_unreliable'))
+    return lines
+
+
 # ── pages ───────────────────────────────────────────────────────────────────
 
 @tt_bp.route('/translation-technique')
@@ -69,13 +91,17 @@ def tt_verse(ref: str):
     heb = [r for r in rows if r['heb_node'] is not None]
     heb.sort(key=lambda r: r['heb_node'])
     syr_only = [r for r in rows if r['heb_node'] is None]
-    syr_text = ''
+    syr_text = mt_text = ''
     if state.corpus is not None:
         try:
             syr_text = state.corpus.get_verse_text(ref, 'PESH')
         except Exception:
             syr_text = ''
-    return render_template('tt_verse.html', lang=lang, ref=ref, rows=heb, syr_only=syr_only, syr_text=syr_text,
+        try:
+            mt_text = state.corpus.get_verse_text(ref, 'MT') or ''
+        except Exception:
+            mt_text = ''
+    return render_template('tt_verse.html', lang=lang, ref=ref, rows=heb, syr_only=syr_only, syr_text=syr_text, mt_text=mt_text,
                            manifest=store.manifest)
 
 
@@ -120,6 +146,8 @@ def tt_table():
         'occurrences': sel,
         'model_share': model_share(sel),
         'witness_notes': store.witness_notes(witness) if witness else [],
+        'summary': (sm := summary(rows, lex, books)),
+        'findings': _findings(sm, _lang()),
         'manifest_hash': store.manifest.get('hash'), 'version': store.version,
     })
 

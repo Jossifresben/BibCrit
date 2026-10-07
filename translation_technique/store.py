@@ -19,6 +19,18 @@ def _strip_points(text: str) -> str:
     return _POINTS.sub('', text)
 
 
+_HEB_TO_BHSA = {'א': '>', 'ב': 'B', 'ג': 'G', 'ד': 'D', 'ה': 'H', 'ו': 'W', 'ז': 'Z', 'ח': 'X', 'ט': 'V',
+                'י': 'J', 'כ': 'K', 'ך': 'K', 'ל': 'L', 'מ': 'M', 'ם': 'M', 'נ': 'N', 'ן': 'N', 'ס': 'S',
+                'ע': '<', 'פ': 'P', 'ף': 'P', 'צ': 'Y', 'ץ': 'Y', 'ק': 'Q', 'ר': 'R', 'ש': 'C', 'ת': 'T'}
+
+
+def _lex_stem(text: str) -> str:
+    """Upper-case BHSA stem of a typed query or a lex id: Hebrew letters transliterated, [ / = suffix dropped."""
+    t = _strip_points(text.strip())
+    t = ''.join(_HEB_TO_BHSA.get(c, c) for c in t).upper()
+    return re.sub(r'[\[/=]+$', '', t)
+
+
 class TTStore:
     def __init__(self, tt_dir: str) -> None:
         self.dir = tt_dir
@@ -103,17 +115,23 @@ class TTStore:
                     self._lexemes = json.load(f)
             else:
                 self._lexemes = {}
-        q = _strip_points((q or '').strip().lower())
+        raw_q = (q or '').strip()
+        q = _strip_points(raw_q.lower())
+        stem = _lex_stem(raw_q) if raw_q else ''
         bset = None if books is None else set(books)
         out = []
         for lex, e in self._lexemes.items():
             hay = _strip_points(f"{lex} {e.get('word', '')} {e.get('gloss', '')}".lower())
-            if q and q not in hay:
+            exact = bool(stem) and _lex_stem(lex) == stem
+            if q and q not in hay and not exact:
                 continue
             count = sum(c for b, c in e.get('books', {}).items() if bset is None or b in bset)
             if count:
-                out.append({'lex': lex, 'gloss': e.get('gloss', ''), 'word': e.get('word', ''), 'count': count})
-        out.sort(key=lambda x: -x['count'])
+                out.append({'lex': lex, 'gloss': e.get('gloss', ''), 'word': e.get('word', ''), 'count': count,
+                            '_exact': exact})
+        out.sort(key=lambda x: (not x['_exact'], -x['count']))
+        for x in out:
+            del x['_exact']
         return out[:25]
 
     # ── witnesses ──

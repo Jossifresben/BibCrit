@@ -1,7 +1,7 @@
 # tests/test_tt_tables.py
 import pytest
 from translation_technique.tables import (
-    FACETS, distribution, crosstab, model_share, apply_witness, occurrences, facet_value,
+    FACETS, summary, distribution, crosstab, model_share, apply_witness, occurrences, facet_value,
 )
 from translation_technique.witnesses import load_witnesses, sigla, substitutions_for
 
@@ -103,3 +103,31 @@ def test_apply_witness_none_lemma_becomes_null_row():
 
 def test_empty_books_selects_nothing():
     assert distribution(_rows(), 'JRD[', [])['total'] == 0
+
+
+def test_summary_too_few():
+    sm = summary(_rows(), 'BW>[', None)
+    assert sm['too_few'] and sm['n'] == 1
+
+
+def test_summary_facts_hand_computed():
+    rows = [_row(f'Deuteronomy 1:{i}', 'X[', 'ܐ') for i in range(1, 7)]
+    rows += [_row(f'Deuteronomy 2:{i}', 'X[', 'ܒ', vs='hif') for i in range(1, 3)]
+    rows += [_row('Deuteronomy 3:1', 'X[', 'ܓ'), _row('Deuteronomy 3:2', 'X[', None, kind='null')]
+    sm = summary(rows, 'X[', ['deuteronomy'])
+    assert sm['n'] == 9 and sm['total'] == 10 and sm['null_count'] == 1
+    assert sm['dominant']['lemma'] == 'ܐ' and sm['dominant']['count'] == 6
+    assert sm['dominant']['share'] == pytest.approx(6 / 9)
+    assert sm['distinct'] == 3 and sm['singletons'] == 1
+    assert sm['model_share'] == pytest.approx(0.0)
+    assert sm['facet'] is None or sm['facet']['v'] <= 1.0   # counts this small are flagged unreliable
+
+
+def test_summary_picks_reliable_facet_with_largest_v():
+    rows = []
+    for i in range(30):
+        rows.append(_row(f'Deuteronomy 1:{i + 1}', 'Y[', 'ܐ', vs='qal'))
+    for i in range(30):
+        rows.append(_row(f'Deuteronomy 2:{i + 1}', 'Y[', 'ܒ', vs='hif'))
+    sm = summary(rows, 'Y[', None)
+    assert sm['facet']['facet'] == 'vs' and sm['facet']['v'] == pytest.approx(1.0)

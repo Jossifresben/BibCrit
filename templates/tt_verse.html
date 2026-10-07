@@ -5,30 +5,47 @@
   <h1 class="tool-title">{{ _t('tt_verse_h1') }} {{ ref }}</h1>
   <p class="tool-subtitle"><a href="/translation-technique?lang={{ lang }}">{{ _t('tt_back') }}</a></p>
 </div>
-<p class="tt-syriac" dir="rtl" lang="syr">{{ syr_text }}</p>
-<table class="tt-table">
-  <thead><tr><th>{{ _t('tt_col_hebrew') }}</th><th>{{ _t('tt_col_lex') }}</th><th>{{ _t('tt_col_syriac') }}</th><th>{{ _t('tt_col_prob') }}</th><th>{{ _t('tt_col_source') }}</th></tr></thead>
-  <tbody>
-  {% for r in rows %}
-    <tr>
-      <td dir="rtl" lang="he">{{ r.heb_word }}</td>
-      <td>{{ r.heb_lex }} <small>{{ r.heb_gloss }}</small></td>
-      <td dir="rtl" lang="syr">{{ r.syr_lemma or '—' }}{% if r.syr_position %} <small>#{{ r.syr_position }}</small>{% endif %}</td>
-      <td>{{ r.prob }}</td>
-      <td>{{ r.source }}{% if r.syr_source %} / {{ r.syr_source }}{% endif %}</td>
-    </tr>
-  {% endfor %}
-  </tbody>
-</table>
-{% if syr_only %}
-<h2>{{ _t('tt_unaligned_syriac') }}</h2>
-<table class="tt-table">
-  <tbody>
-  {% for r in syr_only %}
-    <tr><td dir="rtl" lang="syr">{{ r.syr_lemma or '—' }}</td><td>#{{ r.syr_position }}</td><td>{{ r.syr_source }}</td></tr>
-  {% endfor %}
-  </tbody>
-</table>
-{% endif %}
-<p class="tt-note">{{ _t('tt_manifest_label') }} {{ manifest.hash }}</p>
+<div class="tt-body">
+  <div class="result-card">
+    {% if mt_text %}
+    <p><span class="tradition-badge mt-badge">{{ _t('tt_verse_mt') }}</span></p>
+    <p class="tt-verse-text tt-verse-he" dir="rtl" lang="he">{{ mt_text }}</p>
+    {% endif %}
+    <p><span class="tradition-badge tt-src-lemma">{{ _t('tt_verse_pesh') }}</span></p>
+    <p class="tt-verse-text" dir="rtl" lang="syr">{{ syr_text }}</p>
+  </div>
+  <div class="result-card">
+    <div class="tt-scroll">
+    <table class="tt-table">
+      <thead><tr><th>{{ _t('tt_col_hebrew') }}</th><th>{{ _t('tt_col_lex') }}</th><th>{{ _t('tt_col_syriac') }}</th><th>{{ _t('tt_col_prob') }}</th><th>{{ _t('tt_col_source') }}</th></tr></thead>
+      <tbody>
+      {% for r in rows %}
+        <tr>
+          <td class="tt-hebrew" dir="rtl" lang="he">{{ r.heb_word }}</td>
+          <td>{{ r.heb_lex }} <small>{{ r.heb_gloss }}</small></td>
+          <td class="tt-syriac" dir="rtl" lang="syr">{{ r.syr_lemma or '—' }}{% if r.syr_position %} <small>#{{ r.syr_position }}</small>{% endif %}</td>
+          <td>{% if r.prob is not none %}<span class="confidence-badge {{ 'confidence-high' if r.prob >= 0.8 else ('confidence-medium' if r.prob >= 0.5 else 'confidence-low') }}">{{ r.prob }}</span>{% endif %}</td>
+          <td>{% if r.source %}<span class="tradition-badge tt-src">{{ r.source }}</span>{% endif %}{% if r.syr_source %} <span class="tradition-badge tt-src tt-src-lemma">{{ r.syr_source }}</span>{% endif %}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    </div>
+  </div>
+  {% if syr_only %}
+  <div class="result-card">
+    <h2 class="result-section-title">{{ _t('tt_unaligned_syriac') }}</h2>
+    <div class="tt-scroll">
+    <table class="tt-table">
+      <tbody>
+      {% for r in syr_only %}
+        <tr><td class="tt-syriac" dir="rtl" lang="syr">{{ r.syr_lemma or '—' }}</td><td>#{{ r.syr_position }}</td><td>{% if r.syr_source %}<span class="tradition-badge tt-src tt-src-lemma">{{ r.syr_source }}</span>{% endif %}</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    </div>
+  </div>
+  {% endif %}
+  <p class="tt-note">{{ _t('tt_manifest_label') }} <code>{{ manifest.hash }}</code></p>
+</div>
 {% endblock %}

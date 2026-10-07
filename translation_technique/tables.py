@@ -114,3 +114,31 @@ def apply_witness(rows: list[dict], substitutions: dict) -> list[dict]:
 def occurrences(rows: list[dict], heb_lex: str, books) -> list[dict]:
     sel = [r for r in _select(rows, heb_lex, books) if r['kind'] != 'null']
     return sorted(sel, key=lambda r: (_ref_key(r['ref']), r['heb_node'] or 0))
+
+
+MIN_SUMMARY_N = 5
+
+
+def summary(rows: list[dict], heb_lex: str, books) -> dict:
+    """Structured, deterministic facts about one lexeme's table; the caller phrases them. No causal claims."""
+    dist = distribution(rows, heb_lex, books)
+    n = dist['total'] - dist['null_count']
+    out = {'lex': heb_lex, 'n': n, 'too_few': n < MIN_SUMMARY_N, 'null_count': dist['null_count'],
+           'total': dist['total'], 'model_share': dist['model_share_total']}
+    if out['too_few']:
+        return out
+    top = dist['items'][0]
+    out['dominant'] = {'lemma': top['syr_lemma'], 'count': top['count'], 'share': top['count'] / n}
+    out['distinct'] = len(dist['items'])
+    out['singletons'] = sum(1 for i in dist['items'] if i['count'] == 1)
+    best = None
+    for fid, spec in FACETS.items():
+        if not spec['available']:
+            continue
+        x = crosstab(rows, heb_lex, fid, books)
+        if x['unreliable'] or x['dof'] < 1:
+            continue
+        if best is None or x['cramers_v'] > best['v']:
+            best = {'facet': fid, 'v': x['cramers_v'], 'p': x['p']}
+    out['facet'] = best
+    return out

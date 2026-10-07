@@ -2,23 +2,24 @@
 {% block title %}{{ _t('tt_gold_title') }}{% endblock %}
 {% block content %}
 {% if ref is none %}
-  <h1 class="tool-title">{{ _t('tt_gold_title') }}</h1>
-  <ol>
+  <div class="tool-header"><h1 class="tool-title">{{ _t('tt_gold_title') }}</h1></div>
+  <div class="tt-body"><div class="result-card"><ol class="tt-gold-list">
   {% for r in refs %}<li><a href="/translation-technique/gold/{{ r }}">{{ r }}</a>{% if r in done %} ✓{% endif %}</li>{% endfor %}
-  </ol>
+  </ol></div></div>
 {% else %}
-  <h1 class="tool-title">{{ ref }}</h1>
-  <p class="tt-syriac" dir="rtl" lang="syr">{{ syr_text }}</p>
-  <form method="post">
-    <table class="tt-table">
+  <div class="tool-header"><h1 class="tool-title">{{ ref }}</h1></div>
+  <div class="tt-body">
+  <div class="result-card"><p class="tt-verse-text" dir="rtl" lang="syr">{{ syr_text }}</p></div>
+  <form method="post" class="result-card">
+    <div class="tt-scroll"><table class="tt-table">
       <thead><tr><th>Hebrew</th><th>lex</th><th>Syriac token (position)</th></tr></thead>
       <tbody>
       {% for r in rows %}
       <tr>
-        <td dir="rtl" lang="he">{{ r.heb_word }}</td>
+        <td class="tt-hebrew" dir="rtl" lang="he">{{ r.heb_word }}</td>
         <td>{{ r.heb_lex }} <small>{{ r.heb_gloss }}</small></td>
         <td>
-          <select name="node_{{ r.heb_node }}">
+          <select name="node_{{ r.heb_node }}" class="passage-select">
             <option value="">{{ _t('tt_gold_none') }}</option>
             {% for p, l in syr %}<option value="{{ p }}" {% if p == r.selected %}selected{% endif %}>#{{ p }} {{ l }}</option>{% endfor %}
           </select>
@@ -27,9 +28,10 @@
       </tr>
       {% endfor %}
       </tbody>
-    </table>
-    <button type="submit" class="btn">{{ _t('tt_gold_save') }}</button>
-    <a class="btn btn-secondary" href="/translation-technique/gold">{{ _t('tt_gold_back') }}</a>
+    </table></div>
+    <p class="tt-actions"><button type="submit" class="btn-primary">{{ _t('tt_gold_save') }}</button>
+    <a class="btn-export" href="/translation-technique/gold">{{ _t('tt_gold_back') }}</a></p>
   </form>
+  </div>
 {% endif %}
 {% endblock %}

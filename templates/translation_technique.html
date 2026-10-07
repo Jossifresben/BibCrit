@@ -12,64 +12,115 @@
     <h1 class="tool-title">{{ _t('tt_h1') }}</h1>
     <p class="tool-subtitle">{{ _t('tt_lede') }}</p>
   </div>
-
-  {% if not available %}
-  <div class="bt-info-banner"><div class="bt-info-inner"><span class="bt-info-text">{{ _t('tt_unevaluated') }}</span></div></div>
-  {% endif %}
-
-  <div class="tt-controls">
-    <label>{{ _t('tt_lexeme_label') }}
-      <input id="tt-lex" list="tt-lex-list" placeholder="{{ _t('tt_lexeme_placeholder') }}" dir="auto">
-      <datalist id="tt-lex-list"></datalist>
-    </label>
-    <label>{{ _t('tt_books_label') }}
-      <select id="tt-books" multiple size="4">
-        {% for b in books %}<option value="{{ b }}" {% if b == 'deuteronomy' %}selected{% endif %}>{{ b|replace('_', ' ')|title }}</option>{% endfor %}
-      </select>
-    </label>
-    <label>{{ _t('tt_facet_label') }}
-      <select id="tt-facet">
-        <option value="">{{ _t('tt_facet_none') }}</option>
-        {% for fid, f in facets.items() %}
-        <option value="{{ fid }}" {% if not f.available %}disabled{% endif %}>{{ fid }}{% if not f.available %} — {{ _t('tt_facet_unavailable') }}{% endif %}</option>
-        {% endfor %}
-      </select>
-    </label>
-    <label>{{ _t('tt_witness_label') }}
-      <select id="tt-witness">
-        <option value="">{{ _t('tt_witness_main') }}</option>
-        {% for s in sigla %}<option value="{{ s }}">{{ s }}</option>{% endfor %}
-      </select>
-    </label>
+  <div class="bt-info-banner" style="margin-bottom:1rem;">
+    <div class="bt-info-inner">
+      <span class="bt-info-text">{{ _t('tt_banner') }}{% if not available %} {{ _t('tt_unevaluated') }}{% endif %}</span>
+    </div>
   </div>
 
-  <section id="tt-dist" hidden>
-    <h2>{{ _t('tt_distribution_h2') }} <span id="tt-dist-lex" dir="rtl"></span></h2>
-    <div id="tt-bars" class="tt-bars"></div>
-    <p class="tt-note"><span id="tt-model-share"></span> · <span id="tt-null-count"></span></p>
-    <p id="tt-witness-notes" class="tt-note" hidden></p>
-  </section>
+  <details id="tt-how" class="result-card tt-how" open>
+    <summary class="result-section-title">{{ _t('tt_method_h') }}</summary>
+    <p class="tt-para">{{ _t('tt_method_p1') }}</p>
+    <p class="tt-para">{{ _t('tt_method_p2') }}</p>
+    <p class="tt-para">{{ _t('tt_method_p3') }}</p>
+    <p class="tt-para">{{ _t('tt_method_p4') }}</p>
+    <p class="tt-para">{{ _t('tt_method_p5') }}</p>
+  </details>
 
-  <section id="tt-xtab" hidden>
-    <h2>{{ _t('tt_crosstab_h2') }}</h2>
-    <div id="tt-xtab-table"></div>
-    <p id="tt-xtab-stats" class="tt-note"></p>
-  </section>
+  <div class="passage-bar">
+    <div class="passage-bar-row passage-bar-main tt-controls">
+      <div class="tt-field tt-field-lex">
+        <label class="passage-label" for="tt-lex">{{ _t('tt_lexeme_label') }}</label>
+        <input id="tt-lex" class="passage-input tt-full" list="tt-lex-list" placeholder="{{ _t('tt_lexeme_placeholder') }}" dir="auto" autocomplete="off">
+        <datalist id="tt-lex-list"></datalist>
+      </div>
+      <div class="tt-field">
+        <span class="passage-label" id="tt-books-label">{{ _t('tt_books_label') }}</span>
+        <div id="tt-books" class="tt-chips" role="group" aria-labelledby="tt-books-label">
+          <button type="button" class="theo-filter-chip" data-all="1">{{ _t('tt_all_books') }}</button>
+          {% for b in books %}<button type="button" class="theo-filter-chip{% if b == 'deuteronomy' %} active{% endif %}" data-book="{{ b }}" aria-pressed="{{ 'true' if b == 'deuteronomy' else 'false' }}">{{ b|replace('_', ' ')|title }}</button>{% endfor %}
+        </div>
+      </div>
+      <div class="tt-field">
+        <label class="passage-label" for="tt-facet">{{ _t('tt_facet_label') }}</label>
+        <select id="tt-facet" class="passage-select">
+          <option value="">{{ _t('tt_facet_none') }}</option>
+          {% for fid, f in facets.items() %}
+          <option value="{{ fid }}" {% if not f.available %}disabled{% endif %}>{{ fid }}{% if not f.available %} — {{ _t('tt_facet_unavailable') }}{% endif %}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="tt-field">
+        <label class="passage-label" for="tt-witness">{{ _t('tt_witness_label') }}</label>
+        <select id="tt-witness" class="passage-select">
+          <option value="">{{ _t('tt_witness_main') }}</option>
+          {% for s in sigla %}<option value="{{ s }}">{{ s }}</option>{% endfor %}
+        </select>
+      </div>
+    </div>
+  </div>
 
-  <section id="tt-occ" hidden>
-    <h2>{{ _t('tt_occurrences_h2') }} <a id="tt-export" class="btn btn-secondary" href="#">{{ _t('tt_export_csv') }}</a></h2>
-    <table class="tt-table">
-      <thead><tr><th>{{ _t('tt_col_ref') }}</th><th>{{ _t('tt_col_hebrew') }}</th><th>{{ _t('tt_col_syriac') }}</th><th>{{ _t('tt_col_prob') }}</th><th>{{ _t('tt_col_source') }}</th></tr></thead>
-      <tbody id="tt-occ-body"></tbody>
-    </table>
-  </section>
+  <div class="tt-body">
+    <p id="tt-msg" class="tt-msg" role="status" hidden>{{ _t('tt_no_match') }}</p>
 
-  <section id="tt-method">
-    <h2>{{ _t('tt_methodology_h2') }}</h2>
-    <p id="tt-coverage"></p>
-    <p id="tt-manifest"></p>
-    <p id="tt-eval"></p>
-  </section>
+    <div id="tt-empty" class="empty-state">
+      <div class="empty-inner">
+        <p>{{ _t('tt_empty') }}</p>
+        <div class="featured-passages">
+          <a href="#" class="featured-ref" data-lex="JRD[">JRD[ <span lang="he" dir="rtl">ירד</span></a>
+          <a href="#" class="featured-ref" data-lex="BW&gt;[">BW&gt;[ <span lang="he" dir="rtl">בוא</span></a>
+          <a href="#" class="featured-ref" data-lex="NTN[">NTN[ <span lang="he" dir="rtl">נתן</span></a>
+          <a href="#" class="featured-ref" data-lex="XRM[">XRM[ <span lang="he" dir="rtl">חרם</span></a>
+        </div>
+      </div>
+    </div>
+
+    <section id="tt-dist" class="result-card" hidden>
+      <h2 class="result-section-title">{{ _t('tt_distribution_h2') }} <span id="tt-dist-lex" class="tt-lex-title"></span></h2>
+      <div id="tt-bars" class="tt-bars"></div>
+      <p class="tt-note"><span id="tt-model-share"></span> · <span id="tt-null-count"></span></p>
+      <p id="tt-witness-notes" class="tt-note" hidden></p>
+      <div id="tt-findings" class="tt-findings" hidden>
+        <h3 class="result-section-title">{{ _t('tt_find_h') }}</h3>
+        <ul id="tt-findings-list" class="tt-findings-list"></ul>
+        <p class="tt-note">{{ _t('tt_find_caption') }}</p>
+      </div>
+    </section>
+
+    <section id="tt-xtab" class="result-card" hidden>
+      <h2 class="result-section-title">{{ _t('tt_crosstab_h2') }}</h2>
+      <div id="tt-xtab-table" class="tt-scroll"></div>
+      <p id="tt-xtab-stats" class="tt-note"></p>
+    </section>
+
+    <section id="tt-occ" class="result-card" hidden>
+      <div class="tt-card-head">
+        <h2 class="result-section-title">{{ _t('tt_occurrences_h2') }} <span id="tt-occ-count"></span></h2>
+        <a id="tt-export" class="btn-export" href="#">{{ _t('tt_export_csv') }}</a>
+      </div>
+      <p class="tt-sort-hint">{{ _t('tt_sort_hint') }}</p>
+      <div class="tt-scroll">
+        <table class="tt-table">
+          <thead><tr>
+            <th class="tt-sortable" data-sort="ref" aria-sort="ascending" tabindex="0">{{ _t('tt_col_ref') }}<span class="tt-arrow"> ▲</span></th>
+            <th>{{ _t('tt_col_hebrew') }}</th>
+            <th class="tt-sortable" data-sort="syr" aria-sort="none" tabindex="0">{{ _t('tt_col_syriac') }}<span class="tt-arrow"></span></th>
+            <th class="tt-sortable" data-sort="prob" aria-sort="none" tabindex="0">{{ _t('tt_col_prob') }}<span class="tt-arrow"></span></th>
+            <th class="tt-sortable" data-sort="src" aria-sort="none" tabindex="0">{{ _t('tt_col_source') }}<span class="tt-arrow"></span></th>
+          </tr></thead>
+          <tbody id="tt-occ-body"></tbody>
+        </table>
+      </div>
+      <button type="button" id="tt-show-all" class="btn-export tt-show-all" hidden></button>
+    </section>
+
+    <section id="tt-method" class="result-card">
+      <h2 class="result-section-title">{{ _t('tt_methodology_h2') }}</h2>
+      <p id="tt-coverage" class="tt-para"></p>
+      <p id="tt-manifest" class="tt-para"></p>
+      <p id="tt-eval" class="tt-para"></p>
+    </section>
+  </div>
 </div>
 
 <script>
@@ -81,7 +132,9 @@ window.TT_I18N = {
   manifest: {{ _t('tt_manifest')|tojson }},
   eval: {{ _t('tt_eval')|tojson }},
   model: {{ _t('tt_model_word')|tojson }},
-  unevaluated: {{ _t('tt_unevaluated')|tojson }}
+  unevaluated: {{ _t('tt_unevaluated')|tojson }},
+  no_match: {{ _t('tt_no_match')|tojson }},
+  show_all: {{ _t('tt_show_all')|tojson }}
 };
 </script>
 <script src="/static/tt.js"></script>

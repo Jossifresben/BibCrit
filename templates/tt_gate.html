@@ -1,8 +1,8 @@
 <div id="tt-gate" class="tt-gate" data-hash="{{ gate_hash }}">
-  <form id="tt-gate-form" class="tt-gate-form" autocomplete="off">
-    <label for="tt-gate-pw">{{ _t('tt_gate_prompt') }}</label>
-    <input id="tt-gate-pw" type="password" required>
-    <button type="submit" class="btn">{{ _t('tt_gate_button') }}</button>
+  <form id="tt-gate-form" class="result-card tt-gate-form" autocomplete="off">
+    <p class="tt-gate-prompt"><label for="tt-gate-pw">{{ _t('tt_gate_prompt') }}</label></p>
+    <input id="tt-gate-pw" class="passage-input tt-full" type="password" required autofocus>
+    <button type="submit" class="btn-primary">{{ _t('tt_gate_button') }}</button>
     <p id="tt-gate-msg" class="tt-gate-msg" hidden>{{ _t('tt_gate_wrong') }}</p>
   </form>
 </div>

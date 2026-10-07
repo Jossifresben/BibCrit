@@ -84,6 +84,8 @@ def run_links(client, dry: bool, max_batches=None) -> dict:
     for p in pend:
         by_book[book_stem(p['ref'])].append(p)
     for stem, items in by_book.items():
+        if max_batches is not None and stats['batches'] >= max_batches:
+            break
         lemmas = read_jsonl(os.path.join(TT_DIR, 'lemmas', f'{stem}.jsonl'))
         toks = defaultdict(list)
         lookup = {}
@@ -128,9 +130,12 @@ def _update_manifest(model_id: str) -> None:
     mpath = os.path.join(TT_DIR, 'align', 'manifest.json')
     with open(mpath, encoding='utf-8') as fh:
         m = json.load(fh)
-    model_links = sum(1 for stem in m['books']
-                      for r in read_jsonl(os.path.join(TT_DIR, 'align', f'{stem}.jsonl')) if r['source'] == 'model')
-    m.update(model_id=model_id, model_links=model_links, hash=manifest_hash(os.path.join(TT_DIR, 'align'), m['books']))
+    rows = [r for stem in m['books'] for r in read_jsonl(os.path.join(TT_DIR, 'align', f'{stem}.jsonl'))]
+    model_links = sum(1 for r in rows if r['source'] == 'model')
+    with open(os.path.join(TT_DIR, 'align', 'pending.json'), encoding='utf-8') as fh:
+        pending = len(json.load(fh))
+    m.update(model_id=model_id, model_links=model_links, pending_links=pending,
+             total_links=sum(1 for r in rows if r['kind'] != 'null'), hash=manifest_hash(os.path.join(TT_DIR, 'align'), m['books']))
     with open(mpath, 'w', encoding='utf-8') as fh:
         json.dump(m, fh, indent=1)
         fh.write('\n')

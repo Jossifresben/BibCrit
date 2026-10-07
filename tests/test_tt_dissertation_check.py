@@ -22,7 +22,8 @@ def test_print_dissertation_diff(capsys):
         d = distribution(rows, lex, ['deuteronomy'])
         ours = {i['syr_lemma']: i['count'] for i in d['items']}
         top = [i['count'] for i in d['items'][:2]] + [0, 0]
-        print(f'\n{lex}: total={d["total"]} null={d["null_count"]} model_share={d["model_share_total"]}')
+        print(f'\n{lex}: top-1={d["items"][0]["syr_lemma"]} top-2={d["items"][1]["syr_lemma"]}')
+        print(f'{lex}: total={d["total"]} null={d["null_count"]} model_share={d["model_share_total"]}')
         for k, v in pub.items():
             if k == '_top1':
                 print(f'  top-1 count: ours={top[0]} published≈{v}')

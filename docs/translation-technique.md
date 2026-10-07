@@ -14,7 +14,7 @@ Route `/translation-technique` (private preview, phrase-gated). Data in `data/tt
 `tt_adjudicate.py` accepts `--max-batches N` (stop after N batches, any mode) and prints `model=<id> batches=<n> accepted=<k>` at the end of every run.
 
 ## Scope of the model adjudication
-Model adjudication (lemma proposals, pending links, the model-as-second-reader gold rows) has been run for **Deuteronomy only**. Every other book carries SEDRA/rule lemmas and IBM-1 alignments with no model-sourced tokens or links; the page's model-share figures are therefore zero outside Deuteronomy. Extending it is a per-book decision and a per-book cost.
+Model adjudication (lemma proposals, pending links, the model-as-second-reader gold rows) has been run for **Deuteronomy only**. No model-sourced tokens or links exist outside Deuteronomy. Lemma and alignment coverage of other books is whatever `data/tt/lemmas/coverage.json` and the `books` list in `data/tt/align/manifest.json` show at any time (the whole-OT lemma build is in progress; aligning the other books is a follow-up). Model-share figures are therefore zero outside Deuteronomy. Extending it is a per-book decision and a per-book cost.
 
 ## Known limits
 SEDRA coverage of hapax forms is about half before normalization. Free renderings and idioms get low link probabilities and stay visible in the occurrence list. Animacy and other semantic facets are not available in version one. Model lemma answers are applied per surface form (normalized), so homographs share one answer: if two different words have the same consonantal form, both tokens receive the lemma the model chose for the first context it saw.

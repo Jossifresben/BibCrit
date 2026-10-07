@@ -132,3 +132,62 @@ def test_run_lemmas_respects_max_batches(tmp_path, monkeypatch):
     assert Fake.calls == 2 and stats == {'batches': 2, 'accepted': 0}
     Fake.calls = 0
     assert mod.run_lemmas('x', Fake(), False)['batches'] == 4
+
+
+def _load_script():
+    import importlib.util, os
+    spec = importlib.util.spec_from_file_location(
+        'tt_adjudicate', os.path.join(os.path.dirname(os.path.dirname(__file__)), 'scripts', 'tt_adjudicate.py'))
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+def test_update_manifest_recomputes_counts(tmp_path, monkeypatch):
+    from translation_technique.lemmas import write_jsonl
+    mod = _load_script()
+    (tmp_path / 'align').mkdir()
+    base = {'heb_node': 1, 'heb_lex': 'x', 'heb_word': 'w', 'heb_gloss': 'g', 'heb_feats': {}}
+    write_jsonl(str(tmp_path / 'align' / 'x.jsonl'), [
+        dict(base, ref='r', kind='one-one', source='ibm1'), dict(base, ref='r', kind='one-one', source='model'),
+        dict(base, ref='r', kind='null', source='ibm1')])
+    (tmp_path / 'align' / 'pending.json').write_text(json.dumps([{'ref': 'r'}, {'ref': 'r'}]))
+    (tmp_path / 'align' / 'manifest.json').write_text(json.dumps(
+        {'books': ['x'], 'total_links': 99, 'pending_links': 99, 'model_links': 0, 'model_id': None, 'hash': ''}))
+    monkeypatch.setattr(mod, 'TT_DIR', str(tmp_path))
+    mod._update_manifest('m')
+    m = json.loads((tmp_path / 'align' / 'manifest.json').read_text())
+    assert m['pending_links'] == 2 and m['total_links'] == 2 and m['model_links'] == 1 and m['model_id'] == 'm'
+
+
+def test_run_links_respects_max_batches_and_summary(tmp_path, monkeypatch, capsys):
+    from translation_technique.lemmas import write_jsonl
+    mod = _load_script()
+    (tmp_path / 'align').mkdir()
+    (tmp_path / 'lemmas').mkdir()
+    refs = [f'Deuteronomy 1:{i}' for i in range(1, 4)]
+    pend = [{'ref': r, 'heb_node': 1, 'heb_word': 'w', 'heb_lex': 'x', 'heb_gloss': 'g'} for r in refs]
+    (tmp_path / 'align' / 'pending.json').write_text(json.dumps(pend))
+    write_jsonl(str(tmp_path / 'lemmas' / 'deuteronomy.jsonl'), [
+        {'ref': r, 'position': 1, 'form': 'f', 'lemma': 'l', 'source': 'sedra'} for r in refs])
+    write_jsonl(str(tmp_path / 'align' / 'deuteronomy.jsonl'), [
+        {'ref': r, 'heb_node': 1, 'heb_lex': 'x', 'heb_word': 'w', 'heb_gloss': 'g', 'heb_feats': {},
+         'syr_position': None, 'syr_lemma': None, 'syr_source': None, 'kind': 'null', 'source': 'ibm1'} for r in refs])
+    (tmp_path / 'align' / 'manifest.json').write_text(json.dumps({'books': ['deuteronomy'], 'hash': ''}))
+    monkeypatch.setattr(mod, 'TT_DIR', str(tmp_path))
+    monkeypatch.setattr(mod, 'BATCH', 1)
+
+    class Fake:
+        model_id = 'fake'
+        calls = 0
+
+        def complete(self, prompt):
+            Fake.calls += 1
+            return '[]', 'end_turn'
+
+    monkeypatch.setattr(mod, 'AnthropicAnnotator', lambda model: Fake())
+    monkeypatch.setattr(mod, 'load_dotenv', lambda *a, **k: None)
+    monkeypatch.setattr('sys.argv', ['tt_adjudicate.py', 'links', '--model', 'fake', '--max-batches', '2'])
+    mod.main()
+    assert Fake.calls == 2
+    assert 'model=fake batches=2 accepted=0' in capsys.readouterr().out

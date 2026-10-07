@@ -469,6 +469,14 @@ def test_tt_facet_options_use_ids_as_values(tt_client):
     assert '<option value="vs" title="tt_facet_vs_help"' in html or 'value="vs"' in html
 
 
+def test_tt_value_labels_and_no_bare_facet_ids(tt_client):
+    d = tt_client.get('/api/tt/table?lex=JRD[&facet=vs').get_json()
+    assert d['crosstab']['value_labels']['qal'] == 'Qal'
+    html = tt_client.get('/translation-technique').data.decode()
+    assert 'tt_facet_vs' in html and '>vs<' not in html and '>obj_function<' not in html
+    assert '>vs\n' not in html and '>obj_function\n' not in html
+
+
 def test_tt_page_spanish(tt_client):
     assert tt_client.get('/translation-technique?lang=es').status_code == 200
 

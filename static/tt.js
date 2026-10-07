@@ -209,10 +209,12 @@
     const x = d.crosstab;
     $('tt-xtab').hidden = !x;
     if (!x) return;
+    const fo = $('tt-facet').selectedOptions[0];
+    $('tt-xtab-facet').textContent = fo ? fo.textContent : '';
     const rowTot = x.matrix.map(r => r.reduce((a, b) => a + b, 0));
     const colTot = x.values.map((_, j) => x.matrix.reduce((a, r) => a + r[j], 0));
     const grand = rowTot.reduce((a, b) => a + b, 0);
-    $('tt-xtab-table').innerHTML = `<table class="tt-table tt-zebra"><thead><tr><th></th>${x.values.map(v => `<th class="tt-num">${esc(v)}</th>`).join('')}<th class="tt-num">Σ</th></tr></thead>
+    $('tt-xtab-table').innerHTML = `<table class="tt-table tt-zebra"><thead><tr><th></th>${x.values.map(v => { const lb = (x.value_labels || {})[v]; return `<th class="tt-num"${lb ? ` title="${esc(lb)}"` : ''}>${esc(v)}${lb && lb !== v ? `<br><small class="tt-vlabel">${esc(lb)}</small>` : ''}</th>`; }).join('')}<th class="tt-num">Σ</th></tr></thead>
       <tbody>${x.lemmas.map((l, i) => `<tr><th class="tt-syriac" dir="rtl" lang="syr">${esc(l)}</th>${x.matrix[i].map(c => `<td class="tt-num">${esc(c)}</td>`).join('')}<td class="tt-num tt-total">${rowTot[i]}</td></tr>`).join('')}
       <tr class="tt-total-row"><th>Σ</th>${colTot.map(c => `<td class="tt-num tt-total">${c}</td>`).join('')}<td class="tt-num tt-total">${grand}</td></tr></tbody></table>`;
     const el = $('tt-xtab-stats');

@@ -2843,6 +2843,7 @@ body[data-persona="student"] .tool-header { border-top-color: #059669; }
 .tt-bar-label { font-size: 1.5rem; }
 .tt-bar-count { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .tt-bar-count .confidence-badge { margin-left: 6px; font-size: 10px; }
+.tt-vlabel { font-weight: 400; font-size: .72rem; color: var(--muted); }
 .tt-note { font-size: .85rem; color: var(--muted); margin: .6rem 0 0; }
 .tt-findings { margin-top: 1rem; padding-top: .8rem; border-top: 1px solid var(--border); }
 .tt-findings .result-section-title { margin-bottom: 6px; }

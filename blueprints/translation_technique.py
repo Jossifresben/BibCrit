@@ -16,6 +16,7 @@ from flask import Blueprint, Response, abort, jsonify, redirect, render_template
 import state
 from biblical_core.rate_limit import limiter
 from translation_technique.lemmas import read_jsonl, write_jsonl
+from translation_technique.labels import facet_value_label
 from translation_technique.tables import (
     FACETS, apply_witness, crosstab, distribution, model_share, occurrences, summary,
 )
@@ -46,6 +47,12 @@ def _rows_for(store, books, witness):
     if witness:
         rows = apply_witness(rows, store.witness_substitutions(witness))
     return rows
+
+
+def _xtab(rows, lex, facet, books):
+    x = crosstab(rows, lex, facet, books)
+    x['value_labels'] = {v: facet_value_label(facet, v) for v in x['values']}
+    return x
 
 
 def _findings(sm: dict, lang: str) -> list[str]:
@@ -153,7 +160,7 @@ def tt_table():
     return jsonify({
         'lex': lex, 'books': books or store.books, 'witness': witness,
         'distribution': distribution(rows, lex, books),
-        'crosstab': crosstab(rows, lex, facet, books) if facet else None,
+        'crosstab': _xtab(rows, lex, facet, books) if facet else None,
         'occurrences': sel,
         'model_share': model_share(sel),
         'witness_notes': store.witness_notes(witness) if witness else [],

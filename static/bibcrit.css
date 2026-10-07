@@ -2851,6 +2851,7 @@ body[data-persona="student"] .tool-header { border-top-color: #059669; }
 .tt-scroll { overflow-x: auto; max-width: 100%; }
 .tt-card-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
 .tt-card-head .btn-export { text-decoration: none; }
+.tt-card-actions { display: inline-flex; gap: 8px; align-items: center; }
 .tt-show-all { margin-top: 10px; }
 .tt-table { width: 100%; border-collapse: collapse; font-size: .9rem; }
 .tt-table th, .tt-table td { padding: 6px 10px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: middle; }

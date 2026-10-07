@@ -7,7 +7,7 @@
 {% block content %}
 {% include "tt_gate.html" %}
 
-<div id="tt-app" hidden data-books="{{ books|join(',') }}" data-lang="{{ lang }}">
+<div id="tt-app" hidden data-books="{{ books|join(',') }}" data-lang="{{ lang }}" data-lex="{{ q_lex }}" data-sel-books="{{ q_books|join(',') }}" data-facet="{{ q_facet }}" data-witness="{{ q_witness }}">
   <div class="tool-header">
     <h1 class="tool-title">{{ _t('tt_h1') }}</h1>
     <p class="tool-subtitle">{{ _t('tt_lede') }}</p>
@@ -31,14 +31,14 @@
     <div class="passage-bar-row passage-bar-main tt-controls">
       <div class="tt-field tt-field-lex">
         <label class="passage-label" for="tt-lex">{{ _t('tt_lexeme_label') }}</label>
-        <input id="tt-lex" class="passage-input tt-full" list="tt-lex-list" placeholder="{{ _t('tt_lexeme_placeholder') }}" dir="auto" autocomplete="off">
+        <input id="tt-lex" class="passage-input tt-full" list="tt-lex-list" placeholder="{{ _t('tt_lexeme_placeholder') }}" dir="auto" autocomplete="off" value="{{ q_lex }}">
         <datalist id="tt-lex-list"></datalist>
       </div>
       <div class="tt-field">
         <span class="passage-label" id="tt-books-label">{{ _t('tt_books_label') }}</span>
         <div id="tt-books" class="tt-chips" role="group" aria-labelledby="tt-books-label">
           <button type="button" class="theo-filter-chip" data-all="1">{{ _t('tt_all_books') }}</button>
-          {% for b in books %}<button type="button" class="theo-filter-chip{% if b == 'deuteronomy' %} active{% endif %}" data-book="{{ b }}" aria-pressed="{{ 'true' if b == 'deuteronomy' else 'false' }}">{{ b|replace('_', ' ')|title }}</button>{% endfor %}
+          {% for b in books %}<button type="button" class="theo-filter-chip{% if b in q_books %} active{% endif %}" data-book="{{ b }}" aria-pressed="{{ 'true' if b in q_books else 'false' }}">{{ b|replace('_', ' ')|title }}</button>{% endfor %}
         </div>
       </div>
       <div class="tt-field">
@@ -46,7 +46,7 @@
         <select id="tt-facet" class="passage-select">
           <option value="">{{ _t('tt_facet_none') }}</option>
           {% for fid, f in facets.items() %}
-          <option value="{{ fid }}" {% if not f.available %}disabled{% endif %}>{{ fid }}{% if not f.available %} — {{ _t('tt_facet_unavailable') }}{% endif %}</option>
+          <option value="{{ fid }}" {% if not f.available %}disabled{% endif %}{% if fid == q_facet %} selected{% endif %}>{{ fid }}{% if not f.available %} — {{ _t('tt_facet_unavailable') }}{% endif %}</option>
           {% endfor %}
         </select>
       </div>
@@ -54,7 +54,7 @@
         <label class="passage-label" for="tt-witness">{{ _t('tt_witness_label') }}</label>
         <select id="tt-witness" class="passage-select">
           <option value="">{{ _t('tt_witness_main') }}</option>
-          {% for s in sigla %}<option value="{{ s }}">{{ s }}</option>{% endfor %}
+          {% for s in sigla %}<option value="{{ s }}"{% if s == q_witness %} selected{% endif %}>{{ s }}</option>{% endfor %}
         </select>
       </div>
     </div>
@@ -96,7 +96,7 @@
     <section id="tt-occ" class="result-card" hidden>
       <div class="tt-card-head">
         <h2 class="result-section-title">{{ _t('tt_occurrences_h2') }} <span id="tt-occ-count"></span></h2>
-        <a id="tt-export" class="btn-export" href="#">{{ _t('tt_export_csv') }}</a>
+        <span class="tt-card-actions"><button type="button" id="tt-copy" class="btn-export">{{ _t('tt_copy_link') }}</button> <a id="tt-export" class="btn-export" href="#">{{ _t('tt_export_csv') }}</a></span>
       </div>
       <p class="tt-sort-hint">{{ _t('tt_sort_hint') }}</p>
       <div class="tt-scroll">
@@ -134,7 +134,9 @@ window.TT_I18N = {
   model: {{ _t('tt_model_word')|tojson }},
   unevaluated: {{ _t('tt_unevaluated')|tojson }},
   no_match: {{ _t('tt_no_match')|tojson }},
-  show_all: {{ _t('tt_show_all')|tojson }}
+  show_all: {{ _t('tt_show_all')|tojson }},
+  copy_link: {{ _t('tt_copy_link')|tojson }},
+  copied: {{ _t('tt_copied')|tojson }}
 };
 </script>
 <script src="/static/tt.js"></script>

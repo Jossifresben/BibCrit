@@ -76,9 +76,20 @@ def _findings(sm: dict, lang: str) -> list[str]:
 def tt_page():
     lang = _lang()
     store = _store()
+    sigla_known = store.witness_sigla()
+    lex = request.args.get('lex', '').strip()[:64]
+    sel_books = [b for b in request.args.get('books', '').split(',') if b in store.books]
+    facet = request.args.get('facet', '').strip()
+    if facet not in FACETS or not FACETS[facet]['available']:
+        facet = ''
+    witness = request.args.get('witness', '').strip()
+    if witness not in sigla_known:
+        witness = ''
     return render_template('translation_technique.html', lang=lang, gate_hash=GATE_HASH,
                            available=store.available, books=store.books, facets=FACETS,
-                           sigla=store.witness_sigla())
+                           sigla=sigla_known, q_lex=lex,
+                           q_books=sel_books or (['deuteronomy'] if 'deuteronomy' in store.books else store.books),
+                           q_facet=facet, q_witness=witness)
 
 
 @tt_bp.route('/translation-technique/verse/<path:ref>')

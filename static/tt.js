@@ -9,7 +9,7 @@
     const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
     return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
   }
-  function open() { gate.hidden = true; app.hidden = false; loadMeta(); }
+  function open() { gate.hidden = true; app.hidden = false; loadMeta(); if ($('tt-lex').value.trim()) setTimeout(() => schedule(), 0); }
   try { if (sessionStorage.getItem('tt_ok') === '1') open(); } catch (e) {}
   $('tt-gate-form').addEventListener('submit', async (ev) => {
     ev.preventDefault();
@@ -21,6 +21,16 @@
   const how = $('tt-how');
   try { if (localStorage.getItem('tt_how') === 'closed') how.open = false; } catch (e) {}
   how.addEventListener('toggle', () => { try { localStorage.setItem('tt_how', how.open ? 'open' : 'closed'); } catch (e) {} });
+  $('tt-copy').addEventListener('click', async () => {
+    const url = location.href, b = $('tt-copy');
+    try { await navigator.clipboard.writeText(url); }
+    catch (e) {
+      const ta = document.createElement('textarea'); ta.value = url; document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); } catch (e2) { console.warn('tt: copy failed', e2); }
+      ta.remove();
+    }
+    b.textContent = I.copied; setTimeout(() => { b.textContent = I.copy_link; }, 1500);
+  });
   const lang = app.dataset.lang || 'en';
   const OCC_LIMIT = 200;
   function esc(s) { return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
@@ -156,6 +166,7 @@
     showMsg(false); $('tt-empty').hidden = true;
     renderDist(d, my); renderXtab(d); renderOcc(d);
     $('tt-export').href = '/api/tt/occurrences.csv?' + qs(lex);
+    try { history.replaceState(null, '', '?' + qs(lex, { lang })); } catch (e) {}
   }
 
   async function titleFor(lex, my) {

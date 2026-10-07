@@ -1,0 +1,19 @@
+{
+ "version": "0.1.0",
+ "built_at": "2026-10-07T17:59:27+00:00",
+ "corpus_versions": {
+  "bhsa": "2021",
+  "pesh_etcbc": "ETCBC/peshitta tf 0.2",
+  "lemmas": "0.1.0"
+ },
+ "iterations": 5,
+ "threshold": 0.3,
+ "books": [
+  "deuteronomy"
+ ],
+ "model_id": null,
+ "model_links": 0,
+ "total_links": 12727,
+ "pending_links": 464,
+ "hash": "50f558f1598d96e45f1ce1741510532bae24fdbb702f8a69f3602b8398c7db88"
+}

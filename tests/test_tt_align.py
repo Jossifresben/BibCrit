@@ -81,13 +81,26 @@ def test_train_ibm1_learns_identity_mapping():
 
 
 def test_symmetrize_intersection_then_grow():
-    fwd = [[(0, 0, 0.9), (1, 1, 0.8), (2, 2, 0.4)]]
-    bwd = [[(0, 0, 0.9), (1, 1, 0.7), (2, 1, 0.3)]]
-    links = symmetrize(fwd, bwd)[0]
-    assert (0, 0) in {(h, s) for h, s, _ in links}
-    assert (1, 1) in {(h, s) for h, s, _ in links}
-    # (2,2) is adjacent to (1,1) on the diagonal and present in one direction → grown in
-    assert (2, 2) in {(h, s) for h, s, _ in links}
+    # 3x3 toy; pairs are (heb, syr, p)
+    fpost = [(0, 0, 0.9), (1, 1, 0.8), (2, 2, 0.4), (2, 1, 0.02)]
+    bpost = [(0, 0, 0.9), (1, 1, 0.7), (2, 2, 0.45), (2, 1, 0.5)]
+    fam = {(0, 0), (1, 1), (2, 2)}
+    bam = {(0, 0), (1, 1), (2, 1)}
+    links = symmetrize([(fpost, fam)], [(bpost, bam)])[0]
+    got = {(h, s): p for h, s, p in links}
+    assert (0, 0) in got and (1, 1) in got
+    assert abs(got[(0, 0)] - 0.9) < 1e-9
+    # (2,2): argmax only fwd, sqrt(0.4*0.45) >= 0.2 -> grown
+    assert (2, 2) in got and abs(got[(2, 2)] - (0.4 * 0.45) ** 0.5) < 1e-9
+    # (2,1): argmax only bwd, fwd posterior 0.02 -> sqrt(0.02*0.5)=0.1 < 0.2 -> rejected
+    assert (2, 1) not in got
+
+
+def test_syr_units_uses_candidates_even_when_lemma_set():
+    from translation_technique.align import syr_units
+    row = {'lemma': 'c', 'norm': 'c', 'candidates': [{'lemma': 'c', 'pos': 'noun', 'kaylo': None},
+                                                     {'lemma': 'c', 'pos': 'verb', 'kaylo': None}]}
+    assert syr_units(row) == ['c|noun', 'c|verb']
 
 
 def test_align_corpus_rows_and_disambiguation():

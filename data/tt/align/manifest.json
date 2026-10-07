@@ -1,6 +1,6 @@
 {
  "version": "0.1.0",
- "built_at": "2026-10-07T18:01:16+00:00",
+ "built_at": "2026-10-07T18:03:14+00:00",
  "corpus_versions": {
   "bhsa": "2021",
   "pesh_etcbc": "ETCBC/peshitta tf 0.2",
@@ -13,7 +13,7 @@
  ],
  "model_id": null,
  "model_links": 0,
- "total_links": 19331,
- "pending_links": 2405,
- "hash": "a725673ef312075d90a70f04dea9c6a5dd17a09c5e91980ea7029c4d97258324"
+ "total_links": 13039,
+ "pending_links": 786,
+ "hash": "d7a27043cd8558f8fc8ed70da57c06537a80c21e100081663719d9832cbe6812"
 }

@@ -28,6 +28,8 @@ def unit_key(cand: dict) -> str:
 
 
 def syr_units(row: dict) -> list[str]:
+    if row['candidates'] and len(row['candidates']) > 1:
+        return [unit_key(c) for c in row['candidates']]
     if row['lemma'] is not None:
         return [row['lemma']]
     if row['candidates']:
@@ -114,6 +116,7 @@ def hebrew_tokens(api, book_stem: str) -> dict[str, list[dict]]:
 
 NULL = '<null>'
 SMOOTH = 0.5
+GROW_MIN = 0.2
 
 
 def _diag(i: int, I: int, j: int, J: int, lam: float) -> float:
@@ -159,45 +162,54 @@ def train_ibm1(pairs: list[tuple[list[list[str]], list[list[str]]]], iterations:
     return t
 
 
-def _viterbi_links(t, src: list[list[str]], tgt: list[list[str]], lam: float) -> list[tuple[int, int, float]]:
-    """Best source index per target token (or none), with normalized prob."""
-    links = []
+def _viterbi_links(t, src: list[list[str]], tgt: list[list[str]], lam: float):
+    """Posteriors for every (source_idx, target_idx) pair (NULL excluded), normalized over
+    sources (NULL included) per target; plus the set of argmax pairs (NULL argmax -> none)."""
+    post, argmax = [], set()
     srcs = [[NULL]] + src
     I, J = len(srcs) - 1, len(tgt)
     for j, tunits in enumerate(tgt):
-        best, bestp, z = None, 0.0, 0.0
+        ps = []
         for i, sunits in enumerate(srcs):
             prior = 0.2 if i == 0 else _diag(i - 1, I, j, J, lam)
-            p = sum(t[tu][su] for tu in tunits for su in sunits) * prior / (len(sunits) * len(tunits))
-            z += p
-            if p > bestp:
-                best, bestp = i, p
-        if best and z > 0:
-            links.append((best - 1, j, bestp / z))
-    return links
+            ps.append(sum(t[tu][su] for tu in tunits for su in sunits) * prior / (len(sunits) * len(tunits)))
+        z = sum(ps)
+        if z <= 0:
+            continue
+        best = max(range(len(ps)), key=lambda i: ps[i])
+        for i in range(1, len(ps)):
+            post.append((i - 1, j, ps[i] / z))
+        if best > 0:
+            argmax.add((best - 1, j))
+    return post, argmax
 
 
-def symmetrize(fwd: list[list[tuple[int, int, float]]],
-               bwd: list[list[tuple[int, int, float]]]) -> list[list[tuple[int, int, float]]]:
-    """Intersection, then grow-diag: add union links adjacent (incl. diagonal) to an accepted link."""
+def symmetrize(fwd: list, bwd: list) -> list[list[tuple[int, int, float]]]:
+    """Per verse, each direction is (posteriors, argmax) with pairs as (heb_idx, syr_idx, p).
+    Accept pairs that are argmax in both directions (prob = geometric mean); then grow pairs
+    that are argmax in exactly one direction, adjacent (incl. diagonal) to an accepted pair,
+    with at least one endpoint unlinked and two-sided score >= GROW_MIN."""
     out = []
-    for f, b in zip(fwd, bwd):
-        fp = {(h, s): p for h, s, p in f}
-        bp = {(h, s): p for h, s, p in b}
-        inter = {k: (fp[k] + bp[k]) / 2 for k in fp.keys() & bp.keys()}
-        union = {k: fp.get(k, bp.get(k)) for k in fp.keys() | bp.keys()}
-        accepted = dict(inter)
+    for (fpost, fam), (bpost, bam) in zip(fwd, bwd):
+        fp = {(h, s): p for h, s, p in fpost}
+        bp = {(h, s): p for h, s, p in bpost}
+
+        def score(k):
+            return math.sqrt(fp.get(k, 0.0) * bp.get(k, 0.0))
+
+        accepted = {k: score(k) for k in fam & bam}
+        cands = {k: score(k) for k in fam ^ bam if score(k) >= GROW_MIN}
         grown = True
         while grown:
             grown = False
-            for (h, s), p in union.items():
+            for (h, s), sc in sorted(cands.items()):
                 if (h, s) in accepted:
                     continue
                 if any((h + dh, s + ds) in accepted for dh in (-1, 0, 1) for ds in (-1, 0, 1)):
                     linked_h = any(hh == h for hh, _ in accepted)
                     linked_s = any(ss == s for _, ss in accepted)
                     if not (linked_h and linked_s):
-                        accepted[(h, s)] = p
+                        accepted[(h, s)] = sc
                         grown = True
         out.append(sorted((h, s, p) for (h, s), p in accepted.items()))
     return out
@@ -219,7 +231,7 @@ def _rows_for_verse(p: dict, links: list, t_hs) -> tuple[list[dict], dict]:
     for h, s, prob in links:
         hw, sw = p['heb'][h], p['syr'][s]
         lemma, pos = sw['lemma'], None
-        if lemma is None and sw['candidates']:
+        if sw['candidates'] and (lemma is None or len(sw['candidates']) > 1):
             # choose the candidate the Hebrew lex supports most
             best = max(sw['candidates'], key=lambda c: t_hs[unit_key(c)][hw['lex']])
             z = sum(t_hs[unit_key(c)][hw['lex']] for c in sw['candidates'])
@@ -256,8 +268,10 @@ def align_corpus(parallel: list[dict], iterations: int = 5, diag_lambda: float =
     t_sh = train_ibm1([(b, a) for a, b in heb_pairs], iterations, diag_lambda)  # P(heb | syr)
     fwd, bwd = [], []
     for src, tgt in heb_pairs:
-        fwd.append([(h, s, p) for h, s, p in _viterbi_links(t_hs, src, tgt, diag_lambda)])
-        bwd.append([(h, s, p) for s, h, p in _viterbi_links(t_sh, tgt, src, diag_lambda)])
+        fpost, fam = _viterbi_links(t_hs, src, tgt, diag_lambda)
+        fwd.append((fpost, fam))
+        bpost, bam = _viterbi_links(t_sh, tgt, src, diag_lambda)
+        bwd.append(([(h, s, p) for s, h, p in bpost], {(h, s) for s, h in bam}))
     sym = symmetrize(fwd, bwd)
     rows, dis = [], {}
     for p, links in zip(parallel, sym):

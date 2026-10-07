@@ -7,12 +7,15 @@ from __future__ import annotations
 
 import csv
 import io
+import json
+import os
 import re
 
-from flask import Blueprint, Response, abort, jsonify, render_template, request
+from flask import Blueprint, Response, abort, jsonify, redirect, render_template, request
 
 import state
 from biblical_core.rate_limit import limiter
+from translation_technique.lemmas import read_jsonl, write_jsonl
 from translation_technique.tables import (
     FACETS, apply_witness, crosstab, distribution, model_share, occurrences,
 )
@@ -148,3 +151,56 @@ def tt_csv():
                     r['syr_lemma'], r['syr_source'], r['prob'], r['kind'], r['source']])
     return Response(buf.getvalue(), mimetype='text/csv',
                     headers={'Content-Disposition': f'attachment; filename="tt_{safe}.csv"'})
+
+
+# ── gold form (local only: TT_GOLD_EDIT=1) ───────────────────────────────────
+def _gold_enabled() -> bool:
+    return os.environ.get('TT_GOLD_EDIT') == '1'
+
+
+def _gold_paths(store):
+    return (os.path.join(store.dir, 'gold', 'sample_refs.json'),
+            os.path.join(store.dir, 'gold', 'deuteronomy_sample.jsonl'))
+
+
+@tt_bp.route('/translation-technique/gold')
+def tt_gold_index():
+    if not _gold_enabled():
+        abort(404)
+    store = _store()
+    sample_path, gold_path = _gold_paths(store)
+    refs = json.load(open(sample_path, encoding='utf-8')) if os.path.exists(sample_path) else []
+    done = {r['ref'] for r in read_jsonl(gold_path) if r['reader'] == 'jossi'} if os.path.exists(gold_path) else set()
+    return render_template('tt_gold.html', refs=refs, done=done, ref=None, rows=None, lang=_lang())
+
+
+@tt_bp.route('/translation-technique/gold/<path:ref>', methods=['GET', 'POST'])
+def tt_gold_edit(ref: str):
+    if not _gold_enabled():
+        abort(404)
+    store = _store()
+    sample_path, gold_path = _gold_paths(store)
+    rows = store.verse_rows(ref)
+    heb = sorted((r for r in rows if r['heb_node'] is not None), key=lambda r: r['heb_node'])
+    if not heb:
+        abort(404)
+    syr = sorted({(r['syr_position'], r['syr_lemma']) for r in rows if r['syr_position'] is not None})
+    if request.method == 'POST':
+        new = []
+        for r in {x['heb_node']: x for x in heb}.values():
+            raw = request.form.get(f"node_{r['heb_node']}", '')
+            pos = int(raw) if raw.strip() else None
+            lemma = next((l for p, l in syr if p == pos), None) if pos else None
+            new.append({'ref': ref, 'heb_node': r['heb_node'], 'heb_lex': r['heb_lex'], 'heb_word': r['heb_word'],
+                        'heb_gloss': r['heb_gloss'], 'heb_feats': None, 'syr_position': pos, 'syr_lemma': lemma,
+                        'syr_source': None, 'kind': 'one-one' if pos else 'null', 'reader': 'jossi', 'agreed': None})
+        existing = [g for g in (read_jsonl(gold_path) if os.path.exists(gold_path) else [])
+                    if not (g['ref'] == ref and g['reader'] == 'jossi')]
+        write_jsonl(gold_path, existing + new)
+        return redirect('/translation-technique/gold')
+    try:
+        syr_text = state.corpus.get_verse_text(ref, 'PESH') if state.corpus is not None else ''
+    except Exception:
+        syr_text = ''
+    return render_template('tt_gold.html', refs=None, done=None, ref=ref, rows=heb, syr=syr, syr_text=syr_text,
+                           lang=_lang())

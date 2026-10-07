@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Gold sample{% endblock %}
+{% block content %}
+{% if ref is none %}
+  <h1 class="tool-title">Gold sample (local editor)</h1>
+  <ol>
+  {% for r in refs %}<li><a href="/translation-technique/gold/{{ r }}">{{ r }}</a>{% if r in done %} ✓{% endif %}</li>{% endfor %}
+  </ol>
+{% else %}
+  <h1 class="tool-title">{{ ref }}</h1>
+  <p class="tt-syriac" dir="rtl" lang="syr">{{ syr_text }}</p>
+  <form method="post">
+    <table class="tt-table">
+      <thead><tr><th>Hebrew</th><th>lex</th><th>Syriac token (position)</th></tr></thead>
+      <tbody>
+      {% for r in rows %}
+      <tr>
+        <td dir="rtl" lang="he">{{ r.heb_word }}</td>
+        <td>{{ r.heb_lex }} <small>{{ r.heb_gloss }}</small></td>
+        <td>
+          <select name="node_{{ r.heb_node }}">
+            <option value="">— none —</option>
+            {% for p, l in syr %}<option value="{{ p }}" {% if p == r.syr_position %}selected{% endif %}>#{{ p }} {{ l }}</option>{% endfor %}
+          </select>
+        </td>
+      </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    <button type="submit" class="btn">Save</button>
+    <a class="btn btn-secondary" href="/translation-technique/gold">Back</a>
+  </form>
+{% endif %}
+{% endblock %}

@@ -517,3 +517,24 @@ def test_tt_i18n_keys_present_in_both_languages():
 def test_tt_links_in_nav_and_guide(client):
     assert '/translation-technique' in client.get('/guide').data.decode()
     assert '/translation-technique' in client.get('/guide?lang=es').data.decode()
+
+
+def test_tt_gold_routes_hidden_without_env(tt_client, monkeypatch):
+    monkeypatch.delenv('TT_GOLD_EDIT', raising=False)
+    assert tt_client.get('/translation-technique/gold').status_code == 404
+
+
+def test_tt_gold_form_and_post(tt_client, tmp_path, monkeypatch):
+    monkeypatch.setenv('TT_GOLD_EDIT', '1')
+    (tmp_path / 'tt' / 'gold').mkdir(exist_ok=True)
+    (tmp_path / 'tt' / 'gold' / 'sample_refs.json').write_text('["Deuteronomy 24:13"]', encoding='utf-8')
+    r = tt_client.get('/translation-technique/gold')
+    assert r.status_code == 200 and 'Deuteronomy 24:13' in r.data.decode()
+    r = tt_client.get('/translation-technique/gold/Deuteronomy 24:13')
+    assert r.status_code == 200 and 'name="node_3"' in r.data.decode()
+    r = tt_client.post('/translation-technique/gold/Deuteronomy 24:13', data={'node_3': '1', 'node_4': '', 'node_5': '2'})
+    assert r.status_code == 302
+    lines = (tmp_path / 'tt' / 'gold' / 'deuteronomy_sample.jsonl').read_text(encoding='utf-8').strip().split('\n')
+    rows = [json.loads(l) for l in lines]
+    assert {(x['heb_node'], x['syr_position']) for x in rows} == {(3, 1), (4, None), (5, 2)}
+    assert all(x['reader'] == 'jossi' for x in rows)

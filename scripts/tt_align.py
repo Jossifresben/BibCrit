@@ -19,7 +19,8 @@ from collections import defaultdict
 from datetime import datetime, timezone
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from translation_technique.align import align_corpus, build_parallel, hebrew_tokens, pending_links  # noqa: E402
+from translation_technique.align import (  # noqa: E402
+    align_corpus, apply_disambiguations, book_stem, build_parallel, hebrew_tokens, pending_links)
 from translation_technique.lemmas import read_jsonl, write_jsonl  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -50,12 +51,7 @@ def main() -> None:
 
     # write back disambiguations
     for stem, lrows in lemma_rows_by_book.items():
-        changed = 0
-        for r in lrows:
-            key = (r['ref'], r['position'])
-            if key in dis:
-                r['lemma'], r['pos'], r['confidence'] = dis[key]
-                changed += 1
+        changed = apply_disambiguations(lrows, dis)
         write_jsonl(os.path.join(lem_dir, f'{stem}.jsonl'), lrows)
         print(f'{stem}: disambiguated {changed}')
 
@@ -63,12 +59,13 @@ def main() -> None:
     os.makedirs(out_dir, exist_ok=True)
     by_book = defaultdict(list)
     for r in rows:
-        by_book[r['ref'].rsplit(' ', 1)[0].lower().replace(' ', '_')].append(r)
+        by_book[book_stem(r['ref'])].append(r)
     h = hashlib.sha256()
     for stem in sorted(by_book):
         path = os.path.join(out_dir, f'{stem}.jsonl')
         write_jsonl(path, by_book[stem])
-        h.update(open(path, 'rb').read())
+        with open(path, 'rb') as fh:
+            h.update(fh.read())
 
     pend = pending_links(rows, args.threshold)
     with open(os.path.join(out_dir, 'pending.json'), 'w', encoding='utf-8') as fh:
@@ -79,7 +76,7 @@ def main() -> None:
         if r['heb_lex'] is None:
             continue
         e = lex.setdefault(r['heb_lex'], {'gloss': r['heb_gloss'], 'word': r['heb_word'], 'books': {}})
-        stem = r['ref'].rsplit(' ', 1)[0].lower().replace(' ', '_')
+        stem = book_stem(r['ref'])
         e['books'][stem] = e['books'].get(stem, 0) + 1
     with open(os.path.join(TT_DIR, 'lexemes.json'), 'w', encoding='utf-8') as fh:
         json.dump(lex, fh, ensure_ascii=False)

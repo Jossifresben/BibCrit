@@ -27,6 +27,22 @@ def unit_key(cand: dict) -> str:
     return f"{cand['lemma']}|{cand['pos']}" if cand.get('pos') else cand['lemma']
 
 
+def book_stem(ref: str) -> str:
+    """'1 Samuel 1:1' -> '1_samuel'; 'Song of Songs 1:1' -> 'song_of_songs'."""
+    return ref.rsplit(' ', 1)[0].lower().replace(' ', '_')
+
+
+def apply_disambiguations(lemma_rows: list[dict], dis: dict) -> int:
+    """Write chosen lemma/pos/confidence into lemma rows; touches nothing else. Returns rows changed."""
+    changed = 0
+    for r in lemma_rows:
+        key = (r['ref'], r['position'])
+        if key in dis:
+            r['lemma'], r['pos'], r['confidence'] = dis[key]
+            changed += 1
+    return changed
+
+
 def syr_units(row: dict) -> list[str]:
     if row['candidates'] and len(row['candidates']) > 1:
         return [unit_key(c) for c in row['candidates']]
@@ -228,16 +244,23 @@ def _kind(h: int, s: int, links) -> str:
 def _rows_for_verse(p: dict, links: list, t_hs) -> tuple[list[dict], dict]:
     rows, dis = [], {}
     linked_h, linked_s = set(), set()
+    # choose each ambiguous Syriac token's candidate ONCE, from the sum of its links' support
+    choice: dict[int, tuple[str, Optional[str]]] = {}
+    for s in {s for _, s, _ in links}:
+        sw = p['syr'][s]
+        cands = sw['candidates']
+        if cands and (sw['lemma'] is None or len(cands) > 1):
+            score = [sum(t_hs[unit_key(c)][p['heb'][h]['lex']] for h, ss, _ in links if ss == s) for c in cands]
+            bi = max(range(len(cands)), key=lambda i: score[i])
+            z = sum(score)
+            post = score[bi] / z if z else 1.0 / len(cands)
+            choice[s] = (cands[bi]['lemma'], cands[bi]['pos'])
+            dis[(p['ref'], sw['position'])] = (cands[bi]['lemma'], cands[bi]['pos'], round(post, 4))
     for h, s, prob in links:
         hw, sw = p['heb'][h], p['syr'][s]
-        lemma, pos = sw['lemma'], None
-        if sw['candidates'] and (lemma is None or len(sw['candidates']) > 1):
-            # choose the candidate the Hebrew lex supports most
-            best = max(sw['candidates'], key=lambda c: t_hs[unit_key(c)][hw['lex']])
-            z = sum(t_hs[unit_key(c)][hw['lex']] for c in sw['candidates'])
-            post = t_hs[unit_key(best)][hw['lex']] / z if z else 1.0 / len(sw['candidates'])
-            lemma, pos = best['lemma'], best['pos']
-            dis[(p['ref'], sw['position'])] = (lemma, pos, round(post, 4))
+        lemma = sw['lemma']
+        if s in choice:
+            lemma = choice[s][0]
         elif lemma is not None and '|' in lemma:
             lemma = lemma.split('|')[0]
         rows.append({

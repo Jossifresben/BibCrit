@@ -1,6 +1,6 @@
 # tests/test_tt_align.py
 import pytest
-from translation_technique.align import normalize_ref, build_parallel
+from translation_technique.align import normalize_ref, build_parallel, syr_units, book_stem, apply_disambiguations
 
 
 def test_normalize_ref_fixes_song_of_songs():
@@ -57,19 +57,17 @@ def _toy_parallel():
               for k in order]
         sw = []
         for j, k in enumerate(order):
-            if k == 2 and i < 8:
-                sw.append({'position': j + 1, 'form': 'c', 'lemma': None, 'source': 'sedra',
-                           'candidates': [{'lemma': 'c', 'pos': 'noun', 'kaylo': None}, {'lemma': 'c', 'pos': 'verb', 'kaylo': None}],
-                           'units': ['c|noun', 'c|verb']})
+            if k == 2:
+                cands = [{'lemma': 'c', 'pos': 'noun', 'kaylo': None}, {'lemma': 'c', 'pos': 'verb', 'kaylo': None}]
+                # verses 9,10: lemma already written back (pipeline state after a first run)
+                row = {'position': j + 1, 'form': 'c', 'norm': 'c', 'lemma': 'c' if i >= 8 else None,
+                       'source': 'sedra', 'candidates': cands}
             else:
-                sw.append({'position': j + 1, 'form': syr[k], 'lemma': syr[k], 'source': 'sedra',
-                           'candidates': [{'lemma': syr[k], 'pos': 'noun', 'kaylo': None}], 'units': [syr[k]]})
+                row = {'position': j + 1, 'form': syr[k], 'norm': syr[k], 'lemma': syr[k], 'source': 'sedra',
+                       'candidates': [{'lemma': syr[k], 'pos': 'noun', 'kaylo': None}]}
+            row['units'] = syr_units(row)
+            sw.append(row)
         par.append({'ref': f'Toy 1:{i + 1}', 'heb': hw, 'syr': sw})
-    # verses 9,10 resolve c as noun, so EM should prefer c|noun for the ambiguous ones
-    for p in par[8:]:
-        for s in p['syr']:
-            if s['form'] == 'c':
-                s['lemma'] = 'c|noun'; s['units'] = ['c|noun']
     return par
 
 
@@ -135,3 +133,51 @@ def test_rows_for_verse_null_and_kinds():
 def test_pending_links_threshold():
     rows = [{'kind': 'one-one', 'prob': 0.2}, {'kind': 'one-one', 'prob': 0.9}, {'kind': 'null', 'prob': 0.0}]
     assert pending_links(rows, 0.3) == [{'kind': 'one-one', 'prob': 0.2}]
+
+
+def test_disambiguation_chosen_once_per_token():
+    from collections import defaultdict
+    from translation_technique.align import _rows_for_verse
+    cands = [{'lemma': 'c', 'pos': 'noun', 'kaylo': None}, {'lemma': 'c', 'pos': 'verb', 'kaylo': None}]
+    feats = {}
+    heb = [{'node': 1, 'lex': 'X', 'word': 'x', 'gloss': 'x', 'feats': feats},
+           {'node': 2, 'lex': 'Y', 'word': 'y', 'gloss': 'y', 'feats': feats}]
+    syr = [{'position': 1, 'form': 'c', 'lemma': None, 'source': 'sedra', 'candidates': cands,
+            'units': ['c|noun', 'c|verb']}]
+    t = defaultdict(lambda: defaultdict(float))
+    t['c|noun']['X'] = 0.5; t['c|verb']['X'] = 0.1     # X alone prefers noun
+    t['c|noun']['Y'] = 0.05; t['c|verb']['Y'] = 0.4    # Y alone prefers verb; sum favours noun (0.55 vs 0.5); last-link winner would be verb
+    rows, dis = _rows_for_verse({'ref': 'T 1:1', 'heb': heb, 'syr': syr}, [(0, 0, 0.9), (1, 0, 0.8)], t)
+    assert {r['syr_lemma'] for r in rows} == {'c'}
+    lemma, pos, post = dis[('T 1:1', 1)]
+    assert (lemma, pos) == ('c', 'noun') and abs(post - 0.55 / 1.05) < 1e-3
+
+
+def test_align_corpus_idempotent_after_writeback():
+    par = _toy_parallel()
+    rows1, dis1 = align_corpus(par, iterations=5)
+    lemma_rows = [{'ref': p['ref'], 'position': s['position'], 'lemma': s['lemma'], 'pos': None, 'confidence': None}
+                  for p in par for s in p['syr']]
+    apply_disambiguations(lemma_rows, dis1)
+    lk = {(r['ref'], r['position']): r for r in lemma_rows}
+    par2 = _toy_parallel()
+    for p in par2:
+        for s in p['syr']:
+            s['lemma'] = lk[(p['ref'], s['position'])]['lemma']
+            s['units'] = syr_units(s)
+    rows2, dis2 = align_corpus(par2, iterations=5)
+    assert rows1 == rows2 and dis1 == dis2
+
+
+def test_apply_disambiguations_touches_only_three_fields():
+    rows = [{'ref': 'T 1:1', 'position': 1, 'form': 'f', 'lemma': None, 'pos': None, 'confidence': None, 'x': 1},
+            {'ref': 'T 1:1', 'position': 2, 'form': 'g', 'lemma': 'q', 'pos': 'noun', 'confidence': 1.0, 'x': 2}]
+    before = [dict(r) for r in rows]
+    assert apply_disambiguations(rows, {('T 1:1', 1): ('c', 'verb', 0.7)}) == 1
+    assert rows[1] == before[1]
+    assert {k for k in rows[0] if rows[0][k] != before[0][k]} == {'lemma', 'pos', 'confidence'}
+
+
+def test_book_stem():
+    assert book_stem('1 Samuel 1:1') == '1_samuel'
+    assert book_stem('Song of Songs 1:1') == 'song_of_songs'

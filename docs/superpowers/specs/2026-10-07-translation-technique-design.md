@@ -97,14 +97,20 @@ confidence  1.0 for a single SEDRA candidate; aligner posterior when chosen amon
 
 ```
 ref           "Deuteronomy 22:4"
-heb_node      BHSA word node id
-heb_lex       BHSA lex (e.g. "JRD[")
-syr_position  int, or null for a Hebrew word with no counterpart
+heb_node      BHSA word node id, or null
+heb_lex       BHSA lex (e.g. "JRD["), or null
+heb_word      BHSA g_word_utf8, or null
+heb_gloss     BHSA lex gloss, or null
+heb_feats     {sp, vs, vt, clause_typ, obj_function, next_prep} or null
+syr_position  int, or null
 syr_lemma     lemma from the lemma row, or null
+syr_source    lemma source ("sedra" | "rule" | "model" | "unresolved"), or null
 prob          symmetrized link probability, 0–1
 kind          "one-one" | "one-many" | "many-one" | "null"
 source        "ibm1" | "model"
 ```
+
+*Hebrew data is denormalized at build time because the web process does not load Text-Fabric.*
 
 A Syriac token with no Hebrew counterpart is written with `heb_node: null`, `heb_lex: null`, `kind: "null"`.
 

@@ -7,7 +7,7 @@
 </div>
 <p class="tt-syriac" dir="rtl" lang="syr">{{ syr_text }}</p>
 <table class="tt-table">
-  <thead><tr><th>{{ _t('tt_col_hebrew') }}</th><th>lex</th><th>{{ _t('tt_col_syriac') }}</th><th>{{ _t('tt_col_prob') }}</th><th>{{ _t('tt_col_source') }}</th></tr></thead>
+  <thead><tr><th>{{ _t('tt_col_hebrew') }}</th><th>{{ _t('tt_col_lex') }}</th><th>{{ _t('tt_col_syriac') }}</th><th>{{ _t('tt_col_prob') }}</th><th>{{ _t('tt_col_source') }}</th></tr></thead>
   <tbody>
   {% for r in rows %}
     <tr>
@@ -20,5 +20,15 @@
   {% endfor %}
   </tbody>
 </table>
-<p class="tt-note">manifest {{ manifest.hash }}</p>
+{% if syr_only %}
+<h2>{{ _t('tt_unaligned_syriac') }}</h2>
+<table class="tt-table">
+  <tbody>
+  {% for r in syr_only %}
+    <tr><td dir="rtl" lang="syr">{{ r.syr_lemma or '—' }}</td><td>#{{ r.syr_position }}</td><td>{{ r.syr_source }}</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+<p class="tt-note">{{ _t('tt_manifest_label') }} {{ manifest.hash }}</p>
 {% endblock %}

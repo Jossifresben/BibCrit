@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import csv
 import io
+import re
 
 from flask import Blueprint, Response, abort, jsonify, render_template, request
 
@@ -27,6 +28,11 @@ def _store():
     return state.tt
 
 
+def _lang() -> str:
+    lang = request.args.get('lang', 'en')
+    return lang if lang in ('en', 'es') else 'en'
+
+
 def _books_arg() -> list[str] | None:
     raw = request.args.get('books', '').strip()
     return [b for b in raw.split(',') if b] or None
@@ -43,7 +49,7 @@ def _rows_for(store, books, witness):
 
 @tt_bp.route('/translation-technique')
 def tt_page():
-    lang = request.args.get('lang', 'en')
+    lang = _lang()
     store = _store()
     return render_template('translation_technique.html', lang=lang, gate_hash=GATE_HASH,
                            available=store.available, books=store.books, facets=FACETS,
@@ -52,20 +58,21 @@ def tt_page():
 
 @tt_bp.route('/translation-technique/verse/<path:ref>')
 def tt_verse(ref: str):
-    lang = request.args.get('lang', 'en')
+    lang = _lang()
     store = _store()
     rows = store.verse_rows(ref)
     if not rows:
         abort(404)
     heb = [r for r in rows if r['heb_node'] is not None]
     heb.sort(key=lambda r: r['heb_node'])
+    syr_only = [r for r in rows if r['heb_node'] is None]
     syr_text = ''
     if state.corpus is not None:
         try:
             syr_text = state.corpus.get_verse_text(ref, 'PESH')
         except Exception:
             syr_text = ''
-    return render_template('tt_verse.html', lang=lang, ref=ref, rows=heb, syr_text=syr_text,
+    return render_template('tt_verse.html', lang=lang, ref=ref, rows=heb, syr_only=syr_only, syr_text=syr_text,
                            manifest=store.manifest)
 
 
@@ -124,10 +131,13 @@ def tt_csv():
     witness = request.args.get('witness', '').strip() or None
     books = _books_arg()
     sel = occurrences(_rows_for(store, books, witness), lex, books)
+    safe = re.sub(r'[^A-Za-z0-9_.-]', '_', lex)
     buf = io.StringIO()
+    def _c(x):
+        return re.sub(r'[\r\n]', ' ', str(x))
     buf.write(f"# BibCrit translation technique export; version={store.version}; "
-              f"manifest={store.manifest.get('hash')}; lex={lex}; books={','.join(books or store.books)}; "
-              f"witness={witness or 'main'}\n")
+              f"manifest={store.manifest.get('hash')}; lex={_c(lex)}; books={_c(','.join(books or store.books))}; "
+              f"witness={_c(witness or 'main')}\n")
     w = csv.writer(buf)
     w.writerow(['ref', 'heb_node', 'heb_lex', 'heb_word', 'heb_gloss', 'vs', 'vt', 'clause_typ', 'obj_function',
                 'next_prep', 'syr_position', 'syr_lemma', 'syr_source', 'prob', 'kind', 'link_source'])
@@ -137,4 +147,4 @@ def tt_csv():
                     f.get('clause_typ'), f.get('obj_function'), f.get('next_prep'), r['syr_position'],
                     r['syr_lemma'], r['syr_source'], r['prob'], r['kind'], r['source']])
     return Response(buf.getvalue(), mimetype='text/csv',
-                    headers={'Content-Disposition': f'attachment; filename="tt_{lex}.csv"'})
+                    headers={'Content-Disposition': f'attachment; filename="tt_{safe}.csv"'})

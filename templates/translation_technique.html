@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block title %}{{ _t('tt_page_title') }}{% endblock %}
-{% block meta_description %}Hebrew–Syriac lexical correspondence in the Peshitta: for a Hebrew lexeme, the Syriac renderings, their distribution and the grammatical factors that condition them, computed from a lemma layer and a word alignment.{% endblock %}
-{% block og_title %}Translation Technique — BibCrit{% endblock %}
-{% block og_description %}Which Syriac lexemes render a Hebrew lexeme in the Peshitta, and why.{% endblock %}
+{% block meta_description %}{% if lang == 'es' %}Correspondencia léxica hebreo–siríaco en la Peshitta: para un lexema hebreo, sus traducciones siríacas, su distribución y los factores gramaticales que las condicionan, calculados a partir de una capa de lemas y un alineamiento de palabras.{% else %}Hebrew–Syriac lexical correspondence in the Peshitta: for a Hebrew lexeme, the Syriac renderings, their distribution and the grammatical factors that condition them, computed from a lemma layer and a word alignment.{% endif %}{% endblock %}
+{% block og_title %}{% if lang == 'es' %}Técnica de traducción — BibCrit{% else %}Translation Technique — BibCrit{% endif %}{% endblock %}
+{% block og_description %}{% if lang == 'es' %}Qué lexemas siríacos traducen un lexema hebreo en la Peshitta, y por qué.{% else %}Which Syriac lexemes render a Hebrew lexeme in the Peshitta, and why.{% endif %}{% endblock %}
 
 {% block content %}
 {% include "tt_gate.html" %}
@@ -80,6 +80,7 @@ window.TT_I18N = {
   coverage: {{ _t('tt_coverage')|tojson }},
   manifest: {{ _t('tt_manifest')|tojson }},
   eval: {{ _t('tt_eval')|tojson }},
+  model: {{ _t('tt_model_word')|tojson }},
   unevaluated: {{ _t('tt_unevaluated')|tojson }}
 };
 </script>

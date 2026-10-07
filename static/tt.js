@@ -28,6 +28,7 @@
     Object.entries(extra || {}).forEach(([k, v]) => p.set(k, v));
     return p.toString();
   }
+  function esc(s) { return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
   function fmtPct(x) { return (100 * x).toFixed(1) + '%'; }
   function tpl(s, vars) { return (s || '').replace(/\{(\w+)\}/g, (_, k) => vars[k] ?? ''); }
 
@@ -49,7 +50,7 @@
       const q = $('tt-lex').value.trim();
       if (q.length < 1) return;
       const items = await (await fetch(`/api/tt/lexemes?q=${encodeURIComponent(q)}&books=${books()}`)).json();
-      $('tt-lex-list').innerHTML = items.map(i => `<option value="${i.lex}">${i.word} · ${i.gloss} (${i.count})</option>`).join('');
+      $('tt-lex-list').innerHTML = items.map(i => `<option value="${esc(i.lex)}">${esc(i.word)} · ${esc(i.gloss)} (${esc(i.count)})</option>`).join('');
     }, 150);
   });
   $('tt-lex').addEventListener('change', run);
@@ -72,9 +73,9 @@
     const max = Math.max(1, ...dist.items.map(i => i.count));
     $('tt-bars').innerHTML = dist.items.map(i => `
       <div class="tt-bar-row">
-        <span class="tt-bar-label" dir="rtl" lang="syr">${i.syr_lemma}</span>
+        <span class="tt-bar-label" dir="rtl" lang="syr">${esc(i.syr_lemma)}</span>
         <span class="tt-bar" style="width:${(100 * i.count / max).toFixed(1)}%"></span>
-        <span class="tt-bar-count">${i.count}${i.model_share ? ` <small>(${fmtPct(i.model_share)} model)</small>` : ''}</span>
+        <span class="tt-bar-count">${esc(i.count)}${i.model_share ? ` <small>(${fmtPct(i.model_share)} ${esc(I.model)})</small>` : ''}</span>
       </div>`).join('');
     $('tt-model-share').textContent = tpl(I.model_share, { share: fmtPct(dist.model_share_total) });
     $('tt-null-count').textContent = tpl(I.null_count, { n: dist.null_count, total: dist.total });
@@ -87,18 +88,18 @@
     const x = d.crosstab;
     $('tt-xtab').hidden = !x;
     if (!x) return;
-    $('tt-xtab-table').innerHTML = `<table class="tt-table"><thead><tr><th></th>${x.values.map(v => `<th>${v}</th>`).join('')}</tr></thead>
-      <tbody>${x.lemmas.map((l, i) => `<tr><th dir="rtl" lang="syr">${l}</th>${x.matrix[i].map(c => `<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+    $('tt-xtab-table').innerHTML = `<table class="tt-table"><thead><tr><th></th>${x.values.map(v => `<th>${esc(v)}</th>`).join('')}</tr></thead>
+      <tbody>${x.lemmas.map((l, i) => `<tr><th dir="rtl" lang="syr">${esc(l)}</th>${x.matrix[i].map(c => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
     $('tt-xtab-stats').textContent = `χ² = ${x.stat}, df = ${x.dof}, p = ${x.p.toExponential(2)}, V = ${x.cramers_v}` + (x.unreliable ? ` — ${I.unreliable}` : '');
   }
 
   function renderOcc(d) {
     $('tt-occ').hidden = false;
     $('tt-occ-body').innerHTML = d.occurrences.map(o => `<tr>
-      <td><a href="/translation-technique/verse/${encodeURIComponent(o.ref)}?lang=${lang}">${o.ref}</a></td>
-      <td dir="rtl" lang="he">${o.heb_word}</td>
-      <td dir="rtl" lang="syr">${o.syr_lemma ?? '—'}</td>
-      <td>${o.prob}</td>
-      <td>${o.source}${o.syr_source ? ' / ' + o.syr_source : ''}</td></tr>`).join('');
+      <td><a href="/translation-technique/verse/${encodeURIComponent(o.ref)}?lang=${encodeURIComponent(lang)}">${esc(o.ref)}</a></td>
+      <td dir="rtl" lang="he">${esc(o.heb_word)}</td>
+      <td dir="rtl" lang="syr">${esc(o.syr_lemma ?? '—')}</td>
+      <td>${esc(o.prob)}</td>
+      <td>${esc(o.source)}${o.syr_source ? ' / ' + esc(o.syr_source) : ''}</td></tr>`).join('');
   }
 })();

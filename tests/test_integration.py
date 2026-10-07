@@ -395,15 +395,14 @@ def test_tier1_per_key_rate_limit_isolated_between_keys(authed_client):
 # ── Translation technique ────────────────────────────────────────────────────
 
 @pytest.fixture
-def tt_client(client, tmp_path):
+def tt_client(client, tmp_path, monkeypatch):
     import shutil
     import state as state_module
     from translation_technique.store import TTStore
     src = os.path.join(os.path.dirname(__file__), 'fixtures', 'tt')
     dst = tmp_path / 'tt'
-    if not dst.exists():
-        shutil.copytree(src, dst)
-    state_module.tt = TTStore(str(dst))
+    shutil.copytree(src, dst)
+    monkeypatch.setattr(state_module, 'tt', TTStore(str(dst)))
     return client
 
 
@@ -464,16 +463,28 @@ def test_tt_csv_export(tt_client):
 def test_tt_verse_view(tt_client):
     r = tt_client.get('/translation-technique/verse/Deuteronomy 24:13')
     assert r.status_code == 200 and 'ܟܒܫ' in r.data.decode()
+    assert 'ܡܢ' in r.data.decode()
     assert tt_client.get('/translation-technique/verse/Deuteronomy 1:1').status_code == 404
 
 
-def test_tt_unavailable_without_data(client, tmp_path):
+def test_tt_unavailable_without_data(client, tmp_path, monkeypatch):
     import state as state_module
     from translation_technique.store import TTStore
-    state_module.tt = TTStore(str(tmp_path / 'nope'))
+    monkeypatch.setattr(state_module, 'tt', TTStore(str(tmp_path / 'nope')))
     assert client.get('/api/tt/meta').get_json()['available'] is False
     assert client.get('/translation-technique').status_code == 200
 
 
 def test_tt_sitemap_entry(client):
     assert '/translation-technique' in client.get('/sitemap.xml').data.decode()
+
+
+def test_tt_lang_is_whitelisted(tt_client):
+    r = tt_client.get('/translation-technique?lang=x%22%20onmouseover%3D%22alert(1)')
+    assert r.status_code == 200 and 'onmouseover' not in r.data.decode()
+
+
+def test_tt_csv_hebrew_lex_ascii_filename(tt_client):
+    r = tt_client.get('/api/tt/occurrences.csv?lex=%D7%90%D7%91')
+    assert r.status_code == 200
+    r.headers['Content-Disposition'].encode('ascii')

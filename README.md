@@ -210,6 +210,7 @@ gunicorn app:app --workers 1 --threads 2 --timeout 120
 |---|---|---|---|
 | `ANTHROPIC_API_KEY` | Yes | — | Anthropic API key. Without it the analysis tools return a graceful error; all cached results and the corpus browser still work. |
 | `BIBCRIT_API_CAP_USD` | No | `10.0` | Monthly Claude spend cap in USD. Resets each calendar month. |
+| `BIBCRIT_API_KEYS_ENFORCE` | No | `0` | Key enforcement is opt-in via `BIBCRIT_API_KEYS_ENFORCE=1`; by default the key-gated endpoints accept anonymous calls, rate-limited by IP. |
 | `SUPABASE_URL` | No | — | Supabase project URL. If unset, caching and budget tracking fall back to disk (`data/cache/`). |
 | `SUPABASE_KEY` | No | — | Supabase `anon` or `service_role` key. |
 | `BIBCRIT_ADMIN_KEY` | No | — | Arbitrary secret for `POST /api/admin/discovery/flag`. Without it the endpoint returns 403. |

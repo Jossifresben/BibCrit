@@ -64,3 +64,19 @@ def test_validate_api_key_true_when_live(monkeypatch):
     assert validate_api_key('bibcrit_live_live_key') is True
     update_call = fake_pipeline._supabase.table.return_value.update.call_args
     assert update_call[0][0]['requests_total'] == 8  # incremented from 7
+
+
+def test_key_gated_route_allows_anonymous_by_default(monkeypatch):
+    """Without BIBCRIT_API_KEYS_ENFORCE the key gate is off (no Claude call:
+    /api/stl/stream without a ref returns its own error payload)."""
+    import app as app_module
+    monkeypatch.delenv('BIBCRIT_API_KEYS_ENFORCE', raising=False)
+    resp = app_module.app.test_client().get('/api/stl/stream')
+    assert resp.status_code != 401
+
+
+def test_key_gated_route_rejects_anonymous_when_enforced(monkeypatch):
+    import app as app_module
+    monkeypatch.setenv('BIBCRIT_API_KEYS_ENFORCE', '1')
+    resp = app_module.app.test_client().get('/api/stl/stream')
+    assert resp.status_code == 401

@@ -16,3 +16,6 @@ services:
       # Monthly Claude spend cap in USD
       - key: BIBCRIT_API_CAP_USD
         value: "20.0"
+      # Opt-in API-key enforcement on key-gated routes (1 = require X-API-Key)
+      - key: BIBCRIT_API_KEYS_ENFORCE
+        value: "0"

@@ -166,7 +166,8 @@ def test_stl_stream_missing_ref_returns_error_event(client, monkeypatch):
     assert b'error' in resp.data
 
 
-def test_stl_stream_no_api_key_returns_401(client):
+def test_stl_stream_no_api_key_returns_401(client, monkeypatch):
+    monkeypatch.setenv('BIBCRIT_API_KEYS_ENFORCE', '1')
     """A missing X-API-Key must be rejected with 401 — Tier-1 routes call
     Claude on a cache miss, so they're key-gated same as their /stream siblings
     in blueprints/textual.py."""

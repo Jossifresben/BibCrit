@@ -110,7 +110,8 @@ def test_api_divergence_unknown_ref_returns_404(authed_client):
     assert rv.status_code == 404
 
 
-def test_api_divergence_no_api_key_returns_401(client):
+def test_api_divergence_no_api_key_returns_401(client, monkeypatch):
+    monkeypatch.setenv('BIBCRIT_API_KEYS_ENFORCE', '1')
     """/api/divergence is Tier-1 (calls Claude on a cache miss) — a missing
     X-API-Key must be rejected with 401, same as its /stream sibling."""
     rv = client.get('/api/divergence?ref=Isaiah+7:14')
@@ -294,14 +295,16 @@ def test_v1_alias_matches_bare_route_for_tier0(client):
     assert rv_bare.data == rv_v1.data
 
 
-def test_tier1_stream_route_rejects_missing_api_key(client):
+def test_tier1_stream_route_rejects_missing_api_key(client, monkeypatch):
+    monkeypatch.setenv('BIBCRIT_API_KEYS_ENFORCE', '1')
     rv = client.get('/api/v1/divergence/stream?ref=Genesis+1:1')
     assert rv.status_code == 401
     data = json.loads(rv.data)
     assert data['error'] == 'unauthorized'
 
 
-def test_tier1_stream_route_rejects_bare_alias_too(client):
+def test_tier1_stream_route_rejects_bare_alias_too(client, monkeypatch):
+    monkeypatch.setenv('BIBCRIT_API_KEYS_ENFORCE', '1')
     """The bare form must enforce the same key requirement — versioning is
     just a URL alias, not a security boundary."""
     rv = client.get('/api/divergence/stream?ref=Genesis+1:1')
@@ -316,7 +319,8 @@ def test_vote_post_rate_limited_at_20_per_hour(client):
     assert any(r.status_code == 429 for r in responses)
 
 
-def test_all_tier1_stream_routes_reject_missing_key(client):
+def test_all_tier1_stream_routes_reject_missing_key(client, monkeypatch):
+    monkeypatch.setenv('BIBCRIT_API_KEYS_ENFORCE', '1')
     tier1_paths = [
         '/api/v1/scribal/stream', '/api/v1/numerical/stream',
         '/api/v1/theological/stream', '/api/v1/patristic/stream',

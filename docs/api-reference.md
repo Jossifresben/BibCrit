@@ -1496,3 +1496,5 @@ curl http://localhost:5000/health
 | `SUPABASE_KEY`        | `""`    | Supabase service role or anon key                                         |
 
 When `SUPABASE_URL` / `SUPABASE_KEY` are not set, BibCrit falls back to disk-based storage under `data/cache/`.
+
+> **API keys:** Key enforcement is opt-in via `BIBCRIT_API_KEYS_ENFORCE=1`; by default the key-gated endpoints accept anonymous calls, rate-limited by IP.

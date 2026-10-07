@@ -2,11 +2,15 @@
 
 Keys are never stored in plaintext — only their SHA-256 hash. Only the Flask
 backend (holding the Supabase service-role key) ever reads/writes api_keys;
-the table has RLS enabled with zero policies (default-deny). See
+the table has RLS enabled with zero policies (default-deny).
+
+Key enforcement is opt-in via BIBCRIT_API_KEYS_ENFORCE=1; by default the
+key-gated endpoints accept anonymous calls, rate-limited by IP. See
 docs/superpowers/specs/2026-07-01-open-api-v1-design.md for the full design.
 """
 import hashlib
 import logging
+import os
 import secrets
 from datetime import datetime
 from functools import wraps
@@ -33,6 +37,10 @@ def _unauthorized():
         'error': 'unauthorized',
         'message': 'Missing or invalid API key. Get one for free: POST /api/v1/keys',
     }), 401
+
+
+def api_keys_enforced() -> bool:
+    return os.environ.get('BIBCRIT_API_KEYS_ENFORCE', '0') == '1'
 
 
 def validate_api_key(raw_key: str) -> bool:
@@ -63,9 +71,12 @@ def validate_api_key(raw_key: str) -> bool:
 
 def require_api_key(view):
     """Decorator for Tier-1 (Claude-calling) routes. Reads the X-API-Key
-    header, rejects with 401 if missing/invalid/revoked."""
+    header, rejects with 401 if missing/invalid/revoked — only when
+    BIBCRIT_API_KEYS_ENFORCE=1; otherwise the view is called directly."""
     @wraps(view)
     def wrapped(*args, **kwargs):
+        if not api_keys_enforced():
+            return view(*args, **kwargs)
         raw_key = request.headers.get('X-API-Key', '')
         if not validate_api_key(raw_key):
             return _unauthorized()

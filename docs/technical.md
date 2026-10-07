@@ -1115,6 +1115,7 @@ services:
 |---|---|---|
 | `ANTHROPIC_API_KEY` | Yes (for analysis) | Claude API key. Without it the app serves cached results but cannot run new analyses. |
 | `BIBCRIT_API_CAP_USD` | No | Monthly spend cap in USD. Default: `10.0`. Increase to allow more analyses per month. |
+| `BIBCRIT_API_KEYS_ENFORCE` | No | Key enforcement is opt-in via `BIBCRIT_API_KEYS_ENFORCE=1`; by default the key-gated endpoints accept anonymous calls, rate-limited by IP. Default: `0`. |
 | `SUPABASE_URL` | No | Supabase project URL. Without it the app falls back to disk caching. |
 | `SUPABASE_KEY` | No | Supabase `anon` or `service_role` key. |
 | `BIBCRIT_ADMIN_KEY` | No | Secret key for the `POST /api/admin/discovery/flag` endpoint. Without it the endpoint returns 403. |

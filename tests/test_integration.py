@@ -488,3 +488,32 @@ def test_tt_csv_hebrew_lex_ascii_filename(tt_client):
     r = tt_client.get('/api/tt/occurrences.csv?lex=%D7%90%D7%91')
     assert r.status_code == 200
     r.headers['Content-Disposition'].encode('ascii')
+
+
+TT_KEYS = ['tt_page_title', 'tt_h1', 'tt_lede', 'tt_gate_prompt', 'tt_gate_button', 'tt_gate_wrong', 'tt_lexeme_label',
+           'tt_lexeme_placeholder', 'tt_books_label', 'tt_facet_label', 'tt_facet_none', 'tt_witness_label',
+           'tt_witness_main', 'tt_distribution_h2', 'tt_crosstab_h2', 'tt_occurrences_h2', 'tt_export_csv',
+           'tt_model_share', 'tt_null_count', 'tt_unreliable', 'tt_methodology_h2', 'tt_coverage', 'tt_manifest',
+           'tt_eval', 'tt_unevaluated', 'tt_facet_unavailable', 'tt_col_ref', 'tt_col_hebrew', 'tt_col_syriac',
+           'tt_col_prob', 'tt_col_source', 'tt_verse_h1', 'tt_back', 'nav_tt', 'guide_tt_title', 'guide_tt_body',
+           'tt_unaligned_syriac', 'tt_model_word', 'tt_col_lex', 'tt_manifest_label']
+
+
+def test_tt_i18n_keys_present_in_both_languages():
+    root = os.path.dirname(os.path.dirname(__file__))
+    data = json.load(open(os.path.join(root, 'data', 'i18n.json'), encoding='utf-8'))
+    for lang in ('en', 'es'):
+        missing = [k for k in TT_KEYS if not data[lang].get(k)]
+        assert not missing, f'{lang} missing {missing}'
+    # the templated strings must keep their placeholders in both languages
+    for lang in ('en', 'es'):
+        assert '{share}' in data[lang]['tt_model_share']
+        assert '{n}' in data[lang]['tt_null_count'] and '{total}' in data[lang]['tt_null_count']
+        assert '{coverage}' in data[lang]['tt_coverage']
+        assert '{hash}' in data[lang]['tt_manifest'] and '{version}' in data[lang]['tt_manifest']
+        assert all(p in data[lang]['tt_eval'] for p in ('{precision}', '{recall}', '{agreement}', '{n}'))
+
+
+def test_tt_links_in_nav_and_guide(client):
+    assert '/translation-technique' in client.get('/guide').data.decode()
+    assert '/translation-technique' in client.get('/guide?lang=es').data.decode()

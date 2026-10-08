@@ -672,7 +672,8 @@
     "tt_method_t4": "Facets",
     "tt_method_p4": "A facet is a grammatical feature of the Hebrew occurrence taken from BHSA (stem, tense, clause type and so on). Association is tested with chi-square and summarised by Cramér’s V (0 = none, 1 = complete); with too few occurrences per cell the test is not reported. Hebrew lexeme ids and grammatical features are ETCBC/BHSA values, the same identifiers SHEBANQ and MQL queries use, so a lexeme can be carried between the two tools unchanged.",
     "tt_method_t5": "Witnesses and evaluation",
-    "tt_method_p5": "Alternative manuscript readings are keyed by hand with their provenance. The aligner is measured against a human-aligned gold sample, and those figures appear in the footer below."
+    "tt_method_p5": "Alternative manuscript readings are keyed by hand with their provenance. The aligner is measured against a human-aligned gold sample, and those figures appear in the footer below.",
+    "tt_method_more": "Full methodology and sources"
   },
   "es": {
     "app_name": "BibCrit",
@@ -1333,6 +1334,7 @@
     "tt_method_t4": "Facetas",
     "tt_method_p4": "Un factor es un rasgo gramatical de la ocurrencia hebrea tomado de BHSA (tema verbal, tiempo, tipo de oración, etc.). La asociación se contrasta con chi cuadrado y se resume con la V de Cramér (0 = ninguna, 1 = completa); con muy pocas ocurrencias por celda no se informa la prueba. Los identificadores de lexema y los rasgos gramaticales del hebreo son valores ETCBC/BHSA, los mismos que usan SHEBANQ y las consultas MQL, de modo que un lexema puede llevarse de una herramienta a la otra sin cambios.",
     "tt_method_t5": "Testigos y evaluación",
-    "tt_method_p5": "Las lecturas alternativas de manuscritos se introducen a mano con su procedencia. El alineador se mide contra una muestra de referencia alineada por una persona; esas cifras figuran en el pie."
+    "tt_method_p5": "Las lecturas alternativas de manuscritos se introducen a mano con su procedencia. El alineador se mide contra una muestra de referencia alineada por una persona; esas cifras figuran en el pie.",
+    "tt_method_more": "Metodología completa y fuentes"
   }
 }

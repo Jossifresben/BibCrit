@@ -2,6 +2,8 @@
 
 Route `/translation-technique` (unlisted: not linked from the site, `noindex`; reachable by URL). Data in `data/tt/`, versioned by `data/tt/VERSION`.
 
+For the methodology and its scholarly sources, see [methodology-peshitta-correspondences.md](methodology-peshitta-correspondences.md).
+
 ## Pipeline
 1. **Lemma layer** (`scripts/tt_build_lemmas.py`): each Peshitta OT token → normalized form → SEDRA IV lookup (cached in `data/tt/sedra_cache.json`) → affix rules on a miss → model proposal on a second miss. Source tag per token: `sedra | rule | model | unresolved`. Coverage per book in `data/tt/lemmas/coverage.json`.
 2. **Alignment** (`scripts/tt_align.py`): IBM Model 1, the classic statistical word-alignment method, both directions with a diagonal prior over the verses of the books listed in `manifest.json` (currently Deuteronomy), symmetrized (intersection + grow-diag). Ambiguous SEDRA analyses are chosen by the alignment. Links under the threshold are listed in `pending.json` for model adjudication (`scripts/tt_adjudicate.py links`), each tagged `source: model`. `manifest.json` records versions, threshold, model id, link counts and a SHA-256 of the alignment files; the page prints that hash.

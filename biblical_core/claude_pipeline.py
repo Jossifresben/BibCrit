@@ -568,6 +568,27 @@ class ClaudePipeline:
 
     # ── Discovery cards ────────────────────────────────────────────────────
 
+    _PAGE = 50
+
+    def _cache_pages(self, columns: str, discovery_ready: bool | None = None):
+        """Yield analysis_cache rows from Supabase a page at a time.
+
+        Reading the whole table in one select held ~100 MB of JSON in memory at
+        once on a 512 MB instance; paging keeps only _PAGE rows alive. Ordered by
+        cache_key so pages are stable. Raises on a Supabase error (callers fall
+        back to disk, as before).
+        """
+        start = 0
+        while True:
+            q = self._supabase.table('analysis_cache').select(columns)
+            if discovery_ready is not None:
+                q = q.eq('discovery_ready', discovery_ready)
+            rows = q.order('cache_key').range(start, start + self._PAGE - 1).execute().data or []
+            yield from rows
+            if len(rows) < self._PAGE:
+                return
+            start += self._PAGE
+
     def get_discovery_cards(self, min_confidence: float = 0.6, limit: int = 12, lang: str = 'en') -> list:
         """Return high-confidence discovery-ready divergence records.
 
@@ -578,13 +599,7 @@ class ClaudePipeline:
 
         if self._supabase:
             try:
-                result = (
-                    self._supabase.table('analysis_cache')
-                    .select('reference, tool, data, cache_key')
-                    .eq('discovery_ready', True)
-                    .execute()
-                )
-                rows = result.data or []
+                rows = list(self._cache_pages('reference, tool, data, cache_key', discovery_ready=True))
                 # Spanish: swap in the translated payload where available, matched by
                 # (reference, tool). Version-independent on purpose — a finding's prompt
                 # version may have moved past the version its translation was made for,
@@ -677,12 +692,7 @@ class ClaudePipeline:
 
         if self._supabase:
             try:
-                result = (
-                    self._supabase.table('analysis_cache')
-                    .select('reference, tool, data')
-                    .execute()
-                )
-                for row in result.data:
+                for row in self._cache_pages('reference, tool, data'):
                     cards.extend(_extract_cards(row['reference'], row['data'],
                                                 min_confidence,
                                                 tool=row.get('tool', 'divergence')))
@@ -730,12 +740,11 @@ class ClaudePipeline:
         rows: list = []
         if self._supabase:
             try:
-                result = (
-                    self._supabase.table('analysis_cache')
-                    .select('data')
-                    .execute()
-                )
-                rows = [r['data'] for r in result.data]
+                # Only the three fields the stats need, extracted per page.
+                for r in self._cache_pages('data'):
+                    d = r['data'] or {}
+                    rows.append({'reference': d.get('reference'), 'book': d.get('book', ''),
+                                 'theories': [None] * len(d.get('theories') or [])})
             except Exception:
                 pass
 

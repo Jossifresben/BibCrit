@@ -4,9 +4,9 @@ from __future__ import annotations
 import json
 import os
 import re
+import sys
 from typing import Optional
 
-from translation_technique.lemmas import read_jsonl
 from translation_technique.tables import BOOK_ORDER
 from translation_technique.witnesses import load_witnesses, sigla, substitutions_for
 
@@ -29,6 +29,39 @@ def _lex_stem(text: str) -> str:
     t = _strip_points(text.strip())
     t = ''.join(_HEB_TO_BHSA.get(c, c) for c in t).upper()
     return re.sub(r'[\[/=]+$', '', t)
+
+
+def _read_compact(path: str) -> list[dict]:
+    """Read an align JSONL file into rows that are cheap to hold for the life of the process.
+
+    The Render instance has 512 MB. json.loads gives every row its own copy of each
+    repeated string and its own heb_feats dict; interning the strings and sharing
+    identical heb_feats dicts (Deuteronomy: 22,330 rows, 2,518 distinct feature sets)
+    keeps the same data in about half the memory. Rows are compacted one line at a
+    time so the uncompacted file is never held whole. Rows are read-only here;
+    callers that change a row copy it first (tables.apply_witness), and none
+    mutate heb_feats.
+    """
+    feats: dict = {}
+    rows: list[dict] = []
+    with open(path, encoding='utf-8') as fh:
+        for line in fh:
+            if not line.strip():
+                continue
+            r = json.loads(line)
+            for k, v in r.items():
+                if type(v) is str:
+                    r[k] = sys.intern(v)
+            f = r.get('heb_feats')
+            if isinstance(f, dict):
+                key = tuple(sorted(f.items()))
+                shared = feats.get(key)
+                if shared is None:
+                    shared = feats[key] = {sys.intern(k): sys.intern(v) if type(v) is str else v
+                                           for k, v in f.items()}
+                r['heb_feats'] = shared
+            rows.append(r)
+    return rows
 
 
 class TTStore:
@@ -87,7 +120,7 @@ class TTStore:
     def _book(self, stem: str) -> list[dict]:
         if stem not in self._book_cache:
             p = os.path.join(self.dir, 'align', f'{stem}.jsonl')
-            self._book_cache[stem] = read_jsonl(p) if os.path.exists(p) else []
+            self._book_cache[stem] = _read_compact(p) if os.path.exists(p) else []
         return self._book_cache[stem]
 
     def rows(self, books: Optional[list[str]]) -> list[dict]:

@@ -3,8 +3,10 @@ services:
     name: bibcrit
     runtime: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --workers 1 --threads 4 --timeout 180
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --workers 1 --threads 4 --timeout 180 --max-requests 1000 --max-requests-jitter 100
     envVars:
+      - key: MALLOC_ARENA_MAX
+        value: "2"
       - key: PYTHON_VERSION
         value: "3.11"
       - key: ANTHROPIC_API_KEY

@@ -8,11 +8,40 @@ Admin toggle: POST /api/admin/discovery/flag?ref=Isaiah+7:14&ready=true&key=ADMI
 
 import os
 import random
+import threading
+import time
 from flask import Blueprint, render_template, request, jsonify, url_for
 import state
 from biblical_core.rate_limit import limiter
 
 discovery_bp = Blueprint('discovery', __name__)
+
+# The card and stats loaders read the whole analysis_cache table (~700 rows of
+# full analysis JSON). Uncached, one /discovery view did that three times and
+# each pull added ~100 MB to the process, which ran the 512 MB Render instance
+# out of memory on 2026-10-09. Results are memoised for _CACHE_TTL seconds, and
+# a single lock means only one thread ever rebuilds at a time.
+_CACHE_TTL = 600
+_cache: dict = {}
+_cache_lock = threading.Lock()
+
+
+def _memo(key, build):
+    hit = _cache.get(key)
+    if hit and time.monotonic() - hit[0] < _CACHE_TTL:
+        return hit[1]
+    with _cache_lock:
+        hit = _cache.get(key)
+        if hit and time.monotonic() - hit[0] < _CACHE_TTL:
+            return hit[1]
+        value = build()
+        _cache[key] = (time.monotonic(), value)
+        return value
+
+
+def _invalidate_cache() -> None:
+    with _cache_lock:
+        _cache.clear()
 
 
 # ── Page route ─────────────────────────────────────────────────────────────
@@ -196,6 +225,7 @@ def admin_flag():
     if not updated:
         return jsonify({'error': f'No cached analysis found for "{ref}"'}), 404
 
+    _invalidate_cache()
     return jsonify({'reference': ref, 'discovery_ready': ready})
 
 
@@ -209,7 +239,11 @@ def _load_all_cards(lang: str = 'en') -> list:
     """
     if not state.pipeline:
         return []
+    lang = lang if lang in ('en', 'es') else 'en'   # bounded cache keys
+    return _memo(('cards', lang), lambda: _build_all_cards(lang))
 
+
+def _build_all_cards(lang: str) -> list:
     curated = state.pipeline.get_discovery_cards(min_confidence=0.6, limit=9999, lang=lang)
 
     if len(curated) >= 3:
@@ -271,4 +305,4 @@ def _load_stats() -> dict:
     """Return aggregate stats for the hero bar."""
     if not state.pipeline:
         return {'passages': 0, 'divergences': 0}
-    return state.pipeline.get_discovery_stats()
+    return _memo(('stats',), state.pipeline.get_discovery_stats)

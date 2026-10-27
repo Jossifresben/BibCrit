@@ -140,6 +140,21 @@
         </table>
       </div>
       <button type="button" id="tt-show-all" class="btn-export tt-show-all" hidden></button>
+      <details id="tt-unlinked" class="tt-unlinked" hidden>
+        <summary class="tt-unlinked-summary" id="tt-unlinked-h"></summary>
+        <p class="tt-note">{{ _t('tt_unlinked_note') }}</p>
+        <div class="tt-scroll">
+          <table class="tt-table">
+            <thead><tr>
+              <th>{{ _t('tt_col_ref') }}</th>
+              <th>{{ _t('tt_col_hebrew') }}</th>
+              <th>{{ _t('tt_col_stemtense') }}</th>
+              <th>{{ _t('tt_col_free_syriac') }}</th>
+            </tr></thead>
+            <tbody id="tt-unlinked-body"></tbody>
+          </table>
+        </div>
+      </details>
     </section>
 
     <section id="tt-method" class="result-card">
@@ -169,6 +184,7 @@ window.TT_I18N = {
   assoc_strong: {{ _t('tt_assoc_strong')|tojson }},
   spread_footer: {{ _t('tt_spread_footer')|tojson }},
   spread_tip: {{ _t('tt_spread_tip')|tojson }},
+  unlinked_h: {{ _t('tt_unlinked_h')|tojson }},
   copy_link: {{ _t('tt_copy_link')|tojson }},
   copied: {{ _t('tt_copied')|tojson }}
 };

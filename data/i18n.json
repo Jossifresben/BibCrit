@@ -674,7 +674,11 @@
     "tt_method_t5": "Witnesses and evaluation",
     "tt_method_p5": "Alternative manuscript readings are keyed by hand with their provenance. The aligner is measured against a human-aligned gold sample, and those figures appear in the footer below.",
     "tt_method_more": "Full methodology and sources",
-    "tt_spread_tip": "Different Syriac renderings: {k}. Hebrew lexemes with that many: {n}. Examples: {examples}"
+    "tt_spread_tip": "Different Syriac renderings: {k}. Hebrew lexemes with that many: {n}. Examples: {examples}",
+    "tt_unlinked_h": "Unlinked occurrences ({n})",
+    "tt_unlinked_note": "Occurrences of this lexeme where the aligner linked no Syriac word. The last column lists the Syriac words of the same verse that have no Hebrew partner; the rendering, if there is one, is often among them. These cases are not counted in the distribution above.",
+    "tt_col_stemtense": "Stem · tense",
+    "tt_col_free_syriac": "Unlinked Syriac words in the verse"
   },
   "es": {
     "app_name": "BibCrit",
@@ -1337,6 +1341,10 @@
     "tt_method_t5": "Testigos y evaluación",
     "tt_method_p5": "Las lecturas alternativas de manuscritos se introducen a mano con su procedencia. El alineador se mide contra una muestra de referencia alineada por una persona; esas cifras figuran en el pie.",
     "tt_method_more": "Metodología completa y fuentes",
-    "tt_spread_tip": "Traducciones siríacas distintas: {k}. Lexemas hebreos con esa cantidad: {n}. Ejemplos: {examples}"
+    "tt_spread_tip": "Traducciones siríacas distintas: {k}. Lexemas hebreos con esa cantidad: {n}. Ejemplos: {examples}",
+    "tt_unlinked_h": "Ocurrencias sin enlace ({n})",
+    "tt_unlinked_note": "Ocurrencias de este lexema para las que el alineador no enlazó ninguna palabra siríaca. La última columna muestra las palabras siríacas del mismo versículo que no tienen pareja hebrea; la traducción, si existe, suele estar entre ellas. Estos casos no se cuentan en la distribución de arriba.",
+    "tt_col_stemtense": "Tema · tiempo",
+    "tt_col_free_syriac": "Palabras siríacas sin enlace en el versículo"
   }
 }

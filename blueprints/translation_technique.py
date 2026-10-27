@@ -18,7 +18,7 @@ from biblical_core.rate_limit import limiter
 from translation_technique.lemmas import read_jsonl, write_jsonl
 from translation_technique.labels import facet_value_label
 from translation_technique.tables import (
-    FACETS, apply_witness, crosstab, distribution, model_share, occurrences, p_text, spread, summary,
+    FACETS, _ref_key, apply_witness, crosstab, distribution, model_share, occurrences, p_text, spread, summary, unlinked,
 )
 
 tt_bp = Blueprint('translation_technique', __name__)
@@ -164,6 +164,8 @@ def tt_table():
         'distribution': distribution(rows, lex, books),
         'crosstab': _xtab(rows, lex, facet, books) if facet else None,
         'occurrences': sel,
+        'unlinked': [dict(u, vs_label=facet_value_label('vs', u['vs']), vt_label=facet_value_label('vt', u['vt']))
+                     for u in unlinked(rows, lex, books)],
         'model_share': model_share(sel),
         'witness_notes': store.witness_notes(witness) if witness else [],
         'summary': (sm := summary(rows, lex, books)),
@@ -199,7 +201,11 @@ def tt_csv():
         return jsonify({'error': 'lex is required'}), 400
     witness = request.args.get('witness', '').strip() or None
     books = _books_arg()
-    sel = occurrences(_rows_for(store, books, witness), lex, books)
+    rows = _rows_for(store, books, witness)
+    unl = {(u['ref'], u['heb_node']) for u in unlinked(rows, lex, books)}
+    sel = sorted(occurrences(rows, lex, books) +
+                 [r for r in rows if r['heb_lex'] == lex and (r['ref'], r['heb_node']) in unl],
+                 key=lambda r: (_ref_key(r['ref']), r['heb_node'] or 0))
     safe = re.sub(r'[^A-Za-z0-9_.-]', '_', lex)
     buf = io.StringIO()
     def _c(x):

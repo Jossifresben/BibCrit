@@ -2849,6 +2849,9 @@ body[data-persona="student"] .tool-header { border-top-color: #059669; }
 .tt-card-head .btn-export { text-decoration: none; }
 .tt-card-actions { display: inline-flex; gap: 8px; align-items: center; }
 .tt-show-all { margin-top: 10px; }
+.tt-unlinked { margin-top: 18px; border-top: 1px solid var(--border); padding-top: 12px; }
+.tt-unlinked-summary { cursor: pointer; font-weight: 600; color: var(--accent); }
+.tt-unlinked-summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .tt-table { width: 100%; border-collapse: collapse; font-size: .9rem; }
 .tt-table th, .tt-table td { padding: 6px 10px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: middle; }
 .tt-table thead th { font-size: .8rem; text-transform: none; letter-spacing: 0; font-weight: 600; color: var(--muted); }

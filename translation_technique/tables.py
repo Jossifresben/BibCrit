@@ -167,6 +167,25 @@ def occurrences(rows: list[dict], heb_lex: str, books) -> list[dict]:
     return sorted(sel, key=lambda r: (_ref_key(r['ref']), r['heb_node'] or 0))
 
 
+def unlinked(rows: list[dict], heb_lex: str, books) -> list[dict]:
+    """Occurrences of heb_lex with no Syriac token linked, in canonical order, each with the Syriac tokens of the
+    same verse that have no Hebrew partner (`syr_free`). `rows` must hold those verses' Syriac-only rows. Lists
+    facts only: which free token, if any, renders the Hebrew word is left to the reader."""
+    sel = [r for r in _select(rows, heb_lex, books) if r['kind'] == 'null' and r.get('heb_node') is not None]
+    refs = {r['ref'] for r in sel}
+    free = defaultdict(list)
+    for r in rows:
+        if r['ref'] in refs and r.get('heb_node') is None and r.get('syr_position') is not None:
+            free[r['ref']].append({'position': r['syr_position'], 'lemma': r.get('syr_lemma')})
+    out = []
+    for r in sorted(sel, key=lambda r: (_ref_key(r['ref']), r['heb_node'])):
+        f = r.get('heb_feats') or {}
+        out.append({'ref': r['ref'], 'heb_node': r['heb_node'], 'heb_word': r.get('heb_word'),
+                    'vs': f.get('vs'), 'vt': f.get('vt'),
+                    'syr_free': sorted(free[r['ref']], key=lambda t: t['position'])})
+    return out
+
+
 MIN_SUMMARY_N = 5
 
 

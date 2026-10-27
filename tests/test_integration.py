@@ -541,6 +541,33 @@ def test_tt_csv_export(tt_client):
     assert 'Deuteronomy 22:4' in body and body.count('\n') >= 4
 
 
+def test_tt_table_unlinked(tt_client):
+    d = tt_client.get('/api/tt/table?lex=JRD[').get_json()
+    assert d['unlinked'] == [{'ref': 'Deuteronomy 24:13', 'heb_node': 5, 'heb_word': 'יָרַד', 'vs': 'qal', 'vt': 'perf',
+                              'vs_label': d['unlinked'][0]['vs_label'], 'vt_label': d['unlinked'][0]['vt_label'],
+                              'syr_free': [{'position': 3, 'lemma': 'ܡܢ'}]}]
+    assert d['unlinked'][0]['vs_label'] and d['unlinked'][0]['vt_label']
+    assert len(d['unlinked']) == d['distribution']['null_count']
+
+
+def test_tt_unlinked_resolved_by_witness(tt_client):
+    assert len(tt_client.get('/api/tt/table?lex=>X/').get_json()['unlinked']) == 1
+    d = tt_client.get('/api/tt/table?lex=>X/&witness=9a1').get_json()
+    assert d['unlinked'] == []
+
+
+def test_tt_unlinked_only_lexeme_is_not_no_match(tt_client):
+    d = tt_client.get('/api/tt/table?lex=>X/').get_json()
+    assert d['occurrences'] == [] and len(d['unlinked']) == 1
+
+
+def test_tt_csv_includes_unlinked(tt_client):
+    body = tt_client.get('/api/tt/occurrences.csv?lex=JRD[').data.decode()
+    lines = [ln for ln in body.splitlines()[2:] if ln]
+    assert len(lines) == 4                                            # 3 linked + 1 unlinked
+    assert any(ln.startswith('Deuteronomy 24:13,5,') and ',null,' in ln for ln in lines)
+
+
 def test_tt_verse_view(tt_client):
     r = tt_client.get('/translation-technique/verse/Deuteronomy 24:13')
     assert r.status_code == 200 and 'ܟܒܫ' in r.data.decode()
@@ -574,7 +601,7 @@ def test_tt_csv_hebrew_lex_ascii_filename(tt_client):
     r.headers['Content-Disposition'].encode('ascii')
 
 
-TT_KEYS = ['tt_spread_tip', 'tt_gold_title', 'tt_gold_save', 'tt_gold_back', 'tt_gold_none', 'tt_page_title', 'tt_h1', 'tt_lede', 'tt_lexeme_label',
+TT_KEYS = ['tt_unlinked_h', 'tt_unlinked_note', 'tt_col_stemtense', 'tt_col_free_syriac', 'tt_spread_tip', 'tt_gold_title', 'tt_gold_save', 'tt_gold_back', 'tt_gold_none', 'tt_page_title', 'tt_h1', 'tt_lede', 'tt_lexeme_label',
            'tt_lexeme_placeholder', 'tt_books_label', 'tt_facet_label', 'tt_facet_none', 'tt_witness_label',
            'tt_witness_main', 'tt_distribution_h2', 'tt_crosstab_h2', 'tt_occurrences_h2', 'tt_export_csv',
            'tt_model_share', 'tt_null_count', 'tt_unreliable', 'tt_methodology_h2', 'tt_coverage', 'tt_manifest',

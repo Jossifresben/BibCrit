@@ -237,3 +237,33 @@ def test_spread_examples_capped_at_three():
     rows = [_srow(f'L{i}/', 'x', pos=1 + j) for i in range(5) for j in range(i + 1)]
     s = spread(rows, None, 'subs')
     assert s['examples'][1] == ['L4/', 'L3/', 'L2/']
+
+
+def _null_heb(ref, lex, node, vs='qal', vt='perf'):
+    return {'ref': ref, 'heb_node': node, 'heb_lex': lex, 'heb_word': 'w', 'heb_gloss': 'g',
+            'heb_feats': {'sp': 'verb', 'vs': vs, 'vt': vt, 'clause_typ': 'WayX', 'obj_function': 'none', 'next_prep': 'none'},
+            'syr_position': None, 'syr_lemma': None, 'syr_source': None, 'prob': 0.0, 'kind': 'null', 'source': 'ibm1'}
+
+
+def _syr_only(ref, pos, lemma):
+    return {'ref': ref, 'heb_node': None, 'heb_lex': None, 'heb_word': None, 'heb_gloss': None, 'heb_feats': None,
+            'syr_position': pos, 'syr_lemma': lemma, 'syr_source': 'sedra', 'prob': 0.0, 'kind': 'null', 'source': 'ibm1'}
+
+
+def test_unlinked_lists_null_hebrew_with_free_syriac():
+    from translation_technique.tables import unlinked
+    rows = [
+        _row('Deuteronomy 2:1', 'BW>[', 'ܥܠ'),                       # linked: not listed
+        _null_heb('Deuteronomy 12:9', 'BW>[', 7, vt='perf'),
+        _syr_only('Deuteronomy 12:9', 6, 'ܡܛܐ'), _syr_only('Deuteronomy 12:9', 2, 'ܗܫܐ'),
+        _null_heb('Deuteronomy 1:24', 'BW>[', 3, vt='wayq'),           # no free Syriac in this verse
+        _null_heb('Deuteronomy 3:3', 'HLK[', 9),                       # other lexeme
+        _syr_only('Deuteronomy 3:3', 1, 'ܐܙܠ'),
+        _null_heb('Genesis 1:1', 'BW>[', 1),                           # other book
+    ]
+    out = unlinked(rows, 'BW>[', ['deuteronomy'])
+    assert [o['ref'] for o in out] == ['Deuteronomy 1:24', 'Deuteronomy 12:9']
+    assert out[0]['syr_free'] == [] and out[0]['vt'] == 'wayq' and out[0]['heb_node'] == 3
+    assert out[1]['syr_free'] == [{'position': 2, 'lemma': 'ܗܫܐ'}, {'position': 6, 'lemma': 'ܡܛܐ'}]
+    assert unlinked(rows, 'BW>[', None)[0]['ref'] == 'Genesis 1:1'
+    assert unlinked(rows, 'ZZZ', None) == []

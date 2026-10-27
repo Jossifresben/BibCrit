@@ -208,7 +208,7 @@
       d = await r.json();
     } catch (e) { console.warn('tt: table failed', e); if (my === seq) noMatch(); return; }
     if (my !== seq) return;
-    if (!d.occurrences || !d.occurrences.length) { noMatch(); return; }
+    if (!(d.occurrences && d.occurrences.length) && !(d.unlinked && d.unlinked.length)) { noMatch(); return; }
     showMsg(false); $('tt-empty').hidden = true;
     renderDist(d, my); renderXtab(d); renderOcc(d);
     $('tt-export').href = '/api/tt/occurrences.csv?' + qs(lex);
@@ -348,5 +348,15 @@
     showAll = false;
     $('tt-occ-count').textContent = `(${occAll.length})`;
     paintOcc();
+    renderUnlinked(d.unlinked || []);
+  }
+  function renderUnlinked(list) {
+    $('tt-unlinked').hidden = !list.length;
+    $('tt-unlinked-h').textContent = tpl(I.unlinked_h, { n: list.length });
+    $('tt-unlinked-body').innerHTML = list.map(u => `<tr>
+      <td><a href="/translation-technique/verse/${encodeURIComponent(u.ref)}?lang=${encodeURIComponent(lang)}">${esc(u.ref)}</a></td>
+      <td class="tt-hebrew" dir="rtl" lang="he">${esc(u.heb_word || '')}</td>
+      <td><span title="${esc(`${u.vs} · ${u.vt}`)}">${esc(u.vs_label || u.vs || '')} · ${esc(u.vt_label || u.vt || '')}</span></td>
+      <td class="tt-syriac" dir="rtl" lang="syr">${u.syr_free.length ? u.syr_free.map(t => esc(t.lemma ?? '?')).join(' · ') : '—'}</td></tr>`).join('');
   }
 })();

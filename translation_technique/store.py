@@ -140,6 +140,20 @@ class TTStore:
         return [r for r in self._book(stem) if r['ref'] == ref]
 
     # ── lexemes ──
+    def _lexeme_entries(self) -> dict:
+        if self._lexemes is None:
+            p = os.path.join(self.dir, 'lexemes.json')
+            if os.path.exists(p):
+                with open(p, encoding='utf-8') as f:
+                    self._lexemes = json.load(f)
+            else:
+                self._lexemes = {}
+        return self._lexemes
+
+    def lexeme_word(self, lex: str) -> str:
+        """The pointed Hebrew form shown for a BHSA lexeme id, or '' if unknown."""
+        return self._lexeme_entries().get(lex, {}).get('word', '')
+
     def lexemes(self, q: str, books: Optional[list[str]]) -> list[dict]:
         if self._lexemes is None:
             p = os.path.join(self.dir, 'lexemes.json')

@@ -638,12 +638,12 @@
     "tt_assoc_strong": "strong",
     "tt_spread_h2": "Lexical consistency",
     "tt_spread_minocc_label": "Minimum occurrences",
-    "tt_spread_lede": "For each Hebrew lexeme, how many distinct Syriac renderings the aligner found. A tall first bar means a consistent translator.",
+    "tt_spread_lede": "Each bar counts Hebrew lexemes. Its place on the axis is how many different Syriac words the aligner found for each of them: the bar at 1 counts the lexemes always rendered the same way, the bar at 2 those rendered two ways, and so on. A tall first bar means a consistent translator. Hover a bar for examples; click it to open the first one.",
     "tt_spread_subs": "Nouns",
     "tt_spread_verb": "Verbs",
     "tt_spread_prep": "Prepositions",
-    "tt_spread_x": "distinct Syriac renderings",
-    "tt_spread_y": "Hebrew lexemes",
+    "tt_spread_x": "different Syriac renderings per lexeme",
+    "tt_spread_y": "number of Hebrew lexemes",
     "tt_spread_footer": "{lexemes} lexemes · {share} rest on model-proposed annotations",
     "tt_spread_minocc": "at least {n} occurrences",
     "tt_xtab_view_table": "Table",
@@ -673,7 +673,8 @@
     "tt_method_p4": "A facet is a grammatical feature of the Hebrew occurrence taken from BHSA (stem, tense, clause type and so on). Association is tested with chi-square and summarised by Cramér’s V (0 = none, 1 = complete); with too few occurrences per cell the test is not reported. Hebrew lexeme ids and grammatical features are ETCBC/BHSA values, the same identifiers SHEBANQ and MQL queries use, so a lexeme can be carried between the two tools unchanged.",
     "tt_method_t5": "Witnesses and evaluation",
     "tt_method_p5": "Alternative manuscript readings are keyed by hand with their provenance. The aligner is measured against a human-aligned gold sample, and those figures appear in the footer below.",
-    "tt_method_more": "Full methodology and sources"
+    "tt_method_more": "Full methodology and sources",
+    "tt_spread_tip": "Different Syriac renderings: {k}. Hebrew lexemes with that many: {n}. Examples: {examples}"
   },
   "es": {
     "app_name": "BibCrit",
@@ -1300,12 +1301,12 @@
     "tt_assoc_strong": "fuerte",
     "tt_spread_h2": "Consistencia léxica",
     "tt_spread_minocc_label": "Ocurrencias mínimas",
-    "tt_spread_lede": "Para cada lexema hebreo, cuántas traducciones siríacas distintas encontró el alineador. Una primera barra alta indica un traductor consistente.",
+    "tt_spread_lede": "Cada barra cuenta lexemas hebreos. Su lugar en el eje es cuántas palabras siríacas distintas encontró el alineador para cada uno: la barra en 1 cuenta los lexemas traducidos siempre igual, la barra en 2 los traducidos de dos maneras, y así sucesivamente. Una primera barra alta indica un traductor consistente. Pase el cursor sobre una barra para ver ejemplos; haga clic para abrir el primero.",
     "tt_spread_subs": "Sustantivos",
     "tt_spread_verb": "Verbos",
     "tt_spread_prep": "Preposiciones",
-    "tt_spread_x": "traducciones siríacas distintas",
-    "tt_spread_y": "lexemas hebreos",
+    "tt_spread_x": "traducciones siríacas distintas por lexema",
+    "tt_spread_y": "número de lexemas hebreos",
     "tt_spread_footer": "{lexemes} lexemas · {share} descansan en anotaciones propuestas por el modelo",
     "tt_spread_minocc": "al menos {n} ocurrencias",
     "tt_xtab_view_table": "Tabla",
@@ -1335,6 +1336,7 @@
     "tt_method_p4": "Un factor es un rasgo gramatical de la ocurrencia hebrea tomado de BHSA (tema verbal, tiempo, tipo de oración, etc.). La asociación se contrasta con chi cuadrado y se resume con la V de Cramér (0 = ninguna, 1 = completa); con muy pocas ocurrencias por celda no se informa la prueba. Los identificadores de lexema y los rasgos gramaticales del hebreo son valores ETCBC/BHSA, los mismos que usan SHEBANQ y las consultas MQL, de modo que un lexema puede llevarse de una herramienta a la otra sin cambios.",
     "tt_method_t5": "Testigos y evaluación",
     "tt_method_p5": "Las lecturas alternativas de manuscritos se introducen a mano con su procedencia. El alineador se mide contra una muestra de referencia alineada por una persona; esas cifras figuran en el pie.",
-    "tt_method_more": "Metodología completa y fuentes"
+    "tt_method_more": "Metodología completa y fuentes",
+    "tt_spread_tip": "Traducciones siríacas distintas: {k}. Lexemas hebreos con esa cantidad: {n}. Ejemplos: {examples}"
   }
 }

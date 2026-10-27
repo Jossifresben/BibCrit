@@ -185,7 +185,9 @@ def tt_spread():
         return jsonify({'error': 'min_occ must be an integer'}), 400
     witness = request.args.get('witness', '').strip() or None
     books = _books_arg()
-    return jsonify(spread(_rows_for(store, books, witness), books, sp, min_occ))
+    out = spread(_rows_for(store, books, witness), books, sp, min_occ)
+    out['example_words'] = {k: [store.lexeme_word(lex) for lex in lexes] for k, lexes in out['examples'].items()}
+    return jsonify(out)
 
 
 @tt_bp.route('/api/tt/occurrences.csv')

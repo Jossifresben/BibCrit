@@ -574,7 +574,7 @@ def test_tt_csv_hebrew_lex_ascii_filename(tt_client):
     r.headers['Content-Disposition'].encode('ascii')
 
 
-TT_KEYS = ['tt_gold_title', 'tt_gold_save', 'tt_gold_back', 'tt_gold_none', 'tt_page_title', 'tt_h1', 'tt_lede', 'tt_lexeme_label',
+TT_KEYS = ['tt_spread_tip', 'tt_gold_title', 'tt_gold_save', 'tt_gold_back', 'tt_gold_none', 'tt_page_title', 'tt_h1', 'tt_lede', 'tt_lexeme_label',
            'tt_lexeme_placeholder', 'tt_books_label', 'tt_facet_label', 'tt_facet_none', 'tt_witness_label',
            'tt_witness_main', 'tt_distribution_h2', 'tt_crosstab_h2', 'tt_occurrences_h2', 'tt_export_csv',
            'tt_model_share', 'tt_null_count', 'tt_unreliable', 'tt_methodology_h2', 'tt_coverage', 'tt_manifest',
@@ -690,6 +690,15 @@ def test_tt_spread_endpoint(tt_client):
     assert tt_client.get('/api/tt/spread?books=deuteronomy&sp=subs').get_json()['histogram'] == []
     assert tt_client.get('/api/tt/spread?sp=noun').status_code == 400
     assert tt_client.get('/api/tt/spread?sp=verb&min_occ=x').status_code == 400
+
+
+def test_tt_spread_example_words(tt_client):
+    d = tt_client.get('/api/tt/spread?books=deuteronomy&sp=verb').get_json()
+    words = d['example_words']
+    assert set(words) == set(d['examples'])
+    for k, lexes in d['examples'].items():
+        assert len(words[k]) == len(lexes)
+    assert 'יָרַד' in [w for ws in words.values() for w in ws]
 
 
 def test_tt_spread_card_markup(tt_client):

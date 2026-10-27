@@ -74,7 +74,9 @@
     const max = Math.max(1, ...s.histogram.map(b => b.n));
     $('tt-spread-' + sp).innerHTML = s.histogram.map(b => {
       const ex = (s.examples[b.k] || []);
-      const tip = `${b.k}: ${b.n}` + (ex.length ? ` (${ex.join(', ')})` : '');
+      const words = ((s.example_words || {})[b.k] || []);
+      const named = ex.map((lex, i) => words[i] ? `${words[i]} (${lex})` : lex).join(', ');
+      const tip = tpl(I.spread_tip, { n: b.n, k: b.k, examples: named || '—' });
       return `<button type="button" class="tt-hbar-col" data-lex="${esc(ex[0] || '')}" title="${esc(tip)}">
         <span class="tt-hbar-n">${esc(b.n)}</span>
         <span class="tt-hbar-track"><span class="tt-hbar" style="height:${(100 * b.n / max).toFixed(1)}%"></span></span>

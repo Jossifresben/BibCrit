@@ -2856,6 +2856,7 @@ body[data-persona="student"] .tool-header { border-top-color: #059669; }
 .tt-table th, .tt-table td { padding: 6px 10px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: middle; }
 .tt-table thead th { font-size: .8rem; text-transform: none; letter-spacing: 0; font-weight: 600; color: var(--muted); }
 .tt-table td[dir="rtl"], .tt-table th[dir="rtl"] { text-align: right; }
+.tt-table th.tt-th-rtl { text-align: right; }
 .tt-table th.tt-sortable { cursor: pointer; user-select: none; white-space: nowrap; }
 .tt-table th.tt-sortable:hover { color: var(--accent); }
 .tt-sort-hint { font-size: .8rem; color: var(--muted); margin: 0 0 .5rem; }

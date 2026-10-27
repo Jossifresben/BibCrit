@@ -7,3 +7,4 @@ supabase>=2.0
 flask-limiter>=3.5
 python-dotenv>=1.0
 markdown>=3.5
+certifi>=2026.10.19  # eMudhra intermediate CA compromise (Render advisory, Oct 2026)
